@@ -1,27 +1,27 @@
 [
     {
-        "type": "Google Maps",
-        "description": "<p>Le bloc \"Google Map\" permet d’afficher une carte présentant des contenus géolocalisés, ramenés par une requête.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l'utilisateur.</p><p>La recherche à facettes peut être activée et couplée à la carte.</p>",
+        "type": "#ext-gen1051#",
+        "description": "#ext-gen1052#",
         "configBasique": {
-            "title": "Google Maps",
+            "title": "#ext-gen1051#",
             "bType": "geoSearchResults",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Filtrage",
+                        "categorie": "#ext-gen1054#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Restreindre au site",
+                                    "fieldLabel": "#ext-gen1055#",
                                     "name": "constrainToSite"
                                 }
                             },
                             {
                                 "type": "Rubedo.view.ESQfield",
                                 "config": {
-                                    "fieldLabel": "Facettes prédéfinies",
+                                    "fieldLabel": "#ext-gen1056#",
                                     "name": "predefinedFacets",
                                     "queryMode": false,
                                     "geoQueryMode": true
@@ -30,12 +30,12 @@
                         ]
                     },
                     {
-                        "categorie": "Centre de la carte",
+                        "categorie": "#ext-gen1057#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Geolocalisation",
+                                    "fieldLabel": "#ext-gen1058#",
                                     "name": "useLocation",
                                     "inputValue": true
                                 }
@@ -43,14 +43,14 @@
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Adresse",
+                                    "fieldLabel": "#ext-gen1059#",
                                     "name": "centerAddress"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Latitude",
+                                    "fieldLabel": "#ext-gen1060#",
                                     "name": "centerLatitude",
                                     "allowDecimals": true,
                                     "decimalPrecision": 6
@@ -59,7 +59,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Longitude",
+                                    "fieldLabel": "#ext-gen1061#",
                                     "name": "centerLongitude",
                                     "allowDecimals": true,
                                     "decimalPrecision": 6
@@ -68,7 +68,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Afficher l'icône",
+                                    "fieldLabel": "#ext-gen1062#",
                                     "name": "showCenterMarker",
                                     "inputValue": true
                                 }
@@ -76,12 +76,12 @@
                         ]
                     },
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Recherche",
+                                    "fieldLabel": "#ext-gen1064#",
                                     "name": "activateSearch",
                                     "inputValue": true
                                 }
@@ -89,7 +89,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Zoom",
+                                    "fieldLabel": "#ext-gen1065#",
                                     "name": "zoom",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -98,7 +98,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Hauteur",
+                                    "fieldLabel": "#ext-gen1066#",
                                     "name": "height",
                                     "allowDecimals": false,
                                     "minValue": 100
@@ -107,7 +107,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Nombre de points max",
+                                    "fieldLabel": "#ext-gen1067#",
                                     "name": "pageSize",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -127,45 +127,45 @@
                 "showCenterMarker": false
             }
         },
-        "category": "Cartographie",
+        "category": "#ext-gen1050#",
         "bType": "geoSearchResults",
         "id": "506441f8c64804d514066125"
     },
     {
-        "type": "Agenda",
-        "description": "<p>Le bloc \"Agenda\" permet d’afficher la vue calendaire d’une liste de contenus datés (évènements, rendez-vous, …etc.)</p>",
+        "type": "#ext-gen1069#",
+        "description": "#ext-gen1070#",
         "configBasique": {
-            "title": "Agenda",
+            "title": "#ext-gen1069#",
             "bType": "calendar",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page associée",
+                                    "fieldLabel": "#ext-gen1073#",
                                     "name": "singlePage"
                                 }
                             }
                         ]
                     },
                     {
-                        "categorie": "Contenus",
+                        "categorie": "#ext-gen1068#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.queryBuilderField",
                                 "config": {
-                                    "fieldLabel": "Requête",
+                                    "fieldLabel": "#ext-gen1075#",
                                     "name": "query"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Champ debut",
+                                    "fieldLabel": "#ext-gen1076#",
                                     "name": "date",
                                     "value": "date"
                                 }
@@ -173,7 +173,7 @@
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Champ fin",
+                                    "fieldLabel": "#ext-gen1077#",
                                     "name": "endDate",
                                     "value": null
                                 }
@@ -183,16 +183,16 @@
                                 "isAutoStored": true,
                                 "autoStoreData": [
                                     {
-                                        "label": "Calendrier",
+                                        "label": "#ext-gen1079#",
                                         "value": "showCal"
                                     },
                                     {
-                                        "label": "Liste",
+                                        "label": "#ext-gen1080#",
                                         "value": "showList"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Affichage",
+                                    "fieldLabel": "#ext-gen1072#",
                                     "name": "display",
                                     "multiSelect": true,
                                     "allowBlank": false,
@@ -209,12 +209,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -231,33 +231,33 @@
                 ]
             }
         },
-        "category": "Contenus",
+        "category": "#ext-gen1068#",
         "bType": "calendar",
         "id": "512dcb9ec0e051be0e000002"
     },
     {
-        "type": "Carrousel",
-        "description": "<p>Le bloc \"Carrousel\" permet d’afficher un carrousel dynamique.</p>",
+        "type": "#ext-gen1084#",
+        "description": "#ext-gen1085#",
         "configBasique": {
-            "title": "Carrousel",
+            "title": "#ext-gen1084#",
             "bType": "carrousel",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page associée",
+                                    "fieldLabel": "#ext-gen1073#",
                                     "name": "singlePage"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Largeur (px)",
+                                    "fieldLabel": "#ext-gen1089#",
                                     "name": "imageWidth",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -266,7 +266,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Hauteur (px)",
+                                    "fieldLabel": "#ext-gen1090#",
                                     "name": "imageHeight",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -275,7 +275,7 @@
                             {
                                 "type": "Ext.form.field.ComboBox",
                                 "config": {
-                                    "fieldLabel": "Mode",
+                                    "fieldLabel": "#ext-gen1091#",
                                     "name": "mode",
                                     "editable": false,
                                     "forceSelection": true,
@@ -290,24 +290,24 @@
                         ]
                     },
                     {
-                        "categorie": "Contenus",
+                        "categorie": "#ext-gen1068#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.queryBuilderField",
                                 "config": {
-                                    "fieldLabel": "Requete",
+                                    "fieldLabel": "#ext-gen1093#",
                                     "name": "query"
                                 }
                             }
                         ]
                     },
                     {
-                        "categorie": "Pagination",
+                        "categorie": "#ext-gen1094#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Nombre de résultats affichés",
+                                    "fieldLabel": "#ext-gen1095#",
                                     "name": "pageSize",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -316,7 +316,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Sauter les n premiers résultats",
+                                    "fieldLabel": "#ext-gen1096#",
                                     "allowDecimals": false,
                                     "name": "resultsSkip",
                                     "minValue": 1
@@ -325,7 +325,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Activer le paginateur",
+                                    "fieldLabel": "#ext-gen1097#",
                                     "name": "showPager",
                                     "inputValue": true
                                 }
@@ -335,12 +335,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -350,26 +350,26 @@
             },
             "configBloc": {}
         },
-        "category": "Contenus",
+        "category": "#ext-gen1068#",
         "bType": "carrousel",
         "id": "506441f8c64804d514022000"
     },
     {
-        "type": "Détail de contenu",
-        "description": "<p>Le bloc \"Détail de Contenu\" permet d’afficher les champs d’un contenu particulier.</p>",
+        "type": "#ext-gen1101#",
+        "description": "#ext-gen1102#",
         "configBasique": {
-            "title": "Détail de contenu",
+            "title": "#ext-gen1101#",
             "bType": "contentDetail",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Contenu",
+                        "categorie": "#ext-gen1104#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.DCEField",
                                 "config": {
-                                    "fieldLabel": "Contenu à afficher",
+                                    "fieldLabel": "#ext-gen1105#",
                                     "name": "contentId",
                                     "chooseOnly": true
                                 }
@@ -379,12 +379,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -394,33 +394,33 @@
             },
             "configBloc": {}
         },
-        "category": "Contenus",
+        "category": "#ext-gen1068#",
         "bType": "contentDetail",
         "id": "506441f8c64804d514000001"
     },
     {
-        "type": "Liste de Contenus",
-        "description": "<p>Le bloc \"Liste de contenus\" permet d’afficher une liste de contenus à l’aide d’un assistant requêteur. Trois types de requêtes sont disponibles : </p><ul><li>manuelle (sélection manuelle ordonnée des contenus à afficher)</li><li>simple (choix d'un type de contenu, taxonomie, règles de tri)</li><li>avancée (types de contenus multiples, taxonomie avancée, critères sur les champs systèmes, règles de tri)</li></ul>",
+        "type": "#ext-gen1109#",
+        "description": "#ext-gen1110#",
         "configBasique": {
-            "title": "Liste de contenus",
+            "title": "#ext-gen1111#",
             "bType": "contentList",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page associée",
+                                    "fieldLabel": "#ext-gen1073#",
                                     "name": "singlePage"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Colonnes",
+                                    "fieldLabel": "#ext-gen1114#",
                                     "name": "columns",
                                     "allowBlank": false,
                                     "editable": false,
@@ -432,24 +432,24 @@
                         ]
                     },
                     {
-                        "categorie": "Contenus",
+                        "categorie": "#ext-gen1068#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.queryBuilderField",
                                 "config": {
-                                    "fieldLabel": "Requête",
+                                    "fieldLabel": "#ext-gen1075#",
                                     "name": "query"
                                 }
                             }
                         ]
                     },
                     {
-                        "categorie": "Pagination",
+                        "categorie": "#ext-gen1094#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Nombre de résultats affichés",
+                                    "fieldLabel": "#ext-gen1095#",
                                     "name": "pageSize",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -458,7 +458,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Sauter les n premiers résultats",
+                                    "fieldLabel": "#ext-gen1096#",
                                     "allowDecimals": false,
                                     "name": "resultsSkip",
                                     "minValue": 1
@@ -467,7 +467,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Activer le paginateur",
+                                    "fieldLabel": "#ext-gen1097#",
                                     "name": "showPager",
                                     "inputValue": true
                                 }
@@ -477,12 +477,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -494,26 +494,26 @@
                 "columns": 1
             }
         },
-        "category": "Contenus",
+        "category": "#ext-gen1068#",
         "bType": "contentList",
         "id": "506441f8c64804d514000000"
     },
     {
-        "type": "Texte Riche",
-        "description": "<p>Le bloc \"Texte Riche\" permet d'intégrer simplement un bloc de texte riche dans une page.</p><p>Le texte est lié à la page et n'est pas exploitable dans le référentiel de contenus.</p>",
+        "type": "#ext-gen1124#",
+        "description": "#ext-gen1125#",
         "configBasique": {
-            "title": "Texte Riche",
+            "title": "#ext-gen1124#",
             "bType": "richText",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Contenu",
+                        "categorie": "#ext-gen1104#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.DCEField",
                                 "config": {
-                                    "fieldLabel": "Contenu",
+                                    "fieldLabel": "#ext-gen1104#",
                                     "name": "contentId",
                                     "allowedCT": "richText",
                                     "addOnly": true
@@ -526,26 +526,26 @@
             },
             "configBloc": {}
         },
-        "category": "Contenus",
+        "category": "#ext-gen1068#",
         "bType": "richText",
         "id": "512236abc0e051d210000006"
     },
     {
-        "type": "Texte Simple",
-        "description": "<p>Le bloc \"Texte Simple\" permet d'intégrer simplement un bloc de texte dans une page.</p><p>Le texte est lié à la page et n'est pas exploitable dans le référentiel de contenus.</p>",
+        "type": "#ext-gen1130#",
+        "description": "#ext-gen1131#",
         "configBasique": {
-            "title": "Texte Simple",
+            "title": "#ext-gen1130#",
             "bType": "simpleText",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Contenu",
+                        "categorie": "#ext-gen1104#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.DCEField",
                                 "config": {
-                                    "fieldLabel": "Contenu",
+                                    "fieldLabel": "#ext-gen1104#",
                                     "name": "contentId",
                                     "allowedCT": "simpleText",
                                     "addOnly": true
@@ -558,47 +558,47 @@
             },
             "configBloc": {}
         },
-        "category": "Contenus",
+        "category": "#ext-gen1068#",
         "bType": "simpleText",
         "id": "51222c6ac0e0511a0d000003"
     },
     {
-        "type": "Contrôleur Zend",
-        "description": "<p>Le bloc \"Contrôleur Zend\" permet aux développeurs d’instancier un contrôleur Zend framework directement dans un bloc.</p>",
+        "type": "#ext-gen1136#",
+        "description": "#ext-gen1137#",
         "configBasique": {
-            "title": "Contrôleur Zend",
+            "title": "#ext-gen1136#",
             "bType": "zendController",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Configuration",
+                        "categorie": "#ext-gen1139#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Module",
+                                    "fieldLabel": "#ext-gen1140#",
                                     "name": "module"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Controleur",
+                                    "fieldLabel": "#ext-gen1141#",
                                     "name": "controller"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Action",
+                                    "fieldLabel": "#ext-gen1142#",
                                     "name": "action"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.TextArea",
                                 "config": {
-                                    "fieldLabel": "Options",
+                                    "fieldLabel": "#ext-gen1143#",
                                     "name": "options"
                                 }
                             }
@@ -609,26 +609,26 @@
             },
             "configBloc": {}
         },
-        "category": "Développement",
+        "category": "#ext-gen1135#",
         "bType": "zendController",
         "id": "50f694edc0e051280d000001"
     },
     {
-        "type": "Template Twig",
-        "description": "<p>Le bloc \"Template Twig\" permet à un développeur d'instancier un gabarit Twig directement dans un bloc, pour un besoin spécifique.</p>",
+        "type": "#ext-gen1145#",
+        "description": "#ext-gen1146#",
         "configBasique": {
-            "title": "Template Twig",
+            "title": "#ext-gen1145#",
             "bType": "twig",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Fichier",
+                        "categorie": "#ext-gen1148#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Nom du fichier",
+                                    "fieldLabel": "#ext-gen1149#",
                                     "name": "fileName"
                                 }
                             }
@@ -639,26 +639,26 @@
             },
             "configBloc": {}
         },
-        "category": "Développement",
+        "category": "#ext-gen1135#",
         "bType": "twig",
         "id": "506441f8c64804d514066000"
     },
     {
-        "type": "Abonnement newsletter",
-        "description": "<p>Le bloc « Abonnement Newsletter » permet d’afficher un formulaire d’inscription à une mailing-list.</p>",
+        "type": "#ext-gen1151#",
+        "description": "#ext-gen1152#",
         "configBasique": {
-            "title": "Abonnement newsletter",
+            "title": "#ext-gen1151#",
             "bType": "mailingList",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.MailingListPickerField",
                                 "config": {
-                                    "fieldLabel": "Newsletter",
+                                    "fieldLabel": "#ext-gen1155#",
                                     "name": "mailingListId"
                                 }
                             }
@@ -669,28 +669,28 @@
             },
             "configBloc": {}
         },
-        "category": "Formulaire",
+        "category": "#ext-gen1150#",
         "bType": "mailingList",
         "id": "514ae0c5c0e051ac0d001672"
     },
     {
-        "type": "Contact",
-        "description": "<p>Le bloc « Contact » affiche un formulaire de contact.</p>",
+        "type": "#ext-gen1157#",
+        "description": "#ext-gen1158#",
         "configBasique": {
-            "title": "Contact",
+            "title": "#ext-gen1157#",
             "bType": "contact",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.ux.form.field.BoxSelect",
                                 "config": {
                                     "store": [],
                                     "name": "contacts",
-                                    "fieldLabel": "Destinataires",
+                                    "fieldLabel": "#ext-gen1161#",
                                     "multiSelect": true,
                                     "forceSelection": false,
                                     "stacked": true,
@@ -704,7 +704,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Captcha",
+                                    "fieldLabel": "#ext-gen1162#",
                                     "name": "captcha",
                                     "inputValue": true
                                 }
@@ -714,12 +714,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -729,28 +729,28 @@
             },
             "configBloc": {}
         },
-        "category": "Formulaire",
+        "category": "#ext-gen1150#",
         "bType": "contact",
         "id": "514ae0c5c0e051ac0d00002e"
     },
     {
-        "type": "Contact avancé",
-        "description": "<p>Le bloc « Contact avancé » affiche un formulaire de contact avancé, basé sur un template et un gabarit spécifiques.</p>",
+        "type": "#ext-gen1166#",
+        "description": "#ext-gen1167#",
         "configBasique": {
-            "title": "Contact avancé",
+            "title": "#ext-gen1166#",
             "bType": "advancedContact",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.ux.form.field.BoxSelect",
                                 "config": {
                                     "store": [],
                                     "name": "contacts",
-                                    "fieldLabel": "Destinataires",
+                                    "fieldLabel": "#ext-gen1161#",
                                     "multiSelect": true,
                                     "forceSelection": false,
                                     "stacked": true,
@@ -764,7 +764,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Captcha",
+                                    "fieldLabel": "#ext-gen1162#",
                                     "name": "captcha",
                                     "inputValue": true
                                 }
@@ -772,28 +772,28 @@
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Nom du formulaire",
+                                    "fieldLabel": "#ext-gen1172#",
                                     "name": "formName"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Sujet de l'e-mail",
+                                    "fieldLabel": "#ext-gen1173#",
                                     "name": "subject"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "De la part de",
+                                    "fieldLabel": "#ext-gen1174#",
                                     "name": "from"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Personnes en copie",
+                                    "fieldLabel": "#ext-gen1175#",
                                     "name": "cc"
                                 }
                             }
@@ -802,12 +802,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -817,26 +817,26 @@
             },
             "configBloc": {}
         },
-        "category": "Formulaire",
+        "category": "#ext-gen1150#",
         "bType": "advancedContact",
         "id": "514ae0c5c0e051ac0d46282e"
     },
     {
-        "type": "Questionnaire",
-        "description": "<p>Le bloc « Questionnaire » permet d’afficher une des enquêtes en ligne créées à l’aide du module Questionnaires.</p>",
+        "type": "#ext-gen1179#",
+        "description": "#ext-gen1180#",
         "configBasique": {
-            "title": "Questionnaire",
+            "title": "#ext-gen1179#",
             "bType": "form",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.FormPickerField",
                                 "config": {
-                                    "fieldLabel": "Questionnaire",
+                                    "fieldLabel": "#ext-gen1179#",
                                     "name": "formId"
                                 }
                             },
@@ -846,15 +846,15 @@
                                 "autoStoreData": [
                                     {
                                         "value": 0,
-                                        "label": "Barre"
+                                        "label": "#ext-gen1185#"
                                     },
                                     {
                                         "value": 1,
-                                        "label": "Etapes"
+                                        "label": "#ext-gen1186#"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Progression",
+                                    "fieldLabel": "#ext-gen1184#",
                                     "name": "progression",
                                     "editable": false,
                                     "forceSelection": true,
@@ -871,26 +871,26 @@
                 "progression": 0
             }
         },
-        "category": "Formulaire",
+        "category": "#ext-gen1150#",
         "bType": "form",
         "id": "514ae0c5c0e051ac0d000002"
     },
     {
-        "type": "Audio",
-        "description": "<p>Le bloc \"Audio\" permet d’afficher un lecteur de médias audio (mp3, …)</p>",
+        "type": "#ext-gen1188#",
+        "description": "#ext-gen1189#",
         "configBasique": {
-            "title": "Audio",
+            "title": "#ext-gen1188#",
             "bType": "audio",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Audio",
+                                    "fieldLabel": "#ext-gen1188#",
                                     "name": "audioFile",
                                     "allowedFileType": "Audio",
                                     "smallMode": true
@@ -899,7 +899,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Lecture automatique",
+                                    "fieldLabel": "#ext-gen1193#",
                                     "name": "audioPlay",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -908,7 +908,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Prechargement",
+                                    "fieldLabel": "#ext-gen1194#",
                                     "name": "audioPreload",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -917,7 +917,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Barre d'outils",
+                                    "fieldLabel": "#ext-gen1195#",
                                     "name": "audioControls",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -926,7 +926,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Lecture en boucle",
+                                    "fieldLabel": "#ext-gen1196#",
                                     "name": "audioLoop",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -939,26 +939,26 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "audio",
         "id": "511cde89c0e0511619000000"
     },
     {
-        "type": "Galerie d'images",
-        "description": "<p>Le bloc \"Galerie d’images\" permet d’afficher une galerie d’images stockées dans la médiathèque Rubedo.</p>",
+        "type": "#ext-gen1198#",
+        "description": "#ext-gen1199#",
         "configBasique": {
-            "title": "Galerie d'images",
+            "title": "#ext-gen1198#",
             "bType": "imageGallery",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.MQField",
                                 "config": {
-                                    "fieldLabel": "Requête",
+                                    "fieldLabel": "#ext-gen1075#",
                                     "name": "query",
                                     "allowedFileType": "Image"
                                 }
@@ -966,7 +966,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Images par page",
+                                    "fieldLabel": "#ext-gen1203#",
                                     "name": "pageSize",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -975,7 +975,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Largeur miniatures(px)",
+                                    "fieldLabel": "#ext-gen1204#",
                                     "name": "imageThumbnailWidth",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -984,7 +984,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Hauteur miniatures(px)",
+                                    "fieldLabel": "#ext-gen1205#",
                                     "name": "imageThumbnailHeight",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -997,33 +997,33 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "imageGallery",
         "id": "511cf184c0e051321a000001"
     },
     {
-        "type": "Galerie Flickr",
-        "description": "<p>Le bloc \"Galerie Flicker\" permet d’afficher une galerie d’images en provenance de Flicker, filtrée sur un compte utilisateur ou une liste de tags.</p>",
+        "type": "#ext-gen1207#",
+        "description": "#ext-gen1208#",
         "configBasique": {
-            "title": "Galerie Flickr",
+            "title": "#ext-gen1207#",
             "bType": "flickrGallery",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Source",
+                        "categorie": "#ext-gen1210#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Utilisateur",
+                                    "fieldLabel": "#ext-gen1211#",
                                     "name": "user"
                                 }
                             },
                             {
                                 "type": "Ext.ux.form.field.BoxSelect",
                                 "config": {
-                                    "fieldLabel": "Tags",
+                                    "fieldLabel": "#ext-gen1212#",
                                     "name": "tags",
                                     "store": [],
                                     "multiSelect": true,
@@ -1041,15 +1041,15 @@
                                 "autoStoreData": [
                                     {
                                         "value": "ALL",
-                                        "label": "ET"
+                                        "label": "#ext-gen1214#"
                                     },
                                     {
                                         "value": "ANY",
-                                        "label": "OU"
+                                        "label": "#ext-gen1215#"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Règle sur tags",
+                                    "fieldLabel": "#ext-gen1213#",
                                     "name": "tagmode",
                                     "queryMode": "local",
                                     "editable": false,
@@ -1059,12 +1059,12 @@
                         ]
                     },
                     {
-                        "categorie": "Options",
+                        "categorie": "#ext-gen1143#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Images par page",
+                                    "fieldLabel": "#ext-gen1203#",
                                     "name": "itemsPerPage",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1080,47 +1080,47 @@
                 "tagmode": "ANY"
             }
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "flickrGallery",
         "id": "506441f8c64804d514044123"
     },
     {
-        "type": "Image",
-        "description": "<p>Le bloc \"Image\" permet d'afficher une image stockée dans la médiathèque Rubedo.</p>",
+        "type": "#ext-gen1219#",
+        "description": "#ext-gen1220#",
         "configBasique": {
-            "title": "Image",
+            "title": "#ext-gen1219#",
             "bType": "image",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Lien",
+                                    "fieldLabel": "#ext-gen1223#",
                                     "name": "imageLink"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Alternative",
+                                    "fieldLabel": "#ext-gen1224#",
                                     "name": "imageAlt"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Lien externe",
+                                    "fieldLabel": "#ext-gen1225#",
                                     "name": "externalURL"
                                 }
                             },
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Image",
+                                    "fieldLabel": "#ext-gen1219#",
                                     "name": "imageFile",
                                     "allowedFileType": "Image",
                                     "smallMode": true
@@ -1129,7 +1129,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Largeur (px)",
+                                    "fieldLabel": "#ext-gen1089#",
                                     "name": "imageWidth",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1138,7 +1138,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Hauteur (px)",
+                                    "fieldLabel": "#ext-gen1090#",
                                     "name": "imageHeight",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1147,7 +1147,7 @@
                             {
                                 "type": "Ext.form.field.ComboBox",
                                 "config": {
-                                    "fieldLabel": "Mode",
+                                    "fieldLabel": "#ext-gen1091#",
                                     "name": "mode",
                                     "editable": false,
                                     "forceSelection": true,
@@ -1166,26 +1166,26 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "image",
         "id": "51000880c0e0518010000002"
     },
     {
-        "type": "Liste de médias",
-        "description": "<p></p>",
+        "type": "#ext-gen1231#",
+        "description": "#ext-gen1232#",
         "configBasique": {
-            "title": "Liste de médias",
+            "title": "#ext-gen1231#",
             "bType": "damList",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Filtrage",
+                        "categorie": "#ext-gen1054#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Restreindre au site",
+                                    "fieldLabel": "#ext-gen1055#",
                                     "name": "constrainToSite"
                                 }
                             },
@@ -1195,15 +1195,15 @@
                                 "autoStoreData": [
                                     {
                                         "value": "asc",
-                                        "label": "Croissant"
+                                        "label": "#ext-gen1237#"
                                     },
                                     {
                                         "value": "desc",
-                                        "label": "Decroissant"
+                                        "label": "#ext-gen1238#"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Tri",
+                                    "fieldLabel": "#ext-gen1236#",
                                     "name": "sort",
                                     "editable": false,
                                     "forceSelection": true,
@@ -1214,7 +1214,7 @@
                             {
                                 "type": "Rubedo.view.ESQfield",
                                 "config": {
-                                    "fieldLabel": "Facettes",
+                                    "fieldLabel": "#ext-gen1239#",
                                     "name": "facets",
                                     "queryMode": false,
                                     "geoQueryMode": false,
@@ -1224,7 +1224,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Médias par page",
+                                    "fieldLabel": "#ext-gen1240#",
                                     "name": "pagesize",
                                     "allowDecimals": false,
                                     "minValue": 1
@@ -1241,26 +1241,26 @@
                 "constrainToSite": true
             }
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "damList",
         "id": "506441f8c64804d514066927"
     },
     {
-        "type": "Média Externe",
-        "description": "<p>Le bloc \"Média Externe\" s’appuie sur l’API oEmbed (http://oembed.com/) et permet d’afficher un média externe provenant des sources suivantes :</p><ul><li>YouTube  (vidéos)</li><li>Flickr (partage photos)</li><li>Vimeo (vidéos)</li><li>Poll Everywhere (enquêtes & sondages)</li><li>My Opera (blogs et photos)</li><li>SmugMug (partage de photos)</li><li>SlideShare (partage de presentations)</li><li>WordPress.com  (blogs)</li><li>chirbit.com (partage de fichiers audio)</li><li>CircuitLab (outil de dessin de schéma électrique)</li><li>Quizz.biz (outil de sondage)</li></ul>",
+        "type": "#ext-gen1242#",
+        "description": "#ext-gen1243#",
         "configBasique": {
-            "title": "Média Externe",
+            "title": "#ext-gen1242#",
             "bType": "externalMedia",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Configuration",
+                        "categorie": "#ext-gen1139#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "URL",
+                                    "fieldLabel": "#ext-gen1246#",
                                     "name": "url",
                                     "vtype": "url"
                                 }
@@ -1268,7 +1268,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Largeur max",
+                                    "fieldLabel": "#ext-gen1247#",
                                     "name": "maxWidth",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1277,7 +1277,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Hauteur max",
+                                    "fieldLabel": "#ext-gen1248#",
                                     "name": "maxHeight",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1290,26 +1290,26 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "externalMedia",
         "id": "50f81083c0e0514e10000005"
     },
     {
-        "type": "Téléchargement de média",
-        "description": "<p>Le bloc « Téléchargement de média » permet de télécharger un média de façon anonyme.</p>",
+        "type": "#ext-gen1250#",
+        "description": "#ext-gen1251#",
         "configBasique": {
-            "title": "Téléchargement de média",
+            "title": "#ext-gen1250#",
             "bType": "resource",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Média",
+                                    "fieldLabel": "#ext-gen1254#",
                                     "name": "documentId",
                                     "smallMode": true
                                 }
@@ -1317,7 +1317,7 @@
                             {
                                 "type": "Rubedo.view.directRTEField",
                                 "config": {
-                                    "fieldLabel": "Introduction",
+                                    "fieldLabel": "#ext-gen1255#",
                                     "name": "introduction"
                                 }
                             }
@@ -1328,33 +1328,33 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "resource",
         "id": "516404ecc0e0518d0f123418"
     },
     {
-        "type": "Téléchargement de média protégé",
-        "description": "<p>Le bloc « Téléchargement de média » permet de télécharger un média  par le biais d’une invitation par e-mail.</p>",
+        "type": "#ext-gen1257#",
+        "description": "#ext-gen1258#",
         "configBasique": {
-            "title": "Téléchargement de média protégé",
+            "title": "#ext-gen1257#",
             "bType": "protectedResource",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.MailingListPickerField",
                                 "config": {
-                                    "fieldLabel": "Liste de diffusion",
+                                    "fieldLabel": "#ext-gen1261#",
                                     "name": "mailingListId"
                                 }
                             },
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Média",
+                                    "fieldLabel": "#ext-gen1254#",
                                     "name": "documentId",
                                     "smallMode": true
                                 }
@@ -1362,7 +1362,7 @@
                             {
                                 "type": "Rubedo.view.directRTEField",
                                 "config": {
-                                    "fieldLabel": "Introduction",
+                                    "fieldLabel": "#ext-gen1255#",
                                     "name": "introduction"
                                 }
                             }
@@ -1373,26 +1373,26 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "protectedResource",
         "id": "516404ecc0e0518d0f000018"
     },
     {
-        "type": "Vidéo",
-        "description": "<p>Le bloc \"Vidéo\" permet d'afficher une vidéo stockée dans la médiathèque Rubedo. Le lecteur utilisé par défaut est JW Player.</p>",
+        "type": "#ext-gen1265#",
+        "description": "#ext-gen1266#",
         "configBasique": {
-            "title": "Vidéo",
+            "title": "#ext-gen1265#",
             "bType": "video",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Video",
+                                    "fieldLabel": "#ext-gen1269#",
                                     "name": "videoFile",
                                     "allowedFileType": "Video",
                                     "smallMode": true
@@ -1401,7 +1401,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Lecture automatique",
+                                    "fieldLabel": "#ext-gen1193#",
                                     "name": "videoAutoPlay",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -1410,7 +1410,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Prechargement",
+                                    "fieldLabel": "#ext-gen1194#",
                                     "name": "videoPreload",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -1419,7 +1419,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Barre d'outils",
+                                    "fieldLabel": "#ext-gen1195#",
                                     "name": "videoControls",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -1428,7 +1428,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Lecture en boucle",
+                                    "fieldLabel": "#ext-gen1196#",
                                     "name": "videoLoop",
                                     "labelWidth": 160,
                                     "inputValue": true
@@ -1437,7 +1437,7 @@
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Aperçu par défaut",
+                                    "fieldLabel": "#ext-gen1274#",
                                     "name": "videoPoster",
                                     "smallMode": true,
                                     "allowedFileType": "Image"
@@ -1446,7 +1446,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Largeur (px)",
+                                    "fieldLabel": "#ext-gen1089#",
                                     "name": "videoWidth",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1455,7 +1455,7 @@
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Hauteur (px)",
+                                    "fieldLabel": "#ext-gen1090#",
                                     "name": "videoHeight",
                                     "allowDecimals": false,
                                     "minValue": 0
@@ -1468,27 +1468,27 @@
             },
             "configBloc": {}
         },
-        "category": "Médias",
+        "category": "#ext-gen1187#",
         "bType": "video",
         "id": "511cda96c0e0517919000000"
     },
     {
-        "type": "Fil d'Ariane",
-        "description": "<p>Le bloc \"Fil d’Ariane\" permet d’afficher automatiquement une vue de la position de la page courante dans l'arborescence du site.</p>",
+        "type": "#ext-gen1278#",
+        "description": "#ext-gen1279#",
         "configBasique": {
-            "title": "Fil d'Ariane",
+            "title": "#ext-gen1278#",
             "bType": "breadcrumb",
             "flex": 1,
             "champsConfig": {
                 "simple": [],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -1498,40 +1498,40 @@
             },
             "configBloc": {}
         },
-        "category": "Navigation",
+        "category": "#ext-gen1277#",
         "bType": "breadcrumb",
         "id": "506441f8c64804d514044000"
     },
     {
-        "type": "Menu",
-        "description": "<p>Le bloc \"Menu\" affiche un menu de navigation, horizontal ou vertical, à partir du niveau sélectionné. </p><p>Il peut être utilisé indifféremment pour créer la barre de navigation principale d’un site ou pour créer des menus secondaires au sein des rubriques.</p>",
+        "type": "#ext-gen1284#",
+        "description": "#ext-gen1285#",
         "configBasique": {
-            "title": "Menu",
+            "title": "#ext-gen1284#",
             "bType": "navigation",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Pages",
+                        "categorie": "#ext-gen1287#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Racine",
+                                    "fieldLabel": "#ext-gen1288#",
                                     "name": "rootPage"
                                 }
                             },
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page de recherche",
+                                    "fieldLabel": "#ext-gen1289#",
                                     "name": "searchPage"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Niveau de base",
+                                    "fieldLabel": "#ext-gen1290#",
                                     "name": "menuLevel",
                                     "allowDecimals": false,
                                     "editable": false,
@@ -1541,7 +1541,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Moteur de recherche",
+                                    "fieldLabel": "#ext-gen1291#",
                                     "name": "useSearchEngine",
                                     "inputValue": true
                                 }
@@ -1549,7 +1549,7 @@
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Afficher la racine",
+                                    "fieldLabel": "#ext-gen1292#",
                                     "name": "displayRootPage",
                                     "inputValue": true
                                 }
@@ -1557,12 +1557,12 @@
                         ]
                     },
                     {
-                        "categorie": "Options",
+                        "categorie": "#ext-gen1143#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.ComboBox",
                                 "config": {
-                                    "fieldLabel": "Style",
+                                    "fieldLabel": "#ext-gen1294#",
                                     "name": "style",
                                     "editable": false,
                                     "forceSelection": true,
@@ -1577,7 +1577,7 @@
                             {
                                 "type": "Rubedo.view.ImagePickerField",
                                 "config": {
-                                    "fieldLabel": "Logo",
+                                    "fieldLabel": "#ext-gen1295#",
                                     "name": "logo",
                                     "allowedFileType": "Image",
                                     "smallMode": true
@@ -1588,12 +1588,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -1607,33 +1607,33 @@
                 "menuLevel": 0
             }
         },
-        "category": "Navigation",
+        "category": "#ext-gen1277#",
         "bType": "navigation",
         "id": "506441f8c64804d514033000"
     },
     {
-        "type": "Plan de site",
-        "description": "<p>Le bloc « Plan de site » permet d’afficher le plan du site.</p>",
+        "type": "#ext-gen1299#",
+        "description": "#ext-gen1300#",
         "configBasique": {
-            "title": "Plan de site",
+            "title": "#ext-gen1299#",
             "bType": "siteMap",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page racine",
+                                    "fieldLabel": "#ext-gen1303#",
                                     "name": "rootPage"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Number",
                                 "config": {
-                                    "fieldLabel": "Niveaux dépliés",
+                                    "fieldLabel": "#ext-gen1304#",
                                     "name": "displayLevel",
                                     "allowDecimals": false,
                                     "minValue": 1
@@ -1644,12 +1644,12 @@
                 ],
                 "avance": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Template alternatif",
+                                    "fieldLabel": "#ext-gen1082#",
                                     "name": "displayType"
                                 }
                             }
@@ -1659,33 +1659,33 @@
             },
             "configBloc": {}
         },
-        "category": "Navigation",
+        "category": "#ext-gen1277#",
         "bType": "siteMap",
         "id": "506441f8c64804d514044492"
     },
     {
-        "type": "Formulaire de recherche",
-        "description": "<p>Le bloc \"Formulaire de recherche\" permet d'afficher un formulaire redirigeant sur une page de recherche.</p>",
+        "type": "#ext-gen1308#",
+        "description": "#ext-gen1309#",
         "configBasique": {
-            "title": "Formulaire de recherche",
+            "title": "#ext-gen1308#",
             "bType": "searchForm",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Configuration",
+                        "categorie": "#ext-gen1139#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page de recherche",
+                                    "fieldLabel": "#ext-gen1289#",
                                     "name": "searchPage"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Placeholder",
+                                    "fieldLabel": "#ext-gen1313#",
                                     "name": "placeholder"
                                 }
                             }
@@ -1696,47 +1696,47 @@
             },
             "configBloc": {}
         },
-        "category": "Recherche",
+        "category": "#ext-gen1064#",
         "bType": "searchForm",
         "id": "510001e9c0e0510a11000001"
     },
     {
-        "type": "Formulaire de recherche avancé",
-        "description": "<p>Le bloc \"Formulaire de recherche\" permet d'afficher un formulaire redirigeant sur une page de recherche.</p>",
+        "type": "#ext-gen1315#",
+        "description": "#ext-gen1309#",
         "configBasique": {
-            "title": "Formulaire de recherche avancé",
+            "title": "#ext-gen1315#",
             "bType": "advancedSearchForm",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Configuration",
+                        "categorie": "#ext-gen1139#",
                         "champs": [
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page de recherche",
+                                    "fieldLabel": "#ext-gen1289#",
                                     "name": "searchPage"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Placeholder",
+                                    "fieldLabel": "#ext-gen1313#",
                                     "name": "placeholder"
                                 }
                             },
                             {
                                 "type": "Rubedo.view.CTCField",
                                 "config": {
-                                    "fieldLabel": "Types de contenus",
+                                    "fieldLabel": "#ext-gen1321#",
                                     "name": "contentTypes"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Dynamique",
+                                    "fieldLabel": "#ext-gen1322#",
                                     "name": "dynamic",
                                     "editable": false,
                                     "disabled": true,
@@ -1752,40 +1752,40 @@
                 "dynamic": false
             }
         },
-        "category": "Recherche",
+        "category": "#ext-gen1064#",
         "bType": "advancedSearchForm",
         "id": "510001e9c0e0510a111234561"
     },
     {
-        "type": "Page de recherche",
-        "description": "<p>Le bloc \"Page de recherche\" permet d'afficher le résultat d'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>",
+        "type": "#ext-gen1289#",
+        "description": "#ext-gen1325#",
         "configBasique": {
-            "title": "Page de recherche",
+            "title": "#ext-gen1289#",
             "bType": "searchResults",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
-                                    "fieldLabel": "Restreindre au site",
+                                    "fieldLabel": "#ext-gen1055#",
                                     "name": "constrainToSite"
                                 }
                             },
                             {
                                 "type": "Rubedo.view.ESQfield",
                                 "config": {
-                                    "fieldLabel": "Facettes prédéfinies",
+                                    "fieldLabel": "#ext-gen1056#",
                                     "name": "predefinedFacets"
                                 }
                             },
                             {
                                 "type": "Ext.ux.TreePicker",
                                 "config": {
-                                    "fieldLabel": "Page associée",
+                                    "fieldLabel": "#ext-gen1073#",
                                     "name": "singlePage"
                                 }
                             }
@@ -1798,26 +1798,26 @@
                 "constrainToSite": true
             }
         },
-        "category": "Recherche",
+        "category": "#ext-gen1064#",
         "bType": "searchResults",
         "id": "506441f8c64804d514066000"
     },
     {
-        "type": "AddThis Follow",
-        "description": "<p>Le Bloc \"AddThis Follow\" permet d’ajouter des icônes de redirection vers différents réseaux sociaux. </p>",
+        "type": "#ext-gen1332#",
+        "description": "#ext-gen1333#",
         "configBasique": {
-            "title": "AddThis Follow",
+            "title": "#ext-gen1332#",
             "bType": "addThisFollow",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Affichage",
+                        "categorie": "#ext-gen1072#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.ComboBox",
                                 "config": {
-                                    "fieldLabel": "Disposition",
+                                    "fieldLabel": "#ext-gen1336#",
                                     "name": "disposition",
                                     "editable": false,
                                     "forceSelection": true,
@@ -1834,15 +1834,15 @@
                                 "autoStoreData": [
                                     {
                                         "value": 0,
-                                        "label": "Petit"
+                                        "label": "#ext-gen1338#"
                                     },
                                     {
                                         "value": 1,
-                                        "label": "Grand"
+                                        "label": "#ext-gen1339#"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Taille",
+                                    "fieldLabel": "#ext-gen1337#",
                                     "name": "small",
                                     "editable": false,
                                     "forceSelection": true,
@@ -1853,89 +1853,89 @@
                         ]
                     },
                     {
-                        "categorie": "Boutons",
+                        "categorie": "#ext-gen1340#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Facebook",
+                                    "fieldLabel": "#ext-gen1341#",
                                     "name": "facebook"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Twitter",
+                                    "fieldLabel": "#ext-gen1342#",
                                     "name": "twitter"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "LinkedIn",
+                                    "fieldLabel": "#ext-gen1343#",
                                     "name": "linkedin"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Google+",
+                                    "fieldLabel": "#ext-gen1344#",
                                     "name": "google"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "YouTube",
+                                    "fieldLabel": "#ext-gen1345#",
                                     "name": "youtube"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Flickr",
+                                    "fieldLabel": "#ext-gen1346#",
                                     "name": "flickr"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Vimeo",
+                                    "fieldLabel": "#ext-gen1347#",
                                     "name": "vimeo"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Pinterest",
+                                    "fieldLabel": "#ext-gen1348#",
                                     "name": "pinterest"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Instagram",
+                                    "fieldLabel": "#ext-gen1349#",
                                     "name": "instagram"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Foursquare",
+                                    "fieldLabel": "#ext-gen1350#",
                                     "name": "foursquare"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "Tumblr",
+                                    "fieldLabel": "#ext-gen1351#",
                                     "name": "tumblr"
                                 }
                             },
                             {
                                 "type": "Ext.form.field.Text",
                                 "config": {
-                                    "fieldLabel": "RSS",
+                                    "fieldLabel": "#ext-gen1352#",
                                     "name": "rss"
                                 }
                             }
@@ -1949,26 +1949,26 @@
                 "small": 0
             }
         },
-        "category": "Syndication",
+        "category": "#ext-gen1331#",
         "bType": "addThisFollow",
         "id": "512c97bfc0e051b80e000001"
     },
     {
-        "type": "AddThis Share",
-        "description": "<p>Le Bloc \"AddThis Share\" permet d’ajouter des fonctionnalités de partage de la page courante sur différents réseaux sociaux.</p>",
+        "type": "#ext-gen1354#",
+        "description": "#ext-gen1355#",
         "configBasique": {
-            "title": "AddThis Share",
+            "title": "#ext-gen1354#",
             "bType": "addThis",
             "flex": 1,
             "champsConfig": {
                 "simple": [
                     {
-                        "categorie": "Paramètres",
+                        "categorie": "#ext-gen1063#",
                         "champs": [
                             {
                                 "type": "Ext.form.field.ComboBox",
                                 "config": {
-                                    "fieldLabel": "Disposition",
+                                    "fieldLabel": "#ext-gen1336#",
                                     "name": "disposition",
                                     "editable": false,
                                     "forceSelection": true,
@@ -1986,15 +1986,15 @@
                                 "autoStoreData": [
                                     {
                                         "value": 0,
-                                        "label": "Petit"
+                                        "label": "#ext-gen1338#"
                                     },
                                     {
                                         "value": 1,
-                                        "label": "Grand"
+                                        "label": "#ext-gen1339#"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Taille",
+                                    "fieldLabel": "#ext-gen1337#",
                                     "name": "small",
                                     "editable": false,
                                     "forceSelection": true,
@@ -2008,15 +2008,15 @@
                                 "autoStoreData": [
                                     {
                                         "value": 0,
-                                        "label": "AddThis"
+                                        "label": "#ext-gen1363#"
                                     },
                                     {
                                         "value": 1,
-                                        "label": "Facebook Like"
+                                        "label": "#ext-gen1364#"
                                     }
                                 ],
                                 "config": {
-                                    "fieldLabel": "Style",
+                                    "fieldLabel": "#ext-gen1294#",
                                     "name": "like",
                                     "editable": false,
                                     "forceSelection": true,
@@ -2035,15 +2035,15 @@
                 "like": 0
             }
         },
-        "category": "Syndication",
+        "category": "#ext-gen1331#",
         "bType": "addThis",
         "id": "512c9141c0e051030e000000"
     },
     {
-        "type": "Authentification",
-        "description": "<p>Le bloc \"Authentification\" permet à un utilisateur de s’authentifier depuis le Front-Office.</p>",
+        "type": "#ext-gen1366#",
+        "description": "#ext-gen1367#",
         "configBasique": {
-            "title": "Authentification",
+            "title": "#ext-gen1366#",
             "bType": "authentication",
             "flex": 1,
             "champsConfig": {
@@ -2052,7 +2052,7 @@
             },
             "configBloc": {}
         },
-        "category": "Utilisateur",
+        "category": "#ext-gen1211#",
         "bType": "authentication",
         "id": "511e6508c0e051bd12000001"
     }

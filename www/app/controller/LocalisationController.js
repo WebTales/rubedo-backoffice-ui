@@ -662,9 +662,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
                 });
             });
         });
-        console.log(extractedLoc);
+        console.log(Ext.JSON.encode(extractedLoc));
         console.log("\n \n");
-        console.log(data);
+        console.log(Ext.JSON.encode(data));
     },
 
     insertAndReplace: function(locObj, targetString) {

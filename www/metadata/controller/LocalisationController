@@ -756,9 +756,9 @@
                     "        });\r",
                     "    });\r",
                     "});\r",
-                    "console.log(extractedLoc);\r",
+                    "console.log(Ext.JSON.encode(extractedLoc));\r",
                     "console.log(\"\\n \\n\");\r",
-                    "console.log(data);"
+                    "console.log(Ext.JSON.encode(data));"
                 ]
             },
             "designerId": "135734d5-8fd3-4b96-9764-767a7262b2f7"
