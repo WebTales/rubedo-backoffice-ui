@@ -51,6 +51,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
             if (!Ext.isEmpty(configs)) {
                 Ext.apply(component, configs);
+                if (!Ext.isEmpty(configs.tooltip)) {
+                    component.setTooltip(configs.tooltip);
+                }
             }
             if ((component.isXType("button"))&&(component.scale=="large")){
                 component.minWidth=48;
@@ -58,7 +61,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
         }
         if ((component.isXType("field"))||(component.isXType("checkboxgroup"))||(component.isXType("radiogroup"))){
             component.labelSeparator=" ";
-            if (component.fieldLabel=="Localisable"){
+            if (component.name=="localizable"){
                 //temporary localiser hide
                 component.hide();
             }
@@ -291,6 +294,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
                 if ((test.isXType("field"))||(test.isXType("radiogroup"))||(test.isXType("checkboxgroup"))){
                     result[test.localiserId]={
                         fieldLabel:test.fieldLabel,
+                        boxLabel:test.boxLabel,
+                        buttonText:test.buttonText,
                         RTip:test.RTip
                     };
                 } else if (test.isXType("button")){
@@ -309,7 +314,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     };
                 } else if (test.isXType("panel")){
                     result[test.localiserId]={
-                        title:test.title
+                        title:test.title,
+                        tooltip:test.tooltip
                     };
                 } else if (test.isXType("window")){
                     result[test.localiserId]={
@@ -323,6 +329,13 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     console.log("unhandled localised component for id : "+test.localiserId); 
                     count=count-1;
                 }
+                if (!Ext.isEmpty(result[test.localiserId])){
+                    Ext.Object.each(result[test.localiserId], function(key, value, myself) {
+                        if (Ext.isEmpty(value)){
+                            delete result[test.localiserId][key];
+                        }
+                    });
+                }
             }
             try{
                 Ext.Array.forEach(test.query("component"), function(component){
@@ -331,11 +344,14 @@ Ext.define('Rubedo.controller.LocalisationController', {
                         if ((component.isXType("field"))||(component.isXType("radiogroup"))||(component.isXType("checkboxgroup"))){
                             result[component.localiserId]={
                                 fieldLabel:component.fieldLabel,
+                                boxLabel:component.boxLabel,
+                                buttonText:component.buttonText,
                                 RTip:component.RTip
                             };
                         } else if (component.isXType("button")){
                             result[component.localiserId]={
-                                text:component.text
+                                text:component.text,
+                                tooltip:component.tooltip
                             };
                         } else if (component.isXType("menuitem")){
                             result[component.localiserId]={
@@ -347,7 +363,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
                             };
                         } else if (component.isXType("panel")){
                             result[component.localiserId]={
-                                title:component.title
+                                title:component.title,
+                                tooltip:component.tooltip
                             };
                         } else if (component.isXType("window")){
                             result[component.localiserId]={
@@ -361,16 +378,23 @@ Ext.define('Rubedo.controller.LocalisationController', {
                             console.log("unhandled localised component for id : "+component.localiserId); 
                             count=count-1;
                         }
+                        if (!Ext.isEmpty(result[component.localiserId])){
+                            Ext.Object.each(result[component.localiserId], function(key, value, myself) {
+                                if (Ext.isEmpty(value)){
+                                    delete result[component.localiserId][key];
+                                }
+                            });
+                        }
                     }
                 });
 
             }catch(err){
-                //console.log(err);
+                console.log(err);
             }
             test.destroy();
         });
         console.log(count+" localised interface components");
-        return(result);
+        return(Ext.JSON.encode(result));
     },
 
     updateLocalisationSingletons: function() {

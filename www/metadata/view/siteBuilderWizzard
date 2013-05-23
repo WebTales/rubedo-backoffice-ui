@@ -77,10 +77,10 @@
                                 "localiserId": "createEmptySiteField",
                                 "layout|anchor": "100%",
                                 "id": "useEmptySiteField",
-                                "fieldLabel": "Créer un site vide",
+                                "fieldLabel": null,
                                 "labelWidth": 110,
                                 "name": "builtOnEmptySite",
-                                "boxLabel": null,
+                                "boxLabel": "Créer un site vide",
                                 "checked": true,
                                 "inputValue": "true"
                             },
@@ -148,12 +148,12 @@
                             "userConfig": {
                                 "localiserId": "createSiteFromModelField",
                                 "layout|anchor": "100%",
-                                "fieldLabel": "Créer un site en utilisant un site existant comme modèle",
+                                "fieldLabel": null,
                                 "labelAlign": null,
                                 "labelStyle": null,
                                 "labelWidth": 320,
                                 "name": "builtOnEmptySite",
-                                "boxLabel": null,
+                                "boxLabel": "Créer un site en utilisant un site existant comme modèle",
                                 "inputValue": "false"
                             },
                             "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da",

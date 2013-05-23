@@ -485,8 +485,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 {
                                     xtype: 'gridpanel',
                                     managesStore: false,
-                                    flex: 1,
                                     localiserId: 'MTtaxoGridUse',
+                                    flex: 1,
                                     autoRender: false,
                                     id: 'vocabulariesMTGrid',
                                     title: 'Vocabulaires utilisables comme plan de classement',

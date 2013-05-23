@@ -11,6 +11,9 @@
 	"authorCol":{
 		"text":"Author"
 	},
+	"hideAllWindowsBtn":{
+		"tooltip":"Show desktop"
+	},
 	"iconsBtn":{
 		"text":"Icons"
 	},
@@ -26,11 +29,11 @@
 	"CustomizeBtn":{
 		"text":"Customize"
 	},
-	"wallpapaerPickerBtn":{
-		"text":"Choose as new wallpaper"
-	},
 	"themePickerBtn":{
 		"text":"Apply this theme"
+	},
+	"wallpapaerPickerBtn":{
+		"text":"Choose as new wallpaper"
 	},
 	"hcmodeFieldset":{
 		"title":"High contrast mode"
@@ -42,8 +45,7 @@
 		"title":"Add a group"
 	},
 	"nameField":{
-		"fieldLabel":"Name ",
-		"RTip":""
+		"fieldLabel":"Name "
 	},
 	"createGroupAsAsonBtn":{
 		"text":"Create as a descendant of the selected group"
@@ -60,43 +62,38 @@
 	"addBtn":{
 		"text":"Add"
 	},
+	"changePasswordWindow":{
+		"title":"Change password"
+	},
+	"newPasswordField":{
+		"fieldLabel":"New password "
+	},
+	"confirmField":{
+		"fieldLabel":"Confirm "
+	},
+	"applyBtn":{
+		"text":"Apply"
+	},
+	"exportElementsWindow":{
+		"title":"Export an element"
+	},
+	"mandatoryNameField":{
+		"fieldLabel":"Name * "
+	},
+	"elementDescriptionField":{
+		"fieldLabel":"Description "
+	},
+	"exportElementBtn":{
+		"text":"Export this element "
+	},
 	"removeBtn":{
 		"text":"Delete"
 	},
 	"renameBtn":{
 		"text":"Rename"
 	},
-	"exportElementsWindow":{
-		"title":"Export an element"
-	},
-	"mandatoryNameField":{
-		"fieldLabel":"Name * ",
-		"RTip":""
-	},
-	"elementDescriptionField":{
-		"fieldLabel":"Description ",
-		"RTip":""
-	},
-	"exportElementBtn":{
-		"text":"Export this element "
-	},
-	"changePasswordWindow":{
-		"title":"Change password"
-	},
-	"newPasswordField":{
-		"fieldLabel":"New password ",
-		"RTip":""
-	},
-	"confirmField":{
-		"fieldLabel":"Confirm ",
-		"RTip":""
-	},
-	"applyBtn":{
-		"text":"Apply"
-	},
 	"termField":{
-		"fieldLabel":"Term ",
-		"RTip":""
+		"fieldLabel":"Term "
 	},
 	"indexedElementsWindow":{
 		"title":"Indexed elements"
@@ -105,10 +102,10 @@
 		"text":"<b>OK<\/b>"
 	},
 	"imagePickerChangeBtn":{
-		"text":""
+		"tooltip":"Choose a media"
 	},
 	"imagePickerClearBtn":{
-		"text":""
+		"tooltip":"Deselect"
 	},
 	"createDesktopShortcutMenuBtn":{
 		"text":"Create a desktop shortcut"
@@ -117,12 +114,10 @@
 		"title":"New media type"
 	},
 	"newDamTypeNameField":{
-		"fieldLabel":"Name ",
-		"RTip":""
+		"fieldLabel":"Name "
 	},
 	"newDamTypeMainFileTypeField":{
-		"fieldLabel":"Main file type",
-		"RTip":""
+		"fieldLabel":"Main file type"
 	},
 	"newDamTypeSubmitBtn":{
 		"text":"Create a new type of media"
@@ -137,43 +132,37 @@
 		"title":"Choice of the criteria on fields"
 	},
 	"qbs3ruleadder":{
-		"fieldLabel":"Add a rule on ",
-		"RTip":""
+		"fieldLabel":"Add a rule on "
 	},
-	"qbs3auxbtn":{
-		"text":""
-	},
+	"qbs3auxbtn":[],
 	"qbs4":{
 		"title":"Choice of sorting on fields"
 	},
 	"qbs4sortBtn":{
-		"fieldLabel":"Add a sort on ",
-		"RTip":""
+		"fieldLabel":"Add a sort on "
 	},
-	"qbs4auxbtn":{
-		"text":""
-	},
+	"qbs4auxbtn":[],
 	"gfsUploadFileBtn":{
-		"text":""
+		"tooltip":"Upload a file"
 	},
 	"gfsDeleteFileBtn":{
-		"text":""
+		"tooltip":"Delete the file"
 	},
 	"gfsDownloadFileBtn":{
-		"text":""
+		"tooltip":"Download the file"
 	},
 	"gfsPreviewFileBtn":{
-		"text":""
+		"tooltip":"Display in detail"
 	},
 	"fieldEditlocBtn":{
-		"text":""
+		"tooltip":"Edit the file"
 	},
 	"gfsUploadWindow":{
 		"title":"Upload"
 	},
 	"fileField":{
 		"fieldLabel":"File",
-		"RTip":""
+		"buttonText":"Choose"
 	},
 	"validateBtn":{
 		"text":"Validate"
@@ -212,11 +201,16 @@
 		"title":"Choose a media type"
 	},
 	"chooseDamTypeField":{
-		"fieldLabel":"Type",
-		"RTip":""
+		"fieldLabel":"Type"
 	},
 	"chooseDamTypeSubmitBtn":{
 		"text":"Create a new media of this type"
+	},
+	"newWorkspaceWindow":{
+		"title":"New workspace"
+	},
+	"createNewWorkspaceBtn":{
+		"text":"Create a new workspace"
 	},
 	"workspaceWindow":{
 		"title":"Workspaces"
@@ -227,18 +221,26 @@
 	"propsPanel":{
 		"title":"Properties"
 	},
-	"newWorkspaceWindow":{
-		"title":"New workspace"
+	"workspaceField":{
+		"fieldLabel":"Workspaces"
 	},
-	"createNewWorkspaceBtn":{
-		"text":"Create a new workspace"
+	"mediaQueryAssistant":{
+		"title":"Querying on media Wizard"
+	},
+	"mqs1":{
+		"title":"Choice of media types"
+	},
+	"mediaTypesField":{
+		"fieldLabel":"Media types"
+	},
+	"mqS2":{
+		"title":"Choice of rules on taxonomy"
+	},
+	"mqls":{
+		"title":"Save"
 	},
 	"newTermWindow":{
 		"title":"New term"
-	},
-	"workspaceField":{
-		"fieldLabel":"Workspaces",
-		"RTip":""
 	},
 	"maskSaveChoiceWindow":{
 		"title":"This mask is used by pages"
@@ -249,22 +251,6 @@
 	"maskSaveChoice2Btn":{
 		"text":"Save as a new mask"
 	},
-	"mediaQueryAssistant":{
-		"title":"Querying on media Wizard"
-	},
-	"mqs1":{
-		"title":"Choice of media types"
-	},
-	"mediaTypesField":{
-		"fieldLabel":"Media types",
-		"RTip":""
-	},
-	"mqS2":{
-		"title":"Choice of rules on taxonomy"
-	},
-	"mqls":{
-		"title":"Save"
-	},
 	"chooseBtn":{
 		"text":"Choose"
 	},
@@ -272,20 +258,16 @@
 		"text":"Edit"
 	},
 	"lcFieldAdress":{
-		"fieldLabel":"Address",
-		"RTip":""
+		"fieldLabel":"Address"
 	},
 	"lcFieldAltitude":{
-		"fieldLabel":"Altitude",
-		"RTip":""
+		"fieldLabel":"Altitude"
 	},
 	"lcFieldLatitude":{
-		"fieldLabel":"Latitude",
-		"RTip":""
+		"fieldLabel":"Latitude"
 	},
 	"lcFieldLongitude":{
-		"fieldLabel":"Longitude",
-		"RTip":""
+		"fieldLabel":"Longitude"
 	},
 	"sessionExpiringWindow":{
 		"title":"Your session will soon expire"
@@ -366,27 +348,25 @@
 		"text":"Mailing lists"
 	},
 	"gfsUploadBtn":{
-		"text":""
+		"tooltip":"Upload a file"
 	},
 	"gfsRemoveFileBtn":{
-		"text":""
+		"tooltip":"Delete the file"
 	},
 	"gfsDownloadBtn":{
-		"text":""
+		"tooltip":"Download the file"
 	},
 	"gfsHelpBtn":{
-		"text":""
+		"tooltip":"Main media file. Mandatory."
 	},
 	"newUserWindow":{
 		"title":"New user"
 	},
 	"emailField":{
-		"fieldLabel":"E-mail ",
-		"RTip":""
+		"fieldLabel":"E-mail "
 	},
 	"userAccountField":{
-		"fieldLabel":"User account ",
-		"RTip":""
+		"fieldLabel":"User account "
 	},
 	"picUploadWindow":{
 		"title":"Upload an image"
@@ -395,8 +375,7 @@
 		"title":"New form"
 	},
 	"newFormTitleField":{
-		"fieldLabel":"Title",
-		"RTip":""
+		"fieldLabel":"Title"
 	},
 	"newFormCreateBtn":{
 		"text":"Create this form"
@@ -405,98 +384,79 @@
 		"title":"Add Item"
 	},
 	"formFieldConfiguratorBtn":{
-		"text":""
+		"tooltip":"Settings"
 	},
 	"formFieldConditionBtn":{
-		"text":""
+		"tooltip":"Display condition"
 	},
 	"formFieldConditionsBtn":{
-		"text":""
+		"tooltip":"Display condition"
 	},
 	"fieldPanel":{
 		"title":"Fields"
-	},
-	"rteConfigWindow":{
-		"title":"Rich text editor"
 	},
 	"formOpenQuestionConfigurator":{
 		"title":"Open question Editor"
 	},
 	"questionLabelField":{
-		"fieldLabel":"Title of the question",
-		"RTip":""
+		"fieldLabel":"Title of the question"
 	},
 	"questionCodeField":{
-		"fieldLabel":"Code of the question",
-		"RTip":""
+		"fieldLabel":"Code of the question"
 	},
 	"questionHelpTextField":{
-		"fieldLabel":"Tooltip",
-		"RTip":""
+		"fieldLabel":"Tooltip"
 	},
 	"questionMandatoryField":{
-		"fieldLabel":"Mandatory",
-		"RTip":""
+		"fieldLabel":"Mandatory"
 	},
 	"questionFieldTypeRadioGroup":{
-		"fieldLabel":"Field type",
-		"RTip":""
+		"fieldLabel":"Field type"
 	},
 	"questionTextRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"Text"
 	},
 	"questionTextareaRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"Comment"
 	},
 	"questionNumberRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"Number"
 	},
 	"questionDateRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"Date"
 	},
 	"questionTimeRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"Time"
 	},
 	"minLengthField":{
-		"fieldLabel":"Min length",
-		"RTip":""
+		"fieldLabel":"Min length"
 	},
 	"maxLengthField":{
-		"fieldLabel":"Max length",
-		"RTip":""
+		"fieldLabel":"Max length"
 	},
 	"validationField":{
-		"fieldLabel":"Validation",
-		"RTip":""
+		"fieldLabel":"Validation"
 	},
 	"minValueField":{
-		"fieldLabel":"Min value",
-		"RTip":""
+		"fieldLabel":"Min value"
 	},
 	"maxValueField":{
-		"fieldLabel":"Max value",
-		"RTip":""
+		"fieldLabel":"Max value"
 	},
 	"allowDecimalsField":{
-		"fieldLabel":"Decimals",
-		"RTip":""
+		"fieldLabel":"Decimals"
+	},
+	"rteConfigWindow":{
+		"title":"Rich text editor"
 	},
 	"emFieldURL":{
-		"fieldLabel":"URL",
-		"RTip":""
+		"fieldLabel":"URL"
 	},
 	"emFieldMaxWidth":{
-		"fieldLabel":"Max width",
-		"RTip":""
+		"fieldLabel":"Max width"
 	},
 	"emFieldMAxHeight":{
-		"fieldLabel":"Max height",
-		"RTip":""
+		"fieldLabel":"Max height"
 	},
 	"confirmDeleteWindow":{
 		"title":"Deletion confirmation"
@@ -520,19 +480,31 @@
 		"title":"Page selector"
 	},
 	"siteField":{
-		"fieldLabel":"Site ",
-		"RTip":""
+		"fieldLabel":"Site "
 	},
 	"previewDeviceCombo":{
 		"text":"Desktop"
 	},
+	"desktopItem":{
+		"text":"Desktop"
+	},
+	"phoneItem":{
+		"text":"Phone - portrait"
+	},
+	"phoneLItem":{
+		"text":"Phone - landscape"
+	},
+	"tabletItem":{
+		"text":"Tablet - portrait"
+	},
+	"tabletLItem":{
+		"text":"Tablet - landscape"
+	},
 	"draftField":{
-		"fieldLabel":"Draft mode",
-		"RTip":""
+		"fieldLabel":"Draft mode"
 	},
 	"dateField":{
-		"fieldLabel":"Date",
-		"RTip":""
+		"fieldLabel":"Date"
 	},
 	"refreshBtn":{
 		"text":"<b>Refresh<\/b>"
@@ -541,12 +513,10 @@
 		"title":"New Page"
 	},
 	"newPageTitleField":{
-		"fieldLabel":"Title ",
-		"RTip":""
+		"fieldLabel":"Title "
 	},
 	"newPageMaskChoiceField":{
-		"fieldLabel":"Page mask",
-		"RTip":""
+		"fieldLabel":"Page mask "
 	},
 	"newPageSubmitBtn":{
 		"text":"Create as a descendant of the selected page"
@@ -555,40 +525,34 @@
 		"title":"Closed question Editor"
 	},
 	"mandatoryCheckbox":{
-		"fieldLabel":"Mandatory",
-		"RTip":""
+		"fieldLabel":"Mandatory"
 	},
 	"colNumberField":{
-		"fieldLabel":"Number of columns",
-		"RTip":""
+		"fieldLabel":"Number of columns"
 	},
 	"answerTypeCheckboxGroup":{
-		"fieldLabel":"Answer",
-		"RTip":""
+		"fieldLabel":"Answer"
 	},
 	"sipleChoiceRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"simple choice"
 	},
 	"multiChoiceRadio":{
-		"fieldLabel":"",
-		"RTip":""
+		"boxLabel":"multi-choice"
 	},
 	"optionsCol":{
 		"text":"Options"
 	},
 	"closedQuestionAddOptionBtn":{
-		"text":""
+		"tooltip":"Add an option"
 	},
 	"closedQuestionRemoveOptionBtn":{
-		"text":""
+		"tooltip":"Remove this option"
 	},
 	"formPageConfigurator":{
 		"title":"Page editor"
 	},
 	"formPageLabelField":{
-		"fieldLabel":"Label",
-		"RTip":""
+		"fieldLabel":"Label"
 	},
 	"importMainWindow":{
 		"title":"Import"
@@ -597,16 +561,13 @@
 		"title":"Choice of the file to import"
 	},
 	"importSeparatorField":{
-		"fieldLabel":"Separator",
-		"RTip":""
+		"fieldLabel":"Separator"
 	},
 	"importCSVFileField":{
 		"fieldLabel":"CSV file",
-		"RTip":""
+		"buttonText":"Choose and analyse"
 	},
-	"importCSVFieldAuxilaryBtn":{
-		"text":""
-	},
+	"importCSVFieldAuxilaryBtn":[],
 	"importStage1MainPanel":{
 		"title":"Choose a CSV file to display its fields"
 	},
@@ -659,19 +620,16 @@
 		"title":"The content type settings"
 	},
 	"workflowField":{
-		"fieldLabel":"Workflow",
-		"RTip":""
+		"fieldLabel":"Workflow"
 	},
 	"importS4Fieldset2":{
 		"title":"Content settings"
 	},
 	"contributeWorkspaceField":{
-		"fieldLabel":"Contribution",
-		"RTip":""
+		"fieldLabel":"Contribution"
 	},
 	"difusionWorkspaceField":{
-		"fieldLabel":"Diffusion",
-		"RTip":""
+		"fieldLabel":"Diffusion"
 	},
 	"importBtn":{
 		"text":"Import"
@@ -686,27 +644,25 @@
 		"title":"Sender"
 	},
 	"expeditorAdressField":{
-		"fieldLabel":"Sender's address",
-		"RTip":""
+		"fieldLabel":"Sender's address"
 	},
 	"expeditorNameField":{
-		"fieldLabel":"Sender's name",
-		"RTip":""
+		"fieldLabel":"Sender's name"
 	},
 	"responseFieldset":{
 		"title":"Reply"
 	},
 	"replyToAdressField":{
-		"fieldLabel":"Reply address",
-		"RTip":""
+		"fieldLabel":"Reply address"
 	},
 	"replyToNameField":{
-		"fieldLabel":"Reply name",
-		"RTip":""
+		"fieldLabel":"Reply name"
 	},
 	"returnPathAdressField":{
-		"fieldLabel":"Return path address",
-		"RTip":""
+		"fieldLabel":"Return path address"
+	},
+	"optionsConfiguratorBtn":{
+		"text":"Configure options"
 	},
 	"newMLWindow":{
 		"title":"New mailing list"
@@ -724,14 +680,10 @@
 		"text":"Label"
 	},
 	"oeditor1addBtn":{
-		"text":""
+		"tooltip":"Add an option"
 	},
 	"oeditor1removeBtn":{
-		"text":""
-	},
-	"optionsConfiguratorBtn":{
-		"text":"Configure options",
-		"tooltip":""
+		"tooltip":"Remove this option"
 	},
 	"pageMaskWindow":{
 		"title":"Page masks"
@@ -776,20 +728,7 @@
 		"title":"Select an item"
 	},
 	"zoomLevelSlider":{
-		"fieldLabel":"Zoom level",
-		"RTip":""
-	},
-	"desktopCustomizeWindow":{
-		"title":"Customizing the desktop"
-	},
-	"wallpaperGrid":{
-		"title":"Wallpaper"
-	},
-	"themeGrid":{
-		"title":"Themes"
-	},
-	"accessibilityPanel":{
-		"title":"Accessibility"
+		"fieldLabel":"Zoom level"
 	},
 	"pageWindow":{
 		"title":"Pages"
@@ -810,27 +749,34 @@
 		"text":"Displayed Contents"
 	},
 	"urlField":{
-		"fieldLabel":"URL",
-		"RTip":""
+		"fieldLabel":"URL"
 	},
 	"excludeFromMenuField":{
-		"fieldLabel":"Non-navigational",
-		"RTip":""
+		"fieldLabel":"Non-navigational"
 	},
 	"inheritWorkspaceField":{
-		"fieldLabel":"Inherits workspace",
-		"RTip":""
+		"fieldLabel":"Inherits workspace"
 	},
 	"referencingFieldSEt":{
 		"title":"SEO"
 	},
 	"titleField":{
-		"fieldLabel":"Title *",
-		"RTip":""
+		"fieldLabel":"Title *"
 	},
 	"descriptionField":{
-		"fieldLabel":"Description ",
-		"RTip":""
+		"fieldLabel":"Description "
+	},
+	"desktopCustomizeWindow":{
+		"title":"Customizing the desktop"
+	},
+	"wallpaperGrid":{
+		"title":"Wallpaper"
+	},
+	"themeGrid":{
+		"title":"Themes"
+	},
+	"accessibilityPanel":{
+		"title":"Accessibility"
 	},
 	"groupsWindow":{
 		"title":"Groups"
@@ -860,19 +806,13 @@
 		"text":"Department"
 	},
 	"readWorkSpaceField":{
-		"fieldLabel":"Read workspaces ",
-		"RTip":""
+		"fieldLabel":"Read workspaces "
 	},
 	"writeWorkspaceField":{
-		"fieldLabel":"Write workspaces",
-		"RTip":""
+		"fieldLabel":"Contribute workspaces"
 	},
 	"defaultWorkspaceField":{
-		"fieldLabel":"Default workspace",
-		"RTip":""
-	},
-	"addUsersToGroupWindow":{
-		"text":"Add these users to the selected group"
+		"fieldLabel":"Default workspace"
 	},
 	"usersWindow":{
 		"title":"Users"
@@ -887,44 +827,34 @@
 		"title":"Information"
 	},
 	"mailField":{
-		"fieldLabel":"E-mail ",
-		"RTip":""
+		"fieldLabel":"E-mail "
 	},
 	"civilityField":{
-		"fieldLabel":"Civility ",
-		"RTip":""
+		"fieldLabel":"Civility "
 	},
 	"organisationField":{
-		"fieldLabel":"Organization ",
-		"RTip":""
+		"fieldLabel":"Organization "
 	},
 	"serviceField":{
-		"fieldLabel":"Department",
-		"RTip":""
+		"fieldLabel":"Department "
 	},
 	"postField":{
-		"fieldLabel":"Function ",
-		"RTip":""
+		"fieldLabel":"Job title"
 	},
 	"phoneField":{
-		"fieldLabel":"Phone ",
-		"RTip":""
+		"fieldLabel":"Phone "
 	},
 	"mobileField":{
-		"fieldLabel":"Mobile ",
-		"RTip":""
+		"fieldLabel":"Mobile "
 	},
 	"coordinatesField":{
-		"fieldLabel":"Coordinates ",
-		"RTip":""
+		"fieldLabel":"Coordinates "
 	},
 	"languageField":{
-		"fieldLabel":"Language ",
-		"RTip":""
+		"fieldLabel":"Language "
 	},
 	"countryField":{
-		"fieldLabel":"Country ",
-		"RTip":""
+		"fieldLabel":"Country "
 	},
 	"applyField":{
 		"text":"Apply"
@@ -939,24 +869,19 @@
 		"title":"User account and validity"
 	},
 	"useraccountField":{
-		"fieldLabel":"User account ",
-		"RTip":""
+		"fieldLabel":"User account "
 	},
 	"gruopsField":{
-		"fieldLabel":"Groups",
-		"RTip":""
+		"fieldLabel":"Groups"
 	},
 	"defaultGroupField":{
-		"fieldLabel":"Default group",
-		"RTip":""
+		"fieldLabel":"Default group"
 	},
 	"startValidityField":{
-		"fieldLabel":"Valid from ",
-		"RTip":""
+		"fieldLabel":"Valid from "
 	},
 	"endValidityField":{
-		"fieldLabel":"Valid until ",
-		"RTip":""
+		"fieldLabel":"Valid until "
 	},
 	"passwordChangeFieldSet":{
 		"title":"Change password"
@@ -964,33 +889,8 @@
 	"userPasswordChangeBtn":{
 		"text":"Change the password for this user"
 	},
-	"settingWindow":{
-		"title":"Settings"
-	},
-	"loginField":{
-		"fieldLabel":"Login ",
-		"RTip":""
-	},
-	"functionField":{
-		"fieldLabel":"Job Title",
-		"RTip":""
-	},
-	"changePassFieldSet":{
-		"title":"Change password"
-	},
-	"oldPasswordField":{
-		"fieldLabel":"Current password ",
-		"RTip":""
-	},
-	"newPasswordConfirmField":{
-		"fieldLabel":"Confirm new password ",
-		"RTip":""
-	},
-	"changePasswordBtn":{
-		"text":"Change Password"
-	},
-	"desktopBtn":{
-		"text":"Desktop"
+	"addUsersToGroupWindow":{
+		"text":"Add these users to the selected group"
 	},
 	"stateColumn":{
 		"text":"Status"
@@ -1022,99 +922,29 @@
 	"typeColumn":{
 		"text":"Type"
 	},
-	"sitesWindow":{
-		"title":"Sites"
+	"settingWindow":{
+		"title":"Settings"
 	},
-	"domainNameColumn":{
-		"text":"Domain name"
+	"loginField":{
+		"fieldLabel":"Login "
 	},
-	"siteFieldSet":{
-		"title":"Site"
+	"functionField":{
+		"fieldLabel":"Function "
 	},
-	"domainNameField":{
-		"fieldLabel":"Domain name *",
-		"RTip":""
+	"changePassFieldSet":{
+		"title":"Change password"
 	},
-	"aliasField":{
-		"fieldLabel":"Alias ",
-		"RTip":""
+	"oldPasswordField":{
+		"fieldLabel":"Current password "
 	},
-	"themeField":{
-		"fieldLabel":"Theme ",
-		"RTip":""
+	"newPasswordConfirmField":{
+		"fieldLabel":"Confirm new password "
 	},
-	"protocolField":{
-		"fieldLabel":"Protocol *",
-		"RTip":""
+	"changePasswordBtn":{
+		"text":"Change Password"
 	},
-	"siteDefaultTitleField":{
-		"fieldLabel":"Default title",
-		"RTip":""
-	},
-	"defaultDescriptionField":{
-		"fieldLabel":"Default description",
-		"RTip":""
-	},
-	"defaultAuthorField":{
-		"fieldLabel":"Default author",
-		"RTip":""
-	},
-	"messageryFieldSet":{
-		"title":"Messaging"
-	},
-	"activeMessageryField":{
-		"fieldLabel":"Enabled ",
-		"RTip":""
-	},
-	"smtpServerField":{
-		"fieldLabel":"SMTP server ",
-		"RTip":""
-	},
-	"smtpPortField":{
-		"fieldLabel":"SMTP port ",
-		"RTip":""
-	},
-	"smtpLoginField":{
-		"fieldLabel":"SMTP login ",
-		"RTip":""
-	},
-	"smtpPassField":{
-		"fieldLabel":"SMTP password ",
-		"RTip":""
-	},
-	"defaultEmailField":{
-		"fieldLabel":"Default e-mail ",
-		"RTip":""
-	},
-	"accessibilityFieldSet ":{
-		"title":"Accessibility"
-	},
-	"accessibilityLeveLfield":{
-		"fieldLabel":"Accessibility level",
-		"RTip":""
-	},
-	"opquastLoginField":{
-		"fieldLabel":"Opquast Login ",
-		"RTip":""
-	},
-	"opquastPassField":{
-		"fieldLabel":"Optquast Password ",
-		"RTip":""
-	},
-	"apiKeysFieldSet":{
-		"title":"External API keys"
-	},
-	"googleMapKeyField":{
-		"fieldLabel":"Google Maps",
-		"RTip":""
-	},
-	"googleAnalyticsKeyField":{
-		"fieldLabel":"Google Analytics",
-		"RTip":""
-	},
-	"disqusKeyField":{
-		"fieldLabel":"Disqus",
-		"RTip":""
+	"desktopBtn":{
+		"text":"Desktop"
 	},
 	"searchResultsWindow":{
 		"title":"Search Results"
@@ -1134,6 +964,84 @@
 	"pertinenceCol":{
 		"text":"Relevance"
 	},
+	"sitesWindow":{
+		"title":"Sites"
+	},
+	"domainNameColumn":{
+		"text":"Domain name"
+	},
+	"siteFieldSet":{
+		"title":"Site"
+	},
+	"domainNameField":{
+		"fieldLabel":"Domain name *"
+	},
+	"aliasField":{
+		"fieldLabel":"Alias "
+	},
+	"themeField":{
+		"fieldLabel":"Theme "
+	},
+	"protocolField":{
+		"fieldLabel":"Protocol *"
+	},
+	"siteDefaultTitleField":{
+		"fieldLabel":"Default title"
+	},
+	"defaultDescriptionField":{
+		"fieldLabel":"Default description"
+	},
+	"defaultAuthorField":{
+		"fieldLabel":"Default author"
+	},
+	"messageryFieldSet":{
+		"title":"Messaging"
+	},
+	"activeMessageryField":{
+		"fieldLabel":"Enabled "
+	},
+	"smtpServerField":{
+		"fieldLabel":"SMTP server "
+	},
+	"smtpPortField":{
+		"fieldLabel":"SMTP port "
+	},
+	"smtpLoginField":{
+		"fieldLabel":"SMTP login "
+	},
+	"smtpPassField":{
+		"fieldLabel":"SMTP password "
+	},
+	"defaultEmailField":{
+		"fieldLabel":"Default e-mail "
+	},
+	"accessibilityFieldSet ":{
+		"title":"Accessibility"
+	},
+	"accessibilityLeveLfield":{
+		"fieldLabel":"Accessibility level "
+	},
+	"opquastLoginField":{
+		"fieldLabel":"Opquast Login "
+	},
+	"opquastPassField":{
+		"fieldLabel":"Optquast Password "
+	},
+	"apiKeysFieldSet":{
+		"title":"External API keys"
+	},
+	"googleMapKeyField":{
+		"fieldLabel":"Google Maps"
+	},
+	"googleAnalyticsKeyField":{
+		"fieldLabel":"Google Analytics"
+	},
+	"disqusKeyField":{
+		"fieldLabel":"Disqus"
+	},
+	"damPickerWindow":{
+		"title":"DAM choice"
+	},
 	"queryBuilder":{
 		"title":"Query Wizard "
 	},
@@ -1141,7 +1049,7 @@
 		"title":"Choice of types of content"
 	},
 	"qbs1selAllBtn":{
-		"text":""
+		"tooltip":"Select all"
 	},
 	"qbStage2":{
 		"title":"Choice of taxonomy terms"
@@ -1151,9 +1059,6 @@
 	},
 	"nextBtn":{
 		"text":"Next"
-	},
-	"damPickerWindow":{
-		"title":"DAM choice"
 	},
 	"monitoringField":{
 		"title":"Monitoring"
@@ -1165,8 +1070,7 @@
 		"title":"Cached items"
 	},
 	"objectField":{
-		"fieldLabel":"Objects",
-		"RTip":""
+		"fieldLabel":"Objects"
 	},
 	"clearCacheBtn":{
 		"text":"<b>Clear cache<\/b>"
@@ -1189,33 +1093,6 @@
 	"chooseThisContentBtn":{
 		"text":"<b>Choose this content<\/b>"
 	},
-	"newDamWindow":{
-		"title":"New media"
-	},
-	"damTitleField":{
-		"fieldLabel":"Title *",
-		"RTip":"Title of the media. Mandatory."
-	},
-	"damOrginalFileField":{
-		"fieldLabel":"Original file *",
-		"RTip":"Main media file. Mandatory."
-	},
-	"taxonomyFieldset":{
-		"title":"Taxonomy"
-	},
-	"workspacesFieldset":{
-		"title":"Workspaces"
-	},
-	"diffusionWorkspaceField":{
-		"fieldLabel":"Diffusion",
-		"RTip":""
-	},
-	"damSubmitNewBtn":{
-		"text":"Create this new media"
-	},
-	"damSubmitUpdateBtn":{
-		"text":"Save changes"
-	},
 	"u1TitleColumn":{
 		"text":"Title"
 	},
@@ -1228,6 +1105,33 @@
 	"u1OnlineColumn":{
 		"text":"Online"
 	},
+	"newDamWindow":{
+		"title":"New media"
+	},
+	"damTitleField":{
+		"fieldLabel":"Title *",
+		"RTip":"Title of the media. Mandatory."
+	},
+	"damOrginalFileField":{
+		"fieldLabel":"Original file *",
+		"buttonText":"Browse...",
+		"RTip":"Main media file. Mandatory."
+	},
+	"taxonomyFieldset":{
+		"title":"Taxonomy"
+	},
+	"workspacesFieldset":{
+		"title":"Workspaces"
+	},
+	"diffusionWorkspaceField":{
+		"fieldLabel":"Diffusion"
+	},
+	"damSubmitNewBtn":{
+		"text":"Create this new media"
+	},
+	"damSubmitUpdateBtn":{
+		"text":"Save changes"
+	},
 	"siteBuilderWizzard":{
 		"title":"Site creation wizard"
 	},
@@ -1235,16 +1139,13 @@
 		"title":"Step 1: model"
 	},
 	"createEmptySiteField":{
-		"fieldLabel":"Create a blank site",
-		"RTip":""
+		"boxLabel":"Create a blank site"
 	},
 	"createSiteFromModelField":{
-		"fieldLabel":"Create a site using an existing site as model",
-		"RTip":""
+		"boxLabel":"Create a site using an existing site as model"
 	},
 	"siteMoelField":{
-		"fieldLabel":"Model site",
-		"RTip":""
+		"fieldLabel":"Model site"
 	},
 	"sbStage1":{
 		"title":"Step 2: Identification"
@@ -1271,7 +1172,8 @@
 		"title":"Surveys"
 	},
 	"addPageBtn":{
-		"text":"New page"
+		"text":"New page",
+		"tooltip":" Add a page in a form (stage management)"
 	},
 	"newElemBtn":{
 		"text":"New item"
@@ -1280,38 +1182,35 @@
 		"title":"Clipboard"
 	},
 	"exploitationField":{
-		"text":"Operation"
+		"text":"Operation",
+		"tooltip":"The operation of the surveys allows to export results in csv format"
 	},
 	"formTitleField":{
-		"fieldLabel":"Survey title",
-		"RTip":""
+		"fieldLabel":"Survey title"
 	},
 	"uniqueAnswerField":{
-		"fieldLabel":"Uniqueness of the answer",
-		"RTip":""
+		"fieldLabel":"Uniqueness of the answer"
+	},
+	"formsUniquenessBtn":{
+		"tooltip":"The uniqueness is designed to restrict submission of a survey"
 	},
 	"openingDateField":{
-		"fieldLabel":"Start date ",
-		"RTip":""
+		"fieldLabel":"Start date "
 	},
 	"closingDateField":{
-		"fieldLabel":"End date",
-		"RTip":""
+		"fieldLabel":"End date"
 	},
 	"endMessageField":{
-		"fieldLabel":"End message",
-		"RTip":""
+		"fieldLabel":"End message"
 	},
 	"statsFieldSet":{
 		"title":"Statistics"
 	},
 	"totalResultFields":{
-		"fieldLabel":"Number of people having started the survey",
-		"RTip":""
+		"fieldLabel":"Number of people having started the survey"
 	},
 	"validResultField":{
-		"fieldLabel":"Number of people having completed the survey",
-		"RTip":""
+		"fieldLabel":"Number of people having completed the survey"
 	},
 	"resultsFieldSet":{
 		"title":"Results"
@@ -1345,12 +1244,10 @@
 		"title":"Publication"
 	},
 	"contentStartPublicationDateField":{
-		"fieldLabel":"Start Publication Date ",
-		"RTip":""
+		"fieldLabel":"Start Publication Date "
 	},
 	"contentEndPublicationDateField":{
-		"fieldLabel":"End Publication Date ",
-		"RTip":""
+		"fieldLabel":"End Publication Date "
 	},
 	"versionTitleCol":{
 		"text":"Title"
@@ -1367,21 +1264,47 @@
 	"createAsDraftBtn":{
 		"text":"Draft"
 	},
-	"termsCol":{
-		"text":"Terms"
-	},
 	"newVocabWindow":{
 		"title":"New vocabulary"
 	},
 	"createNewVocabBtn":{
 		"text":"Create a new vocabulary"
 	},
+	"termsCol":{
+		"text":"Terms"
+	},
+	"newMaskWindow":{
+		"title":"New mask"
+	},
+	"nmSiteField":{
+		"fieldLabel":"Site "
+	},
+	"createNewMaskBtn":{
+		"text":"Create a new mask"
+	},
+	"maskDupliacteWindow":{
+		"title":"Mask duplication"
+	},
+	"mdNewTitleField":{
+		"fieldLabel":"New title "
+	},
+	"mdnewSiteField":{
+		"fieldLabel":"In the site "
+	},
+	"mdSubmitBtn":{
+		"text":"Duplicate this mask"
+	},
+	"blockConfigSimplePanel":{
+		"title":"Simple"
+	},
+	"blockConfigAdvancedPanel":{
+		"title":"Advanced"
+	},
 	"newCTWindow":{
 		"title":"New content type"
 	},
 	"isDepField":{
-		"fieldLabel":"Nested ",
-		"RTip":""
+		"fieldLabel":"Nested "
 	},
 	"createNTCBtn":{
 		"text":"Create a new content type"
@@ -1398,36 +1321,6 @@
 	"depCTTab":{
 		"title":"Nested content types"
 	},
-	"newMaskWindow":{
-		"title":"New mask"
-	},
-	"nmSiteField":{
-		"fieldLabel":"Site ",
-		"RTip":""
-	},
-	"createNewMaskBtn":{
-		"text":"Create a new mask"
-	},
-	"maskDupliacteWindow":{
-		"title":"Mask duplication"
-	},
-	"mdNewTitleField":{
-		"fieldLabel":"New title ",
-		"RTip":""
-	},
-	"mdnewSiteField":{
-		"fieldLabel":"In the site ",
-		"RTip":""
-	},
-	"mdSubmitBtn":{
-		"text":"Duplicate this mask"
-	},
-	"blockConfigSimplePanel":{
-		"title":"Simple"
-	},
-	"blockConfigAdvancedPanel":{
-		"title":"Advanced"
-	},
 	"contentTypesWindow":{
 		"title":"Content types"
 	},
@@ -1441,7 +1334,8 @@
 		"title":"Administration"
 	},
 	"purgeContentTypeBtn":{
-		"text":"Empty content"
+		"text":"Empty content",
+		"tooltip":"Delete all the contents of this type"
 	},
 	"systemFieldPanel":{
 		"title":"System fields"
@@ -1451,6 +1345,9 @@
 	},
 	"propertiesPanel":{
 		"title":"Properties"
+	},
+	"vocabulariesGridPanel":{
+		"title":"Vocabularies"
 	},
 	"descriptionColumn":{
 		"text":"Description"
@@ -1464,9 +1361,8 @@
 	"multiChoiseColumn":{
 		"text":"Multi-choice"
 	},
-	"mandatoryField":{
-		"fieldLabel":"Mandatory ",
-		"RTip":""
+	"mandatoryColumn":{
+		"text":"Mandatory"
 	},
 	"rightWorkflowFieldSet":{
 		"title":"Rights and workflow"
@@ -1475,35 +1371,38 @@
 		"title":"Comments"
 	},
 	"disqusField":{
-		"fieldLabel":"Disqus",
-		"RTip":""
+		"fieldLabel":"Disqus"
 	},
 	"DamTypesMainWindow":{
 		"title":"Media types"
 	},
+	"auxBtn13":{
+		"tooltip":"Title of the media. Mandatory."
+	},
+	"auxBtn15":{
+		"tooltip":"Main media file. Mandatory."
+	},
 	"originalFileField":{
 		"fieldLabel":"Original file *",
-		"RTip":""
+		"buttonText":"Browse..."
+	},
+	"MTtaxoGridUse":{
+		"title":"Vocabularies that can be used as classification scheme "
 	},
 	"labelColumn":{
 		"text":"Labels"
-	},
-	"mandatoryColumn":{
-		"text":"Mandatory"
 	},
 	"rightsFieldSet":{
 		"title":"Rights"
 	},
 	"showOnlyIfCombo":{
-		"fieldLabel":"Displayed if and only if ",
-		"RTip":""
+		"fieldLabel":"Displayed if and only if "
 	},
 	"formsConditionalEditor":{
 		"title":"Display condition"
 	},
 	"showOnlyIfField":{
-		"fieldLabel":"Displayed if and only if ",
-		"RTip":""
+		"fieldLabel":"Displayed if and only if "
 	},
 	"taxonomyWindow":{
 		"title":"Taxonomy"
@@ -1512,24 +1411,21 @@
 		"title":"Term editing"
 	},
 	"helpTextField":{
-		"fieldLabel":"Help text ",
-		"RTip":""
+		"fieldLabel":"Help text "
 	},
 	"expandableField":{
-		"fieldLabel":"Extensible ",
-		"RTip":""
+		"fieldLabel":"Extensible "
 	},
 	"inputAsTreeField":{
-		"fieldLabel":"Tree entry",
-		"RTip":""
+		"fieldLabel":"Tree entry"
 	},
 	"multiSelectField":{
-		"fieldLabel":"Multi-choice ",
-		"RTip":""
+		"fieldLabel":"Multi-choice "
 	},
-	"termsPanel":{
-		"title":""
+	"mandatoryField":{
+		"fieldLabel":"Mandatory "
 	},
+	"termsPanel":[],
 	"authorColumn":{
 		"text":"Author"
 	},
