@@ -48,8 +48,8 @@ Ext.define('Rubedo.controller.SitesController', {
             }
             var boiteMeta = Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
             var valeurs= Ext.clone(selected[0].data);
-            valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');
-            valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, 'd-m-Y');
+            valeurs.creation= Ext.Date.format(valeurs.createTime, Ext.Date.defaultFormat);
+            valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, Ext.Date.defaultFormat);
             boiteMeta.update(valeurs);
             boiteMeta.show();
 

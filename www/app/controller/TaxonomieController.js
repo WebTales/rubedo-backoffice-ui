@@ -121,8 +121,8 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     store.load();
 
     var boiteMeta = Ext.getCmp("adminFTaxonomie").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
-    customMeta=record.get("name")+"</br> "+Rubedo.RubedoAutomatedElementsLoc.createText+" : "+Ext.Date.format(record.get("createTime"), "d-m-y")+
-    " "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : "+Ext.Date.format(record.get("lastUpdateTime"), "d-m-y")+" "+Rubedo.RubedoAutomatedElementsLoc.authorText+" : "+record.get("createUser").fullName;
+    customMeta=record.get("name")+"</br> "+Rubedo.RubedoAutomatedElementsLoc.createText+" : "+Ext.Date.format(record.get("createTime"), Ext.Date.defaultFormat)+
+    " "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : "+Ext.Date.format(record.get("lastUpdateTime"), Ext.Date.defaultFormat)+" "+Rubedo.RubedoAutomatedElementsLoc.authorText+" : "+record.get("createUser").fullName;
     boiteMeta.update(customMeta);
     },
 

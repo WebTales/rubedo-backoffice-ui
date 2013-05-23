@@ -27,6 +27,8 @@ Ext.define('Rubedo.controller.FormsController', {
         if (form.isValid()){
             var newOne=Ext.create("Rubedo.model.formModel",form.getValues());
             newOne.set("workspaces",[ACL.defaultWorkspace]);
+            newOne.set("uniqueAnswerText",Rubedo.RubedoAutomatedElementsLoc.formUniqueAnswerMessage);
+            newOne.set("endMessage",Rubedo.RubedoAutomatedElementsLoc.formEndMessage);
             Ext.Ajax.request({
                 url: 'xhr-get-mongo-id',
                 params: { },
@@ -321,8 +323,8 @@ Ext.define('Rubedo.controller.FormsController', {
         Ext.getCmp("FormsInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: record.get("title"), iconCls:"form_small"}));
         var metaBox = Ext.getCmp("FormsInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var values= record.getData();
-        values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
-        values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+        values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);
+        values.derniereModification= Ext.Date.format(values.lastUpdateTime, Ext.Date.defaultFormat);
         metaBox.update(values);
         metaBox.show();
         if (pageRefresh){

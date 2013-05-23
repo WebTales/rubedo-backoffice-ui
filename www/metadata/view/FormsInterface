@@ -914,6 +914,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "formsUniquenessBtn",
                                 "margin": "0 20 0 20",
                                 "style": "{float:left;}",
                                 "allowDepress": false,
@@ -929,7 +930,14 @@
                                 "style": "string",
                                 "tooltip": "string"
                             },
-                            "designerId": "be82c7ed-7e72-4dcc-8ef8-887bf2b60936"
+                            "designerId": "be82c7ed-7e72-4dcc-8ef8-887bf2b60936",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",

@@ -722,7 +722,7 @@
                                         "localiserId": "versionPublishDateCol",
                                         "dataIndex": "publishTime",
                                         "text": "Date de publication",
-                                        "format": "d/m/Y"
+                                        "format": null
                                     },
                                     "designerId": "dc810999-8bb5-457c-a815-ac91addb696b",
                                     "customConfigs": [
@@ -776,7 +776,7 @@
                                             "userConfig": {
                                                 "icon": "resources/icones/generic/repeat.png",
                                                 "iconCls": null,
-                                                "tooltip": "Restaurer"
+                                                "tooltip": null
                                             },
                                             "designerId": "b0a1486a-98f6-4f25-a08b-2a68816e00ef",
                                             "cn": [
@@ -827,6 +827,25 @@
                                                         ]
                                                     },
                                                     "designerId": "f53b4afd-68a0-4ca2-bf52-23be52ea856d"
+                                                },
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "processMyActionColumnItem",
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "implHandler": [
+                                                            "config.tooltip=Rubedo.RubedoAutomatedElementsLoc.restoreText;\r",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "designerId": "00e3ccc3-3fd2-4bfd-ad35-3e658d4d7023"
                                                 }
                                             ]
                                         }

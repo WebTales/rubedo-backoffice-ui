@@ -121,9 +121,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "defaultValue": [
-                    "\"Vous avez déjà complété cette enquête. Merci.\""
-                ],
+                "defaultValue": null,
                 "name": "uniqueAnswerText"
             },
             "designerId": "cbdfbe7b-3c7e-4b1e-bbdd-1be015d14912"
@@ -136,9 +134,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "defaultValue": [
-                    "\"Nous vous remercions d’avoir répondu à cette enquête.\""
-                ],
+                "defaultValue": null,
                 "name": "endMessage"
             },
             "designerId": "fff58254-25bc-4777-865f-3d01f657ed42"

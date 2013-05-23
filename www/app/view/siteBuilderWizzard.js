@@ -271,7 +271,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
             store:[],
             anchor:"100%",
             name:"keywords",
-            fieldLabel:"Mots clés par défaut",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultKeywordsText,
             multiSelect:true,
             forceSelection:false,
             createNewOnEnter:true,

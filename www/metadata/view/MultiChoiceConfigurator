@@ -62,8 +62,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "validateBtn",
+                        "layout|flex": null,
                         "id": "MultiChoiceConfiguratorSubmit",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
@@ -139,8 +139,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionLabelField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Intitulé de la question",
                         "labelWidth": 140,
                         "name": "fieldLabel"
@@ -162,8 +162,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionCodeField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
                         "name": "qNb"
@@ -185,8 +185,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionHelpTextField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140,
                         "name": "tooltip"
@@ -208,8 +208,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "mandatoryCheckbox",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "name": "mandatory",
@@ -234,8 +234,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "colNumberField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Nombre de colonnes",
                         "labelWidth": 140,
                         "name": "columns",
@@ -414,8 +414,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "localiserId": "closedQuestionAddOptionBtn",
+                                        "layout|flex": null,
                                         "id": "formsMCCGridAdd",
                                         "iconCls": "add",
                                         "text": "",
@@ -477,8 +477,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "localiserId": "closedQuestionRemoveOptionBtn",
+                                        "layout|flex": null,
                                         "disabled": true,
                                         "id": "formsMCCGridRemove",
                                         "iconCls": "close",

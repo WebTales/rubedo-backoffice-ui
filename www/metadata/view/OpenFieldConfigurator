@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
         "localiserId": "formOpenQuestionConfigurator",
+        "container|align": "stretch",
         "height": 288,
         "id": "OpenFieldConfigurator",
         "width": 715,
@@ -64,11 +64,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "validateBtn",
                         "id": "OpenFieldConfiguratorSubmit",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
                     },
                     "designerId": "fd1bcb3c-c06f-4340-a2ee-24bcaebdfeac",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -138,8 +146,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionLabelField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Intitulé de la question",
                         "labelWidth": 140,
                         "name": "fieldLabel"
@@ -161,8 +169,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionCodeField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
                         "name": "qNb"
@@ -184,8 +192,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionHelpTextField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Bulle d'aide",
                         "labelWidth": 140,
                         "name": "tooltip"
@@ -207,8 +215,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "questionMandatoryField",
+                        "layout|anchor": "100%",
                         "fieldLabel": "Obligatoire",
                         "labelWidth": 140,
                         "name": "mandatory",
@@ -424,8 +432,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "minLengthField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
                                 "name": "minLength",
@@ -449,8 +457,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "maxLengthField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
                                 "name": "maxLength",
@@ -474,8 +482,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "validationField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
                                 "name": "vtype",
@@ -521,8 +529,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "minLengthField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Longueur min",
                                 "labelWidth": 140,
                                 "name": "minLength",
@@ -546,8 +554,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "maxLengthField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Longueur max",
                                 "labelWidth": 140,
                                 "name": "maxLength",
@@ -571,8 +579,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "validationField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Validation",
                                 "labelWidth": 140,
                                 "name": "vtype",
@@ -618,8 +626,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "minValueField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
@@ -641,8 +649,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "maxValueField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
@@ -664,8 +672,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "allowDecimalsField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Décimales",
                                 "labelWidth": 140,
                                 "name": "allowDecimals",
@@ -705,8 +713,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "minValueField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
@@ -728,8 +736,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "maxValueField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"
@@ -768,8 +776,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "minValueField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Valeur min",
                                 "labelWidth": 140,
                                 "name": "minValue"
@@ -791,8 +799,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "maxValueField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Valeur max",
                                 "labelWidth": 140,
                                 "name": "maxValue"

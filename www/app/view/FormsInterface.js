@@ -353,6 +353,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'formsUniquenessBtn',
                                     margin: '0 20 0 20',
                                     style: '{float:left;}',
                                     allowDepress: false,

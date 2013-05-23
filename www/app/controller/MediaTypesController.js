@@ -259,8 +259,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp("MTFieldConfigsBox").removeAll();
         var metaBox = Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var values= record.getData();
-        values.creation= Ext.Date.format(values.createTime, 'd-m-Y');
-        values.derniereModification= Ext.Date.format(values.lastUpdateTime, 'd-m-Y');
+        values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);
+        values.derniereModification= Ext.Date.format(values.lastUpdateTime, Ext.Date.defaultFormat);
         metaBox.update(values);
         metaBox.show();
         var selector= [];

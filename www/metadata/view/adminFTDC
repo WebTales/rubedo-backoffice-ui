@@ -1273,6 +1273,7 @@
                             "userConfig": {
                                 "managesStore": false,
                                 "layout|flex": 1,
+                                "localiserId": "vocabulariesGridPanel",
                                 "autoRender": false,
                                 "id": "vocabulairesTypesContenusGrid",
                                 "title": "Vocabulaires",
@@ -1286,6 +1287,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "managesStore",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ],
@@ -1399,6 +1405,28 @@
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processEtiquettes",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "168f23af-cbbd-4d82-b96c-f3edda8b3b80"
+                                        }
                                     ]
                                 },
                                 {
@@ -1423,6 +1451,28 @@
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processChoixMultiple",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "9b03eb60-2bc1-4335-8d5e-c6439a726b55"
+                                        }
                                     ]
                                 },
                                 {
@@ -1433,7 +1483,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "mandatoryField",
+                                        "localiserId": "mandatoryColumn",
                                         "dataIndex": "mandatory",
                                         "text": "Obligatoire",
                                         "flex": 1,
@@ -1446,6 +1496,28 @@
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processObligatoire",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "09f601f4-1554-4b42-a456-1e08aa308155"
                                         }
                                     ]
                                 },
@@ -1583,6 +1655,36 @@
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processWorkflow",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "var store = Ext.create('Ext.data.Store', {\r",
+                                                    "    fields: ['value', 'name'],\r",
+                                                    "    data : [\r",
+                                                    "        {\"value\":\"Aucun\", \"name\":Rubedo.RubedoAutomatedElementsLoc.noneText},\r",
+                                                    "        {\"value\":\"Basique\", \"name\":Rubedo.RubedoAutomatedElementsLoc.basicText}\r",
+                                                    "    ]\r",
+                                                    "});\r",
+                                                    "config.store=store;\r",
+                                                    "config.valueField=\"value\";\r",
+                                                    "config.displayField=\"name\";\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "3fec7f6f-9a3b-47df-8b0f-f487c350e3bb"
                                         }
                                     ]
                                 }

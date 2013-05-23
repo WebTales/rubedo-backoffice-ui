@@ -217,6 +217,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "desktop",
+                                                "localiserId": "desktopItem",
                                                 "height": null,
                                                 "icon": null,
                                                 "iconCls": "prevDesktop",
@@ -228,6 +229,11 @@
                                                 {
                                                     "group": "(Custom Properties)",
                                                     "name": "deviceValue",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
                                                     "type": "string"
                                                 }
                                             ]
@@ -241,6 +247,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "iphone",
+                                                "localiserId": "phoneItem",
                                                 "iconCls": "prevIphone",
                                                 "plain": true,
                                                 "text": "Téléphone - portrait"
@@ -250,6 +257,11 @@
                                                 {
                                                     "group": "(Custom Properties)",
                                                     "name": "deviceValue",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
                                                     "type": "string"
                                                 }
                                             ]
@@ -263,6 +275,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "iphone-l",
+                                                "localiserId": "phoneLItem",
                                                 "iconCls": "prevIphoneL",
                                                 "plain": true,
                                                 "text": "Téléphone - paysage"
@@ -272,6 +285,11 @@
                                                 {
                                                     "group": "(Custom Properties)",
                                                     "name": "deviceValue",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
                                                     "type": "string"
                                                 }
                                             ]
@@ -285,6 +303,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "ipad",
+                                                "localiserId": "tabletItem",
                                                 "iconCls": "prevIpad",
                                                 "plain": true,
                                                 "text": "Tablette - portrait"
@@ -294,6 +313,11 @@
                                                 {
                                                     "group": "(Custom Properties)",
                                                     "name": "deviceValue",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
                                                     "type": "string"
                                                 }
                                             ]
@@ -307,6 +331,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "ipad-l",
+                                                "localiserId": "tabletLItem",
                                                 "iconCls": "prevIpadL",
                                                 "plain": true,
                                                 "text": "Tablette - paysage"
@@ -316,6 +341,11 @@
                                                 {
                                                     "group": "(Custom Properties)",
                                                     "name": "deviceValue",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
                                                     "type": "string"
                                                 }
                                             ]

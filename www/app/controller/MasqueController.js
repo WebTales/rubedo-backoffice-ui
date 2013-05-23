@@ -82,8 +82,8 @@ Ext.define('Rubedo.controller.MasqueController', {
         var dataview = Ext.getCmp("masquesGrid");
         var boiteMeta = dataview.findParentByType('window').getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var valeurs= Ext.clone(record.data);
-        valeurs.creation= Ext.Date.format(valeurs.createTime, 'd-m-Y');
-        valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, 'd-m-Y');
+        valeurs.creation= Ext.Date.format(valeurs.createTime, Ext.Date.defaultFormat);
+        valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, Ext.Date.defaultFormat);
         boiteMeta.update(valeurs);
         boiteMeta.show();
 
@@ -880,7 +880,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("importElement").enable();
         Ext.getCmp("exportElement").disable();
         var propEdit=Ext.getCmp('elementEditControl');
-        propEdit.setTitle("Racine");
+        propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.simpleQueryText.rootText);
         propEdit.setIconCls('editZone');
         propEdit.removeAll();
         var configSpec = Ext.widget('ConfigSpecBloc');

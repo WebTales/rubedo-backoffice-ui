@@ -506,6 +506,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     xtype: 'gridpanel',
                                     managesStore: false,
                                     flex: 1,
+                                    localiserId: 'vocabulariesGridPanel',
                                     autoRender: false,
                                     id: 'vocabulairesTypesContenusGrid',
                                     title: 'Vocabulaires',
@@ -538,7 +539,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             text: 'HelpText',
                                             flex: 2
                                         },
-                                        {
+                                        me.processEtiquettes({
                                             xtype: 'booleancolumn',
                                             localiserId: 'labelField',
                                             dataIndex: 'expandable',
@@ -546,8 +547,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             flex: 1,
                                             falseText: 'non',
                                             trueText: 'oui'
-                                        },
-                                        {
+                                        }),
+                                        me.processChoixMultiple({
                                             xtype: 'booleancolumn',
                                             localiserId: 'multiChoiseColumn',
                                             dataIndex: 'mandatory',
@@ -555,16 +556,16 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             flex: 1,
                                             falseText: 'non',
                                             trueText: 'oui'
-                                        },
-                                        {
+                                        }),
+                                        me.processObligatoire({
                                             xtype: 'booleancolumn',
-                                            localiserId: 'mandatoryField',
+                                            localiserId: 'mandatoryColumn',
                                             dataIndex: 'mandatory',
                                             text: 'Obligatoire',
                                             flex: 1,
                                             falseText: 'non',
                                             trueText: 'oui'
-                                        }
+                                        })
                                     ],
                                     listeners: {
                                         viewready: {
@@ -600,7 +601,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             store: 'ContributeWorkspacesCombo',
                                             anchor: '100%'
                                         },
-                                        {
+                                        me.processWorkflow({
                                             xtype: 'combobox',
                                             localiserId: 'workflowField',
                                             anchor: '100%',
@@ -614,7 +615,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 'Aucun',
                                                 'Basique'
                                             ]
-                                        }
+                                        })
                                     ]
                                 },
                                 {
@@ -664,6 +665,38 @@ Ext.define('Rubedo.view.adminFTDC', {
         config.tpl=[
         '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
+        return config;
+    },
+
+    processEtiquettes: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processChoixMultiple: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processObligatoire: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processWorkflow: function(config) {
+        var store = Ext.create('Ext.data.Store', {
+            fields: ['value', 'name'],
+            data : [
+            {"value":"Aucun", "name":Rubedo.RubedoAutomatedElementsLoc.noneText},
+            {"value":"Basique", "name":Rubedo.RubedoAutomatedElementsLoc.basicText}
+            ]
+        });
+        config.store=store;
+        config.valueField="value";
+        config.displayField="name";
         return config;
     },
 

@@ -372,7 +372,7 @@
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');\r",
                     "\r",
                     "} else if (selected.length==1) {\r",
-                    "    var customMeta = \"<b> \"+selected[0].get(\"text\")+\"</b></br><b> \"+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+\" : </b>\"+Ext.Date.format(selected[0].get(\"lastUpdateTime\"), 'd-m-Y')+\"<b> \"+Rubedo.RubedoAutomatedElementsLoc.authorText+\" : </b>\"+selected[0].get(\"author\");\r",
+                    "    var customMeta = \"<b> \"+selected[0].get(\"text\")+\"</b></br><b> \"+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+\" : </b>\"+Ext.Date.format(selected[0].get(\"lastUpdateTime\"), Ext.Date.defaultFormat)+\"<b> \"+Rubedo.RubedoAutomatedElementsLoc.authorText+\" : </b>\"+selected[0].get(\"author\");\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
                     "    Ext.getCmp(\"DAMPPBtnGroup\").enable();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",

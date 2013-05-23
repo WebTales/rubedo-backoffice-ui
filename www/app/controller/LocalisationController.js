@@ -93,7 +93,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
         });
         Ext.require("Ext.ux.callout.Callout");
 
-
+        Ext.Date.defaultFormat="d/m/Y";
         //define localisation singletons 
         Ext.define("Rubedo.RubedoAppHelp",{
             singleton:true,
@@ -249,7 +249,15 @@ Ext.define('Rubedo.controller.LocalisationController', {
             refusedText:"refusé",
             yesText:"Oui",
             noText:"Non",
-            mediasText:"médias"
+            mediasText:"médias",
+            simpleQueryText:"Requête simple",
+            manualQueryText:"Requête manuelle",
+            restoreText:"Restaurer",
+            originalFileMText:"Fichier original *",
+            noneText:"Aucun",
+            basicText:"Basique",
+            formUniqueAnswerMessage:"Vous avez déjà complété cette enquête. Merci.",
+            formEndMessage:"Nous vous remercions d’avoir répondu à cette enquête."
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){
@@ -369,6 +377,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
         //new method using simple JSON files
         var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
         if ((!Ext.isEmpty(userLanguage))&&(userLanguage!="fr")){
+            if (userLanguage=="en"){
+                Ext.Date.defaultFormat="m/d/Y";
+            }
             Ext.Ajax.request({
                 url: 'resources/localisationfiles/'+userLanguage+'/appHelp.json',
                 params: {

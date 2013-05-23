@@ -39,8 +39,8 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'nameField',
+                            anchor: '100%',
                             id: 'champCreerTC',
                             fieldLabel: 'Nom ',
                             allowBlank: false,
@@ -54,16 +54,16 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                         {
                             xtype: 'checkboxfield',
                             ACL: 'write.ui.dependantTypes',
-                            anchor: '100%',
                             localiserId: 'isDepField',
+                            anchor: '100%',
                             id: 'champTCIsDep',
                             fieldLabel: 'Imbriqué ',
                             boxLabel: ''
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'createNTCBtn',
+                            anchor: '100%',
                             id: 'boutonCreerTC',
                             text: 'Créer un nouveau type de contenu'
                         }

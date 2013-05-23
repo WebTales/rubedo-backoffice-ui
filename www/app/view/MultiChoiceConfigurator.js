@@ -65,32 +65,32 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'questionLabelField',
+                            anchor: '100%',
                             fieldLabel: 'Intitulé de la question',
                             labelWidth: 140,
                             name: 'fieldLabel'
                         },
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'questionCodeField',
+                            anchor: '100%',
                             fieldLabel: 'Code de la question',
                             labelWidth: 140,
                             name: 'qNb'
                         },
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'questionHelpTextField',
+                            anchor: '100%',
                             fieldLabel: 'Bulle d\'aide',
                             labelWidth: 140,
                             name: 'tooltip'
                         },
                         {
                             xtype: 'checkboxfield',
-                            anchor: '100%',
                             localiserId: 'mandatoryCheckbox',
+                            anchor: '100%',
                             fieldLabel: 'Obligatoire',
                             labelWidth: 140,
                             name: 'mandatory',
@@ -100,8 +100,8 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
                         },
                         {
                             xtype: 'numberfield',
-                            anchor: '100%',
                             localiserId: 'colNumberField',
+                            anchor: '100%',
                             fieldLabel: 'Nombre de colonnes',
                             labelWidth: 140,
                             name: 'columns',

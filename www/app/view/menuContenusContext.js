@@ -105,13 +105,6 @@ Ext.define('Rubedo.view.menuContenusContext', {
                     dock: 'bottom',
                     width: 360,
                     displayInfo: true,
-                    displayMsg: 'Affichage des contenus {0} - {1} sur {2}',
-                    emptyMsg: 'Rien à afficher',
-                    firstText: 'Première page',
-                    lastText: 'Dernière page',
-                    nextText: 'Page suivante',
-                    prevText: 'Page prècèdente',
-                    refreshText: 'Rafraichir',
                     store: 'ContenusDataJson'
                 }
             ]

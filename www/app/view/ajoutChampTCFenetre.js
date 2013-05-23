@@ -89,8 +89,8 @@ Ext.define('Rubedo.view.ajoutChampTCFenetre', {
                         },
                         {
                             xtype: 'gridpanel',
-                            flex: 1,
                             localiserId: 'multiTCAddFieldCol',
+                            flex: 1,
                             title: 'Ajout multiple',
                             forceFit: true,
                             store: 'AddMultiFieldStore',

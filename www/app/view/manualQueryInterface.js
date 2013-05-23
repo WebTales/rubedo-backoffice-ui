@@ -283,7 +283,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                 modRec.set("query",refined);
             } else {
                 var newQuery = Ext.create("Rubedo.model.queryDataModel", {
-                    name:"Requête manuelle",
+                    name:Rubedo.RubedoAutomatedElementsLoc.manualQueryText,
                     type:"manual",
                     query:refined,
                     averageDuration:0,

@@ -113,6 +113,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'desktop',
+                                                localiserId: 'desktopItem',
                                                 iconCls: 'prevDesktop',
                                                 plain: true,
                                                 text: 'Ordinateur'
@@ -120,6 +121,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'iphone',
+                                                localiserId: 'phoneItem',
                                                 iconCls: 'prevIphone',
                                                 plain: true,
                                                 text: 'Téléphone - portrait'
@@ -127,6 +129,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'iphone-l',
+                                                localiserId: 'phoneLItem',
                                                 iconCls: 'prevIphoneL',
                                                 plain: true,
                                                 text: 'Téléphone - paysage'
@@ -134,6 +137,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'ipad',
+                                                localiserId: 'tabletItem',
                                                 iconCls: 'prevIpad',
                                                 plain: true,
                                                 text: 'Tablette - portrait'
@@ -141,6 +145,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                             {
                                                 xtype: 'menucheckitem',
                                                 deviceValue: 'ipad-l',
+                                                localiserId: 'tabletLItem',
                                                 iconCls: 'prevIpadL',
                                                 plain: true,
                                                 text: 'Tablette - paysage'

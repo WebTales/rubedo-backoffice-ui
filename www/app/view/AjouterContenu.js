@@ -276,8 +276,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             xtype: 'datecolumn',
                                             localiserId: 'versionPublishDateCol',
                                             dataIndex: 'publishTime',
-                                            text: 'Date de publication',
-                                            format: 'd/m/Y'
+                                            text: 'Date de publication'
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -289,7 +288,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             xtype: 'actioncolumn',
                                             width: 20,
                                             items: [
-                                                {
+                                                me.processMyActionColumnItem({
                                                     handler: function(view, rowIndex, colIndex, item, e, record, row) {
                                                         var cible = record;
                                                         Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("fields"));
@@ -317,9 +316,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                             console.log("reloading anomaly");
                                                         }
                                                     },
-                                                    icon: 'resources/icones/generic/repeat.png',
-                                                    tooltip: 'Restaurer'
-                                                }
+                                                    icon: 'resources/icones/generic/repeat.png'
+                                                })
                                             ]
                                         }
                                     ]
@@ -449,6 +447,11 @@ Ext.define('Rubedo.view.AjouterContenu', {
         });
 
         me.callParent(arguments);
+    },
+
+    processMyActionColumnItem: function(config) {
+        config.tooltip=Rubedo.RubedoAutomatedElementsLoc.restoreText;
+        return config;
     },
 
     onAjouterContenuRender: function(component, eOpts) {

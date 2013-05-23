@@ -27,7 +27,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 					return {
 						thumbnails: generateThumbnail(),
 						author:record.get("author"),
-                        date: Ext.Date.format(record.get("lastUpdateTime"), 'd-m-Y'),
+                        date: Ext.Date.format(record.get("lastUpdateTime"), Ext.Date.defaultFormat),
                         filename:properName,
                         fileSize:Ext.util.Format.fileSize(record.get("fileSize"))
 					};

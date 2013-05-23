@@ -211,7 +211,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
             name:"originalFileId",
             allowBlank:false,
             id:"DAMOriginalUpd",
-            fieldLabel:"Fichier original *",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.originalFileMText,
             style:{"float":"left"},
             localiserId:"damOrginalLargeFileField",
             bigMode:true,

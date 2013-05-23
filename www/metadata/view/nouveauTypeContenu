@@ -53,8 +53,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "nameField",
+                        "layout|anchor": "100%",
                         "id": "champCreerTC",
                         "fieldLabel": "Nom ",
                         "allowBlank": false
@@ -98,8 +98,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dependantTypes",
-                        "layout|anchor": "100%",
                         "localiserId": "isDepField",
+                        "layout|anchor": "100%",
                         "id": "champTCIsDep",
                         "fieldLabel": "Imbriqué ",
                         "boxLabel": ""
@@ -126,8 +126,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "createNTCBtn",
+                        "layout|anchor": "100%",
                         "id": "boutonCreerTC",
                         "text": "Créer un nouveau type de contenu"
                     },

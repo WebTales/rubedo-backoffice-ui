@@ -155,7 +155,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 editedOne.beginEdit();
                 editedOne.set("query", result);
                 if (Ext.getCmp("assistantRequetage").simpleMode){
-                    editedOne.set("name", "Requête simple");
+                    editedOne.set("name", Rubedo.RubedoAutomatedElementsLoc.simpleQueryText);
                 } else {
                     editedOne.set("name", result.queryName);
                 }
@@ -174,7 +174,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     });
                     if (Ext.getCmp("assistantRequetage").simpleMode){
                         newQuery.set("type", "simple");
-                        newQuery.set("name", "Requête simple");
+                        newQuery.set("name", Rubedo.RubedoAutomatedElementsLoc.simpleQueryText);
                     }
                     if (Ext.getCmp("assistantRequetage").adminMode){
 
