@@ -409,31 +409,69 @@ Ext.define('Rubedo.controller.LocalisationController', {
                 }
             });
             Ext.Ajax.request({
-                url: 'resources/localisationfiles/'+userLanguage+'/fieldTypes.json',
+                url: 'resources/localisationfiles/generic/fieldTypes.json',
                 params: {
 
                 },
                 success: function(response){
-                    var singletonUpdates = Ext.JSON.decode(response.responseText);
-                    Ext.getStore("TypesChampsDataStore").removeAll();
-                    Ext.getStore("TypesChampsDataStore").loadData(singletonUpdates);
+                    var genericStructureString = response.responseText;
+                    Ext.Ajax.request({
+                        url: 'resources/localisationfiles/'+userLanguage+'/fieldTypeLabels.json',
+                        params: {
+
+                        },
+                        success: function(response){
+                            var localisedLabels =Ext.JSON.decode(response.responseText);
+                            Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                replacer=new RegExp(key, 'g');
+                                genericStructureString=genericStructureString.replace(replacer, value);
+                            });
+                            var decodedFT=Ext.JSON.decode(genericStructureString);
+                            Ext.getStore("TypesChampsDataStore").removeAll();
+                            Ext.getStore("TypesChampsDataStore").loadData(decodedFT);
+
+
+                        },
+                        failure:function(){
+                            console.log("FieldTypes store could not be localised for this language");
+                        }
+                    });
                 },
                 failure:function(){
-                    console.log("FieldTypes store could not be localized for the current language");
+                    console.log("FieldTypes store could not retrieve generic structure");
                 }
             });
             Ext.Ajax.request({
-                url: 'resources/localisationfiles/'+userLanguage+'/blockTypes.json',
+                url: 'resources/localisationfiles/generic/blockTypes.json',
                 params: {
 
                 },
                 success: function(response){
-                    var singletonUpdates = Ext.JSON.decode(response.responseText);
-                    Ext.getStore("BlocsDataStore").removeAll();
-                    Ext.getStore("BlocsDataStore").loadData(singletonUpdates);
+                    var genericStructureString = response.responseText;
+                    Ext.Ajax.request({
+                        url: 'resources/localisationfiles/'+userLanguage+'/blockTypeLabels.json',
+                        params: {
+
+                        },
+                        success: function(response){
+                            var localisedLabels =Ext.JSON.decode(response.responseText);
+                            Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                replacer=new RegExp(key, 'g');
+                                genericStructureString=genericStructureString.replace(replacer, value);
+                            });
+                            var decodedFT=Ext.JSON.decode(genericStructureString);
+                            Ext.getStore("BlocsDataStore").removeAll();
+                            Ext.getStore("BlocsDataStore").loadData(decodedFT);
+
+
+                        },
+                        failure:function(){
+                            console.log("Blocks store could not be localised for this language");
+                        }
+                    });
                 },
                 failure:function(){
-                    console.log("BlockTypes store could not be localized for the current language");
+                    console.log("Blocks store could not retrieve generic structure");
                 }
             });
         }
@@ -661,6 +699,25 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     }
                 });
             });
+        });
+        console.log(Ext.JSON.encode(extractedLoc));
+        console.log("\n \n");
+        console.log(Ext.JSON.encode(data));
+    },
+
+    extractLocFromFTJson: function() {
+        var me = this;
+        var data = Ext.clone(Ext.Array.pluck(Ext.getStore("TypesChampsDataStore").getRange(), "data"));
+        var extractedLoc = { };
+        Ext.Array.forEach(data, function(block){
+            block.category=me.insertAndReplace(extractedLoc, block.category);
+            block.type=me.insertAndReplace(extractedLoc, block.type);
+            block.description=me.insertAndReplace(extractedLoc, block.description);
+            block.config.fieldLabel=me.insertAndReplace(extractedLoc, block.config.fieldLabel);
+            Ext.Array.forEach(block.configFields, function(field){
+                field.config.fieldLabel=me.insertAndReplace(extractedLoc, field.config.fieldLabel);
+            });
+
         });
         console.log(Ext.JSON.encode(extractedLoc));
         console.log("\n \n");
