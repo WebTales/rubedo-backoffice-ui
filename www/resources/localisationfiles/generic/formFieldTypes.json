@@ -1,0 +1,44 @@
+[
+    {
+        "id": "51489f8ac0e051b81a000002",
+        "type": "#ext-gen1050#",
+        "itemConfig": {
+            "fType": "openQuestion",
+            "label": "#ext-gen1050#",
+            "fieldType": "textfield",
+            "fieldConfig": {
+                "mandatory": false
+            },
+            "conditionals": [],
+            "validations": []
+        },
+        "description": "#ext-gen1051#"
+    },
+    {
+        "id": "51489f8ac0e051b81a000004",
+        "type": "#ext-gen1053#",
+        "itemConfig": {
+            "fType": "multiChoiceQuestion",
+            "label": "#ext-gen1053#",
+            "fieldType": "checkboxgroup",
+            "fieldConfig": {
+                "mandatory": false,
+                "columns": 1,
+                "vertical": true,
+                "items": []
+            },
+            "conditionals": [],
+            "validations": []
+        },
+        "description": "#ext-gen1054#"
+    },
+    {
+        "id": "51489f8ac0e051b81a000006",
+        "type": "#ext-gen1056#",
+        "itemConfig": {
+            "fType": "richText",
+            "html": "#ext-gen1058#"
+        },
+        "description": "#ext-gen1057#"
+    }
+]

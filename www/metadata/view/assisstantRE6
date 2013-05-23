@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "etape": "5",
+        "loaliserId": "qbFinalRecStagePanel",
         "id": "assisstantRE6",
         "designer|userClassName": "assisstantRE6",
         "designer|userAlias": "assisstantRE6",
@@ -20,6 +21,11 @@
             "group": "(Custom Properties)",
             "name": "etape",
             "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "loaliserId",
+            "type": "string"
         }
     ],
     "cn": [
@@ -31,12 +37,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "loaliserId": "qbRecapFieldset",
                 "id": "querySummaryBox",
                 "padding": 10,
                 "styleHtmlContent": true,
                 "title": "<b>Récapitulatif</b>"
             },
-            "designerId": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b"
+            "designerId": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "loaliserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.Text",
@@ -47,13 +61,21 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
+                "loaliserId": "queryNameField",
                 "id": "queryNameField",
                 "fieldLabel": "Nom de la requête",
                 "labelWidth": 130,
                 "name": "queryName",
                 "allowBlank": false
             },
-            "designerId": "a89a5a01-5925-41ab-9032-04ee64189047"
+            "designerId": "a89a5a01-5925-41ab-9032-04ee64189047",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "loaliserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.button.Button",
@@ -64,6 +86,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
+                "loaliserId": "saveQBQueryBtn",
                 "id": "queryBuildSaveBtn",
                 "margin": null,
                 "style": null,
@@ -71,7 +94,14 @@
                 "scale": "large",
                 "text": "<b>Enregistrer la requête </b>"
             },
-            "designerId": "8efbcf04-d93d-45f4-894a-eb37d3963e9b"
+            "designerId": "8efbcf04-d93d-45f4-894a-eb37d3963e9b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "loaliserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

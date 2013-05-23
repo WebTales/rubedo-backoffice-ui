@@ -942,6 +942,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "localiserId": "auxBtn13",
                                                         "itemId": "helpBouton",
                                                         "margin": null,
                                                         "style": [
@@ -958,7 +959,14 @@
                                                             "'Titre du média. Obligatoire.'"
                                                         ]
                                                     },
-                                                    "designerId": "186d58b5-abd3-49b7-8ca3-127616c41418"
+                                                    "designerId": "186d58b5-abd3-49b7-8ca3-127616c41418",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -1011,6 +1019,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "localiserId": "auxBtn15",
                                                         "itemId": "helpBouton",
                                                         "margin": null,
                                                         "style": [
@@ -1027,7 +1036,14 @@
                                                             "'Fichier principal du média. Obligatoire.'"
                                                         ]
                                                     },
-                                                    "designerId": "b88ea4e8-52ad-4871-9a48-0aa0dbdba768"
+                                                    "designerId": "b88ea4e8-52ad-4871-9a48-0aa0dbdba768",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "type": "Ext.form.field.File",
@@ -1206,6 +1222,7 @@
                             "userConfig": {
                                 "managesStore": false,
                                 "layout|flex": 1,
+                                "localiserId": "MTtaxoGridUse",
                                 "autoRender": false,
                                 "id": "vocabulariesMTGrid",
                                 "title": "Vocabulaires utilisables comme plan de classement",
@@ -1219,6 +1236,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "managesStore",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ],
@@ -1332,6 +1354,28 @@
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processEtiquettes",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "9843a21b-504a-4ced-9829-311bbe8abf1f"
+                                        }
                                     ]
                                 },
                                 {
@@ -1356,6 +1400,28 @@
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processChoixMultiple",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "a7d2c35a-54c8-4938-900a-f33cff063c9b"
+                                        }
                                     ]
                                 },
                                 {
@@ -1379,6 +1445,28 @@
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processObligatoire",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "d3323ba3-4dcc-499d-8cb6-3933db4c6248"
                                         }
                                     ]
                                 },

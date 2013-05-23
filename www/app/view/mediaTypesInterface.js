@@ -373,6 +373,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                     items: [
                                                         {
                                                             xtype: 'button',
+                                                            localiserId: 'auxBtn13',
                                                             itemId: 'helpBouton',
                                                             style: '{float:right;}',
                                                             handleMouseEvents: false,
@@ -401,6 +402,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                     items: [
                                                         {
                                                             xtype: 'button',
+                                                            localiserId: 'auxBtn15',
                                                             itemId: 'helpBouton',
                                                             style: '{float:right;}',
                                                             handleMouseEvents: false,
@@ -484,6 +486,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     xtype: 'gridpanel',
                                     managesStore: false,
                                     flex: 1,
+                                    localiserId: 'MTtaxoGridUse',
                                     autoRender: false,
                                     id: 'vocabulariesMTGrid',
                                     title: 'Vocabulaires utilisables comme plan de classement',
@@ -516,7 +519,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                             text: 'HelpText',
                                             flex: 2
                                         },
-                                        {
+                                        me.processEtiquettes({
                                             xtype: 'booleancolumn',
                                             localiserId: 'labelColumn',
                                             dataIndex: 'expandable',
@@ -524,8 +527,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                             flex: 1,
                                             falseText: 'non',
                                             trueText: 'oui'
-                                        },
-                                        {
+                                        }),
+                                        me.processChoixMultiple({
                                             xtype: 'booleancolumn',
                                             localiserId: 'multiChoiseColumn',
                                             dataIndex: 'mandatory',
@@ -533,8 +536,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                             flex: 1,
                                             falseText: 'non',
                                             trueText: 'oui'
-                                        },
-                                        {
+                                        }),
+                                        me.processObligatoire({
                                             xtype: 'booleancolumn',
                                             localiserId: 'mandatoryColumn',
                                             dataIndex: 'mandatory',
@@ -542,7 +545,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                             flex: 1,
                                             falseText: 'non',
                                             trueText: 'oui'
-                                        }
+                                        })
                                     ],
                                     listeners: {
                                         viewready: {
@@ -627,6 +630,24 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         config.tpl=[
         '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
+        return config;
+    },
+
+    processEtiquettes: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processChoixMultiple: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processObligatoire: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         return config;
     },
 

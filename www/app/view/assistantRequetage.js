@@ -45,14 +45,14 @@ Ext.define('Rubedo.view.assistantRequetage', {
                     xtype: 'toolbar',
                     dock: 'bottom',
                     items: [
-                        {
+                        me.processProgressAR({
                             xtype: 'progressbar',
                             flex: 1,
                             id: 'progressAR',
                             animate: true,
                             text: 'Etape 1 sur 5',
                             value: 0.2
-                        },
+                        }),
                         {
                             xtype: 'button',
                             localiserId: 'prevBtn',
@@ -144,6 +144,11 @@ Ext.define('Rubedo.view.assistantRequetage', {
         });
 
         me.callParent(arguments);
+    },
+
+    processProgressAR: function(config) {
+        config.text=Rubedo.RubedoAutomatedElementsLoc.stageText+" 1 "+Rubedo.RubedoAutomatedElementsLoc.onText+" 5";
+        return config;
     },
 
     onAssistantRequetageRender: function(component, eOpts) {

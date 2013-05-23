@@ -267,7 +267,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         valueField: 'id'
                                     }
                                 },
-                                {
+                                me.processRecherchable({
                                     xtype: 'booleancolumn',
                                     localiserId: 'importS2SearchableCol',
                                     dataIndex: 'searchable',
@@ -279,8 +279,8 @@ Ext.define('Rubedo.view.InportInterface', {
                                         inputValue: 'true',
                                         uncheckedValue: 'false'
                                     }
-                                },
-                                {
+                                }),
+                                me.processObligatoire({
                                     xtype: 'booleancolumn',
                                     localiserId: 'importS2MandatoryCol',
                                     dataIndex: 'mandatory',
@@ -292,7 +292,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         inputValue: 'true',
                                         uncheckedValue: 'false'
                                     }
-                                }
+                                })
                             ],
                             plugins: [
                                 Ext.create('Ext.grid.plugin.CellEditing', {
@@ -473,6 +473,18 @@ Ext.define('Rubedo.view.InportInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processRecherchable: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processObligatoire: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
     },
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {

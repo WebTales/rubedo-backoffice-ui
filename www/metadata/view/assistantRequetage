@@ -65,7 +65,28 @@
                         "text": "Etape 1 sur 5",
                         "value": 0.2
                     },
-                    "designerId": "1232c257-4234-493b-8154-4cf2735d6afe"
+                    "designerId": "1232c257-4234-493b-8154-4cf2735d6afe",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processProgressAR",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.text=Rubedo.RubedoAutomatedElementsLoc.stageText+\" 1 \"+Rubedo.RubedoAutomatedElementsLoc.onText+\" 5\";\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "2fb6b3dc-73cd-48b5-9b07-40d0c71a166e"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

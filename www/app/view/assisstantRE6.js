@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
     alias: 'widget.assisstantRE6',
 
     etape: '5',
+    loaliserId: 'qbFinalRecStagePanel',
     id: 'assisstantRE6',
     autoScroll: true,
     bodyPadding: 10,
@@ -30,6 +31,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
             items: [
                 {
                     xtype: 'fieldset',
+                    loaliserId: 'qbRecapFieldset',
                     id: 'querySummaryBox',
                     padding: 10,
                     styleHtmlContent: true,
@@ -38,6 +40,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
+                    loaliserId: 'queryNameField',
                     id: 'queryNameField',
                     fieldLabel: 'Nom de la requête',
                     labelWidth: 130,
@@ -47,6 +50,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
                 {
                     xtype: 'button',
                     anchor: '100%',
+                    loaliserId: 'saveQBQueryBtn',
                     id: 'queryBuildSaveBtn',
                     scale: 'large',
                     text: '<b>Enregistrer la requête </b>'

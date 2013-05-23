@@ -676,6 +676,26 @@
                                         "uncheckedValue": "false"
                                     },
                                     "designerId": "d4e76942-5824-49c7-8426-3cfea400a5e3"
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processRecherchable",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                            "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "ee101961-2de9-48ce-9c6d-1beba0962107"
                                 }
                             ]
                         },
@@ -715,6 +735,26 @@
                                         "uncheckedValue": "false"
                                     },
                                     "designerId": "e4b6784b-7f90-4144-8844-e40c51cc84e7"
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processObligatoire",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                            "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "64367b74-dea7-4acd-b4db-5a8c65c9319a"
                                 }
                             ]
                         },

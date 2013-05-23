@@ -54,6 +54,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "hideAllWindowsBtn",
                 "id": "desktopHomeBtn",
                 "iconCls": "desktopHome_med",
                 "scale": "medium",
@@ -63,7 +64,14 @@
             "configAlternates": {
                 "tooltip": "string"
             },
-            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4"
+            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.toolbar.Separator",
@@ -132,6 +140,25 @@
                         "scope": "me"
                     },
                     "designerId": "7b36020e-2393-4e1a-8ef3-1ab10e082097"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processESSearchField",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.emptyText=Rubedo.RubedoAutomatedElementsLoc.searchText;\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "71cb22c2-97ef-46a9-b047-4aa803c1a149"
                 }
             ]
         },

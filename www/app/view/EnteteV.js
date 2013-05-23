@@ -37,6 +37,7 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'hideAllWindowsBtn',
                     id: 'desktopHomeBtn',
                     iconCls: 'desktopHome_med',
                     scale: 'medium',
@@ -54,7 +55,7 @@ Ext.define('Rubedo.view.EnteteV', {
                     id: 'taskbarPrincipal',
                     enableOverflow: true
                 },
-                {
+                me.processESSearchField({
                     xtype: 'textfield',
                     id: 'ESSearchField',
                     itemId: 'filterField',
@@ -68,7 +69,7 @@ Ext.define('Rubedo.view.EnteteV', {
                             scope: me
                         }
                     }
-                },
+                }),
                 {
                     xtype: 'button',
                     id: 'ESSearchButton',
@@ -78,6 +79,11 @@ Ext.define('Rubedo.view.EnteteV', {
         });
 
         me.callParent(arguments);
+    },
+
+    processESSearchField: function(config) {
+        config.emptyText=Rubedo.RubedoAutomatedElementsLoc.searchText;
+        return config;
     },
 
     onESSearchFieldSpecialkey: function(field, e, eOpts) {

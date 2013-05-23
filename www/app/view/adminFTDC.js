@@ -505,8 +505,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'gridpanel',
                                     managesStore: false,
-                                    flex: 1,
                                     localiserId: 'vocabulariesGridPanel',
+                                    flex: 1,
                                     autoRender: false,
                                     id: 'vocabulairesTypesContenusGrid',
                                     title: 'Vocabulaires',
