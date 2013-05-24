@@ -260,7 +260,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             noneText:"Aucun",
             basicText:"Basique",
             formUniqueAnswerMessage:"Vous avez déjà complété cette enquête. Merci.",
-            formEndMessage:"Nous vous remercions d’avoir répondu à cette enquête."
+            formEndMessage:"Nous vous remercions d’avoir répondu à cette enquête.",
+            oldVersionText:"(Une version )"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

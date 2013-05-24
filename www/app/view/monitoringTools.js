@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.monitoringTools', {
 
     ACL: 'exe.ui.elasticSearch',
     localiserId: 'monitoringField',
-    height: 280,
+    height: 303,
     id: 'monitoringTools',
     width: 577,
     layout: {
@@ -234,7 +234,37 @@ Ext.define('Rubedo.view.monitoringTools', {
                         }
                     ]
                 }
-            ]
+            ],
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    flex: 1,
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                var theWin =Ext.getCmp("SystemInfoDisplayWindow");
+                                if (Ext.isEmpty(theWin)){
+                                    Ext.widget("SystemInfoDisplayWindow").show();
+                                } else {
+                                    theWin.show();
+                                }
+                            },
+                            localiserId: 'systemInformationGetBtn',
+                            id: 'getSystemInformationBtn',
+                            iconCls: 'help',
+                            text: 'Informations système'
+                        }
+                    ]
+                }
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onMonitoringToolsAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -242,6 +272,24 @@ Ext.define('Rubedo.view.monitoringTools', {
 
     onSupervisionCachePanelAfterRender: function(component, eOpts) {
         component.refreshCacheInfo();
+    },
+
+    onMonitoringToolsAfterRender: function(component, eOpts) {
+        Ext.getCmp("getSystemInformationBtn").setLoading(true);
+        Ext.Ajax.request({
+            url: 'rubedo-version',
+            params: {
+            },
+            success: function(response){
+                var data = Ext.JSON.decode(response.responseText);
+                Ext.getCmp("getSystemInformationBtn").setLoading(false);
+                component.retrievedSystemInfo=data;
+                if (!(data.IsRubedoLatest)){
+                    Ext.getCmp("getSystemInformationBtn").setIconCls("infoWarning");
+                    Ext.getCmp("getSystemInformationBtn").setText(Ext.getCmp("getSystemInformationBtn").getText()+" "+Rubedo.RubedoAutomatedElementsLoc.oldVersionText);
+                }
+            }
+        });
     }
 
 });

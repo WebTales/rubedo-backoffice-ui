@@ -1,0 +1,177 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "systemInfoDisplayWindow",
+        "container|align": "stretch",
+        "height": 332,
+        "id": "SystemInfoDisplayWindow",
+        "width": 461,
+        "designer|userClassName": "SystemInfoDisplayWindow",
+        "designer|userAlias": "SystemInfoDisplayWindow",
+        "layout": "vbox",
+        "iconCls": "help",
+        "title": "InformationsSystème"
+    },
+    "designerId": "08c86828-4c11-46f1-8868-d6188a6cd164",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "bb9bea88-49b2-4bf9-8ca2-8615c4fc75b9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "localiserId": "rubedoVersionField",
+                        "fieldLabel": "Rubedo",
+                        "name": "RubedoVersion"
+                    },
+                    "designerId": "09818be2-eeca-41ee-8296-16a7168d232b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "localiserId": "ZFVersionField",
+                        "fieldLabel": "Zend Framework",
+                        "name": "ZendFramework"
+                    },
+                    "designerId": "0c5c94e1-147f-4a29-8860-5dd60b28fb8e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "layout": "hbox"
+            },
+            "designerId": "215e3548-c9aa-40fd-9d17-ab3e68b9285b",
+            "cn": [
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "localiserId": "phpCompoentsPropertyGrid",
+                        "autoScroll": true,
+                        "title": "Composants PHP",
+                        "hideHeaders": true,
+                        "source": [
+                            "{ }"
+                        ]
+                    },
+                    "designerId": "0ec658ba-7f15-4b15-861d-3f39608f9cb7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "localiserId": "frontComponentsPropertyGrid",
+                        "autoScroll": true,
+                        "title": "Composants Front",
+                        "hideHeaders": true,
+                        "source": [
+                            "{ }"
+                        ]
+                    },
+                    "designerId": "f7164544-d118-482a-8d2e-80e835130dae",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSystemInfoDisplayWindowAfterRender",
+                "implHandler": [
+                    "var data = Ext.getCmp(\"monitoringTools\").retrievedSystemInfo;\r",
+                    "component.getComponent(0).getForm().setValues(data);\r",
+                    "component.getComponent(1).getComponent(0).setSource(data.Components.phpComponents);\r",
+                    "component.getComponent(1).getComponent(1).setSource(data.Components.frontComponents);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "5d27802d-571a-414b-a975-7a0cffb3506f"
+        }
+    ]
+}

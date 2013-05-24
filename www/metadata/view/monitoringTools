@@ -9,7 +9,7 @@
         "ACL": "exe.ui.elasticSearch",
         "localiserId": "monitoringField",
         "container|align": "stretch",
-        "height": 280,
+        "height": 303,
         "id": "monitoringTools",
         "width": 577,
         "designer|userClassName": "monitoringTools",
@@ -545,6 +545,101 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top"
+            },
+            "designerId": "d73fb910-2b55-48e2-ad69-9d4fc8241e3f",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "localiserId": "systemInformationGetBtn",
+                        "id": "getSystemInformationBtn",
+                        "iconCls": "help",
+                        "text": "Informations système"
+                    },
+                    "designerId": "b26e63c7-7bce-4452-9ca8-ecd438876785",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "var theWin =Ext.getCmp(\"SystemInfoDisplayWindow\");\r",
+                                    "if (Ext.isEmpty(theWin)){\r",
+                                    "\tExt.widget(\"SystemInfoDisplayWindow\").show();\r",
+                                    "} else {\r",
+                                    "\ttheWin.show();\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "6316bca4-28e4-4da4-96ae-f3cb502787eb"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMonitoringToolsAfterRender",
+                "implHandler": [
+                    "Ext.getCmp(\"getSystemInformationBtn\").setLoading(true);\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: 'rubedo-version',\r",
+                    "    params: {\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        var data = Ext.JSON.decode(response.responseText);\r",
+                    "        Ext.getCmp(\"getSystemInformationBtn\").setLoading(false);\r",
+                    "        component.retrievedSystemInfo=data;\r",
+                    "        if (!(data.IsRubedoLatest)){\r",
+                    "            Ext.getCmp(\"getSystemInformationBtn\").setIconCls(\"infoWarning\");\r",
+                    "            Ext.getCmp(\"getSystemInformationBtn\").setText(Ext.getCmp(\"getSystemInformationBtn\").getText()+\" \"+Rubedo.RubedoAutomatedElementsLoc.oldVersionText);\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "fe635a26-cac5-406d-9f60-785193df03da"
         }
     ]
 }
