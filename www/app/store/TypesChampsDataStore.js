@@ -2011,7 +2011,31 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
             },
             sorters: {
                 property: 'type'
+            },
+            listeners: {
+                datachanged: {
+                    fn: me.onJsonstoreDataChangeD,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreDataChangeD: function(store, eOpts) {
+        try{
+            var companionStore= Ext.getStore("ImportableFieldTypesStore");
+            if (!Ext.isEmpty(companionStore)){
+                companionStore.findRecord("cType","text").set("type", Rubedo.RubedoAutomatedElementsLoc.titleText);
+                companionStore.findRecord("cType","summary").set("type", Rubedo.RubedoAutomatedElementsLoc.summaryText);
+                Ext.Array.forEach(companionStore.getRange(), function(fieldDef){
+                    var counterPart = store.findRecord("cType", fieldDef.get("cType"));
+                    if (!Ext.isEmpty(counterPart)){
+                        fieldDef.set("type", counterPart.get("type"));
+                    }
+                });
+            }
+        } catch (err) {console.log("Error localising importable fields");}
+
     }
+
 });

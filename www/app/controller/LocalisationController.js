@@ -261,7 +261,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             basicText:"Basique",
             formUniqueAnswerMessage:"Vous avez déjà complété cette enquête. Merci.",
             formEndMessage:"Nous vous remercions d’avoir répondu à cette enquête.",
-            oldVersionText:"(Une version plus récente de Rubedo est disponible)"
+            oldVersionText:"(Une version plus récente de Rubedo est disponible)",
+            summaryText:"Résumé"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

@@ -8,9 +8,9 @@
     "userConfig": {
         "localiserId": "systemInfoDisplayWindow",
         "container|align": "stretch",
-        "height": 332,
+        "height": 342,
         "id": "SystemInfoDisplayWindow",
-        "width": 461,
+        "width": 533,
         "designer|userClassName": "SystemInfoDisplayWindow",
         "designer|userAlias": "SystemInfoDisplayWindow",
         "layout": "vbox",
@@ -47,7 +47,33 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "localiserId": "MongoDBField",
+                        "layout|anchor": "50%",
+                        "style": "{float:right;}",
+                        "fieldLabel": "MongoDB",
+                        "name": "MongoDB"
+                    },
+                    "configAlternates": {
+                        "style": "string"
+                    },
+                    "designerId": "634a5964-f720-4cfc-9df6-525f4c20ae4f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "50%",
                         "localiserId": "rubedoVersionField",
                         "fieldLabel": "Rubedo",
                         "name": "RubedoVersion"
@@ -69,7 +95,33 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "localiserId": "ESVersionField",
+                        "layout|anchor": "50%",
+                        "style": "{float:right;}",
+                        "fieldLabel": "Elasticsearch",
+                        "name": "ElasticSearch"
+                    },
+                    "configAlternates": {
+                        "style": "string"
+                    },
+                    "designerId": "c7664982-090e-4c5b-a8fd-1eaefaac4165",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "50%",
                         "localiserId": "ZFVersionField",
                         "fieldLabel": "Zend Framework",
                         "name": "ZendFramework"
@@ -113,6 +165,7 @@
                         "title": "Composants PHP",
                         "disableSelection": true,
                         "hideHeaders": true,
+                        "nameColumnWidth": 160,
                         "source": [
                             "{ }"
                         ]
@@ -158,7 +211,9 @@
                         "autoScroll": true,
                         "title": "Composants Front",
                         "disableSelection": true,
+                        "enableColumnMove": true,
                         "hideHeaders": true,
+                        "nameColumnWidth": 160,
                         "source": [
                             "{ }"
                         ]

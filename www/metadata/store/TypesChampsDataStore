@@ -1998,6 +1998,36 @@
                 "property": "type"
             },
             "designerId": "5877c43e-313e-4fe1-a402-79a1bf26de7e"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreDataChangeD",
+                "implHandler": [
+                    "try{\r",
+                    "var companionStore= Ext.getStore(\"ImportableFieldTypesStore\");\r",
+                    "if (!Ext.isEmpty(companionStore)){\r",
+                    "companionStore.findRecord(\"cType\",\"text\").set(\"type\", Rubedo.RubedoAutomatedElementsLoc.titleText);\r",
+                    "companionStore.findRecord(\"cType\",\"summary\").set(\"type\", Rubedo.RubedoAutomatedElementsLoc.summaryText);\r",
+                    "Ext.Array.forEach(companionStore.getRange(), function(fieldDef){\r",
+                    "\tvar counterPart = store.findRecord(\"cType\", fieldDef.get(\"cType\"));\r",
+                    "    if (!Ext.isEmpty(counterPart)){\r",
+                    "    \tfieldDef.set(\"type\", counterPart.get(\"type\"));\r",
+                    "    }\r",
+                    "});\r",
+                    "}\r",
+                    "} catch (err) {console.log(\"Error localising importable fields\");}\r",
+                    ""
+                ],
+                "name": "datachanged",
+                "scope": "me"
+            },
+            "designerId": "011d0bb6-8e5e-42e6-89fa-39130a823252"
         }
     ]
 }

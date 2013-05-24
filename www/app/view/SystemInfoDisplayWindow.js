@@ -18,9 +18,9 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
     alias: 'widget.SystemInfoDisplayWindow',
 
     localiserId: 'systemInfoDisplayWindow',
-    height: 332,
+    height: 342,
     id: 'SystemInfoDisplayWindow',
-    width: 461,
+    width: 533,
     layout: {
         align: 'stretch',
         type: 'vbox'
@@ -40,14 +40,30 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                     items: [
                         {
                             xtype: 'displayfield',
-                            anchor: '100%',
+                            localiserId: 'MongoDBField',
+                            anchor: '50%',
+                            style: '{float:right;}',
+                            fieldLabel: 'MongoDB',
+                            name: 'MongoDB'
+                        },
+                        {
+                            xtype: 'displayfield',
+                            anchor: '50%',
                             localiserId: 'rubedoVersionField',
                             fieldLabel: 'Rubedo',
                             name: 'RubedoVersion'
                         },
                         {
                             xtype: 'displayfield',
-                            anchor: '100%',
+                            localiserId: 'ESVersionField',
+                            anchor: '50%',
+                            style: '{float:right;}',
+                            fieldLabel: 'Elasticsearch',
+                            name: 'ElasticSearch'
+                        },
+                        {
+                            xtype: 'displayfield',
+                            anchor: '50%',
                             localiserId: 'ZFVersionField',
                             fieldLabel: 'Zend Framework',
                             name: 'ZendFramework'
@@ -70,6 +86,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             title: 'Composants PHP',
                             disableSelection: true,
                             hideHeaders: true,
+                            nameColumnWidth: 160,
                             source: {
                                 
                             },
@@ -87,7 +104,9 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             autoScroll: true,
                             title: 'Composants Front',
                             disableSelection: true,
+                            enableColumnMove: true,
                             hideHeaders: true,
+                            nameColumnWidth: 160,
                             source: {
                                 
                             },
