@@ -29,11 +29,11 @@
 	"CustomizeBtn":{
 		"text":"Customize"
 	},
-	"themePickerBtn":{
-		"text":"Apply this theme"
-	},
 	"wallpapaerPickerBtn":{
 		"text":"Choose as new wallpaper"
+	},
+	"themePickerBtn":{
+		"text":"Apply this theme"
 	},
 	"hcmodeFieldset":{
 		"title":"High contrast mode"
@@ -62,17 +62,11 @@
 	"addBtn":{
 		"text":"Add"
 	},
-	"changePasswordWindow":{
-		"title":"Change password"
+	"removeBtn":{
+		"text":"Delete"
 	},
-	"newPasswordField":{
-		"fieldLabel":"New password "
-	},
-	"confirmField":{
-		"fieldLabel":"Confirm "
-	},
-	"applyBtn":{
-		"text":"Apply"
+	"renameBtn":{
+		"text":"Rename"
 	},
 	"exportElementsWindow":{
 		"title":"Export an element"
@@ -86,11 +80,17 @@
 	"exportElementBtn":{
 		"text":"Export this element "
 	},
-	"removeBtn":{
-		"text":"Delete"
+	"changePasswordWindow":{
+		"title":"Change password"
 	},
-	"renameBtn":{
-		"text":"Rename"
+	"newPasswordField":{
+		"fieldLabel":"New password "
+	},
+	"confirmField":{
+		"fieldLabel":"Confirm "
+	},
+	"applyBtn":{
+		"text":"Apply"
 	},
 	"termField":{
 		"fieldLabel":"Term "
@@ -122,6 +122,13 @@
 	"newDamTypeSubmitBtn":{
 		"text":"Create a new type of media"
 	},
+	"qbs4":{
+		"title":"Choice of sorting on fields"
+	},
+	"qbs4sortBtn":{
+		"fieldLabel":"Add a sort on "
+	},
+	"qbs4auxbtn":[],
 	"addMTFieldWindow":{
 		"title":"Add a field"
 	},
@@ -135,13 +142,6 @@
 		"fieldLabel":"Add a rule on "
 	},
 	"qbs3auxbtn":[],
-	"qbs4":{
-		"title":"Choice of sorting on fields"
-	},
-	"qbs4sortBtn":{
-		"fieldLabel":"Add a sort on "
-	},
-	"qbs4auxbtn":[],
 	"gfsUploadFileBtn":{
 		"tooltip":"Upload a file"
 	},
@@ -224,21 +224,6 @@
 	"workspaceField":{
 		"fieldLabel":"Workspaces"
 	},
-	"mediaQueryAssistant":{
-		"title":"Querying on media Wizard"
-	},
-	"mqs1":{
-		"title":"Choice of media types"
-	},
-	"mediaTypesField":{
-		"fieldLabel":"Media types"
-	},
-	"mqS2":{
-		"title":"Choice of rules on taxonomy"
-	},
-	"mqls":{
-		"title":"Save"
-	},
 	"newTermWindow":{
 		"title":"New term"
 	},
@@ -256,6 +241,21 @@
 	},
 	"modifyBtn":{
 		"text":"Edit"
+	},
+	"mediaQueryAssistant":{
+		"title":"Querying on media Wizard"
+	},
+	"mqs1":{
+		"title":"Choice of media types"
+	},
+	"mediaTypesField":{
+		"fieldLabel":"Media types"
+	},
+	"mqS2":{
+		"title":"Choice of rules on taxonomy"
+	},
+	"mqls":{
+		"title":"Save"
 	},
 	"lcFieldAdress":{
 		"fieldLabel":"Address"
@@ -395,6 +395,9 @@
 	"fieldPanel":{
 		"title":"Fields"
 	},
+	"rteConfigWindow":{
+		"title":"Rich text editor"
+	},
 	"formOpenQuestionConfigurator":{
 		"title":"Open question Editor"
 	},
@@ -445,9 +448,6 @@
 	},
 	"allowDecimalsField":{
 		"fieldLabel":"Decimals"
-	},
-	"rteConfigWindow":{
-		"title":"Rich text editor"
 	},
 	"emFieldURL":{
 		"fieldLabel":"URL"
@@ -661,14 +661,14 @@
 	"returnPathAdressField":{
 		"fieldLabel":"Return path address"
 	},
-	"optionsConfiguratorBtn":{
-		"text":"Configure options"
-	},
 	"newMLWindow":{
 		"title":"New mailing list"
 	},
 	"newMLCreateBtn":{
 		"text":"Create a new mailing list"
+	},
+	"optionsConfiguratorBtn":{
+		"text":"Configure options"
 	},
 	"optionsEditor1Window":{
 		"title":"Option editor"
@@ -684,6 +684,27 @@
 	},
 	"oeditor1removeBtn":{
 		"tooltip":"Remove this option"
+	},
+	"systemInfoDisplayWindow":{
+		"title":"System information"
+	},
+	"MongoDBField":{
+		"fieldLabel":"MongoDB"
+	},
+	"rubedoVersionField":{
+		"fieldLabel":"Rubedo"
+	},
+	"ESVersionField":{
+		"fieldLabel":"Elasticsearch"
+	},
+	"ZFVersionField":{
+		"fieldLabel":"Zend Framework"
+	},
+	"phpCompoentsPropertyGrid":{
+		"title":"PHP components"
+	},
+	"frontComponentsPropertyGrid":{
+		"title":"Front components"
 	},
 	"pageMaskWindow":{
 		"title":"Page masks"
@@ -730,6 +751,18 @@
 	"zoomLevelSlider":{
 		"fieldLabel":"Zoom level"
 	},
+	"desktopCustomizeWindow":{
+		"title":"Customizing the desktop"
+	},
+	"wallpaperGrid":{
+		"title":"Wallpaper"
+	},
+	"themeGrid":{
+		"title":"Themes"
+	},
+	"accessibilityPanel":{
+		"title":"Accessibility"
+	},
 	"pageWindow":{
 		"title":"Pages"
 	},
@@ -766,18 +799,6 @@
 	"descriptionField":{
 		"fieldLabel":"Description "
 	},
-	"desktopCustomizeWindow":{
-		"title":"Customizing the desktop"
-	},
-	"wallpaperGrid":{
-		"title":"Wallpaper"
-	},
-	"themeGrid":{
-		"title":"Themes"
-	},
-	"accessibilityPanel":{
-		"title":"Accessibility"
-	},
 	"groupsWindow":{
 		"title":"Groups"
 	},
@@ -813,6 +834,9 @@
 	},
 	"defaultWorkspaceField":{
 		"fieldLabel":"Default workspace"
+	},
+	"addUsersToGroupWindow":{
+		"text":"Add these users to the selected group"
 	},
 	"usersWindow":{
 		"title":"Users"
@@ -888,9 +912,6 @@
 	},
 	"userPasswordChangeBtn":{
 		"text":"Change the password for this user"
-	},
-	"addUsersToGroupWindow":{
-		"text":"Add these users to the selected group"
 	},
 	"stateColumn":{
 		"text":"Status"
@@ -1039,9 +1060,6 @@
 	"disqusKeyField":{
 		"fieldLabel":"Disqus"
 	},
-	"damPickerWindow":{
-		"title":"DAM choice"
-	},
 	"queryBuilder":{
 		"title":"Query Wizard "
 	},
@@ -1060,8 +1078,14 @@
 	"nextBtn":{
 		"text":"Next"
 	},
+	"damPickerWindow":{
+		"title":"DAM choice"
+	},
 	"monitoringField":{
 		"title":"Monitoring"
+	},
+	"systemInformationGetBtn":{
+		"text":"System information"
 	},
 	"cachePanel":{
 		"title":"Cache"
@@ -1264,12 +1288,6 @@
 	"createAsDraftBtn":{
 		"text":"Draft"
 	},
-	"newVocabWindow":{
-		"title":"New vocabulary"
-	},
-	"createNewVocabBtn":{
-		"text":"Create a new vocabulary"
-	},
 	"termsCol":{
 		"text":"Terms"
 	},
@@ -1315,11 +1333,17 @@
 	"multiTCAddFieldCol":{
 		"title":"Multiple adding"
 	},
+	"depCTTab":{
+		"title":"Nested content types"
+	},
 	"optionsGrid":{
 		"title":"Options"
 	},
-	"depCTTab":{
-		"title":"Nested content types"
+	"newVocabWindow":{
+		"title":"New vocabulary"
+	},
+	"createNewVocabBtn":{
+		"text":"Create a new vocabulary"
 	},
 	"contentTypesWindow":{
 		"title":"Content types"

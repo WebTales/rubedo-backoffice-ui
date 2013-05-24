@@ -29,11 +29,11 @@
     "CustomizeBtn": {
         "text": "Personnaliser"
     },
-    "themePickerBtn": {
-        "text": "Appliquer ce thème"
-    },
     "wallpapaerPickerBtn": {
         "text": "Choisir en tant que nouveau fond d'écran"
+    },
+    "themePickerBtn": {
+        "text": "Appliquer ce thème"
     },
     "hcmodeFieldset": {
         "title": "Mode contraste élevé"
@@ -62,17 +62,11 @@
     "addBtn": {
         "text": "Ajouter"
     },
-    "changePasswordWindow": {
-        "title": "Changement  de mot de passe"
+    "removeBtn": {
+        "text": "Supprimer"
     },
-    "newPasswordField": {
-        "fieldLabel": "Nouveau mot de passe "
-    },
-    "confirmField": {
-        "fieldLabel": "Confirmer "
-    },
-    "applyBtn": {
-        "text": "Appliquer"
+    "renameBtn": {
+        "text": "Renommer"
     },
     "exportElementsWindow": {
         "title": "Exporter un élément"
@@ -86,11 +80,17 @@
     "exportElementBtn": {
         "text": "Exporter cet élément "
     },
-    "removeBtn": {
-        "text": "Supprimer"
+    "changePasswordWindow": {
+        "title": "Changement  de mot de passe"
     },
-    "renameBtn": {
-        "text": "Renommer"
+    "newPasswordField": {
+        "fieldLabel": "Nouveau mot de passe "
+    },
+    "confirmField": {
+        "fieldLabel": "Confirmer "
+    },
+    "applyBtn": {
+        "text": "Appliquer"
     },
     "termField": {
         "fieldLabel": "Terme "
@@ -122,6 +122,13 @@
     "newDamTypeSubmitBtn": {
         "text": "Créer un nouveau type de média"
     },
+    "qbs4": {
+        "title": "Choix des tris sur les champs"
+    },
+    "qbs4sortBtn": {
+        "fieldLabel": "Ajouter un tri sur "
+    },
+    "qbs4auxbtn": {},
     "addMTFieldWindow": {
         "title": "Ajouter un champ"
     },
@@ -135,13 +142,6 @@
         "fieldLabel": "Ajouter une régle sur "
     },
     "qbs3auxbtn": {},
-    "qbs4": {
-        "title": "Choix des tris sur les champs"
-    },
-    "qbs4sortBtn": {
-        "fieldLabel": "Ajouter un tri sur "
-    },
-    "qbs4auxbtn": {},
     "gfsUploadFileBtn": {
         "tooltip": "Uploader un fichier"
     },
@@ -224,21 +224,6 @@
     "workspaceField": {
         "fieldLabel": "Espaces de travail"
     },
-    "mediaQueryAssistant": {
-        "title": "Assistant de requêtage sur médias"
-    },
-    "mqs1": {
-        "title": "Choix des types de médias"
-    },
-    "mediaTypesField": {
-        "fieldLabel": "Types de media"
-    },
-    "mqS2": {
-        "title": "Choix des règles sur la taxonomie"
-    },
-    "mqls": {
-        "title": "Enregistrement"
-    },
     "newTermWindow": {
         "title": "Nouveau terme"
     },
@@ -256,6 +241,21 @@
     },
     "modifyBtn": {
         "text": "Modifier"
+    },
+    "mediaQueryAssistant": {
+        "title": "Assistant de requêtage sur médias"
+    },
+    "mqs1": {
+        "title": "Choix des types de médias"
+    },
+    "mediaTypesField": {
+        "fieldLabel": "Types de media"
+    },
+    "mqS2": {
+        "title": "Choix des règles sur la taxonomie"
+    },
+    "mqls": {
+        "title": "Enregistrement"
     },
     "lcFieldAdress": {
         "fieldLabel": "Adresse"
@@ -395,6 +395,9 @@
     "fieldPanel": {
         "title": "Champs"
     },
+    "rteConfigWindow": {
+        "title": "Editeur de texte riche"
+    },
     "formOpenQuestionConfigurator": {
         "title": "Editeur de question ouverte"
     },
@@ -445,9 +448,6 @@
     },
     "allowDecimalsField": {
         "fieldLabel": "Décimales"
-    },
-    "rteConfigWindow": {
-        "title": "Editeur de texte riche"
     },
     "emFieldURL": {
         "fieldLabel": "URL"
@@ -661,14 +661,14 @@
     "returnPathAdressField": {
         "fieldLabel": "Adresse d'erreur"
     },
-    "optionsConfiguratorBtn": {
-        "text": "Configurer les options"
-    },
     "newMLWindow": {
         "title": "Nouvelle liste de diffusion"
     },
     "newMLCreateBtn": {
         "text": "Créer une nouvelle liste de diffusion"
+    },
+    "optionsConfiguratorBtn": {
+        "text": "Configurer les options"
     },
     "optionsEditor1Window": {
         "title": "Editeur d'options"
@@ -684,6 +684,27 @@
     },
     "oeditor1removeBtn": {
         "tooltip": "Supprimer cette option"
+    },
+    "systemInfoDisplayWindow": {
+        "title": "Informations Système"
+    },
+    "MongoDBField": {
+        "fieldLabel": "MongoDB"
+    },
+    "rubedoVersionField": {
+        "fieldLabel": "Rubedo"
+    },
+    "ESVersionField": {
+        "fieldLabel": "Elasticsearch"
+    },
+    "ZFVersionField": {
+        "fieldLabel": "Zend Framework"
+    },
+    "phpCompoentsPropertyGrid": {
+        "title": "Composants PHP"
+    },
+    "frontComponentsPropertyGrid": {
+        "title": "Composants Front"
     },
     "pageMaskWindow": {
         "title": "Masques de page"
@@ -730,6 +751,18 @@
     "zoomLevelSlider": {
         "fieldLabel": "Niveau de zoom"
     },
+    "desktopCustomizeWindow": {
+        "title": "Personnalisation du bureau"
+    },
+    "wallpaperGrid": {
+        "title": "Fond d'écran"
+    },
+    "themeGrid": {
+        "title": "Thèmes"
+    },
+    "accessibilityPanel": {
+        "title": "Accessibilité"
+    },
     "pageWindow": {
         "title": "Pages"
     },
@@ -766,18 +799,6 @@
     "descriptionField": {
         "fieldLabel": "Description "
     },
-    "desktopCustomizeWindow": {
-        "title": "Personnalisation du bureau"
-    },
-    "wallpaperGrid": {
-        "title": "Fond d'écran"
-    },
-    "themeGrid": {
-        "title": "Thèmes"
-    },
-    "accessibilityPanel": {
-        "title": "Accessibilité"
-    },
     "groupsWindow": {
         "title": "Groupes"
     },
@@ -813,6 +834,9 @@
     },
     "defaultWorkspaceField": {
         "fieldLabel": "Espace de travail par défaut"
+    },
+    "addUsersToGroupWindow": {
+        "text": "Ajouter ces utilisateurs au groupe séléctionné"
     },
     "usersWindow": {
         "title": "Utilisateurs"
@@ -888,9 +912,6 @@
     },
     "userPasswordChangeBtn": {
         "text": "Changer le mot de passe de cet utilisateur"
-    },
-    "addUsersToGroupWindow": {
-        "text": "Ajouter ces utilisateurs au groupe séléctionné"
     },
     "stateColumn": {
         "text": "Etat"
@@ -1039,9 +1060,6 @@
     "disqusKeyField": {
         "fieldLabel": "Disqus"
     },
-    "damPickerWindow": {
-        "title": "Choix DAM"
-    },
     "queryBuilder": {
         "title": "Assistant de requêtage "
     },
@@ -1060,8 +1078,14 @@
     "nextBtn": {
         "text": "Suivant"
     },
+    "damPickerWindow": {
+        "title": "Choix DAM"
+    },
     "monitoringField": {
         "title": "Supervision"
+    },
+    "systemInformationGetBtn": {
+        "text": "Informations système"
     },
     "cachePanel": {
         "title": "Cache"
@@ -1264,12 +1288,6 @@
     "createAsDraftBtn": {
         "text": "Brouillon"
     },
-    "newVocabWindow": {
-        "title": "Nouveau vocabulaire"
-    },
-    "createNewVocabBtn": {
-        "text": "Créer un nouveau vocabulaire"
-    },
     "termsCol": {
         "text": "Termes"
     },
@@ -1315,11 +1333,17 @@
     "multiTCAddFieldCol": {
         "title": "Ajout multiple"
     },
+    "depCTTab": {
+        "title": "Types de contenus imbriqués"
+    },
     "optionsGrid": {
         "title": "Options"
     },
-    "depCTTab": {
-        "title": "Types de contenus imbriqués"
+    "newVocabWindow": {
+        "title": "Nouveau vocabulaire"
+    },
+    "createNewVocabBtn": {
+        "text": "Créer un nouveau vocabulaire"
     },
     "contentTypesWindow": {
         "title": "Types de contenus"
