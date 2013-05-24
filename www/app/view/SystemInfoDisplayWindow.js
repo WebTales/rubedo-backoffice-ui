@@ -18,9 +18,9 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
     alias: 'widget.SystemInfoDisplayWindow',
 
     localiserId: 'systemInfoDisplayWindow',
-    height: 342,
+    height: 324,
     id: 'SystemInfoDisplayWindow',
-    width: 533,
+    width: 666,
     layout: {
         align: 'stretch',
         type: 'vbox'
@@ -86,7 +86,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             title: 'Composants PHP',
                             disableSelection: true,
                             hideHeaders: true,
-                            nameColumnWidth: 160,
+                            nameColumnWidth: 240,
                             source: {
                                 
                             },
@@ -106,7 +106,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             disableSelection: true,
                             enableColumnMove: true,
                             hideHeaders: true,
-                            nameColumnWidth: 160,
+                            nameColumnWidth: 240,
                             source: {
                                 
                             },

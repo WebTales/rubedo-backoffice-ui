@@ -8,9 +8,9 @@
     "userConfig": {
         "localiserId": "systemInfoDisplayWindow",
         "container|align": "stretch",
-        "height": 342,
+        "height": 324,
         "id": "SystemInfoDisplayWindow",
-        "width": 533,
+        "width": 666,
         "designer|userClassName": "SystemInfoDisplayWindow",
         "designer|userAlias": "SystemInfoDisplayWindow",
         "layout": "vbox",
@@ -165,7 +165,7 @@
                         "title": "Composants PHP",
                         "disableSelection": true,
                         "hideHeaders": true,
-                        "nameColumnWidth": 160,
+                        "nameColumnWidth": 240,
                         "source": [
                             "{ }"
                         ]
@@ -213,7 +213,7 @@
                         "disableSelection": true,
                         "enableColumnMove": true,
                         "hideHeaders": true,
-                        "nameColumnWidth": 160,
+                        "nameColumnWidth": 240,
                         "source": [
                             "{ }"
                         ]
