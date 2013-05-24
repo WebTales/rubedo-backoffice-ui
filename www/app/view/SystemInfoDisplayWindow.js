@@ -26,7 +26,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
         type: 'vbox'
     },
     iconCls: 'help',
-    title: 'InformationsSystème',
+    title: 'Informations Système',
 
     initComponent: function() {
         var me = this;
@@ -68,9 +68,16 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             localiserId: 'phpCompoentsPropertyGrid',
                             autoScroll: true,
                             title: 'Composants PHP',
+                            disableSelection: true,
                             hideHeaders: true,
                             source: {
                                 
+                            },
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onPropertygridBeforeEdit1,
+                                    scope: me
+                                }
                             }
                         },
                         {
@@ -79,9 +86,16 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             localiserId: 'frontComponentsPropertyGrid',
                             autoScroll: true,
                             title: 'Composants Front',
+                            disableSelection: true,
                             hideHeaders: true,
                             source: {
                                 
+                            },
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onPropertygridBeforeEdit,
+                                    scope: me
+                                }
                             }
                         }
                     ]
@@ -96,6 +110,14 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    onPropertygridBeforeEdit1: function(editor, e, eOpts) {
+        return(false);
+    },
+
+    onPropertygridBeforeEdit: function(editor, e, eOpts) {
+        return(false);
     },
 
     onSystemInfoDisplayWindowAfterRender: function(component, eOpts) {

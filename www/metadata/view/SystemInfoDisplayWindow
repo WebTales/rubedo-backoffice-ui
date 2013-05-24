@@ -15,7 +15,7 @@
         "designer|userAlias": "SystemInfoDisplayWindow",
         "layout": "vbox",
         "iconCls": "help",
-        "title": "InformationsSystème"
+        "title": "Informations Système"
     },
     "designerId": "08c86828-4c11-46f1-8868-d6188a6cd164",
     "customConfigs": [
@@ -111,6 +111,7 @@
                         "localiserId": "phpCompoentsPropertyGrid",
                         "autoScroll": true,
                         "title": "Composants PHP",
+                        "disableSelection": true,
                         "hideHeaders": true,
                         "source": [
                             "{ }"
@@ -122,6 +123,25 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPropertygridBeforeEdit1",
+                                "implHandler": [
+                                    "return(false);"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "f7eec2b6-f4f6-4394-9599-a2e9ae1ad6ec"
                         }
                     ]
                 },
@@ -137,6 +157,7 @@
                         "localiserId": "frontComponentsPropertyGrid",
                         "autoScroll": true,
                         "title": "Composants Front",
+                        "disableSelection": true,
                         "hideHeaders": true,
                         "source": [
                             "{ }"
@@ -148,6 +169,25 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPropertygridBeforeEdit",
+                                "implHandler": [
+                                    "return(false);"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "eeccf70c-ab8d-454f-8677-eb161c3ce209"
                         }
                     ]
                 }
