@@ -89,7 +89,7 @@ Ext.define('Rubedo.controller.ImportController', {
                 },
                 success: function(form, action) {
                     var response = Ext.JSON.decode(action.response.responseText);
-                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.succesText, response.importedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);            
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);            
                     button.up().up().setLoading(false);
                     button.up().up().close();
 

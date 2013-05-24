@@ -107,7 +107,7 @@
                     "        },\r",
                     "        success: function(form, action) {\r",
                     "            var response = Ext.JSON.decode(action.response.responseText);\r",
-                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.succesText, response.importedContentsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);            \r",
+                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);            \r",
                     "            button.up().up().setLoading(false);\r",
                     "            button.up().up().close();\r",
                     "\r",
