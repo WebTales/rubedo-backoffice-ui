@@ -335,7 +335,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp('pageElementIdField').setValue(component.id);
             var propEdit=Ext.getCmp('pageElementPropsPanel');
             try{
-                propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.blockText+" "+Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("type"));
+                propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.blockText+" "+Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("type"));
             }catch(err){
                 propEdit.setTitle(component.id.replace("unBloc", "Bloc"));
             }
@@ -510,8 +510,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 var categories = Ext.clone(component.champsConfig.simple);
                 var categoriesADV = Ext.clone(component.champsConfig.avance);
             } else {
-                var categories=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("configBasique").champsConfig.simple);
-                var categoriesADV=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType).get("configBasique").champsConfig.avance);
+                var categories=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.simple);
+                var categoriesADV=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.avance);
             }
 
             Ext.Array.forEach(categoriesADV,function(someCat){someCat.isAdv=true;});
