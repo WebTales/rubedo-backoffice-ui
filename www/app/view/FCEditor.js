@@ -74,9 +74,9 @@ Ext.define('Rubedo.view.FCEditor', {
                     items: [
                         {
                             xtype: 'mycombobox32',
+                            localiserId: 'showOnlyIfField',
                             itemId: 'conditionFieldCombo',
-                            flex: 1,
-                            localiserId: 'showOnlyIfField'
+                            flex: 1
                         },
                         {
                             xtype: 'combobox',

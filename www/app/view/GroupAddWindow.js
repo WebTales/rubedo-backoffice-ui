@@ -41,16 +41,16 @@ Ext.define('Rubedo.view.GroupAddWindow', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'nameField',
+                            anchor: '100%',
                             fieldLabel: 'Nom ',
                             labelWidth: 40,
                             allowBlank: false
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'createGroupAsAsonBtn',
+                            anchor: '100%',
                             id: 'groupCreateButton',
                             text: 'Créer en tant que fils du groupe séléctionné'
                         }

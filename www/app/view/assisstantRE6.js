@@ -39,8 +39,8 @@ Ext.define('Rubedo.view.assisstantRE6', {
                 },
                 {
                     xtype: 'textfield',
-                    anchor: '100%',
                     loaliserId: 'queryNameField',
+                    anchor: '100%',
                     id: 'queryNameField',
                     fieldLabel: 'Nom de la requête',
                     labelWidth: 130,
@@ -49,8 +49,8 @@ Ext.define('Rubedo.view.assisstantRE6', {
                 },
                 {
                     xtype: 'button',
-                    anchor: '100%',
                     loaliserId: 'saveQBQueryBtn',
+                    anchor: '100%',
                     id: 'queryBuildSaveBtn',
                     scale: 'large',
                     text: '<b>Enregistrer la requête </b>'

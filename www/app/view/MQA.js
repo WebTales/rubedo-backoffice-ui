@@ -52,8 +52,8 @@ Ext.define('Rubedo.view.MQA', {
                     items: [
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'mediaTypesField',
+                            anchor: '100%',
                             id: 'DAMTypeWizCombo',
                             fieldLabel: 'Types de media',
                             name: 'DAMTypes',
@@ -95,8 +95,8 @@ Ext.define('Rubedo.view.MQA', {
                     items: [
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'saveBtn',
+                            anchor: '100%',
                             id: 'MQASaveBtn',
                             scale: 'large',
                             text: 'Enregistrer',

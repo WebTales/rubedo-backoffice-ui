@@ -41,8 +41,8 @@ Ext.define('Rubedo.view.newFormWindow', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'newFormTitleField',
+                            anchor: '100%',
                             fieldLabel: 'Titre',
                             labelWidth: 40,
                             name: 'title',
@@ -56,8 +56,8 @@ Ext.define('Rubedo.view.newFormWindow', {
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'newFormCreateBtn',
+                            anchor: '100%',
                             id: 'submitNewFormBtn',
                             text: 'Créer ce questionnaire'
                         }

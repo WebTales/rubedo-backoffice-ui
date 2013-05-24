@@ -35,8 +35,8 @@ Ext.define('Rubedo.view.themePicker', {
                 },
                 {
                     xtype: 'button',
-                    anchor: '100%',
                     localiserId: 'themePickerBtn',
+                    anchor: '100%',
                     id: 'themePickerButton',
                     margin: '10 0 0 0',
                     text: 'Appliquer ce thème'

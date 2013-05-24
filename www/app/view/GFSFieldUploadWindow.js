@@ -40,8 +40,8 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
                     items: [
                         {
                             xtype: 'filefield',
-                            anchor: '100%',
                             localiserId: 'fileField',
+                            anchor: '100%',
                             fieldLabel: 'Fichier',
                             name: 'file',
                             allowBlank: false,
@@ -80,8 +80,8 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
                                 });
 
                             },
-                            anchor: '50%',
                             localiserId: 'validateBtn',
+                            anchor: '50%',
                             margin: '0 10 0 0',
                             iconCls: 'ouiSpetit',
                             text: 'Valider'
@@ -91,8 +91,8 @@ Ext.define('Rubedo.view.GFSFieldUploadWindow', {
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
-                            anchor: '50%',
                             localiserId: 'cancelBtn',
+                            anchor: '50%',
                             margin: '0 0 0 10',
                             iconCls: 'close',
                             text: 'Annuler'

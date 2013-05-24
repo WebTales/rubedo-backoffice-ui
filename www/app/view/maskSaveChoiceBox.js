@@ -35,14 +35,14 @@ Ext.define('Rubedo.view.maskSaveChoiceBox', {
             items: [
                 {
                     xtype: 'button',
-                    flex: 1,
                     localiserId: 'maskSaveChoice1Btn',
+                    flex: 1,
                     text: 'Enregistrer et répercuter les modifications sur toutes les pages'
                 },
                 {
                     xtype: 'button',
-                    flex: 1,
                     localiserId: 'maskSaveChoice2Btn',
+                    flex: 1,
                     text: 'Enregistrer sous un nouveau masque'
                 }
             ]

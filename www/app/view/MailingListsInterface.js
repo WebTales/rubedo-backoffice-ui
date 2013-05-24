@@ -114,8 +114,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                 },
                 {
                     xtype: 'form',
-                    flex: 1,
                     localiserId: 'propertiesForm',
+                    flex: 1,
                     disabled: true,
                     id: 'MLPropsForm',
                     autoScroll: true,
@@ -147,8 +147,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'expeditorAdressField',
+                                    anchor: '100%',
                                     fieldLabel: 'Adresse de l\'expéditeur',
                                     labelWidth: 140,
                                     name: 'fromAddress',
@@ -156,8 +156,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'expeditorNameField',
+                                    anchor: '100%',
                                     fieldLabel: 'Nom de l\'expéditeur',
                                     labelWidth: 140,
                                     name: 'fromName'
@@ -171,8 +171,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'replyToAdressField',
+                                    anchor: '100%',
                                     fieldLabel: 'Adresse de réponse',
                                     labelWidth: 140,
                                     name: 'replyToAddress',
@@ -180,8 +180,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'replyToNameField',
+                                    anchor: '100%',
                                     fieldLabel: 'Nom de réponse',
                                     labelWidth: 140,
                                     name: 'replyToName'
@@ -190,8 +190,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                         },
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'returnPathAdressField',
+                            anchor: '100%',
                             fieldLabel: 'Adresse d\'erreur',
                             labelWidth: 140,
                             name: 'returnPathAddress',

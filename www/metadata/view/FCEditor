@@ -62,8 +62,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "validateBtn",
+                        "layout|flex": null,
                         "id": "FCEditorSubmitBtn",
                         "iconCls": "ouiSpetit",
                         "text": "Valider"
@@ -139,9 +139,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "showOnlyIfField",
                         "itemId": "conditionFieldCombo",
-                        "layout|flex": 1,
-                        "localiserId": "showOnlyIfField"
+                        "layout|flex": 1
                     },
                     "designerId": "75c47fb2-ed24-4e3c-be97-2edf87479e61",
                     "customConfigs": [

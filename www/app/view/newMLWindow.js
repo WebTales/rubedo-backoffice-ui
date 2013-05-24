@@ -41,16 +41,16 @@ Ext.define('Rubedo.view.newMLWindow', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'nameField',
+                            anchor: '100%',
                             fieldLabel: 'Nom',
                             name: 'name',
                             allowBlank: false
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'newMLCreateBtn',
+                            anchor: '100%',
                             id: 'newMLSubmitBtn',
                             scale: 'medium',
                             text: 'Créer une nouvelle liste de diffusion'

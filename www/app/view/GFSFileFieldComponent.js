@@ -98,9 +98,9 @@ Ext.define('Rubedo.view.GFSFileFieldComponent', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'fieldEditlocBtn',
                             x: 130,
                             y: 10,
-                            localiserId: 'fieldEditlocBtn',
                             hidden: true,
                             itemId: 'fieldEditFile',
                             width: 40,

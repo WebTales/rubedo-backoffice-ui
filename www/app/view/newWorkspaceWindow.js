@@ -40,16 +40,16 @@ Ext.define('Rubedo.view.newWorkspaceWindow', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'nameField',
+                            anchor: '100%',
                             fieldLabel: 'Nom',
                             name: 'text',
                             allowBlank: false
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'createNewWorkspaceBtn',
+                            anchor: '100%',
                             id: 'newWorkspaceSublitBtn',
                             scale: 'medium',
                             text: 'Créer un nouvel espace de travail'

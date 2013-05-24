@@ -64,8 +64,8 @@ Ext.define('Rubedo.view.FormsPageConfigurator', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'formPageLabelField',
+                            anchor: '100%',
                             fieldLabel: 'Label',
                             name: 'label',
                             allowBlank: false

@@ -38,16 +38,16 @@ Ext.define('Rubedo.view.taxoTermInsertWindow', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'termField',
+                            anchor: '100%',
                             fieldLabel: 'Terme ',
                             name: 'text',
                             allowBlank: false
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'addBtn',
+                            anchor: '100%',
                             id: 'taxoTermInsertorBtn',
                             scale: 'large',
                             text: 'Ajouter'

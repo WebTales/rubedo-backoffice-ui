@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
         "localiserId": "searchResultsWindow",
+        "container|align": "stretch",
         "height": 492,
         "id": "searchResultsWindow",
         "width": 936,
@@ -35,8 +35,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "localiserId": "filtersPanel",
+                "layout|flex": null,
                 "id": "searchFacetBox",
                 "width": 240,
                 "overflowY": "auto",
@@ -375,8 +375,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "saveQueryBtn",
+                        "layout|flex": null,
                         "hidden": true,
                         "id": "saveGeoQueryBtn",
                         "iconCls": "ouiSpetit",
