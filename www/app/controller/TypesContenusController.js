@@ -1036,7 +1036,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 success: function(response){
                     button.setLoading(false);
 
-                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.succesTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);
                 },
                 failure: function(response) {
                     button.setLoading(false);

@@ -1415,7 +1415,7 @@
                     "        success: function(response){\r",
                     "            button.setLoading(false);\r",
                     "\r",
-                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.succesTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);\r",
+                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);\r",
                     "        },\r",
                     "        failure: function(response) {\r",
                     "            button.setLoading(false);\r",
