@@ -303,6 +303,7 @@
                     "record.set(\"members\", Ext.Array.union(record.get(\"members\"),selection));\r",
                     "Ext.getCmp(\"groupsGrid\").getSelectionModel().deselectAll();\r",
                     "Ext.getCmp(\"groupsGrid\").getSelectionModel().select(record);\r",
+                    "\r",
                     "button.up().up().close();"
                 ],
                 "name": "click",

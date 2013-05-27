@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "managesStore": false,
         "designer|userClassName": "MyGridPanel16",
         "designer|userAlias": "mygridpanel16",
         "title": "",
@@ -16,13 +15,6 @@
         "managesStore": "boolean"
     },
     "designerId": "73e60547-6188-4b20-9a1a-e3f085be455a",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "managesStore",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "Ext.grid.View",
@@ -384,6 +376,25 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processMyGridPanel16",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.plugins=[Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})];\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "1289625c-ecc3-447a-b76c-ff27bd2cdd14"
         }
     ]
 }

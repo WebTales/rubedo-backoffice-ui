@@ -255,9 +255,9 @@
                     "}\r",
                     "});\r",
                     "DAMPicker.on(\"itemdblclick\", function(){\r",
-                    "    try{\r",
-                    "Ext.getCmp(\"imagePickerAcceptBtn\").fireEvent(\"click\",Ext.getCmp(\"imagePickerAcceptBtn\"));\r",
-                    "    } catch(err){}\r",
+                    "try{\r",
+                    "    Ext.getCmp(\"imagePickerAcceptBtn\").fireEvent(\"click\",Ext.getCmp(\"imagePickerAcceptBtn\"));\r",
+                    "} catch(err){}\r",
                     "});\r",
                     "\r",
                     "\r",
@@ -426,7 +426,7 @@
                                 "fn": "onDAMPickerAddBtnRender",
                                 "implHandler": [
                                     "if (typeof(Rubedo.view.DAMCreateUpdateWindow)==\"undefined\"){\r",
-                                    "\tcomponent.hide();\r",
+                                    "    component.hide();\r",
                                     "}"
                                 ],
                                 "name": "render",

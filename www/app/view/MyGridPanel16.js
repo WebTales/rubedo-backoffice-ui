@@ -17,11 +17,6 @@ Ext.define('Rubedo.view.MyGridPanel16', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.mygridpanel16',
 
-    requires: [
-        'Rubedo.view.override.MyGridPanel16'
-    ],
-
-    managesStore: false,
     title: '',
     store: 'UsersAdminDataStore',
 
@@ -140,7 +135,13 @@ Ext.define('Rubedo.view.MyGridPanel16', {
             ]
         });
 
+        me.processMyGridPanel16(me);
         me.callParent(arguments);
+    },
+
+    processMyGridPanel16: function(config) {
+        config.plugins=[Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})];
+        return config;
     }
 
 });

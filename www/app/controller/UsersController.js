@@ -167,6 +167,7 @@ Ext.define('Rubedo.controller.UsersController', {
         record.set("members", Ext.Array.union(record.get("members"),selection));
         Ext.getCmp("groupsGrid").getSelectionModel().deselectAll();
         Ext.getCmp("groupsGrid").getSelectionModel().select(record);
+
         button.up().up().close();
     },
 
