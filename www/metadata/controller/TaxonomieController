@@ -123,7 +123,7 @@
                     "store.load();\r",
                     "\r",
                     "var boiteMeta = Ext.getCmp(\"adminFTaxonomie\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
-                    "customMeta=record.get(\"name\")+\"</br> \"+Rubedo.RubedoAutomatedElementsLoc.createText+\" : \"+Ext.Date.format(record.get(\"createTime\"), Ext.Date.defaultFormat)+\r",
+                    "customMeta=record.get(\"name\")+\"</br> \"+Rubedo.RubedoAutomatedElementsLoc.creationText+\" : \"+Ext.Date.format(record.get(\"createTime\"), Ext.Date.defaultFormat)+\r",
                     "\" \"+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+\" : \"+Ext.Date.format(record.get(\"lastUpdateTime\"), Ext.Date.defaultFormat)+\" \"+Rubedo.RubedoAutomatedElementsLoc.authorText+\" : \"+record.get(\"createUser\").fullName;\r",
                     "boiteMeta.update(customMeta);"
                 ],
