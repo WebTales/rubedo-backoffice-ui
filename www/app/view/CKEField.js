@@ -81,7 +81,11 @@ Ext.define('Rubedo.view.CKEField', {
         }
 
         var targetId = component.getInputId();
-        var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+        if (Ext.isEmpty(Ext.getStore("CurrentUserDataStore"))){
+            var userLanguage="fr";
+        } else {
+            var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+        }
         if (Ext.isEmpty(userLanguage)){
             userLanguage='fr';
         }

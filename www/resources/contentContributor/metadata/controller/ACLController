@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "ACLController",
         "designer|userAlias": "ACLController"
     },
-    "id": "ExtBox1-ext-gen9348",
     "designerId": "6cfeb0f4-f1fe-474f-bb55-fa4d1dd695ac",
     "cn": [
         {
@@ -20,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -79,14 +77,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
-                    "if (!Ext.isEmpty(abstractcomponent.ACL)) {   ",
-                    "    if (ACL.interfaceRights[abstractcomponent.ACL]===false){",
-                    "        abstractcomponent.hide();",
-                    "        abstractcomponent.clearListeners();",
-                    "        abstractcomponent.fireEvent=Ext.emptyFn;",
+                    "if (!Ext.isEmpty(component.ACL)) {   ",
+                    "    if (ACL.interfaceRights[component.ACL]===false){",
+                    "        component.hide();",
+                    "        component.clearListeners();",
+                    "        component.fireEvent=Ext.emptyFn;",
                     "    }",
                     "}"
                 ],
@@ -105,7 +102,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
                     "Ext.Ajax.request({",

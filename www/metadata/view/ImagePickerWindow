@@ -255,7 +255,9 @@
                     "}\r",
                     "});\r",
                     "DAMPicker.on(\"itemdblclick\", function(){\r",
+                    "    try{\r",
                     "Ext.getCmp(\"imagePickerAcceptBtn\").fireEvent(\"click\",Ext.getCmp(\"imagePickerAcceptBtn\"));\r",
+                    "    } catch(err){}\r",
                     "});\r",
                     "\r",
                     "\r",
@@ -412,6 +414,25 @@
                                 "scope": "me"
                             },
                             "designerId": "04d12175-05f0-49d6-b852-600597648f1c"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDAMPickerAddBtnRender",
+                                "implHandler": [
+                                    "if (typeof(Rubedo.view.DAMCreateUpdateWindow)==\"undefined\"){\r",
+                                    "\tcomponent.hide();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "9541c829-4bb4-4a0b-b319-0879f292b29a"
                         }
                     ]
                 },

@@ -9,10 +9,10 @@
         "genTimestamps": false,
         "cacheBust": false
     },
-    "xdsVersion": "2.1.0",
-    "xdsBuild": 678,
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
     "schemaVersion": 1,
-    "upgradeVersion": 210000000498,
+    "upgradeVersion": 210000000503,
     "framework": "ext41",
     "topInstanceFileMap": {
         "7374cafb-8817-43a0-8fa4-7a363ba65a53": {
@@ -28,12 +28,6 @@
                 "resources/contentContributor/app/view/MainForm.js"
             ],
             "className": "MainForm"
-        },
-        "a4b299f1-ded0-4958-9bc9-9bad82056c30": {
-            "paths": [
-                "metadata/resource/css"
-            ],
-            "className": "css"
         },
         "7b179740-bc32-424a-9f22-d87b248d4bef": {
             "paths": [
@@ -208,22 +202,6 @@
             ],
             "className": "mediaTypeModel"
         },
-        "67701fd5-18e4-48d1-a2c5-e34f546f7808": {
-            "paths": [
-                "metadata/view/DAMMainView",
-                "resources/contentContributor/app/view/override/DAMMainView.js",
-                "resources/contentContributor/app/view/DAMMainView.js"
-            ],
-            "className": "DAMMainView"
-        },
-        "a3e62dcc-3e49-4f7f-ad6a-d64dae3b2f21": {
-            "paths": [
-                "metadata/view/DAMPickerWindow",
-                "resources/contentContributor/app/view/override/DAMPickerWindow.js",
-                "resources/contentContributor/app/view/DAMPickerWindow.js"
-            ],
-            "className": "DAMPickerWindow"
-        },
         "487b9d97-ed46-40f7-b752-c771b1b317ce": {
             "paths": [
                 "metadata/view/MyTool17",
@@ -231,38 +209,6 @@
                 "resources/contentContributor/app/view/MyTool17.js"
             ],
             "className": "MyTool17"
-        },
-        "1ffb40bf-f8f5-4769-8f8a-ce8ad5fda718": {
-            "paths": [
-                "metadata/view/ImageFieldComponent",
-                "resources/contentContributor/app/view/override/ImageFieldComponent.js",
-                "resources/contentContributor/app/view/ImageFieldComponent.js"
-            ],
-            "className": "ImageFieldComponent"
-        },
-        "87c18ad5-14ee-48f3-82d6-850631e34b63": {
-            "paths": [
-                "metadata/view/ImagePickerField",
-                "resources/contentContributor/app/view/override/ImagePickerField.js",
-                "resources/contentContributor/app/view/ImagePickerField.js"
-            ],
-            "className": "ImagePickerField"
-        },
-        "1da351ad-99a6-4150-9990-87deaaa49d9d": {
-            "paths": [
-                "metadata/store/DAMPickerStore",
-                "resources/contentContributor/app/store/override/DAMPickerStore.js",
-                "resources/contentContributor/app/store/DAMPickerStore.js"
-            ],
-            "className": "DAMPickerStore"
-        },
-        "0c925756-e271-47d3-ad7c-7384ac3752f2": {
-            "paths": [
-                "metadata/store/MediaTypesFORDAMPicker",
-                "resources/contentContributor/app/store/override/MediaTypesFORDAMPicker.js",
-                "resources/contentContributor/app/store/MediaTypesFORDAMPicker.js"
-            ],
-            "className": "MediaTypesFORDAMPicker"
         },
         "bb31fd8e-1897-4149-a70e-4f326b820581": {
             "paths": [
@@ -306,18 +252,12 @@
             "fdfc62ca-7705-4dbb-9b13-8d528a0451c8",
             "7e993cf9-0647-41b1-9a43-5a8a0b09e568",
             "33902aa5-6d2c-42d9-9095-f7ffe3229abf",
-            "67701fd5-18e4-48d1-a2c5-e34f546f7808",
-            "a3e62dcc-3e49-4f7f-ad6a-d64dae3b2f21",
-            "487b9d97-ed46-40f7-b752-c771b1b317ce",
-            "1ffb40bf-f8f5-4769-8f8a-ce8ad5fda718",
-            "87c18ad5-14ee-48f3-82d6-850631e34b63"
+            "487b9d97-ed46-40f7-b752-c771b1b317ce"
         ],
         "store": [
             "878fb62d-cad8-432c-8ada-7c747d0df220",
             "a7c74968-2e49-41d2-94c2-728098b2f9c9",
-            "7da94d0b-37e6-45c0-a50d-391fb5611e6c",
-            "1da351ad-99a6-4150-9990-87deaaa49d9d",
-            "0c925756-e271-47d3-ad7c-7384ac3752f2"
+            "7da94d0b-37e6-45c0-a50d-391fb5611e6c"
         ],
         "controller": [
             "7b179740-bc32-424a-9f22-d87b248d4bef",
@@ -334,7 +274,6 @@
         ],
         "resource": [
             "7374cafb-8817-43a0-8fa4-7a363ba65a53",
-            "a4b299f1-ded0-4958-9bc9-9bad82056c30",
             "394874e7-fff5-4a88-a765-c051168a7398",
             "ea3d2462-0153-4cf4-bcbe-de1b901ae830",
             "4461edd5-141b-4fe7-8e43-0d1ebe8e286a",

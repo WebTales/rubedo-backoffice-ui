@@ -63,8 +63,8 @@
                     "readOnly"
                 ],
                 "implHandler": [
-                    " var me = this,\r",
-                    " old = me.readOnly;\r",
+                    "var me = this,\r",
+                    "    old = me.readOnly;\r",
                     "if (me.canSwitchStore){\r",
                     "    if (readOnly){\r",
                     "        me.bindStore(Ext.getStore(\"WorkspacesComboStore\"));\r",
@@ -72,11 +72,11 @@
                     "        me.bindStore(Ext.getStore(\"ContributeWorkspacesCombo\"));\r",
                     "    }\r",
                     "}\r",
-                    "            \r",
-                    "  me.callParent(arguments);\r",
-                    "  if (readOnly != old) {\r",
-                    "      me.updateLayout();\r",
-                    "  }"
+                    "\r",
+                    "me.callParent(arguments);\r",
+                    "if (readOnly != old) {\r",
+                    "    me.updateLayout();\r",
+                    "}"
                 ]
             },
             "designerId": "85a81b30-30a2-4c68-8781-9888e8ec4628"

@@ -1,28 +1,26 @@
 {
-    "type": "form",
+    "type": "Ext.form.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MainForm",
-        "designer|userAlias": "MainForm",
         "border": 0,
         "height": null,
         "id": "MainForm",
         "width": null,
+        "designer|userClassName": "MainForm",
+        "designer|userAlias": "MainForm",
         "overflowY": "auto",
         "bodyPadding": 20,
-        "header": true,
         "title": "Nouveau Contenu",
         "titleAlign": "center"
     },
-    "id": "ExtBox1-ext-gen2309",
     "designerId": "7e993cf9-0647-41b1-9a43-5a8a0b09e568",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -30,8 +28,7 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.contents",
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar1"
+                "dock": "bottom"
             },
             "designerId": "37143275-eea3-428d-8a1b-08ac13a7b387",
             "customConfigs": [
@@ -48,20 +45,19 @@
             ],
             "cn": [
                 {
-                    "type": "tbspacer",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "designer|userClassName": "MySpacer"
+                        "layout|flex": 1
                     },
                     "designerId": "2c1a08ea-cc79-430b-a82d-a5e33a6763fd"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -71,7 +67,6 @@
                         "ACL": "write.ui.contents.published",
                         "cStatus": "published",
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton7",
                         "id": "mainPublishBtn",
                         "scale": "large",
                         "text": "Publier"
@@ -91,37 +86,34 @@
                     ]
                 },
                 {
-                    "type": "tbspacer",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "designer|userClassName": "MySpacer1"
+                        "layout|flex": 1
                     },
                     "designerId": "91da9d27-7fa3-47d1-b7b1-a4c0e2bb2281"
                 }
             ]
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ChampTC",
-                "designer|userAlias": "ChampTC",
                 "padding": 10,
                 "layout": "anchor"
             },
             "designerId": "4a7cdb2c-01e1-469c-bd26-34d7d9d31835",
             "cn": [
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -129,26 +121,24 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "90%",
-                        "designer|userClassName": "MyTextField1",
                         "style": [
                             "{float:left}"
                         ],
-                        "name": "text",
                         "fieldLabel": "Titre ",
                         "labelSeparator": " *",
+                        "name": "text",
                         "allowBlank": false
                     },
                     "designerId": "fcc42d21-45b5-4cd2-9fe6-aaac70ce9077"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton17",
                         "itemId": "helpBouton",
                         "margin": null,
                         "style": [
@@ -170,22 +160,20 @@
             ]
         },
         {
-            "type": "container",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "ChampTC",
-                "designer|userAlias": "ChampTC",
                 "padding": 10,
                 "layout": "anchor"
             },
             "designerId": "b4114e94-d33c-409b-a71d-39fab9e0e570",
             "cn": [
                 {
-                    "type": "textareafield",
+                    "type": "Ext.form.field.TextArea",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -193,25 +181,23 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "90%",
-                        "designer|userClassName": "MyTextArea7",
                         "style": [
                             "{float:left}"
                         ],
-                        "name": "summary",
                         "fieldLabel": "Résumé",
-                        "labelSeparator": " "
+                        "labelSeparator": " ",
+                        "name": "summary"
                     },
                     "designerId": "dc13d5b3-c805-4e0b-8f99-e92aefc24f9f"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyButton17",
                         "itemId": "helpBouton",
                         "margin": null,
                         "style": [

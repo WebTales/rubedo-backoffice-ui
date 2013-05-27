@@ -78,6 +78,10 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                                 click: {
                                     fn: me.onDAMPickerAddBtnClick,
                                     scope: me
+                                },
+                                render: {
+                                    fn: me.onDAMPickerAddBtnRender,
+                                    scope: me
                                 }
                             }
                         },
@@ -322,11 +326,13 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         }
     });
     DAMPicker.on("itemdblclick", function(){
-        Ext.getCmp("imagePickerAcceptBtn").fireEvent("click",Ext.getCmp("imagePickerAcceptBtn"));
-    });
+        try{
+            Ext.getCmp("imagePickerAcceptBtn").fireEvent("click",Ext.getCmp("imagePickerAcceptBtn"));
+        } catch(err){}
+        });
 
 
-    component.add(DAMPicker);
+        component.add(DAMPicker);
     },
 
     onImagePickerWindowBeforeClose: function(panel, eOpts) {
@@ -371,6 +377,12 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
             Ext.Msg.alert("Erreur", "Aucun type de média défini");
         }
 
+    },
+
+    onDAMPickerAddBtnRender: function(component, eOpts) {
+        if (typeof(Rubedo.view.DAMCreateUpdateWindow)=="undefined"){
+            component.hide();
+        }
     }
 
 });

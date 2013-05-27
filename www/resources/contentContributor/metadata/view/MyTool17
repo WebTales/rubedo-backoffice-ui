@@ -1,16 +1,15 @@
 {
-    "type": "tool",
+    "type": "Ext.panel.Tool",
     "reference": {
         "name": "tools",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "itemId": "windowMaximize",
         "designer|userClassName": "MyTool17",
         "designer|userAlias": "mytool17",
-        "itemId": "windowMaximize",
         "type": "maximize"
     },
-    "id": "ExtBox1-ext-gen2736",
     "designerId": "487b9d97-ed46-40f7-b752-c771b1b317ce"
 }

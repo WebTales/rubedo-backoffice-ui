@@ -1,28 +1,26 @@
 {
-    "type": "container",
+    "type": "Ext.container.Container",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "padding": 10,
         "designer|userClassName": "fieldWrapper",
         "designer|userAlias": "fieldWrapper",
-        "padding": 10,
         "layout": "anchor"
     },
-    "id": "ExtBox1-ext-gen14932",
     "designerId": "33902aa5-6d2c-42d9-9095-f7ffe3229abf",
     "cn": [
         {
-            "type": "button",
+            "type": "Ext.button.Button",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyButton17",
                 "itemId": "helpBouton",
                 "margin": null,
                 "style": [

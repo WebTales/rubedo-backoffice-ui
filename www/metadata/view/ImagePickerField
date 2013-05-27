@@ -24,6 +24,10 @@
             "userConfig": {
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
+                    "var icDir=\"blue\";\r",
+                    "if (typeof(MyPrefData)!=\"undefined\"){\r",
+                    "    icDir=MyPrefData.iconsDir;\r",
+                    "}\r",
                     "if (component.smallMode) {\r",
                     "    var myComponent = Ext.widget(\"ImageFieldComponentSmall\");\r",
                     "} else {\r",
@@ -32,7 +36,7 @@
                     "myComponent.getComponent(0).setText(component.fieldLabel+\" \");\r",
                     "myComponent.on(\"afterrender\",function(){\r",
                     "    if (Ext.isEmpty(component.getValue())){\r",
-                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+MyPrefData.iconsDir+\"/128x128/image_remove.png\");\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+icDir+\"/128x128/image_remove.png\");\r",
                     "        myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldClearImage\").hide();\r",
                     "    } else {\r",
                     "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"dam/get-thumbnail?id=\"+component.getValue());\r",
@@ -52,7 +56,7 @@
                     "});\r",
                     "component.on(\"change\",function(theField,newValue){\r",
                     "    if ((newValue===\"\")||(Ext.isEmpty(newValue))){\r",
-                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+MyPrefData.iconsDir+\"/128x128/image_remove.png\");\r",
+                    "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"resources/icones/\"+icDir+\"/128x128/image_remove.png\");\r",
                     "        myComponent.getComponent(\"buttonHolder\").getComponent(\"fieldClearImage\").hide();\r",
                     "    } else {\r",
                     "        myComponent.getComponent(\"fieldImagePreview\").setSrc(\"dam/get-thumbnail?id=\"+newValue);\r",

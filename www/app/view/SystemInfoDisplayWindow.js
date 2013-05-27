@@ -48,8 +48,8 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                         },
                         {
                             xtype: 'displayfield',
-                            anchor: '50%',
                             localiserId: 'rubedoVersionField',
+                            anchor: '50%',
                             fieldLabel: 'Rubedo',
                             name: 'RubedoVersion'
                         },
@@ -63,8 +63,8 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                         },
                         {
                             xtype: 'displayfield',
-                            anchor: '50%',
                             localiserId: 'ZFVersionField',
+                            anchor: '50%',
                             fieldLabel: 'Zend Framework',
                             name: 'ZendFramework'
                         }
@@ -80,8 +80,8 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                     items: [
                         {
                             xtype: 'propertygrid',
-                            flex: 1,
                             localiserId: 'phpCompoentsPropertyGrid',
+                            flex: 1,
                             autoScroll: true,
                             title: 'Composants PHP',
                             disableSelection: true,
@@ -99,8 +99,8 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                         },
                         {
                             xtype: 'propertygrid',
-                            flex: 1,
                             localiserId: 'frontComponentsPropertyGrid',
+                            flex: 1,
                             autoScroll: true,
                             title: 'Composants Front',
                             disableSelection: true,

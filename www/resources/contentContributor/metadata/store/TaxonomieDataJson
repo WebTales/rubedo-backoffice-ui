@@ -8,17 +8,15 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "Taxonomy",
-        "designer|userClassName": "TaxonomieDataJson",
-        "designer|userAlias": "TaxonomieDataJson",
         "autoLoad": true,
-        "autoSync": false,
+        "model": "taxonomieDataModel",
         "storeId": "TaxonomieDataJson",
-        "model": "taxonomieDataModel"
+        "designer|userClassName": "TaxonomieDataJson",
+        "designer|userAlias": "TaxonomieDataJson"
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "id": "ExtBox1-ext-gen10117",
     "designerId": "7da94d0b-37e6-45c0-a50d-391fb5611e6c",
     "customConfigs": [
         {
@@ -34,14 +32,13 @@
     ],
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy10",
                 "api": [
                     "{",
                     "read : 'taxonomy'",
@@ -52,14 +49,13 @@
             "designerId": "50d7a94a-29f6-4a2e-9049-a5849e8acfc4",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader8",
                         "messageProperty": "message",
                         "root": "data"
                     },

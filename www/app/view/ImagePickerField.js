@@ -36,6 +36,10 @@ Ext.define('Rubedo.view.ImagePickerField', {
     },
 
     onHiddenfieldRender: function(component, eOpts) {
+        var icDir="blue";
+        if (typeof(MyPrefData)!="undefined"){
+            icDir=MyPrefData.iconsDir;
+        }
         if (component.smallMode) {
             var myComponent = Ext.widget("ImageFieldComponentSmall");
         } else {
@@ -44,7 +48,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
         myComponent.getComponent(0).setText(component.fieldLabel+" ");
         myComponent.on("afterrender",function(){
             if (Ext.isEmpty(component.getValue())){
-                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+icDir+"/128x128/image_remove.png");
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").hide();
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+component.getValue());
@@ -64,7 +68,7 @@ Ext.define('Rubedo.view.ImagePickerField', {
         });
         component.on("change",function(theField,newValue){
             if ((newValue==="")||(Ext.isEmpty(newValue))){
-                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+icDir+"/128x128/image_remove.png");
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").hide();
             } else {
                 myComponent.getComponent("fieldImagePreview").setSrc("dam/get-thumbnail?id="+newValue);

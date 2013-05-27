@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -9,7 +9,6 @@
         "designer|userClassName": "MainStoresController",
         "designer|userAlias": "MainStoresController"
     },
-    "id": "ExtBox1-ext-gen27825",
     "designerId": "5affe889-8d2a-4e2c-b305-55cc48a45c07",
     "cn": [
         {
@@ -20,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
@@ -85,7 +83,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "reloadActiveBrothers",
                 "fn": "reloadActiveBrothers",
                 "designer|params": [
                     "collectionName",
@@ -109,13 +106,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
-                    "if ((abstractcomponent.managesStore)&&(abstractcomponent.store)) {",
-                    "    abstractcomponent.getStore().load();",
+                    "if ((component.managesStore)&&(component.store)) {",
+                    "    component.getStore().load();",
                     "",
-                    "    abstractcomponent.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });",
+                    "    component.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });",
                     "} "
                 ],
                 "name": "render",

@@ -33,12 +33,17 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        var icDir="blue";
+                        if (typeof(MyPrefData)!="undefined"){
+                            icDir=MyPrefData.iconsDir;
+                        }
+
                         if (record.get("status")=="published") {
-                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+value);
+                            return('<img src="resources/icones/'+icDir+'/16x16/page_accept.png"> '+value);
                         } else if (record.get("status")=="pending") {
-                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+value);
+                            return('<img src="resources/icones/'+icDir+'/16x16/page_process.png"> '+value);
                         } else if (record.get("status")=="draft") {
-                            return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+value);
+                            return('<img src="resources/icones/'+icDir+'/16x16/page_edit.png"> '+value);
                         }
 
 

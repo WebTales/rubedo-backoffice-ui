@@ -1,17 +1,16 @@
 {
-    "type": "viewport",
+    "type": "Ext.container.Viewport",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "id": "MainViewport",
         "designer|userClassName": "MainViewport",
         "designer|userAlias": "MainViewport",
         "designer|initialView": true,
-        "id": "MainViewport",
         "layout": "fit"
     },
-    "id": "ExtBox1-ext-gen36847",
     "designerId": "fdfc62ca-7705-4dbb-9b13-8d528a0451c8"
 }

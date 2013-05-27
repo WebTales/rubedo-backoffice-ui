@@ -1,5 +1,5 @@
 {
-    "type": "application",
+    "type": "Ext.app.Application",
     "reference": {
         "name": "items",
         "type": "array"
@@ -16,41 +16,33 @@
         "stores": [
             "Contents",
             "QueriesStore",
-            "TaxonomieDataJson",
-            "DAMPickerStore",
-            "MediaTypesFORDAMPicker"
+            "TaxonomieDataJson"
         ],
         "views": [
-            "MyPanel",
             "fieldWrapper",
-            "ImageFieldComponent",
-            "ImagePickerWindow",
-            "ImagePickerField",
-            "MainViewport",
-            "DAMMainView",
-            "DAMPickerWindow"
+            "MainForm",
+            "MyTool17",
+            "MainViewport"
         ],
         "appFolder": "resources/contentContributor/app",
         "autoCreateViewport": true,
-        "name": "ContentContributor",
         "controllers": [
             "MainController",
             "ACLController",
             "MainStoresController"
-        ]
+        ],
+        "name": "ContentContributor"
     },
-    "id": "ExtBox1-ext-gen1587",
     "designerId": "application",
     "cn": [
         {
-            "type": "loader",
+            "type": "Ext.Loader",
             "reference": {
                 "name": "loader",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "Loader56",
                 "enabled": true,
                 "paths": [
                     "{\"Ext\":\".\",",
