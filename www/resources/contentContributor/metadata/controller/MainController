@@ -29,7 +29,8 @@
                 "implHandler": [
                     "Ext.getCmp(\"MainForm\").setTitle(\"Nouveau contenu : \"+contentType.type);",
                     "this.renderMainFields(contentType.fields);",
-                    "this.renderTaxoFields(contentType.vocabularies);"
+                    "this.renderTaxoFields(contentType.vocabularies);",
+                    "window.parent.jQuery(\"#contentModal\").modal(\"loading\");"
                 ]
             },
             "designerId": "d6f02e2a-9d7e-4173-8881-f0abc95df10f"

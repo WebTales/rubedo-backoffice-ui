@@ -43,8 +43,22 @@ Ext.define('ContentContributor.view.MainForm', {
                             ACL: 'write.ui.contents.published',
                             cStatus: 'published',
                             id: 'mainPublishBtn',
+                            icon: 'resources/icones/blue/32x32/floppy_disc_accept.png',
                             scale: 'large',
                             text: 'Publier'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            width: 20
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                window.parent.destroyModal("add-content-window");
+                            },
+                            icon: 'resources/icones/blue/32x32/remove.png',
+                            scale: 'large',
+                            text: 'Annuler'
                         },
                         {
                             xtype: 'tbspacer',

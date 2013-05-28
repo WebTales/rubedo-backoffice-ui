@@ -13,7 +13,6 @@
  * Do NOT hand edit this file.
  */
 
-
 Ext.Loader.setConfig({
     enabled: true,
     paths: {

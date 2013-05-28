@@ -104,6 +104,7 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
         this.renderMainFields(contentType.fields);
         this.renderTaxoFields(contentType.vocabularies);
+        window.parent.jQuery("#contentModal").modal("loading");
     },
 
     renderMainFields: function(fields) {
