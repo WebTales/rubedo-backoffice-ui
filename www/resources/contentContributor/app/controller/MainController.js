@@ -40,54 +40,72 @@ Ext.define('ContentContributor.controller.MainController', {
 
     saveContent: function(button, e, eOpts) {
         if (Ext.getCmp("MainForm").getForm().isValid()){
-            if (Ext.getCmp("MainForm").isUpdatingContent){
-
-            } else {
+            if (AppGlobals.editMode){
+                var currentContent = Ext.getStore("Contents").getRange()[0];
                 var myFields = Ext.getCmp("MainForm").getForm().getValues();
-                var newContent = Ext.create('ContentContributor.model.contentDataModel', {
-                    text:myFields.text,
-                    fields:myFields,
-                    taxonomy: { },
-                    online:true,
-                    status:button.cStatus,
-                    typeId:AppGlobals.typeId
-
-                });
-                newContent.set("writeWorkspace",AppGlobals.currentWorkspace);
-                newContent.set("target",[AppGlobals.currentWorkspace]);
-                var taxoRes = {};
+                var taxoRes = currentContent.get("taxonomy");
                 if (!Ext.isEmpty(Ext.getCmp("taxonomyFieldset"))){
                     Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
                         taxoRes[leField.name]=leField.getValue();
                         delete myFields[leField.name];
                     });
                 }
-                taxoRes.navigation=[AppGlobals.currentPage];
-                newContent.set("taxonomy",taxoRes);
-                newContent.set("fields",myFields);
-
-                Ext.getCmp("MainForm").setLoading(true);
                 Ext.getStore("Contents").addListener("write", function(){
-
-                    Ext.getCmp("MainForm").setLoading(false);
-                    if (AppGlobals.contextQueryType=="manual"){
-                        var queryRecord = Ext.getStore("QueriesStore").getRange()[0];
-                        var qArray =Ext.clone(queryRecord.get("query"));
-                        qArray.push(newContent.get("id"));
-                        queryRecord.set("query", qArray);
-                    }
-                    Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré', function(){
+                    Ext.Msg.alert('Succès', 'Les modifications ont bien été enregistrées.', function(){
                         window.parent.destroyModal("add-content-window");
                     });
                 },this, {single:true});
+                    currentContent.beginEdit();
+                    currentContent.set("taxonomy",taxoRes);
+                    currentContent.set("fields",myFields);
+                    currentContent.endEdit();
+
+                } else {
+                    var myFields = Ext.getCmp("MainForm").getForm().getValues();
+                    var newContent = Ext.create('ContentContributor.model.contentDataModel', {
+                        text:myFields.text,
+                        fields:myFields,
+                        taxonomy: { },
+                        online:true,
+                        status:button.cStatus,
+                        typeId:AppGlobals.typeId
+
+                    });
+                    newContent.set("writeWorkspace",AppGlobals.currentWorkspace);
+                    newContent.set("target",[AppGlobals.currentWorkspace]);
+                    var taxoRes = {};
+                    if (!Ext.isEmpty(Ext.getCmp("taxonomyFieldset"))){
+                        Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
+                            taxoRes[leField.name]=leField.getValue();
+                            delete myFields[leField.name];
+                        });
+                    }
+                    taxoRes.navigation=[AppGlobals.currentPage];
+                    newContent.set("taxonomy",taxoRes);
+                    newContent.set("fields",myFields);
+
+                    Ext.getCmp("MainForm").setLoading(true);
+                    Ext.getStore("Contents").addListener("write", function(){
+
+                        Ext.getCmp("MainForm").setLoading(false);
+                        if (AppGlobals.contextQueryType=="manual"){
+                            var queryRecord = Ext.getStore("QueriesStore").getRange()[0];
+                            var qArray =Ext.clone(queryRecord.get("query"));
+                            qArray.push(newContent.get("id"));
+                            queryRecord.set("query", qArray);
+                        }
+                        Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré.', function(){
+                            window.parent.destroyModal("add-content-window");
+                        });
+                    },this, {single:true});
 
 
-                    Ext.getStore("Contents").add(newContent);
+                        Ext.getStore("Contents").add(newContent);
 
+                    }
+                } else {
+                    Ext.Msg.alert('Erreur', 'Certains champs ne sont pas valides');
                 }
-            } else {
-                Ext.Msg.alert('Erreur', 'Certains champs ne sont pas valides');
-            }
     },
 
     onBasefieldBeforeRender: function(component, eOpts) {
@@ -101,9 +119,21 @@ Ext.define('ContentContributor.controller.MainController', {
     },
 
     initializeContentForm: function(contentType) {
-        Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
         this.renderMainFields(contentType.fields);
         this.renderTaxoFields(contentType.vocabularies);
+        if (AppGlobals.editMode){
+            Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("text"));
+            Ext.getCmp("MainForm").getForm().setValues(Ext.getStore("Contents").getRange()[0].get("fields"));
+            var myTaxo =Ext.clone(Ext.getStore("Contents").getRange()[0].get("taxonomy"));
+            Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
+                if (!Ext.isEmpty(myTaxo[leField.name])){
+                    leField.setValue(myTaxo[leField.name]);
+                }
+            });
+        } else {
+            Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
+        }
+
         window.parent.jQuery("#contentModal").modal("loading");
     },
 
@@ -394,49 +424,69 @@ Ext.define('ContentContributor.controller.MainController', {
             a[b[0]] = b[1];
             return a;
         }, {});
-            AppGlobals.currentPage=options["current-page"];
-            AppGlobals.currentWorkspace=options["current-workspace"];
-            if (!Ext.isEmpty(options.queryId)){
-                Ext.getStore("QueriesStore").filter("id",options.queryId);
-                Ext.getStore("QueriesStore").addListener("load", function(a, records){
-                    if (!Ext.isEmpty(records)){
-                        AppGlobals.contextQuery=records[0].get("query");
-                        AppGlobals.contextQueryType=records[0].get("type");
+            if (Ext.isEmpty(options["edit-mode"])){
+                AppGlobals.currentPage=options["current-page"];
+                AppGlobals.currentWorkspace=options["current-workspace"];
+                if (!Ext.isEmpty(options.queryId)){
+                    Ext.getStore("QueriesStore").filter("id",options.queryId);
+                    Ext.getStore("QueriesStore").addListener("load", function(a, records){
+                        if (!Ext.isEmpty(records)){
+                            AppGlobals.contextQuery=records[0].get("query");
+                            AppGlobals.contextQueryType=records[0].get("type");
+                        } else {
+                            Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la requête de contexte');
+                        }
+                        if (!Ext.isEmpty(options.typeId)){
+                            Ext.Ajax.request({
+                                url: 'content-types/find-one',
+                                params: {
+                                    id: options.typeId
+                                },
+                                success: function(response){
+                                    var result = Ext.JSON.decode(response.responseText).data;
+                                    AppGlobals.typeId=options.typeId;
+                                    Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                    me.initializeContentForm(result);
+                                }
+                            });
+                        }
+                    }, this, {single:true});
                     } else {
-                        Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la requête de contexte');
+                        if (!Ext.isEmpty(options.typeId)){
+                            Ext.Ajax.request({
+                                url: 'content-types/find-one',
+                                params: {
+                                    id: options.typeId
+                                },
+                                success: function(response){
+                                    var result = Ext.JSON.decode(response.responseText).data;
+                                    AppGlobals.typeId=options.typeId;
+                                    Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                    me.initializeContentForm(result);
+                                }
+                            });
+                        }
                     }
-                    if (!Ext.isEmpty(options.typeId)){
-                        Ext.Ajax.request({
-                            url: 'content-types/find-one',
-                            params: {
-                                id: options.typeId
-                            },
-                            success: function(response){
-                                var result = Ext.JSON.decode(response.responseText).data;
-                                AppGlobals.typeId=options.typeId;
-                                Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
-                                me.initializeContentForm(result);
-                            }
-                        });
-                    }
-                }, this, {single:true});
                 } else {
-                    if (!Ext.isEmpty(options.typeId)){
+                    AppGlobals.editMode=true;
+                    Ext.getStore("Contents").filter("id",options['content-id']);
+                    Ext.getStore("Contents").on("load",function(){
+                        var theTypeId=Ext.getStore("Contents").getRange()[0].get("typeId");
                         Ext.Ajax.request({
                             url: 'content-types/find-one',
                             params: {
-                                id: options.typeId
+                                id: theTypeId
                             },
                             success: function(response){
                                 var result = Ext.JSON.decode(response.responseText).data;
-                                AppGlobals.typeId=options.typeId;
+                                AppGlobals.typeId=theTypeId;
                                 Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
                                 me.initializeContentForm(result);
                             }
                         });
+                    },this,{single:true});
+                        Ext.getStore("Contents").load();
                     }
-                }
-
     }
 
 });
