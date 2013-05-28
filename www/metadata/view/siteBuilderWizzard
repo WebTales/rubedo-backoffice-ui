@@ -148,6 +148,7 @@
                             "userConfig": {
                                 "localiserId": "createSiteFromModelField",
                                 "layout|anchor": "100%",
+                                "id": "sitesSecondReplicaterChoice",
                                 "fieldLabel": null,
                                 "labelAlign": null,
                                 "labelStyle": null,
@@ -162,6 +163,27 @@
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSitesSecondReplicaterChoiceRender",
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(Ext.getStore(\"SitesJson\").getRange())){\r",
+                                            "\tcomponent.hide();\r",
+                                            "}"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "22212f7e-293d-4144-a894-72475c56f330"
                                 }
                             ]
                         },

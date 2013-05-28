@@ -80,10 +80,17 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     xtype: 'radiofield',
                                     localiserId: 'createSiteFromModelField',
                                     anchor: '100%',
+                                    id: 'sitesSecondReplicaterChoice',
                                     labelWidth: 320,
                                     name: 'builtOnEmptySite',
                                     boxLabel: 'Créer un site en utilisant un site existant comme modèle',
-                                    inputValue: 'false'
+                                    inputValue: 'false',
+                                    listeners: {
+                                        render: {
+                                            fn: me.onSitesSecondReplicaterChoiceRender,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'fieldset',
@@ -253,6 +260,12 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
 
     onUseEmptySiteFieldAfterRender: function(component, eOpts) {
         component.fireEvent("change", true);
+    },
+
+    onSitesSecondReplicaterChoiceRender: function(component, eOpts) {
+        if (Ext.isEmpty(Ext.getStore("SitesJson").getRange())){
+            component.hide();
+        }
     },
 
     onModelSiteIdFieldChange: function(field, newValue, oldValue, eOpts) {
