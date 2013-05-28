@@ -75,10 +75,12 @@ Ext.define('Rubedo.model.userDataModel', {
             name: 'defaultGroup'
         },
         {
+            dateFormat: 'U',
             name: 'createTime',
             type: 'date'
         },
         {
+            dateFormat: 'U',
             name: 'updateTime',
             type: 'date'
         },

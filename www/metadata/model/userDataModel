@@ -211,7 +211,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dateFormat": null,
+                "dateFormat": "U",
                 "name": "createTime",
                 "type": "date"
             },
@@ -225,6 +225,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "U",
                 "name": "updateTime",
                 "type": "date"
             },

@@ -286,7 +286,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         {
                                             xtype: 'gridcolumn',
                                             localiserId: 'addressColumn',
-                                            dataIndex: 'login',
+                                            dataIndex: 'coordinates',
                                             text: 'Adresse',
                                             flex: 1
                                         },
