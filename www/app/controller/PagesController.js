@@ -1010,7 +1010,8 @@ Ext.define('Rubedo.controller.PagesController', {
                     idHTML:nBloc.idHTML,
                     urlPrefix:nBloc.urlPrefix,
                     flex:nBloc.flex,
-                    canEdit:nBloc.canEdit
+                    canEdit:nBloc.canEdit,
+                    checksum:nBloc.checksum
 
                 });
             }

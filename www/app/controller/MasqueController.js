@@ -1736,7 +1736,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 idHTML:nBloc.idHTML,
                 urlPrefix:nBloc.urlPrefix,
                 flex:nBloc.flex,
-                canEdit:nBloc.canEdit
+                checksum:nBloc.checksum
 
             });
 
