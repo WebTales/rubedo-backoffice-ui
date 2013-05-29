@@ -559,7 +559,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             Ext.getStore("Contents").load();
                         }
                     });
-                    task.delay(300);
+                    task.delay(700);
     },
 
     onLaunch: function() {
@@ -569,7 +569,7 @@ Ext.define('ContentContributor.controller.MainController', {
             } catch (err){}
                 Ext.getStore("CurrentUserDataStore").load();
             });
-            task.delay(200);
+            task.delay(400);
     }
 
 });
