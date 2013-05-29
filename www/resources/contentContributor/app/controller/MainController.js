@@ -124,12 +124,29 @@ Ext.define('ContentContributor.controller.MainController', {
         if (AppGlobals.editMode){
             Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("text"));
             Ext.getCmp("MainForm").getForm().setValues(Ext.getStore("Contents").getRange()[0].get("fields"));
+            Ext.Object.each(Ext.clone(Ext.getStore("Contents").getRange()[0].get("fields")), function(key, value, myself){
+                if (Ext.isArray(value)) {
+                    var multiField=Ext.getCmp('MainForm').query('[name='+key+']')[0];
+                    var y=0;
+                    if (multiField.multivalued) {
+                        Ext.Array.each(value,function(val,index){
+                            if (index>0) {
+                                multiField.up().getComponent('fieldReplicatorBtn').fireEvent("click",multiField.up().getComponent('fieldReplicatorBtn'));
+                            }
+                            Ext.getCmp('MainForm').query('[name='+key+']')[index].setValue(val);
+                        }); 
+                    }
+                }
+            });
+
+
             var myTaxo =Ext.clone(Ext.getStore("Contents").getRange()[0].get("taxonomy"));
             Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
                 if (!Ext.isEmpty(myTaxo[leField.name])){
                     leField.setValue(myTaxo[leField.name]);
                 }
             });
+
         } else {
             Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
         }
@@ -207,7 +224,7 @@ Ext.define('ContentContributor.controller.MainController', {
             wrapping.getComponent('helpBouton').hidden=true;
         } 
         if (newField.multivalued) {
-            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));
+            wrapping.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));
 
         }
         target.add(wrapping);
@@ -403,7 +420,7 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.define('AppGlobals', {singleton: true});
 
         this.control({
-            "[itemId= 'boutonReplicateurChamps']": {
+            "[itemId= 'fieldReplicatorBtn']": {
                 click: this.fieldReplicate
             },
             "#mainDraftBtn, #mainSubmitBtn, #mainPublishBtn": {
