@@ -33,6 +33,8 @@ Ext.define('ContentContributor.view.MainForm', {
                     xtype: 'toolbar',
                     ACL: 'write.ui.contents',
                     dock: 'bottom',
+                    border: 0,
+                    style: '{background:#fff !important;}',
                     items: [
                         {
                             xtype: 'tbspacer',
@@ -44,8 +46,8 @@ Ext.define('ContentContributor.view.MainForm', {
                             cStatus: 'published',
                             localiserId: 'publishBtn',
                             id: 'mainPublishBtn',
-                            icon: 'resources/icones/blue/32x32/floppy_disc_accept.png',
-                            scale: 'large',
+                            icon: 'resources/icones/blue/24x24/floppy_disc_accept.png',
+                            scale: 'medium',
                             text: 'Publier'
                         },
                         {
@@ -58,8 +60,8 @@ Ext.define('ContentContributor.view.MainForm', {
                                 window.parent.destroyModal("add-content-window");
                             },
                             localiserId: 'cancelBtn',
-                            icon: 'resources/icones/blue/32x32/remove.png',
-                            scale: 'large',
+                            icon: 'resources/icones/blue/24x24/remove.png',
+                            scale: 'medium',
                             text: 'Annuler'
                         },
                         {

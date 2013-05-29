@@ -28,7 +28,12 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.contents",
-                "dock": "bottom"
+                "dock": "bottom",
+                "border": 0,
+                "style": "{background:#fff !important;}"
+            },
+            "configAlternates": {
+                "style": "string"
             },
             "designerId": "37143275-eea3-428d-8a1b-08ac13a7b387",
             "customConfigs": [
@@ -69,8 +74,8 @@
                         "layout|flex": null,
                         "localiserId": "publishBtn",
                         "id": "mainPublishBtn",
-                        "icon": "resources/icones/blue/32x32/floppy_disc_accept.png",
-                        "scale": "large",
+                        "icon": "resources/icones/blue/24x24/floppy_disc_accept.png",
+                        "scale": "medium",
                         "text": "Publier"
                     },
                     "designerId": "090f904c-d738-44a0-bd09-bcfbf900dcaa",
@@ -115,8 +120,8 @@
                     "userConfig": {
                         "layout|flex": null,
                         "localiserId": "cancelBtn",
-                        "icon": "resources/icones/blue/32x32/remove.png",
-                        "scale": "large",
+                        "icon": "resources/icones/blue/24x24/remove.png",
+                        "scale": "medium",
                         "text": "Annuler"
                     },
                     "designerId": "f8884a5e-4348-46ca-9aad-30d99ea31bb9",
