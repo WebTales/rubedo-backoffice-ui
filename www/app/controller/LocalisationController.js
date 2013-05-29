@@ -402,155 +402,157 @@ Ext.define('Rubedo.controller.LocalisationController', {
     updateLocalisationSingletons: function() {
         //new method using simple JSON files
         var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
-        if ((!Ext.isEmpty(userLanguage))&&(userLanguage!="fr")){
-            if (userLanguage=="en"){
-                Ext.Date.defaultFormat="m/d/Y";
-            }
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/'+userLanguage+'/appHelp.json',
-                params: {
-
-                },
-                success: function(response){
-                    var singletonUpdates = Ext.JSON.decode(response.responseText);
-                    Ext.apply(Rubedo.RubedoAppHelp, singletonUpdates);
-                },
-                failure:function(){
-                    console.log("RubedoAppHelp singleton could not be localized for the current language");
-                }
-            });
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/'+userLanguage+'/componentLabels.json',
-                params: {
-
-                },
-                success: function(response){
-                    var singletonUpdates = Ext.JSON.decode(response.responseText);
-                    Ext.apply(Rubedo.RubedoInterfaceLoc, singletonUpdates);
-                },
-                failure:function(){
-                    console.log("RubedoInterfaceLoc singleton could not be localized for the current language");
-                }
-            });
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/'+userLanguage+'/automatedElements.json',
-                params: {
-
-                },
-                success: function(response){
-                    var singletonUpdates = Ext.JSON.decode(response.responseText);
-                    Ext.apply(Rubedo.RubedoAutomatedElementsLoc, singletonUpdates);
-                },
-                failure:function(){
-                    console.log("RubedoAutomatedElementsLoc singleton could not be localized for the current language");
-                }
-            });
-            if (!Ext.isEmpty(Ext.getStore("TypesChampsDataStore"))){
-                Ext.Ajax.request({
-                    url: 'resources/localisationfiles/generic/fieldTypes.json',
-                    params: {
-
-                    },
-                    success: function(response){
-                        var genericStructureString = response.responseText;
-                        Ext.Ajax.request({
-                            url: 'resources/localisationfiles/'+userLanguage+'/fieldTypeLabels.json',
-                            params: {
-
-                            },
-                            success: function(response){
-                                var localisedLabels =Ext.JSON.decode(response.responseText);
-                                Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                    replacer=new RegExp(key, 'g');
-                                    genericStructureString=genericStructureString.replace(replacer, value);
-                                });
-                                var decodedFT=Ext.JSON.decode(genericStructureString);
-                                Ext.getStore("TypesChampsDataStore").removeAll();
-                                Ext.getStore("TypesChampsDataStore").loadData(decodedFT);
-
-
-                            },
-                            failure:function(){
-                                console.log("FieldTypes store could not be localised for this language");
-                            }
-                        });
-                    },
-                    failure:function(){
-                        console.log("FieldTypes store could not retrieve generic structure");
-                    }
-                });
-            }
-            if (!Ext.isEmpty(Ext.getStore("BlocsDataStore"))){
-                Ext.Ajax.request({
-                    url: 'resources/localisationfiles/generic/blockTypes.json',
-                    params: {
-
-                    },
-                    success: function(response){
-                        var genericStructureString = response.responseText;
-                        Ext.Ajax.request({
-                            url: 'resources/localisationfiles/'+userLanguage+'/blockTypeLabels.json',
-                            params: {
-
-                            },
-                            success: function(response){
-                                var localisedLabels =Ext.JSON.decode(response.responseText);
-                                Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                    replacer=new RegExp(key, 'g');
-                                    genericStructureString=genericStructureString.replace(replacer, value);
-                                });
-                                var decodedFT=Ext.JSON.decode(genericStructureString);
-                                Ext.getStore("BlocsDataStore").removeAll();
-                                Ext.getStore("BlocsDataStore").loadData(decodedFT);
-
-
-                            },
-                            failure:function(){
-                                console.log("Blocks store could not be localised for this language");
-                            }
-                        });
-                    },
-                    failure:function(){
-                        console.log("Blocks store could not retrieve generic structure");
-                    }
-                });
-            }
-            if (!Ext.isEmpty(Ext.getStore("FormFieldTypesStore"))){
-                Ext.Ajax.request({
-                    url: 'resources/localisationfiles/generic/formFieldTypes.json',
-                    params: {
-
-                    },
-                    success: function(response){
-                        var genericStructureString = response.responseText;
-                        Ext.Ajax.request({
-                            url: 'resources/localisationfiles/'+userLanguage+'/formFieldLabels.json',
-                            params: {
-
-                            },
-                            success: function(response){
-                                var localisedLabels =Ext.JSON.decode(response.responseText);
-                                Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                    replacer=new RegExp(key, 'g');
-                                    genericStructureString=genericStructureString.replace(replacer, value);
-                                });
-                                var decodedFT=Ext.JSON.decode(genericStructureString);
-                                Ext.getStore("FormFieldTypesStore").removeAll();
-                                Ext.getStore("FormFieldTypesStore").loadData(decodedFT);
-
-
-                            },
-                            failure:function(){
-                                console.log("Form Fields store could not be localised for this language");
-                            }
-                        });
-                    },
-                    failure:function(){
-                        console.log("Form Fields store could not retrieve generic structure");
-                    }
-                });
-            }
+        if (Ext.isEmpty(userLanguage)){
+            userLanguage="en";
         }
+        if (userLanguage=="en"){
+            Ext.Date.defaultFormat="m/d/Y";
+        }
+        Ext.Ajax.request({
+            url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/appHelp.json',
+            params: {
+
+            },
+            success: function(response){
+                var singletonUpdates = Ext.JSON.decode(response.responseText);
+                Ext.apply(Rubedo.RubedoAppHelp, singletonUpdates);
+            },
+            failure:function(){
+                console.log("RubedoAppHelp singleton could not be localized for the current language");
+            }
+        });
+        Ext.Ajax.request({
+            url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/componentLabels.json',
+            params: {
+
+            },
+            success: function(response){
+                var singletonUpdates = Ext.JSON.decode(response.responseText);
+                Ext.apply(Rubedo.RubedoInterfaceLoc, singletonUpdates);
+            },
+            failure:function(){
+                console.log("RubedoInterfaceLoc singleton could not be localized for the current language");
+            }
+        });
+        Ext.Ajax.request({
+            url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/automatedElements.json',
+            params: {
+
+            },
+            success: function(response){
+                var singletonUpdates = Ext.JSON.decode(response.responseText);
+                Ext.apply(Rubedo.RubedoAutomatedElementsLoc, singletonUpdates);
+            },
+            failure:function(){
+                console.log("RubedoAutomatedElementsLoc singleton could not be localized for the current language");
+            }
+        });
+        if (!Ext.isEmpty(Ext.getStore("TypesChampsDataStore"))){
+            Ext.Ajax.request({
+                url: 'resources/localisationfiles/generic/fieldTypes.json',
+                params: {
+
+                },
+                success: function(response){
+                    var genericStructureString = response.responseText;
+                    Ext.Ajax.request({
+                        url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/fieldTypeLabels.json',
+                        params: {
+
+                        },
+                        success: function(response){
+                            var localisedLabels =Ext.JSON.decode(response.responseText);
+                            Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                replacer=new RegExp(key, 'g');
+                                genericStructureString=genericStructureString.replace(replacer, value);
+                            });
+                            var decodedFT=Ext.JSON.decode(genericStructureString);
+                            Ext.getStore("TypesChampsDataStore").removeAll();
+                            Ext.getStore("TypesChampsDataStore").loadData(decodedFT);
+
+
+                        },
+                        failure:function(){
+                            console.log("FieldTypes store could not be localised for this language");
+                        }
+                    });
+                },
+                failure:function(){
+                    console.log("FieldTypes store could not retrieve generic structure");
+                }
+            });
+        }
+        if (!Ext.isEmpty(Ext.getStore("BlocsDataStore"))){
+            Ext.Ajax.request({
+                url: 'resources/localisationfiles/generic/blockTypes.json',
+                params: {
+
+                },
+                success: function(response){
+                    var genericStructureString = response.responseText;
+                    Ext.Ajax.request({
+                        url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/blockTypeLabels.json',
+                        params: {
+
+                        },
+                        success: function(response){
+                            var localisedLabels =Ext.JSON.decode(response.responseText);
+                            Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                replacer=new RegExp(key, 'g');
+                                genericStructureString=genericStructureString.replace(replacer, value);
+                            });
+                            var decodedFT=Ext.JSON.decode(genericStructureString);
+                            Ext.getStore("BlocsDataStore").removeAll();
+                            Ext.getStore("BlocsDataStore").loadData(decodedFT);
+
+
+                        },
+                        failure:function(){
+                            console.log("Blocks store could not be localised for this language");
+                        }
+                    });
+                },
+                failure:function(){
+                    console.log("Blocks store could not retrieve generic structure");
+                }
+            });
+        }
+        if (!Ext.isEmpty(Ext.getStore("FormFieldTypesStore"))){
+            Ext.Ajax.request({
+                url: 'resources/localisationfiles/generic/formFieldTypes.json',
+                params: {
+
+                },
+                success: function(response){
+                    var genericStructureString = response.responseText;
+                    Ext.Ajax.request({
+                        url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/formFieldLabels.json',
+                        params: {
+
+                        },
+                        success: function(response){
+                            var localisedLabels =Ext.JSON.decode(response.responseText);
+                            Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                replacer=new RegExp(key, 'g');
+                                genericStructureString=genericStructureString.replace(replacer, value);
+                            });
+                            var decodedFT=Ext.JSON.decode(genericStructureString);
+                            Ext.getStore("FormFieldTypesStore").removeAll();
+                            Ext.getStore("FormFieldTypesStore").loadData(decodedFT);
+
+
+                        },
+                        failure:function(){
+                            console.log("Form Fields store could not be localised for this language");
+                        }
+                    });
+                },
+                failure:function(){
+                    console.log("Form Fields store could not retrieve generic structure");
+                }
+            });
+        }
+
 
 
 
