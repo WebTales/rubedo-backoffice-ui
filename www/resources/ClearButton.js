@@ -411,7 +411,12 @@
             if (this.hideClearButtonWhenEmpty && Ext.isEmpty(this.textField.getValue())) {
                 return false;
             }
-
+            if (this.textField.readOnly){
+                return false;
+            }
+            if (this.textField.isDisabled()){
+                return false;
+            }
             var clearButtonEl = this.clearButtonEl;
             //noinspection RedundantIfStatementJS
             if (this.hideClearButtonWhenMouseOut
