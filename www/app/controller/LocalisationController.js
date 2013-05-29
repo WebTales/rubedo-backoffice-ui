@@ -445,105 +445,111 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     console.log("RubedoAutomatedElementsLoc singleton could not be localized for the current language");
                 }
             });
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/generic/fieldTypes.json',
-                params: {
+            if (!Ext.isEmpty(Ext.getStore("TypesChampsDataStore"))){
+                Ext.Ajax.request({
+                    url: 'resources/localisationfiles/generic/fieldTypes.json',
+                    params: {
 
-                },
-                success: function(response){
-                    var genericStructureString = response.responseText;
-                    Ext.Ajax.request({
-                        url: 'resources/localisationfiles/'+userLanguage+'/fieldTypeLabels.json',
-                        params: {
+                    },
+                    success: function(response){
+                        var genericStructureString = response.responseText;
+                        Ext.Ajax.request({
+                            url: 'resources/localisationfiles/'+userLanguage+'/fieldTypeLabels.json',
+                            params: {
 
-                        },
-                        success: function(response){
-                            var localisedLabels =Ext.JSON.decode(response.responseText);
-                            Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                replacer=new RegExp(key, 'g');
-                                genericStructureString=genericStructureString.replace(replacer, value);
-                            });
-                            var decodedFT=Ext.JSON.decode(genericStructureString);
-                            Ext.getStore("TypesChampsDataStore").removeAll();
-                            Ext.getStore("TypesChampsDataStore").loadData(decodedFT);
-
-
-                        },
-                        failure:function(){
-                            console.log("FieldTypes store could not be localised for this language");
-                        }
-                    });
-                },
-                failure:function(){
-                    console.log("FieldTypes store could not retrieve generic structure");
-                }
-            });
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/generic/blockTypes.json',
-                params: {
-
-                },
-                success: function(response){
-                    var genericStructureString = response.responseText;
-                    Ext.Ajax.request({
-                        url: 'resources/localisationfiles/'+userLanguage+'/blockTypeLabels.json',
-                        params: {
-
-                        },
-                        success: function(response){
-                            var localisedLabels =Ext.JSON.decode(response.responseText);
-                            Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                replacer=new RegExp(key, 'g');
-                                genericStructureString=genericStructureString.replace(replacer, value);
-                            });
-                            var decodedFT=Ext.JSON.decode(genericStructureString);
-                            Ext.getStore("BlocsDataStore").removeAll();
-                            Ext.getStore("BlocsDataStore").loadData(decodedFT);
+                            },
+                            success: function(response){
+                                var localisedLabels =Ext.JSON.decode(response.responseText);
+                                Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                    replacer=new RegExp(key, 'g');
+                                    genericStructureString=genericStructureString.replace(replacer, value);
+                                });
+                                var decodedFT=Ext.JSON.decode(genericStructureString);
+                                Ext.getStore("TypesChampsDataStore").removeAll();
+                                Ext.getStore("TypesChampsDataStore").loadData(decodedFT);
 
 
-                        },
-                        failure:function(){
-                            console.log("Blocks store could not be localised for this language");
-                        }
-                    });
-                },
-                failure:function(){
-                    console.log("Blocks store could not retrieve generic structure");
-                }
-            });
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/generic/formFieldTypes.json',
-                params: {
+                            },
+                            failure:function(){
+                                console.log("FieldTypes store could not be localised for this language");
+                            }
+                        });
+                    },
+                    failure:function(){
+                        console.log("FieldTypes store could not retrieve generic structure");
+                    }
+                });
+            }
+            if (!Ext.isEmpty(Ext.getStore("BlocsDataStore"))){
+                Ext.Ajax.request({
+                    url: 'resources/localisationfiles/generic/blockTypes.json',
+                    params: {
 
-                },
-                success: function(response){
-                    var genericStructureString = response.responseText;
-                    Ext.Ajax.request({
-                        url: 'resources/localisationfiles/'+userLanguage+'/formFieldLabels.json',
-                        params: {
+                    },
+                    success: function(response){
+                        var genericStructureString = response.responseText;
+                        Ext.Ajax.request({
+                            url: 'resources/localisationfiles/'+userLanguage+'/blockTypeLabels.json',
+                            params: {
 
-                        },
-                        success: function(response){
-                            var localisedLabels =Ext.JSON.decode(response.responseText);
-                            Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                replacer=new RegExp(key, 'g');
-                                genericStructureString=genericStructureString.replace(replacer, value);
-                            });
-                            var decodedFT=Ext.JSON.decode(genericStructureString);
-                            Ext.getStore("FormFieldTypesStore").removeAll();
-                            Ext.getStore("FormFieldTypesStore").loadData(decodedFT);
+                            },
+                            success: function(response){
+                                var localisedLabels =Ext.JSON.decode(response.responseText);
+                                Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                    replacer=new RegExp(key, 'g');
+                                    genericStructureString=genericStructureString.replace(replacer, value);
+                                });
+                                var decodedFT=Ext.JSON.decode(genericStructureString);
+                                Ext.getStore("BlocsDataStore").removeAll();
+                                Ext.getStore("BlocsDataStore").loadData(decodedFT);
 
 
-                        },
-                        failure:function(){
-                            console.log("Form Fields store could not be localised for this language");
-                        }
-                    });
-                },
-                failure:function(){
-                    console.log("Form Fields store could not retrieve generic structure");
-                }
-            });
+                            },
+                            failure:function(){
+                                console.log("Blocks store could not be localised for this language");
+                            }
+                        });
+                    },
+                    failure:function(){
+                        console.log("Blocks store could not retrieve generic structure");
+                    }
+                });
+            }
+            if (!Ext.isEmpty(Ext.getStore("FormFieldTypesStore"))){
+                Ext.Ajax.request({
+                    url: 'resources/localisationfiles/generic/formFieldTypes.json',
+                    params: {
+
+                    },
+                    success: function(response){
+                        var genericStructureString = response.responseText;
+                        Ext.Ajax.request({
+                            url: 'resources/localisationfiles/'+userLanguage+'/formFieldLabels.json',
+                            params: {
+
+                            },
+                            success: function(response){
+                                var localisedLabels =Ext.JSON.decode(response.responseText);
+                                Ext.Object.each(localisedLabels, function(key, value, myself) {
+                                    replacer=new RegExp(key, 'g');
+                                    genericStructureString=genericStructureString.replace(replacer, value);
+                                });
+                                var decodedFT=Ext.JSON.decode(genericStructureString);
+                                Ext.getStore("FormFieldTypesStore").removeAll();
+                                Ext.getStore("FormFieldTypesStore").loadData(decodedFT);
+
+
+                            },
+                            failure:function(){
+                                console.log("Form Fields store could not be localised for this language");
+                            }
+                        });
+                    },
+                    failure:function(){
+                        console.log("Form Fields store could not retrieve generic structure");
+                    }
+                });
+            }
         }
 
 

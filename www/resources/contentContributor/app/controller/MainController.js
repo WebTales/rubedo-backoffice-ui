@@ -51,7 +51,7 @@ Ext.define('ContentContributor.controller.MainController', {
                     });
                 }
                 Ext.getStore("Contents").addListener("write", function(){
-                    Ext.Msg.alert('Succès', 'Les modifications ont bien été enregistrées.', function(){
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.notifUpdate, function(){
                         window.parent.destroyModal("add-content-window");
                     });
                 },this, {single:true});
@@ -94,7 +94,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             qArray.push(newContent.get("id"));
                             queryRecord.set("query", qArray);
                         }
-                        Ext.Msg.alert('Succès', 'Le nouveau contenu a bien été enregistré.', function(){
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.notifCreate, function(){
                             window.parent.destroyModal("add-content-window");
                         });
                     },this, {single:true});
@@ -104,7 +104,7 @@ Ext.define('ContentContributor.controller.MainController', {
 
                     }
                 } else {
-                    Ext.Msg.alert('Erreur', 'Certains champs ne sont pas valides');
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
                 }
     },
 
@@ -116,6 +116,48 @@ Ext.define('ContentContributor.controller.MainController', {
                 component.altFormats='U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j';
             }    
         }
+    },
+
+    onFieldBeforeRender: function(component, eOpts) {
+        if (component.localiserId){
+            var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
+            if (!Ext.isEmpty(configs)) {
+                Ext.apply(component, configs);
+                if (!Ext.isEmpty(configs.tooltip)) {
+                    component.setTooltip(configs.tooltip);
+                }
+            }
+            if ((component.isXType("button"))&&(component.scale=="large")){
+                component.minWidth=48;
+            }
+        }
+        if ((component.isXType("field"))||(component.isXType("checkboxgroup"))||(component.isXType("radiogroup"))){
+            component.labelSeparator=" ";
+            if (component.name=="localizable"){
+                //temporary localiser hide
+                component.hide();
+            }
+        }
+    },
+
+    onFieldAdded: function(component, container, pos, eOpts) {
+        if (component.localiserId){
+            var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
+            if (!Ext.isEmpty(configs)) {
+                Ext.apply(component, configs);
+            }
+        }
+        if (!Ext.isEmpty(component.RTip)){
+            component.anchor="90%";
+            container.insert(pos,Ext.widget("RHelpBtn", {tooltip:component.RTip}));
+        }
+    },
+
+    onFieldsetAfterRender: function(component, eOpts) {
+        var task = new Ext.util.DelayedTask(function(){
+            component.setTitle(component.title);
+        });
+        task.delay(100);
     },
 
     initializeContentForm: function(contentType) {
@@ -148,7 +190,7 @@ Ext.define('ContentContributor.controller.MainController', {
             });
 
         } else {
-            Ext.getCmp("MainForm").setTitle("Nouveau contenu : "+contentType.type);
+            Ext.getCmp("MainForm").setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+" "+contentType.type);
         }
 
         window.parent.jQuery("#contentModal").modal("loading");
@@ -237,7 +279,7 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.Array.remove(vocabularies, "navigation");
         if (!Ext.isEmpty(vocabularies)){
             var target = Ext.getCmp("MainForm");
-            var taxoFieldset = Ext.widget("fieldset", {title:"Taxonomie", collapsible:true, id:"taxonomyFieldset"});
+            var taxoFieldset = Ext.widget("fieldset", {title:"Taxonomie", collapsible:true, id:"taxonomyFieldset",localiserId:"taxonomyFieldset"});
             var lesTaxo = vocabularies;
             var i=0;
             for (i=0; i<lesTaxo.length; i++) {
@@ -417,6 +459,8 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.require("Rubedo.view.ImagePickerField");
         Ext.require("Rubedo.view.ImageFieldComponent");
         Ext.require("Rubedo.view.ImagePickerWindow");
+        Ext.require("Rubedo.controller.LocalisationController");
+        Ext.create("Rubedo.store.CurrentUserDataStore");
         Ext.define('AppGlobals', {singleton: true});
 
         this.control({
@@ -428,6 +472,15 @@ Ext.define('ContentContributor.controller.MainController', {
             },
             "field": {
                 beforerender: this.onBasefieldBeforeRender
+            },
+            "component": {
+                beforerender: this.onFieldBeforeRender
+            },
+            "field, checkboxgroup, radiogroup": {
+                added: this.onFieldAdded
+            },
+            "fieldset": {
+                afterrender: this.onFieldsetAfterRender
             }
         });
     },
@@ -441,69 +494,82 @@ Ext.define('ContentContributor.controller.MainController', {
             a[b[0]] = b[1];
             return a;
         }, {});
-            if (Ext.isEmpty(options["edit-mode"])){
-                AppGlobals.currentPage=options["current-page"];
-                AppGlobals.currentWorkspace=options["current-workspace"];
-                if (!Ext.isEmpty(options.queryId)){
-                    Ext.getStore("QueriesStore").filter("id",options.queryId);
-                    Ext.getStore("QueriesStore").addListener("load", function(a, records){
-                        if (!Ext.isEmpty(records)){
-                            AppGlobals.contextQuery=records[0].get("query");
-                            AppGlobals.contextQueryType=records[0].get("type");
-                        } else {
-                            Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la requête de contexte');
-                        }
-                        if (!Ext.isEmpty(options.typeId)){
-                            Ext.Ajax.request({
-                                url: 'content-types/find-one',
-                                params: {
-                                    id: options.typeId
-                                },
-                                success: function(response){
-                                    var result = Ext.JSON.decode(response.responseText).data;
-                                    AppGlobals.typeId=options.typeId;
-                                    Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
-                                    me.initializeContentForm(result);
-                                }
-                            });
-                        }
-                    }, this, {single:true});
-                    } else {
-                        if (!Ext.isEmpty(options.typeId)){
-                            Ext.Ajax.request({
-                                url: 'content-types/find-one',
-                                params: {
-                                    id: options.typeId
-                                },
-                                success: function(response){
-                                    var result = Ext.JSON.decode(response.responseText).data;
-                                    AppGlobals.typeId=options.typeId;
-                                    Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
-                                    me.initializeContentForm(result);
-                                }
-                            });
-                        }
-                    }
-                } else {
-                    AppGlobals.editMode=true;
-                    Ext.getStore("Contents").filter("id",options['content-id']);
-                    Ext.getStore("Contents").on("load",function(){
-                        var theTypeId=Ext.getStore("Contents").getRange()[0].get("typeId");
-                        Ext.Ajax.request({
-                            url: 'content-types/find-one',
-                            params: {
-                                id: theTypeId
-                            },
-                            success: function(response){
-                                var result = Ext.JSON.decode(response.responseText).data;
-                                AppGlobals.typeId=theTypeId;
-                                Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
-                                me.initializeContentForm(result);
+            var task = new Ext.util.DelayedTask(function(){
+                if (Ext.isEmpty(options["edit-mode"])){
+                    AppGlobals.currentPage=options["current-page"];
+                    AppGlobals.currentWorkspace=options["current-workspace"];
+                    if (!Ext.isEmpty(options.queryId)){
+                        Ext.getStore("QueriesStore").filter("id",options.queryId);
+                        Ext.getStore("QueriesStore").addListener("load", function(a, records){
+                            if (!Ext.isEmpty(records)){
+                                AppGlobals.contextQuery=records[0].get("query");
+                                AppGlobals.contextQueryType=records[0].get("type");
+                            } else {
+                                Ext.Msg.alert('Erreur', 'Erreur dans la récupération de la requête de contexte');
                             }
-                        });
-                    },this,{single:true});
-                        Ext.getStore("Contents").load();
-                    }
+                            if (!Ext.isEmpty(options.typeId)){
+                                Ext.Ajax.request({
+                                    url: 'content-types/find-one',
+                                    params: {
+                                        id: options.typeId
+                                    },
+                                    success: function(response){
+                                        var result = Ext.JSON.decode(response.responseText).data;
+                                        AppGlobals.typeId=options.typeId;
+                                        Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                        me.initializeContentForm(result);
+                                    }
+                                });
+                            }
+                        }, this, {single:true});
+                        } else {
+                            if (!Ext.isEmpty(options.typeId)){
+                                Ext.Ajax.request({
+                                    url: 'content-types/find-one',
+                                    params: {
+                                        id: options.typeId
+                                    },
+                                    success: function(response){
+                                        var result = Ext.JSON.decode(response.responseText).data;
+                                        AppGlobals.typeId=options.typeId;
+                                        Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                        me.initializeContentForm(result);
+                                    }
+                                });
+                            }
+                        }
+                    } else {
+                        AppGlobals.editMode=true;
+                        Ext.getStore("Contents").filter("id",options['content-id']);
+                        Ext.getStore("Contents").on("load",function(){
+                            var theTypeId=Ext.getStore("Contents").getRange()[0].get("typeId");
+                            Ext.Ajax.request({
+                                url: 'content-types/find-one',
+                                params: {
+                                    id: theTypeId
+                                },
+                                success: function(response){
+                                    var result = Ext.JSON.decode(response.responseText).data;
+                                    AppGlobals.typeId=theTypeId;
+                                    Ext.getCmp("MainViewport").add(Ext.widget("MainForm"));
+                                    me.initializeContentForm(result);
+                                }
+                            });
+                        },this,{single:true});
+                            Ext.getStore("Contents").load();
+                        }
+                    });
+                    task.delay(300);
+    },
+
+    onLaunch: function() {
+        var task = new Ext.util.DelayedTask(function(){
+            try {
+                Rubedo.controller.LocalisationController.prototype.init();
+            } catch (err){}
+                Ext.getStore("CurrentUserDataStore").load();
+            });
+            task.delay(200);
     }
 
 });

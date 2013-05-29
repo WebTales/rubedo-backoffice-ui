@@ -42,6 +42,7 @@ Ext.define('ContentContributor.view.MainForm', {
                             xtype: 'button',
                             ACL: 'write.ui.contents.published',
                             cStatus: 'published',
+                            localiserId: 'publishBtn',
                             id: 'mainPublishBtn',
                             icon: 'resources/icones/blue/32x32/floppy_disc_accept.png',
                             scale: 'large',
@@ -56,6 +57,7 @@ Ext.define('ContentContributor.view.MainForm', {
                             handler: function(button, event) {
                                 window.parent.destroyModal("add-content-window");
                             },
+                            localiserId: 'cancelBtn',
                             icon: 'resources/icones/blue/32x32/remove.png',
                             scale: 'large',
                             text: 'Annuler'

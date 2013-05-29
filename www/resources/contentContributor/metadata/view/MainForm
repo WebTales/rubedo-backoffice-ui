@@ -67,6 +67,7 @@
                         "ACL": "write.ui.contents.published",
                         "cStatus": "published",
                         "layout|flex": null,
+                        "localiserId": "publishBtn",
                         "id": "mainPublishBtn",
                         "icon": "resources/icones/blue/32x32/floppy_disc_accept.png",
                         "scale": "large",
@@ -82,6 +83,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "cStatus",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -108,11 +114,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "cancelBtn",
                         "icon": "resources/icones/blue/32x32/remove.png",
                         "scale": "large",
                         "text": "Annuler"
                     },
                     "designerId": "f8884a5e-4348-46ca-9aad-30d99ea31bb9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
