@@ -1300,7 +1300,7 @@
                     "}\r",
                     "\r",
                     "var cible = content;\r",
-                    "Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"champs\"));\r",
+                    "try{Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get(\"champs\"));} catch(err){console.log(\"form set anomaly\");}\r",
                     "Ext.Object.each(cible.get(\"champs\"), function(key, value, myself){\r",
                     "if (Ext.isArray(value)) {\r",
                     "    var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];\r",
