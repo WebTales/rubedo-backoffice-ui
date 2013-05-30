@@ -1787,7 +1787,19 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                 });
             }
         } catch (err) {console.log("Error localising importable fields");}
-
+            try{
+                var companionStore= Ext.getStore("MTFieldsStore");
+                if (!Ext.isEmpty(companionStore)){
+                    Ext.Array.forEach(companionStore.getRange(), function(fieldDef){
+                        var counterPart = store.findRecord("cType", fieldDef.get("cType"));
+                        if (!Ext.isEmpty(counterPart)){
+                            var corrector = Ext.clone(counterPart.getData());
+                            delete corrector.id;
+                            fieldDef.set(corrector);
+                        }
+                    });
+                }
+            } catch (err) {console.log("Error localising media type fields");}
     }
 
 });

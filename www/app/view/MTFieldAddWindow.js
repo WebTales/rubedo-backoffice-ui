@@ -41,6 +41,9 @@ Ext.define('Rubedo.view.MTFieldAddWindow', {
                     id: 'MTFieldSelectGrid',
                     title: '',
                     store: 'MTFieldsStore',
+                    viewConfig: {
+                        markDirty: false
+                    },
                     columns: [
                         {
                             xtype: 'gridcolumn',
