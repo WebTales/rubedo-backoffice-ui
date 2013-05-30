@@ -53,7 +53,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "hideAllWindowsBtn",
                 "layout|flex": null,
                 "id": "desktopHomeBtn",
                 "iconCls": "desktopHome_med",
@@ -64,14 +63,7 @@
             "configAlternates": {
                 "tooltip": "string"
             },
-            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ]
+            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4"
         },
         {
             "type": "Ext.toolbar.Separator",

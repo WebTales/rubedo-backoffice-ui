@@ -41,7 +41,6 @@ Ext.define('Rubedo.view.EnteteV', {
                 },
                 {
                     xtype: 'button',
-                    localiserId: 'hideAllWindowsBtn',
                     id: 'desktopHomeBtn',
                     iconCls: 'desktopHome_med',
                     scale: 'medium',

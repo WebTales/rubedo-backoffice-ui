@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.ESSearchField', {
     fieldLabel: '',
     labelSeparator: ' ',
     labelWidth: 68,
-    emptyText: 'Recherche',
+    emptyText: 'Search',
 
     initComponent: function() {
         var me = this;
