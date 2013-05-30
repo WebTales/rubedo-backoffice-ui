@@ -30,41 +30,31 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
             storeId: 'ImportableFieldTypesStore',
             data: [
                 {
-                    type: 'Titre',
+                    type: 'Title',
                     cType: 'text',
+                    openWindow: '',
+                    description: '',
+                    config: '',
+                    configFields: '',
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: 'text'
+                    id: 'text',
+                    category: 'Autre',
+                    protoId: ''
                 },
                 {
-                    type: 'Résumé',
+                    type: 'Summary',
                     cType: 'summary',
+                    openWindow: '',
+                    description: '',
+                    config: '',
+                    configFields: '',
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: 'summary'
+                    id: 'summary',
+                    category: 'Autre',
+                    protoId: ''
                 },
                 {
-                    type: 'Localisation',
+                    type: 'Location',
                     cType: 'Rubedo.view.localiserField',
                     openWindow: '',
                     description: '<p>Le champ "Localisation" permet de saisir une adresse ou des coordonnées géographique (latitude et longitude)Ces données peuvent être exploitées dans les blocs cartographiques comme Google Map.</p>',
@@ -129,28 +119,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51234e09c0e0516a0b00000d'
+                    id: '51234e09c0e0516a0b00000d',
+                    category: 'Autre',
+                    protoId: ''
                 },
                 {
-                    type: 'Texte',
-                    category: 'Texte',
+                    type: 'Text',
                     cType: 'Ext.form.field.Text',
                     openWindow: '',
                     description: '<p>Le champ "Texte" permet de saisir un texte court, sans formatage avancé.Il intègre plusieurs règles de validation : url, alphabétique, alphanumérique, couriel ou expression régulière.</p>',
@@ -196,7 +176,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Text',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -285,28 +265,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c648043912000017'
+                    id: '506441f8c648043912000017',
+                    category: 'Texte',
+                    protoId: ''
                 },
                 {
-                    type: 'Zone de texte',
-                    category: 'Texte',
+                    type: 'Text area',
                     cType: 'Ext.form.field.TextArea',
                     openWindow: '',
                     description: '<p>Le champ "Zone de texte" permet de saisir un texte long, sans formatage avancé.Il intègre plusieurs règles de validation : alphabétique ou alphanumérique.</p>',
@@ -352,7 +322,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Text',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -426,28 +396,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c648043912000019'
+                    id: '506441f8c648043912000019',
+                    category: 'Texte',
+                    protoId: ''
                 },
                 {
                     type: 'Date',
-                    category: 'Date',
                     cType: 'Ext.form.field.Date',
                     openWindow: '',
                     description: '<p>Le champ "Date" permet de saisir une date.</p>',
@@ -490,7 +450,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Date',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -532,29 +492,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
-                        },
-                        
+                        }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804391200001b'
+                    id: '506441f8c64804391200001b',
+                    category: 'Date',
+                    protoId: ''
                 },
                 {
-                    type: 'Temps',
-                    category: 'Date',
+                    type: 'Time',
                     cType: 'Ext.form.field.Time',
                     openWindow: '',
                     description: '<p>Le champ "Temps" permet de saisir une plage horaire, affichée sous la forme hh:mm.</p>',
@@ -599,7 +548,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Time',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -641,28 +590,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804391200001c'
+                    id: '506441f8c64804391200001c',
+                    category: 'Date',
+                    protoId: ''
                 },
                 {
-                    type: 'Nombre',
-                    category: 'Nombre',
+                    type: 'Number',
                     cType: 'Ext.form.field.Number',
                     openWindow: '',
                     description: '<p>Le champ "Nombre"  permet de saisir un nombre, entier ou décimal, éventuellement limité par des bornes inférieures et supérieures.</p>',
@@ -706,7 +645,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Number',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -755,28 +694,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804391200001d'
+                    id: '506441f8c64804391200001d',
+                    category: 'Nombre',
+                    protoId: ''
                 },
                 {
                     type: 'Slider',
-                    category: 'Nombre',
                     cType: 'Ext.slider.Single',
                     openWindow: '',
                     description: '<p>Le champ "Slider" permet de saisir un nombre entier entre deux bornes, au moyen d\'un slider.</p>',
@@ -820,7 +749,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Number',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -855,28 +784,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804391200001e'
+                    id: '506441f8c64804391200001e',
+                    category: 'Nombre',
+                    protoId: ''
                 },
                 {
-                    type: '\u00e9valuation',
-                    category: 'Nombre',
+                    type: 'Rating',
                     cType: 'Ext.ux.widget.Rating',
                     openWindow: '',
                     description: '<p>Le champ "Evaluation" permet de saisir une note, affichée sous forme d\'étoiles.</p>',
@@ -921,7 +840,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Number',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value'
                             }
                         },
@@ -949,7 +868,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Number',
                             config: {
-                                fieldLabel: 'Divisions par \u00e9toile',
+                                fieldLabel: 'Divisions par étoile',
                                 name: 'split'
                             }
                         },
@@ -963,28 +882,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804391200001f'
+                    id: '506441f8c64804391200001f',
+                    category: 'Nombre',
+                    protoId: ''
                 },
                 {
-                    type: 'Texte riche',
-                    category: 'Texte',
+                    type: 'Rich text',
                     cType: 'Rubedo.view.CKEField',
                     openWindow: '',
                     description: '<p>Le champ "Texte riche" permet de saisir un texte riche, à l\'aide d\'un éditeur wysiwyg. Le composant utilisé par défaut est CKEditor, avec trois configurations par défaut : basic, standard ou complet.</p>',
@@ -1097,27 +1006,18 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c648043912000020'
+                    id: '506441f8c648043912000020',
+                    category: 'Texte',
+                    protoId: ''
                 },
                 {
-                    type: 'Couleur',
+                    type: 'Color',
                     cType: 'Ext.ux.ColorField',
                     openWindow: '',
                     description: '<p>Le champ "Couleur" permet de choisir une couleur à partir d\'une palette basique.</p>',
@@ -1161,7 +1061,7 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.ux.ColorField',
                             config: {
-                                fieldLabel: 'Valeur par d\u00e9faut',
+                                fieldLabel: 'Valeur par défaut',
                                 name: 'value',
                                 allowBlank: true
                             }
@@ -1190,24 +1090,15 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                         {
                             type: 'Ext.form.field.Checkbox',
                             config: {
-                                fieldLabel: 'Multivalu\u00e9',
+                                fieldLabel: 'Multivalué',
                                 name: 'multivalued'
                             }
                         }
                     ],
                     store: '',
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c648043912000024'
+                    id: '506441f8c648043912000024',
+                    category: 'Autre',
+                    protoId: ''
                 }
             ]
         }, cfg)]);

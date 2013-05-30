@@ -31,11 +31,10 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
             data: [
                 {
                     id: '51489f8ac0e051b81a000002',
-                    type: 'Question ouverte',
-                    description: '<p>Les questions ouvertes offrent la possibilité de paramétrer un champ réponse libre de type numérique ou texte  (numérique, commentaire, date, …).</p>',
+                    type: 'Open question',
                     itemConfig: {
                         fType: 'openQuestion',
-                        label: 'Question ouverte',
+                        label: 'Open question',
                         fieldType: 'textfield',
                         fieldConfig: {
                             mandatory: false
@@ -46,15 +45,15 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                         validations: [
                             
                         ]
-                    }
+                    },
+                    description: '<p>Open questions offer the possibility to set up an open, variable type field (numeric, comment, date, etc).</p>'
                 },
                 {
                     id: '51489f8ac0e051b81a000004',
-                    type: 'Question fermée',
-                    description: '<p>Une question fermée est une question pour laquelle la personne interrogée se voit proposer un choix parmi des réponses préétablies. La question fermée peut être à choix unique ou choix multiple.</p>',
+                    type: 'Closed question',
                     itemConfig: {
                         fType: 'multiChoiceQuestion',
-                        label: 'Question fermée',
+                        label: 'Closed question',
                         fieldType: 'checkboxgroup',
                         fieldConfig: {
                             mandatory: false,
@@ -70,16 +69,17 @@ Ext.define('Rubedo.store.FormFieldTypesStore', {
                         validations: [
                             
                         ]
-                    }
+                    },
+                    description: '<p>A closed question is a question for which the interviewee are offered a choice among the expected answers. The closed question can be single choice or multiple choice.</p>'
                 },
                 {
                     id: '51489f8ac0e051b81a000006',
-                    type: 'Texte Riche',
-                    description: '<p>Le texte riche permet de rédiger un texte de présentation et de gérer sa mise en forme. Il donne également la possibilité d\'ajouter des liens et des médias (images, vidéos, sons, documents).</p>',
+                    type: 'Rich text',
                     itemConfig: {
                         fType: 'richText',
-                        html: '<h3>Texte Riche</h3>'
-                    }
+                        html: '<h3>Rich text</h3>'
+                    },
+                    description: '<p>Rich text allows to display a text of presentation and manage its formatting. It also gives the ability to add links and media (images, videos, sounds, documents).</p>'
                 }
             ]
         }, cfg)]);

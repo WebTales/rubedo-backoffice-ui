@@ -30,24 +30,1644 @@ Ext.define('Rubedo.store.BlocsDataStore', {
             storeId: 'BlocsDataStore',
             data: [
                 {
-                    type: 'AddThis Share',
-                    category: 'Syndication',
-                    bType: 'addThis',
-                    description: '<p>Le Bloc "AddThis Share" permet d’ajouter des fonctionnalités de partage de la page courante sur différents réseaux sociaux.</p>',
+                    type: 'Calendar',
+                    description: '<p>The \'Calendar\' block displays the calendar view of a list of dated contents (events, appointments, etc)</p>',
                     configBasique: {
-                        title: 'AddThis Share',
-                        bType: 'addThis',
+                        title: 'Calendar',
+                        bType: 'calendar',
                         flex: 1,
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Paramètres',
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Associated page',
+                                                name: 'singlePage'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contents',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.queryBuilderField',
+                                            config: {
+                                                fieldLabel: 'Query',
+                                                name: 'query'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Start field',
+                                                name: 'date',
+                                                value: 'date'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'End field',
+                                                name: 'endDate',
+                                                value: null
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    label: 'Calendar',
+                                                    value: 'showCal'
+                                                },
+                                                {
+                                                    label: 'List',
+                                                    value: 'showList'
+                                                }
+                                            ],
+                                            config: {
+                                                fieldLabel: 'Display',
+                                                name: 'display',
+                                                multiSelect: true,
+                                                allowBlank: false,
+                                                forceSelection: true,
+                                                editable: false,
+                                                value: [
+                                                    'showCal',
+                                                    'showList'
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            date: 'date',
+                            endDate: null,
+                            display: [
+                                'showCal',
+                                'showList'
+                            ]
+                        }
+                    },
+                    category: 'Contents',
+                    bType: 'calendar',
+                    id: '512dcb9ec0e051be0e000002'
+                },
+                {
+                    type: 'Carousel',
+                    description: '<p>The \'Carousel\' block displays a dynamic carousel.</p>',
+                    configBasique: {
+                        title: 'Carousel',
+                        bType: 'carrousel',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Associated page',
+                                                name: 'singlePage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Width (px)',
+                                                name: 'imageWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Height (px)',
+                                                name: 'imageHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Mode',
+                                                name: 'mode',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                store: [
+                                                    'boxed',
+                                                    'crop',
+                                                    'morph'
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contents',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.queryBuilderField',
+                                            config: {
+                                                fieldLabel: 'Query',
+                                                name: 'query'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Paging',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Number of displayed results',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Skip n first results',
+                                                allowDecimals: false,
+                                                name: 'resultsSkip',
+                                                minValue: 1
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Activate the pager',
+                                                name: 'showPager',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Contents',
+                    bType: 'carrousel',
+                    id: '506441f8c64804d514022000'
+                },
+                {
+                    type: 'Content detail',
+                    description: '<p>The \'Content Detail\' block displays the fields of a particular content.</p>',
+                    configBasique: {
+                        title: 'Content detail',
+                        bType: 'contentDetail',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Content',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.DCEField',
+                                            config: {
+                                                fieldLabel: 'Content to display',
+                                                name: 'contentId',
+                                                chooseOnly: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Contents',
+                    bType: 'contentDetail',
+                    id: '506441f8c64804d514000001'
+                },
+                {
+                    type: 'Content list',
+                    description: '<p>The \'Content list\' block displays a list of content using a query building Wizard. Three types of queries are available:</p> <ul><li>Manual (manual selection of ordered content to display)</li> <li>single (choice of a type of content, taxonomy, sorting rules)</li> <li>Advanced (content types multiple, advanced taxonomy criteria on fields systems, sorting rules)</li></ul>',
+                    configBasique: {
+                        title: 'Content list',
+                        bType: 'contentList',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Associated page',
+                                                name: 'singlePage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Columns',
+                                                name: 'columns',
+                                                allowBlank: false,
+                                                editable: false,
+                                                allowDecimals: false,
+                                                minValue: 1,
+                                                maxValue: 4
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Contents',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.queryBuilderField',
+                                            config: {
+                                                fieldLabel: 'Query',
+                                                name: 'query'
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Paging',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Number of displayed results',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Skip n first results',
+                                                allowDecimals: false,
+                                                name: 'resultsSkip',
+                                                minValue: 1
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Activate the pager',
+                                                name: 'showPager',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            columns: 1
+                        }
+                    },
+                    category: 'Contents',
+                    bType: 'contentList',
+                    id: '506441f8c64804d514000000'
+                },
+                {
+                    type: 'Rich text',
+                    description: '<p>The \'Rich text\' block allows you to simply integrate a block of rich text in a page.</p><p>The text is linked to the page and is not exploitable in the contents window</p>',
+                    configBasique: {
+                        title: 'Rich text',
+                        bType: 'richText',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Content',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.DCEField',
+                                            config: {
+                                                fieldLabel: 'Content',
+                                                name: 'contentId',
+                                                allowedCT: 'richText',
+                                                addOnly: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Contents',
+                    bType: 'richText',
+                    id: '512236abc0e051d210000006'
+                },
+                {
+                    type: 'Simple text',
+                    description: '<p>The \'Simple text\' block allows to simply integrate a block of text in a page.</p><p>The text is linked to the page and is not exploitable in the contents window.</p>',
+                    configBasique: {
+                        title: 'Simple text',
+                        bType: 'simpleText',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Content',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.DCEField',
+                                            config: {
+                                                fieldLabel: 'Content',
+                                                name: 'contentId',
+                                                allowedCT: 'simpleText',
+                                                addOnly: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Contents',
+                    bType: 'simpleText',
+                    id: '51222c6ac0e0511a0d000003'
+                },
+                {
+                    type: 'Twig template',
+                    description: '<p>The \'Twig template\' block allows a developer to instantiate a Twig template directly in a block  for a specific need.</p>',
+                    configBasique: {
+                        title: 'Twig template',
+                        bType: 'twig',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'File',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'File name',
+                                                name: 'fileName'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Development',
+                    bType: 'twig',
+                    id: '506441f8c64804d514066000'
+                },
+                {
+                    type: 'Zend controller',
+                    description: '<p>The \'Zend controller\' block allows developers to instantiate a Zend Framework controller directly in a block.</p>',
+                    configBasique: {
+                        title: 'Zend controller',
+                        bType: 'zendController',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Module',
+                                                name: 'module'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Controller',
+                                                name: 'controller'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Action',
+                                                name: 'action'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.TextArea',
+                                            config: {
+                                                fieldLabel: 'Settings',
+                                                name: 'options'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Development',
+                    bType: 'zendController',
+                    id: '50f694edc0e051280d000001'
+                },
+                {
+                    type: 'Advanced contact',
+                    description: '<p>The \'Advanced contact\' block displays an advanced contact form based on a template.</p>',
+                    configBasique: {
+                        title: 'Advanced contact',
+                        bType: 'advancedContact',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.form.field.BoxSelect',
+                                            config: {
+                                                store: [
+                                                    
+                                                ],
+                                                name: 'contacts',
+                                                fieldLabel: 'Recipients',
+                                                multiSelect: true,
+                                                forceSelection: false,
+                                                stacked: true,
+                                                createNewOnEnter: true,
+                                                hideTrigger: true,
+                                                triggerOnClick: false,
+                                                createNewOnBlur: true,
+                                                pinList: false
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'CAPTCHA',
+                                                name: 'captcha',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Form name',
+                                                name: 'formName'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Subject of the e-mail',
+                                                name: 'subject'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'From',
+                                                name: 'from'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Copy recipients',
+                                                name: 'cc'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Form',
+                    bType: 'advancedContact',
+                    id: '514ae0c5c0e051ac0d46282e'
+                },
+                {
+                    type: 'Contact',
+                    description: '<p>The \'Contact\' block displays a contact form.</p>',
+                    configBasique: {
+                        title: 'Contact',
+                        bType: 'contact',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.form.field.BoxSelect',
+                                            config: {
+                                                store: [
+                                                    
+                                                ],
+                                                name: 'contacts',
+                                                fieldLabel: 'Recipients',
+                                                multiSelect: true,
+                                                forceSelection: false,
+                                                stacked: true,
+                                                createNewOnEnter: true,
+                                                hideTrigger: true,
+                                                triggerOnClick: false,
+                                                createNewOnBlur: true,
+                                                pinList: false
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'CAPTCHA',
+                                                name: 'captcha',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Form',
+                    bType: 'contact',
+                    id: '514ae0c5c0e051ac0d00002e'
+                },
+                {
+                    type: 'Newsletter subscription',
+                    description: '<p>The \'Newsletter Subscription\' block displays a registration form to a mailing list.</p>',
+                    configBasique: {
+                        title: 'Newsletter subscription',
+                        bType: 'mailingList',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.MailingListPickerField',
+                                            config: {
+                                                fieldLabel: 'Newsletter',
+                                                name: 'mailingListId'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Form',
+                    bType: 'mailingList',
+                    id: '514ae0c5c0e051ac0d001672'
+                },
+                {
+                    type: 'Survey',
+                    description: '<p>The \'Survey\' block displays a survey created using the Surveys module.</p>',
+                    configBasique: {
+                        title: 'Survey',
+                        bType: 'form',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.FormPickerField',
+                                            config: {
+                                                fieldLabel: 'Survey',
+                                                name: 'formId'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 0,
+                                                    label: 'Bar'
+                                                },
+                                                {
+                                                    value: 1,
+                                                    label: 'Steps'
+                                                }
+                                            ],
+                                            config: {
+                                                fieldLabel: 'Progress',
+                                                name: 'progression',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            progression: 0
+                        }
+                    },
+                    category: 'Form',
+                    bType: 'form',
+                    id: '514ae0c5c0e051ac0d000002'
+                },
+                {
+                    type: 'Google Maps',
+                    description: '<p>The \'Google Map\' block displays a map with location-based content returned by a query.</p><p>The map can be centered on an address or the location of the user.</p><p>Facets-based research can be activated and coupled with the map.</p>',
+                    configBasique: {
+                        title: 'Google Maps',
+                        bType: 'geoSearchResults',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Filtering',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Constrain to site',
+                                                name: 'constrainToSite'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ESQfield',
+                                            config: {
+                                                fieldLabel: 'Predefined facets',
+                                                name: 'predefinedFacets',
+                                                queryMode: false,
+                                                geoQueryMode: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Center of the map',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Geolocation',
+                                                name: 'useLocation',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Address',
+                                                name: 'centerAddress'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Latitude',
+                                                name: 'centerLatitude',
+                                                allowDecimals: true,
+                                                decimalPrecision: 6
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Longitude',
+                                                name: 'centerLongitude',
+                                                allowDecimals: true,
+                                                decimalPrecision: 6
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Display the icon',
+                                                name: 'showCenterMarker',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Search',
+                                                name: 'activateSearch',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Zoom',
+                                                name: 'zoom',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Height',
+                                                name: 'height',
+                                                allowDecimals: false,
+                                                minValue: 100
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Max markers',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            activateSearch: true,
+                            constrainToSite: true,
+                            zoom: 14,
+                            height: 500,
+                            pageSize: 5000,
+                            showCenterMarker: false
+                        }
+                    },
+                    category: 'Mapping',
+                    bType: 'geoSearchResults',
+                    id: '506441f8c64804d514066125'
+                },
+                {
+                    type: 'Audio',
+                    description: '<p>The \'Audio\' block displays an audio media player (mp3,...)</p>',
+                    configBasique: {
+                        title: 'Audio',
+                        bType: 'audio',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Audio',
+                                                name: 'audioFile',
+                                                allowedFileType: 'Audio',
+                                                smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Autoplay',
+                                                name: 'audioPlay',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Preloading',
+                                                name: 'audioPreload',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Toolbar',
+                                                name: 'audioControls',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Loop playback',
+                                                name: 'audioLoop',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'audio',
+                    id: '511cde89c0e0511619000000'
+                },
+                {
+                    type: 'External media',
+                    description: '<p>The \'External Media\' block relies on the oEmbed (http://oembed.com/) API and allows to display external media from the following sources:</p><ul><li>YouTube (videos)</li>, <li>Flickr (photo sharing)</li>, <li>Vimeo (videos)</li> <li>Poll Everywhere (investigations amp; surveys)</li> <li>My Opera (blogs and photos)</li> <li>SmugMug (photo sharing)</li> <li>SlideShare (sharing presentations)</li> <li>WordPress.com (blogging)</li> <li>chirbit.com (sharing of audio files)</li> <li>CircuitLab (electrical diagram tool)</li> <li>Funtrivia.com (survey tool)</li></ul>',
+                    configBasique: {
+                        title: 'External media',
+                        bType: 'externalMedia',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'URL',
+                                                name: 'url',
+                                                vtype: 'url'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Max width',
+                                                name: 'maxWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Max height',
+                                                name: 'maxHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'externalMedia',
+                    id: '50f81083c0e0514e10000005'
+                },
+                {
+                    type: 'Flickr Gallery',
+                    description: '<p>The \'Flickr Gallery\' block displays a gallery of images from Flickr, filtered through a user account or a list of tags.</p>',
+                    configBasique: {
+                        title: 'Flickr Gallery',
+                        bType: 'flickrGallery',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Source',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'User',
+                                                name: 'user'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.form.field.BoxSelect',
+                                            config: {
+                                                fieldLabel: 'Tags',
+                                                name: 'tags',
+                                                store: [
+                                                    
+                                                ],
+                                                multiSelect: true,
+                                                forceSelection: false,
+                                                createNewOnEnter: true,
+                                                createNewOnBlur: true,
+                                                hideTrigger: true,
+                                                triggerOnClick: false,
+                                                pinList: false
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 'ALL',
+                                                    label: 'AND'
+                                                },
+                                                {
+                                                    value: 'ANY',
+                                                    label: 'OR'
+                                                }
+                                            ],
+                                            config: {
+                                                fieldLabel: 'Rule on tags',
+                                                name: 'tagmode',
+                                                queryMode: 'local',
+                                                editable: false,
+                                                forceSelection: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Images per page',
+                                                name: 'itemsPerPage',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            itemsPerPage: 25,
+                            tagmode: 'ANY'
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'flickrGallery',
+                    id: '506441f8c64804d514044123'
+                },
+                {
+                    type: 'Image',
+                    description: '<p>The \'Image\' block displays an image stored in the Rubedo DAM.</p>',
+                    configBasique: {
+                        title: 'Image',
+                        bType: 'image',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Link',
+                                                name: 'imageLink'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative',
+                                                name: 'imageAlt'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'External link',
+                                                name: 'externalURL'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Image',
+                                                name: 'imageFile',
+                                                allowedFileType: 'Image',
+                                                smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Width (px)',
+                                                name: 'imageWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Height (px)',
+                                                name: 'imageHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            config: {
+                                                fieldLabel: 'Mode',
+                                                name: 'mode',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                store: [
+                                                    'boxed',
+                                                    'crop',
+                                                    'morph'
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'image',
+                    id: '51000880c0e0518010000002'
+                },
+                {
+                    type: 'Image Gallery',
+                    description: '<p>The \'Image gallery\' block displays a gallery of images stored in the Rubedo DAM.</p>',
+                    configBasique: {
+                        title: 'Image Gallery',
+                        bType: 'imageGallery',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.MQField',
+                                            config: {
+                                                fieldLabel: 'Query',
+                                                name: 'query',
+                                                allowedFileType: 'Image'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Images per page',
+                                                name: 'pageSize',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Thumbnail width (px)',
+                                                name: 'imageThumbnailWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Thumbnail height (px)',
+                                                name: 'imageThumbnailHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'imageGallery',
+                    id: '511cf184c0e051321a000001'
+                },
+                {
+                    type: 'Media download',
+                    description: '<p>The \'Media download\' block allows for anonymous download of media.</p>',
+                    configBasique: {
+                        title: 'Media download',
+                        bType: 'resource',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Media',
+                                                name: 'documentId',
+                                                smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.directRTEField',
+                                            config: {
+                                                fieldLabel: 'Introduction',
+                                                name: 'introduction'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'resource',
+                    id: '516404ecc0e0518d0f123418'
+                },
+                {
+                    type: 'Media list',
+                    description: '<p></p>',
+                    configBasique: {
+                        title: 'Media list',
+                        bType: 'damList',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Filtering',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Constrain to site',
+                                                name: 'constrainToSite'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.ComboBox',
+                                            isAutoStored: true,
+                                            autoStoreData: [
+                                                {
+                                                    value: 'asc',
+                                                    label: 'Ascending'
+                                                },
+                                                {
+                                                    value: 'desc',
+                                                    label: 'Descending'
+                                                }
+                                            ],
+                                            config: {
+                                                fieldLabel: 'Sort',
+                                                name: 'sort',
+                                                editable: false,
+                                                forceSelection: true,
+                                                queryMode: 'local',
+                                                value: 'asc'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ESQfield',
+                                            config: {
+                                                fieldLabel: 'Facets',
+                                                name: 'facets',
+                                                queryMode: false,
+                                                geoQueryMode: false,
+                                                damQueryMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Medias per page',
+                                                name: 'pagesize',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            sort: 'asc',
+                            pagesize: 25,
+                            constrainToSite: true
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'damList',
+                    id: '506441f8c64804d514066927'
+                },
+                {
+                    type: 'Protected media download',
+                    description: '<p>The \'Protected media download\' block allows users to download a media through an invitation by e-mail.</p>',
+                    configBasique: {
+                        title: 'Protected media download',
+                        bType: 'protectedResource',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.MailingListPickerField',
+                                            config: {
+                                                fieldLabel: 'Mailing list',
+                                                name: 'mailingListId'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Media',
+                                                name: 'documentId',
+                                                smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.directRTEField',
+                                            config: {
+                                                fieldLabel: 'Introduction',
+                                                name: 'introduction'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'protectedResource',
+                    id: '516404ecc0e0518d0f000018'
+                },
+                {
+                    type: 'Video',
+                    description: '<p>The \'Vidéo\' block displays a video stored in the Rubedo DAM. The default used player is JW Player.</p>',
+                    configBasique: {
+                        title: 'Video',
+                        bType: 'video',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Video',
+                                                name: 'videoFile',
+                                                allowedFileType: 'Video',
+                                                smallMode: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Autoplay',
+                                                name: 'videoAutoPlay',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Preloading',
+                                                name: 'videoPreload',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Toolbar',
+                                                name: 'videoControls',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Loop playback',
+                                                name: 'videoLoop',
+                                                labelWidth: 160,
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ImagePickerField',
+                                            config: {
+                                                fieldLabel: 'Default preview',
+                                                name: 'videoPoster',
+                                                smallMode: true,
+                                                allowedFileType: 'Image'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Width (px)',
+                                                name: 'videoWidth',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Height (px)',
+                                                name: 'videoHeight',
+                                                allowDecimals: false,
+                                                minValue: 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Medias',
+                    bType: 'video',
+                    id: '511cda96c0e0517919000000'
+                },
+                {
+                    type: 'Breadcrumb',
+                    description: '<p>The \'Breadcrumb\' block allows to automatically display a view of the position of the current page in the site tree.</p>',
+                    configBasique: {
+                        title: 'Breadcrumb',
+                        bType: 'breadcrumb',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Navigation',
+                    bType: 'breadcrumb',
+                    id: '506441f8c64804d514044000'
+                },
+                {
+                    type: 'Menu',
+                    description: '<p>The \'Menu\' block displays a navigation menu, horizontal or vertical, from the selected level.</p><p>It can be used interchangeably to create the main site navigation bar or to create secondary menus within the topics.</p>',
+                    configBasique: {
+                        title: 'Menu',
+                        bType: 'navigation',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Pages',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Root',
+                                                name: 'rootPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Search page',
+                                                name: 'searchPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Number',
+                                            config: {
+                                                fieldLabel: 'Base level',
+                                                name: 'menuLevel',
+                                                allowDecimals: false,
+                                                editable: false,
+                                                minValue: 0
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Search engine',
+                                                name: 'useSearchEngine',
+                                                inputValue: true
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Display the root',
+                                                name: 'displayRootPage',
+                                                inputValue: true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    categorie: 'Settings',
                                     champs: [
                                         {
                                             type: 'Ext.form.field.ComboBox',
                                             config: {
-                                                fieldLabel: 'Disposition',
-                                                name: 'disposition',
+                                                fieldLabel: 'Style',
+                                                name: 'style',
                                                 editable: false,
                                                 forceSelection: true,
                                                 queryMode: 'local',
@@ -59,50 +1679,139 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.ComboBox',
-                                            isAutoStored: true,
-                                            autoStoreData: [
-                                                {
-                                                    value: 0,
-                                                    label: 'Petit'
-                                                },
-                                                {
-                                                    value: 1,
-                                                    label: 'Grand'
-                                                }
-                                            ],
+                                            type: 'Rubedo.view.ImagePickerField',
                                             config: {
-                                                fieldLabel: 'Taille',
-                                                name: 'small',
-                                                editable: false,
-                                                forceSelection: true,
-                                                queryMode: 'local',
-                                                value: 0
+                                                fieldLabel: 'Logo',
+                                                name: 'logo',
+                                                allowedFileType: 'Image',
+                                                smallMode: true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            style: 'Horizontal',
+                            displayRootPage: true,
+                            menuLevel: 0
+                        }
+                    },
+                    category: 'Navigation',
+                    bType: 'navigation',
+                    id: '506441f8c64804d514033000'
+                },
+                {
+                    type: 'Site map',
+                    description: '<p>The \'Site map\' block displays the site map.</p>',
+                    configBasique: {
+                        title: 'Site map',
+                        bType: 'siteMap',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Root page',
+                                                name: 'rootPage'
                                             }
                                         },
                                         {
-                                            type: 'Ext.form.field.ComboBox',
-                                            isAutoStored: true,
-                                            autoStoreData: [
-                                                {
-                                                    value: 0,
-                                                    label: 'AddThis'
-                                                },
-                                                {
-                                                    value: 1,
-                                                    label: 'Facebook Like'
-                                                }
-                                            ],
+                                            type: 'Ext.form.field.Number',
                                             config: {
-                                                fieldLabel: 'Style',
-                                                name: 'like',
-                                                editable: false,
-                                                forceSelection: true,
-                                                queryMode: 'local',
-                                                value: 0
+                                                fieldLabel: 'Expanded levels',
+                                                name: 'displayLevel',
+                                                allowDecimals: false,
+                                                minValue: 1
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                {
+                                    categorie: 'Display',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Alternative template',
+                                                name: 'displayType'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
+                    },
+                    category: 'Navigation',
+                    bType: 'siteMap',
+                    id: '506441f8c64804d514044492'
+                },
+                {
+                    type: 'Advanced search form',
+                    description: '<p>The \'Search form\' block displays a form redirecting to a search page.</p>',
+                    configBasique: {
+                        title: 'Advanced search form',
+                        bType: 'advancedSearchForm',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Search page',
+                                                name: 'searchPage'
                                             }
                                         },
-                                        
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Placeholder',
+                                                name: 'placeholder'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.CTCField',
+                                            config: {
+                                                fieldLabel: 'Content types',
+                                                name: 'contentTypes'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Dynamic',
+                                                name: 'dynamic',
+                                                editable: false,
+                                                disabled: true,
+                                                inputValue: true
+                                            }
+                                        }
                                     ]
                                 }
                             ],
@@ -111,29 +1820,105 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            disposition: 'Vertical',
-                            small: 0,
-                            like: 0
+                            dynamic: false
                         }
                     },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
+                    category: 'Search',
+                    bType: 'advancedSearchForm',
+                    id: '510001e9c0e0510a111234561'
+                },
+                {
+                    type: 'Search form',
+                    description: '<p>The \'Search form\' block displays a form redirecting to a search page.</p>',
+                    configBasique: {
+                        title: 'Search form',
+                        bType: 'searchForm',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Search page',
+                                                name: 'searchPage'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.form.field.Text',
+                                            config: {
+                                                fieldLabel: 'Placeholder',
+                                                name: 'placeholder'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            
+                        }
                     },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
+                    category: 'Search',
+                    bType: 'searchForm',
+                    id: '510001e9c0e0510a11000001'
+                },
+                {
+                    type: 'Search page',
+                    description: '<p>The \'Search Page\' block displays the result of a search. It may be limited:</p> <ul><li>to part of the site (workspace)</li> <li>to a set of types of content or documents (media, desktop) given</li></ul> <p>search engine generates automatically the facets from the vocabularies used to classify content and a number of exploitable metadata for all content types (type, author, date, etc)</p>',
+                    configBasique: {
+                        title: 'Search page',
+                        bType: 'searchResults',
+                        flex: 1,
+                        champsConfig: {
+                            simple: [
+                                {
+                                    categorie: 'Settings',
+                                    champs: [
+                                        {
+                                            type: 'Ext.form.field.Checkbox',
+                                            config: {
+                                                fieldLabel: 'Constrain to site',
+                                                name: 'constrainToSite'
+                                            }
+                                        },
+                                        {
+                                            type: 'Rubedo.view.ESQfield',
+                                            config: {
+                                                fieldLabel: 'Predefined facets',
+                                                name: 'predefinedFacets'
+                                            }
+                                        },
+                                        {
+                                            type: 'Ext.ux.TreePicker',
+                                            config: {
+                                                fieldLabel: 'Associated page',
+                                                name: 'singlePage'
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            avance: [
+                                
+                            ]
+                        },
+                        configBloc: {
+                            constrainToSite: true
+                        }
                     },
-                    id: '512c9141c0e051030e000000'
+                    category: 'Search',
+                    bType: 'searchResults',
+                    id: '506441f8c64804d514066000'
                 },
                 {
                     type: 'AddThis Follow',
-                    category: 'Syndication',
-                    bType: 'addThisFollow',
-                    description: '<p>Le Bloc "AddThis Follow" permet d’ajouter des icônes de redirection vers différents réseaux sociaux. </p>',
+                    description: '<p>The \'AddThis Follow\' block allows you to add icons of redirection to different social networks.</p>',
                     configBasique: {
                         title: 'AddThis Follow',
                         bType: 'addThisFollow',
@@ -141,12 +1926,12 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Affichage',
+                                    categorie: 'Display',
                                     champs: [
                                         {
                                             type: 'Ext.form.field.ComboBox',
                                             config: {
-                                                fieldLabel: 'Disposition',
+                                                fieldLabel: 'Layout',
                                                 name: 'disposition',
                                                 editable: false,
                                                 forceSelection: true,
@@ -163,15 +1948,15 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             autoStoreData: [
                                                 {
                                                     value: 0,
-                                                    label: 'Petit'
+                                                    label: 'Small'
                                                 },
                                                 {
                                                     value: 1,
-                                                    label: 'Grand'
+                                                    label: 'Large'
                                                 }
                                             ],
                                             config: {
-                                                fieldLabel: 'Taille',
+                                                fieldLabel: 'Size',
                                                 name: 'small',
                                                 editable: false,
                                                 forceSelection: true,
@@ -182,7 +1967,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                     ]
                                 },
                                 {
-                                    categorie: 'Boutons',
+                                    categorie: 'Buttons',
                                     champs: [
                                         {
                                             type: 'Ext.form.field.Text',
@@ -208,7 +1993,7 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                         {
                                             type: 'Ext.form.field.Text',
                                             config: {
-                                                fieldLabel: 'Google+',
+                                                fieldLabel: 'Google +',
                                                 name: 'google'
                                             }
                                         },
@@ -277,1317 +2062,30 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                         },
                         configBloc: {
                             disposition: 'Vertical',
-                            small: 0,
-                            
+                            small: 0
                         }
                     },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
+                    category: 'Syndication',
+                    bType: 'addThisFollow',
                     id: '512c97bfc0e051b80e000001'
                 },
                 {
-                    type: 'Texte Simple',
-                    category: 'Contenus',
-                    bType: 'simpleText',
-                    description: '<p>Le bloc "Texte Simple" permet d\'intégrer simplement un bloc de texte dans une page.</p><p>Le texte est lié à la page et n\'est pas exploitable dans le référentiel de contenus.</p>',
+                    type: 'AddThis Share',
+                    description: '<p>The \'AddThis Share\' block allows to add various social media sharing features to the current page</p>',
                     configBasique: {
-                        title: 'Texte Simple',
-                        bType: 'simpleText',
+                        title: 'AddThis Share',
+                        bType: 'addThis',
                         flex: 1,
                         champsConfig: {
                             simple: [
                                 {
-                                    categorie: 'Contenu',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.DCEField',
-                                            config: {
-                                                fieldLabel: 'Contenu',
-                                                name: 'contentId',
-                                                allowedCT: 'simpleText',
-                                                addOnly: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51222c6ac0e0511a0d000003'
-                },
-                {
-                    type: 'Texte Riche',
-                    category: 'Contenus',
-                    bType: 'richText',
-                    description: '<p>Le bloc "Texte Riche" permet d\'intégrer simplement un bloc de texte riche dans une page.</p><p>Le texte est lié à la page et n\'est pas exploitable dans le référentiel de contenus.</p>',
-                    configBasique: {
-                        title: 'Texte Riche',
-                        bType: 'richText',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Contenu',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.DCEField',
-                                            config: {
-                                                fieldLabel: 'Contenu',
-                                                name: 'contentId',
-                                                allowedCT: 'richText',
-                                                addOnly: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '512236abc0e051d210000006'
-                },
-                {
-                    type: 'Authentification',
-                    category: 'Utilisateur',
-                    bType: 'authentication',
-                    description: '<p>Le bloc "Authentification" permet à un utilisateur de s\’authentifier depuis le Front-Office.</p>',
-                    configBasique: {
-                        title: 'Authentification',
-                        bType: 'authentication',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '511e6508c0e051bd12000001'
-                },
-                {
-                    type: 'Galerie d\'images',
-                    category: 'Médias',
-                    bType: 'imageGallery',
-                    description: '<p>Le bloc "Galerie d’images" permet d\’afficher une galerie d\’images stockées dans la médiathèque Rubedo.</p>',
-                    configBasique: {
-                        title: 'Galerie d\'images',
-                        bType: 'imageGallery',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.MQField',
-                                            config: {
-                                                fieldLabel: 'Requête',
-                                                name: 'query',
-                                                allowedFileType: 'Image'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Images par page',
-                                                name: 'pageSize',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Largeur miniatures(px)',
-                                                name: 'imageThumbnailWidth',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur miniatures(px)',
-                                                name: 'imageThumbnailHeight',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '511cf184c0e051321a000001'
-                },
-                {
-                    type: 'Image',
-                    category: 'Médias',
-                    bType: 'image',
-                    description: '<p>Le bloc "Image" permet d\'afficher une image stockée dans la médiathèque Rubedo.</p>',
-                    configBasique: {
-                        title: 'Image',
-                        bType: 'image',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Lien',
-                                                name: 'imageLink'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Alternative',
-                                                name: 'imageAlt'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Lien externe',
-                                                name: 'externalURL'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Image',
-                                                name: 'imageFile',
-                                                allowedFileType: 'Image',
-                                                smallMode: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Largeur (px)',
-                                                name: 'imageWidth',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur (px)',
-                                                name: 'imageHeight',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.ComboBox',
-                                            config: {
-                                                fieldLabel: 'Mode',
-                                                name: 'mode',
-                                                editable: false,
-                                                forceSelection: true,
-                                                queryMode: 'local',
-                                                store: [
-                                                    'boxed',
-                                                    'crop',
-                                                    'morph'
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '51000880c0e0518010000002'
-                },
-                {
-                    type: 'Vidéo',
-                    category: 'Médias',
-                    bType: 'video',
-                    description: '<p>Le bloc "Vidéo" permet d\'afficher une vidéo stockée dans la médiathèque Rubedo. Le lecteur utilisé par défaut est JW Player.</p>',
-                    configBasique: {
-                        title: 'Vidéo',
-                        bType: 'video',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Video',
-                                                name: 'videoFile',
-                                                allowedFileType: 'Video',
-                                                smallMode: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Lecture automatique',
-                                                name: 'videoAutoPlay',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Prechargement',
-                                                name: 'videoPreload',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Barre d\'outils',
-                                                name: 'videoControls',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Lecture en boucle',
-                                                name: 'videoLoop',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Aperçu par défaut',
-                                                name: 'videoPoster',
-                                                smallMode: true,
-                                                allowedFileType: 'Image'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Largeur (px)',
-                                                name: 'videoWidth',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur (px)',
-                                                name: 'videoHeight',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '511cda96c0e0517919000000'
-                },
-                {
-                    type: 'Audio',
-                    category: 'Médias',
-                    bType: 'audio',
-                    description: '<p>Le bloc "Audio" permet d\’afficher un lecteur de médias audio (mp3, …)</p>',
-                    configBasique: {
-                        title: 'Audio',
-                        bType: 'audio',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Audio',
-                                                name: 'audioFile',
-                                                allowedFileType: 'Audio',
-                                                smallMode: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Lecture automatique',
-                                                name: 'audioPlay',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Prechargement',
-                                                name: 'audioPreload',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Barre d\'outils',
-                                                name: 'audioControls',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Lecture en boucle',
-                                                name: 'audioLoop',
-                                                labelWidth: 160,
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '511cde89c0e0511619000000'
-                },
-                {
-                    type: 'Formulaire de recherche',
-                    category: 'Recherche',
-                    bType: 'searchForm',
-                    description: '<p>Le bloc "Formulaire de recherche" permet d\'afficher un formulaire redirigeant sur une page de recherche.</p>',
-                    configBasique: {
-                        title: 'Formulaire de recherche',
-                        bType: 'searchForm',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Configuration',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page de recherche',
-                                                name: 'searchPage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Placeholder',
-                                                name: 'placeholder'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '510001e9c0e0510a11000001'
-                },
-                {
-                    type: 'Formulaire de recherche avancé',
-                    category: 'Recherche',
-                    bType: 'advancedSearchForm',
-                    description: '<p>Le bloc "Formulaire de recherche" permet d\'afficher un formulaire redirigeant sur une page de recherche.</p>',
-                    configBasique: {
-                        title: 'Formulaire de recherche avancé',
-                        bType: 'advancedSearchForm',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Configuration',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page de recherche',
-                                                name: 'searchPage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Placeholder',
-                                                name: 'placeholder'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.CTCField',
-                                            config: {
-                                                fieldLabel: 'Types de contenus',
-                                                name: 'contentTypes'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Dynamique',
-                                                name: 'dynamic',
-                                                editable: false,
-                                                disabled: true,
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            dynamic: false
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '510001e9c0e0510a111234561'
-                },
-                {
-                    type: 'Média Externe',
-                    category: 'Médias',
-                    bType: 'externalMedia',
-                    description: '<p>Le bloc "Média Externe" s\’appuie sur l\’API oEmbed (http://oembed.com/) et permet d\’afficher un média externe provenant des sources suivantes :</p><ul><li>YouTube  (vidéos)</li><li>Flickr (partage photos)</li><li>Vimeo (vidéos)</li><li>Poll Everywhere (enquêtes & sondages)</li><li>My Opera (blogs et photos)</li><li>SmugMug (partage de photos)</li><li>SlideShare (partage de presentations)</li><li>WordPress.com  (blogs)</li><li>chirbit.com (partage de fichiers audio)</li><li>CircuitLab (outil de dessin de schéma électrique)</li><li>Quizz.biz (outil de sondage)</li></ul>',
-                    configBasique: {
-                        title: 'Média Externe',
-                        bType: 'externalMedia',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Configuration',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'URL',
-                                                name: 'url',
-                                                vtype: 'url'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Largeur max',
-                                                name: 'maxWidth',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur max',
-                                                name: 'maxHeight',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        }
-                                    ],
-                                    
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '50f81083c0e0514e10000005'
-                },
-                {
-                    type: 'Contrôleur Zend',
-                    category: 'Développement',
-                    bType: 'zendController',
-                    description: '<p>Le bloc "Contrôleur Zend" permet aux développeurs d\’instancier un contrôleur Zend framework directement dans un bloc.</p>',
-                    configBasique: {
-                        title: 'Contrôleur Zend',
-                        bType: 'zendController',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Configuration',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Module',
-                                                name: 'module'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Controleur',
-                                                name: 'controller'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Action',
-                                                name: 'action'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.TextArea',
-                                            config: {
-                                                fieldLabel: 'Options',
-                                                name: 'options'
-                                            }
-                                        },
-                                        
-                                    ],
-                                    
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '50f694edc0e051280d000001'
-                },
-                {
-                    type: 'Galerie Flickr',
-                    category: 'Médias',
-                    bType: 'flickrGallery',
-                    description: '<p>Le bloc "Galerie Flicker" permet d\’afficher une galerie d\’images en provenance de Flicker, filtrée sur un compte utilisateur ou une liste de tags.<\/p>',
-                    configBasique: {
-                        title: 'Galerie Flickr',
-                        bType: 'flickrGallery',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Source',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Utilisateur',
-                                                name: 'user'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.ux.form.field.BoxSelect',
-                                            config: {
-                                                fieldLabel: 'Tags',
-                                                name: 'tags',
-                                                store: [
-                                                    
-                                                ],
-                                                multiSelect: true,
-                                                forceSelection: false,
-                                                createNewOnEnter: true,
-                                                createNewOnBlur: true,
-                                                hideTrigger: true,
-                                                triggerOnClick: false,
-                                                pinList: false
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.ComboBox',
-                                            isAutoStored: true,
-                                            autoStoreData: [
-                                                {
-                                                    value: 'ALL',
-                                                    label: 'ET'
-                                                },
-                                                {
-                                                    value: 'ANY',
-                                                    label: 'OU'
-                                                }
-                                            ],
-                                            config: {
-                                                fieldLabel: 'Règle sur tags',
-                                                name: 'tagmode',
-                                                queryMode: 'local',
-                                                editable: false,
-                                                forceSelection: true
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Options',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Images par page',
-                                                name: 'itemsPerPage',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            itemsPerPage: 25,
-                            tagmode: 'ANY'
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514044123'
-                },
-                {
-                    type: 'Liste de Contenus',
-                    category: 'Contenus',
-                    bType: 'contentList',
-                    description: '<p>Le bloc "Liste de contenus" permet d\’afficher une liste de contenus à l\’aide d\’un assistant requêteur. Trois types de requêtes sont disponibles : </p><ul><li>manuelle (sélection manuelle ordonnée des contenus à afficher)</li><li>simple (choix d\'un type de contenu, taxonomie, règles de tri)</li><li>avancée (types de contenus multiples, taxonomie avancée, critères sur les champs systèmes, règles de tri)</li></ul>',
-                    configBasique: {
-                        title: 'Liste de contenus',
-                        bType: 'contentList',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page associée',
-                                                name: 'singlePage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Colonnes',
-                                                name: 'columns',
-                                                allowBlank: false,
-                                                editable: false,
-                                                allowDecimals: false,
-                                                minValue: 1,
-                                                maxValue: 4
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Contenus',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.queryBuilderField',
-                                            config: {
-                                                fieldLabel: 'Requête',
-                                                name: 'query',
-                                                
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Pagination',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Nombre de résultats affichés',
-                                                name: 'pageSize',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Sauter les n premiers résultats',
-                                                allowDecimals: false,
-                                                name: 'resultsSkip',
-                                                minValue: 1
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Activer le paginateur',
-                                                name: 'showPager',
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            columns: 1
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514000000'
-                },
-                {
-                    type: 'Agenda',
-                    category: 'Contenus',
-                    bType: 'calendar',
-                    description: '<p>Le bloc "Agenda" permet d\’afficher la vue calendaire d\’une liste de contenus datés (évènements, rendez-vous, …etc.)</p>',
-                    configBasique: {
-                        title: 'Agenda',
-                        bType: 'calendar',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page associée',
-                                                name: 'singlePage'
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Contenus',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.queryBuilderField',
-                                            config: {
-                                                fieldLabel: 'Requête',
-                                                name: 'query',
-                                                
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Champ debut',
-                                                name: 'date',
-                                                value: 'date'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Champ fin',
-                                                name: 'endDate',
-                                                value: null
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.ComboBox',
-                                            isAutoStored: true,
-                                            autoStoreData: [
-                                                {
-                                                    label: 'Calendrier',
-                                                    value: 'showCal'
-                                                },
-                                                {
-                                                    label: 'Liste',
-                                                    value: 'showList'
-                                                }
-                                            ],
-                                            config: {
-                                                fieldLabel: 'Affichage',
-                                                name: 'display',
-                                                multiSelect: true,
-                                                allowBlank: false,
-                                                forceSelection: true,
-                                                editable: false,
-                                                value: [
-                                                    'showCal',
-                                                    'showList'
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }/*,
-                                {
-                                    categorie: 'Pagination',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Afficher le paginateur',
-                                                name: 'showPager',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Taille des pages',
-                                                name: 'pageSize',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        }
-                                    ]
-                                }*/
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            date: 'date',
-                            endDate: null,
-                            display: [
-                                'showCal',
-                                'showList'
-                            ]
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '512dcb9ec0e051be0e000002'
-                },
-                {
-                    type: 'Carrousel',
-                    category: 'Contenus',
-                    bType: 'carrousel',
-                    description: '<p>Le bloc "Carrousel" permet d\’afficher un carrousel dynamique.</p>',
-                    configBasique: {
-                        title: 'Carrousel',
-                        bType: 'carrousel',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page associée',
-                                                name: 'singlePage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Largeur (px)',
-                                                name: 'imageWidth',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur (px)',
-                                                name: 'imageHeight',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.ComboBox',
-                                            config: {
-                                                fieldLabel: 'Mode',
-                                                name: 'mode',
-                                                editable: false,
-                                                forceSelection: true,
-                                                queryMode: 'local',
-                                                store: [
-                                                    'boxed',
-                                                    'crop',
-                                                    'morph'
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Contenus',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.queryBuilderField',
-                                            config: {
-                                                fieldLabel: 'Requete',
-                                                name: 'query',
-                                                
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Pagination',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Nombre de résultats affichés',
-                                                name: 'pageSize',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Sauter les n premiers résultats',
-                                                allowDecimals: false,
-                                                name: 'resultsSkip',
-                                                minValue: 1
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Activer le paginateur',
-                                                name: 'showPager',
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514022000'
-                },
-                {
-                    type: 'Menu',
-                    category: 'Navigation',
-                    bType: 'navigation',
-                    description: '<p>Le bloc "Menu" affiche un menu de navigation, horizontal ou vertical, à partir du niveau sélectionné. </p><p>Il peut être utilisé indifféremment pour créer la barre de navigation principale d\’un site ou pour créer des menus secondaires au sein des rubriques.</p>',
-                    configBasique: {
-                        title: 'Menu',
-                        bType: 'navigation',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Pages',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Racine',
-                                                name: 'rootPage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page de recherche',
-                                                name: 'searchPage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Niveau de base',
-                                                name: 'menuLevel',
-                                                allowDecimals: false,
-                                                editable: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Moteur de recherche',
-                                                name: 'useSearchEngine',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Afficher la racine',
-                                                name: 'displayRootPage',
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Options',
+                                    categorie: 'Settings',
                                     champs: [
                                         {
                                             type: 'Ext.form.field.ComboBox',
                                             config: {
-                                                fieldLabel: 'Style',
-                                                name: 'style',
+                                                fieldLabel: 'Layout',
+                                                name: 'disposition',
                                                 editable: false,
                                                 forceSelection: true,
                                                 queryMode: 'local',
@@ -1599,517 +2097,25 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             }
                                         },
                                         {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Logo',
-                                                name: 'logo',
-                                                allowedFileType: 'Image',
-                                                smallMode: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            style: 'Horizontal',
-                            displayRootPage: true,
-                            menuLevel: 0
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514033000'
-                },
-                {
-                    type: 'Fil d\'Ariane',
-                    category: 'Navigation',
-                    bType: 'breadcrumb',
-                    description: '<p>Le bloc "Fil d’Ariane" permet d\’afficher automatiquement une vue de la position de la page courante dans l\'arborescence du site.</p>',
-                    configBasique: {
-                        title: 'Fil d\'Ariane',
-                        bType: 'breadcrumb',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514044000'
-                },
-                {
-                    type: 'Plan de site',
-                    category: 'Navigation',
-                    bType: 'siteMap',
-                    description: '<p>Le bloc « Plan de site » permet d’afficher le plan du site.</p>',
-                    configBasique: {
-                        title: 'Plan de site',
-                        bType: 'siteMap',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page racine',
-                                                name: 'rootPage'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Niveaux dépliés',
-                                                name: 'displayLevel',
-                                                allowDecimals: false,
-                                                minValue: 1
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514044492'
-                },
-                {
-                    type: 'Page de recherche',
-                    category: 'Recherche',
-                    bType: 'searchResults',
-                    description: '<p>Le bloc "Page de recherche" permet d\'afficher le résultat d\'une recherche. Celle-ci peut-être limitée :</p><ul><li>à une partie du site (espace de travail)</li><li>à un ensemble de types de contenus ou de documents (médias, bureautique) donnés</li></ul><p>Le moteur de recherche génère automatiquement des facettes à partir des vocabulaires utilisés pour classer les contenus et d\'un certain nombre de métadonnées exploitables pour tous les types de contenus (type, auteur, date, ...)</p>',
-                    configBasique: {
-                        title: 'Page de recherche',
-                        bType: 'searchResults',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Restreindre au site',
-                                                name: 'constrainToSite'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.ESQfield',
-                                            config: {
-                                                fieldLabel: 'Facettes prédéfinies',
-                                                name: 'predefinedFacets'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.ux.TreePicker',
-                                            config: {
-                                                fieldLabel: 'Page associée',
-                                                name: 'singlePage'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            constrainToSite: true
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514066000'
-                },
-                {
-                    type: 'Liste de médias',
-                    category: 'Médias',
-                    bType: 'damList',
-                    description: '<p></p>',
-                    configBasique: {
-                        title: 'Liste de médias',
-                        bType: 'damList',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Filtrage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Restreindre au site',
-                                                name: 'constrainToSite'
-                                            }
-                                        },
-                                        {
                                             type: 'Ext.form.field.ComboBox',
                                             isAutoStored: true,
                                             autoStoreData: [
                                                 {
-                                                    value: 'asc',
-                                                    label: 'Croissant'
+                                                    value: 0,
+                                                    label: 'Small'
                                                 },
                                                 {
-                                                    value: 'desc',
-                                                    label: 'Decroissant'
+                                                    value: 1,
+                                                    label: 'Large'
                                                 }
                                             ],
                                             config: {
-                                                fieldLabel: 'Tri',
-                                                name: 'sort',
+                                                fieldLabel: 'Size',
+                                                name: 'small',
                                                 editable: false,
                                                 forceSelection: true,
                                                 queryMode: 'local',
-                                                value: 'asc'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.ESQfield',
-                                            config: {
-                                                fieldLabel: 'Facettes',
-                                                name: 'facets',
-                                                queryMode: false,
-                                                geoQueryMode: false,
-                                                damQueryMode: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Médias par page',
-                                                name: 'pagesize',
-                                                allowDecimals: false,
-                                                minValue: 1
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            sort: 'asc',
-                            pagesize: 25,
-                            constrainToSite: true
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514066927'
-                },
-                {
-                    type: 'Google Maps',
-                    category: 'Cartographie',
-                    bType: 'geoSearchResults',
-                    description: '<p>Le bloc "Google Map" permet d’afficher une carte présentant des contenus géolocalisés, ramenés par une requête.</p><p>La carte peut être centrée sur une adresse ou sur la géolocalisation de l\'utilisateur.</p><p>La recherche à facettes peut être activée et couplée à la carte.</p>',
-                    configBasique: {
-                        title: 'Google Maps',
-                        bType: 'geoSearchResults',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Filtrage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Restreindre au site',
-                                                name: 'constrainToSite'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.ESQfield',
-                                            config: {
-                                                fieldLabel: 'Facettes prédéfinies',
-                                                name: 'predefinedFacets',
-                                                queryMode: false,
-                                                geoQueryMode: true
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Centre de la carte',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Geolocalisation',
-                                                name: 'useLocation',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Adresse',
-                                                name: 'centerAddress'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Latitude',
-                                                name: 'centerLatitude',
-                                                allowDecimals: true,
-                                                decimalPrecision: 6
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Longitude',
-                                                name: 'centerLongitude',
-                                                allowDecimals: true,
-                                                decimalPrecision: 6
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Afficher l\'icône',
-                                                name: 'showCenterMarker',
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Recherche',
-                                                name: 'activateSearch',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Zoom',
-                                                name: 'zoom',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Hauteur',
-                                                name: 'height',
-                                                allowDecimals: false,
-                                                minValue: 100
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Number',
-                                            config: {
-                                                fieldLabel: 'Nombre de points max',
-                                                name: 'pageSize',
-                                                allowDecimals: false,
-                                                minValue: 0
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            activateSearch: true,
-                            constrainToSite: true,
-                            zoom: 14,
-                            height: 500,
-                            pageSize: 5000,
-                            showCenterMarker: false
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514066125'
-                },
-                {
-                    type: 'Template Twig',
-                    category: 'Développement',
-                    bType: 'twig',
-                    description: '<p>Le bloc "Template Twig" permet à un développeur d\'instancier un gabarit Twig directement dans un bloc, pour un besoin spécifique.</p>',
-                    configBasique: {
-                        title: 'Template Twig',
-                        bType: 'twig',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Fichier',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Nom du fichier',
-                                                name: 'fileName'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514066000'
-                },
-                {
-                    type: 'Questionnaire',
-                    category: 'Formulaire',
-                    bType: 'form',
-                    description: '<p>Le bloc « Questionnaire » permet d’afficher une des enquêtes en ligne créées à l’aide du module Questionnaires.</p>',
-                    configBasique: {
-                        title: 'Questionnaire',
-                        bType: 'form',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.FormPickerField',
-                                            config: {
-                                                fieldLabel: 'Questionnaire',
-                                                name: 'formId'
+                                                value: 0
                                             }
                                         },
                                         {
@@ -2118,16 +2124,16 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                                             autoStoreData: [
                                                 {
                                                     value: 0,
-                                                    label: 'Barre'
+                                                    label: 'AddThis'
                                                 },
                                                 {
                                                     value: 1,
-                                                    label: 'Etapes'
+                                                    label: 'Facebook Like'
                                                 }
                                             ],
                                             config: {
-                                                fieldLabel: 'Progression',
-                                                name: 'progression',
+                                                fieldLabel: 'Style',
+                                                name: 'like',
                                                 editable: false,
                                                 forceSelection: true,
                                                 queryMode: 'local',
@@ -2142,45 +2148,25 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             ]
                         },
                         configBloc: {
-                            progression: 0
+                            disposition: 'Vertical',
+                            small: 0,
+                            like: 0
                         }
                     },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '514ae0c5c0e051ac0d000002'
+                    category: 'Syndication',
+                    bType: 'addThis',
+                    id: '512c9141c0e051030e000000'
                 },
                 {
-                    type: 'Abonnement newsletter',
-                    category: 'Formulaire',
-                    bType: 'mailingList',
-                    description: '<p>Le bloc « Abonnement Newsletter » permet d’afficher un formulaire d’inscription à une mailing-list.</p>',
+                    type: 'Authentication',
+                    description: '<p>The \'Authentication\' block allows a user to authenticate from the Front-Office.</p>',
                     configBasique: {
-                        title: 'Abonnement newsletter',
-                        bType: 'mailingList',
+                        title: 'Authentication',
+                        bType: 'authentication',
                         flex: 1,
                         champsConfig: {
                             simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.MailingListPickerField',
-                                            config: {
-                                                fieldLabel: 'Newsletter',
-                                                name: 'mailingListId'
-                                            }
-                                        }
-                                    ]
-                                }
+                                
                             ],
                             avance: [
                                 
@@ -2190,366 +2176,9 @@ Ext.define('Rubedo.store.BlocsDataStore', {
                             
                         }
                     },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '514ae0c5c0e051ac0d001672'
-                },
-                {
-                    type: 'Téléchargement de média protégé',
-                    category: 'Médias',
-                    bType: 'protectedResource',
-                    description: '<p>Le bloc « Téléchargement de média » permet de télécharger un média  par le biais d’une invitation par e-mail.</p>',
-                    configBasique: {
-                        title: 'Téléchargement de média protégé',
-                        bType: 'protectedResource',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.MailingListPickerField',
-                                            config: {
-                                                fieldLabel: 'Liste de diffusion',
-                                                name: 'mailingListId'
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Média',
-                                                name: 'documentId',
-                                                smallMode: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.directRTEField',
-                                            config: {
-                                                fieldLabel: 'Introduction',
-                                                name: 'introduction'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '516404ecc0e0518d0f000018'
-                },
-                {
-                    type: 'Téléchargement de média',
-                    category: 'Médias',
-                    bType: 'resource',
-                    description: '<p>Le bloc « Téléchargement de média » permet de télécharger un média de façon anonyme.</p>',
-                    configBasique: {
-                        title: 'Téléchargement de média',
-                        bType: 'resource',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.ImagePickerField',
-                                            config: {
-                                                fieldLabel: 'Média',
-                                                name: 'documentId',
-                                                smallMode: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Rubedo.view.directRTEField',
-                                            config: {
-                                                fieldLabel: 'Introduction',
-                                                name: 'introduction'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '516404ecc0e0518d0f123418'
-                },
-                {
-                    type: 'Contact',
-                    category: 'Formulaire',
-                    description: '<p>Le bloc « Contact » affiche un formulaire de contact.</p>',
-                    bType: 'contact',
-                    configBasique: {
-                        title: 'Contact',
-                        bType: 'contact',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.form.field.BoxSelect',
-                                            config: {
-                                                store: [
-                                                    
-                                                ],
-                                                name: 'contacts',
-                                                fieldLabel: 'Destinataires',
-                                                multiSelect: true,
-                                                forceSelection: false,
-                                                stacked: true,
-                                                createNewOnEnter: true,
-                                                hideTrigger: true,
-                                                triggerOnClick: false,
-                                                createNewOnBlur: true,
-                                                pinList: false
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Captcha',
-                                                name: 'captcha',
-                                                inputValue: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '514ae0c5c0e051ac0d00002e'
-                },
-                {
-                    type: 'Contact avancé',
-                    category: 'Formulaire',
-                    description: '<p>Le bloc « Contact avancé » affiche un formulaire de contact avancé, basé sur un template et un gabarit spécifiques.</p>',
-                    bType: 'advancedContact',
-                    configBasique: {
-                        title: 'Contact avancé',
-                        bType: 'advancedContact',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Paramètres',
-                                    champs: [
-                                        {
-                                            type: 'Ext.ux.form.field.BoxSelect',
-                                            config: {
-                                                store: [
-                                                    
-                                                ],
-                                                name: 'contacts',
-                                                fieldLabel: 'Destinataires',
-                                                multiSelect: true,
-                                                forceSelection: false,
-                                                stacked: true,
-                                                createNewOnEnter: true,
-                                                hideTrigger: true,
-                                                triggerOnClick: false,
-                                                createNewOnBlur: true,
-                                                pinList: false
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Checkbox',
-                                            config: {
-                                                fieldLabel: 'Captcha',
-                                                name: 'captcha',
-                                                inputValue: true
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Nom du formulaire',
-                                                name: 'formName'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Sujet de l\'e-mail',
-                                                name: 'subject'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'De la part de',
-                                                name: 'from'
-                                            }
-                                        },
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Personnes en copie',
-                                                name: 'cc'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '514ae0c5c0e051ac0d46282e'
-                },
-                {
-                    type: 'D\u00e9tail de contenu',
-                    category: 'Contenus',
-                    bType: 'contentDetail',
-                    description: '<p>Le bloc "Détail de Contenu" permet d\’afficher les champs d’un contenu particulier.</p>',
-                    configBasique: {
-                        title: 'D\u00e9tail de contenu',
-                        bType: 'contentDetail',
-                        flex: 1,
-                        champsConfig: {
-                            simple: [
-                                {
-                                    categorie: 'Contenu',
-                                    champs: [
-                                        {
-                                            type: 'Rubedo.view.DCEField',
-                                            config: {
-                                                fieldLabel: 'Contenu à afficher',
-                                                name: 'contentId',
-                                                chooseOnly: true
-                                            }
-                                        }
-                                    ]
-                                }
-                            ],
-                            avance: [
-                                {
-                                    categorie: 'Affichage',
-                                    champs: [
-                                        {
-                                            type: 'Ext.form.field.Text',
-                                            config: {
-                                                fieldLabel: 'Template alternatif',
-                                                name: 'displayType'
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        configBloc: {
-                            
-                        }
-                    },
-                    version: 1,
-                    lastUpdateUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    createUser: {
-                        id: 1,
-                        login: 'jbourdin',
-                        fullName: 'Julien Bourdin'
-                    },
-                    id: '506441f8c64804d514000001'
+                    category: 'User',
+                    bType: 'authentication',
+                    id: '511e6508c0e051bd12000001'
                 }
             ],
             sorters: {
