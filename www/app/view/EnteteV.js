@@ -17,6 +17,10 @@ Ext.define('Rubedo.view.EnteteV', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.entete',
 
+    requires: [
+        'Rubedo.view.ESSearchField'
+    ],
+
     height: 46,
     id: 'entete',
 
@@ -55,41 +59,34 @@ Ext.define('Rubedo.view.EnteteV', {
                     id: 'taskbarPrincipal',
                     enableOverflow: true
                 },
-                me.processESSearchField({
-                    xtype: 'textfield',
-                    id: 'ESSearchField',
-                    itemId: 'filterField',
-                    fieldLabel: '',
-                    labelSeparator: ' ',
-                    labelWidth: 68,
-                    emptyText: 'Recherche',
-                    listeners: {
-                        specialkey: {
-                            fn: me.onESSearchFieldSpecialkey,
-                            scope: me
-                        }
-                    }
-                }),
+                {
+                    xtype: 'ESSearchField'
+                },
                 {
                     xtype: 'button',
                     id: 'ESSearchButton',
                     iconCls: 'search'
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onEnteteAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
     },
 
-    processESSearchField: function(config) {
-        config.emptyText=Rubedo.RubedoAutomatedElementsLoc.searchText;
-        return config;
-    },
+    onEnteteAfterRender: function(component, eOpts) {
+        var task = new Ext.util.DelayedTask(function(){
+            component.remove(Ext.getCmp("ESSearchField"));
+            component.insert(5, Ext.widget("ESSearchField"));
+            Ext.getCmp("desktopHomeBtn").setTooltip(Rubedo.RubedoAutomatedElementsLoc.showDesktopTooltip);
+        });
+        task.delay(600);
 
-    onESSearchFieldSpecialkey: function(field, e, eOpts) {
-        if (e.getKey() == e.ENTER) {
-            Ext.getCmp("ESSearchButton").fireEvent("click",Ext.getCmp("ESSearchButton"));
-        }
     }
 
 });

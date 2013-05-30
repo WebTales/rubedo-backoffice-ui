@@ -103,64 +103,17 @@
             "designerId": "1cf8c639-afdd-492d-a6f2-9805dc2e51c1"
         },
         {
-            "type": "Ext.form.field.Text",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "id": "ESSearchField",
-                "itemId": "filterField",
-                "fieldLabel": "",
-                "labelSeparator": " ",
-                "labelWidth": 68,
-                "value": null,
-                "emptyText": "Recherche",
-                "enableKeyEvents": null
+                "layout|flex": null
             },
-            "designerId": "6c99783e-6f06-4dfc-a123-064f5486e953",
-            "cn": [
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onESSearchFieldSpecialkey",
-                        "implHandler": [
-                            "if (e.getKey() == e.ENTER) {\r",
-                            "    Ext.getCmp(\"ESSearchButton\").fireEvent(\"click\",Ext.getCmp(\"ESSearchButton\"));\r",
-                            "}"
-                        ],
-                        "name": "specialkey",
-                        "scope": "me"
-                    },
-                    "designerId": "7b36020e-2393-4e1a-8ef3-1ab10e082097"
-                },
-                {
-                    "type": "processcfgfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "processESSearchField",
-                        "designer|params": [
-                            "config"
-                        ],
-                        "implHandler": [
-                            "config.emptyText=Rubedo.RubedoAutomatedElementsLoc.searchText;\r",
-                            "return config;"
-                        ]
-                    },
-                    "designerId": "71cb22c2-97ef-46a9-b047-4aa803c1a149"
-                }
-            ]
+            "designerId": "b017ae43-bab1-4682-98c9-f8594d6324f8",
+            "masterInstanceId": "35c8f1c1-4d85-4897-a76f-05b321a51c34"
         },
         {
             "type": "Ext.button.Button",
@@ -177,6 +130,29 @@
                 "text": null
             },
             "designerId": "c36bf3eb-a1b1-4c33-9d98-6c61d12c1f1f"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEnteteAfterRender",
+                "implHandler": [
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    component.remove(Ext.getCmp(\"ESSearchField\"));\r",
+                    "    component.insert(5, Ext.widget(\"ESSearchField\"));\r",
+                    "    Ext.getCmp(\"desktopHomeBtn\").setTooltip(Rubedo.RubedoAutomatedElementsLoc.showDesktopTooltip);\r",
+                    "});\r",
+                    "task.delay(600);\r",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "dad2ab69-181b-4e86-be07-54f5ff60b912"
         }
     ]
 }

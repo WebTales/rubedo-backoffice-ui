@@ -2437,6 +2437,14 @@
                 "app/view/SystemInfoDisplayWindow.js"
             ],
             "className": "SystemInfoDisplayWindow"
+        },
+        "35c8f1c1-4d85-4897-a76f-05b321a51c34": {
+            "paths": [
+                "metadata/view/ESSearchField",
+                "app/view/override/ESSearchField.js",
+                "app/view/ESSearchField.js"
+            ],
+            "className": "ESSearchField"
         }
     },
     "viewOrderMap": {
@@ -2581,7 +2589,8 @@
             "1f387c06-5c71-4cab-ac38-38a30ac34a23",
             "b978680b-dfe2-47fc-b3c1-d006761b80bc",
             "ca0aea61-de73-4f0a-b040-a19454ef84dd",
-            "08c86828-4c11-46f1-8868-d6188a6cd164"
+            "08c86828-4c11-46f1-8868-d6188a6cd164",
+            "35c8f1c1-4d85-4897-a76f-05b321a51c34"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

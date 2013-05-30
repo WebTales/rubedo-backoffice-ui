@@ -29,12 +29,12 @@ Ext.define('Rubedo.controller.UsersController', {
         Ext.getCmp("adminFUtilisateurs").getComponent("filArianne").removeAll();
         Ext.getCmp("adminFUtilisateurs").getComponent("filArianne").add(arButtons.reverse());
         if (record.isRoot()){
-            var name= " Racine ";
+            var name= Rubedo.RubedoAutomatedElementsLoc.rootText+" ";
         } else {
             var name = " "+record.get("name")+" : ";
             var userNb = users.length;
-            var calif = "vide";
-            if (userNb==1) {calif="utilisateur";} else if (userNb>1) {calif="utilisateurs";} else if (userNb===0) {userNb= undefined;}
+            var calif = Rubedo.RubedoAutomatedElementsLoc.emptyText;
+            if (userNb==1) {calif=Rubedo.RubedoAutomatedElementsLoc.userText;} else if (userNb>1) {calif=Rubedo.RubedoAutomatedElementsLoc.usersText;} else if (userNb===0) {userNb= undefined;}
         }
         Ext.getCmp("adminFUtilisateurs").getComponent("barreMeta").getComponent("boiteBarreMeta").update({
             name:name,
@@ -333,7 +333,7 @@ Ext.define('Rubedo.controller.UsersController', {
     ArianneBuilder: function(node, array) {
         var me=this;
         if (node.isRoot()) {
-            var button = Ext.widget("button", {text:"Groupes<b> ></b>", iconCls:"user"});
+            var button = Ext.widget("button", {text:Rubedo.RubedoAutomatedElementsLoc.groupsText+"<b> ></b>", iconCls:"user"});
             button.on("click",function(){ Ext.getCmp("groupsGrid").getSelectionModel().select(node);});
             array.push(button);
         } else {

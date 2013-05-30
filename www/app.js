@@ -147,7 +147,8 @@ Ext.application({
         'Rubedo.view.newMLWindow',
         'Rubedo.view.specialTCFieldItemsConfigurator',
         'Rubedo.view.MultiChoiceConfigurator1',
-        'Rubedo.view.SystemInfoDisplayWindow'
+        'Rubedo.view.SystemInfoDisplayWindow',
+        'Rubedo.view.ESSearchField'
     ],
     models: [
         'sitesDataModel',
@@ -403,7 +404,8 @@ Ext.application({
         'newMLWindow',
         'specialTCFieldItemsConfigurator',
         'MultiChoiceConfigurator1',
-        'SystemInfoDisplayWindow'
+        'SystemInfoDisplayWindow',
+        'ESSearchField'
     ],
     autoCreateViewport: true,
     controllers: [

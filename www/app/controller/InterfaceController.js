@@ -165,6 +165,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 params:{
                 },
                 success: function(response){
+                    window.onbeforeunload=Ext.emptyFn;
                     window.location.href="login";
                 }
             });

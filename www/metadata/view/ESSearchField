@@ -1,0 +1,61 @@
+{
+    "type": "Ext.form.field.Text",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "ESSearchField",
+        "itemId": "filterField",
+        "designer|userClassName": "ESSearchField",
+        "designer|userAlias": "ESSearchField",
+        "fieldLabel": "",
+        "labelSeparator": " ",
+        "labelWidth": 68,
+        "value": null,
+        "emptyText": "Recherche",
+        "enableKeyEvents": null
+    },
+    "designerId": "35c8f1c1-4d85-4897-a76f-05b321a51c34",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onESSearchFieldSpecialkey",
+                "implHandler": [
+                    "if (e.getKey() == e.ENTER) {\r",
+                    "    Ext.getCmp(\"ESSearchButton\").fireEvent(\"click\",Ext.getCmp(\"ESSearchButton\"));\r",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "designerId": "7b36020e-2393-4e1a-8ef3-1ab10e082097"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processESSearchField",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.emptyText=Rubedo.RubedoAutomatedElementsLoc.searchText;\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "71cb22c2-97ef-46a9-b047-4aa803c1a149"
+        }
+    ]
+}

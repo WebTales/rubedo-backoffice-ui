@@ -369,6 +369,7 @@
                     "        params:{\r",
                     "        },\r",
                     "        success: function(response){\r",
+                    "            window.onbeforeunload=Ext.emptyFn;\r",
                     "            window.location.href=\"login\";\r",
                     "        }\r",
                     "    });\r",

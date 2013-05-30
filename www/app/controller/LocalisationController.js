@@ -200,7 +200,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "newDamText": "New media",
             "DAMEditText": "Edition of the media",
             "DAMDisplayText": "Display of the media",
-            "searchText": "Research",
+            "searchText": "Search",
             "identifierRecoveryError": "Error in the recovery of an identifier",
             "invalidFormPropertiesError": "Invalid form properties",
             "fileAnalysisError": "Error in parsing the file",
@@ -262,7 +262,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "formUniqueAnswerMessage": "You have already completed this survey. Thank you.",
             "formEndMessage": "Thank you for completing this survey.",
             "oldVersionText": "(A more recent version of Rubedo is available)",
-            "summaryText": "Summary"
+            "summaryText": "Summary",
+            "showDesktopTooltip": "Show desktop",
+            "userText":"user",
+            "usersText":"users",
+            "emptyText":"empty",
+            "groupsText":"Groups"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){
