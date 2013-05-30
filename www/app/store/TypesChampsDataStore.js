@@ -1798,6 +1798,122 @@ Ext.define('Rubedo.store.TypesChampsDataStore', {
                             fieldDef.set(corrector);
                         }
                     });
+                    var fileFieldCorrector={
+                        type: Rubedo.RubedoAutomatedElementsLoc.fileFieldText,
+                        description: Rubedo.RubedoAutomatedElementsLoc.fileFieldDescription,
+                        config: {
+                            name: 'fileField',
+                            fieldLabel: 'Label',
+                            allowBlank: true,
+                            localizable: false,
+                            searchable: false,
+                            multivalued: false,
+                            tooltip: '',
+                            fileType: 'Image',
+                            labelSeparator: ' '
+                        },
+                        configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.nameText,
+                                name: 'name',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.labelText,
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.tooltipText,
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                'valeur',
+                                'nom'
+                                ],
+                                data: [
+                                {
+                                    valeur: 'Image',
+                                    nom: 'Image'
+                                },
+                                {
+                                    valeur: 'Document',
+                                    nom: 'Document'
+                                },
+                                {
+                                    valeur: 'Video',
+                                    nom: 'VIdeo'
+                                },
+                                {
+                                    valeur: 'Animation',
+                                    nom: 'Animation'
+                                },
+                                {
+                                    valeur: 'Audio',
+                                    nom: 'Audio'
+                                }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.fileTypeText,
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                allowBlank: false,
+                                forceSelect: true,
+                                editable: false,
+                                name: 'fileType'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.optionalText,
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.localizableText,
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.searchableText,
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: Rubedo.RubedoAutomatedElementsLoc.multivaluedText,
+                                name: 'multivalued'
+                            }
+                        }
+                        ]
+                    };
+                    companionStore.findRecord("cType","Ext.form.field.File").set(fileFieldCorrector);
+
+
+
+
+
                 }
             } catch (err) {console.log("Error localising media type fields");}
     }

@@ -270,7 +270,17 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "groupsText":"Groups",
             "removeText":"Remove",
             "duplicateFieldText":"Duplicate of the field",
-            "duplicateText":"Duplicate"
+            "duplicateText":"Duplicate",
+            "multivaluedText":"Multivalued",
+            "searchableText":"Searchable",
+            "localizableText":"Localizable",
+            "optionalText":"Optional",
+            "fileTypeText":"File type",
+            "tooltipText":"Tooltip",
+            "nameText":"Name",
+            "labelText":"Label",
+            "fileFieldText":"File",
+            "fileFieldDescription":"<h2>File field<\/h2> <\/br> <p>This field allows for the upload of files.<\/p>"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){
