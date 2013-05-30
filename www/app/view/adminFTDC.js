@@ -412,10 +412,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         {
                                                             xtype: 'textfield',
                                                             localiserId: 'contentTitleField',
-                                                            RTip: 'Titre du contenu. Obligatoire.',
+                                                            RTip: 'Content title. Mandatory.',
                                                             anchor: '90%',
                                                             style: '{float:left}',
-                                                            fieldLabel: 'Titre *',
+                                                            fieldLabel: 'Title *',
                                                             name: 'text',
                                                             allowBlank: false
                                                         }
