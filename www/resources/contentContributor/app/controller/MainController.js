@@ -27,8 +27,8 @@ Ext.define('ContentContributor.controller.MainController', {
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('fieldWrapper');
         enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip("Réplique du champ "+button.up().getComponent(1).fieldLabel);
-        var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});
+        enrobage.getComponent('helpBouton').setTooltip(Rubedo.RubedoAutomatedElementsLoc.duplicateFieldText+" "+button.up().getComponent(1).fieldLabel);
+        var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.removeText, itemId: 'boutonEffaceurChamps'});
         supprimeur.on('click', function(){
             button.valeursM--;
             button.up().up().remove(supprimeur.up());
@@ -266,7 +266,7 @@ Ext.define('ContentContributor.controller.MainController', {
             wrapping.getComponent('helpBouton').hidden=true;
         } 
         if (newField.multivalued) {
-            wrapping.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'fieldReplicatorBtn'}));
+            wrapping.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'fieldReplicatorBtn'}));
 
         }
         target.add(wrapping);
@@ -440,6 +440,7 @@ Ext.define('ContentContributor.controller.MainController', {
 
     init: function(application) {
         Ext.require("Rubedo.view.CKEField");
+        Ext.require("Rubedo.view.RHelpBtn");
         Ext.require("Rubedo.view.localiserField");
         Ext.require("Rubedo.view.localiserFieldComponent");
         Ext.require("Rubedo.view.externalMediaField");

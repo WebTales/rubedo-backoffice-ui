@@ -129,7 +129,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 enrobage.getComponent('helpBouton').hidden=true;
             } 
             if (nouvChamp.multivalued) {
-                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
+                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
 
             };
             formulaireTC.add(enrobage);
@@ -958,8 +958,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(Rubedo.RubedoAutomatedElementsLoc.fieldReplicaText+" "+button.up().getComponent(1).fieldLabel);
-        var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: 'Enlever', itemId: 'boutonEffaceurChamps'});
+        enrobage.getComponent('helpBouton').setTooltip(Rubedo.RubedoAutomatedElementsLoc.duplicateFieldText+" "+button.up().getComponent(1).fieldLabel);
+        var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.removeText, itemId: 'boutonEffaceurChamps'});
         supprimeur.on('click', function(){
             button.valeursM--;
             button.up().up().remove(supprimeur.up());

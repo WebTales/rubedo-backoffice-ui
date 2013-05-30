@@ -767,7 +767,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             enrobage.getComponent('helpBouton').hidden=true;
         } 
         if (nouvChamp.multivalued) {
-            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
+            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
 
         };
         formulaireTC.add(enrobage);
@@ -1123,7 +1123,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 enrobage.getComponent('helpBouton').hidden=true;
             } 
             if (nouvChamp.multivalued) {
-                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: 'Valeurs multiples', itemId: 'boutonReplicateurChamps'}));
+                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
 
             };
             formulaireTC.add(enrobage);

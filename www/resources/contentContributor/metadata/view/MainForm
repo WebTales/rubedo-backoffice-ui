@@ -71,8 +71,8 @@
                     "userConfig": {
                         "ACL": "write.ui.contents.published",
                         "cStatus": "published",
-                        "layout|flex": null,
                         "localiserId": "publishBtn",
+                        "layout|flex": null,
                         "id": "mainPublishBtn",
                         "icon": "resources/icones/blue/24x24/floppy_disc_accept.png",
                         "scale": "medium",
@@ -118,8 +118,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "cancelBtn",
+                        "layout|flex": null,
                         "icon": "resources/icones/blue/24x24/remove.png",
                         "scale": "medium",
                         "text": "Annuler"
@@ -190,6 +190,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "90%",
+                        "localiserId": "contentTitleField",
                         "style": [
                             "{float:left}"
                         ],
@@ -198,33 +199,14 @@
                         "name": "text",
                         "allowBlank": false
                     },
-                    "designerId": "fcc42d21-45b5-4cd2-9fe6-aaac70ce9077"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "helpBouton",
-                        "margin": null,
-                        "style": [
-                            "{float:right;}"
-                        ],
-                        "allowDepress": null,
-                        "enableToggle": null,
-                        "handleMouseEvents": false,
-                        "iconCls": "help",
-                        "pressed": null,
-                        "pressedCls": "x-btn",
-                        "text": "",
-                        "tooltip": [
-                            "'Titre du contenu. Obligatoire.'"
-                        ]
-                    },
-                    "designerId": "e54d993d-1075-4fd5-9968-1975ccb55bdd"
+                    "designerId": "fcc42d21-45b5-4cd2-9fe6-aaac70ce9077",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },
@@ -250,6 +232,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "90%",
+                        "localiserId": "summaryField",
                         "style": [
                             "{float:left}"
                         ],
@@ -257,33 +240,14 @@
                         "labelSeparator": " ",
                         "name": "summary"
                     },
-                    "designerId": "dc13d5b3-c805-4e0b-8f99-e92aefc24f9f"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "helpBouton",
-                        "margin": null,
-                        "style": [
-                            "{float:right;}"
-                        ],
-                        "allowDepress": null,
-                        "enableToggle": null,
-                        "handleMouseEvents": false,
-                        "iconCls": "help",
-                        "pressed": null,
-                        "pressedCls": "x-btn",
-                        "text": "",
-                        "tooltip": [
-                            "'Résumé facultatif du contenu.'"
-                        ]
-                    },
-                    "designerId": "689df833-f80a-4647-a105-291d0f154b8a"
+                    "designerId": "dc13d5b3-c805-4e0b-8f99-e92aefc24f9f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

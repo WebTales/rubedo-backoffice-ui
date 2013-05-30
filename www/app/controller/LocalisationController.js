@@ -267,7 +267,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "userText":"user",
             "usersText":"users",
             "emptyText":"empty",
-            "groupsText":"Groups"
+            "groupsText":"Groups",
+            "removeText":"Remove",
+            "duplicateFieldText":"Duplicate of the field",
+            "duplicateText":"Duplicate"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

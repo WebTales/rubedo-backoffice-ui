@@ -130,7 +130,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             items: [
                                                 {
                                                     xtype: 'textfield',
-                                                    localiserId: 'titleField',
+                                                    localiserId: 'contentTitleField',
                                                     RTip: 'Titre du contenu. Obligatoire.',
                                                     anchor: '90%',
                                                     style: '{float:left}',

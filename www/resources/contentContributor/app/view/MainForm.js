@@ -82,21 +82,12 @@ Ext.define('ContentContributor.view.MainForm', {
                         {
                             xtype: 'textfield',
                             anchor: '90%',
+                            localiserId: 'contentTitleField',
                             style: '{float:left}',
                             fieldLabel: 'Titre ',
                             labelSeparator: ' *',
                             name: 'text',
                             allowBlank: false
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'helpBouton',
-                            style: '{float:right;}',
-                            handleMouseEvents: false,
-                            iconCls: 'help',
-                            pressedCls: 'x-btn',
-                            text: '',
-                            tooltip: 'Titre du contenu. Obligatoire.'
                         }
                     ]
                 },
@@ -110,20 +101,11 @@ Ext.define('ContentContributor.view.MainForm', {
                         {
                             xtype: 'textareafield',
                             anchor: '90%',
+                            localiserId: 'summaryField',
                             style: '{float:left}',
                             fieldLabel: 'Résumé',
                             labelSeparator: ' ',
                             name: 'summary'
-                        },
-                        {
-                            xtype: 'button',
-                            itemId: 'helpBouton',
-                            style: '{float:right;}',
-                            handleMouseEvents: false,
-                            iconCls: 'help',
-                            pressedCls: 'x-btn',
-                            text: '',
-                            tooltip: 'Résumé facultatif du contenu.'
                         }
                     ]
                 }
