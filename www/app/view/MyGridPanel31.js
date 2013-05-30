@@ -140,13 +140,6 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                     id: 'contentSelectorPagingToolbar',
                     width: 360,
                     displayInfo: true,
-                    displayMsg: 'Affichage des contenus {0} - {1} sur {2}',
-                    emptyMsg: 'Rien à afficher',
-                    firstText: 'Première page',
-                    lastText: 'Dernière page',
-                    nextText: 'Page suivante',
-                    prevText: 'Page prècèdente',
-                    refreshText: 'Rafraichir',
                     listeners: {
                         beforerender: {
                             fn: me.onPagingToolbarConentSelectBeforeRender,

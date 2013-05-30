@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
     id: 'assisstantRE6',
     autoScroll: true,
     bodyPadding: 10,
-    title: 'Finalisation et enregistrement',
+    title: 'Summary and saving',
 
     initComponent: function() {
         var me = this;
@@ -35,14 +35,14 @@ Ext.define('Rubedo.view.assisstantRE6', {
                     id: 'querySummaryBox',
                     padding: 10,
                     styleHtmlContent: true,
-                    title: '<b>Récapitulatif</b>'
+                    title: '<b>Summary</b>'
                 },
                 {
                     xtype: 'textfield',
                     localiserId: 'queryNameField',
                     anchor: '100%',
                     id: 'queryNameField',
-                    fieldLabel: 'Nom de la requête',
+                    fieldLabel: 'Query name',
                     labelWidth: 130,
                     name: 'queryName',
                     allowBlank: false
@@ -53,7 +53,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
                     anchor: '100%',
                     id: 'queryBuildSaveBtn',
                     scale: 'large',
-                    text: '<b>Enregistrer la requête </b>'
+                    text: '<b>Save this query</b>'
                 }
             ]
         });

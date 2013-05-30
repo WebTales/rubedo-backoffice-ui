@@ -13,7 +13,7 @@
         "designer|userAlias": "assisstantRE6",
         "autoScroll": true,
         "bodyPadding": 10,
-        "title": "Finalisation et enregistrement"
+        "title": "Summary and saving"
     },
     "designerId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
     "customConfigs": [
@@ -41,7 +41,7 @@
                 "id": "querySummaryBox",
                 "padding": 10,
                 "styleHtmlContent": true,
-                "title": "<b>Récapitulatif</b>"
+                "title": "<b>Summary</b>"
             },
             "designerId": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b",
             "customConfigs": [
@@ -63,7 +63,7 @@
                 "localiserId": "queryNameField",
                 "layout|anchor": "100%",
                 "id": "queryNameField",
-                "fieldLabel": "Nom de la requête",
+                "fieldLabel": "Query name",
                 "labelWidth": 130,
                 "name": "queryName",
                 "allowBlank": false
@@ -92,7 +92,7 @@
                 "style": null,
                 "iconCls": null,
                 "scale": "large",
-                "text": "<b>Enregistrer la requête </b>"
+                "text": "<b>Save this query</b>"
             },
             "designerId": "8efbcf04-d93d-45f4-894a-eb37d3963e9b",
             "customConfigs": [
