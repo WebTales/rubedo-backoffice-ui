@@ -200,9 +200,9 @@ Ext.define('Rubedo.view.assistantRequetage', {
                 var task2= new Ext.util.DelayedTask(function(){
                     Rubedo.controller.assistantRequetageController.prototype.displayQuery(Rubedo.controller.assistantRequetageController.prototype.readQuery());
                 });
-                task2.delay(200);
+                task2.delay(600);
             });
-            task.delay(800);
+            task.delay(1600);
         }
     }
 

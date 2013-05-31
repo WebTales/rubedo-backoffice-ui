@@ -44,6 +44,7 @@
                 "fn": "onComboboxAdded",
                 "implHandler": [
                     "component.getStore().addListener(\"load\",function(){\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
                     "    if (Ext.isEmpty(component.getValue())){\r",
                     "        component.getStore().filterBy(function(rec){\r",
                     "            if ((rec.get(\"type\")==\"advanced\")) {\r",
@@ -54,6 +55,8 @@
                     "            }\r",
                     "        });\r",
                     "    }\r",
+                    "    });\r",
+                    "    task.delay(1000);\r",
                     "\r",
                     "}, this, {single:true});\r",
                     "    component.getStore().load();\r",

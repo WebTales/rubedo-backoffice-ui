@@ -368,9 +368,9 @@
                     "        var task2= new Ext.util.DelayedTask(function(){\r",
                     "            Rubedo.controller.assistantRequetageController.prototype.displayQuery(Rubedo.controller.assistantRequetageController.prototype.readQuery());\r",
                     "        });\r",
-                    "        task2.delay(200);\r",
+                    "        task2.delay(600);\r",
                     "    });\r",
-                    "    task.delay(800);\r",
+                    "    task.delay(1600);\r",
                     "}"
                 ],
                 "name": "afterrender",

@@ -49,16 +49,19 @@ Ext.define('Rubedo.view.queryBuilderField', {
 
     onComboboxAdded: function(component, container, pos, eOpts) {
         component.getStore().addListener("load",function(){
-            if (Ext.isEmpty(component.getValue())){
-                component.getStore().filterBy(function(rec){
-                    if ((rec.get("type")=="advanced")) {
-                        return(true);
-                    }
-                    else {
-                        return(false);
-                    }
-                });
-            }
+            var task = new Ext.util.DelayedTask(function(){
+                if (Ext.isEmpty(component.getValue())){
+                    component.getStore().filterBy(function(rec){
+                        if ((rec.get("type")=="advanced")) {
+                            return(true);
+                        }
+                        else {
+                            return(false);
+                        }
+                    });
+                }
+            });
+            task.delay(1000);
 
         }, this, {single:true});
             component.getStore().load();
