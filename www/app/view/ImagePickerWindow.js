@@ -354,24 +354,36 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
             Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
-            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
+            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+" "+DAMType.get("type"));
             myEditor.directContribute=true;
             myEditor.show();
             Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);
             Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);
             Ext.getCmp("DAMCreateUpdateWindow").doLayout();
         } else if (!Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").getRange())){
-            var DAMType=Ext.getStore("MediaTypesFORDAMPicker").getRange()[0];
-            var myEditor = Ext.widget("DAMCreateUpdateWindow");
-            Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
-            myEditor.typeId=DAMType.get("id");
-            myEditor.mainFileType=DAMType.get("mainFileType");
-            myEditor.setTitle("Nouveau média "+DAMType.get("type"));
-            myEditor.directContribute=true;
-            myEditor.show();
-            Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);
-            Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);
-            Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+            Ext.widget("DAMChooseMTWindow").show();
+            Ext.getCmp("addDamAfterTypeBtn").nonClassic=true;
+            Ext.getCmp("addDamAfterTypeBtn").setHandler(function(){
+                var form=Ext.getCmp("addDamAfterTypeBtn").up();
+                if (form.getForm().isValid()){
+                    var DAMType=Ext.getStore("MediaTypesFORDAMPicker").findRecord("id", form.getComponent(0).getValue());
+                    var myEditor = Ext.widget("DAMCreateUpdateWindow");
+                    Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
+                    myEditor.typeId=DAMType.get("id");
+                    myEditor.mainFileType=DAMType.get("mainFileType");
+                    myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+" "+DAMType.get("type"));
+                    myEditor.directContribute=true;
+                    myEditor.show();
+                    Ext.getCmp("addDamAfterTypeBtn").up().up().close();
+                    Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);
+                    Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);
+                    Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+                }
+
+            });
+
+
+
 
         } else {
             Ext.Msg.alert("Erreur", "Aucun type de média défini");

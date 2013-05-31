@@ -910,6 +910,7 @@
             "userConfig": {
                 "fn": "onAddDamAfterTypeBtnClick",
                 "implHandler": [
+                    "if (!button.nonClassic){\r",
                     "if (button.up().getForm().isValid()){\r",
                     "    var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",button.up().getForm().getValues().typeId);\r",
                     "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
@@ -922,7 +923,8 @@
                     "    this.renderTaxoFields(DAMType);\r",
                     "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
                     "    button.up().up().close();\r",
-                    "} "
+                    "} \r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
