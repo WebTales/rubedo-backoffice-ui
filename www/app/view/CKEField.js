@@ -89,7 +89,7 @@ Ext.define('Rubedo.view.CKEField', {
         if (Ext.isEmpty(userLanguage)){
             userLanguage='fr';
         }
-        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:"ext-finder?type=Image"});
+        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
         component.editor.on('instanceReady', function(){
             component.up().doLayout();
             component.editor.document.getDocumentElement().on('click', function(){
