@@ -919,7 +919,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             }
                         }
 
-                    )}}});
+                    );}}});
 
                 }
     },

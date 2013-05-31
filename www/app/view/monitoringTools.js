@@ -255,7 +255,36 @@ Ext.define('Rubedo.view.monitoringTools', {
                             id: 'getSystemInformationBtn',
                             iconCls: 'help',
                             text: 'Informations système'
-                        }
+                        },
+                        me.processGetDatabaseInformationBtn({
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                if (button.canUpdate){
+                                    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.databaseUpdateWarning ,function(anser){
+                                        if (anser=="yes"){
+                                            Ext.getCmp("getDatabaseInformationBtn").setLoading(true);
+                                            Ext.Ajax.request({
+                                                url: 'update/run',
+                                                params: {
+                                                },
+                                                success: function(response){
+                                                    var data = Ext.JSON.decode(response.responseText);
+                                                    Ext.getCmp("getDatabaseInformationBtn").setLoading(false);
+                                                    Ext.getCmp("getDatabaseInformationBtn").canUpdate=false;
+                                                    Ext.getCmp("getDatabaseInformationBtn").setIconCls(null);
+                                                    Ext.getCmp("getDatabaseInformationBtn").setText(Rubedo.RubedoAutomatedElementsLoc.databaseIsUpToDateText);
+                                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.databaseUpdatedToText+" "+data.version);
+
+                                                }});
+                                            }
+                                        }
+                                        );
+                                    }
+                            },
+                            id: 'getDatabaseInformationBtn',
+                            icon: 'resources/icones/generic/database.png',
+                            text: 'Database is up to date'
+                        })
                     ]
                 }
             ],
@@ -268,6 +297,11 @@ Ext.define('Rubedo.view.monitoringTools', {
         });
 
         me.callParent(arguments);
+    },
+
+    processGetDatabaseInformationBtn: function(config) {
+        config.text=Rubedo.RubedoAutomatedElementsLoc.databaseIsUpToDateText;
+        return config;
     },
 
     onSupervisionCachePanelAfterRender: function(component, eOpts) {
@@ -287,6 +321,21 @@ Ext.define('Rubedo.view.monitoringTools', {
                 if (!(data.IsRubedoLatest)){
                     Ext.getCmp("getSystemInformationBtn").setIconCls("infoWarning");
                     Ext.getCmp("getSystemInformationBtn").setText(Ext.getCmp("getSystemInformationBtn").getText()+" "+Rubedo.RubedoAutomatedElementsLoc.oldVersionText);
+                }
+            }
+        });
+        Ext.getCmp("getDatabaseInformationBtn").setLoading(true);
+        Ext.Ajax.request({
+            url: 'update',
+            params: {
+            },
+            success: function(response){
+                var data = Ext.JSON.decode(response.responseText);
+                Ext.getCmp("getDatabaseInformationBtn").setLoading(false);
+                if (data.needUpdate){
+                    Ext.getCmp("getDatabaseInformationBtn").canUpdate=true;
+                    Ext.getCmp("getDatabaseInformationBtn").setIconCls("infoWarning");
+                    Ext.getCmp("getDatabaseInformationBtn").setText(Rubedo.RubedoAutomatedElementsLoc.databaseNeedsUpdateText);
                 }
             }
         });

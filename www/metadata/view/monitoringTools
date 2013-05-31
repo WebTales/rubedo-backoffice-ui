@@ -598,13 +598,89 @@
                                 "implHandler": [
                                     "var theWin =Ext.getCmp(\"SystemInfoDisplayWindow\");\r",
                                     "if (Ext.isEmpty(theWin)){\r",
-                                    "\tExt.widget(\"SystemInfoDisplayWindow\").show();\r",
+                                    "    Ext.widget(\"SystemInfoDisplayWindow\").show();\r",
                                     "} else {\r",
-                                    "\ttheWin.show();\r",
+                                    "    theWin.show();\r",
                                     "}"
                                 ]
                             },
                             "designerId": "6316bca4-28e4-4da4-96ae-f3cb502787eb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "getDatabaseInformationBtn",
+                        "icon": "resources/icones/generic/database.png",
+                        "iconCls": null,
+                        "text": "Database is up to date"
+                    },
+                    "designerId": "ab3e31c1-322e-4bb0-8bff-7d6f929d2f7f",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processGetDatabaseInformationBtn",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.text=Rubedo.RubedoAutomatedElementsLoc.databaseIsUpToDateText;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "979e7c54-abfe-48a0-9290-da1021224bf4"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "if (button.canUpdate){\r",
+                                    "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.databaseUpdateWarning ,function(anser){\r",
+                                    "    if (anser==\"yes\"){\r",
+                                    "Ext.getCmp(\"getDatabaseInformationBtn\").setLoading(true);\r",
+                                    "Ext.Ajax.request({\r",
+                                    "    url: 'update/run',\r",
+                                    "    params: {\r",
+                                    "    },\r",
+                                    "    success: function(response){\r",
+                                    "        var data = Ext.JSON.decode(response.responseText);\r",
+                                    "        Ext.getCmp(\"getDatabaseInformationBtn\").setLoading(false);\r",
+                                    "        Ext.getCmp(\"getDatabaseInformationBtn\").canUpdate=false;\r",
+                                    "        Ext.getCmp(\"getDatabaseInformationBtn\").setIconCls(null);\r",
+                                    "        Ext.getCmp(\"getDatabaseInformationBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.databaseIsUpToDateText);\r",
+                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.databaseUpdatedToText+\" \"+data.version);\r",
+                                    "    \r",
+                                    "    }});\r",
+                                    "    }\r",
+                                    "}\r",
+                                    ");\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "b43f6a3f-e780-486a-a8e5-141334a3b44a"
                         }
                     ]
                 }
@@ -632,6 +708,21 @@
                     "        if (!(data.IsRubedoLatest)){\r",
                     "            Ext.getCmp(\"getSystemInformationBtn\").setIconCls(\"infoWarning\");\r",
                     "            Ext.getCmp(\"getSystemInformationBtn\").setText(Ext.getCmp(\"getSystemInformationBtn\").getText()+\" \"+Rubedo.RubedoAutomatedElementsLoc.oldVersionText);\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "Ext.getCmp(\"getDatabaseInformationBtn\").setLoading(true);\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: 'update',\r",
+                    "    params: {\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        var data = Ext.JSON.decode(response.responseText);\r",
+                    "        Ext.getCmp(\"getDatabaseInformationBtn\").setLoading(false);\r",
+                    "        if (data.needUpdate){\r",
+                    "        \tExt.getCmp(\"getDatabaseInformationBtn\").canUpdate=true;\r",
+                    "            Ext.getCmp(\"getDatabaseInformationBtn\").setIconCls(\"infoWarning\");\r",
+                    "            Ext.getCmp(\"getDatabaseInformationBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.databaseNeedsUpdateText);\r",
                     "        }\r",
                     "    }\r",
                     "});"

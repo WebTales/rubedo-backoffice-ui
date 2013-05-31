@@ -280,7 +280,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "nameText":"Name",
             "labelText":"Label",
             "fileFieldText":"File",
-            "fileFieldDescription":"<h2>File field<\/h2> <\/br> <p>This field allows for the upload of files.<\/p>"
+            "fileFieldDescription":"<h2>File field<\/h2> <\/br> <p>This field allows for the upload of files.<\/p>",
+            "databaseIsUpToDateText":"Database is up to date",
+            "databaseNeedsUpdateText":"Database update required",
+            "databaseUpdateWarning":"This action will update the Rubedo database. It is recommended that you back-up your data before starting. Would you like to continue ?",
+            "databaseUpdatedToText":"The database has been updated to version"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){
