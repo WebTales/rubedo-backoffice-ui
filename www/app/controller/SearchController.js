@@ -73,7 +73,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         }
                     });
                     if(thing.label=="Query"){
-                        activeOne.setText("Recherche : "+thing.terms[0].label);
+                        activeOne.setText(Rubedo.RubedoAutomatedElementsLoc.searchText+" : "+thing.terms[0].label);
                     }
                     target.add(activeOne);
                 });
@@ -92,7 +92,7 @@ Ext.define('Rubedo.controller.SearchController', {
                     }
                 });
                 if(thing.label=="Query"){
-                    activeOne.setText("Recherche : "+thing.terms[0].label);
+                    activeOne.setText(Rubedo.RubedoAutomatedElementsLoc.searchText+" : "+thing.terms[0].label);
                 }
                 target.add(activeOne);
             }
