@@ -81,8 +81,8 @@ Ext.define('ContentContributor.view.MainForm', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '90%',
                             localiserId: 'contentTitleField',
+                            anchor: '90%',
                             style: '{float:left}',
                             fieldLabel: 'Titre ',
                             labelSeparator: ' *',
@@ -100,8 +100,8 @@ Ext.define('ContentContributor.view.MainForm', {
                     items: [
                         {
                             xtype: 'textareafield',
-                            anchor: '90%',
                             localiserId: 'summaryField',
+                            anchor: '90%',
                             style: '{float:left}',
                             fieldLabel: 'Résumé',
                             labelSeparator: ' ',
