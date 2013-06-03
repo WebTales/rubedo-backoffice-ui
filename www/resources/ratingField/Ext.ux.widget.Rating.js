@@ -225,6 +225,10 @@ Ext.define('Ext.ux.widget.Rating', {
 		me.focusEl = Ext.get(Ext.query('a.focus-el', me.bodyEl.dom[0]));
 		me.inputEl = Ext.get(Ext.query('input.input-el', me.bodyEl.dom)[0]);
 		me.resetEl = Ext.get(Ext.query('div.reset-el', me.bodyEl.dom)[0]);
+        var task = new Ext.util.DelayedTask(function(){
+        	me.setValue(me.getValue());
+        });
+		task.delay(400);
 	},
 	initEvents: function () {
 		var me = this;
