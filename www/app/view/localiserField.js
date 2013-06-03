@@ -71,8 +71,8 @@ Ext.define('Rubedo.view.localiserField', {
                             field.geoTask=new Ext.util.DelayedTask(function(){
                                 field.geocoder.geocode( { 'address': field.getValue()}, function(results, status) {
                                 if (status == google.maps.GeocoderStatus.OK) {
-                                    decoded.lat=results[0].geometry.location.jb;
-                                    decoded.lon=results[0].geometry.location.kb;
+                                    decoded.lat=results[0].geometry.location.lat();
+                                    decoded.lon=results[0].geometry.location.lng();
                                     decoded.location={
                                         "type":"Point",
                                         "coordinates":[decoded.lon,decoded.lat]
