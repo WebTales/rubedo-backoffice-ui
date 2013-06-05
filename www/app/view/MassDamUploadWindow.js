@@ -121,7 +121,8 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 autoRemoveUploaded:false,
                 multipart_params:{
                     "activeFacets":Ext.JSON.encode(Ext.getStore("DAMFacetteStore").activeFacettes),
-                    "token":ACL.CSRFToken
+                    "token":ACL.CSRFToken,
+                    "writeWorkspace":ACL.defaultWorkspace
                 },
                 statusFailedText: '<span style="color: red">Error</span>',
                 statusDoneText: '<span style="color: green">Complete</span>',
@@ -135,18 +136,18 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
             {
                 filesadded: function(uploader, files)								
                 {
-                    console.log('filesadded');
+                    //console.log('filesadded');
                     return true;
                 },
 
                 beforeupload: function(uploader, file)								
                 {
-                    console.log('beforeupload');			
+                    //console.log('beforeupload');			
                 },
 
                 fileuploaded: function(uploader, file)								
                 {
-                    console.log('fileuploaded');
+                    //console.log('fileuploaded');
                 },
 
                 uploadcomplete: function(uploader, success, failed)								

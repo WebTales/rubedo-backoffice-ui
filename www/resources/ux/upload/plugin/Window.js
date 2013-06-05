@@ -35,10 +35,7 @@ Ext.define('Ext.ux.upload.plugin.Window', {
                 fn: function(uploader, total, percent, sent, success, failed, queued, speed)
                 {
                     var t = Ext.String.format('Upload {0}% ({1} of {2})', percent, sent, total);
-                    me.statusbar.showBusy({
-                        text: t,
-                        clear: false
-                    });
+                    me.statusbar.getComponent(0).updateProgress(sent/total, t);
                 },
                 scope: me
             },
@@ -52,18 +49,20 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             uploadcomplete: {
                 fn: function(uploader, success, failed)
                 {
-                    if(failed.length == 0)
-                        me.window.hide();
+                    if(failed.length == 0){
+                        //me.window.hide();
+						}
                 },
                 scope: me
             }
         });
         
-        me.statusbar = new Ext.ux.StatusBar({
+        me.statusbar = new Ext.toolbar.Toolbar({
             dock: 'bottom',
             id: 'form-statusbar',
-            defaultText: 'Ready',
+			text:"Ready"
         });
+		me.statusbar.add(Ext.create("Ext.ProgressBar",{flex:1}));
         
         me.view = new Ext.grid.Panel({
             store: uploader.store,
