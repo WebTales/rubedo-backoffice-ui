@@ -150,7 +150,8 @@ Ext.application({
         'Rubedo.view.SystemInfoDisplayWindow',
         'Rubedo.view.ESSearchField',
         'Rubedo.view.ImagePreviewWindow',
-        'Rubedo.view.MassDamUploadWindow'
+        'Rubedo.view.MassDamUploadWindow',
+        'Rubedo.view.damTypeFacetImposeWindow'
     ],
     models: [
         'sitesDataModel',
@@ -409,7 +410,8 @@ Ext.application({
         'SystemInfoDisplayWindow',
         'ESSearchField',
         'ImagePreviewWindow',
-        'MassDamUploadWindow'
+        'MassDamUploadWindow',
+        'damTypeFacetImposeWindow'
     ],
     autoCreateViewport: true,
     controllers: [

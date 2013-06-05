@@ -1,0 +1,100 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "chooseDamTypeWindow",
+        "height": 119,
+        "id": "damTypeFacetImposeWindow",
+        "width": 400,
+        "designer|userClassName": "damTypeFacetImposeWindow",
+        "designer|userAlias": "damTypeFacetImposeWindow",
+        "resizable": false,
+        "layout": "fit",
+        "title": "Choissez un type de média",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "d0dd360b-096d-456e-9cde-d04c21fa2fe3",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": null,
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "cf848bb1-2e81-4949-9b91-6b219cc388c5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "chooseDamTypeField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Type",
+                        "name": "typeId",
+                        "allowBlank": false,
+                        "editable": false,
+                        "displayField": "type",
+                        "forceSelection": true,
+                        "store": "MediaTypesForDAM",
+                        "valueField": "id"
+                    },
+                    "designerId": "039e9dd0-f26d-4cb3-ae23-4d5ae2688e4a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "chooseDamTypeMassSubmitBtn",
+                        "layout|anchor": "100%",
+                        "id": "imposeDamTypeFacetBtn",
+                        "scale": "large",
+                        "text": "Upload media of this type"
+                    },
+                    "designerId": "b829d36c-32af-4256-b0ca-d6555e3cb74a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

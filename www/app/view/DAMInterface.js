@@ -136,7 +136,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                             xtype: 'button',
                             ACL: 'write.ui.dam',
                             localiserId: 'massDamUploadBtn',
-                            disabled: true,
                             id: 'massDamUploadBtn',
                             iconAlign: 'top',
                             iconCls: 'database_up_big',

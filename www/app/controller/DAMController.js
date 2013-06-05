@@ -235,7 +235,21 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onMassDamUploadBtnClick: function(button, e, eOpts) {
-        Ext.widget("MassDamUploadWindow").show();
+        if (Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
+            Ext.widget("damTypeFacetImposeWindow").show();
+        } else {
+            Ext.widget("MassDamUploadWindow").show();
+        }
+    },
+
+    onImposeDamTypeFacetBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            Ext.getStore("DAMFacetteStore").activeFacettes.damType=form.getValues().typeId;
+            Ext.getStore("DAMFacetteStore").load();
+            button.up().up().close();
+            Ext.widget("MassDamUploadWindow").show();
+        }
     },
 
     resetInterfaceSelect: function(record) {
@@ -620,11 +634,6 @@ Ext.define('Rubedo.controller.DAMController', {
                 target.add(activeOne);
             }
         });
-        if (Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
-            Ext.getCmp("massDamUploadBtn").disable();
-        } else {
-            Ext.getCmp("massDamUploadBtn").enable();
-        }
     },
 
     init: function(application) {
@@ -665,6 +674,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#massDamUploadBtn": {
                 click: this.onMassDamUploadBtnClick
+            },
+            "#imposeDamTypeFacetBtn": {
+                click: this.onImposeDamTypeFacetBtnClick
             }
         });
     }
