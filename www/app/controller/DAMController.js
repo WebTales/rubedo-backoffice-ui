@@ -235,7 +235,7 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onMassDamUploadBtnClick: function(button, e, eOpts) {
-
+        Ext.widget("MassDamUploadWindow").show();
     },
 
     resetInterfaceSelect: function(record) {

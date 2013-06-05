@@ -946,6 +946,9 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onMassDamUploadBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"MassDamUploadWindow\").show();"
+                ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",

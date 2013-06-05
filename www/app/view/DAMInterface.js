@@ -141,7 +141,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                             iconAlign: 'top',
                             iconCls: 'database_up_big',
                             scale: 'large',
-                            text: 'Upload en masse'
+                            text: 'Mass upload'
                         },
                         {
                             xtype: 'buttongroup',

@@ -1,0 +1,117 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 323,
+        "id": "MassDamUploadWindow",
+        "width": 466,
+        "designer|userClassName": "MassDamUploadWindow",
+        "designer|userAlias": "MassDamUploadWindow",
+        "resizable": false,
+        "layout": "fit",
+        "bodyPadding": 2,
+        "title": "Digital assets mass upload",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "9b8d0b76-4792-4abf-a9db-b52033d4cab6",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "container|pack": "center",
+                "border": 4,
+                "id": "massDamUploadDropZone",
+                "layout": "vbox",
+                "bodyBorder": true,
+                "bodyCls": [
+                    "contrastRow"
+                ],
+                "title": ""
+            },
+            "designerId": "9d75fb9f-b6da-4d5a-ac84-c9f85fa46793",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMassDamUploadDropZoneAfterRender",
+                        "implHandler": [
+                            "component.setBorder(4);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "68de89c1-200b-4f70-a240-db48dc365525"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "height": 128,
+                        "style": "{opacity:0.4;}",
+                        "width": 128,
+                        "src": "resources/icones/generic/image_add.png"
+                    },
+                    "configAlternates": {
+                        "style": "string"
+                    },
+                    "designerId": "0185a33c-65b1-496f-9ed3-bc1c43e27b38"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 60,
+                        "html": "<h1 style=\"color:#999;\">Drop files here</h1>",
+                        "styleHtmlContent": true,
+                        "width": 179
+                    },
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "b53460f0-0119-42f6-816e-303d6d440874"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "height": 30
+            },
+            "designerId": "2f86ce6b-90b4-4437-8857-2f3af0145bc6"
+        }
+    ]
+}
