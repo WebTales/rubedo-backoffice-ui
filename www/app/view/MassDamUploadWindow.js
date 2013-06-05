@@ -152,14 +152,17 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
 
                 uploadcomplete: function(uploader, success, failed)								
                 {
-                    Ext.getCmp("auxUploadWindow1").getComponent(0).getDockedComponent(2).add(Ext.widget("button",{
-                        text:"<b>OK</b>",
-                        handler:function(btn){
-                            uploader.removeAll();
-                            Ext.getCmp("auxUploadWindow1").hide();
-                            btn.up().remove(btn);
-                        }
-                    }));				
+                    if(Ext.isEmpty(Ext.getCmp("buttonToExitUploadWindow"))){
+                        Ext.getCmp("auxUploadWindow1").getComponent(0).getDockedComponent(2).add(Ext.widget("button",{
+                            text:"<b>OK</b>",
+                            id:"buttonToExitUploadWindow",
+                            handler:function(btn){
+                                uploader.removeAll();
+                                Ext.getCmp("auxUploadWindow1").hide();
+                                btn.up().remove(btn);
+                            }
+                        }));	
+                    }
                 },
                 scope: this
             }

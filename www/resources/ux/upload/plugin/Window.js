@@ -119,11 +119,12 @@ Ext.define('Ext.ux.upload.plugin.Window', {
                 },
                 listeners: {
                     beforerender: function(toolbar)
-                    {
-                        /*if(uploader.autoStart == false)
-                            toolbar.add(uploader.actions.start);
+					{
+                        toolbar.add(uploader.actions.start);
+                        toolbar.add(uploader.actions.cancel);
+                        toolbar.add(uploader.actions.removeAll);
                         if(uploader.autoRemoveUploaded == false)
-                            toolbar.add(uploader.actions.removeUploaded);*/
+                            toolbar.add(uploader.actions.removeUploaded);
                     },
                     scope: me
                 }
