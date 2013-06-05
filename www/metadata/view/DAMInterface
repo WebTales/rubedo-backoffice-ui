@@ -299,6 +299,38 @@
                     ]
                 },
                 {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.dam",
+                        "localiserId": "massDamUploadBtn",
+                        "disabled": true,
+                        "id": "massDamUploadBtn",
+                        "iconAlign": "top",
+                        "iconCls": "database_up_big",
+                        "scale": "large",
+                        "text": "Upload en masse"
+                    },
+                    "designerId": "b45dcbce-eadd-4b58-9eb8-bca6a77572c5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
