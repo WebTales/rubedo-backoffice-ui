@@ -82,6 +82,39 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                             scope: me
                         }
                     }
+                },
+                {
+                    xtype: 'toolbar',
+                    dock: 'bottom',
+                    items: [
+                        {
+                            xtype: 'tbtext',
+                            id: 'damTypeTextItem',
+                            text: 'Media type :',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onDamTypeTextItemAfterRender,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'tbtext',
+                            uploadedItems: 0,
+                            id: 'filesUploadedTextItem',
+                            text: '0 files uploaded'
+                        },
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                button.up().up().close();
+                            },
+                            text: 'Done uploading'
+                        }
+                    ]
                 }
             ],
             listeners: {
@@ -146,8 +179,10 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 },
 
                 fileuploaded: function(uploader, file)								
-                {
-                    //console.log('fileuploaded');
+                {	
+                    var indicator=Ext.getCmp("filesUploadedTextItem");
+                    indicator.uploadedItems=indicator.uploadedItems+1;
+                    indicator.setText(" "+indicator.uploadedItems+" "+"files uploaded");
                 },
 
                 uploadcomplete: function(uploader, success, failed)								
@@ -175,6 +210,13 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
     onMassDamUploadWindowBeforeClose: function(panel, eOpts) {
         Ext.getStore("DAMFacetteStore").load();
         Ext.getCmp("auxUploadWindow1").close();
+    },
+
+    onDamTypeTextItemAfterRender: function(component, eOpts) {
+        try {
+            var myType=Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType).get("type");
+            component.setText("Media type : "+myType);
+        } catch(err){console.log("error displaying type");}
     }
 
 });

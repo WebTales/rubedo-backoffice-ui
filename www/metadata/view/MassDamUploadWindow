@@ -170,8 +170,10 @@
                             "        },\r",
                             "\r",
                             "        fileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
-                            "        {\r",
-                            "            //console.log('fileuploaded');\r",
+                            "        {\t\r",
+                            "            var indicator=Ext.getCmp(\"filesUploadedTextItem\");\r",
+                            "            indicator.uploadedItems=indicator.uploadedItems+1;\r",
+                            "            indicator.setText(\" \"+indicator.uploadedItems+\" \"+\"files uploaded\");\r",
                             "        },\r",
                             "\r",
                             "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
@@ -219,6 +221,127 @@
                 "scope": "me"
             },
             "designerId": "c24a4f37-bdc4-4770-bed8-408725fca186"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "56cd3eee-2798-4aaa-bf2c-9366a01f16ef",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.TextItem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "damTypeTextItem",
+                        "text": "Media type :"
+                    },
+                    "designerId": "0f360d76-3a41-4200-924f-d3d14ecd6f69",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDamTypeTextItemAfterRender",
+                                "implHandler": [
+                                    "try {\r",
+                                    "    var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType).get(\"type\");\r",
+                                    "    component.setText(\"Media type : \"+myType);\r",
+                                    "} catch(err){console.log(\"error displaying type\");}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "c84eb423-3520-4900-a39d-210e1d598219"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.TextItem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "uploadedItems": 0,
+                        "id": "filesUploadedTextItem",
+                        "text": "0 files uploaded"
+                    },
+                    "configAlternates": {
+                        "uploadedItems": "number"
+                    },
+                    "designerId": "2a59858f-90a8-4bef-ae1a-9c3f2bbf3ebb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "uploadedItems",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "8501ad42-485c-455d-8e05-d0394e44cba0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Done uploading"
+                    },
+                    "designerId": "20d8b4a4-2214-4ad4-8fc0-38e6db3b428b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "designerId": "4df3a9ca-718d-4723-aaba-ef4b15c7d316"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
