@@ -109,9 +109,112 @@
             "codeClass": null,
             "userConfig": {
                 "dock": "bottom",
-                "height": 30
+                "height": 30,
+                "hidden": true
             },
-            "designerId": "2f86ce6b-90b4-4437-8857-2f3af0145bc6"
+            "designerId": "2f86ce6b-90b4-4437-8857-2f3af0145bc6",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onToolbarAfterRender",
+                        "implHandler": [
+                            "var updBtn=Ext.create('Ext.ux.upload.Button', {\r",
+                            "\t\ttext: 'Select files',\r",
+                            "\t\tplugins: [Ext.create('Ext.ux.upload.plugin.Window',{\r",
+                            "                      title: 'Upload',\r",
+                            "                      width: 520,\r",
+                            "                      height: 350,\r",
+                            "            windowModal:true,\r",
+                            "            windowId:\"auxUploadWindow1\"\r",
+                            "                  })\r",
+                            "        ],\r",
+                            "\t\tuploader: \r",
+                            "\t\t{\r",
+                            "\t\t\turl: 'dam/mass-upload',\r",
+                            "\t\t\tautoStart: true,\r",
+                            "\t\t\tmax_file_size: '2020mb',\t\t\t\r",
+                            "\t\t\tdrop_element: 'massDamUploadDropZone',\r",
+                            "\t\t\tstatusQueuedText: 'Ready to upload',\r",
+                            "\t\t\tstatusUploadingText: 'Uploading ({0}%)',\r",
+                            "            autoRemoveUploaded:false,\r",
+                            "            multipart_params:{\r",
+                            "                \"activeFacets\":Ext.JSON.encode(Ext.getStore(\"DAMFacetteStore\").activeFacettes),\r",
+                            "                \"token\":ACL.CSRFToken\r",
+                            "            },\r",
+                            "\t\t\tstatusFailedText: '<span style=\"color: red\">Error</span>',\r",
+                            "\t\t\tstatusDoneText: '<span style=\"color: green\">Complete</span>',\r",
+                            "            /*filters: [\r",
+                            "                {title: \"Image files\", extensions: \"jpg,gif,png\"}\r",
+                            "            ],*/\r",
+                            "\t\t\tstatusInvalidSizeText: 'File too large',\r",
+                            "\t\t\tstatusInvalidExtensionText: 'Invalid file type'\r",
+                            "\t\t},\r",
+                            "\t\tlisteners: \r",
+                            "\t\t{\r",
+                            "\t\t\tfilesadded: function(uploader, files)\t\t\t\t\t\t\t\t\r",
+                            "\t\t\t{\r",
+                            "\t\t\t\tconsole.log('filesadded');\r",
+                            "\t\t\t\treturn true;\r",
+                            "\t\t\t},\r",
+                            "\t\t\t\r",
+                            "\t\t\tbeforeupload: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                            "\t\t\t{\r",
+                            "\t\t\t\tconsole.log('beforeupload');\t\t\t\r",
+                            "\t\t\t},\r",
+                            "\r",
+                            "\t\t\tfileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                            "\t\t\t{\r",
+                            "\t\t\t\tconsole.log('fileuploaded');\r",
+                            "\t\t\t},\r",
+                            "\t\t\t\r",
+                            "\t\t\tuploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
+                            "\t\t\t{\r",
+                            "\t\t\t\tExt.getCmp(\"auxUploadWindow1\").getComponent(0).getDockedComponent(2).add(Ext.widget(\"button\",{\r",
+                            "                    text:\"<b>OK</b>\",\r",
+                            "                    handler:function(btn){\r",
+                            "                        uploader.removeAll();\r",
+                            "                        Ext.getCmp(\"auxUploadWindow1\").hide();\r",
+                            "                        btn.up().remove(btn);\r",
+                            "                    }\r",
+                            "                }));\t\t\t\t\r",
+                            "\t\t\t},\r",
+                            "\t\t\tscope: this\r",
+                            "\t\t}\r",
+                            "\t\t\t\t\r",
+                            "\t\t\r",
+                            "\t});\r",
+                            "component.add(updBtn);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "c2393a56-f5bf-4642-ae3c-24f87d69b51a"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMassDamUploadWindowBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "Ext.getCmp(\"auxUploadWindow1\").close();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "c24a4f37-bdc4-4770-bed8-408725fca186"
         }
     ]
 }

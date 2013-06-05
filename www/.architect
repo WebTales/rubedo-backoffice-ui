@@ -6686,7 +6686,15 @@
                     ]
                 },
                 {
-                    "id": "2f86ce6b-90b4-4437-8857-2f3af0145bc6"
+                    "id": "2f86ce6b-90b4-4437-8857-2f3af0145bc6",
+                    "cn": [
+                        {
+                            "id": "c2393a56-f5bf-4642-ae3c-24f87d69b51a"
+                        }
+                    ]
+                },
+                {
+                    "id": "c24a4f37-bdc4-4770-bed8-408725fca186"
                 }
             ]
         },
@@ -9616,6 +9624,7 @@
         },
         "da6ed701-29c3-4603-a441-221b8ebb99cf": {
             "id": "da6ed701-29c3-4603-a441-221b8ebb99cf",
+            "expanded": false,
             "cn": [
                 {
                     "id": "50908fd7-bd46-4d7d-b504-215fdd4c7c75"
@@ -10660,14 +10669,14 @@
         ]
     },
     "canvasState": {
-        "topInstance": "9b8d0b76-4792-4abf-a9db-b52033d4cab6"
+        "topInstance": null
     },
     "inspectorState": {
         "topInstance": "9b8d0b76-4792-4abf-a9db-b52033d4cab6",
-        "selectedInstance": "0185a33c-65b1-496f-9ed3-bc1c43e27b38"
+        "selectedInstance": "c2393a56-f5bf-4642-ae3c-24f87d69b51a"
     },
     "codeState": {
         "topInstance": "9b8d0b76-4792-4abf-a9db-b52033d4cab6"
     },
-    "editMode": "design"
+    "editMode": "code"
 }

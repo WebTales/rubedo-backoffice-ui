@@ -74,9 +74,22 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 {
                     xtype: 'toolbar',
                     dock: 'bottom',
-                    height: 30
+                    height: 30,
+                    hidden: true,
+                    listeners: {
+                        afterrender: {
+                            fn: me.onToolbarAfterRender,
+                            scope: me
+                        }
+                    }
                 }
-            ]
+            ],
+            listeners: {
+                beforeclose: {
+                    fn: me.onMassDamUploadWindowBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -84,6 +97,80 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
 
     onMassDamUploadDropZoneAfterRender: function(component, eOpts) {
         component.setBorder(4);
+    },
+
+    onToolbarAfterRender: function(component, eOpts) {
+        var updBtn=Ext.create('Ext.ux.upload.Button', {
+            text: 'Select files',
+            plugins: [Ext.create('Ext.ux.upload.plugin.Window',{
+                title: 'Upload',
+                width: 520,
+                height: 350,
+                windowModal:true,
+                windowId:"auxUploadWindow1"
+            })
+            ],
+            uploader: 
+            {
+                url: 'dam/mass-upload',
+                autoStart: true,
+                max_file_size: '2020mb',			
+                drop_element: 'massDamUploadDropZone',
+                statusQueuedText: 'Ready to upload',
+                statusUploadingText: 'Uploading ({0}%)',
+                autoRemoveUploaded:false,
+                multipart_params:{
+                    "activeFacets":Ext.JSON.encode(Ext.getStore("DAMFacetteStore").activeFacettes),
+                    "token":ACL.CSRFToken
+                },
+                statusFailedText: '<span style="color: red">Error</span>',
+                statusDoneText: '<span style="color: green">Complete</span>',
+                /*filters: [
+                {title: "Image files", extensions: "jpg,gif,png"}
+                ],*/
+                statusInvalidSizeText: 'File too large',
+                statusInvalidExtensionText: 'Invalid file type'
+            },
+            listeners: 
+            {
+                filesadded: function(uploader, files)								
+                {
+                    console.log('filesadded');
+                    return true;
+                },
+
+                beforeupload: function(uploader, file)								
+                {
+                    console.log('beforeupload');			
+                },
+
+                fileuploaded: function(uploader, file)								
+                {
+                    console.log('fileuploaded');
+                },
+
+                uploadcomplete: function(uploader, success, failed)								
+                {
+                    Ext.getCmp("auxUploadWindow1").getComponent(0).getDockedComponent(2).add(Ext.widget("button",{
+                        text:"<b>OK</b>",
+                        handler:function(btn){
+                            uploader.removeAll();
+                            Ext.getCmp("auxUploadWindow1").hide();
+                            btn.up().remove(btn);
+                        }
+                    }));				
+                },
+                scope: this
+            }
+
+
+        });
+        component.add(updBtn);
+    },
+
+    onMassDamUploadWindowBeforeClose: function(panel, eOpts) {
+        Ext.getStore("DAMFacetteStore").load();
+        Ext.getCmp("auxUploadWindow1").close();
     }
 
 });
