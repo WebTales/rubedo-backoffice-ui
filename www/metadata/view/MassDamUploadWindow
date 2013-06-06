@@ -1,0 +1,547 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 343,
+        "id": "MassDamUploadWindow",
+        "width": 466,
+        "designer|userClassName": "MassDamUploadWindow",
+        "designer|userAlias": "MassDamUploadWindow",
+        "resizable": false,
+        "layout": "fit",
+        "bodyPadding": 2,
+        "title": "Digital assets mass upload",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "9b8d0b76-4792-4abf-a9db-b52033d4cab6",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0
+            },
+            "designerId": "7b58afb2-a96a-4483-97bb-1485a29a4c8d",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "border": 4,
+                        "id": "massDamUploadDropZone",
+                        "layout": "vbox",
+                        "bodyBorder": true,
+                        "bodyCls": [
+                            "contrastRow"
+                        ],
+                        "title": "Upload"
+                    },
+                    "designerId": "9d75fb9f-b6da-4d5a-ac84-c9f85fa46793",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMassDamUploadDropZoneAfterRender",
+                                "implHandler": [
+                                    "component.setBorder(4);"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "68de89c1-200b-4f70-a240-db48dc365525"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "height": 128,
+                                "style": "{opacity:0.4;}",
+                                "width": 128,
+                                "src": "resources/icones/generic/image_add.png"
+                            },
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "0185a33c-65b1-496f-9ed3-bc1c43e27b38"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 60,
+                                "html": "<h1 style=\"color:#999;\">Drop files here</h1>",
+                                "styleHtmlContent": true,
+                                "width": 179
+                            },
+                            "configAlternates": {
+                                "html": "string"
+                            },
+                            "designerId": "b53460f0-0119-42f6-816e-303d6d440874"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "designerId": "830f8c69-7623-452e-bcd4-9254e04ae008"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "title": "Options"
+                    },
+                    "designerId": "e999b7a3-2904-489c-a8c6-a8b594a728ff",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "designerId": "c98b5101-d5d8-4fce-a51b-fcdba086a363"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "localiserId": "applyCurrentTaxoToUploadField",
+                                "id": "applyCurrentTaxoToUploadField",
+                                "fieldLabel": "Apply current taxonomy facets",
+                                "labelWidth": 180,
+                                "boxLabel": "",
+                                "checked": true,
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "ba34f258-e0ff-4802-b4da-3a04f495867b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Workspaces to apply to uploaded media"
+                            },
+                            "designerId": "80b82712-7a74-4ffe-a94a-5040fe39196e",
+                            "cn": [
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "contributeWorkspaceField",
+                                        "id": "contributeWorkspaceMassUploadField",
+                                        "fieldLabel": "Contribution",
+                                        "name": "writeWorkspace",
+                                        "store": "ContributeWorkspacesCombo",
+                                        "layout|anchor": "100%"
+                                    },
+                                    "designerId": "c0fc4e74-692d-4efe-8ad0-5866147c5ff4",
+                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "diffusionWorkspaceField",
+                                        "id": "targetWorkspaceMassUploadField",
+                                        "fieldLabel": "Diffusion",
+                                        "name": "target",
+                                        "submitValue": null,
+                                        "multiSelect": true,
+                                        "store": "WorkspacesComboWithAll",
+                                        "layout|anchor": "100%"
+                                    },
+                                    "designerId": "e63623dd-071e-4e6b-807a-d024be5fcfa5",
+                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTabpanelAfterRender",
+                        "implHandler": [
+                            "Ext.getCmp(\"MassDamUploadWindow\").getComponent(0).getLayout().setActiveItem(1);\r",
+                            "Ext.getCmp(\"MassDamUploadWindow\").getComponent(0).getLayout().setActiveItem(0);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "a6d782c8-5b3d-4f71-b7b5-71c324d3bc6c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "height": 30,
+                "hidden": true
+            },
+            "designerId": "2f86ce6b-90b4-4437-8857-2f3af0145bc6",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onToolbarAfterRender",
+                        "implHandler": [
+                            "var updBtn=Ext.create('Ext.ux.upload.Button', {\r",
+                            "    text: 'Select files',\r",
+                            "    plugins: [Ext.create('Ext.ux.upload.plugin.Window',{\r",
+                            "        title: 'Upload',\r",
+                            "        width: 520,\r",
+                            "        height: 350,\r",
+                            "        windowModal:true,\r",
+                            "        windowId:\"auxUploadWindow1\"\r",
+                            "    })\r",
+                            "    ],\r",
+                            "    uploader: \r",
+                            "    {\r",
+                            "        url: 'dam/mass-upload',\r",
+                            "        autoStart: true,\r",
+                            "        max_file_size: '2020mb',\t\t\t\r",
+                            "        drop_element: 'massDamUploadDropZone',\r",
+                            "        statusQueuedText: 'Ready to upload',\r",
+                            "        statusUploadingText: 'Uploading ({0}%)',\r",
+                            "        autoRemoveUploaded:false,\r",
+                            "        multipart_params:{\r",
+                            "            \"typeId\":Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType,\r",
+                            "            \"activeFacets\":Ext.JSON.encode(Ext.getCmp(\"MassDamUploadWindow\").activeFacets),\r",
+                            "            \"applyTaxoFacets\":Ext.getCmp(\"applyCurrentTaxoToUploadField\").value,\r",
+                            "            \"token\":ACL.CSRFToken,\r",
+                            "            \"writeWorkspace\":Ext.getCmp(\"contributeWorkspaceMassUploadField\").value,\r",
+                            "            \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value)\r",
+                            "        },\r",
+                            "        statusFailedText: '<span style=\"color: red\">Error</span>',\r",
+                            "        statusDoneText: '<span style=\"color: green\">Complete</span>',\r",
+                            "        /*filters: [\r",
+                            "        {title: \"Image files\", extensions: \"jpg,gif,png\"}\r",
+                            "        ],*/\r",
+                            "        statusInvalidSizeText: 'File too large',\r",
+                            "        statusInvalidExtensionText: 'Invalid file type'\r",
+                            "    },\r",
+                            "    listeners: \r",
+                            "    {\r",
+                            "        filesadded: function(uploader, files)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            uploader.multipart_params=Ext.getCmp(\"MassDamUploadWindow\").getMassUploadParams();\r",
+                            "            return true;\r",
+                            "        },\r",
+                            "\r",
+                            "        beforeupload: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            //console.log(\"beforeupload\");\r",
+                            "        },\r",
+                            "\r",
+                            "        fileuploaded: function(uploader, file)\t\t\t\t\t\t\t\t\r",
+                            "        {\t\r",
+                            "            var indicator=Ext.getCmp(\"filesUploadedTextItem\");\r",
+                            "            indicator.uploadedItems=indicator.uploadedItems+1;\r",
+                            "            indicator.setText(\" \"+indicator.uploadedItems+\" \"+\"files uploaded\");\r",
+                            "        },\r",
+                            "\r",
+                            "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
+                            "        {\r",
+                            "            if(Ext.isEmpty(Ext.getCmp(\"buttonToExitUploadWindow\"))){\r",
+                            "                Ext.getCmp(\"auxUploadWindow1\").getComponent(0).getDockedComponent(2).add(Ext.widget(\"button\",{\r",
+                            "                    text:\"<b>OK</b>\",\r",
+                            "                    id:\"buttonToExitUploadWindow\",\r",
+                            "                    handler:function(btn){\r",
+                            "                        uploader.removeAll();\r",
+                            "                        Ext.getCmp(\"auxUploadWindow1\").hide();\r",
+                            "                        btn.up().remove(btn);\r",
+                            "                    }\r",
+                            "                }));\t\r",
+                            "            }\r",
+                            "        },\r",
+                            "        scope: this\r",
+                            "    }\r",
+                            "\r",
+                            "\r",
+                            "});\r",
+                            "component.add(updBtn);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "c2393a56-f5bf-4642-ae3c-24f87d69b51a"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMassDamUploadWindowBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "Ext.getCmp(\"auxUploadWindow1\").close();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "c24a4f37-bdc4-4770-bed8-408725fca186"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "56cd3eee-2798-4aaa-bf2c-9366a01f16ef",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.TextItem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "damTypeTextItem",
+                        "text": "Media type :"
+                    },
+                    "designerId": "0f360d76-3a41-4200-924f-d3d14ecd6f69",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDamTypeTextItemAfterRender",
+                                "implHandler": [
+                                    "try {\r",
+                                    "    var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType).get(\"type\");\r",
+                                    "    component.setText(\"Media type : \"+myType);\r",
+                                    "} catch(err){console.log(\"error displaying type\");}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "c84eb423-3520-4900-a39d-210e1d598219"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.TextItem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "uploadedItems": 0,
+                        "layout|flex": null,
+                        "id": "filesUploadedTextItem",
+                        "text": "0 files uploaded"
+                    },
+                    "configAlternates": {
+                        "uploadedItems": "number"
+                    },
+                    "designerId": "2a59858f-90a8-4bef-ae1a-9c3f2bbf3ebb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "uploadedItems",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "8501ad42-485c-455d-8e05-d0394e44cba0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Done uploading"
+                    },
+                    "designerId": "20d8b4a4-2214-4ad4-8fc0-38e6db3b428b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "designerId": "4df3a9ca-718d-4723-aaba-ef4b15c7d316"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMassDamUploadWindowRender",
+                "implHandler": [
+                    "var rawFacets=Ext.clone(Ext.getStore(\"DAMFacetteStore\").activeFacettes);\r",
+                    "delete rawFacets.damType;\r",
+                    "delete rawFacets.query;\r",
+                    "delete rawFacets.lastupdatetime;\r",
+                    "Ext.Object.each(rawFacets, function(key, value, myself) {\r",
+                    "    if (!Ext.isArray(value)){\r",
+                    "        rawFacets[key]=new Array(value);\r",
+                    "    }\r",
+                    "});\r",
+                    "component.activeFacets=rawFacets;"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "5f7b22d7-862a-493a-9c06-da2eaf2871e4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getMassUploadParams",
+                "implHandler": [
+                    "var params={\"typeId\":Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType,\r",
+                    "            \"activeFacets\":Ext.JSON.encode(Ext.getCmp(\"MassDamUploadWindow\").activeFacets),\r",
+                    "            \"applyTaxoFacets\":Ext.getCmp(\"applyCurrentTaxoToUploadField\").value,\r",
+                    "            \"token\":ACL.CSRFToken,\r",
+                    "            \"writeWorkspace\":Ext.getCmp(\"contributeWorkspaceMassUploadField\").value,\r",
+                    "            \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value)}\r",
+                    "return(params);"
+                ]
+            },
+            "designerId": "00de9b96-47a1-4549-b0c5-a12c94cdf9c7"
+        }
+    ]
+}

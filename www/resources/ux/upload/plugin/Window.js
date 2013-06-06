@@ -34,11 +34,8 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             updateprogress: {
                 fn: function(uploader, total, percent, sent, success, failed, queued, speed)
                 {
-                    var t = Ext.String.format('Upload {0}% ({1} sur {2})', percent, sent, total);
-                    me.statusbar.showBusy({
-                        text: t,
-                        clear: false
-                    });
+                    var t = Ext.String.format('Upload {0}% ({1} of {2})', percent, sent, total);
+                    me.statusbar.getComponent(0).updateProgress(sent/total, t);
                 },
                 scope: me
             },
@@ -52,18 +49,20 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             uploadcomplete: {
                 fn: function(uploader, success, failed)
                 {
-                    if(failed.length == 0)
-                        me.window.hide();
+                    if(failed.length == 0){
+                        //me.window.hide();
+						}
                 },
                 scope: me
             }
         });
         
-        me.statusbar = new Ext.ux.StatusBar({
+        me.statusbar = new Ext.toolbar.Toolbar({
             dock: 'bottom',
             id: 'form-statusbar',
-            defaultText: 'Pret'
+			text:"Ready"
         });
+		me.statusbar.add(Ext.create("Ext.ProgressBar",{flex:1}));
         
         me.view = new Ext.grid.Panel({
             store: uploader.store,
@@ -120,9 +119,8 @@ Ext.define('Ext.ux.upload.plugin.Window', {
                 },
                 listeners: {
                     beforerender: function(toolbar)
-                    {
-                        if(uploader.autoStart == false)
-                            toolbar.add(uploader.actions.start);
+					{
+                        toolbar.add(uploader.actions.start);
                         toolbar.add(uploader.actions.cancel);
                         toolbar.add(uploader.actions.removeAll);
                         if(uploader.autoRemoveUploaded == false)
@@ -138,13 +136,15 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             title: me.title || 'Upload files',
             width: me.width || 640,
             height: me.height || 380,
+			modal:me.windowModal || false,
+			id:me.windowId || undefined,
             // modal : true, // harry
             plain: true,
             constrain: true,
             border: false,
             layout: 'fit',
             items: me.view,
-            closeAction: 'hide',
+            closable:false,
             listeners: {
                 hide: function(window)
                 {

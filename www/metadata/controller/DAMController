@@ -831,7 +831,6 @@
                     "facets"
                 ],
                 "implHandler": [
-                    "\r",
                     "Ext.getCmp(\"DAMSearchField\").setValue(Ext.getStore(\"DAMFacetteStore\").activeFacettes.query);\r",
                     "var target=Ext.getCmp(\"DAMActiveFacetBox\");\r",
                     "target.removeAll();\r",
@@ -932,6 +931,54 @@
                 "designer|controlQuery": "#addDamAfterTypeBtn"
             },
             "designerId": "5b4c25c8-302b-4774-8ebe-f7cce1e6848c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMassDamUploadBtnClick",
+                "implHandler": [
+                    "if (Ext.isEmpty(Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType)){\r",
+                    "    Ext.widget(\"damTypeFacetImposeWindow\").show();\r",
+                    "} else {\r",
+                    "\tExt.widget(\"MassDamUploadWindow\").show();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#massDamUploadBtn"
+            },
+            "designerId": "90847aad-6b72-445f-b293-77c2a51a5205"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImposeDamTypeFacetBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType=form.getValues().typeId;\r",
+                    "    Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "    button.up().up().close();\r",
+                    "    Ext.widget(\"MassDamUploadWindow\").show();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#imposeDamTypeFacetBtn"
+            },
+            "designerId": "00afb5b6-e001-4940-9dc9-d968611b4b48"
         }
     ]
 }

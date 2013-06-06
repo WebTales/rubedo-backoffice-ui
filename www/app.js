@@ -148,7 +148,10 @@ Ext.application({
         'Rubedo.view.specialTCFieldItemsConfigurator',
         'Rubedo.view.MultiChoiceConfigurator1',
         'Rubedo.view.SystemInfoDisplayWindow',
-        'Rubedo.view.ESSearchField'
+        'Rubedo.view.ESSearchField',
+        'Rubedo.view.ImagePreviewWindow',
+        'Rubedo.view.MassDamUploadWindow',
+        'Rubedo.view.damTypeFacetImposeWindow'
     ],
     models: [
         'sitesDataModel',
@@ -405,7 +408,10 @@ Ext.application({
         'specialTCFieldItemsConfigurator',
         'MultiChoiceConfigurator1',
         'SystemInfoDisplayWindow',
-        'ESSearchField'
+        'ESSearchField',
+        'ImagePreviewWindow',
+        'MassDamUploadWindow',
+        'damTypeFacetImposeWindow'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -2445,6 +2445,22 @@
                 "app/view/ESSearchField.js"
             ],
             "className": "ESSearchField"
+        },
+        "9b8d0b76-4792-4abf-a9db-b52033d4cab6": {
+            "paths": [
+                "metadata/view/MassDamUploadWindow",
+                "app/view/override/MassDamUploadWindow.js",
+                "app/view/MassDamUploadWindow.js"
+            ],
+            "className": "MassDamUploadWindow"
+        },
+        "d0dd360b-096d-456e-9cde-d04c21fa2fe3": {
+            "paths": [
+                "metadata/view/damTypeFacetImposeWindow",
+                "app/view/override/damTypeFacetImposeWindow.js",
+                "app/view/damTypeFacetImposeWindow.js"
+            ],
+            "className": "damTypeFacetImposeWindow"
         }
     },
     "viewOrderMap": {
@@ -2557,6 +2573,7 @@
             "c64d842c-64aa-47c3-9b0d-ed0957a46fdd",
             "f87deabd-cd38-47df-aac5-7f9f7d9d6df5",
             "061bd6bb-80de-48a4-af26-f6193448d7a1",
+            "d0dd360b-096d-456e-9cde-d04c21fa2fe3",
             "94888e53-9ec4-4b43-8669-5443a9700c76",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "8f7b389a-75fc-438a-8d03-797b9afc7316",
@@ -2590,7 +2607,8 @@
             "b978680b-dfe2-47fc-b3c1-d006761b80bc",
             "ca0aea61-de73-4f0a-b040-a19454ef84dd",
             "08c86828-4c11-46f1-8868-d6188a6cd164",
-            "35c8f1c1-4d85-4897-a76f-05b321a51c34"
+            "35c8f1c1-4d85-4897-a76f-05b321a51c34",
+            "9b8d0b76-4792-4abf-a9db-b52033d4cab6"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

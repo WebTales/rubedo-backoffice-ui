@@ -133,6 +133,16 @@ Ext.define('Rubedo.view.DAMInterface', {
                             text: 'Editer'
                         },
                         {
+                            xtype: 'button',
+                            ACL: 'write.ui.dam',
+                            localiserId: 'massDamUploadBtn',
+                            id: 'massDamUploadBtn',
+                            iconAlign: 'top',
+                            iconCls: 'database_up_big',
+                            scale: 'large',
+                            text: 'Mass upload'
+                        },
+                        {
                             xtype: 'buttongroup',
                             localiserId: 'clipboardGroup',
                             disabled: true,
