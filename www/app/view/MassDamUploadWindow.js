@@ -17,7 +17,11 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.MassDamUploadWindow',
 
-    height: 323,
+    requires: [
+        'Rubedo.view.WorkspaceCombo'
+    ],
+
+    height: 343,
     id: 'MassDamUploadWindow',
     width: 466,
     resizable: false,
@@ -35,39 +39,103 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'panel',
-                    border: 4,
-                    id: 'massDamUploadDropZone',
-                    layout: {
-                        align: 'center',
-                        pack: 'center',
-                        type: 'vbox'
-                    },
-                    bodyBorder: true,
-                    bodyCls: 'contrastRow',
-                    title: '',
-                    listeners: {
-                        afterrender: {
-                            fn: me.onMassDamUploadDropZoneAfterRender,
-                            scope: me
-                        }
-                    },
+                    xtype: 'tabpanel',
+                    activeTab: 0,
                     items: [
                         {
-                            xtype: 'image',
-                            height: 128,
-                            style: '{opacity:0.4;}',
-                            width: 128,
-                            src: 'resources/icones/generic/image_add.png'
+                            xtype: 'panel',
+                            border: 4,
+                            id: 'massDamUploadDropZone',
+                            layout: {
+                                align: 'center',
+                                pack: 'center',
+                                type: 'vbox'
+                            },
+                            bodyBorder: true,
+                            bodyCls: 'contrastRow',
+                            title: 'Upload',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onMassDamUploadDropZoneAfterRender,
+                                    scope: me
+                                }
+                            },
+                            items: [
+                                {
+                                    xtype: 'image',
+                                    height: 128,
+                                    style: '{opacity:0.4;}',
+                                    width: 128,
+                                    src: 'resources/icones/generic/image_add.png'
+                                },
+                                {
+                                    xtype: 'container',
+                                    height: 60,
+                                    html: '<h1 style="color:#999;">Drop files here</h1>',
+                                    styleHtmlContent: true,
+                                    width: 179
+                                }
+                            ],
+                            tabConfig: {
+                                xtype: 'tab',
+                                flex: 1
+                            }
                         },
                         {
-                            xtype: 'container',
-                            height: 60,
-                            html: '<h1 style="color:#999;">Drop files here</h1>',
-                            styleHtmlContent: true,
-                            width: 179
+                            xtype: 'form',
+                            bodyPadding: 10,
+                            title: 'Options',
+                            tabConfig: {
+                                xtype: 'tab',
+                                flex: 1
+                            },
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    localiserId: 'applyCurrentTaxoToUploadField',
+                                    id: 'applyCurrentTaxoToUploadField',
+                                    fieldLabel: 'Apply current taxonomy facets',
+                                    labelWidth: 180,
+                                    boxLabel: '',
+                                    checked: true,
+                                    inputValue: 'true',
+                                    uncheckedValue: 'false'
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Workspaces to apply to uploaded media',
+                                    items: [
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            localiserId: 'contributeWorkspaceField',
+                                            id: 'contributeWorkspaceMassUploadField',
+                                            fieldLabel: 'Contribution',
+                                            name: 'writeWorkspace',
+                                            store: 'ContributeWorkspacesCombo',
+                                            anchor: '100%'
+                                        },
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            localiserId: 'diffusionWorkspaceField',
+                                            id: 'targetWorkspaceMassUploadField',
+                                            fieldLabel: 'Diffusion',
+                                            name: 'target',
+                                            multiSelect: true,
+                                            store: 'WorkspacesComboWithAll',
+                                            anchor: '100%'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
-                    ]
+                    ],
+                    listeners: {
+                        afterrender: {
+                            fn: me.onTabpanelAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ],
             dockedItems: [
@@ -121,6 +189,10 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 beforeclose: {
                     fn: me.onMassDamUploadWindowBeforeClose,
                     scope: me
+                },
+                render: {
+                    fn: me.onMassDamUploadWindowRender,
+                    scope: me
                 }
             }
         });
@@ -130,6 +202,11 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
 
     onMassDamUploadDropZoneAfterRender: function(component, eOpts) {
         component.setBorder(4);
+    },
+
+    onTabpanelAfterRender: function(component, eOpts) {
+        Ext.getCmp("MassDamUploadWindow").getComponent(0).getLayout().setActiveItem(1);
+        Ext.getCmp("MassDamUploadWindow").getComponent(0).getLayout().setActiveItem(0);
     },
 
     onToolbarAfterRender: function(component, eOpts) {
@@ -153,9 +230,12 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 statusUploadingText: 'Uploading ({0}%)',
                 autoRemoveUploaded:false,
                 multipart_params:{
-                    "activeFacets":Ext.JSON.encode(Ext.getStore("DAMFacetteStore").activeFacettes),
+                    "typeId":Ext.getStore("DAMFacetteStore").activeFacettes.damType,
+                    "activeFacets":Ext.JSON.encode(Ext.getCmp("MassDamUploadWindow").activeFacets),
+                    "applyTaxoFacets":Ext.getCmp("applyCurrentTaxoToUploadField").value,
                     "token":ACL.CSRFToken,
-                    "writeWorkspace":ACL.defaultWorkspace
+                    "writeWorkspace":Ext.getCmp("contributeWorkspaceMassUploadField").value,
+                    "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value)
                 },
                 statusFailedText: '<span style="color: red">Error</span>',
                 statusDoneText: '<span style="color: green">Complete</span>',
@@ -169,13 +249,13 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
             {
                 filesadded: function(uploader, files)								
                 {
-                    //console.log('filesadded');
+                    uploader.multipart_params=Ext.getCmp("MassDamUploadWindow").getMassUploadParams();
                     return true;
                 },
 
                 beforeupload: function(uploader, file)								
                 {
-                    //console.log('beforeupload');			
+                    //console.log("beforeupload");
                 },
 
                 fileuploaded: function(uploader, file)								
@@ -217,6 +297,29 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
             var myType=Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType).get("type");
             component.setText("Media type : "+myType);
         } catch(err){console.log("error displaying type");}
+    },
+
+    onMassDamUploadWindowRender: function(component, eOpts) {
+        var rawFacets=Ext.clone(Ext.getStore("DAMFacetteStore").activeFacettes);
+        delete rawFacets.damType;
+        delete rawFacets.query;
+        delete rawFacets.lastupdatetime;
+        Ext.Object.each(rawFacets, function(key, value, myself) {
+            if (!Ext.isArray(value)){
+                rawFacets[key]=new Array(value);
+            }
+        });
+        component.activeFacets=rawFacets;
+    },
+
+    getMassUploadParams: function() {
+        var params={"typeId":Ext.getStore("DAMFacetteStore").activeFacettes.damType,
+                "activeFacets":Ext.JSON.encode(Ext.getCmp("MassDamUploadWindow").activeFacets),
+                "applyTaxoFacets":Ext.getCmp("applyCurrentTaxoToUploadField").value,
+                "token":ACL.CSRFToken,
+                "writeWorkspace":Ext.getCmp("contributeWorkspaceMassUploadField").value,
+            "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value)}
+            return(params);
     }
 
 });
