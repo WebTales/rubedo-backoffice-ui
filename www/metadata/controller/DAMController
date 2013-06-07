@@ -993,11 +993,12 @@
                     "var targetedImageId = component.targetedImageId;\r",
                     "var targetedImageTitle = component.targetedImageTitle;\r",
                     "var iconUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/resources/icones/logoRubedo.png\");\r",
+                    "var exitUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/resources/afterPixlr.html\");\r",
                     "var imageUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/image?file-id=\"+targetedImageId);\r",
                     "var imageResponseUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/file/update?originalId=\"+targetedImageId+\"&token=\"+ACL.CSRFToken);\r",
                     "var holder=Ext.widget(\"panel\", {header:false, autoScroll:true});\r",
                     "component.add(holder);\r",
-                    "var addHtml='<iframe id=\"pixlr\" type=\"text/html\" width=\"100%\" height=\"1200px\" src=\"http://pixlr.com/editor/?referrer=Rubedo&title='+targetedImageTitle+'&locktitle=true&method=POST&image='+imageUrl+'&target='+imageResponseUrl+'&locktarget=true&icon='+iconUrl+'\" frameborder=\"0\"></iframe>';\r",
+                    "var addHtml='<iframe id=\"pixlr\" type=\"text/html\" width=\"100%\" height=\"1200px\" src=\"http://pixlr.com/editor/?referrer=Rubedo&title='+targetedImageTitle+'&locktitle=true&method=POST&image='+imageUrl+'&target='+imageResponseUrl+'&locktarget=true&icon='+iconUrl+'&exit='+exitUrl+'\" frameborder=\"0\"></iframe>';\r",
                     "holder.update(addHtml);"
                 ],
                 "name": "afterrender",
