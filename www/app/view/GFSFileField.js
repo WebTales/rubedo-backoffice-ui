@@ -94,6 +94,13 @@ Ext.define('Rubedo.view.GFSFileField', {
             var myPixlrEditor=Ext.widget("pixlrEditorWindow");
             myPixlrEditor.targetedImageId=component.getValue();
             myPixlrEditor.targetedImageTitle=Ext.getStore("DAMEditStore").getRange()[0].get("title");
+            myPixlrEditor.on("beforeclose",function(){
+                var task = new Ext.util.DelayedTask(function(){
+                    myComponent.getComponent("fieldImagePreview").setSrc(null);
+                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+sizer);
+                });
+                task.delay(400);
+            }); 
             myPixlrEditor.show();
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").on("click",function(){

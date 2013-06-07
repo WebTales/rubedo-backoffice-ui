@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     ],
 
     localiserId: 'newDamWindow',
-    height: 400,
+    height: 518,
     id: 'DAMCreateUpdateWindow',
     minHeight: 220,
     width: 900,
