@@ -291,7 +291,7 @@
                     "            component.setTooltip(configs.tooltip);\r",
                     "        }\r",
                     "    }\r",
-                    "    if ((component.isXType(\"button\"))&&(component.scale==\"large\")){\r",
+                    "    if ((component.isXType(\"button\"))&&(component.scale==\"large\")&&(Ext.isEmpty(component.dontStretch))){\r",
                     "        component.minWidth=48;\r",
                     "    }\r",
                     "}\r",

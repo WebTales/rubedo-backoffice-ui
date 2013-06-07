@@ -104,8 +104,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsUploadBtn",
-                        "layout|x": 70,
+                        "layout|x": 50,
                         "layout|y": 10,
+                        "dontStretch": true,
                         "itemId": "fieldChangeFile",
                         "iconCls": "database_up_big",
                         "scale": "large",
@@ -113,13 +114,19 @@
                         "tooltip": "Uploader un fichier"
                     },
                     "configAlternates": {
-                        "tooltip": "string"
+                        "tooltip": "string",
+                        "dontStretch": "boolean"
                     },
                     "designerId": "a9990c6b-2768-405b-adce-e42d491e656a",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "dontStretch",
                             "type": "string"
                         }
                     ]
@@ -133,8 +140,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsRemoveFileBtn",
-                        "layout|x": 190,
+                        "layout|x": 210,
                         "layout|y": 10,
+                        "dontStretch": true,
                         "itemId": "fieldClearFile",
                         "width": 40,
                         "iconCls": "remove_big",
@@ -143,13 +151,19 @@
                         "tooltip": "Supprimer le fichier"
                     },
                     "configAlternates": {
-                        "tooltip": "string"
+                        "tooltip": "string",
+                        "dontStretch": "boolean"
                     },
                     "designerId": "10ef4574-25d3-4e78-99b1-5489c933b65f",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "dontStretch",
                             "type": "string"
                         }
                     ]
@@ -163,8 +177,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsDownloadBtn",
-                        "layout|x": 10,
+                        "layout|x": 0,
                         "layout|y": 10,
+                        "dontStretch": true,
                         "itemId": "fieldDownloadFile",
                         "width": 40,
                         "iconCls": "database_down_big",
@@ -173,13 +188,19 @@
                         "tooltip": "Télécharger le fichier"
                     },
                     "configAlternates": {
-                        "tooltip": "string"
+                        "tooltip": "string",
+                        "dontStretch": "boolean"
                     },
                     "designerId": "a5f80e8d-f417-4f72-9cd6-68b055efe581",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "dontStretch",
                             "type": "string"
                         }
                     ]
@@ -193,8 +214,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsPreviewFileBtn",
-                        "layout|x": 130,
+                        "layout|x": 100,
                         "layout|y": 10,
+                        "dontStretch": true,
                         "itemId": "fieldPreviewFile",
                         "width": 40,
                         "iconCls": "play_big",
@@ -203,13 +225,19 @@
                         "tooltip": "Affichage en détail"
                     },
                     "configAlternates": {
-                        "tooltip": "string"
+                        "tooltip": "string",
+                        "dontStretch": "boolean"
                     },
                     "designerId": "3b9fcc69-9743-4c23-920d-e4adef0417e5",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "dontStretch",
                             "type": "string"
                         }
                     ]
@@ -223,8 +251,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsHelpBtn",
-                        "layout|x": 250,
+                        "layout|x": 260,
                         "layout|y": 10,
+                        "dontStretch": true,
                         "itemId": "helpBouton",
                         "margin": null,
                         "style": [
@@ -242,11 +271,19 @@
                             "'Fichier principal du média. Obligatoire.'"
                         ]
                     },
+                    "configAlternates": {
+                        "dontStretch": "boolean"
+                    },
                     "designerId": "15e9fd3d-fccb-4da6-b616-056ed2ba0dab",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "dontStretch",
                             "type": "string"
                         }
                     ]
@@ -259,20 +296,34 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|x": 130,
+                        "layout|x": 160,
                         "layout|y": 10,
-                        "hidden": true,
+                        "localiserId": "gfsEditBtn",
+                        "dontStretch": true,
                         "itemId": "fieldEditFile",
                         "width": 40,
                         "iconCls": "pencil_big",
                         "scale": "large",
                         "text": "",
-                        "tooltip": "Editer le fichier"
+                        "tooltip": "Edit the file"
                     },
                     "configAlternates": {
-                        "tooltip": "string"
+                        "tooltip": "string",
+                        "dontStretch": "boolean"
                     },
-                    "designerId": "df807824-f3c9-4950-b97b-0954fe78b320"
+                    "designerId": "df807824-f3c9-4950-b97b-0954fe78b320",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "dontStretch",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

@@ -252,6 +252,18 @@ Ext.define('Rubedo.controller.DAMController', {
         }
     },
 
+    onPixlrEditorWindowAfterRender: function(component, eOpts) {
+        var targetedImageId = component.targetedImageId;
+        var targetedImageTitle = component.targetedImageTitle;
+        var iconUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/resources/icones/logoRubedo.png");
+        var imageUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/image?file-id="+targetedImageId);
+        var imageResponseUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/file/update?originalId="+targetedImageId+"&token="+ACL.CSRFToken);
+        var holder=Ext.widget("panel", {header:false, autoScroll:true});
+        component.add(holder);
+        var addHtml='<iframe id="pixlr" type="text/html" width="100%" height="1200px" src="http://pixlr.com/editor/?referrer=Rubedo&title='+targetedImageTitle+'&locktitle=true&method=POST&image='+imageUrl+'&target='+imageResponseUrl+'&locktarget=true&icon='+iconUrl+'" frameborder="0"></iframe>';
+        holder.update(addHtml);
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -677,6 +689,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#imposeDamTypeFacetBtn": {
                 click: this.onImposeDamTypeFacetBtnClick
+            },
+            "#pixlrEditorWindow": {
+                afterrender: this.onPixlrEditorWindowAfterRender
             }
         });
     }

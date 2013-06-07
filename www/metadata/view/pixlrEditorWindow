@@ -1,0 +1,24 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "id": "pixlrEditorWindow",
+        "width": 400,
+        "designer|userClassName": "pixlrEditorWindow",
+        "designer|userAlias": "pixlrEditorWindow",
+        "resizable": false,
+        "layout": "fit",
+        "title": "Image editor",
+        "maximized": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "8a0627d1-0b5e-426d-bdca-2ee1be6c9d9b"
+}

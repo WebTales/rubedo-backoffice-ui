@@ -56,8 +56,9 @@ Ext.define('Rubedo.view.GFSFileFieldComponentBig', {
                         {
                             xtype: 'button',
                             localiserId: 'gfsUploadBtn',
-                            x: 70,
+                            x: 50,
                             y: 10,
+                            dontStretch: true,
                             itemId: 'fieldChangeFile',
                             iconCls: 'database_up_big',
                             scale: 'large',
@@ -67,8 +68,9 @@ Ext.define('Rubedo.view.GFSFileFieldComponentBig', {
                         {
                             xtype: 'button',
                             localiserId: 'gfsRemoveFileBtn',
-                            x: 190,
+                            x: 210,
                             y: 10,
+                            dontStretch: true,
                             itemId: 'fieldClearFile',
                             width: 40,
                             iconCls: 'remove_big',
@@ -79,8 +81,9 @@ Ext.define('Rubedo.view.GFSFileFieldComponentBig', {
                         {
                             xtype: 'button',
                             localiserId: 'gfsDownloadBtn',
-                            x: 10,
+                            x: 0,
                             y: 10,
+                            dontStretch: true,
                             itemId: 'fieldDownloadFile',
                             width: 40,
                             iconCls: 'database_down_big',
@@ -91,8 +94,9 @@ Ext.define('Rubedo.view.GFSFileFieldComponentBig', {
                         {
                             xtype: 'button',
                             localiserId: 'gfsPreviewFileBtn',
-                            x: 130,
+                            x: 100,
                             y: 10,
+                            dontStretch: true,
                             itemId: 'fieldPreviewFile',
                             width: 40,
                             iconCls: 'play_big',
@@ -103,8 +107,9 @@ Ext.define('Rubedo.view.GFSFileFieldComponentBig', {
                         {
                             xtype: 'button',
                             localiserId: 'gfsHelpBtn',
-                            x: 250,
+                            x: 260,
                             y: 10,
+                            dontStretch: true,
                             itemId: 'helpBouton',
                             style: '{float:right;}',
                             handleMouseEvents: false,
@@ -116,15 +121,16 @@ Ext.define('Rubedo.view.GFSFileFieldComponentBig', {
                         },
                         {
                             xtype: 'button',
-                            x: 130,
+                            x: 160,
                             y: 10,
-                            hidden: true,
+                            localiserId: 'gfsEditBtn',
+                            dontStretch: true,
                             itemId: 'fieldEditFile',
                             width: 40,
                             iconCls: 'pencil_big',
                             scale: 'large',
                             text: '',
-                            tooltip: 'Editer le fichier'
+                            tooltip: 'Edit the file'
                         }
                     ]
                 }

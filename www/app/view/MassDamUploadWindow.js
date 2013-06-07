@@ -92,8 +92,8 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                             items: [
                                 {
                                     xtype: 'checkboxfield',
-                                    anchor: '100%',
                                     localiserId: 'applyCurrentTaxoToUploadField',
+                                    anchor: '100%',
                                     id: 'applyCurrentTaxoToUploadField',
                                     fieldLabel: 'Apply current taxonomy facets',
                                     labelWidth: 180,

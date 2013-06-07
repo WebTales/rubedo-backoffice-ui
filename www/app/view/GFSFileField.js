@@ -62,19 +62,23 @@ Ext.define('Rubedo.view.GFSFileField', {
 
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                if (component.bigMode) {
+                    myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                }
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
             } else {
                 if (component.fileType=="Image"){
                     myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
                     myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+sizer);
+                    if (component.bigMode) {
+                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                    }
                 } else {
                     myComponent.getComponent("fieldImagePreview").setSrc("../file/get-thumbnail");
                     myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
                 }
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
             }
 
             myComponent.getEl().on("click",function(){
@@ -85,6 +89,12 @@ Ext.define('Rubedo.view.GFSFileField', {
         component.up().add(myComponent);
         myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").on("click",function(){
             Ext.widget("GFSFieldUploadWindow",{targetField:component.id}).show();
+        });
+        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").on("click",function(){
+            var myPixlrEditor=Ext.widget("pixlrEditorWindow");
+            myPixlrEditor.targetedImageId=component.getValue();
+            myPixlrEditor.targetedImageTitle=Ext.getStore("DAMEditStore").getRange()[0].get("title");
+            myPixlrEditor.show();
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").on("click",function(){
             var delCon = Ext.widget('delConfirmZ');
@@ -99,35 +109,45 @@ Ext.define('Rubedo.view.GFSFileField', {
                 myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                if (component.bigMode) {
+                    myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                }
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
 
             } else {
                 if (component.fileType=="Image"){
                     myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
                     myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+sizer);
+                    if (component.bigMode) {
+                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                    }
                 } else {
                     myComponent.getComponent("fieldImagePreview").setSrc("../file/get-thumbnail");
                     myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
                 }
                 myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
 
             }
 
         });
         if (component.readOnly){
             myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
-            //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+            if (component.bigMode) {
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+            }
             myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").hide();
         } else {
             myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").show();
-            //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+            if (component.bigMode) {
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+            }
             myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").show();
         }
         if (component.fileType!="Image"){
-            //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+            if (component.bigMode) {
+                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+            }
         } else {
             //handle image online editing
         }
@@ -138,15 +158,21 @@ Ext.define('Rubedo.view.GFSFileField', {
         component.on("writeablechange", function(){
             if (component.readOnly){
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+                if (component.bigMode) {
+                    myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+                }
                 myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").hide();
             } else {
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").show();
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+                if (component.bigMode) {
+                    myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+                }
                 myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").show();
             }
             if (component.fileType!="Image"){
-                //myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+                if (component.bigMode) {
+                    myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                }
             } else {
                 //handle image online editing
             }

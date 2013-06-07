@@ -55,7 +55,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     component.setTooltip(configs.tooltip);
                 }
             }
-            if ((component.isXType("button"))&&(component.scale=="large")){
+            if ((component.isXType("button"))&&(component.scale=="large")&&(Ext.isEmpty(component.dontStretch))){
                 component.minWidth=48;
             }
         }

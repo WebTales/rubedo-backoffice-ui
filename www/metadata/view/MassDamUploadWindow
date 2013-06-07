@@ -157,8 +157,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "applyCurrentTaxoToUploadField",
+                                "layout|anchor": "100%",
                                 "id": "applyCurrentTaxoToUploadField",
                                 "fieldLabel": "Apply current taxonomy facets",
                                 "labelWidth": 180,
@@ -533,12 +533,12 @@
                 "fn": "getMassUploadParams",
                 "implHandler": [
                     "var params={\"typeId\":Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType,\r",
-                    "            \"activeFacets\":Ext.JSON.encode(Ext.getCmp(\"MassDamUploadWindow\").activeFacets),\r",
-                    "            \"applyTaxoFacets\":Ext.getCmp(\"applyCurrentTaxoToUploadField\").value,\r",
-                    "            \"token\":ACL.CSRFToken,\r",
-                    "            \"writeWorkspace\":Ext.getCmp(\"contributeWorkspaceMassUploadField\").value,\r",
-                    "            \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value)}\r",
-                    "return(params);"
+                    "        \"activeFacets\":Ext.JSON.encode(Ext.getCmp(\"MassDamUploadWindow\").activeFacets),\r",
+                    "        \"applyTaxoFacets\":Ext.getCmp(\"applyCurrentTaxoToUploadField\").value,\r",
+                    "        \"token\":ACL.CSRFToken,\r",
+                    "        \"writeWorkspace\":Ext.getCmp(\"contributeWorkspaceMassUploadField\").value,\r",
+                    "    \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value)}\r",
+                    "    return(params);"
                 ]
             },
             "designerId": "00de9b96-47a1-4549-b0c5-a12c94cdf9c7"

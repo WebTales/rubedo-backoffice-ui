@@ -151,7 +151,8 @@ Ext.application({
         'Rubedo.view.ESSearchField',
         'Rubedo.view.ImagePreviewWindow',
         'Rubedo.view.MassDamUploadWindow',
-        'Rubedo.view.damTypeFacetImposeWindow'
+        'Rubedo.view.damTypeFacetImposeWindow',
+        'Rubedo.view.pixlrEditorWindow'
     ],
     models: [
         'sitesDataModel',
@@ -411,7 +412,8 @@ Ext.application({
         'ESSearchField',
         'ImagePreviewWindow',
         'MassDamUploadWindow',
-        'damTypeFacetImposeWindow'
+        'damTypeFacetImposeWindow',
+        'pixlrEditorWindow'
     ],
     autoCreateViewport: true,
     controllers: [
