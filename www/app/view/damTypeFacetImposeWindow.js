@@ -48,6 +48,7 @@ Ext.define('Rubedo.view.damTypeFacetImposeWindow', {
                             editable: false,
                             displayField: 'type',
                             forceSelection: true,
+                            queryMode: 'local',
                             store: 'MediaTypesForDAM',
                             valueField: 'id'
                         },

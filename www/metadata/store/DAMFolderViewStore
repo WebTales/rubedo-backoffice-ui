@@ -8,6 +8,9 @@
     "userConfig": {
         "isOptimised": true,
         "usedCollection": "DAM",
+        "DAMTypeFilters": [
+            "[ ]"
+        ],
         "autoLoad": false,
         "autoSync": true,
         "model": "DAMFolderViewModel",
@@ -20,7 +23,8 @@
         "pageSize": 50
     },
     "configAlternates": {
-        "isOptimised": "boolean"
+        "isOptimised": "boolean",
+        "DAMTypeFilters": "array"
     },
     "designerId": "314e16bf-0e8d-4905-abb5-5aa656d7c22e",
     "customConfigs": [
@@ -32,6 +36,11 @@
         {
             "group": "(Custom Properties)",
             "name": "usedCollection",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "DAMTypeFilters",
             "type": "string"
         }
     ],
@@ -84,6 +93,27 @@
                     "designerId": "11c8623b-7bdc-446d-a768-74293be47fda"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "if (!Ext.isEmpty(store.DAMTypeFilters)){\r",
+                    "    store.getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(store.DAMTypeFilters)+\"}]\";\r",
+                    "} else {\r",
+                    "    delete store.getProxy().extraParams.filter;\r",
+                    "}"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "designerId": "c8ffa646-a104-4dab-bed5-2824b4b968ff"
         }
     ]
 }

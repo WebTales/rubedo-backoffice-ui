@@ -1083,6 +1083,27 @@
                 ]
             },
             "designerId": "b028e857-b7f6-429f-b1d7-c23b40f107c2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDAMFolderViewFiltersBtnClick",
+                "implHandler": [
+                    "var selected=Ext.Array.pluck(Ext.Array.pluck(button.up().up().getSelectionModel().getSelection(),\"data\"),\"id\");\r",
+                    "Ext.getStore(\"DAMFolderViewStore\").DAMTypeFilters=selected;\r",
+                    "Ext.getStore(\"DAMFolderViewStore\").load();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMFolderViewFiltersBtn"
+            },
+            "designerId": "8dffcc30-9ce4-4600-916c-83e78f50c912"
         }
     ]
 }

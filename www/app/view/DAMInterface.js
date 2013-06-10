@@ -308,7 +308,65 @@ Ext.define('Rubedo.view.DAMInterface', {
                         },
                         {
                             xtype: 'panel',
-                            title: 'Folder view'
+                            layout: {
+                                type: 'accordion'
+                            },
+                            title: '',
+                            items: [
+                                {
+                                    xtype: 'treepanel',
+                                    height: 250,
+                                    width: 400,
+                                    title: 'File plan',
+                                    viewConfig: {
+
+                                    },
+                                    columns: [
+                                        {
+                                            xtype: 'treecolumn',
+                                            dataIndex: 'text',
+                                            text: 'Nodes',
+                                            flex: 1
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'value',
+                                            text: 'Value'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'gridpanel',
+                                    autoScroll: true,
+                                    title: 'Filters',
+                                    forceFit: true,
+                                    store: 'MediaTypesForDAM',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'type',
+                                            text: 'Type'
+                                        }
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'bottom',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    flex: 1,
+                                                    id: 'DAMFolderViewFiltersBtn',
+                                                    text: 'Apply filters'
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                                    })
+                                }
+                            ]
                         }
                     ]
                 },

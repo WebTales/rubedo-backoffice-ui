@@ -27,6 +27,9 @@ Ext.define('Rubedo.store.DAMFolderViewStore', {
         me.callParent([Ext.apply({
             isOptimised: true,
             usedCollection: 'DAM',
+            DAMTypeFilters: [
+                
+            ],
             autoLoad: false,
             autoSync: true,
             model: 'Rubedo.model.DAMFolderViewModel',
@@ -53,7 +56,22 @@ Ext.define('Rubedo.store.DAMFolderViewStore', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            listeners: {
+                beforeload: {
+                    fn: me.onJsonstoreBeforeLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreBeforeLoad: function(store, operation, eOpts) {
+        if (!Ext.isEmpty(store.DAMTypeFilters)){
+            store.getProxy().extraParams.filter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(store.DAMTypeFilters)+"}]";
+        } else {
+            delete store.getProxy().extraParams.filter;
+        }
     }
+
 });

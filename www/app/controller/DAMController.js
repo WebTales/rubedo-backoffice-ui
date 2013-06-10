@@ -286,6 +286,12 @@ Ext.define('Rubedo.controller.DAMController', {
         button.adaptToCurrentMode();
     },
 
+    onDAMFolderViewFiltersBtnClick: function(button, e, eOpts) {
+        var selected=Ext.Array.pluck(Ext.Array.pluck(button.up().up().getSelectionModel().getSelection(),"data"),"id");
+        Ext.getStore("DAMFolderViewStore").DAMTypeFilters=selected;
+        Ext.getStore("DAMFolderViewStore").load();
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -735,6 +741,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMSwitchModeBtn": {
                 click: this.onDAMSwitchModeBtnClick
+            },
+            "#DAMFolderViewFiltersBtn": {
+                click: this.onDAMFolderViewFiltersBtnClick
             }
         });
     }
