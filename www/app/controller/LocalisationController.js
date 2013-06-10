@@ -284,7 +284,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "databaseIsUpToDateText":"Database is up to date",
             "databaseNeedsUpdateText":"Database update required",
             "databaseUpdateWarning":"This action will update the Rubedo database. It is recommended that you back-up your data before starting. Would you like to continue ?",
-            "databaseUpdatedToText":"The database has been updated to version"
+            "databaseUpdatedToText":"The database has been updated to version",
+            "folderViewText":"Folder view",
+            "switchToFolderViewText": "Switch to folder view",
+            "searchViewText":"Search view",
+            "switchToSearchViewText":"Switch to search view"    
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

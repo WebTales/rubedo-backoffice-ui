@@ -159,7 +159,7 @@
             "userConfig": {
                 "fn": "onAddDAMBtnClick",
                 "implHandler": [
-                    "if (!Ext.isEmpty(Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType)){\r",
+                    "if ((Ext.getCmp(\"DAMInterface\").currentViewMode==\"search\")&&(!Ext.isEmpty(Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType))){\r",
                     "    var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType);\r",
                     "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
                     "    Ext.getCmp(\"DAMMainFileFieldBox\").up().remove(Ext.getCmp(\"DAMMainFileFieldBox\"));\r",
@@ -407,8 +407,12 @@
                     "var fenetre = Ext.widget('delConfirmZ');\r",
                     "fenetre.show();\r",
                     "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                    "    Ext.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
-                    "    Ext.getStore(\"DAMFacetteStore\").addListener(\"datachanged\", function(){Ext.getStore(\"DAMFacetteStore\").load(); }, this, {delay:100,single:true});\r",
+                    "    if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"folder\"){\r",
+                    "        Ext.getStore(\"DAMFolderViewStore\").remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
+                    "    } else {\r",
+                    "    \tExt.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
+                    "    \tExt.getStore(\"DAMFacetteStore\").addListener(\"datachanged\", function(){Ext.getStore(\"DAMFacetteStore\").load(); }, this, {delay:100,single:true});\r",
+                    "    }\r",
                     "    Ext.getCmp('delConfirmZ').close();\r",
                     "\r",
                     "}, this);  \r",
@@ -449,8 +453,10 @@
                     "        button.up().up().close();\r",
                     "        if (Ext.getCmp(\"DAMCreateUpdateWindow\").directContribute){\r",
                     "            Ext.getStore(\"DAMPickerStore\").load();\r",
-                    "        } else {\r",
+                    "        } else if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"search\"){\r",
                     "            Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "        } else {\r",
+                    "            Ext.getStore(\"DAMFolderViewStore\").load();\r",
                     "        }\r",
                     "\r",
                     "    },\r",
@@ -559,7 +565,11 @@
                     "    record.set(\"taxonomy\", me.getTaxoValues());\r",
                     "    record.endEdit();\r",
                     "    button.up().up().close();\r",
-                    "    Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "    if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"search\"){\r",
+                    "    \tExt.getStore(\"DAMFacetteStore\").load();\r",
+                    "    } else {\r",
+                    "        Ext.getStore(\"DAMFolderViewStore\").load();\r",
+                    "    }\r",
                     "} else {Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);}"
                 ],
                 "name": "click",
@@ -910,19 +920,19 @@
                 "fn": "onAddDamAfterTypeBtnClick",
                 "implHandler": [
                     "if (!button.nonClassic){\r",
-                    "if (button.up().getForm().isValid()){\r",
-                    "    var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",button.up().getForm().getValues().typeId);\r",
-                    "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
-                    "    Ext.getCmp(\"DAMMainFileFieldBox\").up().remove(Ext.getCmp(\"DAMMainFileFieldBox\"));\r",
-                    "    myEditor.typeId=DAMType.get(\"id\");\r",
-                    "    myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
-                    "    myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+\" \"+DAMType.get(\"type\"));\r",
-                    "    myEditor.show();\r",
-                    "    this.renderDAMTypeFields(DAMType, false);\r",
-                    "    this.renderTaxoFields(DAMType);\r",
-                    "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
-                    "    button.up().up().close();\r",
-                    "} \r",
+                    "    if (button.up().getForm().isValid()){\r",
+                    "        var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",button.up().getForm().getValues().typeId);\r",
+                    "        var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                    "        Ext.getCmp(\"DAMMainFileFieldBox\").up().remove(Ext.getCmp(\"DAMMainFileFieldBox\"));\r",
+                    "        myEditor.typeId=DAMType.get(\"id\");\r",
+                    "        myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
+                    "        myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+\" \"+DAMType.get(\"type\"));\r",
+                    "        myEditor.show();\r",
+                    "        this.renderDAMTypeFields(DAMType, false);\r",
+                    "        this.renderTaxoFields(DAMType);\r",
+                    "        Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                    "        button.up().up().close();\r",
+                    "    } \r",
                     "}"
                 ],
                 "name": "click",
@@ -945,7 +955,7 @@
                     "if (Ext.isEmpty(Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType)){\r",
                     "    Ext.widget(\"damTypeFacetImposeWindow\").show();\r",
                     "} else {\r",
-                    "\tExt.widget(\"MassDamUploadWindow\").show();\r",
+                    "    Ext.widget(\"MassDamUploadWindow\").show();\r",
                     "}"
                 ],
                 "name": "click",
@@ -1007,6 +1017,72 @@
                 "designer|controlQuery": "#pixlrEditorWindow"
             },
             "designerId": "f413c44a-1c0d-4e56-ae92-8bb775100d79"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDAMSwitchModeBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var mode =Ext.getCmp(\"DAMInterface\").currentViewMode;\r",
+                    "if (mode==\"search\"){\r",
+                    "\tme.switchToFolderView();\r",
+                    "} else {\r",
+                    "\tme.switchToSearchView();\r",
+                    "}\r",
+                    "button.adaptToCurrentMode();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#DAMSwitchModeBtn"
+            },
+            "designerId": "6b670efe-c050-45f7-9751-34c537d2ccff"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "switchToFolderView",
+                "implHandler": [
+                    "Ext.getCmp(\"DAMInterface\").currentViewMode=\"folder\";\r",
+                    "Ext.getCmp(\"DAMLeftBox\").getLayout().setActiveItem(1);\r",
+                    "Ext.getCmp(\"DAMActiveFacetBox\").hide();\r",
+                    "Ext.getCmp(\"DAMInterface\").getComponent(1).getComponent(0).getView().bindStore(\"DAMFolderViewStore\");\r",
+                    "Ext.getStore(\"DAMFolderViewStore\").load();\r",
+                    "Ext.getCmp(\"massDamUploadBtn\").disable();"
+                ]
+            },
+            "designerId": "3dc95abd-f533-49a8-8710-4ac5e9baeb52"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "switchToSearchView",
+                "implHandler": [
+                    "Ext.getCmp(\"DAMInterface\").currentViewMode=\"search\";\r",
+                    "Ext.getCmp(\"DAMLeftBox\").getLayout().setActiveItem(0);\r",
+                    "Ext.getCmp(\"DAMActiveFacetBox\").show();\r",
+                    "Ext.getCmp(\"DAMInterface\").getComponent(1).getComponent(0).getView().bindStore(\"DAMFacetteStore\");\r",
+                    "Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "Ext.getCmp(\"massDamUploadBtn\").enable();"
+                ]
+            },
+            "designerId": "b028e857-b7f6-429f-b1d7-c23b40f107c2"
         }
     ]
 }

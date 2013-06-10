@@ -26,7 +26,7 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onAddDAMBtnClick: function(button, e, eOpts) {
-        if (!Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
+        if ((Ext.getCmp("DAMInterface").currentViewMode=="search")&&(!Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType))){
             var DAMType= Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType);
             var myEditor = Ext.widget("DAMCreateUpdateWindow");
             Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
@@ -76,8 +76,12 @@ Ext.define('Rubedo.controller.DAMController', {
         var fenetre = Ext.widget('delConfirmZ');
         fenetre.show();
         Ext.getCmp('delConfirmZOui').on('click', function() { 
-            Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
-            Ext.getStore("DAMFacetteStore").addListener("datachanged", function(){Ext.getStore("DAMFacetteStore").load(); }, this, {delay:100,single:true});
+            if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
+                Ext.getStore("DAMFolderViewStore").remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
+            } else {
+                Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
+                Ext.getStore("DAMFacetteStore").addListener("datachanged", function(){Ext.getStore("DAMFacetteStore").load(); }, this, {delay:100,single:true});
+            }
             Ext.getCmp('delConfirmZ').close();
 
         }, this);  
@@ -103,8 +107,10 @@ Ext.define('Rubedo.controller.DAMController', {
                 button.up().up().close();
                 if (Ext.getCmp("DAMCreateUpdateWindow").directContribute){
                     Ext.getStore("DAMPickerStore").load();
-                } else {
+                } else if (Ext.getCmp("DAMInterface").currentViewMode=="search"){
                     Ext.getStore("DAMFacetteStore").load();
+                } else {
+                    Ext.getStore("DAMFolderViewStore").load();
                 }
 
             },
@@ -164,7 +170,11 @@ Ext.define('Rubedo.controller.DAMController', {
             record.set("taxonomy", me.getTaxoValues());
             record.endEdit();
             button.up().up().close();
-            Ext.getStore("DAMFacetteStore").load();
+            if (Ext.getCmp("DAMInterface").currentViewMode=="search"){
+                Ext.getStore("DAMFacetteStore").load();
+            } else {
+                Ext.getStore("DAMFolderViewStore").load();
+            }
         } else {Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);}
     },
 
@@ -263,6 +273,17 @@ Ext.define('Rubedo.controller.DAMController', {
         component.add(holder);
         var addHtml='<iframe id="pixlr" type="text/html" width="100%" height="1200px" src="http://pixlr.com/editor/?referrer=Rubedo&title='+targetedImageTitle+'&locktitle=true&method=POST&image='+imageUrl+'&target='+imageResponseUrl+'&locktarget=true&icon='+iconUrl+'&exit='+exitUrl+'" frameborder="0"></iframe>';
         holder.update(addHtml);
+    },
+
+    onDAMSwitchModeBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var mode =Ext.getCmp("DAMInterface").currentViewMode;
+        if (mode=="search"){
+            me.switchToFolderView();
+        } else {
+            me.switchToSearchView();
+        }
+        button.adaptToCurrentMode();
     },
 
     resetInterfaceSelect: function(record) {
@@ -649,6 +670,24 @@ Ext.define('Rubedo.controller.DAMController', {
         });
     },
 
+    switchToFolderView: function() {
+        Ext.getCmp("DAMInterface").currentViewMode="folder";
+        Ext.getCmp("DAMLeftBox").getLayout().setActiveItem(1);
+        Ext.getCmp("DAMActiveFacetBox").hide();
+        Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFolderViewStore");
+        Ext.getStore("DAMFolderViewStore").load();
+        Ext.getCmp("massDamUploadBtn").disable();
+    },
+
+    switchToSearchView: function() {
+        Ext.getCmp("DAMInterface").currentViewMode="search";
+        Ext.getCmp("DAMLeftBox").getLayout().setActiveItem(0);
+        Ext.getCmp("DAMActiveFacetBox").show();
+        Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFacetteStore");
+        Ext.getStore("DAMFacetteStore").load();
+        Ext.getCmp("massDamUploadBtn").enable();
+    },
+
     init: function(application) {
         this.control({
             "#DAMMTGrid": {
@@ -693,6 +732,9 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#pixlrEditorWindow": {
                 afterrender: this.onPixlrEditorWindowAfterRender
+            },
+            "#DAMSwitchModeBtn": {
+                click: this.onDAMSwitchModeBtnClick
             }
         });
     }

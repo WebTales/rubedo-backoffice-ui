@@ -55,6 +55,12 @@ border-style:dashed !important;
 .prevIphoneL{
 	background: url(../icones/generic/iphone-l32.png) left center no-repeat !important;
 }
+.folder_big{
+	background: url(../icones/blue/32x32/folder.png)  center no-repeat !important;
+}
+.search_big{
+	background: url(../icones/blue/32x32/search.png)  center no-repeat !important;
+}
 .x-toolbar .x-btn-split-right:hover {
     background: url(../images/delete_item.png) right center no-repeat !important;
 }

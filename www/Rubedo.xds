@@ -2469,6 +2469,22 @@
                 "app/view/pixlrEditorWindow.js"
             ],
             "className": "pixlrEditorWindow"
+        },
+        "c150a87f-f1d5-493a-b0af-388160147eb2": {
+            "paths": [
+                "metadata/model/DAMFolderViewModel",
+                "app/model/override/DAMFolderViewModel.js",
+                "app/model/DAMFolderViewModel.js"
+            ],
+            "className": "DAMFolderViewModel"
+        },
+        "314e16bf-0e8d-4905-abb5-5aa656d7c22e": {
+            "paths": [
+                "metadata/store/DAMFolderViewStore",
+                "app/store/override/DAMFolderViewStore.js",
+                "app/store/DAMFolderViewStore.js"
+            ],
+            "className": "DAMFolderViewStore"
         }
     },
     "viewOrderMap": {
@@ -2689,6 +2705,7 @@
             "42485569-d0e5-4710-b0aa-104840533721",
             "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
             "9c372a6b-a40e-4753-9add-88ae21ae9805",
+            "314e16bf-0e8d-4905-abb5-5aa656d7c22e",
             "43314b2e-fa01-4f52-948b-95a4ff336891",
             "cd7bd070-8e86-4a4f-9831-d227e37bec88",
             "fe793f86-3a97-401f-bdae-147c54ef0a7d",
@@ -2739,13 +2756,14 @@
             "b980e128-6e56-43e6-99d6-b9312789f61e",
             "cac18e62-0bfb-4a11-be4a-49601eb16da4",
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
-            "3ca8966a-5026-48a3-8b37-fd962082f613",
             "67923df0-d312-4a3c-90d6-447c7e04828e",
             "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
             "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
             "7e296689-62ae-4f0e-b262-80ab5d8aa99f",
             "3895db21-6cb0-4c47-bbdb-6733b5e4684f",
+            "3ca8966a-5026-48a3-8b37-fd962082f613",
             "2a71f472-b98f-4bb3-b8eb-5ddda2b175aa",
+            "c150a87f-f1d5-493a-b0af-388160147eb2",
             "8130c927-1032-4d5f-b157-d56672d37d52",
             "b22a93f8-8da7-4af9-9421-f70e6693b540",
             "0d7a70b9-8e94-4274-9b36-3d49f6dcc936",

@@ -24,6 +24,7 @@ Ext.define('Rubedo.view.DAMInterface', {
     ],
 
     localiserId: 'mediasWindow',
+    currentViewMode: 'search',
     height: 651,
     id: 'DAMInterface',
     width: 1038,
@@ -84,6 +85,34 @@ Ext.define('Rubedo.view.DAMInterface', {
                     height: 86,
                     itemId: 'contextBar',
                     items: [
+                        {
+                            xtype: 'button',
+                            adaptToCurrentMode: function() {
+                                var btn = Ext.getCmp("DAMSwitchModeBtn");
+                                var mode =Ext.getCmp("DAMInterface").currentViewMode;
+                                if (mode=="search"){
+                                    btn.setIconCls("folder_big");
+                                    btn.setText(Rubedo.RubedoAutomatedElementsLoc.folderViewText);
+                                    btn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.switchToFolderViewText);
+                                } else {
+                                    btn.setIconCls("search_big");
+                                    btn.setText(Rubedo.RubedoAutomatedElementsLoc.searchViewText);
+                                    btn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.switchToSearchViewText);
+                                }
+                            },
+                            id: 'DAMSwitchModeBtn',
+                            iconAlign: 'top',
+                            iconCls: 'folder_big',
+                            scale: 'large',
+                            text: 'Folder view',
+                            tooltip: 'Switch to folder fiew',
+                            listeners: {
+                                render: {
+                                    fn: me.onDAMSwitchModeBtnRender,
+                                    scope: me
+                                }
+                            }
+                        },
                         {
                             xtype: 'button',
                             ACL: 'write.ui.dam',
@@ -237,35 +266,49 @@ Ext.define('Rubedo.view.DAMInterface', {
             items: [
                 {
                     xtype: 'panel',
-                    id: 'DAMFacetBox',
+                    id: 'DAMLeftBox',
                     width: 240,
-                    overflowY: 'auto',
-                    bodyPadding: '10 16 10 10',
+                    layout: {
+                        type: 'card'
+                    },
                     title: '',
-                    dockedItems: [
+                    items: [
                         {
-                            xtype: 'toolbar',
-                            dock: 'top',
-                            items: [
+                            xtype: 'panel',
+                            id: 'DAMFacetBox',
+                            overflowY: 'auto',
+                            bodyPadding: '10 16 10 10',
+                            title: '',
+                            dockedItems: [
                                 {
-                                    xtype: 'textfield',
-                                    flex: 1,
-                                    id: 'DAMSearchField',
-                                    fieldLabel: '',
-                                    listeners: {
-                                        specialkey: {
-                                            fn: me.onDAMSearchFieldSpecialkey,
-                                            scope: me
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            flex: 1,
+                                            id: 'DAMSearchField',
+                                            fieldLabel: '',
+                                            listeners: {
+                                                specialkey: {
+                                                    fn: me.onDAMSearchFieldSpecialkey,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            id: 'DAMSearchBtn',
+                                            iconCls: 'search',
+                                            text: ''
                                         }
-                                    }
-                                },
-                                {
-                                    xtype: 'button',
-                                    id: 'DAMSearchBtn',
-                                    iconCls: 'search',
-                                    text: ''
+                                    ]
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'panel',
+                            title: 'Folder view'
                         }
                     ]
                 },
@@ -311,6 +354,10 @@ Ext.define('Rubedo.view.DAMInterface', {
 
     onImageRender11: function(component, eOpts) {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');
+    },
+
+    onDAMSwitchModeBtnRender: function(component, eOpts) {
+        component.adaptToCurrentMode();
     },
 
     onDAMROBtnRender: function(component, eOpts) {

@@ -182,7 +182,8 @@ Ext.application({
         'formModel',
         'formFieldTypeModel',
         'mailingListsModel',
-        'inportFieldModel'
+        'inportFieldModel',
+        'DAMFolderViewModel'
     ],
     stores: [
         'SitesJson',
@@ -276,7 +277,8 @@ Ext.application({
         'InportAsTaxoStore',
         'SystemCTStore',
         'AddMultiFieldStore',
-        'ImportableFieldTypesStore'
+        'ImportableFieldTypesStore',
+        'DAMFolderViewStore'
     ],
     views: [
         'MyContainer',

@@ -34,7 +34,8 @@
             "formModel",
             "formFieldTypeModel",
             "mailingListsModel",
-            "inportFieldModel"
+            "inportFieldModel",
+            "DAMFolderViewModel"
         ],
         "stores": [
             "SitesJson",
@@ -128,7 +129,8 @@
             "InportAsTaxoStore",
             "SystemCTStore",
             "AddMultiFieldStore",
-            "ImportableFieldTypesStore"
+            "ImportableFieldTypesStore",
+            "DAMFolderViewStore"
         ],
         "views": [
             "MyContainer",

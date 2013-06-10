@@ -8,6 +8,7 @@
     "userConfig": {
         "localiserId": "mediasWindow",
         "container|align": "stretch",
+        "currentViewMode": "search",
         "height": 651,
         "id": "DAMInterface",
         "width": 1038,
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "localiserId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "currentViewMode",
             "type": "string"
         }
     ],
@@ -147,6 +153,71 @@
             },
             "designerId": "01137311-faac-4c13-aba1-c54b2215c288",
             "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "DAMSwitchModeBtn",
+                        "iconAlign": "top",
+                        "iconCls": "folder_big",
+                        "scale": "large",
+                        "text": "Folder view",
+                        "tooltip": "Switch to folder fiew"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "6435d2cd-6608-4a9f-98b7-0c3a0f44240b",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "adaptToCurrentMode",
+                                "implHandler": [
+                                    "var btn = Ext.getCmp(\"DAMSwitchModeBtn\");\r",
+                                    "var mode =Ext.getCmp(\"DAMInterface\").currentViewMode;\r",
+                                    "if (mode==\"search\"){\r",
+                                    "    btn.setIconCls(\"folder_big\");\r",
+                                    "    btn.setText(Rubedo.RubedoAutomatedElementsLoc.folderViewText);\r",
+                                    "    btn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.switchToFolderViewText);\r",
+                                    "} else {\r",
+                                    "    btn.setIconCls(\"search_big\");\r",
+                                    "    btn.setText(Rubedo.RubedoAutomatedElementsLoc.searchViewText);\r",
+                                    "    btn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.switchToSearchViewText);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "d13096c8-a772-4fc3-a7ce-fbc801526f8a"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDAMSwitchModeBtnRender",
+                                "implHandler": [
+                                    "component.adaptToCurrentMode();"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "4ca1f66c-d5e2-4656-a412-aeebc8ad2271"
+                        }
+                    ]
+                },
                 {
                     "type": "Ext.button.Button",
                     "reference": {
@@ -537,78 +608,107 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "id": "DAMFacetBox",
-                "padding": null,
+                "id": "DAMLeftBox",
                 "width": 240,
-                "overflowY": "auto",
-                "bodyPadding": "10 16 10 10",
+                "layout": "card",
                 "title": ""
             },
-            "designerId": "96776b09-4164-4e41-b18f-16f742c8c1d0",
+            "designerId": "d2d2c874-b2b7-4ee5-90bc-84f060dc3868",
             "cn": [
                 {
-                    "type": "Ext.toolbar.Toolbar",
+                    "type": "Ext.panel.Panel",
                     "reference": {
-                        "name": "dockedItems",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top"
+                        "id": "DAMFacetBox",
+                        "padding": null,
+                        "width": null,
+                        "overflowY": "auto",
+                        "bodyPadding": "10 16 10 10",
+                        "title": ""
                     },
-                    "designerId": "33fc02ee-8b52-4a2d-b9cc-4a2f2258d787",
+                    "designerId": "96776b09-4164-4e41-b18f-16f742c8c1d0",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.toolbar.Toolbar",
                             "reference": {
-                                "name": "items",
+                                "name": "dockedItems",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "id": "DAMSearchField",
-                                "fieldLabel": ""
+                                "dock": "top"
                             },
-                            "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
+                            "designerId": "33fc02ee-8b52-4a2d-b9cc-4a2f2258d787",
                             "cn": [
                                 {
-                                    "type": "basiceventbinding",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
-                                        "name": "listeners",
+                                        "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onDAMSearchFieldSpecialkey",
-                                        "implHandler": [
-                                            "if (e.getKey() == e.ENTER) {\r",
-                                            "    Ext.getCmp(\"DAMSearchBtn\").fireEvent(\"click\",Ext.getCmp(\"DAMSearchBtn\"));\r",
-                                            "}"
-                                        ],
-                                        "name": "specialkey",
-                                        "scope": "me"
+                                        "layout|flex": 1,
+                                        "id": "DAMSearchField",
+                                        "fieldLabel": ""
                                     },
-                                    "designerId": "df1d032e-ab74-4c49-a4b4-95ac11055707"
+                                    "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onDAMSearchFieldSpecialkey",
+                                                "implHandler": [
+                                                    "if (e.getKey() == e.ENTER) {\r",
+                                                    "    Ext.getCmp(\"DAMSearchBtn\").fireEvent(\"click\",Ext.getCmp(\"DAMSearchBtn\"));\r",
+                                                    "}"
+                                                ],
+                                                "name": "specialkey",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "df1d032e-ab74-4c49-a4b4-95ac11055707"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "id": "DAMSearchBtn",
+                                        "iconCls": "search",
+                                        "text": ""
+                                    },
+                                    "designerId": "dab35ff8-c763-496a-91b0-7848a1952486"
                                 }
                             ]
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null,
-                                "id": "DAMSearchBtn",
-                                "iconCls": "search",
-                                "text": ""
-                            },
-                            "designerId": "dab35ff8-c763-496a-91b0-7848a1952486"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Folder view"
+                    },
+                    "designerId": "a82e7f7c-70a0-4284-96fe-0fa53be76745"
                 }
             ]
         },
