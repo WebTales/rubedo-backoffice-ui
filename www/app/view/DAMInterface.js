@@ -173,6 +173,38 @@ Ext.define('Rubedo.view.DAMInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            hidden: true,
+                            id: 'filePlanEditBtnGroup',
+                            headerPosition: 'bottom',
+                            title: 'File plan',
+                            columns: 3,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    minWidth: 40,
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_add_big',
+                                    scale: 'large',
+                                    text: 'Add'
+                                },
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                },
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_settings_big',
+                                    scale: 'large',
+                                    text: 'Settings'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
                             localiserId: 'clipboardGroup',
                             disabled: true,
                             id: 'DAMPPBtnGroup',
@@ -325,13 +357,8 @@ Ext.define('Rubedo.view.DAMInterface', {
                                         {
                                             xtype: 'treecolumn',
                                             dataIndex: 'text',
-                                            text: 'Nodes',
+                                            text: 'Folder',
                                             flex: 1
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            dataIndex: 'value',
-                                            text: 'Value'
                                         }
                                     ]
                                 },

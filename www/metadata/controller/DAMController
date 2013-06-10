@@ -1059,7 +1059,8 @@
                     "Ext.getCmp(\"DAMActiveFacetBox\").hide();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(1).getComponent(0).getView().bindStore(\"DAMFolderViewStore\");\r",
                     "Ext.getStore(\"DAMFolderViewStore\").load();\r",
-                    "Ext.getCmp(\"massDamUploadBtn\").disable();"
+                    "Ext.getCmp(\"massDamUploadBtn\").disable();\r",
+                    "Ext.getCmp(\"filePlanEditBtnGroup\").show();"
                 ]
             },
             "designerId": "3dc95abd-f533-49a8-8710-4ac5e9baeb52"
@@ -1079,7 +1080,8 @@
                     "Ext.getCmp(\"DAMActiveFacetBox\").show();\r",
                     "Ext.getCmp(\"DAMInterface\").getComponent(1).getComponent(0).getView().bindStore(\"DAMFacetteStore\");\r",
                     "Ext.getStore(\"DAMFacetteStore\").load();\r",
-                    "Ext.getCmp(\"massDamUploadBtn\").enable();"
+                    "Ext.getCmp(\"massDamUploadBtn\").enable();\r",
+                    "Ext.getCmp(\"filePlanEditBtnGroup\").hide();"
                 ]
             },
             "designerId": "b028e857-b7f6-429f-b1d7-c23b40f107c2"

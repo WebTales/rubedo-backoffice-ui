@@ -408,6 +408,71 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|flex": null,
+                        "hidden": true,
+                        "id": "filePlanEditBtnGroup",
+                        "headerPosition": "bottom",
+                        "title": "File plan",
+                        "columns": 3
+                    },
+                    "designerId": "49007b17-a1fc-4cfe-860b-32f11f80168f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "minWidth": 40,
+                                "iconAlign": "top",
+                                "iconCls": "folder_add_big",
+                                "scale": "large",
+                                "text": "Add"
+                            },
+                            "designerId": "f52ff39a-a110-4213-8a68-1e9bd1a563e6"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "folder_remove_big",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "designerId": "3699d0e3-65ba-4b5f-b2ce-4b38f6fab320"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "folder_settings_big",
+                                "scale": "large",
+                                "text": "Settings"
+                            },
+                            "designerId": "42e2a0e3-a854-4d5f-b300-20a5c6a928d9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "localiserId": "clipboardGroup",
                         "layout|flex": null,
                         "container|columns": 2,
@@ -746,23 +811,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "text",
-                                        "text": "Nodes",
+                                        "text": "Folder",
                                         "flex": 1
                                     },
                                     "designerId": "ef106ff3-cbe1-45cd-9626-8e226864536c"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "value",
-                                        "text": "Value"
-                                    },
-                                    "designerId": "5b3955af-97d2-4228-bb17-a1f6a7a1db4e"
                                 }
                             ]
                         },

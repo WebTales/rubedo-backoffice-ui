@@ -133,10 +133,13 @@ border-style:dashed !important;
 	background: url(../icones/red/24x24/window_add.png) left center no-repeat !important;
 }
 .folder_add_big{
-	background: url(../icones/red/32x32/folder_add.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/folder_add.png)  center no-repeat !important;
 }
 .folder_remove_big{
-	background: url(../icones/red/32x32/folder_remove.png) left center no-repeat !important;
+	background: url(../icones/red/32x32/folder_remove.png)  center no-repeat !important;
+}
+.folder_settings_big{
+	background: url(../icones/red/32x32/folder_process.png)  center no-repeat !important;
 }
 .folder_big{
 	background: url(../icones/red/32x32/folder.png)  center no-repeat !important;
