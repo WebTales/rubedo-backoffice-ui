@@ -85,6 +85,13 @@
                                     "name": "activateSearch",
                                     "inputValue": true
                                 }
+                            },{
+                                "type": "Ext.form.field.Checkbox",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1370#",
+                                    "name": "showPlacesSearch",
+                                    "inputValue": true
+                                }
                             },
                             {
                                 "type": "Ext.form.field.Number",
@@ -124,7 +131,8 @@
                 "zoom": 14,
                 "height": 500,
                 "pageSize": 5000,
-                "showCenterMarker": false
+                "showCenterMarker": false,
+                "showPlacesSearch":true
             }
         },
         "category": "#ext-gen1050#",
