@@ -1245,6 +1245,49 @@
                 "designer|controlQuery": "#mainDirectoriesTree"
             },
             "designerId": "527a2e69-0295-40f7-95cd-f4694d9cc1b2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectorySettingsBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"directoryConfiguratorWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#directorySettingsBtn"
+            },
+            "designerId": "7f047c27-2916-4b27-8c68-df895a45dbe5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectorySettingsApplyBtnClick",
+                "implHandler": [
+                    "if (button.up().getForm().isValid()){\r",
+                    "    Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().set(button.up().getForm().getValues());\r",
+                    "    button.up().up().close();\r",
+                    "    Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().collapseChildren(true);\r",
+                    "\tExt.getCmp(\"mainDirectoriesTree\").getStore().load({\"node\":Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected()});\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#directorySettingsApplyBtn"
+            },
+            "designerId": "4b295550-eac2-4ddb-ace3-256bffdb2525"
         }
     ]
 }

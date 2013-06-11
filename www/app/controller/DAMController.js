@@ -371,6 +371,19 @@ Ext.define('Rubedo.controller.DAMController', {
         }
     },
 
+    onDirectorySettingsBtnClick: function(button, e, eOpts) {
+        Ext.widget("directoryConfiguratorWindow").show();
+    },
+
+    onDirectorySettingsApplyBtnClick: function(button, e, eOpts) {
+        if (button.up().getForm().isValid()){
+            Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().set(button.up().getForm().getValues());
+            button.up().up().close();
+            Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().collapseChildren(true);
+            Ext.getCmp("mainDirectoriesTree").getStore().load({"node":Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected()});
+        }
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -837,6 +850,12 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#mainDirectoriesTree": {
                 selectionchange: this.onMainDirectoriesTreeSelectionChange
+            },
+            "#directorySettingsBtn": {
+                click: this.onDirectorySettingsBtnClick
+            },
+            "#directorySettingsApplyBtn": {
+                click: this.onDirectorySettingsApplyBtnClick
             }
         });
     }

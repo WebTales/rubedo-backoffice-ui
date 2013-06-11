@@ -92,7 +92,8 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'workspace'
         },
         {
-            name: 'inheritWorkspace'
+            name: 'inheritWorkspace',
+            type: 'boolean'
         },
         {
             name: 'readOnly',

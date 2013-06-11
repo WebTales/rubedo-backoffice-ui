@@ -51,7 +51,8 @@ Ext.define('Rubedo.model.directoryModel', {
             name: 'workspace'
         },
         {
-            name: 'inheritWorkspace'
+            name: 'inheritWorkspace',
+            type: 'boolean'
         },
         {
             name: 'readOnly',

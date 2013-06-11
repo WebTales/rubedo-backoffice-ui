@@ -17,7 +17,7 @@ Ext.define('Rubedo.view.newDirectoryWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.newDirectoryWindow',
 
-    height: 127,
+    height: 98,
     id: 'newDirectoryWindow',
     width: 400,
     resizable: false,

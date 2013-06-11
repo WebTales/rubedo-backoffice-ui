@@ -990,6 +990,24 @@
                                                 "scope": "me"
                                             },
                                             "designerId": "81b37e70-67fb-4409-b2a7-edd041b02a62"
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCellEditingEdit",
+                                                "implHandler": [
+                                                    "Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().collapseChildren(true);\r",
+                                                    "Ext.getCmp(\"mainDirectoriesTree\").getStore().load({\"node\":Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected()});"
+                                                ],
+                                                "name": "edit",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "7f31de08-0b07-44ac-81de-2eb7503a1f19"
                                         }
                                     ]
                                 }

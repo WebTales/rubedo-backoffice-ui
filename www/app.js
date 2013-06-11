@@ -153,7 +153,8 @@ Ext.application({
         'Rubedo.view.MassDamUploadWindow',
         'Rubedo.view.damTypeFacetImposeWindow',
         'Rubedo.view.pixlrEditorWindow',
-        'Rubedo.view.newDirectoryWindow'
+        'Rubedo.view.newDirectoryWindow',
+        'Rubedo.view.directoryConfiguratorWindow'
     ],
     models: [
         'sitesDataModel',
@@ -419,7 +420,8 @@ Ext.application({
         'MassDamUploadWindow',
         'damTypeFacetImposeWindow',
         'pixlrEditorWindow',
-        'newDirectoryWindow'
+        'newDirectoryWindow',
+        'directoryConfiguratorWindow'
     ],
     autoCreateViewport: true,
     controllers: [

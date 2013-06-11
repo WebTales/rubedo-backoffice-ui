@@ -413,6 +413,10 @@ Ext.define('Rubedo.view.DAMInterface', {
                                                 beforeedit: {
                                                     fn: me.onCellEditingBeforeEdit,
                                                     scope: me
+                                                },
+                                                edit: {
+                                                    fn: me.onCellEditingEdit,
+                                                    scope: me
                                                 }
                                             }
                                         })
@@ -562,6 +566,11 @@ Ext.define('Rubedo.view.DAMInterface', {
         if ((!ACL.interfaceRights["write.ui.directories"])||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().get("readOnly"))||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().get("id")=="notFiled")||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().isRoot())) {
             return false;
         }
+    },
+
+    onCellEditingEdit: function(editor, e, eOpts) {
+        Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().collapseChildren(true);
+        Ext.getCmp("mainDirectoriesTree").getStore().load({"node":Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected()});
     },
 
     onDAMMTGridRender: function(component, eOpts) {
