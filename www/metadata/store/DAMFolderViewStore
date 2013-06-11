@@ -11,6 +11,7 @@
         "DAMTypeFilters": [
             "[ ]"
         ],
+        "directoryFilter": "notFiled",
         "autoLoad": false,
         "autoSync": true,
         "model": "DAMFolderViewModel",
@@ -41,6 +42,11 @@
         {
             "group": "(Custom Properties)",
             "name": "DAMTypeFilters",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "directoryFilter",
             "type": "string"
         }
     ],
@@ -106,9 +112,9 @@
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
                     "if (!Ext.isEmpty(store.DAMTypeFilters)){\r",
-                    "    store.getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(store.DAMTypeFilters)+\"}]\";\r",
+                    "    store.getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(store.DAMTypeFilters)+\"},{\\\"property\\\":\\\"directory\\\",\\\"value\\\":\\\"\"+store.directoryFilter+\"\\\"}]\";\r",
                     "} else {\r",
-                    "    delete store.getProxy().extraParams.filter;\r",
+                    "    store.getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"directory\\\",\\\"value\\\":\\\"\"+store.directoryFilter+\"\\\"}]\";\r",
                     "}"
                 ],
                 "name": "beforeload",

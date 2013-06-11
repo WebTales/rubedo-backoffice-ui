@@ -30,6 +30,7 @@ Ext.define('Rubedo.store.DAMFolderViewStore', {
             DAMTypeFilters: [
                 
             ],
+            directoryFilter: 'notFiled',
             autoLoad: false,
             autoSync: true,
             model: 'Rubedo.model.DAMFolderViewModel',
@@ -69,9 +70,9 @@ Ext.define('Rubedo.store.DAMFolderViewStore', {
 
     onJsonstoreBeforeLoad: function(store, operation, eOpts) {
         if (!Ext.isEmpty(store.DAMTypeFilters)){
-            store.getProxy().extraParams.filter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(store.DAMTypeFilters)+"}]";
+            store.getProxy().extraParams.filter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(store.DAMTypeFilters)+"},{\"property\":\"directory\",\"value\":\""+store.directoryFilter+"\"}]";
         } else {
-            delete store.getProxy().extraParams.filter;
+            store.getProxy().extraParams.filter="[{\"property\":\"directory\",\"value\":\""+store.directoryFilter+"\"}]";
         }
     }
 

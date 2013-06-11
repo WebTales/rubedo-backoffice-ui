@@ -1194,7 +1194,10 @@
                     "Ext.getStore(\"DAMFacetteStore\").activeFacettes={ };\r",
                     "Ext.getStore(\"DAMFacetteStore\").removeAll();\r",
                     "Ext.getStore(\"DirectoriesStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"filePlan\\\",\\\"value\\\":\\\"emptyDecoy\\\"}]\";\r",
-                    "Ext.getStore(\"DirectoriesStore\").load();"
+                    "Ext.getStore(\"DirectoriesStore\").load();\r",
+                    "Ext.getStore(\"DAMFolderViewStore\").DAMTypeFilters=[ ];\r",
+                    "Ext.getStore(\"DAMFolderViewStore\").directoryFilter=\"notFiled\";\r",
+                    "Ext.getStore(\"DAMFolderViewStore\").removeAll();"
                 ],
                 "name": "destroy",
                 "scope": "me"

@@ -591,6 +591,9 @@ Ext.define('Rubedo.view.DAMInterface', {
         Ext.getStore("DAMFacetteStore").removeAll();
         Ext.getStore("DirectoriesStore").getProxy().extraParams.filter="[{\"property\":\"filePlan\",\"value\":\"emptyDecoy\"}]";
         Ext.getStore("DirectoriesStore").load();
+        Ext.getStore("DAMFolderViewStore").DAMTypeFilters=[ ];
+        Ext.getStore("DAMFolderViewStore").directoryFilter="notFiled";
+        Ext.getStore("DAMFolderViewStore").removeAll();
     }
 
 });

@@ -92,7 +92,13 @@ Ext.define('Rubedo.controller.DAMController', {
         button.up().up().setLoading(true);
         var me=this;
         var form=Ext.getCmp("DAMFieldBox").getForm();
-
+        var myDirectory="notFiled";
+        if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
+            var realDirectory=Ext.clone(Ext.getStore("DAMFolderViewStore").directoryFilter);
+            if ((realDirectory!="emptyDecoy")&&(realDirectory!="root")){
+                myDirectory=realDirectory;
+            }
+        }
         form.submit({
             clientValidation: true,
             url: 'dam/create',
@@ -100,7 +106,8 @@ Ext.define('Rubedo.controller.DAMController', {
                 typeId: button.up().up().typeId,
                 mainFileType: button.up().up().mainFileType,
                 taxonomy: Ext.JSON.encode(me.getTaxoValues()),
-                targetArray: Ext.JSON.encode(form.getFieldValues().target)
+                targetArray: Ext.JSON.encode(form.getFieldValues().target),
+                directory:myDirectory
             },
             success: function(form, action) {
                 button.up().up().setLoading(false);
@@ -355,6 +362,8 @@ Ext.define('Rubedo.controller.DAMController', {
         if (Ext.isEmpty(selected)){
             Ext.getCmp("removeDirectoryBtn").disable();
             Ext.getCmp("directorySettingsBtn").disable();
+            Ext.getStore("DAMFolderViewStore").directoryFilter="emptyDecoy";
+            Ext.getStore("DAMFolderViewStore").load();
         } else {
             if (selected[0].isRoot()){
                 Ext.getCmp("removeDirectoryBtn").disable();
@@ -366,7 +375,11 @@ Ext.define('Rubedo.controller.DAMController', {
             } else if (selected[0].get("readOnly")) {
                 Ext.getCmp("addDirectoryBtn").disable();
                 Ext.getCmp("removeDirectoryBtn").disable();
-            } 
+            }
+            if (Ext.getStore("DAMFolderViewStore").directoryFilter!=Ext.clone(selected[0].get("id"))){
+                Ext.getStore("DAMFolderViewStore").directoryFilter=Ext.clone(selected[0].get("id"));
+                Ext.getStore("DAMFolderViewStore").load();
+            }
 
         }
     },
@@ -776,6 +789,7 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getStore("DAMFolderViewStore").load();
         Ext.getCmp("massDamUploadBtn").disable();
         Ext.getCmp("filePlanEditBtnGroup").show();
+        Ext.getCmp("mainDirectoriesTree").getSelectionModel().select(Ext.getStore("DirectoriesStore").getNodeById(Ext.getStore("DAMFolderViewStore").directoryFilter));
     },
 
     switchToSearchView: function() {
