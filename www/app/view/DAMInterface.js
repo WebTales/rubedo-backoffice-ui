@@ -123,6 +123,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.directories',
                                     id: 'addDirectoryBtn',
                                     minWidth: 40,
                                     iconAlign: 'top',
@@ -132,6 +133,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.directories',
                                     disabled: true,
                                     id: 'removeDirectoryBtn',
                                     iconAlign: 'top',
@@ -363,7 +365,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                     viewConfig: {
                                         plugins: [
                                             Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
-
+                                                ddGroup: 'DirectoriesDD'
                                             })
                                         ],
                                         listeners: {

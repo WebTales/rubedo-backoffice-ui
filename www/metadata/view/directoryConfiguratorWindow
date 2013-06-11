@@ -123,10 +123,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "ACL": "write.ui.directories",
                         "id": "directorySettingsApplyBtn",
                         "text": "Apply "
                     },
-                    "designerId": "2a7f0d7c-508d-495d-8bf2-a02f4dde1313"
+                    "designerId": "2a7f0d7c-508d-495d-8bf2-a02f4dde1313",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "basiceventbinding",
@@ -138,7 +146,11 @@
                     "userConfig": {
                         "fn": "onFormAfterRender",
                         "implHandler": [
-                            "component.getForm().setValues(Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().getData());"
+                            "component.getForm().setValues(Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().getData());\r",
+                            "if ((!ACL.interfaceRights['write.ui.directories'])||(Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().get(\"readOnly\"))){\r",
+                            "    Ext.Array.forEach(component.query(\"field\"),function(field){field.setReadOnly(true);});\r",
+                            "    Ext.getCmp(\"directorySettingsApplyBtn\").hide();\r",
+                            "}"
                         ],
                         "name": "afterrender",
                         "scope": "me"

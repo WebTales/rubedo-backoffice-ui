@@ -69,6 +69,7 @@ Ext.define('Rubedo.view.directoryConfiguratorWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            ACL: 'write.ui.directories',
                             id: 'directorySettingsApplyBtn',
                             text: 'Apply '
                         }
@@ -97,6 +98,10 @@ Ext.define('Rubedo.view.directoryConfiguratorWindow', {
 
     onFormAfterRender: function(component, eOpts) {
         component.getForm().setValues(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().getData());
+        if ((!ACL.interfaceRights['write.ui.directories'])||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().get("readOnly"))){
+            Ext.Array.forEach(component.query("field"),function(field){field.setReadOnly(true);});
+            Ext.getCmp("directorySettingsApplyBtn").hide();
+        }
     }
 
 });

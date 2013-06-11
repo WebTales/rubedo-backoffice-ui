@@ -243,6 +243,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.directories",
                                 "id": "addDirectoryBtn",
                                 "minWidth": 40,
                                 "iconAlign": "top",
@@ -250,7 +251,14 @@
                                 "scale": "large",
                                 "text": "Add"
                             },
-                            "designerId": "f52ff39a-a110-4213-8a68-1e9bd1a563e6"
+                            "designerId": "f52ff39a-a110-4213-8a68-1e9bd1a563e6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -260,6 +268,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.directories",
                                 "disabled": true,
                                 "id": "removeDirectoryBtn",
                                 "iconAlign": "top",
@@ -267,7 +276,14 @@
                                 "scale": "large",
                                 "text": "Remove"
                             },
-                            "designerId": "3699d0e3-65ba-4b5f-b2ce-4b38f6fab320"
+                            "designerId": "3699d0e3-65ba-4b5f-b2ce-4b38f6fab320",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -819,6 +835,9 @@
                                                 "type": "array"
                                             },
                                             "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                                            "userConfig": {
+                                                "ddGroup": "DirectoriesDD"
+                                            },
                                             "designerId": "9399f8d4-d667-41f8-b8fc-37d41327a983",
                                             "cn": [
                                                 {
