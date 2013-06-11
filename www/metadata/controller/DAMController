@@ -1068,7 +1068,9 @@
                     "Ext.getStore(\"DAMFolderViewStore\").load();\r",
                     "Ext.getCmp(\"massDamUploadBtn\").disable();\r",
                     "Ext.getCmp(\"filePlanEditBtnGroup\").show();\r",
-                    "Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().select(Ext.getStore(\"DirectoriesStore\").getNodeById(Ext.getStore(\"DAMFolderViewStore\").directoryFilter));"
+                    "Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().select(Ext.getStore(\"DirectoriesStore\").getNodeById(Ext.getStore(\"DAMFolderViewStore\").directoryFilter));\r",
+                    "Ext.getCmp(\"DAMCenter\").plugins[0].silenced=true;\r",
+                    "Ext.getCmp(\"DAMCenter\").view.plugins[0].enable();"
                 ]
             },
             "designerId": "3dc95abd-f533-49a8-8710-4ac5e9baeb52"
@@ -1089,7 +1091,9 @@
                     "Ext.getCmp(\"DAMInterface\").getComponent(1).getComponent(0).getView().bindStore(\"DAMFacetteStore\");\r",
                     "Ext.getStore(\"DAMFacetteStore\").load();\r",
                     "Ext.getCmp(\"massDamUploadBtn\").enable();\r",
-                    "Ext.getCmp(\"filePlanEditBtnGroup\").hide();"
+                    "Ext.getCmp(\"filePlanEditBtnGroup\").hide();\r",
+                    "Ext.getCmp(\"DAMCenter\").plugins[0].silenced=false;\r",
+                    "Ext.getCmp(\"DAMCenter\").view.plugins[0].disable();"
                 ]
             },
             "designerId": "b028e857-b7f6-429f-b1d7-c23b40f107c2"

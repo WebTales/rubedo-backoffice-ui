@@ -386,7 +386,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                                                 if (record.isRoot()){
                                                     return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                                                 } else if (record.get("id")=="notFiled") {
-                                                    record.data.allowDrop=false;
                                                     record.data.allowDrag=false;
                                                     return(Rubedo.RubedoAutomatedElementsLoc.notFiledText);
 
@@ -526,6 +525,29 @@ Ext.define('Rubedo.view.DAMInterface', {
         }
         Ext.getStore("DirectoriesStore").suspendAutoSync();
         var movedOne=data.records[0];
+        if (!Ext.isEmpty(movedOne.get("typeId"))){
+            if (dropPosition!="append"){return(false);}
+            if (overModel.isRoot()){return(false);}
+            console.log("applying file plan");
+            Ext.getStore("DAMFolderViewStore").suspendAutoSync();
+            Ext.Array.forEach(data.records,function(damItem){
+                damItem.set("directory",overModel.get("id"));
+            });
+            var task22= new Ext.util.DelayedTask(function(){
+                Ext.getCmp("DAMCenter").setLoading(true);
+                Ext.getStore("DAMFolderViewStore").resumeAutoSync();
+                Ext.getStore("DAMFolderViewStore").sync();
+            });
+            task22.delay(40);
+            var task23= new Ext.util.DelayedTask(function(){
+                Ext.getStore("DAMFolderViewStore").load();
+                Ext.getCmp("DAMCenter").setLoading(false);
+            });
+            task23.delay(400);
+            return(false);
+        } else if ((dropPosition=="append")&&(overModel.get("id")=="notFiled")){
+            return(false);
+        }
         var interm=0;
         var targeted=overModel.get("orderValue");
 
@@ -582,6 +604,11 @@ Ext.define('Rubedo.view.DAMInterface', {
         Ext.getStore("DAMFacetteStore").load();
         Ext.getStore("DirectoriesStore").getProxy().extraParams.filter="[{\"property\":\"filePlan\",\"value\":\"default\"}]";
         Ext.getStore("DirectoriesStore").load();
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getCmp("DAMCenter").plugins[0].silenced=false;
+            Ext.getCmp("DAMCenter").view.plugins[0].disable();
+        });
+        task.delay(200);
     },
 
     onDAMInterfaceDestroy: function(component, eOpts) {

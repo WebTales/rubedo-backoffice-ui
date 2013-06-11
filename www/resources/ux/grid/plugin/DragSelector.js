@@ -48,6 +48,7 @@ Ext.define('Ext.ux.grid.plugin.DragSelector', {
         me.selModel = me.view.getSelectionModel();
         me.mon(me.view, 'render', me.onRender, me);
         me.mon(me.view, 'bodyscroll', me.syncScroll, me);
+		me.silenced=false;
     },
     
     onRender: function()
@@ -121,7 +122,9 @@ Ext.define('Ext.ux.grid.plugin.DragSelector', {
     },
     
     onBeforeStart: function(e)
-    {
+    {   
+	    var me=this;
+		if (me.silenced){return(false);}
         // return false if is a right mouseclick
         if(e.button === 2)
         {

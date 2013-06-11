@@ -790,6 +790,8 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("massDamUploadBtn").disable();
         Ext.getCmp("filePlanEditBtnGroup").show();
         Ext.getCmp("mainDirectoriesTree").getSelectionModel().select(Ext.getStore("DirectoriesStore").getNodeById(Ext.getStore("DAMFolderViewStore").directoryFilter));
+        Ext.getCmp("DAMCenter").plugins[0].silenced=true;
+        Ext.getCmp("DAMCenter").view.plugins[0].enable();
     },
 
     switchToSearchView: function() {
@@ -800,6 +802,8 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getStore("DAMFacetteStore").load();
         Ext.getCmp("massDamUploadBtn").enable();
         Ext.getCmp("filePlanEditBtnGroup").hide();
+        Ext.getCmp("DAMCenter").plugins[0].silenced=false;
+        Ext.getCmp("DAMCenter").view.plugins[0].disable();
     },
 
     init: function(application) {

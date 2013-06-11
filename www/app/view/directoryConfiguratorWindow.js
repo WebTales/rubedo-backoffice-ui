@@ -68,8 +68,8 @@ Ext.define('Rubedo.view.directoryConfiguratorWindow', {
                         },
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             ACL: 'write.ui.directories',
+                            anchor: '100%',
                             id: 'directorySettingsApplyBtn',
                             text: 'Apply '
                         }

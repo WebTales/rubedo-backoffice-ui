@@ -3,7 +3,14 @@ Ext.define('Rubedo.view.override.DAMMainView', {
     multiSelect: true,
     viewConfig: {
             stripeRows: true,
-            chunker: Ext.view.TableChunker
+            chunker: Ext.view.TableChunker,
+        plugins: [
+                    Ext.create('Ext.grid.plugin.DragDrop', {
+						ddGroup: 'DirectoriesDD',
+                        enableDrop:false
+                    })
+                ]
+        
         },
         
         plugins: [Ext.create('Ext.ux.grid.plugin.DragSelector')],
