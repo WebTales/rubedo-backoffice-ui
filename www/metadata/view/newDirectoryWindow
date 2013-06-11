@@ -1,0 +1,105 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "usedStores": null,
+        "localiserId": null,
+        "height": 127,
+        "id": "newDirectoryWindow",
+        "width": 400,
+        "designer|userClassName": "newDirectoryWindow",
+        "designer|userAlias": "newDirectoryWindow",
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": null,
+        "title": "New directory",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean",
+        "usedStores": "array"
+    },
+    "designerId": "cbe9387e-c640-49eb-93b5-05d268f42760",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "usedStores",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "de098714-92f4-4377-9fe2-c9a316b5f61e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": null,
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Name",
+                        "labelWidth": 110,
+                        "name": "text",
+                        "allowBlank": false,
+                        "regex": null,
+                        "vtype": null
+                    },
+                    "designerId": "24a882e6-8376-4941-bfdc-08201c20213c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": null,
+                        "layout|anchor": "100%",
+                        "id": "newDirectorySubmitBtn",
+                        "text": "Create as a child of the selected directory"
+                    },
+                    "designerId": "6926ae76-ee7c-4ca5-9310-4cac9079ca7d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

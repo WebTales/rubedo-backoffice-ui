@@ -70,6 +70,11 @@ Ext.define('Rubedo.model.DAMModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            defaultValue: 'notFiled',
+            name: 'directory',
+            type: 'string'
         }
     ]
 });

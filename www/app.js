@@ -152,7 +152,8 @@ Ext.application({
         'Rubedo.view.ImagePreviewWindow',
         'Rubedo.view.MassDamUploadWindow',
         'Rubedo.view.damTypeFacetImposeWindow',
-        'Rubedo.view.pixlrEditorWindow'
+        'Rubedo.view.pixlrEditorWindow',
+        'Rubedo.view.newDirectoryWindow'
     ],
     models: [
         'sitesDataModel',
@@ -183,7 +184,8 @@ Ext.application({
         'formFieldTypeModel',
         'mailingListsModel',
         'inportFieldModel',
-        'DAMFolderViewModel'
+        'DAMFolderViewModel',
+        'directoryModel'
     ],
     stores: [
         'SitesJson',
@@ -278,7 +280,8 @@ Ext.application({
         'SystemCTStore',
         'AddMultiFieldStore',
         'ImportableFieldTypesStore',
-        'DAMFolderViewStore'
+        'DAMFolderViewStore',
+        'DirectoriesStore'
     ],
     views: [
         'MyContainer',
@@ -415,7 +418,8 @@ Ext.application({
         'ImagePreviewWindow',
         'MassDamUploadWindow',
         'damTypeFacetImposeWindow',
-        'pixlrEditorWindow'
+        'pixlrEditorWindow',
+        'newDirectoryWindow'
     ],
     autoCreateViewport: true,
     controllers: [

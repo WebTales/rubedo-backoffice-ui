@@ -7,11 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "mediasWindow",
-        "container|align": "stretch",
         "currentViewMode": "search",
+        "container|align": "stretch",
         "height": 651,
         "id": "DAMInterface",
-        "width": 1038,
+        "width": 1110,
         "designer|userClassName": "DAMInterface",
         "designer|userAlias": "DAMInterface",
         "layout": "hbox",
@@ -219,6 +219,76 @@
                     ]
                 },
                 {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "hidden": true,
+                        "id": "filePlanEditBtnGroup",
+                        "headerPosition": "bottom",
+                        "title": "File plan",
+                        "columns": 3
+                    },
+                    "designerId": "49007b17-a1fc-4cfe-860b-32f11f80168f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "addDirectoryBtn",
+                                "minWidth": 40,
+                                "iconAlign": "top",
+                                "iconCls": "folder_add_big",
+                                "scale": "large",
+                                "text": "Add"
+                            },
+                            "designerId": "f52ff39a-a110-4213-8a68-1e9bd1a563e6"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "id": "removeDirectoryBtn",
+                                "iconAlign": "top",
+                                "iconCls": "folder_remove_big",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "designerId": "3699d0e3-65ba-4b5f-b2ce-4b38f6fab320"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "id": "directorySettingsBtn",
+                                "iconAlign": "top",
+                                "iconCls": "folder_settings_big",
+                                "scale": "large",
+                                "text": "Settings"
+                            },
+                            "designerId": "42e2a0e3-a854-4d5f-b300-20a5c6a928d9"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
@@ -397,71 +467,6 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.container.ButtonGroup",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "hidden": true,
-                        "id": "filePlanEditBtnGroup",
-                        "headerPosition": "bottom",
-                        "title": "File plan",
-                        "columns": 3
-                    },
-                    "designerId": "49007b17-a1fc-4cfe-860b-32f11f80168f",
-                    "cn": [
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "minWidth": 40,
-                                "iconAlign": "top",
-                                "iconCls": "folder_add_big",
-                                "scale": "large",
-                                "text": "Add"
-                            },
-                            "designerId": "f52ff39a-a110-4213-8a68-1e9bd1a563e6"
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "iconAlign": "top",
-                                "iconCls": "folder_remove_big",
-                                "scale": "large",
-                                "text": "Remove"
-                            },
-                            "designerId": "3699d0e3-65ba-4b5f-b2ce-4b38f6fab320"
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "iconAlign": "top",
-                                "iconCls": "folder_settings_big",
-                                "scale": "large",
-                                "text": "Settings"
-                            },
-                            "designerId": "42e2a0e3-a854-4d5f-b300-20a5c6a928d9"
                         }
                     ]
                 },
@@ -771,6 +776,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "container|collapseFirst": false,
+                        "container|activeOnTop": false,
                         "layout": "accordion",
                         "title": ""
                     },
@@ -785,8 +792,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "height": 250,
+                                "id": "mainDirectoriesTree",
                                 "width": 400,
-                                "title": "File plan"
+                                "title": "File plan",
+                                "store": "DirectoriesStore",
+                                "useArrows": true
                             },
                             "designerId": "bf872b1c-ace2-4338-a14e-3f74ed98753e",
                             "isBuiltIn": true,
@@ -800,7 +810,91 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "designerId": "381d7927-90fe-44a4-ac61-cd7238cfedae"
+                                    "designerId": "381d7927-90fe-44a4-ac61-cd7238cfedae",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tree.plugin.TreeViewDragDrop",
+                                            "reference": {
+                                                "name": "plugins",
+                                                "type": "array"
+                                            },
+                                            "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                                            "designerId": "9399f8d4-d667-41f8-b8fc-37d41327a983",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onTreeViewDragDropBeforeDrop",
+                                                        "implHandler": [
+                                                            "\r",
+                                                            "if (!ACL.interfaceRights[\"write.ui.directories\"]){\r",
+                                                            "    return(false);\r",
+                                                            "}\r",
+                                                            "Ext.getStore(\"DirectoriesStore\").suspendAutoSync();\r",
+                                                            "var movedOne=data.records[0];\r",
+                                                            "var interm=0;\r",
+                                                            "var targeted=overModel.get(\"orderValue\");\r",
+                                                            "\r",
+                                                            "if (dropPosition==\"before\"){\r",
+                                                            "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){\r",
+                                                            "        movedOne.parentNode.set(\"expandable\", false);\r",
+                                                            "    }\r",
+                                                            "    if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get(\"orderValue\");}\r",
+                                                            "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
+                                                            "} else if (dropPosition==\"after\"){\r",
+                                                            "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){\r",
+                                                            "        movedOne.parentNode.set(\"expandable\", false);\r",
+                                                            "    }\r",
+                                                            "    if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get(\"orderValue\");}\r",
+                                                            "    else{interm=10000;}\r",
+                                                            "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
+                                                            "} else if (dropPosition==\"append\"){\r",
+                                                            "    if (movedOne.parentNode.childNodes.length==1){\r",
+                                                            "        movedOne.parentNode.set(\"expandable\", false);\r",
+                                                            "    }\r",
+                                                            "\r",
+                                                            "    if (overModel.hasChildNodes()){\r",
+                                                            "        movedOne.set(\"orderValue\", overModel.lastChild.get(\"orderValue\")+100);\r",
+                                                            "    } else {\r",
+                                                            "        movedOne.set(\"orderValue\", 100);\r",
+                                                            "        overModel.set(\"expandable\", true);\r",
+                                                            "    }\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "beforedrop",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "a820f164-5f18-497b-bcaa-9cec368b0a6a"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onTreeViewDragDropDrop",
+                                                        "implHandler": [
+                                                            "var task= new Ext.util.DelayedTask(function(){\r",
+                                                            "    Ext.getStore(\"DirectoriesStore\").resumeAutoSync();\r",
+                                                            "    Ext.getStore(\"DirectoriesStore\").sync();\r",
+                                                            "});\r",
+                                                            "task.delay(200);"
+                                                        ],
+                                                        "name": "drop",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "0ae6c6aa-1da0-4c4a-aed0-42b8e3a66941"
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.tree.Column",
@@ -814,7 +908,90 @@
                                         "text": "Folder",
                                         "flex": 1
                                     },
-                                    "designerId": "ef106ff3-cbe1-45cd-9626-8e226864536c"
+                                    "designerId": "ef106ff3-cbe1-45cd-9626-8e226864536c",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "if (record.isRoot()){\r",
+                                                    "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
+                                                    "} else if (record.get(\"id\")==\"notFiled\") {\r",
+                                                    "    record.data.allowDrop=false;\r",
+                                                    "    record.data.allowDrag=false;\r",
+                                                    "    return(Rubedo.RubedoAutomatedElementsLoc.notFiledText);\r",
+                                                    "\r",
+                                                    "}\r",
+                                                    "else if (record.get(\"readOnly\")) {\r",
+                                                    "    record.data.allowDrop=false;\r",
+                                                    "    record.data.allowDrag=false;\r",
+                                                    "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                                                    "\r",
+                                                    "} else {\r",
+                                                    "    return(value);\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "8de6d15e-c448-4fdd-b118-6cd92a450133"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "41d11fc3-22f3-49af-ba80-467c8027c0df"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.CellEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.CellEditing",
+                                    "designerId": "0c814077-6b09-49a3-9448-5ff5c22724a4",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCellEditingBeforeEdit",
+                                                "implHandler": [
+                                                    "if ((!ACL.interfaceRights[\"write.ui.directories\"])||(Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().get(\"readOnly\"))||(Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().get(\"id\")==\"notFiled\")||(Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().isRoot())) {\r",
+                                                    "    return false;\r",
+                                                    "}"
+                                                ],
+                                                "name": "beforeedit",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "81b37e70-67fb-4409-b2a7-edd041b02a62"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -956,7 +1133,9 @@
                     "Ext.getStore(\"MediaTypesForDAM\").load();\r",
                     "Ext.getStore(\"TaxonomyForDAM\").load();\r",
                     "Ext.getStore(\"DAMFacetteStore\").activeFacettes={ };\r",
-                    "Ext.getStore(\"DAMFacetteStore\").load();"
+                    "Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "Ext.getStore(\"DirectoriesStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"filePlan\\\",\\\"value\\\":\\\"default\\\"}]\";\r",
+                    "Ext.getStore(\"DirectoriesStore\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -976,7 +1155,9 @@
                     "Ext.getStore(\"MediaTypesForDAM\").removeAll();\r",
                     "Ext.getStore(\"TaxonomyForDAM\").removeAll();\r",
                     "Ext.getStore(\"DAMFacetteStore\").activeFacettes={ };\r",
-                    "Ext.getStore(\"DAMFacetteStore\").removeAll();"
+                    "Ext.getStore(\"DAMFacetteStore\").removeAll();\r",
+                    "Ext.getStore(\"DirectoriesStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"filePlan\\\",\\\"value\\\":\\\"emptyDecoy\\\"}]\";\r",
+                    "Ext.getStore(\"DirectoriesStore\").load();"
                 ],
                 "name": "destroy",
                 "scope": "me"

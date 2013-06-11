@@ -2485,6 +2485,30 @@
                 "app/store/DAMFolderViewStore.js"
             ],
             "className": "DAMFolderViewStore"
+        },
+        "c0b4069f-44a9-4ba0-9dc2-3dc669611220": {
+            "paths": [
+                "metadata/model/directoryModel",
+                "app/model/override/directoryModel.js",
+                "app/model/directoryModel.js"
+            ],
+            "className": "directoryModel"
+        },
+        "498be694-62c9-4b93-b79e-7487f219b90c": {
+            "paths": [
+                "metadata/store/DirectoriesStore",
+                "app/store/override/DirectoriesStore.js",
+                "app/store/DirectoriesStore.js"
+            ],
+            "className": "DirectoriesStore"
+        },
+        "cbe9387e-c640-49eb-93b5-05d268f42760": {
+            "paths": [
+                "metadata/view/newDirectoryWindow",
+                "app/view/override/newDirectoryWindow.js",
+                "app/view/newDirectoryWindow.js"
+            ],
+            "className": "newDirectoryWindow"
         }
     },
     "viewOrderMap": {
@@ -2564,6 +2588,7 @@
             "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
             "f720ad71-dfb5-436d-95de-957b47102cb6",
             "ec59b13f-ba9f-4798-932e-3dff958db8e7",
+            "cbe9387e-c640-49eb-93b5-05d268f42760",
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
             "756b35af-6a3f-4477-a677-7ff9f148fee7",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
@@ -2663,6 +2688,7 @@
             "6024e937-1032-4d87-9bf7-74a57a473a31",
             "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
             "1c2adda2-e782-40ff-b3f4-9e592104046f",
+            "498be694-62c9-4b93-b79e-7487f219b90c",
             "4cebc2cb-f5cf-4cd0-aac6-d1e007b3dd02",
             "54a8cac1-8012-4cb2-957c-18ab02aa80e1",
             "ec6d87e1-455e-426b-8458-d7738082aeee",
@@ -2782,6 +2808,7 @@
             "0817bd4b-dad6-4ba8-a953-6e51126364d2",
             "5c997a93-3afc-42e9-9098-74110e9872bf",
             "de8dc629-dc89-4153-926c-012ddbaa1d57",
+            "c0b4069f-44a9-4ba0-9dc2-3dc669611220",
             "98410e9a-0d71-4266-9879-fb34f77e26e0",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3",

@@ -292,6 +292,85 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getStore("DAMFolderViewStore").load();
     },
 
+    onAddDirectoryBtnClick: function(button, e, eOpts) {
+        Ext.widget("newDirectoryWindow").show();
+    },
+
+    onNewDirectorySubmitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        var target=Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected();
+        if (Ext.isEmpty(target)) {
+            target=Ext.getCmp("mainDirectoriesTree").getRootNode();
+        }
+        if (form.isValid()){
+            var newPage=form.getValues();
+            newPage.expandable=false;
+            newPage.filePlan="default";
+            newPage.inheritWorkspace=true;
+            var store=Ext.getCmp("mainDirectoriesTree").getStore();
+            store.suspendAutoSync();
+            target.set("expandable",true);
+            target.expand(false, function(){
+                if (!target.hasChildNodes()){
+                    newPage.orderValue=100;
+                } else {
+                    newPage.orderValue=target.lastChild.get("orderValue")+100;
+                }
+                target.appendChild(newPage);
+                store.resumeAutoSync();
+                store.sync();        
+                button.up().up().close();
+            });
+
+        }
+    },
+
+    onRemoveDirectoryBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var target=Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected();
+
+        var delCon = Ext.widget('delConfirmZ');
+        delCon.show();
+        var store=Ext.getCmp("mainDirectoriesTree").getStore();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            store.suspendAutoSync();
+            var myParent=target.parentNode;
+            if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
+                myParent.set("expandable",false);
+            }
+            target.remove();
+            store.resumeAutoSync();
+            store.sync();
+            Ext.getCmp('delConfirmZ').close();
+            Ext.getCmp("removeDirectoryBtn").disable();
+            Ext.getCmp("directorySettingsBtn").disable();
+        });
+
+    },
+
+    onMainDirectoriesTreeSelectionChange: function(model, selected, eOpts) {
+        Ext.getCmp("addDirectoryBtn").enable();
+        Ext.getCmp("removeDirectoryBtn").enable();
+        Ext.getCmp("directorySettingsBtn").enable();
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("removeDirectoryBtn").disable();
+            Ext.getCmp("directorySettingsBtn").disable();
+        } else {
+            if (selected[0].isRoot()){
+                Ext.getCmp("removeDirectoryBtn").disable();
+                Ext.getCmp("directorySettingsBtn").disable();
+            } else if (selected[0].get("id")=="notFiled") {
+                Ext.getCmp("addDirectoryBtn").disable();
+                Ext.getCmp("removeDirectoryBtn").disable();
+                Ext.getCmp("directorySettingsBtn").disable();
+            } else if (selected[0].get("readOnly")) {
+                Ext.getCmp("addDirectoryBtn").disable();
+                Ext.getCmp("removeDirectoryBtn").disable();
+            } 
+
+        }
+    },
+
     resetInterfaceSelect: function(record) {
         var me =this;
         Ext.getCmp("addDAMBtn").enable();
@@ -746,6 +825,18 @@ Ext.define('Rubedo.controller.DAMController', {
             },
             "#DAMFolderViewFiltersBtn": {
                 click: this.onDAMFolderViewFiltersBtnClick
+            },
+            "#addDirectoryBtn": {
+                click: this.onAddDirectoryBtnClick
+            },
+            "#newDirectorySubmitBtn": {
+                click: this.onNewDirectorySubmitBtnClick
+            },
+            "#removeDirectoryBtn": {
+                click: this.onRemoveDirectoryBtnClick
+            },
+            "#mainDirectoriesTree": {
+                selectionchange: this.onMainDirectoriesTreeSelectionChange
             }
         });
     }

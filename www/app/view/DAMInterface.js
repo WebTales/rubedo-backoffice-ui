@@ -27,7 +27,7 @@ Ext.define('Rubedo.view.DAMInterface', {
     currentViewMode: 'search',
     height: 651,
     id: 'DAMInterface',
-    width: 1038,
+    width: 1110,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -114,6 +114,43 @@ Ext.define('Rubedo.view.DAMInterface', {
                             }
                         },
                         {
+                            xtype: 'buttongroup',
+                            hidden: true,
+                            id: 'filePlanEditBtnGroup',
+                            headerPosition: 'bottom',
+                            title: 'File plan',
+                            columns: 3,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'addDirectoryBtn',
+                                    minWidth: 40,
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_add_big',
+                                    scale: 'large',
+                                    text: 'Add'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'removeDirectoryBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'directorySettingsBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_settings_big',
+                                    scale: 'large',
+                                    text: 'Settings'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'button',
                             ACL: 'write.ui.dam',
                             localiserId: 'addBtn',
@@ -170,38 +207,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                             iconCls: 'database_up_big',
                             scale: 'large',
                             text: 'Mass upload'
-                        },
-                        {
-                            xtype: 'buttongroup',
-                            hidden: true,
-                            id: 'filePlanEditBtnGroup',
-                            headerPosition: 'bottom',
-                            title: 'File plan',
-                            columns: 3,
-                            items: [
-                                {
-                                    xtype: 'button',
-                                    minWidth: 40,
-                                    iconAlign: 'top',
-                                    iconCls: 'folder_add_big',
-                                    scale: 'large',
-                                    text: 'Add'
-                                },
-                                {
-                                    xtype: 'button',
-                                    iconAlign: 'top',
-                                    iconCls: 'folder_remove_big',
-                                    scale: 'large',
-                                    text: 'Remove'
-                                },
-                                {
-                                    xtype: 'button',
-                                    iconAlign: 'top',
-                                    iconCls: 'folder_settings_big',
-                                    scale: 'large',
-                                    text: 'Settings'
-                                }
-                            ]
                         },
                         {
                             xtype: 'buttongroup',
@@ -341,6 +346,8 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'panel',
                             layout: {
+                                collapseFirst: false,
+                                activeOnTop: false,
                                 type: 'accordion'
                             },
                             title: '',
@@ -348,18 +355,67 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 {
                                     xtype: 'treepanel',
                                     height: 250,
+                                    id: 'mainDirectoriesTree',
                                     width: 400,
                                     title: 'File plan',
+                                    store: 'DirectoriesStore',
+                                    useArrows: true,
                                     viewConfig: {
+                                        plugins: [
+                                            Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
 
+                                            })
+                                        ],
+                                        listeners: {
+                                            beforedrop: {
+                                                fn: me.onTreeViewDragDropBeforeDrop,
+                                                scope: me
+                                            },
+                                            drop: {
+                                                fn: me.onTreeViewDragDropDrop,
+                                                scope: me
+                                            }
+                                        }
                                     },
                                     columns: [
                                         {
                                             xtype: 'treecolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                if (record.isRoot()){
+                                                    return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
+                                                } else if (record.get("id")=="notFiled") {
+                                                    record.data.allowDrop=false;
+                                                    record.data.allowDrag=false;
+                                                    return(Rubedo.RubedoAutomatedElementsLoc.notFiledText);
+
+                                                }
+                                                else if (record.get("readOnly")) {
+                                                    record.data.allowDrop=false;
+                                                    record.data.allowDrag=false;
+                                                    return("<i style=\"color:#777;\">"+value+"</i>");
+
+                                                } else {
+                                                    return(value);
+                                                }
+                                            },
                                             dataIndex: 'text',
                                             text: 'Folder',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'textfield',
+                                                allowBlank: false
+                                            }
                                         }
+                                    ],
+                                    plugins: [
+                                        Ext.create('Ext.grid.plugin.CellEditing', {
+                                            listeners: {
+                                                beforeedit: {
+                                                    fn: me.onCellEditingBeforeEdit,
+                                                    scope: me
+                                                }
+                                            }
+                                        })
                                     ]
                                 },
                                 {
@@ -457,11 +513,64 @@ Ext.define('Rubedo.view.DAMInterface', {
         }
     },
 
+    onTreeViewDragDropBeforeDrop: function(node, data, overModel, dropPosition, dropHandler, eOpts) {
+
+        if (!ACL.interfaceRights["write.ui.directories"]){
+            return(false);
+        }
+        Ext.getStore("DirectoriesStore").suspendAutoSync();
+        var movedOne=data.records[0];
+        var interm=0;
+        var targeted=overModel.get("orderValue");
+
+        if (dropPosition=="before"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
+            if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get("orderValue");}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="after"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
+            if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get("orderValue");}
+            else{interm=10000;}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="append"){
+            if (movedOne.parentNode.childNodes.length==1){
+                movedOne.parentNode.set("expandable", false);
+            }
+
+            if (overModel.hasChildNodes()){
+                movedOne.set("orderValue", overModel.lastChild.get("orderValue")+100);
+            } else {
+                movedOne.set("orderValue", 100);
+                overModel.set("expandable", true);
+            }
+        }
+    },
+
+    onTreeViewDragDropDrop: function(node, data, overModel, dropPosition, eOpts) {
+        var task= new Ext.util.DelayedTask(function(){
+            Ext.getStore("DirectoriesStore").resumeAutoSync();
+            Ext.getStore("DirectoriesStore").sync();
+        });
+        task.delay(200);
+    },
+
+    onCellEditingBeforeEdit: function(editor, e, eOpts) {
+        if ((!ACL.interfaceRights["write.ui.directories"])||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().get("readOnly"))||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().get("id")=="notFiled")||(Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().isRoot())) {
+            return false;
+        }
+    },
+
     onDAMMTGridRender: function(component, eOpts) {
         Ext.getStore("MediaTypesForDAM").load();
         Ext.getStore("TaxonomyForDAM").load();
         Ext.getStore("DAMFacetteStore").activeFacettes={ };
         Ext.getStore("DAMFacetteStore").load();
+        Ext.getStore("DirectoriesStore").getProxy().extraParams.filter="[{\"property\":\"filePlan\",\"value\":\"default\"}]";
+        Ext.getStore("DirectoriesStore").load();
     },
 
     onDAMInterfaceDestroy: function(component, eOpts) {
@@ -469,6 +578,8 @@ Ext.define('Rubedo.view.DAMInterface', {
         Ext.getStore("TaxonomyForDAM").removeAll();
         Ext.getStore("DAMFacetteStore").activeFacettes={ };
         Ext.getStore("DAMFacetteStore").removeAll();
+        Ext.getStore("DirectoriesStore").getProxy().extraParams.filter="[{\"property\":\"filePlan\",\"value\":\"emptyDecoy\"}]";
+        Ext.getStore("DirectoriesStore").load();
     }
 
 });

@@ -1106,6 +1106,145 @@
                 "designer|controlQuery": "#DAMFolderViewFiltersBtn"
             },
             "designerId": "8dffcc30-9ce4-4600-916c-83e78f50c912"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddDirectoryBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newDirectoryWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addDirectoryBtn"
+            },
+            "designerId": "27cdaf2c-c812-48bf-a849-095c56d84ab6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewDirectorySubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "var target=Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected();\r",
+                    "if (Ext.isEmpty(target)) {\r",
+                    "    target=Ext.getCmp(\"mainDirectoriesTree\").getRootNode();\r",
+                    "}\r",
+                    "if (form.isValid()){\r",
+                    "    var newPage=form.getValues();\r",
+                    "    newPage.expandable=false;\r",
+                    "    newPage.filePlan=\"default\";\r",
+                    "    newPage.inheritWorkspace=true;\r",
+                    "    var store=Ext.getCmp(\"mainDirectoriesTree\").getStore();\r",
+                    "    store.suspendAutoSync();\r",
+                    "    target.set(\"expandable\",true);\r",
+                    "    target.expand(false, function(){\r",
+                    "        if (!target.hasChildNodes()){\r",
+                    "            newPage.orderValue=100;\r",
+                    "        } else {\r",
+                    "            newPage.orderValue=target.lastChild.get(\"orderValue\")+100;\r",
+                    "        }\r",
+                    "        target.appendChild(newPage);\r",
+                    "        store.resumeAutoSync();\r",
+                    "        store.sync();        \r",
+                    "        button.up().up().close();\r",
+                    "    });\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newDirectorySubmitBtn"
+            },
+            "designerId": "340a45b1-a99b-4ab1-ab0f-c7fea054547c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRemoveDirectoryBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var target=Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected();\r",
+                    "\r",
+                    "                var delCon = Ext.widget('delConfirmZ');\r",
+                    "                delCon.show();\r",
+                    "                var store=Ext.getCmp(\"mainDirectoriesTree\").getStore();\r",
+                    "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "                    store.suspendAutoSync();\r",
+                    "                    var myParent=target.parentNode;\r",
+                    "                    if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){\r",
+                    "                        myParent.set(\"expandable\",false);\r",
+                    "                    }\r",
+                    "                    target.remove();\r",
+                    "                    store.resumeAutoSync();\r",
+                    "                    store.sync();\r",
+                    "                    Ext.getCmp('delConfirmZ').close();\r",
+                    "                    Ext.getCmp(\"removeDirectoryBtn\").disable();\r",
+                    "\t\t\t\t\tExt.getCmp(\"directorySettingsBtn\").disable();\r",
+                    "                });\r",
+                    "           "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#removeDirectoryBtn"
+            },
+            "designerId": "99c553ee-39a2-40b1-915e-a005bc244e7e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainDirectoriesTreeSelectionChange",
+                "implHandler": [
+                    "Ext.getCmp(\"addDirectoryBtn\").enable();\r",
+                    "Ext.getCmp(\"removeDirectoryBtn\").enable();\r",
+                    "Ext.getCmp(\"directorySettingsBtn\").enable();\r",
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    Ext.getCmp(\"removeDirectoryBtn\").disable();\r",
+                    "    Ext.getCmp(\"directorySettingsBtn\").disable();\r",
+                    "} else {\r",
+                    "    if (selected[0].isRoot()){\r",
+                    "        Ext.getCmp(\"removeDirectoryBtn\").disable();\r",
+                    "        Ext.getCmp(\"directorySettingsBtn\").disable();\r",
+                    "    } else if (selected[0].get(\"id\")==\"notFiled\") {\r",
+                    "        Ext.getCmp(\"addDirectoryBtn\").disable();\r",
+                    "        Ext.getCmp(\"removeDirectoryBtn\").disable();\r",
+                    "        Ext.getCmp(\"directorySettingsBtn\").disable();\r",
+                    "    } else if (selected[0].get(\"readOnly\")) {\r",
+                    "        Ext.getCmp(\"addDirectoryBtn\").disable();\r",
+                    "        Ext.getCmp(\"removeDirectoryBtn\").disable();\r",
+                    "    } \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.tree.Panel",
+                "designer|controlQuery": "#mainDirectoriesTree"
+            },
+            "designerId": "527a2e69-0295-40f7-95cd-f4694d9cc1b2"
         }
     ]
 }

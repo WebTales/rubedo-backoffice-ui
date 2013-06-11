@@ -1,0 +1,137 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Directories",
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "directoryModel",
+        "storeId": "DirectoriesStore",
+        "designer|userClassName": "DirectoriesStore",
+        "designer|userAlias": "DirectoriesStore"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "498be694-62c9-4b93-b79e-7487f219b90c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "batchActions": false,
+                "api": [
+                    "{\r",
+                    "                    create: 'directories/create',\r",
+                    "                    read: 'directories/read-child',\r",
+                    "                    update: 'directories/update',\r",
+                    "                    destroy: 'directories/delete'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "a4f87fd8-6f58-4c29-9a73-3cc1363a5a5f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message"
+                    },
+                    "designerId": "6e19c0d6-a419-4520-89b0-1c3eb4248a2a",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getResponseData",
+                                "designer|params": [
+                                    "response"
+                                ],
+                                "implHandler": [
+                                    "var data, error;\r",
+                                    "\r",
+                                    "try {\r",
+                                    "    data = Ext.decode(response.responseText);\r",
+                                    "    if (Ext.isDefined(data.data)){data.children=data.data;}// error fix\r",
+                                    "    return this.readRecords(data);\r",
+                                    "} catch (ex) {\r",
+                                    "    error = new Ext.data.ResultSet({\r",
+                                    "        total  : 0,\r",
+                                    "        count  : 0,\r",
+                                    "        records: [],\r",
+                                    "        success: false,\r",
+                                    "        message: ex.message\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    this.fireEvent('exception', this, response, error);\r",
+                                    "    console.log(ex);\r",
+                                    "\r",
+                                    "    Ext.Logger.warn('Unable to parse the JSON returned by the server');\r",
+                                    "\r",
+                                    "    return error;\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "5e5861a7-554e-4db2-ac7a-af94c4c56608"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "048c76cd-72aa-4cd1-9551-f7f720ba4d5c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "orderValue",
+                "root": null
+            },
+            "designerId": "d766fd66-3676-429a-af3d-e1a1c9a4a5d3"
+        }
+    ]
+}

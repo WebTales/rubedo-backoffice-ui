@@ -202,6 +202,22 @@
                 "type": "boolean"
             },
             "designerId": "34411cf9-fd58-463d-9f6d-7624578632b3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "\"notFiled\""
+                ],
+                "name": "directory",
+                "type": "string"
+            },
+            "designerId": "cc7e6078-a992-4b04-bb0b-77acffc0567c"
         }
     ]
 }

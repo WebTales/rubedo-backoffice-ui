@@ -1,0 +1,168 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "directoryModel",
+        "designer|userAlias": "directoryModel"
+    },
+    "designerId": "c0b4069f-44a9-4ba0-9dc2-3dc669611220",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text",
+                "type": "string"
+            },
+            "designerId": "898203bd-f1c5-4e33-ae63-5eb14ca0f51e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "version",
+                "type": "int"
+            },
+            "designerId": "4243417b-434e-42b5-b948-dd185ce5da12"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "843871e2-b681-4d12-8c14-55e0062ca4a3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "orderValue",
+                "sortType": "asFloat",
+                "type": "float"
+            },
+            "designerId": "fb51ac7e-1a8b-4480-ab67-25a54dc09bd4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "leaf",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "64cc00a1-a5dd-451c-9700-56ad8dafaef0",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return(false);"
+                        ]
+                    },
+                    "designerId": "f1ada2db-5dce-43a3-9330-b3f4432241ed"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "true"
+                ],
+                "name": "expandable",
+                "type": "boolean"
+            },
+            "designerId": "a0636a0c-90bb-455a-8ac6-905535d6dc3b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "workspace"
+            },
+            "designerId": "b1499738-5538-4ded-9a59-973ec1bbe736"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "inheritWorkspace"
+            },
+            "designerId": "aaef423a-cfa8-4f28-a383-74f6e65c33b1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "e91b55f5-1afc-4654-a240-a39a95c6ca12"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "filePlan"
+            },
+            "designerId": "5179d4ff-4805-4f4a-b3a6-b9cafd96f7b1"
+        }
+    ]
+}

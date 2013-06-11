@@ -655,7 +655,7 @@ Ext.define('Rubedo.view.contributionPages', {
             Ext.getStore("PagesDataStore").resumeAutoSync();
             Ext.getStore("PagesDataStore").sync();
         });
-        task.delay(50);
+        task.delay(200);
     },
 
     onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {

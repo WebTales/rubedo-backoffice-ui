@@ -35,7 +35,8 @@
             "formFieldTypeModel",
             "mailingListsModel",
             "inportFieldModel",
-            "DAMFolderViewModel"
+            "DAMFolderViewModel",
+            "directoryModel"
         ],
         "stores": [
             "SitesJson",
@@ -130,7 +131,8 @@
             "SystemCTStore",
             "AddMultiFieldStore",
             "ImportableFieldTypesStore",
-            "DAMFolderViewStore"
+            "DAMFolderViewStore",
+            "DirectoriesStore"
         ],
         "views": [
             "MyContainer",
@@ -267,7 +269,8 @@
             "ImagePreviewWindow",
             "MassDamUploadWindow",
             "damTypeFacetImposeWindow",
-            "pixlrEditorWindow"
+            "pixlrEditorWindow",
+            "newDirectoryWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

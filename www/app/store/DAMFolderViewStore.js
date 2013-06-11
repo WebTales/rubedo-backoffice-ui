@@ -53,6 +53,7 @@ Ext.define('Rubedo.store.DAMFolderViewStore', {
                 },
                 writer: {
                     type: 'json',
+                    nameProperty: 'mapping',
                     encode: true,
                     root: 'data'
                 }

@@ -20,12 +20,10 @@ Ext.define('Rubedo.model.DAMFolderViewModel', {
     fields: [
         {
             mapping: 'title',
-            name: 'text',
-            persist: false
+            name: 'text'
         },
         {
-            name: 'typeId',
-            persist: false
+            name: 'typeId'
         },
         {
             name: 'version',
@@ -33,10 +31,6 @@ Ext.define('Rubedo.model.DAMFolderViewModel', {
         },
         {
             name: 'id'
-        },
-        {
-            name: 'fileSize',
-            persist: false
         },
         {
             name: 'readOnly',
@@ -57,6 +51,27 @@ Ext.define('Rubedo.model.DAMFolderViewModel', {
             mapping: 'createUser.fullName',
             name: 'author',
             persist: false
+        },
+        {
+            name: 'writeWorkspace'
+        },
+        {
+            name: 'mainFileType'
+        },
+        {
+            name: 'originalFileId'
+        },
+        {
+            name: 'target'
+        },
+        {
+            name: 'fileSize'
+        },
+        {
+            name: 'fields'
+        },
+        {
+            name: 'taxonomy'
         }
     ]
 });

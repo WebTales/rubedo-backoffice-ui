@@ -644,7 +644,7 @@
                                             "    Ext.getStore(\"PagesDataStore\").resumeAutoSync();\r",
                                             "    Ext.getStore(\"PagesDataStore\").sync();\r",
                                             "});\r",
-                                            "task.delay(50);"
+                                            "task.delay(200);"
                                         ],
                                         "name": "drop",
                                         "scope": "me"
