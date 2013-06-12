@@ -359,6 +359,7 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("addDirectoryBtn").enable();
         Ext.getCmp("removeDirectoryBtn").enable();
         Ext.getCmp("directorySettingsBtn").enable();
+        Ext.getCmp("DAMCenter").view.plugins[0].enable();
         if (Ext.isEmpty(selected)){
             Ext.getCmp("removeDirectoryBtn").disable();
             Ext.getCmp("directorySettingsBtn").disable();
@@ -375,6 +376,7 @@ Ext.define('Rubedo.controller.DAMController', {
             } else if (selected[0].get("readOnly")) {
                 Ext.getCmp("addDirectoryBtn").disable();
                 Ext.getCmp("removeDirectoryBtn").disable();
+                Ext.getCmp("DAMCenter").view.plugins[0].disable();
             }
             if (Ext.getStore("DAMFolderViewStore").directoryFilter!=Ext.clone(selected[0].get("id"))){
                 Ext.getStore("DAMFolderViewStore").directoryFilter=Ext.clone(selected[0].get("id"));

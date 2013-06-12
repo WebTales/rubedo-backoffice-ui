@@ -528,7 +528,6 @@ Ext.define('Rubedo.view.DAMInterface', {
         if (!Ext.isEmpty(movedOne.get("typeId"))){
             if (dropPosition!="append"){return(false);}
             if (overModel.isRoot()){return(false);}
-            console.log("applying file plan");
             var idArray=Ext.Array.pluck(Ext.Array.pluck(data.records,"data"),"id");
             Ext.Ajax.request({
                 url: 'directories/classify',
@@ -537,9 +536,11 @@ Ext.define('Rubedo.view.DAMInterface', {
                     directoryId:overModel.get("id")
                 },
                 success: function(response){
-                    var text = response.responseText;
-                    console.log(text);
                     Ext.getStore("DAMFolderViewStore").load();
+                },
+                failure:function(response){
+                    var msg=Ext.JSON.decode(response.responseText).msg;
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, msg);
                 }
             });
 
