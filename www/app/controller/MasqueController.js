@@ -251,13 +251,18 @@ Ext.define('Rubedo.controller.MasqueController', {
             var nSite = Ext.getCmp('copierMasqueSite').getValue();
             var nRows = Ext.clone(cible.data.rows);
             var nBlocks=Ext.clone(cible.data.blocks);
+            Ext.Array.forEach(nBlocks, function(block){
+                block.id=Ext.id();
+            });
             var nProperties=Ext.clone(cible.data.pageProperties);
+            var nMainColumnId=Ext.clone(cible.data.mainColumnId);
             var nouvMasque = Ext.create('model.masquesDataModel', {
                 text: nTitre,
                 site: nSite,
                 rows: nRows,
                 blocks:nBlocks,
-                pageProperties:nProperties
+                pageProperties:nProperties,
+                mainColumnId:nMainColumnId
 
             });
             this.getMasquesDataJsonStore().add(nouvMasque);
