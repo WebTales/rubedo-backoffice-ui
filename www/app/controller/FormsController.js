@@ -247,8 +247,12 @@ Ext.define('Rubedo.controller.FormsController', {
                 var target=Ext.getCmp(Ext.getCmp('formSelectedElementField').getValue());
                 var newElement= Ext.widget("RFormField", {id:servedId});
                 newElement.itemConfig=insertor.itemConfig;
-                if (insertor.itemConfig.fType=="richText"){
+                if ((insertor.itemConfig.fType=="richText")||(insertor.itemConfig.fType=="predefinedPrefsQuestion")){
                     newElement.styleHtmlContent=true;
+                } 
+
+                if (insertor.itemConfig.fType=="richText"){
+                    //no increment for this one
                 } else {
                     var incrementor=1;
                     Ext.Array.forEach(Ext.getCmp("FormsEditContainer").query("RFormField"), function(other){
@@ -376,7 +380,7 @@ Ext.define('Rubedo.controller.FormsController', {
             newPage.itemConfig=page.itemConfig;
             Ext.Array.forEach(page.elements, function(element){
                 var newElement = Ext.widget("RFormField", element);
-                if (element.itemConfig.fType=="richText"){
+                if ((element.itemConfig.fType=="richText")||(element.itemConfig.fType=="predefinedPrefsQuestion")){
                     newElement.styleHtmlContent=true;
                 }
                 newPage.add(newElement);
@@ -386,6 +390,7 @@ Ext.define('Rubedo.controller.FormsController', {
     },
 
     fireElementConfigurator: function(itemConfig, id) {
+        var me=this;
         if (itemConfig.fType=="richText") {
             var RTEditor = Ext.widget("RichTextConfigurator").show();
             RTEditor.getComponent(0).setValue(itemConfig.html);
@@ -400,6 +405,12 @@ Ext.define('Rubedo.controller.FormsController', {
             OQEditor.targetedId=id;
             OQEditor.initialItemConfig=itemConfig;
             OQEditor.show();
+        } else if (itemConfig.fType=="predefinedPrefsQuestion") {
+            var PredefEditor = Ext.widget("predefinedPrefsQuestionConfigurator");
+            me.refreshFCEStore(id);
+            PredefEditor.targetedId=id;
+            PredefEditor.initialItemConfig=itemConfig;
+            PredefEditor.show();
         } else {
             //definetly a page
             var PEditor = Ext.widget("FormsPageConfigurator");
@@ -414,7 +425,7 @@ Ext.define('Rubedo.controller.FormsController', {
     refreshFCEStore: function(notThisOne) {
         Ext.getStore("FCEStore").removeAll();
         Ext.Array.forEach(Ext.getCmp("FormsEditContainer").query("RFormField"), function(other){
-            if ((other.itemConfig.fType!="richText")&&(other.id!=notThisOne)){
+            if ((other.itemConfig.fType!="richText")&&(other.itemConfig.fType!="predefinedPrefsQuestion")&&(other.id!=notThisOne)){
                 Ext.getStore("FCEStore").add({
                     id:other.id,
                     qNb:other.itemConfig.qNb,

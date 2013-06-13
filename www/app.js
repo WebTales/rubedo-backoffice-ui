@@ -158,7 +158,8 @@ Ext.application({
         'Rubedo.view.FTDComboField',
         'Rubedo.view.FacetOverriderField',
         'Rubedo.view.FacetOverriderFieldComponent',
-        'Rubedo.view.FacetOverriderWindow'
+        'Rubedo.view.FacetOverriderWindow',
+        'Rubedo.view.predefinedPrefsQuestionConfigurator'
     ],
     models: [
         'sitesDataModel',
@@ -431,7 +432,8 @@ Ext.application({
         'FTDComboField',
         'FacetOverriderField',
         'FacetOverriderFieldComponent',
-        'FacetOverriderWindow'
+        'FacetOverriderWindow',
+        'predefinedPrefsQuestionConfigurator'
     ],
     autoCreateViewport: true,
     controllers: [

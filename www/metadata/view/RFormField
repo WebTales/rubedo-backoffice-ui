@@ -118,6 +118,8 @@
                     "            me.add(previewField);\r",
                     "        } else if (me.itemConfig.fType==\"richText\") {\r",
                     "            me.update(plusText+me.itemConfig.html);\r",
+                    "        } else if (me.itemConfig.fType==\"predefinedPrefsQuestion\") {\r",
+                    "            me.update(plusText+\"<p>\"+\"<b>\"+me.itemConfig.qNb+\" </b> \"+me.itemConfig.label+\"</p>\");\r",
                     "        }\r",
                     "        me.doLayout();    "
                 ]

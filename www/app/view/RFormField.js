@@ -149,6 +149,8 @@ Ext.define('Rubedo.view.RFormField', {
                     me.add(previewField);
                 } else if (me.itemConfig.fType=="richText") {
                     me.update(plusText+me.itemConfig.html);
+                } else if (me.itemConfig.fType=="predefinedPrefsQuestion") {
+                    me.update(plusText+"<p>"+"<b>"+me.itemConfig.qNb+" </b> "+me.itemConfig.label+"</p>");
                 }
                 me.doLayout();    
     }
