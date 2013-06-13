@@ -2517,6 +2517,22 @@
                 "app/view/directoryConfiguratorWindow.js"
             ],
             "className": "directoryConfiguratorWindow"
+        },
+        "a763cc38-0403-42ff-93c3-b8c76c11b7b7": {
+            "paths": [
+                "metadata/store/FacetsToDisplayStore",
+                "app/store/override/FacetsToDisplayStore.js",
+                "app/store/FacetsToDisplayStore.js"
+            ],
+            "className": "FacetsToDisplayStore"
+        },
+        "a78985f2-049d-48b7-b700-1ab96f553aa4": {
+            "paths": [
+                "metadata/view/FTDComboField",
+                "app/view/override/FTDComboField.js",
+                "app/view/FTDComboField.js"
+            ],
+            "className": "FTDComboField"
         }
     },
     "viewOrderMap": {
@@ -2598,6 +2614,7 @@
             "ec59b13f-ba9f-4798-932e-3dff958db8e7",
             "cbe9387e-c640-49eb-93b5-05d268f42760",
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
+            "a78985f2-049d-48b7-b700-1ab96f553aa4",
             "756b35af-6a3f-4477-a677-7ff9f148fee7",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
             "36007f86-6607-47b7-a5b8-b35b3310bc18",
@@ -2687,6 +2704,7 @@
             "03aa16b1-6613-44b9-ad19-4167a7527f99",
             "76cb240a-0759-4696-ab93-7ce71f5ecac6",
             "ad9ed2e8-e6a2-4a5c-9180-4d296526fb47",
+            "a763cc38-0403-42ff-93c3-b8c76c11b7b7",
             "6cb9f760-e375-46f8-ba70-e52ba7aa5725",
             "ab38a55b-ca17-43f5-b3b9-44b0a53ad234",
             "9855c2eb-d7cc-4de3-88a9-b5ac251c3cfd",

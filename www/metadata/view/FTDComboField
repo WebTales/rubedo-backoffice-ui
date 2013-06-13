@@ -1,0 +1,52 @@
+{
+    "type": "Ext.form.field.ComboBox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "managesStore": true,
+        "designer|userClassName": "FTDComboField",
+        "designer|userAlias": "FTDComboField",
+        "fieldLabel": "Label",
+        "displayField": "name",
+        "forceSelection": true,
+        "multiSelect": true,
+        "queryMode": "local",
+        "store": "FacetsToDisplayStore",
+        "valueField": "id"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "designerId": "a78985f2-049d-48b7-b700-1ab96f553aa4",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processFTDComboField",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "627e1c2c-b5bb-4f1e-8742-1b406618f1fd"
+        }
+    ]
+}

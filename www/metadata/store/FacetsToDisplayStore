@@ -1,0 +1,85 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": null,
+        "usedCollection": null,
+        "autoLoad": false,
+        "model": "taxonomieDataModel",
+        "storeId": "FacetsToDisplayStore",
+        "designer|userClassName": "FacetsToDisplayStore",
+        "designer|userAlias": "FacetsToDisplayStore",
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "a763cc38-0403-42ff-93c3-b8c76c11b7b7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "\tread : 'taxonomy'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "94ffa3f3-b9c2-4f95-b270-bdcd1d0efe55",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "a67dcaf2-9a02-432f-88cd-d02c6f5206bf"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "store.add({\"id\":\"contentType\", \"name\":\"Content Type\"},{\"id\":\"damType\", \"name\":\"Media Type\"});"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "60680890-9b3c-4caf-9932-0f564dbcb29e"
+        }
+    ]
+}

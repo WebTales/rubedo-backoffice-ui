@@ -132,7 +132,8 @@
             "AddMultiFieldStore",
             "ImportableFieldTypesStore",
             "DAMFolderViewStore",
-            "DirectoriesStore"
+            "DirectoriesStore",
+            "FacetsToDisplayStore"
         ],
         "views": [
             "MyContainer",
@@ -271,7 +272,8 @@
             "damTypeFacetImposeWindow",
             "pixlrEditorWindow",
             "newDirectoryWindow",
-            "directoryConfiguratorWindow"
+            "directoryConfiguratorWindow",
+            "FTDComboField"
         ],
         "autoCreateViewport": true,
         "controllers": [

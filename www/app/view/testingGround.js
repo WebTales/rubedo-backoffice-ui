@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.DCEField'
-    ],
-
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -31,21 +27,6 @@ Ext.define('Rubedo.view.testingGround', {
 
     initComponent: function() {
         var me = this;
-
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'form',
-                    bodyPadding: 10,
-                    title: 'My Form',
-                    items: [
-                        {
-                            xtype: 'DCEField'
-                        }
-                    ]
-                }
-            ]
-        });
 
         me.callParent(arguments);
     }

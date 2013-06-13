@@ -86,6 +86,12 @@
                                     "inputValue": true
                                 }
                             },{
+                                "type": "Rubedo.view.FTDComboField",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1371#",
+                                    "name": "displayedFacets"
+                                }
+                            },{
                                 "type": "Ext.form.field.Checkbox",
                                 "config": {
                                     "fieldLabel": "#ext-gen1370#",
@@ -1788,6 +1794,12 @@
                                 "config": {
                                     "fieldLabel": "#ext-gen1056#",
                                     "name": "predefinedFacets"
+                                }
+                            },{
+                                "type": "Rubedo.view.FTDComboField",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1371#",
+                                    "name": "displayedFacets"
                                 }
                             },
                             {

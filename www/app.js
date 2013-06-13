@@ -154,7 +154,8 @@ Ext.application({
         'Rubedo.view.damTypeFacetImposeWindow',
         'Rubedo.view.pixlrEditorWindow',
         'Rubedo.view.newDirectoryWindow',
-        'Rubedo.view.directoryConfiguratorWindow'
+        'Rubedo.view.directoryConfiguratorWindow',
+        'Rubedo.view.FTDComboField'
     ],
     models: [
         'sitesDataModel',
@@ -282,7 +283,8 @@ Ext.application({
         'AddMultiFieldStore',
         'ImportableFieldTypesStore',
         'DAMFolderViewStore',
-        'DirectoriesStore'
+        'DirectoriesStore',
+        'FacetsToDisplayStore'
     ],
     views: [
         'MyContainer',
@@ -421,7 +423,8 @@ Ext.application({
         'damTypeFacetImposeWindow',
         'pixlrEditorWindow',
         'newDirectoryWindow',
-        'directoryConfiguratorWindow'
+        'directoryConfiguratorWindow',
+        'FTDComboField'
     ],
     autoCreateViewport: true,
     controllers: [
