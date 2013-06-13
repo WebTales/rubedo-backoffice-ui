@@ -277,6 +277,19 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                             name: 'helpText'
                                         },
                                         {
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            fieldLabel: 'Facet operator',
+                                            name: 'facetOperator',
+                                            allowBlank: false,
+                                            editable: false,
+                                            forceSelection: true,
+                                            store: [
+                                                'AND',
+                                                'OR'
+                                            ]
+                                        },
+                                        {
                                             xtype: 'checkboxfield',
                                             localiserId: 'expandableField',
                                             anchor: '100%',

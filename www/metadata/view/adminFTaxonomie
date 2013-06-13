@@ -716,6 +716,29 @@
                                     ]
                                 },
                                 {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Facet operator",
+                                        "name": "facetOperator",
+                                        "allowBlank": false,
+                                        "editable": false,
+                                        "forceSelection": true,
+                                        "store": [
+                                            "[\"AND\",\"OR\"]"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "store": "array"
+                                    },
+                                    "designerId": "982f8200-cf92-46b7-bb97-dd91fc0398bc"
+                                },
+                                {
                                     "type": "Ext.form.field.Checkbox",
                                     "reference": {
                                         "name": "items",

@@ -1299,7 +1299,7 @@
                     "    Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().set(button.up().getForm().getValues());\r",
                     "    button.up().up().close();\r",
                     "    Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected().collapseChildren(true);\r",
-                    "\tExt.getCmp(\"mainDirectoriesTree\").getStore().load({\"node\":Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected()});\r",
+                    "    Ext.getCmp(\"mainDirectoriesTree\").getStore().load({\"node\":Ext.getCmp(\"mainDirectoriesTree\").getSelectionModel().getLastSelected()});\r",
                     "}"
                 ],
                 "name": "click",

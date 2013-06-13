@@ -72,6 +72,11 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            defaultValue: 'AND',
+            name: 'facetOperator',
+            type: 'string'
         }
     ]
 });

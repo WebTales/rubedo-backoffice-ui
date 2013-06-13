@@ -198,6 +198,22 @@
                 "type": "boolean"
             },
             "designerId": "85f7c26d-aa23-4cee-9af9-aa6d9c03ff5e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "\"AND\""
+                ],
+                "name": "facetOperator",
+                "type": "string"
+            },
+            "designerId": "516d9e8a-63eb-47e5-8ca5-7031d870fe33"
         }
     ]
 }
