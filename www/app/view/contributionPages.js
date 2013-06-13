@@ -660,8 +660,12 @@ Ext.define('Rubedo.view.contributionPages', {
 
     onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
         if (newValue) {
-            field.previousSibling().setReadOnly(true);
-            field.previousSibling().setValue(null);
+            var task = new Ext.util.DelayedTask(function(){
+                field.previousSibling().setReadOnly(true);
+                field.previousSibling().setValue(null);
+            });
+            task.delay(100);
+
         }else {
             field.previousSibling().setReadOnly(false);
         }

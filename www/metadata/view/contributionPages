@@ -1197,8 +1197,12 @@
                                         "fn": "onCheckboxfieldChange",
                                         "implHandler": [
                                             "if (newValue) {\r",
-                                            "    field.previousSibling().setReadOnly(true);\r",
-                                            "    field.previousSibling().setValue(null);\r",
+                                            "    var task = new Ext.util.DelayedTask(function(){\r",
+                                            "        field.previousSibling().setReadOnly(true);\r",
+                                            "    \tfield.previousSibling().setValue(null);\r",
+                                            "\t});\r",
+                                            "    task.delay(100);\r",
+                                            "\r",
                                             "}else {\r",
                                             "    field.previousSibling().setReadOnly(false);\r",
                                             "}"
