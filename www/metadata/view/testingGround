@@ -14,5 +14,42 @@
         "layout": "fit",
         "title": "Testing ground"
     },
-    "designerId": "66174f28-03d3-4c02-855f-65706d91852a"
+    "designerId": "66174f28-03d3-4c02-855f-65706d91852a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": "My Form"
+            },
+            "designerId": "0378740b-d98c-4ac4-8d46-35dd99ad05ed",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "e8d1d666-52ca-4309-b178-ba71c68482eb",
+                    "masterInstanceId": "a78985f2-049d-48b7-b700-1ab96f553aa4"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "240ec825-7b7f-46e7-88b2-d9e49440c956",
+                    "masterInstanceId": "f49940ae-cdb8-4eb2-86dd-78ca8c746b6d"
+                }
+            ]
+        }
+    ]
 }

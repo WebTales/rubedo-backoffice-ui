@@ -1,0 +1,105 @@
+{
+    "type": "Ext.form.field.Hidden",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "allowedCT": null,
+        "queryMode": true,
+        "geoQueryMode": false,
+        "damQueryMode": false,
+        "designer|userClassName": "FacetOverriderField",
+        "designer|userAlias": "FacetOverriderField",
+        "fieldLabel": "Label",
+        "labelSeparator": " "
+    },
+    "configAlternates": {
+        "geoQueryMode": "boolean",
+        "queryMode": "boolean",
+        "damQueryMode": "boolean"
+    },
+    "designerId": "f49940ae-cdb8-4eb2-86dd-78ca8c746b6d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "allowedCT",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "queryMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "geoQueryMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "damQueryMode",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"FacetOverriderFieldComponent\");\r",
+                    "myComponent.setFieldLabel(component.fieldLabel+\" \");\r",
+                    "component.on(\"change\", function(a,newValue){\r",
+                    "    if (Ext.isEmpty(newValue)){\r",
+                    "        myComponent.getComponent(\"addBtn\").show();\r",
+                    "        myComponent.getComponent(\"editBtn\").hide();\r",
+                    "        myComponent.getComponent(\"removeBtn\").hide();\r",
+                    "    } else {\r",
+                    "        myComponent.getComponent(\"addBtn\").hide();\r",
+                    "        myComponent.getComponent(\"editBtn\").show();\r",
+                    "        myComponent.getComponent(\"removeBtn\").show();\r",
+                    "    }\r",
+                    "});\r",
+                    "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){\r",
+                    "    component.setValue(null);\r",
+                    "});\r",
+                    "myComponent.getComponent(\"addBtn\").on(\"click\", function(){\r",
+                    "    var usedFacets=component.findParentByType(\"window\").query(\"FTDComboField\")[0].getValue();\r",
+                    "    var initialValue= [ ];\r",
+                    "    if (!Ext.isEmpty(usedFacets)){\r",
+                    "        var store=component.findParentByType(\"window\").query(\"FTDComboField\")[0].getStore();\r",
+                    "        Ext.Array.forEach(usedFacets, function(facet){\r",
+                    "            initialValue.push({id:facet, facetOperator:store.findRecord(\"id\",facet).get(\"facetOperator\")});\r",
+                    "        });\r",
+                    "    }\r",
+                    "    var editor=Ext.widget(\"FacetOverriderWindow\");\r",
+                    "    editor.initialValue=initialValue;\r",
+                    "    editor.targetedFieldId=component.getId();\r",
+                    "    editor.show();\r",
+                    "    \r",
+                    "});\r",
+                    "\r",
+                    "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
+                    "    var editor=Ext.widget(\"FacetOverriderWindow\");\r",
+                    "    editor.initialValue=Ext.JSON.decode(component.getValue());\r",
+                    "    editor.targetedFieldId=component.getId();\r",
+                    "    editor.show();\r",
+                    "});\r",
+                    "component.up().add(myComponent);\r",
+                    "component.fireEvent(\"change\",component, component.getValue());\r",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "e1b4f5c4-c2dd-4211-9766-cfe1a538c096"
+        }
+    ]
+}

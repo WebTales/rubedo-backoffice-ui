@@ -2533,6 +2533,38 @@
                 "app/view/FTDComboField.js"
             ],
             "className": "FTDComboField"
+        },
+        "a109fcf3-48a3-4aeb-af13-4d6ad0345412": {
+            "paths": [
+                "metadata/view/FacetOverriderFieldComponent",
+                "app/view/override/FacetOverriderFieldComponent.js",
+                "app/view/FacetOverriderFieldComponent.js"
+            ],
+            "className": "FacetOverriderFieldComponent"
+        },
+        "f49940ae-cdb8-4eb2-86dd-78ca8c746b6d": {
+            "paths": [
+                "metadata/view/FacetOverriderField",
+                "app/view/override/FacetOverriderField.js",
+                "app/view/FacetOverriderField.js"
+            ],
+            "className": "FacetOverriderField"
+        },
+        "022b9194-cbf8-489f-ba75-3a204f42e228": {
+            "paths": [
+                "metadata/view/FacetOverriderWindow",
+                "app/view/override/FacetOverriderWindow.js",
+                "app/view/FacetOverriderWindow.js"
+            ],
+            "className": "FacetOverriderWindow"
+        },
+        "5aaff44e-330f-458e-ad51-60d1539340c7": {
+            "paths": [
+                "metadata/store/FacetOverriderStore",
+                "app/store/override/FacetOverriderStore.js",
+                "app/store/FacetOverriderStore.js"
+            ],
+            "className": "FacetOverriderStore"
         }
     },
     "viewOrderMap": {
@@ -2684,10 +2716,14 @@
             "35c8f1c1-4d85-4897-a76f-05b321a51c34",
             "9b8d0b76-4792-4abf-a9db-b52033d4cab6",
             "8a0627d1-0b5e-426d-bdca-2ee1be6c9d9b",
-            "40303feb-9caa-4ec1-a7e2-f9f5b1608e20"
+            "40303feb-9caa-4ec1-a7e2-f9f5b1608e20",
+            "a109fcf3-48a3-4aeb-af13-4d6ad0345412",
+            "f49940ae-cdb8-4eb2-86dd-78ca8c746b6d",
+            "022b9194-cbf8-489f-ba75-3a204f42e228"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
+            "5aaff44e-330f-458e-ad51-60d1539340c7",
             "d83aaaaf-494e-4b1d-961c-a90b48ca6b12",
             "5fb72a18-9339-4c3a-9c9d-c5edd63b5362",
             "1429abea-2977-46c7-993e-339569e76d1a",

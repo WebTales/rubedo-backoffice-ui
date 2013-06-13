@@ -155,7 +155,10 @@ Ext.application({
         'Rubedo.view.pixlrEditorWindow',
         'Rubedo.view.newDirectoryWindow',
         'Rubedo.view.directoryConfiguratorWindow',
-        'Rubedo.view.FTDComboField'
+        'Rubedo.view.FTDComboField',
+        'Rubedo.view.FacetOverriderField',
+        'Rubedo.view.FacetOverriderFieldComponent',
+        'Rubedo.view.FacetOverriderWindow'
     ],
     models: [
         'sitesDataModel',
@@ -284,7 +287,8 @@ Ext.application({
         'ImportableFieldTypesStore',
         'DAMFolderViewStore',
         'DirectoriesStore',
-        'FacetsToDisplayStore'
+        'FacetsToDisplayStore',
+        'FacetOverriderStore'
     ],
     views: [
         'MyContainer',
@@ -424,7 +428,10 @@ Ext.application({
         'pixlrEditorWindow',
         'newDirectoryWindow',
         'directoryConfiguratorWindow',
-        'FTDComboField'
+        'FTDComboField',
+        'FacetOverriderField',
+        'FacetOverriderFieldComponent',
+        'FacetOverriderWindow'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -129,7 +129,18 @@
                         ]
                     }
                 ],
-                "avance": []
+                "avance": [{
+                        "categorie": "#ext-gen1372#",
+                        "champs": [
+                            {
+                                "type": "Rubedo.view.FacetOverriderField",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1373#",
+                                    "name": "facetOverrides"
+                                }
+                            }
+                        ]
+                    }]
             },
             "configBloc": {
                 "activateSearch": true,
@@ -1812,7 +1823,18 @@
                         ]
                     }
                 ],
-                "avance": []
+                "avance": [{
+                        "categorie": "#ext-gen1372#",
+                        "champs": [
+                            {
+                                "type": "Rubedo.view.FacetOverriderField",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1373#",
+                                    "name": "facetOverrides"
+                                }
+                            }
+                        ]
+                    }]
             },
             "configBloc": {
                 "constrainToSite": true

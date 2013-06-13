@@ -1,0 +1,215 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 297,
+        "width": 415,
+        "designer|userClassName": "FacetOverriderWindow",
+        "designer|userAlias": "FacetOverriderWindow",
+        "layout": "fit",
+        "title": "Facet overrides",
+        "constrain": true,
+        "modal": true
+    },
+    "designerId": "022b9194-cbf8-489f-ba75-3a204f42e228",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "",
+                "forceFit": true,
+                "store": "FacetOverriderStore"
+            },
+            "designerId": "9f9b92c8-4bf3-4e66-a1dd-26ff97ee3050",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "markDirty": false
+                    },
+                    "designerId": "2fbf8294-23ef-4c25-b703-549ca20d8b04"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "id",
+                        "text": "Facet"
+                    },
+                    "designerId": "6260e9b8-402a-4908-b929-668d2c572713",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return(Ext.getStore(\"FacetsToDisplayStore\").findRecord(\"id\",value).get(\"name\"));"
+                                ]
+                            },
+                            "designerId": "dd647e8d-aedc-40a8-9818-833d45fe75a3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "facetOperator",
+                        "text": "Operator"
+                    },
+                    "designerId": "260cbad5-081e-4ccc-9a07-847d54451cce",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "forceSelection": true,
+                                "store": [
+                                    "[\"AND\",\"OR\"]"
+                                ]
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "a18e7058-f2aa-47a3-8e95-b5947cd825eb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "userConfig": {
+                        "clicksToEdit": 1
+                    },
+                    "designerId": "2324c95d-2c21-43e8-aa69-122097d0d440"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "a98a2623-d21d-446c-a309-ad4729cef2d8",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "7db1213e-b826-4db4-aadc-73b21303db2e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "facetOverriderApplyBtn",
+                                "iconCls": "ouiSpetit",
+                                "text": "Apply"
+                            },
+                            "designerId": "639eaf59-3c13-454f-b7e4-55bbeb45e864",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onFacetOverriderApplyBtnClick",
+                                        "implHandler": [
+                                            "var data=button.up().up().getStore().getRange();\r",
+                                            "var newValue=Ext.JSON.encode(Ext.Array.pluck(data,\"data\"));\r",
+                                            "Ext.getCmp(button.up().up().up().targetedFieldId).setValue(newValue);\r",
+                                            "button.up().up().up().close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "544751d1-d71b-401b-88ba-802804a47f05"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "component.getComponent(0).getStore().removeAll();\r",
+                    "component.getComponent(0).getStore().loadData(component.initialValue);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "fb30b8dc-ac33-464e-ac3a-fc3d1d51ef24"
+        }
+    ]
+}

@@ -50,7 +50,7 @@ Ext.define('Rubedo.store.FacetsToDisplayStore', {
     },
 
     onJsonstoreLoad: function(store, records, successful, eOpts) {
-        store.add({"id":"contentType", "name":"Content Type"},{"id":"damType", "name":"Media Type"});
+        store.add({"id":"contentType", "name":"Content Type","facetOperator":"AND"},{"id":"damType", "name":"Media Type","facetOperator":"AND"});
     }
 
 });

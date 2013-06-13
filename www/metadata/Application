@@ -133,7 +133,8 @@
             "ImportableFieldTypesStore",
             "DAMFolderViewStore",
             "DirectoriesStore",
-            "FacetsToDisplayStore"
+            "FacetsToDisplayStore",
+            "FacetOverriderStore"
         ],
         "views": [
             "MyContainer",
@@ -273,7 +274,10 @@
             "pixlrEditorWindow",
             "newDirectoryWindow",
             "directoryConfiguratorWindow",
-            "FTDComboField"
+            "FTDComboField",
+            "FacetOverriderField",
+            "FacetOverriderFieldComponent",
+            "FacetOverriderWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

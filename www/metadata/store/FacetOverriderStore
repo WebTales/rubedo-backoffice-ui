@@ -1,0 +1,40 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "FacetOverriderStore",
+        "designer|userClassName": "FacetOverriderStore",
+        "designer|userAlias": "FacetOverriderStore"
+    },
+    "designerId": "5aaff44e-330f-458e-ad51-60d1539340c7",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "f1cd3a97-3030-443e-a93f-382a86a9489a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "facetOperator"
+            },
+            "designerId": "e987924e-cb40-47fb-8ccf-a75c1759f0f5"
+        }
+    ]
+}
