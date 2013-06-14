@@ -2573,6 +2573,54 @@
                 "app/view/predefinedPrefsQuestionConfigurator.js"
             ],
             "className": "predefinedPrefsQuestionConfigurator"
+        },
+        "15bd2509-2de3-4e02-8e27-22097d0bf2e1": {
+            "paths": [
+                "metadata/store/experimentalStore",
+                "app/store/override/experimentalStore.js",
+                "app/store/experimentalStore.js"
+            ],
+            "className": "experimentalStore"
+        },
+        "eec686d6-21b7-4457-81a0-65094f60b05b": {
+            "paths": [
+                "metadata/model/experimentalModel",
+                "app/model/override/experimentalModel.js",
+                "app/model/experimentalModel.js"
+            ],
+            "className": "experimentalModel"
+        },
+        "f5e5f80c-86f4-4e98-8684-b8e04f0dfd70": {
+            "paths": [
+                "metadata/view/experimentalGrid",
+                "app/view/override/experimentalGrid.js",
+                "app/view/experimentalGrid.js"
+            ],
+            "className": "experimentalGrid"
+        },
+        "472daae0-2a53-4bd8-9545-e9939084cf89": {
+            "paths": [
+                "metadata/view/experiencePlanEditorWindow",
+                "app/view/override/experiencePlanEditorWindow.js",
+                "app/view/experiencePlanEditorWindow.js"
+            ],
+            "className": "experiencePlanEditorWindow"
+        },
+        "b7d7c2aa-8852-43f2-917d-c5a046209143": {
+            "paths": [
+                "metadata/view/experimentalGridFieldComponent",
+                "app/view/override/experimentalGridFieldComponent.js",
+                "app/view/experimentalGridFieldComponent.js"
+            ],
+            "className": "experimentalGridFieldComponent"
+        },
+        "56e8b929-18e3-45b1-89e7-3ec9fc3b1319": {
+            "paths": [
+                "metadata/view/experimentalGridField",
+                "app/view/override/experimentalGridField.js",
+                "app/view/experimentalGridField.js"
+            ],
+            "className": "experimentalGridField"
         }
     },
     "viewOrderMap": {
@@ -2714,7 +2762,6 @@
             "d21b3beb-e3a1-4b72-88f6-c68b443690ab",
             "5d41405d-8ed6-4d4a-b220-d09d58101928",
             "f5ce7e47-7c32-4a83-8fde-0a94225bb4ee",
-            "66174f28-03d3-4c02-855f-65706d91852a",
             "d7860367-3cf8-4eb2-bcdd-74fea57755fb",
             "9f720849-6c20-4727-8b99-ce99c0298e28",
             "7120e487-8033-4805-b435-a863418861d9",
@@ -2727,8 +2774,13 @@
             "8a0627d1-0b5e-426d-bdca-2ee1be6c9d9b",
             "40303feb-9caa-4ec1-a7e2-f9f5b1608e20",
             "a109fcf3-48a3-4aeb-af13-4d6ad0345412",
+            "b7d7c2aa-8852-43f2-917d-c5a046209143",
             "f49940ae-cdb8-4eb2-86dd-78ca8c746b6d",
-            "022b9194-cbf8-489f-ba75-3a204f42e228"
+            "56e8b929-18e3-45b1-89e7-3ec9fc3b1319",
+            "022b9194-cbf8-489f-ba75-3a204f42e228",
+            "66174f28-03d3-4c02-855f-65706d91852a",
+            "f5e5f80c-86f4-4e98-8684-b8e04f0dfd70",
+            "472daae0-2a53-4bd8-9545-e9939084cf89"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -2827,7 +2879,8 @@
             "c123336d-eb0e-4617-bf31-1318f6731cb8",
             "f4a3e43b-725c-4ad7-8034-3875dc71bb70",
             "3be2705f-c3a0-4c70-8ead-494722c051a0",
-            "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56"
+            "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56",
+            "15bd2509-2de3-4e02-8e27-22097d0bf2e1"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -2885,7 +2938,8 @@
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3",
             "e52a8e7e-0bba-4062-92d7-15145e60343a",
-            "9e088d56-6c5c-43d3-8291-8dee5762b7ba"
+            "9e088d56-6c5c-43d3-8291-8dee5762b7ba",
+            "eec686d6-21b7-4457-81a0-65094f60b05b"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

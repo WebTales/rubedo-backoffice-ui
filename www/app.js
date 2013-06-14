@@ -159,7 +159,11 @@ Ext.application({
         'Rubedo.view.FacetOverriderField',
         'Rubedo.view.FacetOverriderFieldComponent',
         'Rubedo.view.FacetOverriderWindow',
-        'Rubedo.view.predefinedPrefsQuestionConfigurator'
+        'Rubedo.view.predefinedPrefsQuestionConfigurator',
+        'Rubedo.view.experimentalGrid',
+        'Rubedo.view.experiencePlanEditorWindow',
+        'Rubedo.view.experimentalGridField',
+        'Rubedo.view.experimentalGridFieldComponent'
     ],
     models: [
         'sitesDataModel',
@@ -191,7 +195,8 @@ Ext.application({
         'mailingListsModel',
         'inportFieldModel',
         'DAMFolderViewModel',
-        'directoryModel'
+        'directoryModel',
+        'experimentalModel'
     ],
     stores: [
         'SitesJson',
@@ -289,7 +294,8 @@ Ext.application({
         'DAMFolderViewStore',
         'DirectoriesStore',
         'FacetsToDisplayStore',
-        'FacetOverriderStore'
+        'FacetOverriderStore',
+        'experimentalStore'
     ],
     views: [
         'MyContainer',
@@ -433,7 +439,11 @@ Ext.application({
         'FacetOverriderField',
         'FacetOverriderFieldComponent',
         'FacetOverriderWindow',
-        'predefinedPrefsQuestionConfigurator'
+        'predefinedPrefsQuestionConfigurator',
+        'experimentalGrid',
+        'experiencePlanEditorWindow',
+        'experimentalGridField',
+        'experimentalGridFieldComponent'
     ],
     autoCreateViewport: true,
     controllers: [

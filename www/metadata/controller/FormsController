@@ -648,6 +648,7 @@
                     "    OQEditor.initialItemConfig=itemConfig;\r",
                     "    OQEditor.show();\r",
                     "} else if (itemConfig.fType==\"predefinedPrefsQuestion\") {\r",
+                    "    Ext.require(\"resources/MouseEventForwarding\");\r",
                     "    var PredefEditor = Ext.widget(\"predefinedPrefsQuestionConfigurator\");\r",
                     "    me.refreshFCEStore(id);\r",
                     "    PredefEditor.targetedId=id;\r",

@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "formOpenQuestionConfigurator",
-        "height": 346,
+        "height": 383,
         "id": "predefinedPrefsQuestionConfigurator",
         "width": 715,
         "designer|userClassName": "predefinedPrefsQuestionConfigurator",
@@ -226,10 +226,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "id": "numberOfOptionsBearer",
                         "fieldLabel": "Nombre d'options",
                         "labelWidth": 140,
                         "name": "numberOfOptions",
                         "allowBlank": false,
+                        "editable": false,
                         "allowDecimals": false,
                         "minValue": 2
                     },
@@ -285,7 +287,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "showOnlyIfCombo",
+                                        "localiserId": null,
                                         "layout|anchor": "100%",
                                         "fieldLabel": "Question",
                                         "labelWidth": 140,
@@ -357,7 +359,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "showOnlyIfCombo",
+                                        "localiserId": null,
                                         "layout|anchor": "100%",
                                         "fieldLabel": "Question",
                                         "labelWidth": 140,
@@ -408,6 +410,21 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Plan d'expérience",
+                        "labelWidth": 140,
+                        "name": "experiencePlan"
+                    },
+                    "designerId": "7adaa0b1-00bd-4132-83e7-6539422dd06a",
+                    "masterInstanceId": "56e8b929-18e3-45b1-89e7-3ec9fc3b1319"
                 }
             ]
         },

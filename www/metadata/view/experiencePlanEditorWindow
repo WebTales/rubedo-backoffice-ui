@@ -1,0 +1,58 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "numberOfOptions": "5",
+        "initialData": [
+            "[ ]"
+        ],
+        "height": 445,
+        "id": "experiencePlanEditorWindow",
+        "width": 863,
+        "designer|userClassName": "experiencePlanEditorWindow",
+        "designer|userAlias": "experiencePlanEditorWindow",
+        "layout": "fit",
+        "title": "Plan d'expérience",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "initialData": "array"
+    },
+    "designerId": "472daae0-2a53-4bd8-9545-e9939084cf89",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "numberOfOptions",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "initialData",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onExperiencePlanEditorWindowRender",
+                "implHandler": [
+                    "component.add(Ext.widget(\"experimentalGrid\",{numberOfOptions:component.numberOfOptions,initialData:component.initialData}));"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "f344487a-c697-49c5-80fc-5ed14251557f"
+        }
+    ]
+}

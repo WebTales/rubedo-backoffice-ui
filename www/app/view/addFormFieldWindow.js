@@ -38,7 +38,7 @@ Ext.define('Rubedo.view.addFormFieldWindow', {
             items: [
                 {
                     xtype: 'gridpanel',
-                    flex: 0.5,
+                    flex: 0.8,
                     id: 'formFieldSelectGrid',
                     title: '',
                     store: 'FormFieldTypesStore',

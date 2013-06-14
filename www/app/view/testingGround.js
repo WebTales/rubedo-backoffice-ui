@@ -18,8 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.FTDComboField',
-        'Rubedo.view.FacetOverriderField'
+        'Rubedo.view.experimentalGridField'
     ],
 
     height: 450,
@@ -41,10 +40,7 @@ Ext.define('Rubedo.view.testingGround', {
                     title: 'My Form',
                     items: [
                         {
-                            xtype: 'FTDComboField'
-                        },
-                        {
-                            xtype: 'FacetOverriderField'
+                            xtype: 'experimentalGridField'
                         }
                     ]
                 }

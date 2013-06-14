@@ -17,8 +17,12 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.predefinedPrefsQuestionConfigurator',
 
+    requires: [
+        'Rubedo.view.experimentalGridField'
+    ],
+
     localiserId: 'formOpenQuestionConfigurator',
-    height: 346,
+    height: 383,
     id: 'predefinedPrefsQuestionConfigurator',
     width: 715,
     resizable: false,
@@ -103,10 +107,12 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            id: 'numberOfOptionsBearer',
                             fieldLabel: 'Nombre d\'options',
                             labelWidth: 140,
                             name: 'numberOfOptions',
                             allowBlank: false,
+                            editable: false,
                             allowDecimals: false,
                             minValue: 2
                         },
@@ -132,7 +138,6 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                     items: [
                                         {
                                             xtype: 'combobox',
-                                            localiserId: 'showOnlyIfCombo',
                                             anchor: '100%',
                                             fieldLabel: 'Question',
                                             labelWidth: 140,
@@ -168,7 +173,6 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                     items: [
                                         {
                                             xtype: 'combobox',
-                                            localiserId: 'showOnlyIfCombo',
                                             anchor: '100%',
                                             fieldLabel: 'Question',
                                             labelWidth: 140,
@@ -197,6 +201,12 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'experimentalGridField',
+                            fieldLabel: 'Plan d\'expérience',
+                            labelWidth: 140,
+                            name: 'experiencePlan'
                         }
                     ]
                 }

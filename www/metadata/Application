@@ -36,7 +36,8 @@
             "mailingListsModel",
             "inportFieldModel",
             "DAMFolderViewModel",
-            "directoryModel"
+            "directoryModel",
+            "experimentalModel"
         ],
         "stores": [
             "SitesJson",
@@ -134,7 +135,8 @@
             "DAMFolderViewStore",
             "DirectoriesStore",
             "FacetsToDisplayStore",
-            "FacetOverriderStore"
+            "FacetOverriderStore",
+            "experimentalStore"
         ],
         "views": [
             "MyContainer",
@@ -278,7 +280,11 @@
             "FacetOverriderField",
             "FacetOverriderFieldComponent",
             "FacetOverriderWindow",
-            "predefinedPrefsQuestionConfigurator"
+            "predefinedPrefsQuestionConfigurator",
+            "experimentalGrid",
+            "experiencePlanEditorWindow",
+            "experimentalGridField",
+            "experimentalGridFieldComponent"
         ],
         "autoCreateViewport": true,
         "controllers": [

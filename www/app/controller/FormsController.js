@@ -406,6 +406,7 @@ Ext.define('Rubedo.controller.FormsController', {
             OQEditor.initialItemConfig=itemConfig;
             OQEditor.show();
         } else if (itemConfig.fType=="predefinedPrefsQuestion") {
+            Ext.require("resources/MouseEventForwarding");
             var PredefEditor = Ext.widget("predefinedPrefsQuestionConfigurator");
             me.refreshFCEStore(id);
             PredefEditor.targetedId=id;
