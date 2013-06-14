@@ -25,6 +25,7 @@ Ext.define('Rubedo.view.sessionExpiredWindow', {
     layout: {
         type: 'fit'
     },
+    closable: false,
     title: 'Votre session a expiré',
     modal: true,
 
