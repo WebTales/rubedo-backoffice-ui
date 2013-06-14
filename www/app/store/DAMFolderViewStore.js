@@ -74,6 +74,13 @@ Ext.define('Rubedo.store.DAMFolderViewStore', {
         } else {
             store.getProxy().extraParams.filter="[{\"property\":\"directory\",\"value\":\""+store.directoryFilter+"\"}]";
         }
+        try{
+            Ext.Array.forEach(operation.sorters, function(sorter){
+                if (sorter.property=="text"){
+                    sorter.property="title";
+                }
+            });
+        } catch(err){console.log("failed to fix sort");}
     }
 
 });

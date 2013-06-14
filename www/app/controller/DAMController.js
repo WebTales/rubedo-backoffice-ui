@@ -788,6 +788,7 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMLeftBox").getLayout().setActiveItem(1);
         Ext.getCmp("DAMActiveFacetBox").hide();
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFolderViewStore");
+        Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).store=Ext.getStore("DAMFolderViewStore");
         Ext.getStore("DAMFolderViewStore").load();
         Ext.getCmp("massDamUploadBtn").disable();
         Ext.getCmp("filePlanEditBtnGroup").show();
@@ -801,6 +802,7 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMLeftBox").getLayout().setActiveItem(0);
         Ext.getCmp("DAMActiveFacetBox").show();
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFacetteStore");
+        Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).store=Ext.getStore("DAMFacetteStore");
         Ext.getStore("DAMFacetteStore").load();
         Ext.getCmp("massDamUploadBtn").enable();
         Ext.getCmp("filePlanEditBtnGroup").hide();
