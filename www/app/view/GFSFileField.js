@@ -45,7 +45,12 @@ Ext.define('Rubedo.view.GFSFileField', {
         }
         myComponent.getComponent(0).setText(component.fieldLabel+" ");
         myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").on("click", function(){
+            window.onbeforeunload=Ext.emptyFn;
             window.location.href="file/get?file-id="+component.getValue()+"&attachment=download";
+            var task63 = new Ext.util.DelayedTask(function(){
+                window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
+            });
+            task63.delay(400);
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").on("click", function(){
             if (component.fileType=="Image"){
