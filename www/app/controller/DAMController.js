@@ -32,7 +32,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
             myEditor.typeId=DAMType.get("id");
             myEditor.mainFileType=DAMType.get("mainFileType");
-            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+DAMType.get("type"));
+            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+" "+DAMType.get("type"));
             myEditor.show();
             this.renderDAMTypeFields(DAMType, false);
             this.renderTaxoFields(DAMType);
@@ -252,7 +252,7 @@ Ext.define('Rubedo.controller.DAMController', {
     },
 
     onMassDamUploadBtnClick: function(button, e, eOpts) {
-        if (Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType)){
+        if ((Ext.getCmp("DAMInterface").currentViewMode!="search")||(Ext.isEmpty(Ext.getStore("DAMFacetteStore").activeFacettes.damType))){
             Ext.widget("damTypeFacetImposeWindow").show();
         } else {
             Ext.widget("MassDamUploadWindow").show();
@@ -261,11 +261,15 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onImposeDamTypeFacetBtnClick: function(button, e, eOpts) {
         var form=button.up().getForm();
-        if (form.isValid()){
-            Ext.getStore("DAMFacetteStore").activeFacettes.damType=form.getValues().typeId;
-            Ext.getStore("DAMFacetteStore").load();
+        if (form.isValid()){ 
+            if (Ext.getCmp("DAMInterface").currentViewMode!="search"){
+                Ext.widget("MassDamUploadWindow", {usedType:form.getValues().typeId}).show();
+            } else {
+                Ext.getStore("DAMFacetteStore").activeFacettes.damType=form.getValues().typeId;
+                Ext.getStore("DAMFacetteStore").load();
+                Ext.widget("MassDamUploadWindow").show();
+            }
             button.up().up().close();
-            Ext.widget("MassDamUploadWindow").show();
         }
     },
 
@@ -790,7 +794,6 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFolderViewStore");
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).store=Ext.getStore("DAMFolderViewStore");
         Ext.getStore("DAMFolderViewStore").load();
-        Ext.getCmp("massDamUploadBtn").disable();
         Ext.getCmp("filePlanEditBtnGroup").show();
         Ext.getCmp("mainDirectoriesTree").getSelectionModel().select(Ext.getStore("DirectoriesStore").getNodeById(Ext.getStore("DAMFolderViewStore").directoryFilter));
         Ext.getCmp("DAMCenter").plugins[0].silenced=true;
@@ -804,7 +807,6 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFacetteStore");
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).store=Ext.getStore("DAMFacetteStore");
         Ext.getStore("DAMFacetteStore").load();
-        Ext.getCmp("massDamUploadBtn").enable();
         Ext.getCmp("filePlanEditBtnGroup").hide();
         Ext.getCmp("DAMCenter").plugins[0].silenced=false;
         Ext.getCmp("DAMCenter").view.plugins[0].disable();

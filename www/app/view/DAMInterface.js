@@ -446,8 +446,8 @@ Ext.define('Rubedo.view.DAMInterface', {
                                             items: [
                                                 {
                                                     xtype: 'button',
-                                                    flex: 1,
                                                     localiserId: 'applyFiltersBtn',
+                                                    flex: 1,
                                                     id: 'DAMFolderViewFiltersBtn',
                                                     text: 'Apply filters'
                                                 }

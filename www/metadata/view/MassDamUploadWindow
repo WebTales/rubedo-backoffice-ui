@@ -51,9 +51,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "uploadTab",
                         "container|align": "center",
                         "container|pack": "center",
-                        "localiserId": "uploadTab",
                         "border": 4,
                         "id": "massDamUploadDropZone",
                         "layout": "vbox",
@@ -366,7 +366,7 @@
                             "        {\t\r",
                             "            var indicator=Ext.getCmp(\"filesUploadedTextItem\");\r",
                             "            indicator.uploadedItems=indicator.uploadedItems+1;\r",
-                            "            indicator.setText(\" \"+indicator.uploadedItems+\" \"+\"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText\");\r",
+                            "            indicator.setText(\" \"+indicator.uploadedItems+\" \"+Rubedo.RubedoAutomatedElementsLoc.filesUploadedText);\r",
                             "        },\r",
                             "\r",
                             "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
@@ -407,7 +407,11 @@
             "userConfig": {
                 "fn": "onMassDamUploadWindowBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"DAMFacetteStore\").load();\r",
+                    "if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"folder\"){\r",
+                    "    Ext.getStore(\"DAMFolderViewStore\").load();\r",
+                    "} else {\r",
+                    "\tExt.getStore(\"DAMFacetteStore\").load();\r",
+                    "}\r",
                     "Ext.getCmp(\"auxUploadWindow1\").close();"
                 ],
                 "name": "beforeclose",
@@ -452,7 +456,12 @@
                                 "fn": "onDamTypeTextItemAfterRender",
                                 "implHandler": [
                                     "try {\r",
+                                    "    if (Ext.getCmp(\"DAMInterface\").currentViewMode!=\"search\"){\r",
+                                    "        var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getCmp(\"MassDamUploadWindow\").usedType).get(\"type\");\r",
+                                    "\r",
+                                    "    } else{ \r",
                                     "    var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType).get(\"type\");\r",
+                                    "    }\r",
                                     "    component.setText(Rubedo.RubedoAutomatedElementsLoc.mediaTypeText+\" : \"+myType);\r",
                                     "} catch(err){console.log(\"error displaying type\");}"
                                 ],
@@ -501,7 +510,7 @@
                                     "config"
                                 ],
                                 "implHandler": [
-                                    "config.text=0+\" \"+\"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText\";\r",
+                                    "config.text=0+\" \"+Rubedo.RubedoAutomatedElementsLoc.filesUploadedText;\r",
                                     "return config;"
                                 ]
                             },
@@ -529,8 +538,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "doneUploadingBtn",
+                        "layout|flex": null,
                         "text": "Done uploading"
                     },
                     "designerId": "20d8b4a4-2214-4ad4-8fc0-38e6db3b428b",
@@ -606,7 +615,18 @@
                     "        \"applyTaxoFacets\":Ext.getCmp(\"applyCurrentTaxoToUploadField\").value,\r",
                     "        \"token\":ACL.CSRFToken,\r",
                     "        \"writeWorkspace\":Ext.getCmp(\"contributeWorkspaceMassUploadField\").value,\r",
-                    "    \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value)}\r",
+                    "    \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value),\r",
+                    "            \"directory\":\"notFiled\"};\r",
+                    "if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"folder\"){\r",
+                    "    var realDirectory=Ext.clone(Ext.getStore(\"DAMFolderViewStore\").directoryFilter);\r",
+                    "    if ((realDirectory!=\"emptyDecoy\")&&(realDirectory!=\"root\")){\r",
+                    "        params.directory=realDirectory;\r",
+                    "        params.activeFacets=\"{ }\";\r",
+                    "        params.typeId=Ext.getCmp(\"MassDamUploadWindow\").usedType;\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "\r",
                     "    return(params);"
                 ]
             },

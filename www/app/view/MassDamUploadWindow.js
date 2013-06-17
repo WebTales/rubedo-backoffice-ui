@@ -207,7 +207,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
     },
 
     processFilesUploadedTextItem: function(config) {
-        config.text=0+" "+"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText";
+        config.text=0+" "+Rubedo.RubedoAutomatedElementsLoc.filesUploadedText;
         return config;
     },
 
@@ -273,7 +273,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 {	
                     var indicator=Ext.getCmp("filesUploadedTextItem");
                     indicator.uploadedItems=indicator.uploadedItems+1;
-                    indicator.setText(" "+indicator.uploadedItems+" "+"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText");
+                    indicator.setText(" "+indicator.uploadedItems+" "+Rubedo.RubedoAutomatedElementsLoc.filesUploadedText);
                 },
 
                 uploadcomplete: function(uploader, success, failed)								
@@ -299,13 +299,22 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
     },
 
     onMassDamUploadWindowBeforeClose: function(panel, eOpts) {
-        Ext.getStore("DAMFacetteStore").load();
+        if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
+            Ext.getStore("DAMFolderViewStore").load();
+        } else {
+            Ext.getStore("DAMFacetteStore").load();
+        }
         Ext.getCmp("auxUploadWindow1").close();
     },
 
     onDamTypeTextItemAfterRender: function(component, eOpts) {
         try {
-            var myType=Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType).get("type");
+            if (Ext.getCmp("DAMInterface").currentViewMode!="search"){
+                var myType=Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getCmp("MassDamUploadWindow").usedType).get("type");
+
+            } else{ 
+                var myType=Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType).get("type");
+            }
             component.setText(Rubedo.RubedoAutomatedElementsLoc.mediaTypeText+" : "+myType);
         } catch(err){console.log("error displaying type");}
     },
@@ -329,8 +338,19 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 "applyTaxoFacets":Ext.getCmp("applyCurrentTaxoToUploadField").value,
                 "token":ACL.CSRFToken,
                 "writeWorkspace":Ext.getCmp("contributeWorkspaceMassUploadField").value,
-            "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value)}
-            return(params);
+                "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value),
+            "directory":"notFiled"};
+        if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
+            var realDirectory=Ext.clone(Ext.getStore("DAMFolderViewStore").directoryFilter);
+            if ((realDirectory!="emptyDecoy")&&(realDirectory!="root")){
+                params.directory=realDirectory;
+                params.activeFacets="{ }";
+                params.typeId=Ext.getCmp("MassDamUploadWindow").usedType;
+            }
+        }
+
+
+        return(params);
     }
 
 });
