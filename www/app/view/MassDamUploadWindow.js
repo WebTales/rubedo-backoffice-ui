@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
         'Rubedo.view.WorkspaceCombo'
     ],
 
+    localiserId: 'damMassUploadWindow',
     height: 343,
     id: 'MassDamUploadWindow',
     width: 466,
@@ -44,6 +45,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                     items: [
                         {
                             xtype: 'panel',
+                            localiserId: 'uploadTab',
                             border: 4,
                             id: 'massDamUploadDropZone',
                             layout: {
@@ -70,6 +72,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                                 },
                                 {
                                     xtype: 'container',
+                                    localiserId: 'dropFilesHereContainer',
                                     height: 60,
                                     html: '<h1 style="color:#999;">Drop files here</h1>',
                                     styleHtmlContent: true,
@@ -83,6 +86,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                         },
                         {
                             xtype: 'form',
+                            localiserId: 'uploadOptionsTab',
                             bodyPadding: 10,
                             title: 'Options',
                             tabConfig: {
@@ -104,6 +108,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'workspacesToApplyFieldset',
                                     title: 'Workspaces to apply to uploaded media',
                                     items: [
                                         {
@@ -166,12 +171,12 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                                 }
                             }
                         },
-                        {
+                        me.processFilesUploadedTextItem({
                             xtype: 'tbtext',
                             uploadedItems: 0,
                             id: 'filesUploadedTextItem',
                             text: '0 files uploaded'
-                        },
+                        }),
                         {
                             xtype: 'tbfill'
                         },
@@ -180,6 +185,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                             handler: function(button, event) {
                                 button.up().up().close();
                             },
+                            localiserId: 'doneUploadingBtn',
                             text: 'Done uploading'
                         }
                     ]
@@ -198,6 +204,11 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    processFilesUploadedTextItem: function(config) {
+        config.text=0+" "+"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText";
+        return config;
     },
 
     onMassDamUploadDropZoneAfterRender: function(component, eOpts) {
@@ -262,7 +273,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 {	
                     var indicator=Ext.getCmp("filesUploadedTextItem");
                     indicator.uploadedItems=indicator.uploadedItems+1;
-                    indicator.setText(" "+indicator.uploadedItems+" "+"files uploaded");
+                    indicator.setText(" "+indicator.uploadedItems+" "+"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText");
                 },
 
                 uploadcomplete: function(uploader, success, failed)								
@@ -295,7 +306,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
     onDamTypeTextItemAfterRender: function(component, eOpts) {
         try {
             var myType=Ext.getStore("MediaTypesForDAM").findRecord("id",Ext.getStore("DAMFacetteStore").activeFacettes.damType).get("type");
-            component.setText("Media type : "+myType);
+            component.setText(Rubedo.RubedoAutomatedElementsLoc.mediaTypeText+" : "+myType);
         } catch(err){console.log("error displaying type");}
     },
 

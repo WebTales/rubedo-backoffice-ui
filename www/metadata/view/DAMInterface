@@ -807,6 +807,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "filePlanTreePanel",
                                 "height": 250,
                                 "id": "mainDirectoriesTree",
                                 "width": 400,
@@ -818,6 +819,13 @@
                             "isBuiltIn": true,
                             "iconCls": "icon-treegridpanel",
                             "autoName": "TreeGrid",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.tree.View",
@@ -1064,12 +1072,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "filtersPanel",
                                 "autoScroll": true,
                                 "title": "Filters",
                                 "forceFit": true,
                                 "store": "MediaTypesForDAM"
                             },
                             "designerId": "8a3fe329-7b38-4a7b-885a-98692ce5a07b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -1079,10 +1095,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "typeColumn2",
                                         "dataIndex": "type",
                                         "text": "Type"
                                     },
-                                    "designerId": "714819d9-0b9d-463f-80c0-6a27cfe20a9a"
+                                    "designerId": "714819d9-0b9d-463f-80c0-6a27cfe20a9a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.View",
@@ -1114,10 +1138,18 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": 1,
+                                                "localiserId": "applyFiltersBtn",
                                                 "id": "DAMFolderViewFiltersBtn",
                                                 "text": "Apply filters"
                                             },
-                                            "designerId": "b64a7d65-b213-4dc8-a418-662a0c896048"
+                                            "designerId": "b64a7d65-b213-4dc8-a418-662a0c896048",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },

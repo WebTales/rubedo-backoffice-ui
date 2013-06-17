@@ -175,11 +175,11 @@
                             "config.filter={\r",
                             "    type:\"combo\",\r",
                             "    store: [\r",
-                            "                [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
-                            "                [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
-                            "                [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
-                            "        \t\t[\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
-                            "            ]\r",
+                            "    [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
+                            "    [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
+                            "    [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
+                            "    [\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
+                            "    ]\r",
                             "};\r",
                             "return config;"
                         ]

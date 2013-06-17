@@ -356,6 +356,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                             items: [
                                 {
                                     xtype: 'treepanel',
+                                    localiserId: 'filePlanTreePanel',
                                     height: 250,
                                     id: 'mainDirectoriesTree',
                                     width: 400,
@@ -425,6 +426,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'gridpanel',
+                                    localiserId: 'filtersPanel',
                                     autoScroll: true,
                                     title: 'Filters',
                                     forceFit: true,
@@ -432,6 +434,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'typeColumn2',
                                             dataIndex: 'type',
                                             text: 'Type'
                                         }
@@ -444,6 +447,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                                 {
                                                     xtype: 'button',
                                                     flex: 1,
+                                                    localiserId: 'applyFiltersBtn',
                                                     id: 'DAMFolderViewFiltersBtn',
                                                     text: 'Apply filters'
                                                 }

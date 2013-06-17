@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
     ],
 
     localiserId: 'formOpenQuestionConfigurator',
-    height: 383,
+    height: 394,
     id: 'predefinedPrefsQuestionConfigurator',
     width: 715,
     resizable: false,
@@ -115,6 +115,17 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                             editable: false,
                             allowDecimals: false,
                             minValue: 2
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Nombre de questions',
+                            labelWidth: 140,
+                            name: 'numberOfQuestions',
+                            allowBlank: false,
+                            editable: false,
+                            allowDecimals: false,
+                            minValue: 1
                         },
                         {
                             xtype: 'textfield',

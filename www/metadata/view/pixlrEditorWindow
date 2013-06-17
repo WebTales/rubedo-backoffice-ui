@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "pixlrEditorWindow",
         "height": 250,
         "id": "pixlrEditorWindow",
         "width": 400,
@@ -20,5 +21,12 @@
     "configAlternates": {
         "resizable": "boolean"
     },
-    "designerId": "8a0627d1-0b5e-426d-bdca-2ee1be6c9d9b"
+    "designerId": "8a0627d1-0b5e-426d-bdca-2ee1be6c9d9b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ]
 }

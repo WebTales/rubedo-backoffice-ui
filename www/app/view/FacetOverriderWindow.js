@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.FacetOverriderWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.FacetOverriderWindow',
 
+    localiserId: 'facetOverridesWindow',
     height: 297,
     width: 415,
     layout: {
@@ -45,22 +46,27 @@ Ext.define('Rubedo.view.FacetOverriderWindow', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return(Ext.getStore("FacetsToDisplayStore").findRecord("id",value).get("name"));
                             },
+                            localiserId: 'facetColumn',
                             dataIndex: 'id',
                             text: 'Facet'
                         },
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (value=="AND") {
+                                    return(Rubedo.RubedoAutomatedElementsLoc.andText);
+                                } else if (value=="OR") {
+                                    return(Rubedo.RubedoAutomatedElementsLoc.orText);
+                                } 
+                            },
+                            localiserId: 'OperatorColumn',
                             dataIndex: 'facetOperator',
                             text: 'Operator',
-                            editor: {
+                            editor: me.processMyComboBox10({
                                 xtype: 'combobox',
                                 allowBlank: false,
-                                forceSelection: true,
-                                store: [
-                                    'AND',
-                                    'OR'
-                                ]
-                            }
+                                forceSelection: true
+                            })
                         }
                     ],
                     plugins: [
@@ -78,6 +84,7 @@ Ext.define('Rubedo.view.FacetOverriderWindow', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'applyBtn',
                                     id: 'facetOverriderApplyBtn',
                                     iconCls: 'ouiSpetit',
                                     text: 'Apply',
@@ -102,6 +109,11 @@ Ext.define('Rubedo.view.FacetOverriderWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    processMyComboBox10: function(config) {
+        config.store=[["AND", Rubedo.RubedoAutomatedElementsLoc.andText],["OR", Rubedo.RubedoAutomatedElementsLoc.orText]];
+        return config;
     },
 
     onFacetOverriderApplyBtnClick: function(button, e, eOpts) {

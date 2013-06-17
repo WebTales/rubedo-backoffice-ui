@@ -104,9 +104,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsUploadBtn",
+                        "dontStretch": true,
                         "layout|x": 50,
                         "layout|y": 10,
-                        "dontStretch": true,
                         "itemId": "fieldChangeFile",
                         "iconCls": "database_up_big",
                         "scale": "large",
@@ -140,9 +140,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsRemoveFileBtn",
+                        "dontStretch": true,
                         "layout|x": 210,
                         "layout|y": 10,
-                        "dontStretch": true,
                         "itemId": "fieldClearFile",
                         "width": 40,
                         "iconCls": "remove_big",
@@ -177,9 +177,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsDownloadBtn",
+                        "dontStretch": true,
                         "layout|x": 0,
                         "layout|y": 10,
-                        "dontStretch": true,
                         "itemId": "fieldDownloadFile",
                         "width": 40,
                         "iconCls": "database_down_big",
@@ -214,9 +214,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsPreviewFileBtn",
+                        "dontStretch": true,
                         "layout|x": 100,
                         "layout|y": 10,
-                        "dontStretch": true,
                         "itemId": "fieldPreviewFile",
                         "width": 40,
                         "iconCls": "play_big",
@@ -251,9 +251,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "gfsHelpBtn",
+                        "dontStretch": true,
                         "layout|x": 260,
                         "layout|y": 10,
-                        "dontStretch": true,
                         "itemId": "helpBouton",
                         "margin": null,
                         "style": [
@@ -296,10 +296,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|x": 160,
-                        "layout|y": 10,
                         "localiserId": "gfsEditBtn",
                         "dontStretch": true,
+                        "layout|x": 160,
+                        "layout|y": 10,
                         "itemId": "fieldEditFile",
                         "width": 40,
                         "iconCls": "pencil_big",

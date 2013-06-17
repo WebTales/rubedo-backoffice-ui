@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "damMassUploadWindow",
         "height": 343,
         "id": "MassDamUploadWindow",
         "width": 466,
@@ -22,6 +23,13 @@
         "resizable": "boolean"
     },
     "designerId": "9b8d0b76-4792-4abf-a9db-b52033d4cab6",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.tab.Panel",
@@ -45,6 +53,7 @@
                     "userConfig": {
                         "container|align": "center",
                         "container|pack": "center",
+                        "localiserId": "uploadTab",
                         "border": 4,
                         "id": "massDamUploadDropZone",
                         "layout": "vbox",
@@ -55,6 +64,13 @@
                         "title": "Upload"
                     },
                     "designerId": "9d75fb9f-b6da-4d5a-ac84-c9f85fa46793",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -100,6 +116,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "dropFilesHereContainer",
                                 "height": 60,
                                 "html": "<h1 style=\"color:#999;\">Drop files here</h1>",
                                 "styleHtmlContent": true,
@@ -108,7 +125,14 @@
                             "configAlternates": {
                                 "html": "string"
                             },
-                            "designerId": "b53460f0-0119-42f6-816e-303d6d440874"
+                            "designerId": "b53460f0-0119-42f6-816e-303d6d440874",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.tab.Tab",
@@ -132,10 +156,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "uploadOptionsTab",
                         "bodyPadding": 10,
                         "title": "Options"
                     },
                     "designerId": "e999b7a3-2904-489c-a8c6-a8b594a728ff",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -184,9 +216,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "workspacesToApplyFieldset",
                                 "title": "Workspaces to apply to uploaded media"
                             },
                             "designerId": "80b82712-7a74-4ffe-a94a-5040fe39196e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "linkedinstance",
@@ -326,7 +366,7 @@
                             "        {\t\r",
                             "            var indicator=Ext.getCmp(\"filesUploadedTextItem\");\r",
                             "            indicator.uploadedItems=indicator.uploadedItems+1;\r",
-                            "            indicator.setText(\" \"+indicator.uploadedItems+\" \"+\"files uploaded\");\r",
+                            "            indicator.setText(\" \"+indicator.uploadedItems+\" \"+\"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText\");\r",
                             "        },\r",
                             "\r",
                             "        uploadcomplete: function(uploader, success, failed)\t\t\t\t\t\t\t\t\r",
@@ -413,7 +453,7 @@
                                 "implHandler": [
                                     "try {\r",
                                     "    var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType).get(\"type\");\r",
-                                    "    component.setText(\"Media type : \"+myType);\r",
+                                    "    component.setText(Rubedo.RubedoAutomatedElementsLoc.mediaTypeText+\" : \"+myType);\r",
                                     "} catch(err){console.log(\"error displaying type\");}"
                                 ],
                                 "name": "afterrender",
@@ -446,6 +486,27 @@
                             "name": "uploadedItems",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processFilesUploadedTextItem",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.text=0+\" \"+\"Rubedo.RubedoAutomatedElementsLoc.filesUploadedText\";\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "893ae09b-eb82-4054-8d0b-eaa64e54e40d"
+                        }
                     ]
                 },
                 {
@@ -469,9 +530,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "doneUploadingBtn",
                         "text": "Done uploading"
                     },
                     "designerId": "20d8b4a4-2214-4ad4-8fc0-38e6db3b428b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

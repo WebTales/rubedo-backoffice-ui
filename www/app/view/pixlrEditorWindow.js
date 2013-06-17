@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.pixlrEditorWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.pixlrEditorWindow',
 
+    localiserId: 'pixlrEditorWindow',
     height: 250,
     id: 'pixlrEditorWindow',
     width: 400,

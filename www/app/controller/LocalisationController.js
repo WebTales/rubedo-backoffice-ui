@@ -289,7 +289,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "switchToFolderViewText": "Switch to folder view",
             "searchViewText":"Search view",
             "switchToSearchViewText":"Switch to search view",
-            "notFiledText": "Not filed"    
+            "notFiledText": "Not filed",
+            "mediaTypeText":"Media type",
+            "filesUploadedText":"files uploaded"    
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){
