@@ -460,7 +460,7 @@
                                     "        var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getCmp(\"MassDamUploadWindow\").usedType).get(\"type\");\r",
                                     "\r",
                                     "    } else{ \r",
-                                    "    var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType).get(\"type\");\r",
+                                    "        var myType=Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\",Ext.getStore(\"DAMFacetteStore\").activeFacettes.damType).get(\"type\");\r",
                                     "    }\r",
                                     "    component.setText(Rubedo.RubedoAutomatedElementsLoc.mediaTypeText+\" : \"+myType);\r",
                                     "} catch(err){console.log(\"error displaying type\");}"
@@ -615,8 +615,8 @@
                     "        \"applyTaxoFacets\":Ext.getCmp(\"applyCurrentTaxoToUploadField\").value,\r",
                     "        \"token\":ACL.CSRFToken,\r",
                     "        \"writeWorkspace\":Ext.getCmp(\"contributeWorkspaceMassUploadField\").value,\r",
-                    "    \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value),\r",
-                    "            \"directory\":\"notFiled\"};\r",
+                    "        \"targetArray\":Ext.JSON.encode(Ext.getCmp(\"targetWorkspaceMassUploadField\").value),\r",
+                    "    \"directory\":\"notFiled\"};\r",
                     "if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"folder\"){\r",
                     "    var realDirectory=Ext.clone(Ext.getStore(\"DAMFolderViewStore\").directoryFilter);\r",
                     "    if ((realDirectory!=\"emptyDecoy\")&&(realDirectory!=\"root\")){\r",
@@ -627,7 +627,7 @@
                     "}\r",
                     "\r",
                     "\r",
-                    "    return(params);"
+                    "return(params);"
                 ]
             },
             "designerId": "00de9b96-47a1-4549-b0c5-a12c94cdf9c7"

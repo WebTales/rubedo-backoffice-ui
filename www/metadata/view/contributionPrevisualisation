@@ -222,7 +222,7 @@
                                                 "icon": null,
                                                 "iconCls": "prevDesktop",
                                                 "plain": true,
-                                                "text": "Ordinateur"
+                                                "text": "Desktop"
                                             },
                                             "designerId": "66dbf624-ad21-4c50-826b-2a3572bc30b1",
                                             "customConfigs": [
@@ -250,7 +250,7 @@
                                                 "localiserId": "phoneItem",
                                                 "iconCls": "prevIphone",
                                                 "plain": true,
-                                                "text": "Téléphone - portrait"
+                                                "text": "Phone - portrait"
                                             },
                                             "designerId": "6ef9ffd2-0096-4928-b706-989103450e1e",
                                             "customConfigs": [
@@ -278,7 +278,7 @@
                                                 "localiserId": "phoneLItem",
                                                 "iconCls": "prevIphoneL",
                                                 "plain": true,
-                                                "text": "Téléphone - paysage"
+                                                "text": "Phone - Landscape"
                                             },
                                             "designerId": "a733b3bd-6123-4c34-a178-c9704a358697",
                                             "customConfigs": [
@@ -306,7 +306,7 @@
                                                 "localiserId": "tabletItem",
                                                 "iconCls": "prevIpad",
                                                 "plain": true,
-                                                "text": "Tablette - portrait"
+                                                "text": "Tablet - Portrait"
                                             },
                                             "designerId": "ff5b1895-b0fc-4cc4-9a97-d591d4e4a0ba",
                                             "customConfigs": [
@@ -334,7 +334,7 @@
                                                 "localiserId": "tabletLItem",
                                                 "iconCls": "prevIpadL",
                                                 "plain": true,
-                                                "text": "Tablette - paysage"
+                                                "text": "Tablet - Landscape"
                                             },
                                             "designerId": "0ee5da39-460e-4f73-ad54-afc1bf538b29",
                                             "customConfigs": [
@@ -363,7 +363,7 @@
                                         "fn": "onPreviewDeviceComboChange",
                                         "implHandler": [
                                             "if (!Ext.isEmpty(Ext.getCmp(\"advancedPreviewPageRefresh\"))){\r",
-                                            "Ext.getCmp(\"advancedPreviewPageRefresh\").fireEvent(\"click\", Ext.getCmp(\"advancedPreviewPageRefresh\"));\r",
+                                            "    Ext.getCmp(\"advancedPreviewPageRefresh\").fireEvent(\"click\", Ext.getCmp(\"advancedPreviewPageRefresh\"));\r",
                                             "}"
                                         ],
                                         "name": "change",

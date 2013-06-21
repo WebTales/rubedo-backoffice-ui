@@ -94,6 +94,7 @@
                     "var valeurs= Ext.clone(record.data);\r",
                     "valeurs.creation= Ext.Date.format(valeurs.createTime, Ext.Date.defaultFormat);\r",
                     "valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, Ext.Date.defaultFormat);\r",
+                    "valeurs.autore=valeurs.createUser.fullName;\r",
                     "boiteMeta.update(valeurs);\r",
                     "boiteMeta.show();\r",
                     "\r",

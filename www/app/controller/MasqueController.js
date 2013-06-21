@@ -84,6 +84,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         var valeurs= Ext.clone(record.data);
         valeurs.creation= Ext.Date.format(valeurs.createTime, Ext.Date.defaultFormat);
         valeurs.derniereModification= Ext.Date.format(valeurs.lastUpdateTime, Ext.Date.defaultFormat);
+        valeurs.autore=valeurs.createUser.fullName;
         boiteMeta.update(valeurs);
         boiteMeta.show();
 

@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.ImagePreviewWindow', {
     autoScroll: true,
     resizable: false,
     iconCls: 'imageIco',
-    title: 'Prévisualisation pleine taille',
+    title: 'Full size preview',
     constrainHeader: true,
     modal: true,
 
