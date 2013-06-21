@@ -56,10 +56,14 @@ Ext.define('Rubedo.view.FacetOverriderField', {
             component.setValue(null);
         });
         myComponent.getComponent("addBtn").on("click", function(){
-            var usedFacets=component.findParentByType("window").query("FTDComboField")[0].getValue();
+            var usedFacets=Ext.clone(component.findParentByType("window").query("FTDComboField")[0].getValue());
             var initialValue= [ ];
-            if ((!Ext.isEmpty(usedFacets))&&(!Ext.Array.contains(usedFacets,"all"))){
+            if (!Ext.isEmpty(usedFacets)){
                 var store=component.findParentByType("window").query("FTDComboField")[0].getStore();
+                if (Ext.Array.contains(usedFacets,"all")){
+                    usedFacets=Ext.Array.pluck(Ext.Array.pluck(store.getRange(),"data"),"id");
+                    Ext.Array.remove(usedFacets,"all");
+                }
                 Ext.Array.forEach(usedFacets, function(facet){
                     initialValue.push({id:facet, facetOperator:store.findRecord("id",facet).get("facetOperator")});
                 });

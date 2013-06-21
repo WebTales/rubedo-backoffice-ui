@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "formOpenQuestionConfigurator",
-        "height": 368,
+        "height": 393,
         "id": "predefinedPrefsQuestionConfigurator",
         "width": 715,
         "designer|userClassName": "predefinedPrefsQuestionConfigurator",
@@ -256,6 +256,26 @@
                         "minValue": 1
                     },
                     "designerId": "a63666bd-e656-445c-8afc-e89f5bc52778"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": null,
+                        "fieldLabel": "Nombre de choix",
+                        "labelWidth": 140,
+                        "name": "numberOfChoices",
+                        "allowBlank": false,
+                        "editable": false,
+                        "allowDecimals": false,
+                        "minValue": 1
+                    },
+                    "designerId": "5f050e47-e6b1-4aa6-8ac4-c4378fd7fbef"
                 },
                 {
                     "type": "Ext.container.Container",
