@@ -29,6 +29,15 @@ Ext.define('Rubedo.view.FTDComboField', {
     initComponent: function() {
         var me = this;
 
+        Ext.applyIf(me, {
+            listeners: {
+                change: {
+                    fn: me.onComboboxChange,
+                    scope: me
+                }
+            }
+        });
+
         me.processFTDComboField(me);
         me.callParent(arguments);
     },
@@ -36,6 +45,12 @@ Ext.define('Rubedo.view.FTDComboField', {
     processFTDComboField: function(config) {
         config.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
         return config;
+    },
+
+    onComboboxChange: function(field, newValue, oldValue, eOpts) {
+        if ((!Ext.isEmpty(newValue))&&(newValue.length>1)&&(Ext.Array.contains(newValue,"all"))){
+            field.setValue(["all"]);
+        }
     }
 
 });

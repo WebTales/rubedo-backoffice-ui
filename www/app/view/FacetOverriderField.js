@@ -58,7 +58,7 @@ Ext.define('Rubedo.view.FacetOverriderField', {
         myComponent.getComponent("addBtn").on("click", function(){
             var usedFacets=component.findParentByType("window").query("FTDComboField")[0].getValue();
             var initialValue= [ ];
-            if (!Ext.isEmpty(usedFacets)){
+            if ((!Ext.isEmpty(usedFacets))&&(!Ext.Array.contains(usedFacets,"all"))){
                 var store=component.findParentByType("window").query("FTDComboField")[0].getStore();
                 Ext.Array.forEach(usedFacets, function(facet){
                     initialValue.push({id:facet, facetOperator:store.findRecord("id",facet).get("facetOperator")});

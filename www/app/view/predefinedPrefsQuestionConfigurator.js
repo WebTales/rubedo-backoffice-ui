@@ -22,7 +22,7 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
     ],
 
     localiserId: 'formOpenQuestionConfigurator',
-    height: 394,
+    height: 368,
     id: 'predefinedPrefsQuestionConfigurator',
     width: 715,
     resizable: false,
@@ -128,14 +128,6 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                             minValue: 1
                         },
                         {
-                            xtype: 'textfield',
-                            anchor: '100%',
-                            fieldLabel: 'Libellé des options',
-                            labelWidth: 140,
-                            name: 'optionLabels',
-                            allowBlank: false
-                        },
-                        {
                             xtype: 'container',
                             layout: {
                                 align: 'stretch',
@@ -145,7 +137,7 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                 {
                                     xtype: 'fieldset',
                                     flex: 1,
-                                    title: 'Source 1',
+                                    title: 'Source 1 (heure)',
                                     items: [
                                         {
                                             xtype: 'combobox',
@@ -162,17 +154,13 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                             valueField: 'id'
                                         },
                                         {
-                                            xtype: 'combobox',
+                                            xtype: 'displayfield',
                                             anchor: '100%',
                                             fieldLabel: 'Operateur',
                                             labelWidth: 140,
                                             name: 'source1Operator',
-                                            editable: false,
-                                            forceSelection: true,
-                                            store: [
-                                                '+/-',
-                                                'x'
-                                            ]
+                                            submitValue: true,
+                                            value: '+/-'
                                         }
                                     ]
                                 },
@@ -180,7 +168,7 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                     xtype: 'fieldset',
                                     flex: 1,
                                     margins: '0 0 0 20',
-                                    title: 'Source 2',
+                                    title: 'Source 2 (prix)',
                                     items: [
                                         {
                                             xtype: 'combobox',
@@ -197,17 +185,13 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                                             valueField: 'id'
                                         },
                                         {
-                                            xtype: 'combobox',
+                                            xtype: 'displayfield',
                                             anchor: '100%',
                                             fieldLabel: 'Operateur',
                                             labelWidth: 140,
                                             name: 'source2Operator',
-                                            editable: false,
-                                            forceSelection: true,
-                                            store: [
-                                                '+/-',
-                                                'x'
-                                            ]
+                                            submitValue: true,
+                                            value: 'x'
                                         }
                                     ]
                                 }

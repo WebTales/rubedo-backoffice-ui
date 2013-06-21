@@ -149,7 +149,8 @@
                 "height": 500,
                 "pageSize": 5000,
                 "showCenterMarker": false,
-                "showPlacesSearch":true
+                "showPlacesSearch":true,
+                "displayedFacets":["all"]
             }
         },
         "category": "#ext-gen1050#",
@@ -1837,7 +1838,8 @@
                     }]
             },
             "configBloc": {
-                "constrainToSite": true
+                "constrainToSite": true,
+                "displayedFacets":["all"]
             }
         },
         "category": "#ext-gen1064#",

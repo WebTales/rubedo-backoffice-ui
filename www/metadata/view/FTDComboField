@@ -47,6 +47,25 @@
                 ]
             },
             "designerId": "627e1c2c-b5bb-4f1e-8742-1b406618f1fd"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onComboboxChange",
+                "implHandler": [
+                    "if ((!Ext.isEmpty(newValue))&&(newValue.length>1)&&(Ext.Array.contains(newValue,\"all\"))){\r",
+                    "    field.setValue([\"all\"]);\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "designerId": "363cbf47-1e07-4a57-bb41-db620df80e9e"
         }
     ]
 }

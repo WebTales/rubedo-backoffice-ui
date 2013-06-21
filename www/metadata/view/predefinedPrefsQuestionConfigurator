@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "formOpenQuestionConfigurator",
-        "height": 394,
+        "height": 368,
         "id": "predefinedPrefsQuestionConfigurator",
         "width": 715,
         "designer|userClassName": "predefinedPrefsQuestionConfigurator",
@@ -258,22 +258,6 @@
                     "designerId": "a63666bd-e656-445c-8afc-e89f5bc52778"
                 },
                 {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Libellé des options",
-                        "labelWidth": 140,
-                        "name": "optionLabels",
-                        "allowBlank": false
-                    },
-                    "designerId": "5915d51b-68ed-474b-a420-7ce4c467a8b2"
-                },
-                {
                     "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
@@ -295,7 +279,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
-                                "title": "Source 1"
+                                "title": "Source 1 (heure)"
                             },
                             "designerId": "66bbf4f1-8157-4a01-ba6b-9417971405fb",
                             "cn": [
@@ -333,7 +317,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "Ext.form.field.ComboBox",
+                                    "type": "Ext.form.field.Display",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -344,16 +328,15 @@
                                         "fieldLabel": "Operateur",
                                         "labelWidth": 140,
                                         "name": "source1Operator",
-                                        "editable": false,
-                                        "forceSelection": true,
-                                        "store": [
-                                            "[\"+/-\",\"x\"]"
+                                        "submitValue": true,
+                                        "value": [
+                                            "\"+/-\""
                                         ]
                                     },
                                     "configAlternates": {
                                         "store": "array"
                                     },
-                                    "designerId": "ef015bee-cfad-4d2d-aa34-f580ea8ed88f"
+                                    "designerId": "71dbbefa-7fb7-4872-8c9a-ab817cb277d7"
                                 }
                             ]
                         },
@@ -367,7 +350,7 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "layout|margins": "0 0 0 20",
-                                "title": "Source 2"
+                                "title": "Source 2 (prix)"
                             },
                             "designerId": "f7a7be66-1508-4134-9c11-97a8aabbc3c2",
                             "cn": [
@@ -405,7 +388,7 @@
                                     ]
                                 },
                                 {
-                                    "type": "Ext.form.field.ComboBox",
+                                    "type": "Ext.form.field.Display",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -416,10 +399,9 @@
                                         "fieldLabel": "Operateur",
                                         "labelWidth": 140,
                                         "name": "source2Operator",
-                                        "editable": false,
-                                        "forceSelection": true,
-                                        "store": [
-                                            "[\"+/-\",\"x\"]"
+                                        "submitValue": true,
+                                        "value": [
+                                            "\"x\""
                                         ]
                                     },
                                     "configAlternates": {
