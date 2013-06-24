@@ -447,7 +447,13 @@ Ext.define('Rubedo.view.InportInterface', {
                                     store: 'WorkspacesComboWithAll',
                                     anchor: '100%'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onFieldsetRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -493,6 +499,65 @@ Ext.define('Rubedo.view.InportInterface', {
                 if (Ext.isEmpty(field.getValue())){field.setValue(";");}
             }, this, {single:true});
             }
+    },
+
+    onFieldsetRender: function(component, eOpts) {
+        var store = Ext.create("Ext.data.TreeStore", {
+            isOptimised: true,
+            usedCollection: 'Pages',
+            autoLoad: false,
+            autoSync: false,
+            remoteFilter: true,
+            model: 'Rubedo.model.taxonomyTermModel',
+            proxy: {
+                type: 'ajax',
+                api: {
+                    read: 'taxonomy-terms/navigation-tree'
+                },
+                reader: {
+                    type: 'json',
+                    getResponseData: function(response) {
+                        var data, error;
+
+                        try {
+                            data = Ext.decode(response.responseText);
+                            if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                            return this.readRecords(data);
+                        } catch (ex) {
+                            error = new Ext.data.ResultSet({
+                                total  : 0,
+                                count  : 0,
+                                records: [],
+                                success: false,
+                                message: ex.message
+                            });
+
+                            this.fireEvent('exception', this, response, error);
+                            console.log(ex);
+
+                            Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                            return error;
+                        }
+                    },
+                    messageProperty: 'message'
+                }
+            },
+            sorters: {
+                property: 'orderValue'
+            }
+        });
+        var navTaxoSelector = Ext.create("Ext.ux.TreeMultiPicker", {
+            store:store,
+            displayField:"text",
+            ignoreIsNotPage:true,
+            labelWidth:165,
+            fieldLabel:"Navigation",
+            anchor: "100%",
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
+            name:"ContentsNavTaxo"
+        });
+        component.add(navTaxoSelector);
     },
 
     onInportInterfaceBeforeRender: function(component, eOpts) {
