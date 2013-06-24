@@ -89,7 +89,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "importSeparatorField",
-                                "layout|flex": 0.18,
+                                "layout|flex": 0.14,
                                 "fieldLabel": "Séparateur",
                                 "labelWidth": 60,
                                 "name": "separator",
@@ -121,7 +121,7 @@
                                             "    field.addListener(\"blur\", function(){\r",
                                             "        if (Ext.isEmpty(field.getValue())){field.setValue(\";\");}\r",
                                             "    }, this, {single:true});\r",
-                                            "}"
+                                            "    }"
                                         ],
                                         "name": "change",
                                         "scope": "me"
@@ -129,6 +129,32 @@
                                     "designerId": "4bf021a5-f84a-4243-8e71-9b1992c31840"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 0.3,
+                                "layout|margins": "0 0 0 5",
+                                "disabled": true,
+                                "id": "chooseEncodingField",
+                                "fieldLabel": "Encoding",
+                                "labelWidth": 60,
+                                "name": "encoding",
+                                "editable": false,
+                                "forceSelection": true,
+                                "store": [
+                                    "[ ]"
+                                ]
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "264058fc-1462-45a1-a3ea-d18acb4c7512"
                         },
                         {
                             "type": "Ext.form.field.File",
@@ -139,9 +165,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "importCSVFileField",
-                                "layout|flex": 1,
+                                "layout|flex": 0.6,
                                 "id": "mainCSVinportField",
                                 "margin": "0 0 0 5",
+                                "width": 100,
                                 "fieldLabel": "Fichier CSV",
                                 "labelWidth": 80,
                                 "name": "csvFile",

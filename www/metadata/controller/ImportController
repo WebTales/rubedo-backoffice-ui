@@ -21,7 +21,8 @@
             "userConfig": {
                 "fn": "onMainCSVinportFieldChange",
                 "implHandler": [
-                    "if (value) {\r",
+                    "console.log(filefield);\r",
+                    "if ((value)&&(!filefield.notNow)) {\r",
                     "    var form= filefield.up().up().getForm();\r",
                     "    filefield.up().up().up().setLoading(true);\r",
                     "    form.submit({\r",
@@ -39,7 +40,22 @@
                     "            Ext.getStore(\"NotInportFieldsStore\").loadData(response.detectedFields);\r",
                     "            filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.identifiedFieldsText+\" \"+response.detectedContentsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.importableContentsText);\r",
                     "            filefield.up().up().up().setLoading(false);\r",
-                    "\r",
+                    "            Ext.getCmp(\"chooseEncodingField\").enable();\r",
+                    "            Ext.getCmp(\"chooseEncodingField\").allowBank=false;\r",
+                    "            Ext.getCmp(\"chooseEncodingField\").getStore().removeAll();\r",
+                    "            var possibleEncodings=response.encoding.charsetList;\r",
+                    "            var introducer=[ ];\r",
+                    "            Ext.Array.forEach(possibleEncodings, function(thing){\r",
+                    "            \tintroducer.push([thing,thing]);\r",
+                    "            });\r",
+                    "            Ext.getCmp(\"chooseEncodingField\").getStore().loadData(introducer);\r",
+                    "            Ext.getCmp(\"chooseEncodingField\").notNow=true;\r",
+                    "            Ext.getCmp(\"chooseEncodingField\").setValue(response.encoding.defaultEncoding);\r",
+                    "            var task = new Ext.util.DelayedTask(function(){\r",
+                    "            \tExt.getCmp(\"chooseEncodingField\").notNow=false;\r",
+                    "            });\r",
+                    "            task.delay(300);\r",
+                    "            \r",
                     "        },\r",
                     "        failure: function(form, action) {\r",
                     "            filefield.up().up().up().setLoading(false);\r",
@@ -59,7 +75,7 @@
                 "name": "change",
                 "scope": "me",
                 "designer|targetType": "Ext.form.field.File",
-                "designer|controlQuery": "#mainCSVinportField"
+                "designer|controlQuery": "#mainCSVinportField, #chooseEncodingField"
             },
             "designerId": "05f2ffe9-d0fa-4a54-9b25-797971c64291"
         },
@@ -140,6 +156,10 @@
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "Ext.getCmp(\"chooseEncodingField\").getStore().removeAll();\r",
+                    "Ext.getCmp(\"chooseEncodingField\").allowBlank=true;\r",
+                    "Ext.getCmp(\"chooseEncodingField\").disable();\r",
+                    "Ext.getCmp(\"chooseEncodingField\").setValue(null);\r",
                     "button.hide();"
                 ],
                 "name": "click",

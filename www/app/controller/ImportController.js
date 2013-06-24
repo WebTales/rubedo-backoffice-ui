@@ -18,7 +18,8 @@ Ext.define('Rubedo.controller.ImportController', {
     alias: 'controller.ImportController',
 
     onMainCSVinportFieldChange: function(filefield, value, eOpts) {
-        if (value) {
+        console.log(filefield);
+        if ((value)&&(!filefield.notNow)) {
             var form= filefield.up().up().getForm();
             filefield.up().up().up().setLoading(true);
             form.submit({
@@ -36,6 +37,21 @@ Ext.define('Rubedo.controller.ImportController', {
                     Ext.getStore("NotInportFieldsStore").loadData(response.detectedFields);
                     filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" "+Rubedo.RubedoAutomatedElementsLoc.identifiedFieldsText+" "+response.detectedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importableContentsText);
                     filefield.up().up().up().setLoading(false);
+                    Ext.getCmp("chooseEncodingField").enable();
+                    Ext.getCmp("chooseEncodingField").allowBank=false;
+                    Ext.getCmp("chooseEncodingField").getStore().removeAll();
+                    var possibleEncodings=response.encoding.charsetList;
+                    var introducer=[ ];
+                    Ext.Array.forEach(possibleEncodings, function(thing){
+                        introducer.push([thing,thing]);
+                    });
+                    Ext.getCmp("chooseEncodingField").getStore().loadData(introducer);
+                    Ext.getCmp("chooseEncodingField").notNow=true;
+                    Ext.getCmp("chooseEncodingField").setValue(response.encoding.defaultEncoding);
+                    var task = new Ext.util.DelayedTask(function(){
+                        Ext.getCmp("chooseEncodingField").notNow=false;
+                    });
+                    task.delay(300);
 
                 },
                 failure: function(form, action) {
@@ -107,12 +123,16 @@ Ext.define('Rubedo.controller.ImportController', {
         Ext.getStore("NotInportFieldsStore").removeAll();
         Ext.getStore("InportAsFieldStore").removeAll();
         Ext.getStore("InportAsTaxoStore").removeAll();
+        Ext.getCmp("chooseEncodingField").getStore().removeAll();
+        Ext.getCmp("chooseEncodingField").allowBlank=true;
+        Ext.getCmp("chooseEncodingField").disable();
+        Ext.getCmp("chooseEncodingField").setValue(null);
         button.hide();
     },
 
     init: function(application) {
         this.control({
-            "#mainCSVinportField": {
+            "#mainCSVinportField, #chooseEncodingField": {
                 change: this.onMainCSVinportFieldChange
             },
             "#mainImportSubmitBtn": {

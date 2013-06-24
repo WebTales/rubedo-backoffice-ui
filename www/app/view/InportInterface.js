@@ -67,7 +67,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'textfield',
                                     localiserId: 'importSeparatorField',
-                                    flex: 0.18,
+                                    flex: 0.14,
                                     fieldLabel: 'Séparateur',
                                     labelWidth: 60,
                                     name: 'separator',
@@ -81,15 +81,31 @@ Ext.define('Rubedo.view.InportInterface', {
                                     }
                                 },
                                 {
+                                    xtype: 'combobox',
+                                    flex: 0.3,
+                                    margins: '0 0 0 5',
+                                    disabled: true,
+                                    id: 'chooseEncodingField',
+                                    fieldLabel: 'Encoding',
+                                    labelWidth: 60,
+                                    name: 'encoding',
+                                    editable: false,
+                                    forceSelection: true,
+                                    store: [
+                                        
+                                    ]
+                                },
+                                {
                                     xtype: 'filefield',
                                     extractFileInput: function() {
                                         var fileInput = Ext.getCmp("mainCSVinportField").fileInputEl.dom;
                                         return fileInput;
                                     },
                                     localiserId: 'importCSVFileField',
-                                    flex: 1,
+                                    flex: 0.6,
                                     id: 'mainCSVinportField',
                                     margin: '0 0 0 5',
+                                    width: 100,
                                     fieldLabel: 'Fichier CSV',
                                     labelWidth: 80,
                                     name: 'csvFile',
