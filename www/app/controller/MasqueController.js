@@ -617,7 +617,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     }));
                     configSpec.getComponent(1).add(Ext.widget('checkbox',{
                         itemId:"eRenderSpanField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showSpanAndOfssetText,
+                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showSpanAndOffsetText,
                         onChange:function(){
 
                             component.renderSpan=this.getValue();

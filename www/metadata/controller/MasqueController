@@ -1140,7 +1140,7 @@
                     "            }));\r",
                     "            configSpec.getComponent(1).add(Ext.widget('checkbox',{\r",
                     "                itemId:\"eRenderSpanField\",\r",
-                    "                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showSpanAndOfssetText,\r",
+                    "                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showSpanAndOffsetText,\r",
                     "                onChange:function(){\r",
                     "\r",
                     "                    component.renderSpan=this.getValue();\r",

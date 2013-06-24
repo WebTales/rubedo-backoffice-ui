@@ -76,7 +76,7 @@
                     "    if (!Ext.isEmpty(usedFacets)){\r",
                     "        var store=component.findParentByType(\"window\").query(\"FTDComboField\")[0].getStore();\r",
                     "        if (Ext.Array.contains(usedFacets,\"all\")){\r",
-                    "        \tusedFacets=Ext.Array.pluck(Ext.Array.pluck(store.getRange(),\"data\"),\"id\");\r",
+                    "            usedFacets=Ext.Array.pluck(Ext.Array.pluck(store.getRange(),\"data\"),\"id\");\r",
                     "            Ext.Array.remove(usedFacets,\"all\");\r",
                     "        }\r",
                     "        Ext.Array.forEach(usedFacets, function(facet){\r",
