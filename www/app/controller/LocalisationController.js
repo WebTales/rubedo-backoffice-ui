@@ -292,7 +292,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "notFiledText": "Not filed",
             "mediaTypeText":"Media type",
             "filesUploadedText":"files uploaded",
-            "allText":"All"    
+            "allText":"All",
+            "contentTypeText":"Content type"    
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

@@ -45,12 +45,15 @@ Ext.define('Rubedo.store.FacetsToDisplayStore', {
                     fn: me.onJsonstoreLoad,
                     scope: me
                 }
+            },
+            sorters: {
+                property: 'name'
             }
         }, cfg)]);
     },
 
     onJsonstoreLoad: function(store, records, successful, eOpts) {
-        store.add({"id":"all", "name":"All"},{"id":"contentType", "name":"Content Type","facetOperator":"AND"},{"id":"damType", "name":"Media Type","facetOperator":"AND"});
+        store.add({"id":"all", "name":Rubedo.RubedoAutomatedElementsLoc.allText},{"id":"contentType", "name":Rubedo.RubedoAutomatedElementsLoc.contentTypeText,"facetOperator":"AND"},{"id":"damType", "name":Rubedo.RubedoAutomatedElementsLoc.mediaTypeText,"facetOperator":"AND"});
     }
 
 });

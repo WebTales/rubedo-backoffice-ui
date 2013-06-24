@@ -74,12 +74,24 @@
             "userConfig": {
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
-                    "store.add({\"id\":\"all\", \"name\":\"All\"},{\"id\":\"contentType\", \"name\":\"Content Type\",\"facetOperator\":\"AND\"},{\"id\":\"damType\", \"name\":\"Media Type\",\"facetOperator\":\"AND\"});"
+                    "store.add({\"id\":\"all\", \"name\":Rubedo.RubedoAutomatedElementsLoc.allText},{\"id\":\"contentType\", \"name\":Rubedo.RubedoAutomatedElementsLoc.contentTypeText,\"facetOperator\":\"AND\"},{\"id\":\"damType\", \"name\":Rubedo.RubedoAutomatedElementsLoc.mediaTypeText,\"facetOperator\":\"AND\"});"
                 ],
                 "name": "load",
                 "scope": "me"
             },
             "designerId": "60680890-9b3c-4caf-9932-0f564dbcb29e"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "name"
+            },
+            "designerId": "2de8e7f5-779e-488c-8dc6-7825b15689bc"
         }
     ]
 }
