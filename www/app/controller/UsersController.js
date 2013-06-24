@@ -124,6 +124,7 @@ Ext.define('Rubedo.controller.UsersController', {
                     success: function(form, action) {
                         var record=myForm.getRecord();
                         record.data.version=record.data.version+1;
+                        Rubedo.controller.MainStoresController.prototype.fireNotif(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.passwordChangedText);
                         button.up().up().close();
 
                     },

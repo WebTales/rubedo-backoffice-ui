@@ -187,6 +187,7 @@
                     "            success: function(form, action) {\r",
                     "                var record=myForm.getRecord();\r",
                     "                record.data.version=record.data.version+1;\r",
+                    "                Rubedo.controller.MainStoresController.prototype.fireNotif(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.passwordChangedText);\r",
                     "                button.up().up().close();\r",
                     "\r",
                     "            },\r",
