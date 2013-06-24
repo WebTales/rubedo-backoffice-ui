@@ -327,6 +327,7 @@
                     "                queryMode: 'remote',\r",
                     "                queryParam: 'comboQuery',\r",
                     "                minChars:3,\r",
+                    "                grow:false,\r",
                     "                displayField: 'text',\r",
                     "                valueField: 'id',\r",
                     "                filterPickList: true,\r",

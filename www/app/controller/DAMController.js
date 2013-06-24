@@ -595,6 +595,7 @@ Ext.define('Rubedo.controller.DAMController', {
                         queryMode: 'remote',
                         queryParam: 'comboQuery',
                         minChars:3,
+                        grow:false,
                         displayField: 'text',
                         valueField: 'id',
                         filterPickList: true,
