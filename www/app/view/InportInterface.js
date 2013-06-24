@@ -80,7 +80,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         }
                                     }
                                 },
-                                {
+                                me.processChooseEncodingField({
                                     xtype: 'combobox',
                                     flex: 0.3,
                                     margins: '0 0 0 5',
@@ -94,7 +94,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                     store: [
                                         
                                     ]
-                                },
+                                }),
                                 {
                                     xtype: 'filefield',
                                     extractFileInput: function() {
@@ -495,6 +495,11 @@ Ext.define('Rubedo.view.InportInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processChooseEncodingField: function(config) {
+        config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.encodingText;
+        return config;
     },
 
     processRecherchable: function(config) {

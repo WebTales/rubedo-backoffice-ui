@@ -154,7 +154,28 @@
                             "configAlternates": {
                                 "store": "array"
                             },
-                            "designerId": "264058fc-1462-45a1-a3ea-d18acb4c7512"
+                            "designerId": "264058fc-1462-45a1-a3ea-d18acb4c7512",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processChooseEncodingField",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.encodingText;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "f048740e-fef4-4b02-937b-16acae7837e0"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.File",
