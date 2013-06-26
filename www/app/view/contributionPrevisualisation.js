@@ -103,11 +103,16 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                     id: 'previewDeviceCombo',
                                     margin: '0 20 0 0',
                                     arrowAlign: 'bottom',
+                                    menuAlign: 'bl',
                                     scale: 'large',
                                     showText: true,
                                     menu: {
                                         xtype: 'menu',
+                                        frame: true,
                                         styleHtmlContent: true,
+                                        closeAction: 'hide',
+                                        frameHeader: false,
+                                        plain: true,
                                         showSeparator: false,
                                         items: [
                                             {
