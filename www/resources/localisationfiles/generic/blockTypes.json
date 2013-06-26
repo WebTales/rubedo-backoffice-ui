@@ -98,6 +98,14 @@
                                     "name": "showPlacesSearch",
                                     "inputValue": true
                                 }
+                            },{
+                                "type": "Ext.form.field.Number",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1369#",
+                                    "name": "zoomOnAddress",
+                                    "allowDecimals": false,
+                                    "minValue": 2
+                                }
                             },
                             {
                                 "type": "Ext.form.field.Number",
@@ -145,6 +153,7 @@
             "configBloc": {
                 "activateSearch": true,
                 "constrainToSite": true,
+                "zoomOnAddress":14,
                 "zoom": 14,
                 "height": 500,
                 "pageSize": 5000,
