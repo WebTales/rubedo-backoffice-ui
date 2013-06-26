@@ -276,19 +276,15 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                             fieldLabel: 'Texte d\'aide ',
                                             name: 'helpText'
                                         },
-                                        {
+                                        me.processFacetOperator({
                                             xtype: 'combobox',
                                             anchor: '100%',
                                             fieldLabel: 'Facet operator',
                                             name: 'facetOperator',
                                             allowBlank: false,
                                             editable: false,
-                                            forceSelection: true,
-                                            store: [
-                                                'AND',
-                                                'OR'
-                                            ]
-                                        },
+                                            forceSelection: true
+                                        }),
                                         {
                                             xtype: 'checkboxfield',
                                             localiserId: 'expandableField',
@@ -366,6 +362,11 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
         });
 
         me.callParent(arguments);
+    },
+
+    processFacetOperator: function(config) {
+        config.store=[["AND",Rubedo.RubedoAutomatedElementsLoc.andText],["OR",Rubedo.RubedoAutomatedElementsLoc.orText]];
+        return config;
     },
 
     onImageRender: function(component, eOpts) {

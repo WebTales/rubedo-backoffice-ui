@@ -729,14 +729,33 @@
                                         "allowBlank": false,
                                         "editable": false,
                                         "forceSelection": true,
-                                        "store": [
-                                            "[\"AND\",\"OR\"]"
-                                        ]
+                                        "store": null
                                     },
                                     "configAlternates": {
                                         "store": "array"
                                     },
-                                    "designerId": "982f8200-cf92-46b7-bb97-dd91fc0398bc"
+                                    "designerId": "982f8200-cf92-46b7-bb97-dd91fc0398bc",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processFacetOperator",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.store=[[\"AND\",Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\",Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "4e0a507d-eb58-4f58-a2be-89c0232b33bd"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Checkbox",
