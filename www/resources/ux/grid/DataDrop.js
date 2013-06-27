@@ -164,7 +164,7 @@ Ext.define('Ext.ux.grid.DataDrop', {
             this.textEl.update('');
             var rows = nv.split(this.lineEndRE), columns = this.view.getGridColumns(), fields = Record.prototype.fields, recs = [], cols = [];
 			Ext.each(columns, function(col){
-                if (!col.hidden){
+                if ((!col.hidden)&&(!col.isXType("rownumberer"))){
                     cols.push(col);
                 }
             });

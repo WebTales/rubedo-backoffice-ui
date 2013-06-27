@@ -21,7 +21,7 @@ Ext.define('Rubedo.view.experimentalGrid', {
     id: 'experimentalGrid',
     autoScroll: true,
     title: '',
-    forceFit: true,
+    forceFit: false,
     store: 'experimentalStore',
 
     initComponent: function() {
@@ -71,7 +71,13 @@ Ext.define('Rubedo.view.experimentalGrid', {
                             fn: me.onExperimentalGridCompanionBarRender,
                             scope: me
                         }
-                    }
+                    },
+                    items: [
+                        {
+                            xtype: 'tbspacer',
+                            width: 30
+                        }
+                    ]
                 },
                 {
                     xtype: 'toolbar',
@@ -134,6 +140,7 @@ Ext.define('Rubedo.view.experimentalGrid', {
         })];
         var options=config.numberOfOptions;
         var columnsArray=[ ];
+        columnsArray.push({xtype: 'rownumberer',width:30});
         var fieldsArray=[ ];
         for (i=1;i<=options;i++){
             columnsArray.push({

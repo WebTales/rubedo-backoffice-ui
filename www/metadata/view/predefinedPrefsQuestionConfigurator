@@ -157,7 +157,8 @@
                         "layout|anchor": "100%",
                         "fieldLabel": "Code de la question",
                         "labelWidth": 140,
-                        "name": "qNb"
+                        "name": "qNb",
+                        "allowBlank": false
                     },
                     "designerId": "3805b122-213d-4693-b6ca-4b5440e06b87",
                     "customConfigs": [

@@ -83,7 +83,8 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                             anchor: '100%',
                             fieldLabel: 'Code de la question',
                             labelWidth: 140,
-                            name: 'qNb'
+                            name: 'qNb',
+                            allowBlank: false
                         },
                         {
                             xtype: 'textfield',
