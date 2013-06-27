@@ -244,7 +244,10 @@ Ext.define('Ext.ux.TreeMultiPicker', {
         var toSelect=[ ]; 
         if (value){
 	    	Ext.Array.forEach(value,function(item){
-	    		toSelect.push(me.store.getNodeById(item));
+				var myItem=me.store.getNodeById(item);
+				if (!Ext.isEmpty(myItem)){
+					toSelect.push(myItem);
+				}
 	    	});
 	    	toDisplay=Ext.Array.pluck(Ext.Array.pluck(toSelect,'data'),me.displayField);
 	

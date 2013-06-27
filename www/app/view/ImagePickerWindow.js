@@ -362,6 +362,7 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
             Ext.getCmp("DAMCreateUpdateWindow").doLayout();
         } else if (!Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").getRange())){
             Ext.widget("DAMChooseMTWindow").show();
+            Ext.getCmp("DAMChooseMTWindow").getComponent(0).getComponent(0).bindStore(Ext.getStore("MediaTypesFORDAMPicker"));
             Ext.getCmp("addDamAfterTypeBtn").nonClassic=true;
             Ext.getCmp("addDamAfterTypeBtn").setHandler(function(){
                 var form=Ext.getCmp("addDamAfterTypeBtn").up();

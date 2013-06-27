@@ -394,6 +394,7 @@
                                     "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
                                     "} else if (!Ext.isEmpty(Ext.getStore(\"MediaTypesFORDAMPicker\").getRange())){\r",
                                     "    Ext.widget(\"DAMChooseMTWindow\").show();\r",
+                                    "    Ext.getCmp(\"DAMChooseMTWindow\").getComponent(0).getComponent(0).bindStore(Ext.getStore(\"MediaTypesFORDAMPicker\"));\r",
                                     "    Ext.getCmp(\"addDamAfterTypeBtn\").nonClassic=true;\r",
                                     "    Ext.getCmp(\"addDamAfterTypeBtn\").setHandler(function(){\r",
                                     "        var form=Ext.getCmp(\"addDamAfterTypeBtn\").up();\r",
