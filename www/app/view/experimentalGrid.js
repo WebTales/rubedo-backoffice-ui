@@ -146,7 +146,7 @@ Ext.define('Rubedo.view.experimentalGrid', {
             columnsArray.push({
                 xtype: 'numbercolumn',
                 dataIndex: 'option'+i+'source1',
-                text: 'Souce 1',
+                text: 'Heure',
                 flex: 1,
                 format: '0,000.0',
                 editor: {
@@ -156,7 +156,7 @@ Ext.define('Rubedo.view.experimentalGrid', {
             columnsArray.push({
                 xtype: 'numbercolumn',
                 dataIndex: 'option'+i+'source2',
-                text: 'Souce 2',
+                text: 'Prix',
                 flex: 1,
                 format: '0,000.0',
                 editor: {
