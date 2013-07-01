@@ -467,6 +467,7 @@
                             "userConfig": {
                                 "localiserId": "defaultLanguageField",
                                 "layout|anchor": "100%",
+                                "id": "siteDefaultLanguageField",
                                 "fieldLabel": "Default language",
                                 "labelWidth": 110,
                                 "name": "defaultLanguage",
@@ -475,7 +476,7 @@
                                 "queryMode": "local",
                                 "store": "AllLanguagesStore",
                                 "typeAhead": true,
-                                "valueField": "label"
+                                "valueField": "locale"
                             },
                             "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3",
                             "customConfigs": [
@@ -483,6 +484,31 @@
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "validator",
+                                        "designer|params": [
+                                            "value"
+                                        ],
+                                        "implHandler": [
+                                            "var myValue=Ext.getCmp(\"siteDefaultLanguageField\").getValue();\r",
+                                            "var languagesArray=Ext.getCmp(\"siteUsedLanguagesField\").getValue();\r",
+                                            "if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){\r",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);\r",
+                                            "}\r",
+                                            "return(true);"
+                                        ]
+                                    },
+                                    "designerId": "c52d2b89-feb4-4a4f-b43c-ad4b89b54f42"
                                 }
                             ]
                         },
@@ -621,6 +647,7 @@
                                     "var languagesPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
                                     "    anchor:\"100%\",\r",
                                     "    name:\"languages\",\r",
+                                    "    id:\"siteUsedLanguagesField\",\r",
                                     "    labelWidth:110,\r",
                                     "    fieldLabel:\"Languages\",\r",
                                     "    multiSelect:true,\r",

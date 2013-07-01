@@ -294,7 +294,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "filesUploadedText":"files uploaded",
             "allText":"All",
             "contentTypeText":"Content type",
-            "encodingText":"Encoding"    
+            "encodingText":"Encoding",
+            "siteLanguageChoiceError":"The default site language must be one of the site languages"    
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

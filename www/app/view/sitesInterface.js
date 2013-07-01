@@ -222,8 +222,17 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'combobox',
+                                    validator: function(value) {
+                                        var myValue=Ext.getCmp("siteDefaultLanguageField").getValue();
+                                        var languagesArray=Ext.getCmp("siteUsedLanguagesField").getValue();
+                                        if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){
+                                            return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);
+                                        }
+                                        return(true);
+                                    },
                                     localiserId: 'defaultLanguageField',
                                     anchor: '100%',
+                                    id: 'siteDefaultLanguageField',
                                     fieldLabel: 'Default language',
                                     labelWidth: 110,
                                     name: 'defaultLanguage',
@@ -232,7 +241,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     queryMode: 'local',
                                     store: 'AllLanguagesStore',
                                     typeAhead: true,
-                                    valueField: 'label'
+                                    valueField: 'locale'
                                 },
                                 {
                                     xtype: 'textareafield',
@@ -468,6 +477,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         var languagesPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             anchor:"100%",
             name:"languages",
+            id:"siteUsedLanguagesField",
             labelWidth:110,
             fieldLabel:"Languages",
             multiSelect:true,
