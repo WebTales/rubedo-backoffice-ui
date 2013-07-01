@@ -422,15 +422,15 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     ruleId:'lastUpdateTime',
                     label: Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
                 }});
-                if (typesContenus.length<2) {
+                if (typesContenus.length==1) {
                     var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
                     var champsReq = Ext.clone(myThingType.data.champs);
-                    var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
+                    var champsEligibles = ["datefield", "numberfield", "timefield", "slider","ratingField"];
                     var champsReqF = Ext.Array.filter(champsReq, function(champ){
                         if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                     });
                     champsReqF = Ext.Array.map(champsReqF, function(champ){
-                        return ({nom:typesContenus[0]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: myThingType.get("id")+'>>'+champ.config.name, name: champ.config.name, label: myThingType.get("type")+' > '+champ.config.fieldLabel}});
+                        return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: champ.config.name, name: champ.config.name, label: champ.config.fieldLabel}});
                     });
 
                     champsRegles = Ext.Array.merge(champsRegles, champsReqF);

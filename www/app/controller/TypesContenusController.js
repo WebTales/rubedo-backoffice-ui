@@ -938,7 +938,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 type: nType,
                 dependant: Ext.getCmp('champTCIsDep').getValue(),
                 champs: [ ],
-                vocabularies:[ ],
+                vocabularies:["navigation"],
                 dependantTypes:[ ]
 
 

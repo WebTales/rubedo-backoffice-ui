@@ -1090,7 +1090,7 @@
                     "        type: nType,\r",
                     "        dependant: Ext.getCmp('champTCIsDep').getValue(),\r",
                     "        champs: [ ],\r",
-                    "        vocabularies:[ ],\r",
+                    "        vocabularies:[\"navigation\"],\r",
                     "        dependantTypes:[ ]\r",
                     "\r",
                     "\r",
