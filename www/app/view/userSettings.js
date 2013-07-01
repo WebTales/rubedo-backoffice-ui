@@ -155,10 +155,11 @@ Ext.define('Rubedo.view.userSettings', {
                                             fieldLabel: 'Langue ',
                                             name: 'language',
                                             editable: false,
-                                            displayField: 'language',
+                                            displayField: 'label',
                                             forceSelection: true,
-                                            store: 'languageStore',
-                                            valueField: 'code'
+                                            queryMode: 'local',
+                                            store: 'BOLanguageStore',
+                                            valueField: 'key'
                                         },
                                         {
                                             xtype: 'textfield',

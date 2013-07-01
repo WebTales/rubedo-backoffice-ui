@@ -848,11 +848,11 @@
         },
         "009dac05-8a5b-4014-95f4-f8917c4e8c1c": {
             "paths": [
-                "metadata/store/languageStore",
-                "app/store/override/languageStore.js",
-                "app/store/languageStore.js"
+                "metadata/store/BOLanguageStore",
+                "app/store/override/BOLanguageStore.js",
+                "app/store/BOLanguageStore.js"
             ],
-            "className": "languageStore"
+            "className": "BOLanguageStore"
         },
         "bf25a36d-563e-484d-b6b8-b387924e3a62": {
             "paths": [
@@ -2621,6 +2621,30 @@
                 "app/view/experimentalGridField.js"
             ],
             "className": "experimentalGridField"
+        },
+        "8e8892e4-5bc6-40e0-87aa-114a70fbf727": {
+            "paths": [
+                "metadata/model/languageModel",
+                "app/model/override/languageModel.js",
+                "app/model/languageModel.js"
+            ],
+            "className": "languageModel"
+        },
+        "ec176e97-295c-46c3-9046-e0256d1e3e97": {
+            "paths": [
+                "metadata/store/AllLanguagesStore",
+                "app/store/override/AllLanguagesStore.js",
+                "app/store/AllLanguagesStore.js"
+            ],
+            "className": "AllLanguagesStore"
+        },
+        "fab1f584-2629-4315-8f7f-7b2254804426": {
+            "paths": [
+                "metadata/store/AllLanguagesStore2",
+                "app/store/override/AllLanguagesStore2.js",
+                "app/store/AllLanguagesStore2.js"
+            ],
+            "className": "AllLanguagesStore2"
         }
     },
     "viewOrderMap": {
@@ -2817,6 +2841,8 @@
             "54a8cac1-8012-4cb2-957c-18ab02aa80e1",
             "ec6d87e1-455e-426b-8458-d7738082aeee",
             "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
+            "ec176e97-295c-46c3-9046-e0256d1e3e97",
+            "fab1f584-2629-4315-8f7f-7b2254804426",
             "8cd88717-2905-4617-b9ff-10d34dec0a0e",
             "c1203b34-342c-44b9-b048-d237b3dd290c",
             "6b0800f5-70dc-40f0-974a-fd6b12440e4a",
@@ -2939,7 +2965,8 @@
             "ccbdf090-7d5c-4685-8f2f-050d7eac1cc3",
             "e52a8e7e-0bba-4062-92d7-15145e60343a",
             "9e088d56-6c5c-43d3-8291-8dee5762b7ba",
-            "eec686d6-21b7-4457-81a0-65094f60b05b"
+            "eec686d6-21b7-4457-81a0-65094f60b05b",
+            "8e8892e4-5bc6-40e0-87aa-114a70fbf727"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

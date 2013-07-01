@@ -1,0 +1,51 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "languageModel",
+        "storeId": "AllLanguagesStore",
+        "designer|userClassName": "AllLanguagesStore",
+        "designer|userAlias": "AllLanguagesStore",
+        "data": null,
+        "pageSize": 1000
+    },
+    "designerId": "ec176e97-295c-46c3-9046-e0256d1e3e97",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    \"read\":\"languages\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "173b1fc6-c599-4ff4-b2f1-80733f695200",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "e37adae9-3787-4133-b1c7-165dbb6b6abb"
+                }
+            ]
+        }
+    ]
+}

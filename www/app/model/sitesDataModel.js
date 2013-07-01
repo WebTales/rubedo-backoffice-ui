@@ -37,7 +37,7 @@ Ext.define('Rubedo.model.sitesDataModel', {
             name: 'keywords'
         },
         {
-            name: 'mainLanguage'
+            name: 'defaultLanguage'
         },
         {
             name: 'languages'

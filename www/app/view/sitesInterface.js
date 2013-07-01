@@ -221,18 +221,18 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     ]
                                 },
                                 {
-                                    xtype: 'textfield',
+                                    xtype: 'combobox',
+                                    localiserId: 'defaultLanguageField',
                                     anchor: '100%',
-                                    hidden: true,
-                                    fieldLabel: 'Langue principale ',
-                                    name: 'mainLanguage'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    anchor: '100%',
-                                    hidden: true,
-                                    fieldLabel: 'Langues ',
-                                    name: 'languages'
+                                    fieldLabel: 'Default language',
+                                    labelWidth: 110,
+                                    name: 'defaultLanguage',
+                                    displayField: 'label',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'AllLanguagesStore',
+                                    typeAhead: true,
+                                    valueField: 'label'
                                 },
                                 {
                                     xtype: 'textareafield',
@@ -465,8 +465,21 @@ Ext.define('Rubedo.view.sitesInterface', {
             createNewOnBlur:true,
             pinList:false
         });
+        var languagesPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            anchor:"100%",
+            name:"languages",
+            labelWidth:110,
+            fieldLabel:"Languages",
+            multiSelect:true,
+            forceSelection:true,
+            store: Ext.getStore("AllLanguagesStore2"),
+            displayField:"label",
+            valueField:"locale",
+            queryMode:"local"
+        });
         component.add(tagPicker);
         component.add(homePageSelector);
+        component.insert(5,languagesPicker);
         component.add(singlePageSelector);
     },
 

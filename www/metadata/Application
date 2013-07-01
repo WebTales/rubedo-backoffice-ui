@@ -37,7 +37,8 @@
             "inportFieldModel",
             "DAMFolderViewModel",
             "directoryModel",
-            "experimentalModel"
+            "experimentalModel",
+            "languageModel"
         ],
         "stores": [
             "SitesJson",
@@ -57,7 +58,7 @@
             "UsersAdminDataStore",
             "ReusableElementsDataStore",
             "countryStore",
-            "languageStore",
+            "BOLanguageStore",
             "DelegationsDataStore",
             "UsersComboStore",
             "CurrentUserDataStore",
@@ -136,7 +137,9 @@
             "DirectoriesStore",
             "FacetsToDisplayStore",
             "FacetOverriderStore",
-            "experimentalStore"
+            "experimentalStore",
+            "AllLanguagesStore",
+            "AllLanguagesStore2"
         ],
         "views": [
             "MyContainer",

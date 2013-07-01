@@ -1,0 +1,51 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "languageModel",
+        "storeId": "BOLanguageStore",
+        "designer|userClassName": "BOLanguageStore",
+        "designer|userAlias": "BOLanguageStore",
+        "data": null,
+        "pageSize": 1000
+    },
+    "designerId": "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    \"read\":\"languages/get-bo-languages\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "b64b6500-4591-475e-abfe-19fcadb92fb1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "83bb57b9-2ea9-4655-b51d-c881acd4d525"
+                }
+            ]
+        }
+    ]
+}

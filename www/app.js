@@ -196,7 +196,8 @@ Ext.application({
         'inportFieldModel',
         'DAMFolderViewModel',
         'directoryModel',
-        'experimentalModel'
+        'experimentalModel',
+        'languageModel'
     ],
     stores: [
         'SitesJson',
@@ -216,7 +217,7 @@ Ext.application({
         'UsersAdminDataStore',
         'ReusableElementsDataStore',
         'countryStore',
-        'languageStore',
+        'BOLanguageStore',
         'DelegationsDataStore',
         'UsersComboStore',
         'CurrentUserDataStore',
@@ -295,7 +296,9 @@ Ext.application({
         'DirectoriesStore',
         'FacetsToDisplayStore',
         'FacetOverriderStore',
-        'experimentalStore'
+        'experimentalStore',
+        'AllLanguagesStore',
+        'AllLanguagesStore2'
     ],
     views: [
         'MyContainer',

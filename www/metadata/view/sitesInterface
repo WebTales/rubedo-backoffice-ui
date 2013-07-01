@@ -458,34 +458,33 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "defaultLanguageField",
                                 "layout|anchor": "100%",
-                                "hidden": true,
-                                "fieldLabel": "Langue principale ",
-                                "name": "mainLanguage"
+                                "fieldLabel": "Default language",
+                                "labelWidth": 110,
+                                "name": "defaultLanguage",
+                                "displayField": "label",
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": "AllLanguagesStore",
+                                "typeAhead": true,
+                                "valueField": "label"
                             },
-                            "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|anchor": "100%",
-                                "hidden": true,
-                                "fieldLabel": "Langues ",
-                                "name": "languages"
-                            },
-                            "designerId": "ada022ae-82c9-415b-9926-ea61dd1649fe"
+                            "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.TextArea",
@@ -619,8 +618,21 @@
                                     "    createNewOnBlur:true,\r",
                                     "    pinList:false\r",
                                     "});\r",
+                                    "var languagesPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                    "    anchor:\"100%\",\r",
+                                    "    name:\"languages\",\r",
+                                    "    labelWidth:110,\r",
+                                    "    fieldLabel:\"Languages\",\r",
+                                    "    multiSelect:true,\r",
+                                    "    forceSelection:true,\r",
+                                    "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",
+                                    "    displayField:\"label\",\r",
+                                    "    valueField:\"locale\",\r",
+                                    "    queryMode:\"local\"\r",
+                                    "});\r",
                                     "component.add(tagPicker);\r",
                                     "component.add(homePageSelector);\r",
+                                    "component.insert(5,languagesPicker);\r",
                                     "component.add(singlePageSelector);"
                                 ],
                                 "name": "render",

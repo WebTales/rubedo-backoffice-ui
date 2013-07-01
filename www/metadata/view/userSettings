@@ -348,10 +348,11 @@
                                         "fieldLabel": "Langue ",
                                         "name": "language",
                                         "editable": false,
-                                        "displayField": "language",
+                                        "displayField": "label",
                                         "forceSelection": true,
-                                        "store": "languageStore",
-                                        "valueField": "code"
+                                        "queryMode": "local",
+                                        "store": "BOLanguageStore",
+                                        "valueField": "key"
                                     },
                                     "designerId": "50f88755-fb74-4177-9fa1-e38c0d44ae6e",
                                     "customConfigs": [
