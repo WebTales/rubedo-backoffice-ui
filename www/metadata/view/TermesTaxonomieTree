@@ -76,7 +76,7 @@
                                     "    else{interm=10000;}\r",
                                     "    movedOne.set(\"orderValue\", (interm+targeted)/2);\r",
                                     "} else if (dropPosition==\"append\"){\r",
-                                    "    if (movedOne.parentNode.childNodes.length==1){\r",
+                                    "    if ((movedOne.parentNode.childNodes.length==1)&&(movedOne.parentNode!=overModel)){\r",
                                     "        movedOne.parentNode.set(\"expandable\", false);\r",
                                     "    }\r",
                                     "\r",

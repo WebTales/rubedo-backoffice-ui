@@ -100,7 +100,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
             else{interm=10000;}
             movedOne.set("orderValue", (interm+targeted)/2);
         } else if (dropPosition=="append"){
-            if (movedOne.parentNode.childNodes.length==1){
+            if ((movedOne.parentNode.childNodes.length==1)&&(movedOne.parentNode!=overModel)){
                 movedOne.parentNode.set("expandable", false);
             }
 
