@@ -36,7 +36,7 @@ Ext.define('Rubedo.view.DCEField', {
     },
 
     onHiddenfieldRender: function(component, eOpts) {
-        var myComponent = Ext.widget("DCEFieldComponent", {labelWidth: component.labelWidth});
+        var myComponent = Ext.widget("DCEFieldComponent");
         myComponent.setFieldLabel(component.fieldLabel+" ");
         component.on("change", function(a,newValue){
             if (Ext.isEmpty(newValue)){
@@ -58,6 +58,7 @@ Ext.define('Rubedo.view.DCEField', {
                     success: function(response){
                         var answer = Ext.JSON.decode(response.responseText);
                         myComponent.getComponent("contentTitleBtn").setText(answer.data.text);
+                        myComponent.getComponent("contentTitleBtn").setTooltip(answer.data.text);
                         myComponent.getComponent("contentTitleBtn").show();
                     },
                     failure:function(){

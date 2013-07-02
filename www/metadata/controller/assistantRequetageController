@@ -621,7 +621,7 @@
                     "                if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}\r",
                     "            });\r",
                     "            champsReqF = Ext.Array.map(champsReqF, function(champ){\r",
-                    "                return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: champ.config.name, name: champ.config.name, label: champ.config.fieldLabel}});\r",
+                    "                return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: \"fields.\"+champ.config.name, name: \"fields.\"+champ.config.name, label: champ.config.fieldLabel}});\r",
                     "            });\r",
                     "\r",
                     "            champsRegles = Ext.Array.merge(champsRegles, champsReqF);\r",

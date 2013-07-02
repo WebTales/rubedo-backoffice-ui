@@ -430,7 +430,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                     });
                     champsReqF = Ext.Array.map(champsReqF, function(champ){
-                        return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: champ.config.name, name: champ.config.name, label: champ.config.fieldLabel}});
+                        return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: "fields."+champ.config.name, name: "fields."+champ.config.name, label: champ.config.fieldLabel}});
                     });
 
                     champsRegles = Ext.Array.merge(champsRegles, champsReqF);

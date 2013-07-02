@@ -33,6 +33,7 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
                     disabled: true,
                     itemId: 'contentTitleBtn',
                     margin: '10 10 0 0',
+                    maxWidth: 100,
                     style: '{cursor:default !important;}',
                     allowDepress: false,
                     enableToggle: true,

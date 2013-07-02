@@ -31,7 +31,7 @@
             "userConfig": {
                 "fn": "onHiddenfieldRender",
                 "implHandler": [
-                    "var myComponent = Ext.widget(\"DCEFieldComponent\", {labelWidth: component.labelWidth});\r",
+                    "var myComponent = Ext.widget(\"DCEFieldComponent\");\r",
                     "myComponent.setFieldLabel(component.fieldLabel+\" \");\r",
                     "component.on(\"change\", function(a,newValue){\r",
                     "    if (Ext.isEmpty(newValue)){\r",
@@ -53,6 +53,7 @@
                     "            success: function(response){\r",
                     "                var answer = Ext.JSON.decode(response.responseText);\r",
                     "                myComponent.getComponent(\"contentTitleBtn\").setText(answer.data.text);\r",
+                    "                myComponent.getComponent(\"contentTitleBtn\").setTooltip(answer.data.text);\r",
                     "                myComponent.getComponent(\"contentTitleBtn\").show();\r",
                     "            },\r",
                     "            failure:function(){\r",

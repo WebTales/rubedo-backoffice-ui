@@ -28,15 +28,18 @@
                 "disabled": true,
                 "itemId": "contentTitleBtn",
                 "margin": "10 10 0 0",
+                "maxWidth": 100,
                 "style": "{cursor:default !important;}",
                 "allowDepress": false,
                 "enableToggle": true,
                 "handleMouseEvents": false,
                 "pressed": true,
-                "text": ""
+                "text": "",
+                "tooltip": null
             },
             "configAlternates": {
-                "style": "string"
+                "style": "string",
+                "tooltip": "string"
             },
             "designerId": "b9a7a817-b72a-401f-94ab-c9720d55bd79"
         },
