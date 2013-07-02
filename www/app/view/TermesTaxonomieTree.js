@@ -118,7 +118,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
             Ext.getCmp("TermesTaxonomieTree").getStore().resumeAutoSync();
             Ext.getCmp("TermesTaxonomieTree").getStore().sync();
         });
-        task.delay(50);
+        task.delay(200);
     }
 
 });

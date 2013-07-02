@@ -107,7 +107,7 @@
                                     "    Ext.getCmp(\"TermesTaxonomieTree\").getStore().resumeAutoSync();\r",
                                     "    Ext.getCmp(\"TermesTaxonomieTree\").getStore().sync();\r",
                                     "});\r",
-                                    "task.delay(50);"
+                                    "task.delay(200);"
                                 ],
                                 "name": "drop",
                                 "scope": "me"
