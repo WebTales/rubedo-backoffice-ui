@@ -669,10 +669,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
                                     var task2 = new Ext.util.DelayedTask(function(){
                                         Ext.getCmp("mainPageTree").selectPath(action.pagePath);
                                     });
-                                    task2.delay(200);
+                                    task2.delay(600);
 
                                 });
-                                task.delay(200);
+                                task.delay(400);
 
                             }
 
