@@ -31,7 +31,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     frameHeader: false,
     iconCls: 'meUser',
     overlapHeader: false,
-    title: 'Alexandru Dobre',
+    title: 'Rubedo',
 
     initComponent: function() {
         var me = this;

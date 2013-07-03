@@ -536,7 +536,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
             iconsDir: 'red',
             HCMode:false,
-            myName:'Alexandru Dobre',
+            myName:'Rubedo',
             themeColor: '#D7251D',
             lastEdited:[ ]
         }); 
