@@ -82,7 +82,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
         }),
 		{
             ftype: 'grouping',
-            groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
+            groupHeaderTpl: '{name} ({rows.length} Item{[values.rows.length > 1 ? "s" : ""]})',
             disabled: false
         }],
     tbar: [{},'->', {

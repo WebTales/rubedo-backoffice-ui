@@ -218,7 +218,7 @@
                     "    }),\r",
                     "    {\r",
                     "        ftype: 'grouping',\r",
-                    "        groupHeaderTpl: 'Cuisine: {name} ({rows.length} Item{[values.rows.length > 1 ? \"s\" : \"\"]})',\r",
+                    "        groupHeaderTpl: '{name} ({rows.length} Item{[values.rows.length > 1 ? \"s\" : \"\"]})',\r",
                     "        disabled: false\r",
                     "    }],\r",
                     "    tbar: [{},'->', {\r",
