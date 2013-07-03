@@ -146,6 +146,26 @@
                                     "fieldLabel": "#ext-gen1373#",
                                     "name": "facetOverrides"
                                 }
+                            },{
+                                "type": "Ext.form.field.ComboBox",
+                                "isAutoStored": true,
+                                "autoStoreData": [
+                                    {
+                                        "value": "default",
+                                        "label": "#ext-gen1375#"
+                                    },
+                                    {
+                                        "value": "checkbox",
+                                        "label": "#ext-gen1376#"
+                                    }
+                                ],
+                                "config": {
+                                    "fieldLabel": "#ext-gen1374#",
+                                    "name": "displayMode",
+                                    "editable": false,
+                                    "forceSelection": true,
+                                    "queryMode": "local"
+                                }
                             }
                         ]
                     }]
@@ -159,7 +179,8 @@
                 "pageSize": 5000,
                 "showCenterMarker": false,
                 "showPlacesSearch":true,
-                "displayedFacets":["all"]
+                "displayedFacets":["all"],
+                "displayMode":"default"
             }
         },
         "category": "#ext-gen1050#",
@@ -1842,13 +1863,34 @@
                                     "fieldLabel": "#ext-gen1373#",
                                     "name": "facetOverrides"
                                 }
+                            },{
+                                "type": "Ext.form.field.ComboBox",
+                                "isAutoStored": true,
+                                "autoStoreData": [
+                                    {
+                                        "value": "default",
+                                        "label": "#ext-gen1375#"
+                                    },
+                                    {
+                                        "value": "checkbox",
+                                        "label": "#ext-gen1376#"
+                                    }
+                                ],
+                                "config": {
+                                    "fieldLabel": "#ext-gen1374#",
+                                    "name": "displayMode",
+                                    "editable": false,
+                                    "forceSelection": true,
+                                    "queryMode": "local"
+                                }
                             }
                         ]
                     }]
             },
             "configBloc": {
                 "constrainToSite": true,
-                "displayedFacets":["all"]
+                "displayedFacets":["all"],
+                "displayMode":"default"
             }
         },
         "category": "#ext-gen1064#",
