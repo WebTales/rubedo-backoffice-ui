@@ -49,6 +49,7 @@
                     "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.maskIsUsedText);\r",
                     "            } else {\r",
                     "                var fenetre = Ext.widget('delConfirmZ');\r",
+                    "                fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisMaskText;\r",
                     "                fenetre.show();\r",
                     "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
                     "                    Ext.getCmp('masquesGrid').getStore().remove(cible);\r",

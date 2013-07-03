@@ -192,6 +192,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         var cible = Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getSelection()[0];
         if (Ext.isDefined(cible)) {
             var window = Ext.widget('delConfirmZ');
+            window.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisVocabularyText;
             Ext.getCmp('ViewportPrimaire').add(window);
             window.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 

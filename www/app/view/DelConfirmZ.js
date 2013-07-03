@@ -19,12 +19,12 @@ Ext.define('Rubedo.view.DelConfirmZ', {
 
     localiserId: 'confirmDeleteWindow',
     draggable: false,
-    height: 100,
     id: 'delConfirmZ',
-    width: 205,
+    width: 224,
     resizable: false,
     layout: {
-        type: 'fit'
+        align: 'stretch',
+        type: 'vbox'
     },
     closable: false,
     iconCls: 'warning',
@@ -37,19 +37,28 @@ Ext.define('Rubedo.view.DelConfirmZ', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'toolbar',
+                    xtype: 'form',
+                    flex: 1,
+                    bodyPadding: 10,
+                    title: '',
                     items: [
+                        {
+                            xtype: 'panel',
+                            border: 0,
+                            height: 60,
+                            hidden: true,
+                            id: 'delConMessageHolder',
+                            styleHtmlContent: true,
+                            title: ''
+                        },
                         {
                             xtype: 'button',
                             localiserId: 'confirmDeleteYes',
                             id: 'delConfirmZOui',
-                            margin: '0, 0, 0, 10',
+                            margin: '0 15 0 10',
                             iconCls: 'ouiS',
                             scale: 'large',
                             text: 'Oui'
-                        },
-                        {
-                            xtype: 'tbfill'
                         },
                         {
                             xtype: 'button',
@@ -58,7 +67,7 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                             },
                             localiserId: 'confirmDeleteNo',
                             id: 'delConfirmZNon',
-                            margin: '0, 10, 0, 0',
+                            margin: '0 0 0 20',
                             iconCls: 'nonS',
                             scale: 'large',
                             text: 'Non'
@@ -70,10 +79,25 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onDelConfirmZRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onDelConfirmZRender: function(component, eOpts) {
+        if (!Ext.isEmpty(component.specificMessage)){
+            Ext.getCmp("delConMessageHolder").on("afterrender", function(){
+                Ext.getCmp("delConMessageHolder").update("<p>"+Rubedo.RubedoAutomatedElementsLoc.delconBaseText+" "+component.specificMessage+" ?</p>");
+            });
+            Ext.getCmp("delConMessageHolder").show();
+        }
     }
 
 });

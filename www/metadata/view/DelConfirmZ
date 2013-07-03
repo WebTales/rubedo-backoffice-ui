@@ -7,14 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "confirmDeleteWindow",
+        "container|align": "stretch",
         "draggable": false,
-        "height": 100,
+        "height": null,
         "id": "delConfirmZ",
-        "width": 205,
+        "width": 224,
         "designer|userClassName": "DelConfirmZ",
         "designer|userAlias": "delConfirmZ",
         "resizable": false,
-        "layout": "fit",
+        "layout": "vbox",
         "closable": false,
         "iconCls": "warning",
         "title": "Confirmation de suppression",
@@ -33,18 +34,40 @@
     ],
     "cn": [
         {
-            "type": "Ext.toolbar.Toolbar",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dock": null,
-                "height": null
+                "layout|flex": 1,
+                "bodyPadding": 10,
+                "title": ""
             },
-            "designerId": "c481d41d-742e-4d94-a57c-9ab6d35741f9",
+            "designerId": "a3a10a90-0cc9-4771-ab7f-f5ad5a335d3f",
             "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 0,
+                        "height": 60,
+                        "hidden": true,
+                        "html": null,
+                        "id": "delConMessageHolder",
+                        "styleHtmlContent": true,
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "5a8a8ead-093f-4fa5-87c5-6b2a591683a7"
+                },
                 {
                     "type": "Ext.button.Button",
                     "reference": {
@@ -54,11 +77,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "confirmDeleteYes",
-                        "layout|flex": null,
-                        "layout|margins": null,
+                        "layout|anchor": null,
                         "height": null,
                         "id": "delConfirmZOui",
-                        "margin": "0, 0, 0, 10",
+                        "margin": "0 15 0 10",
                         "style": null,
                         "iconCls": "ouiS",
                         "scale": "large",
@@ -74,18 +96,6 @@
                     ]
                 },
                 {
-                    "type": "Ext.toolbar.Fill",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null
-                    },
-                    "designerId": "66b093b2-ad05-43b7-a0fc-e626558d7aea"
-                },
-                {
                     "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
@@ -94,10 +104,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "confirmDeleteNo",
-                        "layout|flex": null,
-                        "layout|margins": null,
+                        "layout|anchor": null,
                         "id": "delConfirmZNon",
-                        "margin": "0, 10, 0, 0",
+                        "margin": "0 0 0 20",
                         "style": null,
                         "iconCls": "nonS",
                         "scale": "large",
@@ -141,7 +150,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "id": "delConfirmZField",
                         "fieldLabel": "Label"
                     },

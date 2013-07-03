@@ -295,7 +295,16 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "allText":"All",
             "contentTypeText":"Content type",
             "encodingText":"Encoding",
-            "siteLanguageChoiceError":"The default site language must be one of the site languages"    
+            "siteLanguageChoiceError":"The default site language must be one of the site languages",
+            "delconBaseText":"Are you sure you want to delete",
+            "thisMaskText":"this page mask",
+            "thisPageText": "this page",
+            "thisContentTypeText":"this content type",
+            "thisMediaTypeText":"this media type",
+            "thisSurveyText":"this survey",
+            "thisFolderText":"this folder",
+            "thisMediaText":"this digital asset",
+            "thisVocabularyText":"this vocabulary"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

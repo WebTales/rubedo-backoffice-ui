@@ -54,6 +54,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.maskIsUsedText);
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
+                        fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisMaskText;
                         fenetre.show();
                         Ext.getCmp('delConfirmZOui').on('click', function() { 
                             Ext.getCmp('masquesGrid').getStore().remove(cible);

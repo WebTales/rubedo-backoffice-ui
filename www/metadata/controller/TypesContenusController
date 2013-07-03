@@ -935,6 +935,7 @@
                     "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeIsUsedError);\r",
                     "            } else {\r",
                     "                var fenetre = Ext.widget('delConfirmZ');\r",
+                    "                fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisContentTypeText;\r",
                     "                fenetre.show();\r",
                     "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
                     "                    Ext.getCmp('AdminfTypesGridView').getStore().remove(cible);\r",

@@ -187,6 +187,7 @@
                     "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.mediaTypeIsUsedError);\r",
                     "            } else {\r",
                     "                var fenetre = Ext.widget('delConfirmZ');\r",
+                    "                fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisMediaTypeText;\r",
                     "                fenetre.show();\r",
                     "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
                     "                    Ext.getCmp('mainMTGrid').getStore().remove(cible);\r",

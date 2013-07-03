@@ -74,6 +74,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
     onDAMDeleteBtnClick: function(button, e, eOpts) {
         var fenetre = Ext.widget('delConfirmZ');
+        fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisMediaText;
         fenetre.show();
         Ext.getCmp('delConfirmZOui').on('click', function() { 
             if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
@@ -341,6 +342,7 @@ Ext.define('Rubedo.controller.DAMController', {
         var target=Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected();
 
         var delCon = Ext.widget('delConfirmZ');
+        delCon.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisFolderText;
         delCon.show();
         var store=Ext.getCmp("mainDirectoriesTree").getStore();
         Ext.getCmp('delConfirmZOui').on('click', function() { 

@@ -50,6 +50,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                         Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.mediaTypeIsUsedError);
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
+                        fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisMediaTypeText;
                         fenetre.show();
                         Ext.getCmp('delConfirmZOui').on('click', function() { 
                             Ext.getCmp('mainMTGrid').getStore().remove(cible);

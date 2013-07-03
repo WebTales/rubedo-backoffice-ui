@@ -88,6 +88,7 @@ Ext.define('Rubedo.controller.PagesController', {
                         Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.pageHoldsDefaultError);
                     } else {
                         var delCon = Ext.widget('delConfirmZ');
+                        delcon.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisPageText;
                         delCon.show();
                         var store=Ext.getCmp("mainPageTree").getStore();
                         Ext.getCmp('delConfirmZOui').on('click', function() { 

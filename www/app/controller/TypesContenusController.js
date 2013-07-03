@@ -828,6 +828,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeIsUsedError);
                     } else {
                         var fenetre = Ext.widget('delConfirmZ');
+                        fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisContentTypeText;
                         fenetre.show();
                         Ext.getCmp('delConfirmZOui').on('click', function() { 
                             Ext.getCmp('AdminfTypesGridView').getStore().remove(cible);

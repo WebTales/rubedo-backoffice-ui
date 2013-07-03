@@ -166,6 +166,7 @@
                     "var me=this;\r",
                     "if (!Ext.isEmpty(target)) {\r",
                     "    var window = Ext.widget('delConfirmZ');\r",
+                    "    window.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisSurveyText;\r",
                     "    Ext.getCmp('ViewportPrimaire').add(window);\r",
                     "    window.show();\r",
                     "    Ext.getCmp('delConfirmZOui').on('click', function() { \r",

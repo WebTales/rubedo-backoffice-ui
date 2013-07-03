@@ -63,6 +63,7 @@ Ext.define('Rubedo.controller.FormsController', {
         var me=this;
         if (!Ext.isEmpty(target)) {
             var window = Ext.widget('delConfirmZ');
+            window.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisSurveyText;
             Ext.getCmp('ViewportPrimaire').add(window);
             window.show();
             Ext.getCmp('delConfirmZOui').on('click', function() { 
