@@ -15,6 +15,7 @@
         "requires": [
             "Ext.ux.TreePicker"
         ],
+        "autoScroll": true,
         "layout": "fit",
         "iconCls": "content-icon",
         "title": "Nouveau Contenu",
@@ -514,6 +515,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "boiteATaxoContenus",
+                        "autoScroll": true,
                         "bodyPadding": 10,
                         "title": "Taxonomie"
                     },

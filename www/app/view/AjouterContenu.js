@@ -28,6 +28,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
     height: 500,
     id: 'ajouterContenu',
     width: 900,
+    autoScroll: true,
     layout: {
         type: 'fit'
     },
@@ -203,6 +204,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'form',
                             id: 'boiteATaxoContenus',
+                            autoScroll: true,
                             bodyPadding: 10,
                             title: 'Taxonomie',
                             tabConfig: {
