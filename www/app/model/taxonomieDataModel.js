@@ -77,6 +77,12 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
             defaultValue: 'AND',
             name: 'facetOperator',
             type: 'string'
+        },
+        {
+            defaultValue: 3,
+            name: 'order',
+            persist: false,
+            type: 'int'
         }
     ]
 });

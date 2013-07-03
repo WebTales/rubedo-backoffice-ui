@@ -214,6 +214,23 @@
                 "type": "string"
             },
             "designerId": "516d9e8a-63eb-47e5-8ca5-7031d870fe33"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "3"
+                ],
+                "name": "order",
+                "persist": false,
+                "type": "int"
+            },
+            "designerId": "f9ec23be-8374-41ee-842d-c665cb15d320"
         }
     ]
 }

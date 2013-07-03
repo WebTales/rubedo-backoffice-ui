@@ -46,14 +46,19 @@ Ext.define('Rubedo.store.FacetsToDisplayStore', {
                     scope: me
                 }
             },
-            sorters: {
-                property: 'name'
-            }
+            sorters: [
+                {
+                    property: 'order'
+                },
+                {
+                    property: 'name'
+                }
+            ]
         }, cfg)]);
     },
 
     onJsonstoreLoad: function(store, records, successful, eOpts) {
-        store.add({"id":"all", "name":Rubedo.RubedoAutomatedElementsLoc.allText},{"id":"contentType", "name":Rubedo.RubedoAutomatedElementsLoc.contentTypeText,"facetOperator":"AND"},{"id":"damType", "name":Rubedo.RubedoAutomatedElementsLoc.mediaTypeText,"facetOperator":"AND"});
+        store.add({"id":"all", "name":Rubedo.RubedoAutomatedElementsLoc.allText, "order":1},{"id":"contentType", "name":Rubedo.RubedoAutomatedElementsLoc.contentTypeText,"facetOperator":"AND", "order":2},{"id":"damType", "name":Rubedo.RubedoAutomatedElementsLoc.mediaTypeText,"facetOperator":"AND", "order":2});
     }
 
 });
