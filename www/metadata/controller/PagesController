@@ -136,7 +136,7 @@
                     "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.pageHoldsDefaultError);\r",
                     "            } else {\r",
                     "                var delCon = Ext.widget('delConfirmZ');\r",
-                    "                delcon.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisPageText;\r",
+                    "                delCon.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisPageText;\r",
                     "                delCon.show();\r",
                     "                var store=Ext.getCmp(\"mainPageTree\").getStore();\r",
                     "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
