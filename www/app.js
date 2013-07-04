@@ -163,7 +163,8 @@ Ext.application({
         'Rubedo.view.experimentalGrid',
         'Rubedo.view.experiencePlanEditorWindow',
         'Rubedo.view.experimentalGridField',
-        'Rubedo.view.experimentalGridFieldComponent'
+        'Rubedo.view.experimentalGridFieldComponent',
+        'Rubedo.view.languagesInterface'
     ],
     models: [
         'sitesDataModel',
@@ -298,7 +299,8 @@ Ext.application({
         'FacetOverriderStore',
         'experimentalStore',
         'AllLanguagesStore',
-        'AllLanguagesStore2'
+        'AllLanguagesStore2',
+        'MainLanguagesStore'
     ],
     views: [
         'MyContainer',
@@ -446,7 +448,8 @@ Ext.application({
         'experimentalGrid',
         'experiencePlanEditorWindow',
         'experimentalGridField',
-        'experimentalGridFieldComponent'
+        'experimentalGridFieldComponent',
+        'languagesInterface'
     ],
     autoCreateViewport: true,
     controllers: [

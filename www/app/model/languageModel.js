@@ -19,13 +19,31 @@ Ext.define('Rubedo.model.languageModel', {
 
     fields: [
         {
-            name: 'key'
+            name: 'key',
+            persist: false
         },
         {
-            name: 'label'
+            name: 'label',
+            persist: false
         },
         {
-            name: 'locale'
+            name: 'locale',
+            persist: false
+        },
+        {
+            defaultValue: false,
+            name: 'active',
+            type: 'boolean'
+        },
+        {
+            name: 'id'
+        },
+        {
+            name: 'version'
+        },
+        {
+            name: 'iso2',
+            persist: false
         }
     ]
 });

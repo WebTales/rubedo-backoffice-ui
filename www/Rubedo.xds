@@ -2645,6 +2645,22 @@
                 "app/store/AllLanguagesStore2.js"
             ],
             "className": "AllLanguagesStore2"
+        },
+        "efdddbee-4e95-4932-a8ba-4d6a06ca28d5": {
+            "paths": [
+                "metadata/view/languagesInterface",
+                "app/view/override/languagesInterface.js",
+                "app/view/languagesInterface.js"
+            ],
+            "className": "languagesInterface"
+        },
+        "03f7a711-07cf-47a3-bd08-1eec02e8e731": {
+            "paths": [
+                "metadata/store/MainLanguagesStore",
+                "app/store/override/MainLanguagesStore.js",
+                "app/store/MainLanguagesStore.js"
+            ],
+            "className": "MainLanguagesStore"
         }
     },
     "viewOrderMap": {
@@ -2675,7 +2691,6 @@
             "5c71a1ca-b876-4b61-9025-fa2f09aa603a",
             "2de13705-89e4-4cfe-abe7-36d5129e9aca",
             "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
-            "72d10373-385a-4cd4-98b5-fd8e6b3c7eec",
             "72d10373-385a-4cd4-98b5-fd8e6b3c7eec",
             "b1d4214e-b893-4a6c-89f4-d297c8733b26",
             "021dc961-e2fd-4e63-afd9-8829737e3813",
@@ -2805,7 +2820,8 @@
             "022b9194-cbf8-489f-ba75-3a204f42e228",
             "66174f28-03d3-4c02-855f-65706d91852a",
             "f5e5f80c-86f4-4e98-8684-b8e04f0dfd70",
-            "472daae0-2a53-4bd8-9545-e9939084cf89"
+            "472daae0-2a53-4bd8-9545-e9939084cf89",
+            "efdddbee-4e95-4932-a8ba-4d6a06ca28d5"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -2843,6 +2859,7 @@
             "ec6d87e1-455e-426b-8458-d7738082aeee",
             "009dac05-8a5b-4014-95f4-f8917c4e8c1c",
             "ec176e97-295c-46c3-9046-e0256d1e3e97",
+            "03f7a711-07cf-47a3-bd08-1eec02e8e731",
             "fab1f584-2629-4315-8f7f-7b2254804426",
             "8cd88717-2905-4617-b9ff-10d34dec0a0e",
             "c1203b34-342c-44b9-b048-d237b3dd290c",

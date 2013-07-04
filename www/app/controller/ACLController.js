@@ -85,7 +85,9 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.mailingLists":false,
                 "exe.ui.purgeContentType":false,
                 "read.ui.directories":false,
-                "write.ui.directories":false
+                "write.ui.directories":false,
+                "read.ui.languages":false,
+                "write.ui.languages":false
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){

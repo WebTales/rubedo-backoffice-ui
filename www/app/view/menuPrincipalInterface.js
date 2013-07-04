@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
 
     border: 0,
     floating: true,
-    height: 300,
+    height: 320,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -348,6 +348,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             iconCls: 'mail_small',
             localiserId:'mailingListsLaunchBtn',
             text: 'Listes de diffusion'
+        },{
+            xtype: 'menuitem',
+            ACL: 'read.ui.languages',
+            favoriteIcon: 'world.png',
+            itemId: 'languagesInterface',
+            iconCls: 'world_small',
+            localiserId:'languagesLaunchBtn',
+            text: 'Languages'
         }
         ]);
     },

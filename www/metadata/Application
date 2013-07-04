@@ -139,7 +139,8 @@
             "FacetOverriderStore",
             "experimentalStore",
             "AllLanguagesStore",
-            "AllLanguagesStore2"
+            "AllLanguagesStore2",
+            "MainLanguagesStore"
         ],
         "views": [
             "MyContainer",
@@ -287,7 +288,8 @@
             "experimentalGrid",
             "experiencePlanEditorWindow",
             "experimentalGridField",
-            "experimentalGridFieldComponent"
+            "experimentalGridFieldComponent",
+            "languagesInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

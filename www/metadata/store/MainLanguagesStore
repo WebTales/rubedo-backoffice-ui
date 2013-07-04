@@ -1,0 +1,95 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Languages",
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "languageModel",
+        "storeId": "MainLanguagesStore",
+        "designer|userClassName": "MainLanguagesStore",
+        "designer|userAlias": "MainLanguagesStore",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "03f7a711-07cf-47a3-bd08-1eec02e8e731",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    \"read\":\"languages\",\r",
+                    "    \"update\":\"languages/update\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "92580155-db79-4158-af17-779fa5743724",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "79630f42-fb0f-4a8a-bf7f-9a05455cf2b4"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "294860b7-db2f-4090-b264-c076d48b8793"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "label"
+            },
+            "designerId": "cb7fa976-9cf6-421f-beba-96644c89c652"
+        }
+    ]
+}
