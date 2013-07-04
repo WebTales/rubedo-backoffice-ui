@@ -131,6 +131,10 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'builtOnModelSiteId'
+        },
+        {
+            defaultValue: 'onlyOne',
+            name: 'locStrategy'
         }
     ]
 });

@@ -430,6 +430,21 @@
                 "name": "builtOnModelSiteId"
             },
             "designerId": "804cf380-84c3-43b8-96fe-6b873895fa5b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "'onlyOne'"
+                ],
+                "name": "locStrategy"
+            },
+            "designerId": "90415335-1bb7-48f5-8b9b-eb49317a8858"
         }
     ]
 }

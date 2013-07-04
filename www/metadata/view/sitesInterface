@@ -513,6 +513,45 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Localisation strategy",
+                                "labelWidth": 110,
+                                "name": "locStrategy",
+                                "editable": false,
+                                "forceSelection": true,
+                                "queryMode": "local"
+                            },
+                            "designerId": "ad52430e-d2e2-4e21-88a7-2bf1f2ddbbc5",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processLocStrategy",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.store=[[\"onlyOne\",\"Only one\"],[\"fallback\", \"With fallback\"]];\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "a94b6375-9225-4f93-be97-7855e0b7da33"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",

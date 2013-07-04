@@ -243,6 +243,16 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     typeAhead: true,
                                     valueField: 'locale'
                                 },
+                                me.processLocStrategy({
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Localisation strategy',
+                                    labelWidth: 110,
+                                    name: 'locStrategy',
+                                    editable: false,
+                                    forceSelection: true,
+                                    queryMode: 'local'
+                                }),
                                 {
                                     xtype: 'textareafield',
                                     anchor: '100%',
@@ -430,6 +440,11 @@ Ext.define('Rubedo.view.sitesInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processLocStrategy: function(config) {
+        config.store=[["onlyOne","Only one"],["fallback", "With fallback"]];
+        return config;
     },
 
     processBoiteBarreMeta: function(config) {
