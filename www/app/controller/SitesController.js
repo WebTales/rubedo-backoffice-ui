@@ -155,10 +155,14 @@ Ext.define('Rubedo.controller.SitesController', {
         Ext.getStore("SitesJson").removeAll();
         Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\"emptyDecoy\"}]";
         Ext.getStore("PagePickerStore").load();
+        Ext.getStore("AllLanguagesStore").removeAll();
+        Ext.getStore("AllLanguagesStore2").removeAll();
     },
 
     onMainSitesGridRender: function(component, eOpts) {
         Ext.getStore("SitesJson").load();
+        Ext.getStore("AllLanguagesStore").load();
+        Ext.getStore("AllLanguagesStore2").load();
     },
 
     onSiteWizzardCreateBtnClick: function(button, e, eOpts) {

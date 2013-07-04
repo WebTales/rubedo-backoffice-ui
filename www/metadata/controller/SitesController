@@ -232,7 +232,9 @@
                 "implHandler": [
                     "Ext.getStore(\"SitesJson\").removeAll();\r",
                     "Ext.getStore(\"PagePickerStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"emptyDecoy\\\"}]\";\r",
-                    "Ext.getStore(\"PagePickerStore\").load();"
+                    "Ext.getStore(\"PagePickerStore\").load();\r",
+                    "Ext.getStore(\"AllLanguagesStore\").removeAll();\r",
+                    "Ext.getStore(\"AllLanguagesStore2\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me",
@@ -251,7 +253,9 @@
             "userConfig": {
                 "fn": "onMainSitesGridRender",
                 "implHandler": [
-                    "Ext.getStore(\"SitesJson\").load();"
+                    "Ext.getStore(\"SitesJson\").load();\r",
+                    "Ext.getStore(\"AllLanguagesStore\").load();\r",
+                    "Ext.getStore(\"AllLanguagesStore2\").load();"
                 ],
                 "name": "render",
                 "scope": "me",

@@ -6,15 +6,33 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
+        "isOptimised": true,
+        "usedCollection": "Languages",
+        "autoLoad": false,
         "model": "languageModel",
+        "remoteFilter": true,
         "storeId": "AllLanguagesStore",
         "designer|userClassName": "AllLanguagesStore",
         "designer|userAlias": "AllLanguagesStore",
         "data": null,
         "pageSize": 1000
     },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
     "designerId": "ec176e97-295c-46c3-9046-e0256d1e3e97",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -46,6 +64,21 @@
                     "designerId": "e37adae9-3787-4133-b1c7-165dbb6b6abb"
                 }
             ]
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "active",
+                "value": [
+                    "true"
+                ]
+            },
+            "designerId": "984f2ca9-b868-41fb-9620-479d13c9f06c"
         }
     ]
 }

@@ -25,8 +25,11 @@ Ext.define('Rubedo.store.AllLanguagesStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            isOptimised: true,
+            usedCollection: 'Languages',
+            autoLoad: false,
             model: 'Rubedo.model.languageModel',
+            remoteFilter: true,
             storeId: 'AllLanguagesStore',
             pageSize: 1000,
             proxy: {
@@ -39,6 +42,10 @@ Ext.define('Rubedo.store.AllLanguagesStore', {
                     messageProperty: 'message',
                     root: 'data'
                 }
+            },
+            filters: {
+                property: 'active',
+                value: true
             }
         }, cfg)]);
     }
