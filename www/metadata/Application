@@ -141,7 +141,8 @@
             "AllLanguagesStore",
             "AllLanguagesStore2",
             "MainLanguagesStore",
-            "AllLanguagesStore3"
+            "AllLanguagesStore3",
+            "TranslationAdderStore"
         ],
         "views": [
             "MyContainer",
@@ -291,7 +292,10 @@
             "experimentalGridField",
             "experimentalGridFieldComponent",
             "languagesInterface",
-            "workingLanguageChangeWindow"
+            "workingLanguageChangeWindow",
+            "pagesLocProps",
+            "DLSToolbar",
+            "TranslationAdderWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

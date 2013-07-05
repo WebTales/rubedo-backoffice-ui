@@ -99,6 +99,17 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'locale',
+            persist: false
+        },
+        {
+            name: 'nativeLanguage',
+            persist: false
         }
     ]
 });

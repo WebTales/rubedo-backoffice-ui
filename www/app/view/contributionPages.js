@@ -18,7 +18,8 @@ Ext.define('Rubedo.view.contributionPages', {
     alias: 'widget.contributionPages',
 
     requires: [
-        'Rubedo.view.WorkspaceCombo'
+        'Rubedo.view.WorkspaceCombo',
+        'Rubedo.view.DLSToolbar'
     ],
 
     favoriteIcon: 'application.png',
@@ -469,10 +470,11 @@ Ext.define('Rubedo.view.contributionPages', {
                             ]
                         },
                         {
-                            xtype: 'form',
-                            id: 'mainPageAttributeForm',
-                            autoScroll: true,
-                            bodyPadding: 10,
+                            xtype: 'panel',
+                            id: 'PagesPropFormsHolder',
+                            layout: {
+                                type: 'card'
+                            },
                             title: 'Propriétés',
                             tabConfig: {
                                 xtype: 'tab',
@@ -480,77 +482,96 @@ Ext.define('Rubedo.view.contributionPages', {
                             },
                             items: [
                                 {
-                                    xtype: 'textfield',
-                                    localiserId: 'nameField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Nom *',
-                                    name: 'text',
-                                    allowBlank: false
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'urlField',
-                                    anchor: '100%',
-                                    fieldLabel: 'URL ',
-                                    name: 'pageURL'
-                                },
-                                {
-                                    xtype: 'checkboxfield',
-                                    localiserId: 'excludeFromMenuField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Hors navigation',
-                                    name: 'excludeFromMenu',
-                                    boxLabel: '',
-                                    inputValue: 'true'
-                                },
-                                {
-                                    xtype: 'WorkspaceCombo',
-                                    store: 'ContributeWorkspacesCombo',
-                                    anchor: '100%'
-                                },
-                                {
-                                    xtype: 'checkboxfield',
-                                    localiserId: 'inheritWorkspaceField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Hérite de l\'espace de travail',
-                                    name: 'inheritWorkspace',
-                                    boxLabel: '',
-                                    inputValue: 'true',
-                                    listeners: {
-                                        change: {
-                                            fn: me.onCheckboxfieldChange,
-                                            scope: me
-                                        }
-                                    }
-                                },
-                                {
-                                    xtype: 'fieldset',
-                                    localiserId: 'referencingFieldSEt',
-                                    title: 'Référencement',
+                                    xtype: 'form',
+                                    id: 'mainPageAttributeForm',
+                                    itemId: 'mainLocItem',
+                                    autoScroll: true,
+                                    bodyPadding: 10,
+                                    header: false,
+                                    title: 'Propriétés',
                                     items: [
                                         {
                                             xtype: 'textfield',
-                                            localiserId: 'titleField',
+                                            localiserId: 'nameField',
                                             anchor: '100%',
-                                            fieldLabel: 'Titre *',
-                                            name: 'title',
+                                            fieldLabel: 'Nom *',
+                                            name: 'text',
                                             allowBlank: false
                                         },
                                         {
-                                            xtype: 'textareafield',
-                                            localiserId: 'descriptionField',
+                                            xtype: 'textfield',
+                                            localiserId: 'urlField',
                                             anchor: '100%',
-                                            fieldLabel: 'Description ',
-                                            name: 'description',
-                                            maxLength: 250
+                                            fieldLabel: 'URL ',
+                                            name: 'pageURL'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            localiserId: 'excludeFromMenuField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Hors navigation',
+                                            name: 'excludeFromMenu',
+                                            boxLabel: '',
+                                            inputValue: 'true'
+                                        },
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            store: 'ContributeWorkspacesCombo',
+                                            anchor: '100%'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            localiserId: 'inheritWorkspaceField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Hérite de l\'espace de travail',
+                                            name: 'inheritWorkspace',
+                                            boxLabel: '',
+                                            inputValue: 'true',
+                                            listeners: {
+                                                change: {
+                                                    fn: me.onCheckboxfieldChange,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            localiserId: 'referencingFieldSEt',
+                                            title: 'Référencement',
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    localiserId: 'titleField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Titre *',
+                                                    name: 'title',
+                                                    allowBlank: false
+                                                },
+                                                {
+                                                    xtype: 'textareafield',
+                                                    localiserId: 'descriptionField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Description ',
+                                                    name: 'description',
+                                                    maxLength: 250
+                                                }
+                                            ],
+                                            listeners: {
+                                                render: {
+                                                    fn: me.onMainPageAttributeFormRender,
+                                                    scope: me
+                                                }
+                                            }
                                         }
-                                    ],
-                                    listeners: {
-                                        render: {
-                                            fn: me.onMainPageAttributeFormRender,
-                                            scope: me
-                                        }
-                                    }
+                                    ]
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'DLSToolbar',
+                                    dock: 'top',
+                                    id: 'pagesDLSToolbar',
+                                    replicatorEntity: 'pagesLocProps'
                                 }
                             ]
                         },

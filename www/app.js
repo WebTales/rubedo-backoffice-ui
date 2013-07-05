@@ -165,7 +165,10 @@ Ext.application({
         'Rubedo.view.experimentalGridField',
         'Rubedo.view.experimentalGridFieldComponent',
         'Rubedo.view.languagesInterface',
-        'Rubedo.view.workingLanguageChangeWindow'
+        'Rubedo.view.workingLanguageChangeWindow',
+        'Rubedo.view.pagesLocProps',
+        'Rubedo.view.DLSToolbar',
+        'Rubedo.view.TranslationAdderWindow'
     ],
     models: [
         'sitesDataModel',
@@ -302,7 +305,8 @@ Ext.application({
         'AllLanguagesStore',
         'AllLanguagesStore2',
         'MainLanguagesStore',
-        'AllLanguagesStore3'
+        'AllLanguagesStore3',
+        'TranslationAdderStore'
     ],
     views: [
         'MyContainer',
@@ -452,7 +456,10 @@ Ext.application({
         'experimentalGridField',
         'experimentalGridFieldComponent',
         'languagesInterface',
-        'workingLanguageChangeWindow'
+        'workingLanguageChangeWindow',
+        'pagesLocProps',
+        'DLSToolbar',
+        'TranslationAdderWindow'
     ],
     autoCreateViewport: true,
     controllers: [

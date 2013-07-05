@@ -1,0 +1,171 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": null,
+        "id": null,
+        "designer|userClassName": "pagesLocProps",
+        "designer|userAlias": "pagesLocProps",
+        "autoScroll": true,
+        "bodyPadding": 10,
+        "header": false,
+        "title": null
+    },
+    "designerId": "966fdf36-b010-4ad3-a41f-3d4e8da9cf77",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "nameField",
+                "layout|anchor": "100%",
+                "fieldLabel": "Nom *",
+                "labelSeparator": null,
+                "name": "text",
+                "allowBlank": false,
+                "regex": null,
+                "vtype": null
+            },
+            "designerId": "b8a7c4dd-e624-4470-bd92-be6b81a558c0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "urlField",
+                "layout|anchor": "100%",
+                "fieldLabel": "URL ",
+                "name": "pageURL",
+                "regex": null,
+                "vtype": null
+            },
+            "designerId": "cd3e31d6-0377-4377-8670-1d62e6b9e745",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "referencingFieldSEt",
+                "title": "Référencement"
+            },
+            "designerId": "ead64078-f895-4c20-a719-7e3c29ac54cc",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "titleField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Titre *",
+                        "labelSeparator": null,
+                        "name": "title",
+                        "allowBlank": false
+                    },
+                    "designerId": "9e2d622a-09d1-4e8b-be56-8b98d88e389a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "descriptionField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Description ",
+                        "name": "description",
+                        "maxLength": 250
+                    },
+                    "designerId": "e2d29a15-dbf8-4465-a8c1-1bf6d8a05ab5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMainPageAttributeFormRender1",
+                        "implHandler": [
+                            "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                            "    store:[],\r",
+                            "    anchor:\"100%\",\r",
+                            "    name:\"keywords\",\r",
+                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.keywordsText,\r",
+                            "    localiserId:\"keywordsField\",\r",
+                            "    multiSelect:true,\r",
+                            "    forceSelection:false,\r",
+                            "    createNewOnEnter:true,\r",
+                            "    hideTrigger:true,\r",
+                            "    triggerOnClick:false,\r",
+                            "    createNewOnBlur:true,\r",
+                            "    pinList:false\r",
+                            "});\r",
+                            "component.add(tagPicker);"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "7dee39e9-22d4-4816-9fed-1a16cdf4190d"
+                }
+            ]
+        }
+    ]
+}

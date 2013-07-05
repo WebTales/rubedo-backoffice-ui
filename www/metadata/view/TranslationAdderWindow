@@ -1,0 +1,79 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 111,
+        "id": "TranslationAdderWindow",
+        "width": 400,
+        "designer|userClassName": "TranslationAdderWindow",
+        "designer|userAlias": "TranslationAdderWindow",
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": "world_small",
+        "title": "Add new translation",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "bce7652b-a9e7-401d-951f-88b248abcd41",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "45163048-c908-4ffc-ba3f-5a0f7e25c7ef",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "TranslationAdderWindowSelector",
+                        "fieldLabel": "Language",
+                        "name": "language",
+                        "allowBlank": false,
+                        "editable": false,
+                        "displayField": "label",
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "TranslationAdderStore",
+                        "valueField": "locale"
+                    },
+                    "designerId": "d3871c4b-a144-4d39-9088-53f060b15bf6"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "TranslationAdderWindowSubmitBtn",
+                        "scale": "medium",
+                        "text": "Translate in this language"
+                    },
+                    "designerId": "354898b7-762b-4773-87d0-823da1f030e9"
+                }
+            ]
+        }
+    ]
+}

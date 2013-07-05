@@ -1,0 +1,22 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "model": "languageModel",
+        "remoteFilter": true,
+        "storeId": "TranslationAdderStore",
+        "designer|userClassName": "TranslationAdderStore",
+        "designer|userAlias": "TranslationAdderStore",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "5c9e9663-9465-44e6-9157-6dc8ca336bf7"
+}

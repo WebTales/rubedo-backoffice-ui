@@ -1,0 +1,280 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": null,
+        "style": null,
+        "designer|userClassName": "DLSToolbar",
+        "designer|userAlias": "DLSToolbar"
+    },
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "replicatorEntity",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "mainLocale",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "itemId": "LocSelectorCombo",
+                "fieldLabel": "Current language",
+                "editable": false,
+                "displayField": "label",
+                "forceSelection": true,
+                "queryMode": "local",
+                "valueField": "locale"
+            },
+            "designerId": "be2cf7da-ea8b-4fcb-9632-2fa9e900172e",
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processLocSelectorCombo",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.store=Ext.create('Ext.data.Store', {\r",
+                            "    fields:[{name:\"locale\"},{name:\"label\"}]\r",
+                            "});\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "098dcf74-d31a-4ab9-8059-6de1978569f7"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLocSelectorComboChange",
+                        "implHandler": [
+                            "var me=field.up();\r",
+                            "me.getComponent(\"LocRemoveBtn\").disable();\r",
+                            "if (!Ext.isEmpty(newValue)){\r",
+                            "    if(newValue==me.mainLocale){\r",
+                            "        me.up().getLayout().setActiveItem(me.up().getComponent(\"mainLocItem\"));\r",
+                            "    } else {\r",
+                            "        me.up().getLayout().setActiveItem(me.up().getComponent(newValue));\r",
+                            "        me.getComponent(\"LocRemoveBtn\").enable();\r",
+                            "    }\r",
+                            "}"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "designerId": "89e80c73-53e7-488a-ba22-5e35590b2899"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "itemId": "LocAddBtn",
+                "iconCls": "add",
+                "text": "Add translation"
+            },
+            "designerId": "d4359ae1-438e-4f4c-958d-4c3fa0bae3ea",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "var me=button.up();\r",
+                            "var restricted=Ext.Array.pluck(Ext.getStore(\"AllLanguagesStore3\").getRange(),\"data\");\r",
+                            "Ext.getStore(\"TranslationAdderStore\").removeAll();\r",
+                            "var alreadyHere=Ext.Array.pluck(Ext.Array.pluck(me.getComponent(0).getStore().getRange(),\"data\"),\"locale\");\r",
+                            "Ext.Array.forEach(restricted,function(candidate){\r",
+                            "    if(!Ext.Array.contains(alreadyHere,candidate.locale)){\r",
+                            "        Ext.getStore(\"TranslationAdderStore\").add(candidate);\r",
+                            "    }\r",
+                            "});\r",
+                            "Ext.widget(\"TranslationAdderWindow\").show();\r",
+                            "Ext.getCmp(\"TranslationAdderWindowSubmitBtn\").on(\"click\",function(){\r",
+                            "    var form=Ext.getCmp(\"TranslationAdderWindow\").getComponent(0).getForm();\r",
+                            "    if (form.isValid()){\r",
+                            "        me.addTranslation(form.getValues().language);\r",
+                            "        Ext.getCmp(\"TranslationAdderWindow\").close();\r",
+                            "    }\r",
+                            "\r",
+                            "});"
+                        ]
+                    },
+                    "designerId": "98e9df5e-35c0-4054-8bf1-e2da31025fdc"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "disabled": true,
+                "itemId": "LocRemoveBtn",
+                "iconCls": "close",
+                "text": "Remove translation"
+            },
+            "designerId": "1949879a-65ec-4a5c-9f0f-b30ae965472d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "var comboValue=button.up().getComponent(\"LocSelectorCombo\").getValue();\r",
+                            "button.up().getComponent(\"LocSelectorCombo\").setValue(button.up().mainLocale);\r",
+                            "button.up().getComponent(\"LocSelectorCombo\").getStore().remove(button.up().getComponent(\"LocSelectorCombo\").getStore().query(\"locale\",comboValue).items[0]);\r",
+                            "button.up().up().remove(button.up().up().getComponent(comboValue));"
+                        ]
+                    },
+                    "designerId": "db85e2ee-fc66-4a07-a130-048fb85cfb43"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "recievei18n",
+                "designer|params": [
+                    "i18n",
+                    "locale"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "me.mainLocale=locale;\r",
+                    "me.up().getLayout().setActiveItem(me.up().getComponent(\"mainLocItem\"));\r",
+                    "me.getComponent(0).getStore().removeAll();\r",
+                    "Ext.Array.forEach(me.up().items.items, function(item){\r",
+                    "    if(item.itemId!=\"mainLocItem\"){\r",
+                    "        me.up().remove(item);\r",
+                    "    }\r",
+                    "});\r",
+                    "Ext.Object.each(i18n, function(key, value, myself) {\r",
+                    "    me.getComponent(0).getStore().add({\"locale\":key,\"label\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"label\")});\r",
+                    "    if(key!=locale){\r",
+                    "        var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});\r",
+                    "        me.up().add(toAdd);\r",
+                    "        toAdd.getForm().setValues(value);\r",
+                    "    }\r",
+                    "});\r",
+                    "me.getComponent(\"LocSelectorCombo\").setValue(locale);"
+                ]
+            },
+            "designerId": "2121f2fe-d3c0-4d9b-a603-37df98eaddc5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "persisti18n",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var newOne={ };\r",
+                    "var items=me.up().items.items;\r",
+                    "Ext.Array.forEach(items,function(item){\r",
+                    "    if(item.itemId==\"mainLocItem\"){\r",
+                    "\t\tnewOne[me.mainLocale]=item.getForm().getValues();\r",
+                    "    } else {\r",
+                    "        newOne[item.itemId]=item.getForm().getValues();\r",
+                    "    }\r",
+                    "});\r",
+                    "record.set(\"i18n\",newOne);"
+                ]
+            },
+            "designerId": "2e8facc6-9370-4bff-8be0-c671eb20df06"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addTranslation",
+                "designer|params": [
+                    "locale"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "me.getComponent(0).getStore().add({\"locale\":locale,\"label\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"label\")});\r",
+                    "var toAdd=Ext.widget(me.replicatorEntity,{itemId:locale});\r",
+                    "me.up().add(toAdd);\r",
+                    "toAdd.getForm().setValues(me.up().getComponent(\"mainLocItem\").getForm().getValues());\r",
+                    "me.getComponent(0).setValue(\"fr\");"
+                ]
+            },
+            "designerId": "b58e9ed9-4f3d-4ffe-b2ee-3bb9e0f3cb44"
+        }
+    ]
+}

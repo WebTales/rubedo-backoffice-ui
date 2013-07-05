@@ -824,11 +824,13 @@
                     "    myBtn.setIcon(null);\r",
                     "    myBtn.setIconCls(\"infoWarning\");\r",
                     "    myBtn.setTooltip(\"No working language selected\");\r",
+                    "    myBtn.setText(null);\r",
                     "} else {\r",
                     "    var myRec=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",newValue,false,false,true).items[0];\r",
                     "    myBtn.setIconCls(null);\r",
                     "    myBtn.setIcon('/assets/flags/16/'+myRec.get(\"iso2\").toUpperCase()+'.png');\r",
                     "    myBtn.setTooltip(\"Current working language : \"+myRec.get(\"label\"));\r",
+                    "    myBtn.setText(myRec.get(\"label\"));\r",
                     "}"
                 ],
                 "name": "change",
