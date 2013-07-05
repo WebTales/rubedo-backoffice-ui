@@ -104,12 +104,10 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'i18n'
         },
         {
-            name: 'locale',
-            persist: false
+            name: 'locale'
         },
         {
-            name: 'nativeLanguage',
-            persist: false
+            name: 'nativeLanguage'
         }
     ]
 });
