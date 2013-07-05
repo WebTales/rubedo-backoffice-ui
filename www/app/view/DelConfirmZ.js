@@ -79,25 +79,10 @@ Ext.define('Rubedo.view.DelConfirmZ', {
                         }
                     ]
                 }
-            ],
-            listeners: {
-                render: {
-                    fn: me.onDelConfirmZRender,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
-    },
-
-    onDelConfirmZRender: function(component, eOpts) {
-        if (!Ext.isEmpty(component.specificMessage)){
-            Ext.getCmp("delConMessageHolder").on("afterrender", function(){
-                Ext.getCmp("delConMessageHolder").update("<p>"+Rubedo.RubedoAutomatedElementsLoc.delconBaseText+" "+component.specificMessage+" ?</p>");
-            });
-            Ext.getCmp("delConMessageHolder").show();
-        }
     }
 
 });

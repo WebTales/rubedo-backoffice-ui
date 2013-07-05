@@ -102,6 +102,23 @@
                 "persist": false
             },
             "designerId": "96ebf926-0ede-4abb-8fbe-e35396eab11e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "isDefault",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "d7519d4c-5d77-43ca-bd1d-cb0f4ffc8597"
         }
     ]
 }

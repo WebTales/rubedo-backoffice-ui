@@ -90,6 +90,9 @@
                     "    if (Ext.isEmpty(options.params)){\r",
                     "        options.params={};\r",
                     "    }\r",
+                    "    if(!Ext.isEmpty(Ext.getCmp(\"workingLanguageField\").getValue())){\r",
+                    "        options.params.workingLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
+                    "    }\r",
                     "    options.params.token=ACL.CSRFToken;\r",
                     "});"
                 ]

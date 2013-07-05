@@ -1,0 +1,98 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 111,
+        "id": "workingLanguageChangeWindow",
+        "width": 400,
+        "designer|userClassName": "workingLanguageChangeWindow",
+        "designer|userAlias": "workingLanguageChangeWindow",
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": "world_small",
+        "title": "Change current working language",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "4d260747-34d6-4e46-aab4-095f6db9755c",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "5552dcab-6de8-4364-a427-e3e229ad2061",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "currentLanguageSelectorCombo",
+                        "fieldLabel": "Language",
+                        "name": "language",
+                        "allowBlank": false,
+                        "editable": false,
+                        "displayField": "label",
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "AllLanguagesStore3",
+                        "valueField": "locale"
+                    },
+                    "designerId": "602645c5-3b9e-484f-9002-73bd94ea015a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCurrentLanguageSelectorComboAfterRender",
+                                "implHandler": [
+                                    "component.setValue(Ext.getCmp(\"workingLanguageField\").getValue());"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "2c90e09b-f181-4e42-8031-554f5489f6a4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "currentLanguageChangeSubmitBtn",
+                        "scale": "medium",
+                        "text": "Set as current working language"
+                    },
+                    "designerId": "b7843302-1bb8-4e15-8188-99e7db043b83"
+                }
+            ]
+        }
+    ]
+}

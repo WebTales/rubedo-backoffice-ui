@@ -59,6 +59,7 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
 
     onJsonstoreLoad: function(store, records, successful, eOpts) {
         Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();
+        Ext.getCmp("workingLanguageField").setValue(store.getRange()[0].get("workingLanguage"));
     }
 
 });

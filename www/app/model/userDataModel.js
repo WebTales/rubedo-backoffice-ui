@@ -99,6 +99,9 @@ Ext.define('Rubedo.model.userDataModel', {
         {
             name: 'defaultWorkspace',
             persist: false
+        },
+        {
+            name: 'workingLanguage'
         }
     ]
 });

@@ -94,6 +94,9 @@ Ext.define('Rubedo.controller.ACLController', {
             if (Ext.isEmpty(options.params)){
                 options.params={};
             }
+            if(!Ext.isEmpty(Ext.getCmp("workingLanguageField").getValue())){
+                options.params.workingLanguage=Ext.getCmp("workingLanguageField").getValue();
+            }
             options.params.token=ACL.CSRFToken;
         });
 

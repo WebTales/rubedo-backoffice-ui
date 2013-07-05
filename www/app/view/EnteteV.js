@@ -59,6 +59,22 @@ Ext.define('Rubedo.view.EnteteV', {
                     enableOverflow: true
                 },
                 {
+                    xtype: 'hiddenfield',
+                    id: 'workingLanguageField',
+                    fieldLabel: 'Label'
+                },
+                {
+                    xtype: 'button',
+                    id: 'workingLanguageBtn',
+                    iconCls: 'infoWarning',
+                    text: '',
+                    tooltip: 'No working language selected',
+                    tooltipType: 'title'
+                },
+                {
+                    xtype: 'tbseparator'
+                },
+                {
                     xtype: 'ESSearchField'
                 },
                 {
@@ -66,26 +82,10 @@ Ext.define('Rubedo.view.EnteteV', {
                     id: 'ESSearchButton',
                     iconCls: 'search'
                 }
-            ],
-            listeners: {
-                afterrender: {
-                    fn: me.onEnteteAfterRender,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
-    },
-
-    onEnteteAfterRender: function(component, eOpts) {
-        var task = new Ext.util.DelayedTask(function(){
-            component.remove(Ext.getCmp("ESSearchField"));
-            component.insert(5, Ext.widget("ESSearchField"));
-            Ext.getCmp("desktopHomeBtn").setTooltip(Rubedo.RubedoAutomatedElementsLoc.showDesktopTooltip);
-        });
-        task.delay(600);
-
     }
 
 });

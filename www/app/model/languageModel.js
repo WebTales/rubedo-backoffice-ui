@@ -44,6 +44,12 @@ Ext.define('Rubedo.model.languageModel', {
         {
             name: 'iso2',
             persist: false
+        },
+        {
+            defaultValue: false,
+            name: 'isDefault',
+            persist: false,
+            type: 'boolean'
         }
     ]
 });
