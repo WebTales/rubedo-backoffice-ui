@@ -8,7 +8,7 @@
     "userConfig": {
         "height": 368,
         "id": "languagesInterface",
-        "width": 429,
+        "width": 281,
         "designer|userClassName": "languagesInterface",
         "designer|userAlias": "languagesInterface",
         "layout": "fit",
@@ -28,7 +28,7 @@
             "userConfig": {
                 "managesStore": true,
                 "title": "",
-                "forceFit": true,
+                "forceFit": false,
                 "store": "MainLanguagesStore"
             },
             "configAlternates": {
@@ -50,6 +50,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "preserveScrollOnRefresh": true
+                    },
                     "designerId": "2c7f9785-dcb8-4775-b2a5-bf50d03b6a7b"
                 },
                 {
@@ -61,7 +64,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "label",
-                        "text": "Name"
+                        "text": "Name",
+                        "flex": 1
                     },
                     "designerId": "f67a8261-3f0f-4f93-b69e-33e8f74867de",
                     "cn": [
@@ -92,82 +96,38 @@
                     ]
                 },
                 {
-                    "type": "Ext.grid.column.Boolean",
+                    "type": "processcfgfunction",
                     "reference": {
-                        "name": "columns",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "active",
-                        "text": "Active"
+                        "fn": "processMyGridPanel1",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.columns.push(Ext.create(\"Ext.ux.CheckColumn\",{\r",
+                            "    text: 'Active',\r",
+                            "    dataIndex: 'active',\r",
+                            "    width:60,\r",
+                            "    listeners:{\r",
+                            "        beforecheckchange:function(cc,ix,isChecked){\r",
+                            "            if((!isChecked)&&(Ext.getStore(\"MainLanguagesStore\").query(\"active\",true).items.length<=1)){\r",
+                            "                var task = new Ext.util.DelayedTask(function(){\r",
+                            "                \tExt.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.atLeastOneLocError);\r",
+                            "                    });\r",
+                            "                task.delay(200);\r",
+                            "                return(false);\r",
+                            "            }\r",
+                            "        }\r",
+                            "    }\r",
+                            "}));\r",
+                            "return config;"
+                        ]
                     },
-                    "designerId": "c2f0073a-70cf-4ebe-9520-49197a242d49",
-                    "cn": [
-                        {
-                            "type": "processcfgfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "processActive",
-                                "designer|params": [
-                                    "config"
-                                ],
-                                "implHandler": [
-                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
-                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
-                                    "return config;"
-                                ]
-                            },
-                            "designerId": "795301a0-7238-46db-a4e5-427166459da7"
-                        },
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "inputValue": "true",
-                                "uncheckedValue": "false"
-                            },
-                            "designerId": "a88fea07-5bcf-4886-95b4-bda7c3243541"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.plugin.CellEditing",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "a7882365-aa00-4a9f-9542-cedeb8259d5b",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onCellEditingBeforeEdit",
-                                "implHandler": [
-                                    "if (!ACL.interfaceRights[\"write.ui.languages\"]){\r",
-                                    "\treturn(false);\r",
-                                    "}"
-                                ],
-                                "name": "beforeedit",
-                                "scope": "me"
-                            },
-                            "designerId": "d1a12efe-5d7c-47d0-aaa1-714eed8b20cd"
-                        }
-                    ]
+                    "designerId": "cd7006c8-eb5d-409b-8657-50defc3dc7ab"
                 }
             ]
         },

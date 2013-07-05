@@ -304,7 +304,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "thisSurveyText":"this survey",
             "thisFolderText":"this folder",
             "thisMediaText":"this digital asset",
-            "thisVocabularyText":"this vocabulary"
+            "thisVocabularyText":"this vocabulary",
+            "atLeastOneLocError":"At least one language must be active"
         });
         // attach event and load localisation store
         /*Ext.getStore("LocalisationStore").on("load",function(){

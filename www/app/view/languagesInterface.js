@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.languagesInterface', {
 
     height: 368,
     id: 'languagesInterface',
-    width: 429,
+    width: 281,
     layout: {
         type: 'fit'
     },
@@ -36,12 +36,15 @@ Ext.define('Rubedo.view.languagesInterface', {
 
         Ext.applyIf(me, {
             items: [
-                {
+                me.processMyGridPanel1({
                     xtype: 'gridpanel',
                     managesStore: true,
                     title: '',
-                    forceFit: true,
+                    forceFit: false,
                     store: 'MainLanguagesStore',
+                    viewConfig: {
+                        preserveScrollOnRefresh: true
+                    },
                     columns: [
                         {
                             xtype: 'gridcolumn',
@@ -49,30 +52,11 @@ Ext.define('Rubedo.view.languagesInterface', {
                                 return('<img src="/assets/flags/16/'+record.get("iso2").toUpperCase()+'.png"> '+value);
                             },
                             dataIndex: 'label',
-                            text: 'Name'
-                        },
-                        me.processActive({
-                            xtype: 'booleancolumn',
-                            dataIndex: 'active',
-                            text: 'Active',
-                            editor: {
-                                xtype: 'checkboxfield',
-                                inputValue: 'true',
-                                uncheckedValue: 'false'
-                            }
-                        })
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            listeners: {
-                                beforeedit: {
-                                    fn: me.onCellEditingBeforeEdit,
-                                    scope: me
-                                }
-                            }
-                        })
+                            text: 'Name',
+                            flex: 1
+                        }
                     ]
-                }
+                })
             ],
             tools: [
                 {
@@ -84,16 +68,24 @@ Ext.define('Rubedo.view.languagesInterface', {
         me.callParent(arguments);
     },
 
-    processActive: function(config) {
-        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
-        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+    processMyGridPanel1: function(config) {
+        config.columns.push(Ext.create("Ext.ux.CheckColumn",{
+            text: 'Active',
+            dataIndex: 'active',
+            width:60,
+            listeners:{
+                beforecheckchange:function(cc,ix,isChecked){
+                    if((!isChecked)&&(Ext.getStore("MainLanguagesStore").query("active",true).items.length<=1)){
+                        var task = new Ext.util.DelayedTask(function(){
+                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.atLeastOneLocError);
+                        });
+                        task.delay(200);
+                        return(false);
+                    }
+                }
+            }
+        }));
         return config;
-    },
-
-    onCellEditingBeforeEdit: function(editor, e, eOpts) {
-        if (!ACL.interfaceRights["write.ui.languages"]){
-            return(false);
-        }
     }
 
 });
