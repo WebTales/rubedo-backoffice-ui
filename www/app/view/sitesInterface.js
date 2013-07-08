@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.sitesInterface', {
 
     requires: [
         'Rubedo.view.WorkspaceCombo',
+        'Rubedo.view.DLSToolbar',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -160,280 +161,298 @@ Ext.define('Rubedo.view.sitesInterface', {
                     ]
                 },
                 {
-                    xtype: 'form',
+                    xtype: 'panel',
                     flex: 1,
-                    disabled: true,
-                    id: 'mainSiteProps',
-                    autoScroll: true,
-                    bodyPadding: 10,
+                    layout: {
+                        type: 'card'
+                    },
                     title: '',
                     items: [
                         {
-                            xtype: 'fieldset',
-                            localiserId: 'siteFieldSet',
-                            collapsible: true,
-                            title: 'Site',
+                            xtype: 'form',
+                            disabled: true,
+                            id: 'mainSiteProps',
+                            itemId: 'mainLocItem',
+                            autoScroll: true,
+                            bodyPadding: 10,
+                            title: '',
                             items: [
                                 {
-                                    xtype: 'textfield',
-                                    localiserId: 'domainNameField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Nom de domaine *',
-                                    labelWidth: 110,
-                                    name: 'text',
-                                    allowBlank: false,
-                                    regex: new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'aliasField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Alias ',
-                                    labelWidth: 110,
-                                    name: 'alias'
-                                },
-                                {
-                                    xtype: 'combobox',
-                                    managesStore: true,
-                                    localiserId: 'themeField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Theme ',
-                                    labelWidth: 110,
-                                    name: 'theme',
-                                    displayField: 'label',
-                                    store: 'SiteThemesStore',
-                                    valueField: 'text'
-                                },
-                                {
-                                    xtype: 'combobox',
-                                    localiserId: 'protocolField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Protocole *',
-                                    labelWidth: 110,
-                                    name: 'protocol',
-                                    allowBlank: false,
-                                    editable: false,
-                                    forceSelection: true,
-                                    multiSelect: true,
-                                    store: [
-                                        'HTTP',
-                                        'HTTPS'
-                                    ]
-                                },
-                                {
-                                    xtype: 'combobox',
-                                    validator: function(value) {
-                                        var myValue=Ext.getCmp("siteDefaultLanguageField").getValue();
-                                        var languagesArray=Ext.getCmp("siteUsedLanguagesField").getValue();
-                                        if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){
-                                            return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);
+                                    xtype: 'fieldset',
+                                    localiserId: 'siteFieldSet',
+                                    collapsible: true,
+                                    title: 'Site',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'domainNameField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Nom de domaine *',
+                                            labelWidth: 110,
+                                            name: 'text',
+                                            allowBlank: false,
+                                            regex: new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'aliasField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Alias ',
+                                            labelWidth: 110,
+                                            name: 'alias'
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            managesStore: true,
+                                            localiserId: 'themeField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Theme ',
+                                            labelWidth: 110,
+                                            name: 'theme',
+                                            displayField: 'label',
+                                            store: 'SiteThemesStore',
+                                            valueField: 'text'
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            localiserId: 'protocolField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Protocole *',
+                                            labelWidth: 110,
+                                            name: 'protocol',
+                                            allowBlank: false,
+                                            editable: false,
+                                            forceSelection: true,
+                                            multiSelect: true,
+                                            store: [
+                                                'HTTP',
+                                                'HTTPS'
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            validator: function(value) {
+                                                var myValue=Ext.getCmp("siteDefaultLanguageField").getValue();
+                                                var languagesArray=Ext.getCmp("siteUsedLanguagesField").getValue();
+                                                if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){
+                                                    return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);
+                                                }
+                                                return(true);
+                                            },
+                                            localiserId: 'defaultLanguageField',
+                                            anchor: '100%',
+                                            id: 'siteDefaultLanguageField',
+                                            fieldLabel: 'Default language',
+                                            labelWidth: 110,
+                                            name: 'defaultLanguage',
+                                            displayField: 'label',
+                                            forceSelection: true,
+                                            queryMode: 'local',
+                                            store: 'AllLanguagesStore',
+                                            typeAhead: true,
+                                            valueField: 'locale'
+                                        },
+                                        me.processLocStrategy({
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            fieldLabel: 'Localisation strategy',
+                                            labelWidth: 110,
+                                            name: 'locStrategy',
+                                            editable: false,
+                                            forceSelection: true,
+                                            queryMode: 'local'
+                                        }),
+                                        {
+                                            xtype: 'checkboxfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Use browser language',
+                                            labelWidth: 110,
+                                            name: 'useBrowserLanguage',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
+                                        },
+                                        {
+                                            xtype: 'textareafield',
+                                            anchor: '100%',
+                                            hidden: true,
+                                            fieldLabel: 'Filtre ',
+                                            name: 'filter'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'siteDefaultTitleField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Titre par défaut',
+                                            labelWidth: 110,
+                                            name: 'title'
+                                        },
+                                        {
+                                            xtype: 'textareafield',
+                                            localiserId: 'defaultDescriptionField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Description par défaut',
+                                            labelWidth: 110,
+                                            name: 'description',
+                                            maxLength: 250
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'defaultAuthorField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Auteur par défaut',
+                                            labelWidth: 110,
+                                            name: 'author',
+                                            value: 'Powered by Rubedo'
+                                        },
+                                        {
+                                            xtype: 'WorkspaceCombo',
+                                            labelWidth: 110,
+                                            store: 'ContributeWorkspacesCombo',
+                                            anchor: '100%'
                                         }
-                                        return(true);
-                                    },
-                                    localiserId: 'defaultLanguageField',
-                                    anchor: '100%',
-                                    id: 'siteDefaultLanguageField',
-                                    fieldLabel: 'Default language',
-                                    labelWidth: 110,
-                                    name: 'defaultLanguage',
-                                    displayField: 'label',
-                                    forceSelection: true,
-                                    queryMode: 'local',
-                                    store: 'AllLanguagesStore',
-                                    typeAhead: true,
-                                    valueField: 'locale'
-                                },
-                                me.processLocStrategy({
-                                    xtype: 'combobox',
-                                    anchor: '100%',
-                                    fieldLabel: 'Localisation strategy',
-                                    labelWidth: 110,
-                                    name: 'locStrategy',
-                                    editable: false,
-                                    forceSelection: true,
-                                    queryMode: 'local'
-                                }),
-                                {
-                                    xtype: 'checkboxfield',
-                                    anchor: '100%',
-                                    fieldLabel: 'Use browser language',
-                                    labelWidth: 110,
-                                    name: 'useBrowserLanguage',
-                                    inputValue: 'true',
-                                    uncheckedValue: 'false'
+                                    ],
+                                    listeners: {
+                                        render: {
+                                            fn: me.onFieldsetRender,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
-                                    xtype: 'textareafield',
-                                    anchor: '100%',
+                                    xtype: 'fieldset',
+                                    localiserId: 'messageryFieldSet',
                                     hidden: true,
-                                    fieldLabel: 'Filtre ',
-                                    name: 'filter'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'siteDefaultTitleField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Titre par défaut',
-                                    labelWidth: 110,
-                                    name: 'title'
-                                },
-                                {
-                                    xtype: 'textareafield',
-                                    localiserId: 'defaultDescriptionField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Description par défaut',
-                                    labelWidth: 110,
-                                    name: 'description',
-                                    maxLength: 250
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'defaultAuthorField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Auteur par défaut',
-                                    labelWidth: 110,
-                                    name: 'author',
-                                    value: 'Powered by Rubedo'
-                                },
-                                {
-                                    xtype: 'WorkspaceCombo',
-                                    labelWidth: 110,
-                                    store: 'ContributeWorkspacesCombo',
-                                    anchor: '100%'
-                                }
-                            ],
-                            listeners: {
-                                render: {
-                                    fn: me.onFieldsetRender,
-                                    scope: me
-                                }
-                            }
-                        },
-                        {
-                            xtype: 'fieldset',
-                            localiserId: 'messageryFieldSet',
-                            hidden: true,
-                            collapsed: true,
-                            collapsible: true,
-                            title: 'Messagerie',
-                            items: [
-                                {
-                                    xtype: 'checkboxfield',
-                                    localiserId: 'activeMessageryField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Activé ',
-                                    name: 'activeMessagery',
-                                    boxLabel: ''
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'smtpServerField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Serveur SMTP ',
-                                    name: 'SMTPServer'
-                                },
-                                {
-                                    xtype: 'numberfield',
-                                    localiserId: 'smtpPortField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Port SMTP ',
-                                    name: 'SMTPPort',
-                                    allowDecimals: false,
-                                    minValue: 0
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'smtpLoginField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Login SMTP ',
-                                    name: 'SMTPLogin'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'smtpPassField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Mot de passe SMTP ',
-                                    name: 'SMTPPassword',
-                                    inputType: 'password'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'defaultEmailField',
-                                    anchor: '100%',
-                                    fieldLabel: 'E-mail par défaut ',
-                                    name: 'defaultEmail',
-                                    vtype: 'email'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'fieldset',
-                            localiserId: 'accessibilityFieldSet ',
-                            hidden: true,
-                            collapsed: true,
-                            collapsible: true,
-                            title: 'Accessibilité',
-                            items: [
-                                {
-                                    xtype: 'combobox',
-                                    localiserId: 'accessibilityLeveLfield',
-                                    anchor: '100%',
-                                    fieldLabel: 'Niveau d\'accessibilité ',
-                                    name: 'accessibilityLevel',
-                                    store: [
-                                        'RGAA A',
-                                        'RGAA AA',
-                                        'RGAA AAA'
+                                    collapsed: true,
+                                    collapsible: true,
+                                    title: 'Messagerie',
+                                    items: [
+                                        {
+                                            xtype: 'checkboxfield',
+                                            localiserId: 'activeMessageryField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Activé ',
+                                            name: 'activeMessagery',
+                                            boxLabel: ''
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'smtpServerField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Serveur SMTP ',
+                                            name: 'SMTPServer'
+                                        },
+                                        {
+                                            xtype: 'numberfield',
+                                            localiserId: 'smtpPortField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Port SMTP ',
+                                            name: 'SMTPPort',
+                                            allowDecimals: false,
+                                            minValue: 0
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'smtpLoginField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Login SMTP ',
+                                            name: 'SMTPLogin'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'smtpPassField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Mot de passe SMTP ',
+                                            name: 'SMTPPassword',
+                                            inputType: 'password'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'defaultEmailField',
+                                            anchor: '100%',
+                                            fieldLabel: 'E-mail par défaut ',
+                                            name: 'defaultEmail',
+                                            vtype: 'email'
+                                        }
                                     ]
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    localiserId: 'opquastLoginField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Login Opquast ',
-                                    name: 'opquastLogin'
+                                    xtype: 'fieldset',
+                                    localiserId: 'accessibilityFieldSet ',
+                                    hidden: true,
+                                    collapsed: true,
+                                    collapsible: true,
+                                    title: 'Accessibilité',
+                                    items: [
+                                        {
+                                            xtype: 'combobox',
+                                            localiserId: 'accessibilityLeveLfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Niveau d\'accessibilité ',
+                                            name: 'accessibilityLevel',
+                                            store: [
+                                                'RGAA A',
+                                                'RGAA AA',
+                                                'RGAA AAA'
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'opquastLoginField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Login Opquast ',
+                                            name: 'opquastLogin'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'opquastPassField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Mot de passe Optquast ',
+                                            name: 'opquastPassword',
+                                            inputType: 'password'
+                                        }
+                                    ]
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    localiserId: 'opquastPassField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Mot de passe Optquast ',
-                                    name: 'opquastPassword',
-                                    inputType: 'password'
+                                    xtype: 'fieldset',
+                                    localiserId: 'apiKeysFieldSet',
+                                    collapsible: true,
+                                    title: 'Clés d\'API externes',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'googleMapKeyField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Google Maps',
+                                            labelWidth: 110,
+                                            name: 'googleMapsKey'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'googleAnalyticsKeyField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Google Analytics',
+                                            labelWidth: 110,
+                                            name: 'googleAnalyticsKey'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'disqusKeyField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Disqus',
+                                            labelWidth: 110,
+                                            name: 'disqusKey'
+                                        }
+                                    ]
                                 }
                             ]
-                        },
+                        }
+                    ],
+                    dockedItems: [
                         {
-                            xtype: 'fieldset',
-                            localiserId: 'apiKeysFieldSet',
-                            collapsible: true,
-                            title: 'Clés d\'API externes',
-                            items: [
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'googleMapKeyField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Google Maps',
-                                    labelWidth: 110,
-                                    name: 'googleMapsKey'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'googleAnalyticsKeyField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Google Analytics',
-                                    labelWidth: 110,
-                                    name: 'googleAnalyticsKey'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    localiserId: 'disqusKeyField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Disqus',
-                                    labelWidth: 110,
-                                    name: 'disqusKey'
-                                }
-                            ]
+                            xtype: 'DLSToolbar',
+                            dock: 'top',
+                            replicatorEntity: 'sitesRepLoc',
+                            id: 'sitesDLSToolbar'
                         }
                     ]
                 }

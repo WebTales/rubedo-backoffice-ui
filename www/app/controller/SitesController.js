@@ -46,6 +46,7 @@ Ext.define('Rubedo.controller.SitesController', {
             } else {
                 Ext.Array.forEach(Ext.getCmp("mainSiteProps").query("field"), function(field){field.setReadOnly(false);});
             }
+            Ext.getCmp("sitesDLSToolbar").recievei18n(selected[0].get("i18n"),selected[0].get("locale"));
             var boiteMeta = Ext.getCmp("sitesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
             var valeurs= Ext.clone(selected[0].data);
             valeurs.creation= Ext.Date.format(valeurs.createTime, Ext.Date.defaultFormat);
@@ -129,7 +130,10 @@ Ext.define('Rubedo.controller.SitesController', {
                     if (anser=="yes"){
                         Ext.getCmp("contributionPages").close();
                         var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();
-                        myRec.set(form.getValues(false, false, false, true));
+                        myRec.beginEdit();
+                        myRec.set(form.getValues(false, false, false, true)); 
+                        Ext.getCmp("sitesDLSToolbar").persisti18n(myRec);
+                        myRec.endEdit();
                         Ext.getStore("SitesJson").addListener("datachanged",function(){
                             me.selectSite(Ext.getCmp("mainSitesGrid"),[myRec]);
                             if (Ext.getStore("MasquesDataJson").isUsed) {
@@ -140,7 +144,10 @@ Ext.define('Rubedo.controller.SitesController', {
                     });
                 } else {
                     var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();
+                    myRec.beginEdit();
                     myRec.set(form.getValues(false, false, false, true)); 
+                    Ext.getCmp("sitesDLSToolbar").persisti18n(myRec);
+                    myRec.endEdit();
                     Ext.getStore("SitesJson").addListener("datachanged",function(){
                         me.selectSite(Ext.getCmp("mainSitesGrid"),[myRec]);
                         if (Ext.getStore("MasquesDataJson").isUsed) {
@@ -169,6 +176,15 @@ Ext.define('Rubedo.controller.SitesController', {
         var form = button.up().up().getForm();
         if (form.isValid()){
             var newSite= Ext.create("Rubedo.model.sitesDataModel", form.getValues());
+            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+            newSite.set("nativeLanguage", nativeLanguage);
+            var i18n= { };
+            i18n[nativeLanguage]={
+                title:form.getValues().title,
+                description:form.getValues().description,
+                author:form.getValues().author
+            };
+            newSite.set("i18n",i18n);
             Ext.getStore("SitesJson").add(newSite);
             Ext.getStore("SitesJson").addListener("datachanged",function(){
                 Ext.getCmp('mainSitesGrid').getSelectionModel().select(newSite);

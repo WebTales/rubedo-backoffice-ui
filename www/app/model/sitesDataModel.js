@@ -140,6 +140,15 @@ Ext.define('Rubedo.model.sitesDataModel', {
             defaultValue: false,
             name: 'useBrowserLanguage',
             type: 'boolean'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });
