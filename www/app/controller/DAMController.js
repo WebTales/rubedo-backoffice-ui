@@ -94,11 +94,15 @@ Ext.define('Rubedo.controller.DAMController', {
         var me=this;
         var form=Ext.getCmp("DAMFieldBox").getForm();
         var myDirectory="notFiled";
-        if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
-            var realDirectory=Ext.clone(Ext.getStore("DAMFolderViewStore").directoryFilter);
-            if ((realDirectory!="emptyDecoy")&&(realDirectory!="root")){
-                myDirectory=realDirectory;
+        try{
+            if ((!Ext.isEmpty(Ext.getCmp("DAMInterface")))&&(Ext.getCmp("DAMInterface").currentViewMode=="folder")){
+                var realDirectory=Ext.clone(Ext.getStore("DAMFolderViewStore").directoryFilter);
+                if ((realDirectory!="emptyDecoy")&&(realDirectory!="root")){
+                    myDirectory=realDirectory;
+                }
             }
+        }catch(err){
+            console.log("directory error");
         }
         form.submit({
             clientValidation: true,
