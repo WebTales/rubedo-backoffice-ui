@@ -2181,13 +2181,20 @@
                                     "forceSelection": true,
                                     "queryMode": "local"
                                 }
+                            },{
+                                "type": "Ext.form.field.Checkbox",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1380#",
+                                    "name": "showCurrentLanguage"
+                                }
                             }]
                         }
                 ],
                 "avance": []
             },
             "configBloc": {
-            	"displayAs":"select"
+            	"displayAs":"select",
+            	"showCurrentLanguage":true
             }
         },
         "category": "#ext-gen1211#",
