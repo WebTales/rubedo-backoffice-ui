@@ -2709,6 +2709,14 @@
                 "app/store/TranslationAdderStore.js"
             ],
             "className": "TranslationAdderStore"
+        },
+        "966303e3-8916-4e51-aa9f-00cee06be4fa": {
+            "paths": [
+                "metadata/view/workspacesReplicator",
+                "app/view/override/workspacesReplicator.js",
+                "app/view/workspacesReplicator.js"
+            ],
+            "className": "workspacesReplicator"
         }
     },
     "viewOrderMap": {
@@ -2873,7 +2881,8 @@
             "4d260747-34d6-4e46-aab4-095f6db9755c",
             "bce7652b-a9e7-401d-951f-88b248abcd41",
             "966fdf36-b010-4ad3-a41f-3d4e8da9cf77",
-            "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
+            "d4099bd4-38b8-42ed-80b9-5dbde8b941c0",
+            "966303e3-8916-4e51-aa9f-00cee06be4fa"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

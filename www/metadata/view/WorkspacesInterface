@@ -277,21 +277,19 @@
             ]
         },
         {
-            "type": "Ext.form.Panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "propsPanel",
                 "layout|flex": 1,
-                "disabled": true,
-                "id": "workspacesMainForm",
-                "bodyPadding": 10,
+                "localiserId": "propsPanel",
+                "layout": "card",
                 "title": "Propriétés"
             },
-            "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
+            "designerId": "bc23bf6d-f63e-4cd7-ae6e-dc970f2dab60",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
@@ -301,25 +299,57 @@
             ],
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "replicatorEntity": "workspacesReplicator",
+                        "id": "workspacesDLSToolbar"
+                    },
+                    "designerId": "c79eb712-a3dd-414d-b742-bcce9705e88d",
+                    "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
+                },
+                {
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Nom",
-                        "name": "text",
-                        "allowBlank": false
+                        "id": "workspacesMainForm",
+                        "itemId": "mainLocItem",
+                        "bodyPadding": 10,
+                        "title": ""
                     },
-                    "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
-                    "customConfigs": [
+                    "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "nameField",
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Nom",
+                                "name": "text",
+                                "allowBlank": false
+                            },
+                            "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

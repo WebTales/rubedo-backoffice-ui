@@ -168,7 +168,8 @@ Ext.application({
         'Rubedo.view.workingLanguageChangeWindow',
         'Rubedo.view.pagesLocProps',
         'Rubedo.view.DLSToolbar',
-        'Rubedo.view.TranslationAdderWindow'
+        'Rubedo.view.TranslationAdderWindow',
+        'Rubedo.view.workspacesReplicator'
     ],
     models: [
         'sitesDataModel',
@@ -459,7 +460,8 @@ Ext.application({
         'workingLanguageChangeWindow',
         'pagesLocProps',
         'DLSToolbar',
-        'TranslationAdderWindow'
+        'TranslationAdderWindow',
+        'workspacesReplicator'
     ],
     autoCreateViewport: true,
     controllers: [

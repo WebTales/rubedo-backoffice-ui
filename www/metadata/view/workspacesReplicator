@@ -1,0 +1,41 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": null,
+        "designer|userClassName": "workspacesReplicator",
+        "designer|userAlias": "workspacesReplicator",
+        "bodyPadding": 10,
+        "title": ""
+    },
+    "designerId": "966303e3-8916-4e51-aa9f-00cee06be4fa",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "nameField",
+                "layout|anchor": "100%",
+                "fieldLabel": "Nom",
+                "name": "text",
+                "allowBlank": false
+            },
+            "designerId": "e59209bc-8690-4007-b64e-4f4a194ae5fe",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

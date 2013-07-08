@@ -34,7 +34,10 @@ Ext.define('Rubedo.controller.WorkspacesController', {
         var target = Ext.getCmp("workspacesGrid").getSelectionModel().getLastSelected();
         var form = Ext.getCmp("workspacesMainForm").getForm();
         if (form.isValid()){
+            target.beginEdit();
             target.set(form.getValues());
+            Ext.getCmp("workspacesDLSToolbar").persisti18n(target);
+            target.endEdit();
         }  
     },
 
@@ -43,11 +46,11 @@ Ext.define('Rubedo.controller.WorkspacesController', {
             Ext.getCmp("workspaceRemove").disable();
             Ext.getCmp("workspaceSave").disable();
             Ext.getCmp("workspacesMainForm").getForm().reset();
-            Ext.getCmp("workspacesMainForm").disable();
+            Ext.getCmp("workspacesMainForm").up().disable();
         } else {
             Ext.getCmp("workspaceRemove").enable();
             Ext.getCmp("workspaceSave").enable();
-            Ext.getCmp("workspacesMainForm").enable();
+            Ext.getCmp("workspacesMainForm").up().enable();
             Ext.getCmp("workspacesMainForm").getForm().setValues(selected[0].getData());
             if ((selected[0].get("readOnly"))||(!ACL.interfaceRights["write.ui.workspaces"])){
                 Ext.Array.forEach(Ext.getCmp("workspacesMainForm").query("field"), function(field){
@@ -60,6 +63,7 @@ Ext.define('Rubedo.controller.WorkspacesController', {
                     field.setReadOnly(false);
                 });
             }
+            Ext.getCmp("workspacesDLSToolbar").recievei18n(selected[0].get("i18n"),selected[0].get("locale"));
         }
     },
 
@@ -67,6 +71,11 @@ Ext.define('Rubedo.controller.WorkspacesController', {
         var form = button.up().getForm();
         if (form.isValid()){
             var newW= Ext.create("Rubedo.model.workspaceModel", form.getValues());
+            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+            newW.set("nativeLanguage",nativeLanguage);
+            var i18n={ };
+            i18n[nativeLanguage]=form.getValues();
+            newW.set("i18n",i18n);
             Ext.getStore("WorkspacesStore").add(newW);
             Ext.getStore("WorkspacesStore").addListener("datachanged",function(){Ext.getCmp('workspacesGrid').getSelectionModel().select(newW);},this,{single:true});
             button.up().up().close();

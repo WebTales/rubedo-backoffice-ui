@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
     alias: 'widget.WorkspacesInterface',
 
     requires: [
+        'Rubedo.view.DLSToolbar',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -120,21 +121,38 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                     ]
                 },
                 {
-                    xtype: 'form',
-                    localiserId: 'propsPanel',
+                    xtype: 'panel',
                     flex: 1,
-                    disabled: true,
-                    id: 'workspacesMainForm',
-                    bodyPadding: 10,
+                    localiserId: 'propsPanel',
+                    layout: {
+                        type: 'card'
+                    },
                     title: 'Propriétés',
+                    dockedItems: [
+                        {
+                            xtype: 'DLSToolbar',
+                            dock: 'top',
+                            replicatorEntity: 'workspacesReplicator',
+                            id: 'workspacesDLSToolbar'
+                        }
+                    ],
                     items: [
                         {
-                            xtype: 'textfield',
-                            localiserId: 'nameField',
-                            anchor: '100%',
-                            fieldLabel: 'Nom',
-                            name: 'text',
-                            allowBlank: false
+                            xtype: 'form',
+                            id: 'workspacesMainForm',
+                            itemId: 'mainLocItem',
+                            bodyPadding: 10,
+                            title: '',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    localiserId: 'nameField',
+                                    anchor: '100%',
+                                    fieldLabel: 'Nom',
+                                    name: 'text',
+                                    allowBlank: false
+                                }
+                            ]
                         }
                     ]
                 }
