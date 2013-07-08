@@ -163,6 +163,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                 {
                     xtype: 'panel',
                     flex: 1,
+                    disabled: true,
                     layout: {
                         type: 'card'
                     },
@@ -170,7 +171,6 @@ Ext.define('Rubedo.view.sitesInterface', {
                     items: [
                         {
                             xtype: 'form',
-                            disabled: true,
                             id: 'mainSiteProps',
                             itemId: 'mainLocItem',
                             autoScroll: true,
