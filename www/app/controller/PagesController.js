@@ -55,6 +55,10 @@ Ext.define('Rubedo.controller.PagesController', {
             newPage.iconCls="masque-icon";
             newPage.site=Ext.getCmp("pagesSitesCombo").getValue();
             newPage.inheritWorkspace=true;
+            newPage.i18n={ };
+            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+            newPage.nativeLanguage=nativeLanguage;
+            newPage.i18n[nativeLanguage]={title:form.getValues().title};
             var store=Ext.getCmp("mainPageTree").getStore();
             store.suspendAutoSync();
             target.set("expandable",true);

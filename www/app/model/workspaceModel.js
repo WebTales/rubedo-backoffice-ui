@@ -35,6 +35,15 @@ Ext.define('Rubedo.model.workspaceModel', {
         {
             name: 'canContribute',
             type: 'boolean'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });
