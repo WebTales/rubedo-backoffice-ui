@@ -1,0 +1,88 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "taxonomyReplicator",
+        "designer|userAlias": "taxonomyReplicator",
+        "bodyPadding": 10,
+        "title": null
+    },
+    "designerId": "317b4759-85c1-4c25-81d9-1d850e62ab1c",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "nameField",
+                "layout|anchor": "100%",
+                "id": null,
+                "fieldLabel": "Nom ",
+                "name": "name",
+                "allowBlank": false
+            },
+            "designerId": "54e48701-6a3e-4421-b098-e0fd2684ceb0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "descriptionField",
+                "layout|anchor": "100%",
+                "id": null,
+                "itemId": null,
+                "fieldLabel": "Description ",
+                "name": "description"
+            },
+            "designerId": "f6baf0df-80c9-4948-a277-b9aa22d391ed",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "helpTextField",
+                "layout|anchor": "100%",
+                "id": null,
+                "fieldLabel": "Texte d'aide ",
+                "name": "helpText"
+            },
+            "designerId": "c514c882-cdac-44ca-876d-811148b65570",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

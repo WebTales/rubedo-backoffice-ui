@@ -169,7 +169,8 @@ Ext.application({
         'Rubedo.view.pagesLocProps',
         'Rubedo.view.DLSToolbar',
         'Rubedo.view.TranslationAdderWindow',
-        'Rubedo.view.workspacesReplicator'
+        'Rubedo.view.workspacesReplicator',
+        'Rubedo.view.taxonomyReplicator'
     ],
     models: [
         'sitesDataModel',
@@ -461,7 +462,8 @@ Ext.application({
         'pagesLocProps',
         'DLSToolbar',
         'TranslationAdderWindow',
-        'workspacesReplicator'
+        'workspacesReplicator',
+        'taxonomyReplicator'
     ],
     autoCreateViewport: true,
     controllers: [

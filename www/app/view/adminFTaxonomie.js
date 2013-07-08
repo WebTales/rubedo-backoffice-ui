@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
     alias: 'widget.adminFTaxonomie',
 
     requires: [
+        'Rubedo.view.DLSToolbar',
         'Rubedo.view.TermesTaxonomieTree',
         'Rubedo.view.WorkspaceCombo'
     ],
@@ -26,7 +27,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
     localiserId: 'taxonomyWindow',
     height: 578,
     id: 'adminFTaxonomie',
-    width: 1000,
+    width: 1133,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -243,87 +244,106 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             },
                             items: [
                                 {
-                                    xtype: 'form',
+                                    xtype: 'panel',
+                                    flex: 1,
                                     localiserId: 'propsPanel',
-                                    id: 'ProprietesTaxonomie',
-                                    width: 300,
-                                    autoScroll: true,
-                                    bodyPadding: 10,
+                                    layout: {
+                                        type: 'card'
+                                    },
                                     collapseDirection: 'left',
-                                    collapsed: false,
                                     collapsible: true,
                                     title: 'Propriétés',
                                     items: [
                                         {
-                                            xtype: 'textfield',
-                                            localiserId: 'nameField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Nom ',
-                                            name: 'name',
-                                            allowBlank: false
-                                        },
+                                            xtype: 'form',
+                                            id: 'ProprietesTaxonomie',
+                                            itemId: 'mainLocItem',
+                                            width: 300,
+                                            autoScroll: true,
+                                            bodyPadding: 10,
+                                            collapseDirection: 'left',
+                                            collapsed: false,
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    localiserId: 'nameField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Nom ',
+                                                    name: 'name',
+                                                    allowBlank: false
+                                                },
+                                                {
+                                                    xtype: 'textareafield',
+                                                    localiserId: 'descriptionField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Description ',
+                                                    name: 'description'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    localiserId: 'helpTextField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Texte d\'aide ',
+                                                    name: 'helpText'
+                                                },
+                                                me.processFacetOperator({
+                                                    xtype: 'combobox',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Facet operator',
+                                                    name: 'facetOperator',
+                                                    allowBlank: false,
+                                                    editable: false,
+                                                    forceSelection: true
+                                                }),
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    localiserId: 'expandableField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Extensible ',
+                                                    name: 'expandable',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                },
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    localiserId: 'inputAsTreeField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Saisie arborescente',
+                                                    name: 'inputAsTree',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                },
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    localiserId: 'multiSelectField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Choix multiple ',
+                                                    name: 'multiSelect',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                },
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    localiserId: 'mandatoryField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Obligatoire ',
+                                                    name: 'mandatory',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    dockedItems: [
                                         {
-                                            xtype: 'textareafield',
-                                            localiserId: 'descriptionField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Description ',
-                                            name: 'description'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'helpTextField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Texte d\'aide ',
-                                            name: 'helpText'
-                                        },
-                                        me.processFacetOperator({
-                                            xtype: 'combobox',
-                                            anchor: '100%',
-                                            fieldLabel: 'Facet operator',
-                                            name: 'facetOperator',
-                                            allowBlank: false,
-                                            editable: false,
-                                            forceSelection: true
-                                        }),
-                                        {
-                                            xtype: 'checkboxfield',
-                                            localiserId: 'expandableField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Extensible ',
-                                            name: 'expandable',
-                                            boxLabel: '',
-                                            inputValue: 'true',
-                                            uncheckedValue: 'false'
-                                        },
-                                        {
-                                            xtype: 'checkboxfield',
-                                            localiserId: 'inputAsTreeField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Saisie arborescente',
-                                            name: 'inputAsTree',
-                                            boxLabel: '',
-                                            inputValue: 'true',
-                                            uncheckedValue: 'false'
-                                        },
-                                        {
-                                            xtype: 'checkboxfield',
-                                            localiserId: 'multiSelectField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Choix multiple ',
-                                            name: 'multiSelect',
-                                            boxLabel: '',
-                                            inputValue: 'true',
-                                            uncheckedValue: 'false'
-                                        },
-                                        {
-                                            xtype: 'checkboxfield',
-                                            localiserId: 'mandatoryField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Obligatoire ',
-                                            name: 'mandatory',
-                                            boxLabel: '',
-                                            inputValue: 'true',
-                                            uncheckedValue: 'false'
+                                            xtype: 'DLSToolbar',
+                                            dock: 'top',
+                                            replicatorEntity: 'taxonomyReplicator',
+                                            id: 'taxonomyDLSToolbar'
                                         }
                                     ]
                                 },

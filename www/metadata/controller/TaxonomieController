@@ -52,6 +52,7 @@
                     "Ext.Array.forEach(Ext.getCmp(\"taxoRightsBox\").items.items, function(thingy){\r",
                     "thingy.setReadOnly((!ACL.interfaceRights[\"write.ui.taxonomy\"])||(record.get(\"readOnly\")));\r",
                     "});\r",
+                    "Ext.getCmp(\"taxonomyDLSToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"));\r",
                     "if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){\r",
                     "Ext.getCmp('TermesTaxonomieTree').destroy();}\r",
                     "var store = Ext.create('Ext.data.TreeStore', {\r",
@@ -230,6 +231,7 @@
                     "    if (Ext.getCmp(\"ProprietesTaxonomie\").getForm().isValid()){\r",
                     "        cibleR.set(Ext.getCmp(\"ProprietesTaxonomie\").getForm().getValues());\r",
                     "        cibleR.set(Ext.getCmp(\"taxoRightsBox\").getForm().getValues());\r",
+                    "        Ext.getCmp(\"taxonomyDLSToolbar\").persisti18n(cibleR);\r",
                     "    }\r",
                     "    cibleR.endEdit();\r",
                     "}"

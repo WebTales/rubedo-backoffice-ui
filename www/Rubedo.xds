@@ -2717,6 +2717,14 @@
                 "app/view/workspacesReplicator.js"
             ],
             "className": "workspacesReplicator"
+        },
+        "317b4759-85c1-4c25-81d9-1d850e62ab1c": {
+            "paths": [
+                "metadata/view/taxonomyReplicator",
+                "app/view/override/taxonomyReplicator.js",
+                "app/view/taxonomyReplicator.js"
+            ],
+            "className": "taxonomyReplicator"
         }
     },
     "viewOrderMap": {
@@ -2882,7 +2890,8 @@
             "bce7652b-a9e7-401d-951f-88b248abcd41",
             "966fdf36-b010-4ad3-a41f-3d4e8da9cf77",
             "d4099bd4-38b8-42ed-80b9-5dbde8b941c0",
-            "966303e3-8916-4e51-aa9f-00cee06be4fa"
+            "966303e3-8916-4e51-aa9f-00cee06be4fa",
+            "317b4759-85c1-4c25-81d9-1d850e62ab1c"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

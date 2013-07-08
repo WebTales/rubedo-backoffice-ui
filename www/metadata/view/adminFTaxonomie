@@ -11,7 +11,7 @@
         "container|align": "stretch",
         "height": 578,
         "id": "adminFTaxonomie",
-        "width": 1000,
+        "width": 1133,
         "designer|userClassName": "adminFTaxonomie",
         "designer|userAlias": "adminFTaxonomie",
         "layout": "hbox",
@@ -617,25 +617,21 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.Panel",
+                            "type": "Ext.panel.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "layout|flex": 1,
                                 "localiserId": "propsPanel",
-                                "layout|flex": null,
-                                "id": "ProprietesTaxonomie",
-                                "width": 300,
-                                "autoScroll": true,
-                                "bodyPadding": 10,
+                                "layout": "card",
                                 "collapseDirection": "left",
-                                "collapsed": false,
                                 "collapsible": true,
                                 "title": "Propriétés"
                             },
-                            "designerId": "c49a56cf-011f-46c0-9435-0f5bd8623f55",
+                            "designerId": "c5b69e7e-69a3-4a93-8678-bb1229026c2f",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -645,221 +641,257 @@
                             ],
                             "cn": [
                                 {
-                                    "type": "Ext.form.field.Text",
+                                    "type": "Ext.form.Panel",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "nameField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "fieldLabel": "Nom ",
-                                        "name": "name",
-                                        "allowBlank": false
+                                        "id": "ProprietesTaxonomie",
+                                        "itemId": "mainLocItem",
+                                        "width": 300,
+                                        "autoScroll": true,
+                                        "bodyPadding": 10,
+                                        "collapseDirection": "left",
+                                        "collapsed": false,
+                                        "title": null
                                     },
-                                    "designerId": "accbbeb7-c1cc-459a-ab8b-df32d4a45855",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.TextArea",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "descriptionField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "itemId": null,
-                                        "fieldLabel": "Description ",
-                                        "name": "description"
-                                    },
-                                    "designerId": "900247b2-df90-4243-947b-85f7cf846924",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "helpTextField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "fieldLabel": "Texte d'aide ",
-                                        "name": "helpText"
-                                    },
-                                    "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Facet operator",
-                                        "name": "facetOperator",
-                                        "allowBlank": false,
-                                        "editable": false,
-                                        "forceSelection": true,
-                                        "store": null
-                                    },
-                                    "configAlternates": {
-                                        "store": "array"
-                                    },
-                                    "designerId": "982f8200-cf92-46b7-bb97-dd91fc0398bc",
+                                    "designerId": "c49a56cf-011f-46c0-9435-0f5bd8623f55",
                                     "cn": [
                                         {
-                                            "type": "processcfgfunction",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processFacetOperator",
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "implHandler": [
-                                                    "config.store=[[\"AND\",Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\",Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
-                                                    "return config;"
-                                                ]
+                                                "localiserId": "nameField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "fieldLabel": "Nom ",
+                                                "name": "name",
+                                                "allowBlank": false
                                             },
-                                            "designerId": "4e0a507d-eb58-4f58-a2be-89c0232b33bd"
+                                            "designerId": "accbbeb7-c1cc-459a-ab8b-df32d4a45855",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.TextArea",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "descriptionField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "itemId": null,
+                                                "fieldLabel": "Description ",
+                                                "name": "description"
+                                            },
+                                            "designerId": "900247b2-df90-4243-947b-85f7cf846924",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "helpTextField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "fieldLabel": "Texte d'aide ",
+                                                "name": "helpText"
+                                            },
+                                            "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "Facet operator",
+                                                "name": "facetOperator",
+                                                "allowBlank": false,
+                                                "editable": false,
+                                                "forceSelection": true,
+                                                "store": null
+                                            },
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "982f8200-cf92-46b7-bb97-dd91fc0398bc",
+                                            "cn": [
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "processFacetOperator",
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "implHandler": [
+                                                            "config.store=[[\"AND\",Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\",Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "designerId": "4e0a507d-eb58-4f58-a2be-89c0232b33bd"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "expandableField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "fieldLabel": "Extensible ",
+                                                "name": "expandable",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "c7038d51-38ad-48b3-9a43-10a6ef10cd3b",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "inputAsTreeField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "fieldLabel": "Saisie arborescente",
+                                                "name": "inputAsTree",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "85b751eb-9e31-4abd-b396-e51e789f4419",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "multiSelectField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "fieldLabel": "Choix multiple ",
+                                                "name": "multiSelect",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "591a9d3d-a8bd-4cb9-b83d-119ae74c4a47",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "mandatoryField",
+                                                "layout|anchor": "100%",
+                                                "id": null,
+                                                "fieldLabel": "Obligatoire ",
+                                                "name": "mandatory",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "faf9fe8e-3157-427c-8f81-f5b3030b7c61",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Ext.form.field.Checkbox",
+                                    "type": "linkedinstance",
                                     "reference": {
-                                        "name": "items",
+                                        "name": "dockedItems",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "expandableField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "fieldLabel": "Extensible ",
-                                        "name": "expandable",
-                                        "boxLabel": "",
-                                        "inputValue": "true",
-                                        "uncheckedValue": "false"
+                                        "dock": "top",
+                                        "replicatorEntity": "taxonomyReplicator",
+                                        "id": "taxonomyDLSToolbar"
                                     },
-                                    "designerId": "c7038d51-38ad-48b3-9a43-10a6ef10cd3b",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "inputAsTreeField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "fieldLabel": "Saisie arborescente",
-                                        "name": "inputAsTree",
-                                        "boxLabel": "",
-                                        "inputValue": "true",
-                                        "uncheckedValue": "false"
-                                    },
-                                    "designerId": "85b751eb-9e31-4abd-b396-e51e789f4419",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "multiSelectField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "fieldLabel": "Choix multiple ",
-                                        "name": "multiSelect",
-                                        "boxLabel": "",
-                                        "inputValue": "true",
-                                        "uncheckedValue": "false"
-                                    },
-                                    "designerId": "591a9d3d-a8bd-4cb9-b83d-119ae74c4a47",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "mandatoryField",
-                                        "layout|anchor": "100%",
-                                        "id": null,
-                                        "fieldLabel": "Obligatoire ",
-                                        "name": "mandatory",
-                                        "boxLabel": "",
-                                        "inputValue": "true",
-                                        "uncheckedValue": "false"
-                                    },
-                                    "designerId": "faf9fe8e-3157-427c-8f81-f5b3030b7c61",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
+                                    "designerId": "02ceaa7f-5f9c-4245-b6ac-e32a23eaf8a8",
+                                    "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                                 }
                             ]
                         },

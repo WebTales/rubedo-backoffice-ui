@@ -50,6 +50,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     Ext.Array.forEach(Ext.getCmp("taxoRightsBox").items.items, function(thingy){
         thingy.setReadOnly((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly")));
     });
+    Ext.getCmp("taxonomyDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"));
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
     var store = Ext.create('Ext.data.TreeStore', {
@@ -183,6 +184,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
             if (Ext.getCmp("ProprietesTaxonomie").getForm().isValid()){
                 cibleR.set(Ext.getCmp("ProprietesTaxonomie").getForm().getValues());
                 cibleR.set(Ext.getCmp("taxoRightsBox").getForm().getValues());
+                Ext.getCmp("taxonomyDLSToolbar").persisti18n(cibleR);
             }
             cibleR.endEdit();
         }
