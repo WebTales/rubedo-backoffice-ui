@@ -828,7 +828,7 @@
                     "} else {\r",
                     "    var myRec=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",newValue,false,false,true).items[0];\r",
                     "    myBtn.setIconCls(null);\r",
-                    "    myBtn.setIcon('/assets/flags/16/'+myRec.get(\"iso2\").toUpperCase()+'.png');\r",
+                    "    myBtn.setIcon('/assets/flags/16/'+myRec.get(\"flagCode\")+'.png');\r",
                     "    myBtn.setTooltip(\"Current working language : \"+myRec.get(\"label\"));\r",
                     "    myBtn.setText(myRec.get(\"label\"));\r",
                     "}"

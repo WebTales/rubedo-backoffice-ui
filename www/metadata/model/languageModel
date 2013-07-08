@@ -119,6 +119,33 @@
                 "type": "boolean"
             },
             "designerId": "d7519d4c-5d77-43ca-bd1d-cb0f4ffc8597"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "\"_unknown\""
+                ],
+                "name": "flagCode"
+            },
+            "designerId": "e58f9dd0-de06-4f1e-8b17-0717724ab75e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ownLabel"
+            },
+            "designerId": "ff6439b9-f6e7-48ae-a120-0375291f1341"
         }
     ]
 }

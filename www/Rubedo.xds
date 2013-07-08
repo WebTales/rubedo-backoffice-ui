@@ -2733,6 +2733,14 @@
                 "app/view/sitesRepLoc.js"
             ],
             "className": "sitesRepLoc"
+        },
+        "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4": {
+            "paths": [
+                "metadata/store/flagsStore",
+                "app/store/override/flagsStore.js",
+                "app/store/flagsStore.js"
+            ],
+            "className": "flagsStore"
         }
     },
     "viewOrderMap": {
@@ -3005,7 +3013,8 @@
             "f4a3e43b-725c-4ad7-8034-3875dc71bb70",
             "3be2705f-c3a0-4c70-8ead-494722c051a0",
             "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56",
-            "15bd2509-2de3-4e02-8e27-22097d0bf2e1"
+            "15bd2509-2de3-4e02-8e27-22097d0bf2e1",
+            "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

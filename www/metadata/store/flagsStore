@@ -1,0 +1,60 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "storeId": "flagsStore",
+        "designer|userClassName": "flagsStore",
+        "designer|userAlias": "flagsStore"
+    },
+    "designerId": "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    \"read\":\"languages/get-flags-list\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "fd5c989c-953a-4756-a002-708781190387",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "84e96697-a1d1-4c6e-a634-579097856ca2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "code"
+            },
+            "designerId": "04801d96-b3f9-4ca0-a453-a6dba0d8f551"
+        }
+    ]
+}

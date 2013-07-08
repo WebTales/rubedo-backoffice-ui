@@ -21,9 +21,9 @@ Ext.define('Rubedo.view.languagesInterface', {
         'Rubedo.view.MyTool16'
     ],
 
-    height: 368,
+    height: 413,
     id: 'languagesInterface',
-    width: 281,
+    width: 435,
     layout: {
         type: 'fit'
     },
@@ -49,12 +49,44 @@ Ext.define('Rubedo.view.languagesInterface', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return('<img src="/assets/flags/16/'+record.get("iso2").toUpperCase()+'.png"> '+value);
+                                if (!Ext.isEmpty(value)){
+                                    return('<img src="/assets/flags/16/'+value+'.png"> ');
+                                } else return(value);
                             },
+                            dataIndex: 'flagCode',
+                            text: 'Flag',
+                            flex: 1,
+                            editor: me.processMyComboBox33({
+                                xtype: 'combobox',
+                                displayField: 'code',
+                                forceSelection: true,
+                                minChars: 1,
+                                queryMode: 'local',
+                                store: 'flagsStore',
+                                typeAhead: true,
+                                valueField: 'code'
+                            })
+                        },
+                        {
+                            xtype: 'gridcolumn',
                             dataIndex: 'label',
                             text: 'Name',
                             flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'ownLabel',
+                            text: 'Own name',
+                            flex: 1,
+                            editor: {
+                                xtype: 'textfield'
+                            }
                         }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+
+                        })
                     ]
                 })
             ],
@@ -66,6 +98,15 @@ Ext.define('Rubedo.view.languagesInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processMyComboBox33: function(config) {
+        config.tpl=Ext.create('Ext.XTemplate',
+        '<tpl for=".">',
+        '<div class="x-boundlist-item"><img src="/assets/flags/16/{code}.png"> - {code}</div>',
+        '</tpl>'
+        );
+        return config;
     },
 
     processMyGridPanel1: function(config) {

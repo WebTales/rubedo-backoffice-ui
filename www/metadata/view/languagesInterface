@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 368,
+        "height": 413,
         "id": "languagesInterface",
-        "width": 281,
+        "width": 435,
         "designer|userClassName": "languagesInterface",
         "designer|userAlias": "languagesInterface",
         "layout": "fit",
@@ -63,11 +63,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "label",
-                        "text": "Name",
+                        "dataIndex": "flagCode",
+                        "text": "Flag",
                         "flex": 1
                     },
-                    "designerId": "f67a8261-3f0f-4f93-b69e-33e8f74867de",
+                    "designerId": "6518f62c-a0ab-4106-8b92-30ea499fe6d4",
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -88,10 +88,94 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return('<img src=\"/assets/flags/16/'+record.get(\"iso2\").toUpperCase()+'.png\"> '+value);"
+                                    "if (!Ext.isEmpty(value)){\r",
+                                    "\treturn('<img src=\"/assets/flags/16/'+value+'.png\"> ');\r",
+                                    "} else return(value);"
                                 ]
                             },
-                            "designerId": "85155405-4c65-4af0-92b7-df4a9cf3d57d"
+                            "designerId": "2d48a299-50fd-468d-9349-087f62b70f98"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "code",
+                                "forceSelection": true,
+                                "minChars": 1,
+                                "queryMode": "local",
+                                "store": "flagsStore",
+                                "typeAhead": true,
+                                "valueField": "code"
+                            },
+                            "designerId": "bd549b40-f686-40d8-a3cd-2add1837385a",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processMyComboBox33",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.tpl=Ext.create('Ext.XTemplate',\r",
+                                            "'<tpl for=\".\">',\r",
+                                            "'<div class=\"x-boundlist-item\"><img src=\"/assets/flags/16/{code}.png\"> - {code}</div>',\r",
+                                            "'</tpl>'\r",
+                                            ");\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "b6c476cb-bfcb-4f96-bc76-dd7e2cf25d9b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "label",
+                        "text": "Name",
+                        "flex": 1
+                    },
+                    "designerId": "f67a8261-3f0f-4f93-b69e-33e8f74867de"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ownLabel",
+                        "text": "Own name",
+                        "flex": 1
+                    },
+                    "designerId": "717d1784-0e50-4d92-8638-a02bd33d9927",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "1335b3f2-acc2-4047-9bb3-04b774b8c1b2"
                         }
                     ]
                 },
@@ -128,6 +212,15 @@
                         ]
                     },
                     "designerId": "cd7006c8-eb5d-409b-8657-50defc3dc7ab"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "designerId": "2f05e9b9-1f83-4e5a-9c9e-6dc300bbbde3"
                 }
             ]
         },

@@ -65,10 +65,10 @@
                             "    fields:[{name:\"locale\"},{name:\"label\"}]\r",
                             "});\r",
                             "config.tpl=Ext.create('Ext.XTemplate',\r",
-                            "        '<tpl for=\".\">',\r",
-                            "                      '<div class=\"x-boundlist-item\"><img src=\"/assets/flags/16/{locale}.png\"> {label}</div>',\r",
-                            "        '</tpl>'\r",
-                            "    );\r",
+                            "'<tpl for=\".\">',\r",
+                            "'<div class=\"x-boundlist-item\"><img src=\"/assets/flags/16/{locale}.png\"> {label}</div>',\r",
+                            "'</tpl>'\r",
+                            ");\r",
                             "return config;"
                         ]
                     },

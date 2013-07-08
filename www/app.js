@@ -309,7 +309,8 @@ Ext.application({
         'AllLanguagesStore2',
         'MainLanguagesStore',
         'AllLanguagesStore3',
-        'TranslationAdderStore'
+        'TranslationAdderStore',
+        'flagsStore'
     ],
     views: [
         'MyContainer',

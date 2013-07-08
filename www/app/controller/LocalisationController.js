@@ -98,7 +98,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
         } else {
             var myRec=Ext.getStore("AllLanguagesStore3").query("locale",newValue,false,false,true).items[0];
             myBtn.setIconCls(null);
-            myBtn.setIcon('/assets/flags/16/'+myRec.get("iso2").toUpperCase()+'.png');
+            myBtn.setIcon('/assets/flags/16/'+myRec.get("flagCode")+'.png');
             myBtn.setTooltip("Current working language : "+myRec.get("label"));
             myBtn.setText(myRec.get("label"));
         }

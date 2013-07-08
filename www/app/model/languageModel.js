@@ -50,6 +50,13 @@ Ext.define('Rubedo.model.languageModel', {
             name: 'isDefault',
             persist: false,
             type: 'boolean'
+        },
+        {
+            defaultValue: '_unknown',
+            name: 'flagCode'
+        },
+        {
+            name: 'ownLabel'
         }
     ]
 });
