@@ -17,6 +17,8 @@ Ext.define('Rubedo.view.DLSToolbar', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.DLSToolbar',
 
+    hidden: true,
+
     initComponent: function() {
         var me = this;
 
@@ -87,6 +89,11 @@ Ext.define('Rubedo.view.DLSToolbar', {
         config.store=Ext.create('Ext.data.Store', {
             fields:[{name:"locale"},{name:"label"}]
         });
+        config.tpl=Ext.create('Ext.XTemplate',
+        '<tpl for=".">',
+        '<div class="x-boundlist-item"><img src="/assets/flags/16/{locale}.png"> {label}</div>',
+        '</tpl>'
+        );
         return config;
     },
 
@@ -113,15 +120,20 @@ Ext.define('Rubedo.view.DLSToolbar', {
                 me.up().remove(item);
             }
         });
-        Ext.Object.each(i18n, function(key, value, myself) {
-            me.getComponent(0).getStore().add({"locale":key,"label":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label")});
-            if(key!=locale){
-                var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
-                me.up().add(toAdd);
-                toAdd.getForm().setValues(value);
-            }
-        });
-        me.getComponent("LocSelectorCombo").setValue(locale);
+        if (!Ext.isEmpty(i18n)){
+            Ext.Object.each(i18n, function(key, value, myself) {
+                me.getComponent(0).getStore().add({"locale":key,"label":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label")});
+                if(key!=locale){
+                    var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
+                    me.up().add(toAdd);
+                    toAdd.getForm().setValues(value);
+                }
+            });
+            me.getComponent("LocSelectorCombo").setValue(locale);
+            me.show();
+        } else {
+            me.hide();
+        }
     },
 
     persisti18n: function(record) {

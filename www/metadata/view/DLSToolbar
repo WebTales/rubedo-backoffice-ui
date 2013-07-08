@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "border": null,
+        "hidden": true,
         "style": null,
         "designer|userClassName": "DLSToolbar",
         "designer|userAlias": "DLSToolbar"
@@ -63,6 +64,11 @@
                             "config.store=Ext.create('Ext.data.Store', {\r",
                             "    fields:[{name:\"locale\"},{name:\"label\"}]\r",
                             "});\r",
+                            "config.tpl=Ext.create('Ext.XTemplate',\r",
+                            "        '<tpl for=\".\">',\r",
+                            "                      '<div class=\"x-boundlist-item\"><img src=\"/assets/flags/16/{locale}.png\"> {label}</div>',\r",
+                            "        '</tpl>'\r",
+                            "    );\r",
                             "return config;"
                         ]
                     },
@@ -212,6 +218,7 @@
                     "        me.up().remove(item);\r",
                     "    }\r",
                     "});\r",
+                    "if (!Ext.isEmpty(i18n)){\r",
                     "Ext.Object.each(i18n, function(key, value, myself) {\r",
                     "    me.getComponent(0).getStore().add({\"locale\":key,\"label\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"label\")});\r",
                     "    if(key!=locale){\r",
@@ -220,7 +227,11 @@
                     "        toAdd.getForm().setValues(value);\r",
                     "    }\r",
                     "});\r",
-                    "me.getComponent(\"LocSelectorCombo\").setValue(locale);"
+                    "me.getComponent(\"LocSelectorCombo\").setValue(locale);\r",
+                    "me.show();\r",
+                    "} else {\r",
+                    "me.hide();\r",
+                    "}"
                 ]
             },
             "designerId": "2121f2fe-d3c0-4d9b-a603-37df98eaddc5"

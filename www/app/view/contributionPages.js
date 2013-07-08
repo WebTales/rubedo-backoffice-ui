@@ -569,9 +569,9 @@ Ext.define('Rubedo.view.contributionPages', {
                             dockedItems: [
                                 {
                                     xtype: 'DLSToolbar',
-                                    dock: 'top',
+                                    replicatorEntity: 'pagesLocProps',
                                     id: 'pagesDLSToolbar',
-                                    replicatorEntity: 'pagesLocProps'
+                                    dock: 'top'
                                 }
                             ]
                         },
