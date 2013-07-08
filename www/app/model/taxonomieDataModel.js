@@ -83,6 +83,15 @@ Ext.define('Rubedo.model.taxonomieDataModel', {
             name: 'order',
             persist: false,
             type: 'int'
+        },
+        {
+            name: 'nativeLanguage'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'i18n'
         }
     ]
 });

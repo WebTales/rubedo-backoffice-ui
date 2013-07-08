@@ -135,6 +135,11 @@ Ext.define('Rubedo.model.sitesDataModel', {
         {
             defaultValue: 'onlyOne',
             name: 'locStrategy'
+        },
+        {
+            defaultValue: false,
+            name: 'useBrowserLanguage',
+            type: 'boolean'
         }
     ]
 });

@@ -254,6 +254,15 @@ Ext.define('Rubedo.view.sitesInterface', {
                                     queryMode: 'local'
                                 }),
                                 {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Use browser language',
+                                    labelWidth: 110,
+                                    name: 'useBrowserLanguage',
+                                    inputValue: 'true',
+                                    uncheckedValue: 'false'
+                                },
+                                {
                                     xtype: 'textareafield',
                                     anchor: '100%',
                                     hidden: true,

@@ -445,6 +445,23 @@
                 "name": "locStrategy"
             },
             "designerId": "90415335-1bb7-48f5-8b9b-eb49317a8858"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "useBrowserLanguage",
+                "type": "boolean",
+                "designer|displayName": null
+            },
+            "designerId": "92ec37b2-4e35-4c83-a588-0f9a9398463c"
         }
     ]
 }

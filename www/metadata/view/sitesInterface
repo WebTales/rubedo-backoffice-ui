@@ -552,6 +552,24 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Use browser language",
+                                "labelWidth": 110,
+                                "name": "useBrowserLanguage",
+                                "boxLabel": null,
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "289ffab8-0e63-4513-8089-dc3766217e25"
+                        },
+                        {
                             "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",

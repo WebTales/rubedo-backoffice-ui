@@ -124,6 +124,7 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                     xtype: 'panel',
                     flex: 1,
                     localiserId: 'propsPanel',
+                    disabled: true,
                     layout: {
                         type: 'card'
                     },
