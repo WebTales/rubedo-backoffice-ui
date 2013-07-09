@@ -173,7 +173,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                         if (cibleI.hasChildNodes()){              
                             orderValue=cibleI.lastChild.get("orderValue")+100;
                         }
-                        var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                        var nativeLanguage=Ext.getCmp("taxonomyDLSToolbar").getComponent(0).getValue();
                         var i18n= { };
                         i18n[nativeLanguage]={text:champT.getValue()};
                         cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue, nativeLanguage:nativeLanguage,i18n:i18n});
@@ -319,7 +319,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                         if (cibleI.hasChildNodes()){              
                             orderValue=cibleI.lastChild.get("orderValue")+100;
                         }
-                        var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                        var nativeLanguage=Ext.getCmp("taxonomyDLSToolbar").getComponent(0).getValue();
                         var i18n= { };
                         i18n[nativeLanguage]={text:champT.getValue()};
                         cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue, nativeLanguage:nativeLanguage,i18n:i18n});
