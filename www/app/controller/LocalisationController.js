@@ -101,6 +101,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             myBtn.setIcon('/assets/flags/16/'+myRec.get("flagCode")+'.png');
             myBtn.setTooltip("Current working language : "+myRec.get("label"));
             myBtn.setText(myRec.get("label"));
+            if (!Ext.isEmpty(myRec.get("ownLabel"))){
+                myBtn.setText(myRec.get("ownLabel"));
+            }
         }
     },
 
@@ -743,6 +746,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
         myMenu.removeAll();
         Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(language){
             var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
+            if (!Ext.isEmpty(language.get("ownLabel"))){
+                newItem.setText(language.get("ownLabel"));
+            }
             newItem.on("click",function(){
                 Ext.getCmp("workingLanguageField").setValue(language.get("locale"));
                 Ext.getStore("CurrentUserDataStore").getRange()[0].set("workingLanguage",language.get("locale"));
