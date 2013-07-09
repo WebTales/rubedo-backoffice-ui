@@ -77,19 +77,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                 }),
                 me.processEnligne({
                     xtype: 'booleancolumn',
-                    filter: {
-                        type: 'combo',
-                        store: [
-                            [
-                                true,
-                                'Oui'
-                            ],
-                            [
-                                false,
-                                'Non'
-                            ]
-                        ]
-                    },
+                    filter: '{\r\n    type:"combo",\r\n    store: [\r\n                [true, Rubedo.RubedoAutomatedElementsLoc.yesText],\r\n                [false, Rubedo.RubedoAutomatedElementsLoc.noText]\r\n            ]\r\n}',
                     localiserId: 'onlineColumn',
                     width: 60,
                     dataIndex: 'online',

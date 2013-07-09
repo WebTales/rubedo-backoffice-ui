@@ -87,11 +87,11 @@ Ext.define('Rubedo.view.DLSToolbar', {
 
     processLocSelectorCombo: function(config) {
         config.store=Ext.create('Ext.data.Store', {
-            fields:[{name:"locale"},{name:"label"}]
+            fields:[{name:"locale"},{name:"label"},{name:"flagCode"}]
         });
         config.tpl=Ext.create('Ext.XTemplate',
         '<tpl for=".">',
-        '<div class="x-boundlist-item"><img src="/assets/flags/16/{locale}.png"> {label}</div>',
+        '<div class="x-boundlist-item"><img src="/assets/flags/16/{flagCode}.png"> {label}</div>',
         '</tpl>'
         );
         return config;
@@ -122,7 +122,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
         });
         if (!Ext.isEmpty(i18n)){
             Ext.Object.each(i18n, function(key, value, myself) {
-                me.getComponent(0).getStore().add({"locale":key,"label":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label")});
+                me.getComponent(0).getStore().add({"locale":key,"label":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label"),"flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
                 if(key!=locale){
                     var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
                     me.up().add(toAdd);
@@ -156,7 +156,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
 
     addTranslation: function(locale) {
         var me=this;
-        me.getComponent(0).getStore().add({"locale":locale,"label":Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("label")});
+        me.getComponent(0).getStore().add({"locale":locale,"label":Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("label"),"flagCode":Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("flagCode")});
         var toAdd=Ext.widget(me.replicatorEntity,{itemId:locale});
         me.up().add(toAdd);
         toAdd.getForm().setValues(me.up().getComponent("mainLocItem").getForm().getValues());

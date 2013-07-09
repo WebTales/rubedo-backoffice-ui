@@ -38,7 +38,6 @@ Ext.define('Rubedo.view.languagesInterface', {
             items: [
                 me.processMyGridPanel1({
                     xtype: 'gridpanel',
-                    managesStore: true,
                     title: '',
                     forceFit: false,
                     store: 'MainLanguagesStore',
@@ -69,12 +68,14 @@ Ext.define('Rubedo.view.languagesInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            filter: true,
                             dataIndex: 'label',
                             text: 'Name',
                             flex: 1
                         },
                         {
                             xtype: 'gridcolumn',
+                            filter: true,
                             dataIndex: 'ownLabel',
                             text: 'Own name',
                             flex: 1,
@@ -82,11 +83,6 @@ Ext.define('Rubedo.view.languagesInterface', {
                                 xtype: 'textfield'
                             }
                         }
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-
-                        })
                     ]
                 })
             ],
@@ -94,7 +90,17 @@ Ext.define('Rubedo.view.languagesInterface', {
                 {
                     xtype: 'mytool16'
                 }
-            ]
+            ],
+            listeners: {
+                render: {
+                    fn: me.onLanguagesInterfaceRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onLanguagesInterfaceBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -114,6 +120,13 @@ Ext.define('Rubedo.view.languagesInterface', {
             text: 'Active',
             dataIndex: 'active',
             width:60,
+            filter:{
+                type:"combo",
+                store: [
+                [true, Rubedo.RubedoAutomatedElementsLoc.yesText],
+                [false, Rubedo.RubedoAutomatedElementsLoc.noText]
+                ]
+            },
             listeners:{
                 beforecheckchange:function(cc,ix,isChecked){
                     if((!isChecked)&&(Ext.getStore("MainLanguagesStore").query("active",true).items.length<=1)){
@@ -126,7 +139,20 @@ Ext.define('Rubedo.view.languagesInterface', {
                 }
             }
         }));
+        config.plugins=[
+        Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true}),Ext.create('Ext.grid.plugin.CellEditing')
+
+        ];
         return config;
+    },
+
+    onLanguagesInterfaceRender: function(component, eOpts) {
+        Ext.getStore("MainLanguagesStore").load();
+    },
+
+    onLanguagesInterfaceBeforeClose: function(panel, eOpts) {
+        Ext.getStore("MainLanguagesStore").clearFilter(true);
+        Ext.getStore("MainLanguagesStore").removeAll();
     }
 
 });

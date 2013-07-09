@@ -26,7 +26,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": true,
                 "title": "",
                 "forceFit": false,
                 "store": "MainLanguagesStore"
@@ -35,13 +34,6 @@
                 "managesStore": "boolean"
             },
             "designerId": "397ebc72-864d-4c77-820c-e9c9b2b2828c",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "managesStore",
-                    "type": "string"
-                }
-            ],
             "cn": [
                 {
                     "type": "Ext.grid.View",
@@ -89,7 +81,7 @@
                                 ],
                                 "implHandler": [
                                     "if (!Ext.isEmpty(value)){\r",
-                                    "\treturn('<img src=\"/assets/flags/16/'+value+'.png\"> ');\r",
+                                    "    return('<img src=\"/assets/flags/16/'+value+'.png\"> ');\r",
                                     "} else return(value);"
                                 ]
                             },
@@ -148,11 +140,22 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "filter": true,
                         "dataIndex": "label",
                         "text": "Name",
                         "flex": 1
                     },
-                    "designerId": "f67a8261-3f0f-4f93-b69e-33e8f74867de"
+                    "configAlternates": {
+                        "filter": "boolean"
+                    },
+                    "designerId": "f67a8261-3f0f-4f93-b69e-33e8f74867de",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "filter",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -162,11 +165,22 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "filter": true,
                         "dataIndex": "ownLabel",
                         "text": "Own name",
                         "flex": 1
                     },
+                    "configAlternates": {
+                        "filter": "boolean"
+                    },
                     "designerId": "717d1784-0e50-4d92-8638-a02bd33d9927",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "filter",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -196,31 +210,33 @@
                             "    text: 'Active',\r",
                             "    dataIndex: 'active',\r",
                             "    width:60,\r",
+                            "    filter:{\r",
+                            "    type:\"combo\",\r",
+                            "    store: [\r",
+                            "                [true, Rubedo.RubedoAutomatedElementsLoc.yesText],\r",
+                            "                [false, Rubedo.RubedoAutomatedElementsLoc.noText]\r",
+                            "            ]\r",
+                            "},\r",
                             "    listeners:{\r",
                             "        beforecheckchange:function(cc,ix,isChecked){\r",
                             "            if((!isChecked)&&(Ext.getStore(\"MainLanguagesStore\").query(\"active\",true).items.length<=1)){\r",
                             "                var task = new Ext.util.DelayedTask(function(){\r",
-                            "                \tExt.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.atLeastOneLocError);\r",
-                            "                    });\r",
+                            "                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.atLeastOneLocError);\r",
+                            "                });\r",
                             "                task.delay(200);\r",
                             "                return(false);\r",
                             "            }\r",
                             "        }\r",
                             "    }\r",
                             "}));\r",
+                            "config.plugins=[\r",
+                            "        Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true}),Ext.create('Ext.grid.plugin.CellEditing')\r",
+                            "        \r",
+                            "    ];\r",
                             "return config;"
                         ]
                     },
                     "designerId": "cd7006c8-eb5d-409b-8657-50defc3dc7ab"
-                },
-                {
-                    "type": "Ext.grid.plugin.CellEditing",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "2f05e9b9-1f83-4e5a-9c9e-6dc300bbbde3"
                 }
             ]
         },
@@ -233,6 +249,41 @@
             "codeClass": null,
             "designerId": "3a44eeb5-24e9-480a-9b6c-29ecb9511832",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLanguagesInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"MainLanguagesStore\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "c0b1843a-a56d-4fef-aa9a-ae71bed04309"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLanguagesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"MainLanguagesStore\").clearFilter(true);\r",
+                    "Ext.getStore(\"MainLanguagesStore\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "291e467c-b133-4419-990b-42c114ff75b1"
         }
     ]
 }

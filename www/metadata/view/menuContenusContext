@@ -200,8 +200,8 @@
                     "{\r",
                     "    type:\"combo\",\r",
                     "    store: [\r",
-                    "                [true, 'Oui'],\r",
-                    "                [false, 'Non']\r",
+                    "                [true, Rubedo.RubedoAutomatedElementsLoc.yesText],\r",
+                    "                [false, Rubedo.RubedoAutomatedElementsLoc.noText]\r",
                     "            ]\r",
                     "}"
                 ],
