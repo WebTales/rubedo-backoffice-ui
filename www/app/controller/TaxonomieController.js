@@ -230,11 +230,16 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     newVocabulary: function(button, e, eOpts) {
         if (Ext.getCmp('champCreerTaxo').isValid()) {
+            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+            var i18n= { };
+            i18n[nativeLanguage]={name:Ext.getCmp('champCreerTaxo').getValue()};
             var nouveauVocab = Ext.create('model.taxonomieDataModel', {
                 name: Ext.getCmp('champCreerTaxo').getValue(),
                 extendable: false,
                 multiSelect: true,
-                mandatory: false
+                mandatory: false,
+                i18n:i18n,
+                nativeLanguage:nativeLanguage
             });
             Ext.getCmp('AdminfTaxonomieGrid').getStore().add(nouveauVocab);
             Ext.getCmp('AdminfTaxonomieGrid').getStore().addListener("datachanged",function(){Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().select(nouveauVocab);},this,{single:true});
