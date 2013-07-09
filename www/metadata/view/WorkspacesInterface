@@ -284,8 +284,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "localiserId": "propsPanel",
+                "layout|flex": 1,
                 "disabled": true,
                 "layout": "card",
                 "title": "Propriétés"
@@ -307,9 +307,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top",
                         "replicatorEntity": "workspacesReplicator",
-                        "id": "workspacesDLSToolbar"
+                        "id": "workspacesDLSToolbar",
+                        "dock": "top"
                     },
                     "designerId": "c79eb712-a3dd-414d-b742-bcce9705e88d",
                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"

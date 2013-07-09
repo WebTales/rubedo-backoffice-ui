@@ -278,7 +278,8 @@
                 "fn": "onLanguagesInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"MainLanguagesStore\").clearFilter(true);\r",
-                    "Ext.getStore(\"MainLanguagesStore\").removeAll();"
+                    "Ext.getStore(\"MainLanguagesStore\").removeAll();\r",
+                    "Rubedo.controller.LocalisationController.prototype.correctLanguageMenu();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

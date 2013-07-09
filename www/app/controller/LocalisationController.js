@@ -115,7 +115,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
     },
 
     onWorkingLanguageBtnClick: function(button, e, eOpts) {
-        Ext.widget("workingLanguageChangeWindow").show();
+        //Ext.widget("workingLanguageChangeWindow").show();
     },
 
     onCurrentLanguageChangeSubmitBtnClick: function(button, e, eOpts) {
@@ -346,7 +346,6 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "thisVocabularyText":"this vocabulary",
             "atLeastOneLocError":"At least one language must be active"
         });
-
 
         this.control({
             "#RHelpBtn": {
@@ -641,6 +640,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
                 }
             });
         }
+        this.correctLanguageMenu();
 
 
 
@@ -736,6 +736,21 @@ Ext.define('Rubedo.controller.LocalisationController', {
             locObj[finalId]=targetString;
         }
         return(finalId);
+    },
+
+    correctLanguageMenu: function() {
+        var myMenu=Ext.getCmp("LanguageChangerMenu");
+        myMenu.removeAll();
+        Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(language){
+            var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
+            newItem.on("click",function(){
+                Ext.getCmp("workingLanguageField").setValue(language.get("locale"));
+                Ext.getStore("CurrentUserDataStore").getRange()[0].set("workingLanguage",language.get("locale"));
+            });
+            myMenu.add(newItem);
+
+        });
+
     }
 
 });

@@ -69,7 +69,27 @@ Ext.define('Rubedo.view.EnteteV', {
                     iconCls: 'infoWarning',
                     text: '',
                     tooltip: 'No working language selected',
-                    tooltipType: 'title'
+                    tooltipType: 'title',
+                    menu: {
+                        xtype: 'menu',
+                        frame: true,
+                        id: 'LanguageChangerMenu',
+                        minWidth: 60,
+                        items: [
+                            {
+                                xtype: 'menuitem',
+                                text: 'Menu Item'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Menu Item'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Menu Item'
+                            }
+                        ]
+                    }
                 },
                 {
                     xtype: 'tbseparator'

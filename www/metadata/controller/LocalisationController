@@ -247,8 +247,7 @@
                     "    \"thisMediaText\":\"this digital asset\",\r",
                     "    \"thisVocabularyText\":\"this vocabulary\",\r",
                     "    \"atLeastOneLocError\":\"At least one language must be active\"\r",
-                    "});\r",
-                    ""
+                    "});"
                 ]
             },
             "designerId": "02134674-1f73-49b0-ab08-b1257bec9f4e"
@@ -640,6 +639,7 @@
                     "        }\r",
                     "    });\r",
                     "}\r",
+                    "this.correctLanguageMenu();\r",
                     "\r",
                     "\r",
                     "\r",
@@ -875,7 +875,7 @@
             "userConfig": {
                 "fn": "onWorkingLanguageBtnClick",
                 "implHandler": [
-                    "Ext.widget(\"workingLanguageChangeWindow\").show();"
+                    "//Ext.widget(\"workingLanguageChangeWindow\").show();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -907,6 +907,32 @@
                 "designer|controlQuery": "#currentLanguageChangeSubmitBtn"
             },
             "designerId": "06a5ed2d-d911-442e-b51e-edf409c3a85c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "correctLanguageMenu",
+                "implHandler": [
+                    "var myMenu=Ext.getCmp(\"LanguageChangerMenu\");\r",
+                    "myMenu.removeAll();\r",
+                    "Ext.Array.forEach(Ext.getStore(\"AllLanguagesStore3\").getRange(),function(language){\r",
+                    "    var newItem=Ext.widget(\"menuitem\",{text:language.get(\"label\"), icon:\"/assets/flags/16/\"+language.get(\"flagCode\")+\".png\"});\r",
+                    "    newItem.on(\"click\",function(){\r",
+                    "    \tExt.getCmp(\"workingLanguageField\").setValue(language.get(\"locale\"));\r",
+                    "        Ext.getStore(\"CurrentUserDataStore\").getRange()[0].set(\"workingLanguage\",language.get(\"locale\"));\r",
+                    "    });\r",
+                    "    myMenu.add(newItem);\r",
+                    "    \r",
+                    "});\r",
+                    ""
+                ]
+            },
+            "designerId": "e0efd64f-9e4e-4678-9ce1-e6db77ea2d0b"
         }
     ]
 }

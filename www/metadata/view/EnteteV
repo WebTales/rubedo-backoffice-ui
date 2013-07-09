@@ -126,7 +126,62 @@
             "configAlternates": {
                 "tooltip": "string"
             },
-            "designerId": "3f58e393-0c02-4182-8c2b-aa3ba8d5142b"
+            "designerId": "3f58e393-0c02-4182-8c2b-aa3ba8d5142b",
+            "cn": [
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": true,
+                        "id": "LanguageChangerMenu",
+                        "minWidth": 60,
+                        "width": null
+                    },
+                    "designerId": "53b6f53e-ede6-4e3d-92e7-374209cf1cb8",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Menu Item"
+                            },
+                            "designerId": "ada52acd-987e-45fc-ae74-c6bb75864b5c"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Menu Item"
+                            },
+                            "designerId": "d1309dd0-ea82-427d-9115-68316345eb8e"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Menu Item"
+                            },
+                            "designerId": "f75d8f21-6f45-4bea-952f-1a0534dd55a6"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "Ext.toolbar.Separator",

@@ -153,6 +153,7 @@ Ext.define('Rubedo.view.languagesInterface', {
     onLanguagesInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("MainLanguagesStore").clearFilter(true);
         Ext.getStore("MainLanguagesStore").removeAll();
+        Rubedo.controller.LocalisationController.prototype.correctLanguageMenu();
     }
 
 });

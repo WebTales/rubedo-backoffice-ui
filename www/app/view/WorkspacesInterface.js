@@ -122,8 +122,8 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                 },
                 {
                     xtype: 'panel',
-                    flex: 1,
                     localiserId: 'propsPanel',
+                    flex: 1,
                     disabled: true,
                     layout: {
                         type: 'card'
@@ -132,9 +132,9 @@ Ext.define('Rubedo.view.WorkspacesInterface', {
                     dockedItems: [
                         {
                             xtype: 'DLSToolbar',
-                            dock: 'top',
                             replicatorEntity: 'workspacesReplicator',
-                            id: 'workspacesDLSToolbar'
+                            id: 'workspacesDLSToolbar',
+                            dock: 'top'
                         }
                     ],
                     items: [
