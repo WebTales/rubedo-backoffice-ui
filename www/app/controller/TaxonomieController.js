@@ -173,7 +173,10 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                         if (cibleI.hasChildNodes()){              
                             orderValue=cibleI.lastChild.get("orderValue")+100;
                         }
-                        cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
+                        var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                        var i18n= { };
+                        i18n[nativeLanguage]={text:champT.getValue()};
+                        cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue, nativeLanguage:nativeLanguage,i18n:i18n});
 
                         Ext.getCmp('nouveauTermeTaxoField').setValue();
                         Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
@@ -187,7 +190,6 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
             }
         }
-
     },
 
     saveVocabulary: function(button, e, eOpts) {
@@ -312,7 +314,10 @@ Ext.define('Rubedo.controller.TaxonomieController', {
                         if (cibleI.hasChildNodes()){              
                             orderValue=cibleI.lastChild.get("orderValue")+100;
                         }
-                        cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue});
+                        var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                        var i18n= { };
+                        i18n[nativeLanguage]={text:champT.getValue()};
+                        cibleI.appendChild({text: champT.getValue(), vocabularyId:mainTaxo.get("id"),expandable:false, orderValue: orderValue, nativeLanguage:nativeLanguage,i18n:i18n});
                         Ext.getCmp('TermesTaxonomieTree').getStore().resumeAutoSync();
                         Ext.getCmp('TermesTaxonomieTree').getStore().sync();
                         button.up().up().close();

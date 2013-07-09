@@ -162,13 +162,15 @@
                             "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
                             "}\r",
                             "else if ((record.get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.taxonomyTerms\"])) {\r",
-                            "    var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");\r",
+                            "    try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                            "    catch(err){var myFlagCode=\"_unknown\";}\r",
                             "    record.data.allowDrop=false;\r",
                             "    record.data.allowDrag=false;\r",
                             "    return(\"<i style=\\\"color:#777;\\\">\"+value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"></i>\");\r",
                             "\r",
                             "} else {\r",
-                            "    var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");\r",
+                            "    try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                            "    catch(err){var myFlagCode=\"_unknown\";}\r",
                             "    return(value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\">\");\r",
                             "}"
                         ]

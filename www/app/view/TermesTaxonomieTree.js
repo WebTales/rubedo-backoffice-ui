@@ -55,13 +55,15 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                             return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                         }
                         else if ((record.get("readOnly"))||(!ACL.interfaceRights["write.ui.taxonomyTerms"])) {
-                            var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");
+                            try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                            catch(err){var myFlagCode="_unknown";}
                             record.data.allowDrop=false;
                             record.data.allowDrag=false;
                             return("<i style=\"color:#777;\">"+value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\"></i>");
 
                         } else {
-                            var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");
+                            try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                            catch(err){var myFlagCode="_unknown";}
                             return(value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\">");
                         }
                     },
