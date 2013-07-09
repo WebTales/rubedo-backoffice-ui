@@ -61,10 +61,6 @@ Ext.define('Rubedo.controller.LocalisationController', {
         }
         if ((component.isXType("field"))||(component.isXType("checkboxgroup"))||(component.isXType("radiogroup"))){
             component.labelSeparator=" ";
-            if (component.name=="localizable"){
-                //temporary localiser hide
-                component.hide();
-            }
         }
     },
 

@@ -313,10 +313,6 @@
                     "}\r",
                     "if ((component.isXType(\"field\"))||(component.isXType(\"checkboxgroup\"))||(component.isXType(\"radiogroup\"))){\r",
                     "    component.labelSeparator=\" \";\r",
-                    "    if (component.name==\"localizable\"){\r",
-                    "        //temporary localiser hide\r",
-                    "        component.hide();\r",
-                    "    }\r",
                     "}"
                 ],
                 "name": "beforerender",
