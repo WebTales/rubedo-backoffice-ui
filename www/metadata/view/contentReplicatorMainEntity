@@ -1,0 +1,118 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 101,
+        "id": null,
+        "itemId": null,
+        "designer|userClassName": "contentReplicatorMainEntity",
+        "designer|userAlias": "contentReplicatorMainEntity",
+        "autoScroll": true,
+        "bodyPadding": 10,
+        "title": ""
+    },
+    "designerId": "03bb1252-0954-4b34-adc7-949ff8f3bee5",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "padding": 10,
+                "layout": "anchor"
+            },
+            "designerId": "f61eb979-cd9b-4dbe-9984-12ca01c11e67",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "contentTitleField",
+                        "RTip": "Content title. Mandatory.",
+                        "layout|anchor": "90%",
+                        "style": [
+                            "{float:left}"
+                        ],
+                        "fieldLabel": "Title *",
+                        "labelSeparator": null,
+                        "name": "text",
+                        "allowBlank": false
+                    },
+                    "designerId": "be4a01f8-38c5-4c7c-bc68-e9af5ca8deec",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "RTip",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "padding": 10,
+                "layout": "anchor"
+            },
+            "designerId": "49666d3d-d854-445b-9b78-8d85a494d873",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "summaryField",
+                        "RTip": "Résumé facultatif du contenu.",
+                        "layout|anchor": "90%",
+                        "style": [
+                            "{float:left}"
+                        ],
+                        "fieldLabel": "Résumé ",
+                        "labelSeparator": " ",
+                        "name": "summary"
+                    },
+                    "designerId": "4ea3a568-29a9-48eb-b1f5-2c460137a371",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "RTip",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

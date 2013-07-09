@@ -2741,6 +2741,14 @@
                 "app/store/flagsStore.js"
             ],
             "className": "flagsStore"
+        },
+        "03bb1252-0954-4b34-adc7-949ff8f3bee5": {
+            "paths": [
+                "metadata/view/contentReplicatorMainEntity",
+                "app/view/override/contentReplicatorMainEntity.js",
+                "app/view/contentReplicatorMainEntity.js"
+            ],
+            "className": "contentReplicatorMainEntity"
         }
     },
     "viewOrderMap": {
@@ -2908,7 +2916,8 @@
             "d4099bd4-38b8-42ed-80b9-5dbde8b941c0",
             "966303e3-8916-4e51-aa9f-00cee06be4fa",
             "317b4759-85c1-4c25-81d9-1d850e62ab1c",
-            "e228d799-f13d-4c58-8852-63ccae95bd0f"
+            "e228d799-f13d-4c58-8852-63ccae95bd0f",
+            "03bb1252-0954-4b34-adc7-949ff8f3bee5"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

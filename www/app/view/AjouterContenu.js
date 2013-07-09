@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
     alias: 'widget.ajouterContenu',
 
     requires: [
+        'Rubedo.view.DLSToolbar',
         'Rubedo.view.WorkspaceCombo',
         'Rubedo.view.NestedContentsGrid',
         'Rubedo.view.MyTool17',
@@ -105,7 +106,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         {
                             xtype: 'panel',
                             layout: {
-                                type: 'fit'
+                                type: 'card'
                             },
                             title: 'Edition',
                             tabConfig: {
@@ -117,6 +118,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                     xtype: 'form',
                                     height: 101,
                                     id: 'boiteAChampsContenus',
+                                    itemId: 'mainLocItem',
                                     autoScroll: true,
                                     bodyPadding: 10,
                                     title: '',
@@ -162,6 +164,15 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             ]
                                         }
                                     ]
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'DLSToolbar',
+                                    dock: 'top',
+                                    replicatorEntity: 'contentReplicatorMainEntity',
+                                    specialContentsMode: true,
+                                    id: 'contentsDLSToolbar'
                                 }
                             ]
                         },

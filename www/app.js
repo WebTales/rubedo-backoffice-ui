@@ -171,7 +171,8 @@ Ext.application({
         'Rubedo.view.TranslationAdderWindow',
         'Rubedo.view.workspacesReplicator',
         'Rubedo.view.taxonomyReplicator',
-        'Rubedo.view.sitesRepLoc'
+        'Rubedo.view.sitesRepLoc',
+        'Rubedo.view.contentReplicatorMainEntity'
     ],
     models: [
         'sitesDataModel',
@@ -467,7 +468,8 @@ Ext.application({
         'TranslationAdderWindow',
         'workspacesReplicator',
         'taxonomyReplicator',
-        'sitesRepLoc'
+        'sitesRepLoc',
+        'contentReplicatorMainEntity'
     ],
     autoCreateViewport: true,
     controllers: [

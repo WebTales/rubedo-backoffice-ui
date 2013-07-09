@@ -261,7 +261,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout": "fit",
+                        "layout": "card",
                         "title": "Edition"
                     },
                     "designerId": "abd37294-8462-47b8-a2cf-649c1257bdb5",
@@ -295,6 +295,7 @@
                             "userConfig": {
                                 "height": 101,
                                 "id": "boiteAChampsContenus",
+                                "itemId": "mainLocItem",
                                 "autoScroll": true,
                                 "bodyPadding": 10,
                                 "title": ""
@@ -399,6 +400,22 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "replicatorEntity": "contentReplicatorMainEntity",
+                                "specialContentsMode": true,
+                                "id": "contentsDLSToolbar"
+                            },
+                            "designerId": "e3bc6e5d-bcca-43a3-9b68-d8e491bd7510",
+                            "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
                     ]
                 },

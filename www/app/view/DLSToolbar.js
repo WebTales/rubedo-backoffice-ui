@@ -133,7 +133,11 @@ Ext.define('Rubedo.view.DLSToolbar', {
                 if(key!=locale){
                     var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
                     me.up().add(toAdd);
-                    toAdd.getForm().setValues(value);
+                    if (me.specialContentsMode){
+                        toAdd.getForm().setValues(value.fields);
+                    }else{
+                        toAdd.getForm().setValues(value);
+                    }
                     if (me.up().getComponent("mainLocItem").query("field")[0].readOnly){
                         Ext.Array.forEach(toAdd.query("field"), function(field){field.setReadOnly(true);});
                     }
@@ -152,10 +156,18 @@ Ext.define('Rubedo.view.DLSToolbar', {
         var newOne={ };
         var items=me.up().items.items;
         Ext.Array.forEach(items,function(item){
-            if(item.itemId=="mainLocItem"){
-                newOne[me.mainLocale]=item.getForm().getValues();
-            } else {
-                newOne[item.itemId]=item.getForm().getValues();
+            if (me.specialContentsMode){
+                if(item.itemId=="mainLocItem"){
+                    newOne[me.mainLocale]={fields:item.getForm().getValues()};
+                } else {
+                    newOne[item.itemId]={fields:item.getForm().getValues()};
+                }
+            }else{
+                if(item.itemId=="mainLocItem"){
+                    newOne[me.mainLocale]=item.getForm().getValues();
+                } else {
+                    newOne[item.itemId]=item.getForm().getValues();
+                }
             }
         });
         record.set("i18n",newOne);
