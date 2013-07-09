@@ -58,6 +58,19 @@ Ext.define('Rubedo.model.taxonomyTermModel', {
             defaultValue: false,
             name: 'isNotPage',
             persist: false
+        },
+        {
+            name: 'nativeLanguage'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'decoyField',
+            persist: false
         }
     ]
 });

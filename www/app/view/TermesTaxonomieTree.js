@@ -55,23 +55,44 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                             return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                         }
                         else if ((record.get("readOnly"))||(!ACL.interfaceRights["write.ui.taxonomyTerms"])) {
+                            var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");
                             record.data.allowDrop=false;
                             record.data.allowDrag=false;
-                            return("<i style=\"color:#777;\">"+value+"</i>");
+                            return("<i style=\"color:#777;\">"+value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\"></i>");
 
                         } else {
-                            return(value);
+                            var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");
+                            return(value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\">");
                         }
                     },
                     localiserId: 'termsCol',
                     dataIndex: 'text',
-                    text: 'Termes',
+                    text: 'Termes'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        var lang=Ext.getCmp("specialLangTermColumn").usedLanguage;
+                        if (record.isRoot()) {return(null);}
+                        else if (!Ext.isEmpty(record.get("i18n")[lang])){
+                            return(record.get("i18n")[lang].text);
+                        } else {return("");}
+                    },
+                    usedLanguage: 'en',
+                    id: 'specialLangTermColumn',
+                    dataIndex: 'decoyField',
+                    text: 'English',
                     editor: {
-                        xtype: 'textfield',
-                        allowBlank: false
+                        xtype: 'textfield'
                     }
                 }
-            ]
+            ],
+            listeners: {
+                itemclick: {
+                    fn: me.onTermesTaxonomieTreeItemClick,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -119,6 +140,15 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
             Ext.getCmp("TermesTaxonomieTree").getStore().sync();
         });
         task.delay(200);
+    },
+
+    onTermesTaxonomieTreeItemClick: function(dataview, record, item, index, e, eOpts) {
+        var lang=Ext.getCmp("specialLangTermColumn").usedLanguage;
+        if (Ext.isEmpty(record.get("i18n")[lang])){
+            record.set("decoyField","");
+        } else {
+            record.set("decoyField",record.get("i18n")[lang].text);
+        }
     }
 
 });

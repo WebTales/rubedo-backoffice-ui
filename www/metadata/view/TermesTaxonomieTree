@@ -140,18 +140,6 @@
             ],
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "editor",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowBlank": false
-                    },
-                    "designerId": "5e6180c1-591d-42a9-96b8-f27edff43f95"
-                },
-                {
                     "type": "fixedfunction",
                     "reference": {
                         "name": "items",
@@ -174,18 +162,103 @@
                             "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
                             "}\r",
                             "else if ((record.get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.taxonomyTerms\"])) {\r",
+                            "    var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");\r",
                             "    record.data.allowDrop=false;\r",
                             "    record.data.allowDrag=false;\r",
-                            "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
+                            "    return(\"<i style=\\\"color:#777;\\\">\"+value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"></i>\");\r",
                             "\r",
                             "} else {\r",
-                            "    return(value);\r",
+                            "    var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");\r",
+                            "    return(value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\">\");\r",
                             "}"
                         ]
                     },
                     "designerId": "73583cbc-947c-4cf6-8c42-0fd757af6dd0"
                 }
             ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "usedLanguage": "en",
+                "id": "specialLangTermColumn",
+                "dataIndex": "decoyField",
+                "text": "English"
+            },
+            "designerId": "3424dae7-4b88-420b-9c2c-1bef0e7e0f51",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "usedLanguage",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "var lang=Ext.getCmp(\"specialLangTermColumn\").usedLanguage;\r",
+                            "if (record.isRoot()) {return(null);}\r",
+                            "else if (!Ext.isEmpty(record.get(\"i18n\")[lang])){\r",
+                            "return(record.get(\"i18n\")[lang].text);\r",
+                            "} else {return(\"\");}"
+                        ]
+                    },
+                    "designerId": "ad8e22ce-2552-4e99-9833-b8020ad21876"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "2aff21be-3be8-4f4e-82f0-82bf635527fb"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTermesTaxonomieTreeItemClick",
+                "implHandler": [
+                    "var lang=Ext.getCmp(\"specialLangTermColumn\").usedLanguage;\r",
+                    "if (Ext.isEmpty(record.get(\"i18n\")[lang])){\r",
+                    "    record.set(\"decoyField\",\"\");\r",
+                    "} else {\r",
+                    "    record.set(\"decoyField\",record.get(\"i18n\")[lang].text);\r",
+                    "}"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "designerId": "732569e4-a773-4994-868a-8a0e5811e4ff"
         }
     ]
 }

@@ -624,8 +624,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
                                 "localiserId": "propsPanel",
+                                "layout|flex": 1,
                                 "layout": "card",
                                 "collapseDirection": "left",
                                 "collapsible": true,
@@ -886,9 +886,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dock": "top",
                                         "replicatorEntity": "taxonomyReplicator",
-                                        "id": "taxonomyDLSToolbar"
+                                        "specialTaxoMode": true,
+                                        "id": "taxonomyDLSToolbar",
+                                        "dock": "top"
                                     },
                                     "designerId": "02ceaa7f-5f9c-4245-b6ac-e32a23eaf8a8",
                                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"

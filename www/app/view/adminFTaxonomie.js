@@ -245,8 +245,8 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                             items: [
                                 {
                                     xtype: 'panel',
-                                    flex: 1,
                                     localiserId: 'propsPanel',
+                                    flex: 1,
                                     layout: {
                                         type: 'card'
                                     },
@@ -341,9 +341,10 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                     dockedItems: [
                                         {
                                             xtype: 'DLSToolbar',
-                                            dock: 'top',
                                             replicatorEntity: 'taxonomyReplicator',
-                                            id: 'taxonomyDLSToolbar'
+                                            specialTaxoMode: true,
+                                            id: 'taxonomyDLSToolbar',
+                                            dock: 'top'
                                         }
                                     ]
                                 },

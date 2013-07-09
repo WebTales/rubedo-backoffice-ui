@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "specialTaxoMode": false,
         "border": null,
         "hidden": true,
         "style": null,
@@ -13,7 +14,8 @@
         "designer|userAlias": "DLSToolbar"
     },
     "configAlternates": {
-        "style": "string"
+        "style": "string",
+        "specialTaxoMode": "boolean"
     },
     "designerId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0",
     "customConfigs": [
@@ -25,6 +27,11 @@
         {
             "group": "(Custom Properties)",
             "name": "mainLocale",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "specialTaxoMode",
             "type": "string"
         }
     ],
@@ -92,6 +99,11 @@
                             "    } else {\r",
                             "        me.up().getLayout().setActiveItem(me.up().getComponent(newValue));\r",
                             "        me.getComponent(\"LocRemoveBtn\").enable();\r",
+                            "    }\r",
+                            "    if (me.specialTaxoMode){\r",
+                            "        Ext.getCmp(\"specialLangTermColumn\").usedLanguage=newValue;\r",
+                            "        Ext.getCmp(\"TermesTaxonomieTree\").getView().refresh();\r",
+                            "        Ext.getCmp(\"specialLangTermColumn\").setText(field.getRawValue());\r",
                             "    }\r",
                             "}"
                         ],
@@ -258,7 +270,7 @@
                     "var items=me.up().items.items;\r",
                     "Ext.Array.forEach(items,function(item){\r",
                     "    if(item.itemId==\"mainLocItem\"){\r",
-                    "\t\tnewOne[me.mainLocale]=item.getForm().getValues();\r",
+                    "        newOne[me.mainLocale]=item.getForm().getValues();\r",
                     "    } else {\r",
                     "        newOne[item.itemId]=item.getForm().getValues();\r",
                     "    }\r",

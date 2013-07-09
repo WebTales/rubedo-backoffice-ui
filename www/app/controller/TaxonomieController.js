@@ -50,7 +50,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     Ext.Array.forEach(Ext.getCmp("taxoRightsBox").items.items, function(thingy){
         thingy.setReadOnly((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly")));
     });
-    Ext.getCmp("taxonomyDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"));
+
     if (Ext.isDefined(Ext.getCmp('TermesTaxonomieTree'))){
     Ext.getCmp('TermesTaxonomieTree').destroy();}
     var store = Ext.create('Ext.data.TreeStore', {
@@ -112,7 +112,20 @@ Ext.define('Rubedo.controller.TaxonomieController', {
         clicksToEdit:2
     })
     ];
-    plugins[0].on("beforeedit", function(a,b){if ((b.record.get("readOnly"))||(b.record.isRoot())){return(false);}});
+    plugins[0].on("beforeedit", function(a,b){
+        if ((b.record.get("readOnly"))||(b.record.isRoot())){return(false);}
+    });
+    plugins[0].on("edit", function(edtr,e){
+        if (e.field=="decoyField"){  
+            var i18n=Ext.clone(e.record.get("i18n"));
+            var lang=e.column.usedLanguage;
+            if(Ext.isEmpty(i18n[lang])){
+                i18n[lang]={ };
+            }
+            i18n[lang].text=e.value;
+            e.record.set("i18n",i18n);
+        }
+    });
     if ((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly"))||(record.get("id")=="navigation")){
         plugins = [];
     }
@@ -120,7 +133,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     Ext.getCmp('conteneurAdminfTaxo').add(arbre);
     store.load();
-
+    Ext.getCmp("taxonomyDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"));
     var boiteMeta = Ext.getCmp("adminFTaxonomie").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
     customMeta=record.get("name")+"</br> "+Rubedo.RubedoAutomatedElementsLoc.creationText+" : "+Ext.Date.format(record.get("createTime"), Ext.Date.defaultFormat)+
     " "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : "+Ext.Date.format(record.get("lastUpdateTime"), Ext.Date.defaultFormat)+" "+Rubedo.RubedoAutomatedElementsLoc.authorText+" : "+record.get("createUser").fullName;

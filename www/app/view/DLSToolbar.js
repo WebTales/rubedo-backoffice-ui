@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.DLSToolbar',
 
+    specialTaxoMode: false,
     hidden: true,
 
     initComponent: function() {
@@ -106,6 +107,11 @@ Ext.define('Rubedo.view.DLSToolbar', {
             } else {
                 me.up().getLayout().setActiveItem(me.up().getComponent(newValue));
                 me.getComponent("LocRemoveBtn").enable();
+            }
+            if (me.specialTaxoMode){
+                Ext.getCmp("specialLangTermColumn").usedLanguage=newValue;
+                Ext.getCmp("TermesTaxonomieTree").getView().refresh();
+                Ext.getCmp("specialLangTermColumn").setText(field.getRawValue());
             }
         }
     },
