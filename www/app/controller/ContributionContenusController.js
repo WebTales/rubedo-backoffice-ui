@@ -579,6 +579,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         myRec.set("status",status);
                         myRec.set(metaData);
                         myRec.set(droits);
+                        Ext.getCmp("contentsDLSToolbar").persisti18n(myRec);
                         myRec.endEdit();
                         Ext.getStore("CurrentContent").removeAll();
                         Ext.getStore('TaxonomyForC2').removeAll();
@@ -943,6 +944,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
     Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
     Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
+    Ext.getCmp("contentsDLSToolbar").recievei18n(cible.get("i18n"),cible.get("locale"));
     Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
