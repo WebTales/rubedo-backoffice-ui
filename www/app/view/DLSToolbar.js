@@ -166,7 +166,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
         var toAdd=Ext.widget(me.replicatorEntity,{itemId:locale});
         me.up().add(toAdd);
         toAdd.getForm().setValues(me.up().getComponent("mainLocItem").getForm().getValues());
-        me.getComponent(0).setValue("fr");
+        me.getComponent(0).setValue(locale);
     }
 
 });

@@ -298,7 +298,7 @@
                     "var toAdd=Ext.widget(me.replicatorEntity,{itemId:locale});\r",
                     "me.up().add(toAdd);\r",
                     "toAdd.getForm().setValues(me.up().getComponent(\"mainLocItem\").getForm().getValues());\r",
-                    "me.getComponent(0).setValue(\"fr\");"
+                    "me.getComponent(0).setValue(locale);"
                 ]
             },
             "designerId": "b58e9ed9-4f3d-4ffe-b2ee-3bb9e0f3cb44"
