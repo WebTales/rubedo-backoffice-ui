@@ -588,10 +588,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
                     } 
                     else {
+                        var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                        var i18n= { };
+                        i18n[nativeLanguage]={fields:champs};
                         var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
                             text: champs.text,
                             champs: champs,
                             taxonomie:taxonomie,
+                            nativeLanguage:nativeLanguage,
+                            i18n:i18n,
                             online:true,
                             status: status,
                             typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")

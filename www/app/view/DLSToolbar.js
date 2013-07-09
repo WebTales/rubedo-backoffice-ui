@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
     alias: 'widget.DLSToolbar',
 
     specialTaxoMode: false,
+    specialContentsMode: false,
     hidden: true,
 
     initComponent: function() {

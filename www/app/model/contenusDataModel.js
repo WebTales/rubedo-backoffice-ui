@@ -86,6 +86,15 @@ Ext.define('Rubedo.model.contenusDataModel', {
         },
         {
             name: 'blockId'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });

@@ -33,9 +33,11 @@ Ext.define('Rubedo.view.menuContenusContext', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                        var returner = value;
+                        try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                        catch(err){var myFlagCode="_unknown";}
+                        var returner = value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\">";
                         if (record.get("readOnly")){
-                            returner ="<i style=\"color:#777;\">"+value+"</i>";
+                            returner ="<i style=\"color:#777;\">"+value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\"></i>";
                         }
                         if (record.get("status")=="published") {
                             return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+returner);

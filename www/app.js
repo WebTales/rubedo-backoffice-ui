@@ -205,7 +205,8 @@ Ext.application({
         'DAMFolderViewModel',
         'directoryModel',
         'experimentalModel',
-        'languageModel'
+        'languageModel',
+        'taxonomyTermModel'
     ],
     stores: [
         'SitesJson',

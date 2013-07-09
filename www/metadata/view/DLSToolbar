@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "specialTaxoMode": false,
+        "specialContentsMode": false,
         "border": null,
         "hidden": true,
         "style": null,
@@ -15,7 +16,8 @@
     },
     "configAlternates": {
         "style": "string",
-        "specialTaxoMode": "boolean"
+        "specialTaxoMode": "boolean",
+        "specialContentsMode": "boolean"
     },
     "designerId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0",
     "customConfigs": [
@@ -32,6 +34,11 @@
         {
             "group": "(Custom Properties)",
             "name": "specialTaxoMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "specialContentsMode",
             "type": "string"
         }
     ],
