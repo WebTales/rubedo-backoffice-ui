@@ -450,9 +450,9 @@ Ext.define('Rubedo.view.sitesInterface', {
                     dockedItems: [
                         {
                             xtype: 'DLSToolbar',
-                            dock: 'top',
                             replicatorEntity: 'sitesRepLoc',
-                            id: 'sitesDLSToolbar'
+                            id: 'sitesDLSToolbar',
+                            dock: 'top'
                         }
                     ]
                 }

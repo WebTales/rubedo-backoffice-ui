@@ -395,6 +395,93 @@
                             },
                             "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "defaultLanguageField",
+                                "layout|anchor": "100%",
+                                "id": "siteDefaultLanguageField1",
+                                "fieldLabel": "Default language",
+                                "labelWidth": 110,
+                                "name": "defaultLanguage",
+                                "allowBlank": false,
+                                "displayField": "label",
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": "AllLanguagesStore",
+                                "typeAhead": true,
+                                "valueField": "locale"
+                            },
+                            "designerId": "8dd7e659-dab2-4843-936c-ba62bcc2b8b8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "validator",
+                                        "designer|params": [
+                                            "value"
+                                        ],
+                                        "implHandler": [
+                                            "var myValue=Ext.getCmp(\"siteDefaultLanguageField\").getValue();\r",
+                                            "var languagesArray=Ext.getCmp(\"siteUsedLanguagesField1\").getValue();\r",
+                                            "if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){\r",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);\r",
+                                            "}\r",
+                                            "return(true);"
+                                        ]
+                                    },
+                                    "designerId": "55aa9ef2-51ad-4fc6-9485-4681e1da4233"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelAdded",
+                                "implHandler": [
+                                    "var languagesPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                    "    anchor:\"100%\",\r",
+                                    "    name:\"languages\",\r",
+                                    "    id:\"siteUsedLanguagesField1\",\r",
+                                    "    allowBlank:false,\r",
+                                    "    labelWidth:110,\r",
+                                    "    fieldLabel:\"Languages\",\r",
+                                    "    multiSelect:true,\r",
+                                    "    forceSelection:true,\r",
+                                    "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",
+                                    "    displayField:\"label\",\r",
+                                    "    valueField:\"locale\",\r",
+                                    "    queryMode:\"local\"\r",
+                                    "});\r",
+                                    "component.add(languagesPicker);"
+                                ],
+                                "name": "added",
+                                "scope": "me"
+                            },
+                            "designerId": "4271377f-5d16-40a5-8c76-e1b473a020e2"
                         }
                     ]
                 },

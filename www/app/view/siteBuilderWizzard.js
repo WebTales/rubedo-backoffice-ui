@@ -177,8 +177,38 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     labelWidth: 110,
                                     store: 'ContributeWorkspacesCombo',
                                     anchor: '100%'
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    validator: function(value) {
+                                        var myValue=Ext.getCmp("siteDefaultLanguageField").getValue();
+                                        var languagesArray=Ext.getCmp("siteUsedLanguagesField1").getValue();
+                                        if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){
+                                            return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);
+                                        }
+                                        return(true);
+                                    },
+                                    localiserId: 'defaultLanguageField',
+                                    anchor: '100%',
+                                    id: 'siteDefaultLanguageField1',
+                                    fieldLabel: 'Default language',
+                                    labelWidth: 110,
+                                    name: 'defaultLanguage',
+                                    allowBlank: false,
+                                    displayField: 'label',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'AllLanguagesStore',
+                                    typeAhead: true,
+                                    valueField: 'locale'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                added: {
+                                    fn: me.onPanelAdded,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'panel',
@@ -277,6 +307,24 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                 }
             });
         }
+    },
+
+    onPanelAdded: function(component, container, pos, eOpts) {
+        var languagesPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            anchor:"100%",
+            name:"languages",
+            id:"siteUsedLanguagesField1",
+            allowBlank:false,
+            labelWidth:110,
+            fieldLabel:"Languages",
+            multiSelect:true,
+            forceSelection:true,
+            store: Ext.getStore("AllLanguagesStore2"),
+            displayField:"label",
+            valueField:"locale",
+            queryMode:"local"
+        });
+        component.add(languagesPicker);
     },
 
     onPanelRender: function(component, eOpts) {
