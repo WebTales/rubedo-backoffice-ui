@@ -57,7 +57,10 @@ Ext.define('Rubedo.store.TypesContenusNDepDataJson', {
                         $ne: true
                     }
                 }
-            ]
+            ],
+            sorters: {
+                property: 'type'
+            }
         }, cfg)]);
     }
 });

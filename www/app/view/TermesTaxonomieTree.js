@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
 
     id: 'TermesTaxonomieTree',
     title: '',
-    forceFit: true,
+    forceFit: false,
     useArrows: true,
 
     initComponent: function() {
@@ -55,21 +55,41 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                             return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                         }
                         else if ((record.get("readOnly"))||(!ACL.interfaceRights["write.ui.taxonomyTerms"])) {
-                            try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
-                            catch(err){var myFlagCode="_unknown";}
                             record.data.allowDrop=false;
                             record.data.allowDrag=false;
-                            return("<i style=\"color:#777;\">"+value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\"></i>");
+                            return("<i style=\"color:#777;\">"+value+"</i>");
 
                         } else {
-                            try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
-                            catch(err){var myFlagCode="_unknown";}
-                            return(value+" <img src=\"/assets/flags/16/"+myFlagCode+".png\">");
+
+                            return(value);
                         }
                     },
                     localiserId: 'termsCol',
                     dataIndex: 'text',
-                    text: 'Termes'
+                    text: 'Termes',
+                    flex: 1
+                },
+                {
+                    xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        if(record.isRoot()){return("");}
+                        try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                        catch(err){var myFlagCode="_unknown";}
+                        var returner =" <img src=\"/assets/flags/16/"+myFlagCode+".png\"> ";
+                        if(!Ext.isEmpty(value)){
+                            Ext.Object.each(value, function(key, value, myself) {
+                                if (key!=record.get("locale")){
+                                    try{var myFlagCode2=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode");}
+                                    catch(err){var myFlagCode2="_unknown";}
+                                    returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                                }
+                            });
+                        }
+                        return(returner);
+                    },
+                    dataIndex: 'i18n',
+                    text: 'Languages',
+                    flex: 0.5
                 },
                 {
                     xtype: 'gridcolumn',
@@ -84,6 +104,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     id: 'specialLangTermColumn',
                     dataIndex: 'decoyField',
                     text: 'English',
+                    flex: 1,
                     editor: {
                         xtype: 'textfield'
                     }

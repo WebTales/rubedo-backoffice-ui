@@ -97,6 +97,18 @@
                 ]
             },
             "designerId": "d9fbb700-f3c7-432c-9e93-fc56106f7307"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "type"
+            },
+            "designerId": "23910f6b-88f9-43ef-9498-015c61e99bfb"
         }
     ]
 }

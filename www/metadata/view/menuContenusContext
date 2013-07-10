@@ -36,7 +36,7 @@
                 "localiserId": "titleColumn",
                 "dataIndex": "text",
                 "text": "Titre",
-                "flex": 1
+                "flex": 2
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -74,11 +74,9 @@
                             "view"
                         ],
                         "implHandler": [
-                            "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
-                            "    catch(err){var myFlagCode=\"_unknown\";}\r",
-                            "var returner = value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\">\";\r",
+                            "var returner = value;\r",
                             "if (record.get(\"readOnly\")){\r",
-                            "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"></i>\";\r",
+                            "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
                             "}\r",
                             "if (record.get(\"status\")==\"published\") {\r",
                             "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+returner);\r",
@@ -96,6 +94,58 @@
                         ]
                     },
                     "designerId": "4a2a18c1-f9ef-4126-a37c-3af3b0a38374"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "i18n",
+                "text": "Languages",
+                "flex": 1
+            },
+            "designerId": "eae8637e-1dbc-41ae-99a2-2dbe89782726",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                            "catch(err){var myFlagCode=\"_unknown\";}\r",
+                            "var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                            "if(!Ext.isEmpty(value)){\r",
+                            "    Ext.Object.each(value, function(key, value, myself) {\r",
+                            "        if (key!=record.get(\"locale\")){\r",
+                            "    \ttry{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                            "\t\tcatch(err){var myFlagCode2=\"_unknown\";}\r",
+                            "        returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                            "        }\r",
+                            "    });\r",
+                            "}\r",
+                            "return(returner);"
+                        ]
+                    },
+                    "designerId": "130ae6dd-da72-43c1-8dfa-975c2995bd2d"
                 }
             ]
         },

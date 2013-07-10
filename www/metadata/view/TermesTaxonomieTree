@@ -10,7 +10,7 @@
         "designer|userClassName": "TermesTaxonomieTree",
         "designer|userAlias": "TermesTaxonomieTree",
         "title": "",
-        "forceFit": true,
+        "forceFit": false,
         "store": null,
         "useArrows": true
     },
@@ -128,7 +128,8 @@
             "userConfig": {
                 "localiserId": "termsCol",
                 "dataIndex": "text",
-                "text": "Termes"
+                "text": "Termes",
+                "flex": 1
             },
             "designerId": "fb2e8d1b-8817-43dc-b288-b5a97300ec7c",
             "customConfigs": [
@@ -162,16 +163,13 @@
                             "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
                             "}\r",
                             "else if ((record.get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.taxonomyTerms\"])) {\r",
-                            "    try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
-                            "    catch(err){var myFlagCode=\"_unknown\";}\r",
                             "    record.data.allowDrop=false;\r",
                             "    record.data.allowDrag=false;\r",
-                            "    return(\"<i style=\\\"color:#777;\\\">\"+value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"></i>\");\r",
+                            "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
                             "\r",
                             "} else {\r",
-                            "    try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
-                            "    catch(err){var myFlagCode=\"_unknown\";}\r",
-                            "    return(value+\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\">\");\r",
+                            "    \r",
+                            "    return(value);\r",
                             "}"
                         ]
                     },
@@ -187,10 +185,64 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "i18n",
+                "text": "Languages",
+                "flex": 0.5
+            },
+            "designerId": "b7d2d51c-a8c4-4f88-bb9e-98812049407c",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if(record.isRoot()){return(\"\");}\r",
+                            "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                            "catch(err){var myFlagCode=\"_unknown\";}\r",
+                            "var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                            "if(!Ext.isEmpty(value)){\r",
+                            "    Ext.Object.each(value, function(key, value, myself) {\r",
+                            "        if (key!=record.get(\"locale\")){\r",
+                            "    \ttry{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                            "\t\tcatch(err){var myFlagCode2=\"_unknown\";}\r",
+                            "        returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                            "        }\r",
+                            "    });\r",
+                            "}\r",
+                            "return(returner);"
+                        ]
+                    },
+                    "designerId": "f08e9012-8df0-4a98-a911-b02e38e035a6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "usedLanguage": "en",
                 "id": "specialLangTermColumn",
                 "dataIndex": "decoyField",
-                "text": "English"
+                "text": "English",
+                "flex": 1
             },
             "designerId": "3424dae7-4b88-420b-9c2c-1bef0e7e0f51",
             "customConfigs": [
