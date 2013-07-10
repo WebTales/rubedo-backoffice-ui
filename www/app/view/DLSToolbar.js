@@ -134,6 +134,9 @@ Ext.define('Rubedo.view.DLSToolbar', {
                     var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
                     me.up().add(toAdd);
                     if (me.specialContentsMode){
+                        if (Ext.isEmpty(Ext.getCmp("cedtr1"))){
+                            toAdd.removeAll();
+                        }
                         Ext.Array.forEach(me.up().getComponent("mainLocItem").query("ChampTC"),function(candidate){
                             if (candidate.localizable){
                                 var cont=candidate.cloneConfig();
@@ -189,6 +192,9 @@ Ext.define('Rubedo.view.DLSToolbar', {
         var toAdd=Ext.widget(me.replicatorEntity,{itemId:locale});
         me.up().add(toAdd);
         if (me.specialContentsMode){
+            if (Ext.isEmpty(Ext.getCmp("cedtr1"))){
+                toAdd.removeAll();
+            }
             Ext.Array.forEach(me.up().getComponent("mainLocItem").query("ChampTC"),function(candidate){
                 if (candidate.localizable){
                     var cont=candidate.cloneConfig();

@@ -77,6 +77,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     }
                     myRec.set("text",champs.text);
                     myRec.set("champs",champs);
+                    Ext.getCmp("contentsDLSToolbar").persisti18n(myRec);
                     myRec.endEdit();
                     Ext.getStore("CurrentContent").removeAll();
                     Ext.getStore('TaxonomyForC2').removeAll();
@@ -87,9 +88,14 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
                 } else{
                     Ext.getStore("CurrentContent").removeAll();
+                    var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                    var i18n= { };
+                    i18n[nativeLanguage]={fields:champs};
                     var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
                         text: champs.text,
                         champs: champs,
+                        nativeLanguage:nativeLanguage,
+                        i18n:i18n,
                         online:true,
                         taxonomie:[ ],
                         status: "published",
@@ -900,7 +906,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
     Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
     Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
-    Ext.getCmp("contentsDLSToolbar").recievei18n(cible.get("i18n"),cible.get("locale"));
+
     Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
@@ -986,6 +992,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
 
         }
+        Ext.getCmp("contentsDLSToolbar").recievei18n(cible.get("i18n"),cible.get("locale"));
     },
 
     displaySpecialCreate: function(theCT, targetedId) {

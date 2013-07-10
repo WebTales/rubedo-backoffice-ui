@@ -94,6 +94,7 @@
                     "            }\r",
                     "            myRec.set(\"text\",champs.text);\r",
                     "            myRec.set(\"champs\",champs);\r",
+                    "            Ext.getCmp(\"contentsDLSToolbar\").persisti18n(myRec);\r",
                     "            myRec.endEdit();\r",
                     "            Ext.getStore(\"CurrentContent\").removeAll();\r",
                     "            Ext.getStore('TaxonomyForC2').removeAll();\r",
@@ -104,9 +105,14 @@
                     "\r",
                     "        } else{\r",
                     "            Ext.getStore(\"CurrentContent\").removeAll();\r",
+                    "            var nativeLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
+                    "            var i18n= { };\r",
+                    "            i18n[nativeLanguage]={fields:champs};\r",
                     "            var nContenu = Ext.create('Rubedo.model.contenusDataModel', {\r",
                     "                text: champs.text,\r",
                     "                champs: champs,\r",
+                    "                nativeLanguage:nativeLanguage,\r",
+                    "                i18n:i18n,\r",
                     "                online:true,\r",
                     "                taxonomie:[ ],\r",
                     "                status: \"published\",\r",
@@ -1282,7 +1288,7 @@
                     "Ext.getCmp(\"boiteATaxoContenus\").getForm().setValues(cible.get(\"taxonomie\"));\r",
                     "Ext.getCmp(\"boiteADroitsContenus\").getForm().setValues(cible.getData());\r",
                     "Ext.getCmp(\"contentMetadataBox\").getForm().setValues(cible.getData());\r",
-                    "Ext.getCmp(\"contentsDLSToolbar\").recievei18n(cible.get(\"i18n\"),cible.get(\"locale\"));\r",
+                    "\r",
                     "Ext.getCmp(\"boutonEnregistrerNouveauContenu\").isUpdate=true;\r",
                     "Ext.getCmp(\"boutonPublierNouveauContenu\").isUpdate=true;\r",
                     "Ext.getCmp(\"boutonSoumettreNouveauContenu\").isUpdate=true;\r",
@@ -1367,7 +1373,8 @@
                     "    Ext.getCmp(\"cedtr2\").destroy();\r",
                     "\r",
                     "\r",
-                    "}"
+                    "}\r",
+                    "Ext.getCmp(\"contentsDLSToolbar\").recievei18n(cible.get(\"i18n\"),cible.get(\"locale\"));"
                 ]
             },
             "designerId": "55e297cb-12c1-4ee8-a3c9-3e88f1d9caed"
