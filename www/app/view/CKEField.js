@@ -134,6 +134,7 @@ Ext.define('Rubedo.view.CKEField', {
         if (Ext.isDefined(me.editor)) {
             me.editor.setData(value);
         } else {
+            me.value=value;
             me.on("afterrender",function(){
                 me.editor.setData(value);
             });
@@ -144,6 +145,8 @@ Ext.define('Rubedo.view.CKEField', {
         var me=this;
         if (Ext.isDefined(me.editor)) {    
             return(me.editor.getData());
+        } else {
+            return(me.value);
         }
     },
 

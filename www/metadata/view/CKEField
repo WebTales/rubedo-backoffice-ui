@@ -116,7 +116,7 @@
                 "fn": "onTextareafieldBeforeDestroy",
                 "implHandler": [
                     "try {component.editor.destroy();} catch(err) {\r",
-                    "    console.log(\"cke destroy anomaly\");\r",
+                    "console.log(\"cke destroy anomaly\");\r",
                     "}"
                 ],
                 "name": "beforedestroy",
@@ -141,6 +141,7 @@
                     "if (Ext.isDefined(me.editor)) {\r",
                     "    me.editor.setData(value);\r",
                     "} else {\r",
+                    "    me.value=value;\r",
                     "    me.on(\"afterrender\",function(){\r",
                     "    \tme.editor.setData(value);\r",
                     "    });\r",
@@ -162,6 +163,8 @@
                     "var me=this;\r",
                     "if (Ext.isDefined(me.editor)) {    \r",
                     "    return(me.editor.getData());\r",
+                    "} else {\r",
+                    "    return(me.value);\r",
                     "}"
                 ]
             },
