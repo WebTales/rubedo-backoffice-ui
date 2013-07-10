@@ -338,10 +338,7 @@
                     "                    }\r",
                     "                });\r",
                     "}\r",
-                    "var task = new Ext.util.DelayedTask(function(){\r",
                     "toAdd.getForm().setValues(me.up().getComponent(\"mainLocItem\").getForm().getValues());\r",
-                    "});\r",
-                    "task.delay(400);\r",
                     "me.getComponent(0).setValue(locale);"
                 ]
             },

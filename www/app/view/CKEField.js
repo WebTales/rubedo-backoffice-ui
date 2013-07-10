@@ -103,27 +103,6 @@ Ext.define('Rubedo.view.CKEField', {
             });
         });
 
-
-
-
-
-
-
-        /* old config 
-        [
-        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Source' ] },
-        { name: 'links', items: [ 'Link', 'Unlink','-', 'Anchor' ] },
-        { name: 'insert', items: [ 'Image','-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-        '/',
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-        '/',
-        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-        { name: 'colors', items: [ 'TextColor','-', 'BGColor' ] },
-        { name: 'tools', items: [ 'Maximize','-', 'ShowBlocks' ] },
-        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SpellChecker', 'Scayt' ] }
-        ]
-        */
     },
 
     onTextareafieldBeforeDestroy: function(component, eOpts) {
@@ -154,6 +133,10 @@ Ext.define('Rubedo.view.CKEField', {
         var me=this;
         if (Ext.isDefined(me.editor)) {
             me.editor.setData(value);
+        } else {
+            me.on("afterrender",function(){
+                me.editor.setData(value);
+            });
         }
     },
 

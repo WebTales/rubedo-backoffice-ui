@@ -200,10 +200,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
                 }
             });
         }
-        var task = new Ext.util.DelayedTask(function(){
-            toAdd.getForm().setValues(me.up().getComponent("mainLocItem").getForm().getValues());
-        });
-        task.delay(400);
+        toAdd.getForm().setValues(me.up().getComponent("mainLocItem").getForm().getValues());
         me.getComponent(0).setValue(locale);
     }
 
