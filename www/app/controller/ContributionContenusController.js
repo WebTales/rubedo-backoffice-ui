@@ -776,6 +776,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
 
         };
+        if (nouvChamp.localizable) {
+            enrobage.localizable=true;
+        }
         formulaireTC.add(enrobage);
 
     }

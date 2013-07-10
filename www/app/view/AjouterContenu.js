@@ -169,10 +169,10 @@ Ext.define('Rubedo.view.AjouterContenu', {
                             dockedItems: [
                                 {
                                     xtype: 'DLSToolbar',
-                                    dock: 'top',
                                     replicatorEntity: 'contentReplicatorMainEntity',
                                     specialContentsMode: true,
-                                    id: 'contentsDLSToolbar'
+                                    id: 'contentsDLSToolbar',
+                                    dock: 'top'
                                 }
                             ]
                         },

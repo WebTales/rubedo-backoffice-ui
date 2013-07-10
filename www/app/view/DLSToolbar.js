@@ -134,6 +134,16 @@ Ext.define('Rubedo.view.DLSToolbar', {
                     var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
                     me.up().add(toAdd);
                     if (me.specialContentsMode){
+                        Ext.Array.forEach(me.up().getComponent("mainLocItem").query("ChampTC"),function(candidate){
+                            if (candidate.localizable){
+                                var cont=candidate.cloneConfig();
+                                var field=candidate.query("field")[0].cloneConfig({anchor:"90%",style:"{float:left;}"});
+                                cont.getComponent('helpBouton').setTooltip(candidate.getComponent('helpBouton').tooltip);
+                                cont.getComponent('helpBouton').hidden=candidate.getComponent('helpBouton').hidden;
+                                cont.add(field);
+                                toAdd.add(cont);
+                            }
+                        });
                         toAdd.getForm().setValues(value.fields);
                     }else{
                         toAdd.getForm().setValues(value);
@@ -178,7 +188,22 @@ Ext.define('Rubedo.view.DLSToolbar', {
         me.getComponent(0).getStore().add({"locale":locale,"label":Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("label"),"flagCode":Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("flagCode")});
         var toAdd=Ext.widget(me.replicatorEntity,{itemId:locale});
         me.up().add(toAdd);
-        toAdd.getForm().setValues(me.up().getComponent("mainLocItem").getForm().getValues());
+        if (me.specialContentsMode){
+            Ext.Array.forEach(me.up().getComponent("mainLocItem").query("ChampTC"),function(candidate){
+                if (candidate.localizable){
+                    var cont=candidate.cloneConfig();
+                    var field=candidate.query("field")[0].cloneConfig({anchor:"90%",style:"{float:left;}"});
+                    cont.getComponent('helpBouton').setTooltip(candidate.getComponent('helpBouton').tooltip);
+                    cont.getComponent('helpBouton').hidden=candidate.getComponent('helpBouton').hidden;
+                    cont.add(field);
+                    toAdd.add(cont);
+                }
+            });
+        }
+        var task = new Ext.util.DelayedTask(function(){
+            toAdd.getForm().setValues(me.up().getComponent("mainLocItem").getForm().getValues());
+        });
+        task.delay(400);
         me.getComponent(0).setValue(locale);
     }
 
