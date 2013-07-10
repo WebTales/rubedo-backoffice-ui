@@ -739,20 +739,21 @@ Ext.define('Rubedo.controller.LocalisationController', {
 
     correctLanguageMenu: function() {
         var myMenu=Ext.getCmp("LanguageChangerMenu");
-        myMenu.removeAll();
-        Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(language){
-            var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
-            if (!Ext.isEmpty(language.get("ownLabel"))){
-                newItem.setText(language.get("ownLabel"));
-            }
-            newItem.on("click",function(){
-                Ext.getCmp("workingLanguageField").setValue(language.get("locale"));
-                Ext.getStore("CurrentUserDataStore").getRange()[0].set("workingLanguage",language.get("locale"));
+        if(!Ext.isEmpty(myMenu)){
+            myMenu.removeAll();
+            Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(language){
+                var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
+                if (!Ext.isEmpty(language.get("ownLabel"))){
+                    newItem.setText(language.get("ownLabel"));
+                }
+                newItem.on("click",function(){
+                    Ext.getCmp("workingLanguageField").setValue(language.get("locale"));
+                    Ext.getStore("CurrentUserDataStore").getRange()[0].set("workingLanguage",language.get("locale"));
+                });
+                myMenu.add(newItem);
+
             });
-            myMenu.add(newItem);
-
-        });
-
+        }
     }
 
 });
