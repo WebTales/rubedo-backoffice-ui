@@ -106,6 +106,37 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFieldsetAdded",
+                        "implHandler": [
+                            "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                            "    store:[],\r",
+                            "    anchor:\"100%\",\r",
+                            "    name:\"keywords\",\r",
+                            "    labelWidth:110,\r",
+                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultKeywordsText,\r",
+                            "    multiSelect:true,\r",
+                            "    forceSelection:false,\r",
+                            "    createNewOnEnter:true,\r",
+                            "    hideTrigger:true,\r",
+                            "    triggerOnClick:false,\r",
+                            "    createNewOnBlur:true,\r",
+                            "    pinList:false\r",
+                            "});\r",
+                            "component.add(tagPicker);"
+                        ],
+                        "name": "added",
+                        "scope": "me"
+                    },
+                    "designerId": "786064b3-69a1-44e0-8b6f-ce5cedfef21b"
                 }
             ]
         }

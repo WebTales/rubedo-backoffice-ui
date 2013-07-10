@@ -155,6 +155,8 @@ Ext.define('Rubedo.controller.SitesController', {
                         }
                     },this,{single:true});
                     }
+                }else{
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
                 }
     },
 

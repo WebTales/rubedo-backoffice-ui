@@ -57,12 +57,36 @@ Ext.define('Rubedo.view.sitesRepLoc', {
                             name: 'author',
                             value: 'Powered by Rubedo'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        added: {
+                            fn: me.onFieldsetAdded,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onFieldsetAdded: function(component, container, pos, eOpts) {
+        var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            name:"keywords",
+            labelWidth:110,
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultKeywordsText,
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            pinList:false
+        });
+        component.add(tagPicker);
     }
 
 });

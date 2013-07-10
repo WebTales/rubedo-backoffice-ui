@@ -218,7 +218,9 @@
                     "                }\r",
                     "            },this,{single:true});\r",
                     "            }\r",
-                    "        }"
+                    "}else{\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
