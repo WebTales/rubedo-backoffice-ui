@@ -18,7 +18,6 @@ Ext.define('Rubedo.controller.ImportController', {
     alias: 'controller.ImportController',
 
     onMainCSVinportFieldChange: function(filefield, value, eOpts) {
-        console.log(filefield);
         if ((value)&&(!filefield.notNow)) {
             var form= filefield.up().up().getForm();
             filefield.up().up().up().setLoading(true);
