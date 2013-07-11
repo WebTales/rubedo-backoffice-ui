@@ -111,7 +111,7 @@
                     "            field.setReadOnly(false);\r",
                     "        });\r",
                     "    }\r",
-                    "    Ext.getCmp(\"workspacesDLSToolbar\").recievei18n(selected[0].get(\"i18n\"),selected[0].get(\"locale\"));\r",
+                    "    Ext.getCmp(\"workspacesDLSToolbar\").recievei18n(selected[0].get(\"i18n\"),selected[0].get(\"locale\"),selected[0].get(\"nativeLanguage\"));\r",
                     "}"
                 ],
                 "name": "selectionchange",

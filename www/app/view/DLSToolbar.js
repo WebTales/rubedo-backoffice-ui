@@ -111,7 +111,9 @@ Ext.define('Rubedo.view.DLSToolbar', {
                 me.up().getLayout().setActiveItem(me.up().getComponent("mainLocItem"));
             } else {
                 me.up().getLayout().setActiveItem(me.up().getComponent(newValue));
-                me.getComponent("LocRemoveBtn").enable();
+                if (newValue!=me.nativeLanguage){
+                    me.getComponent("LocRemoveBtn").enable();
+                }
             }
             if (me.specialTaxoMode){
                 Ext.getCmp("specialLangTermColumn").usedLanguage=newValue;
@@ -121,9 +123,10 @@ Ext.define('Rubedo.view.DLSToolbar', {
         }
     },
 
-    recievei18n: function(i18n, locale) {
+    recievei18n: function(i18n, locale, nativeLanguage) {
         var me=this;
         me.mainLocale=locale;
+        me.nativeLanguage=nativeLanguage;
         me.up().getLayout().setActiveItem(me.up().getComponent("mainLocItem"));
         me.getComponent(0).getStore().removeAll();
         Ext.Array.forEach(me.up().items.items, function(item){

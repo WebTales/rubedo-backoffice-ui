@@ -992,7 +992,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
 
         }
-        Ext.getCmp("contentsDLSToolbar").recievei18n(cible.get("i18n"),cible.get("locale"));
+        Ext.getCmp("contentsDLSToolbar").recievei18n(cible.get("i18n"),cible.get("locale"),cible.get("nativeLanguage"));
     },
 
     displaySpecialCreate: function(theCT, targetedId) {

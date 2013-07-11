@@ -105,7 +105,9 @@
                             "        me.up().getLayout().setActiveItem(me.up().getComponent(\"mainLocItem\"));\r",
                             "    } else {\r",
                             "        me.up().getLayout().setActiveItem(me.up().getComponent(newValue));\r",
-                            "        me.getComponent(\"LocRemoveBtn\").enable();\r",
+                            "        if (newValue!=me.nativeLanguage){\r",
+                            "        \tme.getComponent(\"LocRemoveBtn\").enable();\r",
+                            "        }\r",
                             "    }\r",
                             "    if (me.specialTaxoMode){\r",
                             "        Ext.getCmp(\"specialLangTermColumn\").usedLanguage=newValue;\r",
@@ -229,11 +231,13 @@
                 "fn": "recievei18n",
                 "designer|params": [
                     "i18n",
-                    "locale"
+                    "locale",
+                    "nativeLanguage"
                 ],
                 "implHandler": [
                     "var me=this;\r",
                     "me.mainLocale=locale;\r",
+                    "me.nativeLanguage=nativeLanguage;\r",
                     "me.up().getLayout().setActiveItem(me.up().getComponent(\"mainLocItem\"));\r",
                     "me.getComponent(0).getStore().removeAll();\r",
                     "Ext.Array.forEach(me.up().items.items, function(item){\r",

@@ -144,7 +144,7 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.getCmp("pageMaskDisplayBtn").setText(Rubedo.RubedoAutomatedElementsLoc.associatedMaskText+" : "+myMask.get("text"));
             Ext.getCmp("pageMaskDisplayBtn").show();
             Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
-            Ext.getCmp("pagesDLSToolbar").recievei18n(record.get('i18n'),record.get('locale'));
+            Ext.getCmp("pagesDLSToolbar").recievei18n(record.get('i18n'),record.get('locale'),record.get("nativeLanguage"));
             Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
                 field.setReadOnly(false);
             });

@@ -1374,7 +1374,7 @@
                     "\r",
                     "\r",
                     "}\r",
-                    "Ext.getCmp(\"contentsDLSToolbar\").recievei18n(cible.get(\"i18n\"),cible.get(\"locale\"));"
+                    "Ext.getCmp(\"contentsDLSToolbar\").recievei18n(cible.get(\"i18n\"),cible.get(\"locale\"),cible.get(\"nativeLanguage\"));"
                 ]
             },
             "designerId": "55e297cb-12c1-4ee8-a3c9-3e88f1d9caed"

@@ -63,7 +63,7 @@ Ext.define('Rubedo.controller.WorkspacesController', {
                     field.setReadOnly(false);
                 });
             }
-            Ext.getCmp("workspacesDLSToolbar").recievei18n(selected[0].get("i18n"),selected[0].get("locale"));
+            Ext.getCmp("workspacesDLSToolbar").recievei18n(selected[0].get("i18n"),selected[0].get("locale"),selected[0].get("nativeLanguage"));
         }
     },
 

@@ -133,7 +133,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
 
     Ext.getCmp('conteneurAdminfTaxo').add(arbre);
     store.load();
-    Ext.getCmp("taxonomyDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"));
+    Ext.getCmp("taxonomyDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     var boiteMeta = Ext.getCmp("adminFTaxonomie").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
     customMeta=record.get("name")+"</br> "+Rubedo.RubedoAutomatedElementsLoc.creationText+" : "+Ext.Date.format(record.get("createTime"), Ext.Date.defaultFormat)+
     " "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : "+Ext.Date.format(record.get("lastUpdateTime"), Ext.Date.defaultFormat)+" "+Rubedo.RubedoAutomatedElementsLoc.authorText+" : "+record.get("createUser").fullName;
