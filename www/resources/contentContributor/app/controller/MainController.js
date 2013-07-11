@@ -73,6 +73,7 @@ Ext.define('ContentContributor.controller.MainController', {
                     });
                     newContent.set("writeWorkspace",AppGlobals.currentWorkspace);
                     newContent.set("target",[AppGlobals.currentWorkspace]);
+                    newContent.set("nativeLanguage",ACL.workingLanguage);
                     var taxoRes = {};
                     if (!Ext.isEmpty(Ext.getCmp("taxonomyFieldset"))){
                         Ext.Array.forEach(Ext.getCmp("taxonomyFieldset").query("field"), function(leField){
@@ -83,6 +84,9 @@ Ext.define('ContentContributor.controller.MainController', {
                     taxoRes.navigation=[AppGlobals.currentPage];
                     newContent.set("taxonomy",taxoRes);
                     newContent.set("fields",myFields);
+                    var i18n={ };
+                    i18n[ACL.workingLanguage]={fields:myFields};
+                    newContent.set("i18n",i18n);
 
                     Ext.getCmp("MainForm").setLoading(true);
                     Ext.getStore("Contents").addListener("write", function(){
@@ -500,6 +504,7 @@ Ext.define('ContentContributor.controller.MainController', {
             a[b[0]] = b[1];
             return a;
         }, {});
+            ACL.workingLanguage=options.workingLanguage;
             var task = new Ext.util.DelayedTask(function(){
                 if (Ext.isEmpty(options["edit-mode"])){
                     AppGlobals.currentPage=options["current-page"];

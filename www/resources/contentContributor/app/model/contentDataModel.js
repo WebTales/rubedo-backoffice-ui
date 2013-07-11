@@ -72,6 +72,15 @@ Ext.define('ContentContributor.model.contentDataModel', {
         },
         {
             name: 'target'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'nativeLanguage'
+        },
+        {
+            name: 'i18n'
         }
     ]
 });
