@@ -322,29 +322,30 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                             Ext.apply(fields,i18n[me.mainLocale].fields);
                                                             me.up().getComponent("mainLocItem").getForm().setValues(fields);
                                                             me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);
-                                                        }
-                                                        Ext.Object.each(fields, function(key, value, myself){
-                                                            if (Ext.isArray(value)) {
-                                                                var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
-                                                                var y=0;
-                                                                if (multiField.multivalued) {
-                                                                    Ext.Array.each(value,function(val,index){
-                                                                        if (index>0) {
-                                                                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
-                                                                        }
-                                                                        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
-                                                                    }); 
+
+                                                            Ext.Object.each(fields, function(key, value, myself){
+                                                                if (Ext.isArray(value)) {
+                                                                    var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
+                                                                    var y=0;
+                                                                    if (multiField.multivalued) {
+                                                                        Ext.Array.each(value,function(val,index){
+                                                                            if (index>0) {
+                                                                                multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                                                                            }
+                                                                            Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
+                                                                        }); 
+                                                                    }
                                                                 }
+                                                            });
+                                                            try{
+                                                                Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
+                                                                Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
+                                                                Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomy"));
+                                                                Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
+                                                                Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
+                                                            }catch (err){
+                                                                console.log("reloading anomaly");
                                                             }
-                                                        });
-                                                        try{
-                                                            Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
-                                                            Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
-                                                            Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomy"));
-                                                            Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
-                                                            Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
-                                                        }catch (err){
-                                                            console.log("reloading anomaly");
                                                         }
                                                     },
                                                     icon: 'resources/icones/generic/repeat.png'
