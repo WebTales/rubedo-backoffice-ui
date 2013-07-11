@@ -274,6 +274,15 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                var me=Ext.getCmp("contentsDLSToolbar");
+                                                var i18n=record.get("i18n");
+                                                if ((Ext.isEmpty(i18n))||(Ext.isEmpty(i18n[me.mainLocale]))){
+                                                    return("Non eligible");
+                                                } else {
+                                                    return(i18n[me.mainLocale].fields.text);
+                                                }
+                                            },
                                             localiserId: 'versionTitleCol',
                                             dataIndex: 'text',
                                             text: 'Titre'
@@ -307,10 +316,10 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                         var fields =cible.get("fields");
                                                         var i18n = cible.get("i18n");
                                                         var me=Ext.getCmp("contentsDLSToolbar");
-                                                        if (Ext.isEmpty(i18n)){
+                                                        if ((Ext.isEmpty(i18n))||(Ext.isEmpty(i18n[me.mainLocale]))){
                                                             Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.missingLocError);
                                                         } else {
-                                                            Ext.apply(fields,i18n[me.mainLocale]);
+                                                            Ext.apply(fields,i18n[me.mainLocale].fields);
                                                             me.up().getComponent("mainLocItem").getForm().setValues(fields);
                                                             me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);
                                                         }

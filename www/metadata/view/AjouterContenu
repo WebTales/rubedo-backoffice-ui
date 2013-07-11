@@ -706,6 +706,38 @@
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "var me=Ext.getCmp(\"contentsDLSToolbar\");\r",
+                                                    "var i18n=record.get(\"i18n\");\r",
+                                                    "if ((Ext.isEmpty(i18n))||(Ext.isEmpty(i18n[me.mainLocale]))){\r",
+                                                    "    return(\"Non eligible\");\r",
+                                                    "} else {\r",
+                                                    "    return(i18n[me.mainLocale].fields.text);\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "f922c663-348b-44f0-bf3a-c81f7dc5521f"
+                                        }
                                     ]
                                 },
                                 {
@@ -822,10 +854,10 @@
                                                             "var fields =cible.get(\"fields\");\r",
                                                             "var i18n = cible.get(\"i18n\");\r",
                                                             "var me=Ext.getCmp(\"contentsDLSToolbar\");\r",
-                                                            "if (Ext.isEmpty(i18n)){\r",
+                                                            "if ((Ext.isEmpty(i18n))||(Ext.isEmpty(i18n[me.mainLocale]))){\r",
                                                             "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.missingLocError);\r",
                                                             "} else {\r",
-                                                            "    Ext.apply(fields,i18n[me.mainLocale]);\r",
+                                                            "    Ext.apply(fields,i18n[me.mainLocale].fields);\r",
                                                             "    me.up().getComponent(\"mainLocItem\").getForm().setValues(fields);\r",
                                                             "    me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);\r",
                                                             "}\r",
