@@ -343,7 +343,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "thisFolderText":"this folder",
             "thisMediaText":"this digital asset",
             "thisVocabularyText":"this vocabulary",
-            "atLeastOneLocError":"At least one language must be active"
+            "atLeastOneLocError":"At least one language must be active",
+            "alreadyTranslatedError":"This item has already been translated in all active languages"
         });
 
         this.control({

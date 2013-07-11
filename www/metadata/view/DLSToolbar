@@ -159,6 +159,7 @@
                             "        Ext.getStore(\"TranslationAdderStore\").add(candidate);\r",
                             "    }\r",
                             "});\r",
+                            "if (!Ext.isEmpty(Ext.getStore(\"TranslationAdderStore\").getRange())){\r",
                             "Ext.widget(\"TranslationAdderWindow\").show();\r",
                             "Ext.getCmp(\"TranslationAdderWindowSubmitBtn\").on(\"click\",function(){\r",
                             "    var form=Ext.getCmp(\"TranslationAdderWindow\").getComponent(0).getForm();\r",
@@ -167,7 +168,10 @@
                             "        Ext.getCmp(\"TranslationAdderWindow\").close();\r",
                             "    }\r",
                             "\r",
-                            "});"
+                            "});\r",
+                            "} else {\r",
+                            "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.alreadyTranslatedError);\r",
+                            "}"
                         ]
                     },
                     "designerId": "98e9df5e-35c0-4054-8bf1-e2da31025fdc"

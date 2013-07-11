@@ -307,6 +307,58 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "i18n",
+                        "text": "Languages",
+                        "flex": 0.7
+                    },
+                    "designerId": "766fe768-d034-4c29-9f88-134953eed9c8",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "catch(err){var myFlagCode=\"_unknown\";}\r",
+                                    "var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                                    "if(!Ext.isEmpty(value)){\r",
+                                    "    Ext.Object.each(value, function(key, value, myself) {\r",
+                                    "        if (key!=record.get(\"locale\")){\r",
+                                    "    \ttry{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "\t\tcatch(err){var myFlagCode2=\"_unknown\";}\r",
+                                    "        returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}\r",
+                                    "return(returner);"
+                                ]
+                            },
+                            "designerId": "8f1f3865-80cb-4756-b32e-26443d29e80b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "filter": [
                             "{\r",
                             "    type:\"combo\",\r",

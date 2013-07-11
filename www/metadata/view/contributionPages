@@ -550,7 +550,7 @@
                 "resizable": true,
                 "resizeHandles": "e",
                 "title": "",
-                "forceFit": true,
+                "forceFit": false,
                 "store": "PagesDataStore",
                 "useArrows": true
             },
@@ -718,7 +718,8 @@
                         "dataIndex": "text",
                         "menuText": "false",
                         "text": "Nom",
-                        "tooltip": null
+                        "tooltip": null,
+                        "flex": 1
                     },
                     "designerId": "32b785a1-1467-42d5-8962-487a7a279488",
                     "customConfigs": [
@@ -762,6 +763,59 @@
                                 ]
                             },
                             "designerId": "5bc62a2a-1c96-46f8-932f-d4dcc8e416b8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "i18n",
+                        "text": "Languages",
+                        "flex": 0.5
+                    },
+                    "designerId": "91c9d991-45bc-422d-adcd-9036522083f6",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(record.isRoot()){return(\"\");}\r",
+                                    "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "catch(err){var myFlagCode=\"_unknown\";}\r",
+                                    "var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                                    "if(!Ext.isEmpty(value)){\r",
+                                    "    Ext.Object.each(value, function(key, value, myself) {\r",
+                                    "        if (key!=record.get(\"locale\")){\r",
+                                    "    \ttry{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "\t\tcatch(err){var myFlagCode2=\"_unknown\";}\r",
+                                    "        returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}\r",
+                                    "return(returner);"
+                                ]
+                            },
+                            "designerId": "93418dc0-633d-4693-a2fa-3c2f86b9f594"
                         }
                     ]
                 }

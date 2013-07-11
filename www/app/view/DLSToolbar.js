@@ -54,15 +54,19 @@ Ext.define('Rubedo.view.DLSToolbar', {
                                 Ext.getStore("TranslationAdderStore").add(candidate);
                             }
                         });
-                        Ext.widget("TranslationAdderWindow").show();
-                        Ext.getCmp("TranslationAdderWindowSubmitBtn").on("click",function(){
-                            var form=Ext.getCmp("TranslationAdderWindow").getComponent(0).getForm();
-                            if (form.isValid()){
-                                me.addTranslation(form.getValues().language);
-                                Ext.getCmp("TranslationAdderWindow").close();
-                            }
+                        if (!Ext.isEmpty(Ext.getStore("TranslationAdderStore").getRange())){
+                            Ext.widget("TranslationAdderWindow").show();
+                            Ext.getCmp("TranslationAdderWindowSubmitBtn").on("click",function(){
+                                var form=Ext.getCmp("TranslationAdderWindow").getComponent(0).getForm();
+                                if (form.isValid()){
+                                    me.addTranslation(form.getValues().language);
+                                    Ext.getCmp("TranslationAdderWindow").close();
+                                }
 
-                        });
+                            });
+                        } else {
+                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.alreadyTranslatedError);
+                        }
                     },
                     itemId: 'LocAddBtn',
                     iconCls: 'add',
