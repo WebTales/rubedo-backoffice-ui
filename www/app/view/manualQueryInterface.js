@@ -334,17 +334,20 @@ Ext.define('Rubedo.view.manualQueryInterface', {
 
     onManualQueryInterfaceRender: function(component, eOpts) {
         Ext.getStore("TCNDepComboCS").load();
-        if (component.editorMode){
-            component.getComponent(2).getStore().getProxy().extraParams.filter="[{\"property\":\"id\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(component.initialQuery)+"}]";
-            component.getComponent(2).getStore().addListener("load", function(){
-                component.getComponent(0).getStore().clearFilter(true);
-                component.getComponent(0).getStore().load();
-            }, this, {single:true});
-                component.getComponent(2).getStore().load();
-            } else {
-                component.getComponent(0).getStore().clearFilter(true);
-                component.getComponent(0).getStore().load();
-            }
+        var task = new Ext.util.DelayedTask(function(){
+            if (component.editorMode){
+                component.getComponent(2).getStore().getProxy().extraParams.filter="[{\"property\":\"id\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(component.initialQuery)+"}]";
+                component.getComponent(2).getStore().addListener("load", function(){
+                    component.getComponent(0).getStore().clearFilter(true);
+                    component.getComponent(0).getStore().load();
+                }, this, {single:true});
+                    component.getComponent(2).getStore().load();
+                } else {
+                    component.getComponent(0).getStore().clearFilter(true);
+                    component.getComponent(0).getStore().load();
+                }
+            });
+            task.delay(400);
     },
 
     onManualQueryInterfaceBeforeClose: function(panel, eOpts) {
