@@ -61,6 +61,12 @@ Ext.define('Rubedo.model.versionsDataModel', {
         },
         {
             name: 'target'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });

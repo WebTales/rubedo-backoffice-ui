@@ -174,6 +174,30 @@
                 "name": "target"
             },
             "designerId": "30dd3256-d17f-448b-8a96-9d6722a565cf"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "i18n"
+            },
+            "designerId": "40b463e2-5098-4a24-9493-b8b9fe1a643c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nativeLanguage"
+            },
+            "designerId": "1a1a906e-fdf2-4b5e-86b6-d5a808ab8d77"
         }
     ]
 }

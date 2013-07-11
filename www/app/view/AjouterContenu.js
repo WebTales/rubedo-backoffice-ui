@@ -304,8 +304,17 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                 me.processMyActionColumnItem({
                                                     handler: function(view, rowIndex, colIndex, item, e, record, row) {
                                                         var cible = record;
-                                                        Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("fields"));
-                                                        Ext.Object.each(cible.get("fields"), function(key, value, myself){
+                                                        var fields =cible.get("fields");
+                                                        var i18n = cible.get("i18n");
+                                                        var me=Ext.getCmp("contentsDLSToolbar");
+                                                        if (Ext.isEmpty(i18n)){
+                                                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.missingLocError);
+                                                        } else {
+                                                            Ext.apply(fields,i18n[me.mainLocale]);
+                                                            me.up().getComponent("mainLocItem").getForm().setValues(fields);
+                                                            me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);
+                                                        }
+                                                        Ext.Object.each(fields, function(key, value, myself){
                                                             if (Ext.isArray(value)) {
                                                                 var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
                                                                 var y=0;
