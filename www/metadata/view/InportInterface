@@ -755,6 +755,65 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "importS2LocalizableCol",
+                                "dataIndex": "localizable",
+                                "text": "Localizable",
+                                "falseText": "Non",
+                                "trueText": "Oui"
+                            },
+                            "designerId": "d6c8f375-31b2-4f3d-bee0-bc7e5542d858",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": null,
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "2fbcc089-cd27-46d1-9902-4d90d79e15ac"
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processLocalizable",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                            "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "18a911a3-8f06-4294-86fa-ca7a9c1091ae"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Boolean",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
                                 "localiserId": "importS2MandatoryCol",
                                 "dataIndex": "mandatory",
                                 "text": "Obligatoire",

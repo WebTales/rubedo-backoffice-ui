@@ -102,6 +102,22 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "localizable",
+                "type": "boolean"
+            },
+            "designerId": "6f3b8174-bcad-4216-a5b5-ed901595a238"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "csvIndex"
             },
             "designerId": "49d0c81a-2323-4faa-8190-9a9029c868e7"

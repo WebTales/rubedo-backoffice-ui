@@ -296,6 +296,19 @@ Ext.define('Rubedo.view.InportInterface', {
                                         uncheckedValue: 'false'
                                     }
                                 }),
+                                me.processLocalizable({
+                                    xtype: 'booleancolumn',
+                                    localiserId: 'importS2LocalizableCol',
+                                    dataIndex: 'localizable',
+                                    text: 'Localizable',
+                                    falseText: 'Non',
+                                    trueText: 'Oui',
+                                    editor: {
+                                        xtype: 'checkboxfield',
+                                        inputValue: 'true',
+                                        uncheckedValue: 'false'
+                                    }
+                                }),
                                 me.processObligatoire({
                                     xtype: 'booleancolumn',
                                     localiserId: 'importS2MandatoryCol',
@@ -503,6 +516,12 @@ Ext.define('Rubedo.view.InportInterface', {
     },
 
     processRecherchable: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processLocalizable: function(config) {
         config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
         config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         return config;

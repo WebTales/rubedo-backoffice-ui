@@ -42,6 +42,11 @@ Ext.define('Rubedo.model.inportFieldModel', {
             type: 'boolean'
         },
         {
+            defaultValue: false,
+            name: 'localizable',
+            type: 'boolean'
+        },
+        {
             name: 'csvIndex'
         },
         {
