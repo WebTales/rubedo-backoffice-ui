@@ -269,6 +269,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "sbStage1",
+                        "autoScroll": true,
                         "layout": "anchor",
                         "bodyPadding": 10,
                         "title": "Etape 2 : Identification"
@@ -494,7 +495,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "sbStage3",
-                        "overflowY": "auto",
+                        "autoScroll": true,
                         "layout": "anchor",
                         "bodyPadding": 10,
                         "title": "Etape 3 : Référencement"

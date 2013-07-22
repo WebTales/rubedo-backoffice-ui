@@ -124,6 +124,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                         {
                             xtype: 'panel',
                             localiserId: 'sbStage1',
+                            autoScroll: true,
                             layout: {
                                 type: 'anchor'
                             },
@@ -213,7 +214,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                         {
                             xtype: 'panel',
                             localiserId: 'sbStage3',
-                            overflowY: 'auto',
+                            autoScroll: true,
                             layout: {
                                 type: 'anchor'
                             },
