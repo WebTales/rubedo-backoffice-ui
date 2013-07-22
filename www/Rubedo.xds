@@ -2749,6 +2749,14 @@
                 "app/view/contentReplicatorMainEntity.js"
             ],
             "className": "contentReplicatorMainEntity"
+        },
+        "9afe69d9-312c-4ea7-8332-ce4389c7ae0c": {
+            "paths": [
+                "metadata/view/genericLocTextField",
+                "app/view/override/genericLocTextField.js",
+                "app/view/genericLocTextField.js"
+            ],
+            "className": "genericLocTextField"
         }
     },
     "viewOrderMap": {
@@ -2917,7 +2925,8 @@
             "966303e3-8916-4e51-aa9f-00cee06be4fa",
             "317b4759-85c1-4c25-81d9-1d850e62ab1c",
             "e228d799-f13d-4c58-8852-63ccae95bd0f",
-            "03bb1252-0954-4b34-adc7-949ff8f3bee5"
+            "03bb1252-0954-4b34-adc7-949ff8f3bee5",
+            "9afe69d9-312c-4ea7-8332-ce4389c7ae0c"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

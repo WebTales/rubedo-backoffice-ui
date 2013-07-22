@@ -172,7 +172,8 @@ Ext.application({
         'Rubedo.view.workspacesReplicator',
         'Rubedo.view.taxonomyReplicator',
         'Rubedo.view.sitesRepLoc',
-        'Rubedo.view.contentReplicatorMainEntity'
+        'Rubedo.view.contentReplicatorMainEntity',
+        'Rubedo.view.genericLocTextField'
     ],
     models: [
         'sitesDataModel',
@@ -469,7 +470,8 @@ Ext.application({
         'workspacesReplicator',
         'taxonomyReplicator',
         'sitesRepLoc',
-        'contentReplicatorMainEntity'
+        'contentReplicatorMainEntity',
+        'genericLocTextField'
     ],
     autoCreateViewport: true,
     controllers: [

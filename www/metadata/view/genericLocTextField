@@ -1,0 +1,233 @@
+{
+    "type": "Ext.form.FieldContainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 26,
+        "id": null,
+        "width": 400,
+        "designer|userClassName": "genericLocTextField",
+        "designer|userAlias": "genericLocTextField",
+        "layout": "hbox",
+        "fieldLabel": "Label"
+    },
+    "designerId": "9afe69d9-312c-4ea7-8332-ce4389c7ae0c",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "itemId": "mainTextInput",
+                "fieldLabel": "",
+                "allowBlank": false
+            },
+            "designerId": "8f286d23-94f3-45aa-944f-992d4d5fcfcb",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMainTextInputChange",
+                        "implHandler": [
+                            "var me=field.up();\r",
+                            "if (field.isValid()){\r",
+                            "    var target=Ext.getCmp(me.targetEntity);\r",
+                            "    var currentLanguage=me.getComponent(\"currentLanguageIntField\").getValue();\r",
+                            "    if (Ext.isEmpty(target.i18n)){\r",
+                            "        target.i18n={ };\r",
+                            "    }\r",
+                            "    if (Ext.isEmpty(target.i18n[currentLanguage])){\r",
+                            "        target.i18n[currentLanguage]={ };\r",
+                            "    }\r",
+                            "    target.i18n[currentLanguage][me.targetEntityProp]=newValue;\r",
+                            "}"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "designerId": "9568ff3f-6a63-495a-88e7-1c742fdf07f4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "hidden": true,
+                "itemId": "currentLanguageIntField",
+                "fieldLabel": "Label"
+            },
+            "designerId": "36f3d4b4-42f4-4c67-89dd-03a4da6ceafe",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCurrentLanguageIntFieldChange",
+                        "implHandler": [
+                            "var me=field.up();\r",
+                            "var target=Ext.getCmp(me.targetEntity);\r",
+                            "var myBtn=me.getComponent(\"languageSwitcher\");\r",
+                            "if (Ext.isEmpty(newValue)){\r",
+                            "    myBtn.setIcon(null);\r",
+                            "    myBtn.setIconCls(\"infoWarning\");\r",
+                            "    myBtn.setTooltip(\"Localization error\");\r",
+                            "    myBtn.setText(null);\r",
+                            "} else {\r",
+                            "    var myRec=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",newValue,false,false,true).items[0];\r",
+                            "    myBtn.setIconCls(null);\r",
+                            "    myBtn.setIcon('/assets/flags/16/'+myRec.get(\"flagCode\")+'.png');\r",
+                            "    myBtn.setTooltip(myRec.get(\"label\"));\r",
+                            "    myBtn.setText(myRec.get(\"label\"));\r",
+                            "    if (!Ext.isEmpty(myRec.get(\"ownLabel\"))){\r",
+                            "        myBtn.setText(myRec.get(\"ownLabel\"));\r",
+                            "        myBtn.setTooltip(myRec.get(\"ownLabel\"));\r",
+                            "    }\r",
+                            "}\r",
+                            "try{\r",
+                            "    me.getComponent(\"mainTextInput\").setValue(target.i18n[newValue][me.targetEntityProp]);\r",
+                            "}catch(err){\r",
+                            "    me.getComponent(\"mainTextInput\").setValue(target[me.targetEntityProp]);\r",
+                            "}"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "designerId": "23047e72-1874-41af-ba00-bac9c6af954e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "id": null,
+                "itemId": "languageSwitcher",
+                "width": 36,
+                "iconCls": "infoWarning",
+                "text": "",
+                "tooltip": "Localization Error",
+                "tooltipType": "title"
+            },
+            "configAlternates": {
+                "tooltip": "string"
+            },
+            "designerId": "f8307ca1-10ee-428b-9840-3fe396b0eadb",
+            "cn": [
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": true,
+                        "id": null,
+                        "minWidth": 60,
+                        "width": null
+                    },
+                    "designerId": "5909fe5a-3d0f-4493-a9c2-2ee3c454cb74",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Menu Item"
+                            },
+                            "designerId": "ff547cb8-0c1d-4ae2-9027-c28b9641733a"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Menu Item"
+                            },
+                            "designerId": "483490fb-c319-49c5-8470-d3b0a8fab9ba"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Menu Item"
+                            },
+                            "designerId": "fa81cb6d-24f0-4731-bfa4-2149d460327c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFieldcontainerAfterRender",
+                "implHandler": [
+                    "var me=component;\r",
+                    "var myMenu=me.getComponent(\"languageSwitcher\").menu;\r",
+                    "if(!Ext.isEmpty(myMenu)){\r",
+                    "    myMenu.removeAll();\r",
+                    "    Ext.Array.forEach(Ext.getStore(\"AllLanguagesStore3\").getRange(),function(language){\r",
+                    "        var newItem=Ext.widget(\"menuitem\",{text:language.get(\"label\"), icon:\"/assets/flags/16/\"+language.get(\"flagCode\")+\".png\"});\r",
+                    "        if (!Ext.isEmpty(language.get(\"ownLabel\"))){\r",
+                    "            newItem.setText(language.get(\"ownLabel\"));\r",
+                    "        }\r",
+                    "        newItem.on(\"click\",function(){\r",
+                    "            me.getComponent(\"currentLanguageIntField\").setValue(language.get(\"locale\"));\r",
+                    "        });\r",
+                    "        myMenu.add(newItem);\r",
+                    "\r",
+                    "    });\r",
+                    "}\r",
+                    "me.getComponent(\"currentLanguageIntField\").setValue(me.initialLanguage);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "0b8799ea-e374-4de1-826e-e1ae6c126226"
+        }
+    ]
+}

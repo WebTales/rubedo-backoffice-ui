@@ -321,19 +321,28 @@ Ext.define('Rubedo.controller.MasqueController', {
             var configSpec = Ext.widget('ConfigSpecBloc');
 
 
-            configSpec.getComponent(0).add(Ext.widget('textfield',{
-                itemId:"eTitleField",
+            /*configSpec.getComponent(0).add(Ext.widget('textfield',{
+            itemId:"eTitleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
+            onChange:function(){
+            if (this.isValid()){
+            component.eTitle=this.getValue();
+            }
+            },
+            labelWidth:60,
+            allowBlank:false,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            value:component.eTitle
+            }));*/
+            configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                 fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
-                onChange:function(){
-                    if (this.isValid()){
-                        component.eTitle=this.getValue();
-                    }
-                },
                 labelWidth:60,
-                allowBlank:false,
                 anchor:"100%",
                 margin:"10 0 10 0",
-                value:component.eTitle
+                targetEntity:component.getId(),
+                targetEntityProp:"eTitle",
+                initialLanguage:Ext.getCmp("workingLanguageField").getValue()
             }));
             configSpec.getComponent(0).add(Ext.widget('checkbox',{
                 itemId:"eTitleShowField",
@@ -732,7 +741,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         elementStyle:"",
                         final:isFinalCol,
                         id:servedId,
-                        eTitle:"titre",
+                        eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,
                         responsive:{
                             phone:true,
                             tablet:true,
@@ -778,7 +787,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             displayRowFluid:false,
             includeContainer:false,
             includeContainerFluid:false,
-            eTitle:"titre",
+            eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,
             responsive:{
                 phone:true,
                 tablet:true,
@@ -1555,6 +1564,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 mType:"row",
                 eTitle:row.eTitle,
                 id:row.id,
+                i18n:row.i18n,
                 elementStyle:row.elementStyle,
                 elementTag:row.elementTag,
                 displayRow:row.displayRow,
@@ -1592,6 +1602,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     final:isFinalCol,
                     mType:'col',
                     id:column.id,
+                    i18n:column.i18n,
                     elementStyle:column.elementStyle,
                     elementTag:column.elementTag,
                     renderSpan:column.renderSpan,
@@ -1682,6 +1693,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     displayTitle:col.displayTitle,
                     span:col.flex,
                     id:col.id,
+                    i18n:col.i18n,
                     mType:"col",
                     offset:offset,
                     rows: rows,
@@ -1696,6 +1708,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 height:row.height,
                 eTitle:row.eTitle,
                 id:row.id,
+                i18n:row.i18n,
                 elementStyle:row.elementStyle,
                 elementTag:row.elementTag,
                 displayRow:row.displayRow,
