@@ -28,7 +28,30 @@ Ext.define('Rubedo.view.UnBloc', {
     initComponent: function() {
         var me = this;
 
+        Ext.applyIf(me, {
+            listeners: {
+                afterrender: {
+                    fn: me.onPanelAfterRender,
+                    scope: me
+                }
+            }
+        });
+
         me.callParent(arguments);
+    },
+
+    onPanelAfterRender: function(component, eOpts) {
+        this.syncTitle();
+    },
+
+    syncTitle: function() {
+        var component=this;
+        if (!Ext.isEmpty(component.i18n)){
+            var currentLanguage=Ext.getCmp("workingLanguageField").getValue();
+            if ((!Ext.isEmpty(component.i18n[currentLanguage]))&&((!Ext.isEmpty(component.i18n[currentLanguage].title)))){
+                component.setTitle(component.i18n[currentLanguage].title);
+            }
+        }
     }
 
 });

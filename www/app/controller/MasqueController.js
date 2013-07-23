@@ -993,19 +993,28 @@ Ext.define('Rubedo.controller.MasqueController', {
         var configSpec = Ext.widget('ConfigSpecBloc');
 
 
-        configSpec.getComponent(0).add(Ext.widget('textfield',{
-            itemId:"eTitleField",
+        /*configSpec.getComponent(0).add(Ext.widget('textfield',{
+        itemId:"eTitleField",
+        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
+        onChange:function(){
+        if (this.isValid()){
+        component.setTitle(this.getValue());
+        }
+        },
+        labelWidth:60,
+        allowBlank:false,
+        anchor:"100%",
+        margin:"10 0 10 0",
+        value:component.title
+        }));*/
+        configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
             fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.setTitle(this.getValue());
-                }
-            },
             labelWidth:60,
-            allowBlank:false,
             anchor:"100%",
             margin:"10 0 10 0",
-            value:component.title
+            targetEntity:component.getId(),
+            targetEntityProp:"title",
+            initialLanguage:Ext.getCmp("workingLanguageField").getValue()
         }));
 
         configSpec.getComponent(0).add(Ext.widget('checkbox',{
@@ -1741,6 +1750,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
                 bType:nBloc.bType,
                 id:nBloc.id,
+                i18n:nBloc.i18n,
                 parentCol:nBloc.up().getId(),
                 mType:"block",
                 champsConfig:nBloc.champsConfig,

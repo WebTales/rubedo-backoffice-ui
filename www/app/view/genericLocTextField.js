@@ -107,6 +107,9 @@ Ext.define('Rubedo.view.genericLocTextField', {
                 target.i18n[currentLanguage]={ };
             }
             target.i18n[currentLanguage][me.targetEntityProp]=newValue;
+            if (target.isXType("unBloc")){
+                target.syncTitle();
+            }
         }
     },
 

@@ -350,19 +350,28 @@ Ext.define('Rubedo.controller.PagesController', {
             var configSpec = Ext.widget('ConfigSpecBloc');
 
 
-            configSpec.getComponent(0).add(Ext.widget('textfield',{
-                itemId:"eTitleField",
+            /*configSpec.getComponent(0).add(Ext.widget('textfield',{
+            itemId:"eTitleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
+            onChange:function(){
+            if (this.isValid()){
+            component.setTitle(this.getValue());
+            }
+            },
+            labelWidth:60,
+            allowBlank:false,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            value:component.title
+            }));*/
+            configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                 fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
-                onChange:function(){
-                    if (this.isValid()){
-                        component.setTitle(this.getValue());
-                    }
-                },
                 labelWidth:60,
-                allowBlank:false,
                 anchor:"100%",
                 margin:"10 0 10 0",
-                value:component.title
+                targetEntity:component.getId(),
+                targetEntityProp:"title",
+                initialLanguage:Ext.getCmp("workingLanguageField").getValue()
             }));
             configSpec.getComponent(0).add(Ext.widget('checkbox',{
                 itemId:"eTitleShowField",
@@ -999,9 +1008,9 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.Array.forEach(startComp.query("unBloc"), function(nBloc){
             if (nBloc.canEdit){
                 newBlocks.push({
-
                     bType:nBloc.bType,
                     id:nBloc.getId().replace("page-",""),
+                    i18n:nBloc.i18n,
                     parentCol:nBloc.up().getId().replace("page-",""),
                     mType:"block",
                     champsConfig:nBloc.champsConfig,
@@ -1019,10 +1028,8 @@ Ext.define('Rubedo.controller.PagesController', {
                     flex:nBloc.flex,
                     canEdit:nBloc.canEdit,
                     checksum:nBloc.checksum
-
                 });
             }
-
         });
         return(newBlocks);
     },

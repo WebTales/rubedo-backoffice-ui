@@ -53,6 +53,9 @@
                             "        target.i18n[currentLanguage]={ };\r",
                             "    }\r",
                             "    target.i18n[currentLanguage][me.targetEntityProp]=newValue;\r",
+                            "    if (target.isXType(\"unBloc\")){\r",
+                            "        target.syncTitle();\r",
+                            "    }\r",
                             "}"
                         ],
                         "name": "change",

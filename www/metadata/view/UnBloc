@@ -16,5 +16,45 @@
         "layout": "fit",
         "title": "Un Bloc"
     },
-    "designerId": "3c5f989b-aadc-4101-b8f1-eecb9b463a6b"
+    "designerId": "3c5f989b-aadc-4101-b8f1-eecb9b463a6b",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "this.syncTitle();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "bc7a92fd-4d17-4f62-a80d-fe2df87fad2a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "syncTitle",
+                "implHandler": [
+                    "var component=this;\r",
+                    "if (!Ext.isEmpty(component.i18n)){\r",
+                    "\tvar currentLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
+                    "    if ((!Ext.isEmpty(component.i18n[currentLanguage]))&&((!Ext.isEmpty(component.i18n[currentLanguage].title)))){\r",
+                    "        component.setTitle(component.i18n[currentLanguage].title);\r",
+                    "    }\r",
+                    "}"
+                ]
+            },
+            "designerId": "340dfb64-aa85-43f9-b6b6-7d717afb204b"
+        }
+    ]
 }
