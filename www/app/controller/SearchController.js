@@ -65,11 +65,11 @@ Ext.define('Rubedo.controller.SearchController', {
                         text:thing.label+" : "+term.label,
                         arrowHandler:function(){
                             Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[thing.id],term.term);
-                            Ext.getStore("ESFacetteStore").load();
+                            Ext.getStore("ESFacetteStore").loadPage(1);
                         },
                         handler:function(){
                             Ext.Array.remove(Ext.getStore("ESFacetteStore").activeFacettes[thing.id],term.term);
-                            Ext.getStore("ESFacetteStore").load();
+                            Ext.getStore("ESFacetteStore").loadPage(1);
                         }
                     });
                     if(thing.label=="Query"){
@@ -84,11 +84,11 @@ Ext.define('Rubedo.controller.SearchController', {
                     text:thing.label+" : "+thing.terms[0].label,
                     arrowHandler:function(){
                         delete Ext.getStore("ESFacetteStore").activeFacettes[thing.id];
-                        Ext.getStore("ESFacetteStore").load();
+                        Ext.getStore("ESFacetteStore").loadPage(1);
                     },
                     handler:function(){
                         delete Ext.getStore("ESFacetteStore").activeFacettes[thing.id];
-                        Ext.getStore("ESFacetteStore").load();
+                        Ext.getStore("ESFacetteStore").loadPage(1);
                     }
                 });
                 if(thing.label=="Query"){
@@ -141,7 +141,7 @@ Ext.define('Rubedo.controller.SearchController', {
 
                             }
                             Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty]=theProp;
-                            Ext.getStore("ESFacetteStore").load();
+                            Ext.getStore("ESFacetteStore").loadPage(1);
                         }
                     });
                     newFacet.add(newTerm);

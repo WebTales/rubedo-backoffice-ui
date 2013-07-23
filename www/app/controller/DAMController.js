@@ -735,7 +735,7 @@ Ext.define('Rubedo.controller.DAMController', {
 
                             }
                             Ext.getStore("DAMFacetteStore").activeFacettes[thing.up().usedProperty]=theProp;
-                            Ext.getStore("DAMFacetteStore").load();
+                            Ext.getStore("DAMFacetteStore").loadPage(1);
                         }
                     });
                     newFacet.add(newTerm);
@@ -760,11 +760,11 @@ Ext.define('Rubedo.controller.DAMController', {
                         text:thing.label+" : "+term.label,
                         arrowHandler:function(){
                             Ext.Array.remove(Ext.getStore("DAMFacetteStore").activeFacettes[thing.id],term.term);
-                            Ext.getStore("DAMFacetteStore").load();
+                            Ext.getStore("DAMFacetteStore").loadPage(1);
                         },
                         handler:function(){
                             Ext.Array.remove(Ext.getStore("DAMFacetteStore").activeFacettes[thing.id],term.term);
-                            Ext.getStore("DAMFacetteStore").load();
+                            Ext.getStore("DAMFacetteStore").loadPage(1);
                         }
                     });
                     if(thing.label=="Query"){
@@ -779,11 +779,11 @@ Ext.define('Rubedo.controller.DAMController', {
                     text:thing.label+" : "+thing.terms[0].label,
                     arrowHandler:function(){
                         delete Ext.getStore("DAMFacetteStore").activeFacettes[thing.id];
-                        Ext.getStore("DAMFacetteStore").load();
+                        Ext.getStore("DAMFacetteStore").loadPage(1);
                     },
                     handler:function(){
                         delete Ext.getStore("DAMFacetteStore").activeFacettes[thing.id];
-                        Ext.getStore("DAMFacetteStore").load();
+                        Ext.getStore("DAMFacetteStore").loadPage(1);
                     }
                 });
                 if(thing.label=="Query"){
