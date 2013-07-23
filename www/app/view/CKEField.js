@@ -18,6 +18,7 @@ Ext.define('Rubedo.view.CKEField', {
     alias: 'widget.CKEField',
 
     fieldLabel: 'Label',
+    stripCharsRe: '',
 
     initComponent: function() {
         var me = this;

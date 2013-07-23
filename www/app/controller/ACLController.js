@@ -99,6 +99,9 @@ Ext.define('Rubedo.controller.ACLController', {
             }
             options.params.token=ACL.CSRFToken;
         });
+        Ext.override(Ext.form.field.Text, {
+            stripCharsRe:/<\/?[^>]+>/gi
+        });
 
         this.control({
             "component": {
