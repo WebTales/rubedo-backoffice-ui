@@ -266,7 +266,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         metaBox.show();
         var selector= [];
         Ext.Array.forEach(record.get("vocabularies"),function(vocabId){
-            selector.push(Ext.getCmp("vocabulariesMTGrid").getStore().findRecord("id", vocabId));
+            if (!Ext.isEmpty(Ext.getCmp("vocabulariesMTGrid").getStore().findRecord("id", vocabId))){
+                selector.push(Ext.getCmp("vocabulariesMTGrid").getStore().findRecord("id", vocabId));
+            }
         });
         Ext.getCmp("vocabulariesMTGrid").getSelectionModel().select(selector);
         var targetZone=Ext.getCmp('MTeditFields');

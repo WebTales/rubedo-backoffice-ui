@@ -775,7 +775,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     var maTaxo= record.get("vocabularies");
     var selectionR = [ ];
     Ext.Array.forEach(maTaxo, function(someTaxoId){
-    selectionR.push(tableauTaxoTC.getStore().findRecord("id", someTaxoId));
+    if(!Ext.isEmpty(tableauTaxoTC.getStore().findRecord("id", someTaxoId))){
+        selectionR.push(tableauTaxoTC.getStore().findRecord("id", someTaxoId));
+    }
     });
     tableauTaxoTC.getSelectionModel().select(selectionR);
 
@@ -786,7 +788,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     var depTypes = record.get("dependantTypes");
     var selector=[];
     Ext.Array.forEach(depTypes, function(someTypeId){
-        selector.push(tableauTCI.getStore().findRecord("id", someTypeId));
+        if(!Ext.isEmpty(tableauTCI.getStore().findRecord("id", someTypeId))){
+            selector.push(tableauTCI.getStore().findRecord("id", someTypeId));
+        }
     });
     tableauTCI.getSelectionModel().select(selector);
     }
