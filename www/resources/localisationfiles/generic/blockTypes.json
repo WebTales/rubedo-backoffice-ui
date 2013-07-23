@@ -2327,6 +2327,12 @@
                                     "forceSelection": true,
                                     "queryMode": "local"
                                 }
+                            },{
+                                "type": "Ext.form.field.Text",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1399#",
+                                    "name": "widgetId"
+                                }
                             }]
                         }
                 ],
