@@ -357,7 +357,6 @@ Ext.define('Rubedo.view.contributionPages', {
                             },
                             localiserId: 'nameColumn',
                             dataIndex: 'text',
-                            menuText: 'false',
                             text: 'Nom',
                             flex: 1
                         },
