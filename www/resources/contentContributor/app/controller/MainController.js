@@ -176,11 +176,9 @@ Ext.define('ContentContributor.controller.MainController', {
                 var myWorkingLanguage=ACL.workingLanguage;
                 var fieldValues=Ext.getStore("Contents").getRange()[0].get("fields");
                 var myi18n=Ext.getStore("Contents").getRange()[0].get("i18n");
-                console.log(fieldValues);
                 if (!Ext.isEmpty(myi18n[myWorkingLanguage])){
                     Ext.apply(fieldValues,myi18n[myWorkingLanguage].fields);
-                    console.log(myi18n[myWorkingLanguage].fields);
-                    console.log(fieldValues);
+
                 }
 
                 Ext.getCmp("MainForm").getForm().setValues(fieldValues);
