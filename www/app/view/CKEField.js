@@ -130,14 +130,27 @@ Ext.define('Rubedo.view.CKEField', {
     },
 
     setValue: function(value) {
-        var me=this;
-        if (Ext.isDefined(me.editor)) {
-            me.editor.setData(value);
+        if (typeof(ContentContributor)!="undefined"){
+            try{
+                var me=this;
+                if (!Ext.isEmpty(value)){
+                    var task = new Ext.util.DelayedTask(function(){
+                        me.editor.setData(value);
+                    });
+                    task.delay(200);
+                }
+            } catch (err) { 
+            }
         } else {
-            me.value=value;
-            me.on("afterrender",function(){
+            var me=this;
+            if (Ext.isDefined(me.editor)) {
                 me.editor.setData(value);
-            });
+            } else {
+                me.value=value;
+                me.on("afterrender",function(){
+                    me.editor.setData(value);
+                });
+            }
         }
     },
 

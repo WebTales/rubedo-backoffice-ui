@@ -117,7 +117,7 @@
                     "var selector= [];\r",
                     "Ext.Array.forEach(record.get(\"vocabularies\"),function(vocabId){\r",
                     "    if (!Ext.isEmpty(Ext.getCmp(\"vocabulariesMTGrid\").getStore().findRecord(\"id\", vocabId))){\r",
-                    "    selector.push(Ext.getCmp(\"vocabulariesMTGrid\").getStore().findRecord(\"id\", vocabId));\r",
+                    "        selector.push(Ext.getCmp(\"vocabulariesMTGrid\").getStore().findRecord(\"id\", vocabId));\r",
                     "    }\r",
                     "});\r",
                     "Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().select(selector);\r",

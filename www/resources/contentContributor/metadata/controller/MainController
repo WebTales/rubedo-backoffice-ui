@@ -37,7 +37,7 @@
                     "        var myi18n=Ext.getStore(\"Contents\").getRange()[0].get(\"i18n\");",
                     "        if (!Ext.isEmpty(myi18n[myWorkingLanguage])){",
                     "            Ext.apply(fieldValues,myi18n[myWorkingLanguage].fields);",
-                    "            ",
+                    "",
                     "        }",
                     "",
                     "        Ext.getCmp(\"MainForm\").getForm().setValues(fieldValues);",

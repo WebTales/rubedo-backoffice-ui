@@ -138,14 +138,27 @@
                     "value"
                 ],
                 "implHandler": [
+                    "if (typeof(ContentContributor)!=\"undefined\"){\r",
+                    "try{\r",
+                    "    var me=this;\r",
+                    "    if (!Ext.isEmpty(value)){\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
+                    "    me.editor.setData(value);\r",
+                    "        });\r",
+                    "    task.delay(200);\r",
+                    "    }\r",
+                    "} catch (err) { \r",
+                    "}\r",
+                    "} else {\r",
                     "var me=this;\r",
                     "if (Ext.isDefined(me.editor)) {\r",
                     "    me.editor.setData(value);\r",
                     "} else {\r",
                     "    me.value=value;\r",
                     "    me.on(\"afterrender\",function(){\r",
-                    "    \tme.editor.setData(value);\r",
+                    "        me.editor.setData(value);\r",
                     "    });\r",
+                    "}\r",
                     "}"
                 ]
             },
