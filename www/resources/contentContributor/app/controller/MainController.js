@@ -58,6 +58,9 @@ Ext.define('ContentContributor.controller.MainController', {
                     currentContent.beginEdit();
                     currentContent.set("taxonomy",taxoRes);
                     currentContent.set("fields",myFields);
+                    var i18n=currentContent.get("i18n");
+                    i18n[ACL.workingLanguage]={fields:myFields};
+                    currentContent.set("i18n",i18n);
                     currentContent.endEdit();
 
                 } else {
@@ -170,8 +173,18 @@ Ext.define('ContentContributor.controller.MainController', {
         if (AppGlobals.editMode){
             var task = new Ext.util.DelayedTask(function(){
                 Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("text"));
-                Ext.getCmp("MainForm").getForm().setValues(Ext.getStore("Contents").getRange()[0].get("fields"));
-                Ext.Object.each(Ext.clone(Ext.getStore("Contents").getRange()[0].get("fields")), function(key, value, myself){
+                var myWorkingLanguage=ACL.workingLanguage;
+                var fieldValues=Ext.getStore("Contents").getRange()[0].get("fields");
+                var myi18n=Ext.getStore("Contents").getRange()[0].get("i18n");
+                console.log(fieldValues);
+                if (!Ext.isEmpty(myi18n[myWorkingLanguage])){
+                    Ext.apply(fieldValues,myi18n[myWorkingLanguage].fields);
+                    console.log(myi18n[myWorkingLanguage].fields);
+                    console.log(fieldValues);
+                }
+
+                Ext.getCmp("MainForm").getForm().setValues(fieldValues);
+                Ext.Object.each(fieldValues, function(key, value, myself){
                     if (Ext.isArray(value)) {
                         var multiField=Ext.getCmp('MainForm').query('[name='+key+']')[0];
                         var y=0;
