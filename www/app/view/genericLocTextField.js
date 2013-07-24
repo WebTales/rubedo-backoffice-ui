@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.genericLocTextField', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget.genericLocTextField',
 
+    CTMode: false,
     height: 26,
     width: 400,
     layout: {
@@ -24,6 +25,7 @@ Ext.define('Rubedo.view.genericLocTextField', {
         type: 'hbox'
     },
     fieldLabel: 'Label',
+    labelSeparator: ' ',
 
     initComponent: function() {
         var me = this;
@@ -98,7 +100,11 @@ Ext.define('Rubedo.view.genericLocTextField', {
     onMainTextInputChange: function(field, newValue, oldValue, eOpts) {
         var me=field.up();
         if (field.isValid()){
-            var target=Ext.getCmp(me.targetEntity);
+            if (me.CTMode){
+                var target=Ext.getCmp(me.targetEntity).config;
+            }else {
+                var target=Ext.getCmp(me.targetEntity);
+            }
             var currentLanguage=me.getComponent("currentLanguageIntField").getValue();
             if (Ext.isEmpty(target.i18n)){
                 target.i18n={ };
@@ -107,7 +113,11 @@ Ext.define('Rubedo.view.genericLocTextField', {
                 target.i18n[currentLanguage]={ };
             }
             target.i18n[currentLanguage][me.targetEntityProp]=newValue;
-            if (target.isXType("unBloc")){
+            if (me.CTMode) { 
+                if (currentLanguage==Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")){
+                    Ext.getCmp(me.companionFieldId).setValue(newValue);
+                }
+            } else if (target.isXType("unBloc")){
                 target.syncTitle();
             }
         }
@@ -115,7 +125,11 @@ Ext.define('Rubedo.view.genericLocTextField', {
 
     onCurrentLanguageIntFieldChange: function(field, newValue, oldValue, eOpts) {
         var me=field.up();
-        var target=Ext.getCmp(me.targetEntity);
+        if (me.CTMode){
+            var target=Ext.getCmp(me.targetEntity).config;
+        }else {
+            var target=Ext.getCmp(me.targetEntity);
+        }
         var myBtn=me.getComponent("languageSwitcher");
         if (Ext.isEmpty(newValue)){
             myBtn.setIcon(null);
@@ -136,7 +150,12 @@ Ext.define('Rubedo.view.genericLocTextField', {
         try{
             me.getComponent("mainTextInput").setValue(target.i18n[newValue][me.targetEntityProp]);
         }catch(err){
-            me.getComponent("mainTextInput").setValue(target[me.targetEntityProp]);
+            if (me.CTMode){
+                me.getComponent("mainTextInput").setValue(Ext.getCmp(me.companionFieldId).getValue());
+            }else {
+                me.getComponent("mainTextInput").setValue(target[me.targetEntityProp]);
+            }
+
         }
     },
 

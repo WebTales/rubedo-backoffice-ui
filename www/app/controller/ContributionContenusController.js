@@ -650,6 +650,17 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         for (g=0; g<champsD.length; g++) {
             var donnees=champsD[g];
             var configurateur = Ext.clone(donnees.config);
+            if (!Ext.isEmpty(configurateur.i18n)){
+                var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+                if (!Ext.isEmpty(configurateur.i18n[BOLanguage])){
+                    if (!Ext.isEmpty(configurateur.i18n[BOLanguage].fieldLabel)){
+                        configurateur.fieldLabel=configurateur.i18n[BOLanguage].fieldLabel;
+                    }
+                    if (!Ext.isEmpty(configurateur.i18n[BOLanguage].tooltip)){
+                        configurateur.tooltip=configurateur.i18n[BOLanguage].tooltip;
+                    }
+                }
+            }
             if (donnees.cType =='treepicker'){ 
                 configurateur.store = Ext.create("Ext.data.TreeStore", {
                     isOptimised: true,
@@ -713,7 +724,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
         nouvChamp.config=Ext.clone(donnees.config);
         //begin temporary fix
-        if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+        if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
         //end temporary fix
         if (donnees.cType =='triggerfield'){ 
             var Ouvrir = Ext.clone(donnees.ouvrir);
@@ -727,8 +738,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-        if (Ext.isEmpty(nouvChamp.config.tooltip)){
+        enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+        if (Ext.isEmpty(configurateur.tooltip)){
             enrobage.getComponent('helpBouton').hidden=true;
         } 
         if (nouvChamp.multivalued) {
@@ -1011,6 +1022,17 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             for (g=0; g<champsD.length; g++) {
                 var donnees=champsD[g];
                 var configurateur = Ext.clone(donnees.config);
+                if (!Ext.isEmpty(configurateur.i18n)){
+                    var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+                    if (!Ext.isEmpty(configurateur.i18n[BOLanguage])){
+                        if (!Ext.isEmpty(configurateur.i18n[BOLanguage].fieldLabel)){
+                            configurateur.fieldLabel=configurateur.i18n[BOLanguage].fieldLabel;
+                        }
+                        if (!Ext.isEmpty(configurateur.i18n[BOLanguage].tooltip)){
+                            configurateur.tooltip=configurateur.i18n[BOLanguage].tooltip;
+                        }
+                    }
+                }
                 if (donnees.cType =='treepicker'){ 
                     configurateur.store = Ext.create("Ext.data.TreeStore", {
                         isOptimised: true,
@@ -1074,7 +1096,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }
             nouvChamp.config=Ext.clone(donnees.config);
             //begin temporary fix
-            if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+            if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
             //end temporary fix
             if (donnees.cType =='triggerfield'){ 
                 var Ouvrir = Ext.clone(donnees.openWindow);
@@ -1088,8 +1110,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             nouvChamp.style = '{float:left;}';
             var enrobage =Ext.widget('ChampTC');
             enrobage.add(nouvChamp);
-            enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-            if (Ext.isEmpty(nouvChamp.config.tooltip)){
+            enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+            if (Ext.isEmpty(configurateur.tooltip)){
                 enrobage.getComponent('helpBouton').hidden=true;
             } 
             if (nouvChamp.multivalued) {

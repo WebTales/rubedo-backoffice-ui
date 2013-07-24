@@ -47,6 +47,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             for (g=0; g<champsD.length; g++) {
                 var donnees=champsD[g];
                 var configurateur = Ext.clone(donnees.config);
+                if (!Ext.isEmpty(configurateur.i18n)){
+                    var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+                    if (!Ext.isEmpty(configurateur.i18n[BOLanguage])){
+                        if (!Ext.isEmpty(configurateur.i18n[BOLanguage].fieldLabel)){
+                            configurateur.fieldLabel=configurateur.i18n[BOLanguage].fieldLabel;
+                        }
+                        if (!Ext.isEmpty(configurateur.i18n[BOLanguage].tooltip)){
+                            configurateur.tooltip=configurateur.i18n[BOLanguage].tooltip;
+                        }
+                    }
+                }
                 if (donnees.cType =='treepicker'){ 
                     configurateur.store = Ext.create("Ext.data.TreeStore", {
                         isOptimised: true,
@@ -110,7 +121,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             }
             nouvChamp.config=Ext.clone(donnees.config);
             //begin temporary fix
-            if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+            if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
             //end temporary fix
             if (donnees.cType =='triggerfield'){ 
                 var Ouvrir = Ext.clone(donnees.openWindow);
@@ -124,8 +135,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             nouvChamp.style = '{float:left;}';
             var enrobage =Ext.widget('ChampTC');
             enrobage.add(nouvChamp);
-            enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-            if (Ext.isEmpty(nouvChamp.config.tooltip)){
+            enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+            if (Ext.isEmpty(configurateur.tooltip)){
                 enrobage.getComponent('helpBouton').hidden=true;
             } 
             if (nouvChamp.multivalued) {
@@ -542,6 +553,19 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             Ext.getCmp(this.targetField).setValue(properMT);
                         },nouvChamp.getStore(),{single:true});
                         }
+                        if ((nouvChamp.name=="fieldLabel")||(nouvChamp.name=="tooltip")){
+                            nouvChamp.hide();
+                            var replacerField=Ext.widget('genericLocTextField',{
+                                fieldLabel:nouvChamp.fieldLabel,
+                                anchor:"100%",
+                                targetEntity:TCfield.getId(),
+                                targetEntityProp:nouvChamp.name,
+                                CTMode:true,
+                                companionFieldId:nouvChamp.getId(),
+                                initialLanguage:Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")
+                            });
+                            boiteParam.add(replacerField);
+                        }
                         nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.contentTypes"])||(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().get("readOnly")));
                         nouvChamp.on('change', function (thing) {
                             if (thing.isValid()){
@@ -679,6 +703,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     for (g=0; g<champsD.length; g++) {
         var donnees=champsD[g];
         var configurateur = Ext.clone(donnees.config);
+        if (!Ext.isEmpty(configurateur.i18n)){
+            var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+            if (!Ext.isEmpty(configurateur.i18n[BOLanguage])){
+                if (!Ext.isEmpty(configurateur.i18n[BOLanguage].fieldLabel)){
+                    configurateur.fieldLabel=configurateur.i18n[BOLanguage].fieldLabel;
+                }
+                if (!Ext.isEmpty(configurateur.i18n[BOLanguage].tooltip)){
+                    configurateur.tooltip=configurateur.i18n[BOLanguage].tooltip;
+                }
+            }
+        }
         if (donnees.cType =='treepicker'){ 
             configurateur.store = Ext.create("Ext.data.TreeStore", {
                 isOptimised: true,
@@ -744,7 +779,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     nouvChamp.config=Ext.clone(donnees.config);
 
     //begin temporary fix
-    if(nouvChamp.config.tooltip=="help text"){nouvChamp.config.tooltip="";}
+    if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
     //end temporary fix
 
     nouvChamp.configFields=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("configFields");
@@ -763,8 +798,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     nouvChamp.style = '{float:left;}';
     var enrobage =Ext.widget('ChampTC');
     enrobage.add(nouvChamp);
-    enrobage.getComponent('helpBouton').setTooltip(nouvChamp.config.tooltip);
-    if (Ext.isEmpty(nouvChamp.config.tooltip)){
+    enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+    if (Ext.isEmpty(configurateur.tooltip)){
         enrobage.getComponent('helpBouton').hidden=true;
     }    
     formulaireTC.add(enrobage);

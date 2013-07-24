@@ -7,15 +7,27 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "CTMode": false,
         "height": 26,
         "id": null,
         "width": 400,
         "designer|userClassName": "genericLocTextField",
         "designer|userAlias": "genericLocTextField",
         "layout": "hbox",
-        "fieldLabel": "Label"
+        "fieldLabel": "Label",
+        "labelSeparator": " "
+    },
+    "configAlternates": {
+        "CTMode": "boolean"
     },
     "designerId": "9afe69d9-312c-4ea7-8332-ce4389c7ae0c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "CTMode",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.field.Text",
@@ -44,7 +56,11 @@
                         "implHandler": [
                             "var me=field.up();\r",
                             "if (field.isValid()){\r",
-                            "    var target=Ext.getCmp(me.targetEntity);\r",
+                            "    if (me.CTMode){\r",
+                            "        var target=Ext.getCmp(me.targetEntity).config;\r",
+                            "    }else {\r",
+                            "    \tvar target=Ext.getCmp(me.targetEntity);\r",
+                            "    }\r",
                             "    var currentLanguage=me.getComponent(\"currentLanguageIntField\").getValue();\r",
                             "    if (Ext.isEmpty(target.i18n)){\r",
                             "        target.i18n={ };\r",
@@ -53,7 +69,11 @@
                             "        target.i18n[currentLanguage]={ };\r",
                             "    }\r",
                             "    target.i18n[currentLanguage][me.targetEntityProp]=newValue;\r",
-                            "    if (target.isXType(\"unBloc\")){\r",
+                            "    if (me.CTMode) { \r",
+                            "        if (currentLanguage==Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\")){\r",
+                            "            Ext.getCmp(me.companionFieldId).setValue(newValue);\r",
+                            "        }\r",
+                            "    } else if (target.isXType(\"unBloc\")){\r",
                             "        target.syncTitle();\r",
                             "    }\r",
                             "}"
@@ -91,7 +111,11 @@
                         "fn": "onCurrentLanguageIntFieldChange",
                         "implHandler": [
                             "var me=field.up();\r",
-                            "var target=Ext.getCmp(me.targetEntity);\r",
+                            "if (me.CTMode){\r",
+                            "        var target=Ext.getCmp(me.targetEntity).config;\r",
+                            "    }else {\r",
+                            "    \tvar target=Ext.getCmp(me.targetEntity);\r",
+                            "    }\r",
                             "var myBtn=me.getComponent(\"languageSwitcher\");\r",
                             "if (Ext.isEmpty(newValue)){\r",
                             "    myBtn.setIcon(null);\r",
@@ -112,7 +136,12 @@
                             "try{\r",
                             "    me.getComponent(\"mainTextInput\").setValue(target.i18n[newValue][me.targetEntityProp]);\r",
                             "}catch(err){\r",
-                            "    me.getComponent(\"mainTextInput\").setValue(target[me.targetEntityProp]);\r",
+                            "    if (me.CTMode){\r",
+                            "        me.getComponent(\"mainTextInput\").setValue(Ext.getCmp(me.companionFieldId).getValue());\r",
+                            "    }else {\r",
+                            "    \tme.getComponent(\"mainTextInput\").setValue(target[me.targetEntityProp]);\r",
+                            "    }\r",
+                            "    \r",
                             "}"
                         ],
                         "name": "change",
