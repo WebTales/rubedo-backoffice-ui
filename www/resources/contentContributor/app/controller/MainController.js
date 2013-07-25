@@ -220,6 +220,17 @@ Ext.define('ContentContributor.controller.MainController', {
         var target = Ext.getCmp("MainForm");
         Ext.Array.forEach(fields, function(field,index){
             var configurator=Ext.clone(field.config);
+            if (!Ext.isEmpty(configurator.i18n)){
+                var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage])){
+                    if (!Ext.isEmpty(configurator.i18n[BOLanguage].fieldLabel)){
+                        configurator.fieldLabel=configurator.i18n[BOLanguage].fieldLabel;
+                    }
+                    if (!Ext.isEmpty(configurator.i18n[BOLanguage].tooltip)){
+                        configurator.tooltip=configurator.i18n[BOLanguage].tooltip;
+                    }
+                }
+            }
             if (field.cType =='treepicker'){
                 configurator.store = Ext.create("Ext.data.TreeStore", {
                     autoLoad: false,
