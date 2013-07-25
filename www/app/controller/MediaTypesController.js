@@ -24,8 +24,13 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     onCreateNewMTBtnClick: function(button, e, eOpts) {
         if (button.up().getForm().isValid()) {
             var newMT=Ext.create("Rubedo.model.mediaTypeModel",button.up().getForm().getValues());
+            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+            var i18n= { };
+            i18n[nativeLanguage]=button.up().getForm().getValues();
             newMT.set("vocabularies", [ ]);
             newMT.set("fields", [ ]);
+            newMT.set("nativeLanguage", nativeLanguage);
+            newMT.set("i18n", i18n);
             Ext.getStore("MediaTypes").add(newMT);
             button.up().up().close();
         }
@@ -305,6 +310,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             Ext.getCmp("MTImportBtn").enable();
             Ext.getCmp("MTfieldDeleter").up().enable();
         }
+        Ext.getCmp("MTLDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     },
 
     updateMT: function(record) {
@@ -316,6 +322,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesMTGrid").getSelectionModel().getSelection(), "data"), "id");
             record.set("vocabularies", newVocabularies);
             record.set("fields", me.recordFields(Ext.getCmp('MTeditFields')));
+            Ext.getCmp("MTLDLSToolbar").persisti18n(record);
             record.endEdit();
         } else {
             Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidRightsPropertiesError);

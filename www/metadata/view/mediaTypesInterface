@@ -663,48 +663,6 @@
                                 ]
                             },
                             "designerId": "bd96e035-9fad-4068-9d12-3039cf95691f"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false
-                            },
-                            "designerId": "d7c5e77d-fe61-4266-95f9-1225bc76396d"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.plugin.CellEditing",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "5f7cf847-b847-4f49-8d7b-bd250b2b051e",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onGridcelleditingpluginBeforeEdit",
-                                "implHandler": [
-                                    "if ((!ACL.interfaceRights[\"write.ui.damTypes\"])||(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
-                                    "    return false;\r",
-                                    "}"
-                                ],
-                                "name": "beforeedit",
-                                "scope": "me"
-                            },
-                            "designerId": "61544c06-776b-45d3-a9a3-1fd6556604a3"
                         }
                     ]
                 },
@@ -726,6 +684,59 @@
                         "scope": "me"
                     },
                     "designerId": "8edd6541-5d56-43d2-849b-80b6da2684f5"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "dataIndex": "i18n",
+                        "text": "Languages",
+                        "flex": null
+                    },
+                    "designerId": "ea23c55d-3cc6-4885-84c3-981b69b89282",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "catch(err){var myFlagCode=\"_unknown\";}\r",
+                                    "var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                                    "if(!Ext.isEmpty(value)){\r",
+                                    "    Ext.Object.each(value, function(key, value, myself) {\r",
+                                    "        if (key!=record.get(\"locale\")){\r",
+                                    "            try{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "            catch(err){var myFlagCode2=\"_unknown\";}\r",
+                                    "            returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}\r",
+                                    "return(returner);"
+                                ]
+                            },
+                            "designerId": "6eed6e66-0ba0-49de-a7a6-5907f0f2473d"
+                        }
+                    ]
                 }
             ]
         },
@@ -1494,19 +1505,18 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "mediaTypesEditForm",
-                        "bodyPadding": 10,
+                        "layout": "card",
                         "iconCls": "parametres",
                         "title": "Propriétés"
                     },
-                    "designerId": "19d9c471-f1cc-4aee-bf63-f7c247740bac",
+                    "designerId": "fb2d5e4e-8424-4c0b-b1b7-3607dba15e67",
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1516,10 +1526,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsTab",
-                                "iconCls": null
+                                "localiserId": "propsTab"
                             },
-                            "designerId": "c36ee29f-bdea-4d70-b845-15be0524073b",
+                            "designerId": "93f1b3d0-5187-4483-bbfc-a278f598900c",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -1529,91 +1538,140 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.FieldSet",
+                            "type": "Ext.form.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "rightsFieldSet",
-                                "title": "Droits"
+                                "id": "mediaTypesEditForm",
+                                "itemId": "mainLocItem",
+                                "bodyPadding": 10,
+                                "iconCls": null,
+                                "title": ""
                             },
-                            "designerId": "f82537e0-dfaf-4194-8865-70ba1538ca6d",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
+                            "designerId": "19d9c471-f1cc-4aee-bf63-f7c247740bac",
                             "cn": [
                                 {
-                                    "type": "linkedinstance",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Espaces de travail",
-                                        "labelWidth": 120,
-                                        "name": "workspaces",
-                                        "multiSelect": true,
-                                        "store": "ContributeWorkspacesCombo",
-                                        "layout|anchor": "100%"
-                                    },
-                                    "designerId": "91283f6c-387b-4614-b1e2-8c39b54303de",
-                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.FieldSet",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "localiserId": "commentsFieldSet",
-                                "title": "Commentaires"
-                            },
-                            "designerId": "861cf760-076f-41b1-a2bc-aaef27e94257",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "disqusField",
                                         "layout|anchor": "100%",
-                                        "fieldLabel": "Disqus",
-                                        "name": "activateDisqus",
-                                        "boxLabel": "",
-                                        "inputValue": "true",
-                                        "uncheckedValue": "false"
+                                        "fieldLabel": "Name",
+                                        "labelWidth": 130,
+                                        "name": "type",
+                                        "allowBlank": false
                                     },
-                                    "designerId": "02be28ba-b63e-4db3-93f1-10d536e54691",
+                                    "designerId": "ca3c8951-1c95-4c89-bd4f-a982aa8f246b"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "rightsFieldSet",
+                                        "title": "Droits"
+                                    },
+                                    "designerId": "f82537e0-dfaf-4194-8865-70ba1538ca6d",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "linkedinstance",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Espaces de travail",
+                                                "labelWidth": 120,
+                                                "name": "workspaces",
+                                                "multiSelect": true,
+                                                "store": "ContributeWorkspacesCombo",
+                                                "layout|anchor": "100%"
+                                            },
+                                            "designerId": "91283f6c-387b-4614-b1e2-8c39b54303de",
+                                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "commentsFieldSet",
+                                        "title": "Commentaires"
+                                    },
+                                    "designerId": "861cf760-076f-41b1-a2bc-aaef27e94257",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "disqusField",
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "Disqus",
+                                                "name": "activateDisqus",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "02be28ba-b63e-4db3-93f1-10d536e54691",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "replicatorEntity": "CTLReplicatorEntity",
+                                "id": "MTLDLSToolbar",
+                                "dock": "top"
+                            },
+                            "designerId": "812b0cd8-6ddf-448e-b13e-ee40363b1cc9",
+                            "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
                     ]
                 },

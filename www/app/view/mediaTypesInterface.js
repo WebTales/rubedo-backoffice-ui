@@ -21,7 +21,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
         'Rubedo.view.MTeditFields',
-        'Rubedo.view.WorkspaceCombo'
+        'Rubedo.view.WorkspaceCombo',
+        'Rubedo.view.DLSToolbar'
     ],
 
     favoriteIcon: 'images.png',
@@ -307,22 +308,29 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             },
                             localiserId: 'typeColumn',
                             dataIndex: 'type',
-                            text: 'Type',
-                            editor: {
-                                xtype: 'textfield',
-                                allowBlank: false
-                            }
-                        }
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            listeners: {
-                                beforeedit: {
-                                    fn: me.onGridcelleditingpluginBeforeEdit,
-                                    scope: me
+                            text: 'Type'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                                catch(err){var myFlagCode="_unknown";}
+                                var returner =" <img src=\"/assets/flags/16/"+myFlagCode+".png\"> ";
+                                if(!Ext.isEmpty(value)){
+                                    Ext.Object.each(value, function(key, value, myself) {
+                                        if (key!=record.get("locale")){
+                                            try{var myFlagCode2=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode");}
+                                            catch(err){var myFlagCode2="_unknown";}
+                                            returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                                        }
+                                    });
                                 }
-                            }
-                        })
+                                return(returner);
+                            },
+                            hidden: true,
+                            dataIndex: 'i18n',
+                            text: 'Languages'
+                        }
                     ],
                     listeners: {
                         select: {
@@ -557,9 +565,10 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             ]
                         },
                         {
-                            xtype: 'form',
-                            id: 'mediaTypesEditForm',
-                            bodyPadding: 10,
+                            xtype: 'panel',
+                            layout: {
+                                type: 'card'
+                            },
                             iconCls: 'parametres',
                             title: 'Propriétés',
                             tabConfig: {
@@ -568,37 +577,62 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             },
                             items: [
                                 {
-                                    xtype: 'fieldset',
-                                    localiserId: 'rightsFieldSet',
-                                    title: 'Droits',
+                                    xtype: 'form',
+                                    id: 'mediaTypesEditForm',
+                                    itemId: 'mainLocItem',
+                                    bodyPadding: 10,
+                                    title: '',
                                     items: [
                                         {
-                                            xtype: 'WorkspaceCombo',
-                                            fieldLabel: 'Espaces de travail',
-                                            labelWidth: 120,
-                                            name: 'workspaces',
-                                            multiSelect: true,
-                                            store: 'ContributeWorkspacesCombo',
-                                            anchor: '100%'
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'fieldset',
-                                    localiserId: 'commentsFieldSet',
-                                    title: 'Commentaires',
-                                    items: [
-                                        {
-                                            xtype: 'checkboxfield',
-                                            localiserId: 'disqusField',
+                                            xtype: 'textfield',
                                             anchor: '100%',
-                                            fieldLabel: 'Disqus',
-                                            name: 'activateDisqus',
-                                            boxLabel: '',
-                                            inputValue: 'true',
-                                            uncheckedValue: 'false'
+                                            fieldLabel: 'Name',
+                                            labelWidth: 130,
+                                            name: 'type',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            localiserId: 'rightsFieldSet',
+                                            title: 'Droits',
+                                            items: [
+                                                {
+                                                    xtype: 'WorkspaceCombo',
+                                                    fieldLabel: 'Espaces de travail',
+                                                    labelWidth: 120,
+                                                    name: 'workspaces',
+                                                    multiSelect: true,
+                                                    store: 'ContributeWorkspacesCombo',
+                                                    anchor: '100%'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            localiserId: 'commentsFieldSet',
+                                            title: 'Commentaires',
+                                            items: [
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    localiserId: 'disqusField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Disqus',
+                                                    name: 'activateDisqus',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                }
+                                            ]
                                         }
                                     ]
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'DLSToolbar',
+                                    replicatorEntity: 'CTLReplicatorEntity',
+                                    id: 'MTLDLSToolbar',
+                                    dock: 'top'
                                 }
                             ]
                         },
@@ -658,12 +692,6 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
             t.stopEvent();
         }
     });
-    },
-
-    onGridcelleditingpluginBeforeEdit: function(editor, e, eOpts) {
-        if ((!ACL.interfaceRights["write.ui.damTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly"))) {
-            return false;
-        }
     },
 
     onMainMTGridSelect: function(rowmodel, record, index, eOpts) {

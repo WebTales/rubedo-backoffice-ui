@@ -181,6 +181,42 @@
                 "type": "date"
             },
             "designerId": "52471988-698f-4b6f-812a-3b0393eee99b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "i18n"
+            },
+            "designerId": "5b16fa88-44b7-430d-9303-6cdcfabfe068"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locale"
+            },
+            "designerId": "f9de3251-ae3b-41f1-a651-ed801210dff2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nativeLanguage"
+            },
+            "designerId": "df731e3c-9dfb-45aa-9c3f-309657bc4b3e"
         }
     ]
 }

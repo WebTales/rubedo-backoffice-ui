@@ -42,8 +42,13 @@
                 "implHandler": [
                     "if (button.up().getForm().isValid()) {\r",
                     "    var newMT=Ext.create(\"Rubedo.model.mediaTypeModel\",button.up().getForm().getValues());\r",
+                    "    var nativeLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
+                    "    var i18n= { };\r",
+                    "    i18n[nativeLanguage]=button.up().getForm().getValues();\r",
                     "    newMT.set(\"vocabularies\", [ ]);\r",
                     "    newMT.set(\"fields\", [ ]);\r",
+                    "    newMT.set(\"nativeLanguage\", nativeLanguage);\r",
+                    "    newMT.set(\"i18n\", i18n);\r",
                     "    Ext.getStore(\"MediaTypes\").add(newMT);\r",
                     "    button.up().up().close();\r",
                     "}"
@@ -141,7 +146,8 @@
                     "    Ext.getCmp(\"saveMTBtn\").enable();\r",
                     "    Ext.getCmp(\"MTImportBtn\").enable();\r",
                     "    Ext.getCmp(\"MTfieldDeleter\").up().enable();\r",
-                    "}"
+                    "}\r",
+                    "Ext.getCmp(\"MTLDLSToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"),record.get(\"nativeLanguage\"));"
                 ]
             },
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
@@ -232,6 +238,7 @@
                     "    var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"vocabulariesMTGrid\").getSelectionModel().getSelection(), \"data\"), \"id\");\r",
                     "    record.set(\"vocabularies\", newVocabularies);\r",
                     "    record.set(\"fields\", me.recordFields(Ext.getCmp('MTeditFields')));\r",
+                    "    Ext.getCmp(\"MTLDLSToolbar\").persisti18n(record);\r",
                     "    record.endEdit();\r",
                     "} else {\r",
                     "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidRightsPropertiesError);\r",

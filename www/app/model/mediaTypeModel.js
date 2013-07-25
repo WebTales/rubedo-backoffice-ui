@@ -68,6 +68,15 @@ Ext.define('Rubedo.model.mediaTypeModel', {
             dateFormat: 'timestamp',
             name: 'lastUpdateTime',
             type: 'date'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });
