@@ -20,6 +20,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     requires: [
         'Rubedo.view.MTeditFields',
         'Rubedo.view.WorkspaceCombo',
+        'Rubedo.view.DLSToolbar',
         'Ext.ux.TreePicker'
     ],
 
@@ -328,6 +329,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                     resizable: true,
                     resizeHandles: 'e',
                     title: '',
+                    forceFit: true,
                     store: 'TypesContenusDataJson',
                     viewConfig: {
                         id: 'AdminfTypesGridView'
@@ -345,29 +347,34 @@ Ext.define('Rubedo.view.adminFTDC', {
 
                             },
                             localiserId: 'typeColumn',
-                            width: 452,
                             dataIndex: 'type',
-                            text: 'Type',
-                            flex: 1,
-                            editor: {
-                                xtype: 'textfield',
-                                allowBlank: false
-                            }
+                            text: 'Type'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                                catch(err){var myFlagCode="_unknown";}
+                                var returner =" <img src=\"/assets/flags/16/"+myFlagCode+".png\"> ";
+                                if(!Ext.isEmpty(value)){
+                                    Ext.Object.each(value, function(key, value, myself) {
+                                        if (key!=record.get("locale")){
+                                            try{var myFlagCode2=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode");}
+                                            catch(err){var myFlagCode2="_unknown";}
+                                            returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                                        }
+                                    });
+                                }
+                                return(returner);
+                            },
+                            hidden: true,
+                            dataIndex: 'i18n',
+                            text: 'Languages'
                         }
                     ],
                     selModel: Ext.create('Ext.selection.RowModel', {
 
-                    }),
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-                            listeners: {
-                                beforeedit: {
-                                    fn: me.onGridcelleditingpluginBeforeEdit,
-                                    scope: me
-                                }
-                            }
-                        })
-                    ]
+                    })
                 },
                 {
                     xtype: 'tabpanel',
@@ -577,9 +584,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                             ]
                         },
                         {
-                            xtype: 'form',
-                            id: 'TDCEditForm',
-                            bodyPadding: 10,
+                            xtype: 'panel',
+                            layout: {
+                                type: 'card'
+                            },
                             iconCls: 'parametres',
                             title: 'Propriétés',
                             tabConfig: {
@@ -588,52 +596,76 @@ Ext.define('Rubedo.view.adminFTDC', {
                             },
                             items: [
                                 {
-                                    xtype: 'fieldset',
-                                    localiserId: 'rightWorkflowFieldSet',
-                                    title: 'Droits et workflow',
+                                    xtype: 'form',
+                                    id: 'TDCEditForm',
+                                    itemId: 'mainLocItem',
+                                    bodyPadding: 10,
                                     items: [
                                         {
-                                            xtype: 'WorkspaceCombo',
-                                            fieldLabel: 'Espaces de travail',
-                                            labelWidth: 120,
-                                            name: 'workspaces',
-                                            multiSelect: true,
-                                            store: 'ContributeWorkspacesCombo',
-                                            anchor: '100%'
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Name',
+                                            labelWidth: 130,
+                                            name: 'type',
+                                            allowBlank: false
                                         },
-                                        me.processWorkflow({
-                                            xtype: 'combobox',
-                                            localiserId: 'workflowField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Workflow',
-                                            labelWidth: 120,
-                                            name: 'workflow',
-                                            allowBlank: false,
-                                            editable: false,
-                                            forceSelection: true,
-                                            store: [
-                                                'Aucun',
-                                                'Basique'
-                                            ]
-                                        })
-                                    ]
-                                },
-                                {
-                                    xtype: 'fieldset',
-                                    localiserId: 'commentsFieldSet',
-                                    title: 'Commentaires',
-                                    items: [
                                         {
-                                            xtype: 'checkboxfield',
-                                            localiserId: 'disqusField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Disqus',
-                                            name: 'activateDisqus',
-                                            boxLabel: '',
-                                            inputValue: 'true',
-                                            uncheckedValue: 'false'
+                                            xtype: 'fieldset',
+                                            localiserId: 'rightWorkflowFieldSet',
+                                            title: 'Droits et workflow',
+                                            items: [
+                                                {
+                                                    xtype: 'WorkspaceCombo',
+                                                    fieldLabel: 'Espaces de travail',
+                                                    labelWidth: 120,
+                                                    name: 'workspaces',
+                                                    multiSelect: true,
+                                                    store: 'ContributeWorkspacesCombo',
+                                                    anchor: '100%'
+                                                },
+                                                me.processWorkflow({
+                                                    xtype: 'combobox',
+                                                    localiserId: 'workflowField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Workflow',
+                                                    labelWidth: 120,
+                                                    name: 'workflow',
+                                                    allowBlank: false,
+                                                    editable: false,
+                                                    forceSelection: true,
+                                                    store: [
+                                                        'Aucun',
+                                                        'Basique'
+                                                    ]
+                                                })
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            localiserId: 'commentsFieldSet',
+                                            title: 'Commentaires',
+                                            items: [
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    localiserId: 'disqusField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Disqus',
+                                                    name: 'activateDisqus',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                }
+                                            ]
                                         }
                                     ]
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'DLSToolbar',
+                                    dock: 'top',
+                                    replicatorEntity: 'CTLReplicatorEntity',
+                                    id: 'CTLDLSToolbar'
                                 }
                             ]
                         },
@@ -711,12 +743,6 @@ Ext.define('Rubedo.view.adminFTDC', {
             t.stopEvent();
         }
     });
-    },
-
-    onGridcelleditingpluginBeforeEdit: function(editor, e, eOpts) {
-        if ((!ACL.interfaceRights["write.ui.contentTypes"])||(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().get("readOnly"))) {
-            return false;
-        }
     },
 
     onVocabulairesTypesContenusGridViewReady: function(tablepanel, eOpts) {

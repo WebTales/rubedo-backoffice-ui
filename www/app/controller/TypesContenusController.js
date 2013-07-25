@@ -850,7 +850,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     Ext.getCmp("AdminfTCImporter").enable();
     Ext.getCmp("TCfieldUp").up().enable();
     }
-
+    Ext.getCmp("CTLDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     },
 
     supprimeTypeContenu: function(button, e, eOpts) {
@@ -931,6 +931,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         target.beginEdit();
                         target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
                         target.set("champs", champsR);
+                        Ext.getCmp("CTLDLSToolbar").persisti18n(target);
                         var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                         target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
                         if ((target.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
@@ -948,6 +949,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 target.beginEdit();
                                 target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
                                 target.set("champs", champsR);
+                                Ext.getCmp("CTLDLSToolbar").persisti18n(target);
                                 var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                                 target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
                                 if ((target.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
@@ -972,23 +974,23 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     creerNTC: function(button, e, eOpts) {
         if (Ext.getCmp('champCreerTC').isValid()) {
-
             var nType = Ext.getCmp('champCreerTC').getValue();
+            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+            var i18n= { };
+            i18n[nativeLanguage]={type:nType};
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
                 dependant: Ext.getCmp('champTCIsDep').getValue(),
                 champs: [ ],
                 vocabularies:["navigation"],
-                dependantTypes:[ ]
-
-
+                dependantTypes:[ ],
+                i18n:i18n,
+                nativeLanguage:nativeLanguage
             });
             this.getTypesContenusDataJsonStore().add(nouvType);
-
             Ext.getCmp('nouveauTypeContenuFenetre').close();
             Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);
             this.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);
-
         }
     },
 

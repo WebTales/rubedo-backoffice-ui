@@ -787,6 +787,7 @@
                 "resizable": true,
                 "resizeHandles": "e",
                 "title": "",
+                "forceFit": true,
                 "store": "TypesContenusDataJson"
             },
             "configAlternates": {
@@ -824,10 +825,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "localiserId": "typeColumn",
-                        "width": 452,
+                        "width": null,
                         "dataIndex": "type",
                         "text": "Type",
-                        "flex": 1
+                        "flex": null
                     },
                     "designerId": "db09bb7e-7f2a-4a7c-8400-82e48b822e46",
                     "customConfigs": [
@@ -867,18 +868,6 @@
                                 ]
                             },
                             "designerId": "5fb6b3c5-4d70-47be-ad37-e8c36c578e63"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false
-                            },
-                            "designerId": "73da240b-428c-452a-beb7-f008eefd9db0"
                         }
                     ]
                 },
@@ -892,32 +881,55 @@
                     "designerId": "16e785a1-3a76-422c-a5de-1397b78c3dbc"
                 },
                 {
-                    "type": "Ext.grid.plugin.CellEditing",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
-                        "name": "plugins",
+                        "name": "columns",
                         "type": "array"
                     },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "b868827d-50c2-4a9e-b8c0-401bcedb701e",
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "dataIndex": "i18n",
+                        "text": "Languages",
+                        "flex": null
+                    },
+                    "designerId": "99cfe374-8d96-4642-9d27-7243aaa319af",
                     "cn": [
                         {
-                            "type": "basiceventbinding",
+                            "type": "fixedfunction",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onGridcelleditingpluginBeforeEdit",
-                                "implHandler": [
-                                    "if ((!ACL.interfaceRights[\"write.ui.contentTypes\"])||(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().get(\"readOnly\"))) {\r",
-                                    "    return false;\r",
-                                    "}"
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
                                 ],
-                                "name": "beforeedit",
-                                "scope": "me"
+                                "implHandler": [
+                                    "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "catch(err){var myFlagCode=\"_unknown\";}\r",
+                                    "var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                                    "if(!Ext.isEmpty(value)){\r",
+                                    "    Ext.Object.each(value, function(key, value, myself) {\r",
+                                    "        if (key!=record.get(\"locale\")){\r",
+                                    "            try{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                                    "            catch(err){var myFlagCode2=\"_unknown\";}\r",
+                                    "            returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}\r",
+                                    "return(returner);"
+                                ]
                             },
-                            "designerId": "c79eb5f4-5050-4574-9d0a-fbdc38ba99f8"
+                            "designerId": "8324241c-67de-4ff8-a2ce-4e95ae76edaf"
                         }
                     ]
                 }
@@ -1545,19 +1557,18 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "TDCEditForm",
-                        "bodyPadding": 10,
+                        "layout": "card",
                         "iconCls": "parametres",
                         "title": "Propriétés"
                     },
-                    "designerId": "6c4d6322-2e2c-4c87-9b52-5edfe0189b2a",
+                    "designerId": "d131d255-8c99-44c1-96f1-655a05a193dd",
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1569,7 +1580,7 @@
                             "userConfig": {
                                 "localiserId": "propsTab"
                             },
-                            "designerId": "5d5cba21-5420-46a7-8f88-88d68b334bdd",
+                            "designerId": "58d09643-0945-4afb-a22e-d785abdff157",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -1579,77 +1590,49 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.FieldSet",
+                            "type": "Ext.form.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "rightWorkflowFieldSet",
-                                "title": "Droits et workflow"
+                                "id": "TDCEditForm",
+                                "itemId": "mainLocItem",
+                                "bodyPadding": 10,
+                                "iconCls": null,
+                                "title": null
                             },
-                            "designerId": "81bdef1a-b73b-4940-974b-c6d5ed7df559",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
+                            "designerId": "6c4d6322-2e2c-4c87-9b52-5edfe0189b2a",
                             "cn": [
                                 {
-                                    "type": "linkedinstance",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Espaces de travail",
-                                        "labelWidth": 120,
-                                        "name": "workspaces",
-                                        "multiSelect": true,
-                                        "store": "ContributeWorkspacesCombo",
-                                        "layout|anchor": "100%"
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Name",
+                                        "labelWidth": 130,
+                                        "name": "type",
+                                        "allowBlank": false
                                     },
-                                    "configAlternates": {
-                                        "canSwitchStore": "boolean"
-                                    },
-                                    "designerId": "46af831a-5640-4e36-bfbc-46ea5e33bdec",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                    "designerId": "0a60dce6-1069-4d8b-a2f6-c6c6090eb7ce"
                                 },
                                 {
-                                    "type": "Ext.form.field.ComboBox",
+                                    "type": "Ext.form.FieldSet",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "workflowField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Workflow",
-                                        "labelWidth": 120,
-                                        "name": "workflow",
-                                        "allowBlank": false,
-                                        "editable": false,
-                                        "forceSelection": true,
-                                        "store": [
-                                            "[\"Aucun\", \"Basique\"]"
-                                        ]
+                                        "localiserId": "rightWorkflowFieldSet",
+                                        "title": "Droits et workflow"
                                     },
-                                    "configAlternates": {
-                                        "store": "array"
-                                    },
-                                    "designerId": "bf32c21b-fba3-4518-9173-9040f31c77e3",
+                                    "designerId": "81bdef1a-b73b-4940-974b-c6d5ed7df559",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
@@ -1659,83 +1642,160 @@
                                     ],
                                     "cn": [
                                         {
-                                            "type": "processcfgfunction",
+                                            "type": "linkedinstance",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processWorkflow",
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "implHandler": [
-                                                    "var store = Ext.create('Ext.data.Store', {\r",
-                                                    "    fields: ['value', 'name'],\r",
-                                                    "    data : [\r",
-                                                    "        {\"value\":\"Aucun\", \"name\":Rubedo.RubedoAutomatedElementsLoc.noneText},\r",
-                                                    "        {\"value\":\"Basique\", \"name\":Rubedo.RubedoAutomatedElementsLoc.basicText}\r",
-                                                    "    ]\r",
-                                                    "});\r",
-                                                    "config.store=store;\r",
-                                                    "config.valueField=\"value\";\r",
-                                                    "config.displayField=\"name\";\r",
-                                                    "return config;"
+                                                "fieldLabel": "Espaces de travail",
+                                                "labelWidth": 120,
+                                                "name": "workspaces",
+                                                "multiSelect": true,
+                                                "store": "ContributeWorkspacesCombo",
+                                                "layout|anchor": "100%"
+                                            },
+                                            "configAlternates": {
+                                                "canSwitchStore": "boolean"
+                                            },
+                                            "designerId": "46af831a-5640-4e36-bfbc-46ea5e33bdec",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "workflowField",
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "Workflow",
+                                                "labelWidth": 120,
+                                                "name": "workflow",
+                                                "allowBlank": false,
+                                                "editable": false,
+                                                "forceSelection": true,
+                                                "store": [
+                                                    "[\"Aucun\", \"Basique\"]"
                                                 ]
                                             },
-                                            "designerId": "3fec7f6f-9a3b-47df-8b0f-f487c350e3bb"
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "bf32c21b-fba3-4518-9173-9040f31c77e3",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "cn": [
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "processWorkflow",
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "implHandler": [
+                                                            "var store = Ext.create('Ext.data.Store', {\r",
+                                                            "    fields: ['value', 'name'],\r",
+                                                            "    data : [\r",
+                                                            "        {\"value\":\"Aucun\", \"name\":Rubedo.RubedoAutomatedElementsLoc.noneText},\r",
+                                                            "        {\"value\":\"Basique\", \"name\":Rubedo.RubedoAutomatedElementsLoc.basicText}\r",
+                                                            "    ]\r",
+                                                            "});\r",
+                                                            "config.store=store;\r",
+                                                            "config.valueField=\"value\";\r",
+                                                            "config.displayField=\"name\";\r",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "designerId": "3fec7f6f-9a3b-47df-8b0f-f487c350e3bb"
+                                                }
+                                            ]
                                         }
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.FieldSet",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "localiserId": "commentsFieldSet",
-                                "title": "Commentaires"
-                            },
-                            "designerId": "c250c238-fb68-4487-97c4-7f7d3b7b58e2",
-                            "customConfigs": [
+                                },
                                 {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "Ext.form.field.Checkbox",
+                                    "type": "Ext.form.FieldSet",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "disqusField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Disqus",
-                                        "name": "activateDisqus",
-                                        "boxLabel": "",
-                                        "inputValue": "true",
-                                        "uncheckedValue": "false"
+                                        "localiserId": "commentsFieldSet",
+                                        "title": "Commentaires"
                                     },
-                                    "designerId": "417d745b-259c-4fa4-ac7e-5fce05c320b7",
+                                    "designerId": "c250c238-fb68-4487-97c4-7f7d3b7b58e2",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
                                         }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "disqusField",
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "Disqus",
+                                                "name": "activateDisqus",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "417d745b-259c-4fa4-ac7e-5fce05c320b7",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "replicatorEntity": "CTLReplicatorEntity",
+                                "id": "CTLDLSToolbar"
+                            },
+                            "designerId": "e2cd1fd3-b6e4-4253-a79c-a5c92d237480",
+                            "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
                     ]
                 },

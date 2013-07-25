@@ -1,0 +1,36 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "width": 400,
+        "designer|userClassName": "CTLReplicatorEntity",
+        "designer|userAlias": "CTLReplicatorEntity",
+        "bodyPadding": 10,
+        "header": false,
+        "title": ""
+    },
+    "designerId": "16d7947b-734c-40f8-89ec-32633511ee40",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "fieldLabel": "Name",
+                "labelWidth": 130,
+                "name": "type",
+                "allowBlank": false
+            },
+            "designerId": "66bb94ce-d3cf-4981-a247-d74baa2f5eaf"
+        }
+    ]
+}

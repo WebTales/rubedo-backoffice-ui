@@ -90,6 +90,15 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             defaultValue: false,
             name: 'system',
             type: 'boolean'
+        },
+        {
+            name: 'nativeLanguage'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'i18n'
         }
     ]
 });

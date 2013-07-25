@@ -106,7 +106,7 @@
                             "    } else {\r",
                             "        me.up().getLayout().setActiveItem(me.up().getComponent(newValue));\r",
                             "        if (newValue!=me.nativeLanguage){\r",
-                            "        \tme.getComponent(\"LocRemoveBtn\").enable();\r",
+                            "            me.getComponent(\"LocRemoveBtn\").enable();\r",
                             "        }\r",
                             "    }\r",
                             "    if (me.specialTaxoMode){\r",
