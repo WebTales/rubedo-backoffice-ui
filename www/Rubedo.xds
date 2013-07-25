@@ -2765,6 +2765,14 @@
                 "app/view/CTLReplicatorEntity.js"
             ],
             "className": "CTLReplicatorEntity"
+        },
+        "eec8d15f-1996-4c4b-8e77-4ef3271d9171": {
+            "paths": [
+                "metadata/view/DAMReplicatorEntity",
+                "app/view/override/DAMReplicatorEntity.js",
+                "app/view/DAMReplicatorEntity.js"
+            ],
+            "className": "DAMReplicatorEntity"
         }
     },
     "viewOrderMap": {
@@ -2935,7 +2943,8 @@
             "e228d799-f13d-4c58-8852-63ccae95bd0f",
             "03bb1252-0954-4b34-adc7-949ff8f3bee5",
             "9afe69d9-312c-4ea7-8332-ce4389c7ae0c",
-            "16d7947b-734c-40f8-89ec-32633511ee40"
+            "16d7947b-734c-40f8-89ec-32633511ee40",
+            "eec8d15f-1996-4c4b-8e77-4ef3271d9171"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

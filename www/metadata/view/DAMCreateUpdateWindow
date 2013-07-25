@@ -18,7 +18,7 @@
             "Ext.ux.TreePicker"
         ],
         "overflowY": "auto",
-        "layout": "fit",
+        "layout": "card",
         "iconCls": "mediaTypes",
         "title": "Nouveau média",
         "constrain": true,
@@ -57,6 +57,7 @@
             "userConfig": {
                 "height": null,
                 "id": "DAMFieldBox",
+                "itemId": "mainLocItem",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
@@ -422,6 +423,22 @@
                     "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"
                 }
             ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "replicatorEntity": "DAMReplicatorEntity",
+                "specialContentsMode": true,
+                "id": "DAMDSLToolbar"
+            },
+            "designerId": "d637fa01-780c-40f8-872c-829ecf0df159",
+            "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
         }
     ]
 }

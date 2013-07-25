@@ -174,7 +174,8 @@ Ext.application({
         'Rubedo.view.sitesRepLoc',
         'Rubedo.view.contentReplicatorMainEntity',
         'Rubedo.view.genericLocTextField',
-        'Rubedo.view.CTLReplicatorEntity'
+        'Rubedo.view.CTLReplicatorEntity',
+        'Rubedo.view.DAMReplicatorEntity'
     ],
     models: [
         'sitesDataModel',
@@ -473,7 +474,8 @@ Ext.application({
         'sitesRepLoc',
         'contentReplicatorMainEntity',
         'genericLocTextField',
-        'CTLReplicatorEntity'
+        'CTLReplicatorEntity',
+        'DAMReplicatorEntity'
     ],
     autoCreateViewport: true,
     controllers: [

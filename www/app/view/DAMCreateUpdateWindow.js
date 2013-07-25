@@ -20,6 +20,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     requires: [
         'Rubedo.view.MyTool17',
         'Rubedo.view.WorkspaceCombo',
+        'Rubedo.view.DLSToolbar',
         'Ext.ux.TreePicker'
     ],
 
@@ -30,7 +31,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
     width: 900,
     overflowY: 'auto',
     layout: {
-        type: 'fit'
+        type: 'card'
     },
     iconCls: 'mediaTypes',
     title: 'Nouveau média',
@@ -51,6 +52,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                 {
                     xtype: 'form',
                     id: 'DAMFieldBox',
+                    itemId: 'mainLocItem',
                     autoScroll: true,
                     bodyPadding: 10,
                     title: '',
@@ -194,6 +196,13 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                             text: 'Passer en mode édition'
                         }
                     ]
+                },
+                {
+                    xtype: 'DLSToolbar',
+                    dock: 'top',
+                    replicatorEntity: 'DAMReplicatorEntity',
+                    specialContentsMode: true,
+                    id: 'DAMDSLToolbar'
                 }
             ]
         });

@@ -180,6 +180,7 @@ Ext.define('Rubedo.controller.DAMController', {
             record.set("writeWorkspace",Ext.getCmp("DAMFieldBox").getForm().getValues().writeWorkspace);
             record.set("target",Ext.getCmp("DAMFieldBox").getForm().getValues().target);
             record.set("taxonomy", me.getTaxoValues());
+            Ext.getCmp("DAMDSLToolbar").persisti18n(record);
             record.endEdit();
             button.up().up().close();
             if (Ext.getCmp("DAMInterface").currentViewMode=="search"){
@@ -465,6 +466,9 @@ Ext.define('Rubedo.controller.DAMController', {
         if (Ext.isEmpty(newField.config.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
+        if (configurator.localizable){
+            casing.localizable=true;
+        }
         renderTarget.add(casing);
     },
 
@@ -691,6 +695,7 @@ Ext.define('Rubedo.controller.DAMController', {
             myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMDisplayText+" \" "+record.get("title")+" \"");
             Ext.getCmp("DAMSubmitUpdateBtn").hide();
         }
+        Ext.getCmp("DAMDSLToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     },
 
     renderFacets: function(facets) {

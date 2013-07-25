@@ -218,6 +218,42 @@
                 "type": "string"
             },
             "designerId": "cc7e6078-a992-4b04-bb0b-77acffc0567c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "i18n"
+            },
+            "designerId": "6dba3b64-ea26-48c7-bad9-a65ee5f556df"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locale"
+            },
+            "designerId": "04e05ed2-baa4-462f-bd2c-cde52a71d689"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nativeLanguage"
+            },
+            "designerId": "a543b983-c2dd-4a8e-80ba-258a017cdba6"
         }
     ]
 }

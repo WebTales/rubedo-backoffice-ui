@@ -144,6 +144,9 @@
                     "if (Ext.isEmpty(newField.config.tooltip)){\r",
                     "    casing.getComponent('helpBouton').hidden=true;\r",
                     "} \r",
+                    "if (configurator.localizable){\r",
+                    "    casing.localizable=true;\r",
+                    "}\r",
                     "renderTarget.add(casing);"
                 ]
             },
@@ -576,6 +579,7 @@
                     "    record.set(\"writeWorkspace\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues().writeWorkspace);\r",
                     "    record.set(\"target\",Ext.getCmp(\"DAMFieldBox\").getForm().getValues().target);\r",
                     "    record.set(\"taxonomy\", me.getTaxoValues());\r",
+                    "    Ext.getCmp(\"DAMDSLToolbar\").persisti18n(record);\r",
                     "    record.endEdit();\r",
                     "    button.up().up().close();\r",
                     "    if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"search\"){\r",
@@ -768,7 +772,8 @@
                     "    //Ext.Array.forEach(myEditor.query(\"button\"), function(thing){thing.disable();});\r",
                     "    myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMDisplayText+\" \\\" \"+record.get(\"title\")+\" \\\"\");\r",
                     "    Ext.getCmp(\"DAMSubmitUpdateBtn\").hide();\r",
-                    "}"
+                    "}\r",
+                    "Ext.getCmp(\"DAMDSLToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"),record.get(\"nativeLanguage\"));"
                 ]
             },
             "designerId": "b46baeb9-0cac-4bfa-b961-22357ac8f3bf"

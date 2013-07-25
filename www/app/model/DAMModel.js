@@ -75,6 +75,15 @@ Ext.define('Rubedo.model.DAMModel', {
             defaultValue: 'notFiled',
             name: 'directory',
             type: 'string'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });
