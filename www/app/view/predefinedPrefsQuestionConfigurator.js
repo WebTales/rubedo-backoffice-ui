@@ -18,13 +18,14 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
     alias: 'widget.predefinedPrefsQuestionConfigurator',
 
     requires: [
+        'Rubedo.view.CKEField',
         'Rubedo.view.experimentalGridField'
     ],
 
     localiserId: 'formOpenQuestionConfigurator',
-    height: 393,
+    height: 593,
     id: 'predefinedPrefsQuestionConfigurator',
-    width: 715,
+    width: 798,
     resizable: false,
     layout: {
         type: 'fit'
@@ -66,16 +67,18 @@ Ext.define('Rubedo.view.predefinedPrefsQuestionConfigurator', {
                     xtype: 'form',
                     border: 0,
                     height: 134,
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: '',
                     items: [
                         {
-                            xtype: 'textfield',
+                            xtype: 'CKEField',
+                            CKETBConfig: 'Standard',
                             localiserId: 'questionLabelField',
-                            anchor: '100%',
                             fieldLabel: 'Intitulé de la question',
-                            labelWidth: 140,
-                            name: 'label'
+                            labelAlign: 'top',
+                            name: 'label',
+                            anchor: '100%'
                         },
                         {
                             xtype: 'textfield',

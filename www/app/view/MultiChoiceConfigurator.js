@@ -17,10 +17,14 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.MultiChoiceConfigurator',
 
+    requires: [
+        'Rubedo.view.CKEField'
+    ],
+
     localiserId: 'multiChoiceQuestionEditor',
-    height: 404,
+    height: 563,
     id: 'MultiChoiceConfigurator',
-    width: 632,
+    width: 828,
     resizable: false,
     layout: {
         type: 'fit'
@@ -60,16 +64,18 @@ Ext.define('Rubedo.view.MultiChoiceConfigurator', {
             items: [
                 {
                     xtype: 'form',
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: '',
                     items: [
                         {
-                            xtype: 'textfield',
-                            localiserId: 'questionLabelField',
+                            xtype: 'CKEField',
                             anchor: '100%',
                             fieldLabel: 'Intitulé de la question',
-                            labelWidth: 140,
-                            name: 'fieldLabel'
+                            labelAlign: 'top',
+                            name: 'fieldLabel',
+                            CKETBConfig: 'Standard',
+                            localiserId: 'questionLabelField'
                         },
                         {
                             xtype: 'textfield',

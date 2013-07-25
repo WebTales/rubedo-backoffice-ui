@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "formOpenQuestionConfigurator",
-        "height": 393,
+        "height": 593,
         "id": "predefinedPrefsQuestionConfigurator",
-        "width": 715,
+        "width": 798,
         "designer|userClassName": "predefinedPrefsQuestionConfigurator",
         "designer|userAlias": "predefinedPrefsQuestionConfigurator",
         "resizable": false,
@@ -117,33 +117,42 @@
             "userConfig": {
                 "border": 0,
                 "height": 134,
+                "autoScroll": true,
                 "bodyPadding": 10,
                 "title": ""
             },
             "designerId": "15cf9828-270d-4786-b9cf-fe6e3648c205",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "CKETBConfig": "Standard",
                         "localiserId": "questionLabelField",
-                        "layout|anchor": "100%",
+                        "height": null,
                         "fieldLabel": "Intitulé de la question",
-                        "labelWidth": 140,
-                        "name": "label"
+                        "labelAlign": "top",
+                        "name": "label",
+                        "layout|anchor": "100%"
                     },
-                    "designerId": "b8adc720-6603-4ebf-8a61-f0d622648c39",
+                    "designerId": "32b15c41-a5ea-4c41-b726-5967180cb002",
                     "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "CKETBConfig",
+                            "type": "string"
+                        },
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
                         }
-                    ]
+                    ],
+                    "masterInstanceId": "d307504b-480a-4d03-adf2-dc2c18432b4f"
                 },
                 {
                     "type": "Ext.form.field.Text",

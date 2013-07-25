@@ -663,9 +663,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                             dockedItems: [
                                 {
                                     xtype: 'DLSToolbar',
-                                    dock: 'top',
                                     replicatorEntity: 'CTLReplicatorEntity',
-                                    id: 'CTLDLSToolbar'
+                                    id: 'CTLDLSToolbar',
+                                    dock: 'top'
                                 }
                             ]
                         },

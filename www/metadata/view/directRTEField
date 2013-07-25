@@ -72,7 +72,7 @@
                     "\r",
                     "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
                     "    var myEditor = Ext.widget(\"RichTextConfigurator\");\r",
-                    "    \r",
+                    "\r",
                     "    Ext.getCmp(\"richTextConfiguratorSubmit\").targetedId=component.getId();\r",
                     "    Ext.getCmp(\"richTextConfiguratorSubmit\").directMode=true;\r",
                     "    myEditor.show();\r",

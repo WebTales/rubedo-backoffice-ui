@@ -17,10 +17,14 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
     extend: 'Ext.window.Window',
     alias: 'widget.OpenFieldConfigurator',
 
+    requires: [
+        'Rubedo.view.CKEField'
+    ],
+
     localiserId: 'formOpenQuestionConfigurator',
-    height: 288,
+    height: 597,
     id: 'OpenFieldConfigurator',
-    width: 715,
+    width: 736,
     resizable: false,
     layout: {
         align: 'stretch',
@@ -62,17 +66,18 @@ Ext.define('Rubedo.view.OpenFieldConfigurator', {
                 {
                     xtype: 'form',
                     border: 0,
-                    height: 134,
+                    height: 440,
                     bodyPadding: 10,
                     title: '',
                     items: [
                         {
-                            xtype: 'textfield',
+                            xtype: 'CKEField',
+                            CKETBConfig: 'Standard',
                             localiserId: 'questionLabelField',
-                            anchor: '100%',
                             fieldLabel: 'Intitulé de la question',
-                            labelWidth: 140,
-                            name: 'fieldLabel'
+                            labelAlign: 'top',
+                            name: 'fieldLabel',
+                            anchor: '100%'
                         },
                         {
                             xtype: 'textfield',
