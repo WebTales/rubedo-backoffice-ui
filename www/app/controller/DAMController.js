@@ -447,6 +447,17 @@ Ext.define('Rubedo.controller.DAMController', {
     renderMTField: function(protoData, renderTarget, updateMode) {
         var me=this;
         var configurator=protoData.config;
+        if (!Ext.isEmpty(configurator.i18n)){
+            var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+            if (!Ext.isEmpty(configurator.i18n[BOLanguage])){
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage].fieldLabel)){
+                    configurator.fieldLabel=configurator.i18n[BOLanguage].fieldLabel;
+                }
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage].tooltip)){
+                    configurator.tooltip=configurator.i18n[BOLanguage].tooltip;
+                }
+            }
+        }
         if (protoData.cType == 'combobox') {
             var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
             configurator.store = myStore;
@@ -462,8 +473,8 @@ Ext.define('Rubedo.controller.DAMController', {
         newField.style = '{float:left;}';
         var casing =Ext.widget('ChampTC');
         casing.add(newField);
-        casing.getComponent('helpBouton').setTooltip(newField.config.tooltip);
-        if (Ext.isEmpty(newField.config.tooltip)){
+        casing.getComponent('helpBouton').setTooltip(configurator.tooltip);
+        if (Ext.isEmpty(configurator.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
         if (configurator.localizable){

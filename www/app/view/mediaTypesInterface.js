@@ -28,7 +28,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
     localiserId: 'DamTypesMainWindow',
     height: 627,
     id: 'mediaTypesInterface',
-    width: 1080,
+    width: 1200,
     layout: {
         align: 'stretch',
         type: 'hbox'

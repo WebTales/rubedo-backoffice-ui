@@ -126,6 +126,19 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                         nouvChamp.validator=me.nameValidator;
                     }
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
+                    if ((nouvChamp.name=="fieldLabel")||(nouvChamp.name=="tooltip")){
+                        nouvChamp.hide();
+                        var replacerField=Ext.widget('genericLocTextField',{
+                            fieldLabel:nouvChamp.fieldLabel,
+                            anchor:"100%",
+                            targetEntity:TCfield.getId(),
+                            targetEntityProp:nouvChamp.name,
+                            CTMode:true,
+                            companionFieldId:nouvChamp.getId(),
+                            initialLanguage:Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")
+                        });
+                        boiteParam.add(replacerField);
+                    }
                     nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.damTypes"])||(Ext.getCmp("mainMTGrid").getSelectionModel().getLastSelected().get("readOnly")));
                     nouvChamp.on('change', function (thing) {
                         if (thing.isValid()){
@@ -312,6 +325,17 @@ Ext.define('Rubedo.controller.MediaTypesController', {
     renderMTField: function(protoData, renderTarget) {
         var me=this;
         var configurator=protoData.config;
+        if (!Ext.isEmpty(configurator.i18n)){
+            var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+            if (!Ext.isEmpty(configurator.i18n[BOLanguage])){
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage].fieldLabel)){
+                    configurator.fieldLabel=configurator.i18n[BOLanguage].fieldLabel;
+                }
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage].tooltip)){
+                    configurator.tooltip=configurator.i18n[BOLanguage].tooltip;
+                }
+            }
+        }
         if (protoData.cType == 'combobox') {
             var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
             configurator.store = myStore;
@@ -325,8 +349,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         newField.style = '{float:left;}';
         var casing =Ext.widget('ChampTC');
         casing.add(newField);
-        casing.getComponent('helpBouton').setTooltip(newField.config.tooltip);
-        if (Ext.isEmpty(newField.config.tooltip)){
+        casing.getComponent('helpBouton').setTooltip(configurator.tooltip);
+        if (Ext.isEmpty(configurator.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
         if (!me.nameAvailable(newField.name)) {
