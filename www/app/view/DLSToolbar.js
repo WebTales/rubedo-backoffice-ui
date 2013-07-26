@@ -62,8 +62,8 @@ Ext.define('Rubedo.view.DLSToolbar', {
                                     me.addTranslation(form.getValues().language);
                                     Ext.getCmp("TranslationAdderWindow").close();
                                 }
-
                             });
+                            Ext.getCmp("TranslationAdderWindow").getComponent(0).getComponent(0).setValue(Ext.getStore("TranslationAdderStore").getRange()[0].get("locale"));
                         } else {
                             Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.alreadyTranslatedError);
                         }
