@@ -544,7 +544,8 @@ function SummerHtmlImageMapCreator() {
 					html_code += utils.encode('</map>');
 				} else {
 					utils.foreachReverse(objects, function(x) {
-						html_code.push({type:x.expType,params:x.params});
+						console.log(x);
+						html_code.push({type:x.expType,params:x.params,href:x.href,alt:x.alt,title:x.title});
 					});
 				}
 				return html_code;
@@ -1915,20 +1916,27 @@ function SummerHtmlImageMapCreator() {
     var i=0;
     for (i=0; i<predefShapes.length; i++){
     	if(predefShapes[i].type=="rect"){
-    		new Rect(0,0).setParams(predefShapes[i].params).redraw();
+    		var myObjs=new Rect(0,0).setParams(predefShapes[i].params).redraw();
     	} else if (predefShapes[i].type=="circle"){
-    		new Circle(0,0).setParams(predefShapes[i].params).redraw();
+    		var myObjs=new Circle(0,0).setParams(predefShapes[i].params).redraw();
     	} else if (predefShapes[i].type=="polygon"){
-    		new Polygon(0,0).setParams(predefShapes[i].params).redraw();
+    		var myObjs=new Polygon(0,0).setParams(predefShapes[i].params);
+    		var myPolyline = myObjs.polygon;
+			myObjs.newPolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+			myObjs.g.replaceChild( myObjs.newPolygon, myObjs.polygon);
+			myObjs.polygon=myObjs.newPolygon;
+			delete(myObjs.newPolygon);
+			myObjs.setCoords(predefShapes[i].params);
     	}
+    	myObjs.href=predefShapes[i].href;
+    	myObjs.href=predefShapes[i].alt;
+    	myObjs.href=predefShapes[i].title;
     }
     app.deselectAll();
     app.setIsDraw(false);
-    console.log(app.getIsDraw());
     }
     setTimeout(restorePreviousShapes,100);
-    //new Rect(0,0).setParams({x:20,y:20,width:200,height:200}).redraw();
-    //new Rect(0,0).setParams({x:40,y:40,width:300,height:300}).redraw();
+    
 };
    
 document.addEventListener("DOMContentLoaded", SummerHtmlImageMapCreator, false);
