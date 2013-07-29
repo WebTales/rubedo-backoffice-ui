@@ -175,7 +175,10 @@ Ext.application({
         'Rubedo.view.contentReplicatorMainEntity',
         'Rubedo.view.genericLocTextField',
         'Rubedo.view.CTLReplicatorEntity',
-        'Rubedo.view.DAMReplicatorEntity'
+        'Rubedo.view.DAMReplicatorEntity',
+        'Rubedo.view.ImageMapField',
+        'Rubedo.view.ImageMapFieldComponent',
+        'Rubedo.view.ImageMapperWindow'
     ],
     models: [
         'sitesDataModel',
@@ -475,7 +478,10 @@ Ext.application({
         'contentReplicatorMainEntity',
         'genericLocTextField',
         'CTLReplicatorEntity',
-        'DAMReplicatorEntity'
+        'DAMReplicatorEntity',
+        'ImageMapField',
+        'ImageMapFieldComponent',
+        'ImageMapperWindow'
     ],
     autoCreateViewport: true,
     controllers: [

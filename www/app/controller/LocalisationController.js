@@ -345,7 +345,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "thisVocabularyText":"this vocabulary",
             "atLeastOneLocError":"At least one language must be active",
             "alreadyTranslatedError":"This item has already been translated in all active languages",
-            "missingLocError":"This version is not eligible for localized revert"
+            "missingLocError":"This version is not eligible for localized revert",
+            "imageRequiredError":"An image must be selected"
         });
 
         this.control({

@@ -2773,6 +2773,30 @@
                 "app/view/DAMReplicatorEntity.js"
             ],
             "className": "DAMReplicatorEntity"
+        },
+        "d7136b60-6c34-449e-8a6c-6ffbbc1923ed": {
+            "paths": [
+                "metadata/view/ImageMapField",
+                "app/view/override/ImageMapField.js",
+                "app/view/ImageMapField.js"
+            ],
+            "className": "ImageMapField"
+        },
+        "f6e7a107-7934-4fd8-97ba-6ce423a5b170": {
+            "paths": [
+                "metadata/view/ImageMapFieldComponent",
+                "app/view/override/ImageMapFieldComponent.js",
+                "app/view/ImageMapFieldComponent.js"
+            ],
+            "className": "ImageMapFieldComponent"
+        },
+        "8c8eb810-59a0-4d95-a6b4-7d495027da77": {
+            "paths": [
+                "metadata/view/ImageMapperWindow",
+                "app/view/override/ImageMapperWindow.js",
+                "app/view/ImageMapperWindow.js"
+            ],
+            "className": "ImageMapperWindow"
         }
     },
     "viewOrderMap": {
@@ -2926,10 +2950,12 @@
             "8a0627d1-0b5e-426d-bdca-2ee1be6c9d9b",
             "40303feb-9caa-4ec1-a7e2-f9f5b1608e20",
             "a109fcf3-48a3-4aeb-af13-4d6ad0345412",
+            "f6e7a107-7934-4fd8-97ba-6ce423a5b170",
             "b7d7c2aa-8852-43f2-917d-c5a046209143",
             "f49940ae-cdb8-4eb2-86dd-78ca8c746b6d",
             "56e8b929-18e3-45b1-89e7-3ec9fc3b1319",
             "022b9194-cbf8-489f-ba75-3a204f42e228",
+            "d7136b60-6c34-449e-8a6c-6ffbbc1923ed",
             "66174f28-03d3-4c02-855f-65706d91852a",
             "f5e5f80c-86f4-4e98-8684-b8e04f0dfd70",
             "472daae0-2a53-4bd8-9545-e9939084cf89",
@@ -2944,7 +2970,8 @@
             "03bb1252-0954-4b34-adc7-949ff8f3bee5",
             "9afe69d9-312c-4ea7-8332-ce4389c7ae0c",
             "16d7947b-734c-40f8-89ec-32633511ee40",
-            "eec8d15f-1996-4c4b-8e77-4ef3271d9171"
+            "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
+            "8c8eb810-59a0-4d95-a6b4-7d495027da77"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",

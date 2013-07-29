@@ -544,7 +544,6 @@ function SummerHtmlImageMapCreator() {
 					html_code += utils.encode('</map>');
 				} else {
 					utils.foreachReverse(objects, function(x) {
-						console.log(x);
 						html_code.push({type:x.expType,params:x.params,href:x.href,alt:x.alt,title:x.title});
 					});
 				}
@@ -979,9 +978,11 @@ function SummerHtmlImageMapCreator() {
 		};
 		
 		function onToHtmlButtonClick(e) {
-			// Generate html code only
 			info.unload();
-			console.log(JSON.stringify(app.getHTMLCode()));
+			var myResult=JSON.stringify(app.getHTMLCode());
+			var targetField=gup("sourceFieldId");
+			window.parent.Ext.getCmp(targetField).setValue(myResult);
+			window.parent.Ext.getCmp("ImageMapperWindow").close();
 			//handle return code here
             //code.print();
 			
@@ -1905,7 +1906,7 @@ function SummerHtmlImageMapCreator() {
       else
         return results[1];
     }
-    app.loadImage("/image?file-id="+gup("id"));
+    app.loadImage("/dam?media-id="+gup("id"));
     function restorePreviousShapes()
     {
     var predefShapes=gup("editJson");

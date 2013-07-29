@@ -1,0 +1,58 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 560,
+        "id": "ImageMapperWindow",
+        "width": 1000,
+        "designer|userClassName": "ImageMapperWindow",
+        "designer|userAlias": "ImageMapperWindow",
+        "layout": "fit",
+        "title": "Image map editor",
+        "constrain": true,
+        "modal": true
+    },
+    "designerId": "8c8eb810-59a0-4d95-a6b4-7d495027da77",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "5bcd248b-49a8-47e9-9d59-23348c18565b",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImageMapperWindowAfterRender",
+                "implHandler": [
+                    "var src=\"resources/summer/index.htm?id=\"+component.sImageId+\"&sourceFieldId=\"+component.sourceFieldId;\r",
+                    "if(!Ext.isEmpty(component.editJson)){\r",
+                    "    src=src+\"&editJson=\"+encodeURIComponent(component.editJson);\r",
+                    "}\r",
+                    "component.add(Ext.widget(\"container\",{\r",
+                    "                    autoEl: {\r",
+                    "                        tag: 'iframe',\r",
+                    "                        src: src\r",
+                    "                    }\r",
+                    "                }));"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "607b144b-d58e-4fb2-adb6-06574d9a8e62"
+        }
+    ]
+}

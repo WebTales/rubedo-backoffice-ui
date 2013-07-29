@@ -1,0 +1,89 @@
+{
+    "type": "Ext.form.FieldContainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 29,
+        "padding": null,
+        "width": 455,
+        "designer|userClassName": "ImageMapFieldComponent",
+        "designer|userAlias": "ImageMapFieldComponent",
+        "fieldLabel": "Label",
+        "labelSeparator": " ",
+        "labelWidth": 60
+    },
+    "designerId": "f6e7a107-7934-4fd8-97ba-6ce423a5b170",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "addBtn",
+                "itemId": "addBtn",
+                "margin": "0 10 0 0",
+                "iconCls": "add",
+                "text": "Ajouter"
+            },
+            "designerId": "c7907bba-1351-480d-9fe8-8e44d58819e7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "modifyBtn",
+                "itemId": "editBtn",
+                "margin": "0 10 0 0",
+                "iconCls": "edit",
+                "text": "Modifier"
+            },
+            "designerId": "239bc148-9f43-4cf4-8538-90ecbc97ac73",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "removeBtn",
+                "itemId": "removeBtn",
+                "iconCls": "close",
+                "text": "Supprimer"
+            },
+            "designerId": "b38846f4-44c4-4983-be2d-7cd2468fb4c2",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}
