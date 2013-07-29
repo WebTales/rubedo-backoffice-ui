@@ -531,8 +531,8 @@ function SummerHtmlImageMapCreator() {
 				return this;
 			},
 			getHTMLCode : function(arg) {
-				var html_code = '';
-				if (arg) {
+				var html_code = [ ];
+				if (false) {
 					if (!objects.length) {
 						return '0 objects';
 					}
@@ -544,7 +544,7 @@ function SummerHtmlImageMapCreator() {
 					html_code += utils.encode('</map>');
 				} else {
 					utils.foreachReverse(objects, function(x) {
-						html_code += x.toString();
+						html_code.push({type:x.expType,params:x.params});
 					});
 				}
 				return html_code;
@@ -980,7 +980,9 @@ function SummerHtmlImageMapCreator() {
 		function onToHtmlButtonClick(e) {
 			// Generate html code only
 			info.unload();
-            code.print();
+			console.log(JSON.stringify(app.getHTMLCode()));
+			//handle return code here
+            //code.print();
 			
 			e.preventDefault();
 		};
@@ -1046,9 +1048,9 @@ function SummerHtmlImageMapCreator() {
 		polygon.addEventListener('click', onShapeButtonClick, false);
 		clear.addEventListener('click', onClearButtonClick, false);
 		to_html.addEventListener('click', onToHtmlButtonClick, false);
-		preview.addEventListener('click', onPreviewButtonClick, false);
+//		preview.addEventListener('click', onPreviewButtonClick, false);
 		edit.addEventListener('click', onEditButtonClick, false);
-		new_image.addEventListener('click', onNewImageButtonClick, false);
+		//new_image.addEventListener('click', onNewImageButtonClick, false);
 		show_help.addEventListener('click', onShowHelpButtonClick, false);
 	})();
 
@@ -1118,6 +1120,7 @@ function SummerHtmlImageMapCreator() {
         this.href = ''; //href attribute - not required
         this.alt = ''; //alt attribute - not required
         this.title = ''; //title attribute - not required
+        this.expType="rect";
         
         this.g = document.createElementNS('http://www.w3.org/2000/svg', 'g'); //container
         this.rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect'); //rectangle
@@ -1449,6 +1452,7 @@ function SummerHtmlImageMapCreator() {
         this.href = ''; //href attribute - not required
         this.alt = ''; //alt attribute - not required
         this.title = ''; //title attribute - not required
+        this.expType="circle";
         
         this.g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         this.circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -1661,6 +1665,7 @@ function SummerHtmlImageMapCreator() {
         this.href = ''; //href attribute - not required
         this.alt = ''; //alt attribute - not required
         this.title = ''; //title attribute - not required
+        this.expType="polygon";
         
         this.g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         this.polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
@@ -1887,7 +1892,43 @@ function SummerHtmlImageMapCreator() {
             + (this.title ? ' title="' + this.title + '"' : '')
             + ' />';
     };
-   
+    
+    function gup( name )
+    {
+      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regexS = "[\\?&]"+name+"=([^&#]*)";
+      var regex = new RegExp( regexS );
+      var results = regex.exec( window.location.href );
+      if( results == null )
+        return "";
+      else
+        return results[1];
+    }
+    app.loadImage("/image?file-id="+gup("id"));
+    function restorePreviousShapes()
+    {
+    var predefShapes=gup("editJson");
+    if (predefShapes){
+    	
+    	predefShapes=JSON.parse(decodeURIComponent(predefShapes));
+    } 
+    var i=0;
+    for (i=0; i<predefShapes.length; i++){
+    	if(predefShapes[i].type=="rect"){
+    		new Rect(0,0).setParams(predefShapes[i].params).redraw();
+    	} else if (predefShapes[i].type=="circle"){
+    		new Circle(0,0).setParams(predefShapes[i].params).redraw();
+    	} else if (predefShapes[i].type=="polygon"){
+    		new Polygon(0,0).setParams(predefShapes[i].params).redraw();
+    	}
+    }
+    app.deselectAll();
+    app.setIsDraw(false);
+    console.log(app.getIsDraw());
+    }
+    setTimeout(restorePreviousShapes,100);
+    //new Rect(0,0).setParams({x:20,y:20,width:200,height:200}).redraw();
+    //new Rect(0,0).setParams({x:40,y:40,width:300,height:300}).redraw();
 };
    
 document.addEventListener("DOMContentLoaded", SummerHtmlImageMapCreator, false);
