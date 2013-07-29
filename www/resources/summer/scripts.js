@@ -1920,7 +1920,12 @@ function SummerHtmlImageMapCreator() {
     	} else if (predefShapes[i].type=="circle"){
     		var myObjs=new Circle(0,0).setParams(predefShapes[i].params).redraw();
     	} else if (predefShapes[i].type=="polygon"){
-    		var myObjs=new Polygon(0,0).setParams(predefShapes[i].params);
+    		var myObjs=new Polygon(predefShapes[i].params[0],predefShapes[i].params[1]);
+    		var j=2;
+    		while (j<predefShapes[i].params.length){
+    			myObjs.addPoint(predefShapes[i].params[j],predefShapes[i].params[j+1]);
+    			j=j+2;
+    		}
     		var myPolyline = myObjs.polygon;
 			myObjs.newPolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
 			myObjs.g.replaceChild( myObjs.newPolygon, myObjs.polygon);
@@ -1928,9 +1933,13 @@ function SummerHtmlImageMapCreator() {
 			delete(myObjs.newPolygon);
 			myObjs.setCoords(predefShapes[i].params);
     	}
+    	
+    	if (predefShapes[i].href){
+	    	myObjs.with_href();
+    	}
     	myObjs.href=predefShapes[i].href;
-    	myObjs.href=predefShapes[i].alt;
-    	myObjs.href=predefShapes[i].title;
+    	myObjs.alt=predefShapes[i].alt;
+    	myObjs.title=predefShapes[i].title;
     }
     app.deselectAll();
     app.setIsDraw(false);
