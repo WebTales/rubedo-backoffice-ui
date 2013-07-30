@@ -201,6 +201,42 @@
                 "name": "taxonomy"
             },
             "designerId": "e448139f-782e-4029-99f2-62b8642d3fb1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "i18n"
+            },
+            "designerId": "95f75910-3b19-4827-b95d-b261c8b1252b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locale"
+            },
+            "designerId": "b6334923-3984-4c2f-948b-eb81804165a6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nativeLanguage"
+            },
+            "designerId": "780c20bc-2a09-42b9-9e98-ddf469f7c87b"
         }
     ]
 }

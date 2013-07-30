@@ -102,6 +102,69 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "i18n",
+                "text": "Languages",
+                "flex": null
+            },
+            "designerId": "d57fa78d-3b6c-4fa9-b32f-d6b6710ab503",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"search\"){\r",
+                            "    var availableLanguages=record.get(\"availableLanguages\");\r",
+                            "    var returner=\"\";\r",
+                            "    Ext.Array.forEach(availableLanguages,function(item){\r",
+                            "    \ttry{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",item,false,false,true).items[0].get(\"flagCode\");}\r",
+                            "                catch(err){var myFlagCode2=\"_unknown\";}\r",
+                            "                returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                            "    });\r",
+                            "    return(returner);\r",
+                            "} else {\r",
+                            "    try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
+                            "    catch(err){var myFlagCode=\"_unknown\";}\r",
+                            "    var returner =\" <img src=\\\"/assets/flags/16/\"+myFlagCode+\".png\\\"> \";\r",
+                            "    if(!Ext.isEmpty(value)){\r",
+                            "        Ext.Object.each(value, function(key, value, myself) {\r",
+                            "            if (key!=record.get(\"locale\")){\r",
+                            "                try{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
+                            "                catch(err){var myFlagCode2=\"_unknown\";}\r",
+                            "                returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                            "            }\r",
+                            "        });\r",
+                            "    }\r",
+                            "    return(returner);\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "1e894fde-b7f3-4049-857b-660abc498cd9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "localiserId": "authorColumn",
                 "dataIndex": "author",
                 "text": "Auteur"

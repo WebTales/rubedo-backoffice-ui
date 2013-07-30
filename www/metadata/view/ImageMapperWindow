@@ -43,11 +43,11 @@
                     "    src=src+\"&editJson=\"+encodeURIComponent(component.editJson);\r",
                     "}\r",
                     "component.add(Ext.widget(\"container\",{\r",
-                    "                    autoEl: {\r",
-                    "                        tag: 'iframe',\r",
-                    "                        src: src\r",
-                    "                    }\r",
-                    "                }));"
+                    "    autoEl: {\r",
+                    "        tag: 'iframe',\r",
+                    "        src: src\r",
+                    "    }\r",
+                    "}));"
                 ],
                 "name": "afterrender",
                 "scope": "me"

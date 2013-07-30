@@ -139,6 +139,18 @@
                 "type": "boolean"
             },
             "designerId": "3985dc61-5196-41e2-8e3d-15a4713e157b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "availableLanguages"
+            },
+            "designerId": "d7518eb4-f538-4505-82b5-1435c8d6b4ff"
         }
     ]
 }

@@ -50,6 +50,37 @@ Ext.define('Rubedo.view.DAMMainView', {
                 },
                 {
                     xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        if (Ext.getCmp("DAMInterface").currentViewMode=="search"){
+                            var availableLanguages=record.get("availableLanguages");
+                            var returner="";
+                            Ext.Array.forEach(availableLanguages,function(item){
+                                try{var myFlagCode2=Ext.getStore("AllLanguagesStore3").query("locale",item,false,false,true).items[0].get("flagCode");}
+                                catch(err){var myFlagCode2="_unknown";}
+                                returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                            });
+                            return(returner);
+                        } else {
+                            try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",record.get("locale"),false,false,true).items[0].get("flagCode");}
+                            catch(err){var myFlagCode="_unknown";}
+                            var returner =" <img src=\"/assets/flags/16/"+myFlagCode+".png\"> ";
+                            if(!Ext.isEmpty(value)){
+                                Ext.Object.each(value, function(key, value, myself) {
+                                    if (key!=record.get("locale")){
+                                        try{var myFlagCode2=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode");}
+                                        catch(err){var myFlagCode2="_unknown";}
+                                        returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                                    }
+                                });
+                            }
+                            return(returner);
+                        }
+                    },
+                    dataIndex: 'i18n',
+                    text: 'Languages'
+                },
+                {
+                    xtype: 'gridcolumn',
                     localiserId: 'authorColumn',
                     dataIndex: 'author',
                     text: 'Auteur'

@@ -72,6 +72,15 @@ Ext.define('Rubedo.model.DAMFolderViewModel', {
         },
         {
             name: 'taxonomy'
+        },
+        {
+            name: 'i18n'
+        },
+        {
+            name: 'locale'
+        },
+        {
+            name: 'nativeLanguage'
         }
     ]
 });
