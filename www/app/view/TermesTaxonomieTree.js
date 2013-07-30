@@ -87,6 +87,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                         }
                         return(returner);
                     },
+                    localiserId: 'languageCoumn',
                     dataIndex: 'i18n',
                     text: 'Languages',
                     flex: 0.5

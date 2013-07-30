@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "imageMapperWindow",
         "height": 560,
         "id": "ImageMapperWindow",
         "width": 1000,
@@ -17,6 +18,13 @@
         "modal": true
     },
     "designerId": "8c8eb810-59a0-4d95-a6b4-7d495027da77",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "linkedinstance",

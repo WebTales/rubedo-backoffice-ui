@@ -102,11 +102,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "languageCoumn",
                 "dataIndex": "i18n",
                 "text": "Languages",
                 "flex": null
             },
             "designerId": "d57fa78d-3b6c-4fa9-b32f-d6b6710ab503",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",

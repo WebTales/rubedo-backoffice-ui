@@ -774,11 +774,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "languageCoumn",
                         "dataIndex": "i18n",
                         "text": "Languages",
                         "flex": 0.5
                     },
                     "designerId": "91c9d991-45bc-422d-adcd-9036522083f6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

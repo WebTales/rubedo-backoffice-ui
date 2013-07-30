@@ -134,7 +134,7 @@ Ext.define('Rubedo.view.genericLocTextField', {
         if (Ext.isEmpty(newValue)){
             myBtn.setIcon(null);
             myBtn.setIconCls("infoWarning");
-            myBtn.setTooltip("Localization error");
+            myBtn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.localizationErrorText);
             myBtn.setText(null);
         } else {
             var myRec=Ext.getStore("AllLanguagesStore3").query("locale",newValue,false,false,true).items[0];

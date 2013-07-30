@@ -888,12 +888,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "languageCoumn",
                         "hidden": true,
                         "dataIndex": "i18n",
                         "text": "Languages",
                         "flex": null
                     },
                     "designerId": "99cfe374-8d96-4642-9d27-7243aaa319af",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

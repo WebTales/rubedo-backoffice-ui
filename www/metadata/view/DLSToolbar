@@ -52,6 +52,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "currentLanguageDSLField",
                 "itemId": "LocSelectorCombo",
                 "fieldLabel": "Current language",
                 "editable": false,
@@ -61,6 +62,13 @@
                 "valueField": "locale"
             },
             "designerId": "be2cf7da-ea8b-4fcb-9632-2fa9e900172e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "processcfgfunction",
@@ -132,11 +140,19 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "addTranslationBtn",
                 "itemId": "LocAddBtn",
                 "iconCls": "add",
                 "text": "Add translation"
             },
             "designerId": "d4359ae1-438e-4f4c-958d-4c3fa0bae3ea",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -189,12 +205,20 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "removeTranslationBtn",
                 "disabled": true,
                 "itemId": "LocRemoveBtn",
                 "iconCls": "close",
                 "text": "Remove translation"
             },
             "designerId": "1949879a-65ec-4a5c-9f0f-b30ae965472d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",

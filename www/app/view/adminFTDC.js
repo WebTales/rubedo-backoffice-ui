@@ -367,6 +367,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 }
                                 return(returner);
                             },
+                            localiserId: 'languageCoumn',
                             hidden: true,
                             dataIndex: 'i18n',
                             text: 'Languages'

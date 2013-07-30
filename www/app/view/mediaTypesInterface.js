@@ -327,6 +327,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                 }
                                 return(returner);
                             },
+                            localiserId: 'languageCoumn',
                             hidden: true,
                             dataIndex: 'i18n',
                             text: 'Languages'

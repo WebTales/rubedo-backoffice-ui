@@ -289,6 +289,7 @@ Ext.define('Rubedo.view.adminFTaxonomie', {
                                                 me.processFacetOperator({
                                                     xtype: 'combobox',
                                                     anchor: '100%',
+                                                    localiserId: 'facetOperatorField',
                                                     fieldLabel: 'Facet operator',
                                                     name: 'facetOperator',
                                                     allowBlank: false,

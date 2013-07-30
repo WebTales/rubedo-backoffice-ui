@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.ImageMapperWindow', {
         'Rubedo.view.MyTool17'
     ],
 
+    localiserId: 'imageMapperWindow',
     height: 560,
     id: 'ImageMapperWindow',
     width: 1000,

@@ -74,6 +74,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                         }
                         return(returner);
                     },
+                    localiserId: 'languageCoumn',
                     dataIndex: 'i18n',
                     text: 'Languages',
                     flex: 1

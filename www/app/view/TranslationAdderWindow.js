@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.TranslationAdderWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.TranslationAdderWindow',
 
+    localiserId: 'translationAdderWindow',
     height: 111,
     id: 'TranslationAdderWindow',
     width: 400,
@@ -42,6 +43,7 @@ Ext.define('Rubedo.view.TranslationAdderWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'TALanguageField',
                             id: 'TranslationAdderWindowSelector',
                             fieldLabel: 'Language',
                             name: 'language',
@@ -56,6 +58,7 @@ Ext.define('Rubedo.view.TranslationAdderWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'translateInThisLanguageBtn',
                             id: 'TranslationAdderWindowSubmitBtn',
                             scale: 'medium',
                             text: 'Translate in this language'

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "translationAdderWindow",
         "height": 111,
         "id": "TranslationAdderWindow",
         "width": 400,
@@ -22,6 +23,13 @@
         "resizable": "boolean"
     },
     "designerId": "bce7652b-a9e7-401d-951f-88b248abcd41",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -45,6 +53,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "TALanguageField",
                         "id": "TranslationAdderWindowSelector",
                         "fieldLabel": "Language",
                         "name": "language",
@@ -56,7 +65,14 @@
                         "store": "TranslationAdderStore",
                         "valueField": "locale"
                     },
-                    "designerId": "d3871c4b-a144-4d39-9088-53f060b15bf6"
+                    "designerId": "d3871c4b-a144-4d39-9088-53f060b15bf6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -67,11 +83,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "translateInThisLanguageBtn",
                         "id": "TranslationAdderWindowSubmitBtn",
                         "scale": "medium",
                         "text": "Translate in this language"
                     },
-                    "designerId": "354898b7-762b-4773-87d0-823da1f030e9"
+                    "designerId": "354898b7-762b-4773-87d0-823da1f030e9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

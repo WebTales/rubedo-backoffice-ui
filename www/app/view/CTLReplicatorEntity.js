@@ -31,7 +31,8 @@ Ext.define('Rubedo.view.CTLReplicatorEntity', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Name',
+                    localiserId: 'mandatoryNameField',
+                    fieldLabel: 'Name *',
                     labelWidth: 130,
                     name: 'type',
                     allowBlank: false

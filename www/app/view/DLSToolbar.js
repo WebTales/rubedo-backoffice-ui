@@ -28,6 +28,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
             items: [
                 me.processLocSelectorCombo({
                     xtype: 'combobox',
+                    localiserId: 'currentLanguageDSLField',
                     itemId: 'LocSelectorCombo',
                     fieldLabel: 'Current language',
                     editable: false,
@@ -68,6 +69,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
                             Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.alreadyTranslatedError);
                         }
                     },
+                    localiserId: 'addTranslationBtn',
                     itemId: 'LocAddBtn',
                     iconCls: 'add',
                     text: 'Add translation'
@@ -80,6 +82,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
                         button.up().getComponent("LocSelectorCombo").getStore().remove(button.up().getComponent("LocSelectorCombo").getStore().query("locale",comboValue).items[0]);
                         button.up().up().remove(button.up().up().getComponent(comboValue));
                     },
+                    localiserId: 'removeTranslationBtn',
                     disabled: true,
                     itemId: 'LocRemoveBtn',
                     iconCls: 'close',

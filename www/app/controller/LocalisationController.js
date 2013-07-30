@@ -89,13 +89,13 @@ Ext.define('Rubedo.controller.LocalisationController', {
         if (Ext.isEmpty(newValue)){
             myBtn.setIcon(null);
             myBtn.setIconCls("infoWarning");
-            myBtn.setTooltip("No working language selected");
+            myBtn.setTooltip(ubedo.RubedoAutomatedElementsLoc.noCurrentWorkingLanguageError);
             myBtn.setText(null);
         } else {
             var myRec=Ext.getStore("AllLanguagesStore3").query("locale",newValue,false,false,true).items[0];
             myBtn.setIconCls(null);
             myBtn.setIcon('/assets/flags/16/'+myRec.get("flagCode")+'.png');
-            myBtn.setTooltip("Current working language : "+myRec.get("label"));
+            myBtn.setTooltip(ubedo.RubedoAutomatedElementsLoc.currentWorkingLanguageText+" : "+myRec.get("label"));
             myBtn.setText(myRec.get("label"));
             if (!Ext.isEmpty(myRec.get("ownLabel"))){
                 myBtn.setText(myRec.get("ownLabel"));
@@ -346,7 +346,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "atLeastOneLocError":"At least one language must be active",
             "alreadyTranslatedError":"This item has already been translated in all active languages",
             "missingLocError":"This version is not eligible for localized revert",
-            "imageRequiredError":"An image must be selected"
+            "imageRequiredError":"An image must be selected",
+            "localizationErrorText":"Localization error",
+            "noCurrentWorkingLanguageError":"No working language selected",
+            "currentWorkingLanguageText":"Current working language"
         });
 
         this.control({

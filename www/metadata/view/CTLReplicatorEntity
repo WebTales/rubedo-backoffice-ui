@@ -25,12 +25,20 @@
             "codeClass": null,
             "userConfig": {
                 "layout|anchor": "100%",
-                "fieldLabel": "Name",
+                "localiserId": "mandatoryNameField",
+                "fieldLabel": "Name *",
                 "labelWidth": 130,
                 "name": "type",
                 "allowBlank": false
             },
-            "designerId": "66bb94ce-d3cf-4981-a247-d74baa2f5eaf"
+            "designerId": "66bb94ce-d3cf-4981-a247-d74baa2f5eaf",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

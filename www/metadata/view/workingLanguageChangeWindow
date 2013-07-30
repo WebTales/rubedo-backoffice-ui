@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "workingLanguageWindow",
         "height": 111,
         "id": "workingLanguageChangeWindow",
         "width": 400,
@@ -22,6 +23,13 @@
         "resizable": "boolean"
     },
     "designerId": "4d260747-34d6-4e46-aab4-095f6db9755c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -45,6 +53,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "TALanguageField",
                         "id": "currentLanguageSelectorCombo",
                         "fieldLabel": "Language",
                         "name": "language",
@@ -57,6 +66,13 @@
                         "valueField": "locale"
                     },
                     "designerId": "602645c5-3b9e-484f-9002-73bd94ea015a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -86,11 +102,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "setAsWLBtn",
                         "id": "currentLanguageChangeSubmitBtn",
                         "scale": "medium",
                         "text": "Set as current working language"
                     },
-                    "designerId": "b7843302-1bb8-4e15-8188-99e7db043b83"
+                    "designerId": "b7843302-1bb8-4e15-8188-99e7db043b83",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

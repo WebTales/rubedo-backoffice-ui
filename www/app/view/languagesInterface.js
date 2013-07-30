@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.languagesInterface', {
         'Rubedo.view.MyTool16'
     ],
 
+    localiserId: 'languagesInterface4',
     height: 413,
     id: 'languagesInterface',
     width: 435,
@@ -52,6 +53,7 @@ Ext.define('Rubedo.view.languagesInterface', {
                                     return('<img src="/assets/flags/16/'+value+'.png"> ');
                                 } else return(value);
                             },
+                            localiserId: 'FlagCol',
                             dataIndex: 'flagCode',
                             text: 'Flag',
                             flex: 1,
@@ -69,6 +71,7 @@ Ext.define('Rubedo.view.languagesInterface', {
                         {
                             xtype: 'gridcolumn',
                             filter: true,
+                            localiserId: 'LangNameCol',
                             dataIndex: 'label',
                             text: 'Name',
                             flex: 1
@@ -76,6 +79,7 @@ Ext.define('Rubedo.view.languagesInterface', {
                         {
                             xtype: 'gridcolumn',
                             filter: true,
+                            localiserId: 'OwnNameCol',
                             dataIndex: 'ownLabel',
                             text: 'Own name',
                             flex: 1,

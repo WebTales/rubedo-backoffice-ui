@@ -693,12 +693,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "languageCoumn",
                         "hidden": true,
                         "dataIndex": "i18n",
                         "text": "Languages",
                         "flex": null
                     },
                     "designerId": "ea23c55d-3cc6-4885-84c3-981b69b89282",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

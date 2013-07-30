@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.workingLanguageChangeWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.workingLanguageChangeWindow',
 
+    localiserId: 'workingLanguageWindow',
     height: 111,
     id: 'workingLanguageChangeWindow',
     width: 400,
@@ -42,6 +43,7 @@ Ext.define('Rubedo.view.workingLanguageChangeWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'TALanguageField',
                             id: 'currentLanguageSelectorCombo',
                             fieldLabel: 'Language',
                             name: 'language',
@@ -62,6 +64,7 @@ Ext.define('Rubedo.view.workingLanguageChangeWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'setAsWLBtn',
                             id: 'currentLanguageChangeSubmitBtn',
                             scale: 'medium',
                             text: 'Set as current working language'

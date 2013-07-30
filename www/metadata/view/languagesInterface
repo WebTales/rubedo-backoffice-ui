@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "languagesInterface4",
         "height": 413,
         "id": "languagesInterface",
         "width": 435,
@@ -17,6 +18,13 @@
         "constrain": true
     },
     "designerId": "efdddbee-4e95-4932-a8ba-4d6a06ca28d5",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -55,11 +63,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "FlagCol",
                         "dataIndex": "flagCode",
                         "text": "Flag",
                         "flex": 1
                     },
                     "designerId": "6518f62c-a0ab-4106-8b92-30ea499fe6d4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -141,6 +157,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "filter": true,
+                        "localiserId": "LangNameCol",
                         "dataIndex": "label",
                         "text": "Name",
                         "flex": 1
@@ -154,6 +171,11 @@
                             "group": "(Custom Properties)",
                             "name": "filter",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -166,6 +188,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "filter": true,
+                        "localiserId": "OwnNameCol",
                         "dataIndex": "ownLabel",
                         "text": "Own name",
                         "flex": 1
@@ -178,6 +201,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "filter",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],

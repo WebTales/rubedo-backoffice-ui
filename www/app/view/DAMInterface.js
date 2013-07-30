@@ -124,6 +124,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.directories',
+                                    localiserId: 'addDirectoryBtn',
                                     id: 'addDirectoryBtn',
                                     minWidth: 40,
                                     iconAlign: 'top',
@@ -134,6 +135,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.directories',
+                                    localiserId: 'removeDirectoryBtn',
                                     disabled: true,
                                     id: 'removeDirectoryBtn',
                                     iconAlign: 'top',
@@ -143,6 +145,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'directorySettingsBtn',
                                     disabled: true,
                                     id: 'directorySettingsBtn',
                                     iconAlign: 'top',
@@ -400,6 +403,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                                     return(value);
                                                 }
                                             },
+                                            localiserId: 'damFolderCol',
                                             dataIndex: 'text',
                                             text: 'Folder',
                                             flex: 1,

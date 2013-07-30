@@ -244,6 +244,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.directories",
+                                "localiserId": "addDirectoryBtn",
                                 "id": "addDirectoryBtn",
                                 "minWidth": 40,
                                 "iconAlign": "top",
@@ -257,6 +258,11 @@
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
                                     "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
                                 }
                             ]
                         },
@@ -269,6 +275,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.directories",
+                                "localiserId": "removeDirectoryBtn",
                                 "disabled": true,
                                 "id": "removeDirectoryBtn",
                                 "iconAlign": "top",
@@ -282,6 +289,11 @@
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
                                     "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
                                 }
                             ]
                         },
@@ -293,6 +305,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "directorySettingsBtn",
                                 "disabled": true,
                                 "id": "directorySettingsBtn",
                                 "iconAlign": "top",
@@ -300,7 +313,14 @@
                                 "scale": "large",
                                 "text": "Settings"
                             },
-                            "designerId": "42e2a0e3-a854-4d5f-b300-20a5c6a928d9"
+                            "designerId": "42e2a0e3-a854-4d5f-b300-20a5c6a928d9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -956,11 +976,19 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "damFolderCol",
                                         "dataIndex": "text",
                                         "text": "Folder",
                                         "flex": 1
                                     },
                                     "designerId": "ef106ff3-cbe1-45cd-9626-8e226864536c",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
