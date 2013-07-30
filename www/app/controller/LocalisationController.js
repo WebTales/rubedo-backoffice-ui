@@ -384,113 +384,117 @@ Ext.define('Rubedo.controller.LocalisationController', {
         var result= { };
         var count=0;
         Ext.Object.each(Rubedo.view, function(a){
-            var test=Ext.create("Rubedo.view."+a,{id:undefined});
-            if (!Ext.isEmpty(test.localiserId)){
-                count=count+1;
-                if ((test.isXType("field"))||(test.isXType("radiogroup"))||(test.isXType("checkboxgroup"))){
-                    result[test.localiserId]={
-                        fieldLabel:test.fieldLabel,
-                        boxLabel:test.boxLabel,
-                        buttonText:test.buttonText,
-                        RTip:test.RTip
-                    };
-                } else if (test.isXType("button")){
-                    result[test.localiserId]={
-                        text:test.text,
-                        tooltip:test.tooltip
-                    };
-                } else if (test.isXType("menuitem")){
-                    result[test.localiserId]={
-                        text:test.text,
-                        tooltip:test.tooltip
-                    };
-                }else if (test.isXType("fieldset")){
-                    result[test.localiserId]={
-                        title:test.title
-                    };
-                } else if (test.isXType("panel")){
-                    result[test.localiserId]={
-                        title:test.title,
-                        tooltip:test.tooltip
-                    };
-                } else if (test.isXType("window")){
-                    result[test.localiserId]={
-                        title:test.title
-                    };
-                }else if (test.isXType("gridcolumn")){
-                    result[test.localiserId]={
-                        text:test.text
-                    };
-                } else {
-                    console.log("unhandled localised component for id : "+test.localiserId); 
-                    count=count-1;
+            try{
+                var test=Ext.create("Rubedo.view."+a,{id:undefined});
+                if (!Ext.isEmpty(test.localiserId)){
+                    count=count+1;
+                    if ((test.isXType("field"))||(test.isXType("radiogroup"))||(test.isXType("checkboxgroup"))){
+                        result[test.localiserId]={
+                            fieldLabel:test.fieldLabel,
+                            boxLabel:test.boxLabel,
+                            buttonText:test.buttonText,
+                            RTip:test.RTip
+                        };
+                    } else if (test.isXType("button")){
+                        result[test.localiserId]={
+                            text:test.text,
+                            tooltip:test.tooltip
+                        };
+                    } else if (test.isXType("menuitem")){
+                        result[test.localiserId]={
+                            text:test.text,
+                            tooltip:test.tooltip
+                        };
+                    }else if (test.isXType("fieldset")){
+                        result[test.localiserId]={
+                            title:test.title
+                        };
+                    } else if (test.isXType("panel")){
+                        result[test.localiserId]={
+                            title:test.title,
+                            tooltip:test.tooltip
+                        };
+                    } else if (test.isXType("window")){
+                        result[test.localiserId]={
+                            title:test.title
+                        };
+                    }else if (test.isXType("gridcolumn")){
+                        result[test.localiserId]={
+                            text:test.text
+                        };
+                    } else {
+                        console.log("unhandled localised component for id : "+test.localiserId); 
+                        count=count-1;
+                    }
+                    if (!Ext.isEmpty(result[test.localiserId])){
+                        Ext.Object.each(result[test.localiserId], function(key, value, myself) {
+                            if (Ext.isEmpty(value)){
+                                delete result[test.localiserId][key];
+                            }
+                        });
+                    }
                 }
-                if (!Ext.isEmpty(result[test.localiserId])){
-                    Ext.Object.each(result[test.localiserId], function(key, value, myself) {
-                        if (Ext.isEmpty(value)){
-                            delete result[test.localiserId][key];
+                try{
+                    Ext.Array.forEach(test.query("component"), function(component){
+                        if (!Ext.isEmpty(component.localiserId)){
+                            count=count+1;
+                            if ((component.isXType("field"))||(component.isXType("radiogroup"))||(component.isXType("checkboxgroup"))){
+                                result[component.localiserId]={
+                                    fieldLabel:component.fieldLabel,
+                                    boxLabel:component.boxLabel,
+                                    buttonText:component.buttonText,
+                                    RTip:component.RTip
+                                };
+                            } else if (component.isXType("button")){
+                                result[component.localiserId]={
+                                    text:component.text,
+                                    tooltip:component.tooltip
+                                };
+                            } else if (component.isXType("menuitem")){
+                                result[component.localiserId]={
+                                    text:component.text
+                                };
+                            }else if (component.isXType("fieldset")){
+                                result[component.localiserId]={
+                                    title:component.title
+                                };
+                            } else if (component.isXType("panel")){
+                                result[component.localiserId]={
+                                    title:component.title,
+                                    tooltip:component.tooltip
+                                };
+                            } else if (component.isXType("window")){
+                                result[component.localiserId]={
+                                    title:component.title
+                                };
+                            }else if (component.isXType("gridcolumn")){
+                                result[component.localiserId]={
+                                    text:component.text
+                                };
+                            } else {
+                                console.log("unhandled localised component for id : "+component.localiserId); 
+                                count=count-1;
+                            }
+                            if (!Ext.isEmpty(result[component.localiserId])){
+                                Ext.Object.each(result[component.localiserId], function(key, value, myself) {
+                                    if (Ext.isEmpty(value)){
+                                        delete result[component.localiserId][key];
+                                    }
+                                });
+                            }
                         }
                     });
-                }
-            }
-            try{
-                Ext.Array.forEach(test.query("component"), function(component){
-                    if (!Ext.isEmpty(component.localiserId)){
-                        count=count+1;
-                        if ((component.isXType("field"))||(component.isXType("radiogroup"))||(component.isXType("checkboxgroup"))){
-                            result[component.localiserId]={
-                                fieldLabel:component.fieldLabel,
-                                boxLabel:component.boxLabel,
-                                buttonText:component.buttonText,
-                                RTip:component.RTip
-                            };
-                        } else if (component.isXType("button")){
-                            result[component.localiserId]={
-                                text:component.text,
-                                tooltip:component.tooltip
-                            };
-                        } else if (component.isXType("menuitem")){
-                            result[component.localiserId]={
-                                text:component.text
-                            };
-                        }else if (component.isXType("fieldset")){
-                            result[component.localiserId]={
-                                title:component.title
-                            };
-                        } else if (component.isXType("panel")){
-                            result[component.localiserId]={
-                                title:component.title,
-                                tooltip:component.tooltip
-                            };
-                        } else if (component.isXType("window")){
-                            result[component.localiserId]={
-                                title:component.title
-                            };
-                        }else if (component.isXType("gridcolumn")){
-                            result[component.localiserId]={
-                                text:component.text
-                            };
-                        } else {
-                            console.log("unhandled localised component for id : "+component.localiserId); 
-                            count=count-1;
-                        }
-                        if (!Ext.isEmpty(result[component.localiserId])){
-                            Ext.Object.each(result[component.localiserId], function(key, value, myself) {
-                                if (Ext.isEmpty(value)){
-                                    delete result[component.localiserId][key];
-                                }
-                            });
-                        }
-                    }
-                });
 
-            }catch(err){
-                console.log(err);
-            }
-            test.destroy();
-        });
-        console.log(count+" localised interface components");
-        return(Ext.JSON.encode(result));
+                }catch(err){
+                    console.log(err);
+                }
+                try{
+                    test.destroy();
+                }catch(err){console.log("destroy anomaly");}
+                }catch(err){console.log("loc anomaly");}
+                });
+                console.log(count+" localised interface components");
+                return(Ext.JSON.encode(result));
     },
 
     updateLocalisationSingletons: function() {

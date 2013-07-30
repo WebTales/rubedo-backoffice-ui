@@ -369,6 +369,7 @@
                     "var result= { };\r",
                     "var count=0;\r",
                     "Ext.Object.each(Rubedo.view, function(a){\r",
+                    "    try{\r",
                     "    var test=Ext.create(\"Rubedo.view.\"+a,{id:undefined});\r",
                     "    if (!Ext.isEmpty(test.localiserId)){\r",
                     "        count=count+1;\r",
@@ -472,7 +473,10 @@
                     "    }catch(err){\r",
                     "        console.log(err);\r",
                     "    }\r",
+                    "    try{\r",
                     "    test.destroy();\r",
+                    "    }catch(err){console.log(\"destroy anomaly\");}\r",
+                    "    }catch(err){console.log(\"loc anomaly\");}\r",
                     "});\r",
                     "console.log(count+\" localised interface components\");\r",
                     "return(Ext.JSON.encode(result));"
