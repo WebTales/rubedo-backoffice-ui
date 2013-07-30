@@ -89,13 +89,13 @@ Ext.define('Rubedo.controller.LocalisationController', {
         if (Ext.isEmpty(newValue)){
             myBtn.setIcon(null);
             myBtn.setIconCls("infoWarning");
-            myBtn.setTooltip(ubedo.RubedoAutomatedElementsLoc.noCurrentWorkingLanguageError);
+            myBtn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.noCurrentWorkingLanguageError);
             myBtn.setText(null);
         } else {
             var myRec=Ext.getStore("AllLanguagesStore3").query("locale",newValue,false,false,true).items[0];
             myBtn.setIconCls(null);
             myBtn.setIcon('/assets/flags/16/'+myRec.get("flagCode")+'.png');
-            myBtn.setTooltip(ubedo.RubedoAutomatedElementsLoc.currentWorkingLanguageText+" : "+myRec.get("label"));
+            myBtn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.currentWorkingLanguageText+" : "+myRec.get("label"));
             myBtn.setText(myRec.get("label"));
             if (!Ext.isEmpty(myRec.get("ownLabel"))){
                 myBtn.setText(myRec.get("ownLabel"));
