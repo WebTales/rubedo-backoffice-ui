@@ -145,7 +145,13 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                             },
                             dataIndex: 'i18n',
                             text: 'Languages',
-                            flex: 0.7
+                            flex: 0.7,
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onGridcolumnAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'gridcolumn',
@@ -293,6 +299,12 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         var target = Ext.getCmp("manualQueryRightGridGrid").getSelectionModel().getLastSelected();
         Ext.getCmp("manualQueryRightGridGrid").getStore().remove(target);
         Ext.getCmp("manualQueryLeftGrid").getStore().add(target);
+    },
+
+    onGridcolumnAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        }
     },
 
     onManualQuerySaveBtnClick: function(button, e, eOpts) {

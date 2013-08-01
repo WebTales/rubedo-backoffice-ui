@@ -857,6 +857,7 @@
                                                             "if ((Ext.isEmpty(i18n))||(Ext.isEmpty(i18n[me.mainLocale]))){\r",
                                                             "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.missingLocError);\r",
                                                             "} else {\r",
+                                                            "    me.directOverrideMode=true;\r",
                                                             "    Ext.apply(fields,i18n[me.mainLocale].fields);\r",
                                                             "    me.up().getComponent(\"mainLocItem\").getForm().setValues(fields);\r",
                                                             "    me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);\r",

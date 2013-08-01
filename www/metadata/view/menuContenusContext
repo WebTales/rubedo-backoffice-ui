@@ -154,6 +154,25 @@
                         ]
                     },
                     "designerId": "130ae6dd-da72-43c1-8dfa-975c2995bd2d"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridcolumnAfterRender",
+                        "implHandler": [
+                            "if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
+                            "    component.hide();\r",
+                            "}"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "ee7add8d-3b0c-4434-adbf-c6a0134c4d06"
                 }
             ]
         },

@@ -78,7 +78,13 @@ Ext.define('Rubedo.view.DAMMainView', {
                     },
                     localiserId: 'languageCoumn',
                     dataIndex: 'i18n',
-                    text: 'Languages'
+                    text: 'Languages',
+                    listeners: {
+                        afterrender: {
+                            fn: me.onGridcolumnAfterRender,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
@@ -97,6 +103,12 @@ Ext.define('Rubedo.view.DAMMainView', {
         });
 
         me.callParent(arguments);
+    },
+
+    onGridcolumnAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        }
     }
 
 });

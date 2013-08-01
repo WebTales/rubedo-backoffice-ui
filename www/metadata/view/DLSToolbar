@@ -237,7 +237,9 @@
                             "var comboValue=button.up().getComponent(\"LocSelectorCombo\").getValue();\r",
                             "button.up().getComponent(\"LocSelectorCombo\").setValue(button.up().mainLocale);\r",
                             "button.up().getComponent(\"LocSelectorCombo\").getStore().remove(button.up().getComponent(\"LocSelectorCombo\").getStore().query(\"locale\",comboValue).items[0]);\r",
-                            "button.up().up().remove(button.up().up().getComponent(comboValue));"
+                            "button.up().up().remove(button.up().up().getComponent(comboValue));\r",
+                            "var me=this;\r",
+                            "me.directOverrideMode=true;"
                         ]
                     },
                     "designerId": "db85e2ee-fc66-4a07-a130-048fb85cfb43"
@@ -327,6 +329,9 @@
                 "implHandler": [
                     "var me=this;\r",
                     "var newOne=EXt.clone(record.get(\"i18n\"));\r",
+                    "if (me.directOverrideMode){\r",
+                    "    newOne={ };\r",
+                    "}\r",
                     "var items=me.up().items.items;\r",
                     "Ext.Array.forEach(items,function(item){\r",
                     "    if (me.specialContentsMode){\r",

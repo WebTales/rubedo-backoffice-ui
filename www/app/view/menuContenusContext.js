@@ -77,7 +77,13 @@ Ext.define('Rubedo.view.menuContenusContext', {
                     localiserId: 'languageCoumn',
                     dataIndex: 'i18n',
                     text: 'Languages',
-                    flex: 1
+                    flex: 1,
+                    listeners: {
+                        afterrender: {
+                            fn: me.onGridcolumnAfterRender,
+                            scope: me
+                        }
+                    }
                 },
                 me.processEtat({
                     xtype: 'gridcolumn',
@@ -153,6 +159,12 @@ Ext.define('Rubedo.view.menuContenusContext', {
             ]
         };
         return config;
+    },
+
+    onGridcolumnAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        }
     }
 
 });

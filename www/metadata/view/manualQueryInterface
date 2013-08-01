@@ -348,6 +348,25 @@
                                 ]
                             },
                             "designerId": "8f1f3865-80cb-4756-b32e-26443d29e80b"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridcolumnAfterRender",
+                                "implHandler": [
+                                    "if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "b4675ba3-ffdc-47e7-99a9-0126f196c397"
                         }
                     ]
                 },

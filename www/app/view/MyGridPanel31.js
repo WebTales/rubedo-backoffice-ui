@@ -76,7 +76,13 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                     },
                     dataIndex: 'i18n',
                     text: 'Languages',
-                    flex: 0.7
+                    flex: 0.7,
+                    listeners: {
+                        afterrender: {
+                            fn: me.onGridcolumnAfterRender,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
@@ -172,6 +178,12 @@ Ext.define('Rubedo.view.MyGridPanel31', {
         });
 
         me.callParent(arguments);
+    },
+
+    onGridcolumnAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        }
     },
 
     onPagingToolbarConentSelectBeforeRender: function(component, eOpts) {

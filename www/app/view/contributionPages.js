@@ -381,7 +381,13 @@ Ext.define('Rubedo.view.contributionPages', {
                             localiserId: 'languageCoumn',
                             dataIndex: 'i18n',
                             text: 'Languages',
-                            flex: 0.5
+                            flex: 0.5,
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onGridcolumnAfterRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 },
@@ -700,6 +706,12 @@ Ext.define('Rubedo.view.contributionPages', {
             Ext.getStore("PagesDataStore").sync();
         });
         task.delay(200);
+    },
+
+    onGridcolumnAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        }
     },
 
     onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
