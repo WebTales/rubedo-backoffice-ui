@@ -735,8 +735,11 @@ Ext.define('Rubedo.controller.PagesController', {
                 component.select(records[0]);
                 if (component.id=="previewSitesCombo"){
                     me.pagePreviewSelect(component, [records[0]]);
-                } else {
+                } else if (component.id=="pagesSitesCombo"){
                     me.pageSiteSelect(component, [records[0]]);
+                }
+                if (records.length==1){
+                    component.up().hide();
                 }
             }
         },this,{single:true});

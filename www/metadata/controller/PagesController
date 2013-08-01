@@ -1072,8 +1072,11 @@
                     "        component.select(records[0]);\r",
                     "        if (component.id==\"previewSitesCombo\"){\r",
                     "            me.pagePreviewSelect(component, [records[0]]);\r",
-                    "        } else {\r",
+                    "        } else if (component.id==\"pagesSitesCombo\"){\r",
                     "            me.pageSiteSelect(component, [records[0]]);\r",
+                    "        }\r",
+                    "        if (records.length==1){\r",
+                    "            component.up().hide();\r",
                     "        }\r",
                     "    }\r",
                     "},this,{single:true});"

@@ -18,7 +18,6 @@ Ext.define('Rubedo.view.nouveauMasque', {
     alias: 'widget.nouveauMasque',
 
     localiserId: 'newMaskWindow',
-    height: 133,
     id: 'nouveauMasqueFenetre',
     width: 400,
     resizable: false,
@@ -86,6 +85,7 @@ Ext.define('Rubedo.view.nouveauMasque', {
         var results = component.getStore().getRange();
         if ((!Ext.isEmpty(results))&&(results.length==1)){
             component.select(results[0]);
+            component.hide();
         }
     }
 

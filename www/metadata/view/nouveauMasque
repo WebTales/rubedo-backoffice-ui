@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "newMaskWindow",
-        "height": 133,
+        "height": null,
         "id": "nouveauMasqueFenetre",
         "width": 400,
         "designer|userClassName": "nouveauMasque",
@@ -113,6 +113,7 @@
                                     "var results = component.getStore().getRange();\r",
                                     "if ((!Ext.isEmpty(results))&&(results.length==1)){\r",
                                     "    component.select(results[0]);\r",
+                                    "    component.hide();\r",
                                     "}"
                                 ],
                                 "name": "afterrender",
