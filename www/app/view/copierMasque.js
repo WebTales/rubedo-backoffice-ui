@@ -18,7 +18,6 @@ Ext.define('Rubedo.view.copierMasque', {
     alias: 'widget.copierMasque',
 
     localiserId: 'maskDupliacteWindow',
-    height: 133,
     id: 'copieMasqueFenetre',
     width: 400,
     resizable: false,
@@ -56,8 +55,15 @@ Ext.define('Rubedo.view.copierMasque', {
                             allowBlank: false,
                             editable: false,
                             forceSelection: true,
-                            store: 'SitesJson',
-                            valueField: 'id'
+                            queryMode: 'local',
+                            store: 'SitesComboMasks',
+                            valueField: 'id',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onCopierMasqueSiteAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -72,6 +78,14 @@ Ext.define('Rubedo.view.copierMasque', {
         });
 
         me.callParent(arguments);
+    },
+
+    onCopierMasqueSiteAfterRender: function(component, eOpts) {
+        var results = component.getStore().getRange();
+        if ((!Ext.isEmpty(results))&&(results.length==1)){
+            component.select(results[0]);
+            component.hide();
+        }
     }
 
 });

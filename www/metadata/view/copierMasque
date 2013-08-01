@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "maskDupliacteWindow",
-        "height": 133,
+        "height": null,
         "id": "copieMasqueFenetre",
         "width": 400,
         "designer|userClassName": "copierMasque",
@@ -81,7 +81,8 @@
                         "allowBlank": false,
                         "editable": false,
                         "forceSelection": true,
-                        "store": "SitesJson",
+                        "queryMode": "local",
+                        "store": "SitesComboMasks",
                         "valueField": "id"
                     },
                     "designerId": "36fde64e-b099-4699-a162-b92b00cde888",
@@ -90,6 +91,29 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCopierMasqueSiteAfterRender",
+                                "implHandler": [
+                                    "var results = component.getStore().getRange();\r",
+                                    "if ((!Ext.isEmpty(results))&&(results.length==1)){\r",
+                                    "    component.select(results[0]);\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "b5cf04c1-1756-4ae4-90c8-5a5c7b137eaf"
                         }
                     ]
                 },
