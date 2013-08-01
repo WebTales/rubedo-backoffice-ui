@@ -269,7 +269,7 @@
                     "        me.up().remove(item);\r",
                     "    }\r",
                     "});\r",
-                    "if (!Ext.isEmpty(i18n)){\r",
+                    "if ((!Ext.isEmpty(i18n))&&(Ext.getStore(\"AllLanguagesStore3\").getRange().length!=1)){\r",
                     "    Ext.Object.each(i18n, function(key, value, myself) {\r",
                     "        me.getComponent(0).getStore().add({\"locale\":key,\"label\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"label\"),\"flagCode\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\")});\r",
                     "        if(key!=locale){\r",
@@ -326,7 +326,7 @@
                 ],
                 "implHandler": [
                     "var me=this;\r",
-                    "var newOne={ };\r",
+                    "var newOne=EXt.clone(record.get(\"i18n\"));\r",
                     "var items=me.up().items.items;\r",
                     "Ext.Array.forEach(items,function(item){\r",
                     "    if (me.specialContentsMode){\r",

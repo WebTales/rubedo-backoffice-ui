@@ -137,7 +137,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
                 me.up().remove(item);
             }
         });
-        if (!Ext.isEmpty(i18n)){
+        if ((!Ext.isEmpty(i18n))&&(Ext.getStore("AllLanguagesStore3").getRange().length!=1)){
             Ext.Object.each(i18n, function(key, value, myself) {
                 me.getComponent(0).getStore().add({"locale":key,"label":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label"),"flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
                 if(key!=locale){
@@ -180,7 +180,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
 
     persisti18n: function(record) {
         var me=this;
-        var newOne={ };
+        var newOne=EXt.clone(record.get("i18n"));
         var items=me.up().items.items;
         Ext.Array.forEach(items,function(item){
             if (me.specialContentsMode){
