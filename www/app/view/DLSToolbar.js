@@ -141,7 +141,12 @@ Ext.define('Rubedo.view.DLSToolbar', {
         });
         if ((!Ext.isEmpty(i18n))&&(Ext.getStore("AllLanguagesStore3").getRange().length!=1)){
             Ext.Object.each(i18n, function(key, value, myself) {
-                me.getComponent(0).getStore().add({"locale":key,"label":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label"),"flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
+                var potentialLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label");
+                var betterLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("ownLabel");
+                if (!Ext.isEmpty(betterLabel)){
+                    potentialLabel=betterLabel;
+                }
+                me.getComponent(0).getStore().add({"locale":key,"label":potentialLabel, "flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
                 if(key!=locale){
                     var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
                     me.up().add(toAdd);
