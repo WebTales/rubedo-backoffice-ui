@@ -39,6 +39,7 @@ Ext.define('Rubedo.view.languagesInterface', {
             items: [
                 me.processMyGridPanel1({
                     xtype: 'gridpanel',
+                    id: 'mainLanguagesAdminGrid',
                     title: '',
                     forceFit: false,
                     store: 'MainLanguagesStore',
@@ -133,11 +134,12 @@ Ext.define('Rubedo.view.languagesInterface', {
             },
             listeners:{
                 beforecheckchange:function(cc,ix,isChecked){
-                    if((!isChecked)&&(Ext.getStore("MainLanguagesStore").query("active",true).items.length<=1)){
-                        var task = new Ext.util.DelayedTask(function(){
-                            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.atLeastOneLocError);
+                    if((Ext.getCmp("mainLanguagesAdminGrid").getStore().getAt(ix).get("isDefault"))||((!isChecked)&&(Ext.getStore("MainLanguagesStore").query("active",true).items.length<=1))){
+                        /*var task = new Ext.util.DelayedTask(function(){
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.atLeastOneLocError);
                         });
                         task.delay(200);
+                        */
                         return(false);
                     }
                 }

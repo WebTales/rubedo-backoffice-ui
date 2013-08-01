@@ -254,7 +254,12 @@
                     "\r",
                     "    });\r",
                     "}\r",
-                    "me.getComponent(\"currentLanguageIntField\").setValue(me.initialLanguage);"
+                    "me.getComponent(\"currentLanguageIntField\").setValue(me.initialLanguage);\r",
+                    "if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
+                    "        me.getComponent(\"languageSwitcher\").hide();\r",
+                    "    } else {\r",
+                    "    \tme.getComponent(\"languageSwitcher\").show();\r",
+                    "    }"
                 ],
                 "name": "afterrender",
                 "scope": "me"

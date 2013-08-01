@@ -177,6 +177,11 @@ Ext.define('Rubedo.view.genericLocTextField', {
             });
         }
         me.getComponent("currentLanguageIntField").setValue(me.initialLanguage);
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            me.getComponent("languageSwitcher").hide();
+        } else {
+            me.getComponent("languageSwitcher").show();
+        }
     }
 
 });

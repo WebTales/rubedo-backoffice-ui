@@ -300,7 +300,11 @@
                     "        }\r",
                     "    });\r",
                     "    me.getComponent(\"LocSelectorCombo\").setValue(locale);\r",
-                    "    me.show();\r",
+                    "    if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
+                    "        me.hide();\r",
+                    "    } else {\r",
+                    "    \tme.show();\r",
+                    "    }\r",
                     "} else {\r",
                     "    me.hide();\r",
                     "}"
