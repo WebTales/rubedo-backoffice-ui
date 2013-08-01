@@ -99,6 +99,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'i18n'
+        },
+        {
+            name: 'code'
         }
     ]
 });

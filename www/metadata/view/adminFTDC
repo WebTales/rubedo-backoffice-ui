@@ -1630,6 +1630,23 @@
                                     "designerId": "0a60dce6-1069-4d8b-a2f6-c6c6090eb7ce"
                                 },
                                 {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Code",
+                                        "labelWidth": 130,
+                                        "name": "code",
+                                        "allowBlank": false,
+                                        "vtype": "alphanum"
+                                    },
+                                    "designerId": "93cc6277-75b1-43db-bef5-1a0883a1d0cc"
+                                },
+                                {
                                     "type": "Ext.form.FieldSet",
                                     "reference": {
                                         "name": "items",

@@ -980,6 +980,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             i18n[nativeLanguage]={type:nType};
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
+                code:nType.replace(/\W/g, ''),
                 dependant: Ext.getCmp('champTCIsDep').getValue(),
                 champs: [ ],
                 vocabularies:["navigation"],

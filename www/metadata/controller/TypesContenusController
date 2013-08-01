@@ -1132,6 +1132,7 @@
                     "    i18n[nativeLanguage]={type:nType};\r",
                     "    var nouvType = Ext.create('model.typesContenusDataModel', {\r",
                     "        type: nType,\r",
+                    "        code:nType.replace(/\\W/g, ''),\r",
                     "        dependant: Ext.getCmp('champTCIsDep').getValue(),\r",
                     "        champs: [ ],\r",
                     "        vocabularies:[\"navigation\"],\r",

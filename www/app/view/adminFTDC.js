@@ -611,6 +611,15 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             allowBlank: false
                                         },
                                         {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Code',
+                                            labelWidth: 130,
+                                            name: 'code',
+                                            allowBlank: false,
+                                            vtype: 'alphanum'
+                                        },
+                                        {
                                             xtype: 'fieldset',
                                             localiserId: 'rightWorkflowFieldSet',
                                             title: 'Droits et workflow',

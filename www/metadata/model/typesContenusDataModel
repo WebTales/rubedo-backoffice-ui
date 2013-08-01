@@ -293,6 +293,18 @@
                 "name": "i18n"
             },
             "designerId": "4592367b-bf1a-4e3e-913c-d136f11a91a4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "code"
+            },
+            "designerId": "2d779021-f509-4050-a1fa-b9eed33270c5"
         }
     ]
 }
