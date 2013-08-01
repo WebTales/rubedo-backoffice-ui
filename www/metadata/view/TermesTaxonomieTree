@@ -235,6 +235,25 @@
                         ]
                     },
                     "designerId": "f08e9012-8df0-4a98-a911-b02e38e035a6"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridcolumnAfterRender",
+                        "implHandler": [
+                            "if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
+                            "    component.hide();\r",
+                            "}"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "b2a76e36-42fa-4f9c-906b-08e977d20345"
                 }
             ]
         },
@@ -249,7 +268,7 @@
                 "usedLanguage": "en",
                 "id": "specialLangTermColumn",
                 "dataIndex": "decoyField",
-                "text": "English",
+                "text": "<img class=\"header-icon\" style=\"vertical-align:middle;margin-bottom:4px;\" src=\"resources/icones/red/16x16/pencil.png\"/> English",
                 "flex": 1
             },
             "designerId": "3424dae7-4b88-420b-9c2c-1bef0e7e0f51",

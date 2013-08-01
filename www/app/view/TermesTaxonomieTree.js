@@ -90,7 +90,13 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     localiserId: 'languageCoumn',
                     dataIndex: 'i18n',
                     text: 'Languages',
-                    flex: 0.5
+                    flex: 0.5,
+                    listeners: {
+                        afterrender: {
+                            fn: me.onGridcolumnAfterRender,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
@@ -104,7 +110,7 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     usedLanguage: 'en',
                     id: 'specialLangTermColumn',
                     dataIndex: 'decoyField',
-                    text: 'English',
+                    text: '<img class="header-icon" style="vertical-align:middle;margin-bottom:4px;" src="resources/icones/red/16x16/pencil.png"/> English',
                     flex: 1,
                     editor: {
                         xtype: 'textfield'
@@ -164,6 +170,12 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
             Ext.getCmp("TermesTaxonomieTree").getStore().sync();
         });
         task.delay(200);
+    },
+
+    onGridcolumnAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        }
     },
 
     onTermesTaxonomieTreeItemClick: function(dataview, record, item, index, e, eOpts) {
