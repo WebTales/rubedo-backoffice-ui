@@ -566,6 +566,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             });
                             boiteParam.add(replacerField);
                         }
+                        if ((nouvChamp.name=="localizable")&&(Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+                            nouvChamp.hide();
+                        }
                         nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.contentTypes"])||(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().get("readOnly")));
                         nouvChamp.on('change', function (thing) {
                             if (thing.isValid()){
