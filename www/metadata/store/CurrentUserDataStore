@@ -75,7 +75,11 @@
                 "implHandler": [
                     "Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();\r",
                     "if (!Ext.isEmpty(Ext.getCmp(\"workingLanguageField\"))){\r",
-                    "    Ext.getCmp(\"workingLanguageField\").setValue(store.getRange()[0].get(\"workingLanguage\"));\r",
+                    "    var myLanguage=store.getRange()[0].get(\"workingLanguage\");\r",
+                    "    if(Ext.isEmpty(Ext.getStore(\"AllLanguagesStore3\").findRecord(\"locale\",myLanguage))){\r",
+                    "        myLanguage=Ext.getStore(\"AllLanguagesStore3\").getRange()[0].get(\"locale\");\r",
+                    "    }\r",
+                    "    Ext.getCmp(\"workingLanguageField\").setValue(myLanguage);\r",
                     "}"
                 ],
                 "name": "load",

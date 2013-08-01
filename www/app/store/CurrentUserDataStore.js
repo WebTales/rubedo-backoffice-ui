@@ -60,7 +60,11 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
     onJsonstoreLoad: function(store, records, successful, eOpts) {
         Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();
         if (!Ext.isEmpty(Ext.getCmp("workingLanguageField"))){
-            Ext.getCmp("workingLanguageField").setValue(store.getRange()[0].get("workingLanguage"));
+            var myLanguage=store.getRange()[0].get("workingLanguage");
+            if(Ext.isEmpty(Ext.getStore("AllLanguagesStore3").findRecord("locale",myLanguage))){
+                myLanguage=Ext.getStore("AllLanguagesStore3").getRange()[0].get("locale");
+            }
+            Ext.getCmp("workingLanguageField").setValue(myLanguage);
         }
     }
 

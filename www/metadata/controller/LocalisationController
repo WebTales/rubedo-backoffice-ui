@@ -930,6 +930,7 @@
                     "var myMenu=Ext.getCmp(\"LanguageChangerMenu\");\r",
                     "if(!Ext.isEmpty(myMenu)){\r",
                     "    myMenu.removeAll();\r",
+                    "    if (Ext.getStore(\"AllLanguagesStore3\").getRange().length>1){\r",
                     "    Ext.Array.forEach(Ext.getStore(\"AllLanguagesStore3\").getRange(),function(language){\r",
                     "        var newItem=Ext.widget(\"menuitem\",{text:language.get(\"label\"), icon:\"/assets/flags/16/\"+language.get(\"flagCode\")+\".png\"});\r",
                     "        if (!Ext.isEmpty(language.get(\"ownLabel\"))){\r",
@@ -942,6 +943,9 @@
                     "        myMenu.add(newItem);\r",
                     "\r",
                     "    });\r",
+                    "    } else {\r",
+                    "        myMenu.up().hide();\r",
+                    "    }\r",
                     "}"
                 ]
             },
