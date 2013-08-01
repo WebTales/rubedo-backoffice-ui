@@ -120,7 +120,7 @@
                             "    if (me.specialTaxoMode){\r",
                             "        Ext.getCmp(\"specialLangTermColumn\").usedLanguage=newValue;\r",
                             "        Ext.getCmp(\"TermesTaxonomieTree\").getView().refresh();\r",
-                            "        Ext.getCmp(\"specialLangTermColumn\").setText('<img class=\"header-icon\" style=\"vertical-align:middle;margin-bottom:4px;\" src=\"resources/icones/red/16x16/pencil.png\"/> '+field.getRawValue());\r",
+                            "        Ext.getCmp(\"specialLangTermColumn\").setText('<img class=\"header-icon\" style=\"vertical-align:middle;margin-bottom:4px;\" src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/pencil.png\"/> '+field.getRawValue());\r",
                             "    }\r",
                             "}"
                         ],

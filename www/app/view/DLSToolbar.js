@@ -123,7 +123,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
             if (me.specialTaxoMode){
                 Ext.getCmp("specialLangTermColumn").usedLanguage=newValue;
                 Ext.getCmp("TermesTaxonomieTree").getView().refresh();
-                Ext.getCmp("specialLangTermColumn").setText('<img class="header-icon" style="vertical-align:middle;margin-bottom:4px;" src="resources/icones/red/16x16/pencil.png"/> '+field.getRawValue());
+                Ext.getCmp("specialLangTermColumn").setText('<img class="header-icon" style="vertical-align:middle;margin-bottom:4px;" src="resources/icones/'+MyPrefData.iconsDir+'/16x16/pencil.png"/> '+field.getRawValue());
             }
         }
     },
