@@ -217,7 +217,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         });
                         chooser.getComponent(1).on("click", function(){
                             var nouvMasque = Ext.create('model.masquesDataModel', {
-                                text: "Nouveau masque",
+                                text: cible.data.text+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'),
                                 site: cible.get("site")
 
                             });
