@@ -240,14 +240,17 @@ Ext.define('Rubedo.controller.UsersController', {
 
     openUserSettings: function(component, eOpts) {
         if (component.isWindow) {
-            var myRecord= Ext.getStore("CurrentUserDataStore").getRange()[0];
-            Ext.getCmp("userInfoDisplay").getForm().loadRecord(myRecord);
-            if (Ext.isEmpty(myRecord.get("photo"))) {
-                Ext.getCmp("userProfilePicture").setSrc("resources/images/userBig.png");
-            } else {
-                Ext.getCmp("userProfilePicture").setSrc("image/get?file-id="+myRecord.get("photo"));
+            Ext.getStore("CurrentUserDataStore").addListener("load",function(){
+                var myRecord= Ext.getStore("CurrentUserDataStore").getRange()[0];
+                Ext.getCmp("userInfoDisplay").getForm().loadRecord(myRecord);
+                if (Ext.isEmpty(myRecord.get("photo"))) {
+                    Ext.getCmp("userProfilePicture").setSrc("resources/images/userBig.png");
+                } else {
+                    Ext.getCmp("userProfilePicture").setSrc("image/get?file-id="+myRecord.get("photo"));
+                }
+            },this,{single:true});
+                Ext.getStore("CurrentUserDataStore").load();
             }
-        }
     },
 
     userInfoUpdate: function(button, e, eOpts) {

@@ -51,6 +51,7 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
             listeners: {
                 load: {
                     fn: me.onJsonstoreLoad,
+                    single: true,
                     scope: me
                 }
             }
