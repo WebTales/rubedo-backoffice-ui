@@ -718,7 +718,6 @@ Ext.define('Rubedo.view.contributionPages', {
         if (newValue) {
             var task = new Ext.util.DelayedTask(function(){
                 field.previousSibling().setReadOnly(true);
-                field.previousSibling().setValue(null);
             });
             task.delay(100);
 

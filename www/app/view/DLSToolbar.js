@@ -141,48 +141,49 @@ Ext.define('Rubedo.view.DLSToolbar', {
         });
         if ((!Ext.isEmpty(i18n))&&(Ext.getStore("AllLanguagesStore3").getRange().length!=1)){
             Ext.Object.each(i18n, function(key, value, myself) {
-                var potentialLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label");
-                var betterLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("ownLabel");
-                if (!Ext.isEmpty(betterLabel)){
-                    potentialLabel=betterLabel;
-                }
-                me.getComponent(0).getStore().add({"locale":key,"label":potentialLabel, "flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
-                if(key!=locale){
-                    var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
-                    me.up().add(toAdd);
-                    if (me.specialContentsMode){
-                        if ((Ext.isEmpty(Ext.getCmp("cedtr1")))&&(Ext.isEmpty(Ext.getCmp("DAMSEcondaryFieldsBox")))){
-                            toAdd.removeAll();
-                        }
-                        Ext.Array.forEach(me.up().getComponent("mainLocItem").query("ChampTC"),function(candidate){
-                            if (candidate.localizable){
-                                var cont=candidate.cloneConfig();
-                                var field=candidate.query("field")[0].cloneConfig({anchor:"90%",style:"{float:left;}"});
-                                cont.getComponent('helpBouton').setTooltip(candidate.getComponent('helpBouton').tooltip);
-                                cont.getComponent('helpBouton').hidden=candidate.getComponent('helpBouton').hidden;
-                                cont.add(field);
-                                toAdd.add(cont);
+                if(!Ext.isEmpty(Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items)){
+                    var potentialLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label");
+                    var betterLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("ownLabel");
+                    if (!Ext.isEmpty(betterLabel)){
+                        potentialLabel=betterLabel;
+                    }
+                    me.getComponent(0).getStore().add({"locale":key,"label":potentialLabel, "flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
+                    if(key!=locale){
+                        var toAdd=Ext.widget(me.replicatorEntity,{itemId:key});
+                        me.up().add(toAdd);
+                        if (me.specialContentsMode){
+                            if ((Ext.isEmpty(Ext.getCmp("cedtr1")))&&(Ext.isEmpty(Ext.getCmp("DAMSEcondaryFieldsBox")))){
+                                toAdd.removeAll();
                             }
-                        });
-                        toAdd.getForm().setValues(value.fields);
-                    }else{
-                        toAdd.getForm().setValues(value);
-                    }
-                    if (me.up().getComponent("mainLocItem").query("field")[0].readOnly){
-                        Ext.Array.forEach(toAdd.query("field"), function(field){field.setReadOnly(true);});
-                    }
+                            Ext.Array.forEach(me.up().getComponent("mainLocItem").query("ChampTC"),function(candidate){
+                                if (candidate.localizable){
+                                    var cont=candidate.cloneConfig();
+                                    var field=candidate.query("field")[0].cloneConfig({anchor:"90%",style:"{float:left;}"});
+                                    cont.getComponent('helpBouton').setTooltip(candidate.getComponent('helpBouton').tooltip);
+                                    cont.getComponent('helpBouton').hidden=candidate.getComponent('helpBouton').hidden;
+                                    cont.add(field);
+                                    toAdd.add(cont);
+                                }
+                            });
+                            toAdd.getForm().setValues(value.fields);
+                        }else{
+                            toAdd.getForm().setValues(value);
+                        }
+                        if (me.up().getComponent("mainLocItem").query("field")[0].readOnly){
+                            Ext.Array.forEach(toAdd.query("field"), function(field){field.setReadOnly(true);});
+                        }
 
+                    }
+                }});
+                me.getComponent("LocSelectorCombo").setValue(locale);
+                if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+                    me.hide();
+                } else {
+                    me.show();
                 }
-            });
-            me.getComponent("LocSelectorCombo").setValue(locale);
-            if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
-                me.hide();
             } else {
-                me.show();
+                me.hide();
             }
-        } else {
-            me.hide();
-        }
     },
 
     persisti18n: function(record) {
