@@ -187,7 +187,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
 
     persisti18n: function(record) {
         var me=this;
-        var newOne=EXt.clone(record.get("i18n"));
+        var newOne=Ext.clone(record.get("i18n"));
         if (me.directOverrideMode){
             newOne={ };
         }

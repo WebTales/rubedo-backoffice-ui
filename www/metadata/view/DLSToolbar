@@ -310,7 +310,7 @@
                     "    if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
                     "        me.hide();\r",
                     "    } else {\r",
-                    "    \tme.show();\r",
+                    "        me.show();\r",
                     "    }\r",
                     "} else {\r",
                     "    me.hide();\r",
@@ -333,7 +333,7 @@
                 ],
                 "implHandler": [
                     "var me=this;\r",
-                    "var newOne=EXt.clone(record.get(\"i18n\"));\r",
+                    "var newOne=Ext.clone(record.get(\"i18n\"));\r",
                     "if (me.directOverrideMode){\r",
                     "    newOne={ };\r",
                     "}\r",
