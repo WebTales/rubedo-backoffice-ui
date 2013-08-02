@@ -134,12 +134,12 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("reusableelementDescription").update(record.data);
         Ext.getCmp("resusableElementsDeleteBtn").enable();
         var go =true;
-
         var target=Ext.getCmp("ReusableElementPicker").insTar;
 
         if (record.get("mType")==target.mType) {go=false;}
 
         else if ((target.mType=="row")&&(Ext.getCmp(target.id).getComponent("eol").flex===0)) {go=false;}
+        else if ((target.mType=="row")&&(record.get("mType")=="col")&&(record.get("mCode").span>Ext.getCmp(target.id).getComponent("eol").flex)) {go=false;}
 
         else if ((record.get("mType")=="row")&&(target.mType=="bloc")) {go=false;}
         else if ((record.get("mType")!="row")&&(target.id=="masqueEdition")) {go=false;}
