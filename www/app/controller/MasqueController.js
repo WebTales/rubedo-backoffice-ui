@@ -221,8 +221,12 @@ Ext.define('Rubedo.controller.MasqueController', {
                                 site: cible.get("site")
 
                             });
+                            var nBlocks=me.saveBlocks(me.getMasqueEdition());
+                            Ext.Array.forEach(nBlocks, function(block){
+                                block.id=Ext.id();
+                            });
                             nouvMasque.set("rows",me.saveRows(me.getMasqueEdition()));
-                            nouvMasque.set("blocks",me.saveBlocks(me.getMasqueEdition()));
+                            nouvMasque.set("blocks",nBlocks);
                             nouvMasque.set("pageProperties",Ext.clone(Ext.getCmp('masqueEdition').pageProperties));
                             nouvMasque.set("mainColumnId",Ext.clone(Ext.getCmp("mainColumnIdField").getValue()));
                             me.getMasquesDataJsonStore().add(nouvMasque);
