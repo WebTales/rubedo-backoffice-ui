@@ -175,6 +175,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
 
                     }
                 }});
+                me.getComponent("LocSelectorCombo").setValue(null);
                 me.getComponent("LocSelectorCombo").setValue(locale);
                 if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
                     me.hide();

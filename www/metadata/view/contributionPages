@@ -1303,7 +1303,7 @@
                                                     "    });\r",
                                                     "    task.delay(100);\r",
                                                     "\r",
-                                                    "}else {\r",
+                                                    "} else {\r",
                                                     "    field.previousSibling().setReadOnly(false);\r",
                                                     "}"
                                                 ],

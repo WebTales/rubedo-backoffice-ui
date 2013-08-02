@@ -307,6 +307,7 @@
                     "\r",
                     "        }\r",
                     "        }});\r",
+                    "    me.getComponent(\"LocSelectorCombo\").setValue(null);\r",
                     "    me.getComponent(\"LocSelectorCombo\").setValue(locale);\r",
                     "    if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
                     "        me.hide();\r",

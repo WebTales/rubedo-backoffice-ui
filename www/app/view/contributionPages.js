@@ -721,7 +721,7 @@ Ext.define('Rubedo.view.contributionPages', {
             });
             task.delay(100);
 
-        }else {
+        } else {
             field.previousSibling().setReadOnly(false);
         }
     },
