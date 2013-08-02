@@ -58,11 +58,11 @@ Ext.define('Rubedo.view.ReusableElementPicker', {
                                 {
                                     translator: function(name) {
                                         if (name=="row") {
-                                            return("Lignes");
+                                            return(Rubedo.RubedoAutomatedElementsLoc.lignText);
                                         } else if (name=="col") {
-                                            return("Colonnes");
+                                            return(Rubedo.RubedoAutomatedElementsLoc.columnText);
                                         } else { 
-                                            return ("Blocs");
+                                            return (Rubedo.RubedoAutomatedElementsLoc.blockText);
                                         }
                                     }
                                 }

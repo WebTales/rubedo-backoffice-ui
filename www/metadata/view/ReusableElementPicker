@@ -125,11 +125,11 @@
                                         ],
                                         "implHandler": [
                                             "if (name==\"row\") {\r",
-                                            "    return(\"Lignes\");\r",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc.lignText);\r",
                                             "} else if (name==\"col\") {\r",
-                                            "    return(\"Colonnes\");\r",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc.columnText);\r",
                                             "} else { \r",
-                                            "    return (\"Blocs\");\r",
+                                            "    return (Rubedo.RubedoAutomatedElementsLoc.blockText);\r",
                                             "}"
                                         ]
                                     },
