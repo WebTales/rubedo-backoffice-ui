@@ -469,7 +469,7 @@
                                     "    id:\"siteUsedLanguagesField1\",\r",
                                     "    allowBlank:false,\r",
                                     "    labelWidth:110,\r",
-                                    "    fieldLabel:\"Languages *\",\r",
+                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText+\" *\",\r",
                                     "    multiSelect:true,\r",
                                     "    forceSelection:true,\r",
                                     "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",

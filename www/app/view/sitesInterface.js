@@ -263,7 +263,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             forceSelection: true,
                                             queryMode: 'local'
                                         }),
-                                        {
+                                        me.processUseBrowserLanguage({
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
                                             fieldLabel: 'Use browser language',
@@ -271,7 +271,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             name: 'useBrowserLanguage',
                                             inputValue: 'true',
                                             uncheckedValue: 'false'
-                                        },
+                                        }),
                                         {
                                             xtype: 'textareafield',
                                             anchor: '100%',
@@ -473,6 +473,12 @@ Ext.define('Rubedo.view.sitesInterface', {
 
     processLocStrategy: function(config) {
         config.store=[["onlyOne","Only one"],["fallback", "With fallback"]];
+        config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;
+        return config;
+    },
+
+    processUseBrowserLanguage: function(config) {
+        config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.useBrowserLanguageText;
         return config;
     },
 
@@ -524,7 +530,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             id:"siteUsedLanguagesField",
             allowBlank:false,
             labelWidth:110,
-            fieldLabel:"Languages *",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText+" *",
             multiSelect:true,
             forceSelection:true,
             store: Ext.getStore("AllLanguagesStore2"),

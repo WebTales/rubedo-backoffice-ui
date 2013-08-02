@@ -559,6 +559,7 @@
                                                 ],
                                                 "implHandler": [
                                                     "config.store=[[\"onlyOne\",\"Only one\"],[\"fallback\", \"With fallback\"]];\r",
+                                                    "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;\r",
                                                     "return config;"
                                                 ]
                                             },
@@ -582,7 +583,28 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
-                                    "designerId": "289ffab8-0e63-4513-8089-dc3766217e25"
+                                    "designerId": "289ffab8-0e63-4513-8089-dc3766217e25",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processUseBrowserLanguage",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.useBrowserLanguageText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "f9cfda9d-9eba-4fce-8b4e-035c22559781"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.TextArea",
@@ -722,7 +744,7 @@
                                             "    id:\"siteUsedLanguagesField\",\r",
                                             "    allowBlank:false,\r",
                                             "    labelWidth:110,\r",
-                                            "    fieldLabel:\"Languages *\",\r",
+                                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText+\" *\",\r",
                                             "    multiSelect:true,\r",
                                             "    forceSelection:true,\r",
                                             "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",

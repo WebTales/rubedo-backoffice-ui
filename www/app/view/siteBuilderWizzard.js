@@ -317,7 +317,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
             id:"siteUsedLanguagesField1",
             allowBlank:false,
             labelWidth:110,
-            fieldLabel:"Languages *",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText+" *",
             multiSelect:true,
             forceSelection:true,
             store: Ext.getStore("AllLanguagesStore2"),

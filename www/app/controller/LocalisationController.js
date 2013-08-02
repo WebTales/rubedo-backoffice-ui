@@ -349,7 +349,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "imageRequiredError":"An image must be selected",
             "localizationErrorText":"Localization error",
             "noCurrentWorkingLanguageError":"No working language selected",
-            "currentWorkingLanguageText":"Current working language"
+            "currentWorkingLanguageText":"Current working language",
+            "languagesText":"Languages",
+            "locStrategyText":"Localizastion strategy",
+            "useBrowserLanguageText":"Use browser language"
         });
 
         this.control({
