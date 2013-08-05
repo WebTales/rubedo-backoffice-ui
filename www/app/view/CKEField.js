@@ -64,7 +64,7 @@ Ext.define('Rubedo.view.CKEField', {
             myTBConfig=[
             { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-            { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },'/',
+            { name: 'colors', items: [ 'TextColor','BGColor','-', 'Scayt' ] },'/',
             { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] }, 
             { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', "Rubedolink", 'Unlink'] },
             { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo'  ] }
@@ -73,7 +73,7 @@ Ext.define('Rubedo.view.CKEField', {
             myTBConfig=[
             { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','-','Image']},
-            { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
+            { name: 'colors', items: [ 'TextColor','BGColor' ,'-', 'Scayt'] },
             { name: 'styles', items: [ 'Font', 'FontSize' ] }
 
 
