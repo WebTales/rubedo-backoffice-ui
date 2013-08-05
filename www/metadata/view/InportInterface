@@ -12,10 +12,14 @@
         "width": 712,
         "designer|userClassName": "InportInterface",
         "designer|userAlias": "InportInterface",
+        "resizable": false,
         "layout": "card",
         "iconCls": "database_up_small",
         "title": "Import",
         "constrainHeader": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
     },
     "designerId": "174581d4-1d9c-4a32-b14d-615f802f9164",
     "customConfigs": [
@@ -89,7 +93,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "importSeparatorField",
-                                "layout|flex": 0.14,
+                                "layout|flex": null,
+                                "width": 100,
                                 "fieldLabel": "Séparateur",
                                 "labelWidth": 60,
                                 "name": "separator",
@@ -138,10 +143,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 0.3,
+                                "layout|flex": null,
                                 "layout|margins": "0 0 0 5",
                                 "disabled": true,
                                 "id": "chooseEncodingField",
+                                "width": 160,
                                 "fieldLabel": "Encoding",
                                 "labelWidth": 60,
                                 "name": "encoding",
@@ -186,10 +192,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "importCSVFileField",
-                                "layout|flex": 0.6,
+                                "layout|flex": null,
                                 "id": "mainCSVinportField",
                                 "margin": "0 0 0 5",
-                                "width": 100,
+                                "width": 380,
                                 "fieldLabel": "Fichier CSV",
                                 "labelWidth": 80,
                                 "name": "csvFile",

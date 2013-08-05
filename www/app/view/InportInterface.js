@@ -26,6 +26,7 @@ Ext.define('Rubedo.view.InportInterface', {
     height: 449,
     id: 'InportInterface',
     width: 712,
+    resizable: false,
     layout: {
         type: 'card'
     },
@@ -67,7 +68,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'textfield',
                                     localiserId: 'importSeparatorField',
-                                    flex: 0.14,
+                                    width: 100,
                                     fieldLabel: 'Séparateur',
                                     labelWidth: 60,
                                     name: 'separator',
@@ -82,10 +83,10 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 me.processChooseEncodingField({
                                     xtype: 'combobox',
-                                    flex: 0.3,
                                     margins: '0 0 0 5',
                                     disabled: true,
                                     id: 'chooseEncodingField',
+                                    width: 160,
                                     fieldLabel: 'Encoding',
                                     labelWidth: 60,
                                     name: 'encoding',
@@ -102,10 +103,9 @@ Ext.define('Rubedo.view.InportInterface', {
                                         return fileInput;
                                     },
                                     localiserId: 'importCSVFileField',
-                                    flex: 0.6,
                                     id: 'mainCSVinportField',
                                     margin: '0 0 0 5',
-                                    width: 100,
+                                    width: 380,
                                     fieldLabel: 'Fichier CSV',
                                     labelWidth: 80,
                                     name: 'csvFile',
