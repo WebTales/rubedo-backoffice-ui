@@ -81,7 +81,7 @@ Ext.define('Rubedo.controller.DAMController', {
                 Ext.getStore("DAMFolderViewStore").remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
             } else {
                 Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
-                Ext.getStore("DAMFacetteStore").addListener("datachanged", function(){Ext.getStore("DAMFacetteStore").load(); }, this, {delay:600,single:true});
+                Ext.getStore("DAMFacetteStore").addListener("datachanged", function(){Ext.getStore("DAMFacetteStore").load(); }, this, {delay:800,single:true});
             }
             Ext.getCmp('delConfirmZ').close();
 
@@ -282,9 +282,10 @@ Ext.define('Rubedo.controller.DAMController', {
     onPixlrEditorWindowAfterRender: function(component, eOpts) {
         var targetedImageId = component.targetedImageId;
         var targetedImageTitle = component.targetedImageTitle;
+        var targetedImageVersion= component.targetedImageVersion;
         var iconUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/resources/icones/logoRubedo.png");
         var exitUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/resources/afterPixlr.html");
-        var imageUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/image?file-id="+targetedImageId);
+        var imageUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/image?file-id="+targetedImageId+"&version="+targetedImageVersion);
         var imageResponseUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/file/update?originalId="+targetedImageId+"&token="+ACL.CSRFToken);
         var holder=Ext.widget("panel", {header:false, autoScroll:true});
         component.add(holder);

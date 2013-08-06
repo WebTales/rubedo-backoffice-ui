@@ -55,7 +55,7 @@ Ext.define('Rubedo.view.GFSFileField', {
         myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").on("click", function(){
             if (component.fileType=="Image"){
                 var showBox = Ext.widget("ImagePreviewWindow", {maxWidth:window.innerWidth, maxHeight:window.innerHeight});
-                showBox.getComponent(0).setSrc("image/get?file-id="+component.getValue());
+                showBox.getComponent(0).setSrc("image/get?file-id="+component.getValue()+"&version="+Ext.getStore("DAMEditStore").getRange()[0].get("version"));
                 showBox.show();
             }
             //handle cases one by one
@@ -74,7 +74,7 @@ Ext.define('Rubedo.view.GFSFileField', {
             } else {
                 if (component.fileType=="Image"){
                     myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
-                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+sizer);
+                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+"&version="+Ext.getStore("DAMEditStore").getRange()[0].get("version")+sizer);
                     if (component.bigMode) {
                         myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
                     }
@@ -98,76 +98,54 @@ Ext.define('Rubedo.view.GFSFileField', {
         myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").on("click",function(){
             var myPixlrEditor=Ext.widget("pixlrEditorWindow");
             myPixlrEditor.targetedImageId=component.getValue();
+            myPixlrEditor.targetedImageVersion=Ext.getStore("DAMEditStore").getRange()[0].get("version");
             myPixlrEditor.targetedImageTitle=Ext.getStore("DAMEditStore").getRange()[0].get("title");
             myPixlrEditor.on("beforeclose",function(){
-                var task = new Ext.util.DelayedTask(function(){
-                    myComponent.getComponent("fieldImagePreview").setSrc(null);
-                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+sizer);
-                });
-                task.delay(400);
-            }); 
-            myPixlrEditor.show();
-        });
-        myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").on("click",function(){
-            var delCon = Ext.widget('delConfirmZ');
-            delCon.show();
-            Ext.getCmp('delConfirmZOui').on('click', function() { 
-                component.setValue(null);
-                delCon.close();
-            }); 
-        });
-        component.on("change",function(theField,newValue){
-            if ((newValue==="")||(Ext.isEmpty(newValue))){
-                myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
-                myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
-                if (component.bigMode) {
-                    myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
-                }
-                myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
-
-            } else {
-                if (component.fileType=="Image"){
-                    myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
-                    myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+sizer);
+                if (myPixlrEditor.hasEdited){
+                    Ext.getStore("DAMEditStore").getRange()[0].data.version=Ext.getStore("DAMEditStore").getRange()[0].data.version+1;
+                    var task = new Ext.util.DelayedTask(function(){
+                        myComponent.getComponent("fieldImagePreview").setSrc(null);
+                        myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+"&version="+Ext.getStore("DAMEditStore").getRange()[0].get("version")+sizer);
+                    });
+                    task.delay(400);
+                }}); 
+                myPixlrEditor.show();
+            });
+            myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").on("click",function(){
+                var delCon = Ext.widget('delConfirmZ');
+                delCon.show();
+                Ext.getCmp('delConfirmZOui').on('click', function() { 
+                    component.setValue(null);
+                    delCon.close();
+                }); 
+            });
+            component.on("change",function(theField,newValue){
+                if ((newValue==="")||(Ext.isEmpty(newValue))){
+                    myComponent.getComponent("fieldImagePreview").setSrc("resources/icones/"+MyPrefData.iconsDir+"/128x128/image_remove.png");
+                    myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").disable();
+                    myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").disable();
                     if (component.bigMode) {
-                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
                     }
-                } else {
-                    myComponent.getComponent("fieldImagePreview").setSrc("../file/get-thumbnail");
                     myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
+
+                } else {
+                    if (component.fileType=="Image"){
+                        myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").enable();
+                        myComponent.getComponent("fieldImagePreview").setSrc("image/get?file-id="+component.getValue()+"&version="+Ext.getStore("DAMEditStore").getRange()[0].get("version")+sizer);
+                        if (component.bigMode) {
+                            myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").enable();
+                        }
+                    } else {
+                        myComponent.getComponent("fieldImagePreview").setSrc("../file/get-thumbnail");
+                        myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").disable();
+                    }
+                    myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
+                    myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
+
                 }
-                myComponent.getComponent("buttonHolder").getComponent("fieldDownloadFile").enable();
-                myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").enable();
 
-            }
-
-        });
-        if (component.readOnly){
-            myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
-            if (component.bigMode) {
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
-            }
-            myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").hide();
-        } else {
-            myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").show();
-            if (component.bigMode) {
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
-            }
-            myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").show();
-        }
-        if (component.fileType!="Image"){
-            if (component.bigMode) {
-                myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
-            }
-        } else {
-            //handle image online editing
-        }
-        if (component.fileType=="Office"){
-            myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").hide();
-        }
-
-        component.on("writeablechange", function(){
+            });
             if (component.readOnly){
                 myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
                 if (component.bigMode) {
@@ -191,7 +169,32 @@ Ext.define('Rubedo.view.GFSFileField', {
             if (component.fileType=="Office"){
                 myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").hide();
             }
-        });
+
+            component.on("writeablechange", function(){
+                if (component.readOnly){
+                    myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").hide();
+                    if (component.bigMode) {
+                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").hide();
+                    }
+                    myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").hide();
+                } else {
+                    myComponent.getComponent("buttonHolder").getComponent("fieldClearFile").show();
+                    if (component.bigMode) {
+                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").show();
+                    }
+                    myComponent.getComponent("buttonHolder").getComponent("fieldChangeFile").show();
+                }
+                if (component.fileType!="Image"){
+                    if (component.bigMode) {
+                        myComponent.getComponent("buttonHolder").getComponent("fieldEditFile").disable();
+                    }
+                } else {
+                    //handle image online editing
+                }
+                if (component.fileType=="Office"){
+                    myComponent.getComponent("buttonHolder").getComponent("fieldPreviewFile").hide();
+                }
+            });
     }
 
 });
