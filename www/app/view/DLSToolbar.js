@@ -137,10 +137,15 @@ Ext.define('Rubedo.view.DLSToolbar', {
         me.directOverrideMode=false;
         me.up().getLayout().setActiveItem(me.up().getComponent("mainLocItem"));
         me.getComponent(0).getStore().removeAll();
+        var toRemove=[ ];
         Ext.Array.forEach(me.up().items.items, function(item){
             if(item.itemId!="mainLocItem"){
-                me.up().remove(item);
-            }
+                toRemove.push(item);
+            } 
+        });
+        Ext.Array.forEach(toRemove, function(obsolete){
+            me.up().up().remove(obsolete);
+            obsolete.destroy();
         });
         if ((!Ext.isEmpty(i18n))&&(Ext.getStore("AllLanguagesStore3").getRange().length!=1)){
             Ext.Object.each(i18n, function(key, value, myself) {
