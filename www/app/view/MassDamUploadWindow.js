@@ -246,7 +246,8 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                     "applyTaxoFacets":Ext.getCmp("applyCurrentTaxoToUploadField").value,
                     "token":ACL.CSRFToken,
                     "writeWorkspace":Ext.getCmp("contributeWorkspaceMassUploadField").value,
-                    "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value)
+                    "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value),
+                    "workingLanguage":Ext.getCmp("workingLanguageField").getValue()
                 },
                 statusFailedText: '<span style="color: red">Error</span>',
                 statusDoneText: '<span style="color: green">Complete</span>',
@@ -339,6 +340,7 @@ Ext.define('Rubedo.view.MassDamUploadWindow', {
                 "token":ACL.CSRFToken,
                 "writeWorkspace":Ext.getCmp("contributeWorkspaceMassUploadField").value,
                 "targetArray":Ext.JSON.encode(Ext.getCmp("targetWorkspaceMassUploadField").value),
+                "workingLanguage":Ext.getCmp("workingLanguageField").getValue(),
             "directory":"notFiled"};
         if (Ext.getCmp("DAMInterface").currentViewMode=="folder"){
             var realDirectory=Ext.clone(Ext.getStore("DAMFolderViewStore").directoryFilter);
