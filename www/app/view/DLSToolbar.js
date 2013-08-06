@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
 
     specialTaxoMode: false,
     specialContentsMode: false,
+    directOverrideMode: false,
     hidden: true,
 
     initComponent: function() {
@@ -81,8 +82,9 @@ Ext.define('Rubedo.view.DLSToolbar', {
                         button.up().getComponent("LocSelectorCombo").setValue(button.up().mainLocale);
                         button.up().getComponent("LocSelectorCombo").getStore().remove(button.up().getComponent("LocSelectorCombo").getStore().query("locale",comboValue).items[0]);
                         button.up().up().remove(button.up().up().getComponent(comboValue));
-                        var me=this;
+                        var me=button.up();
                         me.directOverrideMode=true;
+                        console.log(me.directOverrideMode);
                     },
                     localiserId: 'removeTranslationBtn',
                     disabled: true,
@@ -132,6 +134,7 @@ Ext.define('Rubedo.view.DLSToolbar', {
         var me=this;
         me.mainLocale=locale;
         me.nativeLanguage=nativeLanguage;
+        me.directOverrideMode=false;
         me.up().getLayout().setActiveItem(me.up().getComponent("mainLocItem"));
         me.getComponent(0).getStore().removeAll();
         Ext.Array.forEach(me.up().items.items, function(item){
