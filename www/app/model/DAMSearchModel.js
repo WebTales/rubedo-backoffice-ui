@@ -59,6 +59,10 @@ Ext.define('Rubedo.model.DAMSearchModel', {
         },
         {
             name: 'availableLanguages'
+        },
+        {
+            name: 'version',
+            type: 'auto'
         }
     ]
 });

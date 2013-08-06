@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.override.DAMMainView', {
 	            
 	            generateThumbnail = function()
 	            {
-	                return "dam/get-thumbnail?id="+record.get("id");
+	                return "dam/get-thumbnail?id="+record.get("id")+"&version="+record.get("version");
 	            };
    
 				if(this.viewMode)

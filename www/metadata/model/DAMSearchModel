@@ -151,6 +151,19 @@
                 "name": "availableLanguages"
             },
             "designerId": "d7518eb4-f538-4505-82b5-1435c8d6b4ff"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "version",
+                "type": "auto"
+            },
+            "designerId": "25313ced-56db-4783-86bc-cebcd483ffbd"
         }
     ]
 }

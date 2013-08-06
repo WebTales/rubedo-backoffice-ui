@@ -67,6 +67,12 @@ Ext.define('ContentContributor.controller.ACLController', {
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){
+            if (Ext.isEmpty(options.params)){
+                options.params={};
+            }
+            if(!Ext.isEmpty(ACL.workingLanguage)){
+                options.params.workingLanguage=ACL.workingLanguage;
+            }
             options.params.token=ACL.CSRFToken;
         });
 
