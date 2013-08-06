@@ -81,7 +81,7 @@ Ext.define('Rubedo.controller.DAMController', {
                 Ext.getStore("DAMFolderViewStore").remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
             } else {
                 Ext.getCmp("DAMCenter").getStore().remove(Ext.getCmp("DAMCenter").getSelectionModel().getSelection());
-                Ext.getStore("DAMFacetteStore").addListener("datachanged", function(){Ext.getStore("DAMFacetteStore").load(); }, this, {delay:100,single:true});
+                Ext.getStore("DAMFacetteStore").addListener("datachanged", function(){Ext.getStore("DAMFacetteStore").load(); }, this, {delay:600,single:true});
             }
             Ext.getCmp('delConfirmZ').close();
 

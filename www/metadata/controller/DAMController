@@ -427,7 +427,7 @@
                     "        Ext.getStore(\"DAMFolderViewStore\").remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
                     "    } else {\r",
                     "        Ext.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
-                    "        Ext.getStore(\"DAMFacetteStore\").addListener(\"datachanged\", function(){Ext.getStore(\"DAMFacetteStore\").load(); }, this, {delay:100,single:true});\r",
+                    "        Ext.getStore(\"DAMFacetteStore\").addListener(\"datachanged\", function(){Ext.getStore(\"DAMFacetteStore\").load(); }, this, {delay:600,single:true});\r",
                     "    }\r",
                     "    Ext.getCmp('delConfirmZ').close();\r",
                     "\r",
