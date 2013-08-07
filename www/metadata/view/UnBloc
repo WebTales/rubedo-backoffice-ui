@@ -47,9 +47,9 @@
                 "implHandler": [
                     "var component=this;\r",
                     "if (!Ext.isEmpty(component.i18n)){\r",
-                    "\tvar currentLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
+                    "    var currentLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
                     "    if ((!Ext.isEmpty(component.i18n[currentLanguage]))&&((!Ext.isEmpty(component.i18n[currentLanguage].title)))){\r",
-                    "        component.setTitle(component.i18n[currentLanguage].title);\r",
+                    "        component.setTitle(Ext.util.Format.stripTags(component.i18n[currentLanguage].title));\r",
                     "    }\r",
                     "}"
                 ]

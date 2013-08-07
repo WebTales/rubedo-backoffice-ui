@@ -40,7 +40,8 @@
                 "layout|flex": 1,
                 "itemId": "mainTextInput",
                 "fieldLabel": "",
-                "allowBlank": false
+                "allowBlank": false,
+                "stripCharsRe": "/<\\/?[^>]+>/gi"
             },
             "designerId": "8f286d23-94f3-45aa-944f-992d4d5fcfcb",
             "cn": [

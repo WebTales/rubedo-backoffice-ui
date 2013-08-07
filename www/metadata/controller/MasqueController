@@ -1506,6 +1506,7 @@
                 ],
                 "implHandler": [
                     "Ext.Array.forEach(mBlocks, function(block){\r",
+                    "    block.title=Ext.util.Format.stripTags(block.title);\r",
                     "    var targetCol=Ext.getCmp(block.parentCol);\r",
                     "    if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){\r",
                     "        if (Ext.isEmpty(block.configBloc)){\r",

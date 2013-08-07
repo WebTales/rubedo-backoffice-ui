@@ -978,6 +978,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
     renderBlocks: function(mBlocks, editable) {
         Ext.Array.forEach(mBlocks, function(block){
+            block.title=Ext.util.Format.stripTags(block.title);
             if (block.parentCol.indexOf("page-")==-1) {
                 block.parentCol="page-"+block.parentCol;
             }

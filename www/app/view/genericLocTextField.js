@@ -38,6 +38,7 @@ Ext.define('Rubedo.view.genericLocTextField', {
                     itemId: 'mainTextInput',
                     fieldLabel: '',
                     allowBlank: false,
+                    stripCharsRe: /<\/?[^>]+>/gi,
                     listeners: {
                         change: {
                             fn: me.onMainTextInputChange,

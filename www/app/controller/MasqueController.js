@@ -1654,6 +1654,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
     restoreBlocks: function(mBlocks) {
         Ext.Array.forEach(mBlocks, function(block){
+            block.title=Ext.util.Format.stripTags(block.title);
             var targetCol=Ext.getCmp(block.parentCol);
             if ((!Ext.isEmpty(targetCol))&&(targetCol.mType=='col')){
                 if (Ext.isEmpty(block.configBloc)){

@@ -49,7 +49,7 @@ Ext.define('Rubedo.view.UnBloc', {
         if (!Ext.isEmpty(component.i18n)){
             var currentLanguage=Ext.getCmp("workingLanguageField").getValue();
             if ((!Ext.isEmpty(component.i18n[currentLanguage]))&&((!Ext.isEmpty(component.i18n[currentLanguage].title)))){
-                component.setTitle(component.i18n[currentLanguage].title);
+                component.setTitle(Ext.util.Format.stripTags(component.i18n[currentLanguage].title));
             }
         }
     }

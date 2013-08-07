@@ -1211,6 +1211,7 @@
                 ],
                 "implHandler": [
                     "Ext.Array.forEach(mBlocks, function(block){\r",
+                    "    block.title=Ext.util.Format.stripTags(block.title);\r",
                     "    if (block.parentCol.indexOf(\"page-\")==-1) {\r",
                     "        block.parentCol=\"page-\"+block.parentCol;\r",
                     "    }\r",
