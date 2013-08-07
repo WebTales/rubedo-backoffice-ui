@@ -29,8 +29,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "DAMImageDrop",
-                "designer|userClassName": "MyGridView28"
+                "id": "DAMImageDrop"
             },
             "designerId": "6e4d0cdc-fc61-4a58-9d20-b3d4faf37043"
         },
@@ -43,7 +42,7 @@
             "codeClass": null,
             "userConfig": {
                 "filter": true,
-                "designer|userClassName": "MyColumn47",
+                "localiserId": "titleColumn",
                 "align": null,
                 "dataIndex": "title",
                 "text": "Titre"
@@ -57,6 +56,11 @@
                     "group": "(Custom Properties)",
                     "name": "filter",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
                 }
             ]
         },
@@ -68,11 +72,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn49",
+                "localiserId": "authorColumn",
                 "dataIndex": "createUser",
                 "text": "Auteur"
             },
             "designerId": "18c8c75f-936b-4f3c-841a-052115fc97ab",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -82,7 +93,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "renderer",
                         "fn": "renderer",
                         "designer|params": [
                             "value",
@@ -109,12 +119,19 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn8",
+                "localiserId": "createDateColumn",
                 "dataIndex": "createTime",
                 "text": "Date de création",
                 "format": "d-m-Y"
             },
-            "designerId": "822d2d57-77d9-46ae-a1fb-3d4d38fd8370"
+            "designerId": "822d2d57-77d9-46ae-a1fb-3d4d38fd8370",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

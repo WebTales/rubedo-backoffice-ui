@@ -24,33 +24,35 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onImagePickerWindowRender",
                 "fn": "onImagePickerWindowRender",
                 "implHandler": [
                     "Ext.getStore(\"DAMPickerStore\").clearFilter(true);",
                     "var allowedTypes=[];",
                     "var allowedFileType=CKEOptions.type;",
                     "var columnsOver= [",
-                    "{",
-                    "    xtype: 'gridcolumn',",
-                    "    filter: true,",
-                    "    dataIndex: 'title',",
-                    "    text: 'Titre'",
-                    "},",
-                    "{",
-                    "    xtype: 'gridcolumn',",
-                    "    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {",
-                    "        return(value.fullName);",
-                    "    },",
-                    "    dataIndex: 'createUser',",
-                    "    text: 'Auteur'",
-                    "},",
-                    "{",
-                    "    xtype: 'datecolumn',",
-                    "    dataIndex: 'createTime',",
-                    "    text: 'Date de création',",
-                    "    format: 'd-m-Y'",
-                    "}",
+                    "\t\t\t\t{",
+                    "                    xtype: 'gridcolumn',",
+                    "                    filter: true,",
+                    "                    localiserId: 'titleColumn',",
+                    "                    dataIndex: 'title',",
+                    "                    text: 'Titre'",
+                    "                },",
+                    "                {",
+                    "                    xtype: 'gridcolumn',",
+                    "                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {",
+                    "                        return(value.fullName);",
+                    "                    },",
+                    "                    localiserId: 'authorColumn',",
+                    "                    dataIndex: 'createUser',",
+                    "                    text: 'Auteur'",
+                    "                },",
+                    "                {",
+                    "                    xtype: 'datecolumn',",
+                    "                    localiserId: 'createDateColumn',",
+                    "                    dataIndex: 'createTime',",
+                    "                    text: 'Date de création',",
+                    "                    format: 'd-m-Y'",
+                    "                }",
                     "];",
                     "if (Ext.isEmpty(allowedTypes)){",
                     "    if (Ext.isEmpty(allowedFileType)){            ",
@@ -236,7 +238,6 @@
             "userConfig": {
                 "dock": "bottom",
                 "width": 360,
-                "designer|userClassName": "MyPagingToolbar3",
                 "displayInfo": true,
                 "store": "DAMPickerStore"
             },
@@ -250,8 +251,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 3,
-                        "designer|userClassName": "MySpacer1"
+                        "layout|flex": 3
                     },
                     "designerId": "ee279ada-825b-4e03-858b-6d47d1367800"
                 },
@@ -264,15 +264,22 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "chooseBtn",
                         "disabled": true,
                         "id": "imagePickerAcceptBtn",
-                        "designer|userClassName": "MyButton206",
                         "icon": "resources/icones/blue/16x16/accept.png",
                         "iconCls": null,
                         "scale": null,
                         "text": "Choisir"
                     },
                     "designerId": "19f54c9c-32e6-4fea-991e-f738764690ad",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
@@ -282,16 +289,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "onImagePickerAcceptBtnClick",
                                 "fn": "onImagePickerAcceptBtnClick",
                                 "implHandler": [
                                     "if (CKEOptions.type==\"Image\"){",
-                                    "    ",
+                                    "",
                                     "    if (CKEOptions.soloMode){",
-                                    "       \twindow.opener.saveImage(CKEOptions.contentId,button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"id\"));",
+                                    "        window.opener.saveImage(CKEOptions.contentId,button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"id\"));",
                                     "    } else {",
-                                    "    \tvar fileURL=\"/image?file-id=\"+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"originalFileId\");",
-                                    "    \twindow.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );",
+                                    "        var fileURL=\"/image?file-id=\"+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get(\"originalFileId\");",
+                                    "        window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );",
                                     "    }",
                                     "}",
                                     "window.close();"
@@ -312,12 +318,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton207",
+                        "localiserId": "cancelBtn",
                         "icon": "resources/icones/blue/16x16/remove.png",
                         "iconCls": null,
                         "text": "Annuler"
                     },
                     "designerId": "fffedb6c-4ac3-4630-94b6-cb647ca8fd3d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -327,7 +340,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",
@@ -349,8 +361,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "designer|userClassName": "MySpacer"
+                        "layout|flex": 1
                     },
                     "designerId": "581ecd27-95c8-4720-a902-7ddf20777705"
                 }

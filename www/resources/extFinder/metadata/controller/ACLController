@@ -24,12 +24,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "designer|params": [
                     "application"
                 ],
                 "implHandler": [
+                    "Ext.require(\"Rubedo.controller.LocalisationController\");",
+                    "Ext.create(\"Rubedo.store.CurrentUserDataStore\");",
                     "var me=this;",
                     "var options = decodeURIComponent(window.location.search.slice(1))",
                     ".split('&')",
@@ -95,7 +96,13 @@
                     "        }",
                     "    });",
                     "    Ext.Ajax.on(\"beforerequest\", function(conn, options){",
-                    "        options.params.token=ACL.CSRFToken;",
+                    "        if (Ext.isEmpty(options.params)){",
+                    "        options.params={};",
+                    "    }",
+                    "    if(!Ext.isEmpty(Ext.getStore(\"CurrentUserDataStore\").getRange())){",
+                    "        options.params.workingLanguage=Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"workingLanguage\");",
+                    "    }",
+                    "    options.params.token=ACL.CSRFToken;",
                     "    });"
                 ]
             },
@@ -109,7 +116,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComponentRender",
                 "fn": "onComponentRender",
                 "implHandler": [
                     "if (!Ext.isEmpty(component.ACL)) {   ",
@@ -135,9 +141,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLaunch",
                 "fn": "onLaunch",
                 "implHandler": [
+                    "var task = new Ext.util.DelayedTask(function(){",
+                    "    try {",
+                    "        Rubedo.controller.LocalisationController.prototype.init();",
+                    "    } catch (err){}",
+                    "        Ext.getStore(\"CurrentUserDataStore\").load();",
+                    "    ",
                     "Ext.Ajax.request({",
                     "    url:'current-user/get-token',",
                     "    params:{",
@@ -155,8 +166,12 @@
                     "        data: Ext.JSON.encode(ACL.interfaceRights)",
                     "    },",
                     "    success:function(response){",
+                    "        var task2 = new Ext.util.DelayedTask(function(){",
                     "        ACL.interfaceRights=Ext.JSON.decode(response.responseText);",
+                    "        Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();",
                     "        Ext.getCmp(\"MainViewport\").add(Ext.widget(\"DAMPickerWindow\"));",
+                    "            });",
+                    "\t\ttask2.delay(400);",
                     "    },",
                     "    failure:function(){",
                     "        Ext.Msg.alert('Erreur', 'Erreur dans la récupération des droits');",
@@ -167,10 +182,52 @@
                     "    Ext.getElementById(\"loading-bar\").parentNode.removeChild(Ext.getElementById(\"loading-bar\"));",
                     "} catch (err) {",
                     "    console.log(\"dom element removal anomaly\");",
-                    "}"
+                    "}",
+                    "});",
+                    "task.delay(400);"
                 ]
             },
             "designerId": "525422f6-7e52-4277-935d-f0cf5e8ce1cc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onComponentBeforeRender",
+                "designer|params": [
+                    "component"
+                ],
+                "implHandler": [
+                    "if (component.localiserId){",
+                    "    var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];",
+                    "    if (!Ext.isEmpty(configs)) {",
+                    "        Ext.apply(component, configs);",
+                    "        if (!Ext.isEmpty(configs.tooltip)) {",
+                    "            component.setTooltip(configs.tooltip);",
+                    "        }",
+                    "    }",
+                    "    if ((component.isXType(\"button\"))&&(component.scale==\"large\")){",
+                    "        component.minWidth=48;",
+                    "    }",
+                    "}",
+                    "if ((component.isXType(\"field\"))||(component.isXType(\"checkboxgroup\"))||(component.isXType(\"radiogroup\"))){",
+                    "    component.labelSeparator=\" \";",
+                    "    if (component.name==\"localizable\"){",
+                    "        //temporary localiser hide",
+                    "        component.hide();",
+                    "    }",
+                    "}"
+                ],
+                "name": "beforerender",
+                "scope": "me",
+                "designer|targetType": null,
+                "designer|controlQuery": "component"
+            },
+            "designerId": "0bc78c31-818f-4261-bbda-63aae5f137d4"
         }
     ]
 }
