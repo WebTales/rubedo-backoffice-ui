@@ -1099,6 +1099,132 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                     id: '506441f8c648043912000024',
                     category: 'Autre',
                     protoId: ''
+                },
+                {
+                    type: 'Media',
+                    cType: 'Rubedo.view.ImagePickerField',
+                    openWindow: '',
+                    description: '<p>The \'Média\' field allows to choose a media (audio, video, image, animation, or document) from the DAM.</p>',
+                    config: {
+                        name: 'media',
+                        fieldLabel: 'Field label',
+                        localizable: false,
+                        searchable: false,
+                        multivalued: false,
+                        tooltip: '',
+                        labelSeparator: ' ',
+                        allowBlank: true
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Name',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Label',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: 'Tooltip',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Rubedo.view.CTMTField',
+                            config: {
+                                fieldLabel: 'Media type',
+                                name: 'allowedDAMTypes',
+                                multiSelect: false,
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.ComboBox',
+                            store: {
+                                fields: [
+                                    'valeur',
+                                    'nom'
+                                ],
+                                data: [
+                                    {
+                                        valeur: 'Image',
+                                        nom: 'Image'
+                                    },
+                                    {
+                                        valeur: 'Document',
+                                        nom: 'Document'
+                                    },
+                                    {
+                                        valeur: 'Video',
+                                        nom: 'VIdeo'
+                                    },
+                                    {
+                                        valeur: 'Animation',
+                                        nom: 'Animation'
+                                    },
+                                    {
+                                        valeur: 'Audio',
+                                        nom: 'Audio'
+                                    }
+                                ]
+                            },
+                            config: {
+                                fieldLabel: 'File Type',
+                                queryMode: 'local',
+                                displayField: 'nom',
+                                valueField: 'valeur',
+                                allowBlank: false,
+                                hidden: true,
+                                forceSelect: true,
+                                editable: false,
+                                name: 'allowedFileType'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Localizable',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Searchable',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Optional',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: 'Multivalued',
+                                name: 'multivalued'
+                            }
+                        }
+                    ],
+                    store: '',
+                    id: '506441f8c648043912991123',
+                    category: 'Media',
+                    protoId: ''
                 }
             ]
         }, cfg)]);

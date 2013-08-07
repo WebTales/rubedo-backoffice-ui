@@ -51,6 +51,9 @@ Ext.define('Rubedo.model.inportFieldModel', {
         },
         {
             name: 'cType'
+        },
+        {
+            name: 'mediaTypeId'
         }
     ]
 });

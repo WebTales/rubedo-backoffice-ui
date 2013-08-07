@@ -283,6 +283,28 @@ Ext.define('Rubedo.view.InportInterface', {
                                         valueField: 'id'
                                     }
                                 },
+                                {
+                                    xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (Ext.isEmpty(value)){
+                                            return("");
+                                        } else {
+                                            return(Ext.getStore("MediaTypesFORDAMPicker").findRecord("id", value).get("type"));
+                                        }
+                                    },
+                                    dataIndex: 'mediaTypeId',
+                                    text: 'Media type',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        editable: false,
+                                        displayField: 'type',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'MediaTypesFORDAMPicker',
+                                        valueField: 'id'
+                                    }
+                                },
                                 me.processRecherchable({
                                     xtype: 'booleancolumn',
                                     localiserId: 'importS2SearchableCol',
@@ -604,12 +626,14 @@ Ext.define('Rubedo.view.InportInterface', {
         Ext.getStore("NotInportFieldsStore").removeAll();
         Ext.getStore("InportAsFieldStore").removeAll();
         Ext.getStore("InportAsTaxoStore").removeAll();
+        Ext.getStore("MediaTypesFORDAMPicker").load();
     },
 
     onInportInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("NotInportFieldsStore").removeAll();
         Ext.getStore("InportAsFieldStore").removeAll();
         Ext.getStore("InportAsTaxoStore").removeAll();
+        Ext.getStore("MediaTypesFORDAMPicker").removeAll();
     }
 
 });

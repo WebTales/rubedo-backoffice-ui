@@ -133,6 +133,18 @@
                 "name": "cType"
             },
             "designerId": "c20845d8-e3bf-455b-accc-86312dc18735"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mediaTypeId"
+            },
+            "designerId": "cb13efd1-88fd-4f82-986d-0cd1c2c6a4d1"
         }
     ]
 }

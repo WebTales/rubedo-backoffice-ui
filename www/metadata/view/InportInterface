@@ -695,6 +695,67 @@
                             ]
                         },
                         {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "mediaTypeId",
+                                "text": "Media type"
+                            },
+                            "designerId": "0268c74f-7064-435a-9d18-4892243bbd2c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "editable": false,
+                                        "displayField": "type",
+                                        "forceSelection": true,
+                                        "queryMode": "local",
+                                        "store": "MediaTypesFORDAMPicker",
+                                        "valueField": "id"
+                                    },
+                                    "designerId": "2a6a05c1-e819-499d-9117-335ebbcd2afd"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(value)){\r",
+                                            "\treturn(\"\");\r",
+                                            "} else {\r",
+                                            "return(Ext.getStore(\"MediaTypesFORDAMPicker\").findRecord(\"id\", value).get(\"type\"));\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "ba7440ea-0fb3-4c2e-8d7f-7d2304ebcf9b"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.grid.column.Boolean",
                             "reference": {
                                 "name": "columns",
@@ -1375,7 +1436,8 @@
                 "implHandler": [
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
-                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();"
+                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").load();"
                 ],
                 "name": "beforerender",
                 "scope": "me"
@@ -1394,7 +1456,8 @@
                 "implHandler": [
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
-                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();"
+                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
