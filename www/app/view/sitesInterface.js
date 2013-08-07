@@ -472,7 +472,7 @@ Ext.define('Rubedo.view.sitesInterface', {
     },
 
     processLocStrategy: function(config) {
-        config.store=[["onlyOne","Only one"],["fallback", "With fallback"]];
+        config.store=[["onlyOne",Rubedo.RubedoAutomatedElementsLoc.onlyOneText],["fallback", Rubedo.RubedoAutomatedElementsLoc.withFallbackText]];
         config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;
         return config;
     },

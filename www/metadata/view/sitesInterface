@@ -558,7 +558,7 @@
                                                     "config"
                                                 ],
                                                 "implHandler": [
-                                                    "config.store=[[\"onlyOne\",\"Only one\"],[\"fallback\", \"With fallback\"]];\r",
+                                                    "config.store=[[\"onlyOne\",Rubedo.RubedoAutomatedElementsLoc.onlyOneText],[\"fallback\", Rubedo.RubedoAutomatedElementsLoc.withFallbackText]];\r",
                                                     "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;\r",
                                                     "return config;"
                                                 ]

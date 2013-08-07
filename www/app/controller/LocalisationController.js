@@ -352,7 +352,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "currentWorkingLanguageText":"Current working language",
             "languagesText":"Languages",
             "locStrategyText":"Localizastion strategy",
-            "useBrowserLanguageText":"Use browser language"
+            "useBrowserLanguageText":"Use browser language",
+            "onlyOneText":"Only one",
+            "withFallbackText":"With fallback"
         });
 
         this.control({
