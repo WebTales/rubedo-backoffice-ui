@@ -976,6 +976,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     creerNTC: function(button, e, eOpts) {
+        var me=this;
         if (Ext.getCmp('champCreerTC').isValid()) {
             var nType = Ext.getCmp('champCreerTC').getValue();
             var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
@@ -992,10 +993,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 nativeLanguage:nativeLanguage
             });
             this.getTypesContenusDataJsonStore().add(nouvType);
-            Ext.getCmp('nouveauTypeContenuFenetre').close();
-            Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);
-            this.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);
-        }
+            this.getTypesContenusDataJsonStore().addListener("datachanged",function(){
+                Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);
+                me.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);
+            },this,{single:true});
+                Ext.getCmp('nouveauTypeContenuFenetre').close();
+
+            }
     },
 
     repliqueChamp: function(button, e, eOpts) {

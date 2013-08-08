@@ -1128,6 +1128,7 @@
             "userConfig": {
                 "fn": "creerNTC",
                 "implHandler": [
+                    "var me=this;\r",
                     "if (Ext.getCmp('champCreerTC').isValid()) {\r",
                     "    var nType = Ext.getCmp('champCreerTC').getValue();\r",
                     "    var nativeLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
@@ -1144,9 +1145,12 @@
                     "        nativeLanguage:nativeLanguage\r",
                     "    });\r",
                     "    this.getTypesContenusDataJsonStore().add(nouvType);\r",
+                    "    this.getTypesContenusDataJsonStore().addListener(\"datachanged\",function(){\r",
+                    "        Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);\r",
+                    "    \tme.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);\r",
+                    "    },this,{single:true});\r",
                     "    Ext.getCmp('nouveauTypeContenuFenetre').close();\r",
-                    "    Ext.getCmp('AdminfTypesGridView').getSelectionModel().select(nouvType);\r",
-                    "    this.selectTC(Ext.getCmp('AdminfTypesGridView'), nouvType);\r",
+                    "    \r",
                     "}"
                 ],
                 "name": "click",
