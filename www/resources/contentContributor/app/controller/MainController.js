@@ -172,8 +172,13 @@ Ext.define('ContentContributor.controller.MainController', {
         this.renderTaxoFields(contentType.vocabularies);
         if (AppGlobals.editMode){
             var task = new Ext.util.DelayedTask(function(){
-                Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("text"));
+
                 var myWorkingLanguage=ACL.workingLanguage;
+                try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",myWorkingLanguage,false,false,true).items[0].get("flagCode");}
+                catch(err){var myFlagCode="_unknown";}
+                var returner =" <img src=\"/assets/flags/16/"+myFlagCode+".png\"> ";
+                Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("text")+" "+returner);
+
                 var fieldValues=Ext.getStore("Contents").getRange()[0].get("fields");
                 var myi18n=Ext.getStore("Contents").getRange()[0].get("i18n");
                 if (!Ext.isEmpty(myi18n[myWorkingLanguage])){
@@ -493,6 +498,7 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.require("Rubedo.view.ImagePickerWindow");
         Ext.require("Rubedo.controller.LocalisationController");
         Ext.create("Rubedo.store.CurrentUserDataStore");
+        Ext.create("Rubedo.store.AllLanguagesStore3");
         Ext.define('AppGlobals', {singleton: true});
 
         this.control({
