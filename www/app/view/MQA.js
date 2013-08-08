@@ -149,7 +149,7 @@ Ext.define('Rubedo.view.MQA', {
                 component.reactToMTChange(true);
                 Rubedo.controller.assistantRequetageController.prototype.restoreFieldRules(component.initialQuery.fieldRules);
             });
-            task.delay(600);
+            task.delay(1000);
         }
     },
 
@@ -300,7 +300,7 @@ Ext.define('Rubedo.view.MQA', {
                 });
                 storeT.on("beforeload", function(s,o){
                     o.filters=Ext.Array.slice(o.filters,0,1);
-                    if (!Ext.isEmpty(o.params.comboQuery)){
+                    if ((!Ext.isEmpty(o.params))&&(!Ext.isEmpty(o.params.comboQuery))){
 
                         var newFilter=Ext.create('Ext.util.Filter', {
                             property:"text",
@@ -314,7 +314,7 @@ Ext.define('Rubedo.view.MQA', {
 
 
                 });
-
+                storeT.load();
 
                 var selecteur = Ext.widget('comboboxselect', {
                     name:leVocab.get("id"),
