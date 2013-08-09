@@ -346,7 +346,7 @@
                     "\r",
                     "\r",
                     "        });\r",
-                    "\t\tstoreT.load();\r",
+                    "        storeT.load();\r",
                     "\r",
                     "        var selecteur = Ext.widget('comboboxselect', {\r",
                     "            name:leVocab.get(\"id\"),\r",

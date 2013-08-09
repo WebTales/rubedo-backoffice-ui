@@ -68,7 +68,9 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                                 if (key!=record.get("locale")){
                                     try{var myFlagCode2=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode");}
                                     catch(err){var myFlagCode2="_unknown";}
-                                    returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                                    if (myFlagCode2!="_unknown"){
+                                        returner=returner+" <img src=\"/assets/flags/16/"+myFlagCode2+".png\"> ";
+                                    }
                                 }
                             });
                         }
