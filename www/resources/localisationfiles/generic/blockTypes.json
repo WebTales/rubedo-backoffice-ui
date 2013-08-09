@@ -1377,12 +1377,13 @@
                                     "name": "documentId",
                                     "smallMode": true
                                 }
-                            },
-                            {
-                                "type": "Rubedo.view.directRTEField",
+                            },{
+                                "type": "Rubedo.view.DCEField",
                                 "config": {
                                     "fieldLabel": "#ext-gen1255#",
-                                    "name": "introduction"
+                                    "name": "introduction",
+                                    "allowedCT": "richText",
+                                    "addOnly": true
                                 }
                             }
                         ]
