@@ -818,6 +818,7 @@
                                     "multiSelect": true,
                                     "forceSelection": false,
                                     "stacked": true,
+                                    "allowBlank":false,
                                     "createNewOnEnter": true,
                                     "hideTrigger": true,
                                     "triggerOnClick": false,
@@ -837,6 +838,7 @@
                                 "type": "Ext.form.field.Text",
                                 "config": {
                                     "fieldLabel": "#ext-gen1172#",
+                                    "allowBlank":false,
                                     "name": "formName"
                                 }
                             },
@@ -855,10 +857,19 @@
                                 }
                             },
                             {
-                                "type": "Ext.form.field.Text",
+                                "type": "Ext.ux.form.field.BoxSelect",
                                 "config": {
+                                    "store": [],
+                                    "name": "cc",
                                     "fieldLabel": "#ext-gen1175#",
-                                    "name": "cc"
+                                    "multiSelect": true,
+                                    "forceSelection": false,
+                                    "stacked": true,
+                                    "createNewOnEnter": true,
+                                    "hideTrigger": true,
+                                    "triggerOnClick": false,
+                                    "createNewOnBlur": true,
+                                    "pinList": false
                                 }
                             }
                         ]
