@@ -177,7 +177,7 @@ Ext.define('ContentContributor.controller.MainController', {
                 try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",myWorkingLanguage,false,false,true).items[0].get("flagCode");}
                 catch(err){var myFlagCode="_unknown";}
                 var returner =" <img src=\"/assets/flags/16/"+myFlagCode+".png\"> ";
-                Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("text")+" "+returner);
+                Ext.getCmp("MainForm").setTitle(Ext.getStore("Contents").getRange()[0].get("fields").text+" "+returner);
 
                 var fieldValues=Ext.getStore("Contents").getRange()[0].get("fields");
                 var myi18n=Ext.getStore("Contents").getRange()[0].get("i18n");
