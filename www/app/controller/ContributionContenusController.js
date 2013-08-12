@@ -207,7 +207,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     contentsSelect: function(model, selected, eOpts) {
-        Ext.getCmp("boutonModifierContenu").setText('Modifier');
+        Ext.getCmp("boutonModifierContenu").setText(Rubedo.RubedoAutomatedElementsLoc.editText);
         Ext.getCmp("boutonModifierContenu").restricedRead=false;
         //console.log(Ext.getCmp("boutonModifierContenu").restricedRead);
         var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');

@@ -959,7 +959,28 @@
                             "configAlternates": {
                                 "style": "string"
                             },
-                            "designerId": "3f0aaa4a-1771-405a-af06-5f0f67cd7762"
+                            "designerId": "3f0aaa4a-1771-405a-af06-5f0f67cd7762",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processFormUniqueAnswerTextField",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.alreadyAnsweredText;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "796ad9f5-5df8-4ff1-a6ec-e8dc9977db0d"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

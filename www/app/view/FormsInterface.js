@@ -365,7 +365,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     text: '',
                                     tooltip: 'L\'unicité a pour objectif de restreindre la soumission d\'un questionnaire'
                                 },
-                                {
+                                me.processFormUniqueAnswerTextField({
                                     xtype: 'textfield',
                                     anchor: '90%',
                                     hidden: true,
@@ -374,7 +374,7 @@ Ext.define('Rubedo.view.FormsInterface', {
                                     fieldLabel: 'Déjà répondu',
                                     labelWidth: 160,
                                     name: 'uniqueAnswerText'
-                                },
+                                }),
                                 {
                                     xtype: 'button',
                                     hidden: true,
@@ -542,6 +542,11 @@ Ext.define('Rubedo.view.FormsInterface', {
         config.tpl=[
         '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
+        return config;
+    },
+
+    processFormUniqueAnswerTextField: function(config) {
+        config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.alreadyAnsweredText;
         return config;
     },
 

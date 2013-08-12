@@ -408,7 +408,7 @@
             "userConfig": {
                 "fn": "contentsSelect",
                 "implHandler": [
-                    "Ext.getCmp(\"boutonModifierContenu\").setText('Modifier');\r",
+                    "Ext.getCmp(\"boutonModifierContenu\").setText(Rubedo.RubedoAutomatedElementsLoc.editText);\r",
                     "Ext.getCmp(\"boutonModifierContenu\").restricedRead=false;\r",
                     "//console.log(Ext.getCmp(\"boutonModifierContenu\").restricedRead);\r",
                     "var boiteMeta = Ext.getCmp(\"contributionContenus\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
