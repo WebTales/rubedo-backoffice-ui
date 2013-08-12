@@ -341,6 +341,18 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         if (!Ext.isEmpty(query.fieldRules)){
             htmlDisplay+="<h3>"+Rubedo.RubedoAutomatedElementsLoc.rulesAndSortsOnFieldsText+"</h3><ul>";
             Ext.Object.each(query.fieldRules, function(key, value, myself){
+                var interKey=Ext.clone("key");
+                try {
+                    var possiblesArry=Ext.Array.pluck(Ext.Array.pluck(Ext.getStore('champsTCARStore').getRange(),"data"),"valeur");
+                    Ext.Array.forEach(possiblesArry,function(possibleField){
+                        if (possibleField.ruleId==key){
+                            interKey=possibleField.label;
+                        }
+                    });
+
+                } catch(err){
+                    console.log("failed to get field label")
+                }
                 var tri = "";
                 var a = value.rule||"";
                 var b = value.value||"";
@@ -350,7 +362,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     if (value.sort=="ASC") {tri=", "+Rubedo.RubedoAutomatedElementsLoc.ascSortText;} else {tri=", "+Rubedo.RubedoAutomatedElementsLoc.descSortText;}
                 }
 
-                htmlDisplay+="<li>"+key+" "+a+" "+c+" "+tri+"</li>";
+                htmlDisplay+="<li>"+interKey+" "+a+" "+c+" "+tri+"</li>";
             });
             htmlDisplay+="</ul>";
         }
