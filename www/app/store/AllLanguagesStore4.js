@@ -27,7 +27,7 @@ Ext.define('Rubedo.store.AllLanguagesStore4', {
         me.callParent([Ext.apply({
             isOptimised: true,
             usedCollection: 'Languages',
-            autoLoad: true,
+            autoLoad: false,
             model: 'Rubedo.model.languageModel',
             storeId: 'AllLanguagesStore4',
             pageSize: 1000,

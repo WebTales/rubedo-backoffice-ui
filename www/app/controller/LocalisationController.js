@@ -660,7 +660,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             });
         }
         this.correctLanguageMenu();
-
+        if (!Ext.isEmpty(Ext.getStore("AllLanguagesStore4"))){
+            Ext.getStore("AllLanguagesStore4").load();
+        }
 
 
 

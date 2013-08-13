@@ -656,7 +656,9 @@
                     "    });\r",
                     "}\r",
                     "this.correctLanguageMenu();\r",
-                    "\r",
+                    "if (!Ext.isEmpty(Ext.getStore(\"AllLanguagesStore4\"))){\r",
+                    "    Ext.getStore(\"AllLanguagesStore4\").load();\r",
+                    "}\r",
                     "\r",
                     "\r",
                     ""
