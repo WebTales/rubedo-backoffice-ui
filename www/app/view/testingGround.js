@@ -17,11 +17,6 @@ Ext.define('Rubedo.view.testingGround', {
     extend: 'Ext.window.Window',
     alias: 'widget.testingGround',
 
-    requires: [
-        'Rubedo.view.ImagePickerField',
-        'Rubedo.view.ImageMapField'
-    ],
-
     height: 450,
     id: 'testingGround',
     width: 959,
@@ -41,10 +36,10 @@ Ext.define('Rubedo.view.testingGround', {
                     title: 'My Form',
                     items: [
                         {
-                            xtype: 'ImagePickerField'
-                        },
-                        {
-                            xtype: 'ImageMapField'
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            id: 'numberTestField',
+                            fieldLabel: 'TEST'
                         }
                     ]
                 }

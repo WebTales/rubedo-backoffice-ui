@@ -30,24 +30,18 @@
             "designerId": "04419372-3073-400c-81de-8ea908b48fee",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.form.field.Number",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
-                    "designerId": "08d95494-0b92-4634-9391-84c7f9d4b039",
-                    "masterInstanceId": "29ccd34b-610a-4d7f-84de-be664235a5e8"
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "numberTestField",
+                        "fieldLabel": "TEST"
                     },
-                    "codeClass": null,
-                    "designerId": "670e2b22-e6ad-4ee0-9acb-e283a5a7bb92",
-                    "masterInstanceId": "d7136b60-6c34-449e-8a6c-6ffbbc1923ed"
+                    "designerId": "4c98e472-35ba-4193-86ac-48deb7e67869"
                 }
             ]
         }

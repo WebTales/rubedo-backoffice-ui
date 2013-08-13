@@ -132,6 +132,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             submitFormat:'U',
             altFormats:'U|m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j'
         });
+        Ext.override(Ext.form.field.Number, {
+            getSubmitValue: function(){return(this.getValue());}
+        });
         Ext.require("Ext.ux.callout.Callout");
 
         Ext.Date.defaultFormat="d/m/Y";
