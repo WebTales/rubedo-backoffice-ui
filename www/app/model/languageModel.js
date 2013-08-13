@@ -57,6 +57,11 @@ Ext.define('Rubedo.model.languageModel', {
         },
         {
             name: 'ownLabel'
+        },
+        {
+            defaultValue: 2,
+            name: 'order',
+            persist: false
         }
     ]
 });

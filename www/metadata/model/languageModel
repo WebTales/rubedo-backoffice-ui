@@ -146,6 +146,22 @@
                 "name": "ownLabel"
             },
             "designerId": "ff6439b9-f6e7-48ae-a120-0375291f1341"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "2"
+                ],
+                "name": "order",
+                "persist": false
+            },
+            "designerId": "82161cab-3b93-41ac-beea-f4113f65b7d8"
         }
     ]
 }

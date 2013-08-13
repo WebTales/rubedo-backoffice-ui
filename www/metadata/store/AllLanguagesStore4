@@ -1,0 +1,112 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Languages",
+        "autoLoad": true,
+        "model": "languageModel",
+        "storeId": "AllLanguagesStore4",
+        "designer|userClassName": "AllLanguagesStore4",
+        "designer|userAlias": "AllLanguagesStore4",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "bf5259e7-b74f-4b64-8221-0e8475d49786",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    \"read\":\"languages\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "6a1cbec5-311b-443b-9c5f-6e9ba50ddcb8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "23a18c0a-744a-4ac3-bb4f-12b8191c02bd"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "active",
+                "value": [
+                    "true"
+                ]
+            },
+            "designerId": "796765ac-0ba6-47e9-b991-1d71526c308a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreLoad",
+                "implHandler": [
+                    "store.add({\"locale\":\"all\", \"label\":Rubedo.RubedoAutomatedElementsLoc.allText, \"flagCode\":\"_unknown\", \"active\":true,\"order\":1});"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "0ccac6f1-0df6-4746-aded-8f29e536207b"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "order"
+            },
+            "designerId": "bfa77868-c739-4e39-a62d-c736549f6e6f"
+        }
+    ]
+}

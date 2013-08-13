@@ -350,20 +350,7 @@ Ext.define('Rubedo.controller.PagesController', {
             var configSpec = Ext.widget('ConfigSpecBloc');
 
 
-            /*configSpec.getComponent(0).add(Ext.widget('textfield',{
-            itemId:"eTitleField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
-            onChange:function(){
-            if (this.isValid()){
-            component.setTitle(this.getValue());
-            }
-            },
-            labelWidth:60,
-            allowBlank:false,
-            anchor:"100%",
-            margin:"10 0 10 0",
-            value:component.title
-            }));*/
+
             configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                 fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
                 labelWidth:60,
@@ -389,25 +376,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }));
 
 
-            /*
-            configSpec.getComponent(0).add(Ext.widget('numberfield',{
-            fieldLabel:"Hauteur fluide ",
-            onChange:function(){
-            if(this.isValid()) {
-            abstractcomponent.flex=this.getValue();
-            abstractcomponent.up().doLayout();
-            }
-            },
-            labelWidth:60,
-            allowDecimals:false,
-            allowBlank:false,
-            minValue:1,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:abstractcomponent.flex
-            }));
 
-            */
 
             configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
                 fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
@@ -423,7 +392,42 @@ Ext.define('Rubedo.controller.PagesController', {
                 ]
 
             }));  
-
+            var languagesPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+                anchor:"100%",
+                name:"localeFilters",
+                labelWidth:70,
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText,
+                multiSelect:true,
+                forceSelection:true,
+                store: Ext.getStore("AllLanguagesStore4"),
+                displayField:"label",
+                valueField:"locale",
+                plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
+                queryMode:"local",
+                "labelTpl": "<img src=\"/assets/flags/16/{flagCode}.png\" style=\"height: 16px; vertical-align: middle; margin: 2px;\" /> {label}",
+                "listConfig": {
+                    "tpl": [
+                    "<ul><tpl for=\".\">",
+                    "<li role=\"option\" class=\"x-boundlist-item\" style=\"background-image:url(/assets/flags/16/{flagCode}.png); background-repeat: no-repeat; background-size: 16px; padding-left: 16px;\">{label}</li>",
+                    "</tpl></ul>"
+                    ]
+                }
+            });
+            languagesPicker.on("change",function(){
+                var newValue=languagesPicker.getValue();
+                if (Ext.isEmpty(newValue)){
+                    languagesPicker.setValue(["all"]);
+                } else if((newValue.length>1)&&(Ext.Array.contains(newValue,"all"))){
+                    languagesPicker.setValue(Ext.Array.remove(newValue,"all"));
+                }
+                component.localeFilters=languagesPicker.getValue();
+            });  
+            if (Ext.isEmpty(component.localeFilters)){
+                languagesPicker.setValue(["all"]);
+            } else {
+                languagesPicker.setValue(component.localeFilters);
+            }
+            configSpec.getComponent(0).add(languagesPicker);
 
 
 
@@ -1021,6 +1025,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     configBloc:nBloc.configBloc,
                     orderValue:nBloc.orderValue,
                     title:nBloc.title,
+                    localeFilters:nBloc.localeFilters,
                     elementStyle:nBloc.elementStyle,
                     elementTag:nBloc.elementTag,
                     renderDiv:nBloc.renderDiv,
