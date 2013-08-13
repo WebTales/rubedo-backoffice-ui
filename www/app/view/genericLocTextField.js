@@ -163,18 +163,20 @@ Ext.define('Rubedo.view.genericLocTextField', {
     onFieldcontainerAfterRender: function(component, eOpts) {
         var me=component;
         var myMenu=me.getComponent("languageSwitcher").menu;
+        var BOArray=Ext.Array.pluck(Ext.Array.pluck(Ext.getStore("BOLanguageStore").getRange(),"data"),"key");
         if(!Ext.isEmpty(myMenu)){
             myMenu.removeAll();
             Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(language){
-                var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
-                if (!Ext.isEmpty(language.get("ownLabel"))){
-                    newItem.setText(language.get("ownLabel"));
+                if ((!me.CTMode)||(Ext.Array.contains(BOArray,language.get("locale")))){
+                    var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
+                    if (!Ext.isEmpty(language.get("ownLabel"))){
+                        newItem.setText(language.get("ownLabel"));
+                    }
+                    newItem.on("click",function(){
+                        me.getComponent("currentLanguageIntField").setValue(language.get("locale"));
+                    });
+                    myMenu.add(newItem);
                 }
-                newItem.on("click",function(){
-                    me.getComponent("currentLanguageIntField").setValue(language.get("locale"));
-                });
-                myMenu.add(newItem);
-
             });
         }
         me.getComponent("currentLanguageIntField").setValue(me.initialLanguage);

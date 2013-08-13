@@ -241,9 +241,11 @@
                 "implHandler": [
                     "var me=component;\r",
                     "var myMenu=me.getComponent(\"languageSwitcher\").menu;\r",
+                    "var BOArray=Ext.Array.pluck(Ext.Array.pluck(Ext.getStore(\"BOLanguageStore\").getRange(),\"data\"),\"key\");\r",
                     "if(!Ext.isEmpty(myMenu)){\r",
                     "    myMenu.removeAll();\r",
                     "    Ext.Array.forEach(Ext.getStore(\"AllLanguagesStore3\").getRange(),function(language){\r",
+                    "        if ((!me.CTMode)||(Ext.Array.contains(BOArray,language.get(\"locale\")))){\r",
                     "        var newItem=Ext.widget(\"menuitem\",{text:language.get(\"label\"), icon:\"/assets/flags/16/\"+language.get(\"flagCode\")+\".png\"});\r",
                     "        if (!Ext.isEmpty(language.get(\"ownLabel\"))){\r",
                     "            newItem.setText(language.get(\"ownLabel\"));\r",
@@ -252,15 +254,15 @@
                     "            me.getComponent(\"currentLanguageIntField\").setValue(language.get(\"locale\"));\r",
                     "        });\r",
                     "        myMenu.add(newItem);\r",
-                    "\r",
+                    "        }\r",
                     "    });\r",
                     "}\r",
                     "me.getComponent(\"currentLanguageIntField\").setValue(me.initialLanguage);\r",
                     "if (Ext.getStore(\"AllLanguagesStore3\").getRange().length==1){\r",
-                    "        me.getComponent(\"languageSwitcher\").hide();\r",
-                    "    } else {\r",
-                    "    \tme.getComponent(\"languageSwitcher\").show();\r",
-                    "    }"
+                    "    me.getComponent(\"languageSwitcher\").hide();\r",
+                    "} else {\r",
+                    "    me.getComponent(\"languageSwitcher\").show();\r",
+                    "}"
                 ],
                 "name": "afterrender",
                 "scope": "me"
