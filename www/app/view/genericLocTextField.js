@@ -138,7 +138,7 @@ Ext.define('Rubedo.view.genericLocTextField', {
             myBtn.setTooltip(Rubedo.RubedoAutomatedElementsLoc.localizationErrorText);
             myBtn.setText(null);
         } else {
-            var myRec=Ext.getStore("AllLanguagesStore3").query("locale",newValue,false,false,true).items[0];
+            var myRec=me.store.query("locale",newValue,false,false,true).items[0];
             myBtn.setIconCls(null);
             myBtn.setIcon('/assets/flags/16/'+myRec.get("flagCode")+'.png');
             myBtn.setTooltip(myRec.get("label"));
@@ -163,10 +163,14 @@ Ext.define('Rubedo.view.genericLocTextField', {
     onFieldcontainerAfterRender: function(component, eOpts) {
         var me=component;
         var myMenu=me.getComponent("languageSwitcher").menu;
+        me.store=Ext.getStore("AllLanguagesStore3");
+        if (me.CTMode){
+            me.store=Ext.getStore("MainLanguagesStore");
+        }
         var BOArray=Ext.Array.pluck(Ext.Array.pluck(Ext.getStore("BOLanguageStore").getRange(),"data"),"key");
         if(!Ext.isEmpty(myMenu)){
             myMenu.removeAll();
-            Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(language){
+            Ext.Array.forEach(me.store.getRange(),function(language){
                 if ((!me.CTMode)||(Ext.Array.contains(BOArray,language.get("locale")))){
                     var newItem=Ext.widget("menuitem",{text:language.get("label"), icon:"/assets/flags/16/"+language.get("flagCode")+".png"});
                     if (!Ext.isEmpty(language.get("ownLabel"))){
@@ -180,7 +184,7 @@ Ext.define('Rubedo.view.genericLocTextField', {
             });
         }
         me.getComponent("currentLanguageIntField").setValue(me.initialLanguage);
-        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+        if ((!me.CTMode)&&(Ext.getStore("AllLanguagesStore3").getRange().length==1)){
             me.getComponent("languageSwitcher").hide();
         } else {
             me.getComponent("languageSwitcher").show();
