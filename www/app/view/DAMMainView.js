@@ -79,6 +79,7 @@ Ext.define('Rubedo.view.DAMMainView', {
                             }
                     },
                     localiserId: 'languageCoumn',
+                    sortable: false,
                     dataIndex: 'i18n',
                     text: 'Languages',
                     listeners: {
