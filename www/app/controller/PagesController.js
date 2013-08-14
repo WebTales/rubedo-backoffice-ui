@@ -427,6 +427,9 @@ Ext.define('Rubedo.controller.PagesController', {
             } else {
                 languagesPicker.setValue(component.localeFilters);
             }
+            if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+                languagesPicker.hide();
+            }
             configSpec.getComponent(0).add(languagesPicker);
 
 
