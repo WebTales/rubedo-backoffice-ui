@@ -2112,7 +2112,7 @@
                     "        description:values.description,\r",
                     "        mCode:mCode,\r",
                     "        mBlocks:mBlocks,\r",
-                    "        depth:this.getElementDepth(mCode),\r",
+                    "        mDepth:this.getElementDepth(mCode),\r",
                     "        mType:target.mType,\r",
                     "        mLevel:this.getElementLevel(target,0),\r",
                     "        site:Ext.getCmp(\"masquesGrid\").getSelectionModel().getLastSelected().get(\"site\")\r",

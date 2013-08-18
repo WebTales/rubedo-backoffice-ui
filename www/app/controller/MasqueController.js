@@ -1317,7 +1317,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 description:values.description,
                 mCode:mCode,
                 mBlocks:mBlocks,
-                depth:this.getElementDepth(mCode),
+                mDepth:this.getElementDepth(mCode),
                 mType:target.mType,
                 mLevel:this.getElementLevel(target,0),
                 site:Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("site")
