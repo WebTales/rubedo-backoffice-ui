@@ -193,6 +193,16 @@ Ext.define('Rubedo.view.DLSToolbar', {
                     me.show();
                 }
             } else {
+                if(!Ext.isEmpty(Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items)){
+                    var potentialLabel=Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("label");
+                    var betterLabel=Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("ownLabel");
+                    if (!Ext.isEmpty(betterLabel)){
+                        potentialLabel=betterLabel;
+                    }
+                    me.getComponent(0).getStore().add({"locale":locale,"label":potentialLabel, "flagCode":Ext.getStore("AllLanguagesStore3").query("locale",locale,false,false,true).items[0].get("flagCode")});
+                }
+                me.getComponent("LocSelectorCombo").setValue(null);
+                me.getComponent("LocSelectorCombo").setValue(locale);
                 me.hide();
             }
     },

@@ -331,7 +331,17 @@
                     "            me.show();\r",
                     "        }\r",
                     "    } else {\r",
-                    "        me.hide();\r",
+                    "        if(!Ext.isEmpty(Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items)){\r",
+                    "            var potentialLabel=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"label\");\r",
+                    "            var betterLabel=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"ownLabel\");\r",
+                    "            if (!Ext.isEmpty(betterLabel)){\r",
+                    "                potentialLabel=betterLabel;\r",
+                    "            }\r",
+                    "            me.getComponent(0).getStore().add({\"locale\":locale,\"label\":potentialLabel, \"flagCode\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"flagCode\")});\r",
+                    "        }\r",
+                    "            me.getComponent(\"LocSelectorCombo\").setValue(null);\r",
+                    "            me.getComponent(\"LocSelectorCombo\").setValue(locale);\r",
+                    "            me.hide();\r",
                     "    }"
                 ]
             },
