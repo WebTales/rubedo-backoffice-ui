@@ -27,6 +27,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
     },
     iconCls: 'help',
     title: 'Informations Système',
+    constrain: true,
 
     initComponent: function() {
         var me = this;

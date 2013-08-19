@@ -339,9 +339,9 @@
                     "            }\r",
                     "            me.getComponent(0).getStore().add({\"locale\":locale,\"label\":potentialLabel, \"flagCode\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"flagCode\")});\r",
                     "        }\r",
-                    "            me.getComponent(\"LocSelectorCombo\").setValue(null);\r",
-                    "            me.getComponent(\"LocSelectorCombo\").setValue(locale);\r",
-                    "            me.hide();\r",
+                    "        me.getComponent(\"LocSelectorCombo\").setValue(null);\r",
+                    "        me.getComponent(\"LocSelectorCombo\").setValue(locale);\r",
+                    "        me.hide();\r",
                     "    }"
                 ]
             },

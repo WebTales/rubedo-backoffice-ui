@@ -391,7 +391,7 @@
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();\r",
                     "    Ext.getCmp(\"DAMPPBtnGroup\").enable();\r",
                     "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);\r",
-                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc(\"dam/get-thumbnail?id=\"+selected[0].get(\"id\"));\r",
+                    "    Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc(\"dam/get-thumbnail?id=\"+selected[0].get(\"id\")+\"&version=\"+selected[0].get(\"version\"));\r",
                     "} else {\r",
                     "    Ext.getCmp(\"DAMUpdateBtn\").disable();\r",
                     "    var customMeta = \"<b> \"+selected.length+\" \"+Rubedo.RubedoAutomatedElementsLoc.mediasText+\" \"+ \"</b>\";\r",

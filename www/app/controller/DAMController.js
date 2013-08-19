@@ -60,7 +60,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').show();
             Ext.getCmp("DAMPPBtnGroup").enable();
             Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').update(customMeta);
-            Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc("dam/get-thumbnail?id="+selected[0].get("id"));
+            Ext.getCmp("DAMInterface").getDockedComponent('barreMeta').getComponent(0).setSrc("dam/get-thumbnail?id="+selected[0].get("id")+"&version="+selected[0].get("version"));
         } else {
             Ext.getCmp("DAMUpdateBtn").disable();
             var customMeta = "<b> "+selected.length+" "+Rubedo.RubedoAutomatedElementsLoc.mediasText+" "+ "</b>";
