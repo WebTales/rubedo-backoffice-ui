@@ -39,7 +39,8 @@
             "directoryModel",
             "experimentalModel",
             "languageModel",
-            "taxonomyTermModel"
+            "taxonomyTermModel",
+            "customTheme"
         ],
         "stores": [
             "SitesJson",
@@ -145,7 +146,8 @@
             "AllLanguagesStore3",
             "TranslationAdderStore",
             "flagsStore",
-            "AllLanguagesStore4"
+            "AllLanguagesStore4",
+            "CustomThemes"
         ],
         "views": [
             "MyContainer",
@@ -308,7 +310,8 @@
             "DAMReplicatorEntity",
             "ImageMapField",
             "ImageMapFieldComponent",
-            "ImageMapperWindow"
+            "ImageMapperWindow",
+            "CustomThemesInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

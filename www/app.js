@@ -178,7 +178,8 @@ Ext.application({
         'Rubedo.view.DAMReplicatorEntity',
         'Rubedo.view.ImageMapField',
         'Rubedo.view.ImageMapFieldComponent',
-        'Rubedo.view.ImageMapperWindow'
+        'Rubedo.view.ImageMapperWindow',
+        'Rubedo.view.CustomThemesInterface'
     ],
     models: [
         'sitesDataModel',
@@ -213,7 +214,8 @@ Ext.application({
         'directoryModel',
         'experimentalModel',
         'languageModel',
-        'taxonomyTermModel'
+        'taxonomyTermModel',
+        'customTheme'
     ],
     stores: [
         'SitesJson',
@@ -319,7 +321,8 @@ Ext.application({
         'AllLanguagesStore3',
         'TranslationAdderStore',
         'flagsStore',
-        'AllLanguagesStore4'
+        'AllLanguagesStore4',
+        'CustomThemes'
     ],
     views: [
         'MyContainer',
@@ -482,7 +485,8 @@ Ext.application({
         'DAMReplicatorEntity',
         'ImageMapField',
         'ImageMapFieldComponent',
-        'ImageMapperWindow'
+        'ImageMapperWindow',
+        'CustomThemesInterface'
     ],
     autoCreateViewport: true,
     controllers: [

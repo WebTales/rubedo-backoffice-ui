@@ -2805,6 +2805,30 @@
                 "app/store/AllLanguagesStore4.js"
             ],
             "className": "AllLanguagesStore4"
+        },
+        "f3e0cafa-155c-4a60-aad3-bbf9b81623b9": {
+            "paths": [
+                "metadata/model/customTheme",
+                "app/model/override/customTheme.js",
+                "app/model/customTheme.js"
+            ],
+            "className": "customTheme"
+        },
+        "e1ff2391-5104-46be-9c01-680539baf938": {
+            "paths": [
+                "metadata/view/CustomThemesInterface",
+                "app/view/override/CustomThemesInterface.js",
+                "app/view/CustomThemesInterface.js"
+            ],
+            "className": "CustomThemesInterface"
+        },
+        "d5c0475f-ee5b-44e7-a378-8531b81a9d94": {
+            "paths": [
+                "metadata/store/CustomThemes",
+                "app/store/override/CustomThemes.js",
+                "app/store/CustomThemes.js"
+            ],
+            "className": "CustomThemes"
         }
     },
     "viewOrderMap": {
@@ -2922,7 +2946,6 @@
             "061bd6bb-80de-48a4-af26-f6193448d7a1",
             "d0dd360b-096d-456e-9cde-d04c21fa2fe3",
             "94888e53-9ec4-4b43-8669-5443a9700c76",
-            "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "8f7b389a-75fc-438a-8d03-797b9afc7316",
             "3104ec03-3fa9-4813-a58d-51278a48751f",
             "4444354c-c7f1-44c8-8601-47758824f7d5",
@@ -2979,7 +3002,9 @@
             "9afe69d9-312c-4ea7-8332-ce4389c7ae0c",
             "16d7947b-734c-40f8-89ec-32633511ee40",
             "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
-            "8c8eb810-59a0-4d95-a6b4-7d495027da77"
+            "8c8eb810-59a0-4d95-a6b4-7d495027da77",
+            "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+            "e1ff2391-5104-46be-9c01-680539baf938"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -3086,7 +3111,8 @@
             "3be2705f-c3a0-4c70-8ead-494722c051a0",
             "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56",
             "15bd2509-2de3-4e02-8e27-22097d0bf2e1",
-            "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4"
+            "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4",
+            "d5c0475f-ee5b-44e7-a378-8531b81a9d94"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -3146,7 +3172,8 @@
             "e52a8e7e-0bba-4062-92d7-15145e60343a",
             "9e088d56-6c5c-43d3-8291-8dee5762b7ba",
             "eec686d6-21b7-4457-81a0-65094f60b05b",
-            "8e8892e4-5bc6-40e0-87aa-114a70fbf727"
+            "8e8892e4-5bc6-40e0-87aa-114a70fbf727",
+            "f3e0cafa-155c-4a60-aad3-bbf9b81623b9"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

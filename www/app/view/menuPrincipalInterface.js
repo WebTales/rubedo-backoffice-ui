@@ -263,6 +263,15 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             iconCls: 'form_small',
             localiserId:'formsLaunchBtn',
             text: 'Questionnaires'
+        },
+        {
+            xtype: 'menuitem',
+            ACL: 'read.ui.customThemes',
+            favoriteIcon: 'palette.png',
+            itemId: 'CustomThemesInterface',
+            iconCls: 'palette',
+            localiserId:'customThemesLaunchBtn',
+            text: 'Custom Themes'
         }
         ]);
     },

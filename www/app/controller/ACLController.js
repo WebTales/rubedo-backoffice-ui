@@ -87,7 +87,9 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.directories":false,
                 "write.ui.directories":false,
                 "read.ui.languages":false,
-                "write.ui.languages":false
+                "write.ui.languages":false,
+                "read.ui.customThemes":false,
+                "write.ui.customThemes":false
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){
