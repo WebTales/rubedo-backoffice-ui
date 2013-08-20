@@ -238,7 +238,10 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "id": "mainLessVarsForm",
                 "width": 300,
+                "autoScroll": true,
+                "layout": "auto",
                 "bodyPadding": 10,
                 "collapseDirection": "left",
                 "collapsible": true,
@@ -247,7 +250,7 @@
             "designerId": "65491899-d5da-40fa-96cb-f4550e103ce7",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -255,24 +258,251 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
-                        "id": "testerField"
+                        "title": "Grays"
                     },
-                    "designerId": "386a58e3-a24d-48ba-b41d-f901e2f81c3a",
-                    "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                    "designerId": "c8338297-b2e8-476b-b3e5-c6f053ff3fe7",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Black",
+                                "name": "black"
+                            },
+                            "designerId": "386a58e3-a24d-48ba-b41d-f901e2f81c3a",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Darker gray",
+                                "name": "grayDarker"
+                            },
+                            "designerId": "30f26cd1-f74b-4ab7-a141-95700e715b85",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Dark gray",
+                                "name": "grayDark"
+                            },
+                            "designerId": "cacfecfa-fbb1-4d7c-86a0-340d025a6ea5",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Gray",
+                                "name": "gray"
+                            },
+                            "designerId": "707428d3-41b1-4b84-9516-db4e97500353",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Light gray",
+                                "name": "grayLight"
+                            },
+                            "designerId": "5b79859e-c95c-410e-8707-03ec68ce3590",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Lighter gray",
+                                "name": "grayLighter"
+                            },
+                            "designerId": "7b9c3645-df9c-4e2d-b346-eddad81cab5a",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "White",
+                                "name": "white"
+                            },
+                            "designerId": "e1c81820-5779-41e4-bec4-7e3d5726322d",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        }
+                    ]
                 },
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "secondOne",
-                        "dock": null
+                        "dock": null,
+                        "title": "Accent colors"
                     },
-                    "designerId": "30f26cd1-f74b-4ab7-a141-95700e715b85",
-                    "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                    "designerId": "58b75746-9aac-4478-80a8-a41fee822ad2",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Blue",
+                                "name": "blue"
+                            },
+                            "designerId": "bce3788a-f2f5-4d27-92c7-dffb01296f87",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Dark blue",
+                                "name": "blueDark"
+                            },
+                            "designerId": "77d8fd57-187d-427a-9300-21704913638b",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Green",
+                                "name": "green"
+                            },
+                            "designerId": "cdaaa71e-c610-48bc-9663-e3a5ac1eb528",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Red",
+                                "name": "red"
+                            },
+                            "designerId": "4d1ca48c-ce2e-497d-9a3b-f951ade02305",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Yellow",
+                                "name": "yellow"
+                            },
+                            "designerId": "b4b12f23-9b0a-45ee-8d56-684f7c154526",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Orange",
+                                "name": "orange"
+                            },
+                            "designerId": "e99941cb-414e-415e-9e77-ab9e7509c0ec",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Pink",
+                                "name": "pink"
+                            },
+                            "designerId": "bd5b1fe2-55ef-4d39-91c4-da7893e1fd75",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Purlple",
+                                "name": "purple"
+                            },
+                            "designerId": "4886cbc0-d3dd-411e-b332-04eab5e90891",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        }
+                    ]
                 }
             ]
         },

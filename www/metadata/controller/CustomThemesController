@@ -43,6 +43,24 @@
                     "var form=button.up().getForm();\r",
                     "if (form.isValid()){\r",
                     "    var newRec=Ext.create(\"Rubedo.model.customTheme\",form.getValues());\r",
+                    "    var defaultLessVars={\r",
+                    "    black:                 \"#000000\",\r",
+                    "    grayDarker:            \"#222222\",\r",
+                    "    grayDark:              \"#333333\",\r",
+                    "    gray:                  \"#555555\",\r",
+                    "    grayLight:             \"#999999\",\r",
+                    "    grayLighter:           \"#eeeeee\",\r",
+                    "    white:                 \"#ffffff\",\r",
+                    "    blue:                  \"#049cdb\",\r",
+                    "    blueDark:              \"#0064cd\",\r",
+                    "    green:                 \"#46a546\",\r",
+                    "    red:                   \"#9d261d\",\r",
+                    "    yellow:                \"#ffc40d\",\r",
+                    "    orange:                \"#f89406\",\r",
+                    "    pink:                  \"#c3325f\",\r",
+                    "    purple:                \"#7a43b6\"\r",
+                    "    };\r",
+                    "    newRec.set(\"lessVarsJson\",Ext.JSON.encode(defaultLessVars));\r",
                     "    Ext.getStore(\"CustomThemes\").add(newRec);\r",
                     "    button.up().up().close();\r",
                     "}"
@@ -68,7 +86,8 @@
                 ],
                 "implHandler": [
                     "Ext.getCmp(\"customThemesRemoveBtn\").enable();\r",
-                    "Ext.getCmp(\"customThemesSaveBtn\").enable();"
+                    "Ext.getCmp(\"customThemesSaveBtn\").enable();\r",
+                    "Ext.getCmp(\"mainLessVarsForm\").getForm().setValues(Ext.JSON.decode(record.get(\"lessVarsJson\")));"
                 ]
             },
             "designerId": "f87dc705-a863-4f0b-8e3e-d4185ab7a51d"
@@ -84,7 +103,8 @@
                 "fn": "resetInterfaceNoSelect",
                 "implHandler": [
                     "Ext.getCmp(\"customThemesRemoveBtn\").disable();\r",
-                    "Ext.getCmp(\"customThemesSaveBtn\").disable();"
+                    "Ext.getCmp(\"customThemesSaveBtn\").disable();\r",
+                    "Ext.getCmp(\"mainLessVarsForm\").getForm().reset();"
                 ]
             },
             "designerId": "a1369d62-5810-4b65-b875-02fe6511c8c0"
@@ -102,7 +122,7 @@
                     "if (Ext.isEmpty(selected)){\r",
                     "    this.resetInterfaceNoSelect();\r",
                     "} else {\r",
-                    "\tthis.resetInterfaceSelect(selected[0]);\r",
+                    "    this.resetInterfaceSelect(selected[0]);\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -156,6 +176,31 @@
                 ]
             },
             "designerId": "0cd60d99-4eb8-4f64-9b0c-169a99719688"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesSaveBtnClick",
+                "implHandler": [
+                    "var form=Ext.getCmp(\"mainLessVarsForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var record=Ext.getCmp(\"customThemesGrid\").getSelectionModel().getLastSelected();\r",
+                    "    record.set(\"lessVarsJson\",Ext.JSON.encode(form.getValues()));\r",
+                    "} else {\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#customThemesSaveBtn"
+            },
+            "designerId": "ddfd980d-a5dc-4e86-bd37-8379e36a46a6"
         }
     ]
 }

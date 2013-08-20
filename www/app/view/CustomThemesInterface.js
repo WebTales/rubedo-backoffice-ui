@@ -115,19 +115,103 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 },
                 {
                     xtype: 'form',
+                    id: 'mainLessVarsForm',
                     width: 300,
+                    autoScroll: true,
+                    layout: {
+                        type: 'auto'
+                    },
                     bodyPadding: 10,
                     collapseDirection: 'left',
                     collapsible: true,
                     title: 'Less Varaibles',
                     items: [
                         {
-                            xtype: 'AdvancedColorField',
-                            id: 'testerField'
+                            xtype: 'fieldset',
+                            title: 'Grays',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Black',
+                                    name: 'black'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Darker gray',
+                                    name: 'grayDarker'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Dark gray',
+                                    name: 'grayDark'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Gray',
+                                    name: 'gray'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Light gray',
+                                    name: 'grayLight'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Lighter gray',
+                                    name: 'grayLighter'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'White',
+                                    name: 'white'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'AdvancedColorField',
-                            id: 'secondOne'
+                            xtype: 'fieldset',
+                            title: 'Accent colors',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Blue',
+                                    name: 'blue'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Dark blue',
+                                    name: 'blueDark'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Green',
+                                    name: 'green'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Red',
+                                    name: 'red'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Yellow',
+                                    name: 'yellow'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Orange',
+                                    name: 'orange'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Pink',
+                                    name: 'pink'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Purlple',
+                                    name: 'purple'
+                                }
+                            ]
                         }
                     ]
                 },
