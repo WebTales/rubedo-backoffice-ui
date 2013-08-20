@@ -365,3 +365,24 @@ body .ux-notification-light {
 .x-grid-checkheader-editor .x-form-cb-wrap {
     text-align: center;
 }
+.cPSkin{
+    z-index:99999999 !important;
+}
+.cPSkin input{
+        height: 16px !important;
+}
+.cPSkin .bUp{
+        height: 16px !important;
+}
+.cPSkin .bDown{
+        height: 16px !important;
+}
+.cPSkin .noB{
+        height: 16px !important;
+}
+.cPSkin .cPControl .bUp{
+        height: 24px !important;
+}
+.cPSkin .cPControl .bDown{
+        height: 24px !important;
+}

@@ -239,8 +239,7 @@
             "userConfig": {
                 "layout|flex": null,
                 "width": 300,
-                "layout": "accordion",
-                "bodyPadding": null,
+                "bodyPadding": 10,
                 "collapseDirection": "left",
                 "collapsible": true,
                 "title": "Less Varaibles"
@@ -248,40 +247,32 @@
             "designerId": "65491899-d5da-40fa-96cb-f4550e103ce7",
             "cn": [
                 {
-                    "type": "Ext.panel.Panel",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Group 1"
+                        "dock": null,
+                        "id": "testerField"
                     },
-                    "designerId": "7601a07c-ea66-4a54-ae1a-0884f7f9642c"
+                    "designerId": "386a58e3-a24d-48ba-b41d-f901e2f81c3a",
+                    "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
                 },
                 {
-                    "type": "Ext.panel.Panel",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Group 2"
+                        "id": "secondOne",
+                        "dock": null
                     },
-                    "designerId": "316d4da3-cc7a-4749-ba62-acf6e570537d"
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "title": "Group 3"
-                    },
-                    "designerId": "51124871-48ee-43a5-8dec-38d6e828e7cb"
+                    "designerId": "30f26cd1-f74b-4ab7-a141-95700e715b85",
+                    "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
                 }
             ]
         },
@@ -330,6 +321,23 @@
                 "scope": "me"
             },
             "designerId": "1a310c98-d3bc-48fe-b9fa-c06719a40dee"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesInterfaceBeforeRender",
+                "implHandler": [
+                    "Ext.require(\"resources/colorPicker/colorPicker_src\");"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "9b3c7d6c-7c57-4666-9277-96cbe237cf53"
         }
     ]
 }

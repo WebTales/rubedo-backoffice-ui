@@ -58,6 +58,11 @@ Ext.define('Rubedo.controller.CustomThemesController', {
     },
 
     init: function(application) {
+        Ext.define('ColorPickerControlSingleton', {
+            singleton:true,
+            currentTarget:null
+        });
+
         this.control({
             "#customThemesAddBtn": {
                 click: this.onCustomThemesAddBtnClick

@@ -19,7 +19,8 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
 
     requires: [
         'Rubedo.view.MyTool16',
-        'Rubedo.view.MyTool17'
+        'Rubedo.view.MyTool17',
+        'Rubedo.view.AdvancedColorField'
     ],
 
     height: 600,
@@ -115,24 +116,18 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 {
                     xtype: 'form',
                     width: 300,
-                    layout: {
-                        type: 'accordion'
-                    },
+                    bodyPadding: 10,
                     collapseDirection: 'left',
                     collapsible: true,
                     title: 'Less Varaibles',
                     items: [
                         {
-                            xtype: 'panel',
-                            title: 'Group 1'
+                            xtype: 'AdvancedColorField',
+                            id: 'testerField'
                         },
                         {
-                            xtype: 'panel',
-                            title: 'Group 2'
-                        },
-                        {
-                            xtype: 'panel',
-                            title: 'Group 3'
+                            xtype: 'AdvancedColorField',
+                            id: 'secondOne'
                         }
                     ]
                 },
@@ -148,6 +143,10 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 },
                 beforeclose: {
                     fn: me.onCustomThemesInterfaceBeforeClose,
+                    scope: me
+                },
+                beforerender: {
+                    fn: me.onCustomThemesInterfaceBeforeRender,
                     scope: me
                 }
             }
@@ -171,6 +170,10 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
 
     onCustomThemesInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("CustomThemes").removeAll();
+    },
+
+    onCustomThemesInterfaceBeforeRender: function(component, eOpts) {
+        Ext.require("resources/colorPicker/colorPicker_src");
     }
 
 });

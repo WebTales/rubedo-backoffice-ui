@@ -180,7 +180,8 @@ Ext.application({
         'Rubedo.view.ImageMapFieldComponent',
         'Rubedo.view.ImageMapperWindow',
         'Rubedo.view.CustomThemesInterface',
-        'Rubedo.view.NewCustomThemeWindow'
+        'Rubedo.view.NewCustomThemeWindow',
+        'Rubedo.view.AdvancedColorField'
     ],
     models: [
         'sitesDataModel',
@@ -488,7 +489,8 @@ Ext.application({
         'ImageMapFieldComponent',
         'ImageMapperWindow',
         'CustomThemesInterface',
-        'NewCustomThemeWindow'
+        'NewCustomThemeWindow',
+        'AdvancedColorField'
     ],
     autoCreateViewport: true,
     controllers: [

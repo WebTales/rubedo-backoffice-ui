@@ -1,0 +1,91 @@
+{
+    "type": "Ext.form.field.Text",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": null,
+        "designer|userClassName": "AdvancedColorField",
+        "designer|userAlias": "AdvancedColorField",
+        "fieldLabel": "Test field",
+        "allowBlank": false,
+        "regex": "/^#([0-9a-f]{3}){2}$/i"
+    },
+    "designerId": "e7d07403-1815-4369-9257-def71279340c",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTextfieldAfterRender",
+                "implHandler": [
+                    "component.inputEl.on(\"click\",function(e){\r",
+                    "    ColorPickerControlSingleton.currentTarget=component.getId();\r",
+                    "    colorPicker(e,component.getId());\r",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "8bfec813-591d-422e-a391-154003bfbefc"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTextfieldChange",
+                "implHandler": [
+                    "var hex=\"#FFFFFF\";\r",
+                    "var textColor=\"#000000\";\r",
+                    "if ((!Ext.isEmpty(newValue))&&(field.isValid())){\r",
+                    "    hex=newValue;\r",
+                    "}\r",
+                    "if(this.getLuminance(hex)<70){\r",
+                    "    textColor=\"#FFFFFF\";\r",
+                    "}\r",
+                    "field.setFieldStyle({\r",
+                    "    'background-color': hex,\r",
+                    "    'background-image': 'none',\r",
+                    "    'color':textColor\r",
+                    "});\r",
+                    ""
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "designerId": "dbcb1a1e-da03-446d-a5d1-56fd122c4b44"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getLuminance",
+                "designer|params": [
+                    "hexCode"
+                ],
+                "implHandler": [
+                    "  hexCode = hexCode.replace('#', '');\r",
+                    "  var c_r = parseInt(hexCode.substr(0, 2),16);\r",
+                    "  var c_g = parseInt(hexCode.substr(2, 2),16);\r",
+                    "  var c_b = parseInt(hexCode.substr(4, 2),16);\r",
+                    "  return ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;"
+                ]
+            },
+            "designerId": "bc5b20c9-322f-44b4-b2a6-fe4542cbe829"
+        }
+    ]
+}

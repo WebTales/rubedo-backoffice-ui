@@ -135,6 +135,27 @@
                 "designer|controlQuery": "#customThemesRemoveBtn"
             },
             "designerId": "7e72e958-9879-4e1a-b14a-5c7c8ed6b7ce"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Ext.define('ColorPickerControlSingleton', {\r",
+                    "    singleton:true,\r",
+                    "    currentTarget:null\r",
+                    "});"
+                ]
+            },
+            "designerId": "0cd60d99-4eb8-4f64-9b0c-169a99719688"
         }
     ]
 }
