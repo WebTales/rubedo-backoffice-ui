@@ -75,15 +75,28 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         }
     },
 
+    onSimulateCustomThemeBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var form=Ext.getCmp("mainLessVarsForm").getForm();
+        if (form.isValid()){
+            me.pushLessToSimulator(form.getValues());
+        } else {
+            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
+        }
+    },
+
     resetInterfaceSelect: function(record) {
         Ext.getCmp("customThemesRemoveBtn").enable();
         Ext.getCmp("customThemesSaveBtn").enable();
+        Ext.getCmp("simulateCustomThemeBtn").enable();
         Ext.getCmp("mainLessVarsForm").getForm().setValues(Ext.JSON.decode(record.get("lessVarsJson")));
+        this.pushLessToSimulator(Ext.JSON.decode(record.get("lessVarsJson")));
     },
 
     resetInterfaceNoSelect: function() {
         Ext.getCmp("customThemesRemoveBtn").disable();
         Ext.getCmp("customThemesSaveBtn").disable();
+        Ext.getCmp("simulateCustomThemeBtn").disable();
         Ext.getCmp("mainLessVarsForm").getForm().reset();
     },
 
@@ -108,8 +121,19 @@ Ext.define('Rubedo.controller.CustomThemesController', {
             },
             "#customThemesSaveBtn": {
                 click: this.onCustomThemesSaveBtnClick
+            },
+            "#simulateCustomThemeBtn": {
+                click: this.onSimulateCustomThemeBtnClick
             }
         });
+    },
+
+    pushLessToSimulator: function(vars) {
+        var refinedVars={ };
+        Ext.Object.each(vars, function(key, value, myself) {
+            refinedVars['@'+key]=value;
+        });
+        themeSimulatorFrame.less.modifyVars(refinedVars);
     }
 
 });

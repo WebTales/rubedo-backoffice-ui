@@ -153,6 +153,24 @@
                     ]
                 },
                 {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "simulateCustomThemeBtn",
+                        "iconAlign": "top",
+                        "iconCls": "play_big",
+                        "scale": "large",
+                        "text": "Simulate"
+                    },
+                    "designerId": "87aa89d6-db1f-4657-ab4c-2182c5b62615"
+                },
+                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
@@ -514,9 +532,36 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1
+                "layout|flex": 1,
+                "id": "themeSimulatorHolder",
+                "layout": "fit"
             },
-            "designerId": "fb05884d-249a-4a19-8147-b97d632530c0"
+            "designerId": "fb05884d-249a-4a19-8147-b97d632530c0",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onThemeSimulatorHolderAfterRender",
+                        "implHandler": [
+                            "var task = new Ext.util.DelayedTask(function(){\r",
+                            "    var holder=Ext.widget(\"panel\", {title:\"Theme Preview\", autoScroll:false});\r",
+                            "    component.add(holder);\r",
+                            "    var addHtml='<iframe id=\"themeSimulatorFrame\" type=\"text/html\" width=\"100%\" height=\"100%\" src=\"resources/themesimulator/testpage/index.html\" frameborder=\"0\"></iframe>';\r",
+                            "    holder.update(addHtml);\r",
+                            "});\r",
+                            "task.delay(1000);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "37a32398-b78f-49ee-9438-db77378a4c9b"
+                }
+            ]
         },
         {
             "type": "basiceventbinding",

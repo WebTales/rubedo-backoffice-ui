@@ -82,6 +82,15 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                             }
                         },
                         {
+                            xtype: 'button',
+                            disabled: true,
+                            id: 'simulateCustomThemeBtn',
+                            iconAlign: 'top',
+                            iconCls: 'play_big',
+                            scale: 'large',
+                            text: 'Simulate'
+                        },
+                        {
                             xtype: 'tbfill'
                         }
                     ]
@@ -217,7 +226,17 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 },
                 {
                     xtype: 'container',
-                    flex: 1
+                    flex: 1,
+                    id: 'themeSimulatorHolder',
+                    layout: {
+                        type: 'fit'
+                    },
+                    listeners: {
+                        afterrender: {
+                            fn: me.onThemeSimulatorHolderAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ],
             listeners: {
@@ -246,6 +265,16 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
             t.stopEvent();
         }
     });
+    },
+
+    onThemeSimulatorHolderAfterRender: function(component, eOpts) {
+        var task = new Ext.util.DelayedTask(function(){
+            var holder=Ext.widget("panel", {title:"Theme Preview", autoScroll:false});
+            component.add(holder);
+            var addHtml='<iframe id="themeSimulatorFrame" type="text/html" width="100%" height="100%" src="resources/themesimulator/testpage/index.html" frameborder="0"></iframe>';
+            holder.update(addHtml);
+        });
+        task.delay(1000);
     },
 
     onCustomThemesInterfaceAfterRender: function(component, eOpts) {

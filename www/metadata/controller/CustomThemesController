@@ -87,7 +87,9 @@
                 "implHandler": [
                     "Ext.getCmp(\"customThemesRemoveBtn\").enable();\r",
                     "Ext.getCmp(\"customThemesSaveBtn\").enable();\r",
-                    "Ext.getCmp(\"mainLessVarsForm\").getForm().setValues(Ext.JSON.decode(record.get(\"lessVarsJson\")));"
+                    "Ext.getCmp(\"simulateCustomThemeBtn\").enable();\r",
+                    "Ext.getCmp(\"mainLessVarsForm\").getForm().setValues(Ext.JSON.decode(record.get(\"lessVarsJson\")));\r",
+                    "this.pushLessToSimulator(Ext.JSON.decode(record.get(\"lessVarsJson\")));"
                 ]
             },
             "designerId": "f87dc705-a863-4f0b-8e3e-d4185ab7a51d"
@@ -104,6 +106,7 @@
                 "implHandler": [
                     "Ext.getCmp(\"customThemesRemoveBtn\").disable();\r",
                     "Ext.getCmp(\"customThemesSaveBtn\").disable();\r",
+                    "Ext.getCmp(\"simulateCustomThemeBtn\").disable();\r",
                     "Ext.getCmp(\"mainLessVarsForm\").getForm().reset();"
                 ]
             },
@@ -201,6 +204,53 @@
                 "designer|controlQuery": "#customThemesSaveBtn"
             },
             "designerId": "ddfd980d-a5dc-4e86-bd37-8379e36a46a6"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "pushLessToSimulator",
+                "designer|params": [
+                    "vars"
+                ],
+                "implHandler": [
+                    "var refinedVars={ };\r",
+                    "Ext.Object.each(vars, function(key, value, myself) {\r",
+                    "    refinedVars['@'+key]=value;\r",
+                    "});\r",
+                    "themeSimulatorFrame.less.modifyVars(refinedVars);"
+                ]
+            },
+            "designerId": "9feebaf3-be11-4e03-ab04-6fd563da8728"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSimulateCustomThemeBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var form=Ext.getCmp(\"mainLessVarsForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    me.pushLessToSimulator(form.getValues());\r",
+                    "} else {\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#simulateCustomThemeBtn"
+            },
+            "designerId": "0fbf1831-7f7d-41ed-b746-3cd2870cf57a"
         }
     ]
 }
