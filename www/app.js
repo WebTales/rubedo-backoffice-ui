@@ -179,7 +179,8 @@ Ext.application({
         'Rubedo.view.ImageMapField',
         'Rubedo.view.ImageMapFieldComponent',
         'Rubedo.view.ImageMapperWindow',
-        'Rubedo.view.CustomThemesInterface'
+        'Rubedo.view.CustomThemesInterface',
+        'Rubedo.view.NewCustomThemeWindow'
     ],
     models: [
         'sitesDataModel',
@@ -486,7 +487,8 @@ Ext.application({
         'ImageMapField',
         'ImageMapFieldComponent',
         'ImageMapperWindow',
-        'CustomThemesInterface'
+        'CustomThemesInterface',
+        'NewCustomThemeWindow'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -508,7 +510,8 @@ Ext.application({
         'LocalisationController',
         'FormsController',
         'ImportController',
-        'MailingListsController'
+        'MailingListsController',
+        'CustomThemesController'
     ],
     name: 'Rubedo'
 });

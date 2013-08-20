@@ -2829,6 +2829,22 @@
                 "app/store/CustomThemes.js"
             ],
             "className": "CustomThemes"
+        },
+        "b3b24ed4-5a5b-41d6-8150-b2a668f6491b": {
+            "paths": [
+                "metadata/controller/CustomThemesController",
+                "app/controller/override/CustomThemesController.js",
+                "app/controller/CustomThemesController.js"
+            ],
+            "className": "CustomThemesController"
+        },
+        "9495e2dc-ea9a-4ec0-9102-8a284dc3ea29": {
+            "paths": [
+                "metadata/view/NewCustomThemeWindow",
+                "app/view/override/NewCustomThemeWindow.js",
+                "app/view/NewCustomThemeWindow.js"
+            ],
+            "className": "NewCustomThemeWindow"
         }
     },
     "viewOrderMap": {
@@ -3003,6 +3019,7 @@
             "16d7947b-734c-40f8-89ec-32633511ee40",
             "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
             "8c8eb810-59a0-4d95-a6b4-7d495027da77",
+            "9495e2dc-ea9a-4ec0-9102-8a284dc3ea29",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "e1ff2391-5104-46be-9c01-680539baf938"
         ],
@@ -3133,7 +3150,8 @@
             "765f93a9-83e7-4405-aaaa-740265c87f51",
             "82778ea5-36d1-422d-993a-6b91ab641629",
             "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
-            "fa7809cb-a36e-40d9-92de-589f62b00143"
+            "fa7809cb-a36e-40d9-92de-589f62b00143",
+            "b3b24ed4-5a5b-41d6-8150-b2a668f6491b"
         ],
         "model": [
             "b980e128-6e56-43e6-99d6-b9312789f61e",

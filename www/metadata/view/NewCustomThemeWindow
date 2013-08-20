@@ -1,0 +1,94 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "newCustomThemeWindow",
+        "height": 112,
+        "width": 400,
+        "designer|userClassName": "NewCustomThemeWindow",
+        "designer|userAlias": "NewCustomThemeWindow",
+        "resizable": false,
+        "layout": "fit",
+        "title": "New custom theme",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "9495e2dc-ea9a-4ec0-9102-8a284dc3ea29",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "30ac1973-362c-464e-893c-325bccf84ef2",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "nameField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Nom",
+                        "name": "name",
+                        "allowBlank": false
+                    },
+                    "designerId": "745cbb84-079b-4ab2-b6ed-5a4bc0a3792d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "createNewCustomThemeBtn",
+                        "layout|anchor": "100%",
+                        "id": "newCustomThemeSublitBtn",
+                        "scale": "medium",
+                        "text": "Create new custom theme"
+                    },
+                    "designerId": "0a03e762-80ba-4c6c-b0c8-e2f9d770f2e8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

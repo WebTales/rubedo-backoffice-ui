@@ -6,12 +6,32 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "CustomThemes",
+        "autoLoad": false,
+        "autoSync": true,
         "model": "customTheme",
         "storeId": "CustomThemes",
         "designer|userClassName": "CustomThemes",
-        "designer|userAlias": "CustomThemes"
+        "designer|userAlias": "CustomThemes",
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
     },
     "designerId": "d5c0475f-ee5b-44e7-a378-8531b81a9d94",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -20,6 +40,16 @@
                 "type": "object"
             },
             "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    create: 'custom-themes/create',\r",
+                    "                    read: 'custom-themes',\r",
+                    "                    update: 'custom-themes/update',\r",
+                    "                    destroy: 'custom-themes/delete'\r",
+                    "                }"
+                ]
+            },
             "designerId": "bb88ffe2-089f-49eb-8127-d48b71a6a9f2",
             "cn": [
                 {
@@ -29,7 +59,24 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
                     "designerId": "bd4414d6-9df0-48e5-b8e5-a18d23856dd3"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "d59aa082-6fb4-4c6f-b57f-27fe327f1d0f"
                 }
             ]
         }

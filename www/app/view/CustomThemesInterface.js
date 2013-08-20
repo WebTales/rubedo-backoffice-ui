@@ -46,6 +46,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                             xtype: 'button',
                             ACL: 'write.ui.workspaces',
                             localiserId: 'addBtn',
+                            id: 'customThemesAddBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
                             scale: 'large',
@@ -56,6 +57,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                             ACL: 'write.ui.workspaces',
                             localiserId: 'removeBtn',
                             disabled: true,
+                            id: 'customThemesRemoveBtn',
                             iconAlign: 'top',
                             iconCls: 'remove_big',
                             scale: 'large',
@@ -66,6 +68,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                             ACL: 'write.ui.workspaces',
                             localiserId: 'saveBtn',
                             disabled: true,
+                            id: 'customThemesSaveBtn',
                             iconAlign: 'top',
                             iconCls: 'floppy_disc_big',
                             scale: 'large',
@@ -94,6 +97,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    id: 'customThemesGrid',
                     width: 180,
                     collapseDirection: 'left',
                     collapsible: true,
@@ -136,7 +140,17 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     xtype: 'container',
                     flex: 1
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onCustomThemesInterfaceAfterRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onCustomThemesInterfaceBeforeClose,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -149,6 +163,14 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
             t.stopEvent();
         }
     });
+    },
+
+    onCustomThemesInterfaceAfterRender: function(component, eOpts) {
+        Ext.getStore("CustomThemes").load();
+    },
+
+    onCustomThemesInterfaceBeforeClose: function(panel, eOpts) {
+        Ext.getStore("CustomThemes").removeAll();
     }
 
 });

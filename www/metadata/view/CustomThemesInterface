@@ -42,7 +42,7 @@
                         "ACL": "write.ui.workspaces",
                         "localiserId": "addBtn",
                         "layout|flex": null,
-                        "id": null,
+                        "id": "customThemesAddBtn",
                         "minWidth": null,
                         "width": null,
                         "iconAlign": "top",
@@ -76,7 +76,7 @@
                         "localiserId": "removeBtn",
                         "layout|flex": null,
                         "disabled": true,
-                        "id": null,
+                        "id": "customThemesRemoveBtn",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
                         "scale": "large",
@@ -108,7 +108,7 @@
                         "localiserId": "saveBtn",
                         "layout|flex": null,
                         "disabled": true,
-                        "id": null,
+                        "id": "customThemesSaveBtn",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
                         "scale": "large",
@@ -195,6 +195,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "id": "customThemesGrid",
                 "width": 180,
                 "collapseDirection": "left",
                 "collapsible": true,
@@ -295,6 +296,40 @@
                 "layout|flex": 1
             },
             "designerId": "fb05884d-249a-4a19-8147-b97d632530c0"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesInterfaceAfterRender",
+                "implHandler": [
+                    "Ext.getStore(\"CustomThemes\").load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "0b757fce-2085-45a9-aa94-477b9dcfe123"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"CustomThemes\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "1a310c98-d3bc-48fe-b9fa-c06719a40dee"
         }
     ]
 }

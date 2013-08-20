@@ -311,7 +311,8 @@
             "ImageMapField",
             "ImageMapFieldComponent",
             "ImageMapperWindow",
-            "CustomThemesInterface"
+            "CustomThemesInterface",
+            "NewCustomThemeWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -333,7 +334,8 @@
             "LocalisationController",
             "FormsController",
             "ImportController",
-            "MailingListsController"
+            "MailingListsController",
+            "CustomThemesController"
         ],
         "name": "Rubedo"
     },

@@ -25,12 +25,30 @@ Ext.define('Rubedo.store.CustomThemes', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            isOptimised: true,
+            usedCollection: 'CustomThemes',
+            autoLoad: false,
+            autoSync: true,
             model: 'Rubedo.model.customTheme',
             storeId: 'CustomThemes',
+            pageSize: 1000,
             proxy: {
                 type: 'ajax',
+                api: {
+                    create: 'custom-themes/create',
+                    read: 'custom-themes',
+                    update: 'custom-themes/update',
+                    destroy: 'custom-themes/delete'
+                },
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    messageProperty: 'message',
+                    root: 'data'
+                },
+                writer: {
+                    type: 'json',
+                    encode: true,
+                    root: 'data'
                 }
             }
         }, cfg)]);

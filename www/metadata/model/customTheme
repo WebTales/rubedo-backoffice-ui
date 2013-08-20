@@ -58,6 +58,18 @@
                 "name": "lessVarsJson"
             },
             "designerId": "f1efebd6-9ffa-4891-acab-f93aaa6c0bb6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "readOnly"
+            },
+            "designerId": "0ed3478b-c38b-462a-8993-db7750cfd45a"
         }
     ]
 }

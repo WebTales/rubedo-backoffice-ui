@@ -29,6 +29,9 @@ Ext.define('Rubedo.model.customTheme', {
         },
         {
             name: 'lessVarsJson'
+        },
+        {
+            name: 'readOnly'
         }
     ]
 });

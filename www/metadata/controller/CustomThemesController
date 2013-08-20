@@ -1,0 +1,140 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CustomThemesController",
+        "designer|userAlias": "CustomThemesController"
+    },
+    "designerId": "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesAddBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"NewCustomThemeWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#customThemesAddBtn"
+            },
+            "designerId": "71c9784a-4bac-4530-a9e2-39e56c621f42"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewCustomThemeSublitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var newRec=Ext.create(\"Rubedo.model.customTheme\",form.getValues());\r",
+                    "    Ext.getStore(\"CustomThemes\").add(newRec);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newCustomThemeSublitBtn"
+            },
+            "designerId": "0f48f144-64c9-4c54-9bbb-e2f3155f0cc8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetInterfaceSelect",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "Ext.getCmp(\"customThemesRemoveBtn\").enable();\r",
+                    "Ext.getCmp(\"customThemesSaveBtn\").enable();"
+                ]
+            },
+            "designerId": "f87dc705-a863-4f0b-8e3e-d4185ab7a51d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetInterfaceNoSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"customThemesRemoveBtn\").disable();\r",
+                    "Ext.getCmp(\"customThemesSaveBtn\").disable();"
+                ]
+            },
+            "designerId": "a1369d62-5810-4b65-b875-02fe6511c8c0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    this.resetInterfaceNoSelect();\r",
+                    "} else {\r",
+                    "\tthis.resetInterfaceSelect(selected[0]);\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#customThemesGrid"
+            },
+            "designerId": "9e835ee2-b0b8-4e25-ae95-9ccc7042e1ce"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomThemesRemoveBtnClick",
+                "implHandler": [
+                    "var delCon = Ext.widget('delConfirmZ');\r",
+                    "delCon.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    Ext.getStore(\"CustomThemes\").remove(Ext.getCmp(\"customThemesGrid\").getSelectionModel().getLastSelected());\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
+                    "}); "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#customThemesRemoveBtn"
+            },
+            "designerId": "7e72e958-9879-4e1a-b14a-5c7c8ed6b7ce"
+        }
+    ]
+}
