@@ -299,6 +299,184 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     name: 'btnInverseBackground'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Forms',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Input border',
+                                    name: 'inputBorder'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Actions background',
+                                    name: 'formActionsBackground'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Dropdowns',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Top divider',
+                                    name: 'dropdownDividerTop'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Wells',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background',
+                                    name: 'wellBackground'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Navbar',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background highlight',
+                                    name: 'navbarBackgroundHighlight'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Text',
+                                    name: 'navbarText'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Link',
+                                    name: 'navbarLinkColor'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Inverted navbar',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background',
+                                    name: 'navbarInverseBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background highlight',
+                                    name: 'navbarInverseBackgroundHighlight'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Border',
+                                    name: 'navbarInverseBorder'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Search placeholder',
+                                    name: 'navbarInverseSearchPlaceholderColor'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Pagination',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background',
+                                    name: 'paginationBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Border',
+                                    name: 'paginationBorder'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Active background',
+                                    name: 'paginationActiveBackground'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Form states and alerts',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Warning text',
+                                    name: 'warningText'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Warning background',
+                                    name: 'warningBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Error text',
+                                    name: 'errorText'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Error background',
+                                    name: 'errorBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Success text',
+                                    name: 'successText'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Success background',
+                                    name: 'successBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Info text',
+                                    name: 'infoText'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Info background',
+                                    name: 'infoBackground'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Tooltips and popovers',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Tooltip color',
+                                    name: 'tooltipColor'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Tooltip background',
+                                    name: 'tooltipBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Popover background',
+                                    name: 'popoverBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Popover arrow color',
+                                    name: 'popoverArrowColor'
+                                }
+                            ]
                         }
                     ]
                 },
