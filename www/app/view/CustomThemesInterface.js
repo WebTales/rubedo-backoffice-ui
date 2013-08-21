@@ -486,6 +486,47 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     name: 'popoverArrowColor'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Typography',
+                            items: [
+                                {
+                                    xtype: 'textareafield',
+                                    fieldLabel: 'Sans font family',
+                                    name: 'sansFontFamily'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    fieldLabel: 'Serif font family',
+                                    name: 'serifFontFamily'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    fieldLabel: 'Mono font family',
+                                    name: 'monoFontFamily'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    fieldLabel: 'Base font size',
+                                    name: 'baseFontSize'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    fieldLabel: 'Base line height',
+                                    name: 'baseLineHeight'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    fieldLabel: 'Heading font family',
+                                    name: 'headingsFontFamily'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    fieldLabel: 'Heading font weight',
+                                    name: 'headingsFontWeight'
+                                }
+                            ]
                         }
                     ]
                 },

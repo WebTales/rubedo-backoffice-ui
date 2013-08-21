@@ -1268,6 +1268,118 @@
                             "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Typography"
+                    },
+                    "designerId": "389ea4b6-5d4e-47d3-a5d6-68437d2494ea",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Sans font family",
+                                "name": "sansFontFamily"
+                            },
+                            "designerId": "dcad2965-1a11-42dd-9a23-73e172245870"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Serif font family",
+                                "name": "serifFontFamily"
+                            },
+                            "designerId": "a0d5afad-ec41-4974-af0c-8f96a2116061"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Mono font family",
+                                "name": "monoFontFamily"
+                            },
+                            "designerId": "280d9866-8867-451c-a841-48e638232967"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Base font size",
+                                "name": "baseFontSize"
+                            },
+                            "designerId": "61901a35-edb2-4d1d-9f1b-959690ae5373"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Base line height",
+                                "name": "baseLineHeight"
+                            },
+                            "designerId": "feb10045-04d5-4af7-b553-5b490ca0f138"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Heading font family",
+                                "name": "headingsFontFamily"
+                            },
+                            "designerId": "9c644c95-7bd9-491c-84dd-4b0772845007"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "Heading font weight",
+                                "name": "headingsFontWeight"
+                            },
+                            "designerId": "68bd8e43-217b-4825-81f5-b50a9e83437e"
+                        }
+                    ]
                 }
             ]
         },

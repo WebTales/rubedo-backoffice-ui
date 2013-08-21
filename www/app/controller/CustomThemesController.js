@@ -78,7 +78,14 @@ Ext.define('Rubedo.controller.CustomThemesController', {
                 "tooltipColor": "#ffffff",
                 "tooltipBackground": "#000000",
                 "popoverBackground": "#ffffff",
-                "popoverArrowColor": "#ffffff"
+                "popoverArrowColor": "#ffffff",
+                "sansFontFamily": '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                "serifFontFamily": 'Georgia, "Times New Roman", Times, serif',
+                "monoFontFamily": 'Monaco, Menlo, Consolas, "Courier New", monospace',
+                "baseFontSize": "14px",
+                "baseLineHeight": "20px",
+                "headingsFontFamily": "inherit",
+                "headingsFontWeight": "bold"
             };
             newRec.set("lessVarsJson",Ext.JSON.encode(defaultLessVars));
             Ext.getStore("CustomThemes").add(newRec);
