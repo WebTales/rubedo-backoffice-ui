@@ -21,8 +21,9 @@ Ext.define('Rubedo.store.SiteThemesStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            isOptimised: true,
+            usedCollection: 'CustomThemes',
             autoLoad: false,
-            autoSync: true,
             storeId: 'SiteThemesStore',
             pageSize: 1000,
             proxy: {

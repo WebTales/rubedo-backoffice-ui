@@ -6,8 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "CustomThemes",
         "autoLoad": false,
-        "autoSync": true,
         "model": null,
         "storeId": "SiteThemesStore",
         "designer|userClassName": "SiteThemesStore",
@@ -18,6 +19,18 @@
         "isOptimised": "boolean"
     },
     "designerId": "d83aaaaf-494e-4b1d-961c-a90b48ca6b12",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
