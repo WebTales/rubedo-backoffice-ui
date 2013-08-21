@@ -221,6 +221,84 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     name: 'purple'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Links',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Link color',
+                                    name: 'linkColor'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Tables',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background accent',
+                                    name: 'tableBackgroundAccent'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Background hover',
+                                    name: 'tableBackgroundHover'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Border',
+                                    name: 'tableBorder'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            title: 'Buttons',
+                            items: [
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Border',
+                                    name: 'btnBorder'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Info background',
+                                    name: 'btnInfoBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Info background highlight',
+                                    name: 'btnInfoBackgroundHighlight'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Success background',
+                                    name: 'btnSuccessBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Success background highlight',
+                                    name: 'btnSuccessBackgroundHighlight'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Danger background',
+                                    name: 'btnDangerBackground'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Danger background highlight',
+                                    name: 'btnDangerBackgroundHighlight'
+                                },
+                                {
+                                    xtype: 'AdvancedColorField',
+                                    fieldLabel: 'Inverse background',
+                                    name: 'btnInverseBackground'
+                                }
+                            ]
                         }
                     ]
                 },

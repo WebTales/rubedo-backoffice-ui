@@ -26,21 +26,33 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         if (form.isValid()){
             var newRec=Ext.create("Rubedo.model.customTheme",form.getValues());
             var defaultLessVars={
-                black:                 "#000000",
-                grayDarker:            "#222222",
-                grayDark:              "#333333",
-                gray:                  "#555555",
-                grayLight:             "#999999",
-                grayLighter:           "#eeeeee",
-                white:                 "#ffffff",
-                blue:                  "#049cdb",
-                blueDark:              "#0064cd",
-                green:                 "#46a546",
-                red:                   "#9d261d",
-                yellow:                "#ffc40d",
-                orange:                "#f89406",
-                pink:                  "#c3325f",
-                purple:                "#7a43b6"
+                black:"#000000",
+                grayDarker:"#222222",
+                grayDark:"#333333",
+                gray:"#555555",
+                grayLight:"#999999",
+                grayLighter:"#eeeeee",
+                white:"#ffffff",
+                blue:"#049cdb",
+                blueDark:"#0064cd",
+                green:"#46a546",
+                red:"#9d261d",
+                yellow:"#ffc40d",
+                orange:"#f89406",
+                pink:"#c3325f",
+                purple:"#7a43b6",
+                linkColor:"#0088cc",
+                tableBackgroundAccent:"#f9f9f9",
+                tableBackgroundHover:"#f5f5f5",
+                tableBorder:"#dddddd",
+                btnBorder:"#cccccc",
+                btnInfoBackground:"#5bc0de",
+                btnInfoBackgroundHighlight:"#2f96b4",
+                btnSuccessBackground:"#62c462",
+                btnSuccessBackgroundHighlight:"#51a351",
+                btnDangerBackground:"#ee5f5b",
+                btnDangerBackgroundHighlight:"#bd362f",
+                btnInverseBackground:"#444444"
             };
             newRec.set("lessVarsJson",Ext.JSON.encode(defaultLessVars));
             Ext.getStore("CustomThemes").add(newRec);

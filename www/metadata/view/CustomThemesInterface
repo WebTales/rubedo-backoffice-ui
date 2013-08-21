@@ -521,6 +521,228 @@
                             "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Links"
+                    },
+                    "designerId": "dd4fb0fb-d06b-458e-8f77-6101da0c0343",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Link color",
+                                "name": "linkColor"
+                            },
+                            "designerId": "7e880472-b7a1-464a-88ba-68e4ea5b2157",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Tables"
+                    },
+                    "designerId": "fe0697e6-b344-4c0e-b91d-b310b197d9a6",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Background accent",
+                                "name": "tableBackgroundAccent"
+                            },
+                            "designerId": "f10c6654-e36e-40f7-a033-574aff169131",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Background hover",
+                                "name": "tableBackgroundHover"
+                            },
+                            "designerId": "6afcb327-eafb-408b-84d0-bf42bb567c55",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Border",
+                                "name": "tableBorder"
+                            },
+                            "designerId": "892b20b9-473b-4f1b-b467-495a210f62af",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Buttons"
+                    },
+                    "designerId": "a1636608-848f-48d7-b889-6b6f3b4b1b98",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Border",
+                                "name": "btnBorder"
+                            },
+                            "designerId": "241b7c39-4627-4730-97ee-2da9e32fb557",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Info background",
+                                "name": "btnInfoBackground"
+                            },
+                            "designerId": "38fefda2-9cc7-4c71-91f2-e3cdd7b8aecc",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Info background highlight",
+                                "name": "btnInfoBackgroundHighlight"
+                            },
+                            "designerId": "e7625e6d-da9b-4c3c-a15f-39acacc12782",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Success background",
+                                "name": "btnSuccessBackground"
+                            },
+                            "designerId": "94b73a52-b45e-4991-82ef-fdec8d6bf91e",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Success background highlight",
+                                "name": "btnSuccessBackgroundHighlight"
+                            },
+                            "designerId": "2042974e-12bb-45af-98e2-e4934b7dcc91",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Danger background",
+                                "name": "btnDangerBackground"
+                            },
+                            "designerId": "d64586fa-0b47-457b-8979-59274846ba5c",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Danger background highlight",
+                                "name": "btnDangerBackgroundHighlight"
+                            },
+                            "designerId": "5875aa60-2449-4a77-b8ba-0d30e80742c4",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "fieldLabel": "Inverse background",
+                                "name": "btnInverseBackground"
+                            },
+                            "designerId": "3a2847e9-fee6-4667-8ceb-c2491bd88f04",
+                            "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        }
+                    ]
                 }
             ]
         },
