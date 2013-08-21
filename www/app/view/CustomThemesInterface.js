@@ -118,8 +118,17 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'name',
-                            text: 'Name'
+                            text: 'Name',
+                            editor: {
+                                xtype: 'textfield',
+                                allowBlank: false
+                            }
                         }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+
+                        })
                     ]
                 },
                 {

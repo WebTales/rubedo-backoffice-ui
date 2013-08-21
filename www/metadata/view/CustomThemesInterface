@@ -243,7 +243,30 @@
                         "dataIndex": "name",
                         "text": "Name"
                     },
-                    "designerId": "775c1164-cba0-45e1-b0b8-9a3beb0197ab"
+                    "designerId": "775c1164-cba0-45e1-b0b8-9a3beb0197ab",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false
+                            },
+                            "designerId": "a885cbab-03a2-4da3-b5a5-6cc999804931"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "designerId": "2e0500bf-7712-41cd-8ba5-f4be382df6ac"
                 }
             ]
         },
