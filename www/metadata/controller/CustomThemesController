@@ -267,7 +267,11 @@
                     "Ext.Object.each(vars, function(key, value, myself) {\r",
                     "    refinedVars['@'+key]=value;\r",
                     "});\r",
-                    "themeSimulatorFrame.less.modifyVars(refinedVars);"
+                    "if ((!Ext.isEmpty(Ext.firefoxVersion))&&(Ext.firefoxVersion>0)){\r",
+                    "    themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);\r",
+                    "} else {\r",
+                    "\tthemeSimulatorFrame.less.modifyVars(refinedVars);\r",
+                    "}"
                 ]
             },
             "designerId": "9feebaf3-be11-4e03-ab04-6fd563da8728"

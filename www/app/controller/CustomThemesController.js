@@ -178,7 +178,11 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         Ext.Object.each(vars, function(key, value, myself) {
             refinedVars['@'+key]=value;
         });
-        themeSimulatorFrame.less.modifyVars(refinedVars);
+        if ((!Ext.isEmpty(Ext.firefoxVersion))&&(Ext.firefoxVersion>0)){
+            themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);
+        } else {
+            themeSimulatorFrame.less.modifyVars(refinedVars);
+        }
     }
 
 });
