@@ -142,6 +142,7 @@
                     "var me=this;\r",
                     "Ext.Ajax.request({\r",
                     "    url:'current-user/get-token',\r",
+                    "    method:\"GET\",\r",
                     "    params:{\r",
                     "    },\r",
                     "    success:function(response){\r",

@@ -116,6 +116,7 @@ Ext.define('Rubedo.controller.ACLController', {
         var me=this;
         Ext.Ajax.request({
             url:'current-user/get-token',
+            method:"GET",
             params:{
             },
             success:function(response){
