@@ -1909,10 +1909,11 @@ function SummerHtmlImageMapCreator() {
     app.loadImage("/dam?media-id="+gup("id"));
     function restorePreviousShapes()
     {
-    var predefShapes=gup("editJson");
+    	var targetField=gup("sourceFieldId");
+    	var predefShapes=window.parent.Ext.getCmp(targetField).getValue();
     if (predefShapes){
     	
-    	predefShapes=JSON.parse(decodeURIComponent(predefShapes));
+    	predefShapes=JSON.parse(predefShapes);
     } 
     var i=0;
     for (i=0; i<predefShapes.length; i++){

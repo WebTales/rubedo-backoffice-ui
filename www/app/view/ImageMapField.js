@@ -78,7 +78,6 @@ Ext.define('Rubedo.view.ImageMapField', {
                 var myEditor=Ext.widget("ImageMapperWindow");
                 myEditor.sImageId=selectedImageId;
                 myEditor.sourceFieldId=component.getId();
-                myEditor.editJson=component.getValue();
                 myEditor.show();
             }
         });

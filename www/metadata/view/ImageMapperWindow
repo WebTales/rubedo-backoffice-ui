@@ -47,9 +47,6 @@
                 "fn": "onImageMapperWindowAfterRender",
                 "implHandler": [
                     "var src=\"resources/summer/index.htm?id=\"+component.sImageId+\"&sourceFieldId=\"+component.sourceFieldId;\r",
-                    "if(!Ext.isEmpty(component.editJson)){\r",
-                    "    src=src+\"&editJson=\"+encodeURIComponent(component.editJson);\r",
-                    "}\r",
                     "component.add(Ext.widget(\"container\",{\r",
                     "    autoEl: {\r",
                     "        tag: 'iframe',\r",
