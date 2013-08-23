@@ -1018,6 +1018,10 @@ Ext.define('Rubedo.controller.PagesController', {
         var newBlocks = [ ];
         Ext.Array.forEach(startComp.query("unBloc"), function(nBloc){
             if (nBloc.canEdit){
+                var myLocaleFilters=nBloc.localeFilters;
+                if (Ext.isEmpty(myLocaleFilters)){
+                    myLocaleFilters=['all'];
+                }
                 newBlocks.push({
                     bType:nBloc.bType,
                     id:nBloc.getId().replace("page-",""),
@@ -1028,7 +1032,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     configBloc:nBloc.configBloc,
                     orderValue:nBloc.orderValue,
                     title:nBloc.title,
-                    localeFilters:nBloc.localeFilters,
+                    localeFilters:myLocaleFilters,
                     elementStyle:nBloc.elementStyle,
                     elementTag:nBloc.elementTag,
                     renderDiv:nBloc.renderDiv,

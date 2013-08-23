@@ -1756,6 +1756,10 @@ Ext.define('Rubedo.controller.MasqueController', {
             searchArray.push(startComp);
         }
         Ext.Array.forEach(searchArray, function(nBloc){
+            var myLocaleFilters=nBloc.localeFilters;
+            if (Ext.isEmpty(myLocaleFilters)){
+                myLocaleFilters=['all'];
+            }
             newBlocks.push({
 
                 bType:nBloc.bType,
@@ -1763,7 +1767,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 i18n:nBloc.i18n,
                 parentCol:nBloc.up().getId(),
                 mType:"block",
-                localeFilters:nBloc.localeFilters,
+                localeFilters:myLocaleFilters,
                 champsConfig:nBloc.champsConfig,
                 orderValue:nBloc.orderValue,
                 configBloc:nBloc.configBloc,
