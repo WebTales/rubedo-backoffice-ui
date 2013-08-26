@@ -954,6 +954,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "disabled": true,
                 "id": "tabPanTC",
                 "iconCls": null,
                 "activeTab": 0
@@ -2006,7 +2007,7 @@
                                 "width": 200,
                                 "collapseDirection": "left",
                                 "collapsible": true,
-                                "title": "Fields",
+                                "title": "Available fields",
                                 "forceFit": true,
                                 "store": "CTFieldsForLayouts"
                             },
@@ -2098,6 +2099,20 @@
                                                 "text": "New Column"
                                             },
                                             "designerId": "e813fd5d-23fb-429c-bbb7-6076f391881e"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "iconCls": "add",
+                                                "text": "Assign field"
+                                            },
+                                            "designerId": "9ce4a5e7-1df6-4cc4-bfa8-68d14b7b6860"
                                         },
                                         {
                                             "type": "Ext.button.Button",

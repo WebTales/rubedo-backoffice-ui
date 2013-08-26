@@ -1592,7 +1592,8 @@
                     "record"
                 ],
                 "implHandler": [
-                    "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();"
+                    "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();\r",
+                    "this.getFieldsListForLayout();"
                 ]
             },
             "designerId": "21e062f4-7c55-4716-99ff-2d34f03eb17d"
@@ -1607,7 +1608,8 @@
             "userConfig": {
                 "fn": "resetLayoutsInterfaceNoSelect",
                 "implHandler": [
-                    "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();"
+                    "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();\r",
+                    "Ext.getStore(\"CTFieldsForLayouts\").removeAll();"
                 ]
             },
             "designerId": "5f7fd77a-3e31-43fd-b713-7bd238c954d2"
@@ -1622,7 +1624,12 @@
             "userConfig": {
                 "fn": "getFieldsListForLayout",
                 "implHandler": [
-                    "var discoveredFields=[ ];"
+                    "var discoveredFields=[{name:\"text\",label:Rubedo.RubedoAutomatedElementsLoc.titleText},{name:\"summary\",label:Rubedo.RubedoAutomatedElementsLoc.summaryText}];\r",
+                    "Ext.Array.forEach(Ext.getCmp('champsEditionTC').query(\"field\"), function(field){\r",
+                    "    discoveredFields.push({name:field.name,label:field.fieldLabel});\r",
+                    "});\r",
+                    "Ext.getStore(\"CTFieldsForLayouts\").removeAll();\r",
+                    "Ext.getStore(\"CTFieldsForLayouts\").add(discoveredFields);"
                 ]
             },
             "designerId": "cf29b169-0fdb-4508-87a4-dd6dd7093835"

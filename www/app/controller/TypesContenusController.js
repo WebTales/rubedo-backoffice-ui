@@ -1170,14 +1170,21 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     resetLayoutsInterfaceSelect: function(record) {
         Ext.getCmp("RemoveCTLayoutBtn").enable();
+        this.getFieldsListForLayout();
     },
 
     resetLayoutsInterfaceNoSelect: function() {
         Ext.getCmp("RemoveCTLayoutBtn").disable();
+        Ext.getStore("CTFieldsForLayouts").removeAll();
     },
 
     getFieldsListForLayout: function() {
-        var discoveredFields=[ ];
+        var discoveredFields=[{name:"text",label:Rubedo.RubedoAutomatedElementsLoc.titleText},{name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText}];
+        Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
+            discoveredFields.push({name:field.name,label:field.fieldLabel});
+        });
+        Ext.getStore("CTFieldsForLayouts").removeAll();
+        Ext.getStore("CTFieldsForLayouts").add(discoveredFields);
     },
 
     init: function(application) {

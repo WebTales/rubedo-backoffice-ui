@@ -382,6 +382,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [
@@ -752,7 +753,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     width: 200,
                                     collapseDirection: 'left',
                                     collapsible: true,
-                                    title: 'Fields',
+                                    title: 'Available fields',
                                     forceFit: true,
                                     store: 'CTFieldsForLayouts',
                                     columns: [
@@ -785,6 +786,11 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     xtype: 'button',
                                                     iconCls: 'add',
                                                     text: 'New Column'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'add',
+                                                    text: 'Assign field'
                                                 },
                                                 {
                                                     xtype: 'button',
