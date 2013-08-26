@@ -1,0 +1,29 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "CTLayout",
+        "storeId": "CTLayouts",
+        "designer|userClassName": "CTLayouts",
+        "designer|userAlias": "CTLayouts"
+    },
+    "designerId": "3a5de90b-d135-4776-b5fa-511ab646a85b",
+    "cn": [
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "type"
+            },
+            "designerId": "34aac552-9aa0-4ff0-ab9e-6291e5fe7685"
+        }
+    ]
+}

@@ -102,6 +102,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'code'
+        },
+        {
+            name: 'layouts'
         }
     ]
 });

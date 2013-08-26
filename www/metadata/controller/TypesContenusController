@@ -945,7 +945,9 @@
                     "Ext.getCmp(\"AdminfTCImporter\").enable();\r",
                     "Ext.getCmp(\"TCfieldUp\").up().enable();\r",
                     "}\r",
-                    "Ext.getCmp(\"CTLDLSToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"),record.get(\"nativeLanguage\"));"
+                    "Ext.getCmp(\"CTLDLSToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"),record.get(\"nativeLanguage\"));\r",
+                    "Ext.getStore(\"CTLayouts\").removeAll();\r",
+                    "Ext.getStore(\"CTLayouts\").loadData(record.get(\"layouts\"));"
                 ],
                 "name": "select",
                 "scope": "me",
@@ -1056,6 +1058,7 @@
                     "                target.beginEdit();\r",
                     "                target.set(Ext.getCmp(\"TDCEditForm\").getForm().getValues());\r",
                     "                target.set(\"champs\", champsR);\r",
+                    "                target.set(\"layouts\",Ext.Array.pluck(Ext.getStore(\"CTLayouts\").getRange(),\"data\"));\r",
                     "                Ext.getCmp(\"CTLDLSToolbar\").persisti18n(target);\r",
                     "                var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();\r",
                     "                target.set(\"vocabularies\", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, \"data\"), \"id\"));\r",
@@ -1074,6 +1077,7 @@
                     "                        target.beginEdit();\r",
                     "                        target.set(Ext.getCmp(\"TDCEditForm\").getForm().getValues());\r",
                     "                        target.set(\"champs\", champsR);\r",
+                    "                        target.set(\"layouts\",Ext.Array.pluck(Ext.getStore(\"CTLayouts\").getRange(),\"data\"));\r",
                     "                        Ext.getCmp(\"CTLDLSToolbar\").persisti18n(target);\r",
                     "                        var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();\r",
                     "                        target.set(\"vocabularies\", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, \"data\"), \"id\"));\r",
@@ -1490,6 +1494,138 @@
                 "designer|controlQuery": "#purgeCTContentsBtn"
             },
             "designerId": "7d05bac5-df93-4d07-9429-3c9665f7a5c3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddCTLayoutBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"NewCTLayoutWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addCTLayoutBtn"
+            },
+            "designerId": "12dcefec-ae6d-440a-97d9-d70fde20525e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRemoveCTLayoutBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"NewCTLayoutWindow\").getStore().remove(Ext.getCmp(\"NewCTLayoutWindow\").getSelectionModel().getLastSelected());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#RemoveCTLayoutBtn"
+            },
+            "designerId": "e4ca4d9e-5d88-4258-8446-abb083a3592e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewCTLayoutWindowSubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    Ext.getStore(\"CTLayouts\").add(form.getValues());\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#NewCTLayoutWindowSubmitBtn"
+            },
+            "designerId": "bc40401c-e8ea-4c49-a186-3ae21b8fa9c5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLayoutsGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    this.resetLayoutsInterfaceNoSelect();\r",
+                    "} else {\r",
+                    "    this.resetLayoutsInterfaceSelect(selected[0]);\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#CTLayoutsGrid"
+            },
+            "designerId": "853b4c10-4955-4132-93ae-a564ad7f07f9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetLayoutsInterfaceSelect",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();"
+                ]
+            },
+            "designerId": "21e062f4-7c55-4716-99ff-2d34f03eb17d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetLayoutsInterfaceNoSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();"
+                ]
+            },
+            "designerId": "5f7fd77a-3e31-43fd-b713-7bd238c954d2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getFieldsListForLayout",
+                "implHandler": [
+                    "var discoveredFields=[ ];"
+                ]
+            },
+            "designerId": "cf29b169-0fdb-4508-87a4-dd6dd7093835"
         }
     ]
 }

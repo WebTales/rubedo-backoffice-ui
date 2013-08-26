@@ -181,7 +181,8 @@ Ext.application({
         'Rubedo.view.ImageMapperWindow',
         'Rubedo.view.CustomThemesInterface',
         'Rubedo.view.NewCustomThemeWindow',
-        'Rubedo.view.AdvancedColorField'
+        'Rubedo.view.AdvancedColorField',
+        'Rubedo.view.NewCTLayoutWindow'
     ],
     models: [
         'sitesDataModel',
@@ -217,7 +218,9 @@ Ext.application({
         'experimentalModel',
         'languageModel',
         'taxonomyTermModel',
-        'customTheme'
+        'customTheme',
+        'CTLayout',
+        'CTFieldForLayout'
     ],
     stores: [
         'SitesJson',
@@ -324,7 +327,9 @@ Ext.application({
         'TranslationAdderStore',
         'flagsStore',
         'AllLanguagesStore4',
-        'CustomThemes'
+        'CustomThemes',
+        'CTLayouts',
+        'CTFieldsForLayouts'
     ],
     views: [
         'MyContainer',
@@ -490,7 +495,8 @@ Ext.application({
         'ImageMapperWindow',
         'CustomThemesInterface',
         'NewCustomThemeWindow',
-        'AdvancedColorField'
+        'AdvancedColorField',
+        'NewCTLayoutWindow'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -40,7 +40,9 @@
             "experimentalModel",
             "languageModel",
             "taxonomyTermModel",
-            "customTheme"
+            "customTheme",
+            "CTLayout",
+            "CTFieldForLayout"
         ],
         "stores": [
             "SitesJson",
@@ -147,7 +149,9 @@
             "TranslationAdderStore",
             "flagsStore",
             "AllLanguagesStore4",
-            "CustomThemes"
+            "CustomThemes",
+            "CTLayouts",
+            "CTFieldsForLayouts"
         ],
         "views": [
             "MyContainer",
@@ -313,7 +317,8 @@
             "ImageMapperWindow",
             "CustomThemesInterface",
             "NewCustomThemeWindow",
-            "AdvancedColorField"
+            "AdvancedColorField",
+            "NewCTLayoutWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

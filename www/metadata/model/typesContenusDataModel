@@ -305,6 +305,18 @@
                 "name": "code"
             },
             "designerId": "2d779021-f509-4050-a1fa-b9eed33270c5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "layouts"
+            },
+            "designerId": "85241527-2c34-4f30-aeec-90926fcec081"
         }
     ]
 }

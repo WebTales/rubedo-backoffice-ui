@@ -382,7 +382,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
-                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [
@@ -686,6 +685,134 @@ Ext.define('Rubedo.view.adminFTDC', {
                             hidden: true,
                             iconCls: 'versions',
                             title: 'Historique'
+                        },
+                        {
+                            xtype: 'panel',
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
+                            },
+                            iconCls: 'masque-icon',
+                            title: 'Layouts',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    id: 'CTLayoutsGrid',
+                                    width: 200,
+                                    collapseDirection: 'left',
+                                    collapsible: true,
+                                    title: 'Layouts',
+                                    forceFit: true,
+                                    store: 'CTLayouts',
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'top',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    id: 'addCTLayoutBtn',
+                                                    iconCls: 'add',
+                                                    text: 'Add'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    disabled: true,
+                                                    id: 'RemoveCTLayoutBtn',
+                                                    iconCls: 'close',
+                                                    text: 'Remove'
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'name',
+                                            text: 'Name',
+                                            editor: {
+                                                xtype: 'textfield',
+                                                allowBlank: false
+                                            }
+                                        }
+                                    ],
+                                    features: [
+                                        {
+                                            ftype: 'grouping'
+                                        }
+                                    ],
+                                    plugins: [
+                                        Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                        })
+                                    ]
+                                },
+                                {
+                                    xtype: 'gridpanel',
+                                    width: 200,
+                                    collapseDirection: 'left',
+                                    collapsible: true,
+                                    title: 'Fields',
+                                    forceFit: true,
+                                    store: 'CTFieldsForLayouts',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            hidden: true,
+                                            dataIndex: 'name',
+                                            text: 'Name'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'label',
+                                            text: 'Label'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    flex: 1,
+                                    items: [
+                                        {
+                                            xtype: 'toolbar',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'add',
+                                                    text: 'New row'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'add',
+                                                    text: 'New Column'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'close',
+                                                    text: 'Remove'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'arrow_up',
+                                                    text: 'Move'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'arrow_down',
+                                                    text: 'Move'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'panel',
+                                    width: 200,
+                                    collapseDirection: 'right',
+                                    collapsible: true,
+                                    title: 'Properties'
+                                }
+                            ]
                         }
                     ]
                 }

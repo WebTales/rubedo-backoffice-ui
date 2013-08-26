@@ -2853,6 +2853,46 @@
                 "app/view/AdvancedColorField.js"
             ],
             "className": "AdvancedColorField"
+        },
+        "3a5de90b-d135-4776-b5fa-511ab646a85b": {
+            "paths": [
+                "metadata/store/CTLayouts",
+                "app/store/override/CTLayouts.js",
+                "app/store/CTLayouts.js"
+            ],
+            "className": "CTLayouts"
+        },
+        "d6570aca-1de2-4ab0-978a-87a7f4358840": {
+            "paths": [
+                "metadata/store/CTFieldsForLayouts",
+                "app/store/override/CTFieldsForLayouts.js",
+                "app/store/CTFieldsForLayouts.js"
+            ],
+            "className": "CTFieldsForLayouts"
+        },
+        "95fbc603-58e8-4a9c-a747-8a52f558a753": {
+            "paths": [
+                "metadata/model/CTLayout",
+                "app/model/override/CTLayout.js",
+                "app/model/CTLayout.js"
+            ],
+            "className": "CTLayout"
+        },
+        "f54d59fc-957d-4df9-8610-25977c88e0ac": {
+            "paths": [
+                "metadata/model/CTFieldForLayout",
+                "app/model/override/CTFieldForLayout.js",
+                "app/model/CTFieldForLayout.js"
+            ],
+            "className": "CTFieldForLayout"
+        },
+        "c588057d-fc9e-48a9-a7cc-943965704e92": {
+            "paths": [
+                "metadata/view/NewCTLayoutWindow",
+                "app/view/override/NewCTLayoutWindow.js",
+                "app/view/NewCTLayoutWindow.js"
+            ],
+            "className": "NewCTLayoutWindow"
         }
     },
     "viewOrderMap": {
@@ -3028,6 +3068,7 @@
             "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
             "8c8eb810-59a0-4d95-a6b4-7d495027da77",
             "9495e2dc-ea9a-4ec0-9102-8a284dc3ea29",
+            "c588057d-fc9e-48a9-a7cc-943965704e92",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "e1ff2391-5104-46be-9c01-680539baf938",
             "e7d07403-1815-4369-9257-def71279340c"
@@ -3138,7 +3179,9 @@
             "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56",
             "15bd2509-2de3-4e02-8e27-22097d0bf2e1",
             "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4",
-            "d5c0475f-ee5b-44e7-a378-8531b81a9d94"
+            "d5c0475f-ee5b-44e7-a378-8531b81a9d94",
+            "3a5de90b-d135-4776-b5fa-511ab646a85b",
+            "d6570aca-1de2-4ab0-978a-87a7f4358840"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -3200,7 +3243,9 @@
             "9e088d56-6c5c-43d3-8291-8dee5762b7ba",
             "eec686d6-21b7-4457-81a0-65094f60b05b",
             "8e8892e4-5bc6-40e0-87aa-114a70fbf727",
-            "f3e0cafa-155c-4a60-aad3-bbf9b81623b9"
+            "f3e0cafa-155c-4a60-aad3-bbf9b81623b9",
+            "95fbc603-58e8-4a9c-a747-8a52f558a753",
+            "f54d59fc-957d-4df9-8610-25977c88e0ac"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",

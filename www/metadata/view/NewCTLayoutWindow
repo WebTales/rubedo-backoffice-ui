@@ -1,0 +1,117 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "newCustomThemeWindow",
+        "height": null,
+        "width": 400,
+        "designer|userClassName": "NewCTLayoutWindow",
+        "designer|userAlias": "NewCTLayoutWindow",
+        "resizable": false,
+        "layout": "fit",
+        "title": "New layout",
+        "constrain": true,
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "c588057d-fc9e-48a9-a7cc-943965704e92",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "c8815506-08b2-4af2-ace2-b58dbca09082",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "nameField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Nom",
+                        "name": "name",
+                        "allowBlank": false
+                    },
+                    "designerId": "3081547e-faa4-4a62-8318-53bb433d7576",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Type",
+                        "name": "type",
+                        "allowBlank": false,
+                        "editable": false,
+                        "forceSelection": true,
+                        "store": [
+                            "[\"Detail\",\"Summary\"]"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "11d4e6ed-6e42-4ebf-9921-0b946cc90713"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "createNewCustomThemeBtn",
+                        "layout|anchor": "100%",
+                        "id": "NewCTLayoutWindowSubmitBtn",
+                        "scale": "medium",
+                        "text": "Create new layout"
+                    },
+                    "designerId": "c8ef831e-d154-4bd3-b604-d868f95ae902",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

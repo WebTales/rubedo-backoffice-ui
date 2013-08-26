@@ -854,6 +854,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     Ext.getCmp("TCfieldUp").up().enable();
     }
     Ext.getCmp("CTLDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
+    Ext.getStore("CTLayouts").removeAll();
+    Ext.getStore("CTLayouts").loadData(record.get("layouts"));
     },
 
     supprimeTypeContenu: function(button, e, eOpts) {
@@ -934,6 +936,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         target.beginEdit();
                         target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
                         target.set("champs", champsR);
+                        target.set("layouts",Ext.Array.pluck(Ext.getStore("CTLayouts").getRange(),"data"));
                         Ext.getCmp("CTLDLSToolbar").persisti18n(target);
                         var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                         target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
@@ -952,6 +955,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 target.beginEdit();
                                 target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
                                 target.set("champs", champsR);
+                                target.set("layouts",Ext.Array.pluck(Ext.getStore("CTLayouts").getRange(),"data"));
                                 Ext.getCmp("CTLDLSToolbar").persisti18n(target);
                                 var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                                 target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
@@ -1106,6 +1110,30 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     },
 
+    onAddCTLayoutBtnClick: function(button, e, eOpts) {
+        Ext.widget("NewCTLayoutWindow").show();
+    },
+
+    onRemoveCTLayoutBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("NewCTLayoutWindow").getStore().remove(Ext.getCmp("NewCTLayoutWindow").getSelectionModel().getLastSelected());
+    },
+
+    onNewCTLayoutWindowSubmitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            Ext.getStore("CTLayouts").add(form.getValues());
+            button.up().up().close();
+        }
+    },
+
+    onCTLayoutsGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            this.resetLayoutsInterfaceNoSelect();
+        } else {
+            this.resetLayoutsInterfaceSelect(selected[0]);
+        }
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1138,6 +1166,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         } else {
             return(true);
         }
+    },
+
+    resetLayoutsInterfaceSelect: function(record) {
+        Ext.getCmp("RemoveCTLayoutBtn").enable();
+    },
+
+    resetLayoutsInterfaceNoSelect: function() {
+        Ext.getCmp("RemoveCTLayoutBtn").disable();
+    },
+
+    getFieldsListForLayout: function() {
+        var discoveredFields=[ ];
     },
 
     init: function(application) {
@@ -1194,6 +1234,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#purgeCTContentsBtn": {
                 click: this.onPurgeCTContentsBtnClick
+            },
+            "#addCTLayoutBtn": {
+                click: this.onAddCTLayoutBtnClick
+            },
+            "#RemoveCTLayoutBtn": {
+                click: this.onRemoveCTLayoutBtnClick
+            },
+            "#NewCTLayoutWindowSubmitBtn": {
+                click: this.onNewCTLayoutWindowSubmitBtnClick
+            },
+            "#CTLayoutsGrid": {
+                selectionchange: this.onCTLayoutsGridSelectionChange
             }
         });
     }
