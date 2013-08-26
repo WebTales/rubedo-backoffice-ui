@@ -133,6 +133,8 @@
                     "Ext.getCmp(\"customThemesRemoveBtn\").enable();\r",
                     "Ext.getCmp(\"customThemesSaveBtn\").enable();\r",
                     "Ext.getCmp(\"simulateCustomThemeBtn\").enable();\r",
+                    "Ext.getCmp(\"mainLessVarsForm\").enable();\r",
+                    "Ext.getCmp(\"themeSimulatorHolder\").enable();\r",
                     "Ext.getCmp(\"mainLessVarsForm\").getForm().setValues(Ext.JSON.decode(record.get(\"lessVarsJson\")));\r",
                     "this.pushLessToSimulator(Ext.JSON.decode(record.get(\"lessVarsJson\")));"
                 ]
@@ -152,7 +154,9 @@
                     "Ext.getCmp(\"customThemesRemoveBtn\").disable();\r",
                     "Ext.getCmp(\"customThemesSaveBtn\").disable();\r",
                     "Ext.getCmp(\"simulateCustomThemeBtn\").disable();\r",
-                    "Ext.getCmp(\"mainLessVarsForm\").getForm().reset();"
+                    "Ext.getCmp(\"mainLessVarsForm\").getForm().reset();\r",
+                    "Ext.getCmp(\"mainLessVarsForm\").disable();\r",
+                    "Ext.getCmp(\"themeSimulatorHolder\").disable();"
                 ]
             },
             "designerId": "a1369d62-5810-4b65-b875-02fe6511c8c0"

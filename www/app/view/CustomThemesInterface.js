@@ -133,6 +133,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 },
                 {
                     xtype: 'form',
+                    disabled: true,
                     id: 'mainLessVarsForm',
                     width: 300,
                     autoScroll: true,
@@ -568,6 +569,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 {
                     xtype: 'container',
                     flex: 1,
+                    disabled: true,
                     id: 'themeSimulatorHolder',
                     layout: {
                         type: 'fit'

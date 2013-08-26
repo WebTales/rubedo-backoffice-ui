@@ -147,6 +147,8 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         Ext.getCmp("customThemesRemoveBtn").enable();
         Ext.getCmp("customThemesSaveBtn").enable();
         Ext.getCmp("simulateCustomThemeBtn").enable();
+        Ext.getCmp("mainLessVarsForm").enable();
+        Ext.getCmp("themeSimulatorHolder").enable();
         Ext.getCmp("mainLessVarsForm").getForm().setValues(Ext.JSON.decode(record.get("lessVarsJson")));
         this.pushLessToSimulator(Ext.JSON.decode(record.get("lessVarsJson")));
     },
@@ -156,6 +158,8 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         Ext.getCmp("customThemesSaveBtn").disable();
         Ext.getCmp("simulateCustomThemeBtn").disable();
         Ext.getCmp("mainLessVarsForm").getForm().reset();
+        Ext.getCmp("mainLessVarsForm").disable();
+        Ext.getCmp("themeSimulatorHolder").disable();
     },
 
     init: function(application) {
