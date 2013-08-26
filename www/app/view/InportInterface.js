@@ -514,6 +514,13 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (Ext.isEmpty(value)){
+                                            return("");
+                                        } else {
+                                            return(Ext.getStore("InportAsFieldStore").findRecord("csvIndex",value).get("name"));
+                                        }
+                                    },
                                     dataIndex: 'translatedElement',
                                     text: 'Translated field',
                                     editor: {
@@ -529,6 +536,13 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (Ext.isEmpty(value)){
+                                            return("");
+                                        } else {
+                                            return(Ext.getStore("AllLanguagesStore3").findRecord("locale",value).get("label"));
+                                        }
+                                    },
                                     dataIndex: 'translateToLanguage',
                                     text: 'Translation language',
                                     editor: {
@@ -562,6 +576,13 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (Ext.isEmpty(value)){
+                                            return("");
+                                        } else {
+                                            return(Ext.getStore("InportAsTaxoStore").findRecord("csvIndex",value).get("name"));
+                                        }
+                                    },
                                     dataIndex: 'translatedElement',
                                     text: 'Translated vocabulary',
                                     editor: {
@@ -577,6 +598,13 @@ Ext.define('Rubedo.view.InportInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (Ext.isEmpty(value)){
+                                            return("");
+                                        } else {
+                                            return(Ext.getStore("AllLanguagesStore3").findRecord("locale",value).get("label"));
+                                        }
+                                    },
                                     dataIndex: 'translateToLanguage',
                                     text: 'Translation language',
                                     editor: {

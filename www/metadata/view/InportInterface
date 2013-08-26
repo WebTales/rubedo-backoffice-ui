@@ -1416,6 +1416,34 @@
                                         "valueField": "csvIndex"
                                     },
                                     "designerId": "778cf649-1e4f-403e-98e9-b40a5ed057cf"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(value)){\r",
+                                            "    return(\"\");\r",
+                                            "} else {\r",
+                                            "    return(Ext.getStore(\"InportAsFieldStore\").findRecord(\"csvIndex\",value).get(\"name\"));\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "eb1d2a3d-a79c-4777-b010-d6ca042cbb80"
                                 }
                             ]
                         },
@@ -1449,6 +1477,34 @@
                                         "valueField": "locale"
                                     },
                                     "designerId": "b4a5ad54-ea01-492b-8985-90d3bd4402ef"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(value)){\r",
+                                            "    return(\"\");\r",
+                                            "} else {\r",
+                                            "    return(Ext.getStore(\"AllLanguagesStore3\").findRecord(\"locale\",value).get(\"label\"));\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "bedf707a-52aa-4309-99c2-201ac24003f8"
                                 }
                             ]
                         }
@@ -1553,6 +1609,34 @@
                                         "valueField": "csvIndex"
                                     },
                                     "designerId": "cd03729a-3f3d-4dbd-b1ae-29f4b49f72ea"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(value)){\r",
+                                            "    return(\"\");\r",
+                                            "} else {\r",
+                                            "    return(Ext.getStore(\"InportAsTaxoStore\").findRecord(\"csvIndex\",value).get(\"name\"));\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "00ffba14-a105-48ff-a071-985d01411691"
                                 }
                             ]
                         },
@@ -1586,6 +1670,34 @@
                                         "valueField": "locale"
                                     },
                                     "designerId": "7a2a4dd2-7502-48da-bfc4-e2451505af65"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(value)){\r",
+                                            "    return(\"\");\r",
+                                            "} else {\r",
+                                            "    return(Ext.getStore(\"AllLanguagesStore3\").findRecord(\"locale\",value).get(\"label\"));\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "6aa4e648-9c62-4763-90b3-da17a24cbb0a"
                                 }
                             ]
                         }
