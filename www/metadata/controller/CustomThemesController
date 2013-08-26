@@ -270,7 +270,7 @@
                     "if ((!Ext.isEmpty(Ext.firefoxVersion))&&(Ext.firefoxVersion>0)){\r",
                     "    themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);\r",
                     "} else {\r",
-                    "\tthemeSimulatorFrame.less.modifyVars(refinedVars);\r",
+                    "    themeSimulatorFrame.less.modifyVars(refinedVars);\r",
                     "}"
                 ]
             },
@@ -300,6 +300,109 @@
                 "designer|controlQuery": "#simulateCustomThemeBtn"
             },
             "designerId": "0fbf1831-7f7d-41ed-b746-3cd2870cf57a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCLSuggestion",
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url: 'custom-themes/get-color-palette',\r",
+                    "    params: {\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        var text = response.responseText;\r",
+                    "        var colors=Ext.JSON.decode(text)[0].colors;\r",
+                    "        var holder=Ext.getCmp(\"customThemesMainGraysBox\");\r",
+                    "        Ext.Array.forEach(colors,function(item,index){\r",
+                    "            holder.getComponent(index+1).setValue(\"#\"+item);\r",
+                    "        });\r",
+                    "    }\r",
+                    "});\r",
+                    ""
+                ]
+            },
+            "designerId": "6c6d3578-6104-4e2a-926d-e67653101455"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRandomizeBaseThemeColorsBtnClick",
+                "implHandler": [
+                    "this.getCLSuggestion();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#randomizeBaseThemeColorsBtn"
+            },
+            "designerId": "d9ae41f1-fe35-4836-bad0-05ecf66ccee7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRandomizeBaseThemeColorsBOBtnClick",
+                "implHandler": [
+                    "var values=Ext.getCmp(\"colorSuggestionCombo\").getValue();\r",
+                    "if(Ext.isEmpty(values)){\r",
+                    "    this.getCLSuggestion();\r",
+                    "} else {\r",
+                    "    this.getCLBOSuggestion(values.toString());\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#randomizeBaseThemeColorsBOBtn"
+            },
+            "designerId": "40874999-4792-4d3f-8026-5f5f3ae6e95e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getCLBOSuggestion",
+                "designer|params": [
+                    "values"
+                ],
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url: 'custom-themes/get-color-palette-bo',\r",
+                    "    params: {\r",
+                    "        values:values\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        var text = response.responseText;\r",
+                    "        var colors=Ext.JSON.decode(text)[0].colors;\r",
+                    "        var holder=Ext.getCmp(\"customThemesMainGraysBox\");\r",
+                    "        Ext.Array.forEach(colors,function(item,index){\r",
+                    "            holder.getComponent(index+1).setValue(\"#\"+item);\r",
+                    "        });\r",
+                    "    }\r",
+                    "});\r",
+                    ""
+                ]
+            },
+            "designerId": "358064a6-61f5-4eab-89a2-793972d51de4"
         }
     ]
 }

@@ -299,6 +299,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
+                        "id": "customThemesMainGraysBox",
                         "title": "Grays"
                     },
                     "designerId": "c8338297-b2e8-476b-b3e5-c6f053ff3fe7",
@@ -407,6 +408,65 @@
                             },
                             "designerId": "e1c81820-5779-41e4-bec4-7e3d5726322d",
                             "masterInstanceId": "e7d07403-1815-4369-9257-def71279340c"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "id": "randomizeBaseThemeColorsBtn",
+                                "margin": "0 0 6 0",
+                                "width": null,
+                                "text": "Randomize base colors"
+                            },
+                            "designerId": "c2767fb1-ff71-41cd-9f81-b3ba428fe0c5"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "50%",
+                                "id": "randomizeBaseThemeColorsBOBtn",
+                                "margin": "0 6 0 0",
+                                "style": "{float:left;}",
+                                "text": "Randomize based on"
+                            },
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "0719a1ca-cef7-4576-b540-83017a5e2a76"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "50%",
+                                "id": "colorSuggestionCombo",
+                                "margin": "",
+                                "fieldLabel": null,
+                                "editable": false,
+                                "forceSelection": true,
+                                "multiSelect": true,
+                                "store": [
+                                    "[\"red\", \"orange\", \"yellow\", \"green\", \"aqua\", \"blue\", \"violet\",\"fuchsia\"]"
+                                ]
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "7d830f12-c945-49cc-a51f-f8b74c898ebc"
                         }
                     ]
                 },

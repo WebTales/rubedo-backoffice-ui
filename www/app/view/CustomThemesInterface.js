@@ -146,6 +146,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     items: [
                         {
                             xtype: 'fieldset',
+                            id: 'customThemesMainGraysBox',
                             title: 'Grays',
                             items: [
                                 {
@@ -182,6 +183,40 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     xtype: 'AdvancedColorField',
                                     fieldLabel: 'White',
                                     name: 'white'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    id: 'randomizeBaseThemeColorsBtn',
+                                    margin: '0 0 6 0',
+                                    text: 'Randomize base colors'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '50%',
+                                    id: 'randomizeBaseThemeColorsBOBtn',
+                                    margin: '0 6 0 0',
+                                    style: '{float:left;}',
+                                    text: 'Randomize based on'
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '50%',
+                                    id: 'colorSuggestionCombo',
+                                    margin: '',
+                                    editable: false,
+                                    forceSelection: true,
+                                    multiSelect: true,
+                                    store: [
+                                        'red',
+                                        'orange',
+                                        'yellow',
+                                        'green',
+                                        'aqua',
+                                        'blue',
+                                        'violet',
+                                        'fuchsia'
+                                    ]
                                 }
                             ]
                         },

@@ -130,6 +130,19 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         }
     },
 
+    onRandomizeBaseThemeColorsBtnClick: function(button, e, eOpts) {
+        this.getCLSuggestion();
+    },
+
+    onRandomizeBaseThemeColorsBOBtnClick: function(button, e, eOpts) {
+        var values=Ext.getCmp("colorSuggestionCombo").getValue();
+        if(Ext.isEmpty(values)){
+            this.getCLSuggestion();
+        } else {
+            this.getCLBOSuggestion(values.toString());
+        }
+    },
+
     resetInterfaceSelect: function(record) {
         Ext.getCmp("customThemesRemoveBtn").enable();
         Ext.getCmp("customThemesSaveBtn").enable();
@@ -169,6 +182,12 @@ Ext.define('Rubedo.controller.CustomThemesController', {
             },
             "#simulateCustomThemeBtn": {
                 click: this.onSimulateCustomThemeBtnClick
+            },
+            "#randomizeBaseThemeColorsBtn": {
+                click: this.onRandomizeBaseThemeColorsBtnClick
+            },
+            "#randomizeBaseThemeColorsBOBtn": {
+                click: this.onRandomizeBaseThemeColorsBOBtnClick
             }
         });
     },
@@ -183,6 +202,41 @@ Ext.define('Rubedo.controller.CustomThemesController', {
         } else {
             themeSimulatorFrame.less.modifyVars(refinedVars);
         }
+    },
+
+    getCLSuggestion: function() {
+        Ext.Ajax.request({
+            url: 'custom-themes/get-color-palette',
+            params: {
+            },
+            success: function(response){
+                var text = response.responseText;
+                var colors=Ext.JSON.decode(text)[0].colors;
+                var holder=Ext.getCmp("customThemesMainGraysBox");
+                Ext.Array.forEach(colors,function(item,index){
+                    holder.getComponent(index+1).setValue("#"+item);
+                });
+            }
+        });
+
+    },
+
+    getCLBOSuggestion: function(values) {
+        Ext.Ajax.request({
+            url: 'custom-themes/get-color-palette-bo',
+            params: {
+                values:values
+            },
+            success: function(response){
+                var text = response.responseText;
+                var colors=Ext.JSON.decode(text)[0].colors;
+                var holder=Ext.getCmp("customThemesMainGraysBox");
+                Ext.Array.forEach(colors,function(item,index){
+                    holder.getComponent(index+1).setValue("#"+item);
+                });
+            }
+        });
+
     }
 
 });
