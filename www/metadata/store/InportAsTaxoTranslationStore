@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "inportFieldModel",
+        "storeId": "InportAsTaxoTranslationStore",
+        "designer|userClassName": "InportAsTaxoTranslationStore",
+        "designer|userAlias": "InportAsTaxoTranslationStore"
+    },
+    "designerId": "990764f8-e15c-419c-9085-ca66d02d33a4"
+}

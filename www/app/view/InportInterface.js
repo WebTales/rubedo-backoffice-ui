@@ -23,9 +23,9 @@ Ext.define('Rubedo.view.InportInterface', {
     ],
 
     localiserId: 'importMainWindow',
-    height: 449,
+    height: 488,
     id: 'InportInterface',
-    width: 712,
+    width: 1063,
     resizable: false,
     layout: {
         type: 'card'
@@ -103,6 +103,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         return fileInput;
                                     },
                                     localiserId: 'importCSVFileField',
+                                    flex: 1,
                                     id: 'mainCSVinportField',
                                     margin: '0 0 0 5',
                                     width: 380,
@@ -193,6 +194,28 @@ Ext.define('Rubedo.view.InportInterface', {
                                             flex: 1,
                                             title: '',
                                             forceFit: true,
+                                            store: 'InportAsFieldTranslationStore',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'name',
+                                                    text: 'Import as field translation'
+                                                }
+                                            ],
+                                            viewConfig: {
+                                                markDirty: false,
+                                                plugins: [
+                                                    Ext.create('Ext.grid.plugin.DragDrop', {
+
+                                                    })
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            xtype: 'gridpanel',
+                                            flex: 1,
+                                            title: '',
+                                            forceFit: true,
                                             store: 'InportAsTaxoStore',
                                             columns: [
                                                 {
@@ -200,6 +223,28 @@ Ext.define('Rubedo.view.InportInterface', {
                                                     localiserId: 'importImportAsTaxoCol',
                                                     dataIndex: 'name',
                                                     text: 'Importer en tant que taxonomie'
+                                                }
+                                            ],
+                                            viewConfig: {
+                                                markDirty: false,
+                                                plugins: [
+                                                    Ext.create('Ext.grid.plugin.DragDrop', {
+
+                                                    })
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            xtype: 'gridpanel',
+                                            flex: 1,
+                                            title: '',
+                                            forceFit: true,
+                                            store: 'InportAsTaxoTranslationStore',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'name',
+                                                    text: 'Import as taxonomy translation'
                                                 }
                                             ],
                                             viewConfig: {
@@ -424,6 +469,122 @@ Ext.define('Rubedo.view.InportInterface', {
                         Ext.create('Ext.grid.plugin.CellEditing', {
                             clicksToEdit: 1
                         })
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    layout: {
+                        align: 'stretch',
+                        type: 'hbox'
+                    },
+                    title: 'Translation settings',
+                    items: [
+                        {
+                            xtype: 'gridpanel',
+                            flex: 1,
+                            title: 'Field translations',
+                            forceFit: true,
+                            store: 'InportAsFieldTranslationStore',
+                            viewConfig: {
+                                markDirty: false
+                            },
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.CellEditing', {
+                                    clicksToEdit: 1
+                                })
+                            ],
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    localiserId: 'importS3NameCol',
+                                    dataIndex: 'name',
+                                    text: 'Nom'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'translatedElement',
+                                    text: 'Translated field',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        editable: false,
+                                        displayField: 'name',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'InportAsFieldStore',
+                                        valueField: 'name'
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'translateToLanguage',
+                                    text: 'Translation language',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        editable: false,
+                                        displayField: 'label',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'AllLanguagesStore3',
+                                        valueField: 'locale'
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            flex: 1,
+                            title: 'Taxonomy translations',
+                            forceFit: true,
+                            store: 'InportAsTaxoTranslationStore',
+                            viewConfig: {
+                                markDirty: false
+                            },
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    localiserId: 'importS3NameCol',
+                                    dataIndex: 'name',
+                                    text: 'Nom'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'translatedElement',
+                                    text: 'Translated vocabulary',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        editable: false,
+                                        displayField: 'name',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'InportAsTaxoStore',
+                                        valueField: 'name'
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'translateToLanguage',
+                                    text: 'Translation language',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        editable: false,
+                                        displayField: 'label',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'AllLanguagesStore3',
+                                        valueField: 'locale'
+                                    }
+                                }
+                            ],
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.CellEditing', {
+                                    clicksToEdit: 1
+                                })
+                            ]
+                        }
                     ]
                 },
                 {

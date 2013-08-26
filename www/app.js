@@ -329,7 +329,9 @@ Ext.application({
         'AllLanguagesStore4',
         'CustomThemes',
         'CTLayouts',
-        'CTFieldsForLayouts'
+        'CTFieldsForLayouts',
+        'InportAsFieldTranslationStore',
+        'InportAsTaxoTranslationStore'
     ],
     views: [
         'MyContainer',

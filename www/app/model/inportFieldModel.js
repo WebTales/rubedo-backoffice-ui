@@ -54,6 +54,12 @@ Ext.define('Rubedo.model.inportFieldModel', {
         },
         {
             name: 'mediaTypeId'
+        },
+        {
+            name: 'translatedElement'
+        },
+        {
+            name: 'translateToLanguage'
         }
     ]
 });

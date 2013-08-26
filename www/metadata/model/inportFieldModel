@@ -145,6 +145,30 @@
                 "name": "mediaTypeId"
             },
             "designerId": "cb13efd1-88fd-4f82-986d-0cd1c2c6a4d1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "translatedElement"
+            },
+            "designerId": "200d001b-c8d4-4302-922a-f0e5e90b660d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "translateToLanguage"
+            },
+            "designerId": "c4764117-101d-4796-9c14-6bbe06bb7443"
         }
     ]
 }

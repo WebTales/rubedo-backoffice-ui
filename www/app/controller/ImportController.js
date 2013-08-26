@@ -93,6 +93,8 @@ Ext.define('Rubedo.controller.ImportController', {
             });
             var inportAsField=Ext.Array.pluck(Ext.getStore("InportAsFieldStore").getRange(), "data");
             var inportAsTaxo=Ext.Array.pluck(Ext.getStore("InportAsTaxoStore").getRange(), "data");
+            var inportAsFieldTranslation=Ext.Array.pluck(Ext.getStore("InportAsFieldTranslationStore").getRange(), "data");
+            var inportAsTaxoTranslation=Ext.Array.pluck(Ext.getStore("InportAsTaxoTranslationStore").getRange(), "data");
             var form=Ext.getCmp("mainCSVinportField").up().up().getForm();
             button.up().up().setLoading(true);
             form.submit({
@@ -100,7 +102,9 @@ Ext.define('Rubedo.controller.ImportController', {
                 params: { 
                     configs:Ext.JSON.encode(configs),
                     inportAsField: Ext.JSON.encode(inportAsField),
-                    inportAsTaxo: Ext.JSON.encode(inportAsTaxo)
+                    inportAsTaxo: Ext.JSON.encode(inportAsTaxo),
+                    inportAsFieldTranslation: Ext.JSON.encode(inportAsFieldTranslation),
+                    inportAsTaxoTranslation: Ext.JSON.encode(inportAsTaxoTranslation)
                 },
                 success: function(form, action) {
                     var response = Ext.JSON.decode(action.response.responseText);
