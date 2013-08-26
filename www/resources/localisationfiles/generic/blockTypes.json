@@ -1308,7 +1308,18 @@
                         ]
                     }
                 ],
-                "avance": []
+                "avance": [{
+                        "categorie": "#ext-gen1072#",
+                        "champs": [
+                            {
+                                "type": "Ext.form.field.Text",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1082#",
+                                    "name": "displayType"
+                                }
+                            }
+                        ]
+                    }]
             },
             "configBloc": {
                 "sort": "asc",
