@@ -474,6 +474,25 @@
                                                     "designerId": "a8eb74ef-3c45-4cea-8d0e-3db6e618f5b7"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onGridpanelAfterRender1",
+                                                "implHandler": [
+                                                    "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                                                    "    component.hide();\r",
+                                                    "}"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "8f6425fa-e8d1-4748-a9fc-5d8f0b938edc"
                                         }
                                     ]
                                 },
@@ -596,6 +615,25 @@
                                                     "designerId": "e6bf08dd-a251-4a52-885d-9f144e05edc3"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onGridpanelAfterRender",
+                                                "implHandler": [
+                                                    "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                                                    "    component.hide();\r",
+                                                    "}"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "cdf574e1-dd0f-4c33-9ccc-f0f429ac946d"
                                         }
                                     ]
                                 }
@@ -1375,7 +1413,7 @@
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "InportAsFieldStore",
-                                        "valueField": "name"
+                                        "valueField": "csvIndex"
                                     },
                                     "designerId": "778cf649-1e4f-403e-98e9-b40a5ed057cf"
                                 }
@@ -1512,7 +1550,7 @@
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "InportAsTaxoStore",
-                                        "valueField": "name"
+                                        "valueField": "csvIndex"
                                     },
                                     "designerId": "cd03729a-3f3d-4dbd-b1ae-29f4b49f72ea"
                                 }
@@ -1550,6 +1588,50 @@
                                     "designerId": "7a2a4dd2-7502-48da-bfc4-e2451505af65"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "layout|flex": 1,
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "3de75f9e-e07d-4562-b632-48b419eea437",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "isValid",
+                                "implHandler": [
+                                    "var store1=Ext.getStore(\"InportAsFieldTranslationStore\");\r",
+                                    "var store2=Ext.getStore(\"InportAsTaxoTranslationStore\");\r",
+                                    "var allGood=true;\r",
+                                    "Ext.Array.forEach(store1.getRange(),function(record){\r",
+                                    "    if((Ext.isEmpty(record.get(\"translatedElement\")))||(Ext.isEmpty(record.get(\"translateToLanguage\")))){\r",
+                                    "        allGood=false;\r",
+                                    "    }\r",
+                                    "});\r",
+                                    "if (allGood===true) {\r",
+                                    "    return(true);\r",
+                                    "} else {\r",
+                                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);\r",
+                                    "    return(false);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "31275bca-52e4-492a-8561-7a9f5cf646a6"
                         }
                     ]
                 }
@@ -1848,7 +1930,12 @@
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
-                    "Ext.getStore(\"MediaTypesFORDAMPicker\").load();"
+                    "Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
+                    "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                    "    component.remove(component.getComponent(3));\r",
+                    "}"
                 ],
                 "name": "beforerender",
                 "scope": "me"
@@ -1868,6 +1955,8 @@
                     "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();\r",
+                    "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").removeAll();"
                 ],
                 "name": "beforeclose",

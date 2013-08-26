@@ -209,6 +209,12 @@ Ext.define('Rubedo.view.InportInterface', {
 
                                                     })
                                                 ]
+                                            },
+                                            listeners: {
+                                                afterrender: {
+                                                    fn: me.onGridpanelAfterRender1,
+                                                    scope: me
+                                                }
                                             }
                                         },
                                         {
@@ -254,6 +260,12 @@ Ext.define('Rubedo.view.InportInterface', {
 
                                                     })
                                                 ]
+                                            },
+                                            listeners: {
+                                                afterrender: {
+                                                    fn: me.onGridpanelAfterRender,
+                                                    scope: me
+                                                }
                                             }
                                         }
                                     ]
@@ -512,7 +524,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         forceSelection: true,
                                         queryMode: 'local',
                                         store: 'InportAsFieldStore',
-                                        valueField: 'name'
+                                        valueField: 'csvIndex'
                                     }
                                 },
                                 {
@@ -560,7 +572,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         forceSelection: true,
                                         queryMode: 'local',
                                         store: 'InportAsTaxoStore',
-                                        valueField: 'name'
+                                        valueField: 'csvIndex'
                                     }
                                 },
                                 {
@@ -584,6 +596,30 @@ Ext.define('Rubedo.view.InportInterface', {
                                     clicksToEdit: 1
                                 })
                             ]
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'hiddenfield',
+                            isValid: function() {
+                                var store1=Ext.getStore("InportAsFieldTranslationStore");
+                                var store2=Ext.getStore("InportAsTaxoTranslationStore");
+                                var allGood=true;
+                                Ext.Array.forEach(store1.getRange(),function(record){
+                                    if((Ext.isEmpty(record.get("translatedElement")))||(Ext.isEmpty(record.get("translateToLanguage")))){
+                                        allGood=false;
+                                    }
+                                });
+                                if (allGood===true) {
+                                    return(true);
+                                } else {
+                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidFieldsError);
+                                    return(false);
+                                }
+                            },
+                            dock: 'bottom',
+                            flex: 1,
+                            fieldLabel: 'Label'
                         }
                     ]
                 },
@@ -724,6 +760,18 @@ Ext.define('Rubedo.view.InportInterface', {
             }
     },
 
+    onGridpanelAfterRender1: function(component, eOpts) {
+        if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+            component.hide();
+        }
+    },
+
+    onGridpanelAfterRender: function(component, eOpts) {
+        if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+            component.hide();
+        }
+    },
+
     onFieldsetRender: function(component, eOpts) {
         var store = Ext.create("Ext.data.TreeStore", {
             isOptimised: true,
@@ -787,13 +835,20 @@ Ext.define('Rubedo.view.InportInterface', {
         Ext.getStore("NotInportFieldsStore").removeAll();
         Ext.getStore("InportAsFieldStore").removeAll();
         Ext.getStore("InportAsTaxoStore").removeAll();
+        Ext.getStore("InportAsFieldTranslationStore").removeAll();
+        Ext.getStore("InportAsTaxoTranslationStore").removeAll();
         Ext.getStore("MediaTypesFORDAMPicker").load();
+        if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+            component.remove(component.getComponent(3));
+        }
     },
 
     onInportInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("NotInportFieldsStore").removeAll();
         Ext.getStore("InportAsFieldStore").removeAll();
         Ext.getStore("InportAsTaxoStore").removeAll();
+        Ext.getStore("InportAsFieldTranslationStore").removeAll();
+        Ext.getStore("InportAsTaxoTranslationStore").removeAll();
         Ext.getStore("MediaTypesFORDAMPicker").removeAll();
     }
 

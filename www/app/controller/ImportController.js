@@ -32,6 +32,8 @@ Ext.define('Rubedo.controller.ImportController', {
                     Ext.getStore("NotInportFieldsStore").removeAll();
                     Ext.getStore("InportAsFieldStore").removeAll();
                     Ext.getStore("InportAsTaxoStore").removeAll();
+                    Ext.getStore("InportAsFieldTranslationStore").removeAll();
+                    Ext.getStore("InportAsTaxoTranslationStore").removeAll();
                     Ext.getCmp("fileFieldHelper1").show();
                     Ext.getStore("NotInportFieldsStore").loadData(response.detectedFields);
                     filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" "+Rubedo.RubedoAutomatedElementsLoc.identifiedFieldsText+" "+response.detectedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importableContentsText);
@@ -126,6 +128,8 @@ Ext.define('Rubedo.controller.ImportController', {
         Ext.getStore("NotInportFieldsStore").removeAll();
         Ext.getStore("InportAsFieldStore").removeAll();
         Ext.getStore("InportAsTaxoStore").removeAll();
+        Ext.getStore("InportAsFieldTranslationStore").removeAll();
+        Ext.getStore("InportAsTaxoTranslationStore").removeAll();
         Ext.getCmp("chooseEncodingField").getStore().removeAll();
         Ext.getCmp("chooseEncodingField").allowBlank=true;
         Ext.getCmp("chooseEncodingField").disable();
