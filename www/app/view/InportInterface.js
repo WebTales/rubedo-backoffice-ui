@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.InportInterface', {
     ],
 
     localiserId: 'importMainWindow',
-    height: 488,
+    height: 439,
     id: 'InportInterface',
     width: 1063,
     resizable: false,
