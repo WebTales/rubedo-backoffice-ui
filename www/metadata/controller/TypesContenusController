@@ -788,9 +788,6 @@
                     "}\r",
                     "}\r",
                     "Ext.getCmp('tabPanTC').enable();\r",
-                    "Ext.getCmp('tabPanTC').setActiveTab(2);\r",
-                    "Ext.getCmp('tabPanTC').setActiveTab(5);\r",
-                    "Ext.getCmp('tabPanTC').setActiveTab(0);\r",
                     "Ext.getCmp('boiteConfigChampsTC').removeAll();\r",
                     "var formulaireTC = Ext.getCmp('champsEditionTC');\r",
                     "formulaireTC.removeAll();\r",
@@ -1545,7 +1542,9 @@
                 "implHandler": [
                     "var form=button.up().getForm();\r",
                     "if (form.isValid()){\r",
-                    "    Ext.getStore(\"CTLayouts\").add(form.getValues());\r",
+                    "    var obs=form.getValues();\r",
+                    "    obs.rows=[ ];\r",
+                    "    Ext.getStore(\"CTLayouts\").add(obs);\r",
                     "    button.up().up().close();\r",
                     "}"
                 ],
@@ -1593,7 +1592,9 @@
                 ],
                 "implHandler": [
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();\r",
-                    "this.getFieldsListForLayout();"
+                    "this.getFieldsListForLayout();\r",
+                    "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
+                    "this.restoreLayout(record.get(\"rows\"),0,Ext.getCmp(\"layoutEditionPanel\"));"
                 ]
             },
             "designerId": "21e062f4-7c55-4716-99ff-2d34f03eb17d"
@@ -1608,6 +1609,7 @@
             "userConfig": {
                 "fn": "resetLayoutsInterfaceNoSelect",
                 "implHandler": [
+                    "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();\r",
                     "Ext.getStore(\"CTFieldsForLayouts\").removeAll();"
                 ]
@@ -1633,6 +1635,161 @@
                 ]
             },
             "designerId": "cf29b169-0fdb-4508-87a4-dd6dd7093835"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "saveLayout",
+                "designer|params": [
+                    "startComp"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var nRows=[ ];\r",
+                    "Ext.Array.forEach(startComp.items.items, function(row){\r",
+                    "    var newCols = [ ];\r",
+                    "    var offset=0;\r",
+                    "    Ext.Array.forEach(row.items.items, function(col){\r",
+                    "        if (col.isXType(\"panel\")) {\r",
+                    "\r",
+                    "            newCols.push({\r",
+                    "                responsive:col.responsive,\r",
+                    "                classHTML:col.classHTML,\r",
+                    "                idHTML:col.idHTML,\r",
+                    "                elementStyle:col.elementStyle,\r",
+                    "                span:col.flex,\r",
+                    "                id:col.id,\r",
+                    "                mType:\"col\",\r",
+                    "                offset:offset\r",
+                    "\r",
+                    "            });\r",
+                    "            offset=0;\r",
+                    "        } else {offset=offset+col.flex;}\r",
+                    "\r",
+                    "        });\r",
+                    "        nRows.push({\r",
+                    "            id:row.id,\r",
+                    "            elementStyle:row.elementStyle,\r",
+                    "            mType:\"row\",\r",
+                    "            responsive:row.responsive,\r",
+                    "            classHTML:row.classHTML,\r",
+                    "            idHTML:row.idHTML,\r",
+                    "            columns: newCols\r",
+                    "\r",
+                    "        });\r",
+                    "});\r",
+                    "return nRows;"
+                ]
+            },
+            "designerId": "2c309a51-1c09-469c-8993-754c9914b1c9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "restoreLayout",
+                "designer|params": [
+                    "mRows,its,cible"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "Ext.Array.forEach(mRows, function(row){\r",
+                    "    var newRow = Ext.widget('panel', {\r",
+                    "        header:false,\r",
+                    "        mType:\"row\",\r",
+                    "        id:row.id,\r",
+                    "        elementStyle:row.elementStyle,\r",
+                    "        elementTag:row.elementTag,\r",
+                    "        responsive:row.responsive,\r",
+                    "        classHTML:row.classHTML,\r",
+                    "        idHTML:row.idHTML,\r",
+                    "        margin:4,\r",
+                    "        layout: {\r",
+                    "            type: 'hbox',\r",
+                    "            align: 'stretch'\r",
+                    "        }\r",
+                    "    });\r",
+                    "    var rFlex=1;\r",
+                    "    var eolWidth=12;\r",
+                    "    Ext.Array.forEach(row.columns, function(column){\r",
+                    "        if (column.offset>0) {\r",
+                    "            newRow.add(Ext.widget('container', {\r",
+                    "                flex:column.offset,\r",
+                    "                style:\"{background-image:url(resources/images/stripes.png);}\"\r",
+                    "            }));\r",
+                    "            eolWidth=eolWidth-column.offset;\r",
+                    "        }\r",
+                    "        var isFinalCol=false;\r",
+                    "        if (its<=0){isFinalCol=true;}\r",
+                    "        var newCol=Ext.widget('panel', {\r",
+                    "            header:false,\r",
+                    "            flex:column.span,\r",
+                    "            final:isFinalCol,\r",
+                    "            mType:'col',\r",
+                    "            id:column.id,\r",
+                    "            elementStyle:column.elementStyle,\r",
+                    "            responsive:column.responsive,\r",
+                    "            classHTML:column.classHTML,\r",
+                    "            idHTML:column.idHTML,\r",
+                    "            margin:4,\r",
+                    "            layout: {\r",
+                    "                type: 'vbox',\r",
+                    "                align: 'stretch'\r",
+                    "            }\r",
+                    "        });\r",
+                    "        if ((its>0)&&(column.isTerminal===false)) {\r",
+                    "            rFlex=Ext.Array.max([rFlex,column.rows.length]);\r",
+                    "            me.masqueRestit(column.rows,its-1,newCol);    \r",
+                    "        }\r",
+                    "\r",
+                    "        eolWidth=eolWidth-column.span;\r",
+                    "        newRow.add(newCol);\r",
+                    "\r",
+                    "    });\r",
+                    "    newRow.add(Ext.widget(\"container\",{\r",
+                    "        flex:eolWidth,\r",
+                    "        itemId:\"eol\"\r",
+                    "    }));\r",
+                    "    if (Ext.isEmpty(row.height)) {\r",
+                    "        newRow.flex=rFlex;\r",
+                    "    } else {\r",
+                    "        newRow.height=row.height;\r",
+                    "    }\r",
+                    "    cible.add(newRow);  \r",
+                    "});"
+                ]
+            },
+            "designerId": "6cb721ad-22c6-4105-b41a-9b7c733393d2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSaveCTLayoutBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected();\r",
+                    "rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel\")));"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#saveCTLayoutBtn"
+            },
+            "designerId": "ed36df37-4dc3-43c6-976f-1d3906828976"
         }
     ]
 }

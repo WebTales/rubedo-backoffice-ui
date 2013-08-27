@@ -382,7 +382,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
-                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [
@@ -773,6 +772,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'container',
                                     flex: 1,
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    },
                                     items: [
                                         {
                                             xtype: 'toolbar',
@@ -806,8 +809,29 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     xtype: 'button',
                                                     iconCls: 'arrow_down',
                                                     text: 'Move'
+                                                },
+                                                {
+                                                    xtype: 'hiddenfield',
+                                                    id: 'layoutElementIdField',
+                                                    fieldLabel: 'Label'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    id: 'saveCTLayoutBtn',
+                                                    iconCls: 'save',
+                                                    text: 'Save layout'
                                                 }
                                             ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            flex: 1,
+                                            id: 'layoutEditionPanel',
+                                            layout: {
+                                                align: 'stretch',
+                                                type: 'vbox'
+                                            },
+                                            title: ''
                                         }
                                     ]
                                 },
@@ -830,6 +854,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                 },
                 beforeclose: {
                     fn: me.onAdminFTDCBeforeClose,
+                    scope: me
+                },
+                afterrender: {
+                    fn: me.onAdminFTDCAfterRender,
                     scope: me
                 }
             }
@@ -902,6 +930,15 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onAdminFTDCBeforeClose: function(panel, eOpts) {
         Ext.getStore("TypesContenusDataJson").removeAll();
+    },
+
+    onAdminFTDCAfterRender: function(component, eOpts) {
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getCmp('tabPanTC').setActiveTab(2);
+            Ext.getCmp('tabPanTC').setActiveTab(5);
+            Ext.getCmp('tabPanTC').setActiveTab(0);
+        });
+        task.delay(600);
     }
 
 });

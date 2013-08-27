@@ -696,9 +696,6 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     }
     Ext.getCmp('tabPanTC').enable();
-    Ext.getCmp('tabPanTC').setActiveTab(2);
-    Ext.getCmp('tabPanTC').setActiveTab(5);
-    Ext.getCmp('tabPanTC').setActiveTab(0);
     Ext.getCmp('boiteConfigChampsTC').removeAll();
     var formulaireTC = Ext.getCmp('champsEditionTC');
     formulaireTC.removeAll();
@@ -1121,7 +1118,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     onNewCTLayoutWindowSubmitBtnClick: function(button, e, eOpts) {
         var form=button.up().getForm();
         if (form.isValid()){
-            Ext.getStore("CTLayouts").add(form.getValues());
+            var obs=form.getValues();
+            obs.rows=[ ];
+            Ext.getStore("CTLayouts").add(obs);
             button.up().up().close();
         }
     },
@@ -1132,6 +1131,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         } else {
             this.resetLayoutsInterfaceSelect(selected[0]);
         }
+    },
+
+    onSaveCTLayoutBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var rec=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected();
+        rec.set("rows",me.saveLayout(Ext.getCmp("layoutEditionPanel")));
     },
 
     miseAPlatTaxo: function(cible, resultat) {
@@ -1171,9 +1176,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     resetLayoutsInterfaceSelect: function(record) {
         Ext.getCmp("RemoveCTLayoutBtn").enable();
         this.getFieldsListForLayout();
+        Ext.getCmp("layoutEditionPanel").removeAll();
+        this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
     },
 
     resetLayoutsInterfaceNoSelect: function() {
+        Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("RemoveCTLayoutBtn").disable();
         Ext.getStore("CTFieldsForLayouts").removeAll();
     },
@@ -1185,6 +1193,112 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         });
         Ext.getStore("CTFieldsForLayouts").removeAll();
         Ext.getStore("CTFieldsForLayouts").add(discoveredFields);
+    },
+
+    saveLayout: function(startComp) {
+        var me=this;
+        var nRows=[ ];
+        Ext.Array.forEach(startComp.items.items, function(row){
+            var newCols = [ ];
+            var offset=0;
+            Ext.Array.forEach(row.items.items, function(col){
+                if (col.isXType("panel")) {
+
+                    newCols.push({
+                        responsive:col.responsive,
+                        classHTML:col.classHTML,
+                        idHTML:col.idHTML,
+                        elementStyle:col.elementStyle,
+                        span:col.flex,
+                        id:col.id,
+                        mType:"col",
+                        offset:offset
+
+                    });
+                    offset=0;
+                } else {offset=offset+col.flex;}
+
+                });
+                nRows.push({
+                    id:row.id,
+                    elementStyle:row.elementStyle,
+                    mType:"row",
+                    responsive:row.responsive,
+                    classHTML:row.classHTML,
+                    idHTML:row.idHTML,
+                    columns: newCols
+
+                });
+            });
+            return nRows;
+    },
+
+    restoreLayout: function(mRows,its,cible) {
+        var me=this;
+        Ext.Array.forEach(mRows, function(row){
+            var newRow = Ext.widget('panel', {
+                header:false,
+                mType:"row",
+                id:row.id,
+                elementStyle:row.elementStyle,
+                elementTag:row.elementTag,
+                responsive:row.responsive,
+                classHTML:row.classHTML,
+                idHTML:row.idHTML,
+                margin:4,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
+                }
+            });
+            var rFlex=1;
+            var eolWidth=12;
+            Ext.Array.forEach(row.columns, function(column){
+                if (column.offset>0) {
+                    newRow.add(Ext.widget('container', {
+                        flex:column.offset,
+                        style:"{background-image:url(resources/images/stripes.png);}"
+                    }));
+                    eolWidth=eolWidth-column.offset;
+                }
+                var isFinalCol=false;
+                if (its<=0){isFinalCol=true;}
+                var newCol=Ext.widget('panel', {
+                    header:false,
+                    flex:column.span,
+                    final:isFinalCol,
+                    mType:'col',
+                    id:column.id,
+                    elementStyle:column.elementStyle,
+                    responsive:column.responsive,
+                    classHTML:column.classHTML,
+                    idHTML:column.idHTML,
+                    margin:4,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    }
+                });
+                if ((its>0)&&(column.isTerminal===false)) {
+                    rFlex=Ext.Array.max([rFlex,column.rows.length]);
+                    me.masqueRestit(column.rows,its-1,newCol);    
+                }
+
+                eolWidth=eolWidth-column.span;
+                newRow.add(newCol);
+
+            });
+            newRow.add(Ext.widget("container",{
+                flex:eolWidth,
+                itemId:"eol"
+            }));
+            if (Ext.isEmpty(row.height)) {
+                newRow.flex=rFlex;
+            } else {
+                newRow.height=row.height;
+            }
+            cible.add(newRow);  
+        });
     },
 
     init: function(application) {
@@ -1253,6 +1367,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#CTLayoutsGrid": {
                 selectionchange: this.onCTLayoutsGridSelectionChange
+            },
+            "#saveCTLayoutBtn": {
+                click: this.onSaveCTLayoutBtnClick
             }
         });
     }

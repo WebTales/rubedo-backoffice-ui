@@ -954,7 +954,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "disabled": true,
                 "id": "tabPanTC",
                 "iconCls": null,
                 "activeTab": 0
@@ -2059,7 +2058,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1
+                                "layout|flex": 1,
+                                "container|align": "stretch",
+                                "layout": "vbox"
                             },
                             "designerId": "53a9de6c-8ea4-4c11-9bef-808068ede9d1",
                             "cn": [
@@ -2155,8 +2156,53 @@
                                                 "text": "Move"
                                             },
                                             "designerId": "6261a03a-2277-45c9-a9d3-e9fba733e8f5"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Hidden",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "id": "layoutElementIdField",
+                                                "fieldLabel": "Label"
+                                            },
+                                            "designerId": "00b9f81e-c0cf-4832-9976-5a14d28c5e6e"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "id": "saveCTLayoutBtn",
+                                                "iconCls": "save",
+                                                "text": "Save layout"
+                                            },
+                                            "designerId": "df84b7e2-9613-43b4-8d2a-770a94bd8213"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "container|align": "stretch",
+                                        "id": "layoutEditionPanel",
+                                        "layout": "vbox",
+                                        "title": ""
+                                    },
+                                    "designerId": "70013f0e-f5fd-418e-ae30-7a20c4ea50de"
                                 }
                             ]
                         },
@@ -2213,6 +2259,28 @@
                 "scope": "me"
             },
             "designerId": "de263276-27fd-4939-9be5-8f882fee1d2c"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAdminFTDCAfterRender",
+                "implHandler": [
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    Ext.getCmp('tabPanTC').setActiveTab(2);\r",
+                    "    Ext.getCmp('tabPanTC').setActiveTab(5);\r",
+                    "    Ext.getCmp('tabPanTC').setActiveTab(0);\r",
+                    "});\r",
+                    "task.delay(600);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "c8c82d22-c163-4e5f-bacb-5446fcb2f84c"
         }
     ]
 }
