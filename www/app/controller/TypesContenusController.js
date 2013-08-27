@@ -853,10 +853,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     Ext.getCmp("CTLDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     Ext.getStore("CTLayouts").removeAll();
     Ext.getStore("CTLayouts").loadData(record.get("layouts"));
+    this.resetLayoutsInterfaceNoSelect();
     },
 
     supprimeTypeContenu: function(button, e, eOpts) {
         var cible = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getSelection()[0];
+        var me=this;
         if (Ext.isDefined(cible)) {
             Ext.Ajax.request({
                 url: 'content-types/is-used',
@@ -881,6 +883,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             Ext.getCmp('tabPanTC').disable();
                             Ext.getCmp("TDCEditForm").getForm().reset();
                             Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
+                            me.resetLayoutsInterfaceNoSelect();
 
                         }); 
                     }
@@ -1001,6 +1004,28 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp('nouveauTypeContenuFenetre').close();
 
             }
+    },
+
+    selectionEvents: function(component, eOpts) {
+        var me=this;
+        if (!component.isXType("unBloc")){
+            component.addBodyCls('contrastBorder');
+            if (component.mType=="col"){
+                component.addBodyCls('contrastRow');
+            }
+            component.getEl().on("mouseover", function(e){
+                component.setBorder(4);
+                e.stopEvent();
+            });
+            component.getEl().on("mouseout", function(e){
+                component.setBorder(2);
+                e.stopEvent();
+            });
+            component.getEl().on("click", function(e){
+                Ext.getCmp("layoutElementIdField").setValue(component.getId());
+                e.stopEvent();
+            });
+        }
     },
 
     repliqueChamp: function(button, e, eOpts) {
@@ -1139,6 +1164,128 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         rec.set("rows",me.saveLayout(Ext.getCmp("layoutEditionPanel")));
     },
 
+    onLayoutEditionPanelAfterRender: function(component, eOpts) {
+        component.setBorder(2);
+        component.addBodyCls('contrastCBorder');
+        component.getEl().on("mouseover", function(e){
+            component.setBorder(4);
+            e.stopEvent();
+        });
+        component.getEl().on("mouseout", function(e){
+            component.setBorder(2);
+            e.stopEvent();
+        });
+        component.getEl().on("click", function(e){
+            Ext.getCmp("layoutElementIdField").setValue(component.getId());
+            e.stopEvent();
+        });
+    },
+
+    onLayoutElementIdFieldChange: function(field, newValue, oldValue, eOpts) {
+        var newSelected=Ext.getCmp(newValue);
+        Ext.Array.forEach(Ext.getCmp("layoutsEditToolbar").items.items,function(item){
+            item.disable();
+        });
+        Ext.getCmp("saveCTLayoutBtn").enable();
+        if (!Ext.isEmpty(newSelected)){
+            newSelected.getEl().frame(MyPrefData.themeColor);
+            newSelected.addBodyCls('selectedelement');
+
+
+            if (newSelected.getId()=="layoutEditionPanel"){
+                Ext.getCmp("addRowToLayoutBtn").enable();
+            } else if (newSelected.mType=="row"){
+                Ext.getCmp("removeLayoutElementBtn").enable()
+                if (newSelected.getComponent("eol").flex>0){
+                    Ext.getCmp("addColToLayoutBtn").enable();
+                }
+            } else if (newSelected.mType=="col"){
+                Ext.getCmp("removeLayoutElementBtn").enable()
+            }
+        }
+
+
+
+        var oldSelected=Ext.getCmp(oldValue);
+        if (!Ext.isEmpty(oldSelected)){
+            oldSelected.removeBodyCls('selectedelement');
+        }
+    },
+
+    onAddRowToLayoutBtnClick: function(button, e, eOpts) {
+        var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+        var row = Ext.widget('panel', {
+            header:false,
+            mType:"row",
+            flex:1,
+            elementStyle:"",
+            responsive:{
+                phone:true,
+                tablet:true,
+                desktop:true
+            },
+            margin:4,
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            }
+        });
+        row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
+        cible.insert(cible.items.items.length,row);
+        Ext.getCmp('layoutElementIdField').setValue(row.getId());
+    },
+
+    onAddColToLayoutBtnClick: function(button, e, eOpts) {
+        var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+        var myEol=cible.getComponent('eol');
+
+        if (myEol.flex>0) {
+            var isFinalCol=true;
+            var newCol=Ext.widget('panel', {
+                header:false,
+                flex:1,
+                elementStyle:"",
+                final:isFinalCol,
+                responsive:{
+                    phone:true,
+                    tablet:true,
+                    desktop:true
+                },
+                mType:'col',
+                margin:4,
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                }
+            });
+            myEol.flex=myEol.flex-1;
+            cible.insert(cible.items.items.length-1,newCol);
+            if (myEol.flex===0){
+                button.disable();
+            }
+            Ext.getCmp('layoutElementIdField').setValue(newCol.getId());
+        }
+
+    },
+
+    onRemoveLayoutElementBtnClick: function(button, e, eOpts) {
+        var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+        if (cible.mType=="col"){
+            var myEol=cible.up().getComponent("eol");
+            var myOffset=cible.previousSibling();
+            if (!Ext.isEmpty(myOffset)) {
+                if ((myOffset.isXType("container"))&&(!(myOffset.isXType("panel")))) {
+                    myEol.flex=myEol.flex+myOffset.flex;
+                    myOffset.up().remove(myOffset);
+                }
+            }
+            myEol.flex=myEol.flex+cible.flex;
+
+        }
+        cible.up().remove(cible);
+        Ext.getCmp('layoutElementIdField').setValue(null);
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1177,13 +1324,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("RemoveCTLayoutBtn").enable();
         this.getFieldsListForLayout();
         Ext.getCmp("layoutEditionPanel").removeAll();
+        Ext.getCmp("layoutsEditToolbar").enable();
         this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
+        Ext.getCmp("layoutElementIdField").setValue(null);
     },
 
     resetLayoutsInterfaceNoSelect: function() {
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("RemoveCTLayoutBtn").disable();
+        Ext.getCmp("layoutsEditToolbar").disable();
         Ext.getStore("CTFieldsForLayouts").removeAll();
+        Ext.getCmp("layoutElementIdField").setValue(null);
     },
 
     getFieldsListForLayout: function() {
@@ -1338,6 +1489,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             "#boutonCreerTC": {
                 click: this.creerNTC
             },
+            "#layoutEditionPanel panel": {
+                afterrender: this.selectionEvents
+            },
             "[itemId= 'boutonReplicateurChamps']": {
                 click: this.repliqueChamp
             },
@@ -1370,6 +1524,21 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#saveCTLayoutBtn": {
                 click: this.onSaveCTLayoutBtnClick
+            },
+            "#layoutEditionPanel": {
+                afterrender: this.onLayoutEditionPanelAfterRender
+            },
+            "#layoutElementIdField": {
+                change: this.onLayoutElementIdFieldChange
+            },
+            "#addRowToLayoutBtn": {
+                click: this.onAddRowToLayoutBtnClick
+            },
+            "#addColToLayoutBtn": {
+                click: this.onAddColToLayoutBtnClick
+            },
+            "#removeLayoutElementBtn": {
+                click: this.onRemoveLayoutElementBtnClick
             }
         });
     }

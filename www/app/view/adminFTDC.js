@@ -721,6 +721,11 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     id: 'RemoveCTLayoutBtn',
                                                     iconCls: 'close',
                                                     text: 'Remove'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'ouiSpetit',
+                                                    text: 'Activate'
                                                 }
                                             ]
                                         }
@@ -767,6 +772,15 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             dataIndex: 'label',
                                             text: 'Label'
                                         }
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'hiddenfield',
+                                            dock: 'top',
+                                            id: 'layoutElementIdField',
+                                            width: 100,
+                                            fieldLabel: 'Label'
+                                        }
                                     ]
                                 },
                                 {
@@ -779,41 +793,47 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     items: [
                                         {
                                             xtype: 'toolbar',
+                                            disabled: true,
+                                            id: 'layoutsEditToolbar',
                                             items: [
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
+                                                    id: 'addRowToLayoutBtn',
                                                     iconCls: 'add',
                                                     text: 'New row'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
+                                                    id: 'addColToLayoutBtn',
                                                     iconCls: 'add',
                                                     text: 'New Column'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
                                                     iconCls: 'add',
                                                     text: 'Assign field'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
+                                                    id: 'removeLayoutElementBtn',
                                                     iconCls: 'close',
                                                     text: 'Remove'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
                                                     iconCls: 'arrow_up',
                                                     text: 'Move'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
                                                     iconCls: 'arrow_down',
                                                     text: 'Move'
-                                                },
-                                                {
-                                                    xtype: 'hiddenfield',
-                                                    id: 'layoutElementIdField',
-                                                    fieldLabel: 'Label'
                                                 },
                                                 {
                                                     xtype: 'button',

@@ -1944,6 +1944,20 @@
                                                 "text": "Remove"
                                             },
                                             "designerId": "ba672c81-b594-468b-8126-3373393fb07e"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "iconCls": "ouiSpetit",
+                                                "text": "Activate"
+                                            },
+                                            "designerId": "f187ac4b-d2a5-41b5-8aa1-7c200e1eb5af"
                                         }
                                     ]
                                 },
@@ -2047,6 +2061,21 @@
                                         "text": "Label"
                                     },
                                     "designerId": "66ca64c0-c226-4dca-82df-ccced119d39b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top",
+                                        "id": "layoutElementIdField",
+                                        "width": 100,
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "00b9f81e-c0cf-4832-9976-5a14d28c5e6e"
                                 }
                             ]
                         },
@@ -2071,6 +2100,10 @@
                                         "type": "array"
                                     },
                                     "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "id": "layoutsEditToolbar"
+                                    },
                                     "designerId": "7f4b3be4-822b-4718-bb72-2c7711e2e0f0",
                                     "cn": [
                                         {
@@ -2082,6 +2115,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
+                                                "id": "addRowToLayoutBtn",
                                                 "iconCls": "add",
                                                 "text": "New row"
                                             },
@@ -2096,6 +2131,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
+                                                "id": "addColToLayoutBtn",
                                                 "iconCls": "add",
                                                 "text": "New Column"
                                             },
@@ -2110,6 +2147,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
                                                 "iconCls": "add",
                                                 "text": "Assign field"
                                             },
@@ -2124,6 +2162,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
+                                                "id": "removeLayoutElementBtn",
                                                 "iconCls": "close",
                                                 "text": "Remove"
                                             },
@@ -2138,6 +2178,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
                                                 "iconCls": "arrow_up",
                                                 "text": "Move"
                                             },
@@ -2152,24 +2193,11 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
                                                 "iconCls": "arrow_down",
                                                 "text": "Move"
                                             },
                                             "designerId": "6261a03a-2277-45c9-a9d3-e9fba733e8f5"
-                                        },
-                                        {
-                                            "type": "Ext.form.field.Hidden",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|flex": null,
-                                                "id": "layoutElementIdField",
-                                                "fieldLabel": "Label"
-                                            },
-                                            "designerId": "00b9f81e-c0cf-4832-9976-5a14d28c5e6e"
                                         },
                                         {
                                             "type": "Ext.button.Button",
