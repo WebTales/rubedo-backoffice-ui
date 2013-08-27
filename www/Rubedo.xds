@@ -2909,6 +2909,22 @@
                 "app/store/InportAsTaxoTranslationStore.js"
             ],
             "className": "InportAsTaxoTranslationStore"
+        },
+        "d25935ab-5ec6-440b-bb41-0a8bf94cca6e": {
+            "paths": [
+                "metadata/store/LocalizedFieldSelectorStore",
+                "app/store/override/LocalizedFieldSelectorStore.js",
+                "app/store/LocalizedFieldSelectorStore.js"
+            ],
+            "className": "LocalizedFieldSelectorStore"
+        },
+        "6e77cf93-78ba-4056-88cc-f56989098e3d": {
+            "paths": [
+                "metadata/store/ImportTranslationLanguageStore",
+                "app/store/override/ImportTranslationLanguageStore.js",
+                "app/store/ImportTranslationLanguageStore.js"
+            ],
+            "className": "ImportTranslationLanguageStore"
         }
     },
     "viewOrderMap": {
@@ -3128,6 +3144,7 @@
             "03f7a711-07cf-47a3-bd08-1eec02e8e731",
             "fab1f584-2629-4315-8f7f-7b2254804426",
             "21dd3269-eb91-4094-8e9d-6b619ec13bce",
+            "6e77cf93-78ba-4056-88cc-f56989098e3d",
             "bf5259e7-b74f-4b64-8221-0e8475d49786",
             "5c9e9663-9465-44e6-9157-6dc8ca336bf7",
             "8cd88717-2905-4617-b9ff-10d34dec0a0e",
@@ -3192,6 +3209,7 @@
             "c123336d-eb0e-4617-bf31-1318f6731cb8",
             "f4a3e43b-725c-4ad7-8034-3875dc71bb70",
             "3be2705f-c3a0-4c70-8ead-494722c051a0",
+            "d25935ab-5ec6-440b-bb41-0a8bf94cca6e",
             "b3bbb402-cff7-40c3-a0a2-e5d43bd79247",
             "1764ba4e-e043-4a99-bbaa-7d3ac58fdc56",
             "990764f8-e15c-419c-9085-ca66d02d33a4",

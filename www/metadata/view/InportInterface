@@ -1129,6 +1129,17 @@
                                 "fn": "isValid",
                                 "implHandler": [
                                     "var store=Ext.getStore(\"InportAsFieldStore\");\r",
+                                    "var secondStore= Ext.getStore(\"LocalizedFieldSelectorStore\");\r",
+                                    "secondStore.loadData(Ext.Array.pluck(store.query(\"localizable\",true).items,\"data\"));\r",
+                                    "var languagesStore=Ext.getStore(\"ImportTranslationLanguageStore\");\r",
+                                    "var newL=[ ];\r",
+                                    "var workingL=Ext.getCmp(\"workingLanguageField\").getValue();\r",
+                                    "Ext.Array.forEach(Ext.getStore(\"AllLanguagesStore3\").getRange(),function(lang){\r",
+                                    "    if (lang.get(\"locale\")!=workingL){\r",
+                                    "        newL.push(lang.getData());\r",
+                                    "    }\r",
+                                    "});\r",
+                                    "languagesStore.loadData(newL);\r",
                                     "if (store.query(\"protoId\",\"text\").length===0) {\r",
                                     "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveTitleError);\r",
                                     "    return(false);\r",
@@ -1412,7 +1423,7 @@
                                         "displayField": "name",
                                         "forceSelection": true,
                                         "queryMode": "local",
-                                        "store": "InportAsFieldStore",
+                                        "store": "LocalizedFieldSelectorStore",
                                         "valueField": "csvIndex"
                                     },
                                     "designerId": "778cf649-1e4f-403e-98e9-b40a5ed057cf"
@@ -1473,7 +1484,7 @@
                                         "displayField": "label",
                                         "forceSelection": true,
                                         "queryMode": "local",
-                                        "store": "AllLanguagesStore3",
+                                        "store": "ImportTranslationLanguageStore",
                                         "valueField": "locale"
                                     },
                                     "designerId": "b4a5ad54-ea01-492b-8985-90d3bd4402ef"
@@ -1666,7 +1677,7 @@
                                         "displayField": "label",
                                         "forceSelection": true,
                                         "queryMode": "local",
-                                        "store": "AllLanguagesStore3",
+                                        "store": "ImportTranslationLanguageStore",
                                         "valueField": "locale"
                                     },
                                     "designerId": "7a2a4dd2-7502-48da-bfc4-e2451505af65"
@@ -1711,8 +1722,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
                         "layout|flex": 1,
+                        "dock": "bottom",
                         "fieldLabel": "Label"
                     },
                     "designerId": "3de75f9e-e07d-4562-b632-48b419eea437",

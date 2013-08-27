@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "inportFieldModel",
+        "storeId": "LocalizedFieldSelectorStore",
+        "designer|userClassName": "LocalizedFieldSelectorStore",
+        "designer|userAlias": "LocalizedFieldSelectorStore"
+    },
+    "designerId": "d25935ab-5ec6-440b-bb41-0a8bf94cca6e"
+}

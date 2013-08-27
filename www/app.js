@@ -331,7 +331,9 @@ Ext.application({
         'CTLayouts',
         'CTFieldsForLayouts',
         'InportAsFieldTranslationStore',
-        'InportAsTaxoTranslationStore'
+        'InportAsTaxoTranslationStore',
+        'LocalizedFieldSelectorStore',
+        'ImportTranslationLanguageStore'
     ],
     views: [
         'MyContainer',

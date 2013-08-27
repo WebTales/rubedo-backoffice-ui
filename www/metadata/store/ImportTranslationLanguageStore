@@ -1,0 +1,21 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "model": "languageModel",
+        "storeId": "ImportTranslationLanguageStore",
+        "designer|userClassName": "ImportTranslationLanguageStore",
+        "designer|userAlias": "ImportTranslationLanguageStore",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "6e77cf93-78ba-4056-88cc-f56989098e3d"
+}

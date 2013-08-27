@@ -412,6 +412,17 @@ Ext.define('Rubedo.view.InportInterface', {
                             xtype: 'hiddenfield',
                             isValid: function() {
                                 var store=Ext.getStore("InportAsFieldStore");
+                                var secondStore= Ext.getStore("LocalizedFieldSelectorStore");
+                                secondStore.loadData(Ext.Array.pluck(store.query("localizable",true).items,"data"));
+                                var languagesStore=Ext.getStore("ImportTranslationLanguageStore");
+                                var newL=[ ];
+                                var workingL=Ext.getCmp("workingLanguageField").getValue();
+                                Ext.Array.forEach(Ext.getStore("AllLanguagesStore3").getRange(),function(lang){
+                                    if (lang.get("locale")!=workingL){
+                                        newL.push(lang.getData());
+                                    }
+                                });
+                                languagesStore.loadData(newL);
                                 if (store.query("protoId","text").length===0) {
                                     Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveTitleError);
                                     return(false);
@@ -530,7 +541,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         displayField: 'name',
                                         forceSelection: true,
                                         queryMode: 'local',
-                                        store: 'InportAsFieldStore',
+                                        store: 'LocalizedFieldSelectorStore',
                                         valueField: 'csvIndex'
                                     }
                                 },
@@ -552,7 +563,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         displayField: 'label',
                                         forceSelection: true,
                                         queryMode: 'local',
-                                        store: 'AllLanguagesStore3',
+                                        store: 'ImportTranslationLanguageStore',
                                         valueField: 'locale'
                                     }
                                 }
@@ -614,7 +625,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                         displayField: 'label',
                                         forceSelection: true,
                                         queryMode: 'local',
-                                        store: 'AllLanguagesStore3',
+                                        store: 'ImportTranslationLanguageStore',
                                         valueField: 'locale'
                                     }
                                 }
@@ -645,8 +656,8 @@ Ext.define('Rubedo.view.InportInterface', {
                                     return(false);
                                 }
                             },
-                            dock: 'bottom',
                             flex: 1,
+                            dock: 'bottom',
                             fieldLabel: 'Label'
                         }
                     ]

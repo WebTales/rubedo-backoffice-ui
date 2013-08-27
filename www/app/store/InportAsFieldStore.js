@@ -26,7 +26,19 @@ Ext.define('Rubedo.store.InportAsFieldStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             model: 'Rubedo.model.inportFieldModel',
-            storeId: 'InportAsFieldStore'
+            storeId: 'InportAsFieldStore',
+            listeners: {
+                datachanged: {
+                    fn: me.onStoreDataChangeD,
+                    scope: me
+                }
+            }
         }, cfg)]);
+    },
+
+    onStoreDataChangeD: function(store, eOpts) {
+        var secondStore= Ext.getStore("LocalizedFieldSelectorStore");
+        secondStore.loadData(Ext.Array.pluck(store.query("localizable",true).items,"data"));
     }
+
 });

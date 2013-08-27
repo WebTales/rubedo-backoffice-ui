@@ -11,5 +11,25 @@
         "designer|userClassName": "InportAsFieldStore",
         "designer|userAlias": "InportAsFieldStore"
     },
-    "designerId": "3be2705f-c3a0-4c70-8ead-494722c051a0"
+    "designerId": "3be2705f-c3a0-4c70-8ead-494722c051a0",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreDataChangeD",
+                "implHandler": [
+                    "var secondStore= Ext.getStore(\"LocalizedFieldSelectorStore\");\r",
+                    "secondStore.loadData(Ext.Array.pluck(store.query(\"localizable\",true).items,\"data\"));"
+                ],
+                "name": "datachanged",
+                "scope": "me"
+            },
+            "designerId": "e335a5b1-4991-4f1e-b2b4-0f22ae1aef6e"
+        }
+    ]
 }
