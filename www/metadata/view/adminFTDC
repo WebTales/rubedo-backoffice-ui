@@ -931,7 +931,7 @@
                                     "            try{var myFlagCode2=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",key,false,false,true).items[0].get(\"flagCode\");}\r",
                                     "            catch(err){var myFlagCode2=\"_unknown\";}\r",
                                     "            if (myFlagCode2!=\"_unknown\"){\r",
-                                    "            returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
+                                    "                returner=returner+\" <img src=\\\"/assets/flags/16/\"+myFlagCode2+\".png\\\"> \";\r",
                                     "            }\r",
                                     "        }\r",
                                     "    });\r",
@@ -1884,7 +1884,7 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "id": "CTLayoutsGrid",
-                                "width": 200,
+                                "width": 220,
                                 "collapseDirection": "left",
                                 "collapsible": true,
                                 "title": "Layouts",
@@ -1954,6 +1954,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "disabled": true,
+                                                "id": "layoutActivatorBtn",
                                                 "iconCls": "ouiSpetit",
                                                 "text": "Activate"
                                             },
@@ -1985,6 +1987,34 @@
                                                 "allowBlank": false
                                             },
                                             "designerId": "eef694fd-4aa1-40af-b42a-b92a34290c50"
+                                        },
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "if (record.get(\"active\")){\r",
+                                                    "    return(value+' <img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/check_mark.png\"> ');\r",
+                                                    "} else {\r",
+                                                    "    return(value);\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "64e439bd-ae4b-4bc1-bf5d-2e62ad2db7a3"
                                         }
                                     ]
                                 },

@@ -1137,7 +1137,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     onRemoveCTLayoutBtnClick: function(button, e, eOpts) {
-        Ext.getCmp("NewCTLayoutWindow").getStore().remove(Ext.getCmp("NewCTLayoutWindow").getSelectionModel().getLastSelected());
+        Ext.getCmp("CTLayoutsGrid").getStore().remove(Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected());
     },
 
     onNewCTLayoutWindowSubmitBtnClick: function(button, e, eOpts) {
@@ -1299,6 +1299,25 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp('layoutElementIdField').setValue(null);
     },
 
+    onLayoutActivatorBtnClick: function(button, e, eOpts) {
+        if (button.deactivateMode){
+            Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",false);
+            Ext.getCmp("layoutActivatorBtn").setText("Activate");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
+            Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
+
+        } else {
+            var myType=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().get("type");
+            Ext.Array.forEach(Ext.getCmp("CTLayoutsGrid").getStore().query("type",myType).items,function(record){
+                record.set("active",false);
+            });
+            Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",true);
+            Ext.getCmp("layoutActivatorBtn").setText("Deactivate");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
+            Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
+        }
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1340,14 +1359,28 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("layoutsEditToolbar").enable();
         this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
         Ext.getCmp("layoutElementIdField").setValue(null);
+        Ext.getCmp("layoutActivatorBtn").enable();
+        if (record.get("active")){
+            Ext.getCmp("layoutActivatorBtn").setText("Deactivate");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
+            Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
+        } else {
+            Ext.getCmp("layoutActivatorBtn").setText("Activate");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
+            Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
+        }
     },
 
     resetLayoutsInterfaceNoSelect: function() {
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("RemoveCTLayoutBtn").disable();
         Ext.getCmp("layoutsEditToolbar").disable();
+        Ext.getCmp("layoutActivatorBtn").disable();
         Ext.getStore("CTFieldsForLayouts").removeAll();
         Ext.getCmp("layoutElementIdField").setValue(null);
+        Ext.getCmp("layoutActivatorBtn").setText("Activate");
+        Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
+        Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
     },
 
     getFieldsListForLayout: function() {
@@ -1649,6 +1682,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#removeLayoutElementBtn": {
                 click: this.onRemoveLayoutElementBtnClick
+            },
+            "#layoutActivatorBtn": {
+                click: this.onLayoutActivatorBtnClick
             }
         });
     }

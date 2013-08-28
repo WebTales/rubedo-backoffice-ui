@@ -698,7 +698,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'gridpanel',
                                     id: 'CTLayoutsGrid',
-                                    width: 200,
+                                    width: 220,
                                     collapseDirection: 'left',
                                     collapsible: true,
                                     title: 'Layouts',
@@ -724,6 +724,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    disabled: true,
+                                                    id: 'layoutActivatorBtn',
                                                     iconCls: 'ouiSpetit',
                                                     text: 'Activate'
                                                 }
@@ -733,6 +735,13 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                if (record.get("active")){
+                                                    return(value+' <img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/check_mark.png"> ');
+                                                } else {
+                                                    return(value);
+                                                }
+                                            },
                                             dataIndex: 'name',
                                             text: 'Name',
                                             editor: {

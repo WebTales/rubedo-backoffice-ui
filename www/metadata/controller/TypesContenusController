@@ -1561,7 +1561,7 @@
             "userConfig": {
                 "fn": "onRemoveCTLayoutBtnClick",
                 "implHandler": [
-                    "Ext.getCmp(\"NewCTLayoutWindow\").getStore().remove(Ext.getCmp(\"NewCTLayoutWindow\").getSelectionModel().getLastSelected());"
+                    "Ext.getCmp(\"CTLayoutsGrid\").getStore().remove(Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected());"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -1636,7 +1636,17 @@
                     "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").enable();\r",
                     "this.restoreLayout(record.get(\"rows\"),0,Ext.getCmp(\"layoutEditionPanel\"));\r",
-                    "Ext.getCmp(\"layoutElementIdField\").setValue(null);"
+                    "Ext.getCmp(\"layoutElementIdField\").setValue(null);\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").enable();\r",
+                    "if (record.get(\"active\")){\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setText(\"Deactivate\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=true;\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setText(\"Activate\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
+                    "}"
                 ]
             },
             "designerId": "21e062f4-7c55-4716-99ff-2d34f03eb17d"
@@ -1654,8 +1664,12 @@
                     "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").disable();\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").disable();\r",
                     "Ext.getStore(\"CTFieldsForLayouts\").removeAll();\r",
-                    "Ext.getCmp(\"layoutElementIdField\").setValue(null);"
+                    "Ext.getCmp(\"layoutElementIdField\").setValue(null);\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").setText(\"Activate\");\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;"
                 ]
             },
             "designerId": "5f7fd77a-3e31-43fd-b713-7bd238c954d2"
@@ -2200,6 +2214,40 @@
                 "designer|controlQuery": "#removeLayoutElementBtn"
             },
             "designerId": "93172e5a-230a-4341-b5f7-6ce91deff08e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLayoutActivatorBtnClick",
+                "implHandler": [
+                    "if (button.deactivateMode){\r",
+                    "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",false);\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setText(\"Activate\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
+                    "\r",
+                    "} else {\r",
+                    "    var myType=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().get(\"type\");\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"CTLayoutsGrid\").getStore().query(\"type\",myType).items,function(record){\r",
+                    "    \trecord.set(\"active\",false);\r",
+                    "    });\r",
+                    "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",true);\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setText(\"Deactivate\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=true;\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#layoutActivatorBtn"
+            },
+            "designerId": "9d4ca793-f6fe-4ebf-86c5-9eafdb51653b"
         }
     ]
 }
