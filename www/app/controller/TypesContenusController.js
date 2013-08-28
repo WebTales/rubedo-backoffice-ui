@@ -1025,6 +1025,25 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp("layoutElementIdField").setValue(component.getId());
                 e.stopEvent();
             });
+        } else {
+            component.getEl().on("mouseover", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+                if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==component.id)) {
+                    component.setIconCls('selectBloc');
+                }
+                e.stopEvent();
+            });
+            component.getEl().on("mouseout", function(e){
+                var prevSelected = Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+                if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==component.id)) {
+                component.setIconCls();}
+                e.stopEvent();
+            });
+            component.getEl().on("click", function(e){
+                Ext.getCmp("layoutElementIdField").setValue(component.getId());
+                e.stopEvent();
+            });
+
         }
     },
 
@@ -1210,10 +1229,20 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 }
                 me.renderRowTools(newSelected);
             } else if (newSelected.mType=="col"){
-                Ext.getCmp("removeLayoutElementBtn").enable()
+                Ext.getCmp("removeLayoutElementBtn").enable();
+                if (!Ext.isEmpty(Ext.getStore("CTFieldsForLayouts").getRange())){
+                    Ext.getCmp("assignFieldToColBtn").enable();
+                }
                 Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);
                 Ext.getCmp("layoutPropsPanel").setIconCls('editZone');
                 me.renderColumnTools(newSelected);
+            } else if (newSelected.isXType("unBloc")){
+                Ext.getCmp("removeLayoutElementBtn").enable();
+                newSelected.setIconCls('editBloc');
+                newSelected.removeBodyCls('selectedelement');
+                Ext.getCmp("layoutPropsPanel").setIconCls('editBloc');
+                Ext.getCmp("layoutPropsPanel").setTitle("Field : "+newSelected.title);
+
             }
         }
 
@@ -1222,6 +1251,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var oldSelected=Ext.getCmp(oldValue);
         if (!Ext.isEmpty(oldSelected)){
             oldSelected.removeBodyCls('selectedelement');
+            oldSelected.setIconCls();
         }
     },
 
@@ -1282,7 +1312,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     onRemoveLayoutElementBtnClick: function(button, e, eOpts) {
+        var me=this;
         var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+        var recalc=false;
+        if (cible.isXType("unBloc")){
+            recalc=true;
+        }
         if (cible.mType=="col"){
             var myEol=cible.up().getComponent("eol");
             var myOffset=cible.previousSibling();
@@ -1297,6 +1332,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
         cible.up().remove(cible);
         Ext.getCmp('layoutElementIdField').setValue(null);
+        if (recalc){
+            me.getFieldsListForLayout();
+        }
     },
 
     onLayoutActivatorBtnClick: function(button, e, eOpts) {
@@ -1316,6 +1354,32 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
         }
+    },
+
+    onAssignFieldToColBtnClick: function(button, e, eOpts) {
+        Ext.widget("AssignFieldToColWindow").show();
+    },
+
+    onAssignFieldToLayoutSubmitBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var form=button.up().getForm();
+        if (form.isValid()){
+            var name=form.getValues().field;
+            var label=Ext.getStore("CTFieldsForLayouts").findRecord("name",name).get("label");
+            var newField = Ext.widget('unBloc', {title:label});
+            newField.responsive={
+                "phone":true,
+                "tablet":true,
+                "desktop":true
+            };
+            newField.elementStyle="";
+            newField.flex=1;
+            newField.name=name;
+            Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue()).add(newField);
+            button.up().up().close();
+            me.getFieldsListForLayout();
+        }
+
     },
 
     miseAPlatTaxo: function(cible, resultat) {
@@ -1354,7 +1418,6 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     resetLayoutsInterfaceSelect: function(record) {
         Ext.getCmp("RemoveCTLayoutBtn").enable();
-        this.getFieldsListForLayout();
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("layoutsEditToolbar").enable();
         this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
@@ -1369,6 +1432,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
         }
+        this.getFieldsListForLayout();
     },
 
     resetLayoutsInterfaceNoSelect: function() {
@@ -1384,9 +1448,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     getFieldsListForLayout: function() {
-        var discoveredFields=[{name:"text",label:Rubedo.RubedoAutomatedElementsLoc.titleText},{name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText}];
+        var discoveredFields=[ ];
+        var usedFields=Ext.Array.pluck(Ext.getCmp("layoutEditionPanel").query("unBloc"),"name");
+        if (!Ext.Array.contains(usedFields,"text")){
+            discoveredFields.push({name:"text",label:Rubedo.RubedoAutomatedElementsLoc.titleText});
+        }
+        if (!Ext.Array.contains(usedFields,"summary")){
+            discoveredFields.push({name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText});
+        }
         Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
-            discoveredFields.push({name:field.name,label:field.fieldLabel});
+            if (!Ext.Array.contains(usedFields,field.name)){
+                discoveredFields.push({name:field.name,label:field.fieldLabel});
+            }
         });
         Ext.getStore("CTFieldsForLayouts").removeAll();
         Ext.getStore("CTFieldsForLayouts").add(discoveredFields);
@@ -1400,7 +1473,16 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var offset=0;
             Ext.Array.forEach(row.items.items, function(col){
                 if (col.isXType("panel")) {
-
+                    var fields=[ ];
+                    Ext.Array.forEach(col.items.items, function(field){
+                        fields.push({
+                            title:field.title,
+                            responsive:field.responsive,
+                            name:field.name,
+                            elementStyle:field.elementStyle,
+                            flex:field.flex
+                        });
+                    });
                     newCols.push({
                         responsive:col.responsive,
                         classHTML:col.classHTML,
@@ -1409,6 +1491,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         span:col.flex,
                         id:col.id,
                         mType:"col",
+                        fields:fields,
                         offset:offset
 
                     });
@@ -1579,6 +1662,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 }
 
                 eolWidth=eolWidth-column.span;
+                Ext.Array.forEach(column.fields,function(field){
+                    newCol.add(Ext.widget("unBloc",field));
+                });
                 newRow.add(newCol);
 
             });
@@ -1685,6 +1771,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#layoutActivatorBtn": {
                 click: this.onLayoutActivatorBtnClick
+            },
+            "#assignFieldToColBtn": {
+                click: this.onAssignFieldToColBtnClick
+            },
+            "#assignFieldToLayoutSubmitBtn": {
+                click: this.onAssignFieldToLayoutSubmitBtnClick
             }
         });
     }

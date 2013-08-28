@@ -822,6 +822,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 {
                                                     xtype: 'button',
                                                     disabled: true,
+                                                    id: 'assignFieldToColBtn',
                                                     iconCls: 'add',
                                                     text: 'Assign field'
                                                 },

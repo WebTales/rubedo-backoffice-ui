@@ -8,19 +8,19 @@
     "userConfig": {
         "localiserId": null,
         "height": null,
-        "width": 400,
-        "designer|userClassName": "NewCTLayoutWindow",
-        "designer|userAlias": "NewCTLayoutWindow",
+        "width": 261,
+        "designer|userClassName": "AssignFieldToColWindow",
+        "designer|userAlias": "AssignFieldToColWindow",
         "resizable": false,
         "layout": "fit",
-        "title": "New layout",
+        "title": "Assign field",
         "constrain": true,
         "modal": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "designerId": "c588057d-fc9e-48a9-a7cc-943965704e92",
+    "designerId": "821e0b00-e3dd-45ff-b0e1-272b71d595bd",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -40,31 +40,8 @@
                 "bodyPadding": 10,
                 "title": ""
             },
-            "designerId": "c8815506-08b2-4af2-ace2-b58dbca09082",
+            "designerId": "ba1ffb02-b668-419a-87a4-0ee7354832c7",
             "cn": [
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Nom",
-                        "name": "name",
-                        "allowBlank": false
-                    },
-                    "designerId": "3081547e-faa4-4a62-8318-53bb433d7576",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ]
-                },
                 {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
@@ -74,20 +51,23 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "fieldLabel": "Type",
-                        "name": "type",
+                        "fieldLabel": "Field",
+                        "labelWidth": 50,
+                        "name": "field",
                         "allowBlank": false,
                         "editable": false,
+                        "displayField": "label",
                         "forceSelection": true,
                         "queryMode": "local",
                         "store": [
-                            "[\"Detail\",\"Summary\"]"
-                        ]
+                            "CTFieldsForLayouts"
+                        ],
+                        "valueField": "name"
                     },
                     "configAlternates": {
                         "store": "array"
                     },
-                    "designerId": "11d4e6ed-6e42-4ebf-9921-0b946cc90713"
+                    "designerId": "0dd0eb78-8281-4d85-ae99-85c6b2eee62f"
                 },
                 {
                     "type": "Ext.button.Button",
@@ -99,11 +79,11 @@
                     "userConfig": {
                         "localiserId": null,
                         "layout|anchor": "100%",
-                        "id": "NewCTLayoutWindowSubmitBtn",
+                        "id": "assignFieldToLayoutSubmitBtn",
                         "scale": "medium",
-                        "text": "Create new layout"
+                        "text": "Assign this field to selected column"
                     },
-                    "designerId": "c8ef831e-d154-4bd3-b604-d868f95ae902",
+                    "designerId": "9c6fa38c-e26c-4a95-8308-5013e7e78a61",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

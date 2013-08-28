@@ -182,7 +182,8 @@ Ext.application({
         'Rubedo.view.CustomThemesInterface',
         'Rubedo.view.NewCustomThemeWindow',
         'Rubedo.view.AdvancedColorField',
-        'Rubedo.view.NewCTLayoutWindow'
+        'Rubedo.view.NewCTLayoutWindow',
+        'Rubedo.view.AssignFieldToColWindow'
     ],
     models: [
         'sitesDataModel',
@@ -500,7 +501,8 @@ Ext.application({
         'CustomThemesInterface',
         'NewCustomThemeWindow',
         'AdvancedColorField',
-        'NewCTLayoutWindow'
+        'NewCTLayoutWindow',
+        'AssignFieldToColWindow'
     ],
     autoCreateViewport: true,
     controllers: [
