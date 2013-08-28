@@ -1439,6 +1439,103 @@
                                 "name": "headingsFontWeight"
                             },
                             "designerId": "68bd8e43-217b-4825-81f5-b50a9e83437e"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "H1 proportion",
+                                "name": "headingH1Multiplier",
+                                "minValue": 0,
+                                "step": 0.25
+                            },
+                            "designerId": "95b8118b-815d-4968-9994-c580ea34031b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "H2 proportion",
+                                "name": "headingH2Multiplier",
+                                "minValue": 0,
+                                "step": 0.25
+                            },
+                            "designerId": "2f7ad4ab-b490-45ed-b303-6cf6e13cdcf6"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "H3 proportion",
+                                "name": "headingH3Multiplier",
+                                "minValue": 0,
+                                "step": 0.25
+                            },
+                            "designerId": "ded29d02-3ac6-4538-a52e-dcf1c8e98e7c"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "H4 proportion",
+                                "name": "headingH4Multiplier",
+                                "minValue": 0,
+                                "step": 0.25
+                            },
+                            "designerId": "d3d51f06-307e-4d16-b1db-d78e7892cf08"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "H5 proportion",
+                                "name": "headingH5Multiplier",
+                                "minValue": 0,
+                                "step": 0.25
+                            },
+                            "designerId": "b1fa44be-29b6-4daf-bbd4-625a84cc15dd"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": null,
+                                "fieldLabel": "H6 proportion",
+                                "name": "headingH6Multiplier",
+                                "allowBlank": false,
+                                "minValue": 0,
+                                "step": 0.25
+                            },
+                            "designerId": "27744be2-9f1d-4b5d-a531-545a7fed99e3"
                         }
                     ]
                 }

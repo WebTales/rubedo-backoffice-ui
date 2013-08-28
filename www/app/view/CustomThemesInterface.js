@@ -561,6 +561,49 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     xtype: 'textfield',
                                     fieldLabel: 'Heading font weight',
                                     name: 'headingsFontWeight'
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    fieldLabel: 'H1 proportion',
+                                    name: 'headingH1Multiplier',
+                                    minValue: 0,
+                                    step: 0.25
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    fieldLabel: 'H2 proportion',
+                                    name: 'headingH2Multiplier',
+                                    minValue: 0,
+                                    step: 0.25
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    fieldLabel: 'H3 proportion',
+                                    name: 'headingH3Multiplier',
+                                    minValue: 0,
+                                    step: 0.25
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    fieldLabel: 'H4 proportion',
+                                    name: 'headingH4Multiplier',
+                                    minValue: 0,
+                                    step: 0.25
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    fieldLabel: 'H5 proportion',
+                                    name: 'headingH5Multiplier',
+                                    minValue: 0,
+                                    step: 0.25
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    fieldLabel: 'H6 proportion',
+                                    name: 'headingH6Multiplier',
+                                    allowBlank: false,
+                                    minValue: 0,
+                                    step: 0.25
                                 }
                             ]
                         }

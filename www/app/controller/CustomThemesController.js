@@ -85,7 +85,13 @@ Ext.define('Rubedo.controller.CustomThemesController', {
                 "baseFontSize": "14px",
                 "baseLineHeight": "20px",
                 "headingsFontFamily": "inherit",
-                "headingsFontWeight": "bold"
+                "headingsFontWeight": "bold",
+                "headingH1Multiplier": 2.75,
+                "headingH2Multiplier": 2.25,
+                "headingH3Multiplier": 1.75,
+                "headingH4Multiplier": 1.25,
+                "headingH5Multiplier": 1,
+                "headingH6Multiplier": 0.85
             };
             newRec.set("lessVarsJson",Ext.JSON.encode(defaultLessVars));
             Ext.getStore("CustomThemes").add(newRec);
@@ -199,7 +205,11 @@ Ext.define('Rubedo.controller.CustomThemesController', {
     pushLessToSimulator: function(vars) {
         var refinedVars={ };
         Ext.Object.each(vars, function(key, value, myself) {
-            refinedVars['@'+key]=value;
+            var interm=value;
+            if (Ext.isNumber(interm)){
+                interm=interm.toString();
+            }
+            refinedVars['@'+key]=interm;
         });
         if ((!Ext.isEmpty(Ext.firefoxVersion))&&(Ext.firefoxVersion>0)){
             themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);
