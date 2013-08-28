@@ -2510,6 +2510,41 @@
                 "designer|controlQuery": "#assignFieldToLayoutSubmitBtn"
             },
             "designerId": "7abe26fd-6f0f-428e-a881-96016269726b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLayoutFieldInjectorGridItemDblClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var target=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());\r",
+                    "if ((!Ext.isEmpty(target))&&(target.mType==\"col\")){\r",
+                    "    var name=record.get(\"name\");\r",
+                    "    var label=record.get(\"label\");\r",
+                    "    var newField = Ext.widget('unBloc', {title:label,id:\"CTLayout-\"+Ext.id()});\r",
+                    "    newField.responsive={\r",
+                    "        \"phone\":true,\r",
+                    "        \"tablet\":true,\r",
+                    "        \"desktop\":true\r",
+                    "    };\r",
+                    "    newField.elementStyle=\"\";\r",
+                    "    newField.flex=1;\r",
+                    "    newField.name=name;\r",
+                    "    target.add(newField);\r",
+                    "    me.getFieldsListForLayout();\r",
+                    "}"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#CTLayoutFieldInjectorGrid"
+            },
+            "designerId": "1b7e7dae-cf9c-4ac3-a96a-fdcea4e3ae90"
         }
     ]
 }

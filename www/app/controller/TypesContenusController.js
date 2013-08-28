@@ -1385,6 +1385,26 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     },
 
+    onCTLayoutFieldInjectorGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        var me=this;
+        var target=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());
+        if ((!Ext.isEmpty(target))&&(target.mType=="col")){
+            var name=record.get("name");
+            var label=record.get("label");
+            var newField = Ext.widget('unBloc', {title:label,id:"CTLayout-"+Ext.id()});
+            newField.responsive={
+                "phone":true,
+                "tablet":true,
+                "desktop":true
+            };
+            newField.elementStyle="";
+            newField.flex=1;
+            newField.name=name;
+            target.add(newField);
+            me.getFieldsListForLayout();
+        }
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1909,6 +1929,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#assignFieldToLayoutSubmitBtn": {
                 click: this.onAssignFieldToLayoutSubmitBtnClick
+            },
+            "#CTLayoutFieldInjectorGrid": {
+                itemdblclick: this.onCTLayoutFieldInjectorGridItemDblClick
             }
         });
     }

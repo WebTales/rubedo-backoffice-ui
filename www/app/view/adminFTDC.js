@@ -767,6 +767,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'gridpanel',
+                                    id: 'CTLayoutFieldInjectorGrid',
                                     width: 200,
                                     collapseDirection: 'left',
                                     collapsible: true,
