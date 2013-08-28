@@ -1665,7 +1665,7 @@
                     "Ext.getCmp(\"importElement\").enable();\r",
                     "Ext.getCmp(\"exportElement\").disable();\r",
                     "var propEdit=Ext.getCmp('elementEditControl');\r",
-                    "propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.simpleQueryText.rootText);\r",
+                    "propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.rootText);\r",
                     "propEdit.setIconCls('editZone');\r",
                     "propEdit.removeAll();\r",
                     "var configSpec = Ext.widget('ConfigSpecBloc');\r",

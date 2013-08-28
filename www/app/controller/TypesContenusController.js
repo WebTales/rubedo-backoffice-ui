@@ -1182,10 +1182,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     onLayoutElementIdFieldChange: function(field, newValue, oldValue, eOpts) {
+        var me=this;
         var newSelected=Ext.getCmp(newValue);
         Ext.Array.forEach(Ext.getCmp("layoutsEditToolbar").items.items,function(item){
             item.disable();
         });
+        Ext.getCmp("layoutPropsPanel").removeAll();
+        Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);
+        Ext.getCmp("layoutPropsPanel").setIconCls();
         Ext.getCmp("saveCTLayoutBtn").enable();
         if (!Ext.isEmpty(newSelected)){
             newSelected.getEl().frame(MyPrefData.themeColor);
@@ -1194,13 +1198,22 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
             if (newSelected.getId()=="layoutEditionPanel"){
                 Ext.getCmp("addRowToLayoutBtn").enable();
+                Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.rootText);
+                Ext.getCmp("layoutPropsPanel").setIconCls('editZone');
+                me.renderMainBoxTools(newSelected);
             } else if (newSelected.mType=="row"){
-                Ext.getCmp("removeLayoutElementBtn").enable()
+                Ext.getCmp("removeLayoutElementBtn").enable();
+                Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.lignText);
+                Ext.getCmp("layoutPropsPanel").setIconCls('editZone');
                 if (newSelected.getComponent("eol").flex>0){
                     Ext.getCmp("addColToLayoutBtn").enable();
                 }
+                me.renderRowTools(newSelected);
             } else if (newSelected.mType=="col"){
                 Ext.getCmp("removeLayoutElementBtn").enable()
+                Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);
+                Ext.getCmp("layoutPropsPanel").setIconCls('editZone');
+                me.renderColumnTools(newSelected);
             }
         }
 
@@ -1382,6 +1395,103 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 });
             });
             return nRows;
+    },
+
+    renderRowTools: function(component) {
+
+    },
+
+    renderMainBoxTools: function(component) {
+
+    },
+
+    renderColumnTools: function(component) {
+        var me=this;
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        var offsetEdit=Ext.widget('numberfield',{
+            itemId:"offsetEditor",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.offsetText,
+            editable:false,
+            labelWidth:60,
+            allowDecimals:false,
+            anchor:"100%",
+            value:0,
+            minValue:0
+        });
+
+        var spanEdit=Ext.widget('numberfield',{
+            itemId:"spanEditor",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.spanText,
+            labelWidth:60,
+            editable:false,
+            allowDecimals:false,
+            anchor:"100%",
+            value:component.flex,
+            minValue:1
+        });
+
+
+
+        configSpec.getComponent(0).add(offsetEdit);
+        configSpec.getComponent(0).add(spanEdit);
+        me.applyConstrain(component,offsetEdit,spanEdit,false);
+        offsetEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
+        spanEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
+
+
+        Ext.getCmp("layoutPropsPanel").add(configSpec);
+    },
+
+    applyConstrain: function(target, offsetF, spanF, applyFirst) {
+        var myEol=target.up().getComponent("eol");
+        var myOffset=null;
+        if ((!Ext.isEmpty(target.prev()))&&(target.prev().isXType("container"))&&(!(target.prev().isXType("panel")))) {
+            myOffset=target.prev();
+        }
+        if (applyFirst) {
+            myEol.flex=myEol.flex+target.flex-spanF.getValue();
+            target.flex=spanF.getValue();
+            spanF.setMaxValue(target.flex+myEol.flex);
+            offsetF.setMaxValue(offsetF.getValue()+myEol.flex);
+            target.up().doLayout();
+            if (offsetF.getValue()>0){ 
+                if (Ext.isEmpty(myOffset)) {
+                    myOffset=Ext.widget("container",{flex:0,style:"{background-image:url(resources/images/stripes.png);}"});
+                    target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);
+
+
+                } 
+                myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                myOffset.flex=offsetF.getValue();
+                offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                target.up().doLayout();
+
+            } else if((offsetF.getValue()===0)) {
+                if (!Ext.isEmpty(myOffset)) {
+                    myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                    myOffset.flex=offsetF.getValue();
+                    offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                    spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                    myOffset.destroy();
+                    target.up().doLayout();      
+                } 
+
+            }
+        }
+        else {
+            if (Ext.isEmpty(myOffset)){
+                offsetF.setValue(0);
+                offsetF.setMaxValue(myEol.flex);
+            }
+            else {
+                offsetF.setValue(myOffset.flex);
+                offsetF.setMaxValue(myOffset.flex+myEol.flex); 
+            }
+
+            spanF.setValue(target.flex);
+            spanF.setMaxValue(target.flex+myEol.flex);
+        }
     },
 
     restoreLayout: function(mRows,its,cible) {

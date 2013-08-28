@@ -2244,11 +2244,51 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "width": 200,
+                                "layout": "fit",
+                                "bodyPadding": 2,
                                 "collapseDirection": "right",
                                 "collapsible": true,
+                                "iconCls": "parametres",
                                 "title": "Properties"
                             },
-                            "designerId": "881fbb69-9083-4891-b8f0-9d2b37a41589"
+                            "designerId": "881fbb69-9083-4891-b8f0-9d2b37a41589",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "layoutPropsPanel",
+                                        "layout": "fit",
+                                        "title": "Select an element"
+                                    },
+                                    "designerId": "f3ad3bb9-4fc7-4b39-85cf-4192a480bd6f",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processLayoutPropsPanel",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.title=Rubedo.RubedoAutomatedElementsLoc.selectAnElementText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "f9d2d0dd-c238-4d24-929f-35c8379bf5ab"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

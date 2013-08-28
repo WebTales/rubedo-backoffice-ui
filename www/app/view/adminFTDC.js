@@ -858,9 +858,24 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'panel',
                                     width: 200,
+                                    layout: {
+                                        type: 'fit'
+                                    },
+                                    bodyPadding: 2,
                                     collapseDirection: 'right',
                                     collapsible: true,
-                                    title: 'Properties'
+                                    iconCls: 'parametres',
+                                    title: 'Properties',
+                                    items: [
+                                        me.processLayoutPropsPanel({
+                                            xtype: 'panel',
+                                            id: 'layoutPropsPanel',
+                                            layout: {
+                                                type: 'fit'
+                                            },
+                                            title: 'Select an element'
+                                        })
+                                    ]
                                 }
                             ]
                         }
@@ -922,6 +937,11 @@ Ext.define('Rubedo.view.adminFTDC', {
         config.store=store;
         config.valueField="value";
         config.displayField="name";
+        return config;
+    },
+
+    processLayoutPropsPanel: function(config) {
+        config.title=Rubedo.RubedoAutomatedElementsLoc.selectAnElementText;
         return config;
     },
 

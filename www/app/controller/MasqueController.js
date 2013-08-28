@@ -900,7 +900,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         Ext.getCmp("importElement").enable();
         Ext.getCmp("exportElement").disable();
         var propEdit=Ext.getCmp('elementEditControl');
-        propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.simpleQueryText.rootText);
+        propEdit.setTitle(Rubedo.RubedoAutomatedElementsLoc.rootText);
         propEdit.setIconCls('editZone');
         propEdit.removeAll();
         var configSpec = Ext.widget('ConfigSpecBloc');

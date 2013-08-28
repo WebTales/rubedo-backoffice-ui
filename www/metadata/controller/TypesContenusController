@@ -1740,6 +1740,162 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "renderRowTools",
+                "designer|params": [
+                    "component"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "e346917a-6e49-4375-b293-126164c36c50"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "renderMainBoxTools",
+                "designer|params": [
+                    "component"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "661fa529-4e0a-480b-a22a-8f97d449bc66"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "renderColumnTools",
+                "designer|params": [
+                    "component"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var configSpec = Ext.widget('ConfigSpecBloc');\r",
+                    "var offsetEdit=Ext.widget('numberfield',{\r",
+                    "    itemId:\"offsetEditor\",\r",
+                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.offsetText,\r",
+                    "    editable:false,\r",
+                    "    labelWidth:60,\r",
+                    "    allowDecimals:false,\r",
+                    "    anchor:\"100%\",\r",
+                    "    value:0,\r",
+                    "    minValue:0\r",
+                    "});\r",
+                    "\r",
+                    "var spanEdit=Ext.widget('numberfield',{\r",
+                    "    itemId:\"spanEditor\",\r",
+                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.spanText,\r",
+                    "    labelWidth:60,\r",
+                    "    editable:false,\r",
+                    "    allowDecimals:false,\r",
+                    "    anchor:\"100%\",\r",
+                    "    value:component.flex,\r",
+                    "    minValue:1\r",
+                    "});\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "configSpec.getComponent(0).add(offsetEdit);\r",
+                    "configSpec.getComponent(0).add(spanEdit);\r",
+                    "me.applyConstrain(component,offsetEdit,spanEdit,false);\r",
+                    "offsetEdit.on(\"change\",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});\r",
+                    "spanEdit.on(\"change\",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});\r",
+                    "\r",
+                    "\r",
+                    "Ext.getCmp(\"layoutPropsPanel\").add(configSpec);"
+                ]
+            },
+            "designerId": "4e7f8f6e-915b-45b8-bbac-c6420215f875"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyConstrain",
+                "designer|params": [
+                    "target",
+                    "offsetF",
+                    "spanF",
+                    "applyFirst"
+                ],
+                "implHandler": [
+                    "var myEol=target.up().getComponent(\"eol\");\r",
+                    "var myOffset=null;\r",
+                    "if ((!Ext.isEmpty(target.prev()))&&(target.prev().isXType(\"container\"))&&(!(target.prev().isXType(\"panel\")))) {\r",
+                    "    myOffset=target.prev();\r",
+                    "}\r",
+                    "if (applyFirst) {\r",
+                    "    myEol.flex=myEol.flex+target.flex-spanF.getValue();\r",
+                    "    target.flex=spanF.getValue();\r",
+                    "    spanF.setMaxValue(target.flex+myEol.flex);\r",
+                    "    offsetF.setMaxValue(offsetF.getValue()+myEol.flex);\r",
+                    "    target.up().doLayout();\r",
+                    "    if (offsetF.getValue()>0){ \r",
+                    "        if (Ext.isEmpty(myOffset)) {\r",
+                    "            myOffset=Ext.widget(\"container\",{flex:0,style:\"{background-image:url(resources/images/stripes.png);}\"});\r",
+                    "            target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);\r",
+                    "\r",
+                    "\r",
+                    "        } \r",
+                    "        myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();\r",
+                    "        myOffset.flex=offsetF.getValue();\r",
+                    "        offsetF.setMaxValue(myOffset.flex+myEol.flex);\r",
+                    "        spanF.setMaxValue(spanF.getValue()+myEol.flex);\r",
+                    "        target.up().doLayout();\r",
+                    "\r",
+                    "    } else if((offsetF.getValue()===0)) {\r",
+                    "        if (!Ext.isEmpty(myOffset)) {\r",
+                    "            myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();\r",
+                    "            myOffset.flex=offsetF.getValue();\r",
+                    "            offsetF.setMaxValue(myOffset.flex+myEol.flex);\r",
+                    "            spanF.setMaxValue(spanF.getValue()+myEol.flex);\r",
+                    "            myOffset.destroy();\r",
+                    "            target.up().doLayout();      \r",
+                    "        } \r",
+                    "\r",
+                    "    }\r",
+                    "}\r",
+                    "else {\r",
+                    "    if (Ext.isEmpty(myOffset)){\r",
+                    "        offsetF.setValue(0);\r",
+                    "        offsetF.setMaxValue(myEol.flex);\r",
+                    "    }\r",
+                    "    else {\r",
+                    "        offsetF.setValue(myOffset.flex);\r",
+                    "        offsetF.setMaxValue(myOffset.flex+myEol.flex); \r",
+                    "    }\r",
+                    "\r",
+                    "    spanF.setValue(target.flex);\r",
+                    "    spanF.setMaxValue(target.flex+myEol.flex);\r",
+                    "}"
+                ]
+            },
+            "designerId": "7f64b9c5-7e17-4ddc-a0fa-97e49cebe57a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "restoreLayout",
                 "designer|params": [
                     "mRows,its,cible"
@@ -1877,25 +2033,38 @@
             "userConfig": {
                 "fn": "onLayoutElementIdFieldChange",
                 "implHandler": [
+                    "var me=this;\r",
                     "var newSelected=Ext.getCmp(newValue);\r",
                     "Ext.Array.forEach(Ext.getCmp(\"layoutsEditToolbar\").items.items,function(item){\r",
-                    "        item.disable();\r",
-                    "    });\r",
+                    "    item.disable();\r",
+                    "});\r",
+                    "Ext.getCmp(\"layoutPropsPanel\").removeAll();\r",
+                    "Ext.getCmp(\"layoutPropsPanel\").setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);\r",
+                    "Ext.getCmp(\"layoutPropsPanel\").setIconCls();\r",
                     "Ext.getCmp(\"saveCTLayoutBtn\").enable();\r",
                     "if (!Ext.isEmpty(newSelected)){\r",
                     "    newSelected.getEl().frame(MyPrefData.themeColor);\r",
                     "    newSelected.addBodyCls('selectedelement');\r",
-                    "    \r",
-                    "    \r",
+                    "\r",
+                    "\r",
                     "    if (newSelected.getId()==\"layoutEditionPanel\"){\r",
                     "        Ext.getCmp(\"addRowToLayoutBtn\").enable();\r",
+                    "        Ext.getCmp(\"layoutPropsPanel\").setTitle(Rubedo.RubedoAutomatedElementsLoc.rootText);\r",
+                    "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editZone');\r",
+                    "        me.renderMainBoxTools(newSelected);\r",
                     "    } else if (newSelected.mType==\"row\"){\r",
-                    "        Ext.getCmp(\"removeLayoutElementBtn\").enable()\r",
+                    "        Ext.getCmp(\"removeLayoutElementBtn\").enable();\r",
+                    "        Ext.getCmp(\"layoutPropsPanel\").setTitle(Rubedo.RubedoAutomatedElementsLoc.lignText);\r",
+                    "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editZone');\r",
                     "        if (newSelected.getComponent(\"eol\").flex>0){\r",
-                    "        \tExt.getCmp(\"addColToLayoutBtn\").enable();\r",
+                    "            Ext.getCmp(\"addColToLayoutBtn\").enable();\r",
                     "        }\r",
+                    "        me.renderRowTools(newSelected);\r",
                     "    } else if (newSelected.mType==\"col\"){\r",
                     "        Ext.getCmp(\"removeLayoutElementBtn\").enable()\r",
+                    "        Ext.getCmp(\"layoutPropsPanel\").setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);\r",
+                    "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editZone');\r",
+                    "        me.renderColumnTools(newSelected);\r",
                     "    }\r",
                     "}\r",
                     "\r",
