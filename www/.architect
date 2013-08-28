@@ -2210,7 +2210,6 @@
         },
         "41d656a3-49d4-4a9c-ab7d-f13817e6085f": {
             "id": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
-            "expanded": false,
             "cn": [
                 {
                     "id": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
@@ -5501,7 +5500,6 @@
                     "cn": [
                         {
                             "id": "ae5a5aab-c42c-409f-92e5-336b6fcff8e1",
-                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "b22e9634-2f00-453d-b24a-515f0c4de552"
@@ -5707,7 +5705,12 @@
                                             ]
                                         },
                                         {
-                                            "id": "082f0e51-be24-4fbc-b912-78b2c1cb5b74"
+                                            "id": "082f0e51-be24-4fbc-b912-78b2c1cb5b74",
+                                            "cn": [
+                                                {
+                                                    "id": "b4597879-0a7b-4e17-a16a-e4d69585c327"
+                                                }
+                                            ]
                                         },
                                         {
                                             "id": "819a8582-03d1-4100-8965-4d53eb5ada4d"
@@ -13161,20 +13164,18 @@
             "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
             "5b65ea9f-b5de-4028-be66-16c03842ef21",
             "da6ed701-29c3-4603-a441-221b8ebb99cf",
-            "2940e405-dc99-406d-a845-063c2c577359",
-            "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
-            "e1ff2391-5104-46be-9c01-680539baf938"
+            "2a997cf3-fe50-4034-bc1b-61cbb5863c12"
         ]
     },
     "canvasState": {
-        "topInstance": "e1ff2391-5104-46be-9c01-680539baf938"
+        "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
-        "selectedInstance": "9feebaf3-be11-4e03-ab04-6fd563da8728"
+        "topInstance": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
+        "selectedInstance": "6cb721ad-22c6-4105-b41a-9b7c733393d2"
     },
     "codeState": {
-        "topInstance": "b3b24ed4-5a5b-41d6-8150-b2a668f6491b"
+        "topInstance": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0"
     },
     "editMode": "code"
 }

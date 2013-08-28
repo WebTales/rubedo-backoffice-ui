@@ -382,6 +382,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [
@@ -752,7 +753,10 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     ],
                                     features: [
                                         {
-                                            ftype: 'grouping'
+                                            ftype: 'grouping',
+                                            groupHeaderTpl: [
+                                                '{name}'
+                                            ]
                                         }
                                     ],
                                     plugins: [

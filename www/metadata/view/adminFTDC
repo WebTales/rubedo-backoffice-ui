@@ -954,6 +954,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "disabled": true,
                 "id": "tabPanTC",
                 "iconCls": null,
                 "activeTab": 0
@@ -2025,7 +2026,24 @@
                                         "type": "array"
                                     },
                                     "codeClass": null,
-                                    "designerId": "082f0e51-be24-4fbc-b912-78b2c1cb5b74"
+                                    "designerId": "082f0e51-be24-4fbc-b912-78b2c1cb5b74",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "groupHeaderTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "implHandler": [
+                                                    "{name}"
+                                                ],
+                                                "designer|displayName": "groupHeaderTpl"
+                                            },
+                                            "designerId": "b4597879-0a7b-4e17-a16a-e4d69585c327"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.plugin.CellEditing",

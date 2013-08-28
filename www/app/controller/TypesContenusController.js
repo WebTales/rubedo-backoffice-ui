@@ -1262,6 +1262,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             header:false,
             mType:"row",
             flex:1,
+            id:"CTLayout-"+Ext.id(),
             elementStyle:"",
             responsive:{
                 phone:true,
@@ -1290,6 +1291,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 flex:1,
                 elementStyle:"",
                 final:isFinalCol,
+                id:"CTLayout-"+Ext.id(),
                 responsive:{
                     phone:true,
                     tablet:true,
@@ -1367,7 +1369,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         if (form.isValid()){
             var name=form.getValues().field;
             var label=Ext.getStore("CTFieldsForLayouts").findRecord("name",name).get("label");
-            var newField = Ext.widget('unBloc', {title:label});
+            var newField = Ext.widget('unBloc', {title:label,id:"CTLayout-"+Ext.id()});
             newField.responsive={
                 "phone":true,
                 "tablet":true,
@@ -1481,16 +1483,15 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             responsive:field.responsive,
                             name:field.name,
                             elementStyle:field.elementStyle,
+                            classHTML:field.classHTML,
                             flex:field.flex
                         });
                     });
                     newCols.push({
                         responsive:col.responsive,
                         classHTML:col.classHTML,
-                        idHTML:col.idHTML,
                         elementStyle:col.elementStyle,
                         span:col.flex,
-                        id:col.id,
                         mType:"col",
                         fields:fields,
                         offset:offset
@@ -1501,12 +1502,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
                 });
                 nRows.push({
-                    id:row.id,
                     elementStyle:row.elementStyle,
                     mType:"row",
                     responsive:row.responsive,
                     classHTML:row.classHTML,
-                    idHTML:row.idHTML,
                     columns: newCols
 
                 });
@@ -1515,11 +1514,99 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     renderRowTools: function(component) {
+        var me=this;
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
+            anchor:"100%",
+            labelWidth:60,
+            margin:"0 0 10 0",
+            vertical:true,
+            columns:1,
+            items: [
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            ]
 
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eClassHTMLField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.classHTML=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.classHTML
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.elementStyle
+        }));
+        Ext.getCmp("layoutPropsPanel").add(configSpec);
     },
 
     renderFieldTools: function(component) {
+        var me=this;
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
+            anchor:"100%",
+            labelWidth:60,
+            margin:"0 0 10 0",
+            vertical:true,
+            columns:1,
+            items: [
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            ]
 
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eClassHTMLField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.classHTML=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.classHTML
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.elementStyle
+        }));
+        Ext.getCmp("layoutPropsPanel").add(configSpec);
     },
 
     renderMainBoxTools: function(component) {
@@ -1529,6 +1616,20 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     renderColumnTools: function(component) {
         var me=this;
         var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
+            anchor:"100%",
+            labelWidth:60,
+            margin:"0 0 10 0",
+            vertical:true,
+            columns:1,
+            items: [
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            ]
+
+        }));
         var offsetEdit=Ext.widget('numberfield',{
             itemId:"offsetEditor",
             fieldLabel:Rubedo.RubedoAutomatedElementsLoc.offsetText,
@@ -1559,7 +1660,34 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         offsetEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
         spanEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
 
-
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eClassHTMLField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.classHTML=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.classHTML
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.elementStyle
+        }));
         Ext.getCmp("layoutPropsPanel").add(configSpec);
     },
 
@@ -1621,12 +1749,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var newRow = Ext.widget('panel', {
                 header:false,
                 mType:"row",
-                id:row.id,
                 elementStyle:row.elementStyle,
-                elementTag:row.elementTag,
                 responsive:row.responsive,
                 classHTML:row.classHTML,
-                idHTML:row.idHTML,
+                id:"CTLayout-"+Ext.id(),
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -1650,11 +1776,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     flex:column.span,
                     final:isFinalCol,
                     mType:'col',
-                    id:column.id,
+                    id:"CTLayout-"+Ext.id(),
                     elementStyle:column.elementStyle,
                     responsive:column.responsive,
                     classHTML:column.classHTML,
-                    idHTML:column.idHTML,
                     margin:4,
                     layout: {
                         type: 'vbox',
@@ -1668,7 +1793,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
                 eolWidth=eolWidth-column.span;
                 Ext.Array.forEach(column.fields,function(field){
-                    newCol.add(Ext.widget("unBloc",field));
+                    var cloned=Ext.clone(field);
+                    cloned.id="CTLayout-"+Ext.id();
+                    newCol.add(Ext.widget("unBloc",cloned));
                 });
                 newRow.add(newCol);
 
