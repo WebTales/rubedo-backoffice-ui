@@ -1742,7 +1742,7 @@
                     "    var offset=0;\r",
                     "    Ext.Array.forEach(row.items.items, function(col){\r",
                     "        if (col.isXType(\"panel\")) {\r",
-                    "\t\t\tvar fields=[ ];\r",
+                    "            var fields=[ ];\r",
                     "            Ext.Array.forEach(col.items.items, function(field){\r",
                     "                fields.push({\r",
                     "                    title:field.title,\r",
@@ -1801,6 +1801,24 @@
                 ]
             },
             "designerId": "e346917a-6e49-4375-b293-126164c36c50"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "renderFieldTools",
+                "designer|params": [
+                    "component"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "74b77068-86c4-4c10-b599-52db74dc5c8a"
         },
         {
             "type": "basicfunction",
@@ -2129,6 +2147,7 @@
                     "        newSelected.removeBodyCls('selectedelement');\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editBloc');\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setTitle(\"Field : \"+newSelected.title);\r",
+                    "        me.renderFieldTools(newSelected);\r",
                     "        \r",
                     "    }\r",
                     "}\r",

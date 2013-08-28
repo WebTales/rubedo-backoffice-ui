@@ -1242,6 +1242,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 newSelected.removeBodyCls('selectedelement');
                 Ext.getCmp("layoutPropsPanel").setIconCls('editBloc');
                 Ext.getCmp("layoutPropsPanel").setTitle("Field : "+newSelected.title);
+                me.renderFieldTools(newSelected);
 
             }
         }
@@ -1514,6 +1515,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     renderRowTools: function(component) {
+
+    },
+
+    renderFieldTools: function(component) {
 
     },
 
