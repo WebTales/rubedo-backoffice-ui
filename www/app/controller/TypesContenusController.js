@@ -1043,6 +1043,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp("layoutElementIdField").setValue(component.getId());
                 e.stopEvent();
             });
+            component.header.add(Ext.widget("tool",{
+                type:"close",
+                handler:function(){
+                    component.up().remove(component);
+                    me.getFieldsListForLayout();
+                }
+            }));
 
         }
     },
@@ -1636,6 +1643,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     renderColumnTools: function(component) {
         var me=this;
         var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('displayfield',{
+            value:"",
+            labelWidth:180,
+            fieldLabel:"Double-click available fields to assign to this column"
+
+
+        }));
         configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
             fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
             anchor:"100%",
