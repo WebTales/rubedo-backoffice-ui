@@ -2268,6 +2268,8 @@
                     "        Ext.getCmp(\"removeLayoutElementBtn\").enable();\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setTitle(Rubedo.RubedoAutomatedElementsLoc.lignText);\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editZone');\r",
+                    "        Ext.getCmp(\"moveLayoutItemUpBtn\").enable();\r",
+                    "        Ext.getCmp(\"moveLayoutItemDownBtn\").enable();\r",
                     "        if (newSelected.getComponent(\"eol\").flex>0){\r",
                     "            Ext.getCmp(\"addColToLayoutBtn\").enable();\r",
                     "        }\r",
@@ -2275,7 +2277,7 @@
                     "    } else if (newSelected.mType==\"col\"){\r",
                     "        Ext.getCmp(\"removeLayoutElementBtn\").enable();\r",
                     "        if (!Ext.isEmpty(Ext.getStore(\"CTFieldsForLayouts\").getRange())){\r",
-                    "        \tExt.getCmp(\"assignFieldToColBtn\").enable();\r",
+                    "            Ext.getCmp(\"assignFieldToColBtn\").enable();\r",
                     "        }\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editZone');\r",
@@ -2284,10 +2286,12 @@
                     "        Ext.getCmp(\"removeLayoutElementBtn\").enable();\r",
                     "        newSelected.setIconCls('editBloc');\r",
                     "        newSelected.removeBodyCls('selectedelement');\r",
+                    "        Ext.getCmp(\"moveLayoutItemUpBtn\").enable();\r",
+                    "        Ext.getCmp(\"moveLayoutItemDownBtn\").enable();\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setIconCls('editBloc');\r",
                     "        Ext.getCmp(\"layoutPropsPanel\").setTitle(\"Field : \"+newSelected.title);\r",
                     "        me.renderFieldTools(newSelected);\r",
-                    "        \r",
+                    "\r",
                     "    }\r",
                     "}\r",
                     "\r",
@@ -2559,6 +2563,54 @@
                 "designer|controlQuery": "#CTLayoutFieldInjectorGrid"
             },
             "designerId": "1b7e7dae-cf9c-4ac3-a96a-fdcea4e3ae90"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMoveLayoutItemUpBtnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp(\"layoutElementIdField\").getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    if (pos > 0) {\r",
+                    "        field.up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveLayoutItemUpBtn"
+            },
+            "designerId": "a0e7869a-fbbf-46c6-8a6f-0403b70dd399"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMoveLayoutItemDownBtnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp(\"layoutElementIdField\").getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    field.up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveLayoutItemDownBtn"
+            },
+            "designerId": "cbbcfdd9-671b-4f5e-bd41-0c6e70e48d56"
         }
     ]
 }

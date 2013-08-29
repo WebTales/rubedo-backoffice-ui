@@ -800,6 +800,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'container',
                                     flex: 1,
+                                    autoScroll: true,
                                     layout: {
                                         align: 'stretch',
                                         type: 'vbox'
@@ -841,12 +842,14 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 {
                                                     xtype: 'button',
                                                     disabled: true,
+                                                    id: 'moveLayoutItemUpBtn',
                                                     iconCls: 'arrow_up',
                                                     text: 'Move'
                                                 },
                                                 {
                                                     xtype: 'button',
                                                     disabled: true,
+                                                    id: 'moveLayoutItemDownBtn',
                                                     iconCls: 'arrow_down',
                                                     text: 'Move'
                                                 },
@@ -860,7 +863,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'panel',
-                                            flex: 1,
+                                            height: 340,
                                             id: 'layoutEditionPanel',
                                             layout: {
                                                 align: 'stretch',
@@ -890,6 +893,32 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             },
                                             title: 'Select an element'
                                         })
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'bottom',
+                                            items: [
+                                                {
+                                                    xtype: 'slider',
+                                                    localiserId: 'zoomLevelSlider',
+                                                    flex: 1,
+                                                    id: 'MaskZoomControlSlider2',
+                                                    fieldLabel: 'Niveau de zoom',
+                                                    labelWidth: 60,
+                                                    value: 924,
+                                                    maxValue: 2000,
+                                                    minValue: 200,
+                                                    useTips: false,
+                                                    listeners: {
+                                                        change: {
+                                                            fn: me.onMaskZoomControlSliderChange1,
+                                                            scope: me
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     ]
                                 }
                             ]
@@ -977,6 +1006,10 @@ Ext.define('Rubedo.view.adminFTDC', {
         if (!ACL.interfaceRights["write.ui.contentTypes"]){
             tablepanel.getSelectionModel().setLocked(true);
         }
+    },
+
+    onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
+        Ext.getCmp("layoutEditionPanel").setHeight(newValue);
     },
 
     onAdminFTDCRender: function(component, eOpts) {

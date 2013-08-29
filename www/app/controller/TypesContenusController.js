@@ -1231,6 +1231,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp("removeLayoutElementBtn").enable();
                 Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.lignText);
                 Ext.getCmp("layoutPropsPanel").setIconCls('editZone');
+                Ext.getCmp("moveLayoutItemUpBtn").enable();
+                Ext.getCmp("moveLayoutItemDownBtn").enable();
                 if (newSelected.getComponent("eol").flex>0){
                     Ext.getCmp("addColToLayoutBtn").enable();
                 }
@@ -1247,6 +1249,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp("removeLayoutElementBtn").enable();
                 newSelected.setIconCls('editBloc');
                 newSelected.removeBodyCls('selectedelement');
+                Ext.getCmp("moveLayoutItemUpBtn").enable();
+                Ext.getCmp("moveLayoutItemDownBtn").enable();
                 Ext.getCmp("layoutPropsPanel").setIconCls('editBloc');
                 Ext.getCmp("layoutPropsPanel").setTitle("Field : "+newSelected.title);
                 me.renderFieldTools(newSelected);
@@ -1409,6 +1413,24 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             newField.name=name;
             target.add(newField);
             me.getFieldsListForLayout();
+        }
+    },
+
+    onMoveLayoutItemUpBtnClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp("layoutElementIdField").getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().items.indexOf(field);
+            if (pos > 0) {
+                field.up().move(pos,pos-1);
+            }
+        }
+    },
+
+    onMoveLayoutItemDownBtnClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp("layoutElementIdField").getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().items.indexOf(field);
+            field.up().move(pos,pos+1);
         }
     },
 
@@ -1946,6 +1968,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#CTLayoutFieldInjectorGrid": {
                 itemdblclick: this.onCTLayoutFieldInjectorGridItemDblClick
+            },
+            "#moveLayoutItemUpBtn": {
+                click: this.onMoveLayoutItemUpBtnClick
+            },
+            "#moveLayoutItemDownBtn": {
+                click: this.onMoveLayoutItemDownBtnClick
             }
         });
     }
