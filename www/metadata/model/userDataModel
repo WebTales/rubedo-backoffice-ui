@@ -307,6 +307,18 @@
                 "name": "workingLanguage"
             },
             "designerId": "1c5b5105-168c-498d-bfd5-1e92a622ae3f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "interfaceMode"
+            },
+            "designerId": "698e7261-e991-4c06-9059-e58d49bce5cc"
         }
     ]
 }

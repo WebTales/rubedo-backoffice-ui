@@ -102,6 +102,9 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'workingLanguage'
+        },
+        {
+            name: 'interfaceMode'
         }
     ]
 });

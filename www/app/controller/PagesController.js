@@ -868,6 +868,9 @@ Ext.define('Rubedo.controller.PagesController', {
         if (Ext.isDefined(fenetre)){fenetre.show();  fenetre.toFront(); }
         else {
             fenetre = Ext.widget("adminFMDP");
+            if (MyPrefData.simpleMode){
+                fenetre.maximized=true;
+            }
             Ext.getCmp('desktopCont').add(fenetre);
             if (Ext.isDefined(window.innerHeight)) {
                 if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}

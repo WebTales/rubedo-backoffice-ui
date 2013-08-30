@@ -61,10 +61,19 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var boutonCompagnon = Ext.widget('splitbutton', {text: component.title, iconCls: component.iconCls, arrowCls:"split", enableToggle: true,allowDepress: false});
             component.on('close', function(){boutonCompagnon.destroy();});
             component.onEsc=Ext.emptyFn;
-            component.getHeader().on("dblclick", function(thing){
-                thing.up().toggleMaximize();
+            if (!MyPrefData.simpleMode){
+                component.getHeader().on("dblclick", function(thing){
+                    thing.up().toggleMaximize();
 
-            });
+                });
+            } else {
+                if (!Ext.isEmpty(component.getHeader().getComponent("windowMinimize"))){
+                    component.getHeader().getComponent("windowMinimize").hide();
+                }
+                if (!Ext.isEmpty(component.getHeader().getComponent("windowMaximize"))){
+                    component.getHeader().getComponent("windowMaximize").hide();
+                }
+            }
             component.on('minimize', function(){component.hide(); boutonCompagnon.toggle(false);});
             component.getEl().on('focus', function(){boutonCompagnon.toggle(true);});
             component.on('resize', function(){this.focus();});
@@ -147,6 +156,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
         if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }
         else {
             fenetre = Ext.widget(button.itemId);
+            if (MyPrefData.simpleMode){
+                fenetre.maximized=true;
+            }
             Ext.getCmp('desktopCont').add(fenetre);
             if (Ext.isDefined(window.innerHeight)) {
                 if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
@@ -155,7 +167,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             fenetre.show();
 
         }
-        Ext.getCmp('menuPrincipalInterface').hide();
+        if (!MyPrefData.simpleMode){
+            Ext.getCmp('menuPrincipalInterface').hide();
+        }
     },
 
     ouvrirFenteresMenuDroite: function(button, e, eOpts) {
@@ -179,6 +193,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }
             else {
                 fenetre = Ext.widget(button.itemId);
+                if (MyPrefData.simpleMode){
+                    fenetre.maximized=true;
+                }
                 Ext.getCmp('desktopCont').add(fenetre);
                 if (Ext.isDefined(window.innerHeight)) {
                     if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
@@ -186,8 +203,12 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 }
                 fenetre.show();
 
+
+
             }
-            Ext.getCmp('menuPrincipalInterface').hide();
+            if (!MyPrefData.simpleMode){
+                Ext.getCmp('menuPrincipalInterface').hide();
+            }
         }
     },
 
@@ -538,6 +559,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             HCMode:false,
             myName:'Rubedo',
             themeColor: '#D7251D',
+            simpleMode:false,
             lastEdited:[ ]
         }); 
 
@@ -560,12 +582,11 @@ Ext.define('Rubedo.controller.InterfaceController', {
             "iconeBureau": {
                 render: this.comportementIcones
             },
-            "#salamanderContext menuitem": {
+            "#salamanderContext menuitem , #specialStudioMenu11 menuitem , #specialAdminMenu22 menuitem": {
                 click: this.onMenuitemClick
             },
-            "#menuPrincipalDroite button": {
-                click: this.ouvrirFenteresMenuDroite,
-                mouseover: this.onButtonMouseOver
+            "#menuPrincipalDroite button , #simpleModeMainBar button": {
+                click: this.ouvrirFenteresMenuDroite
             },
             "#boiteAIconesBureau": {
                 afterrender: this.desktopMenu
@@ -614,6 +635,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
             },
             "#menuPrincipalDroite button, #salamanderContext menuitem": {
                 render: this.mainToolsContextShow
+            },
+            "#menuPrincipalDroite button": {
+                mouseover: this.onButtonMouseOver
             }
         });
     },
@@ -700,6 +724,15 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 task.delay(600);
 
             }
+    },
+
+    setSimpleInterfaceMode: function() {
+        Ext.getCmp("entete").getComponent(0).hide();
+        Ext.getCmp("entete").getComponent(1).hide();
+        Ext.getCmp("entete").getComponent(2).hide();
+        Ext.getCmp("entete").getComponent(3).hide();
+        Ext.getCmp("boiteAIconesBureau").hide();
+        Ext.getCmp("desktopBackGround").hide();
     }
 
 });

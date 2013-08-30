@@ -134,6 +134,12 @@ Ext.define('Rubedo.controller.ACLController', {
             success:function(response){
                 ACL.interfaceRights=Ext.JSON.decode(response.responseText);
                 Ext.getCmp('boutonPincipalInterface').enable();
+                var task = new Ext.util.DelayedTask(function(){
+                    if(MyPrefData.simpleMode){
+                        Ext.getCmp("ViewportPrimaire").insert(0,Ext.widget("simpleModeMainBar"));
+                    }
+                });
+                task.delay(300);
             },
             failure:function(){
                 Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);

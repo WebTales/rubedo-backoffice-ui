@@ -1,0 +1,576 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 40,
+        "id": "simpleModeMainBar",
+        "designer|userClassName": "simpleModeMainBar",
+        "designer|userAlias": "simpleModeMainBar"
+    },
+    "designerId": "1b5f698a-3816-41a7-95cd-7fddf2dbe64d",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "read.ui.pages",
+                "favoriteIcon": "application.png",
+                "localiserId": "pagesLaunchBtn",
+                "layout|flex": null,
+                "itemId": "contributionPages",
+                "margin": null,
+                "iconCls": "site-icon",
+                "text": "Pages"
+            },
+            "designerId": "3312068a-afa0-4271-9838-34d8dbcb892b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "favoriteIcon",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "read.ui.pages",
+                "favoriteIcon": "computer.png",
+                "localiserId": "previewLaunchBtn",
+                "layout|flex": null,
+                "itemId": "contributionPrevisualisation",
+                "margin": null,
+                "iconCls": "personalize",
+                "text": "Prévisualisation"
+            },
+            "designerId": "85044e64-d0c1-4b9c-9845-ce2cc85f353b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "favoriteIcon",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "read.ui.contents",
+                "favoriteIcon": "page_full.png",
+                "localiserId": "contentsLaunchBtn",
+                "layout|flex": null,
+                "itemId": "contributionContenus",
+                "margin": null,
+                "iconCls": "content-icon",
+                "text": "Contenus"
+            },
+            "designerId": "e09775bb-c362-4dcb-99d4-9bbdec8d9c26",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "favoriteIcon",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "read.ui.dam",
+                "favoriteIcon": "images.png",
+                "localiserId": "DAMLaunchBtn",
+                "layout|flex": null,
+                "itemId": "DAMInterface",
+                "margin": null,
+                "iconCls": "mediaTypes",
+                "text": "Médiathèque"
+            },
+            "designerId": "b9c989bd-8167-46cd-800e-a4f4d94d4fe8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "favoriteIcon",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "read.ui.contents",
+                "layout|flex": null
+            },
+            "designerId": "2f1cdbfc-8660-4935-925f-2f0531862e97",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "usesMenu": true,
+                "usedMenu": "salamanderStudioMenu",
+                "localiserId": "studioMenuBtn",
+                "layout|flex": null,
+                "arrowCls": null,
+                "iconCls": "applications",
+                "text": "Studio"
+            },
+            "configAlternates": {
+                "usesMenu": "boolean"
+            },
+            "designerId": "67eb7e32-d3b1-40d6-85e2-efff36835468",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "usesMenu",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "usedMenu",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonRender2",
+                        "implHandler": [
+                            "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
+                            "    component.hide();\r",
+                            "}"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "384e4d9e-10ba-4cfe-b1d7-86543992d7ea"
+                },
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "specialStudioMenu11",
+                        "width": null
+                    },
+                    "designerId": "216d5ab2-8b78-403c-948c-f6bdf0722d84",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processSpecialStudioMenu11",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.items=[\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.sites',\r",
+                                    "    favoriteIcon: 'globe_computer.png',\r",
+                                    "    itemId: 'sitesInterface',\r",
+                                    "    iconCls: 'referencement_icon',\r",
+                                    "    localiserId:'sitesLaunchBtn',\r",
+                                    "    text: 'Sites'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.masks',\r",
+                                    "    favoriteIcon: 'application.png',\r",
+                                    "    itemId: 'adminFMDP',\r",
+                                    "    iconCls: 'masque-icon',\r",
+                                    "    localiserId:'masksLaunchBtn',\r",
+                                    "    text: 'Masques de page'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.contentTypes',\r",
+                                    "    favoriteIcon: 'page_full.png',\r",
+                                    "    itemId: 'adminFTDC',\r",
+                                    "    iconCls: 'content-icon',\r",
+                                    "    localiserId:'contentTypesLaunchBtn',\r",
+                                    "    text: 'Types de contenus'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.damTypes',\r",
+                                    "    favoriteIcon: 'images.png',\r",
+                                    "    itemId: 'mediaTypesInterface',\r",
+                                    "    iconCls: 'mediaTypes',\r",
+                                    "    localiserId:'damTypesLaunchBtn',\r",
+                                    "    text: 'Types de médias'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.forms',\r",
+                                    "    favoriteIcon: 'note.edit.png',\r",
+                                    "    itemId: 'FormsInterface',\r",
+                                    "    iconCls: 'form_small',\r",
+                                    "    localiserId:'formsLaunchBtn',\r",
+                                    "    text: 'Questionnaires'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.customThemes',\r",
+                                    "    favoriteIcon: 'palette.png',\r",
+                                    "    itemId: 'CustomThemesInterface',\r",
+                                    "    iconCls: 'palette',\r",
+                                    "    localiserId:'customThemesLaunchBtn',\r",
+                                    "    text: 'Custom Themes'\r",
+                                    "}\r",
+                                    "];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "c5906f9b-3e31-4111-a1e5-725f35540b1f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "usesMenu": true,
+                "usedMenu": "salamanderAdminMenu",
+                "localiserId": "adminLenuBtn",
+                "layout|flex": null,
+                "iconCls": "process-icon",
+                "text": "Administration"
+            },
+            "configAlternates": {
+                "usesMenu": "boolean"
+            },
+            "designerId": "cae3ec73-3491-40b0-ad8d-39fe19d605e4",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "usesMenu",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "usedMenu",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonRender11",
+                        "implHandler": [
+                            "if ((!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])){\r",
+                            "    component.hide();\r",
+                            "}"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "designerId": "97351aa9-577c-4402-b0ff-c56f344e1616"
+                },
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "specialAdminMenu22",
+                        "width": null
+                    },
+                    "designerId": "bed2abf8-e9f0-4989-9198-384bbfe7146f",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processSpecialAdminMenu22",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.items=[\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.queries',\r",
+                                    "    favoriteIcon: 'database_search.png',\r",
+                                    "    itemId: 'queryManagerInterface',\r",
+                                    "    iconCls: 'database_search',\r",
+                                    "    localiserId:'queriesLaunchBtn',\r",
+                                    "    text: 'Requêtes'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.taxonomy',\r",
+                                    "    favoriteIcon: 'tag.png',\r",
+                                    "    itemId: 'adminFTaxonomie',\r",
+                                    "    iconCls: 'page_taxonomy',\r",
+                                    "    localiserId:'taxonomyLaunchBtn',\r",
+                                    "    text: 'Taxonomie'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.groups',\r",
+                                    "    favoriteIcon: 'users.png',\r",
+                                    "    itemId: 'adminFUtilisateurs',\r",
+                                    "    localiserId:'groupsLaunchBtn',\r",
+                                    "    iconCls: 'user',\r",
+                                    "    text: 'Groupes'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.workspaces',\r",
+                                    "    favoriteIcon: 'users.png',\r",
+                                    "    itemId: 'WorkspacesInterface',\r",
+                                    "    localiserId:'workspacesLaunchBtn',\r",
+                                    "    iconCls: 'user',\r",
+                                    "    text: 'Espaces de travail'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.users',\r",
+                                    "    favoriteIcon: 'user_edit.png',\r",
+                                    "    floating: false,\r",
+                                    "    itemId: 'UserAdminWindow',\r",
+                                    "    localiserId:'usersLaunchBtn',\r",
+                                    "    iconCls: 'user_edit',\r",
+                                    "    text: 'Utilisateurs'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.technicalDashboard',\r",
+                                    "    favoriteIcon: 'chart.png',\r",
+                                    "    itemId: 'monitoringTools',\r",
+                                    "    localiserId:'monitoringLaunchBtn',\r",
+                                    "    iconCls: 'monitoring',\r",
+                                    "    text: 'Supervision'\r",
+                                    "},\r",
+                                    "{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.workflows',\r",
+                                    "    favoriteIcon: 'processes.png',\r",
+                                    "    itemId: 'menuWorkflows',\r",
+                                    "    iconCls: 'process-icon',\r",
+                                    "    localiserId:'workflowsLaunchBtn',\r",
+                                    "    text: 'Workflows'\r",
+                                    "},{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'exe.ui.import',\r",
+                                    "    favoriteIcon: 'database_up.png',\r",
+                                    "    itemId: 'InportInterface',\r",
+                                    "    iconCls: 'database_up_small',\r",
+                                    "    localiserId:'importLaunchBtn',\r",
+                                    "    text: 'Import'\r",
+                                    "},{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.mailingLists',\r",
+                                    "    favoriteIcon: 'mail.png',\r",
+                                    "    itemId: 'MailingListsInterface',\r",
+                                    "    iconCls: 'mail_small',\r",
+                                    "    localiserId:'mailingListsLaunchBtn',\r",
+                                    "    text: 'Listes de diffusion'\r",
+                                    "},{\r",
+                                    "    xtype: 'menuitem',\r",
+                                    "    ACL: 'read.ui.languages',\r",
+                                    "    favoriteIcon: 'world.png',\r",
+                                    "    itemId: 'languagesInterface',\r",
+                                    "    iconCls: 'world_small',\r",
+                                    "    localiserId:'languagesLaunchBtn',\r",
+                                    "    text: 'Languages'\r",
+                                    "}\r",
+                                    "];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "d071579b-8f2d-4d2f-98e7-7e0bad85adac"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "favoriteIcon": "tools.png",
+                "localiserId": "mySettingsLaunchBtn",
+                "layout|flex": null,
+                "itemId": "userSettings",
+                "margin": null,
+                "iconCls": "parametres",
+                "text": "Paramètres"
+            },
+            "designerId": "c0a4772d-5faf-413f-85b3-f3815816f0d8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "favoriteIcon",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Fill",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "1718ceae-52a9-46cf-88f0-d280215903d2"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "logoutBtn",
+                "layout|flex": null,
+                "id": null,
+                "itemId": "deconnexionMenuPrincipal",
+                "iconCls": "deconecter",
+                "text": "Déconnexion"
+            },
+            "designerId": "4f1758ff-49a0-4a2e-9d10-e80de7ddf76e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "settingWindow",
-        "height": 506,
+        "height": 527,
         "id": "userSettings",
         "width": 604,
         "designer|userClassName": "userSettings",
@@ -84,7 +84,7 @@
                             "userConfig": {
                                 "localiserId": "informationsFieldSet",
                                 "layout|flex": 1,
-                                "height": 385,
+                                "height": 420,
                                 "margin": 0,
                                 "width": 356,
                                 "autoScroll": true,
@@ -360,6 +360,43 @@
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Interface",
+                                        "name": "interfaceMode",
+                                        "editable": false,
+                                        "forceSelection": true
+                                    },
+                                    "designerId": "b5319fd5-c0fe-49dc-87eb-52ba350532b9",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processInterfaceMode",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.store=[[\"desktop\",\"Desktop\"],[\"simple\",\"Simple\"]];\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "31588c6a-da6b-4e1c-99e0-3ab650ecfbfe"
                                         }
                                     ]
                                 },

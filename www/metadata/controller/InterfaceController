@@ -180,10 +180,19 @@
                     "    var boutonCompagnon = Ext.widget('splitbutton', {text: component.title, iconCls: component.iconCls, arrowCls:\"split\", enableToggle: true,allowDepress: false});\r",
                     "    component.on('close', function(){boutonCompagnon.destroy();});\r",
                     "    component.onEsc=Ext.emptyFn;\r",
-                    "    component.getHeader().on(\"dblclick\", function(thing){\r",
-                    "        thing.up().toggleMaximize();\r",
-                    "\r",
-                    "    });\r",
+                    "    if (!MyPrefData.simpleMode){\r",
+                    "        component.getHeader().on(\"dblclick\", function(thing){\r",
+                    "            thing.up().toggleMaximize();\r",
+                    "    \r",
+                    "        });\r",
+                    "    } else {\r",
+                    "        if (!Ext.isEmpty(component.getHeader().getComponent(\"windowMinimize\"))){\r",
+                    "            component.getHeader().getComponent(\"windowMinimize\").hide();\r",
+                    "        }\r",
+                    "        if (!Ext.isEmpty(component.getHeader().getComponent(\"windowMaximize\"))){\r",
+                    "            component.getHeader().getComponent(\"windowMaximize\").hide();\r",
+                    "        }\r",
+                    "    }\r",
                     "    component.on('minimize', function(){component.hide(); boutonCompagnon.toggle(false);});\r",
                     "    component.getEl().on('focus', function(){boutonCompagnon.toggle(true);});\r",
                     "    component.on('resize', function(){this.focus();});\r",
@@ -336,6 +345,9 @@
                     "if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }\r",
                     "else {\r",
                     "    fenetre = Ext.widget(button.itemId);\r",
+                    "    if (MyPrefData.simpleMode){\r",
+                    "        fenetre.maximized=true;\r",
+                    "    }\r",
                     "    Ext.getCmp('desktopCont').add(fenetre);\r",
                     "    if (Ext.isDefined(window.innerHeight)) {\r",
                     "        if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
@@ -344,12 +356,14 @@
                     "    fenetre.show();\r",
                     "\r",
                     "}\r",
-                    "Ext.getCmp('menuPrincipalInterface').hide();"
+                    "if (!MyPrefData.simpleMode){\r",
+                    "    Ext.getCmp('menuPrincipalInterface').hide();\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#salamanderContext menuitem"
+                "designer|controlQuery": "#salamanderContext menuitem , #specialStudioMenu11 menuitem , #specialAdminMenu22 menuitem"
             },
             "designerId": "79c93167-a905-4b81-9cd7-8ca95f7d7321"
         },
@@ -383,6 +397,9 @@
                     "    if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }\r",
                     "    else {\r",
                     "        fenetre = Ext.widget(button.itemId);\r",
+                    "        if (MyPrefData.simpleMode){\r",
+                    "            fenetre.maximized=true;\r",
+                    "        }\r",
                     "        Ext.getCmp('desktopCont').add(fenetre);\r",
                     "        if (Ext.isDefined(window.innerHeight)) {\r",
                     "            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}\r",
@@ -390,14 +407,18 @@
                     "        }\r",
                     "        fenetre.show();\r",
                     "\r",
+                    "\r",
+                    "\r",
                     "    }\r",
+                    "    if (!MyPrefData.simpleMode){\r",
                     "    Ext.getCmp('menuPrincipalInterface').hide();\r",
+                    "    }\r",
                     "}"
                 ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#menuPrincipalDroite button"
+                "designer|controlQuery": "#menuPrincipalDroite button , #simpleModeMainBar button"
             },
             "designerId": "eb23ce14-d3fd-4cfe-9907-95b111a42752"
         },
@@ -570,6 +591,7 @@
                     "    HCMode:false,\r",
                     "    myName:'Rubedo',\r",
                     "    themeColor: '#D7251D',\r",
+                    "    simpleMode:false,\r",
                     "    lastEdited:[ ]\r",
                     "}); "
                 ]
@@ -1086,6 +1108,26 @@
                 ]
             },
             "designerId": "22ff9220-65f2-42b5-b72d-5538401c0f78"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setSimpleInterfaceMode",
+                "implHandler": [
+                    "Ext.getCmp(\"entete\").getComponent(0).hide();\r",
+                    "Ext.getCmp(\"entete\").getComponent(1).hide();\r",
+                    "Ext.getCmp(\"entete\").getComponent(2).hide();\r",
+                    "Ext.getCmp(\"entete\").getComponent(3).hide();\r",
+                    "Ext.getCmp(\"boiteAIconesBureau\").hide();\r",
+                    "Ext.getCmp(\"desktopBackGround\").hide();"
+                ]
+            },
+            "designerId": "e96ea476-f8d9-4035-a48b-b55eb4926444"
         }
     ]
 }

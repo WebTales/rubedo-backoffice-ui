@@ -23,7 +23,10 @@ Ext.define('Rubedo.controller.SearchController', {
             var DisplayResults=Ext.getCmp('searchResultsWindow');
             if (Ext.isEmpty(DisplayResults)){
                 DisplayResults=Ext.widget('searchResultsWindow');
-                Ext.getCmp("ViewportPrimaire").add(DisplayResults);
+                if (MyPrefData.simpleMode){
+                    DisplayResults.maximized=true;
+                }
+                Ext.getCmp('desktopCont').add(DisplayResults);
                 DisplayResults.show();
             } else {
                 DisplayResults.show();
