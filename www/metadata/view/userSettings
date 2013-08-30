@@ -803,6 +803,25 @@
                             "designerId": "e6a99a5d-8993-4908-94dd-696e82b03977"
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonAfterRender",
+                        "implHandler": [
+                            "if (MyPrefData.simpleMode){\r",
+                            "\tcomponent.hide();\r",
+                            "}"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "57c80569-a275-4fe5-8168-67a8176238a3"
                 }
             ]
         }

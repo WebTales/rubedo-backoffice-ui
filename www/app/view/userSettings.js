@@ -309,7 +309,13 @@ Ext.define('Rubedo.view.userSettings', {
                             iconCls: 'personalize',
                             text: 'Bureau'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        afterrender: {
+                            fn: me.onButtonAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
@@ -320,6 +326,12 @@ Ext.define('Rubedo.view.userSettings', {
     processInterfaceMode: function(config) {
         config.store=[["desktop","Desktop"],["simple","Simple"]];
         return config;
+    },
+
+    onButtonAfterRender: function(component, eOpts) {
+        if (MyPrefData.simpleMode){
+            component.hide();
+        }
     }
 
 });

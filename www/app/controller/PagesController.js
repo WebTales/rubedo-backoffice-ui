@@ -870,6 +870,7 @@ Ext.define('Rubedo.controller.PagesController', {
             fenetre = Ext.widget("adminFMDP");
             if (MyPrefData.simpleMode){
                 fenetre.maximized=true;
+                fenetre.draggable=false;
             }
             Ext.getCmp('desktopCont').add(fenetre);
             if (Ext.isDefined(window.innerHeight)) {

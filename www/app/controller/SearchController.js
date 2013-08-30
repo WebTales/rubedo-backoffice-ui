@@ -25,6 +25,7 @@ Ext.define('Rubedo.controller.SearchController', {
                 DisplayResults=Ext.widget('searchResultsWindow');
                 if (MyPrefData.simpleMode){
                     DisplayResults.maximized=true;
+                    DisplayResults.draggable=false;
                 }
                 Ext.getCmp('desktopCont').add(DisplayResults);
                 DisplayResults.show();

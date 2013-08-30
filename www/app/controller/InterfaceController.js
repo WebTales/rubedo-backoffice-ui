@@ -158,6 +158,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             fenetre = Ext.widget(button.itemId);
             if (MyPrefData.simpleMode){
                 fenetre.maximized=true;
+                fenetre.draggable=false;
             }
             Ext.getCmp('desktopCont').add(fenetre);
             if (Ext.isDefined(window.innerHeight)) {
@@ -195,6 +196,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 fenetre = Ext.widget(button.itemId);
                 if (MyPrefData.simpleMode){
                     fenetre.maximized=true;
+                    fenetre.draggable=false;
                 }
                 Ext.getCmp('desktopCont').add(fenetre);
                 if (Ext.isDefined(window.innerHeight)) {

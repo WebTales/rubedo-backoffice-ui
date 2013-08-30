@@ -1435,6 +1435,7 @@
                     "    fenetre = Ext.widget(\"adminFMDP\");\r",
                     "    if (MyPrefData.simpleMode){\r",
                     "        fenetre.maximized=true;\r",
+                    "        fenetre.draggable=false;\r",
                     "    }\r",
                     "    Ext.getCmp('desktopCont').add(fenetre);\r",
                     "    if (Ext.isDefined(window.innerHeight)) {\r",
