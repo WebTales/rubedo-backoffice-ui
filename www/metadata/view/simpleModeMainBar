@@ -14,6 +14,33 @@
     "designerId": "1b5f698a-3816-41a7-95cd-7fddf2dbe64d",
     "cn": [
         {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "height": 32,
+                "width": 32,
+                "src": "resources/images/logoRubedo.png"
+            },
+            "designerId": "c5e36476-1fb8-4a4d-b6c6-758e770dd620"
+        },
+        {
+            "type": "Ext.toolbar.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "4480b17c-5c1e-44bd-9391-df7da5625442"
+        },
+        {
             "type": "Ext.button.Button",
             "reference": {
                 "name": "items",

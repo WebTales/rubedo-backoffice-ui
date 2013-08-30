@@ -183,7 +183,7 @@
                     "    if (!MyPrefData.simpleMode){\r",
                     "        component.getHeader().on(\"dblclick\", function(thing){\r",
                     "            thing.up().toggleMaximize();\r",
-                    "    \r",
+                    "\r",
                     "        });\r",
                     "    } else {\r",
                     "        if (!Ext.isEmpty(component.getHeader().getComponent(\"windowMinimize\"))){\r",
@@ -958,7 +958,7 @@
             "userConfig": {
                 "fn": "onButtonAfterRender",
                 "implHandler": [
-                    "if (MyPrefData.simpleMode){\r",
+                    "/*if (MyPrefData.simpleMode){\r",
                     "    if (component.up().queryBy(function(item){\r",
                     "        if((item.isXType(\"button\"))&&(!item.isHidden())){\r",
                     "            return(true);\r",
@@ -969,7 +969,7 @@
                     "    } else {\r",
                     "        component.hide();\r",
                     "    }\r",
-                    "}"
+                    "}*/"
                 ],
                 "name": "afterrender",
                 "scope": "me",

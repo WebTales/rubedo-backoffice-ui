@@ -26,6 +26,15 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
         Ext.applyIf(me, {
             items: [
                 {
+                    xtype: 'image',
+                    height: 32,
+                    width: 32,
+                    src: 'resources/images/logoRubedo.png'
+                },
+                {
+                    xtype: 'tbseparator'
+                },
+                {
                     xtype: 'button',
                     ACL: 'read.ui.pages',
                     favoriteIcon: 'application.png',

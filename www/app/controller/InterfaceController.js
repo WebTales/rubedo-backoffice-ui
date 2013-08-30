@@ -410,18 +410,18 @@ Ext.define('Rubedo.controller.InterfaceController', {
     },
 
     onButtonAfterRender: function(component, eOpts) {
-        if (MyPrefData.simpleMode){
-            if (component.up().queryBy(function(item){
-                if((item.isXType("button"))&&(!item.isHidden())){
-                    return(true);
-                }
-                else { return(false);}
-            }).length==1){
-                component.up().hide();
-            } else {
-                component.hide();
-            }
+        /*if (MyPrefData.simpleMode){
+        if (component.up().queryBy(function(item){
+        if((item.isXType("button"))&&(!item.isHidden())){
+        return(true);
         }
+        else { return(false);}
+        }).length==1){
+        component.up().hide();
+        } else {
+        component.hide();
+        }
+        }*/
     },
 
     launchESWindow: function(button, e, eOpts) {
