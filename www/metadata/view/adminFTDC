@@ -2129,7 +2129,7 @@
                             ]
                         },
                         {
-                            "type": "Ext.container.Container",
+                            "type": "Ext.panel.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -2146,11 +2146,12 @@
                                 {
                                     "type": "Ext.toolbar.Toolbar",
                                     "reference": {
-                                        "name": "items",
+                                        "name": "dockedItems",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "dock": "top",
                                         "disabled": true,
                                         "id": "layoutsEditToolbar"
                                     },

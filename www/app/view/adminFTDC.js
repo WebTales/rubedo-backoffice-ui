@@ -798,16 +798,17 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     ]
                                 },
                                 {
-                                    xtype: 'container',
+                                    xtype: 'panel',
                                     flex: 1,
                                     autoScroll: true,
                                     layout: {
                                         align: 'stretch',
                                         type: 'vbox'
                                     },
-                                    items: [
+                                    dockedItems: [
                                         {
                                             xtype: 'toolbar',
+                                            dock: 'top',
                                             disabled: true,
                                             id: 'layoutsEditToolbar',
                                             items: [
@@ -860,7 +861,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     text: 'Save layout'
                                                 }
                                             ]
-                                        },
+                                        }
+                                    ],
+                                    items: [
                                         {
                                             xtype: 'panel',
                                             height: 340,

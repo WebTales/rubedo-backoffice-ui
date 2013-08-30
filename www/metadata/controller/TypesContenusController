@@ -1754,6 +1754,7 @@
                     "                fields.push({\r",
                     "                    title:field.title,\r",
                     "                    responsive:field.responsive,\r",
+                    "                    responsiveClass:me.deudceResposiveClass(field.responsive),\r",
                     "                    name:field.name,\r",
                     "                    elementStyle:field.elementStyle,\r",
                     "                    classHTML:field.classHTML,\r",
@@ -1762,6 +1763,7 @@
                     "            });\r",
                     "            newCols.push({\r",
                     "                responsive:col.responsive,\r",
+                    "                responsiveClass:me.deudceResposiveClass(col.responsive),\r",
                     "                classHTML:col.classHTML,\r",
                     "                elementStyle:col.elementStyle,\r",
                     "                span:col.flex,\r",
@@ -1778,6 +1780,7 @@
                     "            elementStyle:row.elementStyle,\r",
                     "            mType:\"row\",\r",
                     "            responsive:row.responsive,\r",
+                    "            responsiveClass:me.deudceResposiveClass(row.responsive),\r",
                     "            classHTML:row.classHTML,\r",
                     "            columns: newCols\r",
                     "\r",
@@ -2097,6 +2100,40 @@
                 ]
             },
             "designerId": "7f64b9c5-7e17-4ddc-a0fa-97e49cebe57a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deudceResposiveClass",
+                "designer|params": [
+                    "responsiveObj"
+                ],
+                "implHandler": [
+                    "var responsiveArray=[ ];\r",
+                    "Ext.Object.each(responsiveObj, function(key, value, myself) {\r",
+                    "    if (value===true){\r",
+                    "        responsiveArray.push(key);\r",
+                    "    }\r",
+                    "});\r",
+                    "if (responsiveArray.length==3){\r",
+                    "    return(\"\");\r",
+                    "} else if (responsiveArray.length==2){\r",
+                    "    var hiddenArray=[\"tablet\",\"desktop\",\"phone\"];\r",
+                    "    var hiddenMedia=Ext.Array.difference(hiddenArray,responsiveArray);\r",
+                    "    return(\"hidden-\"+hiddenMedia[0]);\r",
+                    "} else if (responsiveArray.length==1){\r",
+                    "    return(\"visible-\"+responsiveArray[0]);\r",
+                    "} else {\r",
+                    "    return(\"hidden\");\r",
+                    "}"
+                ]
+            },
+            "designerId": "a8392c87-d632-40e3-b75f-5429cfffbde1"
         },
         {
             "type": "basicfunction",

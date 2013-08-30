@@ -1530,6 +1530,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         fields.push({
                             title:field.title,
                             responsive:field.responsive,
+                            responsiveClass:me.deudceResposiveClass(field.responsive),
                             name:field.name,
                             elementStyle:field.elementStyle,
                             classHTML:field.classHTML,
@@ -1538,6 +1539,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     });
                     newCols.push({
                         responsive:col.responsive,
+                        responsiveClass:me.deudceResposiveClass(col.responsive),
                         classHTML:col.classHTML,
                         elementStyle:col.elementStyle,
                         span:col.flex,
@@ -1554,6 +1556,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     elementStyle:row.elementStyle,
                     mType:"row",
                     responsive:row.responsive,
+                    responsiveClass:me.deudceResposiveClass(row.responsive),
                     classHTML:row.classHTML,
                     columns: newCols
 
@@ -1796,6 +1799,26 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
             spanF.setValue(target.flex);
             spanF.setMaxValue(target.flex+myEol.flex);
+        }
+    },
+
+    deudceResposiveClass: function(responsiveObj) {
+        var responsiveArray=[ ];
+        Ext.Object.each(responsiveObj, function(key, value, myself) {
+            if (value===true){
+                responsiveArray.push(key);
+            }
+        });
+        if (responsiveArray.length==3){
+            return("");
+        } else if (responsiveArray.length==2){
+            var hiddenArray=["tablet","desktop","phone"];
+            var hiddenMedia=Ext.Array.difference(hiddenArray,responsiveArray);
+            return("hidden-"+hiddenMedia[0]);
+        } else if (responsiveArray.length==1){
+            return("visible-"+responsiveArray[0]);
+        } else {
+            return("hidden");
         }
     },
 
