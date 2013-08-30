@@ -954,6 +954,36 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "onButtonAfterRender",
+                "implHandler": [
+                    "if (MyPrefData.simpleMode){\r",
+                    "    if (component.up().queryBy(function(item){\r",
+                    "        if((item.isXType(\"button\"))&&(!item.isHidden())){\r",
+                    "            return(true);\r",
+                    "        }\r",
+                    "        else { return(false);}\r",
+                    "    }).length==1){\r",
+                    "        component.up().hide();\r",
+                    "    } else {\r",
+                    "        component.hide();\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "[itemId='boutonCreerRaccourci']"
+            },
+            "designerId": "59c191c1-1c5f-4049-8175-e5d12f12f48f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "launchESWindow",
                 "implHandler": [
                     "if (!(Ext.isDefined(Ext.getCmp('ESWindow')))) {\r",

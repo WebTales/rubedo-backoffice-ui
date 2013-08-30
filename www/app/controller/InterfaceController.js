@@ -407,6 +407,21 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     },
 
+    onButtonAfterRender: function(component, eOpts) {
+        if (MyPrefData.simpleMode){
+            if (component.up().queryBy(function(item){
+                if((item.isXType("button"))&&(!item.isHidden())){
+                    return(true);
+                }
+                else { return(false);}
+            }).length==1){
+                component.up().hide();
+            } else {
+                component.hide();
+            }
+        }
+    },
+
     launchESWindow: function(button, e, eOpts) {
         if (!(Ext.isDefined(Ext.getCmp('ESWindow')))) {
             var fenetre = Ext.widget('ESWindow');
@@ -625,7 +640,8 @@ Ext.define('Rubedo.controller.InterfaceController', {
                 render: this.setHCButtonStatus
             },
             "[itemId='boutonCreerRaccourci']": {
-                click: this.createIconBtn
+                click: this.createIconBtn,
+                afterrender: this.onButtonAfterRender
             },
             "#esWindowButton": {
                 click: this.launchESWindow
