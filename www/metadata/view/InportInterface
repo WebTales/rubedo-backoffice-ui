@@ -1102,7 +1102,32 @@
                             "userConfig": {
                                 "clicksToEdit": 1
                             },
-                            "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797"
+                            "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCellEditingEdit",
+                                        "implHandler": [
+                                            "var store=Ext.getStore(\"InportAsFieldStore\");\r",
+                                            "Ext.Array.forEach(store.getRange(), function(record){\r",
+                                            "    if ((record.get(\"protoId\")==\"text\")||(record.get(\"protoId\")==\"summary\")){\r",
+                                            "        record.set(\"localizable\", true);\r",
+                                            "        record.set(\"searchable\",true);\r",
+                                            "    }\r",
+                                            "});"
+                                        ],
+                                        "name": "edit",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c6e0fcf2-8250-498f-8ee4-fee9ab7b5bce"
+                                }
+                            ]
                         }
                     ]
                 },

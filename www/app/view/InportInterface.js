@@ -404,7 +404,13 @@ Ext.define('Rubedo.view.InportInterface', {
                             ],
                             plugins: [
                                 Ext.create('Ext.grid.plugin.CellEditing', {
-                                    clicksToEdit: 1
+                                    clicksToEdit: 1,
+                                    listeners: {
+                                        edit: {
+                                            fn: me.onCellEditingEdit,
+                                            scope: me
+                                        }
+                                    }
                                 })
                             ]
                         },
@@ -828,6 +834,16 @@ Ext.define('Rubedo.view.InportInterface', {
         if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
             component.hide();
         }
+    },
+
+    onCellEditingEdit: function(editor, e, eOpts) {
+        var store=Ext.getStore("InportAsFieldStore");
+        Ext.Array.forEach(store.getRange(), function(record){
+            if ((record.get("protoId")=="text")||(record.get("protoId")=="summary")){
+                record.set("localizable", true);
+                record.set("searchable",true);
+            }
+        });
     },
 
     onFieldsetRender: function(component, eOpts) {
