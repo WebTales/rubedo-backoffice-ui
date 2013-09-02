@@ -141,6 +141,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
                     menu.getComponent("iconRenameMenuItem").on("click", function(){
                         if (menu.getComponent("iconNameField").isValid()) {
                             Ext.getStore("IconesDataJson").findRecord("id", component.recId).set("text",menu.getComponent("iconNameField").getValue());
+                            menu.destroy();
                             me.refreshIcons();
                         }
                     });
@@ -193,33 +194,55 @@ Ext.define('Rubedo.controller.InterfaceController', {
             Ext.Array.forEach(Ext.getStore('IconesDataJson').getRange(), function(icon){
                 var menuItem=Ext.widget("menuitem", {text:icon.get("text"), icon:"resources/icones/"+MyPrefData.iconsDir+"/16x16/"+icon.get("image")});
                 menuItem.on("click",function(){me.fireIconActions(icon.get("actions"));});
-                button.menu.add(menuItem);
-            });
-        }
-        else{
+                menuItem.recId=icon.get("id");
+                menuItem.on("afterrender",function(){
+                    menuItem.getEl().on("contextmenu", function(e){
+                        var menu= Ext.getCmp('iconsContextMenu');
+                        if (Ext.isEmpty(menu)){
+                            menu = Ext.widget('iconsContextMenu');
+                            menu.on('blur', function(){this.destroy();});}
+                            menu.getComponent("iconDeleteMenuItem").on("click", function(){
+                                Ext.getStore("IconesDataJson").remove(Ext.getStore("IconesDataJson").findRecord("id",menuItem.recId));
+                                menu.destroy();
+                            });
+                            menu.getComponent("iconNameField").setValue(icon.get("text"));
+                            menu.getComponent("iconRenameMenuItem").on("click", function(){
+                                if (menu.getComponent("iconNameField").isValid()) {
+                                    Ext.getStore("IconesDataJson").findRecord("id",menuItem.recId).set("text",menu.getComponent("iconNameField").getValue());
+                                    menu.destroy();
+                                }
+                            });
+                            menu.showAt(Ext.EventObject.getXY());
+                            e.stopEvent();
 
-            var fenetre = Ext.getCmp(button.itemId);
-            if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }
-            else {
-                fenetre = Ext.widget(button.itemId);
-                if (MyPrefData.simpleMode){
-                    fenetre.maximized=true;
-                    fenetre.draggable=false;
+                        });});
+                        button.menu.add(menuItem);
+                    });
                 }
-                Ext.getCmp('desktopCont').add(fenetre);
-                if (Ext.isDefined(window.innerHeight)) {
-                    if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
-                    if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                else{
+
+                    var fenetre = Ext.getCmp(button.itemId);
+                    if (Ext.isDefined(fenetre)){ fenetre.show(); fenetre.toFront(); }
+                    else {
+                        fenetre = Ext.widget(button.itemId);
+                        if (MyPrefData.simpleMode){
+                            fenetre.maximized=true;
+                            fenetre.draggable=false;
+                        }
+                        Ext.getCmp('desktopCont').add(fenetre);
+                        if (Ext.isDefined(window.innerHeight)) {
+                            if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
+                            if (fenetre.width>(window.innerWidth)) {fenetre.setWidth((window.innerWidth));}
+                        }
+                        fenetre.show();
+
+
+
+                    }
+                    if (!MyPrefData.simpleMode){
+                        Ext.getCmp('menuPrincipalInterface').hide();
+                    }
                 }
-                fenetre.show();
-
-
-
-            }
-            if (!MyPrefData.simpleMode){
-                Ext.getCmp('menuPrincipalInterface').hide();
-            }
-        }
     },
 
     desktopMenu: function(component, eOpts) {
