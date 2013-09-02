@@ -423,6 +423,25 @@ Ext.define('Rubedo.view.InportInterface', {
                                     }
                                 });
                                 languagesStore.loadData(newL);
+                                if (newL.length==1){
+                                    Ext.Array.forEach(Ext.getStore("InportAsFieldTranslationStore").getRange(),function(target){
+                                        target.set("translateToLanguage",newL[0].locale);
+                                    });
+                                    Ext.Array.forEach(Ext.getStore("InportAsTaxoTranslationStore").getRange(),function(target){
+                                        target.set("translateToLanguage",newL[0].locale);
+                                    });
+                                }
+                                if (secondStore.getRange().length==1){
+                                    Ext.Array.forEach(Ext.getStore("InportAsFieldTranslationStore").getRange(),function(target){
+                                        target.set("translatedElement",secondStore.getRange()[0].get("csvIndex"));
+                                    });
+                                }
+                                if (Ext.getStore("InportAsTaxoStore").getRange().length==1){
+                                    Ext.Array.forEach(Ext.getStore("InportAsTaxoTranslationStore").getRange(),function(target){
+                                        target.set("translatedElement",Ext.getStore("InportAsTaxoStore").getRange()[0].get("csvIndex"));
+                                    });
+                                }
+
                                 if (store.query("protoId","text").length===0) {
                                     Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveTitleError);
                                     return(false);
