@@ -447,6 +447,12 @@ Ext.define('Rubedo.view.InportInterface', {
                                         target.set("translatedElement",Ext.getStore("InportAsTaxoStore").getRange()[0].get("csvIndex"));
                                     });
                                 }
+                                var mediaError=false;
+                                Ext.Array.forEach(Ext.getStore("InportAsFieldStore").query("protoId","506441f8c648043912991123").items, function(mediaield){
+                                    if (Ext.isEmpty(mediaield.get("mediaTypeId"))){
+                                        mediaError=true;
+                                    }
+                                });
 
                                 if (store.query("protoId","text").length===0) {
                                     Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveTitleError);
@@ -456,6 +462,9 @@ Ext.define('Rubedo.view.InportInterface', {
                                     return(false);
                                 } else if (store.query("protoId","summary").length>1) {
                                     Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.CTMustHaveOnlyOneSummaryError);
+                                    return(false);
+                                } else if (mediaError){
+                                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.MediaFieldNeedsTypeError);
                                     return(false);
                                 }
                                 else if (store.query("protoId","51234e09c0e0516a0b00000d").length>1) {
