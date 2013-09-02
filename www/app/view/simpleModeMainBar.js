@@ -36,6 +36,32 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
                 },
                 {
                     xtype: 'button',
+                    id: 'favoritesAdaptiveMenu',
+                    iconCls: 'favoris',
+                    text: 'Favorites',
+                    menu: {
+                        xtype: 'menu',
+                        items: [
+                            {
+                                xtype: 'menuitem',
+                                text: 'Menu Item'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Menu Item'
+                            },
+                            {
+                                xtype: 'menuitem',
+                                text: 'Menu Item'
+                            }
+                        ]
+                    }
+                },
+                {
+                    xtype: 'tbseparator'
+                },
+                {
+                    xtype: 'button',
                     ACL: 'read.ui.pages',
                     favoriteIcon: 'application.png',
                     localiserId: 'pagesLaunchBtn',
