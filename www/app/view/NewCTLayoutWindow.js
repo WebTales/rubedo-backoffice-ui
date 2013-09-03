@@ -45,18 +45,11 @@ Ext.define('Rubedo.view.NewCTLayoutWindow', {
                             allowBlank: false
                         },
                         {
-                            xtype: 'combobox',
+                            xtype: 'hiddenfield',
                             anchor: '100%',
                             fieldLabel: 'Type',
                             name: 'type',
-                            allowBlank: false,
-                            editable: false,
-                            forceSelection: true,
-                            queryMode: 'local',
-                            store: [
-                                'Detail',
-                                'Summary'
-                            ]
+                            value: 'Detail'
                         },
                         {
                             xtype: 'button',
