@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
         'Rubedo.view.AdvancedColorField'
     ],
 
+    localiserId: 'customThemesWindow',
     height: 600,
     id: 'CustomThemesInterface',
     width: 1200,
@@ -83,6 +84,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'themeSimulateBtn',
                             disabled: true,
                             id: 'simulateCustomThemeBtn',
                             iconAlign: 'top',
@@ -107,6 +109,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    localiserId: 'themesMainPanel',
                     id: 'customThemesGrid',
                     width: 180,
                     collapseDirection: 'left',
@@ -117,6 +120,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'nameColumn',
                             dataIndex: 'name',
                             text: 'Name',
                             editor: {
@@ -138,6 +142,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                 },
                 {
                     xtype: 'form',
+                    localiserId: 'lessVarsPanel',
                     disabled: true,
                     id: 'mainLessVarsForm',
                     width: 300,
@@ -152,6 +157,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     items: [
                         {
                             xtype: 'fieldset',
+                            localiserId: 'garysFieldset',
                             id: 'customThemesMainGraysBox',
                             title: 'Grays',
                             items: [
@@ -193,6 +199,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    localiserId: 'randomizeColorsBtn',
                                     id: 'randomizeBaseThemeColorsBtn',
                                     margin: '0 0 6 0',
                                     text: 'Randomize base colors'
@@ -200,6 +207,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '50%',
+                                    localiserId: 'randomizeColorsBOBtn',
                                     id: 'randomizeBaseThemeColorsBOBtn',
                                     margin: '0 6 0 0',
                                     style: '{float:left;}',
@@ -228,6 +236,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'accentColorsFieldset',
                             title: 'Accent colors',
                             items: [
                                 {
@@ -274,6 +283,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'linksFieldset',
                             title: 'Links',
                             items: [
                                 {
@@ -285,6 +295,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'tablesFieldset',
                             title: 'Tables',
                             items: [
                                 {
@@ -306,6 +317,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'buttonsFieldset',
                             title: 'Buttons',
                             items: [
                                 {
@@ -352,6 +364,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'formsFieldset',
                             title: 'Forms',
                             items: [
                                 {
@@ -368,6 +381,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'dropdownsFieldset',
                             title: 'Dropdowns',
                             items: [
                                 {
@@ -379,6 +393,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'wellsFieldset',
                             title: 'Wells',
                             items: [
                                 {
@@ -390,6 +405,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'navbarsFieldset',
                             title: 'Navbar',
                             items: [
                                 {
@@ -411,6 +427,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'invertedNavbarsFieldset',
                             title: 'Inverted navbar',
                             items: [
                                 {
@@ -437,6 +454,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'paginationFieldset',
                             title: 'Pagination',
                             items: [
                                 {
@@ -458,6 +476,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'statesAlertsFieldset',
                             title: 'Form states and alerts',
                             items: [
                                 {
@@ -504,6 +523,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'tooltipsFieldset',
                             title: 'Tooltips and popovers',
                             items: [
                                 {
@@ -530,6 +550,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'typographyFieldset',
                             title: 'Typography',
                             items: [
                                 {
@@ -666,7 +687,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
 
     onThemeSimulatorHolderAfterRender: function(component, eOpts) {
         var task = new Ext.util.DelayedTask(function(){
-            var holder=Ext.widget("panel", {title:"Theme Preview", autoScroll:false});
+            var holder=Ext.widget("panel", {title:Rubedo.RubedoAutomatedElementsLoc.themePreviewText, autoScroll:false});
             component.add(holder);
             var addHtml='<iframe id="themeSimulatorFrame" type="text/html" width="100%" height="100%" src="resources/themesimulator/testpage/index.html" frameborder="0"></iframe>';
             holder.update(addHtml);

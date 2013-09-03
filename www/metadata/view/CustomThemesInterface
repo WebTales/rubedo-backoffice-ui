@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
+        "localiserId": "customThemesWindow",
         "height": 600,
         "id": "CustomThemesInterface",
         "width": 1200,
@@ -17,6 +18,13 @@
         "title": "Custom Themes"
     },
     "designerId": "e1ff2391-5104-46be-9c01-680539baf938",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -161,6 +169,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "themeSimulateBtn",
                         "disabled": true,
                         "id": "simulateCustomThemeBtn",
                         "iconAlign": "top",
@@ -168,7 +177,14 @@
                         "scale": "large",
                         "text": "Simulate"
                     },
-                    "designerId": "87aa89d6-db1f-4657-ab4c-2182c5b62615"
+                    "designerId": "87aa89d6-db1f-4657-ab4c-2182c5b62615",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Fill",
@@ -213,6 +229,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "themesMainPanel",
                 "id": "customThemesGrid",
                 "width": 180,
                 "collapseDirection": "left",
@@ -222,6 +239,13 @@
                 "store": "CustomThemes"
             },
             "designerId": "711d93db-b4f2-4f0d-99d9-9f97961afd28",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.grid.View",
@@ -240,10 +264,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameColumn",
                         "dataIndex": "name",
                         "text": "Name"
                     },
                     "designerId": "775c1164-cba0-45e1-b0b8-9a3beb0197ab",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -300,6 +332,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "localiserId": "lessVarsPanel",
                 "disabled": true,
                 "id": "mainLessVarsForm",
                 "width": 300,
@@ -311,6 +344,13 @@
                 "title": "Less Varaibles"
             },
             "designerId": "65491899-d5da-40fa-96cb-f4550e103ce7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.FieldSet",
@@ -321,10 +361,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
+                        "localiserId": "garysFieldset",
                         "id": "customThemesMainGraysBox",
                         "title": "Grays"
                     },
                     "designerId": "c8338297-b2e8-476b-b3e5-c6f053ff3fe7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -440,12 +488,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "randomizeColorsBtn",
                                 "id": "randomizeBaseThemeColorsBtn",
                                 "margin": "0 0 6 0",
                                 "width": null,
                                 "text": "Randomize base colors"
                             },
-                            "designerId": "c2767fb1-ff71-41cd-9f81-b3ba428fe0c5"
+                            "designerId": "c2767fb1-ff71-41cd-9f81-b3ba428fe0c5",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -456,6 +512,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "50%",
+                                "localiserId": "randomizeColorsBOBtn",
                                 "id": "randomizeBaseThemeColorsBOBtn",
                                 "margin": "0 6 0 0",
                                 "style": "{float:left;}",
@@ -464,7 +521,14 @@
                             "configAlternates": {
                                 "style": "string"
                             },
-                            "designerId": "0719a1ca-cef7-4576-b540-83017a5e2a76"
+                            "designerId": "0719a1ca-cef7-4576-b540-83017a5e2a76",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -501,9 +565,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": null,
+                        "localiserId": "accentColorsFieldset",
                         "title": "Accent colors"
                     },
                     "designerId": "58b75746-9aac-4478-80a8-a41fee822ad2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -635,9 +707,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "linksFieldset",
                         "title": "Links"
                     },
                     "designerId": "dd4fb0fb-d06b-458e-8f77-6101da0c0343",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -664,9 +744,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "tablesFieldset",
                         "title": "Tables"
                     },
                     "designerId": "fe0697e6-b344-4c0e-b91d-b310b197d9a6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -723,9 +811,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "buttonsFieldset",
                         "title": "Buttons"
                     },
                     "designerId": "a1636608-848f-48d7-b889-6b6f3b4b1b98",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -857,9 +953,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "formsFieldset",
                         "title": "Forms"
                     },
                     "designerId": "27b9ab54-90c3-49e2-9ad4-42f06414b39f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -901,9 +1005,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "dropdownsFieldset",
                         "title": "Dropdowns"
                     },
                     "designerId": "84a797b4-c12e-437d-b523-33d4135bdc31",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -930,9 +1042,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "wellsFieldset",
                         "title": "Wells"
                     },
                     "designerId": "5ebe8517-c92c-49c8-a43e-ce541b9bef6f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -959,9 +1079,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "navbarsFieldset",
                         "title": "Navbar"
                     },
                     "designerId": "62b55c17-a31d-462b-b268-dd0298bdea10",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -1018,9 +1146,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "invertedNavbarsFieldset",
                         "title": "Inverted navbar"
                     },
                     "designerId": "5a23adca-f24e-4fe1-8d71-c2be51422e6a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -1092,9 +1228,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "paginationFieldset",
                         "title": "Pagination"
                     },
                     "designerId": "545dac10-7849-47b5-892f-a430fef4c8dc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -1151,9 +1295,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "statesAlertsFieldset",
                         "title": "Form states and alerts"
                     },
                     "designerId": "7acf87f3-d205-492e-9332-7d684339c32c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -1285,9 +1437,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "tooltipsFieldset",
                         "title": "Tooltips and popovers"
                     },
                     "designerId": "1a5ce5b0-de41-4c66-bdd1-09403092cce0",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "linkedinstance",
@@ -1359,9 +1519,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "typographyFieldset",
                         "title": "Typography"
                     },
                     "designerId": "389ea4b6-5d4e-47d3-a5d6-68437d2494ea",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.TextArea",
@@ -1588,7 +1756,7 @@
                         "fn": "onThemeSimulatorHolderAfterRender",
                         "implHandler": [
                             "var task = new Ext.util.DelayedTask(function(){\r",
-                            "    var holder=Ext.widget(\"panel\", {title:\"Theme Preview\", autoScroll:false});\r",
+                            "    var holder=Ext.widget(\"panel\", {title:Rubedo.RubedoAutomatedElementsLoc.themePreviewText, autoScroll:false});\r",
                             "    component.add(holder);\r",
                             "    var addHtml='<iframe id=\"themeSimulatorFrame\" type=\"text/html\" width=\"100%\" height=\"100%\" src=\"resources/themesimulator/testpage/index.html\" frameborder=\"0\"></iframe>';\r",
                             "    holder.update(addHtml);\r",

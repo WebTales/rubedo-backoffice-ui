@@ -361,7 +361,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "editText":"Edit",
             "alreadyAnsweredText":"Already answered",
             "MediaFieldNeedsTypeError":"Media fields require a media type",
-            "damTypeHasBeenEmptiedText": "The media type has been emptied"
+            "damTypeHasBeenEmptiedText": "The media type has been emptied",
+            "themePreviewText":"Theme preview"
         });
 
         this.control({
