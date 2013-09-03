@@ -360,7 +360,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "withFallbackText":"With fallback",
             "editText":"Edit",
             "alreadyAnsweredText":"Already answered",
-            "MediaFieldNeedsTypeError":"Media fields require a media type"
+            "MediaFieldNeedsTypeError":"Media fields require a media type",
+            "damTypeHasBeenEmptiedText": "The media type has been emptied"
         });
 
         this.control({

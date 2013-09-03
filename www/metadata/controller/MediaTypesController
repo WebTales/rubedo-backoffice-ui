@@ -701,6 +701,13 @@
                     "delete(rec.id);\r",
                     "rec.type=rec.type+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
                     "rec.readOnly=false;\r",
+                    "Ext.Object.each(rec.i18n, function(key, value, myself) {\r",
+                    "    value.type=value.type+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "});\r",
+                    "rec.code=rec.type.replace(/\\W/g, '');\r",
+                    "delete(rec.version);\r",
+                    "delete(rec.createTime);\r",
+                    "delete(rec.lastUpdateTime);\r",
                     "Ext.getCmp(\"mainMTGrid\").getStore().add(rec);"
                 ],
                 "name": "click",
@@ -709,6 +716,55 @@
                 "designer|controlQuery": "#copyMTBtn"
             },
             "designerId": "dcdf96e3-e7bd-4224-9722-7768435a64fc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPurgeDTDamTypeBtnClick",
+                "implHandler": [
+                    "var fenetre = Ext.widget('delConfirmZ');\r",
+                    "fenetre.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    var target = Ext.getCmp('mainMTGrid').getSelectionModel().getLastSelected();\r",
+                    "    button.setLoading(true);\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'dam/delete-by-dam-type-id',\r",
+                    "        method:\"POST\",\r",
+                    "        params: {\r",
+                    "            \"type-id\": target.get(\"id\")\r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            button.setLoading(false);\r",
+                    "\r",
+                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.damTypeHasBeenEmptiedText);\r",
+                    "        },\r",
+                    "        failure: function(response) {\r",
+                    "            button.setLoading(false);\r",
+                    "            var message = Rubedo.RubedoAutomatedElementsLoc.contentsDeleteError;\r",
+                    "            try {\r",
+                    "                var answer = Ext.JSON.decode(response.responseText);\r",
+                    "                if (answer.message){\r",
+                    "                    message=answer.message;\r",
+                    "                }\r",
+                    "            } catch(err){}\r",
+                    "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);\r",
+                    "            }\r",
+                    "        });\r",
+                    "        Ext.getCmp('delConfirmZ').close();\r",
+                    "\r",
+                    "    }); "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#purgeDTDamTypeBtn"
+            },
+            "designerId": "aaef4d14-5409-4025-8c3c-801bea5e3291"
         }
     ]
 }

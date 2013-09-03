@@ -246,7 +246,48 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         delete(rec.id);
         rec.type=rec.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
         rec.readOnly=false;
+        Ext.Object.each(rec.i18n, function(key, value, myself) {
+            value.type=value.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        });
+        rec.code=rec.type.replace(/\W/g, '');
+        delete(rec.version);
+        delete(rec.createTime);
+        delete(rec.lastUpdateTime);
         Ext.getCmp("mainMTGrid").getStore().add(rec);
+    },
+
+    onPurgeDTDamTypeBtnClick: function(button, e, eOpts) {
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            var target = Ext.getCmp('mainMTGrid').getSelectionModel().getLastSelected();
+            button.setLoading(true);
+            Ext.Ajax.request({
+                url: 'dam/delete-by-dam-type-id',
+                method:"POST",
+                params: {
+                    "type-id": target.get("id")
+                },
+                success: function(response){
+                    button.setLoading(false);
+
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.damTypeHasBeenEmptiedText);
+                },
+                failure: function(response) {
+                    button.setLoading(false);
+                    var message = Rubedo.RubedoAutomatedElementsLoc.contentsDeleteError;
+                    try {
+                        var answer = Ext.JSON.decode(response.responseText);
+                        if (answer.message){
+                            message=answer.message;
+                        }
+                    } catch(err){}
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);
+                    }
+                });
+                Ext.getCmp('delConfirmZ').close();
+
+            }); 
     },
 
     resetInterfaceNoSelect: function() {
@@ -465,6 +506,9 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             },
             "#copyMTBtn": {
                 click: this.onCopyMTBtnClick
+            },
+            "#purgeDTDamTypeBtn": {
+                click: this.onPurgeDTDamTypeBtnClick
             }
         });
     }

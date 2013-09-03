@@ -84,6 +84,7 @@ Ext.define('Rubedo.controller.ACLController', {
                 "write.ui.mailingLists":false,
                 "read.ui.mailingLists":false,
                 "exe.ui.purgeContentType":false,
+                "exe.ui.purgeDamType":false,
                 "read.ui.directories":false,
                 "write.ui.directories":false,
                 "read.ui.languages":false,

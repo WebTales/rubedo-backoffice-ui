@@ -537,6 +537,71 @@
                     ]
                 },
                 {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "exe.ui.purgeDamType",
+                        "localiserId": "adminGroupCT",
+                        "layout|flex": null,
+                        "container|columns": 1,
+                        "disabled": true,
+                        "minWidth": null,
+                        "headerPosition": "bottom",
+                        "title": "Administration",
+                        "columns": null
+                    },
+                    "designerId": "0fdbdd9a-b0fe-461b-b605-c151b789ccae",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": null,
+                                "id": "purgeDTDamTypeBtn",
+                                "itemId": null,
+                                "minWidth": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "database_remove_big",
+                                "scale": "large",
+                                "text": "Empty assets",
+                                "tooltip": "Supprimer tous les contenus de ce type"
+                            },
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "c3cccf67-5d75-47f2-bda0-254ff2f1372c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",

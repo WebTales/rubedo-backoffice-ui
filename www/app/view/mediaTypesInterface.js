@@ -245,6 +245,29 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             ]
                         },
                         {
+                            xtype: 'buttongroup',
+                            ACL: 'exe.ui.purgeDamType',
+                            localiserId: 'adminGroupCT',
+                            disabled: true,
+                            headerPosition: 'bottom',
+                            title: 'Administration',
+                            layout: {
+                                columns: 1,
+                                type: 'table'
+                            },
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'purgeDTDamTypeBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'database_remove_big',
+                                    scale: 'large',
+                                    text: 'Empty assets',
+                                    tooltip: 'Supprimer tous les contenus de ce type'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'tbfill'
                         },
                         {
