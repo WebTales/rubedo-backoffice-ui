@@ -1105,6 +1105,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var rec = Ext.clone(Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected().data);
         delete(rec.id);
         rec.type=rec.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        Ext.Object.each(rec.i18n, function(key, value, myself) {
+            value.type=value.type+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        });
+        rec.code=rec.type.replace(/\W/g, '');
+        delete(rec.version);
+        delete(rec.createTime);
+        delete(rec.lastUpdateTime);
         Ext.getCmp("AdminfTypesGrid").getStore().add(rec);
     },
 
