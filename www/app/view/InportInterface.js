@@ -198,6 +198,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'importAsFieldTransCol',
                                                     dataIndex: 'name',
                                                     text: 'Import as field translation'
                                                 }
@@ -249,6 +250,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'ImportAsTaxoTransCol',
                                                     dataIndex: 'name',
                                                     text: 'Import as taxonomy translation'
                                                 }
@@ -530,6 +532,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 },
                 {
                     xtype: 'panel',
+                    localiserId: 'translationSettingsPanel',
                     layout: {
                         align: 'stretch',
                         type: 'hbox'
@@ -538,6 +541,7 @@ Ext.define('Rubedo.view.InportInterface', {
                     items: [
                         {
                             xtype: 'gridpanel',
+                            localiserId: 'FieldTransSetPanel',
                             flex: 1,
                             title: 'Field translations',
                             forceFit: true,
@@ -566,6 +570,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             return(Ext.getStore("InportAsFieldStore").findRecord("csvIndex",value).get("name"));
                                         }
                                     },
+                                    localiserId: 'transFieldCol',
                                     dataIndex: 'translatedElement',
                                     text: 'Translated field',
                                     editor: {
@@ -588,6 +593,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             return(Ext.getStore("AllLanguagesStore3").findRecord("locale",value).get("label"));
                                         }
                                     },
+                                    localiserId: 'transLanguageCol',
                                     dataIndex: 'translateToLanguage',
                                     text: 'Translation language',
                                     editor: {
@@ -605,6 +611,7 @@ Ext.define('Rubedo.view.InportInterface', {
                         },
                         {
                             xtype: 'gridpanel',
+                            localiserId: 'TaxoTransSetPanel',
                             flex: 1,
                             title: 'Taxonomy translations',
                             forceFit: true,
@@ -628,6 +635,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             return(Ext.getStore("InportAsTaxoStore").findRecord("csvIndex",value).get("name"));
                                         }
                                     },
+                                    localiserId: 'transVocabCol',
                                     dataIndex: 'translatedElement',
                                     text: 'Translated vocabulary',
                                     editor: {
@@ -650,6 +658,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                             return(Ext.getStore("AllLanguagesStore3").findRecord("locale",value).get("label"));
                                         }
                                     },
+                                    localiserId: 'transLanguageCol',
                                     dataIndex: 'translateToLanguage',
                                     text: 'Translation language',
                                     editor: {

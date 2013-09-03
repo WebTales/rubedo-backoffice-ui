@@ -198,16 +198,16 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                 },
                                 {
                                     xtype: 'button',
-                                    anchor: '100%',
                                     localiserId: 'randomizeColorsBtn',
+                                    anchor: '100%',
                                     id: 'randomizeBaseThemeColorsBtn',
                                     margin: '0 0 6 0',
                                     text: 'Randomize base colors'
                                 },
                                 {
                                     xtype: 'button',
-                                    anchor: '50%',
                                     localiserId: 'randomizeColorsBOBtn',
+                                    anchor: '50%',
                                     id: 'randomizeBaseThemeColorsBOBtn',
                                     margin: '0 6 0 0',
                                     style: '{float:left;}',

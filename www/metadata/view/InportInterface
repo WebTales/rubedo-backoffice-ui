@@ -439,7 +439,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": null,
+                                                "localiserId": "importAsFieldTransCol",
                                                 "dataIndex": "name",
                                                 "text": "Import as field translation"
                                             },
@@ -580,7 +580,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": null,
+                                                "localiserId": "ImportAsTaxoTransCol",
                                                 "dataIndex": "name",
                                                 "text": "Import as taxonomy translation"
                                             },
@@ -1377,10 +1377,18 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "stretch",
+                "localiserId": "translationSettingsPanel",
                 "layout": "hbox",
                 "title": "Translation settings"
             },
             "designerId": "e54a6d10-2e68-4f13-8ca5-7d81c2a7f12d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.grid.Panel",
@@ -1390,7 +1398,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
+                        "localiserId": "FieldTransSetPanel",
                         "layout|flex": 1,
                         "title": "Field translations",
                         "forceFit": true,
@@ -1458,10 +1466,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "transFieldCol",
                                 "dataIndex": "translatedElement",
                                 "text": "Translated field"
                             },
                             "designerId": "e5f2f4e2-c103-417a-b874-830c1c9fd51c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -1519,10 +1535,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "transLanguageCol",
                                 "dataIndex": "translateToLanguage",
                                 "text": "Translation language"
                             },
                             "designerId": "3fafc062-57c4-4358-95f9-cdec2aa8c346",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -1582,7 +1606,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
+                        "localiserId": "TaxoTransSetPanel",
                         "layout|flex": 1,
                         "layout|margins": null,
                         "title": "Taxonomy translations",
@@ -1651,10 +1675,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "transVocabCol",
                                 "dataIndex": "translatedElement",
                                 "text": "Translated vocabulary"
                             },
                             "designerId": "0ccb0132-e1a6-4fbe-a9fa-505a5dc6183c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -1712,10 +1744,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "transLanguageCol",
                                 "dataIndex": "translateToLanguage",
                                 "text": "Translation language"
                             },
                             "designerId": "eb69090f-7e3e-4b2f-ba04-7b3969c4a1a2",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
