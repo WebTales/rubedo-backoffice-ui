@@ -278,7 +278,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         var mainWin= Ext.getCmp("assistantRequetage");
         var result = {};
         result.vocabularies={ };
-        result.fieldRules={ };
+        result.fieldRules=[ ];
         Ext.Array.forEach(mainWin.query("field"),function(field){
             if (field.submitValue){
                 if ((field.isVocabularyField)&&(!Ext.isEmpty(field.getValue()))) {
@@ -294,16 +294,42 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     }
 
                 } else if (field.isAddedRuleField){
-                    if (Ext.isEmpty(result.fieldRules[field.ruleId])){
-                        result.fieldRules[field.ruleId]={ };           
+                    /* if (Ext.isEmpty(result.fieldRules[field.ruleId])){
+                    result.fieldRules[field.ruleId]={ };           
                     }
-                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();
+                    result.fieldRules[field.ruleId][field.usedRole]=field.getValue();*/
 
                 } else { 
-                    result[field.name]=field.getValue();
+                    if (Ext.Array.contains(["contentTypes","queryName","vocabulariesRule"],field.name)){
+                        result[field.name]=field.getValue();
+                    }
                 }
             }
         });
+        if (!Ext.isEmpty(Ext.getCmp('assisstantRE4'))){
+            Ext.Array.forEach(Ext.getCmp('assisstantRE4').query("regleChampAR"), function(newRule){
+                var objInter={};
+                Ext.Array.forEach(newRule.query("field"),function(field){
+                    if (field.isAddedRuleField){
+                        objInter.field=field.ruleId;
+                        objInter[field.usedRole]=field.getValue();
+                    }
+                });
+                result.fieldRules.push(objInter);
+            });
+        }
+        if (!Ext.isEmpty(Ext.getCmp('assisstantRE5'))){
+            Ext.Array.forEach(Ext.getCmp('assisstantRE5').query("regleChampAR"), function(newRule){
+                var objInter={};
+                Ext.Array.forEach(newRule.query("field"),function(field){
+                    if (field.isAddedRuleField){
+                        objInter.field=field.ruleId;
+                        objInter[field.usedRole]=field.getValue();
+                    }
+                });
+                result.fieldRules.push(objInter);
+            });
+        }
         if (!Ext.isArray(result.contentTypes)){
             result.contentTypes=[result.contentTypes];
         }
@@ -340,8 +366,9 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
         }
         if (!Ext.isEmpty(query.fieldRules)){
             htmlDisplay+="<h3>"+Rubedo.RubedoAutomatedElementsLoc.rulesAndSortsOnFieldsText+"</h3><ul>";
-            Ext.Object.each(query.fieldRules, function(key, value, myself){
-                var interKey=Ext.clone("key");
+            Ext.Array.forEach(query.fieldRules, function(value){
+                var key=value.field;
+                var interKey=Ext.clone(key);
                 try {
                     var possiblesArry=Ext.Array.pluck(Ext.Array.pluck(Ext.getStore('champsTCARStore').getRange(),"data"),"valeur");
                     Ext.Array.forEach(possiblesArry,function(possibleField){
@@ -712,7 +739,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     restoreFieldRules: function(fieldRules) {
-        Ext.Object.each(fieldRules, function(key, value){
+        Ext.Array.forEach(fieldRules, function(value){
+            var key=value.field;
             try{
                 if (!Ext.isEmpty(value.rule)) {
 
