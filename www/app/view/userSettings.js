@@ -324,7 +324,7 @@ Ext.define('Rubedo.view.userSettings', {
     },
 
     processInterfaceMode: function(config) {
-        config.store=[["desktop","Desktop"],["simple","Simple"]];
+        config.store=[["desktop","Desktop"],["simple","Application"]];
         return config;
     },
 

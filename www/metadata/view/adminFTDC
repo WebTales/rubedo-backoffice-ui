@@ -954,6 +954,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "disabled": true,
                 "id": "tabPanTC",
                 "iconCls": null,
                 "activeTab": 0
@@ -1859,7 +1860,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "localiserId": "layoutsPanel",
+                        "localiserId": "layoutsGrid",
                         "layout": "hbox",
                         "iconCls": "masque-icon",
                         "title": "Layouts"
@@ -1880,7 +1881,17 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "designerId": "1defb267-99d9-4d43-affa-4d6e15c51d16"
+                            "userConfig": {
+                                "localiserId": "layoutsGrid"
+                            },
+                            "designerId": "1defb267-99d9-4d43-affa-4d6e15c51d16",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.Panel",

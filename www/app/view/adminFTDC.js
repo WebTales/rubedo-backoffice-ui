@@ -382,6 +382,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [
@@ -688,13 +689,17 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'panel',
-                            localiserId: 'layoutsPanel',
+                            localiserId: 'layoutsGrid',
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'
                             },
                             iconCls: 'masque-icon',
                             title: 'Layouts',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'layoutsGrid'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
