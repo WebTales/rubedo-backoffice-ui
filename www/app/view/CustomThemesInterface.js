@@ -45,7 +45,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.workspaces',
+                            ACL: 'write.ui.customThemes',
                             localiserId: 'addBtn',
                             id: 'customThemesAddBtn',
                             iconAlign: 'top',
@@ -55,7 +55,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.workspaces',
+                            ACL: 'write.ui.customThemes',
                             localiserId: 'removeBtn',
                             disabled: true,
                             id: 'customThemesRemoveBtn',
@@ -66,7 +66,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.workspaces',
+                            ACL: 'write.ui.customThemes',
                             localiserId: 'saveBtn',
                             disabled: true,
                             id: 'customThemesSaveBtn',
@@ -127,7 +127,12 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     ],
                     plugins: [
                         Ext.create('Ext.grid.plugin.CellEditing', {
-
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onCellEditingBeforeEdit,
+                                    scope: me
+                                }
+                            }
                         })
                     ]
                 },
@@ -651,6 +656,12 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
             t.stopEvent();
         }
     });
+    },
+
+    onCellEditingBeforeEdit: function(editor, e, eOpts) {
+        if (!ACL.interfaceRights["write.ui.customThemes"]){
+            return(false);
+        }
     },
 
     onThemeSimulatorHolderAfterRender: function(component, eOpts) {

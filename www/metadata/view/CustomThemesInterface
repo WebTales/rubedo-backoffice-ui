@@ -39,7 +39,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.customThemes",
                         "localiserId": "addBtn",
                         "layout|flex": null,
                         "id": "customThemesAddBtn",
@@ -72,7 +72,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.customThemes",
                         "localiserId": "removeBtn",
                         "layout|flex": null,
                         "disabled": true,
@@ -104,7 +104,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.customThemes",
                         "localiserId": "saveBtn",
                         "layout|flex": null,
                         "disabled": true,
@@ -266,7 +266,28 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "2e0500bf-7712-41cd-8ba5-f4be382df6ac"
+                    "designerId": "2e0500bf-7712-41cd-8ba5-f4be382df6ac",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingBeforeEdit",
+                                "implHandler": [
+                                    "if (!ACL.interfaceRights[\"write.ui.customThemes\"]){\r",
+                                    "    return(false);\r",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "d0651d61-d20a-4920-877d-a0c838e08972"
+                        }
+                    ]
                 }
             ]
         },
