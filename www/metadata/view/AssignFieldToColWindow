@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
+        "localiserId": "assignTCFieldWindow",
         "height": null,
         "width": 261,
         "designer|userClassName": "AssignFieldToColWindow",
@@ -51,6 +51,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "assignFieldField",
                         "fieldLabel": "Field",
                         "labelWidth": 50,
                         "name": "field",
@@ -67,7 +68,14 @@
                     "configAlternates": {
                         "store": "array"
                     },
-                    "designerId": "0dd0eb78-8281-4d85-ae99-85c6b2eee62f"
+                    "designerId": "0dd0eb78-8281-4d85-ae99-85c6b2eee62f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -77,7 +85,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
+                        "localiserId": "assignFieldSubmitBtn",
                         "layout|anchor": "100%",
                         "id": "assignFieldToLayoutSubmitBtn",
                         "scale": "medium",

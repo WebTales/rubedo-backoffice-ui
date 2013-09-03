@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.AssignFieldToColWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.AssignFieldToColWindow',
 
+    localiserId: 'assignTCFieldWindow',
     width: 261,
     resizable: false,
     layout: {
@@ -39,6 +40,7 @@ Ext.define('Rubedo.view.AssignFieldToColWindow', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'assignFieldField',
                             fieldLabel: 'Field',
                             labelWidth: 50,
                             name: 'field',
@@ -52,6 +54,7 @@ Ext.define('Rubedo.view.AssignFieldToColWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'assignFieldSubmitBtn',
                             anchor: '100%',
                             id: 'assignFieldToLayoutSubmitBtn',
                             scale: 'medium',

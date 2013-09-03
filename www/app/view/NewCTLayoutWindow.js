@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.NewCTLayoutWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.NewCTLayoutWindow',
 
+    localiserId: 'newLayoutWindow',
     width: 400,
     resizable: false,
     layout: {
@@ -53,6 +54,7 @@ Ext.define('Rubedo.view.NewCTLayoutWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'createNewLayoutBtn',
                             anchor: '100%',
                             id: 'NewCTLayoutWindowSubmitBtn',
                             scale: 'medium',

@@ -1259,7 +1259,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 Ext.getCmp("moveLayoutItemUpBtn").enable();
                 Ext.getCmp("moveLayoutItemDownBtn").enable();
                 Ext.getCmp("layoutPropsPanel").setIconCls('editBloc');
-                Ext.getCmp("layoutPropsPanel").setTitle("Field : "+newSelected.title);
+                Ext.getCmp("layoutPropsPanel").setTitle(Rubedo.RubedoAutomatedElementsLoc.fieldText+" : "+newSelected.title);
                 me.renderFieldTools(newSelected);
 
             }
@@ -1361,7 +1361,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     onLayoutActivatorBtnClick: function(button, e, eOpts) {
         if (button.deactivateMode){
             Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",false);
-            Ext.getCmp("layoutActivatorBtn").setText("Activate");
+            Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
             Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
 
@@ -1371,7 +1371,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 record.set("active",false);
             });
             Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",true);
-            Ext.getCmp("layoutActivatorBtn").setText("Deactivate");
+            Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
             Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
         }
@@ -1483,11 +1483,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("layoutElementIdField").setValue(null);
         Ext.getCmp("layoutActivatorBtn").enable();
         if (record.get("active")){
-            Ext.getCmp("layoutActivatorBtn").setText("Deactivate");
+            Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
             Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
         } else {
-            Ext.getCmp("layoutActivatorBtn").setText("Activate");
+            Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
             Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
         }
@@ -1501,7 +1501,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("layoutActivatorBtn").disable();
         Ext.getStore("CTFieldsForLayouts").removeAll();
         Ext.getCmp("layoutElementIdField").setValue(null);
-        Ext.getCmp("layoutActivatorBtn").setText("Activate");
+        Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
         Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
         Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
     },
@@ -1678,7 +1678,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         configSpec.getComponent(0).add(Ext.widget('displayfield',{
             value:"",
             labelWidth:180,
-            fieldLabel:"Double-click available fields to assign to this column"
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.dbclickToAssignText
 
 
         }));

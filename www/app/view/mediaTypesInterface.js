@@ -258,6 +258,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'emptyDamBtn',
                                     id: 'purgeDTDamTypeBtn',
                                     iconAlign: 'top',
                                     iconCls: 'database_remove_big',

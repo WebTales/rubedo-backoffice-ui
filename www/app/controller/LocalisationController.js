@@ -362,7 +362,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "alreadyAnsweredText":"Already answered",
             "MediaFieldNeedsTypeError":"Media fields require a media type",
             "damTypeHasBeenEmptiedText": "The media type has been emptied",
-            "themePreviewText":"Theme preview"
+            "themePreviewText":"Theme preview",
+            "fieldText":"Field",
+            "dbclickToAssignText":"Double-click available fields to assign to this column"
         });
 
         this.control({

@@ -954,7 +954,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "disabled": true,
                 "id": "tabPanTC",
                 "iconCls": null,
                 "activeTab": 0
@@ -1860,11 +1859,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "localiserId": "layoutsPanel",
                         "layout": "hbox",
                         "iconCls": "masque-icon",
                         "title": "Layouts"
                     },
                     "designerId": "3f456a79-271d-4f68-85fb-9da53f7d0d57",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1884,6 +1891,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "layoutsGrid",
                                 "id": "CTLayoutsGrid",
                                 "width": 220,
                                 "collapseDirection": "left",
@@ -1893,6 +1901,13 @@
                                 "store": "CTLayouts"
                             },
                             "designerId": "e49456f4-e369-4781-9570-63a7d1c0ac4f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.grid.View",
@@ -1924,11 +1939,19 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "addBtn",
                                                 "id": "addCTLayoutBtn",
                                                 "iconCls": "add",
                                                 "text": "Add"
                                             },
-                                            "designerId": "11f06beb-6a0f-4bd3-8b9a-b29c78f03e24"
+                                            "designerId": "11f06beb-6a0f-4bd3-8b9a-b29c78f03e24",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -1939,12 +1962,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "removeBtn",
                                                 "disabled": true,
                                                 "id": "RemoveCTLayoutBtn",
                                                 "iconCls": "close",
                                                 "text": "Remove"
                                             },
-                                            "designerId": "ba672c81-b594-468b-8126-3373393fb07e"
+                                            "designerId": "ba672c81-b594-468b-8126-3373393fb07e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -1972,10 +2003,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "nameColumn",
                                         "dataIndex": "name",
                                         "text": "Name"
                                     },
                                     "designerId": "ec21dab3-f682-4b8a-9a75-4778cd760296",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "Ext.form.field.Text",
@@ -2065,6 +2104,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "availableFieldsGrid",
                                 "id": "CTLayoutFieldInjectorGrid",
                                 "width": 200,
                                 "collapseDirection": "left",
@@ -2074,6 +2114,13 @@
                                 "store": "CTFieldsForLayouts"
                             },
                             "designerId": "5a43b018-cc8a-4674-b54e-25351772c8fe",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.grid.View",
@@ -2106,10 +2153,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "labelColumn",
                                         "dataIndex": "label",
                                         "text": "Label"
                                     },
-                                    "designerId": "66ca64c0-c226-4dca-82df-ccced119d39b"
+                                    "designerId": "66ca64c0-c226-4dca-82df-ccced119d39b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Hidden",
@@ -2166,12 +2221,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "addRowToLBtn",
                                                 "disabled": true,
                                                 "id": "addRowToLayoutBtn",
                                                 "iconCls": "add",
                                                 "text": "New row"
                                             },
-                                            "designerId": "c7977c24-9658-4326-8e60-58792de6f127"
+                                            "designerId": "c7977c24-9658-4326-8e60-58792de6f127",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -2182,12 +2245,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "addColToLBtn",
                                                 "disabled": true,
                                                 "id": "addColToLayoutBtn",
                                                 "iconCls": "add",
                                                 "text": "New Column"
                                             },
-                                            "designerId": "e813fd5d-23fb-429c-bbb7-6076f391881e"
+                                            "designerId": "e813fd5d-23fb-429c-bbb7-6076f391881e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -2198,12 +2269,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "assignFieldToColBtn",
                                                 "disabled": true,
                                                 "id": "assignFieldToColBtn",
                                                 "iconCls": "add",
                                                 "text": "Assign field"
                                             },
-                                            "designerId": "9ce4a5e7-1df6-4cc4-bfa8-68d14b7b6860"
+                                            "designerId": "9ce4a5e7-1df6-4cc4-bfa8-68d14b7b6860",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -2214,12 +2293,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "removeBtn",
                                                 "disabled": true,
                                                 "id": "removeLayoutElementBtn",
                                                 "iconCls": "close",
                                                 "text": "Remove"
                                             },
-                                            "designerId": "8709789a-1f44-435e-97c5-aef067e4fdb6"
+                                            "designerId": "8709789a-1f44-435e-97c5-aef067e4fdb6",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -2230,12 +2317,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "moveLBtn",
                                                 "disabled": true,
                                                 "id": "moveLayoutItemUpBtn",
                                                 "iconCls": "arrow_up",
                                                 "text": "Move"
                                             },
-                                            "designerId": "761c0f58-6db8-48fe-9e86-c101ed06a431"
+                                            "designerId": "761c0f58-6db8-48fe-9e86-c101ed06a431",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -2246,12 +2341,20 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "moveLBtn",
                                                 "disabled": true,
                                                 "id": "moveLayoutItemDownBtn",
                                                 "iconCls": "arrow_down",
                                                 "text": "Move"
                                             },
-                                            "designerId": "6261a03a-2277-45c9-a9d3-e9fba733e8f5"
+                                            "designerId": "6261a03a-2277-45c9-a9d3-e9fba733e8f5",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.button.Button",
@@ -2262,11 +2365,19 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
+                                                "localiserId": "saveLayoutBtn",
                                                 "id": "saveCTLayoutBtn",
                                                 "iconCls": "save",
                                                 "text": "Save layout"
                                             },
-                                            "designerId": "df84b7e2-9613-43b4-8d2a-770a94bd8213"
+                                            "designerId": "df84b7e2-9613-43b4-8d2a-770a94bd8213",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -2298,6 +2409,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "localiserId": "layoutPropertiesPanel",
                                 "width": 200,
                                 "layout": "fit",
                                 "bodyPadding": 2,
@@ -2307,6 +2419,13 @@
                                 "title": "Properties"
                             },
                             "designerId": "881fbb69-9083-4891-b8f0-9d2b37a41589",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.panel.Panel",

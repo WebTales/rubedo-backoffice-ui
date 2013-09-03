@@ -382,7 +382,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
-                    disabled: true,
                     id: 'tabPanTC',
                     activeTab: 0,
                     items: [
@@ -689,6 +688,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                         },
                         {
                             xtype: 'panel',
+                            localiserId: 'layoutsPanel',
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'
@@ -698,6 +698,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             items: [
                                 {
                                     xtype: 'gridpanel',
+                                    localiserId: 'layoutsGrid',
                                     id: 'CTLayoutsGrid',
                                     width: 220,
                                     collapseDirection: 'left',
@@ -712,12 +713,14 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             items: [
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'addBtn',
                                                     id: 'addCTLayoutBtn',
                                                     iconCls: 'add',
                                                     text: 'Add'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'removeBtn',
                                                     disabled: true,
                                                     id: 'RemoveCTLayoutBtn',
                                                     iconCls: 'close',
@@ -743,6 +746,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     return(value);
                                                 }
                                             },
+                                            localiserId: 'nameColumn',
                                             dataIndex: 'name',
                                             text: 'Name',
                                             editor: {
@@ -767,6 +771,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'gridpanel',
+                                    localiserId: 'availableFieldsGrid',
                                     id: 'CTLayoutFieldInjectorGrid',
                                     width: 200,
                                     collapseDirection: 'left',
@@ -783,6 +788,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'labelColumn',
                                             dataIndex: 'label',
                                             text: 'Label'
                                         }
@@ -814,6 +820,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             items: [
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'addRowToLBtn',
                                                     disabled: true,
                                                     id: 'addRowToLayoutBtn',
                                                     iconCls: 'add',
@@ -821,6 +828,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'addColToLBtn',
                                                     disabled: true,
                                                     id: 'addColToLayoutBtn',
                                                     iconCls: 'add',
@@ -828,6 +836,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'assignFieldToColBtn',
                                                     disabled: true,
                                                     id: 'assignFieldToColBtn',
                                                     iconCls: 'add',
@@ -835,6 +844,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'removeBtn',
                                                     disabled: true,
                                                     id: 'removeLayoutElementBtn',
                                                     iconCls: 'close',
@@ -842,6 +852,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'moveLBtn',
                                                     disabled: true,
                                                     id: 'moveLayoutItemUpBtn',
                                                     iconCls: 'arrow_up',
@@ -849,6 +860,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'moveLBtn',
                                                     disabled: true,
                                                     id: 'moveLayoutItemDownBtn',
                                                     iconCls: 'arrow_down',
@@ -856,6 +868,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    localiserId: 'saveLayoutBtn',
                                                     id: 'saveCTLayoutBtn',
                                                     iconCls: 'save',
                                                     text: 'Save layout'
@@ -878,6 +891,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 },
                                 {
                                     xtype: 'panel',
+                                    localiserId: 'layoutPropertiesPanel',
                                     width: 200,
                                     layout: {
                                         type: 'fit'
