@@ -596,7 +596,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
         }
         if (!Ext.isEmpty(Ext.getStore("BlocsDataStore"))){
             Ext.Ajax.request({
-                url: 'resources/localisationfiles/generic/blockTypes.json',
+                url: 'blocks',
+                method:'GET',
                 params: {
 
                 },
