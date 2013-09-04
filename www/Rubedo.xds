@@ -2941,6 +2941,14 @@
                 "app/view/simpleModeMainBar.js"
             ],
             "className": "simpleModeMainBar"
+        },
+        "94fb422b-80b5-40d7-8b25-2a16cc8be41a": {
+            "paths": [
+                "metadata/controller/AppExtensionController",
+                "app/controller/override/AppExtensionController.js",
+                "app/controller/AppExtensionController.js"
+            ],
+            "className": "AppExtensionController"
         }
     },
     "viewOrderMap": {
@@ -3257,7 +3265,8 @@
             "82778ea5-36d1-422d-993a-6b91ab641629",
             "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
             "fa7809cb-a36e-40d9-92de-589f62b00143",
-            "b3b24ed4-5a5b-41d6-8150-b2a668f6491b"
+            "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
+            "94fb422b-80b5-40d7-8b25-2a16cc8be41a"
         ],
         "model": [
             "b980e128-6e56-43e6-99d6-b9312789f61e",

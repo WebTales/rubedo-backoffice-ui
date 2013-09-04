@@ -20,7 +20,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
     localiserId: 'systemInfoDisplayWindow',
     height: 324,
     id: 'SystemInfoDisplayWindow',
-    width: 666,
+    width: 925,
     layout: {
         align: 'stretch',
         type: 'vbox'
@@ -87,7 +87,7 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             title: 'Composants PHP',
                             disableSelection: true,
                             hideHeaders: true,
-                            nameColumnWidth: 240,
+                            nameColumnWidth: 200,
                             source: {
                                 
                             },
@@ -107,13 +107,33 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
                             disableSelection: true,
                             enableColumnMove: true,
                             hideHeaders: true,
-                            nameColumnWidth: 240,
+                            nameColumnWidth: 200,
                             source: {
                                 
                             },
                             listeners: {
                                 beforeedit: {
                                     fn: me.onPropertygridBeforeEdit,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'propertygrid',
+                            localiserId: 'extensionsPropDisplayPanel',
+                            flex: 1,
+                            autoScroll: true,
+                            title: 'Rubedo Extensions',
+                            disableSelection: true,
+                            enableColumnMove: true,
+                            hideHeaders: true,
+                            nameColumnWidth: 200,
+                            source: {
+                                
+                            },
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onPropertygridBeforeEdit2,
                                     scope: me
                                 }
                             }
@@ -140,11 +160,16 @@ Ext.define('Rubedo.view.SystemInfoDisplayWindow', {
         return(false);
     },
 
+    onPropertygridBeforeEdit2: function(editor, e, eOpts) {
+        return(false);
+    },
+
     onSystemInfoDisplayWindowAfterRender: function(component, eOpts) {
         var data = Ext.getCmp("monitoringTools").retrievedSystemInfo;
         component.getComponent(0).getForm().setValues(data);
         component.getComponent(1).getComponent(0).setSource(data.Components.phpComponents);
         component.getComponent(1).getComponent(1).setSource(data.Components.frontComponents);
+        component.getComponent(1).getComponent(2).setSource(data.Components.extensions);
     }
 
 });

@@ -10,7 +10,7 @@
         "container|align": "stretch",
         "height": 324,
         "id": "SystemInfoDisplayWindow",
-        "width": 666,
+        "width": 925,
         "designer|userClassName": "SystemInfoDisplayWindow",
         "designer|userAlias": "SystemInfoDisplayWindow",
         "layout": "vbox",
@@ -166,7 +166,7 @@
                         "title": "Composants PHP",
                         "disableSelection": true,
                         "hideHeaders": true,
-                        "nameColumnWidth": 240,
+                        "nameColumnWidth": 200,
                         "source": [
                             "{ }"
                         ]
@@ -214,7 +214,7 @@
                         "disableSelection": true,
                         "enableColumnMove": true,
                         "hideHeaders": true,
-                        "nameColumnWidth": 240,
+                        "nameColumnWidth": 200,
                         "source": [
                             "{ }"
                         ]
@@ -246,6 +246,54 @@
                             "designerId": "eeccf70c-ab8d-454f-8677-eb161c3ce209"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "extensionsPropDisplayPanel",
+                        "layout|flex": 1,
+                        "autoScroll": true,
+                        "title": "Rubedo Extensions",
+                        "disableSelection": true,
+                        "enableColumnMove": true,
+                        "hideHeaders": true,
+                        "nameColumnWidth": 200,
+                        "source": [
+                            "{ }"
+                        ]
+                    },
+                    "designerId": "87b90cb7-174c-40e3-8fb6-410d081a3780",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPropertygridBeforeEdit2",
+                                "implHandler": [
+                                    "return(false);"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "d4a96849-f8a9-4008-a7b7-f80ce897cdef"
+                        }
+                    ]
                 }
             ]
         },
@@ -262,7 +310,8 @@
                     "var data = Ext.getCmp(\"monitoringTools\").retrievedSystemInfo;\r",
                     "component.getComponent(0).getForm().setValues(data);\r",
                     "component.getComponent(1).getComponent(0).setSource(data.Components.phpComponents);\r",
-                    "component.getComponent(1).getComponent(1).setSource(data.Components.frontComponents);"
+                    "component.getComponent(1).getComponent(1).setSource(data.Components.frontComponents);\r",
+                    "component.getComponent(1).getComponent(2).setSource(data.Components.extensions);"
                 ],
                 "name": "afterrender",
                 "scope": "me"

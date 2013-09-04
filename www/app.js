@@ -527,7 +527,8 @@ Ext.application({
         'FormsController',
         'ImportController',
         'MailingListsController',
-        'CustomThemesController'
+        'CustomThemesController',
+        'AppExtensionController'
     ],
     name: 'Rubedo'
 });

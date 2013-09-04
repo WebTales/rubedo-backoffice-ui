@@ -1,0 +1,61 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AppExtensionController",
+        "designer|userAlias": "AppExtensionController"
+    },
+    "designerId": "94fb422b-80b5-40d7-8b25-2a16cc8be41a",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": [
+                    "var me=this;\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: 'app-extension',\r",
+                    "    method:'GET',\r",
+                    "    params: {\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        var extensionConfigs = Ext.JSON.decode(response.responseText);\r",
+                    "        me.processAppExtensions(extensionConfigs);\r",
+                    "    },\r",
+                    "    failure:function(response){\r",
+                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve extensions\");\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "8fa96181-ab9e-490d-b1d5-f90e89b92950"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processAppExtensions",
+                "designer|params": [
+                    "extensionConfigs"
+                ],
+                "implHandler": [
+                    "console.log(extensionConfigs);"
+                ]
+            },
+            "designerId": "4fc9d1dd-f071-444c-a871-f43285cf39ec"
+        }
+    ]
+}
