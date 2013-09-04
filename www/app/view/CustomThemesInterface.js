@@ -148,7 +148,8 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                     width: 300,
                     autoScroll: true,
                     layout: {
-                        type: 'auto'
+                        align: 'stretch',
+                        type: 'vbox'
                     },
                     bodyPadding: 10,
                     collapseDirection: 'left',

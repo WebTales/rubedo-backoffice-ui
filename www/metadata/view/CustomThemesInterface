@@ -333,11 +333,12 @@
             "userConfig": {
                 "localiserId": "lessVarsPanel",
                 "layout|flex": null,
+                "container|align": "stretch",
                 "disabled": true,
                 "id": "mainLessVarsForm",
                 "width": 300,
                 "autoScroll": true,
-                "layout": "auto",
+                "layout": "vbox",
                 "bodyPadding": 10,
                 "collapseDirection": "left",
                 "collapsible": true,
