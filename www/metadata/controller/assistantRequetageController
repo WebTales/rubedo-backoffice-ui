@@ -963,6 +963,15 @@
                     "fieldRules"
                 ],
                 "implHandler": [
+                    "if (Ext.isObject(fieldRules)){\r",
+                    "    var arrayFixer=[ ];\r",
+                    "    Ext.Object.each(fieldRules, function(key, value, myself) {\r",
+                    "        var newFix=value;\r",
+                    "        newFix.field=key;\r",
+                    "        arrayFixer.push(newFix);\r",
+                    "    });\r",
+                    "    fieldRules=arrayFixer;\r",
+                    "}\r",
                     "Ext.Array.forEach(fieldRules, function(value){\r",
                     "    var key=value.field;\r",
                     "    try{\r",

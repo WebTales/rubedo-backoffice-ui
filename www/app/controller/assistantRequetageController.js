@@ -739,6 +739,15 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     restoreFieldRules: function(fieldRules) {
+        if (Ext.isObject(fieldRules)){
+            var arrayFixer=[ ];
+            Ext.Object.each(fieldRules, function(key, value, myself) {
+                var newFix=value;
+                newFix.field=key;
+                arrayFixer.push(newFix);
+            });
+            fieldRules=arrayFixer;
+        }
         Ext.Array.forEach(fieldRules, function(value){
             var key=value.field;
             try{
