@@ -39,8 +39,8 @@ Ext.define('Rubedo.view.AssignFieldToColWindow', {
                     items: [
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'assignFieldField',
+                            anchor: '100%',
                             fieldLabel: 'Field',
                             labelWidth: 50,
                             name: 'field',

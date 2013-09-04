@@ -484,6 +484,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'pagingtoolbar',
                             dock: 'bottom',
+                            id: 'damMainPager',
                             width: 360,
                             displayInfo: true,
                             store: 'DAMFacetteStore'

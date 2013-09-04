@@ -1859,8 +1859,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "container|align": "stretch",
                         "localiserId": "layoutsGrid",
+                        "container|align": "stretch",
                         "layout": "hbox",
                         "iconCls": "masque-icon",
                         "title": "Layouts"
@@ -1901,8 +1901,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "layoutsGrid",
+                                "layout|flex": null,
                                 "id": "CTLayoutsGrid",
                                 "width": 220,
                                 "collapseDirection": "left",
@@ -1949,8 +1949,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "addBtn",
+                                                "layout|flex": null,
                                                 "id": "addCTLayoutBtn",
                                                 "iconCls": "add",
                                                 "text": "Add"
@@ -1972,8 +1972,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "removeBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "RemoveCTLayoutBtn",
                                                 "iconCls": "close",
@@ -2114,8 +2114,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "availableFieldsGrid",
+                                "layout|flex": null,
                                 "id": "CTLayoutFieldInjectorGrid",
                                 "width": 200,
                                 "collapseDirection": "left",
@@ -2231,8 +2231,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "addRowToLBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "addRowToLayoutBtn",
                                                 "iconCls": "add",
@@ -2255,8 +2255,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "addColToLBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "addColToLayoutBtn",
                                                 "iconCls": "add",
@@ -2279,8 +2279,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "assignFieldToColBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "assignFieldToColBtn",
                                                 "iconCls": "add",
@@ -2303,8 +2303,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "removeBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "removeLayoutElementBtn",
                                                 "iconCls": "close",
@@ -2327,8 +2327,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "moveLBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "moveLayoutItemUpBtn",
                                                 "iconCls": "arrow_up",
@@ -2351,8 +2351,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "moveLBtn",
+                                                "layout|flex": null,
                                                 "disabled": true,
                                                 "id": "moveLayoutItemDownBtn",
                                                 "iconCls": "arrow_down",
@@ -2375,8 +2375,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
                                                 "localiserId": "saveLayoutBtn",
+                                                "layout|flex": null,
                                                 "id": "saveCTLayoutBtn",
                                                 "iconCls": "save",
                                                 "text": "Save layout"
@@ -2419,8 +2419,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "localiserId": "layoutPropertiesPanel",
+                                "layout|flex": null,
                                 "width": 200,
                                 "layout": "fit",
                                 "bodyPadding": 2,

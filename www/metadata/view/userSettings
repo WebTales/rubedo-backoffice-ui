@@ -815,7 +815,7 @@
                         "fn": "onButtonAfterRender",
                         "implHandler": [
                             "if (MyPrefData.simpleMode){\r",
-                            "\tcomponent.hide();\r",
+                            "    component.hide();\r",
                             "}"
                         ],
                         "name": "afterrender",
