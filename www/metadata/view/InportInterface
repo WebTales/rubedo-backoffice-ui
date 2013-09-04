@@ -1119,6 +1119,9 @@
                                             "    if ((record.get(\"protoId\")==\"text\")||(record.get(\"protoId\")==\"summary\")){\r",
                                             "        record.set(\"localizable\", true);\r",
                                             "        record.set(\"searchable\",true);\r",
+                                            "    } else if ((record.get(\"protoId\")==\"51234e09c0e0516a0b00000d\")){\r",
+                                            "        record.set(\"localizable\", false);\r",
+                                            "        record.set(\"searchable\",true);\r",
                                             "    }\r",
                                             "});"
                                         ],

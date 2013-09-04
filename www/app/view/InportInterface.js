@@ -860,6 +860,9 @@ Ext.define('Rubedo.view.InportInterface', {
             if ((record.get("protoId")=="text")||(record.get("protoId")=="summary")){
                 record.set("localizable", true);
                 record.set("searchable",true);
+            } else if ((record.get("protoId")=="51234e09c0e0516a0b00000d")){
+                record.set("localizable", false);
+                record.set("searchable",true);
             }
         });
     },
