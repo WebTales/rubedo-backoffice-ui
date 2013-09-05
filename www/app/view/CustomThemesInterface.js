@@ -33,6 +33,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
     },
     iconCls: 'palette',
     title: 'Custom Themes',
+    constrainHeader: true,
 
     initComponent: function() {
         var me = this;

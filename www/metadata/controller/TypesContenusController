@@ -1670,6 +1670,7 @@
                 ],
                 "implHandler": [
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();\r",
+                    "Ext.getCmp(\"copyCTLayoutBtn\").enable();\r",
                     "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").enable();\r",
                     "this.restoreLayout(record.get(\"rows\"),0,Ext.getCmp(\"layoutEditionPanel\"));\r",
@@ -1701,6 +1702,7 @@
                 "implHandler": [
                     "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();\r",
+                    "Ext.getCmp(\"copyCTLayoutBtn\").disable();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").disable();\r",
                     "Ext.getCmp(\"layoutActivatorBtn\").disable();\r",
                     "Ext.getStore(\"CTFieldsForLayouts\").removeAll();\r",
@@ -2505,8 +2507,8 @@
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
                     "\r",
                     "} else {\r",
-                    "    var myType=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().get(\"type\");\r",
-                    "    Ext.Array.forEach(Ext.getCmp(\"CTLayoutsGrid\").getStore().query(\"type\",myType).items,function(record){\r",
+                    "    var mySite=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().get(\"site\");\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"CTLayoutsGrid\").getStore().query(\"site\",mySite).items,function(record){\r",
                     "        record.set(\"active\",false);\r",
                     "    });\r",
                     "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",true);\r",
@@ -2683,6 +2685,56 @@
                 "designer|controlQuery": "#CTLayoutsGrid"
             },
             "designerId": "fb6d6b7a-04d3-414d-8b04-da82e0d39660"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCopyCTLayoutBtnClick",
+                "implHandler": [
+                    "var target = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(target)) {\r",
+                    "    var fenetre = Ext.widget('CTLCopyWindow');\r",
+                    "    fenetre.show();\r",
+                    "    fenetre.getComponent(0).getComponent(0).setValue(target.get(\"name\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i'));\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#copyCTLayoutBtn"
+            },
+            "designerId": "43afccc8-b496-404f-b3a1-684aa2baa75d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLCopyLSubitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var data = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0].getData();\r",
+                    "    data.active=false;\r",
+                    "    Ext.apply(data, form.getValues());\r",
+                    "    Ext.getCmp('CTLayoutsGrid').getStore().add(data);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#CTLCopyLSubitBtn"
+            },
+            "designerId": "891beb16-30d9-429c-a095-4a4d1e2f7c03"
         }
     ]
 }

@@ -28,6 +28,9 @@ Ext.define('Rubedo.model.CTLayout', {
         },
         {
             name: 'rows'
+        },
+        {
+            name: 'site'
         }
     ]
 });

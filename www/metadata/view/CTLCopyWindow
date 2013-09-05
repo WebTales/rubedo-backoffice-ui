@@ -6,21 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newLayoutWindow",
+        "localiserId": "newLayoutWindowCopy",
         "height": null,
         "width": 400,
-        "designer|userClassName": "NewCTLayoutWindow",
-        "designer|userAlias": "NewCTLayoutWindow",
+        "designer|userClassName": "CTLCopyWindow",
+        "designer|userAlias": "CTLCopyWindow",
         "resizable": false,
         "layout": "fit",
-        "title": "New layout",
+        "title": "Copy layout",
         "constrain": true,
         "modal": true
     },
     "configAlternates": {
         "resizable": "boolean"
     },
-    "designerId": "c588057d-fc9e-48a9-a7cc-943965704e92",
+    "designerId": "fa44d14a-6bb6-46b5-a662-3f2ae1cba564",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -40,7 +40,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
-            "designerId": "c8815506-08b2-4af2-ace2-b58dbca09082",
+            "designerId": "b6416e5b-720e-4aac-9a60-06d9bd542d37",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -50,13 +50,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
+                        "localiserId": "nameFieldCopy",
                         "layout|anchor": "100%",
-                        "fieldLabel": "Nom",
+                        "fieldLabel": "New name",
                         "name": "name",
                         "allowBlank": false
                     },
-                    "designerId": "3081547e-faa4-4a62-8318-53bb433d7576",
+                    "designerId": "c1660c7b-f4dc-48c0-97e1-6787a65ffb51",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -66,26 +66,6 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Hidden",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Type",
-                        "name": "type",
-                        "value": [
-                            "\"Detail\""
-                        ]
-                    },
-                    "configAlternates": {
-                        "store": "array"
-                    },
-                    "designerId": "11d4e6ed-6e42-4ebf-9921-0b946cc90713"
-                },
-                {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
@@ -93,10 +73,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nmSiteField",
+                        "localiserId": "nmSiteFieldCopy",
                         "layout|anchor": "100%",
-                        "id": "nouveauMasqueSite1",
-                        "fieldLabel": "Site ",
+                        "id": "nouveauMasqueSite2",
+                        "fieldLabel": "To site",
                         "name": "site",
                         "allowBlank": false,
                         "editable": false,
@@ -108,7 +88,7 @@
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
-                    "designerId": "ab1bf818-e57d-4dcc-8de6-6556754fd7c3",
+                    "designerId": "0322317c-c69a-4484-8199-03aecfc947bc",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -136,7 +116,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
-                            "designerId": "4f64c513-d76b-4f9a-9f06-b6a12f2f811e"
+                            "designerId": "e468776b-c969-451a-8c4a-6ba450bbcc14"
                         }
                     ]
                 },
@@ -148,13 +128,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewLayoutBtn",
+                        "localiserId": "createNewLayoutBtnCopy",
                         "layout|anchor": "100%",
-                        "id": "NewCTLayoutWindowSubmitBtn",
+                        "id": "CTLCopyLSubitBtn",
                         "scale": "medium",
-                        "text": "Create new layout"
+                        "text": "Copy this layout"
                     },
-                    "designerId": "c8ef831e-d154-4bd3-b604-d868f95ae902",
+                    "designerId": "c9743c7b-2b5d-4cc5-a332-28b01919faf1",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

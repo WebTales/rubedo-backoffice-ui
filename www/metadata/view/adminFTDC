@@ -435,7 +435,7 @@
                         "id": "CTLayoutsBtnGr",
                         "headerPosition": "bottom",
                         "title": "Layouts",
-                        "columns": 3
+                        "columns": 4
                     },
                     "designerId": "1177e802-3bb1-4906-b8c3-376d307e8840",
                     "customConfigs": [
@@ -477,6 +477,39 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contentTypes",
+                                "localiserId": "duplicateBtn",
+                                "disabled": true,
+                                "id": "copyCTLayoutBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "8f6ed551-e666-4d99-9fcb-1e023220361d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
@@ -2419,11 +2452,35 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "implHandler": [
-                                                    "{name}"
+                                                    "Site : {name:this.getProperName}"
                                                 ],
                                                 "designer|displayName": "groupHeaderTpl"
                                             },
-                                            "designerId": "b4597879-0a7b-4e17-a16a-e4d69585c327"
+                                            "designerId": "b4597879-0a7b-4e17-a16a-e4d69585c327",
+                                            "cn": [
+                                                {
+                                                    "type": "templatefunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "getProperName",
+                                                        "designer|params": [
+                                                            "name"
+                                                        ],
+                                                        "implHandler": [
+                                                            "if (Ext.isEmpty(Ext.getStore(\"SitesComboCTLayouts\").findRecord(\"id\",name))){\r",
+                                                            "    return (\"\");\r",
+                                                            "} else {\r",
+                                                            "\treturn(Ext.getStore(\"SitesComboCTLayouts\").findRecord(\"id\",name).get(\"text\"));\r",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "designerId": "dfe70c83-7373-4844-80c9-827c3589c2eb"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -2737,7 +2794,8 @@
             "userConfig": {
                 "fn": "onAdminFTDCRender",
                 "implHandler": [
-                    "Ext.getStore(\"TypesContenusDataJson\").load();"
+                    "Ext.getStore(\"TypesContenusDataJson\").load();\r",
+                    "Ext.getStore(\"SitesComboCTLayouts\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -2754,7 +2812,8 @@
             "userConfig": {
                 "fn": "onAdminFTDCBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"TypesContenusDataJson\").removeAll();"
+                    "Ext.getStore(\"TypesContenusDataJson\").removeAll();\r",
+                    "Ext.getStore(\"SitesComboCTLayouts\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

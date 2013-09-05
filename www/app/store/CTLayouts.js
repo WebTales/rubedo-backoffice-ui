@@ -28,7 +28,7 @@ Ext.define('Rubedo.store.CTLayouts', {
             model: 'Rubedo.model.CTLayout',
             storeId: 'CTLayouts',
             groupers: {
-                property: 'type'
+                property: 'site'
             }
         }, cfg)]);
     }

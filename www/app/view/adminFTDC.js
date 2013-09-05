@@ -187,7 +187,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             id: 'CTLayoutsBtnGr',
                             headerPosition: 'bottom',
                             title: 'Layouts',
-                            columns: 3,
+                            columns: 4,
                             items: [
                                 {
                                     xtype: 'button',
@@ -198,6 +198,17 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     iconCls: 'add_big',
                                     scale: 'large',
                                     text: 'Add'
+                                },
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
+                                    localiserId: 'duplicateBtn',
+                                    disabled: true,
+                                    id: 'copyCTLayoutBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
                                 },
                                 {
                                     xtype: 'button',
@@ -877,9 +888,18 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     features: [
                                         {
                                             ftype: 'grouping',
-                                            groupHeaderTpl: [
-                                                '{name}'
-                                            ]
+                                            groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                                                'Site : {name:this.getProperName}',
+                                                {
+                                                    getProperName: function(name) {
+                                                        if (Ext.isEmpty(Ext.getStore("SitesComboCTLayouts").findRecord("id",name))){
+                                                            return ("");
+                                                        } else {
+                                                            return(Ext.getStore("SitesComboCTLayouts").findRecord("id",name).get("text"));
+                                                        }
+                                                    }
+                                                }
+                                            )
                                         }
                                     ],
                                     plugins: [
@@ -1119,10 +1139,12 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onAdminFTDCRender: function(component, eOpts) {
         Ext.getStore("TypesContenusDataJson").load();
+        Ext.getStore("SitesComboCTLayouts").load();
     },
 
     onAdminFTDCBeforeClose: function(panel, eOpts) {
         Ext.getStore("TypesContenusDataJson").removeAll();
+        Ext.getStore("SitesComboCTLayouts").removeAll();
     },
 
     onAdminFTDCAfterRender: function(component, eOpts) {

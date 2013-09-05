@@ -184,7 +184,8 @@ Ext.application({
         'Rubedo.view.AdvancedColorField',
         'Rubedo.view.NewCTLayoutWindow',
         'Rubedo.view.AssignFieldToColWindow',
-        'Rubedo.view.simpleModeMainBar'
+        'Rubedo.view.simpleModeMainBar',
+        'Rubedo.view.CTLCopyWindow'
     ],
     models: [
         'sitesDataModel',
@@ -335,7 +336,8 @@ Ext.application({
         'InportAsFieldTranslationStore',
         'InportAsTaxoTranslationStore',
         'LocalizedFieldSelectorStore',
-        'ImportTranslationLanguageStore'
+        'ImportTranslationLanguageStore',
+        'SitesComboCTLayouts'
     ],
     views: [
         'MyContainer',
@@ -504,7 +506,8 @@ Ext.application({
         'AdvancedColorField',
         'NewCTLayoutWindow',
         'AssignFieldToColWindow',
-        'simpleModeMainBar'
+        'simpleModeMainBar',
+        'CTLCopyWindow'
     ],
     autoCreateViewport: true,
     controllers: [

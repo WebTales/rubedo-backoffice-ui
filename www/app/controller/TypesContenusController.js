@@ -1371,8 +1371,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
 
         } else {
-            var myType=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().get("type");
-            Ext.Array.forEach(Ext.getCmp("CTLayoutsGrid").getStore().query("type",myType).items,function(record){
+            var mySite=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().get("site");
+            Ext.Array.forEach(Ext.getCmp("CTLayoutsGrid").getStore().query("site",mySite).items,function(record){
                 record.set("active",false);
             });
             Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",true);
@@ -1454,6 +1454,26 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     },
 
+    onCopyCTLayoutBtnClick: function(button, e, eOpts) {
+        var target = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0];
+        if (Ext.isDefined(target)) {
+            var fenetre = Ext.widget('CTLCopyWindow');
+            fenetre.show();
+            fenetre.getComponent(0).getComponent(0).setValue(target.get("name")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'));
+        }
+    },
+
+    onCTLCopyLSubitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            var data = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0].getData();
+            data.active=false;
+            Ext.apply(data, form.getValues());
+            Ext.getCmp('CTLayoutsGrid').getStore().add(data);
+            button.up().up().close();
+        }
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1490,6 +1510,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     resetLayoutsInterfaceSelect: function(record) {
         Ext.getCmp("RemoveCTLayoutBtn").enable();
+        Ext.getCmp("copyCTLayoutBtn").enable();
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("layoutsEditToolbar").enable();
         this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
@@ -1510,6 +1531,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     resetLayoutsInterfaceNoSelect: function() {
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("RemoveCTLayoutBtn").disable();
+        Ext.getCmp("copyCTLayoutBtn").disable();
         Ext.getCmp("layoutsEditToolbar").disable();
         Ext.getCmp("layoutActivatorBtn").disable();
         Ext.getStore("CTFieldsForLayouts").removeAll();
@@ -2018,6 +2040,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#moveLayoutItemDownBtn": {
                 click: this.onMoveLayoutItemDownBtnClick
+            },
+            "#copyCTLayoutBtn": {
+                click: this.onCopyCTLayoutBtnClick
+            },
+            "#CTLCopyLSubitBtn": {
+                click: this.onCTLCopyLSubitBtnClick
             }
         });
     }

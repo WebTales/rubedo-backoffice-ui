@@ -155,7 +155,8 @@
             "InportAsFieldTranslationStore",
             "InportAsTaxoTranslationStore",
             "LocalizedFieldSelectorStore",
-            "ImportTranslationLanguageStore"
+            "ImportTranslationLanguageStore",
+            "SitesComboCTLayouts"
         ],
         "views": [
             "MyContainer",
@@ -324,7 +325,8 @@
             "AdvancedColorField",
             "NewCTLayoutWindow",
             "AssignFieldToColWindow",
-            "simpleModeMainBar"
+            "simpleModeMainBar",
+            "CTLCopyWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [
