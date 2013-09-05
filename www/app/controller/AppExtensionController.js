@@ -37,26 +37,33 @@ Ext.define('Rubedo.controller.AppExtensionController', {
     processAppExtensions: function(extensionConfigs) {
         var me=this;
         //get models
-
-        Ext.Array.forEach(extensionConfigs.models, function(model){
-            Ext.syncRequire(model);
-        });
+        if(!Ext.isEmpty(extensionConfigs.models)){
+            Ext.Array.forEach(extensionConfigs.models, function(model){
+                Ext.syncRequire(model);
+            });
+        }
         //get stores
-        Ext.Array.forEach(extensionConfigs.stores, function(store){
-            Ext.syncRequire(store);
-            Ext.create("Rubedo.store."+store.split(".").pop());
-        });
+        if(!Ext.isEmpty(extensionConfigs.stores)){
+            Ext.Array.forEach(extensionConfigs.stores, function(store){
+                Ext.syncRequire(store);
+                Ext.create("Rubedo.store."+store.split(".").pop());
+            });
+        }
         //get views
-        Ext.Array.forEach(extensionConfigs.views, function(view){
-            Ext.syncRequire(view);
-        });
+        if(!Ext.isEmpty(extensionConfigs.views)){
+            Ext.Array.forEach(extensionConfigs.views, function(view){
+                Ext.syncRequire(view);
+            });
+        }
 
         //get controllers
-        Ext.Array.forEach(extensionConfigs.controllers, function(controller){
-            Ext.syncRequire(controller);
-            me.getController(controller.split(".").pop()).init();
-            me.getController(controller.split(".").pop()).onLaunch();
-        });
+        if(!Ext.isEmpty(extensionConfigs.controllers)){
+            Ext.Array.forEach(extensionConfigs.controllers, function(controller){
+                Ext.syncRequire(controller);
+                me.getController(controller.split(".").pop()).init();
+                me.getController(controller.split(".").pop()).onLaunch();
+            });
+        }
     }
 
 });
