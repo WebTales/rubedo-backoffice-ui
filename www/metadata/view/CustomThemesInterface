@@ -161,32 +161,6 @@
                     ]
                 },
                 {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "localiserId": "themeSimulateBtn",
-                        "layout|flex": null,
-                        "disabled": true,
-                        "id": "simulateCustomThemeBtn",
-                        "iconAlign": "top",
-                        "iconCls": "play_big",
-                        "scale": "large",
-                        "text": "Simulate"
-                    },
-                    "designerId": "87aa89d6-db1f-4657-ab4c-2182c5b62615",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
@@ -1728,6 +1702,73 @@
                             "designerId": "27744be2-9f1d-4b5d-a531-545a7fed99e3"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "dock": null,
+                "width": 60,
+                "vertical": true
+            },
+            "designerId": "97a91176-46d6-4c60-8a18-c5d3af08fd4f",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "designerId": "9d700dfe-830b-43e2-9210-054a1ea7c746"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "themeSimulateBtn",
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "simulateCustomThemeBtn",
+                        "iconAlign": "top",
+                        "iconCls": "play_big",
+                        "scale": "large",
+                        "text": "Simulate"
+                    },
+                    "designerId": "87aa89d6-db1f-4657-ab4c-2182c5b62615",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "designerId": "113e5219-cf2c-423e-ad0d-67521ef8dbef"
                 }
             ]
         },

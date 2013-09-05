@@ -83,16 +83,6 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                             }
                         },
                         {
-                            xtype: 'button',
-                            localiserId: 'themeSimulateBtn',
-                            disabled: true,
-                            id: 'simulateCustomThemeBtn',
-                            iconAlign: 'top',
-                            iconCls: 'play_big',
-                            scale: 'large',
-                            text: 'Simulate'
-                        },
-                        {
                             xtype: 'tbfill'
                         }
                     ]
@@ -633,6 +623,31 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     step: 0.25
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'toolbar',
+                    width: 60,
+                    vertical: true,
+                    items: [
+                        {
+                            xtype: 'tbspacer',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'button',
+                            localiserId: 'themeSimulateBtn',
+                            disabled: true,
+                            id: 'simulateCustomThemeBtn',
+                            iconAlign: 'top',
+                            iconCls: 'play_big',
+                            scale: 'large',
+                            text: 'Simulate'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            flex: 1
                         }
                     ]
                 },
