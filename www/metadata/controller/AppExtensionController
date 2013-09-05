@@ -23,17 +23,17 @@
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.Ajax.request({\r",
-                    "    url: 'app-extension',\r",
-                    "    method:'GET',\r",
-                    "    params: {\r",
-                    "    },\r",
-                    "    success: function(response){\r",
-                    "        var extensionConfigs = Ext.JSON.decode(response.responseText);\r",
-                    "        me.processAppExtensions(extensionConfigs);\r",
-                    "    },\r",
-                    "    failure:function(response){\r",
-                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve extensions\");\r",
-                    "    }\r",
+                    "url: 'app-extension',\r",
+                    "method:'GET',\r",
+                    "params: {\r",
+                    "},\r",
+                    "success: function(response){\r",
+                    "var extensionConfigs = Ext.JSON.decode(response.responseText).data;\r",
+                    "me.processAppExtensions(extensionConfigs);\r",
+                    "},\r",
+                    "failure:function(response){\r",
+                    "Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve extensions\");\r",
+                    "}\r",
                     "});"
                 ]
             },
@@ -52,7 +52,28 @@
                     "extensionConfigs"
                 ],
                 "implHandler": [
-                    "console.log(extensionConfigs);"
+                    "var me=this;\r",
+                    "//get models\r",
+                    "\r",
+                    "Ext.Array.forEach(extensionConfigs.models, function(model){\r",
+                    "    Ext.syncRequire(model);\r",
+                    "});\r",
+                    "//get stores\r",
+                    "Ext.Array.forEach(extensionConfigs.stores, function(store){\r",
+                    "    Ext.syncRequire(store);\r",
+                    "    Ext.create(\"Rubedo.store.\"+store.split(\".\").pop());\r",
+                    "});\r",
+                    "//get views\r",
+                    "Ext.Array.forEach(extensionConfigs.views, function(view){\r",
+                    "    Ext.syncRequire(view);\r",
+                    "});\r",
+                    "\r",
+                    "//get controllers\r",
+                    "Ext.Array.forEach(extensionConfigs.controllers, function(controller){\r",
+                    "    Ext.syncRequire(controller);\r",
+                    "    me.getController(controller.split(\".\").pop()).init();\r",
+                    "    me.getController(controller.split(\".\").pop()).onLaunch();\r",
+                    "});"
                 ]
             },
             "designerId": "4fc9d1dd-f071-444c-a871-f43285cf39ec"
