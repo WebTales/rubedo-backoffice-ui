@@ -1018,6 +1018,11 @@
             "userConfig": {
                 "fn": "enregistrerTypeContenus",
                 "implHandler": [
+                    "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(rec)){\r",
+                    "    rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel\")));\r",
+                    "}\r",
                     "if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected() !== null){\r",
                     "    var fieldsR = Ext.getCmp('champsEditionTC').items.items;\r",
                     "    var champsR = [ ];\r",
@@ -2655,6 +2660,29 @@
                 "designer|controlQuery": "#moveLayoutItemDownBtn"
             },
             "designerId": "cbbcfdd9-671b-4f5e-bd41-0c6e70e48d56"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLayoutsGridBeforeSelect",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(rec)){\r",
+                    "    rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel\")));\r",
+                    "}"
+                ],
+                "name": "beforeselect",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#CTLayoutsGrid"
+            },
+            "designerId": "fb6d6b7a-04d3-414d-8b04-da82e0d39660"
         }
     ]
 }

@@ -302,6 +302,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     xtype: 'button',
                                     localiserId: 'saveLayoutBtn',
                                     ACL: 'write.ui.contentTypes',
+                                    hidden: true,
                                     id: 'saveCTLayoutBtn',
                                     iconAlign: 'top',
                                     iconCls: 'floppy_disc_big',

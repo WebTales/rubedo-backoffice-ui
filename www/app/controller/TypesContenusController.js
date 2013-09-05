@@ -896,6 +896,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     enregistrerTypeContenus: function(button, e, eOpts) {
+        var me=this;
+        var rec=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(rec)){
+            rec.set("rows",me.saveLayout(Ext.getCmp("layoutEditionPanel")));
+        }
         if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected() !== null){
             var fieldsR = Ext.getCmp('champsEditionTC').items.items;
             var champsR = [ ];
@@ -1441,6 +1446,14 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     },
 
+    onCTLayoutsGridBeforeSelect: function(rowmodel, record, index, eOpts) {
+        var me=this;
+        var rec=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(rec)){
+            rec.set("rows",me.saveLayout(Ext.getCmp("layoutEditionPanel")));
+        }
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1967,7 +1980,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 click: this.onNewCTLayoutWindowSubmitBtnClick
             },
             "#CTLayoutsGrid": {
-                selectionchange: this.onCTLayoutsGridSelectionChange
+                selectionchange: this.onCTLayoutsGridSelectionChange,
+                beforeselect: this.onCTLayoutsGridBeforeSelect
             },
             "#saveCTLayoutBtn": {
                 click: this.onSaveCTLayoutBtnClick
