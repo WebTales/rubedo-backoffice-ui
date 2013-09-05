@@ -1672,11 +1672,11 @@
                     "Ext.getCmp(\"layoutActivatorBtn\").enable();\r",
                     "if (record.get(\"active\")){\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=true;\r",
                     "} else {\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
                     "}\r",
                     "this.getFieldsListForLayout();"
@@ -1701,7 +1701,7 @@
                     "Ext.getStore(\"CTFieldsForLayouts\").removeAll();\r",
                     "Ext.getCmp(\"layoutElementIdField\").setValue(null);\r",
                     "Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
-                    "Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiS\");\r",
                     "Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;"
                 ]
             },
@@ -2496,7 +2496,7 @@
                     "if (button.deactivateMode){\r",
                     "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",false);\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
                     "\r",
                     "} else {\r",
@@ -2506,7 +2506,7 @@
                     "    });\r",
                     "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",true);\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=true;\r",
                     "}"
                 ],

@@ -130,6 +130,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                             ACL: 'write.ui.contentTypes',
                             localiserId: 'editGroup',
                             disabled: true,
+                            id: 'CTEditToolsBtnGr',
                             headerPosition: 'bottom',
                             title: 'Edition',
                             columns: 4,
@@ -176,6 +177,136 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     iconCls: 'remove_big',
                                     scale: 'large',
                                     text: 'Supprimer champ'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            localiserId: 'layoutsGrid',
+                            ACL: 'write.ui.contentTypes',
+                            id: 'CTLayoutsBtnGr',
+                            headerPosition: 'bottom',
+                            title: 'Layouts',
+                            columns: 3,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    id: 'addCTLayoutBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'Add'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'removeBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'RemoveCTLayoutBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                },
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'layoutActivatorBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'ouiS',
+                                    scale: 'large',
+                                    text: 'Activate'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            localiserId: 'editGroup',
+                            ACL: 'write.ui.contentTypes',
+                            disabled: true,
+                            id: 'layoutsEditToolbar',
+                            headerPosition: 'bottom',
+                            title: 'Edition',
+                            columns: 7,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addRowToLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'addRowToLayoutBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'New row'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addColToLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'addColToLayoutBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'New Column'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'assignFieldToColBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'assignFieldToColBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'Assign field'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'removeBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'removeLayoutElementBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'moveLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'moveLayoutItemUpBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_up_big',
+                                    scale: 'large',
+                                    text: 'Move'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'moveLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'moveLayoutItemDownBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_down_big',
+                                    scale: 'large',
+                                    text: 'Move'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'saveLayoutBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    id: 'saveCTLayoutBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_big',
+                                    scale: 'large',
+                                    text: 'Save layout'
                                 }
                             ]
                         },
@@ -328,7 +459,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                     width: 150,
                     resizable: true,
                     resizeHandles: 'e',
-                    title: '',
+                    collapseDirection: 'left',
+                    collapsible: true,
+                    title: 'Content types',
                     forceFit: true,
                     store: 'TypesContenusDataJson',
                     viewConfig: {
@@ -346,9 +479,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + returner );}
 
                             },
-                            localiserId: 'typeColumn',
+                            localiserId: 'nameColumn',
                             dataIndex: 'type',
-                            text: 'Type'
+                            text: 'Name'
                         },
                         {
                             xtype: 'gridcolumn',
@@ -491,7 +624,17 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                activate: {
+                                    fn: me.onPanelActivate1,
+                                    scope: me
+                                },
+                                deactivate: {
+                                    fn: me.onPanelDeactivate1,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'panel',
@@ -711,36 +854,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     title: 'Layouts',
                                     forceFit: true,
                                     store: 'CTLayouts',
-                                    dockedItems: [
-                                        {
-                                            xtype: 'toolbar',
-                                            dock: 'top',
-                                            items: [
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'addBtn',
-                                                    id: 'addCTLayoutBtn',
-                                                    iconCls: 'add',
-                                                    text: 'Add'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'removeBtn',
-                                                    disabled: true,
-                                                    id: 'RemoveCTLayoutBtn',
-                                                    iconCls: 'close',
-                                                    text: 'Remove'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    disabled: true,
-                                                    id: 'layoutActivatorBtn',
-                                                    iconCls: 'ouiSpetit',
-                                                    text: 'Activate'
-                                                }
-                                            ]
-                                        }
-                                    ],
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
@@ -816,71 +929,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         align: 'stretch',
                                         type: 'vbox'
                                     },
-                                    dockedItems: [
-                                        {
-                                            xtype: 'toolbar',
-                                            dock: 'top',
-                                            disabled: true,
-                                            id: 'layoutsEditToolbar',
-                                            items: [
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'addRowToLBtn',
-                                                    disabled: true,
-                                                    id: 'addRowToLayoutBtn',
-                                                    iconCls: 'add',
-                                                    text: 'New row'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'addColToLBtn',
-                                                    disabled: true,
-                                                    id: 'addColToLayoutBtn',
-                                                    iconCls: 'add',
-                                                    text: 'New Column'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'assignFieldToColBtn',
-                                                    disabled: true,
-                                                    id: 'assignFieldToColBtn',
-                                                    iconCls: 'add',
-                                                    text: 'Assign field'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'removeBtn',
-                                                    disabled: true,
-                                                    id: 'removeLayoutElementBtn',
-                                                    iconCls: 'close',
-                                                    text: 'Remove'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'moveLBtn',
-                                                    disabled: true,
-                                                    id: 'moveLayoutItemUpBtn',
-                                                    iconCls: 'arrow_up',
-                                                    text: 'Move'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'moveLBtn',
-                                                    disabled: true,
-                                                    id: 'moveLayoutItemDownBtn',
-                                                    iconCls: 'arrow_down',
-                                                    text: 'Move'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    localiserId: 'saveLayoutBtn',
-                                                    id: 'saveCTLayoutBtn',
-                                                    iconCls: 'save',
-                                                    text: 'Save layout'
-                                                }
-                                            ]
-                                        }
-                                    ],
                                     items: [
                                         {
                                             xtype: 'panel',
@@ -943,7 +991,17 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                activate: {
+                                    fn: me.onPanelActivate,
+                                    scope: me
+                                },
+                                deactivate: {
+                                    fn: me.onPanelDeactivate,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -1024,6 +1082,18 @@ Ext.define('Rubedo.view.adminFTDC', {
     });
     },
 
+    onPanelActivate1: function(component, eOpts) {
+        Ext.getCmp("CTEditToolsBtnGr").show();
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getCmp("AdminfTypesGrid").expand();
+        });
+        task.delay(200);
+    },
+
+    onPanelDeactivate1: function(component, eOpts) {
+        Ext.getCmp("CTEditToolsBtnGr").hide();
+    },
+
     onVocabulairesTypesContenusGridViewReady: function(tablepanel, eOpts) {
         if (!ACL.interfaceRights["write.ui.contentTypes"]){
             tablepanel.getSelectionModel().setLocked(true);
@@ -1032,6 +1102,18 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
         Ext.getCmp("layoutEditionPanel").setHeight(newValue);
+    },
+
+    onPanelActivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr").show();
+        Ext.getCmp("layoutsEditToolbar").show();
+        Ext.getCmp("AdminfTypesGrid").collapse();
+    },
+
+    onPanelDeactivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr").hide();
+        Ext.getCmp("layoutsEditToolbar").hide();
+        Ext.getCmp("AdminfTypesGrid").expand();
     },
 
     onAdminFTDCRender: function(component, eOpts) {

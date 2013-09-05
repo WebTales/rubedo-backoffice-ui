@@ -301,6 +301,7 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
+                        "id": "CTEditToolsBtnGr",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 4
@@ -414,6 +415,373 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "localiserId": "layoutsGrid",
+                        "ACL": "write.ui.contentTypes",
+                        "id": "CTLayoutsBtnGr",
+                        "headerPosition": "bottom",
+                        "title": "Layouts",
+                        "columns": 3
+                    },
+                    "designerId": "1177e802-3bb1-4906-b8c3-376d307e8840",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "addBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "id": "addCTLayoutBtn",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "Add"
+                            },
+                            "designerId": "11f06beb-6a0f-4bd3-8b9a-b29c78f03e24",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "removeBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "RemoveCTLayoutBtn",
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "designerId": "ba672c81-b594-468b-8126-3373393fb07e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "layoutActivatorBtn",
+                                "iconAlign": "top",
+                                "iconCls": "ouiS",
+                                "scale": "large",
+                                "text": "Activate"
+                            },
+                            "designerId": "f187ac4b-d2a5-41b5-8aa1-7c200e1eb5af",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "localiserId": "editGroup",
+                        "ACL": "write.ui.contentTypes",
+                        "disabled": true,
+                        "id": "layoutsEditToolbar",
+                        "headerPosition": "bottom",
+                        "title": "Edition",
+                        "columns": 7
+                    },
+                    "designerId": "042c7a2f-df59-49ee-8d3b-37f2bee07d14",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "addRowToLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "addRowToLayoutBtn",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "New row"
+                            },
+                            "designerId": "c7977c24-9658-4326-8e60-58792de6f127",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "addColToLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "addColToLayoutBtn",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "New Column"
+                            },
+                            "designerId": "e813fd5d-23fb-429c-bbb7-6076f391881e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "assignFieldToColBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "assignFieldToColBtn",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "Assign field"
+                            },
+                            "designerId": "9ce4a5e7-1df6-4cc4-bfa8-68d14b7b6860",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "removeBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "removeLayoutElementBtn",
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "designerId": "8709789a-1f44-435e-97c5-aef067e4fdb6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "moveLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "moveLayoutItemUpBtn",
+                                "iconAlign": "top",
+                                "iconCls": "arrow_up_big",
+                                "scale": "large",
+                                "text": "Move"
+                            },
+                            "designerId": "761c0f58-6db8-48fe-9e86-c101ed06a431",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "moveLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "moveLayoutItemDownBtn",
+                                "iconAlign": "top",
+                                "iconCls": "arrow_down_big",
+                                "scale": "large",
+                                "text": "Move"
+                            },
+                            "designerId": "6261a03a-2277-45c9-a9d3-e9fba733e8f5",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "saveLayoutBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "id": "saveCTLayoutBtn",
+                                "iconAlign": "top",
+                                "iconCls": "floppy_disc_big",
+                                "scale": "large",
+                                "text": "Save layout"
+                            },
+                            "designerId": "df84b7e2-9613-43b4-8d2a-770a94bd8213",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
                                     "type": "string"
                                 }
                             ]
@@ -786,7 +1154,9 @@
                 "width": 150,
                 "resizable": true,
                 "resizeHandles": "e",
-                "title": "",
+                "collapseDirection": "left",
+                "collapsible": true,
+                "title": "Content types",
                 "forceFit": true,
                 "store": "TypesContenusDataJson"
             },
@@ -824,10 +1194,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeColumn",
+                        "localiserId": "nameColumn",
                         "width": null,
                         "dataIndex": "type",
-                        "text": "Type",
+                        "text": "Name",
                         "flex": null
                     },
                     "designerId": "db09bb7e-7f2a-4a7c-8400-82e48b822e46",
@@ -1222,6 +1592,44 @@
                                     "designerId": "d87c6d1b-7468-4d28-bb9d-bceb646cac2a"
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelActivate1",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTEditToolsBtnGr\").show();\r",
+                                    "var task = new Ext.util.DelayedTask(function(){\r",
+                                    "\tExt.getCmp(\"AdminfTypesGrid\").expand();\r",
+                                    "});\r",
+                                    "task.delay(200);"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "designerId": "86f0e017-53d2-4ddf-be1b-97db1e9c17ce"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelDeactivate1",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTEditToolsBtnGr\").hide();"
+                                ],
+                                "name": "deactivate",
+                                "scope": "me"
+                            },
+                            "designerId": "eaee499e-c2f3-4434-8a64-35f862969e75"
                         }
                     ]
                 },
@@ -1930,83 +2338,6 @@
                                     "designerId": "cbead341-303a-4a61-a8e0-0230d1cd1a69"
                                 },
                                 {
-                                    "type": "Ext.toolbar.Toolbar",
-                                    "reference": {
-                                        "name": "dockedItems",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dock": "top"
-                                    },
-                                    "designerId": "6b10f566-0f73-429a-982e-dc7c55987244",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "addBtn",
-                                                "layout|flex": null,
-                                                "id": "addCTLayoutBtn",
-                                                "iconCls": "add",
-                                                "text": "Add"
-                                            },
-                                            "designerId": "11f06beb-6a0f-4bd3-8b9a-b29c78f03e24",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "removeBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "RemoveCTLayoutBtn",
-                                                "iconCls": "close",
-                                                "text": "Remove"
-                                            },
-                                            "designerId": "ba672c81-b594-468b-8126-3373393fb07e",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "layoutActivatorBtn",
-                                                "iconCls": "ouiSpetit",
-                                                "text": "Activate"
-                                            },
-                                            "designerId": "f187ac4b-d2a5-41b5-8aa1-7c200e1eb5af"
-                                        }
-                                    ]
-                                },
-                                {
                                     "type": "Ext.grid.column.Column",
                                     "reference": {
                                         "name": "columns",
@@ -2210,189 +2541,6 @@
                             "designerId": "53a9de6c-8ea4-4c11-9bef-808068ede9d1",
                             "cn": [
                                 {
-                                    "type": "Ext.toolbar.Toolbar",
-                                    "reference": {
-                                        "name": "dockedItems",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dock": "top",
-                                        "disabled": true,
-                                        "id": "layoutsEditToolbar"
-                                    },
-                                    "designerId": "7f4b3be4-822b-4718-bb72-2c7711e2e0f0",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "addRowToLBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "addRowToLayoutBtn",
-                                                "iconCls": "add",
-                                                "text": "New row"
-                                            },
-                                            "designerId": "c7977c24-9658-4326-8e60-58792de6f127",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "addColToLBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "addColToLayoutBtn",
-                                                "iconCls": "add",
-                                                "text": "New Column"
-                                            },
-                                            "designerId": "e813fd5d-23fb-429c-bbb7-6076f391881e",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "assignFieldToColBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "assignFieldToColBtn",
-                                                "iconCls": "add",
-                                                "text": "Assign field"
-                                            },
-                                            "designerId": "9ce4a5e7-1df6-4cc4-bfa8-68d14b7b6860",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "removeBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "removeLayoutElementBtn",
-                                                "iconCls": "close",
-                                                "text": "Remove"
-                                            },
-                                            "designerId": "8709789a-1f44-435e-97c5-aef067e4fdb6",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "moveLBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "moveLayoutItemUpBtn",
-                                                "iconCls": "arrow_up",
-                                                "text": "Move"
-                                            },
-                                            "designerId": "761c0f58-6db8-48fe-9e86-c101ed06a431",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "moveLBtn",
-                                                "layout|flex": null,
-                                                "disabled": true,
-                                                "id": "moveLayoutItemDownBtn",
-                                                "iconCls": "arrow_down",
-                                                "text": "Move"
-                                            },
-                                            "designerId": "6261a03a-2277-45c9-a9d3-e9fba733e8f5",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "localiserId": "saveLayoutBtn",
-                                                "layout|flex": null,
-                                                "id": "saveCTLayoutBtn",
-                                                "iconCls": "save",
-                                                "text": "Save layout"
-                                            },
-                                            "designerId": "df84b7e2-9613-43b4-8d2a-770a94bd8213",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
                                     "type": "Ext.panel.Panel",
                                     "reference": {
                                         "name": "items",
@@ -2535,6 +2683,44 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelActivate",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTLayoutsBtnGr\").show();\r",
+                                    "Ext.getCmp(\"layoutsEditToolbar\").show();\r",
+                                    "Ext.getCmp(\"AdminfTypesGrid\").collapse();"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "designerId": "804f62a0-2f21-4b04-aa3b-7e52b6050b68"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelDeactivate",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTLayoutsBtnGr\").hide();\r",
+                                    "Ext.getCmp(\"layoutsEditToolbar\").hide();\r",
+                                    "Ext.getCmp(\"AdminfTypesGrid\").expand();"
+                                ],
+                                "name": "deactivate",
+                                "scope": "me"
+                            },
+                            "designerId": "04219ea5-6d49-4c05-9aa6-b4e6d983f300"
                         }
                     ]
                 }
