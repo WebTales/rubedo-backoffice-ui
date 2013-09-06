@@ -71,7 +71,24 @@ Ext.define('Rubedo.controller.AppExtensionController', {
                     me.getController(controller).onLaunch();
                 });
             }
+
+            //register launch buttons
+            if(!Ext.isEmpty(extensionConfigs.launchButtons)){
+                Ext.Object.each(extensionConfigs.launchButtons, function(key, value, myself) {
+                    AppExtensions.launchButtons[key]=Ext.Array.merge(AppExtensions.launchButtons[key],value);
+                });
+            }
         }
+    },
+
+    init: function(application) {
+        Ext.define('AppExtensions', {
+            singleton:true,
+            launchButtons:{
+                studio: [ ],
+                administration:[ ]
+            }
+        });
     }
 
 });

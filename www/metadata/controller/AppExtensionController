@@ -88,10 +88,41 @@
                     "            me.getController(controller).onLaunch();\r",
                     "        });\r",
                     "    }\r",
+                    "    \r",
+                    "    //register launch buttons\r",
+                    "    if(!Ext.isEmpty(extensionConfigs.launchButtons)){\r",
+                    "        Ext.Object.each(extensionConfigs.launchButtons, function(key, value, myself) {\r",
+                    "\t\t\tAppExtensions.launchButtons[key]=Ext.Array.merge(AppExtensions.launchButtons[key],value);\r",
+                    "        });\r",
+                    "    }\r",
                     "}"
                 ]
             },
             "designerId": "4fc9d1dd-f071-444c-a871-f43285cf39ec"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Ext.define('AppExtensions', {\r",
+                    "    singleton:true,\r",
+                    "    launchButtons:{\r",
+                    "        studio: [ ],\r",
+                    "        administration:[ ]\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "8a83605d-459a-4e6e-b71b-3f30e122eca0"
         }
     ]
 }

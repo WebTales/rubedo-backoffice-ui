@@ -257,15 +257,6 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         },
         {
             xtype: 'menuitem',
-            ACL: 'read.ui.forms',
-            favoriteIcon: 'note.edit.png',
-            itemId: 'FormsInterface',
-            iconCls: 'form_small',
-            localiserId:'formsLaunchBtn',
-            text: 'Questionnaires'
-        },
-        {
-            xtype: 'menuitem',
             ACL: 'read.ui.customThemes',
             favoriteIcon: 'palette.png',
             itemId: 'CustomThemesInterface',
@@ -274,6 +265,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             text: 'Custom Themes'
         }
         ]);
+        component.add(AppExtensions.launchButtons.studio);
     },
 
     onSalamanderAdminMenuAdded: function(component, container, pos, eOpts) {

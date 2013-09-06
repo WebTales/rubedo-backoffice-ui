@@ -135,15 +135,6 @@
                                             "},\r",
                                             "{\r",
                                             "    xtype: 'menuitem',\r",
-                                            "    ACL: 'read.ui.forms',\r",
-                                            "    favoriteIcon: 'note.edit.png',\r",
-                                            "    itemId: 'FormsInterface',\r",
-                                            "    iconCls: 'form_small',\r",
-                                            "    localiserId:'formsLaunchBtn',\r",
-                                            "    text: 'Questionnaires'\r",
-                                            "},\r",
-                                            "{\r",
-                                            "    xtype: 'menuitem',\r",
                                             "    ACL: 'read.ui.customThemes',\r",
                                             "    favoriteIcon: 'palette.png',\r",
                                             "    itemId: 'CustomThemesInterface',\r",
@@ -151,7 +142,8 @@
                                             "    localiserId:'customThemesLaunchBtn',\r",
                                             "    text: 'Custom Themes'\r",
                                             "}\r",
-                                            "]);"
+                                            "]);\r",
+                                            "component.add(AppExtensions.launchButtons.studio);"
                                         ],
                                         "name": "added",
                                         "scope": "me"
