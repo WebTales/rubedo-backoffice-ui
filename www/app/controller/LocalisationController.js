@@ -630,41 +630,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
                 }
             });
         }
-        if (!Ext.isEmpty(Ext.getStore("FormFieldTypesStore"))){
-            Ext.Ajax.request({
-                url: 'resources/localisationfiles/generic/formFieldTypes.json',
-                params: {
 
-                },
-                success: function(response){
-                    var genericStructureString = response.responseText;
-                    Ext.Ajax.request({
-                        url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/formFieldLabels.json',
-                        params: {
-
-                        },
-                        success: function(response){
-                            var localisedLabels =Ext.JSON.decode(response.responseText);
-                            Ext.Object.each(localisedLabels, function(key, value, myself) {
-                                replacer=new RegExp(key, 'g');
-                                genericStructureString=genericStructureString.replace(replacer, value);
-                            });
-                            var decodedFT=Ext.JSON.decode(genericStructureString);
-                            Ext.getStore("FormFieldTypesStore").removeAll();
-                            Ext.getStore("FormFieldTypesStore").loadData(decodedFT);
-
-
-                        },
-                        failure:function(){
-                            console.log("Form Fields store could not be localised for this language");
-                        }
-                    });
-                },
-                failure:function(){
-                    console.log("Form Fields store could not retrieve generic structure");
-                }
-            });
-        }
         this.correctLanguageMenu();
         if (!Ext.isEmpty(Ext.getStore("AllLanguagesStore4"))){
             Ext.getStore("AllLanguagesStore4").load();
