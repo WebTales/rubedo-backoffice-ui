@@ -199,10 +199,10 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                 },
                 {
                     xtype: 'DLSToolbar',
-                    dock: 'top',
                     replicatorEntity: 'DAMReplicatorEntity',
                     specialContentsMode: true,
-                    id: 'DAMDSLToolbar'
+                    id: 'DAMDSLToolbar',
+                    dock: 'top'
                 }
             ]
         });

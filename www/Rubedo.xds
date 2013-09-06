@@ -2038,94 +2038,6 @@
             ],
             "className": "PersoPicUploadWindow"
         },
-        "479f5d1f-27bf-4ffb-ba71-0aab8621a58c": {
-            "paths": [
-                "metadata/view/FormsInterface",
-                "app/view/override/FormsInterface.js",
-                "app/view/FormsInterface.js"
-            ],
-            "className": "FormsInterface"
-        },
-        "82778ea5-36d1-422d-993a-6b91ab641629": {
-            "paths": [
-                "metadata/controller/FormsController",
-                "app/controller/override/FormsController.js",
-                "app/controller/FormsController.js"
-            ],
-            "className": "FormsController"
-        },
-        "5ea8c03e-9398-462c-a736-687a92d65bf6": {
-            "paths": [
-                "metadata/store/FormsStore",
-                "app/store/override/FormsStore.js",
-                "app/store/FormsStore.js"
-            ],
-            "className": "FormsStore"
-        },
-        "cac18e62-0bfb-4a11-be4a-49601eb16da4": {
-            "paths": [
-                "metadata/model/formModel",
-                "app/model/override/formModel.js",
-                "app/model/formModel.js"
-            ],
-            "className": "formModel"
-        },
-        "02bcaee3-2fc4-4f83-8521-12359112b8ab": {
-            "paths": [
-                "metadata/view/newFormWindow",
-                "app/view/override/newFormWindow.js",
-                "app/view/newFormWindow.js"
-            ],
-            "className": "newFormWindow"
-        },
-        "fc88ff8b-4055-49a7-9239-9574a3aef04e": {
-            "paths": [
-                "metadata/store/FormFieldTypesStore",
-                "app/store/override/FormFieldTypesStore.js",
-                "app/store/FormFieldTypesStore.js"
-            ],
-            "className": "FormFieldTypesStore"
-        },
-        "b980e128-6e56-43e6-99d6-b9312789f61e": {
-            "paths": [
-                "metadata/model/formFieldTypeModel",
-                "app/model/override/formFieldTypeModel.js",
-                "app/model/formFieldTypeModel.js"
-            ],
-            "className": "formFieldTypeModel"
-        },
-        "304ad092-9c78-4ed0-8170-c2c2b07738e2": {
-            "paths": [
-                "metadata/view/addFormFieldWindow",
-                "app/view/override/addFormFieldWindow.js",
-                "app/view/addFormFieldWindow.js"
-            ],
-            "className": "addFormFieldWindow"
-        },
-        "ea32a3c5-626e-450a-9bd5-3f3e40ac5d5d": {
-            "paths": [
-                "metadata/view/RFormPage",
-                "app/view/override/RFormPage.js",
-                "app/view/RFormPage.js"
-            ],
-            "className": "RFormPage"
-        },
-        "8fa0a4cd-1a8b-41e5-b0d1-f24bb4f30ef7": {
-            "paths": [
-                "metadata/view/RFormField",
-                "app/view/override/RFormField.js",
-                "app/view/RFormField.js"
-            ],
-            "className": "RFormField"
-        },
-        "6ecda564-e312-4a52-b602-3d6ddac71e4b": {
-            "paths": [
-                "metadata/view/FormsEditContainer",
-                "app/view/override/FormsEditContainer.js",
-                "app/view/FormsEditContainer.js"
-            ],
-            "className": "FormsEditContainer"
-        },
         "5ae078a2-d295-4000-952e-e1cf6213b1b9": {
             "paths": [
                 "metadata/view/PortalDropZone",
@@ -2133,22 +2045,6 @@
                 "app/view/PortalDropZone.js"
             ],
             "className": "PortalDropZone"
-        },
-        "36007f86-6607-47b7-a5b8-b35b3310bc18": {
-            "paths": [
-                "metadata/view/FormPickerField",
-                "app/view/override/FormPickerField.js",
-                "app/view/FormPickerField.js"
-            ],
-            "className": "FormPickerField"
-        },
-        "089ed193-b427-4893-b7ba-ede0a8ff7a2b": {
-            "paths": [
-                "metadata/store/FormPickerStore",
-                "app/store/override/FormPickerStore.js",
-                "app/store/FormPickerStore.js"
-            ],
-            "className": "FormPickerStore"
         },
         "9f720849-6c20-4727-8b99-ce99c0298e28": {
             "paths": [
@@ -2173,54 +2069,6 @@
                 "app/view/RichTextConfigurator.js"
             ],
             "className": "RichTextConfigurator"
-        },
-        "547619b3-9e1c-4adf-a83a-d4aa14243ebe": {
-            "paths": [
-                "metadata/view/MultiChoiceConfigurator",
-                "app/view/override/MultiChoiceConfigurator.js",
-                "app/view/MultiChoiceConfigurator.js"
-            ],
-            "className": "MultiChoiceConfigurator"
-        },
-        "66fcb2bd-aade-460e-b8f6-0839b3a1d005": {
-            "paths": [
-                "metadata/view/OpenFieldConfigurator",
-                "app/view/override/OpenFieldConfigurator.js",
-                "app/view/OpenFieldConfigurator.js"
-            ],
-            "className": "OpenFieldConfigurator"
-        },
-        "0c962f45-9c0e-470c-bf7f-7da0075f0ed9": {
-            "paths": [
-                "metadata/store/FCEStore",
-                "app/store/override/FCEStore.js",
-                "app/store/FCEStore.js"
-            ],
-            "className": "FCEStore"
-        },
-        "f5b46bb4-ca52-41c0-9e83-0695c4bd5b02": {
-            "paths": [
-                "metadata/view/FCEditor",
-                "app/view/override/FCEditor.js",
-                "app/view/FCEditor.js"
-            ],
-            "className": "FCEditor"
-        },
-        "1f387c06-5c71-4cab-ac38-38a30ac34a23": {
-            "paths": [
-                "metadata/view/MyComboBox32",
-                "app/view/override/MyComboBox32.js",
-                "app/view/MyComboBox32.js"
-            ],
-            "className": "MyComboBox32"
-        },
-        "6341613e-27da-44e4-b8e4-0157cfe99c02": {
-            "paths": [
-                "metadata/view/FormsPageConfigurator",
-                "app/view/override/FormsPageConfigurator.js",
-                "app/view/FormsPageConfigurator.js"
-            ],
-            "className": "FormsPageConfigurator"
         },
         "c4a3059a-1950-40ff-8528-0964d4544e97": {
             "paths": [
@@ -2565,14 +2413,6 @@
                 "app/store/FacetOverriderStore.js"
             ],
             "className": "FacetOverriderStore"
-        },
-        "2cce97d8-3a9e-46a2-a9db-d7da5288724d": {
-            "paths": [
-                "metadata/view/predefinedPrefsQuestionConfigurator",
-                "app/view/override/predefinedPrefsQuestionConfigurator.js",
-                "app/view/predefinedPrefsQuestionConfigurator.js"
-            ],
-            "className": "predefinedPrefsQuestionConfigurator"
         },
         "15bd2509-2de3-4e02-8e27-22097d0bf2e1": {
             "paths": [
@@ -2954,21 +2794,10 @@
     "viewOrderMap": {
         "view": [
             "174581d4-1d9c-4a32-b14d-615f802f9164",
-            "02bcaee3-2fc4-4f83-8521-12359112b8ab",
             "b6ffe1bc-b42f-4987-9728-a2d2563012af",
             "e0d081a5-ccca-483c-8f7a-43232eebbc43",
-            "6341613e-27da-44e4-b8e4-0157cfe99c02",
-            "f5b46bb4-ca52-41c0-9e83-0695c4bd5b02",
-            "547619b3-9e1c-4adf-a83a-d4aa14243ebe",
-            "66fcb2bd-aade-460e-b8f6-0839b3a1d005",
-            "2cce97d8-3a9e-46a2-a9db-d7da5288724d",
             "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
-            "8fa0a4cd-1a8b-41e5-b0d1-f24bb4f30ef7",
-            "ea32a3c5-626e-450a-9bd5-3f3e40ac5d5d",
-            "304ad092-9c78-4ed0-8170-c2c2b07738e2",
-            "479f5d1f-27bf-4ffb-ba71-0aab8621a58c",
-            "6ecda564-e312-4a52-b602-3d6ddac71e4b",
             "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
             "80577966-9127-4f1a-ba7a-faceef3f254a",
@@ -3033,7 +2862,6 @@
             "a78985f2-049d-48b7-b700-1ab96f553aa4",
             "756b35af-6a3f-4477-a677-7ff9f148fee7",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
-            "36007f86-6607-47b7-a5b8-b35b3310bc18",
             "3dd5f03c-4619-4dc7-bb17-d53b3d011623",
             "71505c40-5587-40f5-be0e-bea55fa8806d",
             "6d174482-b97c-435a-b6aa-7fd530bd5680",
@@ -3091,7 +2919,6 @@
             "d7860367-3cf8-4eb2-bcdd-74fea57755fb",
             "9f720849-6c20-4727-8b99-ce99c0298e28",
             "7120e487-8033-4805-b435-a863418861d9",
-            "1f387c06-5c71-4cab-ac38-38a30ac34a23",
             "b978680b-dfe2-47fc-b3c1-d006761b80bc",
             "ca0aea61-de73-4f0a-b040-a19454ef84dd",
             "08c86828-4c11-46f1-8868-d6188a6cd164",
@@ -3194,8 +3021,6 @@
             "59694082-24d4-4519-ae8c-5fd6849d6503",
             "4e0f7b80-7abc-44ef-9e90-b9cc7a3e1b24",
             "73f05935-ebc7-40e3-8cfa-a797d0649d76",
-            "5ea8c03e-9398-462c-a736-687a92d65bf6",
-            "089ed193-b427-4893-b7ba-ede0a8ff7a2b",
             "fcf5d26b-2f4a-4e20-b881-f1cf4befead8",
             "cc2e5f6d-9258-47d2-8829-9ef556b6d1e1",
             "c01cc863-569c-4c0c-8792-3b898fcb1ab6",
@@ -3229,8 +3054,6 @@
             "562558a9-b585-4d9a-91da-854c3548d79b",
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
             "fc686eab-6027-4b3d-a63c-a230e0bf79ff",
-            "fc88ff8b-4055-49a7-9239-9574a3aef04e",
-            "0c962f45-9c0e-470c-bf7f-7da0075f0ed9",
             "cc39f83e-ee61-4265-9b4f-b3fb44efdb81",
             "c123336d-eb0e-4617-bf31-1318f6731cb8",
             "f4a3e43b-725c-4ad7-8034-3875dc71bb70",
@@ -3262,15 +3085,12 @@
             "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
             "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
             "765f93a9-83e7-4405-aaaa-740265c87f51",
-            "82778ea5-36d1-422d-993a-6b91ab641629",
             "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
             "fa7809cb-a36e-40d9-92de-589f62b00143",
             "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
             "94fb422b-80b5-40d7-8b25-2a16cc8be41a"
         ],
         "model": [
-            "b980e128-6e56-43e6-99d6-b9312789f61e",
-            "cac18e62-0bfb-4a11-be4a-49601eb16da4",
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
             "1ac4602f-b852-45c0-8bd9-c70bb1d56fcc",
             "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
