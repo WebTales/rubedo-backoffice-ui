@@ -69,7 +69,8 @@
                     "    if(!Ext.isEmpty(extensionConfigs.stores)){\r",
                     "        Ext.Array.forEach(extensionConfigs.stores, function(store){\r",
                     "            Ext.syncRequire(\"app.appextensions.\"+myName+\".store.\"+store);\r",
-                    "            Ext.create(\"Rubedo.store.\"+store);\r",
+                    "            var newStore=Ext.create(\"Rubedo.store.\"+store);\r",
+                    "            me.getController(\"MainStoresController\").registerStore(newStore);\r",
                     "        });\r",
                     "    }\r",
                     "    //get views\r",
@@ -78,7 +79,7 @@
                     "            Ext.syncRequire(\"app.appextensions.\"+myName+\".view.\"+view);\r",
                     "        });\r",
                     "    }\r",
-                    "    \r",
+                    "\r",
                     "    //get controllers\r",
                     "    if(!Ext.isEmpty(extensionConfigs.controllers)){\r",
                     "        Ext.Array.forEach(extensionConfigs.controllers, function(controller){\r",
@@ -86,7 +87,7 @@
                     "            me.getController(controller).init();\r",
                     "            me.getController(controller).onLaunch();\r",
                     "        });\r",
-                    "\t}\r",
+                    "    }\r",
                     "}"
                 ]
             },

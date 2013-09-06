@@ -52,7 +52,8 @@ Ext.define('Rubedo.controller.AppExtensionController', {
             if(!Ext.isEmpty(extensionConfigs.stores)){
                 Ext.Array.forEach(extensionConfigs.stores, function(store){
                     Ext.syncRequire("app.appextensions."+myName+".store."+store);
-                    Ext.create("Rubedo.store."+store);
+                    var newStore=Ext.create("Rubedo.store."+store);
+                    me.getController("MainStoresController").registerStore(newStore);
                 });
             }
             //get views
