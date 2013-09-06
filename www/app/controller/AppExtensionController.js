@@ -26,7 +26,10 @@ Ext.define('Rubedo.controller.AppExtensionController', {
             },
             success: function(response){
                 var extensionConfigs = Ext.JSON.decode(response.responseText).data;
-                me.processAppExtensions(extensionConfigs);
+                Ext.Array.forEach(extensionConfigs,function(extension){
+                    me.processAppExtensions(extension);
+                });
+
             },
             failure:function(response){
                 Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, "Failed to retrieve extensions");
@@ -36,33 +39,37 @@ Ext.define('Rubedo.controller.AppExtensionController', {
 
     processAppExtensions: function(extensionConfigs) {
         var me=this;
-        //get models
-        if(!Ext.isEmpty(extensionConfigs.models)){
-            Ext.Array.forEach(extensionConfigs.models, function(model){
-                Ext.syncRequire(model);
-            });
-        }
-        //get stores
-        if(!Ext.isEmpty(extensionConfigs.stores)){
-            Ext.Array.forEach(extensionConfigs.stores, function(store){
-                Ext.syncRequire(store);
-                Ext.create("Rubedo.store."+store.split(".").pop());
-            });
-        }
-        //get views
-        if(!Ext.isEmpty(extensionConfigs.views)){
-            Ext.Array.forEach(extensionConfigs.views, function(view){
-                Ext.syncRequire(view);
-            });
-        }
+        if (!Ext.isEmpty(extensionConfigs)){
+            //get extension name
+            var myName=extensionConfigs.extensionName;
+            //get models
+            if(!Ext.isEmpty(extensionConfigs.models)){
+                Ext.Array.forEach(extensionConfigs.models, function(model){
+                    Ext.syncRequire("app.appextensions."+myName+"."+model);
+                });
+            }
+            //get stores
+            if(!Ext.isEmpty(extensionConfigs.stores)){
+                Ext.Array.forEach(extensionConfigs.stores, function(store){
+                    Ext.syncRequire("app.appextensions."+myName+"."+store);
+                    Ext.create("Rubedo.store."+store);
+                });
+            }
+            //get views
+            if(!Ext.isEmpty(extensionConfigs.views)){
+                Ext.Array.forEach(extensionConfigs.views, function(view){
+                    Ext.syncRequire("app.appextensions."+myName+"."+view);
+                });
+            }
 
-        //get controllers
-        if(!Ext.isEmpty(extensionConfigs.controllers)){
-            Ext.Array.forEach(extensionConfigs.controllers, function(controller){
-                Ext.syncRequire(controller);
-                me.getController(controller.split(".").pop()).init();
-                me.getController(controller.split(".").pop()).onLaunch();
-            });
+            //get controllers
+            if(!Ext.isEmpty(extensionConfigs.controllers)){
+                Ext.Array.forEach(extensionConfigs.controllers, function(controller){
+                    Ext.syncRequire("app.appextensions."+myName+"."+controller);
+                    me.getController(controller).init();
+                    me.getController(controller).onLaunch();
+                });
+            }
         }
     }
 
