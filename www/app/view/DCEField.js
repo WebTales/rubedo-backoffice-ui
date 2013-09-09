@@ -52,6 +52,7 @@ Ext.define('Rubedo.view.DCEField', {
                 myComponent.getComponent("removeBtn").show();
                 Ext.Ajax.request({
                     url: 'contents/find-one',
+                    method:'GET',
                     params: {
                         id: newValue
                     },

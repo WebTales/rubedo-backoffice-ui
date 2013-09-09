@@ -47,6 +47,7 @@
                     "        myComponent.getComponent(\"removeBtn\").show();\r",
                     "        Ext.Ajax.request({\r",
                     "            url: 'contents/find-one',\r",
+                    "            method:'GET',\r",
                     "            params: {\r",
                     "                id: newValue\r",
                     "            },\r",
