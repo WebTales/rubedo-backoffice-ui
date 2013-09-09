@@ -847,6 +847,9 @@ Ext.define('Rubedo.controller.MasqueController', {
     addBloc: function(button, e, eOpts) {
         var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;
         var configurator = Ext.clone(donnees.configBasique);
+        if (Ext.isEmpty(configurator.configBloc)){
+            configurator.configBloc={ };
+        }
         delete configurator.champsConfig;
         var nouvBloc = Ext.widget('unBloc', configurator);
         nouvBloc.responsive={

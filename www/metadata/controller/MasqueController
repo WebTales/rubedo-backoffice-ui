@@ -1462,6 +1462,9 @@
                 "implHandler": [
                     "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
                     "var configurator = Ext.clone(donnees.configBasique);\r",
+                    "if (Ext.isEmpty(configurator.configBloc)){\r",
+                    "    configurator.configBloc={ };\r",
+                    "}\r",
                     "delete configurator.champsConfig;\r",
                     "var nouvBloc = Ext.widget('unBloc', configurator);\r",
                     "nouvBloc.responsive={\r",
