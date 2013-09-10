@@ -40,6 +40,7 @@ Ext.define('linkfinder.controller.ACLController', {
         if (Ext.getCmp("pagePicker").isValid()){
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
+                method:'POST',
                 params: {
                     "page-id": Ext.getCmp("pagePicker").getValue()
                 },
@@ -127,6 +128,7 @@ Ext.define('linkfinder.controller.ACLController', {
     onLaunch: function() {
         Ext.Ajax.request({
             url:'current-user/get-token',
+            method:'GET',
             params:{
             },
             success:function(response){
@@ -138,6 +140,7 @@ Ext.define('linkfinder.controller.ACLController', {
         });
         Ext.Ajax.request({
             url:'acl',
+            method:'GET',
             params:{
                 data: Ext.JSON.encode(ACL.interfaceRights)
             },
