@@ -149,6 +149,7 @@ Ext.define('extFinder.controller.ACLController', {
 
                 Ext.Ajax.request({
                     url:'current-user/get-token',
+                    method:'GET',
                     params:{
                     },
                     success:function(response){
@@ -160,6 +161,7 @@ Ext.define('extFinder.controller.ACLController', {
                 });
                 Ext.Ajax.request({
                     url:'acl',
+                    method:'GET',
                     params:{
                         data: Ext.JSON.encode(ACL.interfaceRights)
                     },
