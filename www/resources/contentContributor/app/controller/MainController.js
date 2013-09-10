@@ -549,6 +549,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             if (!Ext.isEmpty(options.typeId)){
                                 Ext.Ajax.request({
                                     url: 'content-types/find-one',
+                                    method:'GET',
                                     params: {
                                         id: options.typeId
                                     },
@@ -565,6 +566,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             if (!Ext.isEmpty(options.typeId)){
                                 Ext.Ajax.request({
                                     url: 'content-types/find-one',
+                                    method:'GET',
                                     params: {
                                         id: options.typeId
                                     },
@@ -584,6 +586,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             var theTypeId=Ext.getStore("Contents").getRange()[0].get("typeId");
                             Ext.Ajax.request({
                                 url: 'content-types/find-one',
+                                method:'GET',
                                 params: {
                                     id: theTypeId
                                 },
