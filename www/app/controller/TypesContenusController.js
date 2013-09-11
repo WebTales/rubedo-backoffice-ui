@@ -862,6 +862,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         if (Ext.isDefined(cible)) {
             Ext.Ajax.request({
                 url: 'content-types/is-used',
+                method:'GET',
                 params: {
                     id: cible.get("id")
                 },
