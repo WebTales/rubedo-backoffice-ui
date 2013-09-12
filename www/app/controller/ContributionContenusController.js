@@ -897,8 +897,14 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     }
 
     var cible = content;
-    try{Ext.getCmp('boiteAChampsContenus').getForm().setValues(cible.get("champs"));} catch(err){console.log("form set anomaly");}
-    Ext.Object.each(cible.get("champs"), function(key, value, myself){
+    var valuesToApply=cible.get("champs");
+    try{
+        Ext.apply(valuesToApply, cible.get("i18n")[cible.get("locale")].fields);
+    }catch(err){
+        console.log("failed to localize fields on input");
+    }
+    try{Ext.getCmp('boiteAChampsContenus').getForm().setValues(valuesToApply);} catch(err){console.log("form set anomaly");}
+    Ext.Object.each(valuesToApply, function(key, value, myself){
         if (Ext.isArray(value)) {
             var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
             var y=0;
@@ -1121,92 +1127,6 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             formulaireTC.add(enrobage);
 
         }
-        /*var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
-        var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");
-        var i=0;
-        for (i=0; i<lesTaxo.length; i++) {
-        var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
-        var storeT = Ext.create('Ext.data.JsonStore', {
-        model:"Rubedo.model.taxonomyTermModel",
-        remoteFilter:"true",
-        proxy: {
-        type: 'ajax',
-        api: {
-        read: 'taxonomy-terms'
-        },
-        reader: {
-        type: 'json',
-        messageProperty: 'message',
-        root: 'data'
-        },
-        encodeFilters: function(filters) {
-        var min = [],
-        length = filters.length,
-        i = 0;
-
-        for (; i < length; i++) {
-        min[i] = {
-        property: filters[i].property,
-        value   : filters[i].value
-        };
-        if (filters[i].type) {
-        min[i].type = filters[i].type;
-        }
-        if (filters[i].operator) {
-        min[i].operator = filters[i].operator;
-        }
-        }
-        return this.applyEncoding(min);
-        }
-        },
-        filters: {
-        property: 'vocabularyId',
-        value: leVocab.get("id")
-        }
-
-        });
-        storeT.on("beforeload", function(s,o){
-        o.filters=Ext.Array.slice(o.filters,0,1);
-        if (!Ext.isEmpty(o.params.comboQuery)){
-
-        var newFilter=Ext.create('Ext.util.Filter', {
-        property:"text",
-        value:o.params.comboQuery,
-        operator:'like'
-        });
-
-        o.filters.push(newFilter);
-
-        }
-
-
-        });
-
-
-        var selecteur = Ext.widget('comboboxselect', {
-        name:leVocab.get("id"),
-        width:690,
-        fieldLabel: leVocab.get("name"),
-        autoScroll: false,
-        store: storeT,
-        queryMode: 'remote',
-        queryParam: 'comboQuery',
-        minChars:3,
-        displayField: 'text',
-        valueField: 'id',
-        filterPickList: true,
-        typeAhead: true,
-        forceSelection: !leVocab.data.expandable,
-        createNewOnEnter: leVocab.data.expandable,
-        multiSelect: leVocab.data.multiSelect,
-        allowBlank: !leVocab.data.mandatory
-        });
-        var enrobage =Ext.widget('ChampTC');
-        enrobage.add(selecteur);
-        enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
-        formTaxoTC.add(enrobage);
-
-        }*/
 
         try{
             var nct = Ext.getCmp("nestedContentsTab");
