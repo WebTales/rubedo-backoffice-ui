@@ -125,11 +125,15 @@
                             "        }\r",
                             "    }\r",
                             "    if (me.specialTaxoMode){\r",
-                            "        if (!Ext.isEmpty(Ext.getCmp(\"AdminfTaxonomieGrid\").getSelectionModel().getLastSelected().get(\"i18n\")[newValue])){\r",
+                            "        if (Ext.isEmpty(Ext.getCmp(\"AdminfTaxonomieGrid\").getSelectionModel().getLastSelected().get(\"i18n\")[newValue])){\r",
+                            "            if (!Ext.getCmp(\"boutonEnregistrerTaxo\").disabled){\r",
+                            "            \tExt.getCmp(\"boutonEnregistrerTaxo\").fireEvent(\"click\",Ext.getCmp(\"boutonEnregistrerTaxo\"));\r",
+                            "            }\r",
+                            "        }\r",
                             "            Ext.getCmp(\"specialLangTermColumn\").usedLanguage=newValue;\r",
                             "            Ext.getCmp(\"TermesTaxonomieTree\").getView().refresh();\r",
                             "            Ext.getCmp(\"specialLangTermColumn\").setText('<img class=\"header-icon\" style=\"vertical-align:middle;margin-bottom:4px;\" src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/pencil.png\"/> '+field.getRawValue());\r",
-                            "        }\r",
+                            "        \r",
                             "    }\r",
                             "}"
                         ],
@@ -248,8 +252,7 @@
                             "button.up().getComponent(\"LocSelectorCombo\").getStore().remove(button.up().getComponent(\"LocSelectorCombo\").getStore().query(\"locale\",comboValue).items[0]);\r",
                             "button.up().up().remove(button.up().up().getComponent(comboValue));\r",
                             "var me=button.up();\r",
-                            "me.directOverrideMode=true;\r",
-                            "console.log(me.directOverrideMode);"
+                            "me.directOverrideMode=true;"
                         ]
                     },
                     "designerId": "db85e2ee-fc66-4a07-a130-048fb85cfb43"
