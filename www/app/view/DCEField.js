@@ -103,7 +103,7 @@ Ext.define('Rubedo.view.DCEField', {
             companion.show();
         });
         myComponent.getComponent("editBtn").on("click", function(){
-            Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(component.getValue(), true, component.getId());
+            Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(component.getValue(), !Ext.isEmpty(component.allowedCT), component.getId());
         });
         component.up().add(myComponent);
         component.fireEvent("change",component, component.getValue());

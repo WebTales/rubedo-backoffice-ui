@@ -98,7 +98,7 @@
                     "    companion.show();\r",
                     "});\r",
                     "myComponent.getComponent(\"editBtn\").on(\"click\", function(){\r",
-                    "    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(component.getValue(), true, component.getId());\r",
+                    "    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(component.getValue(), !Ext.isEmpty(component.allowedCT), component.getId());\r",
                     "});\r",
                     "component.up().add(myComponent);\r",
                     "component.fireEvent(\"change\",component, component.getValue());"
