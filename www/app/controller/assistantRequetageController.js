@@ -442,85 +442,44 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
 
 
             var typesContenus = Ext.getCmp('champTCRequeteur').getValue();
-            if (simpleMode) {
-                typesContenus=[typesContenus];
-            }
-            var champsRegles = [ ];
-            champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.creationText,
-                valeur: {
-                    cType: 'datefield',
-                    name: 'creation',
-                    ruleId:'createTime',
-                    label: Rubedo.RubedoAutomatedElementsLoc.creationText
+            if(!Ext.isEmpty(typesContenus)){
+                if (simpleMode) {
+                    typesContenus=[typesContenus];
                 }
-            });
-            champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.lastUpdateText,
-                valeur: {
-                    cType: 'datefield',
-                    name: 'derniereModification',
-                    ruleId:'lastUpdateTime',
-                    label: Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
-                }});
-                if (typesContenus.length==1) {
-                    var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
-                    var champsReq = Ext.clone(myThingType.data.champs);
-                    var champsEligibles = ["datefield", "numberfield", "timefield", "slider","ratingField"];
-                    var champsReqF = Ext.Array.filter(champsReq, function(champ){
-                        if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
-                    });
-                    champsReqF = Ext.Array.map(champsReqF, function(champ){
-                        return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: "fields."+champ.config.name, name: "fields."+champ.config.name, label: champ.config.fieldLabel}});
-                    });
-
-                    champsRegles = Ext.Array.merge(champsRegles, champsReqF);
-
-                }
-
-                var typesDEP = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.dependantTypes;
-                var j = 1;
-                for (j=1; j<typesContenus.length; j++) {
-                    var typesDEPSuivant = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[j]).data.dependantTypes;
-                    typesDEP = Ext.Array.intersect(typesDEP, typesDEPSuivant);
-                }
-                var k=0;
-                for (k=0; k<typesDEP.length; k++) {
-
-                    var theTargetType = Ext.getStore('TCDepForQA').findRecord('id',typesDEP[k]);
-                    champsRegles.push({nom:theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.creationText,
-                        valeur: {
-                            cType: 'datefield',
-                            name: 'creation',
-                            ruleId:'createTime',
-                            label: theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.creationText
-                        }
-                    });
-                    champsRegles.push({nom:theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText,
-                        valeur: {
-                            cType: 'datefield',
-                            name: 'derniereModification',
-                            ruleId:'lastUpdateTime',
-                            label: theTargetType.get("type")+' > '+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
-                        }});  
-
-
-                        var champsReq = Ext.clone(theTargetType.get("champs"));
-                        var champsEligibles = ["Ext.form.field.Date", "Ext.form.field.Time", "Ext.form.field.Checkbox", "Ext.form.field.Number"];
+                var champsRegles = [ ];
+                champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.creationText,
+                    valeur: {
+                        cType: 'datefield',
+                        name: 'creation',
+                        ruleId:'createTime',
+                        label: Rubedo.RubedoAutomatedElementsLoc.creationText
+                    }
+                });
+                champsRegles.push({nom:Rubedo.RubedoAutomatedElementsLoc.lastUpdateText,
+                    valeur: {
+                        cType: 'datefield',
+                        name: 'derniereModification',
+                        ruleId:'lastUpdateTime',
+                        label: Rubedo.RubedoAutomatedElementsLoc.lastUpdateText
+                    }});
+                    if (typesContenus.length==1) {
+                        var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);
+                        var champsReq = Ext.clone(myThingType.data.champs);
+                        var champsEligibles = ["datefield", "numberfield", "timefield", "slider","ratingField"];
                         var champsReqF = Ext.Array.filter(champsReq, function(champ){
                             if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}
                         });
                         champsReqF = Ext.Array.map(champsReqF, function(champ){
-                            return ({nom:typesDEP[k]+ ' > '+champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: theTargetType.get("id")+'>>'+champ.config.name , name: champ.config.name, label:theTargetType.get("type")+' > '+champ.config.fieldLabel}});
+                            return ({nom:champ.config.fieldLabel, valeur:{cType: champ.cType, ruleId: "fields."+champ.config.name, name: "fields."+champ.config.name, label: champ.config.fieldLabel}});
                         });
 
                         champsRegles = Ext.Array.merge(champsRegles, champsReqF);
 
+                    }
 
 
-
-                    } 
 
                     Ext.getStore('champsTCARStore').loadData(champsRegles);
-
 
 
                     var vocabulaires = Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]).data.vocabularies;
@@ -601,6 +560,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                                 var storeT = Ext.create('Ext.data.JsonStore', {
                                     model:"Rubedo.model.taxonomyTermModel",
                                     remoteFilter:"true",
+                                    pageSize:2000,
                                     proxy: {
                                         type: 'ajax',
                                         api: {
@@ -734,6 +694,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             }catch(err) {console.log("vocabulary error");}
 
                             }    
+                        }
 
 
     },
