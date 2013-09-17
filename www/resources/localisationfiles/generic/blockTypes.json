@@ -362,6 +362,14 @@
                                     "fieldLabel": "#ext-gen1093#",
                                     "name": "query"
                                 }
+                            },
+                            {
+                                "type": "Ext.form.field.Text",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1405#",
+                                    "name": "imageField",
+                                    "value": "image"
+                                }
                             }
                         ]
                     },
@@ -412,7 +420,9 @@
                     }
                 ]
             },
-            "configBloc": {}
+            "configBloc": {
+            	"imageField":"image"
+            }
         },
         "category": "#ext-gen1068#",
         "bType": "carrousel",
