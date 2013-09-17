@@ -1,0 +1,66 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "applicationLog",
+        "storeId": "ApplicationLogs",
+        "designer|userClassName": "ApplicationLogs",
+        "designer|userAlias": "ApplicationLogs",
+        "pageSize": null
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "bac21dc5-9467-459a-9a13-2c67a5235855",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "\tread: 'application-log'\r",
+                    "}"
+                ]
+            },
+            "designerId": "5fe449cf-6120-411f-a62b-ae5b45b40926",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "e3a335db-f798-44c9-8913-c6a85537b2c3"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "7c790ef6-a9d1-4016-91d8-aabded235ef7"
+                }
+            ]
+        }
+    ]
+}

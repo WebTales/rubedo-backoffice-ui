@@ -171,7 +171,8 @@ Ext.application({
         'Rubedo.view.AdvancedColorField',
         'Rubedo.view.NewCTLayoutWindow',
         'Rubedo.view.AssignFieldToColWindow',
-        'Rubedo.view.simpleModeMainBar'
+        'Rubedo.view.simpleModeMainBar',
+        'Rubedo.view.ApplicationLogsInterface'
     ],
     models: [
         'sitesDataModel',
@@ -206,7 +207,8 @@ Ext.application({
         'taxonomyTermModel',
         'customTheme',
         'CTLayout',
-        'CTFieldForLayout'
+        'CTFieldForLayout',
+        'applicationLog'
     ],
     stores: [
         'SitesJson',
@@ -314,7 +316,8 @@ Ext.application({
         'InportAsFieldTranslationStore',
         'InportAsTaxoTranslationStore',
         'LocalizedFieldSelectorStore',
-        'ImportTranslationLanguageStore'
+        'ImportTranslationLanguageStore',
+        'ApplicationLogs'
     ],
     views: [
         'MyContainer',
@@ -469,7 +472,8 @@ Ext.application({
         'AdvancedColorField',
         'NewCTLayoutWindow',
         'AssignFieldToColWindow',
-        'simpleModeMainBar'
+        'simpleModeMainBar',
+        'ApplicationLogsInterface'
     ],
     autoCreateViewport: true,
     controllers: [

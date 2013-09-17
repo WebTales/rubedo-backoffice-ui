@@ -39,7 +39,8 @@
             "taxonomyTermModel",
             "customTheme",
             "CTLayout",
-            "CTFieldForLayout"
+            "CTFieldForLayout",
+            "applicationLog"
         ],
         "stores": [
             "SitesJson",
@@ -147,7 +148,8 @@
             "InportAsFieldTranslationStore",
             "InportAsTaxoTranslationStore",
             "LocalizedFieldSelectorStore",
-            "ImportTranslationLanguageStore"
+            "ImportTranslationLanguageStore",
+            "ApplicationLogs"
         ],
         "views": [
             "MyContainer",
@@ -302,7 +304,8 @@
             "AdvancedColorField",
             "NewCTLayoutWindow",
             "AssignFieldToColWindow",
-            "simpleModeMainBar"
+            "simpleModeMainBar",
+            "ApplicationLogsInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

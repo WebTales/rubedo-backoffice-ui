@@ -1,0 +1,187 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 418,
+        "id": "ApplicationLogsInterface",
+        "width": 944,
+        "designer|userClassName": "ApplicationLogsInterface",
+        "designer|userAlias": "ApplicationLogsInterface",
+        "requires": [
+            "Ext.ux.RowExpander"
+        ],
+        "layout": "fit",
+        "title": "Application logs",
+        "constrainHeader": true
+    },
+    "designerId": "0abc5443-8a75-4800-9e61-80668e12ed10",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "c6055269-bf03-4be5-bd1c-ac29f986ddc1",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "13daffd3-a1ec-42d0-b62f-0486e2d192b1",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": null,
+                "title": "",
+                "disableSelection": true,
+                "forceFit": false,
+                "store": "ApplicationLogs"
+            },
+            "designerId": "c207b4e4-3034-4543-9aa5-ee31bbd994f9",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": false
+                    },
+                    "designerId": "728ca948-d2f5-45e1-af43-959e8686d4f7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "message",
+                        "text": "Message",
+                        "flex": 1
+                    },
+                    "designerId": "a67757bc-d7ed-45fd-928f-1d7e396e4ccb"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 200,
+                        "dataIndex": "datetime",
+                        "text": "Datetime"
+                    },
+                    "designerId": "4ba372ea-cb0d-44f5-9f20-0e90fc04bd90"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 100,
+                        "dataIndex": "level_name",
+                        "text": "Level"
+                    },
+                    "designerId": "e49d8651-effb-4f9a-803a-168cdff5516c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 100,
+                        "dataIndex": "channel",
+                        "text": "Channel"
+                    },
+                    "designerId": "091ffdbf-2379-4de7-8506-d1f68d3a55e0"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processMyGridPanel6",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.plugins=[{\r",
+                            "\tptype: 'rowexpander',\r",
+                            "\tselectRowOnExpand : false,  \r",
+                            "    rowBodyTpl:\"<div class='specialGridRowDisplay'><pre><code>{detail}</code></pre></div>\"\r",
+                            "}];\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "e4a8fa57-20d6-49ec-bdd5-3c3bd208cdac"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onApplicationLogsInterfaceAfterRender",
+                "implHandler": [
+                    "Ext.getStore(\"ApplicationLogs\").load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "1f789446-59be-4f72-be8b-3766cc4849c4"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onApplicationLogsInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"ApplicationLogs\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "85662b2c-4237-483d-913e-95806a7bb273"
+        }
+    ]
+}
