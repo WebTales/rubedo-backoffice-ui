@@ -27,7 +27,10 @@ Ext.define('Rubedo.store.ApplicationLogs', {
         me.callParent([Ext.apply({
             autoLoad: false,
             model: 'Rubedo.model.applicationLog',
+            remoteFilter: true,
+            remoteSort: true,
             storeId: 'ApplicationLogs',
+            pageSize: 25,
             proxy: {
                 type: 'ajax',
                 api: {
@@ -43,6 +46,10 @@ Ext.define('Rubedo.store.ApplicationLogs', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'datetime'
             }
         }, cfg)]);
     }

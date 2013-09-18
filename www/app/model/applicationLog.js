@@ -50,6 +50,12 @@ Ext.define('Rubedo.model.applicationLog', {
                 return(JSON.stringify(rec.get("context"),null,4));
             },
             name: 'detail'
+        },
+        {
+            convert: function(v, rec) {
+                return(rec.get("context").type);
+            },
+            name: 'type'
         }
     ]
 });

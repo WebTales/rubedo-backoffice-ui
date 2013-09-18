@@ -15,6 +15,7 @@
             "Ext.ux.RowExpander"
         ],
         "layout": "fit",
+        "iconCls": "process-icon",
         "title": "Application logs",
         "constrainHeader": true
     },
@@ -90,6 +91,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "type",
+                        "text": "Type",
+                        "flex": 0.4
+                    },
+                    "designerId": "1d592219-f775-43c2-b6d7-585606b77e9c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "width": 200,
                         "dataIndex": "datetime",
                         "text": "Datetime"
@@ -104,25 +119,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 100,
+                        "width": 140,
                         "dataIndex": "level_name",
                         "text": "Level"
                     },
                     "designerId": "e49d8651-effb-4f9a-803a-168cdff5516c"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "width": 100,
-                        "dataIndex": "channel",
-                        "text": "Channel"
-                    },
-                    "designerId": "091ffdbf-2379-4de7-8506-d1f68d3a55e0"
                 },
                 {
                     "type": "processcfgfunction",
@@ -138,8 +139,8 @@
                         ],
                         "implHandler": [
                             "config.plugins=[{\r",
-                            "\tptype: 'rowexpander',\r",
-                            "\tselectRowOnExpand : false,  \r",
+                            "    ptype: 'rowexpander',\r",
+                            "    selectRowOnExpand : false,  \r",
                             "    rowBodyTpl:\"<div class='specialGridRowDisplay'><pre><code>{detail}</code></pre></div>\"\r",
                             "}];\r",
                             "return config;"
@@ -159,7 +160,8 @@
             "userConfig": {
                 "fn": "onApplicationLogsInterfaceAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"ApplicationLogs\").load();"
+                    "Ext.getStore(\"ApplicationLogs\").clearFilter(true);\r",
+                    "Ext.getStore(\"ApplicationLogs\").loadPage(1);"
                 ],
                 "name": "afterrender",
                 "scope": "me"
@@ -182,6 +184,21 @@
                 "scope": "me"
             },
             "designerId": "85662b2c-4237-483d-913e-95806a7bb273"
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "width": 360,
+                "displayInfo": true,
+                "store": "ApplicationLogs"
+            },
+            "designerId": "791fcb00-6b5f-4d30-9fad-6e81e143ad47"
         }
     ]
 }

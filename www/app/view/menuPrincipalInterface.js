@@ -19,7 +19,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
 
     border: 0,
     floating: true,
-    height: 320,
+    height: 350,
     id: 'menuPrincipalInterface',
     width: 350,
     layout: {
@@ -357,6 +357,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             iconCls: 'world_small',
             localiserId:'languagesLaunchBtn',
             text: 'Languages'
+        },{
+            xtype: 'menuitem',
+            ACL: 'read.ui.applicationLogs',
+            favoriteIcon: 'processes.png',
+            itemId: 'ApplicationLogsInterface',
+            iconCls: 'process-icon',
+            localiserId:'applicationLogsLaunchBtn',
+            text: 'Application logs'
         }
         ]);
     },

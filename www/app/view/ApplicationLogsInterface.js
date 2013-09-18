@@ -29,6 +29,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
     layout: {
         type: 'fit'
     },
+    iconCls: 'process-icon',
     title: 'Application logs',
     constrainHeader: true,
 
@@ -63,21 +64,21 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            dataIndex: 'type',
+                            text: 'Type',
+                            flex: 0.4
+                        },
+                        {
+                            xtype: 'gridcolumn',
                             width: 200,
                             dataIndex: 'datetime',
                             text: 'Datetime'
                         },
                         {
                             xtype: 'gridcolumn',
-                            width: 100,
+                            width: 140,
                             dataIndex: 'level_name',
                             text: 'Level'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            width: 100,
-                            dataIndex: 'channel',
-                            text: 'Channel'
                         }
                     ]
                 })
@@ -91,7 +92,16 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                     fn: me.onApplicationLogsInterfaceBeforeClose,
                     scope: me
                 }
-            }
+            },
+            dockedItems: [
+                {
+                    xtype: 'pagingtoolbar',
+                    dock: 'bottom',
+                    width: 360,
+                    displayInfo: true,
+                    store: 'ApplicationLogs'
+                }
+            ]
         });
 
         me.callParent(arguments);
@@ -107,7 +117,8 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
     },
 
     onApplicationLogsInterfaceAfterRender: function(component, eOpts) {
-        Ext.getStore("ApplicationLogs").load();
+        Ext.getStore("ApplicationLogs").clearFilter(true);
+        Ext.getStore("ApplicationLogs").loadPage(1);
     },
 
     onApplicationLogsInterfaceBeforeClose: function(panel, eOpts) {

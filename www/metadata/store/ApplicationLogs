@@ -8,10 +8,12 @@
     "userConfig": {
         "autoLoad": false,
         "model": "applicationLog",
+        "remoteFilter": true,
+        "remoteSort": true,
         "storeId": "ApplicationLogs",
         "designer|userClassName": "ApplicationLogs",
         "designer|userAlias": "ApplicationLogs",
-        "pageSize": null
+        "pageSize": 25
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -61,6 +63,19 @@
                     "designerId": "7c790ef6-a9d1-4016-91d8-aabded235ef7"
                 }
             ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "datetime"
+            },
+            "designerId": "df89b87b-0d29-4bff-9c29-47a6d3bc458e"
         }
     ]
 }

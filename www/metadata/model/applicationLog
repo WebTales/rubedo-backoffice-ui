@@ -151,6 +151,39 @@
                     "designerId": "270c15f9-c997-4e61-96e6-4ef598c4f34e"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "designerId": "651b03d4-1174-4cdb-8f36-b8de63bdae96",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return(rec.get(\"context\").type);"
+                        ]
+                    },
+                    "designerId": "d02181a4-aeef-4f1a-b526-cfc258005081"
+                }
+            ]
         }
     ]
 }
