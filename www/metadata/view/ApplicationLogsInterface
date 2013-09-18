@@ -160,7 +160,7 @@
             "userConfig": {
                 "fn": "onApplicationLogsInterfaceAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"ApplicationLogs\").clearFilter(true);\r",
+                    "Ext.getStore(\"ApplicationLogs\").getProxy().extraParams={ };\r",
                     "Ext.getStore(\"ApplicationLogs\").loadPage(1);"
                 ],
                 "name": "afterrender",
@@ -199,6 +199,185 @@
                 "store": "ApplicationLogs"
             },
             "designerId": "791fcb00-6b5f-4d30-9fad-6e81e143ad47"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "designerId": "176bedd4-4108-44e0-915c-0aeb0aea28f0",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "operator": "$gte",
+                        "id": "testerDate1",
+                        "fieldLabel": "Show logs between",
+                        "labelWidth": 110,
+                        "name": "datetime"
+                    },
+                    "designerId": "af970184-a7de-4589-8ec6-a157170deb3d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "operator",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "operator": "$lte",
+                        "fieldLabel": "and",
+                        "labelWidth": 30,
+                        "name": "datetime"
+                    },
+                    "designerId": "344dc887-e4fa-4415-8cee-1c5e6b3bdc85",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "operator",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "operator": "$gte",
+                        "fieldLabel": "of minimal level",
+                        "labelWidth": 80,
+                        "name": "level",
+                        "value": [
+                            "100"
+                        ],
+                        "editable": false,
+                        "forceSelection": true,
+                        "store": [
+                            "[[100,\"DEBUG\"],[200,\"INFO\"],[250,\"NOTICE\"],[300,\"WARNING\"],[400,\"ERROR\"],[500,\"CRITICAL\"],[550,\"ALERT\"],[600,\"EMERGENCY\"]]"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "ea971ceb-6455-41eb-876d-528cbc49990d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "operator",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "iconCls": "refresh",
+                        "text": "Refresh"
+                    },
+                    "designerId": "f9e5f1f8-6a44-470a-a3cc-a00428695a6f",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "var filtersArray=[ ];\r",
+                                    "Ext.Array.forEach(button.up().query(\"field\"),function(field){\r",
+                                    "    if (!Ext.isEmpty(field.getValue())){\r",
+                                    "        var myValue=field.getValue();\r",
+                                    "        if (Ext.isDate(myValue)){\r",
+                                    "            myValue=Ext.Date.format(myValue,\"Y-m-d H-i-s\");\r",
+                                    "        }\r",
+                                    "        filtersArray.push({property:field.name, operator:field.operator, value: myValue});\r",
+                                    "    }\r",
+                                    "});\r",
+                                    "Ext.getStore(\"ApplicationLogs\").getProxy().extraParams.filter=Ext.JSON.encode(filtersArray);\r",
+                                    "Ext.getStore(\"ApplicationLogs\").load();"
+                                ]
+                            },
+                            "designerId": "c1208f17-48a4-4e54-b384-f463a8312e31"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "iconCls": "close",
+                        "text": "Clear filters"
+                    },
+                    "designerId": "bc7adfd1-648a-40e3-8be8-a4d90fe980bc",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up().getComponent(0).setValue(null);\r",
+                                    "button.up().getComponent(1).setValue(null);\r",
+                                    "Ext.getStore(\"ApplicationLogs\").getProxy().extraParams={ };\r",
+                                    "Ext.getStore(\"ApplicationLogs\").loadPage(1);"
+                                ]
+                            },
+                            "designerId": "ab79e144-c507-43ef-91b0-ef5649b50633"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

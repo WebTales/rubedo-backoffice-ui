@@ -100,6 +100,101 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                     width: 360,
                     displayInfo: true,
                     store: 'ApplicationLogs'
+                },
+                {
+                    xtype: 'toolbar',
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'datefield',
+                            operator: '$gte',
+                            id: 'testerDate1',
+                            fieldLabel: 'Show logs between',
+                            labelWidth: 110,
+                            name: 'datetime'
+                        },
+                        {
+                            xtype: 'datefield',
+                            operator: '$lte',
+                            fieldLabel: 'and',
+                            labelWidth: 30,
+                            name: 'datetime'
+                        },
+                        {
+                            xtype: 'combobox',
+                            operator: '$gte',
+                            fieldLabel: 'of minimal level',
+                            labelWidth: 80,
+                            name: 'level',
+                            value: 100,
+                            editable: false,
+                            forceSelection: true,
+                            store: [
+                                [
+                                    100,
+                                    'DEBUG'
+                                ],
+                                [
+                                    200,
+                                    'INFO'
+                                ],
+                                [
+                                    250,
+                                    'NOTICE'
+                                ],
+                                [
+                                    300,
+                                    'WARNING'
+                                ],
+                                [
+                                    400,
+                                    'ERROR'
+                                ],
+                                [
+                                    500,
+                                    'CRITICAL'
+                                ],
+                                [
+                                    550,
+                                    'ALERT'
+                                ],
+                                [
+                                    600,
+                                    'EMERGENCY'
+                                ]
+                            ]
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                var filtersArray=[ ];
+                                Ext.Array.forEach(button.up().query("field"),function(field){
+                                    if (!Ext.isEmpty(field.getValue())){
+                                        var myValue=field.getValue();
+                                        if (Ext.isDate(myValue)){
+                                            myValue=Ext.Date.format(myValue,"Y-m-d H-i-s");
+                                        }
+                                        filtersArray.push({property:field.name, operator:field.operator, value: myValue});
+                                    }
+                                });
+                                Ext.getStore("ApplicationLogs").getProxy().extraParams.filter=Ext.JSON.encode(filtersArray);
+                                Ext.getStore("ApplicationLogs").load();
+                            },
+                            iconCls: 'refresh',
+                            text: 'Refresh'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                button.up().getComponent(0).setValue(null);
+                                button.up().getComponent(1).setValue(null);
+                                Ext.getStore("ApplicationLogs").getProxy().extraParams={ };
+                                Ext.getStore("ApplicationLogs").loadPage(1);
+                            },
+                            iconCls: 'close',
+                            text: 'Clear filters'
+                        }
+                    ]
                 }
             ]
         });
@@ -117,7 +212,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
     },
 
     onApplicationLogsInterfaceAfterRender: function(component, eOpts) {
-        Ext.getStore("ApplicationLogs").clearFilter(true);
+        Ext.getStore("ApplicationLogs").getProxy().extraParams={ };
         Ext.getStore("ApplicationLogs").loadPage(1);
     },
 
