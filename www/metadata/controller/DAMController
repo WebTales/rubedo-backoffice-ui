@@ -221,6 +221,7 @@
                     "        } else {\r",
                     "            var leVocab = Ext.getStore('TaxonomyForDAM').findRecord('id', lesTaxo[i]);\r",
                     "        }\r",
+                    "        if (!Ext.isEmpty(leVocab)){\r",
                     "        if (leVocab.get(\"inputAsTree\")){\r",
                     "            var storeT = Ext.create(\"Ext.data.TreeStore\", {\r",
                     "                model:\"Rubedo.model.taxonomyTermModel\",\r",
@@ -359,7 +360,7 @@
                     "        if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}\r",
                     "        formTaxoTC.add(enrobage);\r",
                     "\r",
-                    "    }}"
+                    "        }}}"
                 ]
             },
             "designerId": "d1ba1045-af86-4901-9aa5-c79962ca4a7d"

@@ -151,143 +151,145 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var i=0;
         for (i=0; i<lesTaxo.length; i++) {
             var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
-            if (leVocab.get("inputAsTree")){
-                var storeT = Ext.create("Ext.data.TreeStore", {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms/tree'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
+            if (!Ext.isEmpty(leVocab)){
+                if (leVocab.get("inputAsTree")){
+                    var storeT = Ext.create("Ext.data.TreeStore", {
+                        model:"Rubedo.model.taxonomyTermModel",
+                        remoteFilter:"true",
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms/tree'
+                            },
+                            reader: {
+                                type: 'json',
+                                messageProperty: 'message'
+                            },
+                            encodeFilters: function(filters) {
+                                var min = [],
+                                    length = filters.length,
+                                    i = 0;
 
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
+                                for (; i < length; i++) {
+                                    min[i] = {
+                                        property: filters[i].property,
+                                        value   : filters[i].value
+                                    };
+                                    if (filters[i].type) {
+                                        min[i].type = filters[i].type;
+                                    }
+                                    if (filters[i].operator) {
+                                        min[i].operator = filters[i].operator;
+                                    }
                                 }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
+                                return this.applyEncoding(min);
                             }
-                            return this.applyEncoding(min);
+                        },
+                        filters: {
+                            property: 'vocabularyId',
+                            value: leVocab.get("id")
                         }
-                    },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
 
-                });
-                var toUse="Ext.ux.TreePicker";
-                if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
-                if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
-                storeT.load();
-                var selecteur = Ext.create(toUse, {
-                    name:leVocab.get("id"),
-                    fieldLabel: leVocab.get("name"),
-                    store: storeT,
-                    anchor:"90%",
-                    ignoreIsNotPage:true,
-                    displayField:"text",
-                    allowBlank: !leVocab.data.mandatory,
-                    plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
-                });
+                    });
+                    var toUse="Ext.ux.TreePicker";
+                    if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
+                    if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+                    storeT.load();
+                    var selecteur = Ext.create(toUse, {
+                        name:leVocab.get("id"),
+                        fieldLabel: leVocab.get("name"),
+                        store: storeT,
+                        anchor:"90%",
+                        ignoreIsNotPage:true,
+                        displayField:"text",
+                        allowBlank: !leVocab.data.mandatory,
+                        plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
+                    });
 
 
-            } else {
-                var storeT = Ext.create('Ext.data.JsonStore', {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message',
-                            root: 'data'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
+                } else {
+                    var storeT = Ext.create('Ext.data.JsonStore', {
+                        model:"Rubedo.model.taxonomyTermModel",
+                        remoteFilter:"true",
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms'
+                            },
+                            reader: {
+                                type: 'json',
+                                messageProperty: 'message',
+                                root: 'data'
+                            },
+                            encodeFilters: function(filters) {
+                                var min = [],
+                                    length = filters.length,
+                                    i = 0;
 
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
+                                for (; i < length; i++) {
+                                    min[i] = {
+                                        property: filters[i].property,
+                                        value   : filters[i].value
+                                    };
+                                    if (filters[i].type) {
+                                        min[i].type = filters[i].type;
+                                    }
+                                    if (filters[i].operator) {
+                                        min[i].operator = filters[i].operator;
+                                    }
                                 }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
+                                return this.applyEncoding(min);
                             }
-                            return this.applyEncoding(min);
+                        },
+                        filters: {
+                            property: 'vocabularyId',
+                            value: leVocab.get("id")
                         }
-                    },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
 
-                });
-                storeT.on("beforeload", function(s,o){
-                    o.filters=Ext.Array.slice(o.filters,0,1);
-                    if (!Ext.isEmpty(o.params.comboQuery)){
+                    });
+                    storeT.on("beforeload", function(s,o){
+                        o.filters=Ext.Array.slice(o.filters,0,1);
+                        if (!Ext.isEmpty(o.params.comboQuery)){
 
-                        var newFilter=Ext.create('Ext.util.Filter', {
-                            property:"text",
-                            value:o.params.comboQuery,
-                            operator:'like'
-                        });
+                            var newFilter=Ext.create('Ext.util.Filter', {
+                                property:"text",
+                                value:o.params.comboQuery,
+                                operator:'like'
+                            });
 
-                        o.filters.push(newFilter);
+                            o.filters.push(newFilter);
 
-                    }
+                        }
 
 
-                });
-                var selecteur = Ext.widget('comboboxselect', {
-                    name:leVocab.get("id"),
-                    anchor:"90%",
-                    fieldLabel: leVocab.get("name"),
-                    autoScroll: false,
-                    store: storeT,
-                    queryMode: 'remote',
-                    queryParam: 'comboQuery',
-                    minChars:3,
-                    displayField: 'text',
-                    valueField: 'id',
-                    filterPickList: true,
-                    typeAhead: true,
-                    forceSelection: !leVocab.data.expandable,
-                    createNewOnEnter: leVocab.data.expandable,
-                    multiSelect: leVocab.data.multiSelect,
-                    allowBlank: !leVocab.data.mandatory
-                });
+                    });
+                    var selecteur = Ext.widget('comboboxselect', {
+                        name:leVocab.get("id"),
+                        anchor:"90%",
+                        fieldLabel: leVocab.get("name"),
+                        autoScroll: false,
+                        store: storeT,
+                        queryMode: 'remote',
+                        queryParam: 'comboQuery',
+                        minChars:3,
+                        displayField: 'text',
+                        valueField: 'id',
+                        filterPickList: true,
+                        typeAhead: true,
+                        forceSelection: !leVocab.data.expandable,
+                        createNewOnEnter: leVocab.data.expandable,
+                        multiSelect: leVocab.data.multiSelect,
+                        allowBlank: !leVocab.data.mandatory
+                    });
+
+                }
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(selecteur);
+                enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+                if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
+                formTaxoTC.add(enrobage);
 
             }
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(selecteur);
-            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
-            if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
-            formTaxoTC.add(enrobage);
-
         }
 
         var nct = Ext.getCmp("nestedContentsTab");
