@@ -467,6 +467,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                 {
                     xtype: 'gridpanel',
                     managesStore: false,
+                    localiserId: 'contentTypesWindow',
                     id: 'AdminfTypesGrid',
                     width: 150,
                     resizable: true,
@@ -842,19 +843,15 @@ Ext.define('Rubedo.view.adminFTDC', {
                             iconCls: 'versions',
                             title: 'Historique'
                         },
-                        {
+                        me.processCTLayoutMainTab({
                             xtype: 'panel',
-                            localiserId: 'layoutsGrid',
+                            id: 'CTLayoutMainTab',
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'
                             },
                             iconCls: 'masque-icon',
                             title: 'Layouts',
-                            tabConfig: {
-                                xtype: 'tab',
-                                localiserId: 'layoutsGrid'
-                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -1012,18 +1009,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         }
                                     ]
                                 }
-                            ],
-                            listeners: {
-                                activate: {
-                                    fn: me.onPanelActivate,
-                                    scope: me
-                                },
-                                deactivate: {
-                                    fn: me.onPanelDeactivate,
-                                    scope: me
-                                }
-                            }
-                        }
+                            ]
+                        })
                     ]
                 }
             ],
@@ -1090,6 +1077,11 @@ Ext.define('Rubedo.view.adminFTDC', {
         return config;
     },
 
+    processCTLayoutMainTab: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc["layoutsGrid"].title;
+        return config;
+    },
+
     onImageRender: function(component, eOpts) {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/page_full.png');
     },
@@ -1123,18 +1115,6 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
         Ext.getCmp("layoutEditionPanel").setHeight(newValue);
-    },
-
-    onPanelActivate: function(component, eOpts) {
-        Ext.getCmp("CTLayoutsBtnGr").show();
-        Ext.getCmp("layoutsEditToolbar").show();
-        Ext.getCmp("AdminfTypesGrid").collapse();
-    },
-
-    onPanelDeactivate: function(component, eOpts) {
-        Ext.getCmp("CTLayoutsBtnGr").hide();
-        Ext.getCmp("layoutsEditToolbar").hide();
-        Ext.getCmp("AdminfTypesGrid").expand();
     },
 
     onAdminFTDCRender: function(component, eOpts) {

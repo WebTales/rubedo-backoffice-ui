@@ -1183,6 +1183,7 @@
             "userConfig": {
                 "managesStore": false,
                 "layout|flex": null,
+                "localiserId": "contentTypesWindow",
                 "id": "AdminfTypesGrid",
                 "itemId": null,
                 "width": 150,
@@ -1203,6 +1204,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "managesStore",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -2301,20 +2307,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "layoutsGrid",
                         "container|align": "stretch",
+                        "id": "CTLayoutMainTab",
                         "layout": "hbox",
                         "iconCls": "masque-icon",
                         "title": "Layouts"
                     },
                     "designerId": "3f456a79-271d-4f68-85fb-9da53f7d0d57",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -2323,17 +2322,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "localiserId": "layoutsGrid"
-                            },
-                            "designerId": "1defb267-99d9-4d43-affa-4d6e15c51d16",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
+                            "designerId": "1defb267-99d9-4d43-affa-4d6e15c51d16"
                         },
                         {
                             "type": "Ext.grid.Panel",
@@ -2743,42 +2732,23 @@
                             ]
                         },
                         {
-                            "type": "basiceventbinding",
+                            "type": "processcfgfunction",
                             "reference": {
-                                "name": "listeners",
+                                "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onPanelActivate",
-                                "implHandler": [
-                                    "Ext.getCmp(\"CTLayoutsBtnGr\").show();\r",
-                                    "Ext.getCmp(\"layoutsEditToolbar\").show();\r",
-                                    "Ext.getCmp(\"AdminfTypesGrid\").collapse();"
+                                "fn": "processCTLayoutMainTab",
+                                "designer|params": [
+                                    "config"
                                 ],
-                                "name": "activate",
-                                "scope": "me"
-                            },
-                            "designerId": "804f62a0-2f21-4b04-aa3b-7e52b6050b68"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onPanelDeactivate",
                                 "implHandler": [
-                                    "Ext.getCmp(\"CTLayoutsBtnGr\").hide();\r",
-                                    "Ext.getCmp(\"layoutsEditToolbar\").hide();\r",
-                                    "Ext.getCmp(\"AdminfTypesGrid\").expand();"
-                                ],
-                                "name": "deactivate",
-                                "scope": "me"
+                                    "config.title=Rubedo.RubedoInterfaceLoc[\"layoutsGrid\"].title;\r",
+                                    "return config;"
+                                ]
                             },
-                            "designerId": "04219ea5-6d49-4c05-9aa6-b4e6d983f300"
+                            "designerId": "9e40893b-bba7-43bf-b999-05a3177eb6f0"
                         }
                     ]
                 }

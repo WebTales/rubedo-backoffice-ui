@@ -2737,6 +2737,48 @@
                 "designer|controlQuery": "#CTLCopyLSubitBtn"
             },
             "designerId": "891beb16-30d9-429c-a095-4a4d1e2f7c03"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelActivate",
+                "implHandler": [
+                    "Ext.getCmp(\"CTLayoutsBtnGr\").show();\r",
+                    "Ext.getCmp(\"layoutsEditToolbar\").show();\r",
+                    "Ext.getCmp(\"AdminfTypesGrid\").collapse();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#CTLayoutMainTab"
+            },
+            "designerId": "53165355-ab90-4bd8-933f-01eb499a3373"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelDeactivate",
+                "implHandler": [
+                    "Ext.getCmp(\"CTLayoutsBtnGr\").hide();\r",
+                    "Ext.getCmp(\"layoutsEditToolbar\").hide();\r",
+                    "Ext.getCmp(\"AdminfTypesGrid\").expand();"
+                ],
+                "name": "deactivate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#CTLayoutMainTab"
+            },
+            "designerId": "78a302ac-fe2c-48cb-847b-95bced7cc812"
         }
     ]
 }

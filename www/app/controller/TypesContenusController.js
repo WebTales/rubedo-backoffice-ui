@@ -1476,6 +1476,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     },
 
+    onPanelActivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr").show();
+        Ext.getCmp("layoutsEditToolbar").show();
+        Ext.getCmp("AdminfTypesGrid").collapse();
+    },
+
+    onPanelDeactivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr").hide();
+        Ext.getCmp("layoutsEditToolbar").hide();
+        Ext.getCmp("AdminfTypesGrid").expand();
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -2048,6 +2060,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#CTLCopyLSubitBtn": {
                 click: this.onCTLCopyLSubitBtnClick
+            },
+            "#CTLayoutMainTab": {
+                activate: this.onPanelActivate,
+                deactivate: this.onPanelDeactivate
             }
         });
     }
