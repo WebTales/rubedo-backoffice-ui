@@ -57,6 +57,18 @@
                 "name": "rows"
             },
             "designerId": "8f707bdf-4793-4a28-98ce-0301ae73926c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "site"
+            },
+            "designerId": "0a086a46-dd07-47c0-aef1-52c2ef42c087"
         }
     ]
 }

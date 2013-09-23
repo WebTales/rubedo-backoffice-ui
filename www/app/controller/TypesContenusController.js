@@ -151,143 +151,145 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var i=0;
         for (i=0; i<lesTaxo.length; i++) {
             var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);
-            if (leVocab.get("inputAsTree")){
-                var storeT = Ext.create("Ext.data.TreeStore", {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms/tree'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
+            if (!Ext.isEmpty(leVocab)){
+                if (leVocab.get("inputAsTree")){
+                    var storeT = Ext.create("Ext.data.TreeStore", {
+                        model:"Rubedo.model.taxonomyTermModel",
+                        remoteFilter:"true",
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms/tree'
+                            },
+                            reader: {
+                                type: 'json',
+                                messageProperty: 'message'
+                            },
+                            encodeFilters: function(filters) {
+                                var min = [],
+                                    length = filters.length,
+                                    i = 0;
 
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
+                                for (; i < length; i++) {
+                                    min[i] = {
+                                        property: filters[i].property,
+                                        value   : filters[i].value
+                                    };
+                                    if (filters[i].type) {
+                                        min[i].type = filters[i].type;
+                                    }
+                                    if (filters[i].operator) {
+                                        min[i].operator = filters[i].operator;
+                                    }
                                 }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
+                                return this.applyEncoding(min);
                             }
-                            return this.applyEncoding(min);
+                        },
+                        filters: {
+                            property: 'vocabularyId',
+                            value: leVocab.get("id")
                         }
-                    },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
 
-                });
-                var toUse="Ext.ux.TreePicker";
-                if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
-                if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
-                storeT.load();
-                var selecteur = Ext.create(toUse, {
-                    name:leVocab.get("id"),
-                    fieldLabel: leVocab.get("name"),
-                    store: storeT,
-                    anchor:"90%",
-                    ignoreIsNotPage:true,
-                    displayField:"text",
-                    allowBlank: !leVocab.data.mandatory,
-                    plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
-                });
+                    });
+                    var toUse="Ext.ux.TreePicker";
+                    if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
+                    if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+                    storeT.load();
+                    var selecteur = Ext.create(toUse, {
+                        name:leVocab.get("id"),
+                        fieldLabel: leVocab.get("name"),
+                        store: storeT,
+                        anchor:"90%",
+                        ignoreIsNotPage:true,
+                        displayField:"text",
+                        allowBlank: !leVocab.data.mandatory,
+                        plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
+                    });
 
 
-            } else {
-                var storeT = Ext.create('Ext.data.JsonStore', {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message',
-                            root: 'data'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
+                } else {
+                    var storeT = Ext.create('Ext.data.JsonStore', {
+                        model:"Rubedo.model.taxonomyTermModel",
+                        remoteFilter:"true",
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms'
+                            },
+                            reader: {
+                                type: 'json',
+                                messageProperty: 'message',
+                                root: 'data'
+                            },
+                            encodeFilters: function(filters) {
+                                var min = [],
+                                    length = filters.length,
+                                    i = 0;
 
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
+                                for (; i < length; i++) {
+                                    min[i] = {
+                                        property: filters[i].property,
+                                        value   : filters[i].value
+                                    };
+                                    if (filters[i].type) {
+                                        min[i].type = filters[i].type;
+                                    }
+                                    if (filters[i].operator) {
+                                        min[i].operator = filters[i].operator;
+                                    }
                                 }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
+                                return this.applyEncoding(min);
                             }
-                            return this.applyEncoding(min);
+                        },
+                        filters: {
+                            property: 'vocabularyId',
+                            value: leVocab.get("id")
                         }
-                    },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
 
-                });
-                storeT.on("beforeload", function(s,o){
-                    o.filters=Ext.Array.slice(o.filters,0,1);
-                    if (!Ext.isEmpty(o.params.comboQuery)){
+                    });
+                    storeT.on("beforeload", function(s,o){
+                        o.filters=Ext.Array.slice(o.filters,0,1);
+                        if (!Ext.isEmpty(o.params.comboQuery)){
 
-                        var newFilter=Ext.create('Ext.util.Filter', {
-                            property:"text",
-                            value:o.params.comboQuery,
-                            operator:'like'
-                        });
+                            var newFilter=Ext.create('Ext.util.Filter', {
+                                property:"text",
+                                value:o.params.comboQuery,
+                                operator:'like'
+                            });
 
-                        o.filters.push(newFilter);
+                            o.filters.push(newFilter);
 
-                    }
+                        }
 
 
-                });
-                var selecteur = Ext.widget('comboboxselect', {
-                    name:leVocab.get("id"),
-                    anchor:"90%",
-                    fieldLabel: leVocab.get("name"),
-                    autoScroll: false,
-                    store: storeT,
-                    queryMode: 'remote',
-                    queryParam: 'comboQuery',
-                    minChars:3,
-                    displayField: 'text',
-                    valueField: 'id',
-                    filterPickList: true,
-                    typeAhead: true,
-                    forceSelection: !leVocab.data.expandable,
-                    createNewOnEnter: leVocab.data.expandable,
-                    multiSelect: leVocab.data.multiSelect,
-                    allowBlank: !leVocab.data.mandatory
-                });
+                    });
+                    var selecteur = Ext.widget('comboboxselect', {
+                        name:leVocab.get("id"),
+                        anchor:"90%",
+                        fieldLabel: leVocab.get("name"),
+                        autoScroll: false,
+                        store: storeT,
+                        queryMode: 'remote',
+                        queryParam: 'comboQuery',
+                        minChars:3,
+                        displayField: 'text',
+                        valueField: 'id',
+                        filterPickList: true,
+                        typeAhead: true,
+                        forceSelection: !leVocab.data.expandable,
+                        createNewOnEnter: leVocab.data.expandable,
+                        multiSelect: leVocab.data.multiSelect,
+                        allowBlank: !leVocab.data.mandatory
+                    });
+
+                }
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(selecteur);
+                enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+                if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
+                formTaxoTC.add(enrobage);
 
             }
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(selecteur);
-            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
-            if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
-            formTaxoTC.add(enrobage);
-
         }
 
         var nct = Ext.getCmp("nestedContentsTab");
@@ -897,6 +899,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     },
 
     enregistrerTypeContenus: function(button, e, eOpts) {
+        var me=this;
+        var rec=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(rec)){
+            rec.set("rows",me.saveLayout(Ext.getCmp("layoutEditionPanel")));
+        }
         if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected() !== null){
             var fieldsR = Ext.getCmp('champsEditionTC').items.items;
             var champsR = [ ];
@@ -1363,17 +1370,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         if (button.deactivateMode){
             Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",false);
             Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
-            Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("ouiS");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
 
         } else {
-            var myType=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().get("type");
-            Ext.Array.forEach(Ext.getCmp("CTLayoutsGrid").getStore().query("type",myType).items,function(record){
+            var mySite=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().get("site");
+            Ext.Array.forEach(Ext.getCmp("CTLayoutsGrid").getStore().query("site",mySite).items,function(record){
                 record.set("active",false);
             });
             Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected().set("active",true);
             Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
-            Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("nonS");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
         }
     },
@@ -1442,6 +1449,46 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     },
 
+    onCTLayoutsGridBeforeSelect: function(rowmodel, record, index, eOpts) {
+        var me=this;
+        var rec=Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected();
+        if (!Ext.isEmpty(rec)){
+            rec.set("rows",me.saveLayout(Ext.getCmp("layoutEditionPanel")));
+        }
+    },
+
+    onCopyCTLayoutBtnClick: function(button, e, eOpts) {
+        var target = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0];
+        if (Ext.isDefined(target)) {
+            var fenetre = Ext.widget('CTLCopyWindow');
+            fenetre.show();
+            fenetre.getComponent(0).getComponent(0).setValue(target.get("name")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'));
+        }
+    },
+
+    onCTLCopyLSubitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            var data = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0].getData();
+            data.active=false;
+            Ext.apply(data, form.getValues());
+            Ext.getCmp('CTLayoutsGrid').getStore().add(data);
+            button.up().up().close();
+        }
+    },
+
+    onPanelActivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr").show();
+        Ext.getCmp("layoutsEditToolbar").show();
+        Ext.getCmp("AdminfTypesGrid").collapse();
+    },
+
+    onPanelDeactivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr").hide();
+        Ext.getCmp("layoutsEditToolbar").hide();
+        Ext.getCmp("AdminfTypesGrid").expand();
+    },
+
     miseAPlatTaxo: function(cible, resultat) {
         var e=0;
         for (e=0; e<cible.length; e++) {
@@ -1478,6 +1525,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     resetLayoutsInterfaceSelect: function(record) {
         Ext.getCmp("RemoveCTLayoutBtn").enable();
+        Ext.getCmp("copyCTLayoutBtn").enable();
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("layoutsEditToolbar").enable();
         this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
@@ -1485,11 +1533,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("layoutActivatorBtn").enable();
         if (record.get("active")){
             Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
-            Ext.getCmp("layoutActivatorBtn").setIconCls("nonSpetit");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("nonS");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=true;
         } else {
             Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
-            Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
+            Ext.getCmp("layoutActivatorBtn").setIconCls("ouiS");
             Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
         }
         this.getFieldsListForLayout();
@@ -1498,12 +1546,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     resetLayoutsInterfaceNoSelect: function() {
         Ext.getCmp("layoutEditionPanel").removeAll();
         Ext.getCmp("RemoveCTLayoutBtn").disable();
+        Ext.getCmp("copyCTLayoutBtn").disable();
         Ext.getCmp("layoutsEditToolbar").disable();
         Ext.getCmp("layoutActivatorBtn").disable();
         Ext.getStore("CTFieldsForLayouts").removeAll();
         Ext.getCmp("layoutElementIdField").setValue(null);
         Ext.getCmp("layoutActivatorBtn").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
-        Ext.getCmp("layoutActivatorBtn").setIconCls("ouiSpetit");
+        Ext.getCmp("layoutActivatorBtn").setIconCls("ouiS");
         Ext.getCmp("layoutActivatorBtn").deactivateMode=false;
     },
 
@@ -1968,7 +2017,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 click: this.onNewCTLayoutWindowSubmitBtnClick
             },
             "#CTLayoutsGrid": {
-                selectionchange: this.onCTLayoutsGridSelectionChange
+                selectionchange: this.onCTLayoutsGridSelectionChange,
+                beforeselect: this.onCTLayoutsGridBeforeSelect
             },
             "#saveCTLayoutBtn": {
                 click: this.onSaveCTLayoutBtnClick
@@ -2005,6 +2055,16 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#moveLayoutItemDownBtn": {
                 click: this.onMoveLayoutItemDownBtnClick
+            },
+            "#copyCTLayoutBtn": {
+                click: this.onCopyCTLayoutBtnClick
+            },
+            "#CTLCopyLSubitBtn": {
+                click: this.onCTLCopyLSubitBtnClick
+            },
+            "#CTLayoutMainTab": {
+                activate: this.onPanelActivate,
+                deactivate: this.onPanelDeactivate
             }
         });
     }

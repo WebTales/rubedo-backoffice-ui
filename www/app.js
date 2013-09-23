@@ -172,7 +172,8 @@ Ext.application({
         'Rubedo.view.NewCTLayoutWindow',
         'Rubedo.view.AssignFieldToColWindow',
         'Rubedo.view.simpleModeMainBar',
-        'Rubedo.view.ApplicationLogsInterface'
+        'Rubedo.view.ApplicationLogsInterface',
+		'Rubedo.view.CTLCopyWindow'
     ],
     models: [
         'sitesDataModel',
@@ -317,7 +318,8 @@ Ext.application({
         'InportAsTaxoTranslationStore',
         'LocalizedFieldSelectorStore',
         'ImportTranslationLanguageStore',
-        'ApplicationLogs'
+        'ApplicationLogs',
+		'SitesComboCTLayouts'
     ],
     views: [
         'MyContainer',
@@ -473,7 +475,8 @@ Ext.application({
         'NewCTLayoutWindow',
         'AssignFieldToColWindow',
         'simpleModeMainBar',
-        'ApplicationLogsInterface'
+        'ApplicationLogsInterface',
+		'CTLCopyWindow'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -84,7 +84,6 @@ Ext.define('Rubedo.view.DLSToolbar', {
                         button.up().up().remove(button.up().up().getComponent(comboValue));
                         var me=button.up();
                         me.directOverrideMode=true;
-                        console.log(me.directOverrideMode);
                     },
                     localiserId: 'removeTranslationBtn',
                     disabled: true,
@@ -123,11 +122,15 @@ Ext.define('Rubedo.view.DLSToolbar', {
                 }
             }
             if (me.specialTaxoMode){
-                if (!Ext.isEmpty(Ext.getCmp("AdminfTaxonomieGrid").getSelectionModel().getLastSelected().get("i18n")[newValue])){
-                    Ext.getCmp("specialLangTermColumn").usedLanguage=newValue;
-                    Ext.getCmp("TermesTaxonomieTree").getView().refresh();
-                    Ext.getCmp("specialLangTermColumn").setText('<img class="header-icon" style="vertical-align:middle;margin-bottom:4px;" src="resources/icones/'+MyPrefData.iconsDir+'/16x16/pencil.png"/> '+field.getRawValue());
+                if (Ext.isEmpty(Ext.getCmp("AdminfTaxonomieGrid").getSelectionModel().getLastSelected().get("i18n")[newValue])){
+                    if (!Ext.getCmp("boutonEnregistrerTaxo").disabled){
+                        Ext.getCmp("boutonEnregistrerTaxo").fireEvent("click",Ext.getCmp("boutonEnregistrerTaxo"));
+                    }
                 }
+                Ext.getCmp("specialLangTermColumn").usedLanguage=newValue;
+                Ext.getCmp("TermesTaxonomieTree").getView().refresh();
+                Ext.getCmp("specialLangTermColumn").setText('<img class="header-icon" style="vertical-align:middle;margin-bottom:4px;" src="resources/icones/'+MyPrefData.iconsDir+'/16x16/pencil.png"/> '+field.getRawValue());
+
             }
         }
     },

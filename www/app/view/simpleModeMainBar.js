@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
                 },
                 {
                     xtype: 'button',
+                    localiserId: 'simpleModeFavoritesBtn',
                     id: 'favoritesAdaptiveMenu',
                     iconCls: 'favoris',
                     text: 'Favorites',

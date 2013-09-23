@@ -48,12 +48,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "simpleModeFavoritesBtn",
                 "layout|flex": null,
                 "id": "favoritesAdaptiveMenu",
                 "iconCls": "favoris",
                 "text": "Favorites"
             },
             "designerId": "b9451b93-655a-4f0f-9b26-1b050acdd22b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.menu.Menu",

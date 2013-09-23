@@ -362,6 +362,14 @@
                                     "fieldLabel": "#ext-gen1093#",
                                     "name": "query"
                                 }
+                            },
+                            {
+                                "type": "Ext.form.field.Text",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1405#",
+                                    "name": "imageField",
+                                    "value": "image"
+                                }
                             }
                         ]
                     },
@@ -412,7 +420,9 @@
                     }
                 ]
             },
-            "configBloc": {}
+            "configBloc": {
+            	"imageField":"image"
+            }
         },
         "category": "#ext-gen1068#",
         "bType": "carrousel",
@@ -492,6 +502,22 @@
                                     "minValue": 1,
                                     "maxValue": 4
                                 }
+                            },{
+                                "type": "Ext.form.field.Checkbox",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1406#",
+                                    "name": "showOnlyTitle",
+                                    "inputValue": true
+                                }
+                            },{
+                                "type": "Ext.form.field.Number",
+                                "config": {
+                                    "fieldLabel": "#ext-gen1407#",
+                                    "name": "summaryHeight",
+                                    "allowDecimals": false,
+                                    "minValue": 0,
+                                    "value":80
+                                }
                             }
                         ]
                     },
@@ -555,7 +581,9 @@
                 ]
             },
             "configBloc": {
-                "columns": 1
+                "columns": 1,
+                "showOnlyTitle":false,
+                "summaryHeight":80
             }
         },
         "category": "#ext-gen1068#",
@@ -758,6 +786,7 @@
                                     "multiSelect": true,
                                     "forceSelection": false,
                                     "stacked": true,
+                                    "allowBlank":false,
                                     "createNewOnEnter": true,
                                     "hideTrigger": true,
                                     "triggerOnClick": false,

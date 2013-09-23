@@ -153,6 +153,7 @@
                     "var i=0;\r",
                     "for (i=0; i<lesTaxo.length; i++) {\r",
                     "    var leVocab = Ext.getStore('TaxonomyForC').findRecord('id', lesTaxo[i]);\r",
+                    "    if (!Ext.isEmpty(leVocab)){\r",
                     "    if (leVocab.get(\"inputAsTree\")){\r",
                     "        var storeT = Ext.create(\"Ext.data.TreeStore\", {\r",
                     "            model:\"Rubedo.model.taxonomyTermModel\",\r",
@@ -290,6 +291,7 @@
                     "    if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}\r",
                     "    formTaxoTC.add(enrobage);\r",
                     "\r",
+                    "}\r",
                     "}\r",
                     "\r",
                     "var nct = Ext.getCmp(\"nestedContentsTab\");\r",
@@ -1019,6 +1021,11 @@
             "userConfig": {
                 "fn": "enregistrerTypeContenus",
                 "implHandler": [
+                    "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(rec)){\r",
+                    "    rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel\")));\r",
+                    "}\r",
                     "if (Ext.getCmp('AdminfTypesGridView').getSelectionModel().getLastSelected() !== null){\r",
                     "    var fieldsR = Ext.getCmp('champsEditionTC').items.items;\r",
                     "    var champsR = [ ];\r",
@@ -1666,6 +1673,7 @@
                 ],
                 "implHandler": [
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();\r",
+                    "Ext.getCmp(\"copyCTLayoutBtn\").enable();\r",
                     "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").enable();\r",
                     "this.restoreLayout(record.get(\"rows\"),0,Ext.getCmp(\"layoutEditionPanel\"));\r",
@@ -1673,11 +1681,11 @@
                     "Ext.getCmp(\"layoutActivatorBtn\").enable();\r",
                     "if (record.get(\"active\")){\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=true;\r",
                     "} else {\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
                     "}\r",
                     "this.getFieldsListForLayout();"
@@ -1697,12 +1705,13 @@
                 "implHandler": [
                     "Ext.getCmp(\"layoutEditionPanel\").removeAll();\r",
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").disable();\r",
+                    "Ext.getCmp(\"copyCTLayoutBtn\").disable();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").disable();\r",
                     "Ext.getCmp(\"layoutActivatorBtn\").disable();\r",
                     "Ext.getStore(\"CTFieldsForLayouts\").removeAll();\r",
                     "Ext.getCmp(\"layoutElementIdField\").setValue(null);\r",
                     "Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
-                    "Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiS\");\r",
                     "Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;"
                 ]
             },
@@ -2497,17 +2506,17 @@
                     "if (button.deactivateMode){\r",
                     "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",false);\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"ouiS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;\r",
                     "\r",
                     "} else {\r",
-                    "    var myType=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().get(\"type\");\r",
-                    "    Ext.Array.forEach(Ext.getCmp(\"CTLayoutsGrid\").getStore().query(\"type\",myType).items,function(record){\r",
+                    "    var mySite=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().get(\"site\");\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"CTLayoutsGrid\").getStore().query(\"site\",mySite).items,function(record){\r",
                     "        record.set(\"active\",false);\r",
                     "    });\r",
                     "    Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected().set(\"active\",true);\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
-                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonSpetit\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn\").setIconCls(\"nonS\");\r",
                     "    Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=true;\r",
                     "}"
                 ],
@@ -2656,6 +2665,121 @@
                 "designer|controlQuery": "#moveLayoutItemDownBtn"
             },
             "designerId": "cbbcfdd9-671b-4f5e-bd41-0c6e70e48d56"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLayoutsGridBeforeSelect",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(rec)){\r",
+                    "    rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel\")));\r",
+                    "}"
+                ],
+                "name": "beforeselect",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#CTLayoutsGrid"
+            },
+            "designerId": "fb6d6b7a-04d3-414d-8b04-da82e0d39660"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCopyCTLayoutBtnClick",
+                "implHandler": [
+                    "var target = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(target)) {\r",
+                    "    var fenetre = Ext.widget('CTLCopyWindow');\r",
+                    "    fenetre.show();\r",
+                    "    fenetre.getComponent(0).getComponent(0).setValue(target.get(\"name\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i'));\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#copyCTLayoutBtn"
+            },
+            "designerId": "43afccc8-b496-404f-b3a1-684aa2baa75d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLCopyLSubitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var data = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0].getData();\r",
+                    "    data.active=false;\r",
+                    "    Ext.apply(data, form.getValues());\r",
+                    "    Ext.getCmp('CTLayoutsGrid').getStore().add(data);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#CTLCopyLSubitBtn"
+            },
+            "designerId": "891beb16-30d9-429c-a095-4a4d1e2f7c03"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelActivate",
+                "implHandler": [
+                    "Ext.getCmp(\"CTLayoutsBtnGr\").show();\r",
+                    "Ext.getCmp(\"layoutsEditToolbar\").show();\r",
+                    "Ext.getCmp(\"AdminfTypesGrid\").collapse();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#CTLayoutMainTab"
+            },
+            "designerId": "53165355-ab90-4bd8-933f-01eb499a3373"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelDeactivate",
+                "implHandler": [
+                    "Ext.getCmp(\"CTLayoutsBtnGr\").hide();\r",
+                    "Ext.getCmp(\"layoutsEditToolbar\").hide();\r",
+                    "Ext.getCmp(\"AdminfTypesGrid\").expand();"
+                ],
+                "name": "deactivate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#CTLayoutMainTab"
+            },
+            "designerId": "78a302ac-fe2c-48cb-847b-95bced7cc812"
         }
     ]
 }
