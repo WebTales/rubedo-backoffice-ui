@@ -210,6 +210,7 @@ Ext.define('Rubedo.view.CustomThemesInterface', {
                                     anchor: '50%',
                                     id: 'colorSuggestionCombo',
                                     margin: '',
+                                    submitValue: false,
                                     editable: false,
                                     forceSelection: true,
                                     multiSelect: true,
