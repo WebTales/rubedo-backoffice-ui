@@ -220,8 +220,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "operator": "$gte",
+                        "layout|flex": null,
                         "id": "testerDate1",
                         "fieldLabel": "Show logs between",
                         "labelWidth": 110,
@@ -244,8 +244,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "operator": "$lte",
+                        "layout|flex": null,
                         "fieldLabel": "and",
                         "labelWidth": 30,
                         "name": "datetime"
@@ -267,8 +267,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "operator": "$gte",
+                        "layout|flex": null,
                         "fieldLabel": "of minimal level",
                         "labelWidth": 80,
                         "name": "level",
