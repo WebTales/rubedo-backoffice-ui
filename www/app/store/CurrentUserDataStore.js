@@ -53,6 +53,10 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
                     fn: me.onJsonstoreLoad,
                     single: true,
                     scope: me
+                },
+                update: {
+                    fn: me.onJsonstoreUpdate,
+                    scope: me
                 }
             }
         }, cfg)]);
@@ -73,6 +77,18 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
             Ext.getCmp("workingLanguageField").setValue(myLanguage);
         }
 
+    },
+
+    onJsonstoreUpdate: function(store, record, operation, modifiedFieldNames, eOpts) {
+        if ((!Ext.isEmpty(modifiedFieldNames))&&(!Ext.isEmpty(Ext.Array.intersect(modifiedFieldNames,["workingLanguage","language","interfaceMode"])))){
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.boReloadRequired ,function(anser){
+                if (anser=="yes"){
+                    window.onbeforeunload=Ext.emptyFn;
+                    window.location.href="login";
+                }
+            });
+
+        }
     }
 
 });

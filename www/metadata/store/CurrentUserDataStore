@@ -93,6 +93,31 @@
                 "scope": "me"
             },
             "designerId": "8e993bdd-5ab4-4019-bbf4-5651cddd4509"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreUpdate",
+                "implHandler": [
+                    "if ((!Ext.isEmpty(modifiedFieldNames))&&(!Ext.isEmpty(Ext.Array.intersect(modifiedFieldNames,[\"workingLanguage\",\"language\",\"interfaceMode\"])))){\r",
+                    "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.boReloadRequired ,function(anser){\r",
+                    "        if (anser==\"yes\"){\r",
+                    "            window.onbeforeunload=Ext.emptyFn;\r",
+                    "\t\t\twindow.location.href=\"login\";\r",
+                    "        }\r",
+                    "    });\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "designerId": "f49a9d07-bf74-4690-a80e-679f72bfc974"
         }
     ]
 }

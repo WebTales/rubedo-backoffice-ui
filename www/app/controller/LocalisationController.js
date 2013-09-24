@@ -364,7 +364,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "damTypeHasBeenEmptiedText": "The media type has been emptied",
             "themePreviewText":"Theme preview",
             "fieldText":"Field",
-            "dbclickToAssignText":"Double-click available fields to assign to this column"
+            "dbclickToAssignText":"Double-click available fields to assign to this column",
+            "boReloadRequired":"This change requires an interface reload in order to fully take effect. Would you like to reload now ?"
         });
 
         this.control({
