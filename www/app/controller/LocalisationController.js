@@ -170,7 +170,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "internalServerError": "Internal server error",
             "unkownError": "Unknown error",
             "activateText": "Activate",
-            "pageHoldsDefaultError": "This page cannot be deleted because it u one of its decendantes is used as a detail of the site page",
+            "pageHoldsDefaultError": "This page cannot be deleted because it or one of its decendantes is used as a detail of the site page",
             "pageHoldsDefaultServerError": "Error in the determination of the deletable status of the page",
             "deactivateText": "Disable",
             "windowBeforeUnloadMessage": "You will leave the Back Office and lose any unsaved changes.",

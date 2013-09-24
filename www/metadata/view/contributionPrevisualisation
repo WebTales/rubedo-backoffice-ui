@@ -440,6 +440,56 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "layout|margins": "0 0 0 20",
+                                "id": "previewLanguageCombo",
+                                "itemId": null,
+                                "fieldLabel": "Language",
+                                "labelWidth": 60,
+                                "editable": false,
+                                "displayField": "label",
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "valueField": "locale"
+                            },
+                            "designerId": "77e8591e-e618-4496-92a1-8648f7640c9b",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processPreviewLanguageCombo",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.store=Ext.create('Ext.data.Store', {\r",
+                                            "    fields:[{name:\"locale\"},{name:\"label\"},{name:\"flagCode\"}]\r",
+                                            "});\r",
+                                            "config.tpl=Ext.create('Ext.XTemplate',\r",
+                                            "'<tpl for=\".\">',\r",
+                                            "'<div class=\"x-boundlist-item\"><img src=\"/assets/flags/16/{flagCode}.png\"> {label}</div>',\r",
+                                            "'</tpl>'\r",
+                                            ");\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "004aae53-61fa-4906-8ce9-26cb9d8f8415"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.toolbar.Fill",
                             "reference": {
                                 "name": "items",

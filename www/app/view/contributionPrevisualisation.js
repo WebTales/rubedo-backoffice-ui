@@ -184,6 +184,18 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                     fieldLabel: 'Date',
                                     labelWidth: 40
                                 },
+                                me.processPreviewLanguageCombo({
+                                    xtype: 'combobox',
+                                    margins: '0 0 0 20',
+                                    id: 'previewLanguageCombo',
+                                    fieldLabel: 'Language',
+                                    labelWidth: 60,
+                                    editable: false,
+                                    displayField: 'label',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    valueField: 'locale'
+                                }),
                                 {
                                     xtype: 'tbfill'
                                 },
@@ -206,6 +218,18 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
         });
 
         me.callParent(arguments);
+    },
+
+    processPreviewLanguageCombo: function(config) {
+        config.store=Ext.create('Ext.data.Store', {
+            fields:[{name:"locale"},{name:"label"},{name:"flagCode"}]
+        });
+        config.tpl=Ext.create('Ext.XTemplate',
+        '<tpl for=".">',
+        '<div class="x-boundlist-item"><img src="/assets/flags/16/{flagCode}.png"> {label}</div>',
+        '</tpl>'
+        );
+        return config;
     },
 
     onPreviewDeviceComboChange: function(cycle, item, eOpts) {
