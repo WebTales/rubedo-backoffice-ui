@@ -194,7 +194,13 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                     displayField: 'label',
                                     forceSelection: true,
                                     queryMode: 'local',
-                                    valueField: 'locale'
+                                    valueField: 'locale',
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onPreviewLanguageComboAfterRender,
+                                            scope: me
+                                        }
+                                    }
                                 }),
                                 {
                                     xtype: 'tbfill'
@@ -236,6 +242,12 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
         if (!Ext.isEmpty(Ext.getCmp("advancedPreviewPageRefresh"))){
             Ext.getCmp("advancedPreviewPageRefresh").fireEvent("click", Ext.getCmp("advancedPreviewPageRefresh"));
         }
+    },
+
+    onPreviewLanguageComboAfterRender: function(component, eOpts) {
+        if (Ext.getStore("AllLanguagesStore3").getRange().length==1){
+            component.hide();
+        } 
     }
 
 });

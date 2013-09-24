@@ -761,15 +761,17 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("previewLanguageCombo").getStore().removeAll();
         var record=records[0];
         Ext.Array.forEach(record.get("languages"), function(key){
-            var potentialLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label");
-            var betterLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("ownLabel");
-            if (!Ext.isEmpty(betterLabel)){
-                potentialLabel=betterLabel;
-            }
-            Ext.getCmp("previewLanguageCombo").getStore().add({"locale":key,"label":potentialLabel, "flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
-        });
-        Ext.getCmp("previewLanguageCombo").setValue(record.get("defaultLanguage"));
-        Ext.getCmp("contribPreviewMain").removeAll();
+            try{
+                var potentialLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("label");
+                var betterLabel=Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("ownLabel");
+                if (!Ext.isEmpty(betterLabel)){
+                    potentialLabel=betterLabel;
+                }
+                Ext.getCmp("previewLanguageCombo").getStore().add({"locale":key,"label":potentialLabel, "flagCode":Ext.getStore("AllLanguagesStore3").query("locale",key,false,false,true).items[0].get("flagCode")});
+            }catch(err){}
+            });
+            Ext.getCmp("previewLanguageCombo").setValue(record.get("defaultLanguage"));
+            Ext.getCmp("contribPreviewMain").removeAll();
     },
 
     onPreviewPageTreeSelect: function(rowmodel, record, index, eOpts) {
