@@ -1008,6 +1008,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonPublierNouveauContenu").targetedId=targetedId;
             Ext.getCmp("cedtr1").destroy();
             Ext.getCmp("cedtr2").destroy();
+            Ext.getCmp("cedtrURL").destroy();
 
 
         }

@@ -585,6 +585,24 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     },
                                                     items: [
                                                         {
+                                                            xtype: 'textfield',
+                                                            RTip: 'Value to be used as content part in any URL diplaying this content.',
+                                                            anchor: '90%',
+                                                            style: '{float:left}',
+                                                            fieldLabel: 'URL Segment',
+                                                            labelSeparator: ' ',
+                                                            name: 'urlSegment'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
                                                             xtype: 'textareafield',
                                                             localiserId: 'summaryField',
                                                             RTip: 'Résumé facultatif du contenu.',

@@ -144,6 +144,25 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                         },
                                         {
                                             xtype: 'container',
+                                            id: 'cedtrURL',
+                                            padding: 10,
+                                            layout: {
+                                                type: 'anchor'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    RTip: 'Value to be used as content part in any URL diplaying this content.',
+                                                    anchor: '90%',
+                                                    style: '{float:left}',
+                                                    fieldLabel: 'URL Segment',
+                                                    labelSeparator: ' ',
+                                                    name: 'urlSegment'
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'container',
                                             id: 'cedtr2',
                                             padding: 10,
                                             layout: {

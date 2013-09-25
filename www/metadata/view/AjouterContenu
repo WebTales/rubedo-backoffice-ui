@@ -358,6 +358,48 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "id": "cedtrURL",
+                                        "padding": 10,
+                                        "layout": "anchor"
+                                    },
+                                    "designerId": "4d578b3c-91e2-4fc2-87d2-df2ec654b180",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "RTip": "Value to be used as content part in any URL diplaying this content.",
+                                                "layout|anchor": "90%",
+                                                "style": [
+                                                    "{float:left}"
+                                                ],
+                                                "fieldLabel": "URL Segment",
+                                                "labelSeparator": " ",
+                                                "name": "urlSegment"
+                                            },
+                                            "designerId": "e65fce58-37e5-4220-957b-ef952ab8180f",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "RTip",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
                                         "id": "cedtr2",
                                         "padding": 10,
                                         "layout": "anchor"
