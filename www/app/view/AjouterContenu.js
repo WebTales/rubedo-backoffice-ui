@@ -469,13 +469,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                 {
                     xtype: 'mytool17'
                 }
-            ],
-            listeners: {
-                render: {
-                    fn: me.onAjouterContenuRender,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
@@ -484,12 +478,6 @@ Ext.define('Rubedo.view.AjouterContenu', {
     processMyActionColumnItem: function(config) {
         config.tooltip=Rubedo.RubedoAutomatedElementsLoc.restoreText;
         return config;
-    },
-
-    onAjouterContenuRender: function(component, eOpts) {
-        if (component.specialMode){
-            //abstractcomponent.setHeight(300);
-        }
     }
 
 });

@@ -900,6 +900,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
     var cible = content;
     var valuesToApply=cible.get("champs");
+    if (Ext.isEmpty(valuesToApply)){
+        valuesToApply={ };
+    }
     try{
         Ext.apply(valuesToApply, cible.get("i18n")[cible.get("locale")].fields);
     }catch(err){
@@ -920,11 +923,13 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             }
         }
     });
+
     Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
     Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
     Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
     Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
     Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
+
 
     Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
