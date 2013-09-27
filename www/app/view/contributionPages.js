@@ -543,7 +543,8 @@ Ext.define('Rubedo.view.contributionPages', {
                                             fieldLabel: 'Hors navigation',
                                             name: 'excludeFromMenu',
                                             boxLabel: '',
-                                            inputValue: 'true'
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
                                         },
                                         {
                                             xtype: 'WorkspaceCombo',
@@ -593,6 +594,30 @@ Ext.define('Rubedo.view.contributionPages', {
                                                     scope: me
                                                 }
                                             }
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            title: 'Robot',
+                                            items: [
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'noindex',
+                                                    name: 'noIndex',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                },
+                                                {
+                                                    xtype: 'checkboxfield',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'nofollow',
+                                                    name: 'noFollow',
+                                                    boxLabel: '',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

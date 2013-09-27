@@ -1227,7 +1227,8 @@
                                         "fieldLabel": "Hors navigation",
                                         "name": "excludeFromMenu",
                                         "boxLabel": "",
-                                        "inputValue": "true"
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
                                     },
                                     "designerId": "9780587d-3fe2-44a4-ab33-b8ae5ce82e1d",
                                     "customConfigs": [
@@ -1413,6 +1414,54 @@
                                                 "scope": "me"
                                             },
                                             "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Robot"
+                                    },
+                                    "designerId": "d5d213a4-7047-4330-a4db-3f27a6c434e9",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "noindex",
+                                                "name": "noIndex",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "276d66aa-eeee-40d4-89ca-8ff432a875c5"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "fieldLabel": "nofollow",
+                                                "name": "noFollow",
+                                                "boxLabel": "",
+                                                "inputValue": "true",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "designerId": "ab76ad94-2520-45fb-8e51-52436626ccee"
                                         }
                                     ]
                                 }
