@@ -16,8 +16,8 @@
         "designer|userAlias": "ajoutBlocFenetre",
         "resizable": false,
         "layout": "hbox",
-        "title": "Ajouter un bloc",
         "constrainHeader": true,
+        "title": "Ajouter un bloc",
         "modal": true
     },
     "configAlternates": {
@@ -116,7 +116,6 @@
             "userConfig": {
                 "layout|flex": 1.3,
                 "id": "PaneauBlocsDetail",
-                "styleHtmlContent": true,
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "bodyStyle": [

@@ -12,11 +12,11 @@
         "width": 400,
         "designer|userClassName": "workingLanguageChangeWindow",
         "designer|userAlias": "workingLanguageChangeWindow",
+        "constrain": true,
         "resizable": false,
         "layout": "fit",
         "iconCls": "world_small",
         "title": "Change current working language",
-        "constrain": true,
         "modal": true
     },
     "configAlternates": {
@@ -52,8 +52,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "TALanguageField",
+                        "layout|anchor": "100%",
                         "id": "currentLanguageSelectorCombo",
                         "fieldLabel": "Language",
                         "name": "language",
@@ -101,8 +101,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "setAsWLBtn",
+                        "layout|anchor": "100%",
                         "id": "currentLanguageChangeSubmitBtn",
                         "scale": "medium",
                         "text": "Set as current working language"

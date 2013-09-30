@@ -148,6 +148,7 @@
                     "    }\r",
                     "    me.refreshIcons(); \r",
                     "});\r",
+                    "\r",
                     "Ext.getStore('PersonalPrefsStore').load();\r",
                     "Ext.getStore(\"CurrentUserDataStore\").on(\"load\", function(){\r",
                     "    var currentUser = this.getRange()[0];\r",
@@ -626,7 +627,8 @@
                     "    themeColor: '#D7251D',\r",
                     "    simpleMode:false,\r",
                     "    lastEdited:[ ]\r",
-                    "}); "
+                    "}); \r",
+                    "Ext.getStore(\"AllLanguagesStore3\").load();"
                 ]
             },
             "designerId": "ba2fb59b-169b-4580-9a53-19166be42cf7"

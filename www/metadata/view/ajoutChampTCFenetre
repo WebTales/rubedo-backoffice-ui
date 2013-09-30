@@ -17,8 +17,8 @@
             "false"
         ],
         "layout": "hbox",
-        "title": "Ajouter un champ",
         "constrainHeader": true,
+        "title": "Ajouter un champ",
         "modal": true
     },
     "designerId": "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
@@ -161,7 +161,6 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "id": "PaneauTCDetail",
-                        "styleHtmlContent": true,
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "bodyStyle": [

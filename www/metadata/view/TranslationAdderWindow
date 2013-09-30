@@ -12,11 +12,11 @@
         "width": 400,
         "designer|userClassName": "TranslationAdderWindow",
         "designer|userAlias": "TranslationAdderWindow",
+        "constrain": true,
         "resizable": false,
         "layout": "fit",
         "iconCls": "world_small",
         "title": "Add new translation",
-        "constrain": true,
         "modal": true
     },
     "configAlternates": {
@@ -52,8 +52,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "TALanguageField",
+                        "layout|anchor": "100%",
                         "id": "TranslationAdderWindowSelector",
                         "fieldLabel": "Language",
                         "name": "language",
@@ -82,8 +82,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "localiserId": "translateInThisLanguageBtn",
+                        "layout|anchor": "100%",
                         "id": "TranslationAdderWindowSubmitBtn",
                         "scale": "medium",
                         "text": "Translate in this language"

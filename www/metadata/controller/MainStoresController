@@ -25,6 +25,11 @@
                 ],
                 "implHandler": [
                     "var me = this;\r",
+                    "Ext.override(Ext.data.Store, {\r",
+                    "     removeAll: function () {\r",
+                    "         this.data.clear(); this.fireEvent(\"clear\",this);\r",
+                    "     }\r",
+                    "});\r",
                     "Ext.data.StoreManager.each(function(store){\r",
                     "    me.registerStore(store);\r",
                     "});"

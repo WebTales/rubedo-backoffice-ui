@@ -13,9 +13,9 @@
         "designer|userAlias": "GroupAddWindow",
         "resizable": false,
         "layout": "fit",
+        "constrainHeader": true,
         "iconCls": "user",
         "title": "Ajouter un groupe",
-        "constrainHeader": true,
         "modal": true
     },
     "configAlternates": {

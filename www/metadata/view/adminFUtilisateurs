@@ -14,9 +14,9 @@
         "designer|userClassName": "adminFUtilisateurs",
         "designer|userAlias": "adminFUtilisateurs",
         "layout": "hbox",
+        "constrainHeader": true,
         "iconCls": "user",
-        "title": "Groupes",
-        "constrainHeader": true
+        "title": "Groupes"
     },
     "designerId": "fb146702-039a-47f8-8142-bd4572c13135",
     "customConfigs": [
@@ -153,8 +153,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "boiteBarreMeta",
-                        "margin": "0 0 0 10",
-                        "styleHtmlContent": true
+                        "margin": "0 0 0 10"
                     },
                     "designerId": "ac6e9cc8-defd-49ca-be3e-e8db39210003",
                     "cn": [

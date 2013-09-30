@@ -73,6 +73,7 @@
             "userConfig": {
                 "fn": "onJsonstoreLoad",
                 "implHandler": [
+                    "\r",
                     "var mode=records[0].get(\"interfaceMode\");\r",
                     "if ((!Ext.isEmpty(mode))&&(mode==\"simple\")){\r",
                     "    MyPrefData.simpleMode=true;\r",
@@ -80,13 +81,12 @@
                     "}\r",
                     "Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();\r",
                     "if (!Ext.isEmpty(Ext.getCmp(\"workingLanguageField\"))){\r",
-                    "    var myLanguage=store.getRange()[0].get(\"workingLanguage\");\r",
+                    "    var myLanguage=records[0].get(\"workingLanguage\");\r",
                     "    if(Ext.isEmpty(Ext.getStore(\"AllLanguagesStore3\").findRecord(\"locale\",myLanguage))){\r",
                     "        myLanguage=Ext.getStore(\"AllLanguagesStore3\").getRange()[0].get(\"locale\");\r",
                     "    }\r",
                     "    Ext.getCmp(\"workingLanguageField\").setValue(myLanguage);\r",
-                    "}\r",
-                    ""
+                    "}"
                 ],
                 "single": true,
                 "name": "load",

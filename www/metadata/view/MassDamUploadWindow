@@ -12,11 +12,11 @@
         "width": 466,
         "designer|userClassName": "MassDamUploadWindow",
         "designer|userAlias": "MassDamUploadWindow",
+        "constrain": true,
         "resizable": false,
         "layout": "fit",
         "bodyPadding": 2,
         "title": "Digital assets mass upload",
-        "constrain": true,
         "modal": true
     },
     "configAlternates": {
@@ -119,7 +119,6 @@
                                 "localiserId": "dropFilesHereContainer",
                                 "height": 60,
                                 "html": "<h1 style=\"color:#999;\">Drop files here</h1>",
-                                "styleHtmlContent": true,
                                 "width": 179
                             },
                             "configAlternates": {

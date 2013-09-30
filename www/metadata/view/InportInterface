@@ -14,9 +14,9 @@
         "designer|userAlias": "InportInterface",
         "resizable": false,
         "layout": "card",
+        "constrainHeader": true,
         "iconCls": "database_up_small",
-        "title": "Import",
-        "constrainHeader": true
+        "title": "Import"
     },
     "configAlternates": {
         "resizable": "boolean"

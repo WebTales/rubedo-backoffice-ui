@@ -16,9 +16,9 @@
             "Ext.ux.TreePicker"
         ],
         "layout": "fit",
+        "constrainHeader": true,
         "iconCls": "content-icon",
         "title": "Nouveau Contenu",
-        "constrainHeader": true,
         "modal": true
     },
     "configAlternates": {

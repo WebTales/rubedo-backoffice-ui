@@ -15,9 +15,9 @@
         "designer|userClassName": "DAMInterface",
         "designer|userAlias": "DAMInterface",
         "layout": "hbox",
+        "constrainHeader": true,
         "iconCls": "mediaTypes",
-        "title": "Médiathèque",
-        "constrainHeader": true
+        "title": "Médiathèque"
     },
     "designerId": "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
     "customConfigs": [
@@ -113,8 +113,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "itemId": "boiteBarreMeta",
-                        "styleHtmlContent": true
+                        "itemId": "boiteBarreMeta"
                     },
                     "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
                     "cn": [

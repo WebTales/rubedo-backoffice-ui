@@ -17,12 +17,12 @@
         "requires": [
             "Ext.ux.TreePicker"
         ],
+        "constrain": true,
         "overflowY": "auto",
         "layout": "card",
+        "constrainHeader": true,
         "iconCls": "mediaTypes",
         "title": "Nouveau média",
-        "constrain": true,
-        "constrainHeader": true,
         "modal": true
     },
     "configAlternates": {

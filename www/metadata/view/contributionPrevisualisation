@@ -15,9 +15,9 @@
         "designer|userClassName": "contributionPrevisualisation",
         "designer|userAlias": "contributionPrevisualisation",
         "layout": "hbox",
+        "constrainHeader": true,
         "iconCls": "personalize",
         "title": "Prévisualisation",
-        "constrainHeader": true,
         "maximized": true
     },
     "designerId": "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
@@ -204,7 +204,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "frame": true,
-                                        "styleHtmlContent": true,
                                         "width": null,
                                         "closeAction": "hide",
                                         "frameHeader": false,

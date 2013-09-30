@@ -17,8 +17,8 @@
             "false"
         ],
         "layout": "hbox",
-        "title": "Ajouter un champ",
         "constrainHeader": true,
+        "title": "Ajouter un champ",
         "modal": true
     },
     "designerId": "930bd7cd-dcce-4789-a701-014e8fbe373e",
@@ -109,7 +109,6 @@
             "userConfig": {
                 "layout|flex": 1,
                 "id": "MTFieldDescriber",
-                "styleHtmlContent": true,
                 "bodyPadding": 10,
                 "bodyStyle": [
                     "{text-align: justify;}"

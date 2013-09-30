@@ -14,9 +14,9 @@
         "designer|userClassName": "UserAdminWindow",
         "designer|userAlias": "UserAdminWindow",
         "layout": "hbox",
+        "constrainHeader": true,
         "iconCls": "user_edit",
-        "title": "Utilisateurs",
-        "constrainHeader": true
+        "title": "Utilisateurs"
     },
     "configAlternates": {
         "resizable": "boolean"
