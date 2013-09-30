@@ -245,15 +245,15 @@
                             "config"
                         ],
                         "implHandler": [
-                            "/*config.filter={\r",
-                            "    type:\"list\",\r",
-                            "    store: [\r",
-                            "    [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
-                            "    [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
-                            "    [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
-                            "    [\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
-                            "    ]\r",
-                            "};*/\r",
+                            "config.filter={\r",
+                            "type:\"list\",\r",
+                            "options: [\r",
+                            "[\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
+                            "[\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
+                            "[\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
+                            "[\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
+                            "]\r",
+                            "};\r",
                             "return config;"
                         ]
                     },
@@ -318,7 +318,11 @@
                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
                             "config.filter={\r",
-                            "    type: 'boolean'\r",
+                            "type:\"list\",\r",
+                            "options: [\r",
+                            "[true, config.trueText],\r",
+                            "[false,config.falseText]\r",
+                            "]\r",
                             "};\r",
                             "return config;"
                         ]
@@ -356,7 +360,44 @@
                 "refreshText": null,
                 "store": "ContenusDataJson"
             },
-            "designerId": "0c1466ec-1856-48a9-a1f5-56e00a3fecbc"
+            "designerId": "0c1466ec-1856-48a9-a1f5-56e00a3fecbc",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "iconCls": "close",
+                        "text": "Clear filters"
+                    },
+                    "designerId": "538a877e-b64a-465d-b13e-7336d02981d9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "Ext.getCmp(\"ContenusGrid\").features[0].clearFilters();"
+                                ]
+                            },
+                            "designerId": "998d7216-8649-4d69-bbb9-b3dfa2ca7bc3"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "processcfgfunction",

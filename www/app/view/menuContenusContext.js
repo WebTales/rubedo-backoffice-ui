@@ -122,7 +122,17 @@ Ext.define('Rubedo.view.menuContenusContext', {
                     dock: 'bottom',
                     width: 360,
                     displayInfo: true,
-                    store: 'ContenusDataJson'
+                    store: 'ContenusDataJson',
+                    items: [
+                        {
+                            xtype: 'button',
+                            handler: function(button, event) {
+                                Ext.getCmp("ContenusGrid").features[0].clearFilters();
+                            },
+                            iconCls: 'close',
+                            text: 'Clear filters'
+                        }
+                    ]
                 }
             ]
         });
@@ -132,15 +142,15 @@ Ext.define('Rubedo.view.menuContenusContext', {
     },
 
     processEtat: function(config) {
-        /*config.filter={
-        type:"list",
-        store: [
-        ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
-        ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
-        ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
-        ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
-        ]
-        };*/
+        config.filter={
+            type:"list",
+            options: [
+            ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
+            ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
+            ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
+            ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
+            ]
+        };
         return config;
     },
 
@@ -148,7 +158,11 @@ Ext.define('Rubedo.view.menuContenusContext', {
         config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
         config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         config.filter={
-            type: 'boolean'
+            type:"list",
+            options: [
+            [true, config.trueText],
+            [false,config.falseText]
+            ]
         };
         return config;
     },

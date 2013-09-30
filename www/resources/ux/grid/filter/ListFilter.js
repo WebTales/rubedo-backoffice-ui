@@ -161,7 +161,7 @@ Ext.define('Ext.ux.grid.filter.ListFilter', {
      * key value pairs representing the current configuration of the filter.
      */
     getSerialArgs : function () {
-        return {type: 'list', value: this.phpMode ? this.getValue().join(',') : this.getValue()};
+        return {type: 'list', operator:'$in', value: this.phpMode ? this.getValue().join(',') : this.getValue()};
     },
 
     /** @private */
