@@ -793,7 +793,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     success: function(response){
                         var targetedUrl = Ext.JSON.decode(response.responseText).url;
                         var showArg =encodeURIComponent(targetedUrl+"?preview=1"+"&preview_draft="+Ext.getCmp("advancedPreviewDraftField").getValue()+dateValue);
-                        Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+                        Ext.getCmp("contribPreviewMain").add(Ext.widget("component",{
                             autoEl: {
                                 tag: 'iframe',
                                 src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+showArg
@@ -819,7 +819,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 },
                 success: function(response){
                     var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("component",{
                         autoEl: {
                             tag: 'iframe',
                             src: targetedUrl+"?preview=1"
@@ -852,7 +852,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     success: function(response){
                         var targetedUrl = Ext.JSON.decode(response.responseText).url;
                         var showArg =encodeURIComponent(targetedUrl+"?preview=1"+"&preview_draft="+Ext.getCmp("advancedPreviewDraftField").getValue()+dateValue);
-                        Ext.getCmp("contribPreviewMain").add(Ext.widget("container",{
+                        Ext.getCmp("contribPreviewMain").add(Ext.widget("component",{
                             autoEl: {
                                 tag: 'iframe',
                                 src: "resources/responsiveShow/?device="+Ext.getCmp("previewDeviceCombo").getActiveItem().deviceValue+"&url="+showArg
