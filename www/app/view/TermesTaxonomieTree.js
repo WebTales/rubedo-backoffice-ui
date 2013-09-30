@@ -124,7 +124,12 @@ Ext.define('Rubedo.view.TermesTaxonomieTree', {
                     fn: me.onTermesTaxonomieTreeItemClick,
                     scope: me
                 }
-            }
+            },
+            plugins: [
+                Ext.create('Ext.grid.plugin.BufferedRenderer', {
+
+                })
+            ]
         });
 
         me.callParent(arguments);

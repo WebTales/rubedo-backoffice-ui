@@ -342,6 +342,15 @@
                 "scope": "me"
             },
             "designerId": "732569e4-a773-4994-868a-8a0e5811e4ff"
+        },
+        {
+            "type": "Ext.grid.plugin.BufferedRenderer",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": "Ext.grid.plugin.BufferedRenderer",
+            "designerId": "268929a4-3894-4d9f-8ed4-7b3b940b0e5d"
         }
     ]
 }
