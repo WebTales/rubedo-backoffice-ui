@@ -729,7 +729,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
             for (i = 0; i < len; i++) {
                 f = filters[i];
                 root = [this.paramPrefix, '[', i, ']'].join('');
-                p[root + '[field]'] = f.field;
+                p[root + '[property]'] = f.field;
 
                 dataPrefix = root + '[data]';
                 for (key in f.data) {
@@ -742,7 +742,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
                 f = filters[i];
                 tmp.push(Ext.apply(
                     {},
-                    {field: f.field},
+                    {property: f.field},
                     f.data
                 ));
             }

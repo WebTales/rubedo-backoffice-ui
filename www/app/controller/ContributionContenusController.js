@@ -34,8 +34,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         filArianne.add(typeFil);
     }
 
-    Ext.getCmp("ContenusGrid").getStore().clearFilter(true);
-    Ext.getCmp("ContenusGrid").getStore().filter("typeId",record.get("id"));
+    Ext.getCmp("ContenusGrid").getStore().getProxy().extraParams.tFilter=Ext.JSON.encode([{property:"typeId",value:record.get("id")}]);
+    Ext.getCmp("ContenusGrid").features[0].clearFilters();
+    Ext.getCmp("ContenusGrid").getStore().loadPage(1);
 
     Ext.Array.forEach(Ext.getCmp("contributionContenus").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
     Ext.getCmp("ajoutPanierContenus").disable();
