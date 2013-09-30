@@ -67,7 +67,6 @@ Ext.define('Rubedo.controller.AppExtensionController', {
             if(!Ext.isEmpty(extensionConfigs.controllers)){
                 Ext.Array.forEach(extensionConfigs.controllers, function(controller){
                     Ext.syncRequire("app.appextensions."+myName+".controller."+controller);
-                    me.getController(controller).init();
                     me.getController(controller).onLaunch();
                 });
             }
