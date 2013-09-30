@@ -18,7 +18,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
     alias: 'widget.menuContenusContext',
 
     requires: [
-        'Rubedo.view.override.menuContenusContext'
+        'Ext.ux.grid.FiltersFeature'
     ],
 
     id: 'ContenusGrid',
@@ -51,7 +51,6 @@ Ext.define('Rubedo.view.menuContenusContext', {
 
 
                     },
-                    filter: true,
                     localiserId: 'titleColumn',
                     dataIndex: 'text',
                     text: 'Titre',
@@ -128,19 +127,20 @@ Ext.define('Rubedo.view.menuContenusContext', {
             ]
         });
 
+        me.processMenuContenusContext(me);
         me.callParent(arguments);
     },
 
     processEtat: function(config) {
-        config.filter={
-            type:"combo",
-            store: [
-            ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
-            ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
-            ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
-            ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
-            ]
-        };
+        /*config.filter={
+        type:"list",
+        store: [
+        ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
+        ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
+        ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
+        ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
+        ]
+        };*/
         return config;
     },
 
@@ -148,18 +148,13 @@ Ext.define('Rubedo.view.menuContenusContext', {
         config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
         config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         config.filter={
-            type: 'combo',
-            store: [
-            [
-            true,
-            Rubedo.RubedoAutomatedElementsLoc.yesText
-            ],
-            [
-            false,
-            Rubedo.RubedoAutomatedElementsLoc.noText
-            ]
-            ]
+            type: 'boolean'
         };
+        return config;
+    },
+
+    processMenuContenusContext: function(config) {
+        config.features=[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})];
         return config;
     },
 

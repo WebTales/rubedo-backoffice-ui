@@ -10,6 +10,9 @@
         "itemId": null,
         "designer|userClassName": "menuContenusContext",
         "designer|userAlias": "menuContenusContext",
+        "requires": [
+            "Ext.ux.grid.FiltersFeature"
+        ],
         "title": "",
         "store": "ContenusDataJson"
     },
@@ -32,7 +35,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
                 "localiserId": "titleColumn",
                 "dataIndex": "text",
                 "text": "Titre",
@@ -43,11 +45,6 @@
             },
             "designerId": "530bd307-39db-43cc-87f5-75331b3c161a",
             "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
                 {
                     "group": "(Custom Properties)",
                     "name": "localiserId",
@@ -198,11 +195,6 @@
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
-                {
-                    "group": "(Custom Properties)",
                     "name": "localiserId",
                     "type": "string"
                 }
@@ -253,15 +245,15 @@
                             "config"
                         ],
                         "implHandler": [
-                            "config.filter={\r",
-                            "    type:\"combo\",\r",
+                            "/*config.filter={\r",
+                            "    type:\"list\",\r",
                             "    store: [\r",
                             "    [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
                             "    [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
                             "    [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
                             "    [\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
                             "    ]\r",
-                            "};\r",
+                            "};*/\r",
                             "return config;"
                         ]
                     },
@@ -326,18 +318,8 @@
                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
                             "config.filter={\r",
-                            "                        type: 'combo',\r",
-                            "                        store: [\r",
-                            "                            [\r",
-                            "                                true,\r",
-                            "                                Rubedo.RubedoAutomatedElementsLoc.yesText\r",
-                            "                            ],\r",
-                            "                            [\r",
-                            "                                false,\r",
-                            "                                Rubedo.RubedoAutomatedElementsLoc.noText\r",
-                            "                            ]\r",
-                            "                        ]\r",
-                            "                    };\r",
+                            "    type: 'boolean'\r",
+                            "};\r",
                             "return config;"
                         ]
                     },
@@ -375,6 +357,25 @@
                 "store": "ContenusDataJson"
             },
             "designerId": "0c1466ec-1856-48a9-a1f5-56e00a3fecbc"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processMenuContenusContext",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "07e4bdd0-d38f-4519-8479-c07e7f801385"
         }
     ]
 }
