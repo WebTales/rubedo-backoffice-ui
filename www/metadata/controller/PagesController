@@ -218,7 +218,7 @@
                     "        },\r",
                     "        success: function(response){\r",
                     "            var targetedUrl = Ext.JSON.decode(response.responseText).url;\r",
-                    "            Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"container\",{\r",
+                    "            Ext.getCmp(\"pagesInternalPreview\").add(Ext.widget(\"component\",{\r",
                     "                autoEl: {\r",
                     "                    tag: 'iframe',\r",
                     "                    src: targetedUrl+\"?preview=1\"\r",

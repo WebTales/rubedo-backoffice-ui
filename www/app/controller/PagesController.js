@@ -155,7 +155,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 },
                 success: function(response){
                     var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("container",{
+                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("component",{
                         autoEl: {
                             tag: 'iframe',
                             src: targetedUrl+"?preview=1"
