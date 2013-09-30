@@ -42,6 +42,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
     maximize: function(tool, e, eOpts) {
         tool.up().up().toggleMaximize();
+        var task = new Ext.util.DelayedTask(function(){
+            tool.show();
+        });
+        task.delay(100);
     },
 
     compenserResize: function(component, width, height, oldWidth, oldHeight, eOpts) {

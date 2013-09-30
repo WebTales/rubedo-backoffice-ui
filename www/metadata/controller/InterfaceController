@@ -58,7 +58,11 @@
             "userConfig": {
                 "fn": "maximize",
                 "implHandler": [
-                    "tool.up().up().toggleMaximize();"
+                    "tool.up().up().toggleMaximize();\r",
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    tool.show();\r",
+                    "});\r",
+                    "task.delay(100);"
                 ],
                 "name": "click",
                 "scope": "me",
