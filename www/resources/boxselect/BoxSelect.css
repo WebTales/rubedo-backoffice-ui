@@ -6,6 +6,7 @@
 }
 .x-boxselect ul.x-boxselect-list {
     padding: 1px 3px;
+    margin:0px;
 }
 ul.x-boxselect-list.x-boxselect-singleselect {
     white-space: nowrap;
@@ -19,8 +20,8 @@ ul.x-boxselect-list.x-boxselect-singleselect {
 	width: 100%;
 }
 .x-boxselect-input, .x-boxselect-item {
-	display: inline-block;
-	position: relative;
+	display: inline-block !important;
+	position: relative !important;
 	*display:inline; /* IE7 */
 	zoom:1; /* IE */
 }
@@ -44,10 +45,19 @@ ul.x-boxselect-list.x-boxselect-singleselect {
 }
 .x-boxselect-item-text {
 	line-height: 16px;
-	padding-right: 20px !important;
+    float:left;
+	padding-right: 4px !important;
+    
 }
 .x-boxselect-item-close {
 	cursor: pointer;
+    display: inline-block !important;
+    position: relative !important;
+    float:right;
+    height:10px;
+    width:10px;
+    margin-top:3px;
+    background-image:url("../images/delete_item.png");
 }
 .x-boxselect-hideselections .x-boundlist-selected {
     display: none;
