@@ -126,8 +126,8 @@ Ext.define('Rubedo.view.languagesInterface', {
             dataIndex: 'active',
             width:60,
             filter:{
-                type:"combo",
-                store: [
+                type:"list",
+                options: [
                 [true, Rubedo.RubedoAutomatedElementsLoc.yesText],
                 [false, Rubedo.RubedoAutomatedElementsLoc.noText]
                 ]
@@ -146,9 +146,9 @@ Ext.define('Rubedo.view.languagesInterface', {
             }
         }));
         config.plugins=[
-        Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true}),Ext.create('Ext.grid.plugin.CellEditing')
-
+        Ext.create('Ext.grid.plugin.CellEditing')
         ];
+        config.features=[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})];
         return config;
     },
 
