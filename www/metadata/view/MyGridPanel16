@@ -390,7 +390,7 @@
                     "config"
                 ],
                 "implHandler": [
-                    "config.plugins=[Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})];\r",
+                    "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];\r",
                     "return config;"
                 ]
             },

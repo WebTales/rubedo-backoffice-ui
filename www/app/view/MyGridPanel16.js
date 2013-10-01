@@ -140,7 +140,7 @@ Ext.define('Rubedo.view.MyGridPanel16', {
     },
 
     processMyGridPanel16: function(config) {
-        config.plugins=[Ext.create('Ext.ux.grid.FilterBar', {renderHidden: false, showShowHideButton: true,showClearAllButton: true})];
+        config.features=[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})];
         return config;
     }
 
