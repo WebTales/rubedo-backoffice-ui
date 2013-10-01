@@ -188,6 +188,7 @@ Ext.define('Rubedo.view.userSettings', {
                                 {
                                     xtype: 'fieldset',
                                     localiserId: 'photoFieldSet',
+                                    height: 278,
                                     margin: '0 0 0 10',
                                     width: 200,
                                     title: 'Photo',
@@ -233,6 +234,7 @@ Ext.define('Rubedo.view.userSettings', {
                                 {
                                     xtype: 'fieldset',
                                     localiserId: 'changePassFieldSet',
+                                    height: 128,
                                     title: 'Changer de mot de passe',
                                     items: [
                                         {

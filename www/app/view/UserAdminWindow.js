@@ -184,6 +184,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                 {
                                     xtype: 'fieldset',
                                     localiserId: 'photoFieldSet',
+                                    height: 280,
                                     margin: '0 0 0 10',
                                     width: 200,
                                     title: 'Photo',
@@ -232,6 +233,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                 {
                                     xtype: 'fieldset',
                                     localiserId: 'acountUserValidFieldSet',
+                                    height: 180,
                                     title: 'Compte utilisateur et validité',
                                     items: [
                                         {
@@ -303,6 +305,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                                     xtype: 'fieldset',
                                     ACL: 'write.ui.users',
                                     localiserId: 'passwordChangeFieldSet',
+                                    height: 50,
                                     title: 'Changement de mot de passe',
                                     items: [
                                         {

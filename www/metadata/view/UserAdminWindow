@@ -548,7 +548,7 @@
                             "userConfig": {
                                 "localiserId": "photoFieldSet",
                                 "layout|flex": null,
-                                "height": null,
+                                "height": 280,
                                 "margin": "0 0 0 10",
                                 "width": 200,
                                 "title": "Photo"
@@ -697,6 +697,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "acountUserValidFieldSet",
+                                "height": 180,
                                 "title": "Compte utilisateur et validité"
                             },
                             "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
@@ -882,6 +883,7 @@
                             "userConfig": {
                                 "ACL": "write.ui.users",
                                 "localiserId": "passwordChangeFieldSet",
+                                "height": 50,
                                 "title": "Changement de mot de passe"
                             },
                             "designerId": "1b357183-8778-440b-956b-daf1e3e28000",
