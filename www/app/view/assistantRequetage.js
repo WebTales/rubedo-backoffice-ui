@@ -93,7 +93,6 @@ Ext.define('Rubedo.view.assistantRequetage', {
                             displayField: 'type',
                             forceSelection: true,
                             multiSelect: true,
-                            queryMode: 'local',
                             store: 'TCNDepCombo',
                             valueField: 'id'
                         },
