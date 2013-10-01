@@ -41,7 +41,8 @@
                 "flex": 2
             },
             "configAlternates": {
-                "filter": "boolean"
+                "filter": "boolean",
+                "filterable": "boolean"
             },
             "designerId": "530bd307-39db-43cc-87f5-75331b3c161a",
             "customConfigs": [
@@ -246,13 +247,13 @@
                         ],
                         "implHandler": [
                             "config.filter={\r",
-                            "type:\"list\",\r",
-                            "options: [\r",
-                            "[\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
-                            "[\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
-                            "[\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
-                            "[\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
-                            "]\r",
+                            "    type:\"list\",\r",
+                            "    options: [\r",
+                            "    [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
+                            "    [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
+                            "    [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
+                            "    [\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
+                            "    ]\r",
                             "};\r",
                             "return config;"
                         ]
@@ -318,11 +319,11 @@
                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
                             "config.filter={\r",
-                            "type:\"list\",\r",
-                            "options: [\r",
-                            "[true, config.trueText],\r",
-                            "[false,config.falseText]\r",
-                            "]\r",
+                            "    type:\"list\",\r",
+                            "    options: [\r",
+                            "    [true, config.trueText],\r",
+                            "    [false,config.falseText]\r",
+                            "    ]\r",
                             "};\r",
                             "return config;"
                         ]

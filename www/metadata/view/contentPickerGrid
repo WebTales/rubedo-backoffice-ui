@@ -35,7 +35,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
                 "localiserId": "titleCol",
                 "dataIndex": "text",
                 "text": "Titre",
@@ -46,11 +45,6 @@
             },
             "designerId": "e2803e7a-812d-4587-becf-1e3e1314aded",
             "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
                 {
                     "group": "(Custom Properties)",
                     "name": "localiserId",
@@ -106,14 +100,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": [
-                    "{\r",
-                    "    type:\"combo\",\r",
-                    "    valueField:\"id\",\r",
-                    "    displayField:\"type\",\r",
-                    "    store: \"TCNDepComboCS\"\r",
-                    "}"
-                ],
                 "localiserId": "typeCol",
                 "dataIndex": "typeId",
                 "text": "Type",
@@ -124,11 +110,6 @@
             },
             "designerId": "a4eee99c-f024-4d18-97e0-cb45f0c77e13",
             "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
                 {
                     "group": "(Custom Properties)",
                     "name": "localiserId",
@@ -163,6 +144,29 @@
                         ]
                     },
                     "designerId": "69544424-82b8-43fe-b334-d6b29d08db4d"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processType",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.filter={\r",
+                            "    type:\"list\",\r",
+                            "    labelField:\"type\",\r",
+                            "    store:Ext.getStore(\"TCNDepComboCS\")\r",
+                            "};\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "0a927237-a6b6-40fc-bbda-b4d04b18172f"
                 }
             ]
         },
@@ -174,16 +178,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": [
-                    "{\r",
-                    "    type:\"combo\",\r",
-                    "    store: [\r",
-                    "                [\"draft\", \"brouillon\"],\r",
-                    "                [\"pending\", \"en attente de validation\"],\r",
-                    "                [\"published\", \"publié\"]\r",
-                    "            ]\r",
-                    "}"
-                ],
                 "localiserId": "statusCol",
                 "dataIndex": "status",
                 "text": "Etat",
@@ -194,11 +188,6 @@
             },
             "designerId": "c9254786-82d2-4561-adae-8efe60fca743",
             "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
                 {
                     "group": "(Custom Properties)",
                     "name": "localiserId",
@@ -235,6 +224,33 @@
                         ]
                     },
                     "designerId": "6f49f994-2220-49f3-8301-aa7aa449a963"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processEtat",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.filter={\r",
+                            "    type:\"list\",\r",
+                            "    options: [\r",
+                            "    [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
+                            "    [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
+                            "    [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
+                            "    [\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
+                            "    ]\r",
+                            "};\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "0b456401-d823-4c41-91eb-af8c92775148"
                 }
             ]
         },
@@ -246,15 +262,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": [
-                    "{\r",
-                    "    type:\"combo\",\r",
-                    "    store: [\r",
-                    "                [true, 'Oui'],\r",
-                    "                [false, 'Non']\r",
-                    "            ]\r",
-                    "}"
-                ],
                 "localiserId": "onlineCol",
                 "width": 60,
                 "dataIndex": "online",
@@ -269,13 +276,37 @@
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
-                {
-                    "group": "(Custom Properties)",
                     "name": "localiserId",
                     "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processEnligne",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                            "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                            "config.filter={\r",
+                            "    type:\"list\",\r",
+                            "    options: [\r",
+                            "    [true, config.trueText],\r",
+                            "    [false,config.falseText]\r",
+                            "    ]\r",
+                            "};\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "95ff3732-c714-49bc-bdf1-6e0aefef35f2"
                 }
             ]
         },
@@ -290,13 +321,13 @@
                 "dock": "bottom",
                 "width": 360,
                 "displayInfo": true,
-                "displayMsg": "Affichage des contenus {0} - {1} sur {2}",
-                "emptyMsg": "Rien à afficher",
-                "firstText": "Première page",
-                "lastText": "Dernière page",
-                "nextText": "Page suivante",
-                "prevText": "Page prècèdente",
-                "refreshText": "Rafraichir",
+                "displayMsg": null,
+                "emptyMsg": null,
+                "firstText": null,
+                "lastText": null,
+                "nextText": null,
+                "prevText": null,
+                "refreshText": null,
                 "store": "ContentSelectorStore"
             },
             "designerId": "dd52bba2-d8d2-4f4a-af5e-dfc758ecaf49",
@@ -401,6 +432,25 @@
                 "scope": "me"
             },
             "designerId": "04e8d318-5c37-4c14-a658-448547dcc971"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processContentPickerGrid",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "b4b1858d-9da1-4035-ad10-7f7531e34d3c"
         }
     ]
 }

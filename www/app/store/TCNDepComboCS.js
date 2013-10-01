@@ -40,24 +40,15 @@ Ext.define('Rubedo.store.TCNDepComboCS', {
                     update: 'content-types/update',
                     destroy: 'content-types/delete'
                 },
+                extraParams: {
+                    tFilter: '[{"property":"dependant","value":false},{"property":"system","value":{"$ne":true}}]'
+                },
                 reader: {
                     type: 'json',
                     messageProperty: 'message',
                     root: 'data'
                 }
-            },
-            filters: [
-                {
-                    property: 'dependant',
-                    value: false
-                },
-                {
-                    property: 'system',
-                    value: {
-                        $ne: true
-                    }
-                }
-            ]
+            }
         }, cfg)]);
     }
 });

@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.contentPickerGrid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.contentPickerGrid',
 
-    requires: [
-        'Rubedo.view.override.contentPickerGrid'
-    ],
-
     id: 'contentPickerGrid',
     title: '',
     store: 'ContentSelectorStore',
@@ -49,13 +45,12 @@ Ext.define('Rubedo.view.contentPickerGrid', {
 
 
                     },
-                    filter: true,
                     localiserId: 'titleCol',
                     dataIndex: 'text',
                     text: 'Titre',
                     flex: 1
                 },
-                {
+                me.processType({
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (Ext.isEmpty(Ext.getStore("TCNDepComboCS").findRecord("id",value))) {
@@ -64,18 +59,12 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                             return(Ext.getStore("TCNDepComboCS").findRecord("id",value).get("type"));
                         }
                     },
-                    filter: {
-                        type: 'combo',
-                        valueField: 'id',
-                        displayField: 'type',
-                        store: 'TCNDepComboCS'
-                    },
                     localiserId: 'typeCol',
                     dataIndex: 'typeId',
                     text: 'Type',
                     flex: 1
-                },
-                {
+                }),
+                me.processEtat({
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (value=="published") {
@@ -86,50 +75,20 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                             return("brouillon");
                         }
                     },
-                    filter: {
-                        type: 'combo',
-                        store: [
-                            [
-                                'draft',
-                                'brouillon'
-                            ],
-                            [
-                                'pending',
-                                'en attente de validation'
-                            ],
-                            [
-                                'published',
-                                'publié'
-                            ]
-                        ]
-                    },
                     localiserId: 'statusCol',
                     dataIndex: 'status',
                     text: 'Etat',
                     flex: 1
-                },
-                {
+                }),
+                me.processEnligne({
                     xtype: 'booleancolumn',
-                    filter: {
-                        type: 'combo',
-                        store: [
-                            [
-                                true,
-                                'Oui'
-                            ],
-                            [
-                                false,
-                                'Non'
-                            ]
-                        ]
-                    },
                     localiserId: 'onlineCol',
                     width: 60,
                     dataIndex: 'online',
                     text: 'En ligne',
                     falseText: 'Non',
                     trueText: 'Oui'
-                }
+                })
             ],
             dockedItems: [
                 {
@@ -137,13 +96,6 @@ Ext.define('Rubedo.view.contentPickerGrid', {
                     dock: 'bottom',
                     width: 360,
                     displayInfo: true,
-                    displayMsg: 'Affichage des contenus {0} - {1} sur {2}',
-                    emptyMsg: 'Rien à afficher',
-                    firstText: 'Première page',
-                    lastText: 'Dernière page',
-                    nextText: 'Page suivante',
-                    prevText: 'Page prècèdente',
-                    refreshText: 'Rafraichir',
                     store: 'ContentSelectorStore',
                     items: [
                         {
@@ -178,7 +130,48 @@ Ext.define('Rubedo.view.contentPickerGrid', {
             }
         });
 
+        me.processContentPickerGrid(me);
         me.callParent(arguments);
+    },
+
+    processType: function(config) {
+        config.filter={
+            type:"list",
+            labelField:"type",
+            store:Ext.getStore("TCNDepComboCS")
+        };
+        return config;
+    },
+
+    processEtat: function(config) {
+        config.filter={
+            type:"list",
+            options: [
+            ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
+            ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
+            ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
+            ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
+            ]
+        };
+        return config;
+    },
+
+    processEnligne: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        config.filter={
+            type:"list",
+            options: [
+            [true, config.trueText],
+            [false,config.falseText]
+            ]
+        };
+        return config;
+    },
+
+    processContentPickerGrid: function(config) {
+        config.features=[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})];
+        return config;
     },
 
     onContentPickerGridSelectionChange: function(model, selected, eOpts) {

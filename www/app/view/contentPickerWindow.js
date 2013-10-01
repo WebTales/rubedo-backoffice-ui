@@ -29,7 +29,7 @@ Ext.define('Rubedo.view.contentPickerWindow', {
         type: 'fit'
     },
     constrainHeader: true,
-    title: 'Sélecteur de contenu',
+    title: 'Content selector',
     modal: true,
 
     initComponent: function() {

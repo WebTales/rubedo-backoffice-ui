@@ -17,7 +17,6 @@ Ext.define('Rubedo.view.DCEFieldComponent', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget.DCEFieldComponent',
 
-    height: 70,
     width: 243,
     fieldLabel: 'Label',
     labelSeparator: ' ',

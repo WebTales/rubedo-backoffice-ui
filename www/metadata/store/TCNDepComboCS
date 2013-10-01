@@ -49,6 +49,11 @@
                     "                    destroy: 'content-types/delete'\r",
                     "                }"
                 ],
+                "extraParams": [
+                    "{\r",
+                    "    \"tFilter\":'[{\"property\":\"dependant\",\"value\":false},{\"property\":\"system\",\"value\":{\"$ne\":true}}]'\r",
+                    "}"
+                ],
                 "url": null
             },
             "designerId": "f483a415-5858-46c2-afcf-e29ffd0ad330",
@@ -67,38 +72,6 @@
                     "designerId": "f99966a1-2816-46fc-981c-ab35da9fcc3f"
                 }
             ]
-        },
-        {
-            "type": "Ext.util.Filter",
-            "reference": {
-                "name": "filters",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "property": "dependant",
-                "value": [
-                    "false"
-                ]
-            },
-            "designerId": "9c750fb1-6da6-486c-881f-ef46b32e7fb0"
-        },
-        {
-            "type": "Ext.util.Filter",
-            "reference": {
-                "name": "filters",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "property": "system",
-                "value": [
-                    "{\r",
-                    "                    $ne: true\r",
-                    "                }"
-                ]
-            },
-            "designerId": "03705618-516f-4e0c-8a1b-ae3ac7a3c815"
         }
     ]
 }
