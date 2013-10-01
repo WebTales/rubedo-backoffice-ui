@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.NestedContentsGrid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.NestedContentsGrid',
 
-    requires: [
-        'Rubedo.view.override.NestedContentsGrid'
-    ],
-
     id: 'NestedContentsGrid',
     store: 'NestedContentsStore',
 

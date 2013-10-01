@@ -131,6 +131,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         text:term.label+" ("+term.count+")",
                         usedValue:term.term,
                         anchor:"100%",
+                        margin:2,
                         handler:function(thing){
                             var theProp=Ext.getStore("ESFacetteStore").activeFacettes[thing.up().usedProperty];
                             if ((!Ext.isEmpty(theProp))&&(facet._type!="range")){

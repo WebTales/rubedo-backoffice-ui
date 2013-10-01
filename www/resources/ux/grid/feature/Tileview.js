@@ -10,7 +10,6 @@ Ext.onReady(function() {
             mutateMetaTableTpl: function(metaTableTplArray) {
             }
         });
-
     Ext.view.TableChunker.getTableTpl = function(cfg, textOnly) {
         var tpl,
             tableTplMemberFns = {

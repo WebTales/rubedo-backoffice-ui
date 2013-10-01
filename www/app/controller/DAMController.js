@@ -739,6 +739,7 @@ Ext.define('Rubedo.controller.DAMController', {
                         text:term.label+" ("+term.count+")",
                         usedValue:term.term,
                         anchor:"100%",
+                        margin:2,
                         handler:function(thing){
                             var theProp=Ext.getStore("DAMFacetteStore").activeFacettes[thing.up().usedProperty];
                             if ((!Ext.isEmpty(theProp))&&(facet._type!="range")){

@@ -196,6 +196,7 @@
                     "                text:term.label+\" (\"+term.count+\")\",\r",
                     "                usedValue:term.term,\r",
                     "                anchor:\"100%\",\r",
+                    "                margin:2,\r",
                     "                handler:function(thing){\r",
                     "                    var theProp=Ext.getStore(\"ESFacetteStore\").activeFacettes[thing.up().usedProperty];\r",
                     "                    if ((!Ext.isEmpty(theProp))&&(facet._type!=\"range\")){\r",
