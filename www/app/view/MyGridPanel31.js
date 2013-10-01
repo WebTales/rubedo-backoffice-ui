@@ -17,10 +17,6 @@ Ext.define('Rubedo.view.MyGridPanel31', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.mygridpanel31',
 
-    requires: [
-        'Rubedo.view.override.MyGridPanel31'
-    ],
-
     id: 'manualQueryLeftGrid',
     title: '',
     store: 'ContentSelectorStore2',
@@ -51,7 +47,6 @@ Ext.define('Rubedo.view.MyGridPanel31', {
 
 
                     },
-                    filter: true,
                     localiserId: 'u1TitleColumn',
                     dataIndex: 'text',
                     text: 'Titre',
@@ -86,7 +81,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                         }
                     }
                 },
-                {
+                me.processType({
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (Ext.isEmpty(Ext.getStore("TCNDepComboCS").findRecord("id",value))) {
@@ -95,18 +90,12 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                             return(Ext.getStore("TCNDepComboCS").findRecord("id",value).get("type"));
                         }
                     },
-                    filter: {
-                        type: 'combo',
-                        valueField: 'id',
-                        displayField: 'type',
-                        store: 'TCNDepComboCS'
-                    },
                     localiserId: 'u1TypeColumn',
                     dataIndex: 'typeId',
                     text: 'Type',
                     flex: 1
-                },
-                {
+                }),
+                me.processEtat({
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (value=="published") {
@@ -117,29 +106,12 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                             return("brouillon");
                         }
                     },
-                    filter: {
-                        type: 'combo',
-                        store: [
-                            [
-                                'draft',
-                                'brouillon'
-                            ],
-                            [
-                                'pending',
-                                'en attente de validation'
-                            ],
-                            [
-                                'published',
-                                'publié'
-                            ]
-                        ]
-                    },
                     localiserId: 'u1StatusColumn',
                     dataIndex: 'status',
                     text: 'Etat',
                     flex: 1
-                },
-                {
+                }),
+                me.processEnligne({
                     xtype: 'booleancolumn',
                     filter: {
                         type: 'combo',
@@ -160,7 +132,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                     text: 'En ligne',
                     falseText: 'Non',
                     trueText: 'Oui'
-                }
+                })
             ],
             dockedItems: [
                 {
@@ -179,7 +151,48 @@ Ext.define('Rubedo.view.MyGridPanel31', {
             ]
         });
 
+        me.processMyGridPanel31(me);
         me.callParent(arguments);
+    },
+
+    processType: function(config) {
+        config.filter={
+            type:"list",
+            labelField:"type",
+            store:Ext.getStore("TCNDepComboCS")
+        };
+        return config;
+    },
+
+    processEtat: function(config) {
+        config.filter={
+            type:"list",
+            options: [
+            ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
+            ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
+            ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
+            ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
+            ]
+        };
+        return config;
+    },
+
+    processEnligne: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        config.filter={
+            type:"list",
+            options: [
+            [true, config.trueText],
+            [false,config.falseText]
+            ]
+        };
+        return config;
+    },
+
+    processMyGridPanel31: function(config) {
+        config.features=[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})];
+        return config;
     },
 
     onGridcolumnAfterRender: function(component, eOpts) {
