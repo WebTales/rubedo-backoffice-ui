@@ -687,7 +687,7 @@ Ext.define('Rubedo.controller.DAMController', {
             Ext.getStore("DAMEditStore").removeAll();
             Ext.getStore("TaxonomyForDam2").removeAll();
         });
-        myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMEditText+" \" "+record.get("title")+" \"");
+
         Ext.getCmp("DAMSubmitBtn").hide();
         Ext.getCmp("DAMSubmitUpdateBtn").show();
         Ext.getCmp("DAMSubmitUpdateBtn").indepMode=true;
@@ -700,6 +700,7 @@ Ext.define('Rubedo.controller.DAMController', {
         valueBox.title=record.get("title");
         valueBox.originalFileId=record.get("originalFileId");
         valueBox=Ext.Object.merge(valueBox,record.get("taxonomy"));
+        myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMEditText+" \" "+record.get("title")+" \"");
         myEditor.getComponent(0).getForm().setValues(valueBox);
         Ext.getCmp("DAMCreateUpdateWindow").doLayout();
         if (ROMode){
