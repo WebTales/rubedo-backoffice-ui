@@ -131,6 +131,7 @@
                     "if ((!ACL.interfaceRights[\"write.ui.taxonomy\"])||(record.get(\"readOnly\"))||(record.get(\"id\")==\"navigation\")){\r",
                     "plugins = [];\r",
                     "}\r",
+                    "plugins.push(Ext.create('Ext.grid.plugin.BufferedRenderer',{}));\r",
                     "var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1, plugins:plugins});\r",
                     "\r",
                     "Ext.getCmp('conteneurAdminfTaxo').add(arbre);\r",

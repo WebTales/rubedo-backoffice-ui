@@ -129,6 +129,7 @@ Ext.define('Rubedo.controller.TaxonomieController', {
     if ((!ACL.interfaceRights["write.ui.taxonomy"])||(record.get("readOnly"))||(record.get("id")=="navigation")){
         plugins = [];
     }
+    plugins.push(Ext.create('Ext.grid.plugin.BufferedRenderer',{}));
     var arbre = Ext.widget('TermesTaxonomieTree', {store: store, flex:1, plugins:plugins});
 
     Ext.getCmp('conteneurAdminfTaxo').add(arbre);
