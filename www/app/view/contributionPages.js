@@ -391,6 +391,11 @@ Ext.define('Rubedo.view.contributionPages', {
                                 }
                             }
                         }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.BufferedRenderer', {
+
+                        })
                     ]
                 },
                 {

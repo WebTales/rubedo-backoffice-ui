@@ -140,6 +140,15 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.plugin.BufferedRenderer",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.BufferedRenderer",
+                    "designerId": "b3d585cd-0494-45b6-8059-057d49c0beea"
                 }
             ]
         },

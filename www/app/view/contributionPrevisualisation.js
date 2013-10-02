@@ -83,6 +83,11 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 }
                             ]
                         }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.BufferedRenderer', {
+
+                        })
                     ]
                 },
                 {

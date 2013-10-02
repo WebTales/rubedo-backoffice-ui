@@ -697,7 +697,6 @@
         },
         "bde1968a-cbce-4b3a-872c-548461f2e683": {
             "id": "bde1968a-cbce-4b3a-872c-548461f2e683",
-            "expanded": false,
             "cn": [
                 {
                     "id": "f7a3f49d-de46-4e94-922f-f9b262b0e41b"
@@ -1985,6 +1984,9 @@
                                     "id": "a858cc00-b53d-455b-9091-6414d6e3f6b6"
                                 }
                             ]
+                        },
+                        {
+                            "id": "bd143597-df51-4fe2-b54c-cd4d68fc941f"
                         }
                     ]
                 },
@@ -4552,6 +4554,9 @@
                                     "id": "d2e3a5e8-7c98-4561-ade7-4d9b9ee8357f"
                                 }
                             ]
+                        },
+                        {
+                            "id": "b3d585cd-0494-45b6-8059-057d49c0beea"
                         }
                     ]
                 },
@@ -12736,18 +12741,21 @@
             "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
             "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265",
             "648ee02b-21bf-4d06-8c07-2e215977ab97",
-            "694f297c-7498-4216-9113-e00663d5f6c4"
+            "694f297c-7498-4216-9113-e00663d5f6c4",
+            "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
+            "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
+            "bde1968a-cbce-4b3a-872c-548461f2e683"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "bde1968a-cbce-4b3a-872c-548461f2e683"
     },
     "inspectorState": {
-        "topInstance": "694f297c-7498-4216-9113-e00663d5f6c4",
-        "selectedInstance": "01427099-ea52-45c1-a5ad-233d5b442eec"
+        "topInstance": "bde1968a-cbce-4b3a-872c-548461f2e683",
+        "selectedInstance": "e23a61b1-96f1-4e90-a90b-f24742116e7a"
     },
     "codeState": {
-        "topInstance": "694f297c-7498-4216-9113-e00663d5f6c4"
+        "topInstance": "bde1968a-cbce-4b3a-872c-548461f2e683"
     },
     "editMode": "code"
 }

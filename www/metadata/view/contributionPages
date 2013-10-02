@@ -847,6 +847,15 @@
                             "designerId": "a858cc00-b53d-455b-9091-6414d6e3f6b6"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.plugin.BufferedRenderer",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.BufferedRenderer",
+                    "designerId": "bd143597-df51-4fe2-b54c-cd4d68fc941f"
                 }
             ]
         },
