@@ -119,9 +119,27 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
         var columnsOver= [
         {
             xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                var link="dam/get-thumbnail?id="+record.get("id")+"&version="+record.get("version");
+                return ('<img src=\"'+link+'\" height=\"100\" width=\"100\">');
+            },
+            dataIndex: 'originalFileId',
+            width:130,
+            text: 'Main file'
+        },
+        {
+            xtype: 'gridcolumn',
             filter: true,
             dataIndex: 'title',
-            text: 'Titre'
+            text: 'Title'
+        },
+        {
+            xtype: 'gridcolumn',
+            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                return(Ext.util.Format.fileSize(record.get("fileSize")));
+            },
+            dataIndex: 'fileSize',
+            text: 'Size'
         },
         {
             xtype: 'gridcolumn',
@@ -129,12 +147,12 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                 return(value.fullName);
             },
             dataIndex: 'createUser',
-            text: 'Auteur'
+            text: 'Author'
         },
         {
             xtype: 'datecolumn',
             dataIndex: 'createTime',
-            text: 'Date de création',
+            text: 'Creation date',
             format: 'd-m-Y'
         }
         ];
