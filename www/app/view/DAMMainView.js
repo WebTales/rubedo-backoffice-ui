@@ -36,6 +36,15 @@ Ext.define('Rubedo.view.DAMMainView', {
                 {
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        var link="dam/get-thumbnail?id="+record.get("id")+"&version="+record.get("version");
+                        return ('<img src=\"'+link+'\" height=\"100\" width=\"100\">');
+                    },
+                    dataIndex: 'originalFileId',
+                    text: 'Main file'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (record.get("readOnly")){
                             return("<i style=\"color:#777;\">"+value+"</i>");
                         } else {
@@ -46,6 +55,14 @@ Ext.define('Rubedo.view.DAMMainView', {
                     localiserId: 'titleColumn',
                     dataIndex: 'text',
                     text: 'Titre'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        return(Ext.util.Format.fileSize(record.get("fileSize")));
+                    },
+                    dataIndex: 'fileSize',
+                    text: 'Size'
                 },
                 {
                     xtype: 'gridcolumn',

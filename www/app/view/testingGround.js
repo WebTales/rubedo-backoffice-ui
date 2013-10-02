@@ -28,24 +28,6 @@ Ext.define('Rubedo.view.testingGround', {
     initComponent: function() {
         var me = this;
 
-        Ext.applyIf(me, {
-            items: [
-                {
-                    xtype: 'form',
-                    bodyPadding: 10,
-                    title: 'My Form',
-                    items: [
-                        {
-                            xtype: 'numberfield',
-                            anchor: '100%',
-                            id: 'numberTestField',
-                            fieldLabel: 'TEST'
-                        }
-                    ]
-                }
-            ]
-        });
-
         me.callParent(arguments);
     }
 

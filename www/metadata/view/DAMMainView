@@ -41,6 +41,46 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "originalFileId",
+                "text": "Main file"
+            },
+            "designerId": "07377b2f-7887-4080-a074-f131185f8c76",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "var link=\"dam/get-thumbnail?id=\"+record.get(\"id\")+\"&version=\"+record.get(\"version\");\r",
+                            "return ('<img src=\\\"'+link+'\\\" height=\\\"100\\\" width=\\\"100\\\">');"
+                        ]
+                    },
+                    "designerId": "f83260e1-c5ae-417c-9fe3-e27805f27c78"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "filter": true,
                 "localiserId": "titleColumn",
                 "align": null,
@@ -91,6 +131,45 @@
                         ]
                     },
                     "designerId": "1024ceea-d981-4850-8ef9-ed99cfd9c74d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "fileSize",
+                "text": "Size"
+            },
+            "designerId": "21694824-385c-4e75-80e3-bea6ac241642",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "return(Ext.util.Format.fileSize(record.get(\"fileSize\")));"
+                        ]
+                    },
+                    "designerId": "300b4b01-8c44-48ec-b7a2-85f07a7db11d"
                 }
             ]
         },
