@@ -43,8 +43,8 @@ Ext.define('Ext.ux.grid.filter.DateFilter', {
      * Map for assigning the comparison values used in serialization.
      */
     compareMap : {
-        before: 'lt',
-        after:  'gt',
+        before: '$lte',
+        after:  '$gte',
         on:     'eq'
     },
     /**
@@ -264,8 +264,8 @@ Ext.define('Ext.ux.grid.filter.DateFilter', {
             if(this.fields[key].checked){
                 args.push({
                     type: 'date',
-                    comparison: this.compareMap[key],
-                    value: Ext.Date.format(this.getFieldValue(key), this.dateFormat)
+                    operator: this.compareMap[key],
+                    value: parseInt(Ext.Date.format(this.getFieldValue(key), this.dateFormat))
                 });
             }
         }

@@ -104,6 +104,11 @@ Ext.define('Rubedo.view.menuContenusContext', {
                     text: 'Etat',
                     flex: 1
                 }),
+                me.processLastupdate({
+                    xtype: 'datecolumn',
+                    dataIndex: 'lastUpdateTime',
+                    text: 'Last update'
+                }),
                 me.processEnligne({
                     xtype: 'booleancolumn',
                     filter: '{\r\n    type:"combo",\r\n    store: [\r\n                [true, Rubedo.RubedoAutomatedElementsLoc.yesText],\r\n                [false, Rubedo.RubedoAutomatedElementsLoc.noText]\r\n            ]\r\n}',
@@ -150,6 +155,14 @@ Ext.define('Rubedo.view.menuContenusContext', {
             ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
             ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
             ]
+        };
+        return config;
+    },
+
+    processLastupdate: function(config) {
+        config.filter={
+            type:"date",
+            dateFormat: 'U'
         };
         return config;
     },

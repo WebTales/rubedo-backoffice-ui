@@ -263,6 +263,43 @@
             ]
         },
         {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "lastUpdateTime",
+                "text": "Last update"
+            },
+            "designerId": "321ff94d-59f8-45c4-9a03-276bc393e2f4",
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processLastupdate",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.filter={\r",
+                            "    type:\"date\",\r",
+                            "    dateFormat: 'U'\r",
+                            "};\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "ee817fd9-afda-4b40-a1bb-9d31daac4c81"
+                }
+            ]
+        },
+        {
             "type": "Ext.grid.column.Boolean",
             "reference": {
                 "name": "columns",
