@@ -151,7 +151,8 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
                 params: {
-                    "page-id": record.get("id")
+                    "page-id": record.get("id"),
+                    "locale": Ext.getCmp("pagesDLSToolbar").getComponent(0).getValue()
                 },
                 success: function(response){
                     var targetedUrl = Ext.JSON.decode(response.responseText).url;
