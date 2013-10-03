@@ -414,8 +414,8 @@ body .ux-notification-light {
 }
 
 #images-view .thumb img{
-    height: 60px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
 }
 #images-view .thumb-wrap{
     float: left;
@@ -428,7 +428,7 @@ body .ux-notification-light {
     display: block;
     overflow: hidden;
     text-align: center;
-    width: 86px; /* for ie to ensure that the text is centered */
+    width: 106px; /* for ie to ensure that the text is centered */
 }
 
 #images-view .x-item-over{

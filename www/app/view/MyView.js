@@ -53,7 +53,7 @@ Ext.define('Rubedo.view.MyView', {
         ];
         config.prepareData= function(data) {
             data.link="dam/get-thumbnail?id="+data.id+"&version="+data.version;
-            data.text=Ext.String.ellipsis(data.text,12);
+            data.text=Ext.String.ellipsis(data.text,14);
             return data;
         };
         return config;
