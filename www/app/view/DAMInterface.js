@@ -485,7 +485,6 @@ Ext.define('Rubedo.view.DAMInterface', {
                         {
                             xtype: 'myview',
                             hidden: true,
-                            hideMode: 'display',
                             flex: 1
                         }
                     ],

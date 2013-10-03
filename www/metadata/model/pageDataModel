@@ -329,6 +329,30 @@
                 "name": "nativeLanguage"
             },
             "designerId": "514dfcc5-cd59-4ff3-ac57-d0f2caa4ace7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "noIndex"
+            },
+            "designerId": "7544323c-f91d-45bf-92b6-c322112d562c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "noFollow"
+            },
+            "designerId": "b131bfa8-22e5-4215-a23e-2effe98c8957"
         }
     ]
 }

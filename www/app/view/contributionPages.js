@@ -598,7 +598,11 @@ Ext.define('Rubedo.view.contributionPages', {
                                                     scope: me
                                                 }
                                             }
-                                        }
+                                        },
+                                        me.processRobot({
+                                            xtype: 'fieldset',
+                                            title: 'Robot'
+                                        })
                                     ]
                                 }
                             ],
@@ -652,6 +656,30 @@ Ext.define('Rubedo.view.contributionPages', {
         });
 
         me.callParent(arguments);
+    },
+
+    processRobot: function(config) {
+        config.items=[
+        {
+            xtype: 'checkboxfield',
+            anchor: '100%',
+            fieldLabel: 'noindex',
+            name: 'noIndex',
+            boxLabel: '',
+            inputValue: 'true',
+            uncheckedValue: 'false'
+        },
+        {
+            xtype: 'checkboxfield',
+            anchor: '100%',
+            fieldLabel: 'nofollow',
+            name: 'noFollow',
+            boxLabel: '',
+            inputValue: 'true',
+            uncheckedValue: 'false'
+        }
+        ];
+        return config;
     },
 
     processBoiteBarreMeta: function(config) {

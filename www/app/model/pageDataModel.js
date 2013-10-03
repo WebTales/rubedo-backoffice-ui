@@ -108,6 +108,12 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'nativeLanguage'
+        },
+        {
+            name: 'noIndex'
+        },
+        {
+            name: 'noFollow'
         }
     ]
 });

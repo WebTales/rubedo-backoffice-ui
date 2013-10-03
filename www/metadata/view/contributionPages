@@ -1424,6 +1424,58 @@
                                             "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Robot"
+                                    },
+                                    "designerId": "2451b9c3-1c8f-400e-8cdd-d3388099e97a",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processRobot",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.items=[\r",
+                                                    "                                                {\r",
+                                                    "                                                    xtype: 'checkboxfield',\r",
+                                                    "                                                    anchor: '100%',\r",
+                                                    "                                                    fieldLabel: 'noindex',\r",
+                                                    "                                                    name: 'noIndex',\r",
+                                                    "                                                    boxLabel: '',\r",
+                                                    "                                                    inputValue: 'true',\r",
+                                                    "                                                    uncheckedValue: 'false'\r",
+                                                    "                                                },\r",
+                                                    "                                                {\r",
+                                                    "                                                    xtype: 'checkboxfield',\r",
+                                                    "                                                    anchor: '100%',\r",
+                                                    "                                                    fieldLabel: 'nofollow',\r",
+                                                    "                                                    name: 'noFollow',\r",
+                                                    "                                                    boxLabel: '',\r",
+                                                    "                                                    inputValue: 'true',\r",
+                                                    "                                                    uncheckedValue: 'false'\r",
+                                                    "                                                }\r",
+                                                    "                                            ];\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "ea705ddd-c33b-45d6-86a5-98c7c4764fea"
+                                        }
+                                    ]
                                 }
                             ]
                         },
