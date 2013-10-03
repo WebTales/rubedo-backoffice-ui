@@ -364,6 +364,9 @@ Ext.define('Rubedo.controller.InterfaceController', {
 
         } else if ((myWindow.id=="DAMInterface")&&(Ext.getCmp("DAMCenter").getSelectionModel().getSelection().length==1)) {
             var myRecord = Ext.getCmp("DAMCenter").getSelectionModel().getLastSelected();
+            if (Ext.getCmp("images-view").isVisible()){
+                myRecord = Ext.getCmp("images-view").getSelectionModel().getLastSelected();
+            }
             actions.push({
                 type:"editDAM",
                 target:myRecord.get("id"),
