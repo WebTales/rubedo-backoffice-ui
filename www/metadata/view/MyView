@@ -41,7 +41,7 @@
                     "config.trackOver= true;\r",
                     "config.overItemCls= 'x-item-over';\r",
                     "config.itemSelector= 'div.thumb-wrap';\r",
-                    "config.emptyText= 'No images to display';\r",
+                    "config.emptyText= '';\r",
                     "config.plugins= [\r",
                     "Ext.create('Ext.ux.DataView.DragSelector', {}),\r",
                     "Ext.create('Ext.grid.plugin.DragDrop', {\r",

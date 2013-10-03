@@ -406,7 +406,7 @@
                 "name": "selectionchange",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#DAMCenter"
+                "designer|controlQuery": "#DAMCenter, #images-view"
             },
             "designerId": "54e84151-7d25-4893-b80a-090e656b60ba"
         },
@@ -420,14 +420,18 @@
             "userConfig": {
                 "fn": "onDAMDeleteBtnClick",
                 "implHandler": [
+                    "var selection=Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection();\r",
+                    "if (Ext.getCmp(\"images-view\").isVisible()){\r",
+                    "    selection=Ext.getCmp(\"images-view\").getSelectionModel().getSelection();\r",
+                    "}\r",
                     "var fenetre = Ext.widget('delConfirmZ');\r",
                     "fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisMediaText;\r",
                     "fenetre.show();\r",
                     "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
                     "    if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"folder\"){\r",
-                    "        Ext.getStore(\"DAMFolderViewStore\").remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
+                    "        Ext.getStore(\"DAMFolderViewStore\").remove(selection);\r",
                     "    } else {\r",
-                    "        Ext.getCmp(\"DAMCenter\").getStore().remove(Ext.getCmp(\"DAMCenter\").getSelectionModel().getSelection());\r",
+                    "        Ext.getCmp(\"DAMCenter\").getStore().remove(selection);\r",
                     "        //Ext.getStore(\"DAMFacetteStore\").addListener(\"datachanged\", function(){Ext.getStore(\"DAMFacetteStore\").load(); }, this, {delay:800,single:true});\r",
                     "    }\r",
                     "    Ext.getCmp('delConfirmZ').close();\r",
@@ -522,24 +526,10 @@
                 "fn": "onDAMUpdateBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"DAMCenter\").getSelectionModel().getLastSelected();\r",
-                    "this.prepareContext(record.get(\"id\"), record.get(\"typeId\"));\r",
-                    "/*\r",
-                    "var DAMType= Ext.getStore(\"MediaTypesForDAM\").findRecord(\"id\", record.get(\"typeId\"));\r",
-                    "var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
-                    "myEditor.setTitle(\"Edition du média \\\" \"+record.get(\"title\")+\" \\\"\");\r",
-                    "Ext.getCmp(\"DAMSubmitBtn\").hide();\r",
-                    "Ext.getCmp(\"DAMSubmitUpdateBtn\").show();\r",
-                    "Ext.getCmp(\"DAMFieldBox\").remove(Ext.getCmp(\"DAMFieldBox\").getComponent(1));\r",
-                    "myEditor.show();\r",
-                    "this.renderDAMTypeFields(DAMType, true);\r",
-                    "this.renderTaxoFields(DAMType);\r",
-                    "var valueBox=record.get(\"fields\");\r",
-                    "if (Ext.isEmpty(valueBox)){valueBox={ };}\r",
-                    "valueBox.title=record.get(\"title\");\r",
-                    "valueBox.originalFileId=record.get(\"originalFileId\");\r",
-                    "valueBox=Ext.Object.merge(valueBox,record.get(\"taxonomy\"));\r",
-                    "myEditor.getComponent(0).getForm().setValues(valueBox);\r",
-                    "Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();*/"
+                    "if (Ext.getCmp(\"images-view\").isVisible()){\r",
+                    "    record = Ext.getCmp(\"images-view\").getSelectionModel().getLastSelected();\r",
+                    "}\r",
+                    "this.prepareContext(record.get(\"id\"), record.get(\"typeId\"));"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -692,7 +682,7 @@
                 "name": "itemdblclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#DAMCenter"
+                "designer|controlQuery": "#DAMCenter, #images-view"
             },
             "designerId": "692cc083-f2d2-4d56-a7f8-58ef4059890d"
         },

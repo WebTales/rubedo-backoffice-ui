@@ -43,7 +43,7 @@ Ext.define('Rubedo.view.MyView', {
         config.trackOver= true;
         config.overItemCls= 'x-item-over';
         config.itemSelector= 'div.thumb-wrap';
-        config.emptyText= 'No images to display';
+        config.emptyText= '';
         config.plugins= [
         Ext.create('Ext.ux.DataView.DragSelector', {}),
         Ext.create('Ext.grid.plugin.DragDrop', {
