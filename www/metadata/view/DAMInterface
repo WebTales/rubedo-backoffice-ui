@@ -1204,8 +1204,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
+                "container|align": "stretch",
                 "overflowY": "auto",
-                "layout": "fit"
+                "layout": "vbox"
             },
             "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
             "cn": [
@@ -1218,10 +1219,28 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "DAMCenter",
-                        "store": "DAMFacetteStore"
+                        "minHeight": null,
+                        "autoScroll": true,
+                        "store": "DAMFacetteStore",
+                        "layout|flex": 1
                     },
                     "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
                     "masterInstanceId": "bde1968a-cbce-4b3a-872c-548461f2e683"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "hideMode": "display",
+                        "layout|flex": 1
+                    },
+                    "designerId": "292c5800-d39c-4d03-89d4-93a46738ddac",
+                    "masterInstanceId": "f36e89e4-306e-40ee-b555-4f18f4129f6b"
                 },
                 {
                     "type": "Ext.toolbar.Paging",
@@ -1238,6 +1257,76 @@
                         "store": "DAMFacetteStore"
                     },
                     "designerId": "6500b107-777f-40b3-94bb-f648601eaed4"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "dock": "top"
+                    },
+                    "designerId": "a53dbdc4-8ffa-4a34-9c2d-8beb458670f2",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "3724e595-efae-427f-b104-932f1007a05c"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "DAMSwitchGridDisplayBtn",
+                                "iconAlign": "top",
+                                "scale": null,
+                                "text": "Switch display mode"
+                            },
+                            "designerId": "63b7be0d-ec81-4128-837b-fb67df1941ac",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDAMSwitchGridDisplayBtnClick",
+                                        "implHandler": [
+                                            "if (Ext.getCmp(\"images-view\").isVisible()){\r",
+                                            "    Ext.getCmp(\"DAMCenter\").flex=1;\r",
+                                            "    Ext.getCmp(\"images-view\").hide();\r",
+                                            "\r",
+                                            "} else {\r",
+                                            "    Ext.getCmp(\"DAMCenter\").flex=0;\r",
+                                            "    Ext.getCmp(\"DAMCenter\").setHeight(25);\r",
+                                            "    Ext.getCmp(\"images-view\").show();\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "a9b46940-c40e-403d-a8ef-a64751b5cb3e"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

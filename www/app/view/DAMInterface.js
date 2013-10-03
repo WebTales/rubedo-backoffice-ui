@@ -20,7 +20,8 @@ Ext.define('Rubedo.view.DAMInterface', {
     requires: [
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
-        'Rubedo.view.DAMMainView'
+        'Rubedo.view.DAMMainView',
+        'Rubedo.view.MyView'
     ],
 
     localiserId: 'mediasWindow',
@@ -470,13 +471,22 @@ Ext.define('Rubedo.view.DAMInterface', {
                     flex: 1,
                     overflowY: 'auto',
                     layout: {
-                        type: 'fit'
+                        align: 'stretch',
+                        type: 'vbox'
                     },
                     items: [
                         {
                             xtype: 'DAMMainView',
                             id: 'DAMCenter',
-                            store: 'DAMFacetteStore'
+                            autoScroll: true,
+                            store: 'DAMFacetteStore',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'myview',
+                            hidden: true,
+                            hideMode: 'display',
+                            flex: 1
                         }
                     ],
                     dockedItems: [
@@ -487,6 +497,28 @@ Ext.define('Rubedo.view.DAMInterface', {
                             width: 360,
                             displayInfo: true,
                             store: 'DAMFacetteStore'
+                        },
+                        {
+                            xtype: 'toolbar',
+                            flex: 1,
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'tbfill'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'DAMSwitchGridDisplayBtn',
+                                    iconAlign: 'top',
+                                    text: 'Switch display mode',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onDAMSwitchGridDisplayBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
@@ -605,6 +637,18 @@ Ext.define('Rubedo.view.DAMInterface', {
     onCellEditingEdit: function(editor, e, eOpts) {
         Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected().collapseChildren(true);
         Ext.getCmp("mainDirectoriesTree").getStore().load({"node":Ext.getCmp("mainDirectoriesTree").getSelectionModel().getLastSelected()});
+    },
+
+    onDAMSwitchGridDisplayBtnClick: function(button, e, eOpts) {
+        if (Ext.getCmp("images-view").isVisible()){
+            Ext.getCmp("DAMCenter").flex=1;
+            Ext.getCmp("images-view").hide();
+
+        } else {
+            Ext.getCmp("DAMCenter").flex=0;
+            Ext.getCmp("DAMCenter").setHeight(25);
+            Ext.getCmp("images-view").show();
+        }
     },
 
     onDAMMTGridRender: function(component, eOpts) {

@@ -820,6 +820,8 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMActiveFacetBox").hide();
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).getView().bindStore("DAMFolderViewStore");
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).store=Ext.getStore("DAMFolderViewStore");
+        Ext.getCmp("images-view").bindStore("DAMFolderViewStore");
+        Ext.getCmp("images-view").store=Ext.getStore("DAMFolderViewStore");
         Ext.getCmp("damMainPager").bindStore("DAMFolderViewStore");
         Ext.getCmp("damMainPager").store=Ext.getStore("DAMFolderViewStore");
         Ext.getStore("DAMFolderViewStore").load();
@@ -837,6 +839,8 @@ Ext.define('Rubedo.controller.DAMController', {
         Ext.getCmp("DAMInterface").getComponent(1).getComponent(0).store=Ext.getStore("DAMFacetteStore");
         Ext.getCmp("damMainPager").bindStore("DAMFacetteStore");
         Ext.getCmp("damMainPager").store=Ext.getStore("DAMFacetteStore");
+        Ext.getCmp("images-view").bindStore("DAMFacetteStore");
+        Ext.getCmp("images-view").store=Ext.getStore("DAMFacetteStore");
         Ext.getStore("DAMFacetteStore").load();
         Ext.getCmp("filePlanEditBtnGroup").hide();
         Ext.getCmp("DAMCenter").plugins[0].silenced=false;

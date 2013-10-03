@@ -318,7 +318,8 @@ Ext.application({
         'AssignFieldToColWindow',
         'simpleModeMainBar',
         'ApplicationLogsInterface',
-        'CTLCopyWindow'
+        'CTLCopyWindow',
+        'MyView'
     ],
     autoCreateViewport: true,
     controllers: [

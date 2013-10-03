@@ -39,6 +39,7 @@ Ext.define('Rubedo.view.DAMMainView', {
                         var link="dam/get-thumbnail?id="+record.get("id")+"&version="+record.get("version");
                         return ('<img src=\"'+link+'\" height=\"100\" width=\"100\">');
                     },
+                    sortable: false,
                     dataIndex: 'originalFileId',
                     text: 'Main file'
                 },

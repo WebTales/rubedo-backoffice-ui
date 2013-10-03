@@ -1,0 +1,63 @@
+{
+    "type": "Ext.view.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "images-view",
+        "designer|userClassName": "MyView",
+        "designer|userAlias": "myview",
+        "autoScroll": true,
+        "itemSelector": "div",
+        "store": "DAMFacetteStore"
+    },
+    "designerId": "f36e89e4-306e-40ee-b555-4f18f4129f6b",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processMyView",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.tpl= [\r",
+                    "'<tpl for=\".\">',\r",
+                    "'<div class=\"thumb-wrap\" id=\"{id}alternate\">',\r",
+                    "'<div class=\"thumb\"><img src=\"{link}\" title=\"{text}\"></div>',\r",
+                    "'<span>{text}</span>',\r",
+                    "'</div>',\r",
+                    "'</tpl>',\r",
+                    "'<div class=\"x-clear\"></div>'\r",
+                    "];\r",
+                    "config.multiSelect= true;\r",
+                    "config.trackOver= true;\r",
+                    "config.overItemCls= 'x-item-over';\r",
+                    "config.itemSelector= 'div.thumb-wrap';\r",
+                    "config.emptyText= 'No images to display';\r",
+                    "config.plugins= [\r",
+                    "Ext.create('Ext.ux.DataView.DragSelector', {}),\r",
+                    "Ext.create('Ext.grid.plugin.DragDrop', {\r",
+                    "        ddGroup: 'DirectoriesDD',\r",
+                    "        enableDrop:false\r",
+                    "    })\r",
+                    "];\r",
+                    "config.prepareData= function(data) {\r",
+                    "    data.link=\"dam/get-thumbnail?id=\"+data.id+\"&version=\"+data.version;\r",
+                    "    data.text=Ext.String.ellipsis(data.text,12);\r",
+                    "    return data;\r",
+                    "};\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "1e91dc06-3b87-4797-bdbd-87cfae4a6ccf"
+        }
+    ]
+}
