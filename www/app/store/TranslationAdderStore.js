@@ -30,5 +30,10 @@ Ext.define('Rubedo.store.TranslationAdderStore', {
             storeId: 'TranslationAdderStore',
             pageSize: 1000
         }, cfg)]);
+    },
+
+    load: function() {
+
     }
+
 });

@@ -18,5 +18,22 @@
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "designerId": "5c9e9663-9465-44e6-9157-6dc8ca336bf7"
+    "designerId": "5c9e9663-9465-44e6-9157-6dc8ca336bf7",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "load",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "2218a5ec-c070-4242-acf3-5e1ecf7b0ed6"
+        }
+    ]
 }
