@@ -750,7 +750,7 @@
                                             "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",
                                             "    displayField:\"label\",\r",
                                             "    valueField:\"locale\",\r",
-                                            "    queryMode:\"local\"\r",
+                                            "    queryMode:\"remote\"\r",
                                             "});\r",
                                             "component.add(tagPicker);\r",
                                             "component.add(homePageSelector);\r",

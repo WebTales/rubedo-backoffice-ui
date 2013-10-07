@@ -323,7 +323,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
             store: Ext.getStore("AllLanguagesStore2"),
             displayField:"label",
             valueField:"locale",
-            queryMode:"local"
+            queryMode:"remote"
         });
         component.add(languagesPicker);
     },
