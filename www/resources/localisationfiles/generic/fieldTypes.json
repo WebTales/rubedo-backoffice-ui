@@ -361,6 +361,13 @@
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
+                    "fieldLabel": "#ext-gen1068#",
+                    "name": "localizable"
+                }
+            },
+            {
+                "type": "Ext.form.field.Checkbox",
+                "config": {
                     "fieldLabel": "#ext-gen1058#",
                     "name": "multivalued"
                 }
@@ -995,6 +1002,13 @@
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
+                }
+            },
+            {
+                "type": "Ext.form.field.Checkbox",
+                "config": {
+                    "fieldLabel": "#ext-gen1068#",
+                    "name": "localizable"
                 }
             },
             {
