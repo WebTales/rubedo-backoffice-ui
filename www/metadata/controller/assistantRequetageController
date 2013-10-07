@@ -902,7 +902,7 @@
             "userConfig": {
                 "fn": "onMainQueriesGridItemDblClick",
                 "implHandler": [
-                    "Ext.getCmp(\"queryMainEditBtn\").fireEvent(\"click\");"
+                    "Ext.getCmp(\"queryMainEditBtn\").fireEvent(\"click\",Ext.getCmp(\"queryMainEditBtn\"));"
                 ],
                 "name": "itemdblclick",
                 "scope": "me",

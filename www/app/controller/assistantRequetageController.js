@@ -271,7 +271,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
     },
 
     onMainQueriesGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-        Ext.getCmp("queryMainEditBtn").fireEvent("click");
+        Ext.getCmp("queryMainEditBtn").fireEvent("click",Ext.getCmp("queryMainEditBtn"));
     },
 
     readQuery: function() {
