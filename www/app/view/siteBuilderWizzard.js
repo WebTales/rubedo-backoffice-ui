@@ -198,7 +198,6 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     allowBlank: false,
                                     displayField: 'label',
                                     forceSelection: true,
-                                    queryMode: 'local',
                                     store: 'AllLanguagesStore',
                                     typeAhead: true,
                                     valueField: 'locale'
