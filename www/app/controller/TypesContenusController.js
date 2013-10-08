@@ -1565,9 +1565,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         if (!Ext.Array.contains(usedFields,"summary")){
             discoveredFields.push({name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText});
         }
-        Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("field"), function(field){
-            if (!Ext.Array.contains(usedFields,field.name)){
-                discoveredFields.push({name:field.name,label:field.fieldLabel});
+        Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("ChampTC"), function(field){
+            if (!Ext.Array.contains(usedFields,field.getComponent(1).name)){
+                discoveredFields.push({name:field.getComponent(1).name, label:field.getComponent(1).fieldLabel});
             }
         });
         Ext.getStore("CTFieldsForLayouts").removeAll();
