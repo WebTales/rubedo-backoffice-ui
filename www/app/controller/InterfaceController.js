@@ -589,11 +589,15 @@ Ext.define('Rubedo.controller.InterfaceController', {
             ACL.defaultWorkspace=currentUser.get("defaultWorkspace");
 
         }); 
-        Ext.getStore("CurrentUserDataStore").load();
-        // handle url params
-        try{me.handleDirectives();}catch(err){
-        console.log("error in handling url params");
-    }
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getStore("CurrentUserDataStore").load();
+            // handle url params
+            try{me.handleDirectives();}catch(err){
+            console.log("error in handling url params");
+        }
+    });
+    task.delay(300);
+
 
 
     },
