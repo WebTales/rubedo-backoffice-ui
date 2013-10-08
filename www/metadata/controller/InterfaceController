@@ -150,7 +150,10 @@
                     "    if (myPrefs.get(\"HCMode\")){\r",
                     "        Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-access.css');\r",
                     "    }\r",
-                    "    me.refreshIcons(); \r",
+                    "    var task2 =new Ext.util.DelayedTask(function(){\r",
+                    "\t\tme.refreshIcons();\r",
+                    "    });\r",
+                    "    task2.delay(1000); \r",
                     "});\r",
                     "\r",
                     "Ext.getStore('PersonalPrefsStore').load();\r",
@@ -168,6 +171,7 @@
                     "    }\r",
                     "});\r",
                     "task.delay(300);\r",
+                    "\r",
                     "\r",
                     "\r",
                     ""
@@ -942,7 +946,7 @@
                     "        });});\r",
                     "        nIcone.setPosition(icone.data.posX, icone.data.posY);\r",
                     "        Ext.getCmp(\"boiteAIconesBureau\").add(nIcone);\r",
-                    "}); "
+                    "    }); "
                 ]
             },
             "designerId": "87ba059c-e5bc-4365-ae29-67c7e1758449"

@@ -579,7 +579,10 @@ Ext.define('Rubedo.controller.InterfaceController', {
             if (myPrefs.get("HCMode")){
                 Ext.util.CSS.swapStyleSheet('ext_theme', '/components/sencha/extjs/resources/css/ext-all-access.css');
             }
-            me.refreshIcons(); 
+            var task2 =new Ext.util.DelayedTask(function(){
+                me.refreshIcons();
+            });
+            task2.delay(1000); 
         });
 
         Ext.getStore('PersonalPrefsStore').load();
@@ -597,6 +600,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         }
     });
     task.delay(300);
+
 
 
 
