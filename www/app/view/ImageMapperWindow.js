@@ -54,7 +54,7 @@ Ext.define('Rubedo.view.ImageMapperWindow', {
 
     onImageMapperWindowAfterRender: function(component, eOpts) {
         var src="resources/summer/index.htm?id="+component.sImageId+"&sourceFieldId="+component.sourceFieldId;
-        component.add(Ext.widget("container",{
+        component.add(Ext.widget("component",{
             autoEl: {
                 tag: 'iframe',
                 src: src
