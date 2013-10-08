@@ -1151,7 +1151,7 @@ Ext.define('Rubedo.view.adminFTDC', {
             Ext.getCmp('tabPanTC').setActiveTab(5);
             Ext.getCmp('tabPanTC').setActiveTab(0);
         });
-        task.delay(700);
+        task.delay(200);
     }
 
 });
