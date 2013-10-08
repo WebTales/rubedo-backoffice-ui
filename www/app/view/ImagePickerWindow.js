@@ -179,7 +179,10 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
                     text: 'Type'
                 });
                 delete Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter;
-                Ext.getStore("DAMPickerStore").load();   
+                var task = new Ext.util.DelayedTask(function(){
+                    Ext.getStore("DAMPickerStore").load();   
+                });
+                task.delay(300);
             } else {
                 Ext.getStore("MediaTypesFORDAMPicker").getProxy().extraParams.filter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
                 Ext.getStore("MediaTypesFORDAMPicker").load();
@@ -201,8 +204,11 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
                     text: 'Type'
                 });
-                Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
-                Ext.getStore("DAMPickerStore").load();
+                var task = new Ext.util.DelayedTask(function(){
+                    Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"mainFileType\",\"value\":\""+allowedFileType+"\"}]";
+                    Ext.getStore("DAMPickerStore").load();
+                });
+                task.delay(300);
             }
         }else if (allowedTypes.length==1){
             Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"value\":\""+allowedTypes[0]+"\"}]";
@@ -230,9 +236,11 @@ Ext.define('Rubedo.view.ImagePickerWindow', {
 
                 text: 'Type'
             });
-
-            Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
-            Ext.getStore("DAMPickerStore").load();
+            var task = new Ext.util.DelayedTask(function(){
+                Ext.getStore("DAMPickerStore").getProxy().extraParams.tFilter="[{\"property\":\"typeId\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(allowedTypes)+"}]";
+                Ext.getStore("DAMPickerStore").load();
+            });
+            task.delay(300);
         }
         var DAMPicker = Ext.widget("DAMMainView", {features:[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})],id:"DAMPickerView", store:Ext.getStore("DAMPickerStore"),columns:columnsOver, multiSelect:false
     });
