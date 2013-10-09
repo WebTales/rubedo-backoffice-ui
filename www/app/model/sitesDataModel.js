@@ -149,6 +149,15 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'nativeLanguage'
+        },
+        {
+            name: 'staticDomain'
+        },
+        {
+            name: 'recaptcha_public_key'
+        },
+        {
+            name: 'recaptcha_private_key'
         }
     ]
 });

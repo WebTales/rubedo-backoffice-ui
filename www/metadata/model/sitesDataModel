@@ -498,6 +498,42 @@
                 "name": "nativeLanguage"
             },
             "designerId": "99132d61-b07f-4c22-9a46-f1f83b0a2e8f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "staticDomain"
+            },
+            "designerId": "24844e98-4511-451c-a953-83352e8e218c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "recaptcha_public_key"
+            },
+            "designerId": "152d717e-3862-4502-9684-ce4865bdfa27"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "recaptcha_private_key"
+            },
+            "designerId": "b441c981-1bcf-4d49-8568-81553462d185"
         }
     ]
 }

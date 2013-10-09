@@ -312,7 +312,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "disabled": true,
                 "layout": "card",
                 "title": ""
             },
@@ -388,8 +387,25 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Static domain",
+                                        "labelWidth": 110,
+                                        "name": "staticDomain",
+                                        "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
+                                    },
+                                    "designerId": "3c45d03c-9fcf-454e-b30d-826d795b8102"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
                                         "localiserId": "aliasField",
                                         "layout|anchor": "100%",
+                                        "hidden": true,
                                         "fieldLabel": "Alias ",
                                         "labelWidth": 110,
                                         "name": "alias"
@@ -1127,6 +1143,51 @@
                                             "type": "string"
                                         }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapsible": true,
+                                "title": "Recaptcha"
+                            },
+                            "designerId": "44c52af4-c861-4fbd-988d-e4352ae8f85c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Public key",
+                                        "labelWidth": 110,
+                                        "name": "recaptcha_public_key"
+                                    },
+                                    "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Private key",
+                                        "labelWidth": 110,
+                                        "name": "recaptcha_private_key"
+                                    },
+                                    "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b"
                                 }
                             ]
                         }

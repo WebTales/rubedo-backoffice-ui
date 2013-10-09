@@ -163,7 +163,6 @@ Ext.define('Rubedo.view.sitesInterface', {
                 {
                     xtype: 'panel',
                     flex: 1,
-                    disabled: true,
                     layout: {
                         type: 'card'
                     },
@@ -195,8 +194,17 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         },
                                         {
                                             xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Static domain',
+                                            labelWidth: 110,
+                                            name: 'staticDomain',
+                                            regex: new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)
+                                        },
+                                        {
+                                            xtype: 'textfield',
                                             localiserId: 'aliasField',
                                             anchor: '100%',
+                                            hidden: true,
                                             fieldLabel: 'Alias ',
                                             labelWidth: 110,
                                             name: 'alias'
@@ -441,6 +449,27 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             fieldLabel: 'Disqus',
                                             labelWidth: 110,
                                             name: 'disqusKey'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    collapsible: true,
+                                    title: 'Recaptcha',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Public key',
+                                            labelWidth: 110,
+                                            name: 'recaptcha_public_key'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Private key',
+                                            labelWidth: 110,
+                                            name: 'recaptcha_private_key'
                                         }
                                     ]
                                 }
