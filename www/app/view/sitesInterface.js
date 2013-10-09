@@ -454,6 +454,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    collapsed: true,
                                     collapsible: true,
                                     title: 'Recaptcha',
                                     items: [
