@@ -1115,10 +1115,7 @@ Ext.define('Rubedo.view.adminFTDC', {
 
     onPanelActivate1: function(component, eOpts) {
         Ext.getCmp("CTEditToolsBtnGr").show();
-        var task = new Ext.util.DelayedTask(function(){
-            Ext.getCmp("AdminfTypesGrid").expand();
-        });
-        task.delay(200);
+        Ext.getCmp("AdminfTypesGrid").expand();
     },
 
     onPanelDeactivate1: function(component, eOpts) {
@@ -1150,8 +1147,12 @@ Ext.define('Rubedo.view.adminFTDC', {
             Ext.getCmp('tabPanTC').setActiveTab(2);
             Ext.getCmp('tabPanTC').setActiveTab(5);
             Ext.getCmp('tabPanTC').setActiveTab(0);
+            var task2 = new Ext.util.DelayedTask(function(){
+                Ext.getCmp("AdminfTypesGrid").expand();
+            });
+            task2.delay(200);
         });
-        task.delay(200);
+        task.delay(100);
     }
 
 });

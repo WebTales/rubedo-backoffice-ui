@@ -1686,10 +1686,7 @@
                                 "fn": "onPanelActivate1",
                                 "implHandler": [
                                     "Ext.getCmp(\"CTEditToolsBtnGr\").show();\r",
-                                    "var task = new Ext.util.DelayedTask(function(){\r",
-                                    "\tExt.getCmp(\"AdminfTypesGrid\").expand();\r",
-                                    "});\r",
-                                    "task.delay(200);"
+                                    "Ext.getCmp(\"AdminfTypesGrid\").expand();"
                                 ],
                                 "name": "activate",
                                 "scope": "me"
@@ -2846,8 +2843,12 @@
                     "    Ext.getCmp('tabPanTC').setActiveTab(2);\r",
                     "    Ext.getCmp('tabPanTC').setActiveTab(5);\r",
                     "    Ext.getCmp('tabPanTC').setActiveTab(0);\r",
+                    "    var task2 = new Ext.util.DelayedTask(function(){\r",
+                    "    Ext.getCmp(\"AdminfTypesGrid\").expand();\r",
+                    "    });\r",
+                    "    task2.delay(200);\r",
                     "});\r",
-                    "task.delay(200);"
+                    "task.delay(100);"
                 ],
                 "name": "afterrender",
                 "scope": "me"
