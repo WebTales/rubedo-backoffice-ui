@@ -163,6 +163,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                 {
                     xtype: 'panel',
                     flex: 1,
+                    disabled: true,
                     layout: {
                         type: 'card'
                     },
