@@ -15,10 +15,9 @@
             "MediaTypesFORDAMPicker"
         ],
         "views": [
-            "MyViewport",
             "DAMPickerWindow",
-            "DAMMainView",
-            "MainViewport"
+            "MainViewport",
+            "DamMainView"
         ],
         "appFolder": "resources/extFinder/app",
         "autoCreateViewport": true,

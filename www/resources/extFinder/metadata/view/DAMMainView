@@ -7,19 +7,19 @@
     "codeClass": null,
     "userConfig": {
         "id": null,
-        "designer|userClassName": "DAMMainView",
+        "designer|userClassName": "DamMainView",
         "designer|userAlias": "DAMMainView",
         "requires": [
             "Ext.ux.container.SwitchButtonSegment"
         ],
         "title": "",
         "forceFit": true,
-        "store": "DAMStore"
+        "store": "DAMPickerStore"
     },
     "configAlternates": {
         "managesStore": "boolean"
     },
-    "designerId": "0171d531-e44c-4872-9533-36a0c2cf26dd",
+    "designerId": "79508f14-8b05-4ad8-813d-7a1dad450883",
     "cn": [
         {
             "type": "Ext.grid.View",
@@ -31,7 +31,7 @@
             "userConfig": {
                 "id": "DAMImageDrop"
             },
-            "designerId": "6e4d0cdc-fc61-4a58-9d20-b3d4faf37043"
+            "designerId": "b765112c-f3e8-401b-a6c0-2cf02f05b3c6"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -41,42 +41,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "localiserId": "titleColumn",
-                "align": null,
-                "dataIndex": "title",
-                "text": "Titre"
+                "localiserId": "mainFileDamCol",
+                "sortable": false,
+                "dataIndex": "originalFileId",
+                "text": "Main file"
             },
-            "configAlternates": {
-                "filter": "boolean"
-            },
-            "designerId": "666ec183-f2c0-4381-a95d-c6002caf8c11",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "filter",
-                    "type": "string"
-                },
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ]
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "localiserId": "authorColumn",
-                "dataIndex": "createUser",
-                "text": "Auteur"
-            },
-            "designerId": "18c8c75f-936b-4f3c-841a-052115fc97ab",
+            "designerId": "d119c60c-2bc1-4ba1-b5d3-5ed9c75d1288",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
@@ -104,10 +74,140 @@
                             "view"
                         ],
                         "implHandler": [
-                            "return(value.fullName);"
+                            "var link=\"dam/get-thumbnail?id=\"+record.get(\"id\")+\"&version=\"+record.get(\"version\");",
+                            "return ('<img src=\\\"'+link+'\\\" height=\\\"100\\\" width=\\\"100\\\">');"
                         ]
                     },
-                    "designerId": "2d032c4d-f915-41ab-8e96-09345b624af5"
+                    "designerId": "d0188894-7945-4bb4-9491-7ae0bb12d29a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "filter": true,
+                "localiserId": "titleColumn",
+                "align": null,
+                "dataIndex": "text",
+                "text": "Titre"
+            },
+            "configAlternates": {
+                "filter": "boolean"
+            },
+            "designerId": "2dd55bf5-fd07-4e86-85bd-6e6d9f69c5c8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filter",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (record.get(\"readOnly\")){",
+                            "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");",
+                            "} else {",
+                            "    return(value);",
+                            "}"
+                        ]
+                    },
+                    "designerId": "e36cfd10-7d2f-4d04-986a-d2c57be15ec4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "sizeDamCol",
+                "dataIndex": "fileSize",
+                "text": "Size"
+            },
+            "designerId": "85a7730f-c48c-4c8a-a46a-6f7453fd84a9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "return(Ext.util.Format.fileSize(record.get(\"fileSize\")));"
+                        ]
+                    },
+                    "designerId": "6e294c6c-5042-4750-8528-bb68794b118d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "authorColumn",
+                "dataIndex": "author",
+                "text": "Auteur"
+            },
+            "designerId": "e5acf5fc-b9f7-4936-bf6e-820a3b82514f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
                 }
             ]
         },
@@ -120,11 +220,11 @@
             "codeClass": null,
             "userConfig": {
                 "localiserId": "createDateColumn",
-                "dataIndex": "createTime",
+                "dataIndex": "lastUpdateTime",
                 "text": "Date de création",
                 "format": "d-m-Y"
             },
-            "designerId": "822d2d57-77d9-46ae-a1fb-3d4d38fd8370",
+            "designerId": "81e6ecf4-4e04-4d49-a969-6b819c1854b6",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",
@@ -132,6 +232,28 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processDAMMainView",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.multiSelect= false;",
+                    "config.viewConfig= {",
+                    "    stripeRows: true",
+                    "};",
+                    "return(config);"
+                ]
+            },
+            "designerId": "50da9ce4-23aa-4368-a132-66be9570dbc9"
         }
     ]
 }

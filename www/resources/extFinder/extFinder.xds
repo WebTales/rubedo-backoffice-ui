@@ -13,7 +13,7 @@
     "xdsBuild": 991,
     "schemaVersion": 1,
     "upgradeVersion": 210000000503,
-    "framework": "ext41",
+    "framework": "ext42",
     "topInstanceFileMap": {
         "cf6e37a9-ef7d-407a-b064-b3c3beead833": {
             "paths": [
@@ -138,14 +138,6 @@
             ],
             "className": "js6"
         },
-        "0171d531-e44c-4872-9533-36a0c2cf26dd": {
-            "paths": [
-                "metadata/view/DAMMainView",
-                "resources/extFinder/app/view/override/DAMMainView.js",
-                "resources/extFinder/app/view/DAMMainView.js"
-            ],
-            "className": "DAMMainView"
-        },
         "4f49cd0b-e289-45c5-a6e1-c5a441b54b22": {
             "paths": [
                 "metadata/resource/css3"
@@ -157,13 +149,21 @@
                 "metadata/resource/css4"
             ],
             "className": "css4"
+        },
+        "79508f14-8b05-4ad8-813d-7a1dad450883": {
+            "paths": [
+                "metadata/view/DamMainView",
+                "resources/extFinder/app/view/override/DamMainView.js",
+                "resources/extFinder/app/view/DamMainView.js"
+            ],
+            "className": "DamMainView"
         }
     },
     "viewOrderMap": {
         "view": [
             "e6679921-3efa-43ea-aeba-a4878fdadbce",
             "a4680f21-f444-4aa5-9954-5523f4e23fd1",
-            "0171d531-e44c-4872-9533-36a0c2cf26dd"
+            "79508f14-8b05-4ad8-813d-7a1dad450883"
         ],
         "store": [
             "a3641d1d-5b3c-46b4-aa1e-cc532f68228f",
