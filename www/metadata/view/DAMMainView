@@ -41,11 +41,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "mainFileDamCol",
                 "sortable": false,
                 "dataIndex": "originalFileId",
                 "text": "Main file"
             },
             "designerId": "07377b2f-7887-4080-a074-f131185f8c76",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -143,10 +151,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "sizeDamCol",
                 "dataIndex": "fileSize",
                 "text": "Size"
             },
             "designerId": "21694824-385c-4e75-80e3-bea6ac241642",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",

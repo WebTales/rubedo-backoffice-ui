@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
         'Ext.ux.RowExpander'
     ],
 
+    localiserId: 'appLogsWindow',
     height: 418,
     id: 'ApplicationLogsInterface',
     width: 944,
@@ -58,24 +59,28 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'messageCol',
                             dataIndex: 'message',
                             text: 'Message',
                             flex: 1
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'typeCol',
                             dataIndex: 'type',
                             text: 'Type',
                             flex: 0.4
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'DateCol',
                             width: 200,
                             dataIndex: 'datetime',
-                            text: 'Datetime'
+                            text: 'Date'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'levelCol',
                             width: 140,
                             dataIndex: 'level_name',
                             text: 'Level'
@@ -108,6 +113,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                         {
                             xtype: 'datefield',
                             operator: '$gte',
+                            localiserId: 'logsInfDateField',
                             id: 'testerDate1',
                             fieldLabel: 'Show logs between',
                             labelWidth: 110,
@@ -116,6 +122,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                         {
                             xtype: 'datefield',
                             operator: '$lte',
+                            localiserId: 'logsSupDateField',
                             fieldLabel: 'and',
                             labelWidth: 30,
                             name: 'datetime'
@@ -123,6 +130,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                         {
                             xtype: 'combobox',
                             operator: '$gte',
+                            localiserId: 'logsMinLevelField',
                             fieldLabel: 'of minimal level',
                             labelWidth: 80,
                             name: 'level',
@@ -180,6 +188,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                                 Ext.getStore("ApplicationLogs").getProxy().extraParams.filter=Ext.JSON.encode(filtersArray);
                                 Ext.getStore("ApplicationLogs").load();
                             },
+                            localiserId: 'logsRefreshBtn',
                             iconCls: 'refresh',
                             text: 'Refresh'
                         },
@@ -191,6 +200,7 @@ Ext.define('Rubedo.view.ApplicationLogsInterface', {
                                 Ext.getStore("ApplicationLogs").getProxy().extraParams={ };
                                 Ext.getStore("ApplicationLogs").loadPage(1);
                             },
+                            localiserId: 'logsClearFilterBtn',
                             iconCls: 'close',
                             text: 'Clear filters'
                         }

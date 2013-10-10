@@ -457,6 +457,7 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "layout|margins": "0 0 0 20",
+                                "localiserId": "pagePreviewLanguageField",
                                 "id": "previewLanguageCombo",
                                 "itemId": null,
                                 "fieldLabel": "Language",
@@ -468,6 +469,13 @@
                                 "valueField": "locale"
                             },
                             "designerId": "77e8591e-e618-4496-92a1-8648f7640c9b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "processcfgfunction",

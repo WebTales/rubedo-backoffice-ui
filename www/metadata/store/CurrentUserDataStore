@@ -108,7 +108,7 @@
                     "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.boReloadRequired ,function(anser){\r",
                     "        if (anser==\"yes\"){\r",
                     "            window.onbeforeunload=Ext.emptyFn;\r",
-                    "\t\t\twindow.location.href=\"login\";\r",
+                    "            window.location.href=\"login\";\r",
                     "        }\r",
                     "    });\r",
                     "\r",

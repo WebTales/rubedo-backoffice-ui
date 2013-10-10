@@ -601,6 +601,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                         },
                                         me.processRobot({
                                             xtype: 'fieldset',
+                                            localiserId: 'robotFieldset',
                                             title: 'Robot'
                                         })
                                     ]

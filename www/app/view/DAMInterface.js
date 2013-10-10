@@ -507,6 +507,7 @@ Ext.define('Rubedo.view.DAMInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'damSwitchGridViewBtn',
                                     id: 'DAMSwitchGridDisplayBtn',
                                     iconAlign: 'top',
                                     text: 'Switch display mode',

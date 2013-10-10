@@ -196,6 +196,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'staticDomainField',
                                             fieldLabel: 'Static domain',
                                             labelWidth: 110,
                                             name: 'staticDomain',
@@ -455,6 +456,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                 },
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'recaptchaFieldset',
                                     collapsed: true,
                                     collapsible: true,
                                     title: 'Recaptcha',
@@ -462,6 +464,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'recaptchaPublicKeyField',
                                             fieldLabel: 'Public key',
                                             labelWidth: 110,
                                             name: 'recaptcha_public_key'
@@ -469,6 +472,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'recaptchaPrivateKeyField',
                                             fieldLabel: 'Private key',
                                             labelWidth: 110,
                                             name: 'recaptcha_private_key'

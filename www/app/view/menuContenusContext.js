@@ -106,6 +106,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                 }),
                 me.processLastupdate({
                     xtype: 'datecolumn',
+                    localiserId: 'lastUpdateContentCol',
                     dataIndex: 'lastUpdateTime',
                     text: 'Last update'
                 }),
@@ -134,6 +135,7 @@ Ext.define('Rubedo.view.menuContenusContext', {
                             handler: function(button, event) {
                                 Ext.getCmp("ContenusGrid").features[0].clearFilters();
                             },
+                            localiserId: 'contentsClearFilterBtn',
                             iconCls: 'close',
                             text: 'Clear filters'
                         }

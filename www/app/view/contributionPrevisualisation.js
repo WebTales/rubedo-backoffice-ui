@@ -191,6 +191,7 @@ Ext.define('Rubedo.view.contributionPrevisualisation', {
                                 me.processPreviewLanguageCombo({
                                     xtype: 'combobox',
                                     margins: '0 0 0 20',
+                                    localiserId: 'pagePreviewLanguageField',
                                     id: 'previewLanguageCombo',
                                     fieldLabel: 'Language',
                                     labelWidth: 60,

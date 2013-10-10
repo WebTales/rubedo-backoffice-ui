@@ -270,10 +270,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "localiserId": "lastUpdateContentCol",
                 "dataIndex": "lastUpdateTime",
                 "text": "Last update"
             },
             "designerId": "321ff94d-59f8-45c4-9a03-276bc393e2f4",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "processcfgfunction",
@@ -409,10 +417,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "contentsClearFilterBtn",
                         "iconCls": "close",
                         "text": "Clear filters"
                     },
                     "designerId": "538a877e-b64a-465d-b13e-7336d02981d9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

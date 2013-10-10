@@ -389,12 +389,20 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "staticDomainField",
                                         "fieldLabel": "Static domain",
                                         "labelWidth": 110,
                                         "name": "staticDomain",
                                         "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
                                     },
-                                    "designerId": "3c45d03c-9fcf-454e-b30d-826d795b8102"
+                                    "designerId": "3c45d03c-9fcf-454e-b30d-826d795b8102",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -1155,11 +1163,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "recaptchaFieldset",
                                 "collapsed": true,
                                 "collapsible": true,
                                 "title": "Recaptcha"
                             },
                             "designerId": "44c52af4-c861-4fbd-988d-e4352ae8f85c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Text",
@@ -1170,11 +1186,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "recaptchaPublicKeyField",
                                         "fieldLabel": "Public key",
                                         "labelWidth": 110,
                                         "name": "recaptcha_public_key"
                                     },
-                                    "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809"
+                                    "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Text",
@@ -1185,11 +1209,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "recaptchaPrivateKeyField",
                                         "fieldLabel": "Private key",
                                         "labelWidth": 110,
                                         "name": "recaptcha_private_key"
                                     },
-                                    "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b"
+                                    "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         }

@@ -39,6 +39,7 @@ Ext.define('Rubedo.view.DAMMainView', {
                         var link="dam/get-thumbnail?id="+record.get("id")+"&version="+record.get("version");
                         return ('<img src=\"'+link+'\" height=\"100\" width=\"100\">');
                     },
+                    localiserId: 'mainFileDamCol',
                     sortable: false,
                     dataIndex: 'originalFileId',
                     text: 'Main file'
@@ -62,6 +63,7 @@ Ext.define('Rubedo.view.DAMMainView', {
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         return(Ext.util.Format.fileSize(record.get("fileSize")));
                     },
+                    localiserId: 'sizeDamCol',
                     dataIndex: 'fileSize',
                     text: 'Size'
                 },

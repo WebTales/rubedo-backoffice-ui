@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "appLogsWindow",
         "height": 418,
         "id": "ApplicationLogsInterface",
         "width": 944,
@@ -20,6 +21,13 @@
         "title": "Application logs"
     },
     "designerId": "0abc5443-8a75-4800-9e61-80668e12ed10",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "linkedinstance",
@@ -77,11 +85,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "messageCol",
                         "dataIndex": "message",
                         "text": "Message",
                         "flex": 1
                     },
-                    "designerId": "a67757bc-d7ed-45fd-928f-1d7e396e4ccb"
+                    "designerId": "a67757bc-d7ed-45fd-928f-1d7e396e4ccb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -91,11 +107,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "typeCol",
                         "dataIndex": "type",
                         "text": "Type",
                         "flex": 0.4
                     },
-                    "designerId": "1d592219-f775-43c2-b6d7-585606b77e9c"
+                    "designerId": "1d592219-f775-43c2-b6d7-585606b77e9c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -105,11 +129,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "DateCol",
                         "width": 200,
                         "dataIndex": "datetime",
-                        "text": "Datetime"
+                        "text": "Date"
                     },
-                    "designerId": "4ba372ea-cb0d-44f5-9f20-0e90fc04bd90"
+                    "designerId": "4ba372ea-cb0d-44f5-9f20-0e90fc04bd90",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -119,11 +151,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "levelCol",
                         "width": 140,
                         "dataIndex": "level_name",
                         "text": "Level"
                     },
-                    "designerId": "e49d8651-effb-4f9a-803a-168cdff5516c"
+                    "designerId": "e49d8651-effb-4f9a-803a-168cdff5516c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "processcfgfunction",
@@ -222,6 +262,7 @@
                     "userConfig": {
                         "operator": "$gte",
                         "layout|flex": null,
+                        "localiserId": "logsInfDateField",
                         "id": "testerDate1",
                         "fieldLabel": "Show logs between",
                         "labelWidth": 110,
@@ -232,6 +273,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "operator",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -246,6 +292,7 @@
                     "userConfig": {
                         "operator": "$lte",
                         "layout|flex": null,
+                        "localiserId": "logsSupDateField",
                         "fieldLabel": "and",
                         "labelWidth": 30,
                         "name": "datetime"
@@ -255,6 +302,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "operator",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -269,6 +321,7 @@
                     "userConfig": {
                         "operator": "$gte",
                         "layout|flex": null,
+                        "localiserId": "logsMinLevelField",
                         "fieldLabel": "of minimal level",
                         "labelWidth": 80,
                         "name": "level",
@@ -290,6 +343,11 @@
                             "group": "(Custom Properties)",
                             "name": "operator",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ]
                 },
@@ -302,10 +360,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "logsRefreshBtn",
                         "iconCls": "refresh",
                         "text": "Refresh"
                     },
                     "designerId": "f9e5f1f8-6a44-470a-a3cc-a00428695a6f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -348,10 +414,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "logsClearFilterBtn",
                         "iconCls": "close",
                         "text": "Clear filters"
                     },
                     "designerId": "bc7adfd1-648a-40e3-8be8-a4d90fe980bc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

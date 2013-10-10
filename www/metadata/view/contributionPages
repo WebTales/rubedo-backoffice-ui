@@ -1433,9 +1433,17 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "robotFieldset",
                                         "title": "Robot"
                                     },
                                     "designerId": "2451b9c3-1c8f-400e-8cdd-d3388099e97a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "processcfgfunction",
@@ -1451,25 +1459,25 @@
                                                 ],
                                                 "implHandler": [
                                                     "config.items=[\r",
-                                                    "                                                {\r",
-                                                    "                                                    xtype: 'checkboxfield',\r",
-                                                    "                                                    anchor: '100%',\r",
-                                                    "                                                    fieldLabel: 'noindex',\r",
-                                                    "                                                    name: 'noIndex',\r",
-                                                    "                                                    boxLabel: '',\r",
-                                                    "                                                    inputValue: 'true',\r",
-                                                    "                                                    uncheckedValue: 'false'\r",
-                                                    "                                                },\r",
-                                                    "                                                {\r",
-                                                    "                                                    xtype: 'checkboxfield',\r",
-                                                    "                                                    anchor: '100%',\r",
-                                                    "                                                    fieldLabel: 'nofollow',\r",
-                                                    "                                                    name: 'noFollow',\r",
-                                                    "                                                    boxLabel: '',\r",
-                                                    "                                                    inputValue: 'true',\r",
-                                                    "                                                    uncheckedValue: 'false'\r",
-                                                    "                                                }\r",
-                                                    "                                            ];\r",
+                                                    "{\r",
+                                                    "    xtype: 'checkboxfield',\r",
+                                                    "    anchor: '100%',\r",
+                                                    "    fieldLabel: 'noindex',\r",
+                                                    "    name: 'noIndex',\r",
+                                                    "    boxLabel: '',\r",
+                                                    "    inputValue: 'true',\r",
+                                                    "    uncheckedValue: 'false'\r",
+                                                    "},\r",
+                                                    "{\r",
+                                                    "    xtype: 'checkboxfield',\r",
+                                                    "    anchor: '100%',\r",
+                                                    "    fieldLabel: 'nofollow',\r",
+                                                    "    name: 'noFollow',\r",
+                                                    "    boxLabel: '',\r",
+                                                    "    inputValue: 'true',\r",
+                                                    "    uncheckedValue: 'false'\r",
+                                                    "}\r",
+                                                    "];\r",
                                                     "return config;"
                                                 ]
                                             },
