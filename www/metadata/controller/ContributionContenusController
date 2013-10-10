@@ -1561,6 +1561,7 @@
                     "        Ext.getCmp(\"boutonPublierNouveauContenu\").targetedId=targetedId;\r",
                     "        Ext.getCmp(\"cedtr1\").destroy();\r",
                     "        Ext.getCmp(\"cedtr2\").destroy();\r",
+                    "    \tExt.getCmp(\"cedtrURL\").destroy();\r",
                     "\r",
                     "\r",
                     "    }"

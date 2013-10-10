@@ -201,15 +201,6 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
         },
         {
             xtype: 'menuitem',
-            ACL: 'read.ui.forms',
-            favoriteIcon: 'note.edit.png',
-            itemId: 'FormsInterface',
-            iconCls: 'form_small',
-            localiserId:'formsLaunchBtn',
-            text: 'Questionnaires'
-        },
-        {
-            xtype: 'menuitem',
             ACL: 'read.ui.customThemes',
             favoriteIcon: 'palette.png',
             itemId: 'CustomThemesInterface',
@@ -310,6 +301,14 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
             iconCls: 'world_small',
             localiserId:'languagesLaunchBtn',
             text: 'Languages'
+        },{
+            xtype: 'menuitem',
+            ACL: 'read.ui.applicationLogs',
+            favoriteIcon: 'processes.png',
+            itemId: 'ApplicationLogsInterface',
+            iconCls: 'process-icon',
+            localiserId:'applicationLogsLaunchBtn',
+            text: 'Application logs'
         }
         ];
         return config;
