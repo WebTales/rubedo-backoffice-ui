@@ -48,6 +48,11 @@
                     "                    destroy: 'content-types/delete'\r",
                     "                }"
                 ],
+                "extraParams": [
+                    "{\r",
+                    "    'tFilter':'[{\"property\":\"dependant\",\"value\":false},{\"property\":\"system\",\"value\":{\"$ne\":true}}]'\r",
+                    "}"
+                ],
                 "url": null
             },
             "designerId": "47de9444-39aa-49ca-ac7e-7f02f8dd044f",
