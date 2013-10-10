@@ -22,7 +22,6 @@ Ext.define('Rubedo.view.CTCField', {
     displayField: 'type',
     forceSelection: true,
     multiSelect: true,
-    queryMode: 'local',
     store: 'contentTypesCombo',
     valueField: 'id',
 
