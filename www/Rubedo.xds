@@ -2853,6 +2853,22 @@
                 "app/store/UserTypes.js"
             ],
             "className": "UserTypes"
+        },
+        "f226d2f3-1a1c-40c0-97d1-16f6c14b6f16": {
+            "paths": [
+                "metadata/view/UserTypesInterface",
+                "app/view/override/UserTypesInterface.js",
+                "app/view/UserTypesInterface.js"
+            ],
+            "className": "UserTypesInterface"
+        },
+        "d51dd844-1cf3-43cf-859c-7408cf6c8f03": {
+            "paths": [
+                "metadata/store/TaxonomyForUT",
+                "app/store/override/TaxonomyForUT.js",
+                "app/store/TaxonomyForUT.js"
+            ],
+            "className": "TaxonomyForUT"
         }
     },
     "viewOrderMap": {
@@ -2863,6 +2879,7 @@
             "e0d081a5-ccca-483c-8f7a-43232eebbc43",
             "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
+            "f226d2f3-1a1c-40c0-97d1-16f6c14b6f16",
             "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
             "80577966-9127-4f1a-ba7a-faceef3f254a",
@@ -3040,6 +3057,7 @@
             "92e390a8-ea67-46ec-b1f0-678267ecc7ce",
             "0fa04baf-9fd3-4e4c-be25-b88686d58cd4",
             "40961f33-7d90-45dc-9954-ebf0d0856a4b",
+            "d51dd844-1cf3-43cf-859c-7408cf6c8f03",
             "1b50c020-4b46-495e-ae47-295cf55314b2",
             "ed78c7e5-756f-451d-8b70-7973c0deb8fb",
             "03aa16b1-6613-44b9-ad19-4167a7527f99",
