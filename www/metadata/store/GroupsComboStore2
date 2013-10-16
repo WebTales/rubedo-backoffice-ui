@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Groups",
+        "autoLoad": false,
+        "model": "groupDataModel",
+        "storeId": "GroupsComboStore2",
+        "designer|userClassName": "GroupsComboStore2",
+        "designer|userAlias": "GroupsComboStore2",
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "055a8c1f-18ab-47d4-9d86-92b87767d29f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    \"read\":\"groups\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "5918fcbf-2af1-4053-8d2e-b430e67e28d4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "ca3c5e6c-3961-4fbb-bf73-96647018385c"
+                }
+            ]
+        }
+    ]
+}

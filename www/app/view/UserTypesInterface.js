@@ -336,6 +336,34 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                     autoScroll: true,
                                     items: [
                                         {
+                                            xtype: 'panel',
+                                            localiserId: 'systemFieldPanel',
+                                            frame: true,
+                                            margin: 20,
+                                            title: 'Champs système',
+                                            items: [
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            localiserId: 'UTEmailField',
+                                                            anchor: '100%',
+                                                            RTip: 'User email. Mandatory.',
+                                                            fieldLabel: 'E-mail *',
+                                                            name: 'email',
+                                                            allowBlank: false,
+                                                            vtype: 'email'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
                                             xtype: 'MTeditFields',
                                             id: 'UTeditFields'
                                         }
@@ -493,6 +521,51 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                             labelWidth: 130,
                                             name: 'type',
                                             allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            title: 'Rights',
+                                            items: [
+                                                {
+                                                    xtype: 'combobox',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Sign-up type',
+                                                    labelWidth: 130,
+                                                    name: 'signUpType',
+                                                    allowBlank: false,
+                                                    editable: false,
+                                                    forceSelection: true,
+                                                    queryMode: 'local',
+                                                    store: [
+                                                        [
+                                                            'none',
+                                                            'None'
+                                                        ],
+                                                        [
+                                                            'moderated',
+                                                            'Moderated'
+                                                        ],
+                                                        [
+                                                            'open',
+                                                            'Open'
+                                                        ]
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'combobox',
+                                                    localiserId: 'defaultGroupField',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Groupe par defaut',
+                                                    labelWidth: 130,
+                                                    name: 'defaultGroup',
+                                                    editable: false,
+                                                    displayField: 'name',
+                                                    forceSelection: true,
+                                                    queryMode: 'local',
+                                                    store: 'GroupsComboStore2',
+                                                    valueField: 'id'
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -573,10 +646,12 @@ Ext.define('Rubedo.view.UserTypesInterface', {
 
     onMediaTypesInterfaceRender: function(component, eOpts) {
         Ext.getStore("TaxonomyForUT").load();
+        Ext.getStore("GroupsComboStore2").load();
     },
 
     onMediaTypesInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("TaxonomyForUT").removeAll();
+        Ext.getStore("GroupsComboStore2").removeAll();
     }
 
 });

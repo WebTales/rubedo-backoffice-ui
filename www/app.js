@@ -169,7 +169,8 @@ Ext.application({
         'ApplicationLogs',
         'SitesComboCTLayouts',
         'UserTypes',
-        'TaxonomyForUT'
+        'TaxonomyForUT',
+        'GroupsComboStore2'
     ],
     views: [
         'MyGridPanel3',
