@@ -152,7 +152,8 @@
             "ImportTranslationLanguageStore",
             "ApplicationLogs",
             "SitesComboCTLayouts",
-            "UserTypes"
+            "UserTypes",
+            "TaxonomyForUT"
         ],
         "views": [
             "MyGridPanel3",
@@ -305,7 +306,8 @@
             "simpleModeMainBar",
             "ApplicationLogsInterface",
             "CTLCopyWindow",
-            "MyView"
+            "MyView",
+            "UserTypesInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

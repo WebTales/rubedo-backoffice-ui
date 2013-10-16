@@ -168,7 +168,8 @@ Ext.application({
         'ImportTranslationLanguageStore',
         'ApplicationLogs',
         'SitesComboCTLayouts',
-        'UserTypes'
+        'UserTypes',
+        'TaxonomyForUT'
     ],
     views: [
         'MyGridPanel3',
@@ -321,7 +322,8 @@ Ext.application({
         'simpleModeMainBar',
         'ApplicationLogsInterface',
         'CTLCopyWindow',
-        'MyView'
+        'MyView',
+        'UserTypesInterface'
     ],
     autoCreateViewport: true,
     controllers: [
