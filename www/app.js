@@ -323,7 +323,8 @@ Ext.application({
         'ApplicationLogsInterface',
         'CTLCopyWindow',
         'MyView',
-        'UserTypesInterface'
+        'UserTypesInterface',
+        'newUTWindow'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -346,7 +347,8 @@ Ext.application({
         'ImportController',
         'MailingListsController',
         'CustomThemesController',
-        'AppExtensionController'
+        'AppExtensionController',
+        'UserTypesController'
     ],
     name: 'Rubedo'
 });

@@ -644,13 +644,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onMainMTGridSelect",
+                        "fn": "onMainUTGridAfterRender",
                         "implHandler": [
                             "Ext.getCmp(\"UTcenterZone\").setActiveTab(2);\r",
                             "Ext.getCmp(\"UTcenterZone\").setActiveTab(0);"
                         ],
                         "single": true,
-                        "name": "select",
+                        "name": "afterrender",
                         "scope": "me"
                     },
                     "designerId": "83d3d902-7212-4d9a-80a2-065694172516"
@@ -749,7 +749,7 @@
                                 ],
                                 "implHandler": [
                                     "config.tpl=[\r",
-                                    "'<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "'<b>{type}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
                                     "];\r",
                                     "return config;"
                                 ]
@@ -1287,7 +1287,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "userTypesMainEditForm",
+                                "id": "userTypesEditForm",
                                 "itemId": "mainLocItem",
                                 "bodyPadding": 10,
                                 "iconCls": null,

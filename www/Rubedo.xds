@@ -2869,6 +2869,22 @@
                 "app/store/TaxonomyForUT.js"
             ],
             "className": "TaxonomyForUT"
+        },
+        "00775bc6-fbb7-4f53-bb87-669f9cfacbf4": {
+            "paths": [
+                "metadata/controller/UserTypesController",
+                "app/controller/override/UserTypesController.js",
+                "app/controller/UserTypesController.js"
+            ],
+            "className": "UserTypesController"
+        },
+        "9c6e8f8d-5e11-4828-86c8-124ea06b2d24": {
+            "paths": [
+                "metadata/view/newUTWindow",
+                "app/view/override/newUTWindow.js",
+                "app/view/newUTWindow.js"
+            ],
+            "className": "newUTWindow"
         }
     },
     "viewOrderMap": {
@@ -2963,6 +2979,7 @@
             "f5e1fe64-162b-493f-8422-36f38e8a8230",
             "6267ab43-4966-465c-9ab8-2585191a245f",
             "eaea8fd3-deb9-427e-8709-b7a7a3a32c08",
+            "9c6e8f8d-5e11-4828-86c8-124ea06b2d24",
             "074f018d-a0e3-4a1e-a693-b6defc4b819c",
             "2f7e5de4-2ce2-4a35-87a7-927a97315007",
             "08c3601d-6da2-4434-bbf8-03968b08ffe4",
@@ -3169,14 +3186,15 @@
             "b29235f7-9588-4632-b7ab-b0f2633b21ec",
             "bf25a36d-563e-484d-b6b8-b387924e3a62",
             "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
-            "2a85a03b-de9d-4abc-80a4-82114d4267cf",
             "be2b5e1d-97ad-4d34-bac5-6baea7859c11",
             "9db90dbd-9467-4bf3-b0c5-c8ee95a8f5f8",
             "765f93a9-83e7-4405-aaaa-740265c87f51",
             "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
             "fa7809cb-a36e-40d9-92de-589f62b00143",
             "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
-            "94fb422b-80b5-40d7-8b25-2a16cc8be41a"
+            "94fb422b-80b5-40d7-8b25-2a16cc8be41a",
+            "2a85a03b-de9d-4abc-80a4-82114d4267cf",
+            "00775bc6-fbb7-4f53-bb87-669f9cfacbf4"
         ],
         "model": [
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",

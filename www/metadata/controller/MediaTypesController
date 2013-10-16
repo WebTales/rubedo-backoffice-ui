@@ -186,6 +186,7 @@
                     "if (Ext.isDefined(cible)) {\r",
                     "    Ext.Ajax.request({\r",
                     "        url: 'dam-types/is-used',\r",
+                    "        method:\"GET\",\r",
                     "        params: {\r",
                     "            id: cible.get(\"id\")\r",
                     "        },\r",
