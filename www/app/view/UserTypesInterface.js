@@ -303,8 +303,8 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                         }
                     ],
                     listeners: {
-                        select: {
-                            fn: me.onMainMTGridSelect,
+                        afterrender: {
+                            fn: me.onMainUTGridAfterRender,
                             single: true,
                             scope: me
                         }
@@ -481,7 +481,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                             items: [
                                 {
                                     xtype: 'form',
-                                    id: 'userTypesMainEditForm',
+                                    id: 'userTypesEditForm',
                                     itemId: 'mainLocItem',
                                     bodyPadding: 10,
                                     title: '',
@@ -524,7 +524,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
 
     processBoiteBarreMeta: function(config) {
         config.tpl=[
-        '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
+        '<b>{type}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
         return config;
     },
@@ -556,7 +556,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
     });
     },
 
-    onMainMTGridSelect: function(rowmodel, record, index, eOpts) {
+    onMainUTGridAfterRender: function(component, eOpts) {
         Ext.getCmp("UTcenterZone").setActiveTab(2);
         Ext.getCmp("UTcenterZone").setActiveTab(0);
     },

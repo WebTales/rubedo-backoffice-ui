@@ -307,7 +307,8 @@
             "ApplicationLogsInterface",
             "CTLCopyWindow",
             "MyView",
-            "UserTypesInterface"
+            "UserTypesInterface",
+            "newUTWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -330,7 +331,8 @@
             "ImportController",
             "MailingListsController",
             "CustomThemesController",
-            "AppExtensionController"
+            "AppExtensionController",
+            "UserTypesController"
         ],
         "name": "Rubedo"
     },

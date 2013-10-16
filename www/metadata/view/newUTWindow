@@ -1,0 +1,95 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "newUserTypeWindow",
+        "height": null,
+        "id": "newUTWindow",
+        "width": 334,
+        "designer|userClassName": "newUTWindow",
+        "designer|userAlias": "newUTWindow",
+        "resizable": false,
+        "layout": "fit",
+        "constrainHeader": true,
+        "iconCls": "user",
+        "title": "New user type",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "9c6e8f8d-5e11-4828-86c8-124ea06b2d24",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "6b4aca78-d2db-49ab-908d-1d181bd1ed90",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "newDamTypeNameField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Nom ",
+                        "name": "type",
+                        "allowBlank": false
+                    },
+                    "designerId": "3f1a7ca3-ae93-4eb1-9ec6-05e3e57bbcfd",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "newUserTypeSubmitBtn",
+                        "layout|anchor": "100%",
+                        "id": "createNewUTBtn",
+                        "text": "Create this new user type"
+                    },
+                    "designerId": "f1f43fe5-c94b-48d9-80a7-81e9ef3be45b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

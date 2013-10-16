@@ -1,0 +1,278 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserTypesController",
+        "designer|userAlias": "UserTypesController"
+    },
+    "designerId": "00775bc6-fbb7-4f53-bb87-669f9cfacbf4",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewUTBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newUTWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newUTBtn"
+            },
+            "designerId": "a83c9606-ae6c-4ee2-b356-afa0d480c450"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCreateNewUTBtnClick",
+                "implHandler": [
+                    "if (button.up().getForm().isValid()) {\r",
+                    "    var newMT=Ext.create(\"Rubedo.model.userType\",button.up().getForm().getValues());\r",
+                    "    newMT.set(\"vocabularies\", [ ]);\r",
+                    "    newMT.set(\"fields\", [ ]);\r",
+                    "    Ext.getStore(\"UserTypes\").add(newMT);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#createNewUTBtn"
+            },
+            "designerId": "f9f2b868-aab5-4986-9b59-c5f8293d3e44"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainUTGridSelectionChange",
+                "implHandler": [
+                    "this.resetInterfaceSelect(record);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainUTGrid"
+            },
+            "designerId": "d72b1933-cfa8-4eb4-84d8-cacdccdf8f95"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetInterfaceNoSelect",
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp(\"UserTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.disable();});\r",
+                    "Ext.getCmp(\"removeUTBtn\").disable();\r",
+                    "Ext.getCmp(\"UserTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
+                    "Ext.getCmp(\"UserTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"User types \", iconCls:\"user\",localiserId:\"userTypesLaunchBtn\"}));\r",
+                    "Ext.getCmp('UTeditFields').removeAll();\r",
+                    "Ext.getCmp(\"UTfieldUp\").disable();\r",
+                    "Ext.getCmp(\"UTfieldDown\").disable();\r",
+                    "Ext.getCmp(\"UTfieldDeleter\").disable();\r",
+                    "Ext.getCmp('UTFieldId').setValue();\r",
+                    "Ext.getCmp(\"UTFieldConfigsBox\").removeAll();\r",
+                    "Ext.getCmp(\"UTcenterZone\").disable();\r",
+                    "Ext.getCmp(\"userTypesEditForm\").getForm().reset();\r",
+                    "Ext.getCmp(\"UserTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
+                ]
+            },
+            "designerId": "44ca7d65-b178-41f2-94cd-b0a084501961"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetInterfaceSelect",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "var me =this;\r",
+                    "\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"UserTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.enable();});\r",
+                    "Ext.getCmp(\"removeUTBtn\").enable();\r",
+                    "Ext.getCmp(\"UserTypesInterface\").getComponent(\"breadcrumb\").removeAll();\r",
+                    "Ext.getCmp(\"UserTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: \"User types \", iconCls:\"user\",localiserId:\"userTypesLaunchBtn\"}));\r",
+                    "Ext.getCmp(\"UserTypesInterface\").getComponent(\"breadcrumb\").add(Ext.widget(\"button\", {text: record.get(\"type\"), iconCls:\"user\"}));\r",
+                    "Ext.getCmp(\"UTcenterZone\").enable();\r",
+                    "Ext.getCmp(\"UTfieldUp\").disable();\r",
+                    "Ext.getCmp(\"UTfieldDown\").disable();\r",
+                    "Ext.getCmp('UTFieldId').setValue();\r",
+                    "Ext.getCmp(\"userTypesEditForm\").getForm().setValues(record.getData());\r",
+                    "Ext.getCmp(\"UTfieldDeleter\").disable();\r",
+                    "Ext.getCmp(\"UTFieldConfigsBox\").removeAll();\r",
+                    "var metaBox = Ext.getCmp(\"UserTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');\r",
+                    "var values= record.getData();\r",
+                    "values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);\r",
+                    "values.derniereModification= Ext.Date.format(values.lastUpdateTime, Ext.Date.defaultFormat);\r",
+                    "metaBox.update(values);\r",
+                    "metaBox.show();\r",
+                    "var selector= [];\r",
+                    "Ext.Array.forEach(record.get(\"vocabularies\"),function(vocabId){\r",
+                    "    if (!Ext.isEmpty(Ext.getCmp(\"vocabulariesUTGrid\").getStore().findRecord(\"id\", vocabId))){\r",
+                    "        selector.push(Ext.getCmp(\"vocabulariesUTGrid\").getStore().findRecord(\"id\", vocabId));\r",
+                    "    }\r",
+                    "});\r",
+                    "Ext.getCmp(\"vocabulariesUTGrid\").getSelectionModel().select(selector);\r",
+                    "\r",
+                    "/*\r",
+                    "var targetZone=Ext.getCmp('UTeditFields');\r",
+                    "Ext.suspendLayouts();\r",
+                    "targetZone.removeAll();\r",
+                    "Ext.Array.forEach(record.get(\"fields\"),function(field){\r",
+                    "    me.renderMTField(field, targetZone);\r",
+                    "});\r",
+                    "Ext.resumeLayouts();\r",
+                    "Ext.getCmp(\"MTeditFields\").doLayout();\r",
+                    "*/\r",
+                    "\r",
+                    "if ((!ACL.interfaceRights[\"write.ui.userTypes\"])||(record.get(\"readOnly\"))) {\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"userTypesEditForm\").query(\"field\"), function(thing){thing.setReadOnly(true);});\r",
+                    "    Ext.getCmp(\"removeUTBtn\").disable();\r",
+                    "    Ext.getCmp(\"saveUTBtn\").disable();\r",
+                    "    Ext.getCmp(\"UTImportBtn\").disable();\r",
+                    "    Ext.getCmp(\"UTfieldDeleter\").up().disable();\r",
+                    "} else {\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"userTypesEditForm\").query(\"field\"), function(thing){thing.setReadOnly(false);});\r",
+                    "    Ext.getCmp(\"removeUTBtn\").enable();\r",
+                    "    Ext.getCmp(\"saveUTBtn\").enable();\r",
+                    "    Ext.getCmp(\"UTImportBtn\").enable();\r",
+                    "    Ext.getCmp(\"UTfieldDeleter\").up().enable();\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "193c7bb7-40ca-4517-9448-c17bcd74a028"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRemoveUTBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var cible = Ext.getCmp('mainUTGrid').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(cible)) {\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'user-types/is-used',\r",
+                    "        method:\"GET\",\r",
+                    "        params: {\r",
+                    "            id: cible.get(\"id\")\r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var maskIsUsed=Ext.JSON.decode(response.responseText).used;\r",
+                    "            if (maskIsUsed){\r",
+                    "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.userTypeIsUsedError);\r",
+                    "            } else {\r",
+                    "                var fenetre = Ext.widget('delConfirmZ');\r",
+                    "                fenetre.specificMessage=Rubedo.RubedoAutomatedElementsLoc.thisUserTypeText;\r",
+                    "                fenetre.show();\r",
+                    "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "                    Ext.getCmp('mainUTGrid').getStore().remove(cible);\r",
+                    "                    Ext.getCmp('delConfirmZ').close();\r",
+                    "                    me.resetInterfaceNoSelect();\r",
+                    "                }); \r",
+                    "            }\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#removeUTBtn"
+            },
+            "designerId": "cd7eeb60-934b-4766-ab91-52ae764c6039"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSaveUTBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var record=Ext.getCmp(\"mainUTGrid\").getSelectionModel().getLastSelected();\r",
+                    "var form = Ext.getCmp(\"userTypesEditForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    record.beginEdit();\r",
+                    "    record.set(form.getValues());\r",
+                    "    var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"vocabulariesUTGrid\").getSelectionModel().getSelection(), \"data\"), \"id\");\r",
+                    "    record.set(\"vocabularies\", newVocabularies);\r",
+                    "    //record.set(\"fields\", me.recordFields(Ext.getCmp('MTeditFields')));\r",
+                    "    record.endEdit();\r",
+                    "} else {\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidRightsPropertiesError);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#saveUTBtn"
+            },
+            "designerId": "28a303db-df72-4ad3-a116-ffd344ce9d06"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCopyUTBtnClick",
+                "implHandler": [
+                    "var rec = Ext.clone(Ext.getCmp(\"mainUTGrid\").getSelectionModel().getLastSelected().data);\r",
+                    "delete(rec.id);\r",
+                    "rec.type=rec.type+\" - Copy \"+Ext.Date.format(new Date(), 'j F, Y, G:i');\r",
+                    "rec.readOnly=false;\r",
+                    "delete(rec.version);\r",
+                    "delete(rec.createTime);\r",
+                    "delete(rec.lastUpdateTime);\r",
+                    "Ext.getCmp(\"mainUTGrid\").getStore().add(rec);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#copyUTBtn"
+            },
+            "designerId": "0df87471-60c0-435e-b6c8-234ab4da0a8a"
+        }
+    ]
+}
