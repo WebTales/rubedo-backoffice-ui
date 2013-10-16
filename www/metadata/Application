@@ -40,7 +40,8 @@
             "customTheme",
             "CTLayout",
             "CTFieldForLayout",
-            "applicationLog"
+            "applicationLog",
+            "userType"
         ],
         "stores": [
             "SitesJson",
@@ -150,7 +151,8 @@
             "LocalizedFieldSelectorStore",
             "ImportTranslationLanguageStore",
             "ApplicationLogs",
-            "SitesComboCTLayouts"
+            "SitesComboCTLayouts",
+            "UserTypes"
         ],
         "views": [
             "MyGridPanel3",

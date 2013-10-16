@@ -1,0 +1,145 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "userType",
+        "designer|userAlias": "userType"
+    },
+    "designerId": "620a1832-5834-4cfa-8628-4a5f92ce830f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "designerId": "40617727-8257-46a3-8a06-3e4c391c83a9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "7a663307-704a-4b8d-81f7-ae41d37ea0fa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "version"
+            },
+            "designerId": "d086382f-02de-4895-8dcd-bfd658c1b7ab"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fields"
+            },
+            "designerId": "1777bf73-51e3-4095-8f17-a3e7636510e3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vocabularies"
+            },
+            "designerId": "d7f0cc4d-7b14-4155-8c5a-b4f76a4953f9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "createUser.fullName",
+                "name": "createUser",
+                "persist": false
+            },
+            "designerId": "287ec769-7749-455b-8481-f1f95f649516"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "createTime",
+                "type": "date"
+            },
+            "designerId": "167c0706-d6d5-46ef-8196-f51a287a9f3e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "lastUpdateTime",
+                "type": "date"
+            },
+            "designerId": "f3aca04e-1a7f-459b-947d-80a03a658e73"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "0bd12f16-24bb-4c7b-ac0e-7a90f64b5ce5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "lastUpdateTime",
+                "type": "date"
+            },
+            "designerId": "e8d99278-e84d-43d0-b2e3-124a0f2c7aed"
+        }
+    ]
+}
