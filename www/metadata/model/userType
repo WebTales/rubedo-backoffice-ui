@@ -140,6 +140,30 @@
                 "type": "date"
             },
             "designerId": "e8d99278-e84d-43d0-b2e3-124a0f2c7aed"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "defaultGroup"
+            },
+            "designerId": "d5b3db10-4f93-4a40-97ae-0761d4825a9c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "signUpType"
+            },
+            "designerId": "eaf9b3ac-3d84-4680-b6fd-0f8ccca91f3f"
         }
     ]
 }

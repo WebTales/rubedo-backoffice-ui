@@ -57,6 +57,12 @@ Ext.define('Rubedo.model.userType', {
             dateFormat: 'timestamp',
             name: 'lastUpdateTime',
             type: 'date'
+        },
+        {
+            name: 'defaultGroup'
+        },
+        {
+            name: 'signUpType'
         }
     ]
 });

@@ -26,6 +26,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
             var newMT=Ext.create("Rubedo.model.userType",button.up().getForm().getValues());
             newMT.set("vocabularies", [ ]);
             newMT.set("fields", [ ]);
+            newMT.set("signUpType","none");
+            newMT.set("defaultGroup",Ext.getStore("GroupsComboStore2").findRecord("name","public").get("id"));
             Ext.getStore("UserTypes").add(newMT);
             button.up().up().close();
         }

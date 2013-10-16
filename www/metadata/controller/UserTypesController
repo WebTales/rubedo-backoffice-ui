@@ -44,6 +44,8 @@
                     "    var newMT=Ext.create(\"Rubedo.model.userType\",button.up().getForm().getValues());\r",
                     "    newMT.set(\"vocabularies\", [ ]);\r",
                     "    newMT.set(\"fields\", [ ]);\r",
+                    "    newMT.set(\"signUpType\",\"none\");\r",
+                    "    newMT.set(\"defaultGroup\",Ext.getStore(\"GroupsComboStore2\").findRecord(\"name\",\"public\").get(\"id\"));\r",
                     "    Ext.getStore(\"UserTypes\").add(newMT);\r",
                     "    button.up().up().close();\r",
                     "}"
