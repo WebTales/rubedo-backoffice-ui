@@ -75,7 +75,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             record.set(form.getValues());
             var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesUTGrid").getSelectionModel().getSelection(), "data"), "id");
             record.set("vocabularies", newVocabularies);
-            //record.set("fields", me.recordFields(Ext.getCmp('MTeditFields')));
+            record.set("fields", me.recordFields(Ext.getCmp('UTeditFields')));
             record.endEdit();
         } else {
             Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.invalidRightsPropertiesError);
@@ -98,7 +98,129 @@ Ext.define('Rubedo.controller.UserTypesController', {
     },
 
     onUTFieldInsertBtnClick: function(button, e, eOpts) {
+        var proto=Ext.clone(Ext.getCmp("UTFieldSelectGrid").getSelectionModel().getLastSelected().getData());
+        proto.protoId=proto.id;
+        this.renderUTField(proto, Ext.getCmp('UTeditFields'));
+        button.up().up().close();
+    },
 
+    selectionEvents: function(component, eOpts) {
+        var usedNames=["original", "text"];
+        var me=this;
+        var TCfield=component.getComponent(1);
+        TCfield.getEl().on('click', function() {
+            Ext.getCmp("UTfieldUp").enable();
+            Ext.getCmp("UTfieldDown").enable();
+            Ext.getCmp("UTfieldDeleter").enable();   
+            if (Ext.getCmp('UTFieldId').getValue() != TCfield.id) {
+                if (Ext.isDefined(Ext.getCmp(Ext.getCmp('UTFieldId').getValue()))){    
+                    Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).getEl().applyStyles('color:#000000');
+                    var companion =Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).up().getComponent("imageFieldComponent");
+                    if (Ext.isDefined(companion)) {
+                        companion.getEl().applyStyles('color:#000000');
+                    }
+                }
+                Ext.getCmp('UTFieldId').setValue(TCfield.id);
+                if (TCfield.isXType("ImagePickerField")) {
+                    TCfield.up().getComponent("imageFieldComponent").getEl().frame(MyPrefData.themeColor);
+                    TCfield.up().getComponent("imageFieldComponent").getEl().applyStyles('color:'+MyPrefData.themeColor);
+                } else {
+                    this.frame(MyPrefData.themeColor);
+                    this.applyStyles('color:'+MyPrefData.themeColor);
+                }
+                var mesChamps = TCfield.configFields;
+                var boiteParam = Ext.getCmp('UTFieldConfigsBox');
+                boiteParam.removeAll();
+                for(t=0; t<mesChamps.length; t++) {
+                    if (mesChamps[t].type =='Ext.form.field.ComboBox') {
+                        var monStore=  Ext.create('Ext.data.Store', mesChamps[t].store);
+                        mesChamps[t].config.store= monStore;
+                    }
+                    var nouvChamp= Ext.create(mesChamps[t].type, mesChamps[t].config);
+                    nouvChamp.labelSeparator= ' ';
+                    nouvChamp.anchor='100%';
+                    if (nouvChamp.name=="name"){
+                        nouvChamp.validator=me.nameValidator;
+                    }
+                    nouvChamp.setValue(TCfield.config[nouvChamp.name]);
+                    if ((nouvChamp.name=="fieldLabel")||(nouvChamp.name=="tooltip")){
+                        nouvChamp.hide();
+                        var replacerField=Ext.widget('genericLocTextField',{
+                            fieldLabel:nouvChamp.fieldLabel,
+                            anchor:"100%",
+                            targetEntity:TCfield.getId(),
+                            targetEntityProp:nouvChamp.name,
+                            CTMode:true,
+                            companionFieldId:nouvChamp.getId(),
+                            initialLanguage:Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")
+                        });
+                        boiteParam.add(replacerField);
+                    }
+                    if ((nouvChamp.name=="localizable")&&(Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+                        nouvChamp.hide();
+                    }
+                    nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.userTypes"])||(Ext.getCmp("mainUTGrid").getSelectionModel().getLastSelected().get("readOnly")));
+                    nouvChamp.on('change', function (thing) {
+                        if (thing.isValid()){
+                            TCfield.config[this.name]= this.getValue();
+                            if (this.name=='fieldLabel') {
+                                if (TCfield.isXType("ImagePickerField")) {
+                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
+                                } else {
+                                    TCfield.setFieldLabel(this.getValue());
+                                }
+                            }
+                            else if (this.name=='value') {
+                                TCfield.setValue(this.getValue());
+                            }
+                            else if (this.name=='allowBlank') {
+                                var currentOne=TCfield.config.fieldLabel;
+                                if (this.getValue()) {
+                                    currentOne=currentOne.replace(" *","");
+                                } else {
+                                    currentOne=currentOne+" *";
+                                } 
+                                TCfield.config.fieldLabel=currentOne;
+                                if (TCfield.isXType("ImagePickerField")) {
+                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
+                                } else {
+                                    TCfield.setFieldLabel(currentOne);
+                                }
+                            }
+                            else if (this.name=='editable') {
+                                TCfield.setEditable(this.getValue());
+                                TCfield.reset();
+                            }
+                            else if (this.name=='multiSelect') {
+                                TCfield.multiSelect = this.getValue();
+                                TCfield.reset();
+                            }
+                            else if (this.name=='tooltip') {
+                                component.getComponent('helpBouton').setTooltip(this.getValue());
+                                if (Ext.isEmpty(this.getValue())){
+                                    component.getComponent('helpBouton').hide();
+                                } else {
+                                    component.getComponent('helpBouton').show();
+                                }
+                            }
+                            else if (this.name=='regex') {
+                                TCfield.regex = new RegExp(this.getValue());
+                            }
+                            else {
+                                TCfield[this.name]= this.getValue();
+                            }
+                            TCfield.validate();
+                        }});
+                        boiteParam.add(nouvChamp); 
+
+                    }
+                    if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
+                        var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
+                        boiteParam.add(optionsLC);
+
+                    }
+                }
+            });
     },
 
     resetInterfaceNoSelect: function() {
@@ -146,16 +268,16 @@ Ext.define('Rubedo.controller.UserTypesController', {
         });
         Ext.getCmp("vocabulariesUTGrid").getSelectionModel().select(selector);
 
-        /*
+
         var targetZone=Ext.getCmp('UTeditFields');
         Ext.suspendLayouts();
         targetZone.removeAll();
         Ext.Array.forEach(record.get("fields"),function(field){
-        me.renderMTField(field, targetZone);
+            me.renderUTField(field, targetZone);
         });
         Ext.resumeLayouts();
-        Ext.getCmp("MTeditFields").doLayout();
-        */
+        Ext.getCmp("UTeditFields").doLayout();
+
 
         if ((!ACL.interfaceRights["write.ui.userTypes"])||(record.get("readOnly"))) {
             Ext.Array.forEach(Ext.getCmp("userTypesEditForm").query("field"), function(thing){thing.setReadOnly(true);});
@@ -173,6 +295,99 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
 
 
+    },
+
+    renderUTField: function(protoData, renderTarget) {
+        var me=this;
+        var configurator=protoData.config;
+        if (!Ext.isEmpty(configurator.i18n)){
+            var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+            if (!Ext.isEmpty(configurator.i18n[BOLanguage])){
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage].fieldLabel)){
+                    configurator.fieldLabel=configurator.i18n[BOLanguage].fieldLabel;
+                }
+                if (!Ext.isEmpty(configurator.i18n[BOLanguage].tooltip)){
+                    configurator.tooltip=configurator.i18n[BOLanguage].tooltip;
+                }
+            }
+        }
+        if (protoData.cType == 'combobox') {
+            var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));
+            configurator.store = myStore;
+        }
+        var newField= Ext.create(protoData.cType, configurator);
+        newField.config=protoData.config;
+        newField.protoId=protoData.protoId;
+        newField.configFields=Ext.getStore("UTFieldTypes").findRecord("id", protoData.protoId).get("configFields");
+        newField.cType=protoData.cType;
+        newField.anchor = '90%';
+        newField.style = '{float:left;}';
+        var casing =Ext.widget('ChampTC');
+        casing.add(newField);
+        casing.getComponent('helpBouton').setTooltip(configurator.tooltip);
+        if (Ext.isEmpty(configurator.tooltip)){
+            casing.getComponent('helpBouton').hidden=true;
+        } 
+        if (!me.nameAvailable(newField.name)) {
+            var duplic = 1;
+            while (!me.nameAvailable(newField.name+duplic)){
+                duplic++;
+            }
+            newField.name=newField.name+duplic;
+            newField.config.name=newField.config.name+duplic;
+
+        }
+        renderTarget.add(casing);
+    },
+
+    nameAvailable: function(name) {
+        var usedNames=["email","login","password"]; //ADD OTHER ONES
+        Ext.Array.forEach(Ext.getCmp('UTeditFields').query("field"), function(field){
+            Ext.Array.include(usedNames,field.name);
+        });
+        if (Ext.Array.contains(usedNames,name)){
+            return(false);
+        } else {
+            return(true);
+        }
+    },
+
+    recordFields: function(target) {
+        var result = [ ];
+        Ext.Array.forEach(target.query("field"), function(field){
+            var newField = {
+                cType:field.cType,
+                config:field.config,
+                protoId:field.protoId
+            };
+            if (field.isXType('combobox')) {
+                var dones = field.getStore().data.items;
+                var donesR = [ ];
+                for (i=0; i<dones.length; i++) {
+                    donesR.push({valeur: dones[i].data.valeur, nom: dones[i].data.nom });
+                }
+                newField.config.store = {
+                    fields: ['valeur', 'nom'],
+                    data: donesR
+                };
+            }
+            result.push(newField);
+        });
+        return(result);
+    },
+
+    nameValidator: function(name) {
+        var usedNames=["email","login","password"]; //ADD OTHER ONES
+        Ext.Array.forEach(Ext.getCmp('UTeditFields').query("field"), function(field){
+            if (field.getId()!=Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).getId()){
+                Ext.Array.include(usedNames,field.name);
+            }
+        });
+        if (Ext.Array.contains(usedNames,name)){
+            return(Rubedo.RubedoAutomatedElementsLoc.fieldNameAlreadyUsedError);
+        } else {
+            return(true);
+        }
     },
 
     init: function(application) {
@@ -200,6 +415,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#UTFieldInsertBtn": {
                 click: this.onUTFieldInsertBtnClick
+            },
+            "#UTeditFields ChampTC": {
+                afterrender: this.selectionEvents
             }
         });
     }
