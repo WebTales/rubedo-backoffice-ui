@@ -1,0 +1,216 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "addMTFieldWindow",
+        "container|align": "stretch",
+        "height": 300,
+        "id": "UTFieldAddWindow",
+        "width": 500,
+        "designer|userClassName": "UTFieldAddWindow",
+        "designer|userAlias": "UTFieldAddWindow",
+        "resizable": [
+            "false"
+        ],
+        "layout": "hbox",
+        "constrainHeader": true,
+        "title": "Ajouter un champ",
+        "modal": true
+    },
+    "designerId": "55c92826-3664-45c4-a4ec-07940e8c64b6",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.5,
+                "id": "UTFieldSelectGrid",
+                "title": "",
+                "store": "UTFieldTypes"
+            },
+            "designerId": "07734388-9baf-4f69-8a20-950ca81a28c4",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "markDirty": false
+                    },
+                    "designerId": "5f43cd9b-31f5-47d2-85a7-1c34f993156f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "typeCol",
+                        "dataIndex": "type",
+                        "text": "Type",
+                        "flex": 1
+                    },
+                    "designerId": "bcb597f1-31e0-4922-8331-c01023d56989",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMTFieldSelectGridSelect",
+                        "implHandler": [
+                            "Ext.getCmp(\"UTFieldInsertBtn\").enable();\r",
+                            "Ext.getCmp(\"UTFieldDescriber\").update(record.get(\"description\"));"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "e2faaf31-b5eb-456f-8081-03e5ef5248de"
+                },
+                {
+                    "type": "Ext.grid.feature.Grouping",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "bfcbccf9-ed92-44a9-907d-26019904443f",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "implHandler": [
+                                    "{name}"
+                                ],
+                                "designer|displayName": "groupHeaderTpl"
+                            },
+                            "designerId": "6da70d8f-7f66-48ad-803b-9d92e1633eca"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "id": "UTFieldDescriber",
+                "bodyPadding": 10,
+                "bodyStyle": [
+                    "{text-align: justify;}"
+                ],
+                "title": ""
+            },
+            "designerId": "58979e62-fa34-4008-addc-ac7b6c7d16fa",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "implHandler": [
+                            "{description}"
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "d0158b1f-ee86-44f6-88d8-3fdee1007cf1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "da6e0f40-d311-4d93-8004-f96025affdd8",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "644eb258-1572-4932-9c7c-db4f2a1181e3"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "addBtn",
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "UTFieldInsertBtn",
+                        "margin": null,
+                        "iconCls": "add",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "d8e8da1a-1532-4447-8129-cbafea605f04",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

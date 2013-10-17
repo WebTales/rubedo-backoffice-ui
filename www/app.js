@@ -170,7 +170,8 @@ Ext.application({
         'SitesComboCTLayouts',
         'UserTypes',
         'TaxonomyForUT',
-        'GroupsComboStore2'
+        'GroupsComboStore2',
+        'UTFieldTypes'
     ],
     views: [
         'MyGridPanel3',
@@ -325,7 +326,8 @@ Ext.application({
         'CTLCopyWindow',
         'MyView',
         'UserTypesInterface',
-        'newUTWindow'
+        'newUTWindow',
+        'UTFieldAddWindow'
     ],
     autoCreateViewport: true,
     controllers: [

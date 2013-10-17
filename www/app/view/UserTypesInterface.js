@@ -352,8 +352,8 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                         {
                                                             xtype: 'textfield',
                                                             localiserId: 'UTEmailField',
-                                                            anchor: '100%',
                                                             RTip: 'User email. Mandatory.',
+                                                            anchor: '100%',
                                                             fieldLabel: 'E-mail *',
                                                             name: 'email',
                                                             allowBlank: false,
