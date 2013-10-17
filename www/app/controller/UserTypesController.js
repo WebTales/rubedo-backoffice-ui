@@ -93,6 +93,14 @@ Ext.define('Rubedo.controller.UserTypesController', {
         Ext.getCmp("mainUTGrid").getStore().add(rec);
     },
 
+    onNewUTFieldBtnClick: function(button, e, eOpts) {
+        Ext.widget("UTFieldAddWindow").show();
+    },
+
+    onUTFieldInsertBtnClick: function(button, e, eOpts) {
+
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -186,6 +194,12 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#copyUTBtn": {
                 click: this.onCopyUTBtnClick
+            },
+            "#newUTFieldBtn": {
+                click: this.onNewUTFieldBtnClick
+            },
+            "#UTFieldInsertBtn": {
+                click: this.onUTFieldInsertBtnClick
             }
         });
     }

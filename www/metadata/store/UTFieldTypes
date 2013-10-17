@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "model": "typesChampsDataModel",
+        "storeId": "UTFieldTypes",
+        "designer|userClassName": "UTFieldTypes",
+        "designer|userAlias": "UTFieldTypes",
+        "data": null
+    },
+    "designerId": "cef962f3-a15c-4f41-9d46-a8377c8cb753",
+    "cn": [
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "category"
+            },
+            "designerId": "8dc56a65-8023-4304-82f7-c67d3549566c"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "type"
+            },
+            "designerId": "6da69887-520c-4454-84eb-17b73fd56515"
+        }
+    ]
+}

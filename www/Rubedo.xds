@@ -2893,6 +2893,22 @@
                 "app/store/GroupsComboStore2.js"
             ],
             "className": "GroupsComboStore2"
+        },
+        "cef962f3-a15c-4f41-9d46-a8377c8cb753": {
+            "paths": [
+                "metadata/store/UTFieldTypes",
+                "app/store/override/UTFieldTypes.js",
+                "app/store/UTFieldTypes.js"
+            ],
+            "className": "UTFieldTypes"
+        },
+        "55c92826-3664-45c4-a4ec-07940e8c64b6": {
+            "paths": [
+                "metadata/view/UTFieldAddWindow",
+                "app/view/override/UTFieldAddWindow.js",
+                "app/view/UTFieldAddWindow.js"
+            ],
+            "className": "UTFieldAddWindow"
         }
     },
     "viewOrderMap": {
@@ -2933,6 +2949,7 @@
             "98fcade8-7344-415c-99cd-f6e6e08ad540",
             "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
             "930bd7cd-dcce-4789-a701-014e8fbe373e",
+            "55c92826-3664-45c4-a4ec-07940e8c64b6",
             "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265",
             "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
             "a87eba5d-b490-46b3-9dec-8a8f63610693",
@@ -3123,6 +3140,7 @@
             "c6ff1d1b-d029-4bbd-9168-0c5626ce9acd",
             "cb2fc7b0-aa63-4f16-b7f4-12b636102cc6",
             "c3f910a4-dc28-4844-afc2-027ed4e89b9b",
+            "cef962f3-a15c-4f41-9d46-a8377c8cb753",
             "3af423bc-a478-4f9b-b473-227af2fb3de7",
             "b4bbd262-e72b-4675-8908-02414ab69420",
             "69a463a7-e035-49e5-a756-9f98074f41ec",
