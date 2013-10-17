@@ -615,7 +615,7 @@
                     "                    });\r",
                     "                    boiteParam.add(replacerField);\r",
                     "                }\r",
-                    "            \tif ((nouvChamp.name==\"localizable\")&&(Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                    "                if ((nouvChamp.name==\"localizable\")&&(Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
                     "                    nouvChamp.hide();\r",
                     "                }\r",
                     "                nouvChamp.setReadOnly((!ACL.interfaceRights[\"write.ui.contentTypes\"])||(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().get(\"readOnly\")));\r",
