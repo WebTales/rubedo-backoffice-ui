@@ -708,6 +708,25 @@
                 "designer|controlQuery": "#UTfieldDeleter"
             },
             "designerId": "6e9e40c5-d0c6-4932-b8ff-7444982c3dc3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUTFieldSelectGridItemDblClick",
+                "implHandler": [
+                    "this.onUTFieldInsertBtnClick(Ext.getCmp(\"UTFieldInsertBtn\"));"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#UTFieldSelectGrid"
+            },
+            "designerId": "66c6f694-ec9e-487c-b5ad-5e2e3c5b30c8"
         }
     ]
 }

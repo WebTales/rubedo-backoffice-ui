@@ -283,6 +283,10 @@ Ext.define('Rubedo.controller.UserTypesController', {
         }
     },
 
+    onUTFieldSelectGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        this.onUTFieldInsertBtnClick(Ext.getCmp("UTFieldInsertBtn"));
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -490,6 +494,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#UTfieldDeleter": {
                 click: this.onUTfieldDeleterClick
+            },
+            "#UTFieldSelectGrid": {
+                itemdblclick: this.onUTFieldSelectGridItemDblClick
             }
         });
     }
