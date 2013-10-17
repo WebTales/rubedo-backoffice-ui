@@ -105,7 +105,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
     },
 
     selectionEvents: function(component, eOpts) {
-        var usedNames=["original", "text"];
+        var usedNames=["email","login","password"]; //ADD OTHER ONES
         var me=this;
         var TCfield=component.getComponent(1);
         TCfield.getEl().on('click', function() {
@@ -115,15 +115,15 @@ Ext.define('Rubedo.controller.UserTypesController', {
             if (Ext.getCmp('UTFieldId').getValue() != TCfield.id) {
                 if (Ext.isDefined(Ext.getCmp(Ext.getCmp('UTFieldId').getValue()))){    
                     Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).getEl().applyStyles('color:#000000');
-                    var companion =Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).up().getComponent("imageFieldComponent");
+                    var companion =Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).up().getComponent(2);
                     if (Ext.isDefined(companion)) {
                         companion.getEl().applyStyles('color:#000000');
                     }
                 }
                 Ext.getCmp('UTFieldId').setValue(TCfield.id);
-                if (TCfield.isXType("ImagePickerField")) {
-                    TCfield.up().getComponent("imageFieldComponent").getEl().frame(MyPrefData.themeColor);
-                    TCfield.up().getComponent("imageFieldComponent").getEl().applyStyles('color:'+MyPrefData.themeColor);
+                if ((TCfield.isXType("ImagePickerField"))||(TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))) {
+                    TCfield.up().getComponent(2).getEl().frame(MyPrefData.themeColor);
+                    TCfield.up().getComponent(2).getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
                     this.frame(MyPrefData.themeColor);
                     this.applyStyles('color:'+MyPrefData.themeColor);
@@ -143,84 +143,144 @@ Ext.define('Rubedo.controller.UserTypesController', {
                         nouvChamp.validator=me.nameValidator;
                     }
                     nouvChamp.setValue(TCfield.config[nouvChamp.name]);
-                    if ((nouvChamp.name=="fieldLabel")||(nouvChamp.name=="tooltip")){
-                        nouvChamp.hide();
-                        var replacerField=Ext.widget('genericLocTextField',{
-                            fieldLabel:nouvChamp.fieldLabel,
-                            anchor:"100%",
-                            targetEntity:TCfield.getId(),
-                            targetEntityProp:nouvChamp.name,
-                            CTMode:true,
-                            companionFieldId:nouvChamp.getId(),
-                            initialLanguage:Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")
-                        });
-                        boiteParam.add(replacerField);
-                    }
-                    if ((nouvChamp.name=="localizable")&&(Ext.getStore("AllLanguagesStore3").getRange().length==1)){
-                        nouvChamp.hide();
-                    }
-                    nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.userTypes"])||(Ext.getCmp("mainUTGrid").getSelectionModel().getLastSelected().get("readOnly")));
-                    nouvChamp.on('change', function (thing) {
-                        if (thing.isValid()){
-                            TCfield.config[this.name]= this.getValue();
-                            if (this.name=='fieldLabel') {
-                                if (TCfield.isXType("ImagePickerField")) {
-                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(this.getValue()+" ");
-                                } else {
-                                    TCfield.setFieldLabel(this.getValue());
-                                }
-                            }
-                            else if (this.name=='value') {
-                                TCfield.setValue(this.getValue());
-                            }
-                            else if (this.name=='allowBlank') {
-                                var currentOne=TCfield.config.fieldLabel;
-                                if (this.getValue()) {
-                                    currentOne=currentOne.replace(" *","");
-                                } else {
-                                    currentOne=currentOne+" *";
-                                } 
-                                TCfield.config.fieldLabel=currentOne;
-                                if (TCfield.isXType("ImagePickerField")) {
-                                    TCfield.up().getComponent("imageFieldComponent").getComponent(0).setText(currentOne+" ");
-                                } else {
-                                    TCfield.setFieldLabel(currentOne);
-                                }
-                            }
-                            else if (this.name=='editable') {
-                                TCfield.setEditable(this.getValue());
-                                TCfield.reset();
-                            }
-                            else if (this.name=='multiSelect') {
-                                TCfield.multiSelect = this.getValue();
-                                TCfield.reset();
-                            }
-                            else if (this.name=='tooltip') {
-                                component.getComponent('helpBouton').setTooltip(this.getValue());
-                                if (Ext.isEmpty(this.getValue())){
-                                    component.getComponent('helpBouton').hide();
-                                } else {
-                                    component.getComponent('helpBouton').show();
-                                }
-                            }
-                            else if (this.name=='regex') {
-                                TCfield.regex = new RegExp(this.getValue());
-                            }
-                            else {
-                                TCfield[this.name]= this.getValue();
-                            }
-                            TCfield.validate();
-                        }});
-                        boiteParam.add(nouvChamp); 
+                    if ((mesChamps[t].type =='Rubedo.view.CTMTField')||(mesChamps[t].type =='Rubedo.view.CTCField')){
 
-                    }
-                    if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
-                        var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
-                        boiteParam.add(optionsLC);
+                        var properMT =Ext.clone(TCfield.config[nouvChamp.name]);
+                        nouvChamp.getStore().targetField=nouvChamp.id;
+                        nouvChamp.getStore().addListener("load", function(){  
+                            Ext.getCmp(this.targetField).setValue(properMT);
+                        },nouvChamp.getStore(),{single:true});
+                        }
+                        if ((nouvChamp.name=="fieldLabel")||(nouvChamp.name=="tooltip")){
+                            nouvChamp.hide();
+                            var replacerField=Ext.widget('genericLocTextField',{
+                                fieldLabel:nouvChamp.fieldLabel,
+                                anchor:"100%",
+                                targetEntity:TCfield.getId(),
+                                targetEntityProp:nouvChamp.name,
+                                CTMode:true,
+                                companionFieldId:nouvChamp.getId(),
+                                initialLanguage:Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")
+                            });
+                            boiteParam.add(replacerField);
+                        }
+                        if ((nouvChamp.name=="localizable")){
+                            nouvChamp.hide();
+                        }
+                        nouvChamp.setReadOnly((!ACL.interfaceRights["write.ui.userTypes"])||(Ext.getCmp("mainUTGrid").getSelectionModel().getLastSelected().get("readOnly")));
+                        nouvChamp.on('change', function (thing) {
+                            if (thing.isValid()){
+                                if(this.isXType("timefield")){
+                                    TCfield.config[this.name]=Ext.Date.format(this.getValue(),"H:i");
+                                } else if(this.isXType("datefield")){
+                                    TCfield.config[this.name]=Ext.Date.format(this.getValue(),"U");
+                                } else { 
+                                    TCfield.config[this.name]= this.getValue();
+                                }
+                                if ((this.name=='name')&&((TCfield.isXType("radiogroup"))||(TCfield.isXType("checkboxgroup")))){
+                                    var ntcrVal=this.getValue();
+                                    Ext.Array.forEach(TCfield.config.items, function(ntch){ntch.name=ntcrVal;});
+                                }
+                                if (this.name=='fieldLabel') {
 
+                                    if (TCfield.isXType("ImagePickerField")) {
+                                        TCfield.up().getComponent(2).getComponent(0).setText(this.getValue());
+                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
+                                        TCfield.up().getComponent(2).setFieldLabel(this.getValue());
+                                    } else {
+                                        TCfield.setFieldLabel(this.getValue());
+                                    }
+                                }
+                                else if (this.name=='value') {
+
+                                    TCfield.setValue(this.getValue());
+
+                                }
+                                else if (this.name=='allowBlank') {
+                                    var currentOne=TCfield.config.fieldLabel;
+                                    if (this.getValue()) {
+                                        currentOne=currentOne.replace(" *","");
+                                    } else {
+                                        currentOne=currentOne+" *";
+                                    } 
+                                    TCfield.config.fieldLabel=currentOne;
+                                    if (TCfield.isXType("ImagePickerField")) {
+                                        TCfield.up().getComponent(2).getComponent(0).setText(currentOne+" ");
+                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
+                                        TCfield.up().getComponent(2).setFieldLabel(currentOne);
+                                    } else {
+                                        TCfield.setFieldLabel(currentOne);
+                                    }
+                                }
+                                else if (this.name=='editable') {
+                                    TCfield.setEditable(this.getValue());
+                                    TCfield.reset();
+                                }
+                                else if (this.name=='multiSelect') {
+                                    TCfield.multiSelect = this.getValue();
+                                    TCfield.reset();
+                                }
+                                else if (this.name=='tooltip') {
+                                    component.getComponent('helpBouton').setTooltip(this.getValue());
+                                    if (Ext.isEmpty(this.getValue())){
+                                        component.getComponent('helpBouton').hide();
+                                    } else {
+                                        component.getComponent('helpBouton').show();
+                                    }
+                                }
+                                else if (this.name=='regex') {
+                                    TCfield.regex = new RegExp(this.getValue());
+                                }
+                                else {
+                                    TCfield[this.name]= this.getValue();
+                                }
+                                TCfield.validate();
+                            }});
+                            boiteParam.add(nouvChamp); 
+
+                        }
+                        if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
+                            var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
+                            boiteParam.add(optionsLC); 
+
+                        }
+                        if ((TCfield.isXType("radiogroup"))||(TCfield.isXType("checkboxgroup"))) {
+                            var itemsConfigurator=Ext.widget("specialTCFieldItemsConfigurator");
+                            itemsConfigurator.targetedId=TCfield.id;
+                            boiteParam.add(itemsConfigurator); 
+                        }
                     }
-                }
-            });
+                });
+    },
+
+    onUTfieldUpClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp('UTFieldId').getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().up().items.indexOf(field.up());
+            if (pos > 0) {
+                field.up().up().move(pos,pos-1);
+            }
+        }
+    },
+
+    onUTfieldDownClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp('UTFieldId').getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().up().items.indexOf(field.up());
+            field.up().up().move(pos,pos+1);
+        }
+    },
+
+    onUTfieldDeleterClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp('UTFieldId').getValue());
+        if (!Ext.isEmpty(field)) {
+            field.up().destroy();
+            Ext.getCmp("UTfieldUp").disable();
+            Ext.getCmp("UTfieldDown").disable();
+            Ext.getCmp('UTFieldId').setValue();
+            Ext.getCmp("UTfieldDeleter").disable();
+            Ext.getCmp("UTFieldConfigsBox").removeAll();
+        }
     },
 
     resetInterfaceNoSelect: function() {
@@ -277,8 +337,10 @@ Ext.define('Rubedo.controller.UserTypesController', {
         });
         Ext.resumeLayouts();
         Ext.getCmp("UTeditFields").doLayout();
-
-
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getCmp("UTeditFields").doLayout();
+        });
+        task.delay(200);
         if ((!ACL.interfaceRights["write.ui.userTypes"])||(record.get("readOnly"))) {
             Ext.Array.forEach(Ext.getCmp("userTypesEditForm").query("field"), function(thing){thing.setReadOnly(true);});
             Ext.getCmp("removeUTBtn").disable();
@@ -354,7 +416,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
     recordFields: function(target) {
         var result = [ ];
-        Ext.Array.forEach(target.query("field"), function(field){
+        Ext.Array.forEach(target.query("ChampTC"), function(ctc){
+            var field=ctc.getComponent(1);
             var newField = {
                 cType:field.cType,
                 config:field.config,
@@ -418,6 +481,15 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#UTeditFields ChampTC": {
                 afterrender: this.selectionEvents
+            },
+            "#UTfieldUp": {
+                click: this.onUTfieldUpClick
+            },
+            "#UTfieldDown": {
+                click: this.onUTfieldDownClick
+            },
+            "#UTfieldDeleter": {
+                click: this.onUTfieldDeleterClick
             }
         });
     }

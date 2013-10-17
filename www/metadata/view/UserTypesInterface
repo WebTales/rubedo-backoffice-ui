@@ -11,7 +11,7 @@
         "container|align": "stretch",
         "height": 627,
         "id": "UserTypesInterface",
-        "width": 1200,
+        "width": 1300,
         "designer|userClassName": "UserTypesInterface",
         "designer|userAlias": "UserTypesInterface",
         "layout": "hbox",
@@ -822,7 +822,7 @@
                                 "layout|flex": 1,
                                 "id": "UTEditContainer",
                                 "width": null,
-                                "autoScroll": true
+                                "overflowY": "auto"
                             },
                             "designerId": "52d4aed7-5d4f-4ddb-ad6f-4e03b3c31e05",
                             "cn": [

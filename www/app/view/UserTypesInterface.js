@@ -27,7 +27,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
     localiserId: 'UserTypesMainWindow',
     height: 627,
     id: 'UserTypesInterface',
-    width: 1200,
+    width: 1300,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -333,7 +333,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                     xtype: 'container',
                                     flex: 1,
                                     id: 'UTEditContainer',
-                                    autoScroll: true,
+                                    overflowY: 'auto',
                                     items: [
                                         {
                                             xtype: 'panel',
