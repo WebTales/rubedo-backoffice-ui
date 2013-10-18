@@ -23,34 +23,8 @@ Ext.define('Rubedo.model.userDataModel', {
             type: 'string'
         },
         {
-            name: 'title'
-        },
-        {
-            name: 'organisation',
-            type: 'string'
-        },
-        {
-            name: 'service',
-            type: 'string'
-        },
-        {
-            name: 'post',
-            type: 'string'
-        },
-        {
             name: 'email',
             type: 'string'
-        },
-        {
-            name: 'telephone',
-            type: 'string'
-        },
-        {
-            name: 'mobile',
-            type: 'string'
-        },
-        {
-            name: 'coordinates'
         },
         {
             name: 'photo',
@@ -58,10 +32,6 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'language',
-            type: 'string'
-        },
-        {
-            name: 'country',
             type: 'string'
         },
         {
@@ -105,6 +75,12 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'interfaceMode'
+        },
+        {
+            name: 'type'
+        },
+        {
+            name: 'fields'
         }
     ]
 });

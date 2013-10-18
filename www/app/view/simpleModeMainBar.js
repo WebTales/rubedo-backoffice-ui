@@ -264,7 +264,7 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
             ACL: 'read.ui.users',
             favoriteIcon: 'user_edit.png',
             floating: false,
-            itemId: 'UserAdminWindow',
+            itemId: 'UsersInterface',
             localiserId:'usersLaunchBtn',
             iconCls: 'user_edit',
             text: 'Utilisateurs'

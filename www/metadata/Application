@@ -155,7 +155,8 @@
             "UserTypes",
             "TaxonomyForUT",
             "GroupsComboStore2",
-            "UTFieldTypes"
+            "UTFieldTypes",
+            "UserTypesForUsers"
         ],
         "views": [
             "MyGridPanel3",
@@ -311,7 +312,8 @@
             "MyView",
             "UserTypesInterface",
             "newUTWindow",
-            "UTFieldAddWindow"
+            "UTFieldAddWindow",
+            "MyWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

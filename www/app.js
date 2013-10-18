@@ -171,7 +171,8 @@ Ext.application({
         'UserTypes',
         'TaxonomyForUT',
         'GroupsComboStore2',
-        'UTFieldTypes'
+        'UTFieldTypes',
+        'UserTypesForUsers'
     ],
     views: [
         'MyGridPanel3',
@@ -327,7 +328,8 @@ Ext.application({
         'MyView',
         'UserTypesInterface',
         'newUTWindow',
-        'UTFieldAddWindow'
+        'UTFieldAddWindow',
+        'UsersInterface'
     ],
     autoCreateViewport: true,
     controllers: [

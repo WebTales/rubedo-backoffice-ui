@@ -2909,6 +2909,22 @@
                 "app/view/UTFieldAddWindow.js"
             ],
             "className": "UTFieldAddWindow"
+        },
+        "a4b83a90-d89a-4eb9-84fd-5d65fe00e651": {
+            "paths": [
+                "metadata/view/UsersInterface",
+                "app/view/override/UsersInterface.js",
+                "app/view/UsersInterface.js"
+            ],
+            "className": "UsersInterface"
+        },
+        "62d2ad11-342c-4ce7-b926-beedd95ce0c6": {
+            "paths": [
+                "metadata/store/UserTypesForUsers",
+                "app/store/override/UserTypesForUsers.js",
+                "app/store/UserTypesForUsers.js"
+            ],
+            "className": "UserTypesForUsers"
         }
     },
     "viewOrderMap": {
@@ -2951,6 +2967,7 @@
             "930bd7cd-dcce-4789-a701-014e8fbe373e",
             "55c92826-3664-45c4-a4ec-07940e8c64b6",
             "b9f4bc5e-a219-457e-a2d8-8f1f29fc3265",
+            "a4b83a90-d89a-4eb9-84fd-5d65fe00e651",
             "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
             "a87eba5d-b490-46b3-9dec-8a8f63610693",
             "a5749eef-eecb-4978-b0d5-e075d6b5418b",
@@ -3165,6 +3182,7 @@
             "f7eefb3a-6e5a-4190-a8df-1649e9bf344c",
             "42485569-d0e5-4710-b0aa-104840533721",
             "c07b1bf8-041e-4dff-a562-7215859382e1",
+            "62d2ad11-342c-4ce7-b926-beedd95ce0c6",
             "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
             "9c372a6b-a40e-4753-9add-88ae21ae9805",
             "314e16bf-0e8d-4905-abb5-5aa656d7c22e",
