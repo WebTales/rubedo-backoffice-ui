@@ -727,6 +727,34 @@
                 "designer|controlQuery": "#UTFieldSelectGrid"
             },
             "designerId": "66c6f694-ec9e-487c-b5ad-5e2e3c5b30c8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUsersInterfaceTypeGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").clearFilter(true);\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").removeAll();\r",
+                    "    Ext.getCmp(\"addUserBtn\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").clearFilter(true);\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").filter(\"type\",selected[0].get(\"id\"));\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").loadPage(1);\r",
+                    "    Ext.getCmp(\"addUserBtn\").enable();\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#usersInterfaceTypeGrid"
+            },
+            "designerId": "93a955e7-c37d-4966-a9ad-5d76a6251241"
         }
     ]
 }

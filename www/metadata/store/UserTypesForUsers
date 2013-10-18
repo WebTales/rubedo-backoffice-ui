@@ -1,0 +1,69 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "UserTypes",
+        "autoLoad": false,
+        "model": "userType",
+        "storeId": "UserTypesForUsers",
+        "designer|userClassName": "UserTypesForUsers",
+        "designer|userAlias": "UserTypesForUsers",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "62d2ad11-342c-4ce7-b926-beedd95ce0c6",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'user-types'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "cae73ed1-4c51-40de-b217-05c9721725a6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "d20d94db-3754-4098-b636-9d467b33d15d"
+                }
+            ]
+        }
+    ]
+}

@@ -63,6 +63,9 @@ Ext.define('Rubedo.model.userType', {
         },
         {
             name: 'signUpType'
+        },
+        {
+            name: 'UTType'
         }
     ]
 });

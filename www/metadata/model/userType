@@ -164,6 +164,18 @@
                 "name": "signUpType"
             },
             "designerId": "eaf9b3ac-3d84-4680-b6fd-0f8ccca91f3f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "UTType"
+            },
+            "designerId": "6e8e6d0e-c1a2-4e1f-9bad-f2f27d22a076"
         }
     ]
 }

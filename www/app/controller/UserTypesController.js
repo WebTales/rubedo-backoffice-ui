@@ -287,6 +287,19 @@ Ext.define('Rubedo.controller.UserTypesController', {
         this.onUTFieldInsertBtnClick(Ext.getCmp("UTFieldInsertBtn"));
     },
 
+    onUsersInterfaceTypeGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getStore("UsersAdminDataStore").clearFilter(true);
+            Ext.getStore("UsersAdminDataStore").removeAll();
+            Ext.getCmp("addUserBtn").disable();
+        } else {
+            Ext.getStore("UsersAdminDataStore").clearFilter(true);
+            Ext.getStore("UsersAdminDataStore").filter("type",selected[0].get("id"));
+            Ext.getStore("UsersAdminDataStore").loadPage(1);
+            Ext.getCmp("addUserBtn").enable();
+        }
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -497,6 +510,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#UTFieldSelectGrid": {
                 itemdblclick: this.onUTFieldSelectGridItemDblClick
+            },
+            "#usersInterfaceTypeGrid": {
+                selectionchange: this.onUsersInterfaceTypeGridSelectionChange
             }
         });
     }
