@@ -2925,6 +2925,22 @@
                 "app/store/UserTypesForUsers.js"
             ],
             "className": "UserTypesForUsers"
+        },
+        "0034e12c-bfce-4dfd-9b1a-4917b7d7ceb3": {
+            "paths": [
+                "metadata/view/UserCreateUpdateWindow",
+                "app/view/override/UserCreateUpdateWindow.js",
+                "app/view/UserCreateUpdateWindow.js"
+            ],
+            "className": "UserCreateUpdateWindow"
+        },
+        "77995f7b-eeb6-4897-9802-0ccd25915a05": {
+            "paths": [
+                "metadata/store/TaxonomyForU",
+                "app/store/override/TaxonomyForU.js",
+                "app/store/TaxonomyForU.js"
+            ],
+            "className": "TaxonomyForU"
         }
     },
     "viewOrderMap": {
@@ -2935,6 +2951,7 @@
             "e0d081a5-ccca-483c-8f7a-43232eebbc43",
             "bde1968a-cbce-4b3a-872c-548461f2e683",
             "42f4214b-1c84-4039-bad0-2ae468294ac0",
+            "0034e12c-bfce-4dfd-9b1a-4917b7d7ceb3",
             "f226d2f3-1a1c-40c0-97d1-16f6c14b6f16",
             "939ef002-62e9-4ca0-a15f-a368fcab7385",
             "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
@@ -3117,6 +3134,7 @@
             "0fa04baf-9fd3-4e4c-be25-b88686d58cd4",
             "40961f33-7d90-45dc-9954-ebf0d0856a4b",
             "d51dd844-1cf3-43cf-859c-7408cf6c8f03",
+            "77995f7b-eeb6-4897-9802-0ccd25915a05",
             "1b50c020-4b46-495e-ae47-295cf55314b2",
             "ed78c7e5-756f-451d-8b70-7973c0deb8fb",
             "03aa16b1-6613-44b9-ad19-4167a7527f99",

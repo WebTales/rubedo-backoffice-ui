@@ -240,6 +240,18 @@
                 "name": "fields"
             },
             "designerId": "437d8bc7-07e9-4205-95ad-299e15516910"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "taxonomy"
+            },
+            "designerId": "eba0d6b5-ef00-42b1-92ad-d943c9140756"
         }
     ]
 }

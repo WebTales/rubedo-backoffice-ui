@@ -289,15 +289,34 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
     onUsersInterfaceTypeGridSelectionChange: function(model, selected, eOpts) {
         if (Ext.isEmpty(selected)){
+            Ext.Array.forEach(Ext.getCmp("UsersInterface").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
             Ext.getStore("UsersAdminDataStore").removeAll();
             Ext.getCmp("addUserBtn").disable();
         } else {
+            Ext.Array.forEach(Ext.getCmp("UsersInterface").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
             Ext.getStore("UsersAdminDataStore").filter("type",selected[0].get("id"));
             Ext.getStore("UsersAdminDataStore").loadPage(1);
             Ext.getCmp("addUserBtn").enable();
         }
+    },
+
+    onUsersInterfaceCenterGridSelectionChange: function(model, selected, eOpts) {
+        Ext.getCmp("editUserBtn").disable();
+        Ext.getCmp("removeUserBtn").disable();
+        if (Ext.isEmpty(selected)){
+        } else if (selected.length==1) {
+            Ext.getCmp("editUserBtn").enable();
+            Ext.getCmp("removeUserBtn").enable();
+        } else {
+            Ext.getCmp("removeUserBtn").enable();
+        }
+    },
+
+    onAddUserBtnClick: function(button, e, eOpts) {
+        var myType=Ext.getCmp("usersInterfaceTypeGrid").getSelectionModel().getLastSelected();
+        this.fireUserCreate(myType);
     },
 
     resetInterfaceNoSelect: function() {
@@ -376,7 +395,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
     },
 
-    renderUTField: function(protoData, renderTarget) {
+    renderUTField: function(protoData, renderTarget, isUserCU) {
         var me=this;
         var configurator=protoData.config;
         if (!Ext.isEmpty(configurator.i18n)){
@@ -407,14 +426,17 @@ Ext.define('Rubedo.controller.UserTypesController', {
         if (Ext.isEmpty(configurator.tooltip)){
             casing.getComponent('helpBouton').hidden=true;
         } 
-        if (!me.nameAvailable(newField.name)) {
-            var duplic = 1;
-            while (!me.nameAvailable(newField.name+duplic)){
-                duplic++;
-            }
-            newField.name=newField.name+duplic;
-            newField.config.name=newField.config.name+duplic;
+        if (isUserCU){
+        } else {
+            if (!me.nameAvailable(newField.name)) {
+                var duplic = 1;
+                while (!me.nameAvailable(newField.name+duplic)){
+                    duplic++;
+                }
+                newField.name=newField.name+duplic;
+                newField.config.name=newField.config.name+duplic;
 
+            }
         }
         renderTarget.add(casing);
     },
@@ -470,6 +492,195 @@ Ext.define('Rubedo.controller.UserTypesController', {
         }
     },
 
+    fireUserCreate: function(userType) {
+        var me=this;
+        var myEditor=Ext.widget("UserCreateUpdateWindow", {title:"New user "+userType.get("type")});
+        myEditor.show();
+        var targetZone=Ext.getCmp("userCUFields");
+        Ext.Array.forEach(userType.get("fields"),function(field){
+            me.renderUTField(field, targetZone, true);
+        });
+        me.renderTaxoFields(userType);
+        Ext.getCmp("userCUSaveBtn").on("click", function(){
+            me.createUser(userType);
+        });
+    },
+
+    renderTaxoFields: function(DAMType, useSep) {
+        var formTaxoTC =  Ext.getCmp('userCUTaxonomy');
+        var lesTaxo = DAMType.get("vocabularies");
+        if (Ext.isEmpty(lesTaxo)) {
+            //formTaxoTC.hide();
+        } else {
+            var i=0;
+            for (i=0; i<lesTaxo.length; i++) {
+                if (useSep){
+                    var leVocab = Ext.getStore('TaxonomyForDam2').findRecord('id', lesTaxo[i]);
+                } else {
+                    var leVocab = Ext.getStore('TaxonomyForU').findRecord('id', lesTaxo[i]);
+                }
+                if (!Ext.isEmpty(leVocab)){
+                    if (leVocab.get("inputAsTree")){
+                        var storeT = Ext.create("Ext.data.TreeStore", {
+                            model:"Rubedo.model.taxonomyTermModel",
+                            remoteFilter:"true",
+                            proxy: {
+                                type: 'ajax',
+                                api: {
+                                    read: 'taxonomy-terms/tree'
+                                },
+                                reader: {
+                                    type: 'json',
+                                    messageProperty: 'message'
+                                },
+                                encodeFilters: function(filters) {
+                                    var min = [],
+                                        length = filters.length,
+                                        i = 0;
+
+                                    for (; i < length; i++) {
+                                        min[i] = {
+                                            property: filters[i].property,
+                                            value   : filters[i].value
+                                        };
+                                        if (filters[i].type) {
+                                            min[i].type = filters[i].type;
+                                        }
+                                        if (filters[i].operator) {
+                                            min[i].operator = filters[i].operator;
+                                        }
+                                    }
+                                    return this.applyEncoding(min);
+                                }
+                            },
+                            filters: {
+                                property: 'vocabularyId',
+                                value: leVocab.get("id")
+                            }
+
+                        });
+                        var toUse="Ext.ux.TreePicker";
+                        if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
+                        if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+                        storeT.load();
+                        var selecteur = Ext.create(toUse, {
+                            name:leVocab.get("id"),
+                            fieldLabel: leVocab.get("name"),
+                            store: storeT,
+                            anchor:"90%",
+                            ignoreIsNotPage:true,
+                            displayField:"text",
+                            allowBlank: !leVocab.data.mandatory,
+                            plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
+                        });
+
+
+                    } else {
+                        var storeT = Ext.create('Ext.data.JsonStore', {
+                            model:"Rubedo.model.taxonomyTermModel",
+                            remoteFilter:"true",
+                            proxy: {
+                                type: 'ajax',
+                                api: {
+                                    read: 'taxonomy-terms'
+                                },
+                                reader: {
+                                    type: 'json',
+                                    messageProperty: 'message',
+                                    root: 'data'
+                                },
+                                encodeFilters: function(filters) {
+                                    var min = [],
+                                        length = filters.length,
+                                        i = 0;
+
+                                    for (; i < length; i++) {
+                                        min[i] = {
+                                            property: filters[i].property,
+                                            value   : filters[i].value
+                                        };
+                                        if (filters[i].type) {
+                                            min[i].type = filters[i].type;
+                                        }
+                                        if (filters[i].operator) {
+                                            min[i].operator = filters[i].operator;
+                                        }
+                                    }
+                                    return this.applyEncoding(min);
+                                }
+                            },
+                            filters: {
+                                property: 'vocabularyId',
+                                value: leVocab.get("id")
+                            }
+
+                        });
+                        storeT.on("beforeload", function(s,o){
+                            o.filters=Ext.Array.slice(o.filters,0,1);
+                            if (!Ext.isEmpty(o.params.comboQuery)){
+
+                                var newFilter=Ext.create('Ext.util.Filter', {
+                                    property:"text",
+                                    value:o.params.comboQuery,
+                                    operator:'like'
+                                });
+
+                                o.filters.push(newFilter);
+
+                            }
+
+
+                        });
+                        var selecteur = Ext.widget('comboboxselect', {
+                            name:leVocab.get("id"),
+                            anchor:"90%",
+                            fieldLabel: leVocab.get("name"),
+                            autoScroll: false,
+                            store: storeT,
+                            queryMode: 'remote',
+                            queryParam: 'comboQuery',
+                            minChars:3,
+                            grow:false,
+                            displayField: 'text',
+                            valueField: 'id',
+                            filterPickList: true,
+                            typeAhead: true,
+                            forceSelection: !leVocab.data.expandable,
+                            createNewOnEnter: leVocab.data.expandable,
+                            multiSelect: leVocab.data.multiSelect,
+                            allowBlank: !leVocab.data.mandatory
+                        });
+
+                    }
+                    var enrobage =Ext.widget('ChampTC');
+                    enrobage.add(selecteur);
+                    enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+                    if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
+                    formTaxoTC.add(enrobage);
+
+                }}}
+    },
+
+    createUser: function(userType) {
+        var fieldsForm=Ext.getCmp("userCUFields");
+        var taxoForm=Ext.getCmp("userCUTaxonomy");
+        if ((fieldsForm.isValid())&&(taxoForm.isValid())){
+            var newUser={ };
+            var fieldValues=fieldsForm.getValues();
+            newUser.name=fieldValues.name;
+            newUser.email=fieldValues.email;
+            delete fieldValues.name;
+            delete fieldValues.email;
+            newUser.fields=fieldValues;
+            newUser.taxonomy=taxoForm.getValues();
+            newUser.type=userType.get("id");
+            newUser.groups=[userType.get("defaultGroup")];
+            newUser.defaultGroup=userType.get("defaultGroup");
+            Ext.getCmp("usersInterfaceCenterGrid").getStore().add(newUser);
+            Et.getCmp("UserCreateUpdateWindow").close();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#newUTBtn": {
@@ -513,6 +724,12 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#usersInterfaceTypeGrid": {
                 selectionchange: this.onUsersInterfaceTypeGridSelectionChange
+            },
+            "#usersInterfaceCenterGrid": {
+                selectionchange: this.onUsersInterfaceCenterGridSelectionChange
+            },
+            "#addUserBtn": {
+                click: this.onAddUserBtnClick
             }
         });
     }

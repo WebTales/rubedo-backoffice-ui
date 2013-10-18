@@ -101,8 +101,9 @@ Ext.define('Rubedo.view.UsersInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.contents',
+                            ACL: 'write.ui.users',
                             localiserId: 'addBtn',
+                            disabled: true,
                             id: 'addUserBtn',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -111,7 +112,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.contents',
+                            ACL: 'write.ui.users',
                             localiserId: 'editBtn',
                             disabled: true,
                             id: 'editUserBtn',
@@ -122,7 +123,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.contents',
+                            ACL: 'write.ui.users',
                             localiserId: 'removeBtn',
                             disabled: true,
                             id: 'removeUserBtn',
@@ -232,7 +233,10 @@ Ext.define('Rubedo.view.UsersInterface', {
                             displayInfo: true,
                             store: 'UsersAdminDataStore'
                         }
-                    ]
+                    ],
+                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                    })
                 }
             ],
             listeners: {
@@ -256,12 +260,14 @@ Ext.define('Rubedo.view.UsersInterface', {
 
     onUsersInterfaceRender: function(component, eOpts) {
         Ext.getStore("UserTypesForUsers").load();
+        Ext.getStore("TaxonomyForU").load();
     },
 
     onUsersInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("UserTypesForUsers").removeAll();
         Ext.getStore("UsersAdminDataStore").clearFilter(true);
         Ext.getStore("UsersAdminDataStore").removeAll();
+        Ext.getStore("TaxonomyForU").removeAll();
     }
 
 });
