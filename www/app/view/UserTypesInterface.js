@@ -360,6 +360,24 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                             vtype: 'email'
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    xtype: 'container',
+                                                    padding: 10,
+                                                    layout: {
+                                                        type: 'anchor'
+                                                    },
+                                                    items: [
+                                                        {
+                                                            xtype: 'textfield',
+                                                            localiserId: 'UTNameField',
+                                                            RTip: 'User name. Mandatory.',
+                                                            anchor: '100%',
+                                                            fieldLabel: 'Name *',
+                                                            name: 'name',
+                                                            allowBlank: false
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
