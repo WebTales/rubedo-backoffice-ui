@@ -811,7 +811,7 @@
                     "});\r",
                     "me.renderTaxoFields(userType);\r",
                     "Ext.getCmp(\"userCUSaveBtn\").on(\"click\", function(){\r",
-                    "\tme.createUser(userType);\r",
+                    "    me.createUser(userType);\r",
                     "});"
                 ]
             },
@@ -1015,6 +1015,44 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "fireUserEdit",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var myEditor=Ext.widget(\"UserCreateUpdateWindow\", {title:record.get(\"name\")});\r",
+                    "userType=Ext.getStore(\"UserTypesForUsers\").findRecord(\"id\",record.get(\"type\"));\r",
+                    "myEditor.show();\r",
+                    "var targetZone=Ext.getCmp(\"userCUFields\");\r",
+                    "Ext.Array.forEach(userType.get(\"fields\"),function(field){\r",
+                    "    me.renderUTField(field, targetZone, true);\r",
+                    "});\r",
+                    "me.renderTaxoFields(userType);\r",
+                    "var fieldUpdater=record.get(\"fields\");\r",
+                    "if (Ext.isEmpty(fieldUpdater)){\r",
+                    "   fieldUpdater={ };\r",
+                    "}\r",
+                    "fieldUpdater.name=record.get(\"name\");\r",
+                    "fieldUpdater.email=record.get(\"email\");\r",
+                    "Ext.getCmp('userCUFields').getForm().setValues(fieldUpdater);\r",
+                    "Ext.getCmp('userCUTaxonomy').getForm().setValues(record.get(\"taxonomy\"));\r",
+                    "\r",
+                    "Ext.getCmp(\"userCUSaveBtn\").on(\"click\", function(){\r",
+                    "    me.editUser(record);\r",
+                    "});"
+                ]
+            },
+            "designerId": "4d5b5628-bef3-487a-af37-34fade66fe3a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "createUser",
                 "designer|params": [
                     "userType"
@@ -1027,6 +1065,7 @@
                     "    var fieldValues=fieldsForm.getValues();\r",
                     "    newUser.name=fieldValues.name;\r",
                     "    newUser.email=fieldValues.email;\r",
+                    "    newUser.login=newUser.email;\r",
                     "    delete fieldValues.name;\r",
                     "    delete fieldValues.email;\r",
                     "    newUser.fields=fieldValues;\r",
@@ -1035,11 +1074,101 @@
                     "    newUser.groups=[userType.get(\"defaultGroup\")];\r",
                     "    newUser.defaultGroup=userType.get(\"defaultGroup\");\r",
                     "    Ext.getCmp(\"usersInterfaceCenterGrid\").getStore().add(newUser);\r",
-                    "    Et.getCmp(\"UserCreateUpdateWindow\").close();\r",
+                    "    Ext.getCmp(\"UserCreateUpdateWindow\").close();\r",
                     "}"
                 ]
             },
             "designerId": "7db4d0af-1a42-4a99-8d3d-d216142a9f63"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditUserBtnClick",
+                "implHandler": [
+                    "var record=Ext.getCmp(\"usersInterfaceCenterGrid\").getSelectionModel().getLastSelected();\r",
+                    "this.fireUserEdit(record);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editUserBtn"
+            },
+            "designerId": "05628b37-3088-465b-a70a-b38800d4c5b4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRemoveUserBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"usersInterfaceCenterGrid\").getStore().remove(Ext.getCmp(\"usersInterfaceCenterGrid\").getSelectionModel().getSelection());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#removeUserBtn"
+            },
+            "designerId": "bcd3357d-c2b4-463c-a421-2738dc818d10"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "editUser",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "var fieldsForm=Ext.getCmp(\"userCUFields\");\r",
+                    "var taxoForm=Ext.getCmp(\"userCUTaxonomy\");\r",
+                    "if ((fieldsForm.isValid())&&(taxoForm.isValid())){\r",
+                    "    var newUser={ };\r",
+                    "    var fieldValues=fieldsForm.getValues();\r",
+                    "    newUser.name=fieldValues.name;\r",
+                    "    newUser.email=fieldValues.email;\r",
+                    "    newUser.login=newUser.email;\r",
+                    "    delete fieldValues.name;\r",
+                    "    delete fieldValues.email;\r",
+                    "    newUser.fields=fieldValues;\r",
+                    "    newUser.taxonomy=taxoForm.getValues();\r",
+                    "\trecord.set(newUser);\r",
+                    "    Ext.getCmp(\"UserCreateUpdateWindow\").close();\r",
+                    "}"
+                ]
+            },
+            "designerId": "96c4de96-ca21-457e-af48-948cdfd36f8a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUsersInterfaceCenterGridItemDblClick",
+                "implHandler": [
+                    "Ext.getCmp(\"editUserBtn\").fireEvent(\"click\",Ext.getCmp(\"editUserBtn\"));"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#usersInterfaceCenterGrid"
+            },
+            "designerId": "26667fac-4d55-4f1a-bb6a-04f5bfaf269d"
         }
     ]
 }

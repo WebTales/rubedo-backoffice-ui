@@ -319,6 +319,19 @@ Ext.define('Rubedo.controller.UserTypesController', {
         this.fireUserCreate(myType);
     },
 
+    onEditUserBtnClick: function(button, e, eOpts) {
+        var record=Ext.getCmp("usersInterfaceCenterGrid").getSelectionModel().getLastSelected();
+        this.fireUserEdit(record);
+    },
+
+    onRemoveUserBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("usersInterfaceCenterGrid").getStore().remove(Ext.getCmp("usersInterfaceCenterGrid").getSelectionModel().getSelection());
+    },
+
+    onUsersInterfaceCenterGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        Ext.getCmp("editUserBtn").fireEvent("click",Ext.getCmp("editUserBtn"));
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -661,6 +674,30 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 }}}
     },
 
+    fireUserEdit: function(record) {
+        var me=this;
+        var myEditor=Ext.widget("UserCreateUpdateWindow", {title:record.get("name")});
+        userType=Ext.getStore("UserTypesForUsers").findRecord("id",record.get("type"));
+        myEditor.show();
+        var targetZone=Ext.getCmp("userCUFields");
+        Ext.Array.forEach(userType.get("fields"),function(field){
+            me.renderUTField(field, targetZone, true);
+        });
+        me.renderTaxoFields(userType);
+        var fieldUpdater=record.get("fields");
+        if (Ext.isEmpty(fieldUpdater)){
+            fieldUpdater={ };
+        }
+        fieldUpdater.name=record.get("name");
+        fieldUpdater.email=record.get("email");
+        Ext.getCmp('userCUFields').getForm().setValues(fieldUpdater);
+        Ext.getCmp('userCUTaxonomy').getForm().setValues(record.get("taxonomy"));
+
+        Ext.getCmp("userCUSaveBtn").on("click", function(){
+            me.editUser(record);
+        });
+    },
+
     createUser: function(userType) {
         var fieldsForm=Ext.getCmp("userCUFields");
         var taxoForm=Ext.getCmp("userCUTaxonomy");
@@ -669,6 +706,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             var fieldValues=fieldsForm.getValues();
             newUser.name=fieldValues.name;
             newUser.email=fieldValues.email;
+            newUser.login=newUser.email;
             delete fieldValues.name;
             delete fieldValues.email;
             newUser.fields=fieldValues;
@@ -677,7 +715,25 @@ Ext.define('Rubedo.controller.UserTypesController', {
             newUser.groups=[userType.get("defaultGroup")];
             newUser.defaultGroup=userType.get("defaultGroup");
             Ext.getCmp("usersInterfaceCenterGrid").getStore().add(newUser);
-            Et.getCmp("UserCreateUpdateWindow").close();
+            Ext.getCmp("UserCreateUpdateWindow").close();
+        }
+    },
+
+    editUser: function(record) {
+        var fieldsForm=Ext.getCmp("userCUFields");
+        var taxoForm=Ext.getCmp("userCUTaxonomy");
+        if ((fieldsForm.isValid())&&(taxoForm.isValid())){
+            var newUser={ };
+            var fieldValues=fieldsForm.getValues();
+            newUser.name=fieldValues.name;
+            newUser.email=fieldValues.email;
+            newUser.login=newUser.email;
+            delete fieldValues.name;
+            delete fieldValues.email;
+            newUser.fields=fieldValues;
+            newUser.taxonomy=taxoForm.getValues();
+            record.set(newUser);
+            Ext.getCmp("UserCreateUpdateWindow").close();
         }
     },
 
@@ -726,10 +782,17 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 selectionchange: this.onUsersInterfaceTypeGridSelectionChange
             },
             "#usersInterfaceCenterGrid": {
-                selectionchange: this.onUsersInterfaceCenterGridSelectionChange
+                selectionchange: this.onUsersInterfaceCenterGridSelectionChange,
+                itemdblclick: this.onUsersInterfaceCenterGridItemDblClick
             },
             "#addUserBtn": {
                 click: this.onAddUserBtnClick
+            },
+            "#editUserBtn": {
+                click: this.onEditUserBtnClick
+            },
+            "#removeUserBtn": {
+                click: this.onRemoveUserBtnClick
             }
         });
     }
