@@ -207,9 +207,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.contents",
+                        "ACL": "write.ui.users",
                         "localiserId": "addBtn",
                         "layout|flex": null,
+                        "disabled": true,
                         "id": "addUserBtn",
                         "itemId": null,
                         "icon": null,
@@ -240,7 +241,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.contents",
+                        "ACL": "write.ui.users",
                         "localiserId": "editBtn",
                         "layout|flex": null,
                         "disabled": true,
@@ -274,7 +275,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.contents",
+                        "ACL": "write.ui.users",
                         "localiserId": "removeBtn",
                         "layout|flex": null,
                         "disabled": true,
@@ -499,7 +500,8 @@
             "userConfig": {
                 "fn": "onUsersInterfaceRender",
                 "implHandler": [
-                    "Ext.getStore(\"UserTypesForUsers\").load();"
+                    "Ext.getStore(\"UserTypesForUsers\").load();\r",
+                    "Ext.getStore(\"TaxonomyForU\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -518,7 +520,8 @@
                 "implHandler": [
                     "Ext.getStore(\"UserTypesForUsers\").removeAll();\r",
                     "Ext.getStore(\"UsersAdminDataStore\").clearFilter(true);\r",
-                    "Ext.getStore(\"UsersAdminDataStore\").removeAll();"
+                    "Ext.getStore(\"UsersAdminDataStore\").removeAll();\r",
+                    "Ext.getStore(\"TaxonomyForU\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
@@ -616,6 +619,15 @@
                         "store": "UsersAdminDataStore"
                     },
                     "designerId": "32cb232c-bd70-4c0a-a2a0-36e776d732af"
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "designerId": "74830de9-ca3f-4524-ae0e-849d7a01bbaf"
                 }
             ]
         }

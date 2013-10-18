@@ -644,13 +644,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onMainUTGridAfterRender",
+                        "fn": "onMainUTGridSelect",
                         "implHandler": [
                             "Ext.getCmp(\"UTcenterZone\").setActiveTab(2);\r",
                             "Ext.getCmp(\"UTcenterZone\").setActiveTab(0);"
                         ],
                         "single": true,
-                        "name": "afterrender",
+                        "name": "select",
                         "scope": "me"
                     },
                     "designerId": "83d3d902-7212-4d9a-80a2-065694172516"

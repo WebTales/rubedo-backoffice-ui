@@ -303,8 +303,8 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                         }
                     ],
                     listeners: {
-                        afterrender: {
-                            fn: me.onMainUTGridAfterRender,
+                        select: {
+                            fn: me.onMainUTGridSelect,
                             single: true,
                             scope: me
                         }
@@ -647,7 +647,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
     });
     },
 
-    onMainUTGridAfterRender: function(component, eOpts) {
+    onMainUTGridSelect: function(rowmodel, record, index, eOpts) {
         Ext.getCmp("UTcenterZone").setActiveTab(2);
         Ext.getCmp("UTcenterZone").setActiveTab(0);
     },
