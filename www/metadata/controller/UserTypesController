@@ -1040,6 +1040,13 @@
                     "var credentialsForm=Ext.widget(\"userUpdateCreadentialsForm\");\r",
                     "myEditor.getComponent(0).add(credentialsForm);\r",
                     "credentialsForm.getForm().setValues(record.getData());\r",
+                    "credentialsForm.targetRecord=record;\r",
+                    "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
+                    "    Ext.getCmp(\"userCUAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"userCUAdminProfilePicture\").setSrc(\"image/get?file-id=\"+record.get(\"photo\"));\r",
+                    "}\r",
+                    "\r",
                     "Ext.getCmp(\"userCUSaveBtn\").on(\"click\", function(){\r",
                     "    me.editUser(record);\r",
                     "});"
@@ -1172,6 +1179,45 @@
                 "designer|controlQuery": "#usersInterfaceCenterGrid"
             },
             "designerId": "26667fac-4d55-4f1a-bb6a-04f5bfaf269d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserCUChangePictureBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"PersoPicUploadWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userCUChangePictureBtn"
+            },
+            "designerId": "f0f298f1-a903-4047-a1d0-e77020f45b20"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserCUProfilePictureDeleteClick",
+                "implHandler": [
+                    "Ext.getCmp(\"userCUAdminProfilePicture\").setSrc(\"resources/images/userBig.png\");\r",
+                    "Ext.getCmp(\"userUpdateCreadentialsForm\").targetRecord.set(\"photo\", null);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#userCUProfilePictureDelete"
+            },
+            "designerId": "19ad9f68-67b4-4218-8528-475e2ab0cffc"
         }
     ]
 }
