@@ -393,7 +393,7 @@
                                             "    failure: function(response) {\r",
                                             "        button.setLoading(false);\r",
                                             "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);\r",
-                                            "        \r",
+                                            "\r",
                                             "    }\r",
                                             "});"
                                         ]
@@ -469,6 +469,76 @@
                                         ]
                                     },
                                     "designerId": "5e2ffb0e-4f24-4f8f-a786-bf8303d048e9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "designerId": "78a5c9e8-df9f-4b70-95c7-ecddf50b0da5"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "indexUsersBtn",
+                                "layout|flex": null,
+                                "text": "<b>Index users</b>"
+                            },
+                            "designerId": "cb50b4c2-9453-4380-b477-1b3a54d02c09",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "button.setLoading(true);\r",
+                                            "Ext.Ajax.request({\r",
+                                            "    url: 'elastic-indexer?option=user',\r",
+                                            "    params:{\r",
+                                            "    },\r",
+                                            "    success: function(response){\r",
+                                            "        var answerMe = Ext.widget(\"esResponseWindow\");\r",
+                                            "        answerMe.getComponent(0).setSource(Ext.JSON.decode(response.responseText));\r",
+                                            "        Ext.getCmp(\"ViewportPrimaire\").add(answerMe);\r",
+                                            "        answerMe.show();\r",
+                                            "        button.setLoading(false);\r",
+                                            "    },\r",
+                                            "    failure: function(response) {\r",
+                                            "        button.setLoading(false);\r",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);\r",
+                                            "    }\r",
+                                            "});"
+                                        ]
+                                    },
+                                    "designerId": "4a0185c7-a63c-4644-b52f-a9b422e865e4"
                                 }
                             ]
                         },
