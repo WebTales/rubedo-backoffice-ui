@@ -1136,7 +1136,8 @@
                 "implHandler": [
                     "var fieldsForm=Ext.getCmp(\"userCUFields\");\r",
                     "var taxoForm=Ext.getCmp(\"userCUTaxonomy\");\r",
-                    "if ((fieldsForm.isValid())&&(taxoForm.isValid())){\r",
+                    "var credentialsForm=Ext.getCmp(\"userUpdateCreadentialsForm\");\r",
+                    "if ((fieldsForm.isValid())&&(taxoForm.isValid())&&(credentialsForm.isValid())){\r",
                     "    var newUser={ };\r",
                     "    var fieldValues=fieldsForm.getValues();\r",
                     "    newUser.name=fieldValues.name;\r",
@@ -1145,6 +1146,7 @@
                     "    delete fieldValues.email;\r",
                     "    newUser.fields=fieldValues;\r",
                     "    newUser.taxonomy=taxoForm.getValues();\r",
+                    "    Ext.apply(newUser,credentialsForm.getValues());\r",
                     "    record.set(newUser);\r",
                     "    Ext.getCmp(\"UserCreateUpdateWindow\").close();\r",
                     "}"
