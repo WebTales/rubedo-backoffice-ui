@@ -128,7 +128,7 @@ Ext.define('Rubedo.view.MyGridPanel16', {
                     xtype: 'datecolumn',
                     filter: true,
                     hidden: true,
-                    dataIndex: 'updateTime',
+                    dataIndex: 'lastUpdateTime',
                     text: 'Mise à jour',
                     flex: 1
                 }
