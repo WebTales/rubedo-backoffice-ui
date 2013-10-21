@@ -277,34 +277,6 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            localiserId: 'phoneColumn',
-                                            dataIndex: 'mobile',
-                                            text: 'Téléphone',
-                                            flex: 1
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            localiserId: 'addressColumn',
-                                            dataIndex: 'coordinates',
-                                            text: 'Adresse',
-                                            flex: 1
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            localiserId: 'postColumn',
-                                            dataIndex: 'post',
-                                            text: 'Poste',
-                                            flex: 1
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            localiserId: 'departmentColumn',
-                                            dataIndex: 'organisation',
-                                            text: 'Département',
-                                            flex: 1
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
                                             hidden: true,
                                             dataIndex: 'defaultGroup',
                                             text: 'Groupes',
@@ -312,15 +284,13 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         },
                                         {
                                             xtype: 'datecolumn',
-                                            hidden: true,
                                             dataIndex: 'createTime',
                                             text: 'Création',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'datecolumn',
-                                            hidden: true,
-                                            dataIndex: 'updateTime',
+                                            dataIndex: 'lastUpdateTime',
                                             text: 'Dernière modification',
                                             flex: 1
                                         }

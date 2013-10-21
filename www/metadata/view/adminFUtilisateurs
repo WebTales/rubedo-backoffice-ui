@@ -757,94 +757,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "phoneColumn",
-                                        "dataIndex": "mobile",
-                                        "text": "Téléphone",
-                                        "flex": 1
-                                    },
-                                    "designerId": "27f1b109-eacf-41a2-b142-3b4a86f4d109",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "addressColumn",
-                                        "dataIndex": "coordinates",
-                                        "text": "Adresse",
-                                        "flex": 1
-                                    },
-                                    "designerId": "ed976c9b-cbcf-4daf-a59f-ae53a3d7ae5d",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "postColumn",
-                                        "dataIndex": "post",
-                                        "text": "Poste",
-                                        "flex": 1
-                                    },
-                                    "designerId": "384db602-928b-46ce-9a5f-bc711c4a3347",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "departmentColumn",
-                                        "dataIndex": "organisation",
-                                        "text": "Département",
-                                        "flex": 1
-                                    },
-                                    "designerId": "ff63a2a3-1959-430a-97ea-a49f3f0986b4",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
                                         "hidden": true,
                                         "dataIndex": "defaultGroup",
                                         "text": "Groupes",
@@ -860,7 +772,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "hidden": true,
                                         "dataIndex": "createTime",
                                         "text": "Création",
                                         "flex": 1
@@ -875,8 +786,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "hidden": true,
-                                        "dataIndex": "updateTime",
+                                        "dataIndex": "lastUpdateTime",
                                         "text": "Dernière modification",
                                         "flex": 1
                                     },
