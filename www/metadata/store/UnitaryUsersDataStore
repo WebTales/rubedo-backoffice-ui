@@ -1,0 +1,85 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Users",
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "userDataModel",
+        "storeId": "UnitaryUsersDataStore",
+        "designer|userClassName": "UnitaryUsersDataStore",
+        "designer|userAlias": "UnitaryUsersDataStore",
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "30381ed1-6397-4189-a35d-bc831e96d7e6",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "     create: 'users/create',\r",
+                    "     read: 'users',\r",
+                    "     update: 'users/update',\r",
+                    "     destroy: 'users/delete'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "ddc0a8e0-aa1a-4073-ae35-bdad1aa4c7fa",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "96cf8584-3d96-4de7-9312-425cf1f6b398"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "8e05570c-8689-44a7-b51f-2a82d207cdfa"
+                }
+            ]
+        }
+    ]
+}

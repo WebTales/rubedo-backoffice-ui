@@ -173,7 +173,10 @@ Ext.application({
         'GroupsComboStore2',
         'UTFieldTypes',
         'UserTypesForUsers',
-        'TaxonomyForU'
+        'TaxonomyForU',
+        'TaxonomyForUT2',
+        'UnitaryUsersDataStore',
+        'UserTypesForUsers2'
     ],
     views: [
         'MyGridPanel3',

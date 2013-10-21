@@ -543,7 +543,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             var i=0;
             for (i=0; i<lesTaxo.length; i++) {
                 if (useSep){
-                    var leVocab = Ext.getStore('TaxonomyForDam2').findRecord('id', lesTaxo[i]);
+                    var leVocab = Ext.getStore('TaxonomyForUT2').findRecord('id', lesTaxo[i]);
                 } else {
                     var leVocab = Ext.getStore('TaxonomyForU').findRecord('id', lesTaxo[i]);
                 }
@@ -689,16 +689,20 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 }}}
     },
 
-    fireUserEdit: function(record) {
+    fireUserEdit: function(record, untethered) {
         var me=this;
         var myEditor=Ext.widget("UserCreateUpdateWindow", {title:record.get("name")});
-        userType=Ext.getStore("UserTypesForUsers").findRecord("id",record.get("typeId"));
+        if (untethered){
+            var userType=Ext.getStore("UserTypesForUsers2").findRecord("id",record.get("typeId")); 
+        } else {
+            var userType=Ext.getStore("UserTypesForUsers").findRecord("id",record.get("typeId"));
+        }
         myEditor.show();
         var targetZone=Ext.getCmp("userCUFields");
         Ext.Array.forEach(userType.get("fields"),function(field){
             me.renderUTField(field, targetZone, true);
         });
-        me.renderTaxoFields(userType);
+        me.renderTaxoFields(userType, untethered);
         var fieldUpdater=record.get("fields");
         if (Ext.isEmpty(fieldUpdater)){
             fieldUpdater={ };
@@ -760,6 +764,24 @@ Ext.define('Rubedo.controller.UserTypesController', {
             record.set(newUser);
             Ext.getCmp("UserCreateUpdateWindow").close();
         }
+    },
+
+    prepareContext: function(id, typeId) {
+        var me=this;
+        Ext.getStore("TaxonomyForUT2").load();
+        if (Ext.isEmpty(Ext.getStore("GroupsComboStore").getRange())){
+            Ext.getStore("GroupsComboStore").load();
+        }
+        Ext.getStore("UserTypesForUsers2").clearFilter(true);
+        Ext.getStore("UserTypesForUsers2").filter("id",typeId);
+        Ext.getStore("UserTypesForUsers2").load();
+        Ext.getStore("UnitaryUsersDataStore").clearFilter(true);
+        Ext.getStore("UnitaryUsersDataStore").filter("id",id);
+        Ext.getStore("UnitaryUsersDataStore").load();
+        var task = new Ext.util.DelayedTask(function(){
+            me.fireUserEdit(Ext.getStore("UnitaryUsersDataStore").getRange()[0],true);
+        });
+        task.delay(600);
     },
 
     init: function(application) {

@@ -859,7 +859,7 @@
                     "    var i=0;\r",
                     "    for (i=0; i<lesTaxo.length; i++) {\r",
                     "        if (useSep){\r",
-                    "            var leVocab = Ext.getStore('TaxonomyForDam2').findRecord('id', lesTaxo[i]);\r",
+                    "            var leVocab = Ext.getStore('TaxonomyForUT2').findRecord('id', lesTaxo[i]);\r",
                     "        } else {\r",
                     "            var leVocab = Ext.getStore('TaxonomyForU').findRecord('id', lesTaxo[i]);\r",
                     "        }\r",
@@ -1017,18 +1017,23 @@
             "userConfig": {
                 "fn": "fireUserEdit",
                 "designer|params": [
-                    "record"
+                    "record",
+                    "untethered"
                 ],
                 "implHandler": [
                     "var me=this;\r",
                     "var myEditor=Ext.widget(\"UserCreateUpdateWindow\", {title:record.get(\"name\")});\r",
-                    "userType=Ext.getStore(\"UserTypesForUsers\").findRecord(\"id\",record.get(\"typeId\"));\r",
+                    "if (untethered){\r",
+                    "   var userType=Ext.getStore(\"UserTypesForUsers2\").findRecord(\"id\",record.get(\"typeId\")); \r",
+                    "} else {\r",
+                    "\tvar userType=Ext.getStore(\"UserTypesForUsers\").findRecord(\"id\",record.get(\"typeId\"));\r",
+                    "}\r",
                     "myEditor.show();\r",
                     "var targetZone=Ext.getCmp(\"userCUFields\");\r",
                     "Ext.Array.forEach(userType.get(\"fields\"),function(field){\r",
                     "    me.renderUTField(field, targetZone, true);\r",
                     "});\r",
-                    "me.renderTaxoFields(userType);\r",
+                    "me.renderTaxoFields(userType, untethered);\r",
                     "var fieldUpdater=record.get(\"fields\");\r",
                     "if (Ext.isEmpty(fieldUpdater)){\r",
                     "    fieldUpdater={ };\r",
@@ -1239,6 +1244,38 @@
                 "designer|controlQuery": "#UserCUChangePwd"
             },
             "designerId": "0e4ce198-9235-4f97-8738-f62d1b25c869"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "prepareContext",
+                "designer|params": [
+                    "id, typeId"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "Ext.getStore(\"TaxonomyForUT2\").load();\r",
+                    "if (Ext.isEmpty(Ext.getStore(\"GroupsComboStore\").getRange())){\r",
+                    "    Ext.getStore(\"GroupsComboStore\").load();\r",
+                    "}\r",
+                    "Ext.getStore(\"UserTypesForUsers2\").clearFilter(true);\r",
+                    "Ext.getStore(\"UserTypesForUsers2\").filter(\"id\",typeId);\r",
+                    "Ext.getStore(\"UserTypesForUsers2\").load();\r",
+                    "Ext.getStore(\"UnitaryUsersDataStore\").clearFilter(true);\r",
+                    "Ext.getStore(\"UnitaryUsersDataStore\").filter(\"id\",id);\r",
+                    "Ext.getStore(\"UnitaryUsersDataStore\").load();\r",
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    me.fireUserEdit(Ext.getStore(\"UnitaryUsersDataStore\").getRange()[0],true);\r",
+                    "});\r",
+                    "task.delay(600);"
+                ]
+            },
+            "designerId": "d8253939-a8e5-4273-a1f4-f57d05909c45"
         }
     ]
 }
