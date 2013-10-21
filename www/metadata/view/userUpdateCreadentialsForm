@@ -24,7 +24,7 @@
             "codeClass": null,
             "userConfig": {
                 "localiserId": "acountUserValidFieldSet",
-                "height": 180,
+                "height": null,
                 "title": "Compte utilisateur et validité"
             },
             "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
@@ -163,34 +163,6 @@
                     },
                     "designerId": "2f544c05-24f0-4f13-b209-860742f40890",
                     "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "ACL": "write.ui.users",
-                        "localiserId": "applyBtn",
-                        "layout|anchor": "100%",
-                        "id": "userCUAccessEdit",
-                        "text": "Appliquer"
-                    },
-                    "designerId": "848b18e8-9811-4ad3-b616-69932515952b",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
                         {
                             "group": "(Custom Properties)",
                             "name": "localiserId",
