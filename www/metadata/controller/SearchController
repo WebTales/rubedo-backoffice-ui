@@ -66,6 +66,8 @@
                     "    Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get(\"id\"));\r",
                     "} else if ((record.get(\"objectType\")==\"dam\")&&(ACL.interfaceRights['read.ui.contents'])){\r",
                     "    Rubedo.controller.DAMController.prototype.prepareContext(record.get(\"id\"),record.get(\"typeId\"));\r",
+                    "} else if ((record.get(\"objectType\")==\"user\")&&(ACL.interfaceRights['read.ui.users'])){\r",
+                    "    Rubedo.controller.UserTypesController.prototype.prepareContext(record.get(\"id\"),record.get(\"typeId\"));\r",
                     "}"
                 ],
                 "name": "itemdblclick",

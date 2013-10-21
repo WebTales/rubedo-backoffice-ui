@@ -2949,6 +2949,30 @@
                 "app/view/userUpdateCreadentialsForm.js"
             ],
             "className": "userUpdateCreadentialsForm"
+        },
+        "5e0818df-60d5-431f-a669-90990367da29": {
+            "paths": [
+                "metadata/store/TaxonomyForUT2",
+                "app/store/override/TaxonomyForUT2.js",
+                "app/store/TaxonomyForUT2.js"
+            ],
+            "className": "TaxonomyForUT2"
+        },
+        "30381ed1-6397-4189-a35d-bc831e96d7e6": {
+            "paths": [
+                "metadata/store/UnitaryUsersDataStore",
+                "app/store/override/UnitaryUsersDataStore.js",
+                "app/store/UnitaryUsersDataStore.js"
+            ],
+            "className": "UnitaryUsersDataStore"
+        },
+        "13c3dbe2-b595-4c75-a21b-d2f340bf52f7": {
+            "paths": [
+                "metadata/store/UserTypesForUsers2",
+                "app/store/override/UserTypesForUsers2.js",
+                "app/store/UserTypesForUsers2.js"
+            ],
+            "className": "UserTypesForUsers2"
         }
     },
     "viewOrderMap": {
@@ -3143,6 +3167,7 @@
             "0fa04baf-9fd3-4e4c-be25-b88686d58cd4",
             "40961f33-7d90-45dc-9954-ebf0d0856a4b",
             "d51dd844-1cf3-43cf-859c-7408cf6c8f03",
+            "5e0818df-60d5-431f-a669-90990367da29",
             "77995f7b-eeb6-4897-9802-0ccd25915a05",
             "1b50c020-4b46-495e-ae47-295cf55314b2",
             "ed78c7e5-756f-451d-8b70-7973c0deb8fb",
@@ -3159,6 +3184,7 @@
             "81ee60ff-5960-4240-b5ab-53f409b51792",
             "e69f4522-8b28-4e61-badf-c5c8f0dee470",
             "6024e937-1032-4d87-9bf7-74a57a473a31",
+            "30381ed1-6397-4189-a35d-bc831e96d7e6",
             "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
             "1c2adda2-e782-40ff-b3f4-9e592104046f",
             "498be694-62c9-4b93-b79e-7487f219b90c",
@@ -3210,6 +3236,7 @@
             "42485569-d0e5-4710-b0aa-104840533721",
             "c07b1bf8-041e-4dff-a562-7215859382e1",
             "62d2ad11-342c-4ce7-b926-beedd95ce0c6",
+            "13c3dbe2-b595-4c75-a21b-d2f340bf52f7",
             "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
             "9c372a6b-a40e-4753-9add-88ae21ae9805",
             "314e16bf-0e8d-4905-abb5-5aa656d7c22e",
