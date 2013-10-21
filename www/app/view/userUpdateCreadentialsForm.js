@@ -30,7 +30,6 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                 {
                     xtype: 'fieldset',
                     localiserId: 'acountUserValidFieldSet',
-                    height: 180,
                     title: 'Compte utilisateur et validité',
                     items: [
                         {
@@ -86,14 +85,6 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             fieldLabel: 'Fin de validité ',
                             labelWidth: 200,
                             name: 'endValidity'
-                        },
-                        {
-                            xtype: 'button',
-                            ACL: 'write.ui.users',
-                            localiserId: 'applyBtn',
-                            anchor: '100%',
-                            id: 'userCUAccessEdit',
-                            text: 'Appliquer'
                         }
                     ]
                 },
