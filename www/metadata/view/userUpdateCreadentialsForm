@@ -1,0 +1,255 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "userUpdateCreadentialsForm",
+        "designer|userClassName": "userUpdateCreadentialsForm",
+        "designer|userAlias": "userUpdateCreadentialsForm",
+        "overflowY": "auto",
+        "bodyPadding": 20,
+        "title": "Accès"
+    },
+    "designerId": "bd157263-ffca-45b6-9331-28e5972526b7",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "acountUserValidFieldSet",
+                "height": 180,
+                "title": "Compte utilisateur et validité"
+            },
+            "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "useraccountField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Compte utilisateur ",
+                        "labelWidth": 200,
+                        "name": "login",
+                        "value": null,
+                        "allowBlank": false,
+                        "vtype": null
+                    },
+                    "designerId": "99cd73ae-9957-433c-b445-4d1c5a406bbe",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "gruopsField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Groupes",
+                        "labelWidth": 200,
+                        "name": "groups",
+                        "editable": false,
+                        "displayField": "name",
+                        "forceSelection": true,
+                        "multiSelect": true,
+                        "queryMode": "local",
+                        "store": "GroupsComboStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "9c8e2993-fadb-4117-a3b3-6d4279070411",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "defaultGroupField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Groupe par defaut",
+                        "labelWidth": 200,
+                        "name": "defaultGroup",
+                        "editable": false,
+                        "displayField": "name",
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "GroupsComboStore",
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "notAutomatic": "boolean"
+                    },
+                    "designerId": "54093434-1887-4577-810c-21846e785b62",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "startValidityField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Début de validité ",
+                        "labelWidth": 200,
+                        "name": "startValidity"
+                    },
+                    "designerId": "7d3728d2-1b25-48a6-bd55-82bc31eaf284",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "endValidityField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Fin de validité ",
+                        "labelWidth": 200,
+                        "name": "endValidity"
+                    },
+                    "designerId": "2f544c05-24f0-4f13-b209-860742f40890",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.users",
+                        "localiserId": "applyBtn",
+                        "layout|anchor": "100%",
+                        "id": "userCUAccessEdit",
+                        "text": "Appliquer"
+                    },
+                    "designerId": "848b18e8-9811-4ad3-b616-69932515952b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ACL": "write.ui.users",
+                "localiserId": "passwordChangeFieldSet",
+                "height": 50,
+                "title": "Changement de mot de passe"
+            },
+            "designerId": "1b357183-8778-440b-956b-daf1e3e28000",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "userPasswordChangeBtn",
+                        "layout|anchor": "100%",
+                        "id": "UserCUChangePwd",
+                        "text": "Changer le mot de passe de cet utilisateur"
+                    },
+                    "designerId": "a7c9c3f6-0197-4c9c-86d4-154356adf8f5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

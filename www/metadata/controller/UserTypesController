@@ -373,7 +373,7 @@
                     "        }\r",
                     "        newField.name=newField.name+duplic;\r",
                     "        newField.config.name=newField.config.name+duplic;\r",
-                    "    \r",
+                    "\r",
                     "    }\r",
                     "}\r",
                     "renderTarget.add(casing);"
@@ -750,7 +750,7 @@
                     "} else {\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"UsersInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
                     "    Ext.getStore(\"UsersAdminDataStore\").clearFilter(true);\r",
-                    "    Ext.getStore(\"UsersAdminDataStore\").filter(\"type\",selected[0].get(\"id\"));\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").filter(\"typeId\",selected[0].get(\"id\"));\r",
                     "    Ext.getStore(\"UsersAdminDataStore\").loadPage(1);\r",
                     "    Ext.getCmp(\"addUserBtn\").enable();\r",
                     "}"
@@ -1022,7 +1022,7 @@
                 "implHandler": [
                     "var me=this;\r",
                     "var myEditor=Ext.widget(\"UserCreateUpdateWindow\", {title:record.get(\"name\")});\r",
-                    "userType=Ext.getStore(\"UserTypesForUsers\").findRecord(\"id\",record.get(\"type\"));\r",
+                    "userType=Ext.getStore(\"UserTypesForUsers\").findRecord(\"id\",record.get(\"typeId\"));\r",
                     "myEditor.show();\r",
                     "var targetZone=Ext.getCmp(\"userCUFields\");\r",
                     "Ext.Array.forEach(userType.get(\"fields\"),function(field){\r",
@@ -1037,7 +1037,9 @@
                     "fieldUpdater.email=record.get(\"email\");\r",
                     "Ext.getCmp('userCUFields').getForm().setValues(fieldUpdater);\r",
                     "Ext.getCmp('userCUTaxonomy').getForm().setValues(record.get(\"taxonomy\"));\r",
-                    "\r",
+                    "var credentialsForm=Ext.widget(\"userUpdateCreadentialsForm\");\r",
+                    "myEditor.getComponent(0).add(credentialsForm);\r",
+                    "credentialsForm.getForm().setValues(record.getData());\r",
                     "Ext.getCmp(\"userCUSaveBtn\").on(\"click\", function(){\r",
                     "    me.editUser(record);\r",
                     "});"
@@ -1070,7 +1072,7 @@
                     "    delete fieldValues.email;\r",
                     "    newUser.fields=fieldValues;\r",
                     "    newUser.taxonomy=taxoForm.getValues();\r",
-                    "    newUser.type=userType.get(\"id\");\r",
+                    "    newUser.typeId=userType.get(\"id\");\r",
                     "    newUser.groups=[userType.get(\"defaultGroup\")];\r",
                     "    newUser.defaultGroup=userType.get(\"defaultGroup\");\r",
                     "    Ext.getCmp(\"usersInterfaceCenterGrid\").getStore().add(newUser);\r",

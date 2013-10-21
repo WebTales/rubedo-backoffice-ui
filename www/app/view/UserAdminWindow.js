@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
 
     requires: [
         'Rubedo.view.MyGridPanel16',
+        'Rubedo.view.userUpdateCreadentialsForm',
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17'
     ],
@@ -220,199 +221,7 @@ Ext.define('Rubedo.view.UserAdminWindow', {
                             ]
                         },
                         {
-                            xtype: 'form',
-                            id: 'userAdminAccessDisplay',
-                            overflowY: 'auto',
-                            bodyPadding: 20,
-                            title: 'Accès',
-                            tabConfig: {
-                                xtype: 'tab',
-                                localiserId: 'accessTab'
-                            },
-                            items: [
-                                {
-                                    xtype: 'fieldset',
-                                    localiserId: 'acountUserValidFieldSet',
-                                    height: 180,
-                                    title: 'Compte utilisateur et validité',
-                                    items: [
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'useraccountField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Compte utilisateur ',
-                                            labelWidth: 200,
-                                            name: 'login',
-                                            allowBlank: false,
-                                            vtype: 'alphanum'
-                                        },
-                                        {
-                                            xtype: 'combobox',
-                                            localiserId: 'gruopsField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Groupes',
-                                            labelWidth: 200,
-                                            name: 'groups',
-                                            editable: false,
-                                            displayField: 'name',
-                                            forceSelection: true,
-                                            multiSelect: true,
-                                            queryMode: 'local',
-                                            store: 'GroupsComboStore',
-                                            valueField: 'id'
-                                        },
-                                        {
-                                            xtype: 'combobox',
-                                            localiserId: 'defaultGroupField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Groupe par defaut',
-                                            labelWidth: 200,
-                                            name: 'defaultGroup',
-                                            editable: false,
-                                            displayField: 'name',
-                                            forceSelection: true,
-                                            queryMode: 'local',
-                                            store: 'GroupsComboStore',
-                                            valueField: 'id'
-                                        },
-                                        {
-                                            xtype: 'datefield',
-                                            localiserId: 'startValidityField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Début de validité ',
-                                            labelWidth: 200,
-                                            name: 'startValidity'
-                                        },
-                                        {
-                                            xtype: 'datefield',
-                                            localiserId: 'endValidityField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Fin de validité ',
-                                            labelWidth: 200,
-                                            name: 'endValidity'
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            ACL: 'write.ui.users',
-                                            localiserId: 'applyBtn',
-                                            anchor: '100%',
-                                            id: 'userAdminAccessEdit',
-                                            text: 'Appliquer'
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'fieldset',
-                                    ACL: 'write.ui.users',
-                                    localiserId: 'passwordChangeFieldSet',
-                                    height: 50,
-                                    title: 'Changement de mot de passe',
-                                    items: [
-                                        {
-                                            xtype: 'button',
-                                            localiserId: 'userPasswordChangeBtn',
-                                            anchor: '100%',
-                                            id: 'AdminChangeUserPwd',
-                                            text: 'Changer le mot de passe de cet utilisateur'
-                                        }
-                                    ]
-                                },
-                                {
-                                    xtype: 'gridpanel',
-                                    height: 150,
-                                    hidden: true,
-                                    autoScroll: true,
-                                    title: 'Délégations',
-                                    store: 'DelegationsDataStore',
-                                    columns: [
-                                        {
-                                            xtype: 'gridcolumn',
-                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                var user = Ext.getStore("UsersAdminDataStore").findRecord("id", value);
-                                                if (Ext.isEmpty(user)) {
-                                                    return("Inconnu");
-                                                } else {
-                                                    return(user.get("name"));
-                                                }
-                                            },
-                                            dataIndex: 'receiverId',
-                                            text: 'Délégué',
-                                            flex: 1,
-                                            editor: {
-                                                xtype: 'combobox',
-                                                managesStore: true,
-                                                displayField: 'name',
-                                                minChars: 3,
-                                                store: 'UsersComboStore',
-                                                typeAhead: true,
-                                                valueField: 'id'
-                                            }
-                                        },
-                                        {
-                                            xtype: 'datecolumn',
-                                            dataIndex: 'startValidity',
-                                            text: 'Début de validité',
-                                            flex: 1,
-                                            editor: {
-                                                xtype: 'datefield'
-                                            }
-                                        },
-                                        {
-                                            xtype: 'datecolumn',
-                                            dataIndex: 'endValidity',
-                                            text: 'Fin de validité',
-                                            flex: 1,
-                                            editor: {
-                                                xtype: 'datefield'
-                                            }
-                                        }
-                                    ],
-                                    dockedItems: [
-                                        {
-                                            xtype: 'toolbar',
-                                            dock: 'bottom',
-                                            items: [
-                                                {
-                                                    xtype: 'tbfill'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    ACL: 'write.ui.users',
-                                                    id: 'AdminAddDelegationBtn',
-                                                    iconCls: 'add',
-                                                    text: 'Ajouter'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    ACL: 'write.ui.users',
-                                                    id: 'AdminDeleteDelegationBtn',
-                                                    iconCls: 'close',
-                                                    text: 'Supprimer'
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
-
-                                    }),
-                                    plugins: [
-                                        Ext.create('Ext.grid.plugin.RowEditing', {
-                                            listeners: {
-                                                beforeedit: {
-                                                    fn: me.onGridroweditingpluginBeforeEdit,
-                                                    scope: me
-                                                }
-                                            }
-                                        })
-                                    ],
-                                    listeners: {
-                                        destroy: {
-                                            fn: me.onGridpanelDestroy,
-                                            scope: me
-                                        }
-                                    }
-                                }
-                            ]
+                            xtype: 'userUpdateCreadentialsForm'
                         }
                     ],
                     listeners: {
@@ -473,14 +282,6 @@ Ext.define('Rubedo.view.UserAdminWindow', {
         });
 
         me.callParent(arguments);
-    },
-
-    onGridroweditingpluginBeforeEdit: function(editor, context, eOpts) {
-        if (!ACL.interfaceRights['write.ui.users']) {return(false);}
-    },
-
-    onGridpanelDestroy: function(component, eOpts) {
-        component.getStore().removeAll();
     },
 
     onUserAdminMainPanelAfterRender: function(component, eOpts) {
