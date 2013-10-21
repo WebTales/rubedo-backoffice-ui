@@ -1218,6 +1218,27 @@
                 "designer|controlQuery": "#userCUProfilePictureDelete"
             },
             "designerId": "19ad9f68-67b4-4218-8528-475e2ab0cffc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserCUChangePwdClick",
+                "implHandler": [
+                    "var window=Ext.widget(\"AdminPasswordChange\");\r",
+                    "window.show();\r",
+                    "window.getComponent(0).getForm().loadRecord(Ext.getCmp(\"userUpdateCreadentialsForm\").targetRecord);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#UserCUChangePwd"
+            },
+            "designerId": "0e4ce198-9235-4f97-8738-f62d1b25c869"
         }
     ]
 }
