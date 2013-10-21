@@ -11,10 +11,91 @@
         "designer|userAlias": "userUpdateCreadentialsForm",
         "overflowY": "auto",
         "bodyPadding": 20,
-        "title": "Accès"
+        "title": "Credentials and interface settings"
     },
     "designerId": "bd157263-ffca-45b6-9331-28e5972526b7",
     "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Interface settings"
+            },
+            "designerId": "0e853b51-b12f-4191-b936-a118d607d529",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "languageField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Langue ",
+                        "labelWidth": 110,
+                        "name": "language",
+                        "editable": false,
+                        "displayField": "label",
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "BOLanguageStore",
+                        "valueField": "key"
+                    },
+                    "designerId": "08ac2cdd-1afd-480c-bc9c-f1eb1e650ef6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Interface",
+                        "labelWidth": 110,
+                        "name": "interfaceMode",
+                        "editable": false,
+                        "forceSelection": true
+                    },
+                    "designerId": "85fc8e08-7436-4a0d-9478-2fe115321da5",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processInterfaceMode",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.store=[[\"desktop\",\"Desktop\"],[\"simple\",\"Application\"]];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "1286edea-7c58-42c1-ab7f-fa031abf4f61"
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "type": "Ext.form.FieldSet",
             "reference": {
@@ -47,7 +128,7 @@
                         "localiserId": "useraccountField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Compte utilisateur ",
-                        "labelWidth": 200,
+                        "labelWidth": 110,
                         "name": "login",
                         "value": null,
                         "allowBlank": false,
@@ -73,7 +154,7 @@
                         "localiserId": "gruopsField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Groupes",
-                        "labelWidth": 200,
+                        "labelWidth": 110,
                         "name": "groups",
                         "editable": false,
                         "displayField": "name",
@@ -103,7 +184,7 @@
                         "localiserId": "defaultGroupField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Groupe par defaut",
-                        "labelWidth": 200,
+                        "labelWidth": 110,
                         "name": "defaultGroup",
                         "editable": false,
                         "displayField": "name",
@@ -135,7 +216,7 @@
                         "localiserId": "startValidityField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Début de validité ",
-                        "labelWidth": 200,
+                        "labelWidth": 110,
                         "name": "startValidity"
                     },
                     "designerId": "7d3728d2-1b25-48a6-bd55-82bc31eaf284",
@@ -158,7 +239,7 @@
                         "localiserId": "endValidityField",
                         "layout|anchor": "100%",
                         "fieldLabel": "Fin de validité ",
-                        "labelWidth": 200,
+                        "labelWidth": 110,
                         "name": "endValidity"
                     },
                     "designerId": "2f544c05-24f0-4f13-b209-860742f40890",

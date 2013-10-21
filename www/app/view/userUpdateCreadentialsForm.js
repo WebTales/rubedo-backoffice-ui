@@ -20,13 +20,42 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
     id: 'userUpdateCreadentialsForm',
     overflowY: 'auto',
     bodyPadding: 20,
-    title: 'Accès',
+    title: 'Credentials and interface settings',
 
     initComponent: function() {
         var me = this;
 
         Ext.applyIf(me, {
             items: [
+                {
+                    xtype: 'fieldset',
+                    title: 'Interface settings',
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            localiserId: 'languageField',
+                            anchor: '100%',
+                            fieldLabel: 'Langue ',
+                            labelWidth: 110,
+                            name: 'language',
+                            editable: false,
+                            displayField: 'label',
+                            forceSelection: true,
+                            queryMode: 'local',
+                            store: 'BOLanguageStore',
+                            valueField: 'key'
+                        },
+                        me.processInterfaceMode({
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            fieldLabel: 'Interface',
+                            labelWidth: 110,
+                            name: 'interfaceMode',
+                            editable: false,
+                            forceSelection: true
+                        })
+                    ]
+                },
                 {
                     xtype: 'fieldset',
                     localiserId: 'acountUserValidFieldSet',
@@ -37,7 +66,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             localiserId: 'useraccountField',
                             anchor: '100%',
                             fieldLabel: 'Compte utilisateur ',
-                            labelWidth: 200,
+                            labelWidth: 110,
                             name: 'login',
                             allowBlank: false
                         },
@@ -46,7 +75,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             localiserId: 'gruopsField',
                             anchor: '100%',
                             fieldLabel: 'Groupes',
-                            labelWidth: 200,
+                            labelWidth: 110,
                             name: 'groups',
                             editable: false,
                             displayField: 'name',
@@ -61,7 +90,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             localiserId: 'defaultGroupField',
                             anchor: '100%',
                             fieldLabel: 'Groupe par defaut',
-                            labelWidth: 200,
+                            labelWidth: 110,
                             name: 'defaultGroup',
                             editable: false,
                             displayField: 'name',
@@ -75,7 +104,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             localiserId: 'startValidityField',
                             anchor: '100%',
                             fieldLabel: 'Début de validité ',
-                            labelWidth: 200,
+                            labelWidth: 110,
                             name: 'startValidity'
                         },
                         {
@@ -83,7 +112,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             localiserId: 'endValidityField',
                             anchor: '100%',
                             fieldLabel: 'Fin de validité ',
-                            labelWidth: 200,
+                            labelWidth: 110,
                             name: 'endValidity'
                         }
                     ]
@@ -108,6 +137,11 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
         });
 
         me.callParent(arguments);
+    },
+
+    processInterfaceMode: function(config) {
+        config.store=[["desktop","Desktop"],["simple","Application"]];
+        return config;
     }
 
 });
