@@ -332,6 +332,15 @@ Ext.define('Rubedo.controller.UserTypesController', {
         Ext.getCmp("editUserBtn").fireEvent("click",Ext.getCmp("editUserBtn"));
     },
 
+    onUserCUChangePictureBtnClick: function(button, e, eOpts) {
+        Ext.widget("PersoPicUploadWindow").show();
+    },
+
+    onUserCUProfilePictureDeleteClick: function(button, e, eOpts) {
+        Ext.getCmp("userCUAdminProfilePicture").setSrc("resources/images/userBig.png");
+        Ext.getCmp("userUpdateCreadentialsForm").targetRecord.set("photo", null);
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -695,6 +704,13 @@ Ext.define('Rubedo.controller.UserTypesController', {
         var credentialsForm=Ext.widget("userUpdateCreadentialsForm");
         myEditor.getComponent(0).add(credentialsForm);
         credentialsForm.getForm().setValues(record.getData());
+        credentialsForm.targetRecord=record;
+        if (Ext.isEmpty(record.get("photo"))) {
+            Ext.getCmp("userCUAdminProfilePicture").setSrc("resources/images/userBig.png");
+        } else {
+            Ext.getCmp("userCUAdminProfilePicture").setSrc("image/get?file-id="+record.get("photo"));
+        }
+
         Ext.getCmp("userCUSaveBtn").on("click", function(){
             me.editUser(record);
         });
@@ -796,6 +812,12 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#removeUserBtn": {
                 click: this.onRemoveUserBtnClick
+            },
+            "#userCUChangePictureBtn": {
+                click: this.onUserCUChangePictureBtnClick
+            },
+            "#userCUProfilePictureDelete": {
+                click: this.onUserCUProfilePictureDeleteClick
             }
         });
     }

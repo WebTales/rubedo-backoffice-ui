@@ -28,108 +28,164 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'fieldset',
-                    title: 'Interface settings',
+                    xtype: 'container',
+                    layout: {
+                        align: 'stretch',
+                        type: 'hbox'
+                    },
                     items: [
                         {
-                            xtype: 'combobox',
-                            localiserId: 'languageField',
-                            anchor: '100%',
-                            fieldLabel: 'Langue ',
-                            labelWidth: 110,
-                            name: 'language',
-                            editable: false,
-                            displayField: 'label',
-                            forceSelection: true,
-                            queryMode: 'local',
-                            store: 'BOLanguageStore',
-                            valueField: 'key'
+                            xtype: 'container',
+                            flex: 1,
+                            margins: '0 20 0 0',
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Interface settings',
+                                    items: [
+                                        {
+                                            xtype: 'combobox',
+                                            localiserId: 'languageField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Langue ',
+                                            labelWidth: 110,
+                                            name: 'language',
+                                            editable: false,
+                                            displayField: 'label',
+                                            forceSelection: true,
+                                            queryMode: 'local',
+                                            store: 'BOLanguageStore',
+                                            valueField: 'key'
+                                        },
+                                        me.processInterfaceMode({
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            fieldLabel: 'Interface',
+                                            labelWidth: 110,
+                                            name: 'interfaceMode',
+                                            editable: false,
+                                            forceSelection: true
+                                        })
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    localiserId: 'acountUserValidFieldSet',
+                                    title: 'Compte utilisateur et validité',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'useraccountField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Compte utilisateur ',
+                                            labelWidth: 110,
+                                            name: 'login',
+                                            allowBlank: false
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            localiserId: 'gruopsField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Groupes',
+                                            labelWidth: 110,
+                                            name: 'groups',
+                                            editable: false,
+                                            displayField: 'name',
+                                            forceSelection: true,
+                                            multiSelect: true,
+                                            queryMode: 'local',
+                                            store: 'GroupsComboStore',
+                                            valueField: 'id'
+                                        },
+                                        {
+                                            xtype: 'combobox',
+                                            localiserId: 'defaultGroupField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Groupe par defaut',
+                                            labelWidth: 110,
+                                            name: 'defaultGroup',
+                                            editable: false,
+                                            displayField: 'name',
+                                            forceSelection: true,
+                                            queryMode: 'local',
+                                            store: 'GroupsComboStore',
+                                            valueField: 'id'
+                                        },
+                                        {
+                                            xtype: 'datefield',
+                                            localiserId: 'startValidityField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Début de validité ',
+                                            labelWidth: 110,
+                                            name: 'startValidity'
+                                        },
+                                        {
+                                            xtype: 'datefield',
+                                            localiserId: 'endValidityField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Fin de validité ',
+                                            labelWidth: 110,
+                                            name: 'endValidity'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    ACL: 'write.ui.users',
+                                    localiserId: 'passwordChangeFieldSet',
+                                    height: 50,
+                                    title: 'Changement de mot de passe',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            localiserId: 'userPasswordChangeBtn',
+                                            anchor: '100%',
+                                            id: 'UserCUChangePwd',
+                                            text: 'Changer le mot de passe de cet utilisateur'
+                                        }
+                                    ]
+                                }
+                            ]
                         },
-                        me.processInterfaceMode({
-                            xtype: 'combobox',
-                            anchor: '100%',
-                            fieldLabel: 'Interface',
-                            labelWidth: 110,
-                            name: 'interfaceMode',
-                            editable: false,
-                            forceSelection: true
-                        })
-                    ]
-                },
-                {
-                    xtype: 'fieldset',
-                    localiserId: 'acountUserValidFieldSet',
-                    title: 'Compte utilisateur et validité',
-                    items: [
                         {
-                            xtype: 'textfield',
-                            localiserId: 'useraccountField',
-                            anchor: '100%',
-                            fieldLabel: 'Compte utilisateur ',
-                            labelWidth: 110,
-                            name: 'login',
-                            allowBlank: false
-                        },
-                        {
-                            xtype: 'combobox',
-                            localiserId: 'gruopsField',
-                            anchor: '100%',
-                            fieldLabel: 'Groupes',
-                            labelWidth: 110,
-                            name: 'groups',
-                            editable: false,
-                            displayField: 'name',
-                            forceSelection: true,
-                            multiSelect: true,
-                            queryMode: 'local',
-                            store: 'GroupsComboStore',
-                            valueField: 'id'
-                        },
-                        {
-                            xtype: 'combobox',
-                            localiserId: 'defaultGroupField',
-                            anchor: '100%',
-                            fieldLabel: 'Groupe par defaut',
-                            labelWidth: 110,
-                            name: 'defaultGroup',
-                            editable: false,
-                            displayField: 'name',
-                            forceSelection: true,
-                            queryMode: 'local',
-                            store: 'GroupsComboStore',
-                            valueField: 'id'
-                        },
-                        {
-                            xtype: 'datefield',
-                            localiserId: 'startValidityField',
-                            anchor: '100%',
-                            fieldLabel: 'Début de validité ',
-                            labelWidth: 110,
-                            name: 'startValidity'
-                        },
-                        {
-                            xtype: 'datefield',
-                            localiserId: 'endValidityField',
-                            anchor: '100%',
-                            fieldLabel: 'Fin de validité ',
-                            labelWidth: 110,
-                            name: 'endValidity'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'fieldset',
-                    ACL: 'write.ui.users',
-                    localiserId: 'passwordChangeFieldSet',
-                    height: 50,
-                    title: 'Changement de mot de passe',
-                    items: [
-                        {
-                            xtype: 'button',
-                            localiserId: 'userPasswordChangeBtn',
-                            anchor: '100%',
-                            id: 'UserCUChangePwd',
-                            text: 'Changer le mot de passe de cet utilisateur'
+                            xtype: 'container',
+                            width: 220,
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    localiserId: 'photoFieldSet',
+                                    height: 280,
+                                    margin: '0 0 0 10',
+                                    width: 200,
+                                    title: 'Photo',
+                                    items: [
+                                        {
+                                            xtype: 'image',
+                                            height: 180,
+                                            id: 'userCUAdminProfilePicture',
+                                            margin: '0 0 18 18',
+                                            width: 140,
+                                            src: 'resources/images/userBig.png'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            localiserId: 'changeBtn',
+                                            anchor: '100%',
+                                            id: 'userCUChangePictureBtn',
+                                            margin: '0 0 10 0',
+                                            text: 'Changer'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            ACL: 'write.ui.users',
+                                            localiserId: 'removeBtn',
+                                            anchor: '100%',
+                                            id: 'userCUProfilePictureDelete',
+                                            text: 'Supprimer'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
