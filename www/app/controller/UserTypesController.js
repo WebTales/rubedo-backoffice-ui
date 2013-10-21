@@ -727,7 +727,6 @@ Ext.define('Rubedo.controller.UserTypesController', {
             var fieldValues=fieldsForm.getValues();
             newUser.name=fieldValues.name;
             newUser.email=fieldValues.email;
-            newUser.login=newUser.email;
             delete fieldValues.name;
             delete fieldValues.email;
             newUser.fields=fieldValues;

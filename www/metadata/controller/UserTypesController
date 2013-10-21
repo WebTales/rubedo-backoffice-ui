@@ -1031,7 +1031,7 @@
                     "me.renderTaxoFields(userType);\r",
                     "var fieldUpdater=record.get(\"fields\");\r",
                     "if (Ext.isEmpty(fieldUpdater)){\r",
-                    "   fieldUpdater={ };\r",
+                    "    fieldUpdater={ };\r",
                     "}\r",
                     "fieldUpdater.name=record.get(\"name\");\r",
                     "fieldUpdater.email=record.get(\"email\");\r",
@@ -1139,12 +1139,11 @@
                     "    var fieldValues=fieldsForm.getValues();\r",
                     "    newUser.name=fieldValues.name;\r",
                     "    newUser.email=fieldValues.email;\r",
-                    "    newUser.login=newUser.email;\r",
                     "    delete fieldValues.name;\r",
                     "    delete fieldValues.email;\r",
                     "    newUser.fields=fieldValues;\r",
                     "    newUser.taxonomy=taxoForm.getValues();\r",
-                    "\trecord.set(newUser);\r",
+                    "    record.set(newUser);\r",
                     "    Ext.getCmp(\"UserCreateUpdateWindow\").close();\r",
                     "}"
                 ]
