@@ -125,7 +125,7 @@ Ext.define('Rubedo.controller.SearchController', {
             }
             if (!Ext.isEmpty(facet.terms)){
                 var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
-                if((facet.id!="type")&&(facet.id!="damType")){newFacet.collapse();}
+                if((facet.id!="type")&&(facet.id!="damType")&&(facet.id!="userType")){newFacet.collapse();}
                 newFacet.usedProperty=facet.id;
 
                 Ext.Array.forEach(facet.terms, function(term){

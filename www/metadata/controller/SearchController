@@ -190,7 +190,7 @@
                     "    }\r",
                     "    if (!Ext.isEmpty(facet.terms)){\r",
                     "        var newFacet = Ext.widget(\"fieldset\", {title:facet.label, collapsible:true});\r",
-                    "        if((facet.id!=\"type\")&&(facet.id!=\"damType\")){newFacet.collapse();}\r",
+                    "        if((facet.id!=\"type\")&&(facet.id!=\"damType\")&&(facet.id!=\"userType\")){newFacet.collapse();}\r",
                     "        newFacet.usedProperty=facet.id;\r",
                     "\r",
                     "        Ext.Array.forEach(facet.terms, function(term){\r",
