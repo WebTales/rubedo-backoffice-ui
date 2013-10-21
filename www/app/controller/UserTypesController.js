@@ -341,6 +341,12 @@ Ext.define('Rubedo.controller.UserTypesController', {
         Ext.getCmp("userUpdateCreadentialsForm").targetRecord.set("photo", null);
     },
 
+    onUserCUChangePwdClick: function(button, e, eOpts) {
+        var window=Ext.widget("AdminPasswordChange");
+        window.show();
+        window.getComponent(0).getForm().loadRecord(Ext.getCmp("userUpdateCreadentialsForm").targetRecord);
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -818,6 +824,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#userCUProfilePictureDelete": {
                 click: this.onUserCUProfilePictureDeleteClick
+            },
+            "#UserCUChangePwd": {
+                click: this.onUserCUChangePwdClick
             }
         });
     }
