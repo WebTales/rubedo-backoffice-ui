@@ -77,7 +77,7 @@ Ext.define('Rubedo.model.userDataModel', {
             name: 'interfaceMode'
         },
         {
-            name: 'type'
+            name: 'typeId'
         },
         {
             name: 'fields'

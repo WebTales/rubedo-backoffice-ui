@@ -501,7 +501,8 @@
                 "fn": "onUsersInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"UserTypesForUsers\").load();\r",
-                    "Ext.getStore(\"TaxonomyForU\").load();"
+                    "Ext.getStore(\"TaxonomyForU\").load();\r",
+                    "Ext.getStore(\"GroupsComboStore\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -521,7 +522,8 @@
                     "Ext.getStore(\"UserTypesForUsers\").removeAll();\r",
                     "Ext.getStore(\"UsersAdminDataStore\").clearFilter(true);\r",
                     "Ext.getStore(\"UsersAdminDataStore\").removeAll();\r",
-                    "Ext.getStore(\"TaxonomyForU\").removeAll();"
+                    "Ext.getStore(\"TaxonomyForU\").removeAll();\r",
+                    "Ext.getStore(\"GroupsComboStore\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

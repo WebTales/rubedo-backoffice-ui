@@ -261,6 +261,7 @@ Ext.define('Rubedo.view.UsersInterface', {
     onUsersInterfaceRender: function(component, eOpts) {
         Ext.getStore("UserTypesForUsers").load();
         Ext.getStore("TaxonomyForU").load();
+        Ext.getStore("GroupsComboStore").load();
     },
 
     onUsersInterfaceBeforeClose: function(panel, eOpts) {
@@ -268,6 +269,7 @@ Ext.define('Rubedo.view.UsersInterface', {
         Ext.getStore("UsersAdminDataStore").clearFilter(true);
         Ext.getStore("UsersAdminDataStore").removeAll();
         Ext.getStore("TaxonomyForU").removeAll();
+        Ext.getStore("GroupsComboStore").removeAll();
     }
 
 });

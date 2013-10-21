@@ -331,7 +331,8 @@ Ext.application({
         'newUTWindow',
         'UTFieldAddWindow',
         'UserCreateUpdateWindow',
-        'UsersInterface'
+        'UsersInterface',
+        'userUpdateCreadentialsForm'
     ],
     autoCreateViewport: true,
     controllers: [

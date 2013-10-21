@@ -296,7 +296,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
         } else {
             Ext.Array.forEach(Ext.getCmp("UsersInterface").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
-            Ext.getStore("UsersAdminDataStore").filter("type",selected[0].get("id"));
+            Ext.getStore("UsersAdminDataStore").filter("typeId",selected[0].get("id"));
             Ext.getStore("UsersAdminDataStore").loadPage(1);
             Ext.getCmp("addUserBtn").enable();
         }
@@ -677,7 +677,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
     fireUserEdit: function(record) {
         var me=this;
         var myEditor=Ext.widget("UserCreateUpdateWindow", {title:record.get("name")});
-        userType=Ext.getStore("UserTypesForUsers").findRecord("id",record.get("type"));
+        userType=Ext.getStore("UserTypesForUsers").findRecord("id",record.get("typeId"));
         myEditor.show();
         var targetZone=Ext.getCmp("userCUFields");
         Ext.Array.forEach(userType.get("fields"),function(field){
@@ -692,7 +692,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
         fieldUpdater.email=record.get("email");
         Ext.getCmp('userCUFields').getForm().setValues(fieldUpdater);
         Ext.getCmp('userCUTaxonomy').getForm().setValues(record.get("taxonomy"));
-
+        var credentialsForm=Ext.widget("userUpdateCreadentialsForm");
+        myEditor.getComponent(0).add(credentialsForm);
+        credentialsForm.getForm().setValues(record.getData());
         Ext.getCmp("userCUSaveBtn").on("click", function(){
             me.editUser(record);
         });
@@ -711,7 +713,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             delete fieldValues.email;
             newUser.fields=fieldValues;
             newUser.taxonomy=taxoForm.getValues();
-            newUser.type=userType.get("id");
+            newUser.typeId=userType.get("id");
             newUser.groups=[userType.get("defaultGroup")];
             newUser.defaultGroup=userType.get("defaultGroup");
             Ext.getCmp("usersInterfaceCenterGrid").getStore().add(newUser);
