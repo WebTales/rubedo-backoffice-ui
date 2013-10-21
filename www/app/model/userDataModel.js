@@ -51,7 +51,7 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             dateFormat: 'U',
-            name: 'updateTime',
+            name: 'lastUpdateTime',
             type: 'date'
         },
         {

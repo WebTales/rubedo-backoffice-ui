@@ -221,7 +221,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                         },
                         {
                             xtype: 'datecolumn',
-                            dataIndex: 'updateTime',
+                            dataIndex: 'lastUpdateTime',
                             text: 'Last update'
                         }
                     ],
