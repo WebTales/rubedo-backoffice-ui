@@ -724,7 +724,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
     editUser: function(record) {
         var fieldsForm=Ext.getCmp("userCUFields");
         var taxoForm=Ext.getCmp("userCUTaxonomy");
-        if ((fieldsForm.isValid())&&(taxoForm.isValid())){
+        var credentialsForm=Ext.getCmp("userUpdateCreadentialsForm");
+        if ((fieldsForm.isValid())&&(taxoForm.isValid())&&(credentialsForm.isValid())){
             var newUser={ };
             var fieldValues=fieldsForm.getValues();
             newUser.name=fieldValues.name;
@@ -733,6 +734,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             delete fieldValues.email;
             newUser.fields=fieldValues;
             newUser.taxonomy=taxoForm.getValues();
+            Ext.apply(newUser,credentialsForm.getValues());
             record.set(newUser);
             Ext.getCmp("UserCreateUpdateWindow").close();
         }
