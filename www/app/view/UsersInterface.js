@@ -206,6 +206,30 @@ Ext.define('Rubedo.view.UsersInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                var src="";
+                                if (Ext.isEmpty(record.get("photo"))) {
+                                    src="resources/images/userBig.png";
+                                } else {
+                                    src="image/get?file-id="+record.get("photo");
+                                }
+                                return ('<img src=\"'+src+'\" width=\"80\" ');
+                            },
+                            dataIndex: 'photo',
+                            text: 'Photo'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                var valueString= value;
+                                try {
+                                    var groupString=Ext.getStore("GroupsComboStore").findRecord("id",record.get("defaultGroup")).get("name");
+                                }catch(err){
+                                    var groupString="";
+                                }
+                                valueString=valueString+'</br></br><span class="specialminigroupbox">'+groupString+'</span>';
+                                return(valueString);
+                            },
                             dataIndex: 'name',
                             text: 'Name'
                         },
