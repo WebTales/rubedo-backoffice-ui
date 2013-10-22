@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.userSettings', {
     ],
 
     localiserId: 'settingWindow',
-    height: 527,
+    height: 460,
     id: 'userSettings',
     width: 604,
     layout: {
@@ -60,7 +60,7 @@ Ext.define('Rubedo.view.userSettings', {
                                     xtype: 'fieldset',
                                     localiserId: 'informationsFieldSet',
                                     flex: 1,
-                                    height: 420,
+                                    height: 180,
                                     margin: 0,
                                     width: 356,
                                     autoScroll: true,
@@ -94,62 +94,6 @@ Ext.define('Rubedo.view.userSettings', {
                                         },
                                         {
                                             xtype: 'combobox',
-                                            localiserId: 'civilityField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Civilité ',
-                                            name: 'title',
-                                            editable: false,
-                                            forceSelection: true,
-                                            store: [
-                                                'Mr',
-                                                'Mme',
-                                                'Mlle'
-                                            ]
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'organisationField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Organisation ',
-                                            name: 'organisation'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'serviceField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Service ',
-                                            name: 'service'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'functionField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Fonction ',
-                                            name: 'post'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'phoneField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Téléphone ',
-                                            name: 'telephone'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'mobileField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Mobile ',
-                                            name: 'mobile'
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'coordinatesField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Coordonnées ',
-                                            name: 'coordinates'
-                                        },
-                                        {
-                                            xtype: 'combobox',
                                             localiserId: 'languageField',
                                             anchor: '100%',
                                             fieldLabel: 'Langue ',
@@ -169,13 +113,6 @@ Ext.define('Rubedo.view.userSettings', {
                                             editable: false,
                                             forceSelection: true
                                         }),
-                                        {
-                                            xtype: 'textfield',
-                                            localiserId: 'countryField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Pays ',
-                                            name: 'country'
-                                        },
                                         {
                                             xtype: 'button',
                                             localiserId: 'applyBtn',
