@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "managesStore": true,
         "designer|userClassName": "FTDComboField",
         "designer|userAlias": "FTDComboField",
         "fieldLabel": "Label",
@@ -21,13 +20,6 @@
         "managesStore": "boolean"
     },
     "designerId": "a78985f2-049d-48b7-b700-1ab96f553aa4",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "managesStore",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "processcfgfunction",
@@ -66,6 +58,41 @@
                 "scope": "me"
             },
             "designerId": "363cbf47-1e07-4a57-bb41-db620df80e9e"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onComboboxRender",
+                "implHandler": [
+                    "component.getStore().onlyUserFacets=component.onlyUserFacets;\r",
+                    "component.getStore().load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "9c04a126-1473-474b-a20e-3ebc87900b85"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onComboboxBeforeDestroy",
+                "implHandler": [
+                    "component.getStore().removeAll();"
+                ],
+                "name": "beforedestroy",
+                "scope": "me"
+            },
+            "designerId": "8823ebe4-ad6e-4301-a465-ec54cec35d20"
         }
     ]
 }

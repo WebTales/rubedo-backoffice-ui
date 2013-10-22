@@ -58,7 +58,11 @@ Ext.define('Rubedo.store.FacetsToDisplayStore', {
     },
 
     onJsonstoreLoad: function(store, records, successful, eOpts) {
-        store.add({"id":"all", "name":Rubedo.RubedoAutomatedElementsLoc.allText, "order":1},{"id":"contentType", "name":Rubedo.RubedoAutomatedElementsLoc.contentTypeText,"facetOperator":"AND", "order":2},{"id":"damType", "name":Rubedo.RubedoAutomatedElementsLoc.mediaTypeText,"facetOperator":"AND", "order":2},{"id":"userType", "name":"User type","facetOperator":"AND", "order":2});
+        if (store.onlyUserFacets){
+            store.add({"id":"all", "name":Rubedo.RubedoAutomatedElementsLoc.allText, "order":1},{"id":"userType", "name":"User type","facetOperator":"AND", "order":2});
+        } else {
+            store.add({"id":"all", "name":Rubedo.RubedoAutomatedElementsLoc.allText, "order":1},{"id":"contentType", "name":Rubedo.RubedoAutomatedElementsLoc.contentTypeText,"facetOperator":"AND", "order":2},{"id":"damType", "name":Rubedo.RubedoAutomatedElementsLoc.mediaTypeText,"facetOperator":"AND", "order":2},{"id":"userType", "name":"User type","facetOperator":"AND", "order":2});
+        }
     }
 
 });
