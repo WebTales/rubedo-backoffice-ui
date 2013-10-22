@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "localiserId": "settingWindow",
-        "height": 527,
+        "height": 460,
         "id": "userSettings",
         "width": 604,
         "designer|userClassName": "userSettings",
@@ -84,7 +84,7 @@
                             "userConfig": {
                                 "localiserId": "informationsFieldSet",
                                 "layout|flex": 1,
-                                "height": 420,
+                                "height": 180,
                                 "margin": 0,
                                 "width": 356,
                                 "autoScroll": true,
@@ -179,170 +179,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "civilityField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Civilité ",
-                                        "name": "title",
-                                        "editable": false,
-                                        "displayField": null,
-                                        "forceSelection": true,
-                                        "store": [
-                                            "[\"Mr\",\"Mme\",\"Mlle\"]"
-                                        ],
-                                        "valueField": null
-                                    },
-                                    "configAlternates": {
-                                        "store": "array"
-                                    },
-                                    "designerId": "dbb2a9c2-cd57-4f9d-88c5-027c6640d103",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "organisationField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Organisation ",
-                                        "name": "organisation"
-                                    },
-                                    "designerId": "99325132-0517-41ea-9c58-b2cc1d2d3d3d",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "serviceField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Service ",
-                                        "name": "service"
-                                    },
-                                    "designerId": "3a75d1c5-b68d-4955-8f87-36a628726e62",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "functionField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Fonction ",
-                                        "name": "post"
-                                    },
-                                    "designerId": "23831d34-f782-4005-a7ee-556c847b6e70",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "phoneField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Téléphone ",
-                                        "name": "telephone"
-                                    },
-                                    "designerId": "41153bcc-821b-4a8b-9b55-e6b2781d80fa",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "mobileField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Mobile ",
-                                        "name": "mobile"
-                                    },
-                                    "designerId": "ffd1c463-f9a0-4d98-82a3-598e4d50ac74",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "coordinatesField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Coordonnées ",
-                                        "name": "coordinates"
-                                    },
-                                    "designerId": "d455b234-fb9a-438e-b7a2-c97c3085eab7",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
                                         "localiserId": "languageField",
                                         "layout|anchor": "100%",
                                         "fieldLabel": "Langue ",
@@ -397,28 +233,6 @@
                                                 ]
                                             },
                                             "designerId": "31588c6a-da6b-4e1c-99e0-3ab650ecfbfe"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "localiserId": "countryField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Pays ",
-                                        "name": "country"
-                                    },
-                                    "designerId": "330e487a-5f04-4588-805a-b52c927f9a8d",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
                                         }
                                     ]
                                 },
