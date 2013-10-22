@@ -554,10 +554,88 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "photo",
+                        "text": "Photo"
+                    },
+                    "designerId": "725ed79d-6f3c-49f1-97dc-88d828c52731",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "var src=\"\";\r",
+                                    "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
+                                    "    src=\"resources/images/userBig.png\";\r",
+                                    "} else {\r",
+                                    "    src=\"image/get?file-id=\"+record.get(\"photo\");\r",
+                                    "}\r",
+                                    "return ('<img src=\\\"'+src+'\\\" width=\\\"80\\\" ');"
+                                ]
+                            },
+                            "designerId": "6d6140f5-e476-48fb-8f5c-64f1b628eb10"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "dataIndex": "name",
                         "text": "Name"
                     },
-                    "designerId": "62a32be9-8cb1-42c3-9673-d5fb6c09ae7b"
+                    "designerId": "62a32be9-8cb1-42c3-9673-d5fb6c09ae7b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "var valueString= value;\r",
+                                    "try {\r",
+                                    "    var groupString=Ext.getStore(\"GroupsComboStore\").findRecord(\"id\",record.get(\"defaultGroup\")).get(\"name\");\r",
+                                    "}catch(err){\r",
+                                    "    var groupString=\"\";\r",
+                                    "}\r",
+                                    "valueString=valueString+'</br></br><span class=\"specialminigroupbox\">'+groupString+'</span>';\r",
+                                    "return(valueString);"
+                                ]
+                            },
+                            "designerId": "d37438c3-66f7-453c-acce-7c214d316a08"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
