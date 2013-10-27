@@ -1366,6 +1366,26 @@
                                 "uncheckedValue": "false"
                             },
                             "designerId": "09ce9448-ceb2-4893-92a3-1ea3594be74b"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processObligatoire1",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                    "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "d767d947-38b9-4810-ad37-e025d7f5b955"
                         }
                     ]
                 }

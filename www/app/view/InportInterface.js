@@ -510,7 +510,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 xtype: 'textfield'
                             }
                         },
-                        {
+                        me.processObligatoire1({
                             xtype: 'booleancolumn',
                             localiserId: 'importS3MandatoryCol',
                             dataIndex: 'mandatory',
@@ -522,7 +522,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 inputValue: 'true',
                                 uncheckedValue: 'false'
                             }
-                        }
+                        })
                     ],
                     plugins: [
                         Ext.create('Ext.grid.plugin.CellEditing', {
@@ -829,6 +829,12 @@ Ext.define('Rubedo.view.InportInterface', {
     },
 
     processObligatoire: function(config) {
+        config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
+        config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
+        return config;
+    },
+
+    processObligatoire1: function(config) {
         config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
         config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         return config;
