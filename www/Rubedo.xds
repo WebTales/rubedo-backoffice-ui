@@ -2973,6 +2973,22 @@
                 "app/store/UserTypesForUsers2.js"
             ],
             "className": "UserTypesForUsers2"
+        },
+        "b30f91cc-3459-46aa-b09b-018b57d150d8": {
+            "paths": [
+                "metadata/view/UTCField",
+                "app/view/override/UTCField.js",
+                "app/view/UTCField.js"
+            ],
+            "className": "UTCField"
+        },
+        "69d00e8d-8af4-4011-bb76-0c9cb56ffee0": {
+            "paths": [
+                "metadata/store/UserTypesCombo",
+                "app/store/override/UserTypesCombo.js",
+                "app/store/UserTypesCombo.js"
+            ],
+            "className": "UserTypesCombo"
         }
     },
     "viewOrderMap": {
@@ -3048,6 +3064,7 @@
             "ec59b13f-ba9f-4798-932e-3dff958db8e7",
             "cbe9387e-c640-49eb-93b5-05d268f42760",
             "a047977c-445c-4ae7-b3b2-c6db4a58e0bb",
+            "b30f91cc-3459-46aa-b09b-018b57d150d8",
             "a78985f2-049d-48b7-b700-1ab96f553aa4",
             "756b35af-6a3f-4477-a677-7ff9f148fee7",
             "04b1a4ab-0c33-4cdb-bdf0-66802d7eaf8b",
@@ -3236,6 +3253,7 @@
             "42485569-d0e5-4710-b0aa-104840533721",
             "c07b1bf8-041e-4dff-a562-7215859382e1",
             "62d2ad11-342c-4ce7-b926-beedd95ce0c6",
+            "69d00e8d-8af4-4011-bb76-0c9cb56ffee0",
             "13c3dbe2-b595-4c75-a21b-d2f340bf52f7",
             "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
             "9c372a6b-a40e-4753-9add-88ae21ae9805",

@@ -1,0 +1,51 @@
+{
+    "type": "Ext.form.field.ComboBox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "managesStore": true,
+        "designer|userClassName": "UTCField",
+        "designer|userAlias": "UTCField",
+        "fieldLabel": "Label",
+        "editable": false,
+        "displayField": "type",
+        "forceSelection": true,
+        "store": "UserTypesCombo",
+        "valueField": "id"
+    },
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "designerId": "b30f91cc-3459-46aa-b09b-018b57d150d8",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processCTCField",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
+                    "return config;"
+                ]
+            },
+            "designerId": "e2a08bd5-4627-45dc-82fb-f097356c9d19"
+        }
+    ]
+}

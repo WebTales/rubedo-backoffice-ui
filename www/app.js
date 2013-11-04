@@ -176,7 +176,8 @@ Ext.application({
         'TaxonomyForU',
         'TaxonomyForUT2',
         'UnitaryUsersDataStore',
-        'UserTypesForUsers2'
+        'UserTypesForUsers2',
+        'UserTypesCombo'
     ],
     views: [
         'MyGridPanel3',
@@ -335,7 +336,8 @@ Ext.application({
         'UTFieldAddWindow',
         'UserCreateUpdateWindow',
         'UsersInterface',
-        'userUpdateCreadentialsForm'
+        'userUpdateCreadentialsForm',
+        'UTCField'
     ],
     autoCreateViewport: true,
     controllers: [
