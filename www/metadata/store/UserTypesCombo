@@ -10,6 +10,7 @@
         "usedCollection": "UserTypes",
         "autoLoad": false,
         "model": "userType",
+        "remoteFilter": true,
         "storeId": "UserTypesCombo",
         "designer|userClassName": "UserTypesCombo",
         "designer|userAlias": "UserTypesCombo",
@@ -64,6 +65,23 @@
                     "designerId": "c5fce925-c4ff-4694-9d8f-188d05d286e6"
                 }
             ]
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "signUpType",
+                "value": [
+                    "{\r",
+                    "    $ne: \"none\"\r",
+                    "}"
+                ]
+            },
+            "designerId": "89001c14-d816-4d94-84f1-2932b00ad317"
         }
     ]
 }

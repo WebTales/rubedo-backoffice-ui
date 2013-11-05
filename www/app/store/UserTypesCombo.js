@@ -29,6 +29,7 @@ Ext.define('Rubedo.store.UserTypesCombo', {
             usedCollection: 'UserTypes',
             autoLoad: false,
             model: 'Rubedo.model.userType',
+            remoteFilter: true,
             storeId: 'UserTypesCombo',
             pageSize: 1000,
             proxy: {
@@ -40,6 +41,12 @@ Ext.define('Rubedo.store.UserTypesCombo', {
                     type: 'json',
                     messageProperty: 'message',
                     root: 'data'
+                }
+            },
+            filters: {
+                property: 'signUpType',
+                value: {
+                    $ne: 'none'
                 }
             }
         }, cfg)]);
