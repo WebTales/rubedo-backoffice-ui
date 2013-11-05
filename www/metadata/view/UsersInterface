@@ -354,6 +354,82 @@
                     ]
                 },
                 {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "ACL": "write.ui.users",
+                        "disabled": true,
+                        "hidden": true,
+                        "id": "usersSignUpModeration",
+                        "headerPosition": "bottom",
+                        "title": "Sign-up moderation",
+                        "columns": 2
+                    },
+                    "designerId": "1a72384e-26a5-4dae-809e-bfb6f0018440",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.users",
+                                "id": "approveSignUpBtn",
+                                "iconAlign": "top",
+                                "iconCls": "accept_big",
+                                "scale": "large",
+                                "text": "Approve"
+                            },
+                            "designerId": "6a34f357-cb8d-4ddf-9ada-709023a07138",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.users",
+                                "id": "denySignUpBtn",
+                                "iconAlign": "top",
+                                "iconCls": "nonS",
+                                "scale": "large",
+                                "text": "Deny"
+                            },
+                            "designerId": "e15bf391-57d6-42a9-af55-c16e9bab68ea",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
@@ -684,6 +760,21 @@
                         "text": "Last update"
                     },
                     "designerId": "195efb73-765f-4678-a85e-d9ae77987171"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "usersInterfaceStatusCol",
+                        "dataIndex": "status",
+                        "hideable": false,
+                        "text": "Sign-up status"
+                    },
+                    "designerId": "6d08157c-307e-4f8e-b95c-6707734b98b8"
                 },
                 {
                     "type": "Ext.toolbar.Paging",

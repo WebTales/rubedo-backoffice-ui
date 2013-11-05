@@ -156,6 +156,36 @@ Ext.define('Rubedo.view.UsersInterface', {
                             ]
                         },
                         {
+                            xtype: 'buttongroup',
+                            ACL: 'write.ui.users',
+                            disabled: true,
+                            hidden: true,
+                            id: 'usersSignUpModeration',
+                            headerPosition: 'bottom',
+                            title: 'Sign-up moderation',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.users',
+                                    id: 'approveSignUpBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'accept_big',
+                                    scale: 'large',
+                                    text: 'Approve'
+                                },
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.users',
+                                    id: 'denySignUpBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'nonS',
+                                    scale: 'large',
+                                    text: 'Deny'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'tbfill'
                         },
                         {
@@ -247,6 +277,13 @@ Ext.define('Rubedo.view.UsersInterface', {
                             xtype: 'datecolumn',
                             dataIndex: 'lastUpdateTime',
                             text: 'Last update'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            id: 'usersInterfaceStatusCol',
+                            dataIndex: 'status',
+                            hideable: false,
+                            text: 'Sign-up status'
                         }
                     ],
                     dockedItems: [

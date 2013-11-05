@@ -288,6 +288,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
     },
 
     onUsersInterfaceTypeGridSelectionChange: function(model, selected, eOpts) {
+        Ext.getCmp("usersInterfaceStatusCol").hide();
+        Ext.getCmp("usersSignUpModeration").hide();
         if (Ext.isEmpty(selected)){
             Ext.Array.forEach(Ext.getCmp("UsersInterface").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
@@ -299,16 +301,25 @@ Ext.define('Rubedo.controller.UserTypesController', {
             Ext.getStore("UsersAdminDataStore").filter("typeId",selected[0].get("id"));
             Ext.getStore("UsersAdminDataStore").loadPage(1);
             Ext.getCmp("addUserBtn").enable();
+            if (selected[0].get("signUpType")=="moderated"){
+                Ext.getCmp("usersInterfaceStatusCol").show();
+                Ext.getCmp("usersSignUpModeration").show();
+                Ext.getCmp("usersSignUpModeration").disable();
+            }
         }
     },
 
     onUsersInterfaceCenterGridSelectionChange: function(model, selected, eOpts) {
         Ext.getCmp("editUserBtn").disable();
         Ext.getCmp("removeUserBtn").disable();
+        Ext.getCmp("usersSignUpModeration").disable();
         if (Ext.isEmpty(selected)){
         } else if (selected.length==1) {
             Ext.getCmp("editUserBtn").enable();
             Ext.getCmp("removeUserBtn").enable();
+            if (selected[0].get("status")=="pending"){
+                Ext.getCmp("usersSignUpModeration").enable();
+            }
         } else {
             Ext.getCmp("removeUserBtn").enable();
         }
@@ -345,6 +356,16 @@ Ext.define('Rubedo.controller.UserTypesController', {
         var window=Ext.widget("AdminPasswordChange");
         window.show();
         window.getComponent(0).getForm().loadRecord(Ext.getCmp("userUpdateCreadentialsForm").targetRecord);
+    },
+
+    onApproveSignUpBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("usersInterfaceCenterGrid").getSelectionModel().getLastSelected().set("status", "approved");
+        button.up().disable();
+    },
+
+    onDenySignUpBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("usersInterfaceCenterGrid").getSelectionModel().getLastSelected().set("status", "denied");
+        button.up().disable();
     },
 
     resetInterfaceNoSelect: function() {
@@ -850,6 +871,12 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#UserCUChangePwd": {
                 click: this.onUserCUChangePwdClick
+            },
+            "#approveSignUpBtn": {
+                click: this.onApproveSignUpBtnClick
+            },
+            "#denySignUpBtn": {
+                click: this.onDenySignUpBtnClick
             }
         });
     }
