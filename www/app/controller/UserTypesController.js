@@ -742,6 +742,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             newUser.typeId=userType.get("id");
             newUser.groups=[userType.get("defaultGroup")];
             newUser.defaultGroup=userType.get("defaultGroup");
+            newUser.status="approved";
             Ext.getCmp("usersInterfaceCenterGrid").getStore().add(newUser);
             Ext.getCmp("UserCreateUpdateWindow").close();
         }

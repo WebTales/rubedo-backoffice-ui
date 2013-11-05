@@ -84,6 +84,9 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'taxonomy'
+        },
+        {
+            name: 'status'
         }
     ]
 });
