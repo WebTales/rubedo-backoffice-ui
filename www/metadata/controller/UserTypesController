@@ -742,6 +742,8 @@
             "userConfig": {
                 "fn": "onUsersInterfaceTypeGridSelectionChange",
                 "implHandler": [
+                    "Ext.getCmp(\"usersInterfaceStatusCol\").hide();\r",
+                    "Ext.getCmp(\"usersSignUpModeration\").hide();\r",
                     "if (Ext.isEmpty(selected)){\r",
                     "    Ext.Array.forEach(Ext.getCmp(\"UsersInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.disable();});\r",
                     "    Ext.getStore(\"UsersAdminDataStore\").clearFilter(true);\r",
@@ -753,6 +755,11 @@
                     "    Ext.getStore(\"UsersAdminDataStore\").filter(\"typeId\",selected[0].get(\"id\"));\r",
                     "    Ext.getStore(\"UsersAdminDataStore\").loadPage(1);\r",
                     "    Ext.getCmp(\"addUserBtn\").enable();\r",
+                    "    if (selected[0].get(\"signUpType\")==\"moderated\"){\r",
+                    "        Ext.getCmp(\"usersInterfaceStatusCol\").show();\r",
+                    "        Ext.getCmp(\"usersSignUpModeration\").show();\r",
+                    "        Ext.getCmp(\"usersSignUpModeration\").disable();\r",
+                    "    }\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -774,10 +781,14 @@
                 "implHandler": [
                     "Ext.getCmp(\"editUserBtn\").disable();\r",
                     "Ext.getCmp(\"removeUserBtn\").disable();\r",
+                    "Ext.getCmp(\"usersSignUpModeration\").disable();\r",
                     "if (Ext.isEmpty(selected)){\r",
                     "} else if (selected.length==1) {\r",
                     "    Ext.getCmp(\"editUserBtn\").enable();\r",
                     "    Ext.getCmp(\"removeUserBtn\").enable();\r",
+                    "    if (selected[0].get(\"status\")==\"pending\"){\r",
+                    "        Ext.getCmp(\"usersSignUpModeration\").enable();\r",
+                    "    }\r",
                     "} else {\r",
                     "    Ext.getCmp(\"removeUserBtn\").enable();\r",
                     "}"
@@ -1277,6 +1288,46 @@
                 ]
             },
             "designerId": "d8253939-a8e5-4273-a1f4-f57d05909c45"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onApproveSignUpBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"usersInterfaceCenterGrid\").getSelectionModel().getLastSelected().set(\"status\", \"approved\");\r",
+                    "button.up().disable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#approveSignUpBtn"
+            },
+            "designerId": "2efee698-cd53-42d8-8c41-b04dbe9c9352"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDenySignUpBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"usersInterfaceCenterGrid\").getSelectionModel().getLastSelected().set(\"status\", \"denied\");\r",
+                    "button.up().disable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#denySignUpBtn"
+            },
+            "designerId": "2456779b-3b7f-470f-89e5-42ee308836f0"
         }
     ]
 }
