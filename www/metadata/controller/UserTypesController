@@ -759,6 +759,8 @@
                     "        Ext.getCmp(\"usersInterfaceStatusCol\").show();\r",
                     "        Ext.getCmp(\"usersSignUpModeration\").show();\r",
                     "        Ext.getCmp(\"usersSignUpModeration\").disable();\r",
+                    "    } else if (selected[0].get(\"signUpType\")==\"emailConfirmation\") {\r",
+                    "        Ext.getCmp(\"usersInterfaceStatusCol\").show();\r",
                     "    }\r",
                     "}"
                 ],

@@ -305,6 +305,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 Ext.getCmp("usersInterfaceStatusCol").show();
                 Ext.getCmp("usersSignUpModeration").show();
                 Ext.getCmp("usersSignUpModeration").disable();
+            } else if (selected[0].get("signUpType")=="emailConfirmation") {
+                Ext.getCmp("usersInterfaceStatusCol").show();
             }
         }
     },
