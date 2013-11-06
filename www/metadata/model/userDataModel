@@ -264,6 +264,18 @@
                 "name": "status"
             },
             "designerId": "99a3e55e-3d38-4075-8929-9c9866cc190e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "signupTime"
+            },
+            "designerId": "72618d1b-98be-4415-87e2-67be82a94933"
         }
     ]
 }

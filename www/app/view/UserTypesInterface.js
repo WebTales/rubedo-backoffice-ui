@@ -566,6 +566,10 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                         [
                                                             'open',
                                                             'Open'
+                                                        ],
+                                                        [
+                                                            'emailConfirmation',
+                                                            'EMail confirmation'
                                                         ]
                                                     ]
                                                 },

@@ -87,6 +87,9 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'status'
+        },
+        {
+            name: 'signupTime'
         }
     ]
 });
