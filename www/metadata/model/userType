@@ -95,6 +95,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "createTime",
+                "persist": false,
                 "type": "date"
             },
             "designerId": "167c0706-d6d5-46ef-8196-f51a287a9f3e"
@@ -109,6 +110,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "lastUpdateTime",
+                "persist": false,
                 "type": "date"
             },
             "designerId": "f3aca04e-1a7f-459b-947d-80a03a658e73"
@@ -137,6 +139,7 @@
             "userConfig": {
                 "dateFormat": "timestamp",
                 "name": "lastUpdateTime",
+                "persist": false,
                 "type": "date"
             },
             "designerId": "e8d99278-e84d-43d0-b2e3-124a0f2c7aed"
