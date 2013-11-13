@@ -290,11 +290,15 @@ Ext.define('Rubedo.controller.UserTypesController', {
     onUsersInterfaceTypeGridSelectionChange: function(model, selected, eOpts) {
         Ext.getCmp("usersInterfaceStatusCol").hide();
         Ext.getCmp("usersSignUpModeration").hide();
+        var imageMeta = Ext.getCmp('UsersInterface').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
+        var boiteMeta = Ext.getCmp("UsersInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         if (Ext.isEmpty(selected)){
             Ext.Array.forEach(Ext.getCmp("UsersInterface").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
             Ext.getStore("UsersAdminDataStore").removeAll();
             Ext.getCmp("addUserBtn").disable();
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/user.png');
+            boiteMeta.hide();
         } else {
             Ext.Array.forEach(Ext.getCmp("UsersInterface").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
@@ -308,6 +312,10 @@ Ext.define('Rubedo.controller.UserTypesController', {
             } else if (selected[0].get("signUpType")=="emailConfirmation") {
                 Ext.getCmp("usersInterfaceStatusCol").show();
             }
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png'); 
+            var  customMeta = selected[0].get("type");
+            boiteMeta.show();
+            boiteMeta.update(customMeta);
         }
     },
 
@@ -315,15 +323,31 @@ Ext.define('Rubedo.controller.UserTypesController', {
         Ext.getCmp("editUserBtn").disable();
         Ext.getCmp("removeUserBtn").disable();
         Ext.getCmp("usersSignUpModeration").disable();
+        var imageMeta = Ext.getCmp('UsersInterface').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
+        var boiteMeta = Ext.getCmp("UsersInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         if (Ext.isEmpty(selected)){
+            var lastOne=Ext.getCmp("usersInterfaceTypeGrid").getSelectionModel().getLastSelected();
+            if (!Ext.isEmpty(lastOne)){
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png'); 
+                var  customMeta = lastOne.get("type");
+                boiteMeta.update(customMeta);
+            }
+
         } else if (selected.length==1) {
             Ext.getCmp("editUserBtn").enable();
             Ext.getCmp("removeUserBtn").enable();
             if (selected[0].get("status")=="pending"){
                 Ext.getCmp("usersSignUpModeration").enable();
             }
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/user.png'); 
+            var customMeta=selected[0].get("name")+"</br> "+selected[0].get("email")+"</br> "+Rubedo.RubedoAutomatedElementsLoc.creationText+" : "+Ext.Date.format(selected[0].get("createTime"), Ext.Date.defaultFormat)+
+            " "+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+" : "+Ext.Date.format(selected[0].get("lastUpdateTime"), Ext.Date.defaultFormat);
+            boiteMeta.update(customMeta);
         } else {
             Ext.getCmp("removeUserBtn").enable();
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/users.png'); 
+            var  customMeta = selected.length+" Users";
+            boiteMeta.update(customMeta);
         }
     },
 
