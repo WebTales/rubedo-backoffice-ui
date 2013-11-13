@@ -1098,9 +1098,12 @@
                     "    newUser.fields=fieldValues;\r",
                     "    newUser.taxonomy=taxoForm.getValues();\r",
                     "    newUser.typeId=userType.get(\"id\");\r",
-                    "    newUser.groups=[userType.get(\"defaultGroup\")];\r",
+                    "    newUser.groups=[ ];\r",
+                    "    newUser.groups.push(userType.get(\"defaultGroup\"));\r",
                     "    newUser.defaultGroup=userType.get(\"defaultGroup\");\r",
                     "    newUser.status=\"approved\";\r",
+                    "    newUser.startValidity=null;\r",
+                    "    newUser.endValidity=null;\r",
                     "    Ext.getCmp(\"usersInterfaceCenterGrid\").getStore().add(newUser);\r",
                     "    Ext.getCmp(\"UserCreateUpdateWindow\").close();\r",
                     "}"

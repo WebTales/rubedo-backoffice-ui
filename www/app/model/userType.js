@@ -41,11 +41,13 @@ Ext.define('Rubedo.model.userType', {
         {
             dateFormat: 'timestamp',
             name: 'createTime',
+            persist: false,
             type: 'date'
         },
         {
             dateFormat: 'timestamp',
             name: 'lastUpdateTime',
+            persist: false,
             type: 'date'
         },
         {
@@ -56,6 +58,7 @@ Ext.define('Rubedo.model.userType', {
         {
             dateFormat: 'timestamp',
             name: 'lastUpdateTime',
+            persist: false,
             type: 'date'
         },
         {
