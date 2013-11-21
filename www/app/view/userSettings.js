@@ -80,8 +80,7 @@ Ext.define('Rubedo.view.userSettings', {
                                             anchor: '100%',
                                             fieldLabel: 'Login ',
                                             name: 'login',
-                                            allowBlank: false,
-                                            vtype: 'alphanum'
+                                            allowBlank: false
                                         },
                                         {
                                             xtype: 'textfield',
