@@ -1,0 +1,77 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": null,
+        "storeId": "QuerySim",
+        "designer|userClassName": "QuerySim",
+        "designer|userAlias": "QuerySim",
+        "pageSize": 25
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "46b39dfb-e743-4e22-9e2e-ba43b60b6fee",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "\tread: 'queries/simulate-result'\r",
+                    "}"
+                ]
+            },
+            "designerId": "97860b0c-486d-4046-9633-142070142837",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "16bff3e2-6b34-490e-9181-2c92e97a7a1f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "designerId": "2722cfe3-7992-48cf-af03-5add72fd7c9d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "f05b6f0c-f0f7-4004-84e8-212555f4e134"
+        }
+    ]
+}

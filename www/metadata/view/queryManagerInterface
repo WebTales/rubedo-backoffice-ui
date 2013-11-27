@@ -153,6 +153,24 @@
                     ]
                 },
                 {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "queryPlayBtn",
+                        "iconAlign": "top",
+                        "iconCls": "play_big",
+                        "scale": "large",
+                        "text": "Preview"
+                    },
+                    "designerId": "6a431311-8569-4e8f-b800-aa73b9f62632"
+                },
+                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",

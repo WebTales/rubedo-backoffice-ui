@@ -493,12 +493,15 @@
                     "if (Ext.isEmpty(selected)){\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").disable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").disable();\r",
+                    "    Ext.getCmp(\"queryPlayBtn\").disable();\r",
                     "} else if (!selected[0].get(\"readOnly\")){\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").enable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").enable();\r",
+                    "    Ext.getCmp(\"queryPlayBtn\").enable();\r",
                     "} else  {\r",
                     "    Ext.getCmp(\"queryMainRemoveBtn\").disable();\r",
                     "    Ext.getCmp(\"queryMainEditBtn\").disable();\r",
+                    "    Ext.getCmp(\"queryPlayBtn\").enable();\r",
                     "}"
                 ],
                 "name": "selectionchange",
@@ -1050,6 +1053,25 @@
                 ]
             },
             "designerId": "04b065c4-7e4b-4c5e-8715-da8d42bba5ad"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onQueryPlayBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"QuerySimWindow\",{queryId:Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"id\")}).show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#queryPlayBtn"
+            },
+            "designerId": "a6717c40-6670-4a09-959b-5184156753b3"
         }
     ]
 }
