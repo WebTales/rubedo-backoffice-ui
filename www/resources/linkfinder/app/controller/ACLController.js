@@ -40,7 +40,7 @@ Ext.define('linkfinder.controller.ACLController', {
         if (Ext.getCmp("pagePicker").isValid()){
             Ext.Ajax.request({
                 url: 'xhr-get-page-url',
-                method:'POST',
+                method:'GET',
                 params: {
                     "page-id": Ext.getCmp("pagePicker").getValue()
                 },
