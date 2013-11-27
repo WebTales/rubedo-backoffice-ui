@@ -30,7 +30,6 @@ Ext.application({
         'taxonomyTermModel'
     ],
     views: [
-        'MyViewport',
         'MainTabPan'
     ],
     appFolder: 'resources/linkfinder/app',
