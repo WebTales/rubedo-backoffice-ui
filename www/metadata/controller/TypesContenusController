@@ -636,8 +636,10 @@
                     "\r",
                     "                            if (TCfield.isXType(\"ImagePickerField\")) {\r",
                     "                                TCfield.up().getComponent(2).getComponent(0).setText(this.getValue());\r",
+                    "                                TCfield.fieldLabel=this.getValue();\r",
                     "                            } else if ((TCfield.isXType(\"localiserField\"))||(TCfield.isXType(\"externalMediaField\"))||(TCfield.isXType(\"DCEField\"))){\r",
                     "                                TCfield.up().getComponent(2).setFieldLabel(this.getValue());\r",
+                    "                                TCfield.fieldLabel=this.getValue();\r",
                     "                            } else {\r",
                     "                                TCfield.setFieldLabel(this.getValue());\r",
                     "                            }\r",
@@ -2751,7 +2753,10 @@
                 "implHandler": [
                     "Ext.getCmp(\"CTLayoutsBtnGr\").show();\r",
                     "Ext.getCmp(\"layoutsEditToolbar\").show();\r",
-                    "Ext.getCmp(\"AdminfTypesGrid\").collapse();"
+                    "Ext.getCmp(\"AdminfTypesGrid\").collapse();\r",
+                    "if (!Ext.isEmpty(Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected())){\r",
+                    "\tRubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();\r",
+                    "}"
                 ],
                 "name": "activate",
                 "scope": "me",

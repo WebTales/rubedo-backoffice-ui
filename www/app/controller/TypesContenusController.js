@@ -589,8 +589,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent(2).getComponent(0).setText(this.getValue());
+                                        TCfield.fieldLabel=this.getValue();
                                     } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
                                         TCfield.up().getComponent(2).setFieldLabel(this.getValue());
+                                        TCfield.fieldLabel=this.getValue();
                                     } else {
                                         TCfield.setFieldLabel(this.getValue());
                                     }
@@ -1481,6 +1483,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         Ext.getCmp("CTLayoutsBtnGr").show();
         Ext.getCmp("layoutsEditToolbar").show();
         Ext.getCmp("AdminfTypesGrid").collapse();
+        if (!Ext.isEmpty(Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected())){
+            Rubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();
+        }
     },
 
     onPanelDeactivate: function(component, eOpts) {
