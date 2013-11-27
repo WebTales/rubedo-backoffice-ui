@@ -2989,6 +2989,22 @@
                 "app/store/UserTypesCombo.js"
             ],
             "className": "UserTypesCombo"
+        },
+        "46b39dfb-e743-4e22-9e2e-ba43b60b6fee": {
+            "paths": [
+                "metadata/store/QuerySim",
+                "app/store/override/QuerySim.js",
+                "app/store/QuerySim.js"
+            ],
+            "className": "QuerySim"
+        },
+        "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2": {
+            "paths": [
+                "metadata/view/QuerySimWindow",
+                "app/view/override/QuerySimWindow.js",
+                "app/view/QuerySimWindow.js"
+            ],
+            "className": "QuerySimWindow"
         }
     },
     "viewOrderMap": {
@@ -3166,7 +3182,8 @@
             "0abc5443-8a75-4800-9e61-80668e12ed10",
             "66174f28-03d3-4c02-855f-65706d91852a",
             "f36e89e4-306e-40ee-b555-4f18f4129f6b",
-            "bd157263-ffca-45b6-9331-28e5972526b7"
+            "bd157263-ffca-45b6-9331-28e5972526b7",
+            "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -3288,7 +3305,8 @@
             "d5c0475f-ee5b-44e7-a378-8531b81a9d94",
             "3a5de90b-d135-4776-b5fa-511ab646a85b",
             "d6570aca-1de2-4ab0-978a-87a7f4358840",
-            "bac21dc5-9467-459a-9a13-2c67a5235855"
+            "bac21dc5-9467-459a-9a13-2c67a5235855",
+            "46b39dfb-e743-4e22-9e2e-ba43b60b6fee"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",

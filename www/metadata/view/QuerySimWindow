@@ -1,0 +1,108 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 407,
+        "width": 355,
+        "designer|userClassName": "QuerySimWindow",
+        "designer|userAlias": "QuerySimWindow",
+        "layout": "fit",
+        "title": "Query result simulation",
+        "modal": true
+    },
+    "designerId": "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "",
+                "forceFit": true,
+                "store": "QuerySim"
+            },
+            "designerId": "f416ffa8-5956-42ee-9d18-860a16fc9c7e",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "6eacaf75-819d-4672-8835-05e2f256825b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "text",
+                        "text": "Title"
+                    },
+                    "designerId": "3b6353e0-a927-4442-8ed1-01e7fe1e82a6"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "QuerySim"
+                    },
+                    "designerId": "97d2e6cb-67da-49d2-98f8-b5e600ec2f66"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "component.getComponent(0).getStore().getProxy().extraParams.query=component.queryId;\r",
+                    "component.getComponent(0).getStore().loadPage(1);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "742c5d48-d8bc-482c-895e-7dfff69d3b71"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeClose",
+                "implHandler": [
+                    "panel.getComponent(0).getStore().removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "686bded8-b084-4b54-b762-2cfc930253b7"
+        }
+    ]
+}

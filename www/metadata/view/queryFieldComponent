@@ -7,11 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "100%",
-        "height": 24,
+        "designer|snapToGrid": 10,
+        "height": 54,
         "margin": "30 0 0 0",
-        "width": 307,
+        "width": 183,
         "designer|userClassName": "queryFieldComponent",
-        "designer|userAlias": "queryFieldComponent"
+        "designer|userAlias": "queryFieldComponent",
+        "layout": "absolute"
     },
     "designerId": "2f7e5de4-2ce2-4a35-87a7-927a97315007",
     "customConfigs": [
@@ -34,6 +36,7 @@
                 "localiserId": "addBtn",
                 "itemId": "addBtn",
                 "margin": "0 4 0 0",
+                "width": 80,
                 "iconCls": "add",
                 "text": "Ajouter"
             },
@@ -61,8 +64,11 @@
             "userConfig": {
                 "ACL": "write.ui.queries",
                 "localiserId": "editBtn",
+                "layout|x": 0,
+                "layout|y": 30,
                 "itemId": "editBtn",
                 "margin": "0 4 0 0",
+                "width": 80,
                 "iconCls": "edit",
                 "text": "Modifier"
             },
@@ -90,7 +96,10 @@
             "userConfig": {
                 "ACL": "write.ui.queries",
                 "localiserId": "removeBtn",
+                "layout|x": 90,
+                "layout|y": 0,
                 "itemId": "removeBtn",
+                "width": 80,
                 "iconCls": "close",
                 "text": "Supprimer"
             },
@@ -107,6 +116,23 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|x": 90,
+                "layout|y": 30,
+                "itemId": "previewBtn",
+                "width": 80,
+                "iconCls": "play_small",
+                "text": "Preview"
+            },
+            "designerId": "4c638971-035d-472b-b7ec-eeb63ed3fc4e"
         }
     ]
 }
