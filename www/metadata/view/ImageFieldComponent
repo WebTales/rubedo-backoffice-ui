@@ -151,6 +151,22 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 10,
+                        "layout|y": 50,
+                        "itemId": "infoBtn",
+                        "iconCls": "help",
+                        "text": ""
+                    },
+                    "designerId": "d32a7d65-3c88-49b1-9ab2-24d2c86f6813"
                 }
             ]
         }

@@ -8,10 +8,10 @@
     "userConfig": {
         "anchor": "90%",
         "container|align": "stretch",
-        "height": 52,
+        "height": 82,
         "itemId": null,
         "margin": "0 0 10 0",
-        "width": 177,
+        "width": 193,
         "designer|userClassName": "ImageFieldComponentSmall",
         "designer|userAlias": "ImageFieldComponentSmall",
         "layout": "hbox"
@@ -34,7 +34,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "width": 100,
+                "width": 60,
                 "text": "My Label :"
             },
             "designerId": "ca478cff-c265-4afb-8870-dbb2e62e5878"
@@ -48,6 +48,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|snapToGrid": 10,
+                "height": 91,
                 "itemId": "buttonHolder",
                 "margin": "0 0 0 5",
                 "width": 29,
@@ -110,6 +111,22 @@
                             "type": "string"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 0,
+                        "layout|y": 60,
+                        "itemId": "infoBtn",
+                        "iconCls": "help",
+                        "text": ""
+                    },
+                    "designerId": "10664e84-1a82-4096-817e-9dd9351a7630"
                 }
             ]
         },
