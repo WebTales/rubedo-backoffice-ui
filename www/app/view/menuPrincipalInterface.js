@@ -257,6 +257,15 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         },
         {
             xtype: 'menuitem',
+            ACL: 'read.ui.userTypes',
+            favoriteIcon: 'users.png',
+            itemId: 'UserTypesInterface',
+            localiserId:'userTypesLaunchBtn',
+            iconCls: 'user',
+            text: 'User types'
+        },
+        {
+            xtype: 'menuitem',
             ACL: 'read.ui.customThemes',
             favoriteIcon: 'palette.png',
             itemId: 'CustomThemesInterface',
@@ -305,15 +314,6 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             localiserId:'workspacesLaunchBtn',
             iconCls: 'user',
             text: 'Espaces de travail'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.userTypes',
-            favoriteIcon: 'users.png',
-            itemId: 'UserTypesInterface',
-            localiserId:'userTypesLaunchBtn',
-            iconCls: 'user',
-            text: 'User types'
         },
         {
             xtype: 'menuitem',
