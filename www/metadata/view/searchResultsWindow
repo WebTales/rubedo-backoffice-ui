@@ -245,6 +245,45 @@
                     ]
                 },
                 {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "type",
+                        "text": "Type"
+                    },
+                    "designerId": "70ce4c42-db36-4cf3-a4b8-264805d732da",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return(record.get(\"objectType\")+\" : \"+record.get(\"type\"));"
+                                ]
+                            },
+                            "designerId": "51aa99b0-e268-43bc-96fd-dbd73421c9cf"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.grid.column.Date",
                     "reference": {
                         "name": "columns",

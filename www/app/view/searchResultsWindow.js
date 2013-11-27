@@ -102,6 +102,14 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             flex: 1
                         },
                         {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return(record.get("objectType")+" : "+record.get("type"));
+                            },
+                            dataIndex: 'type',
+                            text: 'Type'
+                        },
+                        {
                             xtype: 'datecolumn',
                             localiserId: 'lastUpdateCol',
                             dataIndex: 'lastUpdateTime',
