@@ -854,10 +854,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     Ext.getCmp("AdminfTCImporter").enable();
     Ext.getCmp("TCfieldUp").up().enable();
     }
-    Ext.getCmp("CTLDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     Ext.getStore("CTLayouts").removeAll();
     Ext.getStore("CTLayouts").loadData(record.get("layouts"));
     this.resetLayoutsInterfaceNoSelect();
+    Ext.getCmp("CTLDLSToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
+
     },
 
     supprimeTypeContenu: function(button, e, eOpts) {
@@ -947,7 +948,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                         target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
                         target.set("champs", champsR);
                         target.set("layouts",Ext.Array.pluck(Ext.getStore("CTLayouts").getRange(),"data"));
-                        Ext.getCmp("CTLDLSToolbar").persisti18n(target);
+                        try {Ext.getCmp("CTLDLSToolbar").persisti18n(target);} catch(err){console.log("failed i18n persist");}
                         var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                         target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
                         if ((target.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
@@ -966,7 +967,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 target.set(Ext.getCmp("TDCEditForm").getForm().getValues());
                                 target.set("champs", champsR);
                                 target.set("layouts",Ext.Array.pluck(Ext.getStore("CTLayouts").getRange(),"data"));
-                                Ext.getCmp("CTLDLSToolbar").persisti18n(target);
+                                try {Ext.getCmp("CTLDLSToolbar").persisti18n(target);} catch(err){console.log("failed i18n persist");}
                                 var newVocabularies = Ext.getCmp('vocabulairesTypesContenusGrid').getSelectionModel().getSelection();
                                 target.set("vocabularies", Ext.Array.pluck(Ext.Array.pluck(newVocabularies, "data"), "id"));
                                 if ((target.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
