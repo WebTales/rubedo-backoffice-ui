@@ -326,7 +326,7 @@
             "userUpdateCreadentialsForm",
             "UTCField",
             "QuerySimWindow",
-            "MyWindow"
+            "emailTypesInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -350,7 +350,8 @@
             "MailingListsController",
             "CustomThemesController",
             "AppExtensionController",
-            "UserTypesController"
+            "UserTypesController",
+            "EmailController"
         ],
         "name": "Rubedo"
     },

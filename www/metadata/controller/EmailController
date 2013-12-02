@@ -1,0 +1,115 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EmailController",
+        "designer|userAlias": "EmailController"
+    },
+    "designerId": "0c137efa-3885-472d-a4d2-96e811f9f233",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewETRowBtnClick",
+                "implHandler": [
+                    "var newRow=Ext.widget(\"panel\",{\r",
+                    "    type:\"row\",\r",
+                    "    flex:1\r",
+                    "});\r",
+                    "Ext.getCmp(\"mainETHolder\").add(newRow);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newETRowBtn"
+            },
+            "designerId": "126bde2e-5dcd-4121-8875-0958430edbb8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainETContainerAfterRender",
+                "implHandler": [
+                    "component.getEl().on(\"click\", function(){\r",
+                    "\tExt.getCmp(\"elementETIdField\").setValue(component.getComponent(0).getId());\r",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.container.Container",
+                "designer|controlQuery": "#mainETContainer"
+            },
+            "designerId": "543a8a7b-83ee-40e9-b986-d0cd275af490"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainETHolderAfterRender",
+                "implHandler": [
+                    "component.getEl().on(\"click\", function(e){\r",
+                    "    Ext.getCmp(\"elementETIdField\").setValue(component.getId());\r",
+                    "    e.stopEvent();\r",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#mainETHolder panel"
+            },
+            "designerId": "338ce064-8461-4840-a300-de1fce060133"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onElementETIdFieldChange",
+                "implHandler": [
+                    "if (!Ext.isEmpty(oldValue)){\r",
+                    "    var oldOne=Ext.getCmp(oldValue);\r",
+                    "    if (!Ext.isEmpty(oldOne)){\r",
+                    "        oldOne.removeBodyCls('selectedelement');\r",
+                    "    }\r",
+                    "}\r",
+                    "if (!Ext.isEmpty(newValue)){\r",
+                    "    var newOne=Ext.getCmp(newValue);\r",
+                    "    if (!Ext.isEmpty(newOne)){\r",
+                    "        newOne.getEl().frame(MyPrefData.themeColor);\r",
+                    "\t\tnewOne.addBodyCls('selectedelement');\r",
+                    "    }\r",
+                    "} else {\r",
+                    "\r",
+                    "}\r",
+                    "console.log(newValue);"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Hidden",
+                "designer|controlQuery": "#elementETIdField"
+            },
+            "designerId": "2be8bd78-2484-48ee-9f43-8bda3166f1ca"
+        }
+    ]
+}
