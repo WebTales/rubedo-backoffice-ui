@@ -239,6 +239,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         },
         {
             xtype: 'menuitem',
+            ACL: 'read.ui.emailTypes',
+            favoriteIcon: 'mail.png',
+            itemId: 'emailTypesInterface',
+            iconCls: 'mail_small',
+            text: 'Email templates'
+        },
+        {
+            xtype: 'menuitem',
             ACL: 'read.ui.contentTypes',
             favoriteIcon: 'page_full.png',
             itemId: 'adminFTDC',

@@ -57,7 +57,8 @@ Ext.application({
         'CTLayout',
         'CTFieldForLayout',
         'applicationLog',
-        'userType'
+        'userType',
+        'emailTemplateModel'
     ],
     stores: [
         'SitesJson',
@@ -178,7 +179,8 @@ Ext.application({
         'UnitaryUsersDataStore',
         'UserTypesForUsers2',
         'UserTypesCombo',
-        'QuerySim'
+        'QuerySim',
+        'EmailTemplates'
     ],
     views: [
         'MyGridPanel3',
@@ -339,7 +341,8 @@ Ext.application({
         'UsersInterface',
         'userUpdateCreadentialsForm',
         'UTCField',
-        'QuerySimWindow'
+        'QuerySimWindow',
+        'emailTypesInterface'
     ],
     autoCreateViewport: true,
     controllers: [

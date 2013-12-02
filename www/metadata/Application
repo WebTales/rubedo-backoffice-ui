@@ -41,7 +41,8 @@
             "CTLayout",
             "CTFieldForLayout",
             "applicationLog",
-            "userType"
+            "userType",
+            "emailTemplateModel"
         ],
         "stores": [
             "SitesJson",
@@ -162,7 +163,8 @@
             "UnitaryUsersDataStore",
             "UserTypesForUsers2",
             "UserTypesCombo",
-            "QuerySim"
+            "QuerySim",
+            "EmailTemplates"
         ],
         "views": [
             "MyGridPanel3",
@@ -323,7 +325,8 @@
             "UsersInterface",
             "userUpdateCreadentialsForm",
             "UTCField",
-            "QuerySimWindow"
+            "QuerySimWindow",
+            "MyWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

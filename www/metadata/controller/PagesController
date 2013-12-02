@@ -1032,7 +1032,7 @@
                     "        task.delay(200);\r",
                     "\r",
                     "    } else {\r",
-                    "        Ext.getCmp(\"mainPageAttributeForm\").up().setActiveTab(2);\r",
+                    "        Ext.getCmp(\"mainPageAttributeForm\").up().up().setActiveTab(2);\r",
                     "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pagePropertiesInvalidError);\r",
                     "    }"
                 ],

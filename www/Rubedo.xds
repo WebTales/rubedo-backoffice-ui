@@ -3005,6 +3005,30 @@
                 "app/view/QuerySimWindow.js"
             ],
             "className": "QuerySimWindow"
+        },
+        "c3353cdd-8fb5-4b0b-b2b4-3fe14225c4b2": {
+            "paths": [
+                "metadata/view/emailTypesInterface",
+                "app/view/override/emailTypesInterface.js",
+                "app/view/emailTypesInterface.js"
+            ],
+            "className": "emailTypesInterface"
+        },
+        "b9adfb4f-ba33-4894-bf9e-3ab108e03d8c": {
+            "paths": [
+                "metadata/model/emailTemplateModel",
+                "app/model/override/emailTemplateModel.js",
+                "app/model/emailTemplateModel.js"
+            ],
+            "className": "emailTemplateModel"
+        },
+        "8561823f-1079-4fa0-ab84-b2c76b8753c8": {
+            "paths": [
+                "metadata/store/EmailTemplates",
+                "app/store/override/EmailTemplates.js",
+                "app/store/EmailTemplates.js"
+            ],
+            "className": "EmailTemplates"
         }
     },
     "viewOrderMap": {
@@ -3074,6 +3098,7 @@
             "648ee02b-21bf-4d06-8c07-2e215977ab97",
             "1a109b37-693d-4f8c-8b02-455dffd48a58",
             "5b65ea9f-b5de-4028-be66-16c03842ef21",
+            "c3353cdd-8fb5-4b0b-b2b4-3fe14225c4b2",
             "1dd7d2f3-5f63-4221-a070-989924064068",
             "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
             "f720ad71-dfb5-436d-95de-957b47102cb6",
@@ -3194,6 +3219,7 @@
             "5640d13d-589e-4233-a94f-d4e11749b140",
             "b14e3026-7234-4383-9a87-4aef97ffebfc",
             "f9902d72-af14-482b-bdd9-9ceda04a75cd",
+            "8561823f-1079-4fa0-ab84-b2c76b8753c8",
             "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
             "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
             "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",
@@ -3347,6 +3373,7 @@
             "0d7a70b9-8e94-4274-9b36-3d49f6dcc936",
             "fe5d7737-8a9a-41fb-bffc-cc004c69d906",
             "959aada9-4d0a-400b-bb01-0907998b9c82",
+            "b9adfb4f-ba33-4894-bf9e-3ab108e03d8c",
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "47f4935c-57ba-4bf2-afc8-ba2cfce49904",

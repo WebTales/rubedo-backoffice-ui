@@ -1,0 +1,150 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "idProperty": null,
+        "designer|userClassName": "emailTemplateModel",
+        "designer|userAlias": "emailTemplateModel"
+    },
+    "designerId": "b9adfb4f-ba33-4894-bf9e-3ab108e03d8c",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text",
+                "type": "string"
+            },
+            "designerId": "08fbb933-db4f-4f16-bbe6-5769538e205d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rows",
+                "type": "auto"
+            },
+            "designerId": "f5c1f839-41ff-42a0-acce-43835a29a1eb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "blocks"
+            },
+            "designerId": "5115f29b-447c-42eb-9d5c-0df198ceb30d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "5fedfc9d-df23-4057-829d-5b7407a93567"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "version",
+                "type": "auto"
+            },
+            "designerId": "da220c18-27e3-416e-b369-a4837faf2506"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "lastUpdateTime",
+                "type": "date"
+            },
+            "designerId": "f698975c-93ec-4b6d-b1cb-e05dc2cd448f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "createTime",
+                "type": "date"
+            },
+            "designerId": "59e5abca-9261-4760-bb5b-fc628753b334"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "createUser"
+            },
+            "designerId": "9bf5f6c7-3a02-4516-aabd-05951dca0640"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "readOnly",
+                "persist": false,
+                "type": "boolean"
+            },
+            "designerId": "5349e74b-9000-4be8-962a-2c3e2d6ee4ad"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "{ \r",
+                    "    showInDiv:false\r",
+                    "}"
+                ],
+                "name": "emailProperties"
+            },
+            "designerId": "7b8ea4da-a3f3-4f65-830d-292e7337ed8b"
+        }
+    ]
+}
