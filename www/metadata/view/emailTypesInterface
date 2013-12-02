@@ -1,0 +1,874 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "favoriteIcon": "application.png",
+        "localiserId": null,
+        "container|align": "stretch",
+        "height": 578,
+        "id": "emailTypesInterface",
+        "width": 1400,
+        "designer|userClassName": "emailTypesInterface",
+        "designer|userAlias": "emailTypesInterface",
+        "layout": "hbox",
+        "constrainHeader": true,
+        "iconCls": "mail_small",
+        "title": "Email templates"
+    },
+    "designerId": "c3353cdd-8fb5-4b0b-b2b4-3fe14225c4b2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "favoriteIcon",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "7129d95c-f9cb-44a7-bd5e-ac5183e01f41",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "475f561a-925b-4504-9c54-23648d832527",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "height": 30,
+                "itemId": "filArianne"
+            },
+            "designerId": "ce7fe760-fe2c-43cc-b3e4-ee93874859a4",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": null,
+                        "layout|flex": null,
+                        "itemId": "origine",
+                        "iconCls": "mail_small",
+                        "text": "Email templates"
+                    },
+                    "designerId": "17d7a8e2-3c3f-4a32-a797-d950e2011b8e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom",
+                "height": 50,
+                "itemId": "barreMeta",
+                "width": null
+            },
+            "designerId": "a244fb4b-7b85-450a-ac4e-264c7ba6a7e8",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "height": 45,
+                        "width": 48,
+                        "src": null
+                    },
+                    "designerId": "25f8535c-59a0-424f-b925-99e5df32d826",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImageRender",
+                                "implHandler": [
+                                    "component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/mail.png');"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "3e20e5e5-b864-4969-bc76-99e9583d462c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 2,
+                        "itemId": "boiteBarreMeta",
+                        "minWidth": 400
+                    },
+                    "designerId": "6844851e-bb5f-43db-98ff-3b8aaf67682f",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "implHandler": [
+                                    "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {autore}  <b>Version : </b>{version}"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "e21ea7ce-d2e8-453e-b000-e1df42c1b607"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processBoiteBarreMeta",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.tpl=[\r",
+                                    "'<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {autore}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
+                                    "];\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "71b54198-c66e-4a27-a985-9fbdeee96fd7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "top",
+                "height": 86,
+                "itemId": "contextBar",
+                "width": null,
+                "enableOverflow": true
+            },
+            "designerId": "aa942620-7208-40f8-806e-b0ef953ee534",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.masks",
+                        "localiserId": "newBtn",
+                        "layout|flex": null,
+                        "id": "newETBtn",
+                        "itemId": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "scale": "large",
+                        "text": "Nouveau"
+                    },
+                    "designerId": "7286871a-ae6f-49d9-bc6b-c9370190e3d7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.masks",
+                        "localiserId": "removeBtn",
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "deleteEtBtn",
+                        "itemId": null,
+                        "arrowAlign": null,
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "remove_big",
+                        "scale": "large",
+                        "text": "Supprimer"
+                    },
+                    "designerId": "93b98d06-691b-428d-a527-a03ebf72bbcc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.masks",
+                        "localiserId": "editGroup",
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "disabled": true,
+                        "id": "masksEditionTopBarBox1",
+                        "headerPosition": "bottom",
+                        "title": "Edition",
+                        "columns": 8
+                    },
+                    "designerId": "f04eb1a7-1aa8-427a-92f4-6d0170cab4b7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "newRowBtn",
+                                "disabled": true,
+                                "id": "newETRowBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "window_add_big",
+                                "scale": "large",
+                                "text": "Nouvelle Ligne"
+                            },
+                            "designerId": "52e7c741-8c82-4ba0-9735-2d12f5ae22b5",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "newColBtn",
+                                "disabled": true,
+                                "id": "newETColBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "window_add_big",
+                                "scale": "large",
+                                "text": "Nouvelle Colonne"
+                            },
+                            "designerId": "21e06063-a4f3-4ba4-b6f8-e8426a905d15",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "newBlocBtn",
+                                "disabled": true,
+                                "id": "newETBlockBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "window_add_big",
+                                "scale": "large",
+                                "text": "Nouveau Bloc"
+                            },
+                            "designerId": "d66259a9-029d-4396-b17d-7d549644dee9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "removeBtn",
+                                "disabled": true,
+                                "id": "deleteETElBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "window_remove_big",
+                                "scale": "large",
+                                "text": "Supprimer"
+                            },
+                            "designerId": "ba0f3bc3-be8d-4af7-9aa7-b57818aa70d3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "moveBtn",
+                                "disabled": true,
+                                "id": "moveUPETBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "arrow_up_big",
+                                "scale": "large",
+                                "text": "Déplacer"
+                            },
+                            "designerId": "2f68b42c-7e3c-45d6-b812-77207a084de8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "moveBtn",
+                                "disabled": true,
+                                "id": "moveDownETBTn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "arrow_down_big",
+                                "scale": "large",
+                                "text": "Déplacer"
+                            },
+                            "designerId": "bd1e595f-e5fd-4bd7-b506-d654ace646c2",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "clipboardGroup",
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "title": "Presse-papiers",
+                        "columns": 4
+                    },
+                    "designerId": "3c37dd9e-4b0c-4576-b15f-9090984974bb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.masks",
+                                "localiserId": "duplicateBtn",
+                                "id": "duplicateETBtn",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Dupliquer"
+                            },
+                            "designerId": "080474d7-fd4d-46de-87de-9f59ed3cf3c3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "shotcutBtn",
+                                "itemId": "boutonCreerRaccourci",
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "favorite_add_big",
+                                "scale": "large",
+                                "text": "Ajouter aux favoris"
+                            },
+                            "designerId": "fe13bd38-fb44-470d-b599-2cd4e5a55b15",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.masks",
+                        "localiserId": "saveGroup",
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "title": "Sauvegarde",
+                        "columns": 4
+                    },
+                    "designerId": "fbc33fb2-6b9e-47ba-8c42-8390c798f295",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "saveBtn",
+                                "id": "saveETBtn",
+                                "itemId": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "floppy_disc_big",
+                                "scale": "large",
+                                "text": "Enregistrer"
+                            },
+                            "designerId": "a02ce5a9-d2e1-46a4-8d74-74c042d39ec0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAdminfMasquesEnregistrerAfterRender",
+                                        "implHandler": [
+                                            "component.findParentByType(\"window\").getEl().addKeyListener({key:\"s\", ctrl:true}, function(e,t){\r",
+                                            "if (!component.disabled){\r",
+                                            "    component.fireEvent(\"click\", component);\r",
+                                            "    t.stopEvent();\r",
+                                            "}\r",
+                                            "});"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "2644b8a0-893f-4b3f-b1df-18fddf208fc6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "e45d9712-4883-40ca-89a8-57051a574dcf"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEmailTypesInterfaceAfterRender",
+                "implHandler": [
+                    "Ext.getStore(\"EmailTemplates\").load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "9e60ddb4-576b-478e-a50f-4b7c46e2df23"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEmailTypesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"EmailTemplates\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "d122e65a-2950-4892-8659-bb44c0354ee5"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "id": "mainETGrid",
+                "width": 200,
+                "title": "",
+                "forceFit": true,
+                "store": "EmailTemplates"
+            },
+            "designerId": "10df4ecb-1606-4cfd-955a-6de3da9ddea4",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "aa4f777f-419a-4589-8c8a-069e1bd29840"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "text",
+                        "text": "Name"
+                    },
+                    "designerId": "3cd68489-92f1-4c92-8868-99ff1fa98499"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "center",
+                "padding": 10,
+                "autoScroll": true,
+                "layout": "vbox"
+            },
+            "designerId": "534a4840-2bf9-418b-9a99-595efc2b6ae0",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "height": 600,
+                        "width": 800,
+                        "title": ""
+                    },
+                    "designerId": "65edd206-7ddc-4c62-aed3-8732dc526bca"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "localiserId": "propsPanel",
+                "layout|flex": null,
+                "layout|margins": "0, 0, 0, 2",
+                "dock": null,
+                "container|align": "stretch",
+                "frame": true,
+                "id": "paneauPropMasque1",
+                "margin": null,
+                "width": 240,
+                "autoScroll": true,
+                "resizable": [
+                    "true"
+                ],
+                "resizeHandles": "w",
+                "layout": "vbox",
+                "collapseDirection": "right",
+                "collapsed": false,
+                "collapsible": true,
+                "iconCls": "parametres",
+                "title": "Propriétés"
+            },
+            "designerId": "c69eca4e-55c4-49b3-b5cd-66496a860f8d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "elementIdField1",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "1957b3a7-e992-4e35-97e5-f0bb5251f625"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "selectElementPanel",
+                        "layout|flex": 1,
+                        "height": null,
+                        "id": "elementEditControl1",
+                        "margin": null,
+                        "autoScroll": true,
+                        "bodyPadding": null,
+                        "iconCls": null,
+                        "title": "Sélectionnez un élément"
+                    },
+                    "designerId": "e4227d64-4e67-4d28-b9a3-47f6c70bc755",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPaneauPropMasqueResize1",
+                        "implHandler": [
+                            "this.doLayout();"
+                        ],
+                        "name": "resize",
+                        "scope": "me"
+                    },
+                    "designerId": "3baedd9d-be8c-40a4-890c-fe17c1ed0eef"
+                }
+            ]
+        }
+    ]
+}
