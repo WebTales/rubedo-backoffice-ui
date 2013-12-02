@@ -82,13 +82,32 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         me.processBoiteBarreMeta({
                             xtype: 'container',
-                            flex: 2,
                             itemId: 'boiteBarreMeta',
                             minWidth: 400,
                             tpl: [
                                 '<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {autore}  <b>Version : </b>{version}'
                             ]
-                        })
+                        }),
+                        {
+                            xtype: 'tbfill'
+                        },
+                        {
+                            xtype: 'slider',
+                            localiserId: 'zoomLevelSlider',
+                            id: 'MaskZoomControlSlider2',
+                            width: 400,
+                            fieldLabel: 'Niveau de zoom',
+                            value: 600,
+                            maxValue: 2000,
+                            minValue: 200,
+                            useTips: false,
+                            listeners: {
+                                change: {
+                                    fn: me.onMaskZoomControlSliderChange1,
+                                    scope: me
+                                }
+                            }
+                        }
                     ]
                 },
                 {
@@ -124,7 +143,6 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.masks',
                             localiserId: 'editGroup',
-                            disabled: true,
                             id: 'masksEditionTopBarBox1',
                             headerPosition: 'bottom',
                             title: 'Edition',
@@ -137,7 +155,6 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'newRowBtn',
-                                    disabled: true,
                                     id: 'newETRowBtn',
                                     iconAlign: 'top',
                                     iconCls: 'window_add_big',
@@ -147,12 +164,17 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'newColBtn',
-                                    disabled: true,
                                     id: 'newETColBtn',
                                     iconAlign: 'top',
                                     iconCls: 'window_add_big',
                                     scale: 'large',
-                                    text: 'Nouvelle Colonne'
+                                    text: 'Nouvelle Colonne',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onNewETColBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -167,32 +189,47 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'removeBtn',
-                                    disabled: true,
                                     id: 'deleteETElBtn',
                                     iconAlign: 'top',
                                     iconCls: 'window_remove_big',
                                     scale: 'large',
-                                    text: 'Supprimer'
+                                    text: 'Supprimer',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onDeleteETElBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
                                     localiserId: 'moveBtn',
-                                    disabled: true,
                                     id: 'moveUPETBtn',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
                                     scale: 'large',
-                                    text: 'Déplacer'
+                                    text: 'Déplacer',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onMoveUPETBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
                                     localiserId: 'moveBtn',
-                                    disabled: true,
                                     id: 'moveDownETBTn',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
                                     scale: 'large',
-                                    text: 'Déplacer'
+                                    text: 'Déplacer',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onMoveDownETBTnClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -294,6 +331,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                 {
                     xtype: 'container',
                     flex: 1,
+                    id: 'mainETContainer',
                     padding: 10,
                     autoScroll: true,
                     layout: {
@@ -301,12 +339,17 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         type: 'vbox'
                     },
                     items: [
-                        {
+                        me.processMainETHolder({
                             xtype: 'panel',
                             height: 600,
+                            id: 'mainETHolder',
                             width: 800,
+                            layout: {
+                                align: 'stretch',
+                                type: 'vbox'
+                            },
                             title: ''
-                        }
+                        })
                     ]
                 },
                 {
@@ -331,7 +374,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     items: [
                         {
                             xtype: 'hiddenfield',
-                            id: 'elementIdField1',
+                            id: 'elementETIdField',
                             fieldLabel: 'Label'
                         },
                         {
@@ -363,8 +406,33 @@ Ext.define('Rubedo.view.emailTypesInterface', {
         return config;
     },
 
+    processMainETHolder: function(config) {
+        config.plugins=[Ext.create("Ext.ux.BoxReorderer")];
+        return config;
+    },
+
     onImageRender: function(component, eOpts) {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/mail.png');
+    },
+
+    onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
+        Ext.getCmp("mainETHolder").setHeight(newValue);
+    },
+
+    onNewETColBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onDeleteETElBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onMoveUPETBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onMoveDownETBTnClick: function(button, e, eOpts) {
+
     },
 
     onAdminfMasquesEnregistrerAfterRender: function(component, eOpts) {

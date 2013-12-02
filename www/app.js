@@ -366,7 +366,8 @@ Ext.application({
         'MailingListsController',
         'CustomThemesController',
         'AppExtensionController',
-        'UserTypesController'
+        'UserTypesController',
+        'EmailController'
     ],
     name: 'Rubedo'
 });

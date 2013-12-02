@@ -3029,6 +3029,14 @@
                 "app/store/EmailTemplates.js"
             ],
             "className": "EmailTemplates"
+        },
+        "0c137efa-3885-472d-a4d2-96e811f9f233": {
+            "paths": [
+                "metadata/controller/EmailController",
+                "app/controller/override/EmailController.js",
+                "app/controller/EmailController.js"
+            ],
+            "className": "EmailController"
         }
     },
     "viewOrderMap": {
@@ -3355,7 +3363,8 @@
             "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
             "94fb422b-80b5-40d7-8b25-2a16cc8be41a",
             "2a85a03b-de9d-4abc-80a4-82114d4267cf",
-            "00775bc6-fbb7-4f53-bb87-669f9cfacbf4"
+            "00775bc6-fbb7-4f53-bb87-669f9cfacbf4",
+            "0c137efa-3885-472d-a4d2-96e811f9f233"
         ],
         "model": [
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
