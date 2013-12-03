@@ -142,11 +142,10 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.masks',
-                            localiserId: 'editGroup',
-                            id: 'masksEditionTopBarBox1',
+                            id: 'eTTopBarBox',
                             headerPosition: 'bottom',
-                            title: 'Edition',
-                            columns: 8,
+                            title: 'Edit structure',
+                            columns: 5,
                             layout: {
                                 columns: 2,
                                 type: 'table'
@@ -168,23 +167,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'window_add_big',
                                     scale: 'large',
-                                    text: 'Nouvelle Colonne',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onNewETColBtnClick,
-                                            scope: me
-                                        }
-                                    }
-                                },
-                                {
-                                    xtype: 'button',
-                                    localiserId: 'newBlocBtn',
-                                    disabled: true,
-                                    id: 'newETBlockBtn',
-                                    iconAlign: 'top',
-                                    iconCls: 'window_add_big',
-                                    scale: 'large',
-                                    text: 'Nouveau Bloc'
+                                    text: 'Nouvelle Colonne'
                                 },
                                 {
                                     xtype: 'button',
@@ -208,13 +191,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
                                     scale: 'large',
-                                    text: 'Déplacer',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onMoveUPETBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Déplacer'
                                 },
                                 {
                                     xtype: 'button',
@@ -223,13 +200,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
                                     scale: 'large',
-                                    text: 'Déplacer',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onMoveDownETBTnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Déplacer'
                                 }
                             ]
                         },
@@ -419,19 +390,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
         Ext.getCmp("mainETHolder").setHeight(newValue);
     },
 
-    onNewETColBtnClick: function(button, e, eOpts) {
-
-    },
-
     onDeleteETElBtnClick: function(button, e, eOpts) {
-
-    },
-
-    onMoveUPETBtnClick: function(button, e, eOpts) {
-
-    },
-
-    onMoveDownETBTnClick: function(button, e, eOpts) {
 
     },
 

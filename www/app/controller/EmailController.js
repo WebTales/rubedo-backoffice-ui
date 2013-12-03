@@ -19,19 +19,27 @@ Ext.define('Rubedo.controller.EmailController', {
 
     onNewETRowBtnClick: function(button, e, eOpts) {
         var newRow=Ext.widget("panel",{
-            type:"row",
+            eType:"row",
+            plugins:[Ext.create("Ext.ux.BoxReorderer")],
+            layout: {
+                type: 'hbox',
+                align: 'stretch'
+            },
             flex:1
         });
-        Ext.getCmp("mainETHolder").add(newRow);
+        Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newRow);
+        newRow.getEl().dom.click();
     },
 
     onMainETContainerAfterRender: function(component, eOpts) {
+        component.getComponent(0).addBodyCls('contrastEMBorder');
         component.getEl().on("click", function(){
             Ext.getCmp("elementETIdField").setValue(component.getComponent(0).getId());
         });
     },
 
     onMainETHolderAfterRender: function(component, eOpts) {
+        component.addBodyCls('contrastEMBorder');
         component.getEl().on("click", function(e){
             Ext.getCmp("elementETIdField").setValue(component.getId());
             e.stopEvent();
@@ -39,22 +47,76 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     onElementETIdFieldChange: function(field, newValue, oldValue, eOpts) {
+        var me=this;
         if (!Ext.isEmpty(oldValue)){
             var oldOne=Ext.getCmp(oldValue);
             if (!Ext.isEmpty(oldOne)){
-                oldOne.removeBodyCls('selectedelement');
+                oldOne.removeBodyCls('selectedEMElement');
+                if (oldOne.eType=="col"){
+                    oldOne.up().removeBodyCls("contrastEMPadding");
+                    oldOne.up().doLayout();
+                }
             }
         }
         if (!Ext.isEmpty(newValue)){
             var newOne=Ext.getCmp(newValue);
             if (!Ext.isEmpty(newOne)){
                 newOne.getEl().frame(MyPrefData.themeColor);
-                newOne.addBodyCls('selectedelement');
+                newOne.addBodyCls('selectedEMElement');
+                if (newOne.eType=="col"){
+                    newOne.up().addBodyCls("contrastEMPadding");
+                    newOne.up().doLayout();
+                }
             }
         } else {
 
         }
-        console.log(newValue);
+        me.adaptETEditButtons(newValue);
+    },
+
+    onNewETColBtnClick: function(button, e, eOpts) {
+        var newCol=Ext.widget("panel",{
+            eType:"col",
+            width:100
+
+        });
+        Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newCol);
+        newCol.getEl().dom.click();
+    },
+
+    onMoveUPETBtnClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp("elementETIdField").getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().items.indexOf(field);
+            if (pos > 0) {
+                field.up().move(pos,pos-1);
+            }
+        }
+    },
+
+    onMoveDownETBTnClick: function(button, e, eOpts) {
+        var field = Ext.getCmp(Ext.getCmp("elementETIdField").getValue());
+        if (!Ext.isEmpty(field)) {
+            var pos = field.up().items.indexOf(field);
+            field.up().move(pos,pos+1);
+        }
+    },
+
+    adaptETEditButtons: function(selectedElement) {
+        Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
+        var thing=Ext.getCmp(selectedElement);
+        if (!Ext.isEmpty(thing)){
+            if (selectedElement=="mainETHolder"){
+                Ext.getCmp("newETRowBtn").enable();
+            } else if (thing.eType=="row"){
+                Ext.getCmp("newETColBtn").enable();
+                Ext.getCmp("moveUPETBtn").enable();
+                Ext.getCmp("moveDownETBTn").enable();
+            } else if (thing.eType=="col"){
+                Ext.getCmp("moveUPETBtn").enable();
+                Ext.getCmp("moveDownETBTn").enable();
+            }
+        }
     },
 
     init: function(application) {
@@ -70,6 +132,15 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             "#elementETIdField": {
                 change: this.onElementETIdFieldChange
+            },
+            "#newETColBtn": {
+                click: this.onNewETColBtnClick
+            },
+            "#moveUPETBtn": {
+                click: this.onMoveUPETBtnClick
+            },
+            "#moveDownETBTn": {
+                click: this.onMoveDownETBTnClick
             }
         });
     }

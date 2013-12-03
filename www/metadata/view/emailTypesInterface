@@ -355,13 +355,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.masks",
-                        "localiserId": "editGroup",
+                        "localiserId": null,
                         "layout|flex": null,
                         "container|columns": 2,
-                        "id": "masksEditionTopBarBox1",
+                        "id": "eTTopBarBox",
                         "headerPosition": "bottom",
-                        "title": "Edition",
-                        "columns": 8
+                        "title": "Edit structure",
+                        "columns": 5
                     },
                     "designerId": "f04eb1a7-1aa8-427a-92f4-6d0170cab4b7",
                     "customConfigs": [
@@ -421,49 +421,6 @@
                                 "text": "Nouvelle Colonne"
                             },
                             "designerId": "21e06063-a4f3-4ba4-b6f8-e8426a905d15",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onNewETColBtnClick",
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "0cb23a21-6589-4705-abb9-71bd21fe43c9"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "localiserId": "newBlocBtn",
-                                "disabled": true,
-                                "id": "newETBlockBtn",
-                                "width": null,
-                                "icon": null,
-                                "iconAlign": "top",
-                                "iconCls": "window_add_big",
-                                "scale": "large",
-                                "text": "Nouveau Bloc"
-                            },
-                            "designerId": "d66259a9-029d-4396-b17d-7d549644dee9",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -538,22 +495,6 @@
                                     "name": "localiserId",
                                     "type": "string"
                                 }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onMoveUPETBtnClick",
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "fdca57a4-cb02-4264-b94c-a8c9c5863c21"
-                                }
                             ]
                         },
                         {
@@ -579,22 +520,6 @@
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onMoveDownETBTnClick",
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "b179931b-d966-4b52-8791-08bcf6ba11bf"
                                 }
                             ]
                         }
