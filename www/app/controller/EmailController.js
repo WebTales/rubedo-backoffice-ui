@@ -33,8 +33,9 @@ Ext.define('Rubedo.controller.EmailController', {
 
     onMainETContainerAfterRender: function(component, eOpts) {
         component.getComponent(0).addBodyCls('contrastEMBorder');
-        component.getEl().on("click", function(){
+        component.getEl().on("click", function(e){
             Ext.getCmp("elementETIdField").setValue(component.getComponent(0).getId());
+            e.stopEvent();
         });
     },
 
@@ -103,7 +104,10 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     adaptETEditButtons: function(selectedElement) {
+        var me=this;
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
+        Ext.getCmp("ETAddComponentsBtnGr").disable();
+        Ext.getCmp("eTEditControl").removeAll();
         var thing=Ext.getCmp(selectedElement);
         if (!Ext.isEmpty(thing)){
             if (selectedElement=="mainETHolder"){
@@ -113,10 +117,45 @@ Ext.define('Rubedo.controller.EmailController', {
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
             } else if (thing.eType=="col"){
+                Ext.getCmp("ETAddComponentsBtnGr").enable();
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
+                me.displayColControls(thing);
             }
         }
+    },
+
+    displayColControls: function(col) {
+        var me=this;
+        var container=Ext.getCmp("eTEditControl");
+        var spanEdit=Ext.widget('numberfield',{
+            itemId:"spanEditor",
+            fieldLabel:"Width",
+            labelWidth:60,
+            editable:true,
+            allowDecimals:false,
+            anchor:"100%",
+            value:col.getWidth(),
+            minValue:10
+        });
+        spanEdit.on("change",function(){
+            if (spanEdit.isValid()){
+                col.setWidth(spanEdit.getValue());
+                me.applyWidthConstraints(spanEdit,col);
+            }
+        });
+        me.applyWidthConstraints(spanEdit,col);
+        container.add(spanEdit);
+    },
+
+    applyWidthConstraints: function(field, col) {
+        var maxWidth=col.up().getWidth()-2;
+        Ext.Array.forEach(col.up().query("panel"), function(otherCol){
+            if (otherCol.getId()!=col.getId()){
+                maxWidth=maxWidth-otherCol.getWidth();
+            }
+        });
+        field.setMaxValue(maxWidth);
     },
 
     init: function(application) {

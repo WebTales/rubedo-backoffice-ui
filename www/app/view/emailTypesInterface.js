@@ -154,6 +154,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'newRowBtn',
+                                    disabled: true,
                                     id: 'newETRowBtn',
                                     iconAlign: 'top',
                                     iconCls: 'window_add_big',
@@ -163,6 +164,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'newColBtn',
+                                    disabled: true,
                                     id: 'newETColBtn',
                                     iconAlign: 'top',
                                     iconCls: 'window_add_big',
@@ -172,6 +174,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'removeBtn',
+                                    disabled: true,
                                     id: 'deleteETElBtn',
                                     iconAlign: 'top',
                                     iconCls: 'window_remove_big',
@@ -187,6 +190,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'moveBtn',
+                                    disabled: true,
                                     id: 'moveUPETBtn',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_up_big',
@@ -196,11 +200,38 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'moveBtn',
+                                    disabled: true,
                                     id: 'moveDownETBTn',
                                     iconAlign: 'top',
                                     iconCls: 'arrow_down_big',
                                     scale: 'large',
                                     text: 'Déplacer'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            id: 'ETAddComponentsBtnGr',
+                            headerPosition: 'bottom',
+                            title: 'Add components',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'ETAddImageBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'image_add_big',
+                                    scale: 'large',
+                                    text: 'Image'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'ETAddTextBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'text_big',
+                                    scale: 'large',
+                                    text: 'Text'
                                 }
                             ]
                         },
@@ -314,7 +345,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             xtype: 'panel',
                             height: 600,
                             id: 'mainETHolder',
-                            width: 800,
+                            width: 804,
                             layout: {
                                 align: 'stretch',
                                 type: 'vbox'
@@ -328,7 +359,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     localiserId: 'propsPanel',
                     margins: '0, 0, 0, 2',
                     frame: true,
-                    id: 'paneauPropMasque1',
+                    id: 'eTPropsPan',
                     width: 240,
                     autoScroll: true,
                     resizable: true,
@@ -352,8 +383,9 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             xtype: 'form',
                             localiserId: 'selectElementPanel',
                             flex: 1,
-                            id: 'elementEditControl1',
+                            id: 'eTEditControl',
                             autoScroll: true,
+                            bodyPadding: 10,
                             title: 'Sélectionnez un élément'
                         }
                     ],

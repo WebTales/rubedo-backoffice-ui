@@ -386,6 +386,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "newRowBtn",
+                                "disabled": true,
                                 "id": "newETRowBtn",
                                 "width": null,
                                 "icon": null,
@@ -412,6 +413,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "newColBtn",
+                                "disabled": true,
                                 "id": "newETColBtn",
                                 "width": null,
                                 "icon": null,
@@ -438,6 +440,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "removeBtn",
+                                "disabled": true,
                                 "id": "deleteETElBtn",
                                 "width": null,
                                 "icon": null,
@@ -480,6 +483,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "moveBtn",
+                                "disabled": true,
                                 "id": "moveUPETBtn",
                                 "width": null,
                                 "icon": null,
@@ -506,6 +510,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "localiserId": "moveBtn",
+                                "disabled": true,
                                 "id": "moveDownETBTn",
                                 "width": null,
                                 "icon": null,
@@ -522,6 +527,57 @@
                                     "type": "string"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "ETAddComponentsBtnGr",
+                        "headerPosition": "bottom",
+                        "title": "Add components",
+                        "columns": 2
+                    },
+                    "designerId": "0fd488bd-c985-4cc0-a49d-8c239fafc602",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "ETAddImageBtn",
+                                "iconAlign": "top",
+                                "iconCls": "image_add_big",
+                                "scale": "large",
+                                "text": "Image"
+                            },
+                            "designerId": "1d564ddd-b4e7-4371-927b-95333ba3b0c4"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "ETAddTextBtn",
+                                "iconAlign": "top",
+                                "iconCls": "text_big",
+                                "scale": "large",
+                                "text": "Text"
+                            },
+                            "designerId": "bc711cbd-86aa-47de-9190-4db8ff7612c0"
                         }
                     ]
                 },
@@ -810,7 +866,7 @@
                         "container|align": "stretch",
                         "height": 600,
                         "id": "mainETHolder",
-                        "width": 800,
+                        "width": 804,
                         "layout": "vbox",
                         "title": ""
                     },
@@ -853,7 +909,7 @@
                 "dock": null,
                 "container|align": "stretch",
                 "frame": true,
-                "id": "paneauPropMasque1",
+                "id": "eTPropsPan",
                 "margin": null,
                 "width": 240,
                 "autoScroll": true,
@@ -901,10 +957,10 @@
                         "localiserId": "selectElementPanel",
                         "layout|flex": 1,
                         "height": null,
-                        "id": "elementEditControl1",
+                        "id": "eTEditControl",
                         "margin": null,
                         "autoScroll": true,
-                        "bodyPadding": null,
+                        "bodyPadding": 10,
                         "iconCls": null,
                         "title": "Sélectionnez un élément"
                     },
