@@ -51,8 +51,9 @@
                 "fn": "onMainETContainerAfterRender",
                 "implHandler": [
                     "component.getComponent(0).addBodyCls('contrastEMBorder');\r",
-                    "component.getEl().on(\"click\", function(){\r",
-                    "\tExt.getCmp(\"elementETIdField\").setValue(component.getComponent(0).getId());\r",
+                    "component.getEl().on(\"click\", function(e){\r",
+                    "    Ext.getCmp(\"elementETIdField\").setValue(component.getComponent(0).getId());\r",
+                    "    e.stopEvent();\r",
                     "});"
                 ],
                 "name": "afterrender",
@@ -141,7 +142,10 @@
                     "selectedElement"
                 ],
                 "implHandler": [
+                    "var me=this;\r",
                     "Ext.Array.forEach(Ext.getCmp(\"eTTopBarBox\").query(\"button\"), function(button){button.disable();});\r",
+                    "Ext.getCmp(\"ETAddComponentsBtnGr\").disable();\r",
+                    "Ext.getCmp(\"eTEditControl\").removeAll();\r",
                     "var thing=Ext.getCmp(selectedElement);\r",
                     "if (!Ext.isEmpty(thing)){\r",
                     "    if (selectedElement==\"mainETHolder\"){\r",
@@ -151,8 +155,10 @@
                     "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
                     "    } else if (thing.eType==\"col\"){\r",
+                    "        Ext.getCmp(\"ETAddComponentsBtnGr\").enable();\r",
                     "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
+                    "        me.displayColControls(thing);\r",
                     "    }\r",
                     "}"
                 ]
@@ -231,6 +237,68 @@
                 "designer|controlQuery": "#moveDownETBTn"
             },
             "designerId": "322c6208-21df-4887-955b-8239fbf64e67"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayColControls",
+                "designer|params": [
+                    "col"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var container=Ext.getCmp(\"eTEditControl\");\r",
+                    "var spanEdit=Ext.widget('numberfield',{\r",
+                    "    itemId:\"spanEditor\",\r",
+                    "    fieldLabel:\"Width\",\r",
+                    "    labelWidth:60,\r",
+                    "    editable:true,\r",
+                    "    allowDecimals:false,\r",
+                    "    anchor:\"100%\",\r",
+                    "    value:col.getWidth(),\r",
+                    "    minValue:10\r",
+                    "});\r",
+                    "spanEdit.on(\"change\",function(){\r",
+                    "    if (spanEdit.isValid()){\r",
+                    "        col.setWidth(spanEdit.getValue());\r",
+                    "        me.applyWidthConstraints(spanEdit,col);\r",
+                    "    }\r",
+                    "});\r",
+                    "me.applyWidthConstraints(spanEdit,col);\r",
+                    "container.add(spanEdit);"
+                ]
+            },
+            "designerId": "22677d58-ca79-4fe3-a0e8-794df8348db5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyWidthConstraints",
+                "designer|params": [
+                    "field",
+                    "col"
+                ],
+                "implHandler": [
+                    "var maxWidth=col.up().getWidth()-2;\r",
+                    "Ext.Array.forEach(col.up().query(\"panel\"), function(otherCol){\r",
+                    "    if (otherCol.getId()!=col.getId()){\r",
+                    "        maxWidth=maxWidth-otherCol.getWidth();\r",
+                    "    }\r",
+                    "});\r",
+                    "field.setMaxValue(maxWidth);"
+                ]
+            },
+            "designerId": "b2497bd0-4478-452a-aec3-e61175c2db4e"
         }
     ]
 }

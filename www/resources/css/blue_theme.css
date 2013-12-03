@@ -36,6 +36,12 @@ border-width:2px;
 .contrastEMBorder{
 border-color:#666666;
 }
+.image_add_big {
+	background: url(../icones/blue/32x32/image_add.png)  center no-repeat !important;
+}
+.text_big{
+	background: url(../icones/blue/32x32/page_full.png) center no-repeat !important;
+}
 .contrastEMPadding{
 padding-top:10px;
 padding-bottom:10px;
