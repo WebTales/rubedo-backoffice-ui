@@ -76,9 +76,10 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     onNewETColBtnClick: function(button, e, eOpts) {
+        var me=this;
         var newCol=Ext.widget("panel",{
             eType:"col",
-            width:100
+            width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()))])
 
         });
         Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newCol);
@@ -108,15 +109,21 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
         Ext.getCmp("ETAddComponentsBtnGr").disable();
         Ext.getCmp("eTEditControl").removeAll();
+        Ext.getCmp("eTEditControl").setTitle("Select an element");
         var thing=Ext.getCmp(selectedElement);
         if (!Ext.isEmpty(thing)){
             if (selectedElement=="mainETHolder"){
                 Ext.getCmp("newETRowBtn").enable();
+                Ext.getCmp("eTEditControl").setTitle("Email body");
             } else if (thing.eType=="row"){
-                Ext.getCmp("newETColBtn").enable();
+                Ext.getCmp("eTEditControl").setTitle("Row");
+                if(me.calculateRemainingRowWidth(thing)>=10){
+                    Ext.getCmp("newETColBtn").enable();
+                }
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
             } else if (thing.eType=="col"){
+                Ext.getCmp("eTEditControl").setTitle("Column");
                 Ext.getCmp("ETAddComponentsBtnGr").enable();
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
@@ -156,6 +163,14 @@ Ext.define('Rubedo.controller.EmailController', {
             }
         });
         field.setMaxValue(maxWidth);
+    },
+
+    calculateRemainingRowWidth: function(row) {
+        var maxWidth=row.getWidth()-2;
+        Ext.Array.forEach(row.query("panel"), function(otherCol){
+            maxWidth=maxWidth-otherCol.getWidth();
+        });
+        return(maxWidth);
     },
 
     init: function(application) {

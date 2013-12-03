@@ -146,15 +146,21 @@
                     "Ext.Array.forEach(Ext.getCmp(\"eTTopBarBox\").query(\"button\"), function(button){button.disable();});\r",
                     "Ext.getCmp(\"ETAddComponentsBtnGr\").disable();\r",
                     "Ext.getCmp(\"eTEditControl\").removeAll();\r",
+                    "Ext.getCmp(\"eTEditControl\").setTitle(\"Select an element\");\r",
                     "var thing=Ext.getCmp(selectedElement);\r",
                     "if (!Ext.isEmpty(thing)){\r",
                     "    if (selectedElement==\"mainETHolder\"){\r",
                     "        Ext.getCmp(\"newETRowBtn\").enable();\r",
+                    "        Ext.getCmp(\"eTEditControl\").setTitle(\"Email body\");\r",
                     "    } else if (thing.eType==\"row\"){\r",
+                    "        Ext.getCmp(\"eTEditControl\").setTitle(\"Row\");\r",
+                    "        if(me.calculateRemainingRowWidth(thing)>=10){\r",
                     "        Ext.getCmp(\"newETColBtn\").enable();\r",
+                    "        }\r",
                     "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
                     "    } else if (thing.eType==\"col\"){\r",
+                    "        Ext.getCmp(\"eTEditControl\").setTitle(\"Column\");\r",
                     "        Ext.getCmp(\"ETAddComponentsBtnGr\").enable();\r",
                     "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
@@ -175,10 +181,11 @@
             "userConfig": {
                 "fn": "onNewETColBtnClick",
                 "implHandler": [
+                    "var me=this;\r",
                     "var newCol=Ext.widget(\"panel\",{\r",
                     "    eType:\"col\",\r",
-                    "    width:100\r",
-                    "    \r",
+                    "    width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()))])\r",
+                    "\r",
                     "});\r",
                     "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newCol);\r",
                     "newCol.getEl().dom.click();"
@@ -299,6 +306,28 @@
                 ]
             },
             "designerId": "b2497bd0-4478-452a-aec3-e61175c2db4e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "calculateRemainingRowWidth",
+                "designer|params": [
+                    "row"
+                ],
+                "implHandler": [
+                    "var maxWidth=row.getWidth()-2;\r",
+                    "Ext.Array.forEach(row.query(\"panel\"), function(otherCol){\r",
+                    "        maxWidth=maxWidth-otherCol.getWidth();\r",
+                    "});\r",
+                    "return(maxWidth);"
+                ]
+            },
+            "designerId": "6f50f766-78ac-41bb-9b1c-f5e927435494"
         }
     ]
 }
