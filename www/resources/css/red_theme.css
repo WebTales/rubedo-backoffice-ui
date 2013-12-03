@@ -33,7 +33,16 @@ background:#FFE7E5 !important;
 border-color:#666666;
 border-width:2px; 
 }
-
+.contrastEMBorder{
+border-color:#666666;
+}
+.selectedEMElement{
+border-color:#D7251D !important;
+}
+.contrastEMPadding{
+padding-top:10px;
+padding-bottom:10px;
+}
 .contrastCBorder{
 border-color:#666666;
 border-width:2px; 

@@ -22,10 +22,16 @@
                 "fn": "onNewETRowBtnClick",
                 "implHandler": [
                     "var newRow=Ext.widget(\"panel\",{\r",
-                    "    type:\"row\",\r",
+                    "    eType:\"row\",\r",
+                    "    plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
+                    "    layout: {\r",
+                    "        type: 'hbox',\r",
+                    "        align: 'stretch'\r",
+                    "    },\r",
                     "    flex:1\r",
                     "});\r",
-                    "Ext.getCmp(\"mainETHolder\").add(newRow);"
+                    "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newRow);\r",
+                    "newRow.getEl().dom.click();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -44,6 +50,7 @@
             "userConfig": {
                 "fn": "onMainETContainerAfterRender",
                 "implHandler": [
+                    "component.getComponent(0).addBodyCls('contrastEMBorder');\r",
                     "component.getEl().on(\"click\", function(){\r",
                     "\tExt.getCmp(\"elementETIdField\").setValue(component.getComponent(0).getId());\r",
                     "});"
@@ -65,6 +72,7 @@
             "userConfig": {
                 "fn": "onMainETHolderAfterRender",
                 "implHandler": [
+                    "component.addBodyCls('contrastEMBorder');\r",
                     "component.getEl().on(\"click\", function(e){\r",
                     "    Ext.getCmp(\"elementETIdField\").setValue(component.getId());\r",
                     "    e.stopEvent();\r",
@@ -87,22 +95,31 @@
             "userConfig": {
                 "fn": "onElementETIdFieldChange",
                 "implHandler": [
+                    "var me=this;\r",
                     "if (!Ext.isEmpty(oldValue)){\r",
                     "    var oldOne=Ext.getCmp(oldValue);\r",
                     "    if (!Ext.isEmpty(oldOne)){\r",
-                    "        oldOne.removeBodyCls('selectedelement');\r",
+                    "        oldOne.removeBodyCls('selectedEMElement');\r",
+                    "        if (oldOne.eType==\"col\"){\r",
+                    "            oldOne.up().removeBodyCls(\"contrastEMPadding\");\r",
+                    "            oldOne.up().doLayout();\r",
+                    "        }\r",
                     "    }\r",
                     "}\r",
                     "if (!Ext.isEmpty(newValue)){\r",
                     "    var newOne=Ext.getCmp(newValue);\r",
                     "    if (!Ext.isEmpty(newOne)){\r",
                     "        newOne.getEl().frame(MyPrefData.themeColor);\r",
-                    "\t\tnewOne.addBodyCls('selectedelement');\r",
+                    "        newOne.addBodyCls('selectedEMElement');\r",
+                    "        if (newOne.eType==\"col\"){\r",
+                    "            newOne.up().addBodyCls(\"contrastEMPadding\");\r",
+                    "            newOne.up().doLayout();\r",
+                    "        }\r",
                     "    }\r",
                     "} else {\r",
                     "\r",
                     "}\r",
-                    "console.log(newValue);"
+                    "me.adaptETEditButtons(newValue);"
                 ],
                 "name": "change",
                 "scope": "me",
@@ -110,6 +127,110 @@
                 "designer|controlQuery": "#elementETIdField"
             },
             "designerId": "2be8bd78-2484-48ee-9f43-8bda3166f1ca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "adaptETEditButtons",
+                "designer|params": [
+                    "selectedElement"
+                ],
+                "implHandler": [
+                    "Ext.Array.forEach(Ext.getCmp(\"eTTopBarBox\").query(\"button\"), function(button){button.disable();});\r",
+                    "var thing=Ext.getCmp(selectedElement);\r",
+                    "if (!Ext.isEmpty(thing)){\r",
+                    "    if (selectedElement==\"mainETHolder\"){\r",
+                    "        Ext.getCmp(\"newETRowBtn\").enable();\r",
+                    "    } else if (thing.eType==\"row\"){\r",
+                    "        Ext.getCmp(\"newETColBtn\").enable();\r",
+                    "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
+                    "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
+                    "    } else if (thing.eType==\"col\"){\r",
+                    "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
+                    "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
+                    "    }\r",
+                    "}"
+                ]
+            },
+            "designerId": "e85a4abe-ef9c-4045-98d5-207d7be889c2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewETColBtnClick",
+                "implHandler": [
+                    "var newCol=Ext.widget(\"panel\",{\r",
+                    "    eType:\"col\",\r",
+                    "    width:100\r",
+                    "    \r",
+                    "});\r",
+                    "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newCol);\r",
+                    "newCol.getEl().dom.click();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newETColBtn"
+            },
+            "designerId": "7fe60160-e4cc-45bb-a3f7-57806b157b37"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMoveUPETBtnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    if (pos > 0) {\r",
+                    "        field.up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveUPETBtn"
+            },
+            "designerId": "9ee2ab82-0ab1-4ecb-80d7-609f39ac95a0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMoveDownETBTnClick",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    field.up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveDownETBTn"
+            },
+            "designerId": "322c6208-21df-4887-955b-8239fbf64e67"
         }
     ]
 }
