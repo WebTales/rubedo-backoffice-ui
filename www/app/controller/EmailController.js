@@ -25,6 +25,9 @@ Ext.define('Rubedo.controller.EmailController', {
                 type: 'hbox',
                 align: 'stretch'
             },
+            eConfig:{
+                styles:""
+            },
             flex:1
         });
         Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newRow);
@@ -95,6 +98,9 @@ Ext.define('Rubedo.controller.EmailController', {
                 type: 'vbox',
                 align: 'stretch'
             },
+            eConfig:{
+                styles:""
+            },
             width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()))])
 
         });
@@ -128,7 +134,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 type: 'fit'
             },
             eConfig:{
-                image:null
+                image:null,
+                styles:""
             },
             flex:1
 
@@ -146,7 +153,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 type: 'fit'
             },
             eConfig:{
-                html:null
+                html:null,
+                styles:""
             },
             flex:1
 
@@ -172,6 +180,7 @@ Ext.define('Rubedo.controller.EmailController', {
             if (selectedElement=="mainETHolder"){
                 Ext.getCmp("newETRowBtn").enable();
                 Ext.getCmp("eTEditControl").setTitle("Email body");
+                me.displayBodyControls();
             } else if (thing.eType=="row"){
                 Ext.getCmp("eTEditControl").setTitle("Row");
                 if(me.calculateRemainingRowWidth(thing)>=30){
@@ -180,6 +189,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
                 Ext.getCmp("deleteETElBtn").enable();
+                me.displayRowControls(thing);
+                me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             } else if (thing.eType=="col"){
                 Ext.getCmp("eTEditControl").setTitle("Column");
                 if (Ext.isEmpty(thing.getComponent(0))){
@@ -189,39 +200,19 @@ Ext.define('Rubedo.controller.EmailController', {
                 Ext.getCmp("moveDownETBTn").enable();
                 Ext.getCmp("deleteETElBtn").enable();
                 me.displayColControls(thing);
+                me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             } else if (thing.eType=="imageComponent"){
                 Ext.getCmp("eTEditControl").setTitle("Image");
                 Ext.getCmp("deleteETElBtn").enable();
                 me.displayImageControls(thing,Ext.getCmp("eTEditControl"));
+                me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             } else if (thing.eType=="textComponent"){
                 Ext.getCmp("eTEditControl").setTitle("Text");
                 Ext.getCmp("deleteETElBtn").enable();
                 me.displayTextControls(thing,Ext.getCmp("eTEditControl"));
+                me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             }
         }
-    },
-
-    displayColControls: function(col) {
-        var me=this;
-        var container=Ext.getCmp("eTEditControl");
-        var spanEdit=Ext.widget('numberfield',{
-            itemId:"spanEditor",
-            fieldLabel:"Width",
-            labelWidth:60,
-            editable:true,
-            allowDecimals:false,
-            anchor:"100%",
-            value:col.getWidth(),
-            minValue:10
-        });
-        spanEdit.on("change",function(){
-            if (spanEdit.isValid()){
-                col.setWidth(spanEdit.getValue());
-                me.applyWidthConstraints(spanEdit,col);
-            }
-        });
-        me.applyWidthConstraints(spanEdit,col);
-        container.add(spanEdit);
     },
 
     applyWidthConstraints: function(field, col) {
@@ -293,6 +284,86 @@ Ext.define('Rubedo.controller.EmailController', {
             me.syncEComponent(textComponent);
         });
         target.add(textField);
+    },
+
+    displayRowControls: function(row) {
+
+    },
+
+    displayColControls: function(col) {
+        var me=this;
+        var container=Ext.getCmp("eTEditControl");
+        var spanEdit=Ext.widget('numberfield',{
+            itemId:"spanEditor",
+            fieldLabel:"Width",
+            labelWidth:60,
+            editable:true,
+            allowDecimals:false,
+            anchor:"100%",
+            value:col.getWidth(),
+            minValue:10
+        });
+        spanEdit.on("change",function(){
+            if (spanEdit.isValid()){
+                col.setWidth(spanEdit.getValue());
+                me.applyWidthConstraints(spanEdit,col);
+            }
+        });
+        me.applyWidthConstraints(spanEdit,col);
+        container.add(spanEdit);
+    },
+
+    displayGenericControls: function(component, target) {
+        var styleEdit=Ext.widget("textareafield",{
+            itemId:"styleEditor",
+            fieldLabel:"Style",
+            labelWidth:60,
+            anchor:"100%",
+            grow:true,
+            value:Ext.clone(component.eConfig.styles)
+
+        });
+        styleEdit.on("change", function(){
+            component.eConfig.styles=styleEdit.getValue();
+        });
+        target.add(styleEdit);
+    },
+
+    displayBodyControls: function() {
+        var container=Ext.getCmp("eTEditControl");
+        var mainBody=Ext.getCmp("mainETHolder");
+        if (Ext.isEmpty(mainBody.eConfig)){
+            mainBody.eConfig={ };
+        }
+        var widthDisplayer=Ext.widget("displayfield",{
+            labelWidth:60,
+            fieldLabel:"Width",
+            value:mainBody.getWidth()-4
+        });
+        container.add(widthDisplayer);
+        var centerCheckbox=Ext.widget("checkbox",{
+            labelWidth:60,
+            fieldLabel:"Centered",
+            inputValue:true,
+            checked:Ext.clone(mainBody.eConfig.centered)
+        });
+        centerCheckbox.on("change",function(){
+            mainBody.eConfig.centered=centerCheckbox.getValue();
+        });
+        container.add(centerCheckbox);
+        var styleEdit=Ext.widget("textareafield",{
+            itemId:"styleEditor",
+            fieldLabel:"Style",
+            labelWidth:60,
+            anchor:"100%",
+            grow:true,
+            value:Ext.clone(mainBody.eConfig.styles)
+
+        });
+        styleEdit.on("change", function(){
+            mainBody.eConfig.styles=styleEdit.getValue();
+        });
+        container.add(styleEdit);
     },
 
     init: function(application) {

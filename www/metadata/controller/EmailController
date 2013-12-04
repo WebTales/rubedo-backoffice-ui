@@ -28,6 +28,9 @@
                     "        type: 'hbox',\r",
                     "        align: 'stretch'\r",
                     "    },\r",
+                    "    eConfig:{\r",
+                    "        styles:\"\"\r",
+                    "    },\r",
                     "    flex:1\r",
                     "});\r",
                     "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newRow);\r",
@@ -164,6 +167,7 @@
                     "    if (selectedElement==\"mainETHolder\"){\r",
                     "        Ext.getCmp(\"newETRowBtn\").enable();\r",
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Email body\");\r",
+                    "        me.displayBodyControls();\r",
                     "    } else if (thing.eType==\"row\"){\r",
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Row\");\r",
                     "        if(me.calculateRemainingRowWidth(thing)>=30){\r",
@@ -172,6 +176,8 @@
                     "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
                     "        Ext.getCmp(\"deleteETElBtn\").enable();\r",
+                    "        me.displayRowControls(thing);\r",
+                    "        me.displayGenericControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
                     "    } else if (thing.eType==\"col\"){\r",
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Column\");\r",
                     "        if (Ext.isEmpty(thing.getComponent(0))){\r",
@@ -181,14 +187,17 @@
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
                     "        Ext.getCmp(\"deleteETElBtn\").enable();\r",
                     "        me.displayColControls(thing);\r",
+                    "        me.displayGenericControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
                     "    } else if (thing.eType==\"imageComponent\"){\r",
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Image\");\r",
                     "        Ext.getCmp(\"deleteETElBtn\").enable();\r",
                     "        me.displayImageControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
+                    "        me.displayGenericControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
                     "    } else if (thing.eType==\"textComponent\"){\r",
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Text\");\r",
                     "        Ext.getCmp(\"deleteETElBtn\").enable();\r",
                     "        me.displayTextControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
+                    "        me.displayGenericControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
                     "    }\r",
                     "}"
                 ]
@@ -211,6 +220,9 @@
                     "    layout: {\r",
                     "        type: 'vbox',\r",
                     "        align: 'stretch'\r",
+                    "    },\r",
+                    "    eConfig:{\r",
+                    "        styles:\"\"\r",
                     "    },\r",
                     "    width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()))])\r",
                     "\r",
@@ -281,43 +293,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayColControls",
-                "designer|params": [
-                    "col"
-                ],
-                "implHandler": [
-                    "var me=this;\r",
-                    "var container=Ext.getCmp(\"eTEditControl\");\r",
-                    "var spanEdit=Ext.widget('numberfield',{\r",
-                    "    itemId:\"spanEditor\",\r",
-                    "    fieldLabel:\"Width\",\r",
-                    "    labelWidth:60,\r",
-                    "    editable:true,\r",
-                    "    allowDecimals:false,\r",
-                    "    anchor:\"100%\",\r",
-                    "    value:col.getWidth(),\r",
-                    "    minValue:10\r",
-                    "});\r",
-                    "spanEdit.on(\"change\",function(){\r",
-                    "    if (spanEdit.isValid()){\r",
-                    "        col.setWidth(spanEdit.getValue());\r",
-                    "        me.applyWidthConstraints(spanEdit,col);\r",
-                    "    }\r",
-                    "});\r",
-                    "me.applyWidthConstraints(spanEdit,col);\r",
-                    "container.add(spanEdit);"
-                ]
-            },
-            "designerId": "22677d58-ca79-4fe3-a0e8-794df8348db5"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "applyWidthConstraints",
                 "designer|params": [
                     "field",
@@ -374,7 +349,8 @@
                     "        type: 'fit'\r",
                     "    },\r",
                     "    eConfig:{\r",
-                    "        image:null\r",
+                    "        image:null,\r",
+                    "        styles:\"\"\r",
                     "    },\r",
                     "    flex:1\r",
                     "\r",
@@ -407,7 +383,8 @@
                     "        type: 'fit'\r",
                     "    },\r",
                     "    eConfig:{\r",
-                    "        html:null\r",
+                    "        html:null,\r",
+                    "        styles:\"\"\r",
                     "    },\r",
                     "    flex:1\r",
                     "\r",
@@ -540,6 +517,140 @@
                 ]
             },
             "designerId": "303dac8f-446a-44a8-a47e-e3b919bcb594"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayRowControls",
+                "designer|params": [
+                    "row"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "34e8a10c-3e64-4e4d-a017-52136650366b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayColControls",
+                "designer|params": [
+                    "col"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var container=Ext.getCmp(\"eTEditControl\");\r",
+                    "var spanEdit=Ext.widget('numberfield',{\r",
+                    "    itemId:\"spanEditor\",\r",
+                    "    fieldLabel:\"Width\",\r",
+                    "    labelWidth:60,\r",
+                    "    editable:true,\r",
+                    "    allowDecimals:false,\r",
+                    "    anchor:\"100%\",\r",
+                    "    value:col.getWidth(),\r",
+                    "    minValue:10\r",
+                    "});\r",
+                    "spanEdit.on(\"change\",function(){\r",
+                    "    if (spanEdit.isValid()){\r",
+                    "        col.setWidth(spanEdit.getValue());\r",
+                    "        me.applyWidthConstraints(spanEdit,col);\r",
+                    "    }\r",
+                    "});\r",
+                    "me.applyWidthConstraints(spanEdit,col);\r",
+                    "container.add(spanEdit);"
+                ]
+            },
+            "designerId": "22677d58-ca79-4fe3-a0e8-794df8348db5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayGenericControls",
+                "designer|params": [
+                    "component",
+                    "target"
+                ],
+                "implHandler": [
+                    "var styleEdit=Ext.widget(\"textareafield\",{\r",
+                    "    itemId:\"styleEditor\",\r",
+                    "    fieldLabel:\"Style\",\r",
+                    "    labelWidth:60,\r",
+                    "    anchor:\"100%\",\r",
+                    "    grow:true,\r",
+                    "    value:Ext.clone(component.eConfig.styles)\r",
+                    "\r",
+                    "});\r",
+                    "styleEdit.on(\"change\", function(){\r",
+                    "    component.eConfig.styles=styleEdit.getValue();\r",
+                    "});\r",
+                    "target.add(styleEdit);"
+                ]
+            },
+            "designerId": "d63e2bd6-990e-48a4-a7a4-8fe138ed452d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayBodyControls",
+                "implHandler": [
+                    "var container=Ext.getCmp(\"eTEditControl\");\r",
+                    "var mainBody=Ext.getCmp(\"mainETHolder\");\r",
+                    "if (Ext.isEmpty(mainBody.eConfig)){\r",
+                    "    mainBody.eConfig={ };\r",
+                    "}\r",
+                    "var widthDisplayer=Ext.widget(\"displayfield\",{\r",
+                    "    labelWidth:60,\r",
+                    "    fieldLabel:\"Width\",\r",
+                    "    value:mainBody.getWidth()-4\r",
+                    "});\r",
+                    "container.add(widthDisplayer);\r",
+                    "var centerCheckbox=Ext.widget(\"checkbox\",{\r",
+                    "\tlabelWidth:60,\r",
+                    "    fieldLabel:\"Centered\",\r",
+                    "    inputValue:true,\r",
+                    "    checked:Ext.clone(mainBody.eConfig.centered)\r",
+                    "});\r",
+                    "centerCheckbox.on(\"change\",function(){\r",
+                    "\tmainBody.eConfig.centered=centerCheckbox.getValue();\r",
+                    "});\r",
+                    "container.add(centerCheckbox);\r",
+                    "var styleEdit=Ext.widget(\"textareafield\",{\r",
+                    "    itemId:\"styleEditor\",\r",
+                    "    fieldLabel:\"Style\",\r",
+                    "    labelWidth:60,\r",
+                    "    anchor:\"100%\",\r",
+                    "    grow:true,\r",
+                    "    value:Ext.clone(mainBody.eConfig.styles)\r",
+                    "\r",
+                    "});\r",
+                    "styleEdit.on(\"change\", function(){\r",
+                    "    mainBody.eConfig.styles=styleEdit.getValue();\r",
+                    "});\r",
+                    "container.add(styleEdit);"
+                ]
+            },
+            "designerId": "46f52be4-faba-49ae-9c03-09a59a8d08e6"
         }
     ]
 }
