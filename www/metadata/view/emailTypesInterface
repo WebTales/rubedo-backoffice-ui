@@ -456,22 +456,6 @@
                                     "name": "localiserId",
                                     "type": "string"
                                 }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onDeleteETElBtnClick",
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "b5f571b7-d71a-49da-beca-b3fc58bde294"
-                                }
                             ]
                         },
                         {
