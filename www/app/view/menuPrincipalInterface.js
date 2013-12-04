@@ -239,7 +239,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         },
         {
             xtype: 'menuitem',
-            ACL: 'read.ui.emailTypes',
+            ACL: 'read.ui.emailTemplates',
             favoriteIcon: 'mail.png',
             itemId: 'emailTypesInterface',
             iconCls: 'mail_small',

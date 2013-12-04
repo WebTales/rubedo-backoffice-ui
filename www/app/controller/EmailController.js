@@ -21,6 +21,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var newRow=Ext.widget("panel",{
             eType:"row",
             plugins:[Ext.create("Ext.ux.BoxReorderer")],
+            id:"emailType-"+Ext.id(),
             layout: {
                 type: 'hbox',
                 align: 'stretch'
@@ -94,6 +95,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var me=this;
         var newCol=Ext.widget("panel",{
             eType:"col",
+            id:"emailType-"+Ext.id(),
             layout: {
                 type: 'vbox',
                 align: 'stretch'
@@ -130,6 +132,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var me=this;
         var newImage=Ext.widget("panel",{
             eType:"imageComponent",
+            id:"emailType-"+Ext.id(),
             layout: {
                 type: 'fit'
             },
@@ -149,6 +152,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var me=this;
         var newText=Ext.widget("panel",{
             eType:"textComponent",
+            id:"emailType-"+Ext.id(),
             layout: {
                 type: 'fit'
             },
