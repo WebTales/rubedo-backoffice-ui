@@ -23,7 +23,7 @@ Ext.define('Rubedo.view.RichTextConfigurator', {
 
     localiserId: 'rteConfigWindow',
     height: 360,
-    width: 632,
+    width: 667,
     constrain: true,
     resizable: false,
     layout: {
@@ -39,7 +39,7 @@ Ext.define('Rubedo.view.RichTextConfigurator', {
             items: [
                 {
                     xtype: 'CKEField',
-                    CKETBConfig: 'Standard',
+                    CKETBConfig: 'Email',
                     hideLabel: true,
                     name: 'html'
                 }
