@@ -40,7 +40,7 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     onMainETHolderAfterRender: function(component, eOpts) {
-        if (component.eType=="imageComponent"){
+        if ((component.eType=="imageComponent")||(component.eType=="textComponent")){
             component.addBodyCls('contrastCBorder');
         } else {
             component.addBodyCls('contrastEMBorder');
@@ -60,7 +60,7 @@ Ext.define('Rubedo.controller.EmailController', {
                 if (oldOne.eType=="col"){
                     oldOne.up().removeBodyCls("contrastEMPadding");
                     oldOne.up().doLayout();
-                } else if (oldOne.eType=="imageComponent"){
+                } else if ((oldOne.eType=="imageComponent")||(oldOne.eType=="textComponent")){
                     oldOne.up().removeBodyCls("contrastEMPadding");
                     oldOne.up().up().removeBodyCls("contrastEMPadding");
                     oldOne.up().up().doLayout();
@@ -75,7 +75,7 @@ Ext.define('Rubedo.controller.EmailController', {
                 if (newOne.eType=="col"){
                     newOne.up().addBodyCls("contrastEMPadding");
                     newOne.up().doLayout();
-                } else if (newOne.eType=="imageComponent"){
+                } else if ((newOne.eType=="imageComponent")||(newOne.eType=="textComponent")){
                     newOne.up().addBodyCls("contrastEMPadding");
                     newOne.up().up().addBodyCls("contrastEMPadding");
                     newOne.up().up().doLayout();
@@ -139,7 +139,21 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     onETAddTextBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var newText=Ext.widget("panel",{
+            eType:"textComponent",
+            layout: {
+                type: 'fit'
+            },
+            eConfig:{
+                html:null
+            },
+            flex:1
 
+        });
+        Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newText);
+        me.syncEComponent(newText, true);
+        newText.getEl().dom.click();
     },
 
     onDeleteETElBtnClick: function(button, e, eOpts) {
@@ -179,6 +193,10 @@ Ext.define('Rubedo.controller.EmailController', {
                 Ext.getCmp("eTEditControl").setTitle("Image");
                 Ext.getCmp("deleteETElBtn").enable();
                 me.displayImageControls(thing,Ext.getCmp("eTEditControl"));
+            } else if (thing.eType=="textComponent"){
+                Ext.getCmp("eTEditControl").setTitle("Text");
+                Ext.getCmp("deleteETElBtn").enable();
+                me.displayTextControls(thing,Ext.getCmp("eTEditControl"));
             }
         }
     },
@@ -235,6 +253,11 @@ Ext.define('Rubedo.controller.EmailController', {
             } else {
                 component.getComponent(0).setSrc("/dam?media-id="+component.eConfig.image);
             }
+        } else if (component.eType=="textComponent"){
+            if (firstTime){
+                component.add(Ext.create('Ext.Component'));
+            }
+            component.getComponent(0).update(component.eConfig.html);
         }
     },
 
@@ -254,6 +277,22 @@ Ext.define('Rubedo.controller.EmailController', {
             me.syncEComponent(imageComponent);
         });
         target.add(imageField);
+    },
+
+    displayTextControls: function(textComponent, target) {
+        var me=this;
+        var textField=Ext.widget('directRTEField',{
+            itemId:"textTEditor",
+            fieldLabel:"Text",
+            labelWidth:60,
+            anchor:"100%",
+            value:Ext.clone(textComponent.eConfig.html)
+        });
+        textField.on("change",function(){
+            textComponent.eConfig.html=textField.getValue();
+            me.syncEComponent(textComponent);
+        });
+        target.add(textField);
     },
 
     init: function(application) {
