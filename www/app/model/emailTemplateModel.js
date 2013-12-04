@@ -27,7 +27,7 @@ Ext.define('Rubedo.model.emailTemplateModel', {
             type: 'auto'
         },
         {
-            name: 'blocks'
+            name: 'eComponents'
         },
         {
             name: 'id'
@@ -58,7 +58,7 @@ Ext.define('Rubedo.model.emailTemplateModel', {
             defaultValue: {
                 showInDiv: false
             },
-            name: 'emailProperties'
+            name: 'bodyProperties'
         }
     ]
 });

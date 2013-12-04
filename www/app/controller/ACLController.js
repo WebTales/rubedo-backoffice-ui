@@ -92,7 +92,11 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.customThemes":false,
                 "write.ui.customThemes":false,
                 "read.ui.userTypes":false,
-                "write.ui.userTypes":false
+                "write.ui.userTypes":false,
+                "read.ui.emails":false,
+                "read.ui.emailTemplates":false,
+                "write.ui.emails":false,
+                "write.ui.emailTemplates":false
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){
