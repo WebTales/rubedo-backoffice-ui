@@ -73,10 +73,10 @@
             "userConfig": {
                 "fn": "onMainETHolderAfterRender",
                 "implHandler": [
-                    "if (component.eType==\"imageComponent\"){\r",
+                    "if ((component.eType==\"imageComponent\")||(component.eType==\"textComponent\")){\r",
                     "    component.addBodyCls('contrastCBorder');\r",
                     "} else {\r",
-                    "\tcomponent.addBodyCls('contrastEMBorder');\r",
+                    "    component.addBodyCls('contrastEMBorder');\r",
                     "}\r",
                     "component.getEl().on(\"click\", function(e){\r",
                     "    Ext.getCmp(\"elementETIdField\").setValue(component.getId());\r",
@@ -108,7 +108,7 @@
                     "        if (oldOne.eType==\"col\"){\r",
                     "            oldOne.up().removeBodyCls(\"contrastEMPadding\");\r",
                     "            oldOne.up().doLayout();\r",
-                    "        } else if (oldOne.eType==\"imageComponent\"){\r",
+                    "        } else if ((oldOne.eType==\"imageComponent\")||(oldOne.eType==\"textComponent\")){\r",
                     "            oldOne.up().removeBodyCls(\"contrastEMPadding\");\r",
                     "            oldOne.up().up().removeBodyCls(\"contrastEMPadding\");\r",
                     "            oldOne.up().up().doLayout();\r",
@@ -123,7 +123,7 @@
                     "        if (newOne.eType==\"col\"){\r",
                     "            newOne.up().addBodyCls(\"contrastEMPadding\");\r",
                     "            newOne.up().doLayout();\r",
-                    "        } else if (newOne.eType==\"imageComponent\"){\r",
+                    "        } else if ((newOne.eType==\"imageComponent\")||(newOne.eType==\"textComponent\")){\r",
                     "            newOne.up().addBodyCls(\"contrastEMPadding\");\r",
                     "            newOne.up().up().addBodyCls(\"contrastEMPadding\");\r",
                     "            newOne.up().up().doLayout();\r",
@@ -175,7 +175,7 @@
                     "    } else if (thing.eType==\"col\"){\r",
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Column\");\r",
                     "        if (Ext.isEmpty(thing.getComponent(0))){\r",
-                    "        \tExt.getCmp(\"ETAddComponentsBtnGr\").enable();\r",
+                    "            Ext.getCmp(\"ETAddComponentsBtnGr\").enable();\r",
                     "        }\r",
                     "        Ext.getCmp(\"moveUPETBtn\").enable();\r",
                     "        Ext.getCmp(\"moveDownETBTn\").enable();\r",
@@ -185,6 +185,10 @@
                     "        Ext.getCmp(\"eTEditControl\").setTitle(\"Image\");\r",
                     "        Ext.getCmp(\"deleteETElBtn\").enable();\r",
                     "        me.displayImageControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
+                    "    } else if (thing.eType==\"textComponent\"){\r",
+                    "        Ext.getCmp(\"eTEditControl\").setTitle(\"Text\");\r",
+                    "        Ext.getCmp(\"deleteETElBtn\").enable();\r",
+                    "        me.displayTextControls(thing,Ext.getCmp(\"eTEditControl\"));\r",
                     "    }\r",
                     "}"
                 ]
@@ -396,7 +400,21 @@
             "userConfig": {
                 "fn": "onETAddTextBtnClick",
                 "implHandler": [
-                    ""
+                    "var me=this;\r",
+                    "var newText=Ext.widget(\"panel\",{\r",
+                    "    eType:\"textComponent\",\r",
+                    "    layout: {\r",
+                    "        type: 'fit'\r",
+                    "    },\r",
+                    "    eConfig:{\r",
+                    "        html:null\r",
+                    "    },\r",
+                    "    flex:1\r",
+                    "\r",
+                    "});\r",
+                    "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newText);\r",
+                    "me.syncEComponent(newText, true);\r",
+                    "newText.getEl().dom.click();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -429,6 +447,11 @@
                     "    } else {\r",
                     "        component.getComponent(0).setSrc(\"/dam?media-id=\"+component.eConfig.image);\r",
                     "    }\r",
+                    "} else if (component.eType==\"textComponent\"){\r",
+                    "    if (firstTime){\r",
+                    "        component.add(Ext.create('Ext.Component'));\r",
+                    "    }\r",
+                    "    component.getComponent(0).update(component.eConfig.html);\r",
                     "}"
                 ]
             },
@@ -453,7 +476,7 @@
                     "    itemId:\"imageEditor\",\r",
                     "    fieldLabel:\"Image\",\r",
                     "    allowedFileType:\"Image\",\r",
-                    "\tsmallMode:true,\r",
+                    "    smallMode:true,\r",
                     "    labelWidth:60,\r",
                     "    anchor:\"100%\",\r",
                     "    value:Ext.clone(imageComponent.eConfig.image)\r",
@@ -486,6 +509,37 @@
                 "designer|controlQuery": "#deleteETElBtn"
             },
             "designerId": "ccf985fc-af0c-4397-b322-dc060a47d447"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "displayTextControls",
+                "designer|params": [
+                    "textComponent",
+                    "target"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var textField=Ext.widget('directRTEField',{\r",
+                    "    itemId:\"textTEditor\",\r",
+                    "    fieldLabel:\"Text\",\r",
+                    "    labelWidth:60,\r",
+                    "    anchor:\"100%\",\r",
+                    "    value:Ext.clone(textComponent.eConfig.html)\r",
+                    "});\r",
+                    "textField.on(\"change\",function(){\r",
+                    "    textComponent.eConfig.html=textField.getValue();\r",
+                    "    me.syncEComponent(textComponent);\r",
+                    "});\r",
+                    "target.add(textField);"
+                ]
+            },
+            "designerId": "303dac8f-446a-44a8-a47e-e3b919bcb594"
         }
     ]
 }
