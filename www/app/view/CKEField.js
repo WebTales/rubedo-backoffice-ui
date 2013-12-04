@@ -78,6 +78,17 @@ Ext.define('Rubedo.view.CKEField', {
 
 
             ];
+        } else if (component.CKETBConfig=="Email"){
+            myTBConfig=[
+            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+            { name: 'colors', items: [ 'TextColor','BGColor' ,'-', 'Scayt'] },
+            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+            { name: 'insert', items: [ 'Image',  '-', 'SpecialChar', 'Link', "Rubedolink", 'Unlink'] },
+            { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo',"Source"  ] }
+
+
+            ];
         }
 
         var targetId = component.getInputId();
