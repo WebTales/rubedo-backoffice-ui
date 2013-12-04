@@ -59,7 +59,9 @@
                         "layout": "vbox",
                         "bodyBorder": true,
                         "bodyCls": [
-                            "contrastRow"
+                            "contrastRow",
+                            "x-panel-body-default",
+                            "x-box-layout-ct"
                         ],
                         "title": "Upload"
                     },

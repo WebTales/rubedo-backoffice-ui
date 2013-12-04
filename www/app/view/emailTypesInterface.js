@@ -179,13 +179,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'window_remove_big',
                                     scale: 'large',
-                                    text: 'Supprimer',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onDeleteETElBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Supprimer'
                                 },
                                 {
                                     xtype: 'button',
@@ -420,10 +414,6 @@ Ext.define('Rubedo.view.emailTypesInterface', {
 
     onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
         Ext.getCmp("mainETHolder").setHeight(newValue);
-    },
-
-    onDeleteETElBtnClick: function(button, e, eOpts) {
-
     },
 
     onAdminfMasquesEnregistrerAfterRender: function(component, eOpts) {

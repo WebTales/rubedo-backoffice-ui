@@ -40,7 +40,11 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     onMainETHolderAfterRender: function(component, eOpts) {
-        component.addBodyCls('contrastEMBorder');
+        if (component.eType=="imageComponent"){
+            component.addBodyCls('contrastCBorder');
+        } else {
+            component.addBodyCls('contrastEMBorder');
+        }
         component.getEl().on("click", function(e){
             Ext.getCmp("elementETIdField").setValue(component.getId());
             e.stopEvent();
@@ -56,6 +60,10 @@ Ext.define('Rubedo.controller.EmailController', {
                 if (oldOne.eType=="col"){
                     oldOne.up().removeBodyCls("contrastEMPadding");
                     oldOne.up().doLayout();
+                } else if (oldOne.eType=="imageComponent"){
+                    oldOne.up().removeBodyCls("contrastEMPadding");
+                    oldOne.up().up().removeBodyCls("contrastEMPadding");
+                    oldOne.up().up().doLayout();
                 }
             }
         }
@@ -67,6 +75,10 @@ Ext.define('Rubedo.controller.EmailController', {
                 if (newOne.eType=="col"){
                     newOne.up().addBodyCls("contrastEMPadding");
                     newOne.up().doLayout();
+                } else if (newOne.eType=="imageComponent"){
+                    newOne.up().addBodyCls("contrastEMPadding");
+                    newOne.up().up().addBodyCls("contrastEMPadding");
+                    newOne.up().up().doLayout();
                 }
             }
         } else {
@@ -79,6 +91,10 @@ Ext.define('Rubedo.controller.EmailController', {
         var me=this;
         var newCol=Ext.widget("panel",{
             eType:"col",
+            layout: {
+                type: 'vbox',
+                align: 'stretch'
+            },
             width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()))])
 
         });
@@ -104,6 +120,33 @@ Ext.define('Rubedo.controller.EmailController', {
         }
     },
 
+    onETAddImageBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var newImage=Ext.widget("panel",{
+            eType:"imageComponent",
+            layout: {
+                type: 'fit'
+            },
+            eConfig:{
+                image:null
+            },
+            flex:1
+
+        });
+        Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newImage);
+        me.syncEComponent(newImage, true);
+        newImage.getEl().dom.click();
+    },
+
+    onETAddTextBtnClick: function(button, e, eOpts) {
+
+    },
+
+    onDeleteETElBtnClick: function(button, e, eOpts) {
+        Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).up().remove(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()));
+        Ext.getCmp("elementETIdField").setValue(null);
+    },
+
     adaptETEditButtons: function(selectedElement) {
         var me=this;
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
@@ -117,17 +160,25 @@ Ext.define('Rubedo.controller.EmailController', {
                 Ext.getCmp("eTEditControl").setTitle("Email body");
             } else if (thing.eType=="row"){
                 Ext.getCmp("eTEditControl").setTitle("Row");
-                if(me.calculateRemainingRowWidth(thing)>=10){
+                if(me.calculateRemainingRowWidth(thing)>=30){
                     Ext.getCmp("newETColBtn").enable();
                 }
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
+                Ext.getCmp("deleteETElBtn").enable();
             } else if (thing.eType=="col"){
                 Ext.getCmp("eTEditControl").setTitle("Column");
-                Ext.getCmp("ETAddComponentsBtnGr").enable();
+                if (Ext.isEmpty(thing.getComponent(0))){
+                    Ext.getCmp("ETAddComponentsBtnGr").enable();
+                }
                 Ext.getCmp("moveUPETBtn").enable();
                 Ext.getCmp("moveDownETBTn").enable();
+                Ext.getCmp("deleteETElBtn").enable();
                 me.displayColControls(thing);
+            } else if (thing.eType=="imageComponent"){
+                Ext.getCmp("eTEditControl").setTitle("Image");
+                Ext.getCmp("deleteETElBtn").enable();
+                me.displayImageControls(thing,Ext.getCmp("eTEditControl"));
             }
         }
     },
@@ -157,7 +208,7 @@ Ext.define('Rubedo.controller.EmailController', {
 
     applyWidthConstraints: function(field, col) {
         var maxWidth=col.up().getWidth()-2;
-        Ext.Array.forEach(col.up().query("panel"), function(otherCol){
+        Ext.Array.forEach(col.up().items.items, function(otherCol){
             if (otherCol.getId()!=col.getId()){
                 maxWidth=maxWidth-otherCol.getWidth();
             }
@@ -167,10 +218,42 @@ Ext.define('Rubedo.controller.EmailController', {
 
     calculateRemainingRowWidth: function(row) {
         var maxWidth=row.getWidth()-2;
-        Ext.Array.forEach(row.query("panel"), function(otherCol){
+        Ext.Array.forEach(row.items.items, function(otherCol){
             maxWidth=maxWidth-otherCol.getWidth();
         });
         return(maxWidth);
+    },
+
+    syncEComponent: function(component, firstTime) {
+        if (component.eType=="imageComponent"){
+            if (firstTime){
+                component.add(Ext.create('Ext.Img'));
+            } 
+
+            if (Ext.isEmpty(component.eConfig.image)){
+                component.getComponent(0).setSrc("resources/icones/generic/image_add.png");
+            } else {
+                component.getComponent(0).setSrc("/dam?media-id="+component.eConfig.image);
+            }
+        }
+    },
+
+    displayImageControls: function(imageComponent, target) {
+        var me=this;
+        var imageField=Ext.create('Rubedo.view.ImagePickerField',{
+            itemId:"imageEditor",
+            fieldLabel:"Image",
+            allowedFileType:"Image",
+            smallMode:true,
+            labelWidth:60,
+            anchor:"100%",
+            value:Ext.clone(imageComponent.eConfig.image)
+        });
+        imageField.on("change",function(){
+            imageComponent.eConfig.image=imageField.getValue();
+            me.syncEComponent(imageComponent);
+        });
+        target.add(imageField);
     },
 
     init: function(application) {
@@ -195,6 +278,15 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             "#moveDownETBTn": {
                 click: this.onMoveDownETBTnClick
+            },
+            "#ETAddImageBtn": {
+                click: this.onETAddImageBtnClick
+            },
+            "#ETAddTextBtn": {
+                click: this.onETAddTextBtnClick
+            },
+            "#deleteETElBtn": {
+                click: this.onDeleteETElBtnClick
             }
         });
     }
