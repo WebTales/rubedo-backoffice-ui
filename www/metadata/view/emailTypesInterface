@@ -522,8 +522,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "ACL": "write.ui.emailTemplates",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "ETAddComponentsBtnGr",
                         "headerPosition": "bottom",
@@ -585,6 +585,7 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
+                        "id": "ETppBG",
                         "headerPosition": "bottom",
                         "title": "Presse-papiers",
                         "columns": 4
@@ -670,6 +671,7 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
+                        "id": "ETSaverBG",
                         "headerPosition": "bottom",
                         "title": "Sauvegarde",
                         "columns": 4

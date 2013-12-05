@@ -655,6 +655,275 @@
                 ]
             },
             "designerId": "46f52be4-faba-49ae-9c03-09a59a8d08e6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewETBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newEmailTemplateWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newETBtn"
+            },
+            "designerId": "ba961974-4379-4a9b-994f-424df94c7dc5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeleteEtBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"mainETGrid\").getStore().remove(Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#deleteEtBtn"
+            },
+            "designerId": "a0e9e761-d2ab-4d4e-ae6a-cdbb9cf7ebd5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetETSelect",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "Ext.getCmp(\"deleteEtBtn\").enable();\r",
+                    "Ext.getCmp(\"ETSaverBG\").enable();\r",
+                    "Ext.getCmp(\"ETppBG\").enable();\r",
+                    "Ext.getCmp(\"mainETHolder\").removeAll();\r",
+                    "Ext.getCmp(\"elementETIdField\").setValue(null);\r",
+                    "Ext.getCmp(\"mainETHolder\").setWidth(record.get(\"bodyProperties\").bodyWidth+4);\r",
+                    "this.renderRows(record.get(\"rows\"), Ext.getCmp(\"mainETHolder\"));\r",
+                    "Ext.getCmp(\"mainETHolder\").eConfig=Ext.clone(record.get(\"bodyProperties\"));"
+                ]
+            },
+            "designerId": "4c33d954-eec4-497a-8042-7c575d73ee16"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetETNoSelect",
+                "implHandler": [
+                    "Ext.getCmp(\"deleteEtBtn\").disable();\r",
+                    "Ext.getCmp(\"ETSaverBG\").disable();\r",
+                    "Ext.getCmp(\"ETppBG\").disable();\r",
+                    "Ext.getCmp(\"mainETHolder\").removeAll();\r",
+                    "Ext.getCmp(\"elementETIdField\").setValue(null);"
+                ]
+            },
+            "designerId": "f538eef0-7f20-4258-ad4f-510aca13f01c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewETSubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var values=form.getValues();\r",
+                    "    var newET=Ext.create(\"Rubedo.model.emailTemplateModel\",{\r",
+                    "        text:values.text,\r",
+                    "        rows: [ ],\r",
+                    "        bodyProperties:{\r",
+                    "            style:null,\r",
+                    "            centered:true,\r",
+                    "            bodyWidth:values.bodyWidth\r",
+                    "        }\r",
+                    "\r",
+                    "    });\r",
+                    "    Ext.getCmp(\"mainETGrid\").getStore().add(newET);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newETSubmitBtn"
+            },
+            "designerId": "4a01c750-51cf-4e03-99b7-3672e990d575"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainETGridSelectionChange",
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    me.resetETNoSelect();\r",
+                    "} else {\r",
+                    "    me.resetETSelect(selected[0]);\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mainETGrid"
+            },
+            "designerId": "412133d3-56e4-42ed-94cb-688bd61cc1a8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "renderRows",
+                "designer|params": [
+                    "rows",
+                    "target"
+                ],
+                "implHandler": [
+                    "var me=this;\r",
+                    "var newRows=[ ];\r",
+                    "Ext.Array.forEach(rows, function(row){\r",
+                    "\tvar newRow=Ext.widget(\"panel\",{\r",
+                    "        eType:\"row\",\r",
+                    "        plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
+                    "        id:row.id,\r",
+                    "        layout: {\r",
+                    "            type: 'hbox',\r",
+                    "            align: 'stretch'\r",
+                    "        },\r",
+                    "        eConfig:row.config,\r",
+                    "        flex:1\r",
+                    "    });\r",
+                    "    Ext.Array.forEach(row.cols, function(col){\r",
+                    "    \tvar newCol=Ext.widget(\"panel\",{\r",
+                    "            eType:\"col\",\r",
+                    "            id:col.id,\r",
+                    "            layout: {\r",
+                    "                type: 'vbox',\r",
+                    "                align: 'stretch'\r",
+                    "            },\r",
+                    "            eConfig:col.config,\r",
+                    "            width:col.width\r",
+                    "        });\r",
+                    "        Ext.Array.forEach(col.components, function(component){\r",
+                    "        \tvar newComponent=Ext.widget(\"panel\",{\r",
+                    "                eType:component.type,\r",
+                    "                id:component.is,\r",
+                    "                layout: {\r",
+                    "                    type: 'fit'\r",
+                    "                },\r",
+                    "                eConfig:component.config,\r",
+                    "                flex:1\r",
+                    "            \r",
+                    "            });\r",
+                    "            newCol.add(newComponent);\r",
+                    "            me.syncEComponent(newComponent, true);\r",
+                    "            \r",
+                    "        });\r",
+                    "    \tnewRow.add(newCol);\r",
+                    "    });\r",
+                    "    newRows.push(newRow);\r",
+                    "});\r",
+                    "target.add(newRows);"
+                ]
+            },
+            "designerId": "66737ad7-f6ee-4e03-b9a8-a9aeeffaf36b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "saveRows",
+                "implHandler": [
+                    "var rows=[ ];\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"mainETHolder\").items.items, function(row){\r",
+                    "    var myCols=[ ];\r",
+                    "    Ext.Array.forEach(row.items.items, function(col){\r",
+                    "        var myComponents=[ ];\r",
+                    "        Ext.Array.forEach(col.items.items, function(component){\r",
+                    "            myComponents.push({\r",
+                    "                type:component.eType,\r",
+                    "                id:component.getId(),\r",
+                    "                config:component.eConfig\r",
+                    "            });\r",
+                    "        });\r",
+                    "        var newCol={\r",
+                    "            width:col.getWidth(),\r",
+                    "            config:col.eConfig,\r",
+                    "            id:col.getId(),\r",
+                    "            components:myComponents\r",
+                    "        };\r",
+                    "        myCols.push(newCol);\r",
+                    "    });\r",
+                    "    var newRow={\r",
+                    "        config:row.eConfig,\r",
+                    "        id:row.getId(),\r",
+                    "        cols:myCols\r",
+                    "    };\r",
+                    "    rows.push(newRow);\r",
+                    "});\r",
+                    "return(rows);"
+                ]
+            },
+            "designerId": "f8af1a56-22d1-4914-bbac-d3b3dcefd642"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSaveETBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var record=Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected();\r",
+                    "record.beginEdit();\r",
+                    "record.set(\"bodyProperties\",Ext.getCmp(\"mainETHolder\").eConfig);\r",
+                    "record.set(\"rows\",me.saveRows());\r",
+                    "record.endEdit();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#saveETBtn"
+            },
+            "designerId": "0b657bfa-71c6-4013-9472-c75482953b2b"
         }
     ]
 }
