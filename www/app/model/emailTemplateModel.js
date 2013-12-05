@@ -27,9 +27,6 @@ Ext.define('Rubedo.model.emailTemplateModel', {
             type: 'auto'
         },
         {
-            name: 'eComponents'
-        },
-        {
             name: 'id'
         },
         {

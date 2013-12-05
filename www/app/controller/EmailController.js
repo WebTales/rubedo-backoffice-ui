@@ -173,6 +173,51 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.getCmp("elementETIdField").setValue(null);
     },
 
+    onNewETBtnClick: function(button, e, eOpts) {
+        Ext.widget("newEmailTemplateWindow").show();
+    },
+
+    onDeleteEtBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("mainETGrid").getStore().remove(Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected());
+    },
+
+    onNewETSubmitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            var values=form.getValues();
+            var newET=Ext.create("Rubedo.model.emailTemplateModel",{
+                text:values.text,
+                rows: [ ],
+                bodyProperties:{
+                    style:null,
+                    centered:true,
+                    bodyWidth:values.bodyWidth
+                }
+
+            });
+            Ext.getCmp("mainETGrid").getStore().add(newET);
+            button.up().up().close();
+        }
+    },
+
+    onMainETGridSelectionChange: function(model, selected, eOpts) {
+        var me=this;
+        if (Ext.isEmpty(selected)){
+            me.resetETNoSelect();
+        } else {
+            me.resetETSelect(selected[0]);
+        }
+    },
+
+    onSaveETBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var record=Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected();
+        record.beginEdit();
+        record.set("bodyProperties",Ext.getCmp("mainETHolder").eConfig);
+        record.set("rows",me.saveRows());
+        record.endEdit();
+    },
+
     adaptETEditButtons: function(selectedElement) {
         var me=this;
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
@@ -370,6 +415,104 @@ Ext.define('Rubedo.controller.EmailController', {
         container.add(styleEdit);
     },
 
+    resetETSelect: function(record) {
+        Ext.getCmp("deleteEtBtn").enable();
+        Ext.getCmp("ETSaverBG").enable();
+        Ext.getCmp("ETppBG").enable();
+        Ext.getCmp("mainETHolder").removeAll();
+        Ext.getCmp("elementETIdField").setValue(null);
+        Ext.getCmp("mainETHolder").setWidth(record.get("bodyProperties").bodyWidth+4);
+        this.renderRows(record.get("rows"), Ext.getCmp("mainETHolder"));
+        Ext.getCmp("mainETHolder").eConfig=Ext.clone(record.get("bodyProperties"));
+    },
+
+    resetETNoSelect: function() {
+        Ext.getCmp("deleteEtBtn").disable();
+        Ext.getCmp("ETSaverBG").disable();
+        Ext.getCmp("ETppBG").disable();
+        Ext.getCmp("mainETHolder").removeAll();
+        Ext.getCmp("elementETIdField").setValue(null);
+    },
+
+    renderRows: function(rows, target) {
+        var me=this;
+        var newRows=[ ];
+        Ext.Array.forEach(rows, function(row){
+            var newRow=Ext.widget("panel",{
+                eType:"row",
+                plugins:[Ext.create("Ext.ux.BoxReorderer")],
+                id:row.id,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
+                },
+                eConfig:row.config,
+                flex:1
+            });
+            Ext.Array.forEach(row.cols, function(col){
+                var newCol=Ext.widget("panel",{
+                    eType:"col",
+                    id:col.id,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    eConfig:col.config,
+                    width:col.width
+                });
+                Ext.Array.forEach(col.components, function(component){
+                    var newComponent=Ext.widget("panel",{
+                        eType:component.type,
+                        id:component.is,
+                        layout: {
+                            type: 'fit'
+                        },
+                        eConfig:component.config,
+                        flex:1
+
+                    });
+                    newCol.add(newComponent);
+                    me.syncEComponent(newComponent, true);
+
+                });
+                newRow.add(newCol);
+            });
+            newRows.push(newRow);
+        });
+        target.add(newRows);
+    },
+
+    saveRows: function() {
+        var rows=[ ];
+        Ext.Array.forEach(Ext.getCmp("mainETHolder").items.items, function(row){
+            var myCols=[ ];
+            Ext.Array.forEach(row.items.items, function(col){
+                var myComponents=[ ];
+                Ext.Array.forEach(col.items.items, function(component){
+                    myComponents.push({
+                        type:component.eType,
+                        id:component.getId(),
+                        config:component.eConfig
+                    });
+                });
+                var newCol={
+                    width:col.getWidth(),
+                    config:col.eConfig,
+                    id:col.getId(),
+                    components:myComponents
+                };
+                myCols.push(newCol);
+            });
+            var newRow={
+                config:row.eConfig,
+                id:row.getId(),
+                cols:myCols
+            };
+            rows.push(newRow);
+        });
+        return(rows);
+    },
+
     init: function(application) {
         this.control({
             "#newETRowBtn": {
@@ -401,6 +544,21 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             "#deleteETElBtn": {
                 click: this.onDeleteETElBtnClick
+            },
+            "#newETBtn": {
+                click: this.onNewETBtnClick
+            },
+            "#deleteEtBtn": {
+                click: this.onDeleteEtBtnClick
+            },
+            "#newETSubmitBtn": {
+                click: this.onNewETSubmitBtnClick
+            },
+            "#mainETGrid": {
+                selectionchange: this.onMainETGridSelectionChange
+            },
+            "#saveETBtn": {
+                click: this.onSaveETBtnClick
             }
         });
     }

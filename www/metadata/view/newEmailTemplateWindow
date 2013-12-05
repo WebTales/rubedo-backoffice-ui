@@ -1,0 +1,117 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": null,
+        "height": null,
+        "id": "newEmailTemplateWindow",
+        "width": 400,
+        "designer|userClassName": "newEmailTemplateWindow",
+        "designer|userAlias": "newEmailTemplateWindow",
+        "resizable": false,
+        "layout": "fit",
+        "iconCls": "add",
+        "title": "New email template",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "910bccb6-9274-4c65-9672-c8a0126a764d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "b836c9aa-f280-4997-b6a5-24587a38b284",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": null,
+                        "layout|anchor": "100%",
+                        "id": null,
+                        "fieldLabel": "Name",
+                        "name": "text",
+                        "value": null,
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false
+                    },
+                    "designerId": "18eb97fe-1fa8-4680-ac3e-77210eab35d3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Width",
+                        "name": "bodyWidth",
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "allowDecimals": false,
+                        "allowExponential": false,
+                        "minValue": 10
+                    },
+                    "designerId": "91331da2-7075-4dcf-9fb4-8f5b5d7bf8b6"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": null,
+                        "layout|anchor": "1",
+                        "id": "newETSubmitBtn",
+                        "width": null,
+                        "text": "Create this new template"
+                    },
+                    "designerId": "08145745-1a56-49ad-80cd-aa61f302d81e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

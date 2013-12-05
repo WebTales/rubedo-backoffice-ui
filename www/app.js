@@ -342,7 +342,8 @@ Ext.application({
         'userUpdateCreadentialsForm',
         'UTCField',
         'QuerySimWindow',
-        'emailTypesInterface'
+        'emailTypesInterface',
+        'newEmailTemplateWindow'
     ],
     autoCreateViewport: true,
     controllers: [
