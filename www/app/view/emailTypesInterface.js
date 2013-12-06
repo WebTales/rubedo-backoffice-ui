@@ -466,7 +466,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'panel',
-                            title: 'Send and follow'
+                            title: 'Send'
                         }
                     ]
                 }

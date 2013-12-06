@@ -1,0 +1,121 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": "subscribeUsersWindow",
+        "width": 400,
+        "designer|userClassName": "subscribeUsersWindow",
+        "designer|userAlias": "subscribeUsersWindow",
+        "layout": "fit",
+        "title": "Subscribe users",
+        "modal": true
+    },
+    "designerId": "6c01b362-f6b8-461e-83ce-8cfdf529203c",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "fbe5535c-5199-4cb2-90d2-c835674431e1",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "subscribeUsersSubmitBtn",
+                        "text": "Subscribe"
+                    },
+                    "designerId": "6f63bf97-493c-4d1d-ac9f-577f4b48fb9c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSubscribeUsersSubmitBtnClick",
+                                "implHandler": [
+                                    "var form=button.up().getForm();\r",
+                                    "if (form.isValid()){\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: 'mailing-lists/subscribe-users', \r",
+                                    "        method:'POST',\r",
+                                    "        params: {\r",
+                                    "            mlId: Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\"),\r",
+                                    "            userEmailArray:Ext.JSON.encode(form.getValues().emails)\r",
+                                    "        },\r",
+                                    "        success: function(response){\r",
+                                    "            var answer=Ext.JSON.decode(response.responseText);\r",
+                                    "            if (answer.success){\r",
+                                    "                button.up().up().close();\r",
+                                    "                Ext.getStore(\"MLUsers\").load();\r",
+                                    "            } else {\r",
+                                    "                Ext.Msg.alert(\"Error\",\"User subscription error\");\r",
+                                    "            }\r",
+                                    "        }\r",
+                                    "\t});\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "6595e6fb-bd48-456e-a8c5-276ea947c81e"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFormAfterRender",
+                        "implHandler": [
+                            "var picker=Ext.create(\"Ext.ux.form.field.BoxSelect\",{\r",
+                            "\t\"store\":[ ],\r",
+                            "\t\"name\":\"emails\",\r",
+                            "\t\"fieldLabel\":\"Emails\",\r",
+                            "    \"labelWidth\":60,\r",
+                            "    \"anchor\":\"100%\",\r",
+                            "\t\"multiSelect\":true,\r",
+                            "\t\"forceSelection\":false,\r",
+                            "    \"allowBlank\":false,\r",
+                            "\t\"stacked\":true,\r",
+                            "\t\"createNewOnEnter\":true,\r",
+                            "\t\"hideTrigger\":true,\r",
+                            "\t\"triggerOnClick\":false,\r",
+                            "\t\"createNewOnBlur\":true,\r",
+                            "\t\"pinList\":false\r",
+                            "});\r",
+                            "component.insert(0, picker);"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "b4ed93a1-b16b-43c1-9d55-260c11e986e2"
+                }
+            ]
+        }
+    ]
+}

@@ -165,7 +165,8 @@
             "UserTypesCombo",
             "QuerySim",
             "EmailTemplates",
-            "EmailModels"
+            "EmailModels",
+            "MLUsers"
         ],
         "views": [
             "MyGridPanel3",
@@ -328,7 +329,8 @@
             "UTCField",
             "QuerySimWindow",
             "emailTypesInterface",
-            "newEmailTemplateWindow"
+            "newEmailTemplateWindow",
+            "subscribeUsersWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [

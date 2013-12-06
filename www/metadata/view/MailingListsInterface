@@ -159,6 +159,58 @@
                     ]
                 },
                 {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "mlUsersManager",
+                        "headerPosition": "bottom",
+                        "title": "Manage users",
+                        "columns": 2
+                    },
+                    "designerId": "566ec6c8-947d-4770-92cc-d93e1d313236",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "mlAddUser",
+                                "iconAlign": "top",
+                                "iconCls": "user_add_big",
+                                "scale": "large",
+                                "text": "Subscribe"
+                            },
+                            "designerId": "c5ea6342-ddba-4dc0-8369-52f39631dd3e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "id": "mlRemoveUser",
+                                "iconAlign": "top",
+                                "iconCls": "user_remove_big",
+                                "scale": "large",
+                                "text": "Unsubscribe"
+                            },
+                            "designerId": "c86c6126-9679-41aa-9ed6-5e3ccd66d2a8"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
@@ -251,94 +303,34 @@
             ]
         },
         {
-            "type": "Ext.form.Panel",
+            "type": "Ext.tab.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "propertiesForm",
                 "layout|flex": 1,
                 "disabled": true,
-                "id": "MLPropsForm",
-                "autoScroll": true,
-                "bodyPadding": 10,
-                "title": "Propriétés"
+                "activeTab": 0
             },
-            "designerId": "0b4a6c0f-00df-4bdf-bccc-f9f992629e82",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ],
+            "designerId": "e9bf3d03-a048-4b39-a01b-d5eff36b8b79",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Nom",
-                        "labelWidth": 140,
-                        "name": "name",
-                        "allowBlank": false
+                        "localiserId": "propertiesForm",
+                        "id": "MLPropsForm",
+                        "autoScroll": true,
+                        "bodyPadding": 10,
+                        "title": "Propriétés"
                     },
-                    "designerId": "ab12c7c6-2a2a-4d08-92b0-06e2dd9df1d6",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "Espaces de travail",
-                        "labelWidth": 140,
-                        "name": "workspaces",
-                        "multiSelect": true,
-                        "store": "ContributeWorkspacesCombo",
-                        "layout|anchor": "100%"
-                    },
-                    "configAlternates": {
-                        "canSwitchStore": "boolean"
-                    },
-                    "designerId": "6be546fc-cbea-49af-9ef9-8cd40327abc3",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ],
-                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
-                },
-                {
-                    "type": "Ext.form.FieldSet",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "localiserId": "expeditorFieldset",
-                        "title": "Expéditeur"
-                    },
-                    "designerId": "89ca43d8-d985-4aa1-94f1-7e881114d136",
+                    "designerId": "0b4a6c0f-00df-4bdf-bccc-f9f992629e82",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -355,19 +347,185 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "expeditorAdressField",
+                                "localiserId": "nameField",
                                 "layout|anchor": "100%",
-                                "fieldLabel": "Adresse de l'expéditeur",
+                                "fieldLabel": "Nom",
                                 "labelWidth": 140,
-                                "name": "fromAddress",
-                                "vtype": "email"
+                                "name": "name",
+                                "allowBlank": false
                             },
-                            "designerId": "81fb611b-5ac8-4d02-b2ca-34602c823c88",
+                            "designerId": "ab12c7c6-2a2a-4d08-92b0-06e2dd9df1d6",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Espaces de travail",
+                                "labelWidth": 140,
+                                "name": "workspaces",
+                                "multiSelect": true,
+                                "store": "ContributeWorkspacesCombo",
+                                "layout|anchor": "100%"
+                            },
+                            "configAlternates": {
+                                "canSwitchStore": "boolean"
+                            },
+                            "designerId": "6be546fc-cbea-49af-9ef9-8cd40327abc3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "expeditorFieldset",
+                                "title": "Expéditeur"
+                            },
+                            "designerId": "89ca43d8-d985-4aa1-94f1-7e881114d136",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "expeditorAdressField",
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Adresse de l'expéditeur",
+                                        "labelWidth": 140,
+                                        "name": "fromAddress",
+                                        "vtype": "email"
+                                    },
+                                    "designerId": "81fb611b-5ac8-4d02-b2ca-34602c823c88",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "expeditorNameField",
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Nom de l'expéditeur",
+                                        "labelWidth": 140,
+                                        "name": "fromName"
+                                    },
+                                    "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "responseFieldset",
+                                "title": "Réponse"
+                            },
+                            "designerId": "6d25ba0a-075e-49a5-9e61-bffdb3d23fea",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "replyToAdressField",
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Adresse de réponse",
+                                        "labelWidth": 140,
+                                        "name": "replyToAddress",
+                                        "vtype": "email"
+                                    },
+                                    "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "replyToNameField",
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Nom de réponse",
+                                        "labelWidth": 140,
+                                        "name": "replyToName"
+                                    },
+                                    "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -379,13 +537,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "expeditorNameField",
+                                "localiserId": "returnPathAdressField",
                                 "layout|anchor": "100%",
-                                "fieldLabel": "Nom de l'expéditeur",
+                                "fieldLabel": "Adresse d'erreur",
                                 "labelWidth": 140,
-                                "name": "fromName"
+                                "name": "returnPathAddress",
+                                "vtype": "email"
                             },
-                            "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040",
+                            "designerId": "b3f288ac-dd00-49d5-92f0-db98bb878bd8",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -393,99 +552,113 @@
                                     "type": "string"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "86eff93f-68d9-4a65-b53c-5050c1d77b56"
                         }
                     ]
                 },
                 {
-                    "type": "Ext.form.FieldSet",
+                    "type": "Ext.grid.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "responseFieldset",
-                        "title": "Réponse"
+                        "id": "MLUsersGrid",
+                        "title": "Users",
+                        "forceFit": true,
+                        "store": "MLUsers"
                     },
-                    "designerId": "6d25ba0a-075e-49a5-9e61-bffdb3d23fea",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ],
+                    "designerId": "2d8c099c-2166-416b-a58b-0411d92d2147",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.grid.column.Column",
                             "reference": {
-                                "name": "items",
+                                "name": "columns",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "replyToAdressField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Adresse de réponse",
-                                "labelWidth": 140,
-                                "name": "replyToAddress",
-                                "vtype": "email"
+                                "dataIndex": "name",
+                                "text": "Name"
                             },
-                            "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
+                            "designerId": "69b0f110-9307-4222-9dd7-e197a9f8662e"
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.grid.column.Number",
                             "reference": {
-                                "name": "items",
+                                "name": "columns",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "replyToNameField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Nom de réponse",
-                                "labelWidth": 140,
-                                "name": "replyToName"
+                                "dataIndex": "email",
+                                "text": "Email"
                             },
-                            "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "localiserId": "returnPathAdressField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Adresse d'erreur",
-                        "labelWidth": 140,
-                        "name": "returnPathAddress",
-                        "vtype": "email"
-                    },
-                    "designerId": "b3f288ac-dd00-49d5-92f0-db98bb878bd8",
-                    "customConfigs": [
+                            "designerId": "18f61888-a512-4727-b1c4-6050a038bed3"
+                        },
                         {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "createTime",
+                                "text": "Creation"
+                            },
+                            "designerId": "513425e4-9673-452c-bdbe-b82b6e430730"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "361fe122-f1a5-4815-92c8-840a981f8306"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "77365a25-7a58-4675-9478-8fe1c8caa3fa"
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "width": 360,
+                                "displayInfo": true,
+                                "store": "MLUsers"
+                            },
+                            "designerId": "0320815f-4603-4a6f-8e96-7db21eca17ad"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "designerId": "5ac8f812-cc8e-4da2-815b-840394134c30"
                         }
                     ]
                 }

@@ -3053,6 +3053,22 @@
                 "app/store/EmailModels.js"
             ],
             "className": "EmailModels"
+        },
+        "01fb058d-9d91-43f1-ba0b-9bcdc8b71eaf": {
+            "paths": [
+                "metadata/store/MLUsers",
+                "app/store/override/MLUsers.js",
+                "app/store/MLUsers.js"
+            ],
+            "className": "MLUsers"
+        },
+        "6c01b362-f6b8-461e-83ce-8cfdf529203c": {
+            "paths": [
+                "metadata/view/subscribeUsersWindow",
+                "app/view/override/subscribeUsersWindow.js",
+                "app/view/subscribeUsersWindow.js"
+            ],
+            "className": "subscribeUsersWindow"
         }
     },
     "viewOrderMap": {
@@ -3233,7 +3249,8 @@
             "66174f28-03d3-4c02-855f-65706d91852a",
             "f36e89e4-306e-40ee-b555-4f18f4129f6b",
             "bd157263-ffca-45b6-9331-28e5972526b7",
-            "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2"
+            "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2",
+            "6c01b362-f6b8-461e-83ce-8cfdf529203c"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -3270,6 +3287,7 @@
             "81ee60ff-5960-4240-b5ab-53f409b51792",
             "e69f4522-8b28-4e61-badf-c5c8f0dee470",
             "6024e937-1032-4d87-9bf7-74a57a473a31",
+            "01fb058d-9d91-43f1-ba0b-9bcdc8b71eaf",
             "30381ed1-6397-4189-a35d-bc831e96d7e6",
             "0a22fbd6-a30a-4acd-a4f1-19d6123be17a",
             "1c2adda2-e782-40ff-b3f4-9e592104046f",
