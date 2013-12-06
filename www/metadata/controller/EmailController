@@ -697,7 +697,12 @@
             "userConfig": {
                 "fn": "onDeleteEtBtnClick",
                 "implHandler": [
-                    "Ext.getCmp(\"mainETGrid\").getStore().remove(Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected());"
+                    "var fenetre = Ext.widget('delConfirmZ');\r",
+                    "                fenetre.show();\r",
+                    "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "                    Ext.getCmp(\"mainETGrid\").getStore().remove(Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected());\r",
+                    "                    Ext.getCmp('delConfirmZ').close();\r",
+                    "                }); "
                 ],
                 "name": "click",
                 "scope": "me",
@@ -725,6 +730,7 @@
                     "Ext.getCmp(\"mainETHolder\").removeAll();\r",
                     "Ext.getCmp(\"elementETIdField\").setValue(null);\r",
                     "Ext.getCmp(\"mainETHolder\").setWidth(record.get(\"bodyProperties\").bodyWidth+4);\r",
+                    "Ext.getCmp(\"mainEmailForm\").getForm().setValues(record.getData());\r",
                     "this.renderRows(record.get(\"rows\"), Ext.getCmp(\"mainETHolder\"));\r",
                     "Ext.getCmp(\"mainETHolder\").eConfig=Ext.clone(record.get(\"bodyProperties\"));"
                 ]
@@ -745,6 +751,7 @@
                     "Ext.getCmp(\"ETSaverBG\").disable();\r",
                     "Ext.getCmp(\"ETppBG\").disable();\r",
                     "Ext.getCmp(\"mainETHolder\").removeAll();\r",
+                    "Ext.getCmp(\"mainEmailForm\").getForm().reset();\r",
                     "Ext.getCmp(\"elementETIdField\").setValue(null);"
                 ]
             },
@@ -765,6 +772,7 @@
                     "    var values=form.getValues();\r",
                     "    var newET=Ext.create(\"Rubedo.model.emailTemplateModel\",{\r",
                     "        text:values.text,\r",
+                    "        subject:values.text,\r",
                     "        isMailModel:values.isModel,\r",
                     "        rows: [ ],\r",
                     "        bodyProperties:{\r",
@@ -780,9 +788,6 @@
                     "        newET.set(\"rows\", Ext.clone(record.get(\"rows\")));\r",
                     "    }\r",
                     "    Ext.getStore(\"EmailTemplates\").add(newET);\r",
-                    "    Ext.getStore(\"EmailTemplates\").addListener(\"datachanged\", function(){\r",
-                    "        Ext.getStore(\"EmailTemplates\").load();\r",
-                    "    }, this, {single:true});\r",
                     "    button.up().up().close();\r",
                     "}"
                 ],
@@ -933,11 +938,17 @@
                 "fn": "onSaveETBtnClick",
                 "implHandler": [
                     "var me=this;\r",
-                    "var record=Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected();\r",
-                    "record.beginEdit();\r",
-                    "record.set(\"bodyProperties\",Ext.getCmp(\"mainETHolder\").eConfig);\r",
-                    "record.set(\"rows\",me.saveRows());\r",
-                    "record.endEdit();"
+                    "var form=Ext.getCmp(\"mainEmailForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var record=Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected();\r",
+                    "    record.beginEdit();\r",
+                    "    record.set(\"bodyProperties\",Ext.getCmp(\"mainETHolder\").eConfig);\r",
+                    "    record.set(\"rows\",me.saveRows());\r",
+                    "    record.set(form.getValues());\r",
+                    "    record.endEdit();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"mainEmailForm\").up().setActiveTab(1);\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",

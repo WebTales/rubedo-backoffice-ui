@@ -60,6 +60,12 @@ Ext.define('Rubedo.model.emailTemplateModel', {
         {
             name: 'isMailModel',
             type: 'boolean'
+        },
+        {
+            name: 'subject'
+        },
+        {
+            name: 'plainText'
         }
     ]
 });
