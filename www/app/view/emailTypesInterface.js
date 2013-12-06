@@ -90,23 +90,6 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         }),
                         {
                             xtype: 'tbfill'
-                        },
-                        {
-                            xtype: 'slider',
-                            localiserId: 'zoomLevelSlider',
-                            id: 'MaskZoomControlSlider2',
-                            width: 400,
-                            fieldLabel: 'Niveau de zoom',
-                            value: 600,
-                            maxValue: 2000,
-                            minValue: 200,
-                            useTips: false,
-                            listeners: {
-                                change: {
-                                    fn: me.onMaskZoomControlSliderChange1,
-                                    scope: me
-                                }
-                            }
                         }
                     ]
                 },
@@ -389,8 +372,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     items: [
                                         me.processMainETHolder({
                                             xtype: 'panel',
-                                            height: 600,
                                             id: 'mainETHolder',
+                                            minHeight: 200,
                                             width: 804,
                                             layout: {
                                                 align: 'stretch',
@@ -508,10 +491,6 @@ Ext.define('Rubedo.view.emailTypesInterface', {
 
     onImageRender: function(component, eOpts) {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/mail.png');
-    },
-
-    onMaskZoomControlSliderChange1: function(slider, newValue, thumb, eOpts) {
-        Ext.getCmp("mainETHolder").setHeight(newValue);
     },
 
     onAdminfMasquesEnregistrerAfterRender: function(component, eOpts) {

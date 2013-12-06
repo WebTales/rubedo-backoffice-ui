@@ -24,12 +24,13 @@ Ext.define('Rubedo.controller.EmailController', {
             id:"emailType-"+Ext.id(),
             layout: {
                 type: 'hbox',
-                align: 'stretch'
+                align: 'stretchmax'
             },
             eConfig:{
                 styles:""
             },
-            flex:1
+            flex:undefined,
+            minHeight:30                  
         });
         Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newRow);
         newRow.getEl().dom.click();
@@ -103,7 +104,8 @@ Ext.define('Rubedo.controller.EmailController', {
             eConfig:{
                 styles:""
             },
-            width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()))])
+            width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()))]),
+            minHeight:28
 
         });
         Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newCol);
@@ -141,7 +143,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 url:null,
                 styles:""
             },
-            flex:1
+            flex:undefined,
+            minHeight:26
 
         });
         Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newImage);
@@ -161,7 +164,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 html:null,
                 styles:""
             },
-            flex:1
+            flex:undefined,
+            minHeight:26
 
         });
         Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newText);
@@ -506,10 +510,12 @@ Ext.define('Rubedo.controller.EmailController', {
                 id:row.id,
                 layout: {
                     type: 'hbox',
-                    align: 'stretch'
+                    align: 'stretchmax'
                 },
                 eConfig:row.config,
-                flex:1
+                flex:undefined,
+                minHeight:30
+
             });
             Ext.Array.forEach(row.cols, function(col){
                 var newCol=Ext.widget("panel",{
@@ -520,7 +526,8 @@ Ext.define('Rubedo.controller.EmailController', {
                         align: 'stretch'
                     },
                     eConfig:col.config,
-                    width:col.width
+                    width:col.width,
+                    minHeight:28
                 });
                 Ext.Array.forEach(col.components, function(component){
                     var newComponent=Ext.widget("panel",{
@@ -530,7 +537,8 @@ Ext.define('Rubedo.controller.EmailController', {
                             type: 'fit'
                         },
                         eConfig:component.config,
-                        flex:1
+                        flex:undefined,
+                        minHeight:26
 
                     });
                     newCol.add(newComponent);
@@ -542,6 +550,10 @@ Ext.define('Rubedo.controller.EmailController', {
             newRows.push(newRow);
         });
         target.add(newRows);
+        var task = new Ext.util.DelayedTask(function(){
+            target.doLayout();
+        });
+        task.delay(200);
     },
 
     saveRows: function() {
