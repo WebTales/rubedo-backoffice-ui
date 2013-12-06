@@ -243,7 +243,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                     text: 'Name'
                                 },
                                 {
-                                    xtype: 'numbercolumn',
+                                    xtype: 'gridcolumn',
                                     dataIndex: 'email',
                                     text: 'Email'
                                 },

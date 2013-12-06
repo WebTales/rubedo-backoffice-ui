@@ -346,7 +346,8 @@ Ext.application({
         'QuerySimWindow',
         'emailTypesInterface',
         'newEmailTemplateWindow',
-        'subscribeUsersWindow'
+        'subscribeUsersWindow',
+        'sendEmailWindow'
     ],
     autoCreateViewport: true,
     controllers: [
