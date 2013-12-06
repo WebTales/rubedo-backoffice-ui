@@ -1,0 +1,69 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": null,
+        "usedCollection": null,
+        "autoLoad": false,
+        "model": "userDataModel",
+        "storeId": "MLUsers",
+        "designer|userClassName": "MLUsers",
+        "designer|userAlias": "MLUsers",
+        "pageSize": 50
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "01fb058d-9d91-43f1-ba0b-9bcdc8b71eaf",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "     read: 'mailing-lists/get-users',\r",
+                    "\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "8bfe7429-7c3d-4cb6-b586-694e87fb589b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "26837e60-60d2-4b28-b192-3944bbcd740d"
+                }
+            ]
+        }
+    ]
+}

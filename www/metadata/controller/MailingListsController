@@ -24,13 +24,18 @@
                     "if (Ext.isEmpty(selected)){\r",
                     "    Ext.getCmp(\"MailingListsRemove\").disable();\r",
                     "    Ext.getCmp(\"MailingListsUpdate\").disable();\r",
+                    "    Ext.getCmp(\"mlUsersManager\").disable();\r",
                     "    Ext.getCmp(\"MLPropsForm\").getForm().reset();\r",
-                    "    Ext.getCmp(\"MLPropsForm\").disable();\r",
+                    "    Ext.getCmp(\"MLPropsForm\").up().disable();\r",
+                    "    Ext.getStore(\"MLUsers\").removeAll();\r",
                     "\r",
                     "} else {\r",
                     "    Ext.getCmp(\"MailingListsRemove\").enable();\r",
                     "    Ext.getCmp(\"MailingListsUpdate\").enable();\r",
-                    "    Ext.getCmp(\"MLPropsForm\").enable();\r",
+                    "    Ext.getCmp(\"mlUsersManager\").enable();\r",
+                    "    Ext.getCmp(\"MLPropsForm\").up().enable();\r",
+                    "    Ext.getStore(\"MLUsers\").getProxy().extraParams.id=selected[0].get(\"id\");\r",
+                    "    Ext.getStore(\"MLUsers\").loadPage(1);\r",
                     "    Ext.getCmp(\"MLPropsForm\").getForm().loadRecord(selected[0]);\r",
                     "    if ((selected[0].get(\"readOnly\"))||(!ACL.interfaceRights[\"write.ui.mailingLists\"])){\r",
                     "        Ext.Array.forEach(Ext.getCmp(\"MLPropsForm\").query(\"field\"), function(field){\r",
@@ -142,6 +147,82 @@
                 "designer|controlQuery": "#MailingListsUpdate"
             },
             "designerId": "c5b0d7dd-e2a0-4ba9-88cf-2f740c833d0b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMlAddUserClick",
+                "implHandler": [
+                    "Ext.widget(\"subscribeUsersWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mlAddUser"
+            },
+            "designerId": "c15df487-80d3-4d4d-a2f1-54c079645657"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMlRemoveUserClick",
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url: 'mailing-lists/unsubscribe-users', \r",
+                    "    method:'POST',\r",
+                    "    params: {\r",
+                    "        mlId: Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\"),\r",
+                    "        userEmailArray:Ext.JSON.encode(Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"MLUsersGrid\").getSelectionModel().getSelection(),\"data\"), \"email\"))\r",
+                    "    },\r",
+                    "    success: function(response){\r",
+                    "        var answer=Ext.JSON.decode(response.responseText);\r",
+                    "        if (answer.success){\r",
+                    "            Ext.getStore(\"MLUsers\").load();\r",
+                    "        } else {\r",
+                    "            Ext.Msg.alert(\"Error\",\"User unsubscription error\");\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mlRemoveUser"
+            },
+            "designerId": "df1aedca-b003-4dfd-a6ec-049291cbcfb0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMLUsersGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    Ext.getCmp(\"mlRemoveUser\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"mlRemoveUser\").enable();\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#MLUsersGrid"
+            },
+            "designerId": "4b211b10-9e97-494b-99aa-0de3945db6c7"
         }
     ]
 }

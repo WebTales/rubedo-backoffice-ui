@@ -21,13 +21,18 @@ Ext.define('Rubedo.controller.MailingListsController', {
         if (Ext.isEmpty(selected)){
             Ext.getCmp("MailingListsRemove").disable();
             Ext.getCmp("MailingListsUpdate").disable();
+            Ext.getCmp("mlUsersManager").disable();
             Ext.getCmp("MLPropsForm").getForm().reset();
-            Ext.getCmp("MLPropsForm").disable();
+            Ext.getCmp("MLPropsForm").up().disable();
+            Ext.getStore("MLUsers").removeAll();
 
         } else {
             Ext.getCmp("MailingListsRemove").enable();
             Ext.getCmp("MailingListsUpdate").enable();
-            Ext.getCmp("MLPropsForm").enable();
+            Ext.getCmp("mlUsersManager").enable();
+            Ext.getCmp("MLPropsForm").up().enable();
+            Ext.getStore("MLUsers").getProxy().extraParams.id=selected[0].get("id");
+            Ext.getStore("MLUsers").loadPage(1);
             Ext.getCmp("MLPropsForm").getForm().loadRecord(selected[0]);
             if ((selected[0].get("readOnly"))||(!ACL.interfaceRights["write.ui.mailingLists"])){
                 Ext.Array.forEach(Ext.getCmp("MLPropsForm").query("field"), function(field){
@@ -74,6 +79,37 @@ Ext.define('Rubedo.controller.MailingListsController', {
         }  
     },
 
+    onMlAddUserClick: function(button, e, eOpts) {
+        Ext.widget("subscribeUsersWindow").show();
+    },
+
+    onMlRemoveUserClick: function(button, e, eOpts) {
+        Ext.Ajax.request({
+            url: 'mailing-lists/unsubscribe-users', 
+            method:'POST',
+            params: {
+                mlId: Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id"),
+                userEmailArray:Ext.JSON.encode(Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("MLUsersGrid").getSelectionModel().getSelection(),"data"), "email"))
+            },
+            success: function(response){
+                var answer=Ext.JSON.decode(response.responseText);
+                if (answer.success){
+                    Ext.getStore("MLUsers").load();
+                } else {
+                    Ext.Msg.alert("Error","User unsubscription error");
+                }
+            }
+        });
+    },
+
+    onMLUsersGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("mlRemoveUser").disable();
+        } else {
+            Ext.getCmp("mlRemoveUser").enable();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#MLMainGrid": {
@@ -90,6 +126,15 @@ Ext.define('Rubedo.controller.MailingListsController', {
             },
             "#MailingListsUpdate": {
                 click: this.onMailingListsUpdateClick
+            },
+            "#mlAddUser": {
+                click: this.onMlAddUserClick
+            },
+            "#mlRemoveUser": {
+                click: this.onMlRemoveUserClick
+            },
+            "#MLUsersGrid": {
+                selectionchange: this.onMLUsersGridSelectionChange
             }
         });
     }

@@ -181,7 +181,8 @@ Ext.application({
         'UserTypesCombo',
         'QuerySim',
         'EmailTemplates',
-        'EmailModels'
+        'EmailModels',
+        'MLUsers'
     ],
     views: [
         'MyGridPanel3',
@@ -344,7 +345,8 @@ Ext.application({
         'UTCField',
         'QuerySimWindow',
         'emailTypesInterface',
-        'newEmailTemplateWindow'
+        'newEmailTemplateWindow',
+        'subscribeUsersWindow'
     ],
     autoCreateViewport: true,
     controllers: [

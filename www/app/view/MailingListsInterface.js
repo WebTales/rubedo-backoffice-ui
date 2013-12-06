@@ -83,6 +83,33 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             }
                         },
                         {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            id: 'mlUsersManager',
+                            headerPosition: 'bottom',
+                            title: 'Manage users',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'mlAddUser',
+                                    iconAlign: 'top',
+                                    iconCls: 'user_add_big',
+                                    scale: 'large',
+                                    text: 'Subscribe'
+                                },
+                                {
+                                    xtype: 'button',
+                                    disabled: true,
+                                    id: 'mlRemoveUser',
+                                    iconAlign: 'top',
+                                    iconCls: 'user_remove_big',
+                                    scale: 'large',
+                                    text: 'Unsubscribe'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'tbfill'
                         }
                     ]
@@ -113,89 +140,131 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                     ]
                 },
                 {
-                    xtype: 'form',
-                    localiserId: 'propertiesForm',
+                    xtype: 'tabpanel',
                     flex: 1,
                     disabled: true,
-                    id: 'MLPropsForm',
-                    autoScroll: true,
-                    bodyPadding: 10,
-                    title: 'Propriétés',
+                    activeTab: 0,
                     items: [
                         {
-                            xtype: 'textfield',
-                            localiserId: 'nameField',
-                            anchor: '100%',
-                            fieldLabel: 'Nom',
-                            labelWidth: 140,
-                            name: 'name',
-                            allowBlank: false
-                        },
-                        {
-                            xtype: 'WorkspaceCombo',
-                            fieldLabel: 'Espaces de travail',
-                            labelWidth: 140,
-                            name: 'workspaces',
-                            multiSelect: true,
-                            store: 'ContributeWorkspacesCombo',
-                            anchor: '100%'
-                        },
-                        {
-                            xtype: 'fieldset',
-                            localiserId: 'expeditorFieldset',
-                            title: 'Expéditeur',
+                            xtype: 'form',
+                            localiserId: 'propertiesForm',
+                            id: 'MLPropsForm',
+                            autoScroll: true,
+                            bodyPadding: 10,
+                            title: 'Propriétés',
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    localiserId: 'expeditorAdressField',
+                                    localiserId: 'nameField',
                                     anchor: '100%',
-                                    fieldLabel: 'Adresse de l\'expéditeur',
+                                    fieldLabel: 'Nom',
                                     labelWidth: 140,
-                                    name: 'fromAddress',
-                                    vtype: 'email'
+                                    name: 'name',
+                                    allowBlank: false
+                                },
+                                {
+                                    xtype: 'WorkspaceCombo',
+                                    fieldLabel: 'Espaces de travail',
+                                    labelWidth: 140,
+                                    name: 'workspaces',
+                                    multiSelect: true,
+                                    store: 'ContributeWorkspacesCombo',
+                                    anchor: '100%'
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    localiserId: 'expeditorFieldset',
+                                    title: 'Expéditeur',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'expeditorAdressField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Adresse de l\'expéditeur',
+                                            labelWidth: 140,
+                                            name: 'fromAddress',
+                                            vtype: 'email'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'expeditorNameField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Nom de l\'expéditeur',
+                                            labelWidth: 140,
+                                            name: 'fromName'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    localiserId: 'responseFieldset',
+                                    title: 'Réponse',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'replyToAdressField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Adresse de réponse',
+                                            labelWidth: 140,
+                                            name: 'replyToAddress',
+                                            vtype: 'email'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            localiserId: 'replyToNameField',
+                                            anchor: '100%',
+                                            fieldLabel: 'Nom de réponse',
+                                            labelWidth: 140,
+                                            name: 'replyToName'
+                                        }
+                                    ]
                                 },
                                 {
                                     xtype: 'textfield',
-                                    localiserId: 'expeditorNameField',
+                                    localiserId: 'returnPathAdressField',
                                     anchor: '100%',
-                                    fieldLabel: 'Nom de l\'expéditeur',
+                                    fieldLabel: 'Adresse d\'erreur',
                                     labelWidth: 140,
-                                    name: 'fromName'
+                                    name: 'returnPathAddress',
+                                    vtype: 'email'
                                 }
                             ]
                         },
                         {
-                            xtype: 'fieldset',
-                            localiserId: 'responseFieldset',
-                            title: 'Réponse',
-                            items: [
+                            xtype: 'gridpanel',
+                            id: 'MLUsersGrid',
+                            title: 'Users',
+                            forceFit: true,
+                            store: 'MLUsers',
+                            columns: [
                                 {
-                                    xtype: 'textfield',
-                                    localiserId: 'replyToAdressField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Adresse de réponse',
-                                    labelWidth: 140,
-                                    name: 'replyToAddress',
-                                    vtype: 'email'
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'name',
+                                    text: 'Name'
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    localiserId: 'replyToNameField',
-                                    anchor: '100%',
-                                    fieldLabel: 'Nom de réponse',
-                                    labelWidth: 140,
-                                    name: 'replyToName'
+                                    xtype: 'numbercolumn',
+                                    dataIndex: 'email',
+                                    text: 'Email'
+                                },
+                                {
+                                    xtype: 'datecolumn',
+                                    dataIndex: 'createTime',
+                                    text: 'Creation'
                                 }
-                            ]
-                        },
-                        {
-                            xtype: 'textfield',
-                            localiserId: 'returnPathAdressField',
-                            anchor: '100%',
-                            fieldLabel: 'Adresse d\'erreur',
-                            labelWidth: 140,
-                            name: 'returnPathAddress',
-                            vtype: 'email'
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'pagingtoolbar',
+                                    dock: 'bottom',
+                                    width: 360,
+                                    displayInfo: true,
+                                    store: 'MLUsers'
+                                }
+                            ],
+                            selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                            })
                         }
                     ]
                 }
