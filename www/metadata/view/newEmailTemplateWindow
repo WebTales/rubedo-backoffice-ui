@@ -15,7 +15,7 @@
         "resizable": false,
         "layout": "fit",
         "iconCls": "add",
-        "title": "New email template",
+        "title": "New email",
         "modal": true
     },
     "configAlternates": {
@@ -43,6 +43,134 @@
             },
             "designerId": "b836c9aa-f280-4997-b6a5-24587a38b284",
             "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Type",
+                        "name": "isModel",
+                        "value": [
+                            "false"
+                        ],
+                        "editable": false,
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": [
+                            "[[true,\"Model\"],[false,\"Mail\"]]"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "fc28980e-06e2-4026-b06a-50cbc11026a8",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onComboboxChange",
+                                "implHandler": [
+                                    "if (newValue==true){\r",
+                                    "    field.up().getComponent(\"useModelField\").setValue(false);\r",
+                                    "    field.up().getComponent(\"useModelField\").hide();\r",
+                                    "} else {\r",
+                                    "    field.up().getComponent(\"useModelField\").show();\r",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "ea9d5a02-3d04-452e-aef4-0a7990b36e48"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "useModelField",
+                        "fieldLabel": "Source",
+                        "name": "useModel",
+                        "value": [
+                            "false"
+                        ],
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "editable": false,
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": [
+                            "[[true,\"From model\"],[false,\"Blank\"]]"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "93dca620-0821-44be-8779-daedf9290e3f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUseModelFieldChange",
+                                "implHandler": [
+                                    "if (newValue){\r",
+                                    "    field.up().getComponent(\"modelField\").show();\r",
+                                    "    field.up().getComponent(\"modelField\").allowBlank=false;\r",
+                                    "    field.up().getComponent(\"widthField\").hide();\r",
+                                    "    field.up().getComponent(\"widthField\").allowBlank=true;\r",
+                                    "} else {\r",
+                                    "    field.up().getComponent(\"modelField\").hide();\r",
+                                    "    field.up().getComponent(\"modelField\").allowBlank=true;\r",
+                                    "    field.up().getComponent(\"widthField\").show();\r",
+                                    "    field.up().getComponent(\"widthField\").allowBlank=false;\r",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "be158f94-fef0-47ae-abdf-7d740a65d3a9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "hidden": true,
+                        "itemId": "modelField",
+                        "fieldLabel": "Model",
+                        "name": "model",
+                        "editable": false,
+                        "forceSelection": true,
+                        "store": "EmailModels",
+                        "valueField": "id"
+                    },
+                    "designerId": "7a28e842-680c-4741-b264-76291d9d21ce"
+                },
                 {
                     "type": "Ext.form.field.Text",
                     "reference": {
@@ -78,6 +206,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "itemId": "widthField",
                         "fieldLabel": "Width",
                         "name": "bodyWidth",
                         "allowBlank": false,

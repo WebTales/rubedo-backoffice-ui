@@ -90,6 +90,10 @@ Ext.define('Rubedo.model.userDataModel', {
         },
         {
             name: 'signupTime'
+        },
+        {
+            name: 'mailingLists',
+            persist: false
         }
     ]
 });

@@ -56,6 +56,10 @@ Ext.define('Rubedo.model.emailTemplateModel', {
                 showInDiv: false
             },
             name: 'bodyProperties'
+        },
+        {
+            name: 'isMailModel',
+            type: 'boolean'
         }
     ]
 });

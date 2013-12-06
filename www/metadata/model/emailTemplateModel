@@ -133,6 +133,19 @@
                 "name": "bodyProperties"
             },
             "designerId": "7b8ea4da-a3f3-4f65-830d-292e7337ed8b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isMailModel",
+                "type": "boolean"
+            },
+            "designerId": "23a11959-7ce0-43f7-b56c-4d559010344e"
         }
     ]
 }

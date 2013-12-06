@@ -9,17 +9,18 @@
         "usedCollection": "EmailTemplates",
         "isOptimised": true,
         "autoLoad": false,
-        "autoSync": true,
+        "autoSync": null,
         "model": "emailTemplateModel",
-        "storeId": "EmailTemplates",
-        "designer|userClassName": "EmailTemplates",
-        "designer|userAlias": "EmailTemplates",
+        "remoteFilter": true,
+        "storeId": "EmailModels",
+        "designer|userClassName": "EmailModels",
+        "designer|userAlias": "EmailModels",
         "pageSize": 1000
     },
     "configAlternates": {
         "isOptimised": "boolean"
     },
-    "designerId": "8561823f-1079-4fa0-ab84-b2c76b8753c8",
+    "designerId": "ced4fd48-d03f-4922-9d15-652ff2633ad7",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -43,15 +44,12 @@
             "userConfig": {
                 "api": [
                     "{\r",
-                    "create : 'emails/create',\r",
-                    "read : 'emails',\r",
-                    "update : 'emails/update',\r",
-                    "destroy : 'emails/delete'\r",
+                    "read : 'emails'\r",
                     "}"
                 ],
                 "url": null
             },
-            "designerId": "29a40d01-1d1f-41e3-9c39-cdd475b3b53e",
+            "designerId": "a5d939d4-a6a7-4698-bffc-2b9cc329dfa7",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -64,35 +62,24 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "2dd884e4-dab9-4aaa-89f8-9a92a7ebd3f5"
-                },
-                {
-                    "type": "Ext.data.writer.Json",
-                    "reference": {
-                        "name": "writer",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "encode": true,
-                        "root": "data"
-                    },
-                    "designerId": "5d4731d5-9b9a-499a-899b-5df6e7575239"
+                    "designerId": "a7b61e24-582c-457f-81e2-12deb02e8737"
                 }
             ]
         },
         {
-            "type": "Ext.util.Grouper",
+            "type": "Ext.util.Filter",
             "reference": {
-                "name": "groupers",
+                "name": "filters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "direction": "DESC",
-                "property": "isMailModel"
+                "property": "isMailModel",
+                "value": [
+                    "true"
+                ]
             },
-            "designerId": "e948c077-658b-4c8c-b35d-c9034e74261b"
+            "designerId": "4d999b46-7d2b-46ee-b3f2-14fa7c7dff58"
         }
     ]
 }

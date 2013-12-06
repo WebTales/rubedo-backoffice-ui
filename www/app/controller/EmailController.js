@@ -187,17 +187,26 @@ Ext.define('Rubedo.controller.EmailController', {
             var values=form.getValues();
             var newET=Ext.create("Rubedo.model.emailTemplateModel",{
                 text:values.text,
+                isMailModel:values.isModel,
                 rows: [ ],
                 bodyProperties:{
-                    style:null,
+                    style:"",
                     centered:true,
                     bodyWidth:values.bodyWidth
                 }
 
             });
-            Ext.getCmp("mainETGrid").getStore().add(newET);
-            button.up().up().close();
-        }
+            if ((!values.isModel)&&(values.useModel)){
+                var record=Ext.getCmp("mainETGrid").getStore().findRecord("id",values.model);
+                newET.set("bodyProperties", Ext.clone(record.get("bodyProperties")));
+                newET.set("rows", Ext.clone(record.get("rows")));
+            }
+            Ext.getStore("EmailTemplates").add(newET);
+            Ext.getStore("EmailTemplates").addListener("datachanged", function(){
+                Ext.getStore("EmailTemplates").load();
+            }, this, {single:true});
+                button.up().up().close();
+            }
     },
 
     onMainETGridSelectionChange: function(model, selected, eOpts) {

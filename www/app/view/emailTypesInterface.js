@@ -32,7 +32,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
     },
     constrainHeader: true,
     iconCls: 'mail_small',
-    title: 'Email templates',
+    title: 'Emails',
 
     initComponent: function() {
         var me = this;
@@ -58,7 +58,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             xtype: 'button',
                             itemId: 'origine',
                             iconCls: 'mail_small',
-                            text: 'Email templates'
+                            text: 'Emails'
                         }
                     ]
                 },
@@ -120,7 +120,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     items: [
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.emailTemplates',
+                            ACL: 'write.ui.emails',
                             localiserId: 'newBtn',
                             id: 'newETBtn',
                             iconAlign: 'top',
@@ -130,7 +130,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'button',
-                            ACL: 'write.ui.emailTemplates',
+                            ACL: 'write.ui.emails',
                             localiserId: 'removeBtn',
                             disabled: true,
                             id: 'deleteEtBtn',
@@ -141,7 +141,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.emailTemplates',
+                            ACL: 'write.ui.emails',
                             id: 'eTTopBarBox',
                             headerPosition: 'bottom',
                             title: 'Edit structure',
@@ -205,7 +205,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.emailTemplates',
+                            ACL: 'write.ui.emails',
                             disabled: true,
                             id: 'ETAddComponentsBtnGr',
                             headerPosition: 'bottom',
@@ -245,7 +245,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    ACL: 'write.ui.emailTemplates',
+                                    ACL: 'write.ui.emails',
                                     localiserId: 'duplicateBtn',
                                     id: 'duplicateETBtn',
                                     iconAlign: 'top',
@@ -266,7 +266,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
-                            ACL: 'write.ui.emailTemplates',
+                            ACL: 'write.ui.emails',
                             localiserId: 'saveGroup',
                             disabled: true,
                             id: 'ETSaverBG',
@@ -335,6 +335,23 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         Ext.create('Ext.grid.plugin.CellEditing', {
 
                         })
+                    ],
+                    features: [
+                        {
+                            ftype: 'grouping',
+                            groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                                '{name:this.formatName}',
+                                {
+                                    formatName: function(name) {
+                                        if (name) {
+                                            return ("Model");
+                                        } else {
+                                            return ("Mail");
+                                        }
+                                    }
+                                }
+                            )
+                        }
                     ]
                 },
                 {
@@ -367,7 +384,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     margins: '0, 0, 0, 2',
                     frame: true,
                     id: 'eTPropsPan',
-                    width: 240,
+                    width: 260,
                     autoScroll: true,
                     resizable: true,
                     resizeHandles: 'w',
