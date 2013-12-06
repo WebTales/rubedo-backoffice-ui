@@ -353,6 +353,7 @@
                     "    },\r",
                     "    eConfig:{\r",
                     "        image:null,\r",
+                    "        url:null,\r",
                     "        styles:\"\"\r",
                     "    },\r",
                     "    flex:1\r",
@@ -466,7 +467,18 @@
                     "    imageComponent.eConfig.image=imageField.getValue();\r",
                     "    me.syncEComponent(imageComponent);\r",
                     "});\r",
-                    "target.add(imageField);"
+                    "target.add(imageField);\r",
+                    "var urlField=Ext.widget(\"textfield\", {\r",
+                    "    fieldLabel:\"URL\",\r",
+                    "    labelWidth:60,\r",
+                    "    anchor:\"100%\",\r",
+                    "    vtype:\"url\",\r",
+                    "    value:Ext.clone(imageComponent.eConfig.url)\r",
+                    "});\r",
+                    "urlField.on(\"change\", function(){\r",
+                    "\timageComponent.eConfig.url=urlField.getValue();\r",
+                    "});\r",
+                    "target.add(urlField);"
                 ]
             },
             "designerId": "14d010ad-67f7-4ce6-a504-867e856fa201"

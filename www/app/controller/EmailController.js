@@ -138,6 +138,7 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             eConfig:{
                 image:null,
+                url:null,
                 styles:""
             },
             flex:1
@@ -326,6 +327,17 @@ Ext.define('Rubedo.controller.EmailController', {
             me.syncEComponent(imageComponent);
         });
         target.add(imageField);
+        var urlField=Ext.widget("textfield", {
+            fieldLabel:"URL",
+            labelWidth:60,
+            anchor:"100%",
+            vtype:"url",
+            value:Ext.clone(imageComponent.eConfig.url)
+        });
+        urlField.on("change", function(){
+            imageComponent.eConfig.url=urlField.getValue();
+        });
+        target.add(urlField);
     },
 
     displayTextControls: function(textComponent, target) {
