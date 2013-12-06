@@ -179,7 +179,12 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     onDeleteEtBtnClick: function(button, e, eOpts) {
-        Ext.getCmp("mainETGrid").getStore().remove(Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected());
+        var fenetre = Ext.widget('delConfirmZ');
+        fenetre.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() { 
+            Ext.getCmp("mainETGrid").getStore().remove(Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected());
+            Ext.getCmp('delConfirmZ').close();
+        }); 
     },
 
     onNewETSubmitBtnClick: function(button, e, eOpts) {
@@ -188,6 +193,7 @@ Ext.define('Rubedo.controller.EmailController', {
             var values=form.getValues();
             var newET=Ext.create("Rubedo.model.emailTemplateModel",{
                 text:values.text,
+                subject:values.text,
                 isMailModel:values.isModel,
                 rows: [ ],
                 bodyProperties:{
@@ -203,11 +209,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 newET.set("rows", Ext.clone(record.get("rows")));
             }
             Ext.getStore("EmailTemplates").add(newET);
-            Ext.getStore("EmailTemplates").addListener("datachanged", function(){
-                Ext.getStore("EmailTemplates").load();
-            }, this, {single:true});
-                button.up().up().close();
-            }
+            button.up().up().close();
+        }
     },
 
     onMainETGridSelectionChange: function(model, selected, eOpts) {
@@ -221,11 +224,17 @@ Ext.define('Rubedo.controller.EmailController', {
 
     onSaveETBtnClick: function(button, e, eOpts) {
         var me=this;
-        var record=Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected();
-        record.beginEdit();
-        record.set("bodyProperties",Ext.getCmp("mainETHolder").eConfig);
-        record.set("rows",me.saveRows());
-        record.endEdit();
+        var form=Ext.getCmp("mainEmailForm").getForm();
+        if (form.isValid()){
+            var record=Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected();
+            record.beginEdit();
+            record.set("bodyProperties",Ext.getCmp("mainETHolder").eConfig);
+            record.set("rows",me.saveRows());
+            record.set(form.getValues());
+            record.endEdit();
+        } else {
+            Ext.getCmp("mainEmailForm").up().setActiveTab(1);
+        }
     },
 
     adaptETEditButtons: function(selectedElement) {
@@ -443,6 +452,7 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.getCmp("mainETHolder").removeAll();
         Ext.getCmp("elementETIdField").setValue(null);
         Ext.getCmp("mainETHolder").setWidth(record.get("bodyProperties").bodyWidth+4);
+        Ext.getCmp("mainEmailForm").getForm().setValues(record.getData());
         this.renderRows(record.get("rows"), Ext.getCmp("mainETHolder"));
         Ext.getCmp("mainETHolder").eConfig=Ext.clone(record.get("bodyProperties"));
     },
@@ -452,6 +462,7 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.getCmp("ETSaverBG").disable();
         Ext.getCmp("ETppBG").disable();
         Ext.getCmp("mainETHolder").removeAll();
+        Ext.getCmp("mainEmailForm").getForm().reset();
         Ext.getCmp("elementETIdField").setValue(null);
     },
 

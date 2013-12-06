@@ -323,18 +323,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'text',
-                            text: 'Name',
-                            editor: {
-                                xtype: 'textfield',
-                                allowBlank: false,
-                                allowOnlyWhitespace: false
-                            }
+                            text: 'Name'
                         }
-                    ],
-                    plugins: [
-                        Ext.create('Ext.grid.plugin.CellEditing', {
-
-                        })
                     ],
                     features: [
                         {
@@ -355,70 +345,130 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     ]
                 },
                 {
-                    xtype: 'container',
+                    xtype: 'tabpanel',
                     flex: 1,
-                    id: 'mainETContainer',
-                    padding: 10,
-                    autoScroll: true,
-                    layout: {
-                        align: 'center',
-                        type: 'vbox'
-                    },
-                    items: [
-                        me.processMainETHolder({
-                            xtype: 'panel',
-                            height: 600,
-                            id: 'mainETHolder',
-                            width: 804,
-                            layout: {
-                                align: 'stretch',
-                                type: 'vbox'
-                            },
-                            title: ''
-                        })
-                    ]
-                },
-                {
-                    xtype: 'panel',
-                    localiserId: 'propsPanel',
-                    margins: '0, 0, 0, 2',
-                    frame: true,
-                    id: 'eTPropsPan',
-                    width: 260,
-                    autoScroll: true,
-                    resizable: true,
-                    resizeHandles: 'w',
-                    layout: {
-                        align: 'stretch',
-                        type: 'vbox'
-                    },
-                    collapseDirection: 'right',
-                    collapsed: false,
-                    collapsible: true,
-                    iconCls: 'parametres',
-                    title: 'Propriétés',
+                    activeTab: 0,
                     items: [
                         {
-                            xtype: 'hiddenfield',
-                            id: 'elementETIdField',
-                            fieldLabel: 'Label'
+                            xtype: 'panel',
+                            frame: true,
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
+                            },
+                            title: 'Edit',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    flex: 1,
+                                    id: 'mainETContainer',
+                                    padding: 10,
+                                    autoScroll: true,
+                                    layout: {
+                                        align: 'center',
+                                        type: 'vbox'
+                                    },
+                                    items: [
+                                        me.processMainETHolder({
+                                            xtype: 'panel',
+                                            height: 600,
+                                            id: 'mainETHolder',
+                                            width: 804,
+                                            layout: {
+                                                align: 'stretch',
+                                                type: 'vbox'
+                                            },
+                                            title: ''
+                                        })
+                                    ]
+                                },
+                                {
+                                    xtype: 'panel',
+                                    localiserId: 'propsPanel',
+                                    margins: '0, 0, 0, 2',
+                                    frame: true,
+                                    id: 'eTPropsPan',
+                                    width: 260,
+                                    autoScroll: true,
+                                    resizable: true,
+                                    resizeHandles: 'w',
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    },
+                                    collapseDirection: 'right',
+                                    collapsed: false,
+                                    collapsible: true,
+                                    iconCls: 'parametres',
+                                    title: 'Propriétés',
+                                    items: [
+                                        {
+                                            xtype: 'hiddenfield',
+                                            id: 'elementETIdField',
+                                            fieldLabel: 'Label'
+                                        },
+                                        {
+                                            xtype: 'form',
+                                            localiserId: 'selectElementPanel',
+                                            flex: 1,
+                                            id: 'eTEditControl',
+                                            autoScroll: true,
+                                            bodyPadding: 10,
+                                            title: 'Sélectionnez un élément'
+                                        }
+                                    ],
+                                    listeners: {
+                                        resize: {
+                                            fn: me.onPaneauPropMasqueResize1,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         },
                         {
                             xtype: 'form',
-                            localiserId: 'selectElementPanel',
-                            flex: 1,
-                            id: 'eTEditControl',
+                            id: 'mainEmailForm',
                             autoScroll: true,
                             bodyPadding: 10,
-                            title: 'Sélectionnez un élément'
+                            title: 'Properties',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Name',
+                                    name: 'text',
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Subject',
+                                    name: 'subject',
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Plain text',
+                                    name: 'plainText',
+                                    grow: true,
+                                    growMin: 100,
+                                    rows: 10
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'panel',
+                            title: 'Preview'
+                        },
+                        {
+                            xtype: 'panel',
+                            title: 'Send and follow'
                         }
-                    ],
-                    listeners: {
-                        resize: {
-                            fn: me.onPaneauPropMasqueResize1,
-                            scope: me
-                        }
-                    }
+                    ]
                 }
             ]
         });

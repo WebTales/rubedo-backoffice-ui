@@ -827,31 +827,7 @@
                         "dataIndex": "text",
                         "text": "Name"
                     },
-                    "designerId": "3cd68489-92f1-4c92-8868-99ff1fa98499",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "editor",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "allowOnlyWhitespace": false
-                            },
-                            "designerId": "c03ec201-2644-4fc1-8f7c-86922d19f5b7"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.grid.plugin.CellEditing",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "1f593ffb-d6e4-456e-81f5-1ddf4bb932f0"
+                    "designerId": "3cd68489-92f1-4c92-8868-99ff1fa98499"
                 },
                 {
                     "type": "Ext.grid.feature.Grouping",
@@ -906,7 +882,7 @@
             ]
         },
         {
-            "type": "Ext.container.Container",
+            "type": "Ext.tab.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -914,13 +890,9 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "container|align": "center",
-                "id": "mainETContainer",
-                "padding": 10,
-                "autoScroll": true,
-                "layout": "vbox"
+                "activeTab": 0
             },
-            "designerId": "534a4840-2bf9-418b-9a99-595efc2b6ae0",
+            "designerId": "f1d88e1e-1718-41b2-8ef9-755c1e3855c0",
             "cn": [
                 {
                     "type": "Ext.panel.Panel",
@@ -930,89 +902,178 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "container|align": "stretch",
-                        "height": 600,
-                        "id": "mainETHolder",
-                        "width": 804,
-                        "layout": "vbox",
-                        "title": ""
+                        "frame": true,
+                        "layout": "hbox",
+                        "title": "Edit"
                     },
-                    "designerId": "65edd206-7ddc-4c62-aed3-8732dc526bca",
+                    "designerId": "cb39bffc-ae71-4859-986c-947faffaa74c",
                     "cn": [
                         {
-                            "type": "processcfgfunction",
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "1d70a132-1494-46b4-8853-ac87c9ded968"
+                        },
+                        {
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processMainETHolder",
-                                "designer|params": [
-                                    "config"
-                                ],
-                                "implHandler": [
-                                    "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
-                                    "return config;"
-                                ]
+                                "layout|flex": 1,
+                                "container|align": "center",
+                                "id": "mainETContainer",
+                                "padding": 10,
+                                "autoScroll": true,
+                                "layout": "vbox"
                             },
-                            "designerId": "3accda25-20b8-4937-bf16-0e320c1e2a97"
+                            "designerId": "534a4840-2bf9-418b-9a99-595efc2b6ae0",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|align": "stretch",
+                                        "height": 600,
+                                        "id": "mainETHolder",
+                                        "width": 804,
+                                        "layout": "vbox",
+                                        "title": ""
+                                    },
+                                    "designerId": "65edd206-7ddc-4c62-aed3-8732dc526bca",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processMainETHolder",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "3accda25-20b8-4937-bf16-0e320c1e2a97"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "propsPanel",
+                                "layout|flex": null,
+                                "layout|margins": "0, 0, 0, 2",
+                                "dock": null,
+                                "container|align": "stretch",
+                                "frame": true,
+                                "id": "eTPropsPan",
+                                "margin": null,
+                                "width": 260,
+                                "autoScroll": true,
+                                "resizable": [
+                                    "true"
+                                ],
+                                "resizeHandles": "w",
+                                "layout": "vbox",
+                                "collapseDirection": "right",
+                                "collapsed": false,
+                                "collapsible": true,
+                                "iconCls": "parametres",
+                                "title": "Propriétés"
+                            },
+                            "designerId": "c69eca4e-55c4-49b3-b5cd-66496a860f8d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "elementETIdField",
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "1957b3a7-e992-4e35-97e5-f0bb5251f625"
+                                },
+                                {
+                                    "type": "Ext.form.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "selectElementPanel",
+                                        "layout|flex": 1,
+                                        "height": null,
+                                        "id": "eTEditControl",
+                                        "margin": null,
+                                        "autoScroll": true,
+                                        "bodyPadding": 10,
+                                        "iconCls": null,
+                                        "title": "Sélectionnez un élément"
+                                    },
+                                    "designerId": "e4227d64-4e67-4d28-b9a3-47f6c70bc755",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPaneauPropMasqueResize1",
+                                        "implHandler": [
+                                            "this.doLayout();"
+                                        ],
+                                        "name": "resize",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "3baedd9d-be8c-40a4-890c-fe17c1ed0eef"
+                                }
+                            ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "Ext.panel.Panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "localiserId": "propsPanel",
-                "layout|flex": null,
-                "layout|margins": "0, 0, 0, 2",
-                "dock": null,
-                "container|align": "stretch",
-                "frame": true,
-                "id": "eTPropsPan",
-                "margin": null,
-                "width": 260,
-                "autoScroll": true,
-                "resizable": [
-                    "true"
-                ],
-                "resizeHandles": "w",
-                "layout": "vbox",
-                "collapseDirection": "right",
-                "collapsed": false,
-                "collapsible": true,
-                "iconCls": "parametres",
-                "title": "Propriétés"
-            },
-            "designerId": "c69eca4e-55c4-49b3-b5cd-66496a860f8d",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ],
-            "cn": [
-                {
-                    "type": "Ext.form.field.Hidden",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "elementETIdField",
-                        "fieldLabel": "Label"
-                    },
-                    "designerId": "1957b3a7-e992-4e35-97e5-f0bb5251f625"
                 },
                 {
                     "type": "Ext.form.Panel",
@@ -1022,41 +1083,118 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "selectElementPanel",
-                        "layout|flex": 1,
-                        "height": null,
-                        "id": "eTEditControl",
-                        "margin": null,
+                        "id": "mainEmailForm",
                         "autoScroll": true,
                         "bodyPadding": 10,
-                        "iconCls": null,
-                        "title": "Sélectionnez un élément"
+                        "title": "Properties"
                     },
-                    "designerId": "e4227d64-4e67-4d28-b9a3-47f6c70bc755",
-                    "customConfigs": [
+                    "designerId": "e2a46fc3-014e-40ab-bedb-ea532fe3014f",
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "88ddc256-38fc-4374-a57e-a63f599aef08"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Name",
+                                "name": "text",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "designerId": "1853ebfa-7164-46b6-976d-4e4bf00c1af2"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Subject",
+                                "name": "subject",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "designerId": "b98ec01e-4761-4fde-a4b1-39d5e6535daa"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Plain text",
+                                "name": "plainText",
+                                "grow": true,
+                                "growMin": 100,
+                                "rows": 10
+                            },
+                            "designerId": "901e44e3-52ca-4618-b688-a6f08622b794"
                         }
                     ]
                 },
                 {
-                    "type": "basiceventbinding",
+                    "type": "Ext.panel.Panel",
                     "reference": {
-                        "name": "listeners",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onPaneauPropMasqueResize1",
-                        "implHandler": [
-                            "this.doLayout();"
-                        ],
-                        "name": "resize",
-                        "scope": "me"
+                        "title": "Preview"
                     },
-                    "designerId": "3baedd9d-be8c-40a4-890c-fe17c1ed0eef"
+                    "designerId": "7c42b40f-f97a-4cff-99d6-e868f0db666c",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "3b22f85e-f632-4b10-a710-8ed78e7f355a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Send and follow"
+                    },
+                    "designerId": "404ac24b-4969-4e18-abb1-a763cbde9c0f",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "0a20c6d1-a875-4983-8282-d55c04d244d1"
+                        }
+                    ]
                 }
             ]
         }
