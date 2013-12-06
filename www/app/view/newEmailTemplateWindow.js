@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.newEmailTemplateWindow', {
         type: 'fit'
     },
     iconCls: 'add',
-    title: 'New email template',
+    title: 'New email',
     modal: true,
 
     initComponent: function() {
@@ -38,6 +38,73 @@ Ext.define('Rubedo.view.newEmailTemplateWindow', {
                     title: '',
                     items: [
                         {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            fieldLabel: 'Type',
+                            name: 'isModel',
+                            value: false,
+                            editable: false,
+                            forceSelection: true,
+                            queryMode: 'local',
+                            store: [
+                                [
+                                    true,
+                                    'Model'
+                                ],
+                                [
+                                    false,
+                                    'Mail'
+                                ]
+                            ],
+                            listeners: {
+                                change: {
+                                    fn: me.onComboboxChange,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            itemId: 'useModelField',
+                            fieldLabel: 'Source',
+                            name: 'useModel',
+                            value: false,
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            forceSelection: true,
+                            queryMode: 'local',
+                            store: [
+                                [
+                                    true,
+                                    'From model'
+                                ],
+                                [
+                                    false,
+                                    'Blank'
+                                ]
+                            ],
+                            listeners: {
+                                change: {
+                                    fn: me.onUseModelFieldChange,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            hidden: true,
+                            itemId: 'modelField',
+                            fieldLabel: 'Model',
+                            name: 'model',
+                            editable: false,
+                            forceSelection: true,
+                            store: 'EmailModels',
+                            valueField: 'id'
+                        },
+                        {
                             xtype: 'textfield',
                             anchor: '100%',
                             fieldLabel: 'Name',
@@ -48,6 +115,7 @@ Ext.define('Rubedo.view.newEmailTemplateWindow', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            itemId: 'widthField',
                             fieldLabel: 'Width',
                             name: 'bodyWidth',
                             allowBlank: false,
@@ -68,6 +136,29 @@ Ext.define('Rubedo.view.newEmailTemplateWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    onComboboxChange: function(field, newValue, oldValue, eOpts) {
+        if (newValue==true){
+            field.up().getComponent("useModelField").setValue(false);
+            field.up().getComponent("useModelField").hide();
+        } else {
+            field.up().getComponent("useModelField").show();
+        }
+    },
+
+    onUseModelFieldChange: function(field, newValue, oldValue, eOpts) {
+        if (newValue){
+            field.up().getComponent("modelField").show();
+            field.up().getComponent("modelField").allowBlank=false;
+            field.up().getComponent("widthField").hide();
+            field.up().getComponent("widthField").allowBlank=true;
+        } else {
+            field.up().getComponent("modelField").hide();
+            field.up().getComponent("modelField").allowBlank=true;
+            field.up().getComponent("widthField").show();
+            field.up().getComponent("widthField").allowBlank=false;
+        }
     }
 
 });

@@ -276,6 +276,19 @@
                 "name": "signupTime"
             },
             "designerId": "72618d1b-98be-4415-87e2-67be82a94933"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mailingLists",
+                "persist": false
+            },
+            "designerId": "02f9df83-5461-4e7c-9ed8-eb4097e43e7b"
         }
     ]
 }

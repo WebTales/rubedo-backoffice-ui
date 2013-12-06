@@ -177,7 +177,7 @@
                                         "fn": "onSitesSecondReplicaterChoiceRender",
                                         "implHandler": [
                                             "if (Ext.isEmpty(Ext.getStore(\"SitesJson\").getRange())){\r",
-                                            "\tcomponent.hide();\r",
+                                            "    component.hide();\r",
                                             "}"
                                         ],
                                         "name": "render",

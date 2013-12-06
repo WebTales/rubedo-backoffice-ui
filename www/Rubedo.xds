@@ -3045,6 +3045,14 @@
                 "app/view/newEmailTemplateWindow.js"
             ],
             "className": "newEmailTemplateWindow"
+        },
+        "ced4fd48-d03f-4922-9d15-652ff2633ad7": {
+            "paths": [
+                "metadata/store/EmailModels",
+                "app/store/override/EmailModels.js",
+                "app/store/EmailModels.js"
+            ],
+            "className": "EmailModels"
         }
     },
     "viewOrderMap": {
@@ -3237,6 +3245,7 @@
             "b14e3026-7234-4383-9a87-4aef97ffebfc",
             "f9902d72-af14-482b-bdd9-9ceda04a75cd",
             "8561823f-1079-4fa0-ab84-b2c76b8753c8",
+            "ced4fd48-d03f-4922-9d15-652ff2633ad7",
             "53a5164e-3fb7-4025-a2eb-6b0e836bdc64",
             "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
             "b01c8a92-3b8a-4cf9-96ad-398b6e97a0d4",

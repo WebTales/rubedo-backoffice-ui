@@ -180,7 +180,8 @@ Ext.application({
         'UserTypesForUsers2',
         'UserTypesCombo',
         'QuerySim',
-        'EmailTemplates'
+        'EmailTemplates',
+        'EmailModels'
     ],
     views: [
         'MyGridPanel3',

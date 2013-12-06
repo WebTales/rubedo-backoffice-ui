@@ -17,7 +17,7 @@
         "layout": "hbox",
         "constrainHeader": true,
         "iconCls": "mail_small",
-        "title": "Email templates"
+        "title": "Emails"
     },
     "designerId": "c3353cdd-8fb5-4b0b-b2b4-3fe14225c4b2",
     "customConfigs": [
@@ -86,7 +86,7 @@
                         "layout|flex": null,
                         "itemId": "origine",
                         "iconCls": "mail_small",
-                        "text": "Email templates"
+                        "text": "Emails"
                     },
                     "designerId": "17d7a8e2-3c3f-4a32-a797-d950e2011b8e",
                     "customConfigs": [
@@ -286,7 +286,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.emailTemplates",
+                        "ACL": "write.ui.emails",
                         "localiserId": "newBtn",
                         "layout|flex": null,
                         "id": "newETBtn",
@@ -319,7 +319,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.emailTemplates",
+                        "ACL": "write.ui.emails",
                         "localiserId": "removeBtn",
                         "layout|flex": null,
                         "disabled": true,
@@ -354,7 +354,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.emailTemplates",
+                        "ACL": "write.ui.emails",
                         "localiserId": null,
                         "layout|flex": null,
                         "container|columns": 2,
@@ -522,7 +522,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.emailTemplates",
+                        "ACL": "write.ui.emails",
                         "layout|flex": null,
                         "disabled": true,
                         "id": "ETAddComponentsBtnGr",
@@ -607,7 +607,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "ACL": "write.ui.emailTemplates",
+                                "ACL": "write.ui.emails",
                                 "localiserId": "duplicateBtn",
                                 "id": "duplicateETBtn",
                                 "width": null,
@@ -666,7 +666,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.emailTemplates",
+                        "ACL": "write.ui.emails",
                         "localiserId": "saveGroup",
                         "layout|flex": null,
                         "container|columns": 2,
@@ -852,6 +852,56 @@
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
                     "designerId": "1f593ffb-d6e4-456e-81f5-1ddf4bb932f0"
+                },
+                {
+                    "type": "Ext.grid.feature.Grouping",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "44b69ffe-21df-41be-b4c9-1b0c0f434913",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "implHandler": [
+                                    "{name:this.formatName}"
+                                ],
+                                "designer|displayName": "groupHeaderTpl"
+                            },
+                            "designerId": "de4dd1c6-7899-436b-ad70-e700fdbe57b8",
+                            "cn": [
+                                {
+                                    "type": "templatefunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "formatName",
+                                        "designer|params": [
+                                            "name"
+                                        ],
+                                        "implHandler": [
+                                            "if (name) {\r",
+                                            "\treturn (\"Model\");\r",
+                                            "} else {\r",
+                                            "    return (\"Mail\");\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "ef13c0db-5fa1-4fee-acfc-5d7ca85060f7"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -929,7 +979,7 @@
                 "frame": true,
                 "id": "eTPropsPan",
                 "margin": null,
-                "width": 240,
+                "width": 260,
                 "autoScroll": true,
                 "resizable": [
                     "true"
