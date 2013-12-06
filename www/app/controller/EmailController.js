@@ -237,6 +237,20 @@ Ext.define('Rubedo.controller.EmailController', {
         }
     },
 
+    onETPreviewPanelActivate: function(component, eOpts) {
+        component.removeAll();
+        component.add(Ext.widget("component",{
+            autoEl: {
+                tag: 'iframe',
+                src: window.location.protocol+"//"+window.location.host+"/backoffice/emails/preview?id="+Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected().get("id")
+            }
+        }));
+    },
+
+    onETSendBtnClick: function(button, e, eOpts) {
+        Ext.widget("sendEmailWindow").show();
+    },
+
     adaptETEditButtons: function(selectedElement) {
         var me=this;
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
@@ -455,15 +469,31 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.getCmp("mainEmailForm").getForm().setValues(record.getData());
         this.renderRows(record.get("rows"), Ext.getCmp("mainETHolder"));
         Ext.getCmp("mainETHolder").eConfig=Ext.clone(record.get("bodyProperties"));
+        if (record.get("isMailModel")){
+            Ext.getCmp("ETEploit").disable();
+        } else {
+            Ext.getCmp("ETEploit").enable();
+        }
+        if (Ext.getCmp("ETPreviewPanel").up().getLayout().getActiveItem()==Ext.getCmp("ETPreviewPanel")){
+            Ext.getCmp("ETPreviewPanel").removeAll();
+            Ext.getCmp("ETPreviewPanel").add(Ext.widget("component",{
+                autoEl: {
+                    tag: 'iframe',
+                    src: window.location.protocol+"//"+window.location.host+"/backoffice/emails/preview?id="+record.get("id")
+                }
+            }));
+        }
     },
 
     resetETNoSelect: function() {
         Ext.getCmp("deleteEtBtn").disable();
         Ext.getCmp("ETSaverBG").disable();
         Ext.getCmp("ETppBG").disable();
+        Ext.getCmp("ETEploit").disable();
         Ext.getCmp("mainETHolder").removeAll();
         Ext.getCmp("mainEmailForm").getForm().reset();
         Ext.getCmp("elementETIdField").setValue(null);
+        Ext.getCmp("ETPreviewPanel").removeAll();
     },
 
     renderRows: function(rows, target) {
@@ -591,6 +621,12 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             "#saveETBtn": {
                 click: this.onSaveETBtnClick
+            },
+            "#ETPreviewPanel": {
+                activate: this.onETPreviewPanelActivate
+            },
+            "#ETSendBtn": {
+                click: this.onETSendBtnClick
             }
         });
     }

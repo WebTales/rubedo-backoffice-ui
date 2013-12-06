@@ -743,6 +743,41 @@
                     ]
                 },
                 {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "ETEploit",
+                        "headerPosition": "bottom",
+                        "title": "Exploit",
+                        "columns": 2
+                    },
+                    "designerId": "2bd4771d-1541-4e6d-8a91-c7c5cc1bd254",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "ETSendBtn",
+                                "iconAlign": "top",
+                                "iconCls": "sendMail_big",
+                                "scale": "large",
+                                "text": "Send"
+                            },
+                            "designerId": "06a1a93a-ce9f-4122-afaf-54a32c5aa6a7"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
@@ -1158,6 +1193,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "id": "ETPreviewPanel",
+                        "layout": "fit",
                         "title": "Preview"
                     },
                     "designerId": "7c42b40f-f97a-4cff-99d6-e868f0db666c",
@@ -1170,29 +1207,6 @@
                             },
                             "codeClass": null,
                             "designerId": "3b22f85e-f632-4b10-a710-8ed78e7f355a"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "title": "Send"
-                    },
-                    "designerId": "404ac24b-4969-4e18-abb1-a763cbde9c0f",
-                    "cn": [
-                        {
-                            "type": "Ext.tab.Tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "designerId": "0a20c6d1-a875-4983-8282-d55c04d244d1"
                         }
                     ]
                 }

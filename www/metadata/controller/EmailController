@@ -732,7 +732,21 @@
                     "Ext.getCmp(\"mainETHolder\").setWidth(record.get(\"bodyProperties\").bodyWidth+4);\r",
                     "Ext.getCmp(\"mainEmailForm\").getForm().setValues(record.getData());\r",
                     "this.renderRows(record.get(\"rows\"), Ext.getCmp(\"mainETHolder\"));\r",
-                    "Ext.getCmp(\"mainETHolder\").eConfig=Ext.clone(record.get(\"bodyProperties\"));"
+                    "Ext.getCmp(\"mainETHolder\").eConfig=Ext.clone(record.get(\"bodyProperties\"));\r",
+                    "if (record.get(\"isMailModel\")){\r",
+                    "    Ext.getCmp(\"ETEploit\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"ETEploit\").enable();\r",
+                    "}\r",
+                    "if (Ext.getCmp(\"ETPreviewPanel\").up().getLayout().getActiveItem()==Ext.getCmp(\"ETPreviewPanel\")){\r",
+                    "    Ext.getCmp(\"ETPreviewPanel\").removeAll();\r",
+                    "Ext.getCmp(\"ETPreviewPanel\").add(Ext.widget(\"component\",{\r",
+                    "                autoEl: {\r",
+                    "                    tag: 'iframe',\r",
+                    "                    src: window.location.protocol+\"//\"+window.location.host+\"/backoffice/emails/preview?id=\"+record.get(\"id\")\r",
+                    "                }\r",
+                    "            }));\r",
+                    "}"
                 ]
             },
             "designerId": "4c33d954-eec4-497a-8042-7c575d73ee16"
@@ -750,9 +764,11 @@
                     "Ext.getCmp(\"deleteEtBtn\").disable();\r",
                     "Ext.getCmp(\"ETSaverBG\").disable();\r",
                     "Ext.getCmp(\"ETppBG\").disable();\r",
+                    "Ext.getCmp(\"ETEploit\").disable();\r",
                     "Ext.getCmp(\"mainETHolder\").removeAll();\r",
                     "Ext.getCmp(\"mainEmailForm\").getForm().reset();\r",
-                    "Ext.getCmp(\"elementETIdField\").setValue(null);"
+                    "Ext.getCmp(\"elementETIdField\").setValue(null);\r",
+                    "Ext.getCmp(\"ETPreviewPanel\").removeAll();"
                 ]
             },
             "designerId": "f538eef0-7f20-4258-ad4f-510aca13f01c"
@@ -956,6 +972,50 @@
                 "designer|controlQuery": "#saveETBtn"
             },
             "designerId": "0b657bfa-71c6-4013-9472-c75482953b2b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onETPreviewPanelActivate",
+                "implHandler": [
+                    "component.removeAll();\r",
+                    "component.add(Ext.widget(\"component\",{\r",
+                    "                autoEl: {\r",
+                    "                    tag: 'iframe',\r",
+                    "                    src: window.location.protocol+\"//\"+window.location.host+\"/backoffice/emails/preview?id=\"+Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                    "                }\r",
+                    "            }));"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#ETPreviewPanel"
+            },
+            "designerId": "23bddfb2-a7df-4446-9fe9-60a501926b40"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onETSendBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"sendEmailWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ETSendBtn"
+            },
+            "designerId": "8305340b-74a2-4ef5-8b10-cda7a8d8f1cc"
         }
     ]
 }

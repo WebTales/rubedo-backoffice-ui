@@ -296,6 +296,24 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             ]
                         },
                         {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            id: 'ETEploit',
+                            headerPosition: 'bottom',
+                            title: 'Exploit',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'ETSendBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'sendMail_big',
+                                    scale: 'large',
+                                    text: 'Send'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'tbfill'
                         }
                     ]
@@ -462,11 +480,11 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'panel',
+                            id: 'ETPreviewPanel',
+                            layout: {
+                                type: 'fit'
+                            },
                             title: 'Preview'
-                        },
-                        {
-                            xtype: 'panel',
-                            title: 'Send'
                         }
                     ]
                 }

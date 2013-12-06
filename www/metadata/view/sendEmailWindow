@@ -1,0 +1,105 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": "sendEmailWindow",
+        "width": 400,
+        "designer|userClassName": "sendEmailWindow",
+        "designer|userAlias": "sendEmailWindow",
+        "layout": "fit",
+        "title": "Send email",
+        "modal": true
+    },
+    "designerId": "d2aea74e-65b3-4dbd-a9e1-a5a4caf7cb9a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "6881a7c2-4a74-48a9-9507-6604faf058a1",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Mailing list",
+                        "name": "mailingList",
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false
+                    },
+                    "designerId": "9927c0e3-f956-49ef-b993-4693ddbdedae",
+                    "masterInstanceId": "3dd5f03c-4619-4dc7-bb17-d53b3d011623"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "sendEmailSubmitBtn",
+                        "text": "Send"
+                    },
+                    "designerId": "7d21b5ce-5ffb-4400-a1f7-8d5eda8c218f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSendEmailSubmitBtnClick",
+                                "implHandler": [
+                                    "var form=button.up().getForm();\r",
+                                    "if (form.isValid()){\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: 'emails/send',\r",
+                                    "        method: 'POST',\r",
+                                    "        params: {\r",
+                                    "            list: form.getValues().mailingList,\r",
+                                    "            id:Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                                    "        },\r",
+                                    "        success: function(response){\r",
+                                    "            var text = Ext.JSON.decode(response.responseText);\r",
+                                    "            if (text.success){\r",
+                                    "                Ext.Msg.alert(\"Success\", \"Mail sent\");\r",
+                                    "                button.up().up().close();\r",
+                                    "            } else {\r",
+                                    "                Ext.Msg.alert(\"Error\", \"Error sending mail\");\r",
+                                    "            }\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "d061ac99-0ca0-4331-80cf-507144e83f79"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
