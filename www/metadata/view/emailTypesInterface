@@ -212,52 +212,6 @@
                         "layout|flex": null
                     },
                     "designerId": "875e1698-6ef4-401f-9f16-e75c00901603"
-                },
-                {
-                    "type": "Ext.slider.Single",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "localiserId": "zoomLevelSlider",
-                        "layout|flex": null,
-                        "id": "MaskZoomControlSlider2",
-                        "width": 400,
-                        "fieldLabel": "Niveau de zoom",
-                        "value": 600,
-                        "maxValue": 2000,
-                        "minValue": 200,
-                        "useTips": false
-                    },
-                    "designerId": "ad27e121-d4f7-4b3c-a1a8-e77e488cb2be",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
-                        }
-                    ],
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onMaskZoomControlSliderChange1",
-                                "implHandler": [
-                                    "Ext.getCmp(\"mainETHolder\").setHeight(newValue);"
-                                ],
-                                "name": "change",
-                                "scope": "me"
-                            },
-                            "designerId": "a65a4c33-b81d-4bb2-8ce4-1913df0b5516"
-                        }
-                    ]
                 }
             ]
         },
@@ -980,8 +934,9 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "container|align": "stretch",
-                                        "height": 600,
+                                        "height": null,
                                         "id": "mainETHolder",
+                                        "minHeight": 200,
                                         "width": 804,
                                         "layout": "vbox",
                                         "title": ""
