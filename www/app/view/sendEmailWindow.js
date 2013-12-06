@@ -51,13 +51,7 @@ Ext.define('Rubedo.view.sendEmailWindow', {
                             xtype: 'button',
                             anchor: '100%',
                             id: 'sendEmailSubmitBtn',
-                            text: 'Send',
-                            listeners: {
-                                click: {
-                                    fn: me.onSendEmailSubmitBtnClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Send'
                         }
                     ]
                 }
@@ -65,29 +59,6 @@ Ext.define('Rubedo.view.sendEmailWindow', {
         });
 
         me.callParent(arguments);
-    },
-
-    onSendEmailSubmitBtnClick: function(button, e, eOpts) {
-        var form=button.up().getForm();
-        if (form.isValid()){
-            Ext.Ajax.request({
-                url: 'emails/send',
-                method: 'POST',
-                params: {
-                    list: form.getValues().mailingList,
-                    id:Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected().get("id")
-                },
-                success: function(response){
-                    var text = Ext.JSON.decode(response.responseText);
-                    if (text.success){
-                        Ext.Msg.alert("Success", "Mail sent");
-                        button.up().up().close();
-                    } else {
-                        Ext.Msg.alert("Error", "Error sending mail");
-                    }
-                }
-            });
-        }
     }
 
 });

@@ -255,6 +255,32 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.widget("sendEmailWindow").show();
     },
 
+    onSendEmailSubmitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            button.setLoading(true);
+            Ext.Ajax.request({
+                url: 'emails/send',
+                method: 'POST',
+                params: {
+                    list: form.getValues().mailingList,
+                    id:Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected().get("id")
+                },
+                success: function(response){
+                    var text = Ext.JSON.decode(response.responseText);
+                    if (text.success){
+                        Ext.Msg.alert("Success", "Mail sent");
+                        button.setLoading(false);
+                        button.up().up().close();
+                    } else {
+                        Ext.Msg.alert("Error", "Error sending mail");
+                        button.setLoading(false);
+                    }
+                }
+            });
+        }
+    },
+
     adaptETEditButtons: function(selectedElement) {
         var me=this;
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
@@ -553,7 +579,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var task = new Ext.util.DelayedTask(function(){
             target.doLayout();
         });
-        task.delay(200);
+        task.delay(300);
     },
 
     saveRows: function() {
@@ -639,6 +665,9 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             "#ETSendBtn": {
                 click: this.onETSendBtnClick
+            },
+            "#sendEmailSubmitBtn": {
+                click: this.onSendEmailSubmitBtnClick
             }
         });
     }
