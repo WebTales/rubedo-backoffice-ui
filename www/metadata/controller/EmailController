@@ -908,7 +908,7 @@
                     "var task = new Ext.util.DelayedTask(function(){\r",
                     "\ttarget.doLayout();\r",
                     "});\r",
-                    "task.delay(200);"
+                    "task.delay(300);"
                 ]
             },
             "designerId": "66737ad7-f6ee-4e03-b9a8-a9aeeffaf36b"
@@ -1028,6 +1028,47 @@
                 "designer|controlQuery": "#ETSendBtn"
             },
             "designerId": "8305340b-74a2-4ef5-8b10-cda7a8d8f1cc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSendEmailSubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    button.setLoading(true);\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'emails/send',\r",
+                    "        method: 'POST',\r",
+                    "        params: {\r",
+                    "            list: form.getValues().mailingList,\r",
+                    "            id:Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var text = Ext.JSON.decode(response.responseText);\r",
+                    "            if (text.success){\r",
+                    "                Ext.Msg.alert(\"Success\", \"Mail sent\");\r",
+                    "                button.setLoading(false);\r",
+                    "                button.up().up().close();\r",
+                    "            } else {\r",
+                    "                Ext.Msg.alert(\"Error\", \"Error sending mail\");\r",
+                    "                button.setLoading(false);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#sendEmailSubmitBtn"
+            },
+            "designerId": "e7990ed9-5be7-419c-8744-d0ef6c0a7bc0"
         }
     ]
 }

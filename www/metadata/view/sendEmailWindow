@@ -59,45 +59,7 @@
                         "id": "sendEmailSubmitBtn",
                         "text": "Send"
                     },
-                    "designerId": "7d21b5ce-5ffb-4400-a1f7-8d5eda8c218f",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onSendEmailSubmitBtnClick",
-                                "implHandler": [
-                                    "var form=button.up().getForm();\r",
-                                    "if (form.isValid()){\r",
-                                    "    Ext.Ajax.request({\r",
-                                    "        url: 'emails/send',\r",
-                                    "        method: 'POST',\r",
-                                    "        params: {\r",
-                                    "            list: form.getValues().mailingList,\r",
-                                    "            id:Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
-                                    "        },\r",
-                                    "        success: function(response){\r",
-                                    "            var text = Ext.JSON.decode(response.responseText);\r",
-                                    "            if (text.success){\r",
-                                    "                Ext.Msg.alert(\"Success\", \"Mail sent\");\r",
-                                    "                button.up().up().close();\r",
-                                    "            } else {\r",
-                                    "                Ext.Msg.alert(\"Error\", \"Error sending mail\");\r",
-                                    "            }\r",
-                                    "        }\r",
-                                    "    });\r",
-                                    "}"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "d061ac99-0ca0-4331-80cf-507144e83f79"
-                        }
-                    ]
+                    "designerId": "7d21b5ce-5ffb-4400-a1f7-8d5eda8c218f"
                 }
             ]
         }
