@@ -41,11 +41,11 @@ Ext.define('Rubedo.view.sendEmailWindow', {
                     items: [
                         {
                             xtype: 'MailingListPickerField',
-                            anchor: '100%',
                             fieldLabel: 'Mailing list',
                             name: 'mailingList',
                             allowBlank: false,
-                            allowOnlyWhitespace: false
+                            allowOnlyWhitespace: false,
+                            anchor: '100%'
                         },
                         {
                             xtype: 'button',

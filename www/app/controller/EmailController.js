@@ -27,7 +27,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 align: 'stretchmax'
             },
             eConfig:{
-                styles:""
+                styles:"",
+                bgColor:""              
             },
             flex:undefined,
             minHeight:30                  
@@ -102,7 +103,8 @@ Ext.define('Rubedo.controller.EmailController', {
                 align: 'stretch'
             },
             eConfig:{
-                styles:""
+                styles:"",
+                bgColor:"" 
             },
             width:Ext.Array.min([100,me.calculateRemainingRowWidth(Ext.getCmp(Ext.getCmp("elementETIdField").getValue()))]),
             minHeight:28
@@ -203,7 +205,9 @@ Ext.define('Rubedo.controller.EmailController', {
                 bodyProperties:{
                     style:"",
                     centered:true,
-                    bodyWidth:values.bodyWidth
+                    bodyWidth:values.bodyWidth,
+                    bgColor:"",
+                    bodyBgColor:"" 
                 }
 
             });
@@ -410,7 +414,21 @@ Ext.define('Rubedo.controller.EmailController', {
     },
 
     displayRowControls: function(row) {
-
+        var container=Ext.getCmp("eTEditControl");
+        var bgColorEdit=Ext.widget("AdvancedColorField",{
+            noPickerDisplay:true,
+            fieldLabel:"Background color",
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%"
+        });
+        bgColorEdit.on("change", function(){
+            if (bgColorEdit.isValid()){
+                row.eConfig.bgColor=bgColorEdit.getValue();
+            }
+        });
+        container.add(bgColorEdit);
+        bgColorEdit.setValue(Ext.clone(row.eConfig.bgColor));
     },
 
     displayColControls: function(col) {
@@ -434,6 +452,21 @@ Ext.define('Rubedo.controller.EmailController', {
         });
         me.applyWidthConstraints(spanEdit,col);
         container.add(spanEdit);
+
+        var bgColorEdit=Ext.widget("AdvancedColorField",{
+            noPickerDisplay:true,
+            allowBlank:true,
+            fieldLabel:"Background color",
+            labelWidth:60,
+            anchor:"100%"
+        });
+        bgColorEdit.on("change", function(){
+            if (bgColorEdit.isValid()){
+                col.eConfig.bgColor=bgColorEdit.getValue();
+            }
+        });
+        container.add(bgColorEdit);
+        bgColorEdit.setValue(Ext.clone(col.eConfig.bgColor));
     },
 
     displayGenericControls: function(component, target) {
@@ -487,6 +520,34 @@ Ext.define('Rubedo.controller.EmailController', {
             mainBody.eConfig.styles=styleEdit.getValue();
         });
         container.add(styleEdit);
+        var bgColorEdit=Ext.widget("AdvancedColorField",{
+            noPickerDisplay:true,
+            allowBlank:true,
+            fieldLabel:"Background color",
+            labelWidth:60,
+            anchor:"100%"
+        });
+        bgColorEdit.on("change", function(){
+            if (bgColorEdit.isValid()){
+                mainBody.eConfig.bgColor=bgColorEdit.getValue();
+            }
+        });
+        container.add(bgColorEdit);
+        bgColorEdit.setValue(Ext.clone(mainBody.eConfig.bgColor));
+        var bodybgColorEdit=Ext.widget("AdvancedColorField",{
+            noPickerDisplay:true,
+            allowBlank:true,
+            fieldLabel:"Body background color",
+            labelWidth:60,
+            anchor:"100%"
+        });
+        bodybgColorEdit.on("change", function(){
+            if (bodybgColorEdit.isValid()){
+                mainBody.eConfig.bodyBgColor=bodybgColorEdit.getValue();
+            }
+        });
+        container.add(bodybgColorEdit);
+        bodybgColorEdit.setValue(Ext.clone(mainBody.eConfig.bodyBgColor));
     },
 
     resetETSelect: function(record) {
@@ -558,7 +619,7 @@ Ext.define('Rubedo.controller.EmailController', {
                 Ext.Array.forEach(col.components, function(component){
                     var newComponent=Ext.widget("panel",{
                         eType:component.type,
-                        id:component.is,
+                        id:component.id,
                         layout: {
                             type: 'fit'
                         },

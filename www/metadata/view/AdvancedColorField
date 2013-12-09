@@ -25,10 +25,12 @@
             "userConfig": {
                 "fn": "onTextfieldAfterRender",
                 "implHandler": [
-                    "component.inputEl.on(\"click\",function(e){\r",
-                    "    ColorPickerControlSingleton.currentTarget=component.getId();\r",
-                    "    colorPicker(e,component.getId());\r",
-                    "});"
+                    "if (!component.noPickerDisplay){\r",
+                    "    component.inputEl.on(\"click\",function(e){\r",
+                    "        ColorPickerControlSingleton.currentTarget=component.getId();\r",
+                    "        colorPicker(e,component.getId());\r",
+                    "    });\r",
+                    "}"
                 ],
                 "name": "afterrender",
                 "scope": "me"
@@ -78,11 +80,11 @@
                     "hexCode"
                 ],
                 "implHandler": [
-                    "  hexCode = hexCode.replace('#', '');\r",
-                    "  var c_r = parseInt(hexCode.substr(0, 2),16);\r",
-                    "  var c_g = parseInt(hexCode.substr(2, 2),16);\r",
-                    "  var c_b = parseInt(hexCode.substr(4, 2),16);\r",
-                    "  return ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;"
+                    "hexCode = hexCode.replace('#', '');\r",
+                    "var c_r = parseInt(hexCode.substr(0, 2),16);\r",
+                    "var c_g = parseInt(hexCode.substr(2, 2),16);\r",
+                    "var c_b = parseInt(hexCode.substr(4, 2),16);\r",
+                    "return ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;"
                 ]
             },
             "designerId": "bc5b20c9-322f-44b4-b2a6-fe4542cbe829"
