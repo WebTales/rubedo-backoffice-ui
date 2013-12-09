@@ -247,6 +247,111 @@
                 "designer|controlQuery": "#mlExportUsersBtn"
             },
             "designerId": "f7a78f4e-03b0-49dd-afda-fc98eddd409e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMlImportUsersBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"mlImportWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mlImportUsersBtn"
+            },
+            "designerId": "b2412f82-64e4-42ed-8041-f69cfb05d3a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMlImportSubmitBtnClick",
+                "implHandler": [
+                    "\r",
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    button.up().setLoading(true);\r",
+                    "    form.submit({\r",
+                    "        url: 'mailing-lists/import-users',\r",
+                    "        params: { \r",
+                    "            id:Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\")\r",
+                    "        },\r",
+                    "        success: function(form, action) {\r",
+                    "            var response = Ext.JSON.decode(action.response.responseText);\r",
+                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+\" Users imported\");            \r",
+                    "            button.up().setLoading(false);\r",
+                    "            Ext.getStore(\"MLUsers\").load();\r",
+                    "            button.up().up().close();\r",
+                    "\r",
+                    "        },\r",
+                    "        failure: function(form, action) {\r",
+                    "            button.up().setLoading(false);\r",
+                    "            var message = \"Import error\";\r",
+                    "            try {\r",
+                    "                var response = Ext.JSON.decode(action.response.responseText);\r",
+                    "                if (response.message){\r",
+                    "                    message=response.message;\r",
+                    "                }\r",
+                    "            } catch(err){}\r",
+                    "                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);\r",
+                    "            }\r",
+                    "        });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mlImportSubmitBtn"
+            },
+            "designerId": "d6ba22b7-860c-4fdd-b544-83f1fb3e1897"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSubscribeUsersSubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: 'mailing-lists/subscribe-users', \r",
+                    "        method:'POST',\r",
+                    "        params: {\r",
+                    "            mlId: Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\"),\r",
+                    "            userEmailArray:Ext.JSON.encode(form.getValues().emails)\r",
+                    "        },\r",
+                    "        success: function(response){\r",
+                    "            var answer=Ext.JSON.decode(response.responseText);\r",
+                    "            if (answer.success){\r",
+                    "                button.up().up().close();\r",
+                    "                Ext.getStore(\"MLUsers\").load();\r",
+                    "            } else {\r",
+                    "                Ext.Msg.alert(\"Error\",\"User subscription error\");\r",
+                    "            }\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#subscribeUsersSubmitBtn"
+            },
+            "designerId": "e7f00a53-ca32-4bdc-a735-c760f9145b0f"
         }
     ]
 }

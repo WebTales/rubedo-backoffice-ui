@@ -1,0 +1,65 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": "mlImportWindow",
+        "width": 400,
+        "designer|userClassName": "mlImportWindow",
+        "designer|userAlias": "mlImportWindow",
+        "layout": "fit",
+        "title": "Import users to mailing list",
+        "modal": true
+    },
+    "designerId": "5d8d58e0-6cd3-4596-92b5-8b66d27d5373",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "b4a8529d-2681-4cf6-8d90-e0167c125c25",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "CSV file",
+                        "name": "csvFile",
+                        "allowBlank": false
+                    },
+                    "designerId": "01658ef5-cd20-4d26-ac11-7a0066ad4eae"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "mlImportSubmitBtn",
+                        "text": "Import"
+                    },
+                    "designerId": "dc288382-9dfd-48ab-af55-bb9789d35a19"
+                }
+            ]
+        }
+    ]
+}
