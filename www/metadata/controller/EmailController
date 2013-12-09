@@ -761,11 +761,11 @@
                 "fn": "onDeleteEtBtnClick",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
-                    "                fenetre.show();\r",
-                    "                Ext.getCmp('delConfirmZOui').on('click', function() { \r",
-                    "                    Ext.getCmp(\"mainETGrid\").getStore().remove(Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected());\r",
-                    "                    Ext.getCmp('delConfirmZ').close();\r",
-                    "                }); "
+                    "fenetre.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    Ext.getCmp(\"mainETGrid\").getStore().remove(Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected());\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
+                    "}); "
                 ],
                 "name": "click",
                 "scope": "me",
@@ -943,6 +943,7 @@
                     "            },\r",
                     "            eConfig:col.config,\r",
                     "            width:col.width,\r",
+                    "            flex:undefined,\r",
                     "            minHeight:28\r",
                     "        });\r",
                     "        Ext.Array.forEach(col.components, function(component){\r",
@@ -997,7 +998,7 @@
                     "            });\r",
                     "        });\r",
                     "        var newCol={\r",
-                    "            width:col.getWidth(),\r",
+                    "            width:col.width,\r",
                     "            config:col.eConfig,\r",
                     "            id:col.getId(),\r",
                     "            components:myComponents\r",
