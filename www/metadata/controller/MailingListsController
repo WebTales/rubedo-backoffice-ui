@@ -223,6 +223,30 @@
                 "designer|controlQuery": "#MLUsersGrid"
             },
             "designerId": "4b211b10-9e97-494b-99aa-0de3945db6c7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMlExportUsersBtnClick",
+                "implHandler": [
+                    "window.onbeforeunload=Ext.emptyFn;\r",
+                    "    window.location.href=\"mailing-lists/export-users?id=\"+Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\");\r",
+                    "    var task63 = new Ext.util.DelayedTask(function(){\r",
+                    "        window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };\r",
+                    "    });\r",
+                    "    task63.delay(400);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mlExportUsersBtn"
+            },
+            "designerId": "f7a78f4e-03b0-49dd-afda-fc98eddd409e"
         }
     ]
 }

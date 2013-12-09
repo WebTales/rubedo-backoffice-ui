@@ -171,7 +171,7 @@
                         "id": "mlUsersManager",
                         "headerPosition": "bottom",
                         "title": "Manage users",
-                        "columns": 2
+                        "columns": 3
                     },
                     "designerId": "566ec6c8-947d-4770-92cc-d93e1d313236",
                     "cn": [
@@ -207,6 +207,22 @@
                                 "text": "Unsubscribe"
                             },
                             "designerId": "c86c6126-9679-41aa-9ed6-5e3ccd66d2a8"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "mlExportUsersBtn",
+                                "iconAlign": "top",
+                                "iconCls": "user_down_big",
+                                "scale": "large",
+                                "text": "Export"
+                            },
+                            "designerId": "e2c6400c-f168-4a7d-8199-415454cef0da"
                         }
                     ]
                 },

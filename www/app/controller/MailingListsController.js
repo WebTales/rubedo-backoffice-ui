@@ -110,6 +110,15 @@ Ext.define('Rubedo.controller.MailingListsController', {
         }
     },
 
+    onMlExportUsersBtnClick: function(button, e, eOpts) {
+        window.onbeforeunload=Ext.emptyFn;
+        window.location.href="mailing-lists/export-users?id="+Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id");
+        var task63 = new Ext.util.DelayedTask(function(){
+            window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
+        });
+        task63.delay(400);
+    },
+
     init: function(application) {
         this.control({
             "#MLMainGrid": {
@@ -135,6 +144,9 @@ Ext.define('Rubedo.controller.MailingListsController', {
             },
             "#MLUsersGrid": {
                 selectionchange: this.onMLUsersGridSelectionChange
+            },
+            "#mlExportUsersBtn": {
+                click: this.onMlExportUsersBtnClick
             }
         });
     }
