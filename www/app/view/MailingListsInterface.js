@@ -88,7 +88,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             id: 'mlUsersManager',
                             headerPosition: 'bottom',
                             title: 'Manage users',
-                            columns: 2,
+                            columns: 3,
                             items: [
                                 {
                                     xtype: 'button',
@@ -106,6 +106,14 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                     iconCls: 'user_remove_big',
                                     scale: 'large',
                                     text: 'Unsubscribe'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'mlExportUsersBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'user_down_big',
+                                    scale: 'large',
+                                    text: 'Export'
                                 }
                             ]
                         },
