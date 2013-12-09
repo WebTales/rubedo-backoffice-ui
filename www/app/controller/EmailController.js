@@ -614,6 +614,7 @@ Ext.define('Rubedo.controller.EmailController', {
                     },
                     eConfig:col.config,
                     width:col.width,
+                    flex:undefined,
                     minHeight:28
                 });
                 Ext.Array.forEach(col.components, function(component){
@@ -657,7 +658,7 @@ Ext.define('Rubedo.controller.EmailController', {
                     });
                 });
                 var newCol={
-                    width:col.getWidth(),
+                    width:col.width,
                     config:col.eConfig,
                     id:col.getId(),
                     components:myComponents
