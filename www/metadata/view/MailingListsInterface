@@ -619,6 +619,50 @@
                             "designerId": "513425e4-9673-452c-bdbe-b82b6e430730"
                         },
                         {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "mailingLists",
+                                "text": "Subscription"
+                            },
+                            "designerId": "be30caa0-e680-40d7-8b9b-37fbebd86788",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "try {\r",
+                                            "    var myDate=value[Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\")].date;\r",
+                                            "    return(Ext.util.Format.date(Ext.Date.parse(myDate,\"U\")));\r",
+                                            "} catch(err){\r",
+                                            "\treturn(\"\");\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "59fd2b10-b7b5-4e79-86f0-6e5c7d6ca153"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.grid.View",
                             "reference": {
                                 "name": "viewConfig",
