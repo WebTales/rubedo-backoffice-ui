@@ -167,13 +167,21 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "ACL": "write.ui.mailingLists",
                         "disabled": true,
                         "id": "mlUsersManager",
                         "headerPosition": "bottom",
                         "title": "Manage users",
-                        "columns": 3
+                        "columns": 4
                     },
                     "designerId": "566ec6c8-947d-4770-92cc-d93e1d313236",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -207,6 +215,22 @@
                                 "text": "Unsubscribe"
                             },
                             "designerId": "c86c6126-9679-41aa-9ed6-5e3ccd66d2a8"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "mlImportUsersBtn",
+                                "iconAlign": "top",
+                                "iconCls": "user_up_big",
+                                "scale": "large",
+                                "text": "Import"
+                            },
+                            "designerId": "d0113c5b-0738-48a1-b50a-0488b018ff59"
                         },
                         {
                             "type": "Ext.button.Button",

@@ -39,13 +39,7 @@ Ext.define('Rubedo.view.subscribeUsersWindow', {
                             xtype: 'button',
                             anchor: '100%',
                             id: 'subscribeUsersSubmitBtn',
-                            text: 'Subscribe',
-                            listeners: {
-                                click: {
-                                    fn: me.onSubscribeUsersSubmitBtnClick,
-                                    scope: me
-                                }
-                            }
+                            text: 'Subscribe'
                         }
                     ],
                     listeners: {
@@ -59,29 +53,6 @@ Ext.define('Rubedo.view.subscribeUsersWindow', {
         });
 
         me.callParent(arguments);
-    },
-
-    onSubscribeUsersSubmitBtnClick: function(button, e, eOpts) {
-        var form=button.up().getForm();
-        if (form.isValid()){
-            Ext.Ajax.request({
-                url: 'mailing-lists/subscribe-users', 
-                method:'POST',
-                params: {
-                    mlId: Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id"),
-                    userEmailArray:Ext.JSON.encode(form.getValues().emails)
-                },
-                success: function(response){
-                    var answer=Ext.JSON.decode(response.responseText);
-                    if (answer.success){
-                        button.up().up().close();
-                        Ext.getStore("MLUsers").load();
-                    } else {
-                        Ext.Msg.alert("Error","User subscription error");
-                    }
-                }
-            });
-        }
     },
 
     onFormAfterRender: function(component, eOpts) {

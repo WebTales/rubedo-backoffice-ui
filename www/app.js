@@ -347,7 +347,8 @@ Ext.application({
         'emailTypesInterface',
         'newEmailTemplateWindow',
         'subscribeUsersWindow',
-        'sendEmailWindow'
+        'sendEmailWindow',
+        'mlImportWindow'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -119,6 +119,66 @@ Ext.define('Rubedo.controller.MailingListsController', {
         task63.delay(400);
     },
 
+    onMlImportUsersBtnClick: function(button, e, eOpts) {
+        Ext.widget("mlImportWindow").show();
+    },
+
+    onMlImportSubmitBtnClick: function(button, e, eOpts) {
+
+        var form=button.up().getForm();
+        if (form.isValid()){
+            button.up().setLoading(true);
+            form.submit({
+                url: 'mailing-lists/import-users',
+                params: { 
+                    id:Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id")
+                },
+                success: function(form, action) {
+                    var response = Ext.JSON.decode(action.response.responseText);
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+" Users imported");            
+                    button.up().setLoading(false);
+                    Ext.getStore("MLUsers").load();
+                    button.up().up().close();
+
+                },
+                failure: function(form, action) {
+                    button.up().setLoading(false);
+                    var message = "Import error";
+                    try {
+                        var response = Ext.JSON.decode(action.response.responseText);
+                        if (response.message){
+                            message=response.message;
+                        }
+                    } catch(err){}
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, message);
+                    }
+                });
+            }
+    },
+
+    onSubscribeUsersSubmitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            Ext.Ajax.request({
+                url: 'mailing-lists/subscribe-users', 
+                method:'POST',
+                params: {
+                    mlId: Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id"),
+                    userEmailArray:Ext.JSON.encode(form.getValues().emails)
+                },
+                success: function(response){
+                    var answer=Ext.JSON.decode(response.responseText);
+                    if (answer.success){
+                        button.up().up().close();
+                        Ext.getStore("MLUsers").load();
+                    } else {
+                        Ext.Msg.alert("Error","User subscription error");
+                    }
+                }
+            });
+        }
+    },
+
     init: function(application) {
         this.control({
             "#MLMainGrid": {
@@ -147,6 +207,15 @@ Ext.define('Rubedo.controller.MailingListsController', {
             },
             "#mlExportUsersBtn": {
                 click: this.onMlExportUsersBtnClick
+            },
+            "#mlImportUsersBtn": {
+                click: this.onMlImportUsersBtnClick
+            },
+            "#mlImportSubmitBtn": {
+                click: this.onMlImportSubmitBtnClick
+            },
+            "#subscribeUsersSubmitBtn": {
+                click: this.onSubscribeUsersSubmitBtnClick
             }
         });
     }
