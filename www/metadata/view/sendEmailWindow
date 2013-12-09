@@ -38,11 +38,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "fieldLabel": "Mailing list",
                         "name": "mailingList",
                         "allowBlank": false,
-                        "allowOnlyWhitespace": false
+                        "allowOnlyWhitespace": false,
+                        "layout|anchor": "100%"
                     },
                     "designerId": "9927c0e3-f956-49ef-b993-4693ddbdedae",
                     "masterInstanceId": "3dd5f03c-4619-4dc7-bb17-d53b3d011623"
