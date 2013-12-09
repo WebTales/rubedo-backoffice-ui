@@ -251,6 +251,19 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                     xtype: 'datecolumn',
                                     dataIndex: 'createTime',
                                     text: 'Creation'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        try {
+                                            var myDate=value[Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id")].date;
+                                            return(Ext.util.Format.date(Ext.Date.parse(myDate,"U")));
+                                        } catch(err){
+                                            return("");
+                                        }
+                                    },
+                                    dataIndex: 'mailingLists',
+                                    text: 'Subscription'
                                 }
                             ],
                             dockedItems: [
