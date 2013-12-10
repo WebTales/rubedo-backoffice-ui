@@ -193,7 +193,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             id: 'ETAddComponentsBtnGr',
                             headerPosition: 'bottom',
                             title: 'Add components',
-                            columns: 2,
+                            columns: 3,
                             items: [
                                 {
                                     xtype: 'button',
@@ -205,11 +205,19 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    id: 'ETAddSimpleTextBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'text_big',
+                                    scale: 'large',
+                                    text: 'Simple text'
+                                },
+                                {
+                                    xtype: 'button',
                                     id: 'ETAddTextBtn',
                                     iconAlign: 'top',
                                     iconCls: 'text_big',
                                     scale: 'large',
-                                    text: 'Text'
+                                    text: 'Rich text'
                                 }
                             ]
                         },

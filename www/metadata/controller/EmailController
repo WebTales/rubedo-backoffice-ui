@@ -397,7 +397,7 @@
                     "        styles:\"\"\r",
                     "    },\r",
                     "    flex:undefined,\r",
-                    "                        minHeight:26\r",
+                    "    minHeight:26\r",
                     "\r",
                     "});\r",
                     "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newText);\r",
@@ -524,13 +524,24 @@
                 ],
                 "implHandler": [
                     "var me=this;\r",
-                    "var textField=Ext.widget('directRTEField',{\r",
-                    "    itemId:\"textTEditor\",\r",
-                    "    fieldLabel:\"Text\",\r",
-                    "    labelWidth:60,\r",
-                    "    anchor:\"100%\",\r",
-                    "    value:Ext.clone(textComponent.eConfig.html)\r",
-                    "});\r",
+                    "if (textComponent.eConfig.simpleTextMode){\r",
+                    "    var textField=Ext.widget('textareafield',{\r",
+                    "        itemId:\"textTEditor\",\r",
+                    "        fieldLabel:\"Text\",\r",
+                    "        labelWidth:60,\r",
+                    "        grow:true,\r",
+                    "        anchor:\"100%\",\r",
+                    "        value:Ext.clone(textComponent.eConfig.html)\r",
+                    "    });\r",
+                    "} else {\r",
+                    "    var textField=Ext.widget('directRTEField',{\r",
+                    "        itemId:\"textTEditor\",\r",
+                    "        fieldLabel:\"Text\",\r",
+                    "        labelWidth:60,\r",
+                    "        anchor:\"100%\",\r",
+                    "        value:Ext.clone(textComponent.eConfig.html)\r",
+                    "    });\r",
+                    "}\r",
                     "textField.on(\"change\",function(){\r",
                     "    textComponent.eConfig.html=textField.getValue();\r",
                     "    me.syncEComponent(textComponent);\r",
@@ -1142,6 +1153,43 @@
                 "designer|controlQuery": "#sendEmailSubmitBtn"
             },
             "designerId": "e7990ed9-5be7-419c-8744-d0ef6c0a7bc0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onETAddSimpleTextBtnClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var newText=Ext.widget(\"panel\",{\r",
+                    "    eType:\"textComponent\",\r",
+                    "    id:\"emailType-\"+Ext.id(),\r",
+                    "    layout: {\r",
+                    "        type: 'fit'\r",
+                    "    },\r",
+                    "    eConfig:{\r",
+                    "        html:null,\r",
+                    "                       simpleTextMode:true,\r",
+                    "        styles:\"\"\r",
+                    "    },\r",
+                    "    flex:undefined,\r",
+                    "    minHeight:26\r",
+                    "\r",
+                    "});\r",
+                    "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).add(newText);\r",
+                    "me.syncEComponent(newText, true);\r",
+                    "newText.getEl().dom.click();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ETAddSimpleTextBtn"
+            },
+            "designerId": "d3823b2c-405c-41d3-bce4-739827af49a1"
         }
     ]
 }
