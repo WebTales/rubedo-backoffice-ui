@@ -39,6 +39,11 @@ Ext.define('Rubedo.view.GFSFileField', {
         var sizer="";
         if (component.bigMode) {
             var myComponent = Ext.widget("GFSFileFieldComponentBig");
+            myComponent.getComponent("buttonHolder").getComponent("helpBouton").on("click", function(){
+                var myUrl=window.location.protocol+"//"+window.location.host+"/file?file-id="+component.getValue();
+                Ext.Msg.alert("File download url", myUrl);
+
+            });
         } else {
             var myComponent = Ext.widget("GFSFileFieldComponent");
             sizer="&size=thumbnail";
