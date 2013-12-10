@@ -126,6 +126,34 @@ Ext.define('Rubedo.view.CKEField', {
                                     var match = /(?:^|\s)float\s*:\s*(left|right)/i.exec(style),
                                         align = match && match[1];
 
+                                    // Get the hspace and vspace from the style
+
+                                    var match =  /(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px/i.exec(style);
+                                    var vspace = match && match[1];
+                                    var hspace = match && match[2];
+
+                                    if ((!vspace)&&(!hspace)){
+                                        var match =  /(?:^|\s)margin\s*:\s*(\d+)px/i.exec(style);
+                                        var hvspace=match && match[1];
+                                    }
+
+                                    if (hvspace) {
+                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px;?/i, '');
+                                        element.attributes.vspace = hvspace;
+                                        element.attributes.hspace = hvspace;
+                                    }
+
+                                    if (vspace) {
+                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px;?/i, '');
+                                        element.attributes.vspace = vspace;
+                                    }
+
+                                    if (hspace) {
+                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px;?/i, '');
+                                        element.attributes.hspace = hspace;
+                                    }
+
+
                                     if (width) {
                                         element.attributes.style = element.attributes.style.replace(/(?:^|\s)width\s*:\s*(\d+)px;?/i, '');
                                         element.attributes.width = width;
