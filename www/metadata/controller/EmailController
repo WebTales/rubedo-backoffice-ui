@@ -429,7 +429,7 @@
                     "    if (firstTime){\r",
                     "        component.add(Ext.create('Ext.Img'));\r",
                     "    } \r",
-                    "    \r",
+                    "\r",
                     "    if (Ext.isEmpty(component.eConfig.image)){\r",
                     "        component.getComponent(0).setSrc(\"resources/icones/generic/image_add.png\");\r",
                     "    } else {\r",
