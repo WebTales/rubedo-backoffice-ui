@@ -482,7 +482,7 @@
                         "id": "ETAddComponentsBtnGr",
                         "headerPosition": "bottom",
                         "title": "Add components",
-                        "columns": 2
+                        "columns": 3
                     },
                     "designerId": "0fd488bd-c985-4cc0-a49d-8c239fafc602",
                     "customConfigs": [
@@ -517,11 +517,27 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "ETAddSimpleTextBtn",
+                                "iconAlign": "top",
+                                "iconCls": "text_big",
+                                "scale": "large",
+                                "text": "Simple text"
+                            },
+                            "designerId": "8fc07e40-5f04-40a8-918e-119e983a54a6"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
                                 "id": "ETAddTextBtn",
                                 "iconAlign": "top",
                                 "iconCls": "text_big",
                                 "scale": "large",
-                                "text": "Text"
+                                "text": "Rich text"
                             },
                             "designerId": "bc711cbd-86aa-47de-9190-4db8ff7612c0"
                         }

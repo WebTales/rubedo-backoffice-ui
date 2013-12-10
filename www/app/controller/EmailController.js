@@ -296,6 +296,28 @@ Ext.define('Rubedo.controller.EmailController', {
         }
     },
 
+    onETAddSimpleTextBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var newText=Ext.widget("panel",{
+            eType:"textComponent",
+            id:"emailType-"+Ext.id(),
+            layout: {
+                type: 'fit'
+            },
+            eConfig:{
+                html:null,
+                simpleTextMode:true,
+                styles:""
+            },
+            flex:undefined,
+            minHeight:26
+
+        });
+        Ext.getCmp(Ext.getCmp("elementETIdField").getValue()).add(newText);
+        me.syncEComponent(newText, true);
+        newText.getEl().dom.click();
+    },
+
     adaptETEditButtons: function(selectedElement) {
         var me=this;
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
@@ -410,13 +432,24 @@ Ext.define('Rubedo.controller.EmailController', {
 
     displayTextControls: function(textComponent, target) {
         var me=this;
-        var textField=Ext.widget('directRTEField',{
-            itemId:"textTEditor",
-            fieldLabel:"Text",
-            labelWidth:60,
-            anchor:"100%",
-            value:Ext.clone(textComponent.eConfig.html)
-        });
+        if (textComponent.eConfig.simpleTextMode){
+            var textField=Ext.widget('textareafield',{
+                itemId:"textTEditor",
+                fieldLabel:"Text",
+                labelWidth:60,
+                grow:true,
+                anchor:"100%",
+                value:Ext.clone(textComponent.eConfig.html)
+            });
+        } else {
+            var textField=Ext.widget('directRTEField',{
+                itemId:"textTEditor",
+                fieldLabel:"Text",
+                labelWidth:60,
+                anchor:"100%",
+                value:Ext.clone(textComponent.eConfig.html)
+            });
+        }
         textField.on("change",function(){
             textComponent.eConfig.html=textField.getValue();
             me.syncEComponent(textComponent);
@@ -741,6 +774,9 @@ Ext.define('Rubedo.controller.EmailController', {
             },
             "#sendEmailSubmitBtn": {
                 click: this.onSendEmailSubmitBtnClick
+            },
+            "#ETAddSimpleTextBtn": {
+                click: this.onETAddSimpleTextBtnClick
             }
         });
     }
