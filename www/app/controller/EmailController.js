@@ -262,26 +262,37 @@ Ext.define('Rubedo.controller.EmailController', {
     onSendEmailSubmitBtnClick: function(button, e, eOpts) {
         var form=button.up().getForm();
         if (form.isValid()){
-            button.setLoading(true);
-            Ext.Ajax.request({
-                url: 'emails/send',
-                method: 'POST',
-                params: {
-                    list: form.getValues().mailingList,
-                    id:Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected().get("id")
-                },
-                success: function(response){
-                    var text = Ext.JSON.decode(response.responseText);
-                    if (text.success){
-                        Ext.Msg.alert("Success", "Mail sent");
-                        button.setLoading(false);
-                        button.up().up().close();
-                    } else {
-                        Ext.Msg.alert("Error", "Error sending mail");
-                        button.setLoading(false);
-                    }
+
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, "Are you sure you want to send this email to all users subscribed to the selected mailing list ?" ,function(anser){
+                if (anser=="yes"){
+                    button.setLoading(true);
+                    Ext.Ajax.request({
+                        url: 'emails/send',
+                        method: 'POST',
+                        params: {
+                            list: form.getValues().mailingList,
+                            id:Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected().get("id")
+                        },
+                        success: function(response){
+                            var text = Ext.JSON.decode(response.responseText);
+                            if (text.success){
+                                Ext.Msg.alert("Success", "Mail sent");
+                                button.setLoading(false);
+                                button.up().up().close();
+                            } else {
+                                Ext.Msg.alert("Error", "Error sending mail");
+                                button.setLoading(false);
+                            }
+                        }
+                    }); 
+
                 }
-            });
+            }
+
+            );
+
+
+
         }
     },
 
@@ -299,7 +310,7 @@ Ext.define('Rubedo.controller.EmailController', {
                 me.displayBodyControls();
             } else if (thing.eType=="row"){
                 Ext.getCmp("eTEditControl").setTitle("Row");
-                if(me.calculateRemainingRowWidth(thing)>=30){
+                if(me.calculateRemainingRowWidth(thing)>=10){
                     Ext.getCmp("newETColBtn").enable();
                 }
                 Ext.getCmp("moveUPETBtn").enable();
