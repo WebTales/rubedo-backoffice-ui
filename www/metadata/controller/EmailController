@@ -615,7 +615,7 @@
                     "});\r",
                     "bgColorEdit.on(\"change\", function(){\r",
                     "    if (bgColorEdit.isValid()){\r",
-                    "    col.eConfig.bgColor=bgColorEdit.getValue();\r",
+                    "        col.eConfig.bgColor=bgColorEdit.getValue();\r",
                     "    }\r",
                     "});\r",
                     "container.add(bgColorEdit);\r",

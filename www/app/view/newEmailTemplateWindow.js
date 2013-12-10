@@ -128,7 +128,7 @@ Ext.define('Rubedo.view.newEmailTemplateWindow', {
                             xtype: 'button',
                             anchor: '1',
                             id: 'newETSubmitBtn',
-                            text: 'Create this new template'
+                            text: 'Create this new email'
                         }
                     ]
                 }
