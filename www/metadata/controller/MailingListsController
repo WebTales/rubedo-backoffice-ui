@@ -352,6 +352,27 @@
                 "designer|controlQuery": "#subscribeUsersSubmitBtn"
             },
             "designerId": "e7f00a53-ca32-4bdc-a735-c760f9145b0f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMLMainGridItemDblClick",
+                "implHandler": [
+                    "if (ACL.interfaceRights['read.ui.users']){\r",
+                    "    Rubedo.controller.UserTypesController.prototype.prepareContext(record.get(\"id\"),record.get(\"typeId\"));\r",
+                    "}"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#MLUsersGrid"
+            },
+            "designerId": "16bb95a0-942d-46d7-9b07-db3ddaeb0ffe"
         }
     ]
 }

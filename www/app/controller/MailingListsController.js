@@ -179,6 +179,12 @@ Ext.define('Rubedo.controller.MailingListsController', {
         }
     },
 
+    onMLMainGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        if (ACL.interfaceRights['read.ui.users']){
+            Rubedo.controller.UserTypesController.prototype.prepareContext(record.get("id"),record.get("typeId"));
+        }
+    },
+
     init: function(application) {
         this.control({
             "#MLMainGrid": {
@@ -203,7 +209,8 @@ Ext.define('Rubedo.controller.MailingListsController', {
                 click: this.onMlRemoveUserClick
             },
             "#MLUsersGrid": {
-                selectionchange: this.onMLUsersGridSelectionChange
+                selectionchange: this.onMLUsersGridSelectionChange,
+                itemdblclick: this.onMLMainGridItemDblClick
             },
             "#mlExportUsersBtn": {
                 click: this.onMlExportUsersBtnClick
