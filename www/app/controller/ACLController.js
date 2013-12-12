@@ -96,7 +96,8 @@ Ext.define('Rubedo.controller.ACLController', {
                 "read.ui.emails":false,
                 "read.ui.emailTemplates":false,
                 "write.ui.emails":false,
-                "write.ui.emailTemplates":false
+                "write.ui.emailTemplates":false,
+                "read.ui.applicationLogs":false
             }
         });
         Ext.Ajax.on("beforerequest", function(conn, options){
