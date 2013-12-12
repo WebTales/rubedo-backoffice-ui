@@ -568,7 +568,7 @@
                             "userConfig": {
                                 "fn": "onButtonRender",
                                 "implHandler": [
-                                    "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])){\r",
+                                    "if ((!ACL.interfaceRights[\"read.ui.sites\"])&&(!ACL.interfaceRights[\"read.ui.masks\"])&&(!ACL.interfaceRights[\"read.ui.contentTypes\"])&&(!ACL.interfaceRights[\"read.ui.damTypes\"])&&(!ACL.interfaceRights[\"read.ui.userTypes\"])&&(!ACL.interfaceRights[\"read.ui.customThemes\"])&&(!ACL.interfaceRights[\"read.ui.emailTemplates\"])){\r",
                                     "    component.hide();\r",
                                     "}"
                                 ],
@@ -638,7 +638,7 @@
                             "userConfig": {
                                 "fn": "onButtonRender1",
                                 "implHandler": [
-                                    "if ((!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])){\r",
+                                    "if ((!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])&&(!ACL.interfaceRights[\"read.ui.mailingLists\"])&&(!ACL.interfaceRights[\"read.ui.languages\"])&&(!ACL.interfaceRights[\"read.ui.applicationLogs\"])){\r",
                                     "    component.hide();\r",
                                     "}"
                                 ],
