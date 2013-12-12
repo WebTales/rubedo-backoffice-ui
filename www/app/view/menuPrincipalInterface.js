@@ -391,13 +391,13 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     },
 
     onButtonRender: function(component, eOpts) {
-        if ((!ACL.interfaceRights["read.ui.sites"])&&(!ACL.interfaceRights["read.ui.masks"])&&(!ACL.interfaceRights["read.ui.contentTypes"])&&(!ACL.interfaceRights["read.ui.damTypes"])){
+        if ((!ACL.interfaceRights["read.ui.sites"])&&(!ACL.interfaceRights["read.ui.masks"])&&(!ACL.interfaceRights["read.ui.contentTypes"])&&(!ACL.interfaceRights["read.ui.damTypes"])&&(!ACL.interfaceRights["read.ui.userTypes"])&&(!ACL.interfaceRights["read.ui.customThemes"])&&(!ACL.interfaceRights["read.ui.emailTemplates"])){
             component.hide();
         }
     },
 
     onButtonRender1: function(component, eOpts) {
-        if ((!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])){
+        if ((!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
             component.hide();
         }
     }
