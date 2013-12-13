@@ -639,6 +639,7 @@
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
             "localizable": false,
+            "useTodayDef":false,
             "searchable": false,
             "multivalued": false,
             "tooltip": "",
@@ -689,6 +690,13 @@
                 "config": {
                     "fieldLabel": "#ext-gen1144#",
                     "name": "minValue"
+                }
+            },
+            {
+                "type": "Ext.form.field.Checkbox",
+                "config": {
+                    "fieldLabel": "Use today",
+                    "name": "useTodayDef"
                 }
             },
             {

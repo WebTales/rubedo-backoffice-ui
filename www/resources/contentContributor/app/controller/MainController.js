@@ -294,6 +294,9 @@ Ext.define('ContentContributor.controller.MainController', {
             var newField = Ext.create(field.cType, configurator);
         }
         var wrapping= Ext.widget("fieldWrapper");
+        if (configurator.useTodayDef){
+        	newField.setValue(new Date());
+        }
         newField.anchor = '90%';
         newField.style = '{float:left;}';
         wrapping.add(newField);

@@ -120,6 +120,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var nouvChamp = Ext.create(donnees.cType, configurateur);
             }
             nouvChamp.config=Ext.clone(donnees.config);
+            if (nouvChamp.config.useTodayDef){
+                nouvChamp.setValue(new Date());
+            }
             //begin temporary fix
             if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
             //end temporary fix
