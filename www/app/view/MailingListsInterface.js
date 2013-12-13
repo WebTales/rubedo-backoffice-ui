@@ -88,7 +88,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             disabled: true,
                             id: 'mlUsersManager',
                             headerPosition: 'bottom',
-                            title: 'Manage users',
+                            title: 'Manage subscribed users',
                             columns: 4,
                             items: [
                                 {
@@ -250,7 +250,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                         {
                             xtype: 'gridpanel',
                             id: 'MLUsersGrid',
-                            title: 'Users',
+                            title: 'Subscribed users',
                             forceFit: true,
                             store: 'MLUsers',
                             columns: [
@@ -290,6 +290,55 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                     width: 360,
                                     displayInfo: true,
                                     store: 'MLUsers'
+                                }
+                            ],
+                            selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                            })
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            id: 'MLUsersGrid1',
+                            title: 'Unsubscribed users',
+                            forceFit: true,
+                            store: 'MLUnsubscribedUsers',
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'name',
+                                    text: 'Name'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'email',
+                                    text: 'Email'
+                                },
+                                {
+                                    xtype: 'datecolumn',
+                                    dataIndex: 'createTime',
+                                    text: 'Creation'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        try {
+                                            var myDate=value[Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id")].date;
+                                            return(Ext.util.Format.date(Ext.Date.parse(myDate,"U")));
+                                        } catch(err){
+                                            return("");
+                                        }
+                                    },
+                                    dataIndex: 'mailingLists',
+                                    text: 'Unsubscription'
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'pagingtoolbar',
+                                    dock: 'bottom',
+                                    width: 360,
+                                    displayInfo: true,
+                                    store: 'MLUnsubscribedUsers'
                                 }
                             ],
                             selModel: Ext.create('Ext.selection.CheckboxModel', {
