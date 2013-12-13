@@ -309,7 +309,7 @@
                                     "    var record =Ext.getCmp(\"groupsGrid\").getSelectionModel().getLastSelected();\r",
                                     "    record.beginEdit();\r",
                                     "    record.set(form.getValues());\r",
-                                    "    record.set(form2.getValues());\r",
+                                    "    record.set(form2.getFieldValues());\r",
                                     "    record.endEdit();\r",
                                     "}"
                                 ],
@@ -1112,7 +1112,8 @@
                                 "labelWidth": 220,
                                 "name": "inheritWorkspace",
                                 "boxLabel": "",
-                                "inputValue": "true"
+                                "inputValue": null,
+                                "uncheckedValue": null
                             },
                             "designerId": "8e91354c-9d6a-4431-b56c-58e22b25880b",
                             "customConfigs": [

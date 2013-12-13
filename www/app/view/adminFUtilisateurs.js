@@ -406,7 +406,6 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                     labelWidth: 220,
                                     name: 'inheritWorkspace',
                                     boxLabel: '',
-                                    inputValue: 'true',
                                     listeners: {
                                         change: {
                                             fn: me.onCheckboxfieldChange1,
@@ -449,7 +448,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
             var record =Ext.getCmp("groupsGrid").getSelectionModel().getLastSelected();
             record.beginEdit();
             record.set(form.getValues());
-            record.set(form2.getValues());
+            record.set(form2.getFieldValues());
             record.endEdit();
         }
     },
