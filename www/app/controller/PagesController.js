@@ -143,60 +143,64 @@ Ext.define('Rubedo.controller.PagesController', {
             Ext.resumeLayouts();
             Ext.getCmp("pageMaskDisplayBtn").setText(Rubedo.RubedoAutomatedElementsLoc.associatedMaskText+" : "+myMask.get("text"));
             Ext.getCmp("pageMaskDisplayBtn").show();
-            Ext.getCmp("mainPageAttributeForm").getForm().loadRecord(record);
-            Ext.getCmp("pagesDLSToolbar").recievei18n(record.get('i18n'),record.get('locale'),record.get("nativeLanguage"));
-            Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
-                field.setReadOnly(false);
-            });
-            Ext.Ajax.request({
-                url: 'xhr-get-page-url',
-                params: {
-                    "page-id": record.get("id"),
-                    "locale": Ext.getCmp("pagesDLSToolbar").getComponent(0).getValue()
-                },
-                success: function(response){
-                    var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                    Ext.getCmp("pagesInternalPreview").add(Ext.widget("component",{
-                        autoEl: {
-                            tag: 'iframe',
-                            src: targetedUrl+"?preview=1"
-                        }
-                    }));
-                },
-                failure:function(){
-                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
-                }
-            });
-
-            Ext.getCmp("pagePreviewTextItem").setText(Rubedo.RubedoAutomatedElementsLoc.pagePreviewText+" "+Ext.Date.format(new Date(), 'F j, Y, G:i '));
-            var metaBox = Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
-            var values= record.getData();
-            values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);
-            values.derniereModification= Ext.Date.format(values.lastUpdateTime, Ext.Date.defaultFormat);
-            metaBox.update(values);
-            metaBox.show();
-            Ext.getCmp("addPageBtn").enable();
-            if((!ACL.interfaceRights["write.ui.pages"])||(record.get("readOnly"))){
-                Ext.getCmp("removePageBtn").disable();
-                Ext.getCmp("addPageBtn").disable();
-                Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
-                Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[2].disable();
+            var valueSetter=Ext.clone(record.getData());
+            try {
+                Ext.apply(valueSetter, valueSetter.i18n[record.get('locale')]);
+            } catch(err) {console.log("page i18n fail");}
+                Ext.getCmp("mainPageAttributeForm").getForm().setValues(valueSetter);
+                Ext.getCmp("pagesDLSToolbar").recievei18n(record.get('i18n'),record.get('locale'),record.get("nativeLanguage"));
                 Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
-                    field.setReadOnly(true);
+                    field.setReadOnly(false);
                 });
+                Ext.Ajax.request({
+                    url: 'xhr-get-page-url',
+                    params: {
+                        "page-id": record.get("id"),
+                        "locale": Ext.getCmp("pagesDLSToolbar").getComponent(0).getValue()
+                    },
+                    success: function(response){
+                        var targetedUrl = Ext.JSON.decode(response.responseText).url;
+                        Ext.getCmp("pagesInternalPreview").add(Ext.widget("component",{
+                            autoEl: {
+                                tag: 'iframe',
+                                src: targetedUrl+"?preview=1"
+                            }
+                        }));
+                    },
+                    failure:function(){
+                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.pageURLRecoveryError);
+                    }
+                });
+
+                Ext.getCmp("pagePreviewTextItem").setText(Rubedo.RubedoAutomatedElementsLoc.pagePreviewText+" "+Ext.Date.format(new Date(), 'F j, Y, G:i '));
+                var metaBox = Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
+                var values= record.getData();
+                values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);
+                values.derniereModification= Ext.Date.format(values.lastUpdateTime, Ext.Date.defaultFormat);
+                metaBox.update(values);
+                metaBox.show();
+                Ext.getCmp("addPageBtn").enable();
+                if((!ACL.interfaceRights["write.ui.pages"])||(record.get("readOnly"))){
+                    Ext.getCmp("removePageBtn").disable();
+                    Ext.getCmp("addPageBtn").disable();
+                    Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
+                    Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[2].disable();
+                    Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
+                        field.setReadOnly(true);
+                    });
+                }
+            } else {
+                Ext.getCmp("addPageBtn").enable();
+                Ext.getCmp("removePageBtn").disable();
+                Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
+                Ext.getCmp("mainPageEdition").removeAll();
+                me.resetInterface();
+                Ext.getCmp("addPageBtn").enable();
             }
-        } else {
-            Ext.getCmp("addPageBtn").enable();
-            Ext.getCmp("removePageBtn").disable();
-            Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
-            Ext.getCmp("mainPageEdition").removeAll();
-            me.resetInterface();
-            Ext.getCmp("addPageBtn").enable();
-        }
-        var arButtons = [ ];
-        me.breadcrumbBuilder(record,arButtons);
-        Ext.getCmp("pageTreeBreadcrumb").removeAll();
-        Ext.getCmp("pageTreeBreadcrumb").add(arButtons.reverse());
+            var arButtons = [ ];
+            me.breadcrumbBuilder(record,arButtons);
+            Ext.getCmp("pageTreeBreadcrumb").removeAll();
+            Ext.getCmp("pageTreeBreadcrumb").add(arButtons.reverse());
     },
 
     moveElementUp: function(button, e, eOpts) {
