@@ -33,6 +33,8 @@ Ext.define('Rubedo.controller.MailingListsController', {
             Ext.getCmp("MLPropsForm").up().enable();
             Ext.getStore("MLUsers").getProxy().extraParams.id=selected[0].get("id");
             Ext.getStore("MLUsers").loadPage(1);
+            Ext.getStore("MLUnsubscribedUsers").getProxy().extraParams.id=selected[0].get("id");
+            Ext.getStore("MLUnsubscribedUsers").loadPage(1);
             Ext.getCmp("MLPropsForm").getForm().loadRecord(selected[0]);
             if ((selected[0].get("readOnly"))||(!ACL.interfaceRights["write.ui.mailingLists"])){
                 Ext.Array.forEach(Ext.getCmp("MLPropsForm").query("field"), function(field){
@@ -95,6 +97,7 @@ Ext.define('Rubedo.controller.MailingListsController', {
                 var answer=Ext.JSON.decode(response.responseText);
                 if (answer.success){
                     Ext.getStore("MLUsers").load();
+                    Ext.getStore("MLUnsubscribedUsers").load();
                 } else {
                     Ext.Msg.alert("Error","User unsubscription error");
                 }

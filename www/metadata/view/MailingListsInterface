@@ -171,7 +171,7 @@
                         "disabled": true,
                         "id": "mlUsersManager",
                         "headerPosition": "bottom",
-                        "title": "Manage users",
+                        "title": "Manage subscribed users",
                         "columns": 4
                     },
                     "designerId": "566ec6c8-947d-4770-92cc-d93e1d313236",
@@ -613,7 +613,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "MLUsersGrid",
-                        "title": "Users",
+                        "title": "Subscribed users",
                         "forceFit": true,
                         "store": "MLUsers"
                     },
@@ -743,6 +743,148 @@
                             },
                             "codeClass": "Ext.selection.CheckboxModel",
                             "designerId": "5ac8f812-cc8e-4da2-815b-840394134c30"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "MLUsersGrid1",
+                        "title": "Unsubscribed users",
+                        "forceFit": true,
+                        "store": "MLUnsubscribedUsers"
+                    },
+                    "designerId": "0031cc66-0370-4d07-9216-f3fe32941508",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "text": "Name"
+                            },
+                            "designerId": "467a613c-86b8-4137-9aca-adb18af982c1"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "email",
+                                "text": "Email"
+                            },
+                            "designerId": "4348b9cf-cd55-4bfe-b706-c09eb2c3ffd7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "createTime",
+                                "text": "Creation"
+                            },
+                            "designerId": "6582203e-dedf-4f8a-a3c3-3af66b340929"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "mailingLists",
+                                "text": "Unsubscription"
+                            },
+                            "designerId": "178e46f0-3513-4672-9419-48db037d7e99",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "try {\r",
+                                            "    var myDate=value[Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\")].date;\r",
+                                            "    return(Ext.util.Format.date(Ext.Date.parse(myDate,\"U\")));\r",
+                                            "} catch(err){\r",
+                                            "    return(\"\");\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "81742b9b-7ffd-47db-9a5f-2b1298144022"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "e1b2ff14-c875-4469-bf72-6196fcfcbe80"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "179b9c5f-a55f-4afa-b2d7-6fc89f33f8e4"
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "width": 360,
+                                "displayInfo": true,
+                                "store": "MLUnsubscribedUsers"
+                            },
+                            "designerId": "4f8824fb-2a70-4bda-89cb-ddf776131019"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "designerId": "13025f2c-f80a-4f81-bc40-68ed30289f69"
                         }
                     ]
                 }

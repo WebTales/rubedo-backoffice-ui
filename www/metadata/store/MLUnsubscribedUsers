@@ -1,0 +1,69 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": null,
+        "usedCollection": null,
+        "autoLoad": false,
+        "model": "userDataModel",
+        "storeId": "MLUnsubscribedUsers",
+        "designer|userClassName": "MLUnsubscribedUsers",
+        "designer|userAlias": "MLUnsubscribedUsers",
+        "pageSize": 50
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "62309158-ce75-444a-88ce-e61ae5bdb727",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "     read: 'mailing-lists/get-unsubscribed-users',\r",
+                    "\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "777bcaab-5ec3-4e49-8d54-be0ea04d4106",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "db9f625e-f5ab-40c8-b693-dd75be6d907d"
+                }
+            ]
+        }
+    ]
+}

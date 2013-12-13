@@ -182,7 +182,8 @@ Ext.application({
         'QuerySim',
         'EmailTemplates',
         'EmailModels',
-        'MLUsers'
+        'MLUsers',
+        'MLUnsubscribedUsers'
     ],
     views: [
         'MyGridPanel3',
