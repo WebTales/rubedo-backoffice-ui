@@ -1107,7 +1107,7 @@
                     "    var nouvChamp = Ext.create(donnees.cType, configurateur);\r",
                     "}\r",
                     "nouvChamp.config=Ext.clone(donnees.config);\r",
-                    "   \r",
+                    "\r",
                     "//begin temporary fix\r",
                     "if(configurateur.tooltip==\"help text\"){configurateur.tooltip=\"\";}\r",
                     "//end temporary fix\r",
