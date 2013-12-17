@@ -58,7 +58,7 @@ Ext.define('Rubedo.view.CKEField', {
         { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
         { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink','-','Anchor' ] },
         '/',
-        { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak', 'Iframe' ] }
+        { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak' ] }
         ];
         if (component.CKETBConfig=="Standard"){
             myTBConfig=[
