@@ -149,6 +149,7 @@
                     "    store.suspendAutoSync();\r",
                     "    target.appendChild({\r",
                     "        name:nameField.getValue(),\r",
+                    "        workspace:Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"defaultWorkspace\"),\r",
                     "        members: [ ],\r",
                     "        rights: { },\r",
                     "        expandable:false\r",
