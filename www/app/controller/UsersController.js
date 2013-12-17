@@ -101,6 +101,7 @@ Ext.define('Rubedo.controller.UsersController', {
             store.suspendAutoSync();
             target.appendChild({
                 name:nameField.getValue(),
+                workspace:Ext.getStore("CurrentUserDataStore").getRange()[0].get("defaultWorkspace"),
                 members: [ ],
                 rights: { },
                 expandable:false
