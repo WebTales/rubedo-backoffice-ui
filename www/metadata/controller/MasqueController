@@ -2388,8 +2388,8 @@
                 ],
                 "implHandler": [
                     "Ext.Array.forEach(col.items.items, function(item, index){\r",
-                    "                if (index===0){item.orderValue=100;} else {item.orderValue=(index+1)*100;}\r",
-                    "            });"
+                    "    if (index===0){item.orderValue=100;} else {item.orderValue=(index+1)*100;}\r",
+                    "});"
                 ]
             },
             "designerId": "24a0279b-f5b8-4e62-a5c3-f2f1af7ac8a4"
