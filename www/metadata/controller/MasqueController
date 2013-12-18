@@ -264,7 +264,7 @@
                     "    target.up().doLayout();\r",
                     "    if (offsetF.getValue()>0){ \r",
                     "        if (Ext.isEmpty(myOffset)) {\r",
-                    "            myOffset=Ext.widget(\"container\",{flex:0,style:\"{background-image:url(resources/images/stripes.png);}\"});\r",
+                    "            myOffset=Ext.widget(\"container\",{flex:0,reorderable:false,style:\"{background-image:url(resources/images/stripes.png);}\"});\r",
                     "            target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);\r",
                     "\r",
                     "\r",
@@ -487,6 +487,7 @@
                     "        eTitle:row.eTitle,\r",
                     "        id:row.id,\r",
                     "        i18n:row.i18n,\r",
+                    "        plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
                     "        elementStyle:row.elementStyle,\r",
                     "        elementTag:row.elementTag,\r",
                     "        displayRow:row.displayRow,\r",
@@ -512,6 +513,7 @@
                     "        if (column.offset>0) {\r",
                     "            newRow.add(Ext.widget('container', {\r",
                     "                flex:column.offset,\r",
+                    "                reorderable:false,\r",
                     "                style:\"{background-image:url(resources/images/stripes.png);}\"\r",
                     "            }));\r",
                     "            eolWidth=eolWidth-column.offset;\r",
@@ -522,6 +524,7 @@
                     "            header:false,\r",
                     "            flex:column.span,\r",
                     "            final:isFinalCol,\r",
+                    "            plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
                     "            mType:'col',\r",
                     "            id:column.id,\r",
                     "            i18n:column.i18n,\r",
@@ -539,6 +542,9 @@
                     "                align: 'stretch'\r",
                     "            }\r",
                     "        });\r",
+                    "        newCol.plugins[0].on(\"Drop\",function(){\r",
+                    "            me.recalculateBlockOrder(newCol);\r",
+                    "        });\r",
                     "        if ((its>0)&&(column.isTerminal===false)) {\r",
                     "            rFlex=Ext.Array.max([rFlex,column.rows.length]);\r",
                     "            me.masqueRestit(column.rows,its-1,newCol);    \r",
@@ -550,7 +556,8 @@
                     "    });\r",
                     "    newRow.add(Ext.widget(\"container\",{\r",
                     "        flex:eolWidth,\r",
-                    "        itemId:\"eol\"\r",
+                    "        itemId:\"eol\",\r",
+                    "        reorderable:false\r",
                     "    }));\r",
                     "    if (Ext.isEmpty(row.height)) {\r",
                     "        newRow.flex=rFlex;\r",
@@ -1278,6 +1285,7 @@
             "userConfig": {
                 "fn": "addCol",
                 "implHandler": [
+                    "var me=this;\r",
                     "Ext.Ajax.request({\r",
                     "    url: 'xhr-get-mongo-id',\r",
                     "    params: { },\r",
@@ -1299,6 +1307,7 @@
                     "                elementTag:\"div\",\r",
                     "                elementStyle:\"\",\r",
                     "                final:isFinalCol,\r",
+                    "                plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
                     "                id:servedId,\r",
                     "                eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,\r",
                     "                responsive:{\r",
@@ -1313,6 +1322,9 @@
                     "                    align: 'stretch'\r",
                     "                }\r",
                     "            });\r",
+                    "            newCol.plugins[0].on(\"Drop\",function(){\r",
+                    "            me.recalculateBlockOrder(newCol);\r",
+                    "        });\r",
                     "            myEol.flex=myEol.flex-1;\r",
                     "            cible.insert(cible.items.items.length-1,newCol);\r",
                     "            if (myEol.flex===0){\r",
@@ -1359,6 +1371,7 @@
                     "    elementStyle:\"\",\r",
                     "    displayRow:true,\r",
                     "    displayRowFluid:false,\r",
+                    "    plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
                     "    includeContainer:false,\r",
                     "    includeContainerFluid:false,\r",
                     "    eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,\r",
@@ -1373,7 +1386,7 @@
                     "        align: 'stretch'\r",
                     "    }\r",
                     "});\r",
-                    "row.add(Ext.widget('container', {flex:12,itemId:\"eol\"}));\r",
+                    "row.add(Ext.widget('container', {flex:12,itemId:\"eol\", reorderable:false}));\r",
                     "cible.insert(cible.items.items.length,row);\r",
                     "Ext.getCmp(\"newBloc\").disable();\r",
                     "row.getEl().dom.click();"
@@ -2360,6 +2373,26 @@
                 "designer|controlQuery": "#mainColumnIdField"
             },
             "designerId": "5f8525ea-37e5-4e36-b297-22cdeb2bb375"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "recalculateBlockOrder",
+                "designer|params": [
+                    "col"
+                ],
+                "implHandler": [
+                    "Ext.Array.forEach(col.items.items, function(item, index){\r",
+                    "                if (index===0){item.orderValue=100;} else {item.orderValue=(index+1)*100;}\r",
+                    "            });"
+                ]
+            },
+            "designerId": "24a0279b-f5b8-4e62-a5c3-f2f1af7ac8a4"
         }
     ]
 }

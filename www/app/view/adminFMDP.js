@@ -97,7 +97,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                             id: 'MaskZoomControlSlider',
                             width: 400,
                             fieldLabel: 'Niveau de zoom',
-                            value: 924,
+                            value: 600,
                             maxValue: 2000,
                             minValue: 200,
                             useTips: false,
@@ -447,7 +447,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                 type: 'vbox'
                             },
                             items: [
-                                {
+                                me.processMasqueEdition({
                                     xtype: 'panel',
                                     border: 0,
                                     height: 600,
@@ -456,7 +456,7 @@ Ext.define('Rubedo.view.adminFMDP', {
                                         align: 'stretch',
                                         type: 'vbox'
                                     }
-                                }
+                                })
                             ]
                         },
                         {
@@ -517,6 +517,11 @@ Ext.define('Rubedo.view.adminFMDP', {
         config.tpl=[
         '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {autore}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
+        return config;
+    },
+
+    processMasqueEdition: function(config) {
+        config.plugins=[Ext.create("Ext.ux.BoxReorderer")];
         return config;
     },
 

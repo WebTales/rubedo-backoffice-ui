@@ -214,7 +214,7 @@
                         "id": "MaskZoomControlSlider",
                         "width": 400,
                         "fieldLabel": "Niveau de zoom",
-                        "value": 924,
+                        "value": 600,
                         "maxValue": 2000,
                         "minValue": 200,
                         "useTips": false
@@ -1178,7 +1178,28 @@
                                 "layout": "vbox",
                                 "bodyStyle": null
                             },
-                            "designerId": "fa467ac8-e4fe-4e4b-aec3-b86b75d58cbb"
+                            "designerId": "fa467ac8-e4fe-4e4b-aec3-b86b75d58cbb",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processMasqueEdition",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "b117c2a0-6e91-49c4-ae2f-64375d42b1a8"
+                                }
+                            ]
                         }
                     ]
                 },
