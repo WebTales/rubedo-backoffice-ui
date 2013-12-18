@@ -723,6 +723,7 @@ Ext.define('Rubedo.controller.MasqueController', {
     },
 
     addCol: function(button, e, eOpts) {
+        var me=this;
         Ext.Ajax.request({
             url: 'xhr-get-mongo-id',
             params: { },
@@ -744,6 +745,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         elementTag:"div",
                         elementStyle:"",
                         final:isFinalCol,
+                        plugins:[Ext.create("Ext.ux.BoxReorderer")],
                         id:servedId,
                         eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,
                         responsive:{
@@ -757,6 +759,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                             type: 'vbox',
                             align: 'stretch'
                         }
+                    });
+                    newCol.plugins[0].on("Drop",function(){
+                        me.recalculateBlockOrder(newCol);
                     });
                     myEol.flex=myEol.flex-1;
                     cible.insert(cible.items.items.length-1,newCol);
@@ -789,6 +794,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             elementStyle:"",
             displayRow:true,
             displayRowFluid:false,
+            plugins:[Ext.create("Ext.ux.BoxReorderer")],
             includeContainer:false,
             includeContainerFluid:false,
             eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,
@@ -803,7 +809,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 align: 'stretch'
             }
         });
-        row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
+        row.add(Ext.widget('container', {flex:12,itemId:"eol", reorderable:false}));
         cible.insert(cible.items.items.length,row);
         Ext.getCmp("newBloc").disable();
         row.getEl().dom.click();
@@ -1439,7 +1445,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             target.up().doLayout();
             if (offsetF.getValue()>0){ 
                 if (Ext.isEmpty(myOffset)) {
-                    myOffset=Ext.widget("container",{flex:0,style:"{background-image:url(resources/images/stripes.png);}"});
+                    myOffset=Ext.widget("container",{flex:0,reorderable:false,style:"{background-image:url(resources/images/stripes.png);}"});
                     target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);
 
 
@@ -1586,6 +1592,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 eTitle:row.eTitle,
                 id:row.id,
                 i18n:row.i18n,
+                plugins:[Ext.create("Ext.ux.BoxReorderer")],
                 elementStyle:row.elementStyle,
                 elementTag:row.elementTag,
                 displayRow:row.displayRow,
@@ -1611,6 +1618,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 if (column.offset>0) {
                     newRow.add(Ext.widget('container', {
                         flex:column.offset,
+                        reorderable:false,
                         style:"{background-image:url(resources/images/stripes.png);}"
                     }));
                     eolWidth=eolWidth-column.offset;
@@ -1621,6 +1629,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     header:false,
                     flex:column.span,
                     final:isFinalCol,
+                    plugins:[Ext.create("Ext.ux.BoxReorderer")],
                     mType:'col',
                     id:column.id,
                     i18n:column.i18n,
@@ -1638,6 +1647,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                         align: 'stretch'
                     }
                 });
+                newCol.plugins[0].on("Drop",function(){
+                    me.recalculateBlockOrder(newCol);
+                });
                 if ((its>0)&&(column.isTerminal===false)) {
                     rFlex=Ext.Array.max([rFlex,column.rows.length]);
                     me.masqueRestit(column.rows,its-1,newCol);    
@@ -1649,7 +1661,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             });
             newRow.add(Ext.widget("container",{
                 flex:eolWidth,
-                itemId:"eol"
+                itemId:"eol",
+                reorderable:false
             }));
             if (Ext.isEmpty(row.height)) {
                 newRow.flex=rFlex;
@@ -1790,6 +1803,12 @@ Ext.define('Rubedo.controller.MasqueController', {
 
         });
         return(newBlocks);
+    },
+
+    recalculateBlockOrder: function(col) {
+        Ext.Array.forEach(col.items.items, function(item, index){
+            if (index===0){item.orderValue=100;} else {item.orderValue=(index+1)*100;}
+        });
     },
 
     init: function(application) {
