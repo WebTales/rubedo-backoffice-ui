@@ -966,7 +966,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         type: 'vbox'
                                     },
                                     items: [
-                                        {
+                                        me.processLayoutEditionPanel({
                                             xtype: 'panel',
                                             height: 340,
                                             id: 'layoutEditionPanel',
@@ -975,7 +975,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                 type: 'vbox'
                                             },
                                             title: ''
-                                        }
+                                        })
                                     ]
                                 },
                                 {
@@ -1012,7 +1012,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     id: 'MaskZoomControlSlider2',
                                                     fieldLabel: 'Niveau de zoom',
                                                     labelWidth: 60,
-                                                    value: 924,
+                                                    value: 340,
                                                     maxValue: 2000,
                                                     minValue: 200,
                                                     useTips: false,
@@ -1087,6 +1087,11 @@ Ext.define('Rubedo.view.adminFTDC', {
         config.store=store;
         config.valueField="value";
         config.displayField="name";
+        return config;
+    },
+
+    processLayoutEditionPanel: function(config) {
+        config.plugins=[Ext.create("Ext.ux.BoxReorderer")];
         return config;
     },
 

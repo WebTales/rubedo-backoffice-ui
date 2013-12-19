@@ -2641,7 +2641,28 @@
                                         "layout": "vbox",
                                         "title": ""
                                     },
-                                    "designerId": "70013f0e-f5fd-418e-ae30-7a20c4ea50de"
+                                    "designerId": "70013f0e-f5fd-418e-ae30-7a20c4ea50de",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processLayoutEditionPanel",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "470a4aa1-c231-466d-8ea6-e6a19ec1ec1c"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -2733,7 +2754,7 @@
                                                 "width": null,
                                                 "fieldLabel": "Niveau de zoom",
                                                 "labelWidth": 60,
-                                                "value": 924,
+                                                "value": 340,
                                                 "maxValue": 2000,
                                                 "minValue": 200,
                                                 "useTips": false
