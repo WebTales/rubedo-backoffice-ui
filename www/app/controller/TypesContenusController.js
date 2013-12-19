@@ -1295,6 +1295,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             mType:"row",
             flex:1,
             id:"CTLayout-"+Ext.id(),
+            plugins:[Ext.create("Ext.ux.BoxReorderer")],
             elementStyle:"",
             responsive:{
                 phone:true,
@@ -1307,7 +1308,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 align: 'stretch'
             }
         });
-        row.add(Ext.widget('container', {flex:12,itemId:"eol"}));
+        row.add(Ext.widget('container', {flex:12,reorderable:false,itemId:"eol"}));
         cible.insert(cible.items.items.length,row);
         Ext.getCmp('layoutElementIdField').setValue(row.getId());
     },
@@ -1324,6 +1325,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 elementStyle:"",
                 final:isFinalCol,
                 id:"CTLayout-"+Ext.id(),
+                plugins:[Ext.create("Ext.ux.BoxReorderer")],
                 responsive:{
                     phone:true,
                     tablet:true,
@@ -1830,7 +1832,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             target.up().doLayout();
             if (offsetF.getValue()>0){ 
                 if (Ext.isEmpty(myOffset)) {
-                    myOffset=Ext.widget("container",{flex:0,style:"{background-image:url(resources/images/stripes.png);}"});
+                    myOffset=Ext.widget("container",{flex:0,reorderable: false,style:"{background-image:url(resources/images/stripes.png);}"});
                     target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);
 
 
@@ -1894,6 +1896,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var newRow = Ext.widget('panel', {
                 header:false,
                 mType:"row",
+                plugins:[Ext.create("Ext.ux.BoxReorderer")],
                 elementStyle:row.elementStyle,
                 responsive:row.responsive,
                 classHTML:row.classHTML,
@@ -1910,6 +1913,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 if (column.offset>0) {
                     newRow.add(Ext.widget('container', {
                         flex:column.offset,
+                        reorderable:false,
                         style:"{background-image:url(resources/images/stripes.png);}"
                     }));
                     eolWidth=eolWidth-column.offset;
@@ -1919,6 +1923,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var newCol=Ext.widget('panel', {
                     header:false,
                     flex:column.span,
+                    plugins:[Ext.create("Ext.ux.BoxReorderer")],
                     final:isFinalCol,
                     mType:'col',
                     id:"CTLayout-"+Ext.id(),
@@ -1947,6 +1952,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             });
             newRow.add(Ext.widget("container",{
                 flex:eolWidth,
+                reorderable:false,
                 itemId:"eol"
             }));
             if (Ext.isEmpty(row.height)) {
