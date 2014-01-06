@@ -2865,7 +2865,7 @@
                     "    Ext.getCmp('tabPanTC').setActiveTab(5);\r",
                     "    Ext.getCmp('tabPanTC').setActiveTab(0);\r",
                     "    var task2 = new Ext.util.DelayedTask(function(){\r",
-                    "    Ext.getCmp(\"AdminfTypesGrid\").expand();\r",
+                    "        Ext.getCmp(\"AdminfTypesGrid\").expand();\r",
                     "    });\r",
                     "    task2.delay(200);\r",
                     "});\r",
