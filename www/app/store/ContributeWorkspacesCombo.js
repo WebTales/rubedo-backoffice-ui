@@ -64,6 +64,7 @@ Ext.define('Rubedo.store.ContributeWorkspacesCombo', {
 
     onJsonstoreBeforeLoad: function(store, operation, eOpts) {
         store.clearFilter(true);
+        store.getProxy().extraParams.filter=null;
     }
 
 });
