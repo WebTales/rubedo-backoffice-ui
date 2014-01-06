@@ -1628,9 +1628,8 @@
                                 "id": "PaneauConfigChamps",
                                 "style": null,
                                 "width": 300,
-                                "autoScroll": true,
-                                "layout": "auto",
-                                "bodyPadding": 8,
+                                "layout": "fit",
+                                "bodyPadding": null,
                                 "bodyStyle": null,
                                 "collapseDirection": "right",
                                 "collapsed": false,
@@ -1655,10 +1654,85 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "container|align": "stretch",
                                         "id": "boiteConfigChampsTC",
-                                        "layout": "anchor"
+                                        "layout": "hbox"
                                     },
-                                    "designerId": "937669e7-3349-43cb-b8f1-eeb7c5cfa801"
+                                    "designerId": "937669e7-3349-43cb-b8f1-eeb7c5cfa801",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tab.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 1,
+                                                "overlapHeader": false,
+                                                "activeTab": 0
+                                            },
+                                            "designerId": "f1b37212-11c4-47b7-9ed2-9ef30eefb34c",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoScroll": true,
+                                                        "bodyPadding": 6,
+                                                        "title": "Data"
+                                                    },
+                                                    "designerId": "02016e2d-af79-407c-9037-56023a274071",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.tab.Tab",
+                                                            "reference": {
+                                                                "name": "tabConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "layout|flex": 1
+                                                            },
+                                                            "designerId": "1aa7b712-2373-4ff4-87a5-73b7d3e3057c"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoScroll": true,
+                                                        "bodyPadding": 6,
+                                                        "title": "Search"
+                                                    },
+                                                    "designerId": "64f9099e-ed2c-4bab-a7eb-290a0fe61db7",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.tab.Tab",
+                                                            "reference": {
+                                                                "name": "tabConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "layout|flex": 1
+                                                            },
+                                                            "designerId": "8566370b-2679-46bc-a118-d07c92dea251"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Hidden",
