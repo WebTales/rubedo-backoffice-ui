@@ -397,7 +397,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     },
 
     onButtonRender1: function(component, eOpts) {
-        if ((!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
+        if ((!ACL.interfaceRights["exe.ui.import"])&&(!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
             component.hide();
         }
     }
