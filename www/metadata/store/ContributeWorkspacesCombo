@@ -97,7 +97,8 @@
             "userConfig": {
                 "fn": "onJsonstoreBeforeLoad",
                 "implHandler": [
-                    "store.clearFilter(true);"
+                    "store.clearFilter(true);\r",
+                    "store.getProxy().extraParams.filter=null;"
                 ],
                 "name": "beforeload",
                 "scope": "me"
