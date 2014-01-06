@@ -143,7 +143,6 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 },
                                 {
                                     xtype: 'combobox',
-                                    managesStore: true,
                                     localiserId: 'themeField',
                                     anchor: '100%',
                                     fieldLabel: 'Theme ',

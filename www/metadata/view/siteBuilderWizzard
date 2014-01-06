@@ -104,7 +104,7 @@
                                         "fn": "onUseEmptySiteFieldChange",
                                         "implHandler": [
                                             "if (newValue){\r",
-                                            "\tExt.getCmp(\"modelSiteIdFieldset\").hide();\r",
+                                            "    Ext.getCmp(\"modelSiteIdFieldset\").hide();\r",
                                             "    Ext.getCmp(\"modelSiteIdField\").setValue(null);\r",
                                             "    Ext.getCmp(\"modelSiteIdField\").allowBlank=true;\r",
                                             "    Ext.getCmp(\"modelSiteIdField\").submitValue=false;\r",
@@ -316,7 +316,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "managesStore": true,
                                 "localiserId": "themeField",
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Theme ",
@@ -334,11 +333,6 @@
                             },
                             "designerId": "3271d51b-d7e4-43cd-83b6-d05fb6b4b174",
                             "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "managesStore",
-                                    "type": "string"
-                                },
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
