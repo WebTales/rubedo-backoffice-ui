@@ -630,11 +630,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     frame: true,
                                     id: 'PaneauConfigChamps',
                                     width: 300,
-                                    autoScroll: true,
                                     layout: {
-                                        type: 'auto'
+                                        type: 'fit'
                                     },
-                                    bodyPadding: 8,
                                     collapseDirection: 'right',
                                     collapsed: false,
                                     collapsible: true,
@@ -645,8 +643,39 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             xtype: 'container',
                                             id: 'boiteConfigChampsTC',
                                             layout: {
-                                                type: 'anchor'
-                                            }
+                                                align: 'stretch',
+                                                type: 'hbox'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'tabpanel',
+                                                    flex: 1,
+                                                    overlapHeader: false,
+                                                    activeTab: 0,
+                                                    items: [
+                                                        {
+                                                            xtype: 'form',
+                                                            autoScroll: true,
+                                                            bodyPadding: 6,
+                                                            title: 'Data',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                flex: 1
+                                                            }
+                                                        },
+                                                        {
+                                                            xtype: 'form',
+                                                            autoScroll: true,
+                                                            bodyPadding: 6,
+                                                            title: 'Search',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                flex: 1
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: 'hiddenfield',

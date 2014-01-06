@@ -8,6 +8,10 @@
             "name": "checkbox",
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "localizable": false,
             "tooltip": "",
@@ -44,11 +48,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -73,6 +128,10 @@
             "allowBlank": true,
             "localizable": false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "tooltip": "",
             "value": "ffffff",
@@ -128,11 +187,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -167,6 +277,10 @@
             ],
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "allowBlank": true,
             "multivalued": false,
             "localizable": false,
@@ -208,11 +322,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                }
         ],
         "store": "",
         "id": "517f7bf7c0e0512c05123451",
@@ -240,6 +405,10 @@
             ],
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "allowBlank": true,
             "multivalued": false,
             "localizable": false,
@@ -281,11 +450,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                }
         ],
         "store": "",
         "id": "517f7bf7c0e0512c05000001",
@@ -301,6 +521,10 @@
             "name": "contentLink",
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "allowBlank": true,
             "multivalued": false,
             "allowedCT": null,
@@ -353,11 +577,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -389,6 +664,10 @@
             "displayField": "text",
             "localizable": false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "allowBlank": true,
             "tooltip": "",
@@ -436,11 +715,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -468,6 +798,10 @@
             "allowBlank": true,
             "localizable": false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "multiSelect": true,
             "editable": true,
@@ -530,11 +864,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -618,11 +1003,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                }
         ],
         "store": "",
         "id": "51234e09c0e0516a0b00000d",
@@ -641,6 +1077,10 @@
             "localizable": false,
             "useTodayDef":false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "tooltip": "",
             "labelSeparator": " "
@@ -715,11 +1155,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -744,6 +1235,10 @@
             "allowBlank": true,
             "localizable": false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "minValue": "0:00",
             "maxValue": "24:00",
@@ -813,11 +1308,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -841,6 +1387,10 @@
             "fieldLabel": "#ext-gen1053#",
             "localizable": false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "tooltip": "",
             "labelSeparator": " ",
@@ -932,11 +1482,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -968,6 +1569,10 @@
             "allowBlank": true,
             "localizable": false,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "tooltip": "",
             "labelSeparator": " "
@@ -1007,11 +1612,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -1042,6 +1698,10 @@
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "localizable": false,
             "tooltip": "",
@@ -1119,11 +1779,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -1146,6 +1857,10 @@
             "name": "slider",
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "minValue": 0,
             "localizable": false,
@@ -1210,11 +1925,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -1237,6 +2003,10 @@
             "name": "evaluation",
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "minValue": 0.5,
             "maxValue": 5,
@@ -1316,11 +2086,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -1347,6 +2168,10 @@
             "allowBlank": true,
             "localizable": true,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "tooltip": "",
             "vtype": null,
@@ -1463,15 +2288,66 @@
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
-                    "fieldLabel": "#ext-gen1057#",
-                    "name": "searchable"
+                    "fieldLabel": "#ext-gen1058#",
+                    "name": "multivalued"
                 }
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
-                    "fieldLabel": "#ext-gen1058#",
-                    "name": "multivalued"
+                    "fieldLabel": "#ext-gen1057#",
+                    "name": "searchable"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
                 }
             }
         ],
@@ -1493,6 +2369,10 @@
             "allowBlank": true,
             "localizable": true,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "CKETBConfig": "Standard",
             "tooltip": "",
@@ -1586,11 +2466,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -1617,6 +2548,10 @@
             "allowBlank": true,
             "localizable": true,
             "searchable": false,
+            "notAnalyzed":false,
+            "returnInSearch":false,
+            "useAsFacet":false,
+            "facetOperator":"AND",
             "multivalued": false,
             "tooltip": "",
             "vtype": null,
@@ -1717,11 +2652,62 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
                 "config": {
                     "fieldLabel": "#ext-gen1057#",
                     "name": "searchable"
                 }
-            },
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Not analayzed",
+                    "name": "notAnalysed"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Return in search",
+                    "name": "returnInSearch"
+                }
+            },{
+                "type": "Ext.form.field.Checkbox",
+                "isASearchField":true,
+                "config": {
+                    "fieldLabel": "Use as facet",
+                    "name": "useAsFacet"
+                }
+            }, {
+                "type": "Ext.form.field.ComboBox",
+                "isASearchField":true,
+                "store": {
+                    "fields": [
+                        "valeur",
+                        "nom"
+                    ],
+                    "data": [
+                        {
+                            "valeur": "AND",
+                            "nom": "AND"
+                        },
+                        {
+                            "valeur": "OR",
+                            "nom": "OR"
+                        }
+                        
+                    ]
+                },
+                "config": {
+                    "fieldLabel": "Facet Operator",
+                    "queryMode": "local",
+                    "displayField": "nom",
+                    "valueField": "valeur",
+                    "forceSelect": true,
+                    "editable": false,
+                    "name": "facetOperator"
+                }
+                },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {

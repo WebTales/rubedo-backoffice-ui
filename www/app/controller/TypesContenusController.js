@@ -534,8 +534,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     this.applyStyles('color:'+MyPrefData.themeColor);
                 }
                 var mesChamps = TCfield.configFields;
-                var boiteParam = Ext.getCmp('boiteConfigChampsTC');
+                var boiteParam = Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0);
+                var boiteParam1 = Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1);
                 boiteParam.removeAll();
+                boiteParam1.removeAll();
                 for(t=0; t<mesChamps.length; t++) {
                     if (mesChamps[t].type =='Ext.form.field.ComboBox') {
                         var monStore=  Ext.create('Ext.data.Store', mesChamps[t].store);
@@ -645,7 +647,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                                 }
                                 TCfield.validate();
                             }});
-                            boiteParam.add(nouvChamp); 
+                            if (mesChamps[t].isASearchField){
+                                boiteParam1.add(nouvChamp);
+                            } else {
+                                boiteParam.add(nouvChamp); 
+                            }
 
                         }
                         if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
@@ -664,7 +670,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     enleveChampTC: function(component, eOpts) {
         if (Ext.getCmp('champTCIdField').getValue() == component.getComponent(1).id) {
-            Ext.getCmp('boiteConfigChampsTC').removeAll();
+            Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0).removeAll();
+            Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();
             Ext.getCmp("TCfieldUp").disable();
             Ext.getCmp("TCfieldDown").disable();
             Ext.getCmp("TCfieldDeleter").disable();
@@ -703,7 +710,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     }
     Ext.getCmp('tabPanTC').enable();
-    Ext.getCmp('boiteConfigChampsTC').removeAll();
+    Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0).removeAll();
+    Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();
     var formulaireTC = Ext.getCmp('champsEditionTC');
     formulaireTC.removeAll();
     var champsD =record.data.champs;
@@ -888,7 +896,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
                             Ext.getCmp("boutonSupprimerTypeContenu").disable();
                             Ext.getCmp('champsEditionTC').removeAll();
-                            Ext.getCmp('boiteConfigChampsTC').removeAll();
+                            Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0).removeAll();
+                            Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();
                             Ext.getCmp('tabPanTC').disable();
                             Ext.getCmp("TDCEditForm").getForm().reset();
                             Ext.getCmp("adminFTDC").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
