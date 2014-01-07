@@ -616,15 +616,15 @@
                                 ],
                                 "implHandler": [
                                     "if (record.isRoot()){\r",
-                                    "    return(\"<i style=\\\"color:#777;\\\">Racine</i>\");\r",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
                                     "} else {\r",
-                                    "var returner = value;\r",
-                                    "if (record.get(\"readOnly\")){\r",
-                                    "    record.data.allowDrop=false;\r",
-                                    "    record.data.allowDrag=false;\r",
-                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
-                                    "}\r",
-                                    "return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png\"> '+value);\r",
+                                    "    var returner = value;\r",
+                                    "    if (record.get(\"readOnly\")){\r",
+                                    "        record.data.allowDrop=false;\r",
+                                    "        record.data.allowDrag=false;\r",
+                                    "        returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "    }\r",
+                                    "    return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png\"> '+returner);\r",
                                     "}"
                                 ]
                             },

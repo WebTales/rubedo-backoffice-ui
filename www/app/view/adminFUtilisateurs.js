@@ -221,7 +221,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                             xtype: 'treecolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 if (record.isRoot()){
-                                    return("<i style=\"color:#777;\">Racine</i>");
+                                    return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
                                 } else {
                                     var returner = value;
                                     if (record.get("readOnly")){
@@ -229,7 +229,7 @@ Ext.define('Rubedo.view.adminFUtilisateurs', {
                                         record.data.allowDrag=false;
                                         returner ="<i style=\"color:#777;\">"+value+"</i>";
                                     }
-                                    return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+value);
+                                    return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/users.png"> '+returner);
                                 }
                             },
                             localiserId: 'nameCol',
