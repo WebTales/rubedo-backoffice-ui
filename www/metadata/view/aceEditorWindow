@@ -11,9 +11,12 @@
         "width": 850,
         "designer|userClassName": "aceEditorWindow",
         "designer|userAlias": "aceEditorWindow",
+        "constrain": true,
         "layout": "fit",
         "iconCls": "edit",
-        "title": "Code editor"
+        "title": "Code editor",
+        "maximizable": true,
+        "modal": true
     },
     "designerId": "26b584ef-18d7-4675-8753-f42da6633fbb",
     "cn": [
@@ -39,7 +42,11 @@
                     "component.editor=ace.edit(component.getComponent(0).getEl().id);\r",
                     "component.editor.getSession().setMode(\"ace/mode/html\");\r",
                     "component.editor.setTheme(\"ace/theme/monokai\");\r",
-                    "component.editor.setValue(component.initialValue);"
+                    "component.editor.setValue(component.initialValue);\r",
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    component.editor.setTheme(\"ace/theme/monokai\");\r",
+                    "});\r",
+                    "task.delay(200);"
                 ],
                 "name": "afterrender",
                 "scope": "me"
@@ -107,6 +114,57 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAceEditorWindowBeforeClose",
+                "implHandler": [
+                    "panel.editor.destroy();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "f4d4bee0-53a9-4353-8222-07a7fa9f87d8"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAceEditorWindowMaximize",
+                "implHandler": [
+                    "window.editor.setTheme(\"ace/theme/monokai\");"
+                ],
+                "name": "maximize",
+                "scope": "me"
+            },
+            "designerId": "8c639d2b-61bb-4d6d-9a03-6ddabbb56e9a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAceEditorWindowMinimize",
+                "implHandler": [
+                    "window.editor.setTheme(\"ace/theme/monokai\");"
+                ],
+                "name": "minimize",
+                "scope": "me"
+            },
+            "designerId": "31237d43-92a5-4a4a-b6e3-35745b628a12"
         }
     ]
 }
