@@ -1609,6 +1609,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             responsive:field.responsive,
                             responsiveClass:me.deudceResposiveClass(field.responsive),
                             name:field.name,
+                            showLabel:field.showLabel,
                             elementStyle:field.elementStyle,
                             classHTML:field.classHTML,
                             flex:field.flex
@@ -1693,6 +1694,21 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     renderFieldTools: function(component) {
         var me=this;
         var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('checkbox',{
+            itemId:"eTitleShowField",
+            fieldLabel:"Display label",
+            onChange:function(){
+
+                component.showLabel=this.getValue();
+
+            },
+            labelWidth:60,
+            inputValue:true,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            checked:component.showLabel
+        }));
+
         configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
             fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
             anchor:"100%",
