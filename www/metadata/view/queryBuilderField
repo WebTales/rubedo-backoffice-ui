@@ -45,7 +45,7 @@
                 "implHandler": [
                     "component.getStore().addListener(\"load\",function(){\r",
                     "    var task = new Ext.util.DelayedTask(function(){\r",
-                    "        if (Ext.isEmpty(component.getValue())){\r",
+                    "        if ((Ext.isEmpty(component.getValue()))&&(!Ext.isEmpty(component.getStore()))){\r",
                     "            component.getStore().filterBy(function(rec){\r",
                     "                if ((rec.get(\"type\")==\"advanced\")) {\r",
                     "                    return(true);\r",
@@ -58,7 +58,7 @@
                     "    });\r",
                     "    task.delay(1000);\r",
                     "\r",
-                    "}, this, {single:true});\r",
+                    "}, this, {single:true}); \r",
                     "    component.getStore().load();\r",
                     "    var companion = Ext.widget(\"queryFieldComponent\");\r",
                     "\r",
@@ -85,7 +85,7 @@
                     "        }\r",
                     "\r",
                     "    });\r",
-                    "\tcompanion.getComponent(\"previewBtn\").on(\"click\", function(){\r",
+                    "    companion.getComponent(\"previewBtn\").on(\"click\", function(){\r",
                     "        Ext.widget(\"QuerySimWindow\",{queryId:component.getValue()}).show();\r",
                     "    });\r",
                     "    component.on(\"change\", function(a,newValue,oldValue){\r",
@@ -143,7 +143,7 @@
             "userConfig": {
                 "fn": "onComboboxBeforeDestroy",
                 "implHandler": [
-                    "component.getStore().removeAll();"
+                    "//component.getStore().removeAll();"
                 ],
                 "name": "beforedestroy",
                 "scope": "me"
