@@ -50,7 +50,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
     onComboboxAdded: function(component, container, pos, eOpts) {
         component.getStore().addListener("load",function(){
             var task = new Ext.util.DelayedTask(function(){
-                if (Ext.isEmpty(component.getValue())){
+                if ((Ext.isEmpty(component.getValue()))&&(!Ext.isEmpty(component.getStore()))){
                     component.getStore().filterBy(function(rec){
                         if ((rec.get("type")=="advanced")) {
                             return(true);
@@ -63,7 +63,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
             });
             task.delay(1000);
 
-        }, this, {single:true});
+        }, this, {single:true}); 
             component.getStore().load();
             var companion = Ext.widget("queryFieldComponent");
 
@@ -135,7 +135,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
     },
 
     onComboboxBeforeDestroy: function(component, eOpts) {
-        component.getStore().removeAll();
+        //component.getStore().removeAll();
     }
 
 });

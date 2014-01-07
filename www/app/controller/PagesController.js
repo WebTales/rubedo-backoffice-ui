@@ -637,7 +637,9 @@ Ext.define('Rubedo.controller.PagesController', {
                         nChampS.getStore().fieldId=Ext.clone(nChampS.id);
                         nChampS.getStore().fieldValue=Ext.clone(component.configBloc[nChampS.name]);
                         nChampS.getStore().addListener("load",function(storeThing){
-                            Ext.getCmp(storeThing.fieldId).setValue(storeThing.fieldValue);
+                            if (!Ext.isEmpty(Ext.getCmp(storeThing.fieldId))){
+                                Ext.getCmp(storeThing.fieldId).setValue(storeThing.fieldValue);
+                            }
                         },this,{single:true});
                         }
                         if (nChampS.isXType("treepicker")){
