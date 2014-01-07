@@ -1,0 +1,112 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 459,
+        "id": "aceEditorWindow",
+        "width": 850,
+        "designer|userClassName": "aceEditorWindow",
+        "designer|userAlias": "aceEditorWindow",
+        "layout": "fit",
+        "iconCls": "edit",
+        "title": "Code editor"
+    },
+    "designerId": "26b584ef-18d7-4675-8753-f42da6633fbb",
+    "cn": [
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "06879fa8-59e1-47f2-9d47-b8107d24ab6f"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAceEditorWindowAfterRender",
+                "implHandler": [
+                    "component.editor=ace.edit(component.getComponent(0).getEl().id);\r",
+                    "component.editor.getSession().setMode(\"ace/mode/html\");\r",
+                    "component.editor.setTheme(\"ace/theme/monokai\");\r",
+                    "component.editor.setValue(component.initialValue);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "d2f3bbb1-6976-4c06-8971-f819f7b86880"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "0c7e2744-6a00-4382-b32d-67cf30b6aad7",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "839df592-fbb8-4936-843c-3751dd77b67c"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "aceWindowSaveBtn",
+                        "iconCls": "save",
+                        "text": "Save"
+                    },
+                    "designerId": "ff3e03eb-1695-4a6e-a348-8e05ff20e6be",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAceWindowSaveBtnClick",
+                                "implHandler": [
+                                    "var component=button.up().up();\r",
+                                    "Ext.getCmp(component.targetedId).setValue(component.editor.getValue());\r",
+                                    "component.close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "a80108b8-22d4-4dd7-b456-3c2dec8ab7a1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -349,7 +349,10 @@ Ext.application({
         'newEmailTemplateWindow',
         'subscribeUsersWindow',
         'sendEmailWindow',
-        'mlImportWindow'
+        'mlImportWindow',
+        'aceEditorWindow',
+        'ACEFieldComponent',
+        'ACEField'
     ],
     autoCreateViewport: true,
     controllers: [
