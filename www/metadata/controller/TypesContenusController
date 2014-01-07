@@ -733,7 +733,7 @@
                 "implHandler": [
                     "if (Ext.getCmp('champTCIdField').getValue() == component.getComponent(1).id) {\r",
                     "    Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0).removeAll();\r",
-                    "\tExt.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();\r",
+                    "    Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();\r",
                     "    Ext.getCmp(\"TCfieldUp\").disable();\r",
                     "    Ext.getCmp(\"TCfieldDown\").disable();\r",
                     "    Ext.getCmp(\"TCfieldDeleter\").disable();\r",
@@ -1004,7 +1004,7 @@
                     "                    Ext.getCmp(\"boutonSupprimerTypeContenu\").disable();\r",
                     "                    Ext.getCmp('champsEditionTC').removeAll();\r",
                     "                    Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0).removeAll();\r",
-                    "\t\t\t\t\tExt.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();\r",
+                    "                    Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1).removeAll();\r",
                     "                    Ext.getCmp('tabPanTC').disable();\r",
                     "                    Ext.getCmp(\"TDCEditForm\").getForm().reset();\r",
                     "                    Ext.getCmp(\"adminFTDC\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",

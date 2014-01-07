@@ -47,6 +47,11 @@ Ext.define('Rubedo.controller.UsersController', {
         if ((!ACL.interfaceRights["write.ui.groups"])||(record.get("readOnly"))){
             Ext.getCmp("groupDeleteButton").disable();
             Ext.getCmp("groupSaveButton").disable();
+            if (!record.isRoot()){
+                Ext.getCmp("groupAddButton").disable();
+            } else {
+                Ext.getCmp("groupAddButton").enable();
+            }
             Ext.Array.forEach(Ext.getCmp("adminFUtilisateurs").getComponent("contextBar").query("buttongroup"), function(btn){btn.disable();});
 
             Ext.Array.forEach(Ext.getCmp("groupPropsForm").query("field"), function(field){field.setReadOnly(true);});
@@ -54,6 +59,7 @@ Ext.define('Rubedo.controller.UsersController', {
         } else {
             Ext.Array.forEach(Ext.getCmp("groupPropsForm").query("field"), function(field){field.setReadOnly(false);});
             Ext.Array.forEach(Ext.getCmp("groupAdminPropsForm").query("field"), function(field){field.setReadOnly(false);});
+            Ext.getCmp("groupAddButton").enable();
 
         }
     },
