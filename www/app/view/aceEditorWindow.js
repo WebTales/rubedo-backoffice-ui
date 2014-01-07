@@ -26,7 +26,6 @@ Ext.define('Rubedo.view.aceEditorWindow', {
     },
     iconCls: 'edit',
     title: 'Code editor',
-    maximizable: true,
     modal: true,
 
     initComponent: function() {
