@@ -20,11 +20,14 @@ Ext.define('Rubedo.view.aceEditorWindow', {
     height: 459,
     id: 'aceEditorWindow',
     width: 850,
+    constrain: true,
     layout: {
         type: 'fit'
     },
     iconCls: 'edit',
     title: 'Code editor',
+    maximizable: true,
+    modal: true,
 
     initComponent: function() {
         var me = this;
@@ -38,6 +41,18 @@ Ext.define('Rubedo.view.aceEditorWindow', {
             listeners: {
                 afterrender: {
                     fn: me.onAceEditorWindowAfterRender,
+                    scope: me
+                },
+                beforeclose: {
+                    fn: me.onAceEditorWindowBeforeClose,
+                    scope: me
+                },
+                maximize: {
+                    fn: me.onAceEditorWindowMaximize,
+                    scope: me
+                },
+                minimize: {
+                    fn: me.onAceEditorWindowMinimize,
                     scope: me
                 }
             },
@@ -74,12 +89,28 @@ Ext.define('Rubedo.view.aceEditorWindow', {
         component.editor.getSession().setMode("ace/mode/html");
         component.editor.setTheme("ace/theme/monokai");
         component.editor.setValue(component.initialValue);
+        var task = new Ext.util.DelayedTask(function(){
+            component.editor.setTheme("ace/theme/monokai");
+        });
+        task.delay(200);
     },
 
     onAceWindowSaveBtnClick: function(button, e, eOpts) {
         var component=button.up().up();
         Ext.getCmp(component.targetedId).setValue(component.editor.getValue());
         component.close();
+    },
+
+    onAceEditorWindowBeforeClose: function(panel, eOpts) {
+        panel.editor.destroy();
+    },
+
+    onAceEditorWindowMaximize: function(window, eOpts) {
+        window.editor.setTheme("ace/theme/monokai");
+    },
+
+    onAceEditorWindowMinimize: function(window, eOpts) {
+        window.editor.setTheme("ace/theme/monokai");
     }
 
 });
