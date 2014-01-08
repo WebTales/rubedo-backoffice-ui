@@ -1,0 +1,149 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "newLayoutWindowCopy",
+        "height": null,
+        "width": 400,
+        "designer|userClassName": "UTLCopyWindow",
+        "designer|userAlias": "UTLCopyWindow",
+        "constrain": true,
+        "resizable": false,
+        "layout": "fit",
+        "title": "Copy layout",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "bf2ee69f-3b82-429e-82a8-47f11200115c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "b6432c22-d54b-4ccd-bc40-2465bdd0d001",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "nameFieldCopy",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "New name",
+                        "name": "name",
+                        "allowBlank": false
+                    },
+                    "designerId": "c882047a-2dfd-4f2e-89d9-4a0795a28a9a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "nmSiteFieldCopy",
+                        "layout|anchor": "100%",
+                        "id": "nouveauMasqueSite4",
+                        "fieldLabel": "To site",
+                        "name": "site",
+                        "allowBlank": false,
+                        "editable": false,
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "SitesComboUTLayouts",
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "managesStore": "boolean"
+                    },
+                    "designerId": "3c75ea09-b654-46d1-8a48-40aadfc759e3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNouveauMasqueSiteAfterRender1",
+                                "implHandler": [
+                                    "var results = component.getStore().getRange();\r",
+                                    "if ((!Ext.isEmpty(results))&&(results.length==1)){\r",
+                                    "    component.select(results[0]);\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "cdea103a-cad3-4bd3-9e4d-a81254992aed"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "createNewLayoutBtnCopy",
+                        "layout|anchor": "100%",
+                        "id": "CTLCopyLSubitBtn1",
+                        "scale": "medium",
+                        "text": "Copy this layout"
+                    },
+                    "designerId": "5815eb47-cd7a-4f35-99d9-bc8fd7374a33",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

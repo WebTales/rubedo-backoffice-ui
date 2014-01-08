@@ -164,6 +164,7 @@
                         "layout|flex": null,
                         "container|columns": 2,
                         "disabled": true,
+                        "id": "CTEditToolsBtnGr1",
                         "headerPosition": "bottom",
                         "title": "Edition",
                         "columns": 4
@@ -277,6 +278,407 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "layoutsGrid",
+                        "ACL": "write.ui.contentTypes",
+                        "layout|flex": null,
+                        "id": "CTLayoutsBtnGr1",
+                        "headerPosition": "bottom",
+                        "title": "Layouts",
+                        "columns": 4
+                    },
+                    "designerId": "417915c6-ec3e-4b1c-bbb3-9d08e46fb0c0",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "addBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "id": "addCTLayoutBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "Add"
+                            },
+                            "designerId": "97383dff-ec30-49d2-ab5c-6b35c76e7e1c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contentTypes",
+                                "localiserId": "duplicateBtn",
+                                "disabled": true,
+                                "id": "copyCTLayoutBtn1",
+                                "width": null,
+                                "icon": null,
+                                "iconAlign": "top",
+                                "iconCls": "applications_big",
+                                "scale": "large",
+                                "text": "Copier"
+                            },
+                            "designerId": "feb51b3e-5101-4394-81c8-0994109758aa",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "removeBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "RemoveCTLayoutBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "designerId": "d0c50088-7dda-4e28-8bda-dd4680204aea",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "layoutActivatorBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "ouiS",
+                                "scale": "large",
+                                "text": "Activate"
+                            },
+                            "designerId": "78ab0046-7fe3-4d70-9b12-b70a1b616a1a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "editGroup",
+                        "ACL": "write.ui.contentTypes",
+                        "layout|flex": null,
+                        "disabled": true,
+                        "id": "layoutsEditToolbar1",
+                        "headerPosition": "bottom",
+                        "title": "Edition",
+                        "columns": 7
+                    },
+                    "designerId": "8113e5a8-9d52-4f94-b271-a2bc58961354",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "addRowToLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "addRowToLayoutBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "New row"
+                            },
+                            "designerId": "b664ee8d-6d22-40c4-94b0-5ae50dcf2c39",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "addColToLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "addColToLayoutBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "New Column"
+                            },
+                            "designerId": "e6bb407b-ba51-4839-a072-2ac11dcbc5e6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "assignFieldToColBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "assignFieldToColBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "add_big",
+                                "scale": "large",
+                                "text": "Assign field"
+                            },
+                            "designerId": "652ceb91-7e39-4fb7-8933-82b65b142d03",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "removeBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "removeLayoutElementBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "designerId": "2f8dc193-654d-4b45-baf8-ff92868ee1b9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "moveLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "moveLayoutItemUpBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "arrow_up_big",
+                                "scale": "large",
+                                "text": "Move"
+                            },
+                            "designerId": "5f32bdd6-94d8-45ae-985c-683a93c78ca0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "moveLBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "disabled": true,
+                                "id": "moveLayoutItemDownBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "arrow_down_big",
+                                "scale": "large",
+                                "text": "Move"
+                            },
+                            "designerId": "c3427946-de64-47f6-943b-4885474fd067",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "saveLayoutBtn",
+                                "ACL": "write.ui.contentTypes",
+                                "hidden": true,
+                                "id": "saveCTLayoutBtn1",
+                                "iconAlign": "top",
+                                "iconCls": "floppy_disc_big",
+                                "scale": "large",
+                                "text": "Save layout"
+                            },
+                            "designerId": "7cc0f5ff-374a-42b1-84cd-0f55ab9db0b6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
                                     "type": "string"
                                 }
                             ]
@@ -589,7 +991,9 @@
                 "width": 200,
                 "resizable": true,
                 "resizeHandles": "e",
-                "title": "",
+                "collapseDirection": "left",
+                "collapsible": true,
+                "title": "User Types",
                 "forceFit": true,
                 "store": "UserTypes"
             },
@@ -1094,6 +1498,41 @@
                                     "designerId": "b5d19348-c6fc-4b14-a487-e68de49ef7c5"
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelActivate",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTEditToolsBtnGr1\").show();\r",
+                                    "Ext.getCmp(\"mainUTGrid\").expand();"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "designerId": "1ce20330-db03-4627-8a8a-9ec66cff99d5"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPanelDeactivate",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "deactivate",
+                                "scope": "me"
+                            },
+                            "designerId": "5c5bb877-02de-447f-be20-6c06fc9053f0"
                         }
                     ]
                 },
@@ -1602,6 +2041,521 @@
                             "designerId": "3701450e-0d33-49a6-b03d-7356bb69fe42"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "id": "CTLayoutMainTab1",
+                        "layout": "hbox",
+                        "iconCls": "masque-icon",
+                        "title": "Layouts"
+                    },
+                    "designerId": "47542b62-316b-478b-8cb1-a0758ee89f59",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "d3a45430-04f0-4fa1-bf6c-d3b02dd8e3b0"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "layoutsGrid",
+                                "layout|flex": null,
+                                "id": "CTLayoutsGrid1",
+                                "width": 220,
+                                "collapseDirection": "left",
+                                "collapsible": true,
+                                "title": "Layouts",
+                                "forceFit": true,
+                                "store": "UTLayouts"
+                            },
+                            "designerId": "2e1ccf6a-bf7c-4602-b6cb-5a4289a8d854",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "fdd70edc-ba00-43bc-9063-3827746cb2a1"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "nameColumn",
+                                        "dataIndex": "name",
+                                        "text": "Name"
+                                    },
+                                    "designerId": "dbade793-49c1-424e-a834-8391a191d3ad",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false
+                                            },
+                                            "designerId": "ddddaaaa-aff5-48fd-a7f4-fd69134d4b1e"
+                                        },
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "if (record.get(\"active\")){\r",
+                                                    "    return(value+' <img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/check_mark.png\"> ');\r",
+                                                    "} else {\r",
+                                                    "    return(value);\r",
+                                                    "}"
+                                                ]
+                                            },
+                                            "designerId": "80f6fa27-3e53-4176-9cd6-74deeaf911f9"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.feature.Grouping",
+                                    "reference": {
+                                        "name": "features",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "e665e66a-5b66-40bc-8128-ee28dacc8f1a",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "groupHeaderTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "implHandler": [
+                                                    "Site : {name:this.getProperName}"
+                                                ],
+                                                "designer|displayName": "groupHeaderTpl"
+                                            },
+                                            "designerId": "bcbd955e-0996-4860-96bd-c86f9a90b9f5",
+                                            "cn": [
+                                                {
+                                                    "type": "templatefunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "getProperName",
+                                                        "designer|params": [
+                                                            "name"
+                                                        ],
+                                                        "implHandler": [
+                                                            "if (Ext.isEmpty(Ext.getStore(\"SitesComboUTLayouts\").findRecord(\"id\",name))){\r",
+                                                            "    return (\"\");\r",
+                                                            "} else {\r",
+                                                            "    return(Ext.getStore(\"SitesComboUTLayouts\").findRecord(\"id\",name).get(\"text\"));\r",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "designerId": "dff72073-adfc-4e0a-9da2-06bdfaf13029"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.CellEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.CellEditing",
+                                    "designerId": "f8280a64-a5d4-42a1-bced-e8c4063a11e5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "availableFieldsGrid",
+                                "layout|flex": null,
+                                "id": "CTLayoutFieldInjectorGrid1",
+                                "width": 200,
+                                "collapseDirection": "left",
+                                "collapsible": true,
+                                "title": "Available fields",
+                                "forceFit": true,
+                                "store": "UTFieldsForLayouts"
+                            },
+                            "designerId": "ac2adf0e-49fc-4d55-9de8-07c6791d47ce",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "cf411d13-9b95-47f7-83a7-25c91aa14ddf"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hidden": true,
+                                        "dataIndex": "name",
+                                        "text": "Name"
+                                    },
+                                    "designerId": "c17bab39-1668-4816-b568-618a4c401250"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "localiserId": "labelColumn",
+                                        "dataIndex": "label",
+                                        "text": "Label"
+                                    },
+                                    "designerId": "4375faef-e5dd-4dba-b966-e84a702c2f73",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top",
+                                        "id": "layoutElementIdField1",
+                                        "width": 100,
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "72322ff1-3472-4403-b336-62ccc3c93e30"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "container|align": "stretch",
+                                "autoScroll": true,
+                                "layout": "vbox"
+                            },
+                            "designerId": "58054897-b77c-4d35-b4a8-ad131037ee95",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|align": "stretch",
+                                        "height": 340,
+                                        "id": "layoutEditionPanel1",
+                                        "layout": "vbox",
+                                        "title": ""
+                                    },
+                                    "designerId": "c7739ca9-ca6b-4eb2-bf98-0ed9d26fedb3",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processLayoutEditionPanel1",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "3833a105-bdd5-44f3-b172-ea9bab8394c0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "layoutPropertiesPanel",
+                                "layout|flex": null,
+                                "width": 200,
+                                "layout": "fit",
+                                "bodyPadding": 2,
+                                "collapseDirection": "right",
+                                "collapsible": true,
+                                "iconCls": "parametres",
+                                "title": "Properties"
+                            },
+                            "designerId": "271a92c8-4d7e-4770-ae86-24cb2430d8ed",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "layoutPropsPanel1",
+                                        "layout": "fit",
+                                        "title": "Select an element"
+                                    },
+                                    "designerId": "6abda705-4a1e-4a54-9db1-e117bbc27cfa",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processLayoutPropsPanel1",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "config.title=Rubedo.RubedoAutomatedElementsLoc.selectAnElementText;\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "ea6e7599-0537-4e91-b315-f793fac0538e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom"
+                                    },
+                                    "designerId": "275c49ea-202d-40e1-8082-8af10565a6ce",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.slider.Single",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "localiserId": "zoomLevelSlider",
+                                                "layout|flex": 1,
+                                                "id": "MaskZoomControlSlider3",
+                                                "width": null,
+                                                "fieldLabel": "Niveau de zoom",
+                                                "labelWidth": 60,
+                                                "value": 294,
+                                                "maxValue": 2000,
+                                                "minValue": 200,
+                                                "useTips": false
+                                            },
+                                            "designerId": "7b182c47-fedc-4567-b013-f5bb10b77c97",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onMaskZoomControlSliderChange11",
+                                                        "implHandler": [
+                                                            "Ext.getCmp(\"layoutEditionPanel1\").setHeight(newValue);"
+                                                        ],
+                                                        "name": "change",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "dd974159-3e45-41bf-ae1d-853371f2b94e"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processCTLayoutMainTab1",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc[\"layoutsGrid\"].title;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "904b905a-fa42-4138-96a8-c9603891b794"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCTLayoutMainTab1Activate",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTLayoutsBtnGr1\").show();\r",
+                                    "Ext.getCmp(\"layoutsEditToolbar1\").show();\r",
+                                    "Ext.getCmp(\"mainUTGrid\").collapse();\r",
+                                    "/*if (!Ext.isEmpty(Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected())){\r",
+                                    "    Rubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();\r",
+                                    "}*/"
+                                ],
+                                "name": "activate",
+                                "scope": "me"
+                            },
+                            "designerId": "9797c005-1cb1-4c7a-968c-1cde67efa4f4"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCTLayoutMainTab1Deactivate",
+                                "implHandler": [
+                                    "Ext.getCmp(\"CTLayoutsBtnGr1\").hide();\r",
+                                    "Ext.getCmp(\"layoutsEditToolbar1\").hide();\r",
+                                    "Ext.getCmp(\"mainUTGrid\").expand();"
+                                ],
+                                "name": "deactivate",
+                                "scope": "me"
+                            },
+                            "designerId": "a81cb0aa-56ab-489b-b4b8-4a4195d7a788"
+                        }
+                    ]
                 }
             ]
         },
@@ -1616,7 +2570,8 @@
                 "fn": "onMediaTypesInterfaceRender",
                 "implHandler": [
                     "Ext.getStore(\"TaxonomyForUT\").load();\r",
-                    "Ext.getStore(\"GroupsComboStore2\").load();"
+                    "Ext.getStore(\"GroupsComboStore2\").load();\r",
+                    "Ext.getStore(\"SitesComboUTLayouts\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -1634,12 +2589,39 @@
                 "fn": "onMediaTypesInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"TaxonomyForUT\").removeAll();\r",
-                    "Ext.getStore(\"GroupsComboStore2\").removeAll();"
+                    "Ext.getStore(\"GroupsComboStore2\").removeAll();\r",
+                    "Ext.getStore(\"SitesComboUTLayouts\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
             },
             "designerId": "e4374ae1-7061-4904-b619-81f07c66a9a8"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserTypesInterfaceAfterRender",
+                "implHandler": [
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "    Ext.getCmp('UTcenterZone').setActiveTab(2);\r",
+                    "    Ext.getCmp('UTcenterZone').setActiveTab(5);\r",
+                    "    Ext.getCmp('UTcenterZone').setActiveTab(0);\r",
+                    "    var task2 = new Ext.util.DelayedTask(function(){\r",
+                    "        Ext.getCmp(\"mainUTGrid\").expand();\r",
+                    "    });\r",
+                    "    task2.delay(200);\r",
+                    "});\r",
+                    "task.delay(100);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "ec58688f-97a5-4f06-80ec-2d23b6a63917"
         }
     ]
 }
