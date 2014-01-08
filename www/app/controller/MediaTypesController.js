@@ -118,8 +118,10 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                     this.applyStyles('color:'+MyPrefData.themeColor);
                 }
                 var mesChamps = TCfield.configFields;
-                var boiteParam = Ext.getCmp('MTFieldConfigsBox');
+                var boiteParam = Ext.getCmp('MTFieldConfigsBox').getComponent(0).getComponent(0);
+                var boiteParam1 = Ext.getCmp('MTFieldConfigsBox').getComponent(0).getComponent(1);
                 boiteParam.removeAll();
+                boiteParam1.removeAll();
                 for(t=0; t<mesChamps.length; t++) {
                     if (mesChamps[t].type =='Ext.form.field.ComboBox') {
                         var monStore=  Ext.create('Ext.data.Store', mesChamps[t].store);
@@ -200,7 +202,11 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                             }
                             TCfield.validate();
                         }});
-                        boiteParam.add(nouvChamp); 
+                        if (mesChamps[t].isASearchField){
+                            boiteParam1.add(nouvChamp);
+                        } else {
+                            boiteParam.add(nouvChamp); 
+                        } 
 
                     }
                     if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
@@ -238,7 +244,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             Ext.getCmp("MTfieldDown").disable();
             Ext.getCmp('MTFieldId').setValue();
             Ext.getCmp("MTfieldDeleter").disable();
-            Ext.getCmp("MTFieldConfigsBox").removeAll();
+            Ext.getCmp("MTFieldConfigsBox").getComponent(0).getComponent(0).removeAll();
+            Ext.getCmp("MTFieldConfigsBox").getComponent(0).getComponent(1).removeAll();
         }
     },
 
@@ -301,7 +308,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp("MTfieldDown").disable();
         Ext.getCmp("MTfieldDeleter").disable();
         Ext.getCmp('MTFieldId').setValue();
-        Ext.getCmp("MTFieldConfigsBox").removeAll();
+        Ext.getCmp("MTFieldConfigsBox").getComponent(0).getComponent(0).removeAll();
+        Ext.getCmp("MTFieldConfigsBox").getComponent(0).getComponent(1).removeAll();
         Ext.getCmp("MTcenterZone").disable();
         Ext.getCmp("mediaTypesEditForm").getForm().reset();
         Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
@@ -320,7 +328,8 @@ Ext.define('Rubedo.controller.MediaTypesController', {
         Ext.getCmp('MTFieldId').setValue();
         Ext.getCmp("mediaTypesEditForm").getForm().setValues(record.getData());
         Ext.getCmp("MTfieldDeleter").disable();
-        Ext.getCmp("MTFieldConfigsBox").removeAll();
+        Ext.getCmp("MTFieldConfigsBox").getComponent(0).getComponent(0).removeAll();
+        Ext.getCmp("MTFieldConfigsBox").getComponent(0).getComponent(1).removeAll();
         var metaBox = Ext.getCmp("mediaTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var values= record.getData();
         values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);
