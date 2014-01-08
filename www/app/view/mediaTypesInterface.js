@@ -474,7 +474,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     layout: {
                                         type: 'fit'
                                     },
-                                    bodyPadding: 8,
+                                    bodyPadding: 0,
                                     collapseDirection: 'right',
                                     collapsed: false,
                                     collapsible: true,
@@ -484,10 +484,40 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                         {
                                             xtype: 'container',
                                             id: 'MTFieldConfigsBox',
-                                            autoScroll: true,
                                             layout: {
-                                                type: 'anchor'
-                                            }
+                                                align: 'stretch',
+                                                type: 'hbox'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'tabpanel',
+                                                    flex: 1,
+                                                    overlapHeader: false,
+                                                    activeTab: 0,
+                                                    items: [
+                                                        {
+                                                            xtype: 'form',
+                                                            autoScroll: true,
+                                                            bodyPadding: 6,
+                                                            title: 'Data',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                flex: 1
+                                                            }
+                                                        },
+                                                        {
+                                                            xtype: 'form',
+                                                            autoScroll: true,
+                                                            bodyPadding: 6,
+                                                            title: 'Search',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                flex: 1
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: 'hiddenfield',
