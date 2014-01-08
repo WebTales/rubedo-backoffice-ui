@@ -3117,6 +3117,54 @@
                 "app/view/ACEFieldComponent.js"
             ],
             "className": "ACEFieldComponent"
+        },
+        "ef3e6e4f-b3cc-4471-a3c1-7df362423531": {
+            "paths": [
+                "metadata/store/UTFieldsForLayouts",
+                "app/store/override/UTFieldsForLayouts.js",
+                "app/store/UTFieldsForLayouts.js"
+            ],
+            "className": "UTFieldsForLayouts"
+        },
+        "b63315e2-2bc6-436a-ba1b-2ea8d3045ee1": {
+            "paths": [
+                "metadata/store/UTLayouts",
+                "app/store/override/UTLayouts.js",
+                "app/store/UTLayouts.js"
+            ],
+            "className": "UTLayouts"
+        },
+        "68fdfe7e-fe26-478b-9edb-76c985c87daf": {
+            "paths": [
+                "metadata/store/SitesComboUTLayouts",
+                "app/store/override/SitesComboUTLayouts.js",
+                "app/store/SitesComboUTLayouts.js"
+            ],
+            "className": "SitesComboUTLayouts"
+        },
+        "51deb2fe-50a8-4a90-a9d7-dc4842095f15": {
+            "paths": [
+                "metadata/view/NewUTLayoutWindow",
+                "app/view/override/NewUTLayoutWindow.js",
+                "app/view/NewUTLayoutWindow.js"
+            ],
+            "className": "NewUTLayoutWindow"
+        },
+        "bf2ee69f-3b82-429e-82a8-47f11200115c": {
+            "paths": [
+                "metadata/view/UTLCopyWindow",
+                "app/view/override/UTLCopyWindow.js",
+                "app/view/UTLCopyWindow.js"
+            ],
+            "className": "UTLCopyWindow"
+        },
+        "486c42cb-ee96-4f43-ab90-c52044678375": {
+            "paths": [
+                "metadata/view/AssignUTFieldToColWindow",
+                "app/view/override/AssignUTFieldToColWindow.js",
+                "app/view/AssignUTFieldToColWindow.js"
+            ],
+            "className": "AssignUTFieldToColWindow"
         }
     },
     "viewOrderMap": {
@@ -3288,8 +3336,11 @@
             "8c8eb810-59a0-4d95-a6b4-7d495027da77",
             "9495e2dc-ea9a-4ec0-9102-8a284dc3ea29",
             "c588057d-fc9e-48a9-a7cc-943965704e92",
+            "51deb2fe-50a8-4a90-a9d7-dc4842095f15",
             "fa44d14a-6bb6-46b5-a662-3f2ae1cba564",
+            "bf2ee69f-3b82-429e-82a8-47f11200115c",
             "821e0b00-e3dd-45ff-b0e1-272b71d595bd",
+            "486c42cb-ee96-4f43-ab90-c52044678375",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "e1ff2391-5104-46be-9c01-680539baf938",
             "e7d07403-1815-4369-9257-def71279340c",
@@ -3313,6 +3364,7 @@
             "1429abea-2977-46c7-993e-339569e76d1a",
             "5640d13d-589e-4233-a94f-d4e11749b140",
             "b14e3026-7234-4383-9a87-4aef97ffebfc",
+            "68fdfe7e-fe26-478b-9edb-76c985c87daf",
             "f9902d72-af14-482b-bdd9-9ceda04a75cd",
             "8561823f-1079-4fa0-ab84-b2c76b8753c8",
             "ced4fd48-d03f-4922-9d15-652ff2633ad7",
@@ -3428,7 +3480,9 @@
             "7a9610ac-20ee-4d6c-9d47-2d8606c48ed4",
             "d5c0475f-ee5b-44e7-a378-8531b81a9d94",
             "3a5de90b-d135-4776-b5fa-511ab646a85b",
+            "b63315e2-2bc6-436a-ba1b-2ea8d3045ee1",
             "d6570aca-1de2-4ab0-978a-87a7f4358840",
+            "ef3e6e4f-b3cc-4471-a3c1-7df362423531",
             "bac21dc5-9467-459a-9a13-2c67a5235855",
             "46b39dfb-e743-4e22-9e2e-ba43b60b6fee"
         ],

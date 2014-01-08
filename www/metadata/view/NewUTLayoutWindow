@@ -1,0 +1,168 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": "newLayoutWindow",
+        "height": null,
+        "width": 400,
+        "designer|userClassName": "NewUTLayoutWindow",
+        "constrain": true,
+        "resizable": false,
+        "layout": "fit",
+        "title": "New layout",
+        "modal": true
+    },
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "51deb2fe-50a8-4a90-a9d7-dc4842095f15",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "44e0095b-2e0a-4a4b-aa0e-71d43bc49923",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "nameField",
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Nom",
+                        "name": "name",
+                        "allowBlank": false
+                    },
+                    "designerId": "97585966-2be5-4062-bb84-e51b88b47537",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Type",
+                        "name": "type",
+                        "value": [
+                            "\"Detail\""
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "39212aa7-6627-4dce-b938-d23066c8f0af"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "nmSiteField",
+                        "layout|anchor": "100%",
+                        "id": "nouveauMasqueSite3",
+                        "fieldLabel": "Site ",
+                        "name": "site",
+                        "allowBlank": false,
+                        "editable": false,
+                        "forceSelection": true,
+                        "queryMode": "local",
+                        "store": "SitesComboUTLayouts",
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "managesStore": "boolean"
+                    },
+                    "designerId": "4c2d5727-af4e-4970-870c-46f9e97f010c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNouveauMasqueSiteAfterRender1",
+                                "implHandler": [
+                                    "var results = component.getStore().getRange();\r",
+                                    "if ((!Ext.isEmpty(results))&&(results.length==1)){\r",
+                                    "    component.select(results[0]);\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "2037f58d-f94c-4dfe-9548-84b0b71540ee"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "localiserId": "createNewLayoutBtn",
+                        "layout|anchor": "100%",
+                        "id": "NewCTLayoutWindowSubmitBtn1",
+                        "scale": "medium",
+                        "text": "Create new layout"
+                    },
+                    "designerId": "1905a922-2a0c-4be9-ada1-39d6520c3e11",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

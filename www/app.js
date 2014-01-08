@@ -183,7 +183,10 @@ Ext.application({
         'EmailTemplates',
         'EmailModels',
         'MLUsers',
-        'MLUnsubscribedUsers'
+        'MLUnsubscribedUsers',
+        'UTFieldsForLayouts',
+        'UTLayouts',
+        'SitesComboUTLayouts'
     ],
     views: [
         'MyGridPanel3',
@@ -352,7 +355,10 @@ Ext.application({
         'mlImportWindow',
         'aceEditorWindow',
         'ACEFieldComponent',
-        'ACEField'
+        'ACEField',
+        'NewUTLayoutWindow',
+        'UTLCopyWindow',
+        'AssignUTFieldToColWindow'
     ],
     autoCreateViewport: true,
     controllers: [

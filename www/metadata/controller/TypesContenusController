@@ -2790,7 +2790,7 @@
                     "Ext.getCmp(\"layoutsEditToolbar\").show();\r",
                     "Ext.getCmp(\"AdminfTypesGrid\").collapse();\r",
                     "if (!Ext.isEmpty(Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected())){\r",
-                    "\tRubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();\r",
+                    "    Rubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();\r",
                     "}"
                 ],
                 "name": "activate",

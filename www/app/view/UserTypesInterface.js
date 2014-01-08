@@ -89,6 +89,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                             ACL: 'write.ui.damTypes',
                             localiserId: 'editGroup',
                             disabled: true,
+                            id: 'CTEditToolsBtnGr1',
                             headerPosition: 'bottom',
                             title: 'Edition',
                             columns: 4,
@@ -135,6 +136,148 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                     iconCls: 'remove_big',
                                     scale: 'large',
                                     text: 'Supprimer champ'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            localiserId: 'layoutsGrid',
+                            ACL: 'write.ui.contentTypes',
+                            id: 'CTLayoutsBtnGr1',
+                            headerPosition: 'bottom',
+                            title: 'Layouts',
+                            columns: 4,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    id: 'addCTLayoutBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'Add'
+                                },
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
+                                    localiserId: 'duplicateBtn',
+                                    disabled: true,
+                                    id: 'copyCTLayoutBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'applications_big',
+                                    scale: 'large',
+                                    text: 'Copier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'removeBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'RemoveCTLayoutBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                },
+                                {
+                                    xtype: 'button',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'layoutActivatorBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'ouiS',
+                                    scale: 'large',
+                                    text: 'Activate'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            localiserId: 'editGroup',
+                            ACL: 'write.ui.contentTypes',
+                            disabled: true,
+                            id: 'layoutsEditToolbar1',
+                            headerPosition: 'bottom',
+                            title: 'Edition',
+                            columns: 7,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addRowToLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'addRowToLayoutBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'New row'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addColToLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'addColToLayoutBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'New Column'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'assignFieldToColBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'assignFieldToColBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'add_big',
+                                    scale: 'large',
+                                    text: 'Assign field'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'removeBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'removeLayoutElementBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'moveLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'moveLayoutItemUpBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_up_big',
+                                    scale: 'large',
+                                    text: 'Move'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'moveLBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    disabled: true,
+                                    id: 'moveLayoutItemDownBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'arrow_down_big',
+                                    scale: 'large',
+                                    text: 'Move'
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'saveLayoutBtn',
+                                    ACL: 'write.ui.contentTypes',
+                                    hidden: true,
+                                    id: 'saveCTLayoutBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'floppy_disc_big',
+                                    scale: 'large',
+                                    text: 'Save layout'
                                 }
                             ]
                         },
@@ -291,7 +434,9 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                     width: 200,
                     resizable: true,
                     resizeHandles: 'e',
-                    title: '',
+                    collapseDirection: 'left',
+                    collapsible: true,
+                    title: 'User Types',
                     forceFit: true,
                     store: 'UserTypes',
                     columns: [
@@ -449,7 +594,17 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                activate: {
+                                    fn: me.onPanelActivate,
+                                    scope: me
+                                },
+                                deactivate: {
+                                    fn: me.onPanelDeactivate,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'panel',
@@ -629,7 +784,185 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                             hidden: true,
                             iconCls: 'versions',
                             title: 'Historique'
-                        }
+                        },
+                        me.processCTLayoutMainTab1({
+                            xtype: 'panel',
+                            id: 'CTLayoutMainTab1',
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
+                            },
+                            iconCls: 'masque-icon',
+                            title: 'Layouts',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    localiserId: 'layoutsGrid',
+                                    id: 'CTLayoutsGrid1',
+                                    width: 220,
+                                    collapseDirection: 'left',
+                                    collapsible: true,
+                                    title: 'Layouts',
+                                    forceFit: true,
+                                    store: 'UTLayouts',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                if (record.get("active")){
+                                                    return(value+' <img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/check_mark.png"> ');
+                                                } else {
+                                                    return(value);
+                                                }
+                                            },
+                                            localiserId: 'nameColumn',
+                                            dataIndex: 'name',
+                                            text: 'Name',
+                                            editor: {
+                                                xtype: 'textfield',
+                                                allowBlank: false
+                                            }
+                                        }
+                                    ],
+                                    features: [
+                                        {
+                                            ftype: 'grouping',
+                                            groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                                                'Site : {name:this.getProperName}',
+                                                {
+                                                    getProperName: function(name) {
+                                                        if (Ext.isEmpty(Ext.getStore("SitesComboUTLayouts").findRecord("id",name))){
+                                                            return ("");
+                                                        } else {
+                                                            return(Ext.getStore("SitesComboUTLayouts").findRecord("id",name).get("text"));
+                                                        }
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    ],
+                                    plugins: [
+                                        Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                        })
+                                    ]
+                                },
+                                {
+                                    xtype: 'gridpanel',
+                                    localiserId: 'availableFieldsGrid',
+                                    id: 'CTLayoutFieldInjectorGrid1',
+                                    width: 200,
+                                    collapseDirection: 'left',
+                                    collapsible: true,
+                                    title: 'Available fields',
+                                    forceFit: true,
+                                    store: 'UTFieldsForLayouts',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            hidden: true,
+                                            dataIndex: 'name',
+                                            text: 'Name'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            localiserId: 'labelColumn',
+                                            dataIndex: 'label',
+                                            text: 'Label'
+                                        }
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'hiddenfield',
+                                            dock: 'top',
+                                            id: 'layoutElementIdField1',
+                                            width: 100,
+                                            fieldLabel: 'Label'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'panel',
+                                    flex: 1,
+                                    autoScroll: true,
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    },
+                                    items: [
+                                        me.processLayoutEditionPanel1({
+                                            xtype: 'panel',
+                                            height: 340,
+                                            id: 'layoutEditionPanel1',
+                                            layout: {
+                                                align: 'stretch',
+                                                type: 'vbox'
+                                            },
+                                            title: ''
+                                        })
+                                    ]
+                                },
+                                {
+                                    xtype: 'panel',
+                                    localiserId: 'layoutPropertiesPanel',
+                                    width: 200,
+                                    layout: {
+                                        type: 'fit'
+                                    },
+                                    bodyPadding: 2,
+                                    collapseDirection: 'right',
+                                    collapsible: true,
+                                    iconCls: 'parametres',
+                                    title: 'Properties',
+                                    items: [
+                                        me.processLayoutPropsPanel1({
+                                            xtype: 'panel',
+                                            id: 'layoutPropsPanel1',
+                                            layout: {
+                                                type: 'fit'
+                                            },
+                                            title: 'Select an element'
+                                        })
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'bottom',
+                                            items: [
+                                                {
+                                                    xtype: 'slider',
+                                                    localiserId: 'zoomLevelSlider',
+                                                    flex: 1,
+                                                    id: 'MaskZoomControlSlider3',
+                                                    fieldLabel: 'Niveau de zoom',
+                                                    labelWidth: 60,
+                                                    value: 294,
+                                                    maxValue: 2000,
+                                                    minValue: 200,
+                                                    useTips: false,
+                                                    listeners: {
+                                                        change: {
+                                                            fn: me.onMaskZoomControlSliderChange11,
+                                                            scope: me
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            listeners: {
+                                activate: {
+                                    fn: me.onCTLayoutMainTab1Activate,
+                                    scope: me
+                                },
+                                deactivate: {
+                                    fn: me.onCTLayoutMainTab1Deactivate,
+                                    scope: me
+                                }
+                            }
+                        })
                     ]
                 }
             ],
@@ -640,6 +973,10 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                 },
                 beforeclose: {
                     fn: me.onMediaTypesInterfaceBeforeClose,
+                    scope: me
+                },
+                afterrender: {
+                    fn: me.onUserTypesInterfaceAfterRender,
                     scope: me
                 }
             }
@@ -673,6 +1010,21 @@ Ext.define('Rubedo.view.UserTypesInterface', {
         return config;
     },
 
+    processLayoutEditionPanel1: function(config) {
+        config.plugins=[Ext.create("Ext.ux.BoxReorderer")];
+        return config;
+    },
+
+    processLayoutPropsPanel1: function(config) {
+        config.title=Rubedo.RubedoAutomatedElementsLoc.selectAnElementText;
+        return config;
+    },
+
+    processCTLayoutMainTab1: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc["layoutsGrid"].title;
+        return config;
+    },
+
     onSaveMTBtnAfterRender: function(component, eOpts) {
         component.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
         if (!component.disabled){
@@ -691,20 +1043,63 @@ Ext.define('Rubedo.view.UserTypesInterface', {
         component.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/users.png');
     },
 
+    onPanelActivate: function(component, eOpts) {
+        Ext.getCmp("CTEditToolsBtnGr1").show();
+        Ext.getCmp("mainUTGrid").expand();
+    },
+
+    onPanelDeactivate: function(component, eOpts) {
+
+    },
+
     onVocabulariesMTGridViewReady: function(tablepanel, eOpts) {
         if (!ACL.interfaceRights["write.ui.userTypes"]){
             tablepanel.getSelectionModel().setLocked(true);
         }
     },
 
+    onMaskZoomControlSliderChange11: function(slider, newValue, thumb, eOpts) {
+        Ext.getCmp("layoutEditionPanel1").setHeight(newValue);
+    },
+
+    onCTLayoutMainTab1Activate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr1").show();
+        Ext.getCmp("layoutsEditToolbar1").show();
+        Ext.getCmp("mainUTGrid").collapse();
+        /*if (!Ext.isEmpty(Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected())){
+        Rubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();
+        }*/
+    },
+
+    onCTLayoutMainTab1Deactivate: function(component, eOpts) {
+        Ext.getCmp("CTLayoutsBtnGr1").hide();
+        Ext.getCmp("layoutsEditToolbar1").hide();
+        Ext.getCmp("mainUTGrid").expand();
+    },
+
     onMediaTypesInterfaceRender: function(component, eOpts) {
         Ext.getStore("TaxonomyForUT").load();
         Ext.getStore("GroupsComboStore2").load();
+        Ext.getStore("SitesComboUTLayouts").load();
     },
 
     onMediaTypesInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("TaxonomyForUT").removeAll();
         Ext.getStore("GroupsComboStore2").removeAll();
+        Ext.getStore("SitesComboUTLayouts").removeAll();
+    },
+
+    onUserTypesInterfaceAfterRender: function(component, eOpts) {
+        var task = new Ext.util.DelayedTask(function(){
+            Ext.getCmp('UTcenterZone').setActiveTab(2);
+            Ext.getCmp('UTcenterZone').setActiveTab(5);
+            Ext.getCmp('UTcenterZone').setActiveTab(0);
+            var task2 = new Ext.util.DelayedTask(function(){
+                Ext.getCmp("mainUTGrid").expand();
+            });
+            task2.delay(200);
+        });
+        task.delay(100);
     }
 
 });
