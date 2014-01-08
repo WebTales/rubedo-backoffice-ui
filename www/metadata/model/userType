@@ -179,6 +179,18 @@
                 "name": "UTType"
             },
             "designerId": "6e8e6d0e-c1a2-4e1f-9bad-f2f27d22a076"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "layouts"
+            },
+            "designerId": "878f6a12-c352-487b-ac0c-bb8c03512bba"
         }
     ]
 }

@@ -11,7 +11,7 @@
         "container|align": "stretch",
         "height": 627,
         "id": "UserTypesInterface",
-        "width": 1300,
+        "width": 1350,
         "designer|userClassName": "UserTypesInterface",
         "designer|userAlias": "UserTypesInterface",
         "layout": "hbox",
@@ -1527,7 +1527,7 @@
                             "userConfig": {
                                 "fn": "onPanelDeactivate",
                                 "implHandler": [
-                                    ""
+                                    "Ext.getCmp(\"CTEditToolsBtnGr1\").hide();"
                                 ],
                                 "name": "deactivate",
                                 "scope": "me"

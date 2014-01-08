@@ -26,6 +26,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             var newMT=Ext.create("Rubedo.model.userType",button.up().getForm().getValues());
             newMT.set("vocabularies", [ ]);
             newMT.set("fields", [ ]);
+            newMT.set("layouts", [ ]);
             newMT.set("signUpType","none");
             newMT.set("defaultGroup",Ext.getStore("GroupsComboStore2").findRecord("name","public").get("id"));
             Ext.getStore("UserTypes").add(newMT);
@@ -75,6 +76,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             record.set(form.getValues());
             var newVocabularies=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("vocabulariesUTGrid").getSelectionModel().getSelection(), "data"), "id");
             record.set("vocabularies", newVocabularies);
+            record.set("layouts",Ext.Array.pluck(Ext.getStore("UTLayouts").getRange(),"data"));
             record.set("fields", me.recordFields(Ext.getCmp('UTeditFields')));
             record.endEdit();
         } else {
@@ -474,6 +476,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
             Ext.getCmp("UTImportBtn").enable();
             Ext.getCmp("UTfieldDeleter").up().enable();
         }
+        Ext.getStore("UTLayouts").removeAll();
+        Ext.getStore("UTLayouts").loadData(record.get("layouts"));
 
 
 
