@@ -27,7 +27,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
     localiserId: 'UserTypesMainWindow',
     height: 627,
     id: 'UserTypesInterface',
-    width: 1300,
+    width: 1350,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -1049,7 +1049,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
     },
 
     onPanelDeactivate: function(component, eOpts) {
-
+        Ext.getCmp("CTEditToolsBtnGr1").hide();
     },
 
     onVocabulariesMTGridViewReady: function(tablepanel, eOpts) {

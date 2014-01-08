@@ -69,6 +69,9 @@ Ext.define('Rubedo.model.userType', {
         },
         {
             name: 'UTType'
+        },
+        {
+            name: 'layouts'
         }
     ]
 });
