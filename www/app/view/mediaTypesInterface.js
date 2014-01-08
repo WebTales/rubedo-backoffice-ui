@@ -470,6 +470,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                     localiserId: 'propsPanel',
                                     frame: true,
                                     id: 'MTPropPanel',
+                                    padding: 0,
                                     width: 300,
                                     layout: {
                                         type: 'fit'

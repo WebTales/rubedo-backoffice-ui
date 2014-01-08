@@ -129,8 +129,10 @@ Ext.define('Rubedo.controller.UserTypesController', {
                     this.applyStyles('color:'+MyPrefData.themeColor);
                 }
                 var mesChamps = TCfield.configFields;
-                var boiteParam = Ext.getCmp('UTFieldConfigsBox');
+                var boiteParam = Ext.getCmp('UTFieldConfigsBox').getComponent(0).getComponent(0);
+                var boiteParam1 = Ext.getCmp('UTFieldConfigsBox').getComponent(0).getComponent(1);
                 boiteParam.removeAll();
+                boiteParam1.removeAll();
                 for(t=0; t<mesChamps.length; t++) {
                     if (mesChamps[t].type =='Ext.form.field.ComboBox') {
                         var monStore=  Ext.create('Ext.data.Store', mesChamps[t].store);
@@ -236,7 +238,11 @@ Ext.define('Rubedo.controller.UserTypesController', {
                                 }
                                 TCfield.validate();
                             }});
-                            boiteParam.add(nouvChamp); 
+                            if (mesChamps[t].isASearchField){
+                                boiteParam1.add(nouvChamp);
+                            } else {
+                                boiteParam.add(nouvChamp); 
+                            } 
 
                         }
                         if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
@@ -279,7 +285,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
             Ext.getCmp("UTfieldDown").disable();
             Ext.getCmp('UTFieldId').setValue();
             Ext.getCmp("UTfieldDeleter").disable();
-            Ext.getCmp("UTFieldConfigsBox").removeAll();
+            Ext.getCmp("UTFieldConfigsBox").getComponent(0).getComponent(0).removeAll();
+            Ext.getCmp("UTFieldConfigsBox").getComponent(0).getComponent(1).removeAll();
         }
     },
 
@@ -404,7 +411,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
         Ext.getCmp("UTfieldDown").disable();
         Ext.getCmp("UTfieldDeleter").disable();
         Ext.getCmp('UTFieldId').setValue();
-        Ext.getCmp("UTFieldConfigsBox").removeAll();
+        Ext.getCmp("UTFieldConfigsBox").getComponent(0).getComponent(0).removeAll();
+        Ext.getCmp("UTFieldConfigsBox").getComponent(0).getComponent(1).removeAll();
         Ext.getCmp("UTcenterZone").disable();
         Ext.getCmp("userTypesEditForm").getForm().reset();
         Ext.getCmp("UserTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
@@ -424,7 +432,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
         Ext.getCmp('UTFieldId').setValue();
         Ext.getCmp("userTypesEditForm").getForm().setValues(record.getData());
         Ext.getCmp("UTfieldDeleter").disable();
-        Ext.getCmp("UTFieldConfigsBox").removeAll();
+        Ext.getCmp("UTFieldConfigsBox").getComponent(0).getComponent(0).removeAll();
+        Ext.getCmp("UTFieldConfigsBox").getComponent(0).getComponent(1).removeAll();
         var metaBox = Ext.getCmp("UserTypesInterface").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         var values= record.getData();
         values.creation= Ext.Date.format(values.createTime, Ext.Date.defaultFormat);

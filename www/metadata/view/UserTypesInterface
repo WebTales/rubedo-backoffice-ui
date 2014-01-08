@@ -969,11 +969,12 @@
                                 "layout|flex": null,
                                 "frame": true,
                                 "id": "UTPropPanel",
+                                "padding": 0,
                                 "style": null,
                                 "width": 300,
                                 "overflowY": null,
                                 "layout": "fit",
-                                "bodyPadding": 8,
+                                "bodyPadding": 0,
                                 "bodyStyle": null,
                                 "collapseDirection": "right",
                                 "collapsed": false,
@@ -998,11 +999,86 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "container|align": "stretch",
                                         "id": "UTFieldConfigsBox",
-                                        "autoScroll": true,
-                                        "layout": "anchor"
+                                        "autoScroll": null,
+                                        "layout": "hbox"
                                     },
-                                    "designerId": "ba523c66-2e82-465d-a5c9-cfed6db6f2f8"
+                                    "designerId": "ba523c66-2e82-465d-a5c9-cfed6db6f2f8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tab.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 1,
+                                                "overlapHeader": false,
+                                                "activeTab": 0
+                                            },
+                                            "designerId": "abe717b3-2016-4ce9-9272-f26de9d9f822",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoScroll": true,
+                                                        "bodyPadding": 6,
+                                                        "title": "Data"
+                                                    },
+                                                    "designerId": "15d3082e-ca54-43b2-9269-c379a6cfd073",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.tab.Tab",
+                                                            "reference": {
+                                                                "name": "tabConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "layout|flex": 1
+                                                            },
+                                                            "designerId": "6ef9f654-c61c-41da-86d5-ff3d73c01c40"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoScroll": true,
+                                                        "bodyPadding": 6,
+                                                        "title": "Search"
+                                                    },
+                                                    "designerId": "d74e0ccf-92b2-423e-b5c0-5c8f16abb338",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.tab.Tab",
+                                                            "reference": {
+                                                                "name": "tabConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "layout|flex": 1
+                                                            },
+                                                            "designerId": "acb3ab3c-e17a-4d4d-a223-2524c3f652ff"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Hidden",
