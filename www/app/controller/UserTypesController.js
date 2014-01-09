@@ -403,6 +403,26 @@ Ext.define('Rubedo.controller.UserTypesController', {
         button.up().disable();
     },
 
+    onAddCTLayoutBtn1Click: function(button, e, eOpts) {
+
+    },
+
+    onCopyCTLayoutBtn1Click: function(button, e, eOpts) {
+
+    },
+
+    onRemoveCTLayoutBtn1Click: function(button, e, eOpts) {
+
+    },
+
+    onLayoutActivatorBtn1Click: function(button, e, eOpts) {
+
+    },
+
+    onCTLayoutsGrid1SelectionChange: function(model, selected, eOpts) {
+
+    },
+
     resetInterfaceNoSelect: function() {
         Ext.Array.forEach(Ext.getCmp("UserTypesInterface").getComponent("contextBar").query("buttongroup"), function(btng){btng.disable();});
         Ext.getCmp("removeUTBtn").disable();
@@ -848,6 +868,452 @@ Ext.define('Rubedo.controller.UserTypesController', {
         task.delay(600);
     },
 
+    resetLayoutsInterfaceSelect: function(record) {
+        Ext.getCmp("RemoveCTLayoutBtn1").enable();
+        Ext.getCmp("copyCTLayoutBtn1").enable();
+        Ext.getCmp("layoutEditionPanel1").removeAll();
+        Ext.getCmp("layoutsEditToolbar1").enable();
+        this.restoreLayout(record.get("rows"),0,Ext.getCmp("layoutEditionPanel"));
+        Ext.getCmp("layoutElementIdField1").setValue(null);
+        Ext.getCmp("layoutActivatorBtn1").enable();
+        if (record.get("active")){
+            Ext.getCmp("layoutActivatorBtn1").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);
+            Ext.getCmp("layoutActivatorBtn1").setIconCls("nonS");
+            Ext.getCmp("layoutActivatorBtn1").deactivateMode=true;
+        } else {
+            Ext.getCmp("layoutActivatorBtn1").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
+            Ext.getCmp("layoutActivatorBtn1").setIconCls("ouiS");
+            Ext.getCmp("layoutActivatorBtn1").deactivateMode=false;
+        }
+        this.getFieldsListForLayout();
+    },
+
+    resetLayoutsInterfaceNoSelect: function() {
+        Ext.getCmp("layoutEditionPanel1").removeAll();
+        Ext.getCmp("RemoveCTLayoutBtn1").disable();
+        Ext.getCmp("copyCTLayoutBtn1").disable();
+        Ext.getCmp("layoutsEditToolbar1").disable();
+        Ext.getCmp("layoutActivatorBtn1").disable();
+        Ext.getStore("UTFieldsForLayouts").removeAll();
+        Ext.getCmp("layoutElementIdField1").setValue(null);
+        Ext.getCmp("layoutActivatorBtn1").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);
+        Ext.getCmp("layoutActivatorBtn1").setIconCls("ouiS");
+        Ext.getCmp("layoutActivatorBtn1").deactivateMode=false;
+    },
+
+    getFieldsListForLayout: function() {
+        var discoveredFields=[ ];
+        var usedFields=Ext.Array.pluck(Ext.getCmp("layoutEditionPanel1").query("unBloc"),"name");
+        if (!Ext.Array.contains(usedFields,"text")){
+            discoveredFields.push({name:"text",label:Rubedo.RubedoAutomatedElementsLoc.titleText});
+        }
+        if (!Ext.Array.contains(usedFields,"summary")){
+            discoveredFields.push({name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText});
+        }
+        Ext.Array.forEach(Ext.getCmp('champsEditionTC1').query("ChampTC"), function(field){
+            if (!Ext.Array.contains(usedFields,field.getComponent(1).name)){
+                discoveredFields.push({name:field.getComponent(1).name, label:field.getComponent(1).fieldLabel});
+            }
+        });
+        Ext.getStore("UTFieldsForLayouts").removeAll();
+        Ext.getStore("UTFieldsForLayouts").add(discoveredFields);
+    },
+
+    saveLayout: function(startComp) {
+        var me=this;
+        var nRows=[ ];
+        Ext.Array.forEach(startComp.items.items, function(row){
+            var newCols = [ ];
+            var offset=0;
+            Ext.Array.forEach(row.items.items, function(col){
+                if (col.isXType("panel")) {
+                    var fields=[ ];
+                    Ext.Array.forEach(col.items.items, function(field){
+                        fields.push({
+                            title:field.title,
+                            responsive:field.responsive,
+                            responsiveClass:me.deudceResposiveClass(field.responsive),
+                            name:field.name,
+                            showLabel:field.showLabel,
+                            elementStyle:field.elementStyle,
+                            classHTML:field.classHTML,
+                            flex:field.flex
+                        });
+                    });
+                    newCols.push({
+                        responsive:col.responsive,
+                        responsiveClass:me.deudceResposiveClass(col.responsive),
+                        classHTML:col.classHTML,
+                        elementStyle:col.elementStyle,
+                        span:col.flex,
+                        mType:"col",
+                        fields:fields,
+                        offset:offset
+
+                    });
+                    offset=0;
+                } else {offset=offset+col.flex;}
+
+                });
+                nRows.push({
+                    elementStyle:row.elementStyle,
+                    mType:"row",
+                    responsive:row.responsive,
+                    responsiveClass:me.deudceResposiveClass(row.responsive),
+                    classHTML:row.classHTML,
+                    columns: newCols
+
+                });
+            });
+            return nRows;
+    },
+
+    renderRowTools: function(component) {
+        var me=this;
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
+            anchor:"100%",
+            labelWidth:60,
+            margin:"0 0 10 0",
+            vertical:true,
+            columns:1,
+            items: [
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            ]
+
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eClassHTMLField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.classHTML=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.classHTML
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.elementStyle
+        }));
+        Ext.getCmp("layoutPropsPanel1").add(configSpec);
+    },
+
+    renderFieldTools: function(component) {
+        var me=this;
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('checkbox',{
+            itemId:"eTitleShowField",
+            fieldLabel:"Display label",
+            onChange:function(){
+
+                component.showLabel=this.getValue();
+
+            },
+            labelWidth:60,
+            inputValue:true,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            checked:component.showLabel
+        }));
+
+        configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
+            anchor:"100%",
+            labelWidth:60,
+            margin:"0 0 10 0",
+            vertical:true,
+            columns:1,
+            items: [
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            ]
+
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eClassHTMLField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.classHTML=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.classHTML
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.elementStyle
+        }));
+        Ext.getCmp("layoutPropsPanel1").add(configSpec);
+    },
+
+    renderMainBoxTools: function(component) {
+
+    },
+
+    renderColumnTools: function(component) {
+        var me=this;
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        configSpec.getComponent(0).add(Ext.widget('displayfield',{
+            value:"",
+            labelWidth:180,
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.dbclickToAssignText
+
+
+        }));
+        configSpec.getComponent(0).add(Ext.widget('checkboxgroup',{
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.visibilityText,
+            anchor:"100%",
+            labelWidth:60,
+            margin:"0 0 10 0",
+            vertical:true,
+            columns:1,
+            items: [
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            ]
+
+        }));
+        var offsetEdit=Ext.widget('numberfield',{
+            itemId:"offsetEditor",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.offsetText,
+            editable:false,
+            labelWidth:60,
+            allowDecimals:false,
+            anchor:"100%",
+            value:0,
+            minValue:0
+        });
+
+        var spanEdit=Ext.widget('numberfield',{
+            itemId:"spanEditor",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.spanText,
+            labelWidth:60,
+            editable:false,
+            allowDecimals:false,
+            anchor:"100%",
+            value:component.flex,
+            minValue:1
+        });
+
+
+
+        configSpec.getComponent(0).add(offsetEdit);
+        configSpec.getComponent(0).add(spanEdit);
+        me.applyConstrain(component,offsetEdit,spanEdit,false);
+        offsetEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
+        spanEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
+
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eClassHTMLField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.classHTML=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.classHTML
+        }));
+        configSpec.getComponent(1).add(Ext.widget('textfield',{
+            itemId:"eStyleField",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
+            onChange:function(){
+                if (this.isValid()){
+                    component.elementStyle=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.elementStyle
+        }));
+        Ext.getCmp("layoutPropsPanel1").add(configSpec);
+    },
+
+    applyConstrain: function(target, offsetF, spanF, applyFirst) {
+        var myEol=target.up().getComponent("eol");
+        var myOffset=null;
+        if ((!Ext.isEmpty(target.prev()))&&(target.prev().isXType("container"))&&(!(target.prev().isXType("panel")))) {
+            myOffset=target.prev();
+        }
+        if (applyFirst) {
+            myEol.flex=myEol.flex+target.flex-spanF.getValue();
+            target.flex=spanF.getValue();
+            spanF.setMaxValue(target.flex+myEol.flex);
+            offsetF.setMaxValue(offsetF.getValue()+myEol.flex);
+            target.up().doLayout();
+            if (offsetF.getValue()>0){ 
+                if (Ext.isEmpty(myOffset)) {
+                    myOffset=Ext.widget("container",{flex:0,reorderable: false,style:"{background-image:url(resources/images/stripes.png);}"});
+                    target.up().insert(Ext.Array.indexOf(target.up().items.items,target),myOffset);
+
+
+                } 
+                myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                myOffset.flex=offsetF.getValue();
+                offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                target.up().doLayout();
+
+            } else if((offsetF.getValue()===0)) {
+                if (!Ext.isEmpty(myOffset)) {
+                    myEol.flex=myEol.flex+myOffset.flex-offsetF.getValue();
+                    myOffset.flex=offsetF.getValue();
+                    offsetF.setMaxValue(myOffset.flex+myEol.flex);
+                    spanF.setMaxValue(spanF.getValue()+myEol.flex);
+                    myOffset.destroy();
+                    target.up().doLayout();      
+                } 
+
+            }
+        }
+        else {
+            if (Ext.isEmpty(myOffset)){
+                offsetF.setValue(0);
+                offsetF.setMaxValue(myEol.flex);
+            }
+            else {
+                offsetF.setValue(myOffset.flex);
+                offsetF.setMaxValue(myOffset.flex+myEol.flex); 
+            }
+
+            spanF.setValue(target.flex);
+            spanF.setMaxValue(target.flex+myEol.flex);
+        }
+    },
+
+    deudceResposiveClass: function(responsiveObj) {
+        var responsiveArray=[ ];
+        Ext.Object.each(responsiveObj, function(key, value, myself) {
+            if (value===true){
+                responsiveArray.push(key);
+            }
+        });
+        if (responsiveArray.length==3){
+            return("");
+        } else if (responsiveArray.length==2){
+            var hiddenArray=["tablet","desktop","phone"];
+            var hiddenMedia=Ext.Array.difference(hiddenArray,responsiveArray);
+            return("hidden-"+hiddenMedia[0]);
+        } else if (responsiveArray.length==1){
+            return("visible-"+responsiveArray[0]);
+        } else {
+            return("hidden");
+        }
+    },
+
+    restoreLayout: function(mRows, its, cible) {
+        var me=this;
+        Ext.Array.forEach(mRows, function(row){
+            var newRow = Ext.widget('panel', {
+                header:false,
+                mType:"row",
+                plugins:[Ext.create("Ext.ux.BoxReorderer")],
+                elementStyle:row.elementStyle,
+                responsive:row.responsive,
+                classHTML:row.classHTML,
+                id:"UTLayout-"+Ext.id(),
+                margin:4,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
+                }
+            });
+            var rFlex=1;
+            var eolWidth=12;
+            Ext.Array.forEach(row.columns, function(column){
+                if (column.offset>0) {
+                    newRow.add(Ext.widget('container', {
+                        flex:column.offset,
+                        reorderable:false,
+                        style:"{background-image:url(resources/images/stripes.png);}"
+                    }));
+                    eolWidth=eolWidth-column.offset;
+                }
+                var isFinalCol=false;
+                if (its<=0){isFinalCol=true;}
+                var newCol=Ext.widget('panel', {
+                    header:false,
+                    flex:column.span,
+                    plugins:[Ext.create("Ext.ux.BoxReorderer")],
+                    final:isFinalCol,
+                    mType:'col',
+                    id:"UTLayout-"+Ext.id(),
+                    elementStyle:column.elementStyle,
+                    responsive:column.responsive,
+                    classHTML:column.classHTML,
+                    margin:4,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    }
+                });
+                if ((its>0)&&(column.isTerminal===false)) {
+                    rFlex=Ext.Array.max([rFlex,column.rows.length]);
+                    me.masqueRestit(column.rows,its-1,newCol);    
+                }
+
+                eolWidth=eolWidth-column.span;
+                Ext.Array.forEach(column.fields,function(field){
+                    var cloned=Ext.clone(field);
+                    cloned.id="UTLayout-"+Ext.id();
+                    newCol.add(Ext.widget("unBloc",cloned));
+                });
+                newRow.add(newCol);
+
+            });
+            newRow.add(Ext.widget("container",{
+                flex:eolWidth,
+                reorderable:false,
+                itemId:"eol"
+            }));
+            if (Ext.isEmpty(row.height)) {
+                newRow.flex=rFlex;
+            } else {
+                newRow.height=row.height;
+            }
+            cible.add(newRow);  
+        });
+    },
+
     init: function(application) {
         this.control({
             "#newUTBtn": {
@@ -919,6 +1385,21 @@ Ext.define('Rubedo.controller.UserTypesController', {
             },
             "#denySignUpBtn": {
                 click: this.onDenySignUpBtnClick
+            },
+            "#addCTLayoutBtn1": {
+                click: this.onAddCTLayoutBtn1Click
+            },
+            "#copyCTLayoutBtn1": {
+                click: this.onCopyCTLayoutBtn1Click
+            },
+            "#RemoveCTLayoutBtn1": {
+                click: this.onRemoveCTLayoutBtn1Click
+            },
+            "#layoutActivatorBtn1": {
+                click: this.onLayoutActivatorBtn1Click
+            },
+            "#CTLayoutsGrid1": {
+                selectionchange: this.onCTLayoutsGrid1SelectionChange
             }
         });
     }
