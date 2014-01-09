@@ -2527,9 +2527,9 @@
                                     "Ext.getCmp(\"CTLayoutsBtnGr1\").show();\r",
                                     "Ext.getCmp(\"layoutsEditToolbar1\").show();\r",
                                     "Ext.getCmp(\"mainUTGrid\").collapse();\r",
-                                    "/*if (!Ext.isEmpty(Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected())){\r",
-                                    "    Rubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();\r",
-                                    "}*/"
+                                    "if (!Ext.isEmpty(Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected())){\r",
+                                    "Rubedo.controller.UserTypesController.prototype.getFieldsListForLayout();\r",
+                                    "}"
                                 ],
                                 "name": "activate",
                                 "scope": "me"

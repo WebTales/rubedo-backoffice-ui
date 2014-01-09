@@ -100,7 +100,8 @@
                     "Ext.getCmp(\"UTFieldConfigsBox\").getComponent(0).getComponent(1).removeAll();\r",
                     "Ext.getCmp(\"UTcenterZone\").disable();\r",
                     "Ext.getCmp(\"userTypesEditForm\").getForm().reset();\r",
-                    "Ext.getCmp(\"UserTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
+                    "Ext.getCmp(\"UserTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();\r",
+                    "this.resetLayoutsInterfaceNoSelect();"
                 ]
             },
             "designerId": "44ca7d65-b178-41f2-94cd-b0a084501961"
@@ -237,6 +238,10 @@
                 "fn": "onSaveUTBtnClick",
                 "implHandler": [
                     "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(rec)){\r",
+                    "    rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel1\")));\r",
+                    "}\r",
                     "var record=Ext.getCmp(\"mainUTGrid\").getSelectionModel().getLastSelected();\r",
                     "var form = Ext.getCmp(\"userTypesEditForm\").getForm();\r",
                     "if (form.isValid()){\r",
@@ -1381,7 +1386,7 @@
             "userConfig": {
                 "fn": "onAddCTLayoutBtn1Click",
                 "implHandler": [
-                    ""
+                    "Ext.widget(\"NewUTLayoutWindow\").show();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -1400,7 +1405,12 @@
             "userConfig": {
                 "fn": "onCopyCTLayoutBtn1Click",
                 "implHandler": [
-                    ""
+                    "var target = Ext.getCmp('CTLayoutsGrid1').getSelectionModel().getSelection()[0];\r",
+                    "if (Ext.isDefined(target)) {\r",
+                    "    var fenetre = Ext.widget('UTLCopyWindow');\r",
+                    "    fenetre.show();\r",
+                    "    fenetre.getComponent(0).getComponent(0).setValue(target.get(\"name\")+\" - Copie du \"+Ext.Date.format(new Date(), 'j F, Y, G:i'));\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -1419,7 +1429,7 @@
             "userConfig": {
                 "fn": "onRemoveCTLayoutBtn1Click",
                 "implHandler": [
-                    ""
+                    "Ext.getCmp(\"CTLayoutsGrid1\").getStore().remove(Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected());"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -1438,7 +1448,22 @@
             "userConfig": {
                 "fn": "onLayoutActivatorBtn1Click",
                 "implHandler": [
-                    ""
+                    "if (button.deactivateMode){\r",
+                    "    Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected().set(\"active\",false);\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn1\").setText(Rubedo.RubedoAutomatedElementsLoc.activateText);\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn1\").setIconCls(\"ouiS\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn1\").deactivateMode=false;\r",
+                    "\r",
+                    "} else {\r",
+                    "    var mySite=Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected().get(\"site\");\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"CTLayoutsGrid1\").getStore().query(\"site\",mySite).items,function(record){\r",
+                    "        record.set(\"active\",false);\r",
+                    "    });\r",
+                    "    Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected().set(\"active\",true);\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn1\").setText(Rubedo.RubedoAutomatedElementsLoc.deactivateText);\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn1\").setIconCls(\"nonS\");\r",
+                    "    Ext.getCmp(\"layoutActivatorBtn1\").deactivateMode=true;\r",
+                    "}"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -1457,7 +1482,11 @@
             "userConfig": {
                 "fn": "onCTLayoutsGrid1SelectionChange",
                 "implHandler": [
-                    ""
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    this.resetLayoutsInterfaceNoSelect();\r",
+                    "} else {\r",
+                    "    this.resetLayoutsInterfaceSelect(selected[0]);\r",
+                    "}"
                 ],
                 "name": "selectionchange",
                 "scope": "me",
@@ -1483,7 +1512,7 @@
                     "Ext.getCmp(\"copyCTLayoutBtn1\").enable();\r",
                     "Ext.getCmp(\"layoutEditionPanel1\").removeAll();\r",
                     "Ext.getCmp(\"layoutsEditToolbar1\").enable();\r",
-                    "this.restoreLayout(record.get(\"rows\"),0,Ext.getCmp(\"layoutEditionPanel\"));\r",
+                    "this.restoreLayout(record.get(\"rows\"),0,Ext.getCmp(\"layoutEditionPanel1\"));\r",
                     "Ext.getCmp(\"layoutElementIdField1\").setValue(null);\r",
                     "Ext.getCmp(\"layoutActivatorBtn1\").enable();\r",
                     "if (record.get(\"active\")){\r",
@@ -1542,7 +1571,7 @@
                     "if (!Ext.Array.contains(usedFields,\"summary\")){\r",
                     "    discoveredFields.push({name:\"summary\",label:Rubedo.RubedoAutomatedElementsLoc.summaryText});\r",
                     "}\r",
-                    "Ext.Array.forEach(Ext.getCmp('champsEditionTC1').query(\"ChampTC\"), function(field){\r",
+                    "Ext.Array.forEach(Ext.getCmp('UTeditFields').query(\"ChampTC\"), function(field){\r",
                     "    if (!Ext.Array.contains(usedFields,field.getComponent(1).name)){\r",
                     "        discoveredFields.push({name:field.getComponent(1).name, label:field.getComponent(1).fieldLabel});\r",
                     "    }\r",
@@ -2062,6 +2091,520 @@
                 ]
             },
             "designerId": "acefa262-dd95-40ce-b7f9-516d7135b6ac"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewCTLayoutWindowSubmitBtn1Click",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var obs=form.getValues();\r",
+                    "    obs.rows=[ ];\r",
+                    "    Ext.getStore(\"UTLayouts\").add(obs);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#NewCTLayoutWindowSubmitBtn1"
+            },
+            "designerId": "c8315aff-13a3-4415-a38d-8294093f352f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLCopyLSubitBtn1Click",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var data = Ext.getCmp('CTLayoutsGrid1').getSelectionModel().getSelection()[0].getData();\r",
+                    "    data.active=false;\r",
+                    "    Ext.apply(data, form.getValues());\r",
+                    "    Ext.getCmp('CTLayoutsGrid1').getStore().add(data);\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#CTLCopyLSubitBtn1"
+            },
+            "designerId": "76e723aa-2a83-45a1-b1c5-23841f941449"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLayoutsGrid1BeforeSelect",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var rec=Ext.getCmp(\"CTLayoutsGrid1\").getSelectionModel().getLastSelected();\r",
+                    "if (!Ext.isEmpty(rec)){\r",
+                    "    rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel1\")));\r",
+                    "}"
+                ],
+                "name": "beforeselect",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#CTLayoutsGrid1"
+            },
+            "designerId": "06ade831-cea6-43c2-b989-1c5f4659e101"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (!component.isXType(\"unBloc\")){\r",
+                    "    component.addBodyCls('contrastBorder');\r",
+                    "    if (component.mType==\"col\"){\r",
+                    "        component.addBodyCls('contrastRow');\r",
+                    "    }\r",
+                    "    component.getEl().on(\"mouseover\", function(e){\r",
+                    "        component.setBorder(4);\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    component.getEl().on(\"mouseout\", function(e){\r",
+                    "        component.setBorder(2);\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    component.getEl().on(\"click\", function(e){\r",
+                    "        Ext.getCmp(\"layoutElementIdField1\").setValue(component.getId());\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "} else {\r",
+                    "    component.getEl().on(\"mouseover\", function(e){\r",
+                    "        var prevSelected = Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());\r",
+                    "        if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==component.id)) {\r",
+                    "            component.setIconCls('selectBloc');\r",
+                    "        }\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    component.getEl().on(\"mouseout\", function(e){\r",
+                    "        var prevSelected = Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());\r",
+                    "        if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==component.id)) {\r",
+                    "        component.setIconCls();}\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    component.getEl().on(\"click\", function(e){\r",
+                    "        Ext.getCmp(\"layoutElementIdField1\").setValue(component.getId());\r",
+                    "        e.stopEvent();\r",
+                    "    });\r",
+                    "    component.header.add(Ext.widget(\"tool\",{\r",
+                    "        type:\"close\",\r",
+                    "        handler:function(){\r",
+                    "            component.up().remove(component);\r",
+                    "            me.getFieldsListForLayout();\r",
+                    "        }\r",
+                    "    }));\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#layoutEditionPanel1 panel"
+            },
+            "designerId": "06e39ee7-0984-41e8-a10b-fd62918ff4e2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLayoutEditionPanel1AfterRender",
+                "implHandler": [
+                    "component.setBorder(2);\r",
+                    "component.addBodyCls('contrastCBorder');\r",
+                    "component.getEl().on(\"mouseover\", function(e){\r",
+                    "    component.setBorder(4);\r",
+                    "    e.stopEvent();\r",
+                    "});\r",
+                    "component.getEl().on(\"mouseout\", function(e){\r",
+                    "    component.setBorder(2);\r",
+                    "    e.stopEvent();\r",
+                    "});\r",
+                    "component.getEl().on(\"click\", function(e){\r",
+                    "    Ext.getCmp(\"layoutElementIdField1\").setValue(component.getId());\r",
+                    "    e.stopEvent();\r",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#layoutEditionPanel1"
+            },
+            "designerId": "fec28a11-a4e3-4eec-a062-37f6b890a538"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLayoutElementIdField1Change",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var newSelected=Ext.getCmp(newValue);\r",
+                    "Ext.Array.forEach(Ext.getCmp(\"layoutsEditToolbar1\").items.items,function(item){\r",
+                    "    item.disable();\r",
+                    "});\r",
+                    "Ext.getCmp(\"layoutPropsPanel1\").removeAll();\r",
+                    "Ext.getCmp(\"layoutPropsPanel1\").setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);\r",
+                    "Ext.getCmp(\"layoutPropsPanel1\").setIconCls();\r",
+                    "Ext.getCmp(\"saveCTLayoutBtn1\").enable();\r",
+                    "if (!Ext.isEmpty(newSelected)){\r",
+                    "    newSelected.getEl().frame(MyPrefData.themeColor);\r",
+                    "    newSelected.addBodyCls('selectedelement');\r",
+                    "\r",
+                    "\r",
+                    "    if (newSelected.getId()==\"layoutEditionPanel1\"){\r",
+                    "        Ext.getCmp(\"addRowToLayoutBtn1\").enable();\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setTitle(Rubedo.RubedoAutomatedElementsLoc.rootText);\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setIconCls('editZone');\r",
+                    "        me.renderMainBoxTools(newSelected);\r",
+                    "    } else if (newSelected.mType==\"row\"){\r",
+                    "        Ext.getCmp(\"removeLayoutElementBtn1\").enable();\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setTitle(Rubedo.RubedoAutomatedElementsLoc.lignText);\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setIconCls('editZone');\r",
+                    "        Ext.getCmp(\"moveLayoutItemUpBtn1\").enable();\r",
+                    "        Ext.getCmp(\"moveLayoutItemDownBtn1\").enable();\r",
+                    "        if (newSelected.getComponent(\"eol\").flex>0){\r",
+                    "            Ext.getCmp(\"addColToLayoutBtn1\").enable();\r",
+                    "        }\r",
+                    "        me.renderRowTools(newSelected);\r",
+                    "    } else if (newSelected.mType==\"col\"){\r",
+                    "        Ext.getCmp(\"removeLayoutElementBtn1\").enable();\r",
+                    "        if (!Ext.isEmpty(Ext.getStore(\"UTFieldsForLayouts\").getRange())){\r",
+                    "            Ext.getCmp(\"assignFieldToColBtn1\").enable();\r",
+                    "        }\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setIconCls('editZone');\r",
+                    "        me.renderColumnTools(newSelected);\r",
+                    "    } else if (newSelected.isXType(\"unBloc\")){\r",
+                    "        Ext.getCmp(\"removeLayoutElementBtn1\").enable();\r",
+                    "        newSelected.setIconCls('editBloc');\r",
+                    "        newSelected.removeBodyCls('selectedelement');\r",
+                    "        Ext.getCmp(\"moveLayoutItemUpBtn1\").enable();\r",
+                    "        Ext.getCmp(\"moveLayoutItemDownBtn1\").enable();\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setIconCls('editBloc');\r",
+                    "        Ext.getCmp(\"layoutPropsPanel1\").setTitle(Rubedo.RubedoAutomatedElementsLoc.fieldText+\" : \"+newSelected.title);\r",
+                    "        me.renderFieldTools(newSelected);\r",
+                    "\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var oldSelected=Ext.getCmp(oldValue);\r",
+                    "if (!Ext.isEmpty(oldSelected)){\r",
+                    "    oldSelected.removeBodyCls('selectedelement');\r",
+                    "    oldSelected.setIconCls();\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Hidden",
+                "designer|controlQuery": "#layoutElementIdField1"
+            },
+            "designerId": "fd9f1ee9-d210-44f5-aca2-b684ae227a6d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddRowToLayoutBtn1Click",
+                "implHandler": [
+                    "var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());\r",
+                    "var row = Ext.widget('panel', {\r",
+                    "    header:false,\r",
+                    "    mType:\"row\",\r",
+                    "    flex:1,\r",
+                    "    id:\"UTLayout-\"+Ext.id(),\r",
+                    "    plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
+                    "    elementStyle:\"\",\r",
+                    "    responsive:{\r",
+                    "        phone:true,\r",
+                    "        tablet:true,\r",
+                    "        desktop:true\r",
+                    "    },\r",
+                    "    margin:4,\r",
+                    "    layout: {\r",
+                    "        type: 'hbox',\r",
+                    "        align: 'stretch'\r",
+                    "    }\r",
+                    "});\r",
+                    "row.add(Ext.widget('container', {flex:12,reorderable:false,itemId:\"eol\"}));\r",
+                    "cible.insert(cible.items.items.length,row);\r",
+                    "Ext.getCmp('layoutElementIdField1').setValue(row.getId());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addRowToLayoutBtn1"
+            },
+            "designerId": "b9924a86-65f7-45e4-a0fb-3288b2d5493b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddColToLayoutBtn1Click",
+                "implHandler": [
+                    "var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());\r",
+                    "var myEol=cible.getComponent('eol');\r",
+                    "\r",
+                    "if (myEol.flex>0) {\r",
+                    "    var isFinalCol=true;\r",
+                    "    var newCol=Ext.widget('panel', {\r",
+                    "        header:false,\r",
+                    "        flex:1,\r",
+                    "        elementStyle:\"\",\r",
+                    "        final:isFinalCol,\r",
+                    "        id:\"UTLayout-\"+Ext.id(),\r",
+                    "        plugins:[Ext.create(\"Ext.ux.BoxReorderer\")],\r",
+                    "        responsive:{\r",
+                    "            phone:true,\r",
+                    "            tablet:true,\r",
+                    "            desktop:true\r",
+                    "        },\r",
+                    "        mType:'col',\r",
+                    "        margin:4,\r",
+                    "        layout: {\r",
+                    "            type: 'vbox',\r",
+                    "            align: 'stretch'\r",
+                    "        }\r",
+                    "    });\r",
+                    "    myEol.flex=myEol.flex-1;\r",
+                    "    cible.insert(cible.items.items.length-1,newCol);\r",
+                    "    if (myEol.flex===0){\r",
+                    "        button.disable();\r",
+                    "    }\r",
+                    "    Ext.getCmp('layoutElementIdField1').setValue(newCol.getId());\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addColToLayoutBtn1"
+            },
+            "designerId": "ba8fc7f2-702a-46ad-a0b9-200d9de97dfb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssignFieldToColBtn1Click",
+                "implHandler": [
+                    "Ext.widget(\"AssignFieldToColWindow1\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#assignFieldToColBtn1"
+            },
+            "designerId": "20ef8774-4a8f-4a53-be32-2110b26c1d13"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onRemoveLayoutElementBtn1Click",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());\r",
+                    "var recalc=false;\r",
+                    "if (cible.isXType(\"unBloc\")){\r",
+                    "    recalc=true;\r",
+                    "}\r",
+                    "if (cible.mType==\"col\"){\r",
+                    "    var myEol=cible.up().getComponent(\"eol\");\r",
+                    "    var myOffset=cible.previousSibling();\r",
+                    "    if (!Ext.isEmpty(myOffset)) {\r",
+                    "        if ((myOffset.isXType(\"container\"))&&(!(myOffset.isXType(\"panel\")))) {\r",
+                    "            myEol.flex=myEol.flex+myOffset.flex;\r",
+                    "            myOffset.up().remove(myOffset);\r",
+                    "        }\r",
+                    "    }\r",
+                    "    myEol.flex=myEol.flex+cible.flex;\r",
+                    "\r",
+                    "}\r",
+                    "cible.up().remove(cible);\r",
+                    "Ext.getCmp('layoutElementIdField1').setValue(null);\r",
+                    "if (recalc){\r",
+                    "    me.getFieldsListForLayout();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#removeLayoutElementBtn1"
+            },
+            "designerId": "28147472-4f4b-491a-9869-2ff3f121d8cc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMoveLayoutItemUpBtn1Click",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp(\"layoutElementIdField1\").getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    if (pos > 0) {\r",
+                    "        field.up().move(pos,pos-1);\r",
+                    "    }\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveLayoutItemUpBtn1"
+            },
+            "designerId": "2c487c35-63b6-489c-a7e3-eada9fe26685"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMoveLayoutItemDownBtn1Click",
+                "implHandler": [
+                    "var field = Ext.getCmp(Ext.getCmp(\"layoutElementIdField1\").getValue());\r",
+                    "if (!Ext.isEmpty(field)) {\r",
+                    "    var pos = field.up().items.indexOf(field);\r",
+                    "    field.up().move(pos,pos+1);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#moveLayoutItemDownBtn1"
+            },
+            "designerId": "46566bae-70a6-4e4c-ba14-b7f9bf2dcc2d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTLayoutFieldInjectorGrid1ItemDblClick",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var target=Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());\r",
+                    "if ((!Ext.isEmpty(target))&&(target.mType==\"col\")){\r",
+                    "    var name=record.get(\"name\");\r",
+                    "    var label=record.get(\"label\");\r",
+                    "    var newField = Ext.widget('unBloc', {title:label,id:\"UTLayout-\"+Ext.id()});\r",
+                    "    newField.responsive={\r",
+                    "        \"phone\":true,\r",
+                    "        \"tablet\":true,\r",
+                    "        \"desktop\":true\r",
+                    "    };\r",
+                    "    newField.elementStyle=\"\";\r",
+                    "    newField.flex=1;\r",
+                    "    newField.name=name;\r",
+                    "    target.add(newField);\r",
+                    "    me.getFieldsListForLayout();\r",
+                    "}"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#CTLayoutFieldInjectorGrid1"
+            },
+            "designerId": "713a4707-a834-44d3-afab-a2da6fb3ef39"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAssignFieldToLayoutSubmitBtn2Click",
+                "implHandler": [
+                    "var me=this;\r",
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var name=form.getValues().field;\r",
+                    "    var label=Ext.getStore(\"UTFieldsForLayouts\").findRecord(\"name\",name).get(\"label\");\r",
+                    "    var newField = Ext.widget('unBloc', {title:label,id:\"UTLayout-\"+Ext.id()});\r",
+                    "    newField.responsive={\r",
+                    "        \"phone\":true,\r",
+                    "        \"tablet\":true,\r",
+                    "        \"desktop\":true\r",
+                    "    };\r",
+                    "    newField.elementStyle=\"\";\r",
+                    "    newField.flex=1;\r",
+                    "    newField.name=name;\r",
+                    "    Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue()).add(newField);\r",
+                    "    button.up().up().close();\r",
+                    "    me.getFieldsListForLayout();\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#assignFieldToLayoutSubmitBtn2"
+            },
+            "designerId": "2226125e-c362-4fc2-84d5-9c293180b049"
         }
     ]
 }
