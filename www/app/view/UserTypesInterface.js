@@ -1066,9 +1066,9 @@ Ext.define('Rubedo.view.UserTypesInterface', {
         Ext.getCmp("CTLayoutsBtnGr1").show();
         Ext.getCmp("layoutsEditToolbar1").show();
         Ext.getCmp("mainUTGrid").collapse();
-        /*if (!Ext.isEmpty(Ext.getCmp("CTLayoutsGrid").getSelectionModel().getLastSelected())){
-        Rubedo.controller.TypesContenusController.prototype.getFieldsListForLayout();
-        }*/
+        if (!Ext.isEmpty(Ext.getCmp("CTLayoutsGrid1").getSelectionModel().getLastSelected())){
+            Rubedo.controller.UserTypesController.prototype.getFieldsListForLayout();
+        }
     },
 
     onCTLayoutMainTab1Deactivate: function(component, eOpts) {

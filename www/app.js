@@ -358,7 +358,8 @@ Ext.application({
         'ACEField',
         'NewUTLayoutWindow',
         'UTLCopyWindow',
-        'AssignUTFieldToColWindow'
+        'AssignUTFieldToColWindow',
+        'AssignFieldToColWindow1'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -15,6 +15,7 @@
 
 Ext.define('Rubedo.view.NewUTLayoutWindow', {
     extend: 'Ext.window.Window',
+    alias: 'widget.NewUTLayoutWindow',
 
     localiserId: 'newLayoutWindow',
     width: 400,
