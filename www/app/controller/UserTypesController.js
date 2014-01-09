@@ -1237,11 +1237,14 @@ Ext.define('Rubedo.controller.UserTypesController', {
     getFieldsListForLayout: function() {
         var discoveredFields=[ ];
         var usedFields=Ext.Array.pluck(Ext.getCmp("layoutEditionPanel1").query("unBloc"),"name");
-        if (!Ext.Array.contains(usedFields,"text")){
-            discoveredFields.push({name:"text",label:Rubedo.RubedoAutomatedElementsLoc.titleText});
+        if (!Ext.Array.contains(usedFields,"email")){
+            discoveredFields.push({name:"email",label:"E-mail"});
         }
-        if (!Ext.Array.contains(usedFields,"summary")){
-            discoveredFields.push({name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText});
+        if (!Ext.Array.contains(usedFields,"name")){
+            discoveredFields.push({name:"name",label:"Name"});
+        }
+        if (!Ext.Array.contains(usedFields,"photo")){
+            discoveredFields.push({name:"photo",label:"Photo"});
         }
         Ext.Array.forEach(Ext.getCmp('UTeditFields').query("ChampTC"), function(field){
             if (!Ext.Array.contains(usedFields,field.getComponent(1).name)){
