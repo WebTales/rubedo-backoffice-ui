@@ -917,6 +917,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             result.push(newField);
         });
         return(result);
+
+
+
     },
 
     nameValidator: function(name) {
@@ -1150,6 +1153,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             newUser.login=newUser.email;
             delete fieldValues.name;
             delete fieldValues.email;
+            Ext.Array.forEach(Ext.getCmp("userCUFields").query("checkboxgroup"),function(cbGroup){
+                fieldValues[cbGroup.name]=cbGroup.getValue();
+            });
             newUser.fields=fieldValues;
             newUser.taxonomy=taxoForm.getValues();
             newUser.typeId=userType.get("id");
@@ -1175,6 +1181,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             newUser.email=fieldValues.email;
             delete fieldValues.name;
             delete fieldValues.email;
+            Ext.Array.forEach(Ext.getCmp("userCUFields").query("checkboxgroup"),function(cbGroup){
+                fieldValues[cbGroup.name]=cbGroup.getValue();
+            });
             newUser.fields=fieldValues;
             newUser.taxonomy=taxoForm.getValues();
             Ext.apply(newUser,credentialsForm.getValues());
