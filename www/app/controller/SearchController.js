@@ -125,9 +125,34 @@ Ext.define('Rubedo.controller.SearchController', {
             }
             if (!Ext.isEmpty(facet.terms)){
                 var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
-                if((facet.id!="type")&&(facet.id!="damType")&&(facet.id!="userType")){newFacet.collapse();}
+                if((facet.id!="type")&&(facet.id!="damType")&&(facet.id!="userType")&&(!target.up().advancedESQMode)){newFacet.collapse();}
                 newFacet.usedProperty=facet.id;
+                if (target.up().advancedESQMode){
 
+                    newFacet.add({
+                        xtype: 'checkbox',
+                        anchor: '100%',
+                        fieldLabel: 'Display',
+                        name: 'displayFacet',
+                        itemId:"facetIsDisplayedField",
+                        inputValue:true,
+                        checked:true
+                    });
+                    newFacet.add({
+                        xtype: 'combobox',
+                        localiserId: 'facetOperatorField',
+                        anchor: '100%',
+                        fieldLabel: 'Facet operator',
+                        name: 'facetOperator',
+                        itemId:"facetOperatorField",
+                        allowBlank: false,
+                        editable: false,
+                        store:[["AND",Rubedo.RubedoAutomatedElementsLoc.andText],["OR",Rubedo.RubedoAutomatedElementsLoc.orText]],
+                        value:"AND",
+                        forceSelection: true
+                    });
+
+                }
                 Ext.Array.forEach(facet.terms, function(term){
                     var newTerm=Ext.widget("button",{
                         text:term.label+" ("+term.count+")",
