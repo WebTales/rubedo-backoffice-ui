@@ -67,6 +67,7 @@ Ext.define('Rubedo.view.ESQfield', {
                     queryMode:component.queryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
+                    advancedESQMode:component.advancedESQMode,
                     damQueryMode:component.damQueryMode,
                     targetedId:component.getId(),
                     predefFacettes:null
@@ -88,6 +89,7 @@ Ext.define('Rubedo.view.ESQfield', {
                     queryMode:component.queryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
+                    advancedESQMode:component.advancedESQMode,
                     damQueryMode:component.damQueryMode,
                     targetedId:component.getId(),
                     predefFacettes:Ext.JSON.decode(component.getValue())
