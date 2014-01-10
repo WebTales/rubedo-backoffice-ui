@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
     layout: {
         type: 'fit'
     },
+    constrainHeader: true,
     iconCls: 'user_edit',
     title: 'My Window',
     modal: true,

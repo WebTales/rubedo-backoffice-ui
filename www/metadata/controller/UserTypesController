@@ -452,7 +452,10 @@
                     "    }\r",
                     "    result.push(newField);\r",
                     "});\r",
-                    "return(result);"
+                    "return(result);\r",
+                    "\r",
+                    "\r",
+                    ""
                 ]
             },
             "designerId": "754c5add-88fa-4c75-82cf-2f7000f2ba2b"
@@ -1137,6 +1140,9 @@
                     "    newUser.login=newUser.email;\r",
                     "    delete fieldValues.name;\r",
                     "    delete fieldValues.email;\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"userCUFields\").query(\"checkboxgroup\"),function(cbGroup){\r",
+                    "                fieldValues[cbGroup.name]=cbGroup.getValue();\r",
+                    "            });\r",
                     "    newUser.fields=fieldValues;\r",
                     "    newUser.taxonomy=taxoForm.getValues();\r",
                     "    newUser.typeId=userType.get(\"id\");\r",
@@ -1215,6 +1221,9 @@
                     "    newUser.email=fieldValues.email;\r",
                     "    delete fieldValues.name;\r",
                     "    delete fieldValues.email;\r",
+                    "    Ext.Array.forEach(Ext.getCmp(\"userCUFields\").query(\"checkboxgroup\"),function(cbGroup){\r",
+                    "                fieldValues[cbGroup.name]=cbGroup.getValue();\r",
+                    "            });\r",
                     "    newUser.fields=fieldValues;\r",
                     "    newUser.taxonomy=taxoForm.getValues();\r",
                     "    Ext.apply(newUser,credentialsForm.getValues());\r",
