@@ -18,6 +18,9 @@
         "iconCls": "search",
         "title": "Résultats de recherche"
     },
+    "configAlternates": {
+        "advancedESQMode": "boolean"
+    },
     "designerId": "f720ad71-dfb5-436d-95de-957b47102cb6",
     "customConfigs": [
         {
@@ -37,9 +40,11 @@
             "userConfig": {
                 "localiserId": "filtersPanel",
                 "layout|flex": null,
+                "container|align": "stretch",
                 "id": "searchFacetBox",
                 "width": 240,
                 "overflowY": "auto",
+                "layout": "vbox",
                 "bodyPadding": "0 20 0 10",
                 "title": "Filtres"
             },
@@ -52,6 +57,25 @@
                 }
             ],
             "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processSearchFacetBox",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "a25df425-cb7b-4987-b070-ef1c26dd7d4f"
+                },
                 {
                     "type": "Ext.toolbar.Toolbar",
                     "reference": {
@@ -128,6 +152,153 @@
                                 "text": ""
                             },
                             "designerId": "3586846f-9108-4862-ac69-bfeec8c1a386"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "dock": "top",
+                        "hidden": true,
+                        "bodyPadding": 10,
+                        "collapsed": true,
+                        "collapsible": true,
+                        "title": "Global facet settings"
+                    },
+                    "designerId": "6bc092c0-ece6-4454-af5d-fdc4e6dc7cf8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Display",
+                                "name": "displayFacet",
+                                "boxLabel": "",
+                                "checked": true,
+                                "inputValue": "true"
+                            },
+                            "designerId": "b2b2916d-d91e-4245-bdad-198a8d035275"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "facetOperatorField",
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Facet operator",
+                                "name": "facetOperator",
+                                "value": [
+                                    "\"AND\""
+                                ],
+                                "allowBlank": false,
+                                "editable": false,
+                                "forceSelection": true,
+                                "store": null
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "d963f4c4-4f35-4706-9c0c-f00d054eda83",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processFacetOperator",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "config.store=[[\"AND\",Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\",Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "659766cc-a380-4106-a23d-c09a1daaa8c0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "id": "apllyFacetPropsToAllBtn",
+                                "text": "Apply to all"
+                            },
+                            "designerId": "8602b8b9-514e-4f41-936f-b3a03f3032df",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onApllyFacetPropsToAllBtnClick",
+                                        "implHandler": [
+                                            "var values=button.up().getForm().getFieldValues();\r",
+                                            "Ext.Array.forEach(button.up().up().items.items,function(fieldset){\r",
+                                            "\tfieldset.getComponent(\"facetIsDisplayedField\").setValue(values.displayFacet);\r",
+                                            "    fieldset.getComponent(\"facetOperatorField\").setValue(values.facetOperator);\r",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "32e6391e-84ef-4014-a5e2-c240a18bc27b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFormAfterRender",
+                                "implHandler": [
+                                    "if (component.up().up().advancedESQMode){\r",
+                                    "    \r",
+                                    "    component.show();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "1d2bbc73-7e00-42b3-ba73-24dda1d7a159"
                         }
                     ]
                 }

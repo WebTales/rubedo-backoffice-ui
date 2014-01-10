@@ -39,12 +39,16 @@ Ext.define('Rubedo.view.searchResultsWindow', {
 
         Ext.applyIf(me, {
             items: [
-                {
+                me.processSearchFacetBox({
                     xtype: 'form',
                     localiserId: 'filtersPanel',
                     id: 'searchFacetBox',
                     width: 240,
                     overflowY: 'auto',
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    },
                     bodyPadding: '0 20 0 10',
                     title: 'Filtres',
                     dockedItems: [
@@ -77,9 +81,59 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                                     text: ''
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'form',
+                            flex: 1,
+                            dock: 'top',
+                            hidden: true,
+                            bodyPadding: 10,
+                            collapsed: true,
+                            collapsible: true,
+                            title: 'Global facet settings',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Display',
+                                    name: 'displayFacet',
+                                    boxLabel: '',
+                                    checked: true,
+                                    inputValue: 'true'
+                                },
+                                me.processFacetOperator({
+                                    xtype: 'combobox',
+                                    localiserId: 'facetOperatorField',
+                                    anchor: '100%',
+                                    fieldLabel: 'Facet operator',
+                                    name: 'facetOperator',
+                                    value: 'AND',
+                                    allowBlank: false,
+                                    editable: false,
+                                    forceSelection: true
+                                }),
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    id: 'apllyFacetPropsToAllBtn',
+                                    text: 'Apply to all',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onApllyFacetPropsToAllBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ],
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onFormAfterRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
-                },
+                }),
                 {
                     xtype: 'gridpanel',
                     flex: 1,
@@ -202,9 +256,34 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         me.callParent(arguments);
     },
 
+    processSearchFacetBox: function(config) {
+        config.plugins=[Ext.create("Ext.ux.BoxReorderer")];
+        return config;
+    },
+
+    processFacetOperator: function(config) {
+        config.store=[["AND",Rubedo.RubedoAutomatedElementsLoc.andText],["OR",Rubedo.RubedoAutomatedElementsLoc.orText]];
+        return config;
+    },
+
     onESFacetQueryFieldSpecialkey: function(field, e, eOpts) {
         if (e.getKey() == e.ENTER) {
             Ext.getCmp("ESFacetQueryBtn").fireEvent("click",Ext.getCmp("ESFacetQueryBtn"));
+        }
+    },
+
+    onApllyFacetPropsToAllBtnClick: function(button, e, eOpts) {
+        var values=button.up().getForm().getFieldValues();
+        Ext.Array.forEach(button.up().up().items.items,function(fieldset){
+            fieldset.getComponent("facetIsDisplayedField").setValue(values.displayFacet);
+            fieldset.getComponent("facetOperatorField").setValue(values.facetOperator);
+        });
+    },
+
+    onFormAfterRender: function(component, eOpts) {
+        if (component.up().up().advancedESQMode){
+
+            component.show();
         }
     },
 
