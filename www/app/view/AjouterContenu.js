@@ -138,7 +138,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     style: '{float:left}',
                                                     fieldLabel: 'Title *',
                                                     name: 'text',
-                                                    allowBlank: false
+                                                    allowBlank: false,
+                                                    stripCharsRe: new RegExp("/")
                                                 }
                                             ]
                                         },
@@ -157,7 +158,8 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     style: '{float:left}',
                                                     fieldLabel: 'URL Segment',
                                                     labelSeparator: ' ',
-                                                    name: 'urlSegment'
+                                                    name: 'urlSegment',
+                                                    stripCharsRe: new RegExp("/")
                                                 }
                                             ]
                                         },

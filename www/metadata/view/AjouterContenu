@@ -332,7 +332,8 @@
                                                 "fieldLabel": "Title *",
                                                 "labelSeparator": null,
                                                 "name": "text",
-                                                "allowBlank": false
+                                                "allowBlank": false,
+                                                "stripCharsRe": "new RegExp(\"/\")"
                                             },
                                             "designerId": "a1c40ec8-11e9-4786-995b-514d97b359ba",
                                             "customConfigs": [
@@ -379,7 +380,8 @@
                                                 ],
                                                 "fieldLabel": "URL Segment",
                                                 "labelSeparator": " ",
-                                                "name": "urlSegment"
+                                                "name": "urlSegment",
+                                                "stripCharsRe": "new RegExp(\"/\")"
                                             },
                                             "designerId": "e65fce58-37e5-4220-957b-ef952ab8180f",
                                             "customConfigs": [
