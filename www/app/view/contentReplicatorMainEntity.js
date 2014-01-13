@@ -42,7 +42,8 @@ Ext.define('Rubedo.view.contentReplicatorMainEntity', {
                             style: '{float:left}',
                             fieldLabel: 'Title *',
                             name: 'text',
-                            allowBlank: false
+                            allowBlank: false,
+                            stripCharsRe: new RegExp("/")
                         }
                     ]
                 },
@@ -60,7 +61,8 @@ Ext.define('Rubedo.view.contentReplicatorMainEntity', {
                             style: '{float:left}',
                             fieldLabel: 'URL Segment',
                             labelSeparator: ' ',
-                            name: 'urlSegment'
+                            name: 'urlSegment',
+                            stripCharsRe: new RegExp("/")
                         }
                     ]
                 },
