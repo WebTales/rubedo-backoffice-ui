@@ -123,6 +123,25 @@
                     "designerId": "c10c65aa-5737-48d2-af1e-c2bad3b2ef87"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeStoreWrite",
+                "implHandler": [
+                    "if (Ext.getStore(\"UsersAdminDataStore\").isUsed){\r",
+                    "    Ext.getStore(\"UsersAdminDataStore\").load();\r",
+                    "}"
+                ],
+                "name": "write",
+                "scope": "me"
+            },
+            "designerId": "9c70e79e-e656-4df2-bbd2-928a26c00259"
         }
     ]
 }
