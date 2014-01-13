@@ -72,7 +72,20 @@ Ext.define('Rubedo.store.GroupsDataStore', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            listeners: {
+                write: {
+                    fn: me.onTreeStoreWrite,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onTreeStoreWrite: function(store, operation, eOpts) {
+        if (Ext.getStore("UsersAdminDataStore").isUsed){
+            Ext.getStore("UsersAdminDataStore").load();
+        }
     }
+
 });
