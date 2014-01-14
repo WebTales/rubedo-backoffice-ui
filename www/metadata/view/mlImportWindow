@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "MLImportWindow",
         "height": null,
         "id": "mlImportWindow",
         "width": 400,
@@ -16,6 +17,13 @@
         "modal": true
     },
     "designerId": "5d8d58e0-6cd3-4596-92b5-8b66d27d5373",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -39,11 +47,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "csvFileFIeld",
                         "fieldLabel": "CSV file",
                         "name": "csvFile",
                         "allowBlank": false
                     },
-                    "designerId": "01658ef5-cd20-4d26-ac11-7a0066ad4eae"
+                    "designerId": "01658ef5-cd20-4d26-ac11-7a0066ad4eae",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -54,10 +70,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "importSubmitBtn",
                         "id": "mlImportSubmitBtn",
                         "text": "Import"
                     },
-                    "designerId": "dc288382-9dfd-48ab-af55-bb9789d35a19"
+                    "designerId": "dc288382-9dfd-48ab-af55-bb9789d35a19",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

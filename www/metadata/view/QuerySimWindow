@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "querySimWindow",
         "height": 407,
         "width": 355,
         "designer|userClassName": "QuerySimWindow",
@@ -15,6 +16,13 @@
         "modal": true
     },
     "designerId": "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -47,10 +55,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "titleCol",
                         "dataIndex": "text",
                         "text": "Title"
                     },
-                    "designerId": "3b6353e0-a927-4442-8ed1-01e7fe1e82a6"
+                    "designerId": "3b6353e0-a927-4442-8ed1-01e7fe1e82a6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Paging",

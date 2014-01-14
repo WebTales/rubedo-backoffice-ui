@@ -53,6 +53,7 @@
                     "userConfig": {
                         "ACL": "write.ui.users",
                         "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "id": "userCUSaveBtn",
                         "iconCls": "save",
                         "text": "Save"
@@ -62,6 +63,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ]
@@ -88,12 +94,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "ucuFieldsTab",
                         "id": "userCUFields",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "title": "Fields"
                     },
                     "designerId": "f2f6d9cb-5fc9-455b-93f4-09d5f1d35944",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -206,11 +220,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "taxoTab",
                         "id": "userCUTaxonomy",
                         "bodyPadding": 10,
                         "title": "Taxonomy"
                     },
                     "designerId": "bb86e71e-3bc5-42bb-9c4e-e5aca27b34de",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",

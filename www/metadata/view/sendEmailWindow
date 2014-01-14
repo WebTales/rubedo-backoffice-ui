@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "sendEmailWindow",
         "height": null,
         "id": "sendEmailWindow",
         "width": 400,
@@ -16,6 +17,13 @@
         "modal": true
     },
     "designerId": "d2aea74e-65b3-4dbd-a9e1-a5a4caf7cb9a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -42,9 +50,17 @@
                         "name": "mailingList",
                         "allowBlank": false,
                         "allowOnlyWhitespace": false,
-                        "layout|anchor": "100%"
+                        "layout|anchor": "100%",
+                        "localiserId": "mailingListPicker"
                     },
                     "designerId": "9927c0e3-f956-49ef-b993-4693ddbdedae",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "masterInstanceId": "3dd5f03c-4619-4dc7-bb17-d53b3d011623"
                 },
                 {
@@ -56,10 +72,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "sendSubmitBtn",
                         "id": "sendEmailSubmitBtn",
                         "text": "Send"
                     },
-                    "designerId": "7d21b5ce-5ffb-4400-a1f7-8d5eda8c218f"
+                    "designerId": "7d21b5ce-5ffb-4400-a1f7-8d5eda8c218f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

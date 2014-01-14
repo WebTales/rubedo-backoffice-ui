@@ -630,10 +630,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "photoCol",
                         "dataIndex": "photo",
                         "text": "Photo"
                     },
                     "designerId": "725ed79d-6f3c-49f1-97dc-88d828c52731",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -675,10 +683,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameCol",
                         "dataIndex": "name",
                         "text": "Name"
                     },
                     "designerId": "62a32be9-8cb1-42c3-9673-d5fb6c09ae7b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -721,10 +737,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "emailCol",
                         "dataIndex": "email",
                         "text": "Email"
                     },
-                    "designerId": "4b292ac3-758d-412a-b452-bd95cc92e8d3"
+                    "designerId": "4b292ac3-758d-412a-b452-bd95cc92e8d3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.View",
@@ -743,10 +767,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "creationCol",
                         "dataIndex": "createTime",
                         "text": "Creation"
                     },
-                    "designerId": "07f5a976-d4e4-42c7-a0f7-dd48e3e03966"
+                    "designerId": "07f5a976-d4e4-42c7-a0f7-dd48e3e03966",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Date",
@@ -756,10 +788,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "lastUpdateCol",
                         "dataIndex": "lastUpdateTime",
                         "text": "Last update"
                     },
-                    "designerId": "195efb73-765f-4678-a85e-d9ae77987171"
+                    "designerId": "195efb73-765f-4678-a85e-d9ae77987171",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -769,12 +809,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "signUpStatCol",
                         "id": "usersInterfaceStatusCol",
                         "dataIndex": "status",
                         "hideable": false,
                         "text": "Sign-up status"
                     },
-                    "designerId": "6d08157c-307e-4f8e-b95c-6707734b98b8"
+                    "designerId": "6d08157c-307e-4f8e-b95c-6707734b98b8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Paging",

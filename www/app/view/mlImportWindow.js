@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.mlImportWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.mlImportWindow',
 
+    localiserId: 'MLImportWindow',
     id: 'mlImportWindow',
     width: 400,
     layout: {
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.mlImportWindow', {
                         {
                             xtype: 'filefield',
                             anchor: '100%',
+                            localiserId: 'csvFileFIeld',
                             fieldLabel: 'CSV file',
                             name: 'csvFile',
                             allowBlank: false
@@ -45,6 +47,7 @@ Ext.define('Rubedo.view.mlImportWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'importSubmitBtn',
                             id: 'mlImportSubmitBtn',
                             text: 'Import'
                         }

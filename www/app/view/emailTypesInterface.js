@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
     ],
 
     favoriteIcon: 'application.png',
+    localiserId: 'emailsInterface',
     height: 578,
     id: 'emailTypesInterface',
     width: 1400,
@@ -56,6 +57,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'emailsLaunchBtn',
                             itemId: 'origine',
                             iconCls: 'mail_small',
                             text: 'Emails'
@@ -125,6 +127,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.emails',
+                            localiserId: 'editStructureFS',
                             id: 'eTTopBarBox',
                             headerPosition: 'bottom',
                             title: 'Edit structure',
@@ -189,6 +192,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.emails',
+                            localiserId: 'addComponentsFS',
                             disabled: true,
                             id: 'ETAddComponentsBtnGr',
                             headerPosition: 'bottom',
@@ -197,6 +201,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addImageCBtn',
                                     id: 'ETAddImageBtn',
                                     iconAlign: 'top',
                                     iconCls: 'image_add_big',
@@ -205,6 +210,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addSimpleTextCBtn',
                                     id: 'ETAddSimpleTextBtn',
                                     iconAlign: 'top',
                                     iconCls: 'text_big',
@@ -213,6 +219,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addRichTextCBtn',
                                     id: 'ETAddTextBtn',
                                     iconAlign: 'top',
                                     iconCls: 'text_big',
@@ -288,6 +295,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'exploutFS',
                             disabled: true,
                             id: 'ETEploit',
                             headerPosition: 'bottom',
@@ -296,6 +304,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'sendEmailBtn',
                                     id: 'ETSendBtn',
                                     iconAlign: 'top',
                                     iconCls: 'sendMail_big',
@@ -331,6 +340,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'nameCol',
                             dataIndex: 'text',
                             text: 'Name'
                         }
@@ -360,6 +370,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     items: [
                         {
                             xtype: 'panel',
+                            localiserId: 'editTab',
                             frame: true,
                             layout: {
                                 align: 'stretch',
@@ -437,6 +448,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'form',
+                            localiserId: 'propertiesTab',
                             id: 'mainEmailForm',
                             autoScroll: true,
                             bodyPadding: 10,
@@ -445,6 +457,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'nameField',
                                     fieldLabel: 'Name',
                                     name: 'text',
                                     allowBlank: false,
@@ -453,6 +466,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'subjectField',
                                     fieldLabel: 'Subject',
                                     name: 'subject',
                                     allowBlank: false,
@@ -461,6 +475,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     xtype: 'textareafield',
                                     anchor: '100%',
+                                    localiserId: 'plainTextField',
                                     fieldLabel: 'Plain text',
                                     name: 'plainText',
                                     grow: true,
@@ -471,6 +486,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                         },
                         {
                             xtype: 'panel',
+                            localiserId: 'previewTab',
                             id: 'ETPreviewPanel',
                             layout: {
                                 type: 'fit'

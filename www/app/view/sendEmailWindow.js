@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.sendEmailWindow', {
         'Rubedo.view.MailingListPickerField'
     ],
 
+    localiserId: 'sendEmailWindow',
     id: 'sendEmailWindow',
     width: 400,
     layout: {
@@ -45,11 +46,13 @@ Ext.define('Rubedo.view.sendEmailWindow', {
                             name: 'mailingList',
                             allowBlank: false,
                             allowOnlyWhitespace: false,
-                            anchor: '100%'
+                            anchor: '100%',
+                            localiserId: 'mailingListPicker'
                         },
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'sendSubmitBtn',
                             id: 'sendEmailSubmitBtn',
                             text: 'Send'
                         }

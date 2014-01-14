@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
     extend: 'Ext.form.Panel',
     alias: 'widget.userUpdateCreadentialsForm',
 
+    localiserId: 'credentiamsAndIntForm',
     id: 'userUpdateCreadentialsForm',
     overflowY: 'auto',
     bodyPadding: 20,
@@ -41,6 +42,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'IntterfaceSettingsFS',
                                     title: 'Interface settings',
                                     items: [
                                         {
@@ -60,6 +62,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                                         me.processInterfaceMode({
                                             xtype: 'combobox',
                                             anchor: '100%',
+                                            localiserId: 'interfaceModeField',
                                             fieldLabel: 'Interface',
                                             labelWidth: 110,
                                             name: 'interfaceMode',

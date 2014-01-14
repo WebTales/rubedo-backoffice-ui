@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.subscribeUsersWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.subscribeUsersWindow',
 
+    localiserId: 'subscribeUsersWindow',
     id: 'subscribeUsersWindow',
     width: 400,
     layout: {
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.subscribeUsersWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'subscribeSubmitBtn',
                             id: 'subscribeUsersSubmitBtn',
                             text: 'Subscribe'
                         }

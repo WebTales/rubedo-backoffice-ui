@@ -245,6 +245,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                                 }
                                 return ('<img src=\"'+src+'\" width=\"80\" ');
                             },
+                            localiserId: 'photoCol',
                             dataIndex: 'photo',
                             text: 'Photo'
                         },
@@ -260,26 +261,31 @@ Ext.define('Rubedo.view.UsersInterface', {
                                 valueString=valueString+'</br></br><span class="specialminigroupbox">'+groupString+'</span>';
                                 return(valueString);
                             },
+                            localiserId: 'nameCol',
                             dataIndex: 'name',
                             text: 'Name'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'emailCol',
                             dataIndex: 'email',
                             text: 'Email'
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'creationCol',
                             dataIndex: 'createTime',
                             text: 'Creation'
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'lastUpdateCol',
                             dataIndex: 'lastUpdateTime',
                             text: 'Last update'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'signUpStatCol',
                             id: 'usersInterfaceStatusCol',
                             dataIndex: 'status',
                             hideable: false,

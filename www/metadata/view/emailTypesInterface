@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "favoriteIcon": "application.png",
-        "localiserId": null,
+        "localiserId": "emailsInterface",
         "container|align": "stretch",
         "height": 578,
         "id": "emailTypesInterface",
@@ -82,7 +82,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
+                        "localiserId": "emailsLaunchBtn",
                         "layout|flex": null,
                         "itemId": "origine",
                         "iconCls": "mail_small",
@@ -309,7 +309,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "localiserId": null,
+                        "localiserId": "editStructureFS",
                         "layout|flex": null,
                         "container|columns": 2,
                         "id": "eTTopBarBox",
@@ -478,6 +478,7 @@
                     "userConfig": {
                         "ACL": "write.ui.emails",
                         "layout|flex": null,
+                        "localiserId": "addComponentsFS",
                         "disabled": true,
                         "id": "ETAddComponentsBtnGr",
                         "headerPosition": "bottom",
@@ -490,6 +491,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ],
                     "cn": [
@@ -501,13 +507,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "addImageCBtn",
                                 "id": "ETAddImageBtn",
                                 "iconAlign": "top",
                                 "iconCls": "image_add_big",
                                 "scale": "large",
                                 "text": "Image"
                             },
-                            "designerId": "1d564ddd-b4e7-4371-927b-95333ba3b0c4"
+                            "designerId": "1d564ddd-b4e7-4371-927b-95333ba3b0c4",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -517,13 +531,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "addSimpleTextCBtn",
                                 "id": "ETAddSimpleTextBtn",
                                 "iconAlign": "top",
                                 "iconCls": "text_big",
                                 "scale": "large",
                                 "text": "Simple text"
                             },
-                            "designerId": "8fc07e40-5f04-40a8-918e-119e983a54a6"
+                            "designerId": "8fc07e40-5f04-40a8-918e-119e983a54a6",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -533,13 +555,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "addRichTextCBtn",
                                 "id": "ETAddTextBtn",
                                 "iconAlign": "top",
                                 "iconCls": "text_big",
                                 "scale": "large",
                                 "text": "Rich text"
                             },
-                            "designerId": "bc711cbd-86aa-47de-9190-4db8ff7612c0"
+                            "designerId": "bc711cbd-86aa-47de-9190-4db8ff7612c0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -721,6 +751,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "exploutFS",
                         "disabled": true,
                         "id": "ETEploit",
                         "headerPosition": "bottom",
@@ -728,6 +759,13 @@
                         "columns": 2
                     },
                     "designerId": "2bd4771d-1541-4e6d-8a91-c7c5cc1bd254",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -737,13 +775,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "sendEmailBtn",
                                 "id": "ETSendBtn",
                                 "iconAlign": "top",
                                 "iconCls": "sendMail_big",
                                 "scale": "large",
                                 "text": "Send"
                             },
-                            "designerId": "06a1a93a-ce9f-4122-afaf-54a32c5aa6a7"
+                            "designerId": "06a1a93a-ce9f-4122-afaf-54a32c5aa6a7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -829,10 +875,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "nameCol",
                         "dataIndex": "text",
                         "text": "Name"
                     },
-                    "designerId": "3cd68489-92f1-4c92-8868-99ff1fa98499"
+                    "designerId": "3cd68489-92f1-4c92-8868-99ff1fa98499",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.feature.Grouping",
@@ -872,7 +926,7 @@
                                         ],
                                         "implHandler": [
                                             "if (name) {\r",
-                                            "\treturn (\"Model\");\r",
+                                            "    return (\"Model\");\r",
                                             "} else {\r",
                                             "    return (\"Mail\");\r",
                                             "}"
@@ -908,11 +962,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "localiserId": "editTab",
                         "frame": true,
                         "layout": "hbox",
                         "title": "Edit"
                     },
                     "designerId": "cb39bffc-ae71-4859-986c-947faffaa74c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1089,12 +1151,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "propertiesTab",
                         "id": "mainEmailForm",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "title": "Properties"
                     },
                     "designerId": "e2a46fc3-014e-40ab-bedb-ea532fe3014f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1114,12 +1184,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "nameField",
                                 "fieldLabel": "Name",
                                 "name": "text",
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false
                             },
-                            "designerId": "1853ebfa-7164-46b6-976d-4e4bf00c1af2"
+                            "designerId": "1853ebfa-7164-46b6-976d-4e4bf00c1af2",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -1130,12 +1208,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "subjectField",
                                 "fieldLabel": "Subject",
                                 "name": "subject",
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false
                             },
-                            "designerId": "b98ec01e-4761-4fde-a4b1-39d5e6535daa"
+                            "designerId": "b98ec01e-4761-4fde-a4b1-39d5e6535daa",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.TextArea",
@@ -1146,13 +1232,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "plainTextField",
                                 "fieldLabel": "Plain text",
                                 "name": "plainText",
                                 "grow": true,
                                 "growMin": 100,
                                 "rows": 10
                             },
-                            "designerId": "901e44e3-52ca-4618-b688-a6f08622b794"
+                            "designerId": "901e44e3-52ca-4618-b688-a6f08622b794",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -1164,11 +1258,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "previewTab",
                         "id": "ETPreviewPanel",
                         "layout": "fit",
                         "title": "Preview"
                     },
                     "designerId": "7c42b40f-f97a-4cff-99d6-e868f0db666c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
