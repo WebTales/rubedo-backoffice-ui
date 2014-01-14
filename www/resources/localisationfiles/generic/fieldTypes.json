@@ -1612,64 +1612,6 @@
             },
             {
                 "type": "Ext.form.field.Checkbox",
-                "isASearchField":true,
-                "config": {
-                    "fieldLabel": "#ext-gen1057#",
-                    "name": "searchable"
-                }
-            },{
-                "type": "Ext.form.field.Checkbox",
-                "isASearchField":true,
-                "config": {
-                    "fieldLabel": "Not analayzed",
-                    "name": "notAnalysed"
-                }
-            },{
-                "type": "Ext.form.field.Checkbox",
-                "isASearchField":true,
-                "config": {
-                    "fieldLabel": "Return in search",
-                    "name": "returnInSearch"
-                }
-            },{
-                "type": "Ext.form.field.Checkbox",
-                "isASearchField":true,
-                "config": {
-                    "fieldLabel": "Use as facet",
-                    "name": "useAsFacet"
-                }
-            }, {
-                "type": "Ext.form.field.ComboBox",
-                "isASearchField":true,
-                "store": {
-                    "fields": [
-                        "valeur",
-                        "nom"
-                    ],
-                    "data": [
-                        {
-                            "valeur": "AND",
-                            "nom": "AND"
-                        },
-                        {
-                            "valeur": "OR",
-                            "nom": "OR"
-                        }
-                        
-                    ]
-                },
-                "config": {
-                    "fieldLabel": "Facet Operator",
-                    "queryMode": "local",
-                    "displayField": "nom",
-                    "valueField": "valeur",
-                    "forceSelect": true,
-                    "editable": false,
-                    "name": "facetOperator"
-                }
-                },
-            {
-                "type": "Ext.form.field.Checkbox",
                 "config": {
                     "fieldLabel": "#ext-gen1068#",
                     "name": "localizable"
