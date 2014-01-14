@@ -987,6 +987,7 @@
             "userConfig": {
                 "managesStore": true,
                 "layout|flex": null,
+                "localiserId": "userTypesGrid",
                 "id": "mainUTGrid",
                 "width": 200,
                 "resizable": true,
@@ -1006,6 +1007,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "managesStore",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],
@@ -1432,11 +1438,19 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "localiserId": "dataTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "title": "Data"
                                                     },
                                                     "designerId": "15d3082e-ca54-43b2-9269-c379a6cfd073",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "Ext.tab.Tab",
@@ -1460,11 +1474,19 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "localiserId": "searchTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "title": "Search"
                                                     },
                                                     "designerId": "d74e0ccf-92b2-423e-b5c0-5c8f16abb338",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "Ext.tab.Tab",

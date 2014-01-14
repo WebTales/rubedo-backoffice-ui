@@ -243,6 +243,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             favoriteIcon: 'mail.png',
             itemId: 'emailTypesInterface',
             iconCls: 'mail_small',
+            localiserId:'emailsLaunchBtn',
             text: 'Emails'
         },
         {

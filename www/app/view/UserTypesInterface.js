@@ -430,6 +430,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                 {
                     xtype: 'gridpanel',
                     managesStore: true,
+                    localiserId: 'userTypesGrid',
                     id: 'mainUTGrid',
                     width: 200,
                     resizable: true,
@@ -565,6 +566,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                     items: [
                                                         {
                                                             xtype: 'form',
+                                                            localiserId: 'dataTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             title: 'Data',
@@ -575,6 +577,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                         },
                                                         {
                                                             xtype: 'form',
+                                                            localiserId: 'searchTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             title: 'Search',

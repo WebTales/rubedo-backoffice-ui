@@ -43,6 +43,7 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.users',
+                            localiserId: 'saveBtn',
                             id: 'userCUSaveBtn',
                             iconCls: 'save',
                             text: 'Save'
@@ -57,6 +58,7 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
                     items: [
                         {
                             xtype: 'form',
+                            localiserId: 'ucuFieldsTab',
                             id: 'userCUFields',
                             autoScroll: true,
                             bodyPadding: 10,
@@ -103,6 +105,7 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
                         },
                         {
                             xtype: 'form',
+                            localiserId: 'taxoTab',
                             id: 'userCUTaxonomy',
                             bodyPadding: 10,
                             title: 'Taxonomy'

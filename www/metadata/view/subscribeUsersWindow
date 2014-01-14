@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "subscribeUsersWindow",
         "height": null,
         "id": "subscribeUsersWindow",
         "width": 400,
@@ -16,6 +17,13 @@
         "modal": true
     },
     "designerId": "6c01b362-f6b8-461e-83ce-8cfdf529203c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -39,10 +47,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "subscribeSubmitBtn",
                         "id": "subscribeUsersSubmitBtn",
                         "text": "Subscribe"
                     },
-                    "designerId": "6f63bf97-493c-4d1d-ac9f-577f4b48fb9c"
+                    "designerId": "6f63bf97-493c-4d1d-ac9f-577f4b48fb9c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "basiceventbinding",

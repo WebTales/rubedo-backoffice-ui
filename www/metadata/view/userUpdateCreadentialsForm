@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "credentiamsAndIntForm",
         "id": "userUpdateCreadentialsForm",
         "designer|userClassName": "userUpdateCreadentialsForm",
         "designer|userAlias": "userUpdateCreadentialsForm",
@@ -14,6 +15,13 @@
         "title": "Credentials and interface settings"
     },
     "designerId": "bd157263-ffca-45b6-9331-28e5972526b7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.container.Container",
@@ -49,9 +57,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "IntterfaceSettingsFS",
                                 "title": "Interface settings"
                             },
                             "designerId": "0e853b51-b12f-4191-b936-a118d607d529",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -91,6 +107,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|anchor": "100%",
+                                        "localiserId": "interfaceModeField",
                                         "fieldLabel": "Interface",
                                         "labelWidth": 110,
                                         "name": "interfaceMode",
@@ -98,6 +115,13 @@
                                         "forceSelection": true
                                     },
                                     "designerId": "85fc8e08-7436-4a0d-9478-2fe115321da5",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "processcfgfunction",

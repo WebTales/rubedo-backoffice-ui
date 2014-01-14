@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.QuerySimWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.QuerySimWindow',
 
+    localiserId: 'querySimWindow',
     height: 407,
     width: 355,
     layout: {
@@ -38,6 +39,7 @@ Ext.define('Rubedo.view.QuerySimWindow', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'titleCol',
                             dataIndex: 'text',
                             text: 'Title'
                         }

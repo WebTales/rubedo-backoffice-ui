@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "localiserId": "codeEditorWindow",
         "height": 459,
         "id": "aceEditorWindow",
         "width": 850,
@@ -18,6 +19,13 @@
         "modal": true
     },
     "designerId": "26b584ef-18d7-4675-8753-f42da6633fbb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.Component",
@@ -85,11 +93,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "id": "aceWindowSaveBtn",
                         "iconCls": "save",
                         "text": "Save"
                     },
                     "designerId": "ff3e03eb-1695-4a6e-a348-8e05ff20e6be",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",

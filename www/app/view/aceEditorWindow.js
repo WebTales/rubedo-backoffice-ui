@@ -17,6 +17,7 @@ Ext.define('Rubedo.view.aceEditorWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.aceEditorWindow',
 
+    localiserId: 'codeEditorWindow',
     height: 459,
     id: 'aceEditorWindow',
     width: 850,
@@ -65,6 +66,7 @@ Ext.define('Rubedo.view.aceEditorWindow', {
                         },
                         {
                             xtype: 'button',
+                            localiserId: 'saveBtn',
                             id: 'aceWindowSaveBtn',
                             iconCls: 'save',
                             text: 'Save',
