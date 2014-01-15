@@ -377,7 +377,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "emailBodyText":"Email body",
             "emailSendWarning":"Are you sure you want to send this email to all users subscribed to the selected mailing list ?",
             "modelText":"Model",
-            "mailText":"Mail"
+            "mailText":"Mail",
+            "displayLabelText":"Display label"
         });
 
         this.control({
