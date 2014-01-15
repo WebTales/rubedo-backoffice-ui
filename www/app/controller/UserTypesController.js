@@ -1366,7 +1366,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
         var configSpec = Ext.widget('ConfigSpecBloc');
         configSpec.getComponent(0).add(Ext.widget('checkbox',{
             itemId:"eTitleShowField",
-            fieldLabel:"Display label",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayLabelText,
             onChange:function(){
 
                 component.showLabel=this.getValue();

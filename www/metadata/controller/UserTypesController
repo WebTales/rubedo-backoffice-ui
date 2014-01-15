@@ -1736,7 +1736,7 @@
                     "var configSpec = Ext.widget('ConfigSpecBloc');\r",
                     "configSpec.getComponent(0).add(Ext.widget('checkbox',{\r",
                     "    itemId:\"eTitleShowField\",\r",
-                    "    fieldLabel:\"Display label\",\r",
+                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayLabelText,\r",
                     "    onChange:function(){\r",
                     "\r",
                     "        component.showLabel=this.getValue();\r",
