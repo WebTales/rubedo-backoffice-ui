@@ -136,7 +136,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         name: 'displayFacet',
                         itemId:"facetIsDisplayedField",
                         inputValue:true,
-                        checked:true
+                        checked:Ext.isEmpty(target.up().initialDF)
                     });
                     newFacet.add({
                         xtype: 'combobox',
@@ -182,6 +182,27 @@ Ext.define('Rubedo.controller.SearchController', {
                 target.add(newFacet);
             }
         });
+        if ((target.up().advancedESQMode)&&(!Ext.isEmpty(target.up().initialDF))){
+            console.log("ok1");
+            var positioner = 0;
+            Ext.Array.forEach(target.up().initialDF, function(determinant){
+                var notFound=true;
+                Ext.Array.forEach(target.items.items, function(candidate, index){
+                    if(notFound){
+                        if (candidate.usedProperty==determinant.name){
+                            candidate.getComponent("facetOperatorField").setValue(determinant.operator);
+                            candidate.getComponent("facetIsDisplayedField").setValue(true);
+                            candidate.up().move(index,positioner);
+                            positioner=positioner+1;
+                            notFound=false;
+                        }
+                    }
+
+                });
+
+            });
+
+        }
 
     },
 

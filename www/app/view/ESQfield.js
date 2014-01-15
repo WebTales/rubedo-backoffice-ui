@@ -63,15 +63,28 @@ Ext.define('Rubedo.view.ESQfield', {
                 delay=400;
             }
             var task = new Ext.util.DelayedTask(function(){
+                var initialDF = [ ];
+                if (component.advancedESQMode){
+                    var candidateValue=component.up().getComponent("displayedFacetsBrotherField").getValue();
+                    if ((Ext.isString(candidateValue))&&(candidateValue!="all")){
+                        candidateValue=Ext.JSON.decode(candidateValue);
+                        if ((Ext.isArray(candidateValue))&&(candidateValue.length>0)&&(Ext.isObject(candidateValue[0]))){
+                            initialDF=Ext.clone(candidateValue);
+                        }
+                    }
+                }
+
                 Ext.widget("searchResultsWindow", {
                     queryMode:component.queryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
                     advancedESQMode:component.advancedESQMode,
+                    initialDF:initialDF,
                     damQueryMode:component.damQueryMode,
                     targetedId:component.getId(),
                     predefFacettes:null
                 }).show();
+
             });
             task.delay(delay);
 
@@ -84,12 +97,23 @@ Ext.define('Rubedo.view.ESQfield', {
                 prev.close();
                 delay=400;
             }
+            var initialDF = [ ];
+            if (component.advancedESQMode){
+                var candidateValue=component.up().getComponent("displayedFacetsBrotherField").getValue();
+                if ((Ext.isString(candidateValue))&&(candidateValue!="all")){
+                    candidateValue=Ext.JSON.decode(candidateValue);
+                    if ((Ext.isArray(candidateValue))&&(candidateValue.length>0)&&(Ext.isObject(candidateValue[0]))){
+                        initialDF=Ext.clone(candidateValue);
+                    }
+                }
+            }
             var task = new Ext.util.DelayedTask(function(){
                 Ext.widget("searchResultsWindow", {
                     queryMode:component.queryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
                     advancedESQMode:component.advancedESQMode,
+                    initialDF:initialDF,
                     damQueryMode:component.damQueryMode,
                     targetedId:component.getId(),
                     predefFacettes:Ext.JSON.decode(component.getValue())
@@ -100,7 +124,6 @@ Ext.define('Rubedo.view.ESQfield', {
         });
         component.up().add(myComponent);
         component.fireEvent("change",component, component.getValue());
-
     }
 
 });

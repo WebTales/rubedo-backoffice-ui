@@ -296,6 +296,21 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     onSaveGeoQueryBtnClick: function(button, e, eOpts) {
         var rez = Ext.JSON.encode(Ext.getStore("ESFacetteStore").activeFacettes);
         Ext.getCmp(button.up().up().targetedId).setValue(rez);
+
+        if (button.up().up().advancedESQMode){
+            var newDF= [ ];
+            Ext.Array.forEach(Ext.getCmp("searchFacetBox").items.items, function(facet){
+                if (facet.getComponent("facetIsDisplayedField").getValue()){
+                    newDF.push({
+                        name:facet.usedProperty,
+                        operator:facet.getComponent("facetOperatorField").getValue()
+                    });
+                }
+            });
+            newDF=Ext.JSON.encode(newDF);
+            Ext.getCmp(button.up().up().targetedId).up().getComponent("displayedFacetsBrotherField").setValue(newDF);
+        }
+
         button.up().up().close();
     },
 
@@ -347,6 +362,10 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-user';
             Ext.getStore("ESFacetteStore").load();
 
+        }
+
+        if (component.advancedESQMode){
+            console.log(component.initialDF);
         }
     }
 
