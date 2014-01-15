@@ -353,9 +353,9 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 {
                                     formatName: function(name) {
                                         if (name) {
-                                            return ("Model");
+                                            return (Rubedo.RubedoAutomatedElementsLoc.modelText);
                                         } else {
-                                            return ("Mail");
+                                            return (Rubedo.RubedoAutomatedElementsLoc.mailText);
                                         }
                                     }
                                 }
@@ -456,8 +456,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'nameField',
+                                    anchor: '100%',
                                     fieldLabel: 'Name',
                                     name: 'text',
                                     allowBlank: false,
@@ -465,8 +465,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 },
                                 {
                                     xtype: 'textfield',
-                                    anchor: '100%',
                                     localiserId: 'subjectField',
+                                    anchor: '100%',
                                     fieldLabel: 'Subject',
                                     name: 'subject',
                                     allowBlank: false,
@@ -474,8 +474,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 },
                                 {
                                     xtype: 'textareafield',
-                                    anchor: '100%',
                                     localiserId: 'plainTextField',
+                                    anchor: '100%',
                                     fieldLabel: 'Plain text',
                                     name: 'plainText',
                                     grow: true,
