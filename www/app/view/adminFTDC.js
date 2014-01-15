@@ -656,6 +656,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     items: [
                                                         {
                                                             xtype: 'form',
+                                                            localiserId: 'dataTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             title: 'Data',
@@ -666,6 +667,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         },
                                                         {
                                                             xtype: 'form',
+                                                            localiserId: 'searchTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             title: 'Search',

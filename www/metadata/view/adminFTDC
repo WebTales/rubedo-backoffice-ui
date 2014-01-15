@@ -1683,11 +1683,19 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "localiserId": "dataTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "title": "Data"
                                                     },
                                                     "designerId": "02016e2d-af79-407c-9037-56023a274071",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "Ext.tab.Tab",
@@ -1711,11 +1719,19 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "localiserId": "searchTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "title": "Search"
                                                     },
                                                     "designerId": "64f9099e-ed2c-4bab-a7eb-290a0fe61db7",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "Ext.tab.Tab",
