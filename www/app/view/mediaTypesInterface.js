@@ -498,6 +498,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                     items: [
                                                         {
                                                             xtype: 'form',
+                                                            localiserId: 'dataTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             title: 'Data',
@@ -508,6 +509,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                         },
                                                         {
                                                             xtype: 'form',
+                                                            localiserId: 'searchTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             title: 'Search',
