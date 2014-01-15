@@ -263,7 +263,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var form=button.up().getForm();
         if (form.isValid()){
 
-            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, "Are you sure you want to send this email to all users subscribed to the selected mailing list ?" ,function(anser){
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.emailSendWarning ,function(anser){
                 if (anser=="yes"){
                     button.setLoading(true);
                     Ext.Ajax.request({
@@ -323,15 +323,15 @@ Ext.define('Rubedo.controller.EmailController', {
         Ext.Array.forEach(Ext.getCmp("eTTopBarBox").query("button"), function(button){button.disable();});
         Ext.getCmp("ETAddComponentsBtnGr").disable();
         Ext.getCmp("eTEditControl").removeAll();
-        Ext.getCmp("eTEditControl").setTitle("Select an element");
+        Ext.getCmp("eTEditControl").setTitle(Rubedo.RubedoAutomatedElementsLoc.selectAnElementText);
         var thing=Ext.getCmp(selectedElement);
         if (!Ext.isEmpty(thing)){
             if (selectedElement=="mainETHolder"){
                 Ext.getCmp("newETRowBtn").enable();
-                Ext.getCmp("eTEditControl").setTitle("Email body");
+                Ext.getCmp("eTEditControl").setTitle(Rubedo.RubedoAutomatedElementsLoc.emailBodyText);
                 me.displayBodyControls();
             } else if (thing.eType=="row"){
-                Ext.getCmp("eTEditControl").setTitle("Row");
+                Ext.getCmp("eTEditControl").setTitle(Rubedo.RubedoAutomatedElementsLoc.lignText);
                 if(me.calculateRemainingRowWidth(thing)>=10){
                     Ext.getCmp("newETColBtn").enable();
                 }
@@ -341,7 +341,7 @@ Ext.define('Rubedo.controller.EmailController', {
                 me.displayRowControls(thing);
                 me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             } else if (thing.eType=="col"){
-                Ext.getCmp("eTEditControl").setTitle("Column");
+                Ext.getCmp("eTEditControl").setTitle(Rubedo.RubedoAutomatedElementsLoc.columnText);
                 if (Ext.isEmpty(thing.getComponent(0))){
                     Ext.getCmp("ETAddComponentsBtnGr").enable();
                 }
@@ -351,12 +351,12 @@ Ext.define('Rubedo.controller.EmailController', {
                 me.displayColControls(thing);
                 me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             } else if (thing.eType=="imageComponent"){
-                Ext.getCmp("eTEditControl").setTitle("Image");
+                Ext.getCmp("eTEditControl").setTitle(Rubedo.RubedoAutomatedElementsLoc.imageText);
                 Ext.getCmp("deleteETElBtn").enable();
                 me.displayImageControls(thing,Ext.getCmp("eTEditControl"));
                 me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
             } else if (thing.eType=="textComponent"){
-                Ext.getCmp("eTEditControl").setTitle("Text");
+                Ext.getCmp("eTEditControl").setTitle(Rubedo.RubedoAutomatedElementsLoc.textText);
                 Ext.getCmp("deleteETElBtn").enable();
                 me.displayTextControls(thing,Ext.getCmp("eTEditControl"));
                 me.displayGenericControls(thing,Ext.getCmp("eTEditControl"));
@@ -406,7 +406,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var imageField=Ext.create('Rubedo.view.ImagePickerField',{
             itemId:"imageEditor",
             fieldLabel:"Image",
-            allowedFileType:"Image",
+            allowedFileType:Rubedo.RubedoAutomatedElementsLoc.imageText,
             smallMode:true,
             labelWidth:60,
             anchor:"100%",
@@ -435,7 +435,7 @@ Ext.define('Rubedo.controller.EmailController', {
         if (textComponent.eConfig.simpleTextMode){
             var textField=Ext.widget('textareafield',{
                 itemId:"textTEditor",
-                fieldLabel:"Text",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.textText,
                 labelWidth:60,
                 grow:true,
                 anchor:"100%",
@@ -444,7 +444,7 @@ Ext.define('Rubedo.controller.EmailController', {
         } else {
             var textField=Ext.widget('directRTEField',{
                 itemId:"textTEditor",
-                fieldLabel:"Text",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.textText,
                 labelWidth:60,
                 anchor:"100%",
                 value:Ext.clone(textComponent.eConfig.html)
@@ -461,7 +461,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var container=Ext.getCmp("eTEditControl");
         var bgColorEdit=Ext.widget("AdvancedColorField",{
             noPickerDisplay:true,
-            fieldLabel:"Background color",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.bgColorText,
             labelWidth:60,
             allowBlank:true,
             anchor:"100%"
@@ -480,7 +480,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var container=Ext.getCmp("eTEditControl");
         var spanEdit=Ext.widget('numberfield',{
             itemId:"spanEditor",
-            fieldLabel:"Width",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.widthText,
             labelWidth:60,
             editable:true,
             allowDecimals:false,
@@ -500,7 +500,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var bgColorEdit=Ext.widget("AdvancedColorField",{
             noPickerDisplay:true,
             allowBlank:true,
-            fieldLabel:"Background color",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.bgColorText,
             labelWidth:60,
             anchor:"100%"
         });
@@ -516,7 +516,7 @@ Ext.define('Rubedo.controller.EmailController', {
     displayGenericControls: function(component, target) {
         var styleEdit=Ext.widget("textareafield",{
             itemId:"styleEditor",
-            fieldLabel:"Style",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
             labelWidth:60,
             anchor:"100%",
             grow:true,
@@ -537,13 +537,13 @@ Ext.define('Rubedo.controller.EmailController', {
         }
         var widthDisplayer=Ext.widget("displayfield",{
             labelWidth:60,
-            fieldLabel:"Width",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.widthText,
             value:mainBody.getWidth()-4
         });
         container.add(widthDisplayer);
         var centerCheckbox=Ext.widget("checkbox",{
             labelWidth:60,
-            fieldLabel:"Centered",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.centeredText,
             inputValue:true,
             checked:Ext.clone(mainBody.eConfig.centered)
         });
@@ -553,7 +553,7 @@ Ext.define('Rubedo.controller.EmailController', {
         container.add(centerCheckbox);
         var styleEdit=Ext.widget("textareafield",{
             itemId:"styleEditor",
-            fieldLabel:"Style",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
             labelWidth:60,
             anchor:"100%",
             grow:true,
@@ -567,7 +567,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var bgColorEdit=Ext.widget("AdvancedColorField",{
             noPickerDisplay:true,
             allowBlank:true,
-            fieldLabel:"Background color",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.bgColorText,
             labelWidth:60,
             anchor:"100%"
         });
@@ -581,7 +581,7 @@ Ext.define('Rubedo.controller.EmailController', {
         var bodybgColorEdit=Ext.widget("AdvancedColorField",{
             noPickerDisplay:true,
             allowBlank:true,
-            fieldLabel:"Body background color",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.bbgColorText,
             labelWidth:60,
             anchor:"100%"
         });

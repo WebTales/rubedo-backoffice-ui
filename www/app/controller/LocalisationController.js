@@ -367,7 +367,17 @@ Ext.define('Rubedo.controller.LocalisationController', {
             "dbclickToAssignText":"Double-click available fields to assign to this column",
             "boReloadRequired":"This change requires an interface reload in order to fully take effect. Would you like to reload now ?",
             "thisUserTypeText":"this user type",
-            "userTypeIsUsedError":"This user type is used by users and therfore cannot be deleted."
+            "userTypeIsUsedError":"This user type is used by users and therfore cannot be deleted.",
+            "widthText":"Width",
+            "centeredText":"Centered",
+            "bgColorText":"Background color",
+            "bbgColorText":"Body background color",
+            "imageText":"Image",
+            "textText":"Text",
+            "emailBodyText":"Email body",
+            "emailSendWarning":"Are you sure you want to send this email to all users subscribed to the selected mailing list ?",
+            "modelText":"Model",
+            "mailText":"Mail"
         });
 
         this.control({

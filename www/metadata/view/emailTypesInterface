@@ -477,8 +477,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "layout|flex": null,
                         "localiserId": "addComponentsFS",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "ETAddComponentsBtnGr",
                         "headerPosition": "bottom",
@@ -750,8 +750,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "exploutFS",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "ETEploit",
                         "headerPosition": "bottom",
@@ -926,9 +926,9 @@
                                         ],
                                         "implHandler": [
                                             "if (name) {\r",
-                                            "    return (\"Model\");\r",
+                                            "    return (Rubedo.RubedoAutomatedElementsLoc.modelText);\r",
                                             "} else {\r",
-                                            "    return (\"Mail\");\r",
+                                            "    return (Rubedo.RubedoAutomatedElementsLoc.mailText);\r",
                                             "}"
                                         ]
                                     },
@@ -961,8 +961,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "container|align": "stretch",
                         "localiserId": "editTab",
+                        "container|align": "stretch",
                         "frame": true,
                         "layout": "hbox",
                         "title": "Edit"
@@ -1183,8 +1183,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "nameField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Name",
                                 "name": "text",
                                 "allowBlank": false,
@@ -1207,8 +1207,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "subjectField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Subject",
                                 "name": "subject",
                                 "allowBlank": false,
@@ -1231,8 +1231,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "localiserId": "plainTextField",
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Plain text",
                                 "name": "plainText",
                                 "grow": true,
