@@ -364,9 +364,6 @@ Ext.define('Rubedo.view.searchResultsWindow', {
 
         }
 
-        if (component.advancedESQMode){
-            console.log(component.initialDF);
-        }
     }
 
 });

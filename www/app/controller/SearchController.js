@@ -183,7 +183,6 @@ Ext.define('Rubedo.controller.SearchController', {
             }
         });
         if ((target.up().advancedESQMode)&&(!Ext.isEmpty(target.up().initialDF))){
-            console.log("ok1");
             var positioner = 0;
             Ext.Array.forEach(target.up().initialDF, function(determinant){
                 var notFound=true;
