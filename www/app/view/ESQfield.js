@@ -54,6 +54,9 @@ Ext.define('Rubedo.view.ESQfield', {
         });
         myComponent.getComponent("removeBtn").on("click", function(){
             component.setValue(null);
+            if (component.advancedESQMode){
+                component.up().getComponent("displayedFacetsBrotherField").setValue("['all']");
+            }
         });
         myComponent.getComponent("addBtn").on("click", function(){
             var delay = 10;

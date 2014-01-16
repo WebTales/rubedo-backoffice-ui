@@ -84,9 +84,9 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                         },
                         {
                             xtype: 'form',
+                            localiserId: 'fsGlobalSetPan',
                             flex: 1,
                             dock: 'top',
-                            localiserId: 'fsGlobalSetPan',
                             hidden: true,
                             bodyPadding: 10,
                             collapsed: true,
@@ -95,8 +95,8 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             items: [
                                 {
                                     xtype: 'checkboxfield',
-                                    anchor: '100%',
                                     localiserId: 'displayFacetFieldM',
+                                    anchor: '100%',
                                     fieldLabel: 'Display',
                                     name: 'displayFacet',
                                     boxLabel: '',
@@ -318,6 +318,22 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     },
 
     onSearchResultsWindowBeforeRender: function(component, eOpts) {
+        if(component.advancedESQMode){
+            component.defaultFOps={ };
+            Ext.Ajax.request({
+                url: 'elastic-search/get-default-operators',
+                params: {
+
+                },
+                success: function(response){
+                    var defops = Ext.JSON.decode(response.responseText).data;
+                    component.defaultFOps=defops;
+                }
+            });
+        }
+
+
+
         if (component.geoQueryMode){
             component.modal=true;
             component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esGeoQueryText);
