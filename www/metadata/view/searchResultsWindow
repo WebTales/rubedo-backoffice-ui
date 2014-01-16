@@ -697,10 +697,7 @@
                     "    Ext.getStore(\"ESFacetteStore\").load();\r",
                     "\r",
                     "}\r",
-                    "\r",
-                    "if (component.advancedESQMode){\r",
-                    "    console.log(component.initialDF);\r",
-                    "}"
+                    ""
                 ],
                 "name": "beforerender",
                 "scope": "me"

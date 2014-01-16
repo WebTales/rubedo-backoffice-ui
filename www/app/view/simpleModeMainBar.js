@@ -183,6 +183,15 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
         },
         {
             xtype: 'menuitem',
+            ACL: 'read.ui.emailTemplates',
+            favoriteIcon: 'mail.png',
+            itemId: 'emailTypesInterface',
+            iconCls: 'mail_small',
+            localiserId:'emailsLaunchBtn',
+            text: 'Emails'
+        },
+        {
+            xtype: 'menuitem',
             ACL: 'read.ui.contentTypes',
             favoriteIcon: 'page_full.png',
             itemId: 'adminFTDC',
@@ -198,6 +207,15 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
             iconCls: 'mediaTypes',
             localiserId:'damTypesLaunchBtn',
             text: 'Types de médias'
+        },
+        {
+            xtype: 'menuitem',
+            ACL: 'read.ui.userTypes',
+            favoriteIcon: 'users.png',
+            itemId: 'UserTypesInterface',
+            localiserId:'userTypesLaunchBtn',
+            iconCls: 'user',
+            text: 'User types'
         },
         {
             xtype: 'menuitem',
@@ -249,15 +267,6 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
             localiserId:'workspacesLaunchBtn',
             iconCls: 'user',
             text: 'Espaces de travail'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.userTypes',
-            favoriteIcon: 'users.png',
-            itemId: 'UserTypesInterface',
-            localiserId:'userTypesLaunchBtn',
-            iconCls: 'user',
-            text: 'User types'
         },
         {
             xtype: 'menuitem',
@@ -324,13 +333,13 @@ Ext.define('Rubedo.view.simpleModeMainBar', {
     },
 
     onButtonRender2: function(component, eOpts) {
-        if ((!ACL.interfaceRights["read.ui.sites"])&&(!ACL.interfaceRights["read.ui.masks"])&&(!ACL.interfaceRights["read.ui.contentTypes"])&&(!ACL.interfaceRights["read.ui.damTypes"])){
+        if ((!ACL.interfaceRights["read.ui.sites"])&&(!ACL.interfaceRights["read.ui.masks"])&&(!ACL.interfaceRights["read.ui.contentTypes"])&&(!ACL.interfaceRights["read.ui.damTypes"])&&(!ACL.interfaceRights["read.ui.userTypes"])&&(!ACL.interfaceRights["read.ui.customThemes"])&&(!ACL.interfaceRights["read.ui.emailTemplates"])){
             component.hide();
         }
     },
 
     onButtonRender11: function(component, eOpts) {
-        if ((!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])){
+        if ((!ACL.interfaceRights["exe.ui.import"])&&(!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
             component.hide();
         }
     }
