@@ -86,6 +86,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             xtype: 'form',
                             flex: 1,
                             dock: 'top',
+                            localiserId: 'fsGlobalSetPan',
                             hidden: true,
                             bodyPadding: 10,
                             collapsed: true,
@@ -95,6 +96,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    localiserId: 'displayFacetFieldM',
                                     fieldLabel: 'Display',
                                     name: 'displayFacet',
                                     boxLabel: '',
@@ -160,6 +162,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return(record.get("objectType")+" : "+record.get("type"));
                             },
+                            localiserId: 'typeCol',
                             dataIndex: 'type',
                             text: 'Type'
                         },

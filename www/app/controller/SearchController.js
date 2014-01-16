@@ -133,6 +133,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         xtype: 'checkbox',
                         anchor: '100%',
                         fieldLabel: 'Display',
+                        localiserId:"displayFacetFieldM",
                         name: 'displayFacet',
                         itemId:"facetIsDisplayedField",
                         inputValue:true,

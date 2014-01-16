@@ -165,6 +165,7 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "dock": "top",
+                        "localiserId": "fsGlobalSetPan",
                         "hidden": true,
                         "bodyPadding": 10,
                         "collapsed": true,
@@ -172,6 +173,13 @@
                         "title": "Global facet settings"
                     },
                     "designerId": "6bc092c0-ece6-4454-af5d-fdc4e6dc7cf8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -182,13 +190,21 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "localiserId": "displayFacetFieldM",
                                 "fieldLabel": "Display",
                                 "name": "displayFacet",
                                 "boxLabel": "",
                                 "checked": true,
                                 "inputValue": "true"
                             },
-                            "designerId": "b2b2916d-d91e-4245-bdad-198a8d035275"
+                            "designerId": "b2b2916d-d91e-4245-bdad-198a8d035275",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -423,10 +439,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "typeCol",
                         "dataIndex": "type",
                         "text": "Type"
                     },
                     "designerId": "70ce4c42-db36-4cf3-a4b8-264805d732da",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

@@ -85,6 +85,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.mailingLists',
+                            localiserId: 'manageUsersFS',
                             disabled: true,
                             id: 'mlUsersManager',
                             headerPosition: 'bottom',
@@ -93,6 +94,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'subscribeBtn',
                                     id: 'mlAddUser',
                                     iconAlign: 'top',
                                     iconCls: 'user_add_big',
@@ -101,6 +103,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'unsubscribeBtn',
                                     disabled: true,
                                     id: 'mlRemoveUser',
                                     iconAlign: 'top',
@@ -110,6 +113,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'importBtn',
                                     id: 'mlImportUsersBtn',
                                     iconAlign: 'top',
                                     iconCls: 'user_up_big',
@@ -118,6 +122,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'exportBtn',
                                     id: 'mlExportUsersBtn',
                                     iconAlign: 'top',
                                     iconCls: 'user_down_big',
@@ -249,6 +254,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                         },
                         {
                             xtype: 'gridpanel',
+                            localiserId: 'subscribedUsersGrid',
                             id: 'MLUsersGrid',
                             title: 'Subscribed users',
                             forceFit: true,
@@ -256,16 +262,19 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'nameCol',
                                     dataIndex: 'name',
                                     text: 'Name'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'emailCol',
                                     dataIndex: 'email',
                                     text: 'Email'
                                 },
                                 {
                                     xtype: 'datecolumn',
+                                    localiserId: 'createCol',
                                     dataIndex: 'createTime',
                                     text: 'Creation'
                                 },
@@ -279,6 +288,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                             return("");
                                         }
                                     },
+                                    localiserId: 'subsCribeCol',
                                     dataIndex: 'mailingLists',
                                     text: 'Subscription'
                                 }
@@ -298,6 +308,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                         },
                         {
                             xtype: 'gridpanel',
+                            localiserId: 'unsubscribedUsersGrid',
                             id: 'MLUsersGrid1',
                             title: 'Unsubscribed users',
                             forceFit: true,
@@ -305,16 +316,19 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'nameCol',
                                     dataIndex: 'name',
                                     text: 'Name'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'emailCol',
                                     dataIndex: 'email',
                                     text: 'Email'
                                 },
                                 {
                                     xtype: 'datecolumn',
+                                    localiserId: 'createCol',
                                     dataIndex: 'createTime',
                                     text: 'Creation'
                                 },
@@ -328,6 +342,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                             return("");
                                         }
                                     },
+                                    localiserId: 'unsubscribedCol',
                                     dataIndex: 'mailingLists',
                                     text: 'Unsubscription'
                                 }
