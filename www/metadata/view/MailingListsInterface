@@ -168,6 +168,7 @@
                     "userConfig": {
                         "ACL": "write.ui.mailingLists",
                         "layout|flex": null,
+                        "localiserId": "manageUsersFS",
                         "disabled": true,
                         "id": "mlUsersManager",
                         "headerPosition": "bottom",
@@ -180,6 +181,11 @@
                             "group": "(Custom Properties)",
                             "name": "ACL",
                             "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
                         }
                     ],
                     "cn": [
@@ -191,13 +197,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "subscribeBtn",
                                 "id": "mlAddUser",
                                 "iconAlign": "top",
                                 "iconCls": "user_add_big",
                                 "scale": "large",
                                 "text": "Subscribe"
                             },
-                            "designerId": "c5ea6342-ddba-4dc0-8369-52f39631dd3e"
+                            "designerId": "c5ea6342-ddba-4dc0-8369-52f39631dd3e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -207,6 +221,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "unsubscribeBtn",
                                 "disabled": true,
                                 "id": "mlRemoveUser",
                                 "iconAlign": "top",
@@ -214,7 +229,14 @@
                                 "scale": "large",
                                 "text": "Unsubscribe"
                             },
-                            "designerId": "c86c6126-9679-41aa-9ed6-5e3ccd66d2a8"
+                            "designerId": "c86c6126-9679-41aa-9ed6-5e3ccd66d2a8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -224,13 +246,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "importBtn",
                                 "id": "mlImportUsersBtn",
                                 "iconAlign": "top",
                                 "iconCls": "user_up_big",
                                 "scale": "large",
                                 "text": "Import"
                             },
-                            "designerId": "d0113c5b-0738-48a1-b50a-0488b018ff59"
+                            "designerId": "d0113c5b-0738-48a1-b50a-0488b018ff59",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -240,13 +270,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "exportBtn",
                                 "id": "mlExportUsersBtn",
                                 "iconAlign": "top",
                                 "iconCls": "user_down_big",
                                 "scale": "large",
                                 "text": "Export"
                             },
-                            "designerId": "e2c6400c-f168-4a7d-8199-415454cef0da"
+                            "designerId": "e2c6400c-f168-4a7d-8199-415454cef0da",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -612,12 +650,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "subscribedUsersGrid",
                         "id": "MLUsersGrid",
                         "title": "Subscribed users",
                         "forceFit": true,
                         "store": "MLUsers"
                     },
                     "designerId": "2d8c099c-2166-416b-a58b-0411d92d2147",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.grid.column.Column",
@@ -627,10 +673,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "nameCol",
                                 "dataIndex": "name",
                                 "text": "Name"
                             },
-                            "designerId": "69b0f110-9307-4222-9dd7-e197a9f8662e"
+                            "designerId": "69b0f110-9307-4222-9dd7-e197a9f8662e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -640,10 +694,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "emailCol",
                                 "dataIndex": "email",
                                 "text": "Email"
                             },
-                            "designerId": "18f61888-a512-4727-b1c4-6050a038bed3"
+                            "designerId": "18f61888-a512-4727-b1c4-6050a038bed3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Date",
@@ -653,10 +715,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "createCol",
                                 "dataIndex": "createTime",
                                 "text": "Creation"
                             },
-                            "designerId": "513425e4-9673-452c-bdbe-b82b6e430730"
+                            "designerId": "513425e4-9673-452c-bdbe-b82b6e430730",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -666,10 +736,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "subsCribeCol",
                                 "dataIndex": "mailingLists",
                                 "text": "Subscription"
                             },
                             "designerId": "be30caa0-e680-40d7-8b9b-37fbebd86788",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -694,7 +772,7 @@
                                             "    var myDate=value[Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\")].date;\r",
                                             "    return(Ext.util.Format.date(Ext.Date.parse(myDate,\"U\")));\r",
                                             "} catch(err){\r",
-                                            "\treturn(\"\");\r",
+                                            "    return(\"\");\r",
                                             "}"
                                         ]
                                     },
@@ -754,12 +832,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "unsubscribedUsersGrid",
                         "id": "MLUsersGrid1",
                         "title": "Unsubscribed users",
                         "forceFit": true,
                         "store": "MLUnsubscribedUsers"
                     },
                     "designerId": "0031cc66-0370-4d07-9216-f3fe32941508",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.grid.column.Column",
@@ -769,10 +855,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "nameCol",
                                 "dataIndex": "name",
                                 "text": "Name"
                             },
-                            "designerId": "467a613c-86b8-4137-9aca-adb18af982c1"
+                            "designerId": "467a613c-86b8-4137-9aca-adb18af982c1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -782,10 +876,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "emailCol",
                                 "dataIndex": "email",
                                 "text": "Email"
                             },
-                            "designerId": "4348b9cf-cd55-4bfe-b706-c09eb2c3ffd7"
+                            "designerId": "4348b9cf-cd55-4bfe-b706-c09eb2c3ffd7",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Date",
@@ -795,10 +897,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "createCol",
                                 "dataIndex": "createTime",
                                 "text": "Creation"
                             },
-                            "designerId": "6582203e-dedf-4f8a-a3c3-3af66b340929"
+                            "designerId": "6582203e-dedf-4f8a-a3c3-3af66b340929",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -808,10 +918,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "unsubscribedCol",
                                 "dataIndex": "mailingLists",
                                 "text": "Unsubscription"
                             },
                             "designerId": "178e46f0-3513-4672-9419-48db037d7e99",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
