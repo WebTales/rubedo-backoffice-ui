@@ -128,6 +128,11 @@ Ext.define('Rubedo.controller.SearchController', {
                 if((facet.id!="type")&&(facet.id!="damType")&&(facet.id!="userType")&&(!target.up().advancedESQMode)){newFacet.collapse();}
                 newFacet.usedProperty=facet.id;
                 if (target.up().advancedESQMode){
+                    var myOperat="and";
+                    if (!Ext.isEmpty(target.up().defaultFOps[newFacet.usedProperty])){
+                        myOperat=target.up().defaultFOps[newFacet.usedProperty];
+                    }
+                    myOperat=myOperat.toUpperCase();
 
                     newFacet.add({
                         xtype: 'checkbox',
@@ -149,7 +154,7 @@ Ext.define('Rubedo.controller.SearchController', {
                         allowBlank: false,
                         editable: false,
                         store:[["AND",Rubedo.RubedoAutomatedElementsLoc.andText],["OR",Rubedo.RubedoAutomatedElementsLoc.orText]],
-                        value:"AND",
+                        value:myOperat,
                         forceSelection: true
                     });
 
