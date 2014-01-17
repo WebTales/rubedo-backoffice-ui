@@ -572,7 +572,8 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                             title: 'Data',
                                                             tabConfig: {
                                                                 xtype: 'tab',
-                                                                flex: 1
+                                                                flex: 1,
+                                                                iconCls: 'process-icon'
                                                             }
                                                         },
                                                         {
@@ -580,6 +581,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                             localiserId: 'searchTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
+                                                            iconCls: 'search',
                                                             title: 'Search',
                                                             tabConfig: {
                                                                 xtype: 'tab',

@@ -986,8 +986,8 @@
             "codeClass": null,
             "userConfig": {
                 "managesStore": true,
-                "layout|flex": null,
                 "localiserId": "userTypesGrid",
+                "layout|flex": null,
                 "id": "mainUTGrid",
                 "width": 200,
                 "resizable": true,
@@ -1460,7 +1460,8 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "layout|flex": 1
+                                                                "layout|flex": 1,
+                                                                "iconCls": "process-icon"
                                                             },
                                                             "designerId": "6ef9f654-c61c-41da-86d5-ff3d73c01c40"
                                                         }
@@ -1477,6 +1478,7 @@
                                                         "localiserId": "searchTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
+                                                        "iconCls": "search",
                                                         "title": "Search"
                                                     },
                                                     "designerId": "d74e0ccf-92b2-423e-b5c0-5c8f16abb338",
