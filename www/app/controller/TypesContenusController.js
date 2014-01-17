@@ -1077,6 +1077,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         }
     },
 
+    onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
+        if ((field.name=="searchable")&&(newValue===false)){
+            Ext.Array.forEach(field.up().query("checkboxfield"),function(chk){
+                if (chk.name!="searchable"){
+                    chk.setValue(false);
+                }
+            });
+        } else if ((field.name!="searchable")&&(newValue===true)&&(!field.up().getComponent(0).getValue())){
+            field.up().getComponent(0).setValue(true);
+        }
+    },
+
     repliqueChamp: function(button, e, eOpts) {
         var nouvChamp=button.up().getComponent(1).cloneConfig();
         nouvChamp.anchor = '90%';
@@ -2028,6 +2040,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "#layoutEditionPanel panel": {
                 afterrender: this.selectionEvents
+            },
+            "#searchFormCheck checkboxfield": {
+                change: this.onCheckboxfieldChange
             },
             "[itemId= 'boutonReplicateurChamps']": {
                 click: this.repliqueChamp
