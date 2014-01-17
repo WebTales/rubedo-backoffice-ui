@@ -180,6 +180,7 @@ Ext.define('Rubedo.controller.SitesController', {
             var newSite= Ext.create("Rubedo.model.sitesDataModel", form.getValues());
             var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
             newSite.set("nativeLanguage", nativeLanguage);
+            newSite.set("locale", nativeLanguage);
             var i18n= { };
             i18n[nativeLanguage]={
                 title:form.getValues().title,
