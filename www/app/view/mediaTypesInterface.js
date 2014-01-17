@@ -501,6 +501,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             localiserId: 'dataTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
+                                                            iconCls: 'process-icon',
                                                             title: 'Data',
                                                             tabConfig: {
                                                                 xtype: 'tab',
@@ -512,6 +513,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             localiserId: 'searchTab',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
+                                                            iconCls: 'search',
                                                             title: 'Search',
                                                             tabConfig: {
                                                                 xtype: 'tab',
