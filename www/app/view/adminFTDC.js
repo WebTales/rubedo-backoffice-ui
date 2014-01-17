@@ -669,6 +669,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         {
                                                             xtype: 'form',
                                                             localiserId: 'searchTab',
+                                                            itemId: 'searchFormCheck',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             iconCls: 'search',

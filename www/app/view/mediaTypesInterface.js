@@ -511,6 +511,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                         {
                                                             xtype: 'form',
                                                             localiserId: 'searchTab',
+                                                            itemId: 'searchFormCheck',
                                                             autoScroll: true,
                                                             bodyPadding: 6,
                                                             iconCls: 'search',

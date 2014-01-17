@@ -1251,6 +1251,33 @@
             "designerId": "1a3d6c16-2026-4fb3-97b6-4495f52a7805"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCheckboxfieldChange",
+                "implHandler": [
+                    "if ((field.name==\"searchable\")&&(newValue===false)){\r",
+                    "    Ext.Array.forEach(field.up().query(\"checkboxfield\"),function(chk){\r",
+                    "        if (chk.name!=\"searchable\"){\r",
+                    "        \tchk.setValue(false);\r",
+                    "        }\r",
+                    "    });\r",
+                    "} else if ((field.name!=\"searchable\")&&(newValue===true)&&(!field.up().getComponent(0).getValue())){\r",
+                    "    field.up().getComponent(0).setValue(true);\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Checkbox",
+                "designer|controlQuery": "#searchFormCheck checkboxfield"
+            },
+            "designerId": "1d97759c-5055-4fb4-893f-0cc6aa215026"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
