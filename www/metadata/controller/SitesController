@@ -288,6 +288,7 @@
                     "    var newSite= Ext.create(\"Rubedo.model.sitesDataModel\", form.getValues());\r",
                     "    var nativeLanguage=Ext.getCmp(\"workingLanguageField\").getValue();\r",
                     "    newSite.set(\"nativeLanguage\", nativeLanguage);\r",
+                    "    newSite.set(\"locale\", nativeLanguage);\r",
                     "    var i18n= { };\r",
                     "    i18n[nativeLanguage]={\r",
                     "        title:form.getValues().title,\r",
