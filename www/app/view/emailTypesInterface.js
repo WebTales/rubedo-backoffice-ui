@@ -368,7 +368,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                     flex: 1,
                     activeTab: 0,
                     items: [
-                        {
+                        me.processEdit({
                             xtype: 'panel',
                             localiserId: 'editTab',
                             frame: true,
@@ -445,8 +445,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     }
                                 }
                             ]
-                        },
-                        {
+                        }),
+                        me.processMainEmailForm({
                             xtype: 'form',
                             localiserId: 'propertiesTab',
                             id: 'mainEmailForm',
@@ -483,8 +483,8 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                     rows: 10
                                 }
                             ]
-                        },
-                        {
+                        }),
+                        me.processETPreviewPanel({
                             xtype: 'panel',
                             localiserId: 'previewTab',
                             id: 'ETPreviewPanel',
@@ -492,7 +492,7 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                                 type: 'fit'
                             },
                             title: 'Preview'
-                        }
+                        })
                     ]
                 }
             ]
@@ -510,6 +510,21 @@ Ext.define('Rubedo.view.emailTypesInterface', {
 
     processMainETHolder: function(config) {
         config.plugins=[Ext.create("Ext.ux.BoxReorderer")];
+        return config;
+    },
+
+    processEdit: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.editTab.text;
+        return config;
+    },
+
+    processMainEmailForm: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.propertiesTab.title;
+        return config;
+    },
+
+    processETPreviewPanel: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.previewTab.title;
         return config;
     },
 

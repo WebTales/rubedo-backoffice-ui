@@ -252,7 +252,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                                 }
                             ]
                         },
-                        {
+                        me.processMLUsersGrid({
                             xtype: 'gridpanel',
                             localiserId: 'subscribedUsersGrid',
                             id: 'MLUsersGrid',
@@ -305,8 +305,8 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             selModel: Ext.create('Ext.selection.CheckboxModel', {
 
                             })
-                        },
-                        {
+                        }),
+                        me.processMLUsersGrid1({
                             xtype: 'gridpanel',
                             localiserId: 'unsubscribedUsersGrid',
                             id: 'MLUsersGrid1',
@@ -359,7 +359,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
                             selModel: Ext.create('Ext.selection.CheckboxModel', {
 
                             })
-                        }
+                        })
                     ]
                 }
             ],
@@ -374,6 +374,16 @@ Ext.define('Rubedo.view.MailingListsInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processMLUsersGrid: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.subscribedUsersGrid.title;
+        return config;
+    },
+
+    processMLUsersGrid1: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.unsubscribedUsersGrid;
+        return config;
     },
 
     onWorkspaceSaveAfterRender: function(component, eOpts) {

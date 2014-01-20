@@ -496,7 +496,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                     overlapHeader: false,
                                                     activeTab: 0,
                                                     items: [
-                                                        {
+                                                        me.processData({
                                                             xtype: 'form',
                                                             localiserId: 'dataTab',
                                                             autoScroll: true,
@@ -507,8 +507,8 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                                 xtype: 'tab',
                                                                 flex: 1
                                                             }
-                                                        },
-                                                        {
+                                                        }),
+                                                        me.processSearchFormCheck({
                                                             xtype: 'form',
                                                             localiserId: 'searchTab',
                                                             itemId: 'searchFormCheck',
@@ -520,7 +520,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                                 xtype: 'tab',
                                                                 flex: 1
                                                             }
-                                                        }
+                                                        })
                                                     ]
                                                 }
                                             ]
@@ -727,6 +727,16 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
         config.tpl=[
         '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
+        return config;
+    },
+
+    processData: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.dataTab.title;
+        return config;
+    },
+
+    processSearchFormCheck: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.searchTab.title;
         return config;
     },
 
