@@ -103,7 +103,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
             Ext.getCmp("MTfieldDeleter").enable();   
             if (Ext.getCmp('MTFieldId').getValue() != TCfield.id) {
                 if (Ext.isDefined(Ext.getCmp(Ext.getCmp('MTFieldId').getValue()))){    
-                    Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).getEl().applyStyles('color:#000000');
+                    Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).labelEl.applyStyles('color:#000000');
                     var companion =Ext.getCmp(Ext.getCmp('MTFieldId').getValue()).up().getComponent("imageFieldComponent");
                     if (Ext.isDefined(companion)) {
                         companion.getEl().applyStyles('color:#000000');
@@ -115,7 +115,7 @@ Ext.define('Rubedo.controller.MediaTypesController', {
                     TCfield.up().getComponent("imageFieldComponent").getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
                     this.frame(MyPrefData.themeColor);
-                    this.applyStyles('color:'+MyPrefData.themeColor);
+                    TCfield.labelEl.applyStyles('color:'+MyPrefData.themeColor);
                 }
                 var mesChamps = TCfield.configFields;
                 var boiteParam = Ext.getCmp('MTFieldConfigsBox').getComponent(0).getComponent(0);
