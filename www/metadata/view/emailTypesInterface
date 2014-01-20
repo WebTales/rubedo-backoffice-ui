@@ -1140,6 +1140,25 @@
                                     "designerId": "3baedd9d-be8c-40a4-890c-fe17c1ed0eef"
                                 }
                             ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processEdit",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc.editTab.text;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "17625376-d221-431f-adf1-eb9227e514b3"
                         }
                     ]
                 },
@@ -1247,6 +1266,25 @@
                                     "type": "string"
                                 }
                             ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMainEmailForm",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc.propertiesTab.title;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "e95db5bd-e5b0-41e3-b218-885dbfeb9402"
                         }
                     ]
                 },
@@ -1280,6 +1318,25 @@
                             },
                             "codeClass": null,
                             "designerId": "3b22f85e-f632-4b10-a710-8ed78e7f355a"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processETPreviewPanel",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc.previewTab.title;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "5b767867-91a4-4e75-982d-d5c7b1baac2a"
                         }
                     ]
                 }

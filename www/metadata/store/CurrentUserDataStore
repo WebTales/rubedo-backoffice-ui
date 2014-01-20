@@ -78,7 +78,7 @@
                     "if ((!Ext.isEmpty(mode))&&(mode==\"simple\")){\r",
                     "    MyPrefData.simpleMode=true;\r",
                     "    var task = new Ext.util.DelayedTask(function(){\r",
-                    "    Rubedo.controller.InterfaceController.prototype.setSimpleInterfaceMode();\r",
+                    "        Rubedo.controller.InterfaceController.prototype.setSimpleInterfaceMode();\r",
                     "    });\r",
                     "    task.delay(300);\r",
                     "}\r",

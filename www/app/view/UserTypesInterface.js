@@ -564,7 +564,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                     overlapHeader: false,
                                                     activeTab: 0,
                                                     items: [
-                                                        {
+                                                        me.processData({
                                                             xtype: 'form',
                                                             localiserId: 'dataTab',
                                                             autoScroll: true,
@@ -575,8 +575,8 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                                 flex: 1,
                                                                 iconCls: 'process-icon'
                                                             }
-                                                        },
-                                                        {
+                                                        }),
+                                                        me.processSearchFormCheck({
                                                             xtype: 'form',
                                                             localiserId: 'searchTab',
                                                             itemId: 'searchFormCheck',
@@ -588,7 +588,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                                 xtype: 'tab',
                                                                 flex: 1
                                                             }
-                                                        }
+                                                        })
                                                     ]
                                                 }
                                             ]
@@ -995,6 +995,16 @@ Ext.define('Rubedo.view.UserTypesInterface', {
         config.tpl=[
         '<b>{type}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
         ];
+        return config;
+    },
+
+    processData: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.dataTab.title;
+        return config;
+    },
+
+    processSearchFormCheck: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.searchTab.title;
         return config;
     },
 

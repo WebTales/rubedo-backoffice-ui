@@ -1270,6 +1270,25 @@
                                                                 "layout|flex": 1
                                                             },
                                                             "designerId": "4db0b53f-6219-41d7-a3c1-54c0eff79cf8"
+                                                        },
+                                                        {
+                                                            "type": "processcfgfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "processData",
+                                                                "designer|params": [
+                                                                    "config"
+                                                                ],
+                                                                "implHandler": [
+                                                                    "config.title=Rubedo.RubedoInterfaceLoc.dataTab.title;\r",
+                                                                    "return config;"
+                                                                ]
+                                                            },
+                                                            "designerId": "63b4d6e0-04a6-494b-a413-bf77a525b7cb"
                                                         }
                                                     ]
                                                 },
@@ -1308,6 +1327,25 @@
                                                                 "layout|flex": 1
                                                             },
                                                             "designerId": "fd6ce0ca-278e-471f-9da8-c4b67691fa52"
+                                                        },
+                                                        {
+                                                            "type": "processcfgfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "processSearchFormCheck",
+                                                                "designer|params": [
+                                                                    "config"
+                                                                ],
+                                                                "implHandler": [
+                                                                    "config.title=Rubedo.RubedoInterfaceLoc.searchTab.title;\r",
+                                                                    "return config;"
+                                                                ]
+                                                            },
+                                                            "designerId": "649d1f19-61fa-4448-952b-f34813840027"
                                                         }
                                                     ]
                                                 }

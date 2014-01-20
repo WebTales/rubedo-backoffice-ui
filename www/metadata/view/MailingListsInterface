@@ -167,8 +167,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.mailingLists",
-                        "layout|flex": null,
                         "localiserId": "manageUsersFS",
+                        "layout|flex": null,
                         "disabled": true,
                         "id": "mlUsersManager",
                         "headerPosition": "bottom",
@@ -821,6 +821,25 @@
                             },
                             "codeClass": "Ext.selection.CheckboxModel",
                             "designerId": "5ac8f812-cc8e-4da2-815b-840394134c30"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMLUsersGrid",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc.subscribedUsersGrid.title;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "29076473-4a27-4bbb-83fb-1a622dcc6d4f"
                         }
                     ]
                 },
@@ -1003,6 +1022,25 @@
                             },
                             "codeClass": "Ext.selection.CheckboxModel",
                             "designerId": "13025f2c-f80a-4f81-bc40-68ed30289f69"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMLUsersGrid1",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc.unsubscribedUsersGrid;\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "fb6792b4-4a5d-462a-94cb-cdfc56aa0f59"
                         }
                     ]
                 }
