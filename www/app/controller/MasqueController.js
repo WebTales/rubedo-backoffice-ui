@@ -1191,6 +1191,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         categories=Ext.Array.merge(categories,categoriesADV);
         for (j=0; j<categories.length; j++){
             var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
+            nCateg.isAdv=categories[j].isAdv;
 
             var champsS = Ext.clone(categories[j].champs);
             for (i=0; i<champsS.length; i++) {
