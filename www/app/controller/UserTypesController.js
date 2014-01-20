@@ -120,7 +120,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             Ext.getCmp("UTfieldDeleter").enable();   
             if (Ext.getCmp('UTFieldId').getValue() != TCfield.id) {
                 if (Ext.isDefined(Ext.getCmp(Ext.getCmp('UTFieldId').getValue()))){    
-                    Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).getEl().applyStyles('color:#000000');
+                    Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).labelEl.applyStyles('color:#000000');
                     var companion =Ext.getCmp(Ext.getCmp('UTFieldId').getValue()).up().getComponent(2);
                     if (Ext.isDefined(companion)) {
                         companion.getEl().applyStyles('color:#000000');
@@ -132,7 +132,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
                     TCfield.up().getComponent(2).getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
                     this.frame(MyPrefData.themeColor);
-                    this.applyStyles('color:'+MyPrefData.themeColor);
+                    TCfield.labelEl.applyStyles('color:'+MyPrefData.themeColor);
                 }
                 var mesChamps = TCfield.configFields;
                 var boiteParam = Ext.getCmp('UTFieldConfigsBox').getComponent(0).getComponent(0);
