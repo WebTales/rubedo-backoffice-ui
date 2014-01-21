@@ -176,7 +176,6 @@
                     "target.removeAll();\r",
                     "Ext.Array.forEach(facets, function(facet){\r",
                     "    if (facet._type==\"range\"){\r",
-                    "        facet.id=\"lastupdatetime\";\r",
                     "        facet.terms=[ ];\r",
                     "        if (!Ext.isEmpty(facet.ranges)){\r",
                     "            Ext.Array.forEach(facet.ranges, function(rangeTerm){\r",
