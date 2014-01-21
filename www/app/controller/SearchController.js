@@ -111,7 +111,7 @@ Ext.define('Rubedo.controller.SearchController', {
         target.removeAll();
         Ext.Array.forEach(facets, function(facet){
             if (facet._type=="range"){
-                facet.id="lastupdatetime";
+                facet.id="date";
                 facet.terms=[ ];
                 if (!Ext.isEmpty(facet.ranges)){
                     Ext.Array.forEach(facet.ranges, function(rangeTerm){
