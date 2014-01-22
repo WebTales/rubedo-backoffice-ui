@@ -97,8 +97,9 @@ Ext.define('Rubedo.view.DCEField', {
 
         });
         myComponent.getComponent("chooseBtn").on("click", function(){
-            var companion = Ext.widget("contentPickerWindow");
+            var companion = Ext.widget("searchResultsWindow");
             companion.targetId=component.getId();
+            companion.DCEFMode=true;
             companion.allowedCT=component.allowedCT;
             companion.show();
         });
