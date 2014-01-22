@@ -191,7 +191,13 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             displayInfo: true,
                             store: 'ESFacetteStore'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onResultContentsGridSelectionChange,
+                            scope: me
+                        }
+                    }
                 }
             ],
             listeners: {
@@ -236,6 +242,21 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             iconCls: 'favorite_add_med',
                             scale: 'medium',
                             text: ''
+                        },
+                        {
+                            xtype: 'button',
+                            localiserId: 'chooseBtn',
+                            disabled: true,
+                            hidden: true,
+                            id: 'selectESEntityBtn',
+                            iconCls: 'ouiSpetit',
+                            text: '<b>Choose</b>',
+                            listeners: {
+                                click: {
+                                    fn: me.onSelectESEntityBtnClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -294,6 +315,20 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         Ext.getStore("ESFacetteStore").removeAll();
         Ext.getStore("ESFacetteStore").activeFacettes={ };
         Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search';
+    },
+
+    onResultContentsGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("selectESEntityBtn").disable();
+        } else {
+            Ext.getCmp("selectESEntityBtn").enable();
+        }
+    },
+
+    onSelectESEntityBtnClick: function(button, e, eOpts) {
+        var id=Ext.getCmp("ResultContentsGrid").getSelectionModel().getLastSelected().get("id");
+        Ext.getCmp(button.up().up().targetId).setValue(id);
+        button.up().up().close();
     },
 
     onSaveGeoQueryBtnClick: function(button, e, eOpts) {
@@ -381,6 +416,17 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-user';
             Ext.getStore("ESFacetteStore").load();
 
+        } else if (component.DCEFMode){
+            component.modal=true;
+            component.setTitle("Content Selector");
+            Ext.getStore("ESFacetteStore").activeFacettes={ };
+            if (!Ext.isEmpty(component.allowedCT)){
+                Ext.getStore("ESFacetteStore").activeFacettes={type:component.allowedCT};
+            }
+            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("selectESEntityBtn").show();
+            Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-content';
+            Ext.getStore("ESFacetteStore").load();
         }
 
     }

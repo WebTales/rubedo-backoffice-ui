@@ -538,6 +538,27 @@
                         "store": "ESFacetteStore"
                     },
                     "designerId": "cccd126e-1f28-4c4e-9e7b-40559bbac696"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onResultContentsGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){\r",
+                            "\tExt.getCmp(\"selectESEntityBtn\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"selectESEntityBtn\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "02c3eebd-44c1-4f8c-81d4-bf70e7cd29a9"
                 }
             ]
         },
@@ -600,6 +621,52 @@
                         "text": ""
                     },
                     "designerId": "0a9d678c-0299-444b-b6a1-91103dd41bc3"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "localiserId": "chooseBtn",
+                        "disabled": true,
+                        "hidden": true,
+                        "id": "selectESEntityBtn",
+                        "iconCls": "ouiSpetit",
+                        "text": "<b>Choose</b>"
+                    },
+                    "designerId": "e3065147-1362-4fc0-8e70-57889bab25f9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSelectESEntityBtnClick",
+                                "implHandler": [
+                                    "var id=Ext.getCmp(\"ResultContentsGrid\").getSelectionModel().getLastSelected().get(\"id\");\r",
+                                    "Ext.getCmp(button.up().up().targetId).setValue(id);\r",
+                                    "button.up().up().close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "15840bcc-c641-4483-8816-077eb1a89631"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -678,7 +745,7 @@
                     "    Ext.Ajax.request({\r",
                     "        url: 'elastic-search/get-default-operators',\r",
                     "        params: {\r",
-                    "            \r",
+                    "\r",
                     "        },\r",
                     "        success: function(response){\r",
                     "            var defops = Ext.JSON.decode(response.responseText).data;\r",
@@ -736,6 +803,17 @@
                     "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-user';\r",
                     "    Ext.getStore(\"ESFacetteStore\").load();\r",
                     "\r",
+                    "} else if (component.DCEFMode){\r",
+                    "    component.modal=true;\r",
+                    "    component.setTitle(\"Content Selector\");\r",
+                    "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };\r",
+                    "    if (!Ext.isEmpty(component.allowedCT)){\r",
+                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes={type:component.allowedCT};\r",
+                    "    }\r",
+                    "    Ext.getCmp(\"ESFavBtn\").hide();\r",
+                    "    Ext.getCmp(\"selectESEntityBtn\").show();\r",
+                    "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-content';\r",
+                    "    Ext.getStore(\"ESFacetteStore\").load();\r",
                     "}\r",
                     ""
                 ],
