@@ -162,7 +162,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
         Ext.define("Rubedo.RubedoAutomatedElementsLoc",{
             singleton:true,
             "notifTitle": "Notification",
-            "notifCreate": "<p>Succesful creation.</p>",
+            "notifCreate": "<p>Successful creation.</p>",
             "notifUpdate": "<p>Successful update.</p>",
             "notifDestroy": "<p>Successful deletion.</p>",
             "errorTitle": "Error",
