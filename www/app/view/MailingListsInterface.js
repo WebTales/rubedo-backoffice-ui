@@ -382,7 +382,7 @@ Ext.define('Rubedo.view.MailingListsInterface', {
     },
 
     processMLUsersGrid1: function(config) {
-        config.title=Rubedo.RubedoInterfaceLoc.unsubscribedUsersGrid;
+        config.title=Rubedo.RubedoInterfaceLoc.unsubscribedUsersGrid.title;
         return config;
     },
 
