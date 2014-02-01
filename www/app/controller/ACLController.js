@@ -147,7 +147,7 @@ Ext.define('Rubedo.controller.ACLController', {
                         Ext.getCmp("ViewportPrimaire").insert(0,Ext.widget("simpleModeMainBar"));
                     }
                 });
-                task.delay(300);
+                task.delay(2000);
             },
             failure:function(){
                 Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);
