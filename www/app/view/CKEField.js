@@ -45,29 +45,29 @@ Ext.define('Rubedo.view.CKEField', {
     onTextareafieldAfterRender: function(component, eOpts) {
         var myTBConfig=[
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
-        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo',"Source"  ] },
         { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
 
-        '/',
+
         { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
         { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
 
-        '/',
+
         { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
         { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
         { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
         { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink','-','Anchor' ] },
-        '/',
+
         { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak' ] }
         ];
         if (component.CKETBConfig=="Standard"){
             myTBConfig=[
             { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-            { name: 'colors', items: [ 'TextColor','BGColor','-', 'Scayt' ] },'/',
+            { name: 'colors', items: [ 'TextColor','BGColor','-', 'Scayt' ] },
             { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] }, 
             { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', "Rubedolink", 'Unlink'] },
-            { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo'  ] }
+            { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo', "Source"  ] }
             ];
         } else if (component.CKETBConfig=="Basic"){
             myTBConfig=[
@@ -93,12 +93,12 @@ Ext.define('Rubedo.view.CKEField', {
 
         var targetId = component.getInputId();
         if (Ext.isEmpty(Ext.getStore("CurrentUserDataStore"))){
-            var userLanguage="fr";
+            var userLanguage="en";
         } else {
             var userLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
         }
         if (Ext.isEmpty(userLanguage)){
-            userLanguage='fr';
+            userLanguage='en';
         }
         component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
         component.editor.on('instanceReady', function(){
