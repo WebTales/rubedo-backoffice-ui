@@ -535,6 +535,19 @@
                 "name": "recaptcha_private_key"
             },
             "designerId": "b441c981-1bcf-4d49-8568-81553462d185"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "enableECommerceFeatures",
+                "type": "boolean"
+            },
+            "designerId": "61163532-ee01-49d8-845c-75bd9a397e6c"
         }
     ]
 }

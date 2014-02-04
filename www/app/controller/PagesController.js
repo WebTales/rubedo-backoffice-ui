@@ -22,6 +22,12 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getStore("PagesDataStore").load();
         Ext.getStore("MasksComboStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+records[0].get("id")+"\"}]";
         Ext.getStore("MasksComboStore").load();
+        Ext.getCmp("contributionPages").siteHasEC=records[0].get("enableECommerceFeatures");
+        if (Ext.getCmp("contributionPages").siteHasEC){
+            Ext.getCmp("primaryPageECFS").show();
+        } else {
+            Ext.getCmp("primaryPageECFS").hide();
+        }
         var filArianne = combo.up().up().up().getDockedComponent('filArianne');
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(records[0].get("text"));}
@@ -751,6 +757,7 @@ Ext.define('Rubedo.controller.PagesController', {
         component.getStore().addListener("load",function(store,records){
             if (!Ext.isEmpty(records)){
                 component.select(records[0]);
+                Ext.getCmp("contributionPages").siteHasEC=records[0].get("enableECommerceFeatures");
                 if (component.id=="previewSitesCombo"){
                     me.pagePreviewSelect(component, [records[0]]);
                 } else if (component.id=="pagesSitesCombo"){

@@ -319,6 +319,15 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             labelWidth: 110,
                                             store: 'ContributeWorkspacesCombo',
                                             anchor: '100%'
+                                        },
+                                        {
+                                            xtype: 'checkboxfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'E-Commerce features',
+                                            labelWidth: 110,
+                                            name: 'enableECommerceFeatures',
+                                            inputValue: 'true',
+                                            uncheckedValue: 'false'
                                         }
                                     ],
                                     listeners: {

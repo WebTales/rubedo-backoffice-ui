@@ -359,7 +359,8 @@ Ext.application({
         'NewUTLayoutWindow',
         'UTLCopyWindow',
         'AssignUTFieldToColWindow',
-        'AssignFieldToColWindow1'
+        'AssignFieldToColWindow1',
+        'pagesECommerceFieldset'
     ],
     autoCreateViewport: true,
     controllers: [

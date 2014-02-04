@@ -1,0 +1,86 @@
+{
+    "type": "Ext.form.FieldSet",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "hidden": true,
+        "designer|userClassName": "pagesECommerceFieldset",
+        "designer|userAlias": "pagesECommerceFieldset",
+        "title": "E-Commerce category"
+    },
+    "designerId": "84a70db4-eb10-4d76-81cc-006305b2ab59",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "fieldLabel": "Title",
+                "name": "eCTitle"
+            },
+            "designerId": "8f86520f-29f1-421b-a83b-e54b3f5ecec8"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "fieldLabel": "Description",
+                "name": "eCDescription"
+            },
+            "designerId": "969e4a69-4a74-4540-a6c1-e30c43444755"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Image",
+                "name": "eCImage",
+                "allowedFileType": "Image"
+            },
+            "designerId": "c1f11263-bd5f-4383-b280-690eb1dd3198",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "allowedFileType",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "29ccd34b-610a-4d7f-84de-be664235a5e8"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFieldsetAfterRender",
+                "implHandler": [
+                    "if (Ext.getCmp(\"contributionPages\").siteHasEC){\r",
+                    "\tcomponent.show();\r",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "c7a1affe-b02f-40d2-954e-2537951e1633"
+        }
+    ]
+}

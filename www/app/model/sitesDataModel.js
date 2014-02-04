@@ -158,6 +158,10 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'recaptcha_private_key'
+        },
+        {
+            name: 'enableECommerceFeatures',
+            type: 'boolean'
         }
     ]
 });

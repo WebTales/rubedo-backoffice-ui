@@ -1484,6 +1484,19 @@
                                             "designerId": "ea705ddd-c33b-45d6-86a5-98c7c4764fea"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "primaryPageECFS"
+                                    },
+                                    "designerId": "b676315a-f6d5-4d16-b32e-5d61c64fd581",
+                                    "masterInstanceId": "84a70db4-eb10-4d76-81cc-006305b2ab59"
                                 }
                             ]
                         },

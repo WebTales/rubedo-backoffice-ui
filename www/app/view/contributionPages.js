@@ -19,6 +19,7 @@ Ext.define('Rubedo.view.contributionPages', {
 
     requires: [
         'Rubedo.view.WorkspaceCombo',
+        'Rubedo.view.pagesECommerceFieldset',
         'Rubedo.view.DLSToolbar'
     ],
 
@@ -603,7 +604,11 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'fieldset',
                                             localiserId: 'robotFieldset',
                                             title: 'Robot'
-                                        })
+                                        }),
+                                        {
+                                            xtype: 'pagesECommerceFieldset',
+                                            id: 'primaryPageECFS'
+                                        }
                                     ]
                                 }
                             ],

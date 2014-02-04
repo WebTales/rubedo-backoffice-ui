@@ -800,6 +800,24 @@
                                     },
                                     "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
                                     "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "E-Commerce features",
+                                        "labelWidth": 110,
+                                        "name": "enableECommerceFeatures",
+                                        "boxLabel": null,
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6"
                                 }
                             ]
                         },
