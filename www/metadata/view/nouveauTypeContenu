@@ -10,7 +10,7 @@
         "frame": null,
         "height": null,
         "id": "nouveauTypeContenuFenetre",
-        "maxHeight": 120,
+        "maxHeight": null,
         "width": 300,
         "designer|userClassName": "nouveauTypeContenu",
         "designer|userAlias": "nouveauTypeContenu",
@@ -57,6 +57,7 @@
                         "layout|anchor": "100%",
                         "id": "champCreerTC",
                         "fieldLabel": "Nom ",
+                        "name": "type",
                         "allowBlank": false
                     },
                     "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a",
@@ -90,31 +91,43 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Checkbox",
+                    "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.dependantTypes",
-                        "localiserId": "isDepField",
-                        "layout|anchor": "100%",
-                        "id": "champTCIsDep",
-                        "fieldLabel": "Imbriqué ",
-                        "boxLabel": ""
+                        "title": "E-Commerce"
                     },
-                    "designerId": "5151ac20-edbc-403f-9251-031b0356329c",
-                    "customConfigs": [
+                    "designerId": "87ea5507-c2dc-43eb-ad40-ed19875ee096",
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "ACL",
-                            "type": "string"
-                        },
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "localiserId",
-                            "type": "string"
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Product type",
+                                "name": "productType",
+                                "value": [
+                                    "\"none\""
+                                ],
+                                "allowBlank": false,
+                                "editable": false,
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": [
+                                    "[[\"none\",\"None\"],[\"configurable\",\"Configurable\"],[\"grouped\",\"Grouped\"]]"
+                                ]
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "61eeb713-474c-4796-8a2c-9814a2cd0a91"
                         }
                     ]
                 },

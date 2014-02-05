@@ -484,11 +484,18 @@ Ext.define('Rubedo.view.adminFTDC', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                var returner = value;
-                                if (record.get("readOnly")){
-                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                var nValue=value;
+                                if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){
+                                    nValue=nValue+" : "+record.get("productType");
                                 }
-                                if (record.data.dependant===false) {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> ' + returner );}
+                                var returner = nValue;
+                                if (record.get("readOnly")){
+                                    returner ="<i style=\"color:#777;\">"+nValue+"</i>";
+                                }
+                                if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/shopping_cart.png"> ' + returner );
+                                }
+                                else if (record.data.dependant===false) {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png"> ' + returner );}
                                 else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + returner );}
 
                             },

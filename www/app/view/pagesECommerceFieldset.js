@@ -43,9 +43,9 @@ Ext.define('Rubedo.view.pagesECommerceFieldset', {
                 },
                 {
                     xtype: 'ImagePickerField',
+                    allowedFileType: 'Image',
                     fieldLabel: 'Image',
-                    name: 'eCImage',
-                    allowedFileType: 'Image'
+                    name: 'eCImage'
                 }
             ],
             listeners: {

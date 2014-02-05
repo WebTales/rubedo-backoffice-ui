@@ -272,7 +272,18 @@ Ext.define('Rubedo.view.contributionContenus', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return ('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> '+value);
+                                var nValue=value;
+                                if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){
+                                    nValue=nValue+" : "+record.get("productType");
+                                }
+                                var returner = nValue;
+
+                                if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/shopping_cart.png"> ' + returner );
+                                }
+                                else if (record.data.dependant===false) {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png"> ' + returner );}
+                                else {return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png"> ' + returner );}
+
                             },
                             localiserId: 'typeColumn',
                             width: 672,

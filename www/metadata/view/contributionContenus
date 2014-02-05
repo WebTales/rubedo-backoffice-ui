@@ -707,7 +707,18 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> '+value);"
+                                    "var nValue=value;\r",
+                                    "if ((!Ext.isEmpty(record.get(\"productType\")))&&(record.get(\"productType\")!=\"none\")){\r",
+                                    "    nValue=nValue+\" : \"+record.get(\"productType\");\r",
+                                    "}\r",
+                                    "var returner = nValue;\r",
+                                    "\r",
+                                    "if ((!Ext.isEmpty(record.get(\"productType\")))&&(record.get(\"productType\")!=\"none\")){\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/shopping_cart.png\"> ' + returner );\r",
+                                    "}\r",
+                                    "else if (record.data.dependant===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> ' + returner );}\r",
+                                    "else {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> ' + returner );}\r",
+                                    ""
                                 ]
                             },
                             "designerId": "10470436-a46c-419d-a074-03b75cb7565d"

@@ -105,6 +105,10 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         },
         {
             name: 'layouts'
+        },
+        {
+            defaultValue: 'none',
+            name: 'productType'
         }
     ]
 });

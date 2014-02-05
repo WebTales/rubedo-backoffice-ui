@@ -317,6 +317,21 @@
                 "name": "layouts"
             },
             "designerId": "85241527-2c34-4f30-aeec-90926fcec081"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "\"none\""
+                ],
+                "name": "productType"
+            },
+            "designerId": "e1eb4aa4-b873-47d6-b60e-035dee459651"
         }
     ]
 }

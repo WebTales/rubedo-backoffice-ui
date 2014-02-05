@@ -1268,11 +1268,18 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "var returner = value;\r",
-                                    "if (record.get(\"readOnly\")){\r",
-                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";\r",
+                                    "var nValue=value;\r",
+                                    "if ((!Ext.isEmpty(record.get(\"productType\")))&&(record.get(\"productType\")!=\"none\")){\r",
+                                    "    nValue=nValue+\" : \"+record.get(\"productType\");\r",
                                     "}\r",
-                                    "if (record.data.dependant===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> ' + returner );}\r",
+                                    "var returner = nValue;\r",
+                                    "if (record.get(\"readOnly\")){\r",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+nValue+\"</i>\";\r",
+                                    "}\r",
+                                    "if ((!Ext.isEmpty(record.get(\"productType\")))&&(record.get(\"productType\")!=\"none\")){\r",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/shopping_cart.png\"> ' + returner );\r",
+                                    "}\r",
+                                    "else if (record.data.dependant===false) {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_full.png\"> ' + returner );}\r",
                                     "else {return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> ' + returner );}\r",
                                     ""
                                 ]

@@ -19,7 +19,6 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
 
     localiserId: 'newCTWindow',
     id: 'nouveauTypeContenuFenetre',
-    maxHeight: 120,
     width: 300,
     resizable: false,
     constrainHeader: true,
@@ -43,6 +42,7 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                             anchor: '100%',
                             id: 'champCreerTC',
                             fieldLabel: 'Nom ',
+                            name: 'type',
                             allowBlank: false,
                             listeners: {
                                 specialkey: {
@@ -52,13 +52,35 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                             }
                         },
                         {
-                            xtype: 'checkboxfield',
-                            ACL: 'write.ui.dependantTypes',
-                            localiserId: 'isDepField',
-                            anchor: '100%',
-                            id: 'champTCIsDep',
-                            fieldLabel: 'Imbriqué ',
-                            boxLabel: ''
+                            xtype: 'fieldset',
+                            title: 'E-Commerce',
+                            items: [
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Product type',
+                                    name: 'productType',
+                                    value: 'none',
+                                    allowBlank: false,
+                                    editable: false,
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: [
+                                        [
+                                            'none',
+                                            'None'
+                                        ],
+                                        [
+                                            'configurable',
+                                            'Configurable'
+                                        ],
+                                        [
+                                            'grouped',
+                                            'Grouped'
+                                        ]
+                                    ]
+                                }
+                            ]
                         },
                         {
                             xtype: 'button',

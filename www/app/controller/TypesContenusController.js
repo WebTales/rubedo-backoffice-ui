@@ -1004,15 +1004,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     creerNTC: function(button, e, eOpts) {
         var me=this;
-        if (Ext.getCmp('champCreerTC').isValid()) {
-            var nType = Ext.getCmp('champCreerTC').getValue();
+        if (button.up().getForm().isValid()) {
+            var values=button.up().getForm().getValues();
+            var nType = values.type;
             var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
             var i18n= { };
             i18n[nativeLanguage]={type:nType};
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
                 code:nType.replace(/\W/g, ''),
-                dependant: Ext.getCmp('champTCIsDep').getValue(),
+                productType:values.productType,
+                dependant: false,
                 champs: [ ],
                 vocabularies:["navigation"],
                 dependantTypes:[ ],

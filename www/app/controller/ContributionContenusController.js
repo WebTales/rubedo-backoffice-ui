@@ -46,7 +46,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     Ext.getCmp("contribWorkflowBox").disable();
     var  customMeta = record.get("type");
     var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
-    imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  
+    if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){
+        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/shopping_cart.png'); 
+    } else {
+        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');  
+    }
     var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
     boiteMeta.update(customMeta);
     var myDependantTypes= [ ];
@@ -222,7 +226,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             Ext.getCmp("boutonCopierContenus").disable();
             Ext.getCmp("contribWorkflowBox").disable();
             customMeta = Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().data.type;
-            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');    
+            if ((!Ext.isEmpty(Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().get("productType")))&&(Ext.getCmp('TypesContenusGrid').getSelectionModel().getLastSelected().get("productType")!="none")){
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/shopping_cart.png');  
+            } else {
+                imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');   
+            }
 
         } else if (selected.length==1) {
             Ext.getCmp("ajoutPanierContenus").enable();
