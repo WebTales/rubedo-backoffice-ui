@@ -360,7 +360,8 @@ Ext.application({
         'UTLCopyWindow',
         'AssignUTFieldToColWindow',
         'AssignFieldToColWindow1',
-        'pagesECommerceFieldset'
+        'pagesECommerceFieldset',
+        'productSettingsForm'
     ],
     autoCreateViewport: true,
     controllers: [

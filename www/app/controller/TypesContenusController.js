@@ -43,6 +43,36 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             fenetre.setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+" "+Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("type"));
             var formulaireTC = Ext.getCmp('boiteAChampsContenus');
             Ext.getCmp("contentsVersionPanel").up().remove( Ext.getCmp("contentsVersionPanel"));
+            var isProduct=false;
+            if ((!Ext.isEmpty(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("productType")))&&(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("productType")!="none")){
+                isProduct=true;
+                fenetre.getComponent(0).add(Ext.widget("productSettingsForm"));
+                var variatorFields=[
+                {name:"price"},
+                {name:"stock"}
+                ];
+                var variatorColumns=[
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'price',
+                    text: 'Price',
+                    flex:1,
+                    editor:{
+                        xtype:"numberfield"
+                    }
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'stock',
+                    flex:1,
+                    text: 'Stock',
+                    editor:{
+                        xtype:"numberfield",
+                        allowDecimals:false
+                    }
+                }
+                ];
+            }
             var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;
             for (g=0; g<champsD.length; g++) {
                 var donnees=champsD[g];
@@ -116,38 +146,59 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 //begin temporary fix
                 configurateur.labelSeparator=" ";
                 //end temporary fix
-                try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
-                var nouvChamp = Ext.create(donnees.cType, configurateur);
-            }
-            nouvChamp.config=Ext.clone(donnees.config);
-            if (nouvChamp.config.useTodayDef){
-                nouvChamp.setValue(new Date());
-            }
-            //begin temporary fix
-            if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
-            //end temporary fix
-            if (donnees.cType =='triggerfield'){ 
-                var Ouvrir = Ext.clone(donnees.openWindow);
-                nouvChamp.onTriggerClick= function() {
-                    var fenetre = Ext.widget(Ouvrir);
-                    fenetre.showAt(screen.width/2-200, 100);
-                } ; 
-                nouvChamp.openWindow =Ext.clone(donnees.openWindow);
-            }  
-            nouvChamp.anchor = '90%';
-            nouvChamp.style = '{float:left;}';
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(nouvChamp);
-            enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
-            if (Ext.isEmpty(configurateur.tooltip)){
-                enrobage.getComponent('helpBouton').hidden=true;
-            } 
-            if (nouvChamp.multivalued) {
-                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
+                if (configurateur.useAsVariation&&isProduct){
+                    variatorFields.push({name:configurateur.name});
+                    var colEditor=Ext.clone(configurateur);
+                    colEditor.xtype=donnees.cType;
+                    delete colEditor.fieldLabel;
+                    variatorColumns.push({
+                        xtype: 'gridcolumn',
+                        dataIndex: configurateur.name,
+                        text: configurateur.fieldLabel,
+                        flex:1,
+                        editor:colEditor
+                    });
+                } else {
+                    try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
+                    var nouvChamp = Ext.create(donnees.cType, configurateur);
+                }
+                nouvChamp.config=Ext.clone(donnees.config);
+                if (nouvChamp.config.useTodayDef){
+                    nouvChamp.setValue(new Date());
+                }
+                //begin temporary fix
+                if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
+                //end temporary fix
+                if (donnees.cType =='triggerfield'){ 
+                    var Ouvrir = Ext.clone(donnees.openWindow);
+                    nouvChamp.onTriggerClick= function() {
+                        var fenetre = Ext.widget(Ouvrir);
+                        fenetre.showAt(screen.width/2-200, 100);
+                    } ; 
+                    nouvChamp.openWindow =Ext.clone(donnees.openWindow);
+                }  
+                nouvChamp.anchor = '90%';
+                nouvChamp.style = '{float:left;}';
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(nouvChamp);
+                enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+                if (Ext.isEmpty(configurateur.tooltip)){
+                    enrobage.getComponent('helpBouton').hidden=true;
+                } 
+                if (nouvChamp.multivalued) {
+                    enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
 
-            };
-            formulaireTC.add(enrobage);
+                };
+                formulaireTC.add(enrobage);
+            }
 
+        }
+        if (isProduct){
+            var variatorStore=Ext.create('Ext.data.Store', {
+                fields:variatorFields,
+                data:[]
+            });
+            Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns.reverse());
         }
         var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
         var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");
