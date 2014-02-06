@@ -533,7 +533,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     this.frame(MyPrefData.themeColor);
                     TCfield.labelEl.applyStyles('color:'+MyPrefData.themeColor);
                 }
-                var mesChamps = TCfield.configFields;
+                var mesChamps = Ext.clone(TCfield.configFields);
+                var record=Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected();
+                if (((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none"))&&(Ext.Array.contains(["textfield","numberfield","combobox"],TCfield.xtype))){
+                    mesChamps.push({
+                        type:"Ext.form.field.Checkbox",
+                        config:{
+                            fieldLabel:"Use as variation",
+                            name:"useAsVariation"
+                        }
+                    });
+                }
+
                 var boiteParam = Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0);
                 var boiteParam1 = Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(1);
                 boiteParam.removeAll();
