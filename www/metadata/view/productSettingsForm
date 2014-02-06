@@ -1,57 +1,68 @@
 {
-    "type": "Ext.form.Panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "container|align": "stretch",
         "id": "productSettingsForm",
         "designer|userClassName": "productSettingsForm",
         "designer|userAlias": "productSettingsForm",
-        "bodyPadding": 10,
+        "layout": "vbox",
+        "bodyPadding": null,
         "title": "Product settings"
     },
     "designerId": "2ae78d7f-914e-476c-840e-3b4423f7e7ae",
     "cn": [
         {
-            "type": "Ext.form.field.Text",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "100%",
-                "fieldLabel": "SKU"
+                "bodyPadding": 10,
+                "title": ""
             },
-            "designerId": "a52f0f59-5772-4fc9-a469-99c03a056824"
-        },
-        {
-            "type": "Ext.form.field.Number",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|anchor": "100%",
-                "fieldLabel": "Base price"
-            },
-            "designerId": "e1aa9ae9-7bb0-4474-bdd1-53d7758eabc4"
-        },
-        {
-            "type": "Ext.form.field.Number",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|anchor": "100%",
-                "fieldLabel": "Base stock"
-            },
-            "designerId": "ff470718-7ac8-414d-839c-84865c0cf321"
+            "designerId": "a6e711fc-b66c-4a95-9973-9936e6c7ba1f",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "SKU",
+                        "name": "sku",
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false
+                    },
+                    "designerId": "a52f0f59-5772-4fc9-a469-99c03a056824"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "id": "basePriceField",
+                        "fieldLabel": "Base price",
+                        "name": "basePrice",
+                        "allowBlank": false,
+                        "minValue": 0
+                    },
+                    "designerId": "e1aa9ae9-7bb0-4474-bdd1-53d7758eabc4"
+                }
+            ]
         },
         {
             "type": "Ext.grid.Panel",
@@ -61,7 +72,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "height": 239,
+                "layout|flex": 1,
+                "height": null,
                 "id": "productVariationsGrid",
                 "title": "Variations"
             },
@@ -136,7 +148,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom"
+                        "dock": "top"
                     },
                     "designerId": "028e5349-cfa7-4653-8284-c254e9cc896b",
                     "cn": [
@@ -176,7 +188,13 @@
                                     "userConfig": {
                                         "fn": "onButtonClick",
                                         "implHandler": [
-                                            "button.up().up().getStore().add({ });"
+                                            "var form=button.up().up().up().getComponent(0).getForm();\r",
+                                            "if (form.isValid()){\r",
+                                            "    button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku});\r",
+                                            "} else {\r",
+                                            "    Ext.Msg.alert(\"Error\",\"SKU and Base price are required in order to create variations\");\r",
+                                            "}\r",
+                                            ""
                                         ],
                                         "name": "click",
                                         "scope": "me"
@@ -194,12 +212,54 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "disabled": true,
+                                "id": "variationRemoverBtn",
                                 "iconCls": "close",
                                 "text": "Remove"
                             },
-                            "designerId": "d7e3c802-65b7-4c19-8e1e-9f44d9e717e0"
+                            "designerId": "d7e3c802-65b7-4c19-8e1e-9f44d9e717e0",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onVariationRemoverBtnClick",
+                                        "implHandler": [
+                                            "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "321b78ca-09eb-415d-961c-d6ef7a508b23"
+                                }
+                            ]
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onProductVariationsGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){\r",
+                            "    Ext.getCmp(\"variationRemoverBtn\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"variationRemoverBtn\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "ff571074-469b-4610-a8fb-78310e09236c"
                 },
                 {
                     "type": "Ext.grid.plugin.CellEditing",
@@ -208,9 +268,46 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
-                    "designerId": "0fb8d05d-2264-4bc4-94a7-22859d04887d"
+                    "userConfig": {
+                        "clicksToEdit": 1
+                    },
+                    "designerId": "75a07cee-4842-47f7-a9dc-b64b332be990"
                 }
             ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "isValid",
+                "implHandler": [
+                    "if (!Ext.getCmp(\"productSettingsForm\").getComponent(0).getForm().isValid()){\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,\"Invalid product settings\");\r",
+                    "    return false;\r",
+                    "}\r",
+                    "if (Ext.isEmpty(Ext.getCmp(\"productSettingsForm\").getComponent(1).getStore().getRange())){\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,\"Product must have at least one variation\");\r",
+                    "    return false;\r",
+                    "}\r",
+                    "var dataOk=true;\r",
+                    "Ext.Array.forEach(Ext.Array.pluck(Ext.getCmp(\"productSettingsForm\").getComponent(1).getStore().getRange(),\"data\"),function(variation){\r",
+                    "\tExt.Object.each(variation, function(key, value, myself) {\r",
+                    "        if (Ext.isEmpty(value)){\r",
+                    "            dataOk=false;\r",
+                    "        }\r",
+                    "\t});\r",
+                    "});\r",
+                    "if (!dataOk){\r",
+                    "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,\"Invalid variation settings. Each variation must have a valid value for each column\");\r",
+                    "}\r",
+                    "return dataOk;"
+                ]
+            },
+            "designerId": "98fcada9-5672-4e71-a6a3-40f287c89a3d"
         }
     ]
 }

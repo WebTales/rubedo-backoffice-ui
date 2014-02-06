@@ -49,7 +49,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 fenetre.getComponent(0).add(Ext.widget("productSettingsForm"));
                 var variatorFields=[
                 {name:"price"},
-                {name:"stock"}
+                {name:"stock"},
+                {name:"sku"}
                 ];
                 var variatorColumns=[
                 {
@@ -58,7 +59,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     text: 'Price',
                     flex:1,
                     editor:{
-                        xtype:"numberfield"
+                        xtype:"numberfield",
                     }
                 },
                 {
@@ -68,7 +69,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                     text: 'Stock',
                     editor:{
                         xtype:"numberfield",
-                        allowDecimals:false
+                        allowDecimals:false,
+                        minValue:0
+                    }
+                },{
+                    xtype: 'gridcolumn',
+                    dataIndex: 'sku',
+                    flex:1,
+                    text: 'SKU',
+                    editor:{
+                        xtype:"textfield"
+
                     }
                 }
                 ];

@@ -290,6 +290,31 @@
                 "name": "nativeLanguage"
             },
             "designerId": "e2ca6177-c678-4e15-b60c-e771c267d78a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isProduct",
+                "type": "boolean"
+            },
+            "designerId": "c8cc19e7-8467-4935-8028-05582e11e3d0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "productProperties"
+            },
+            "designerId": "8cda48e0-adbc-463b-9e6d-97b5fcf50b96"
         }
     ]
 }

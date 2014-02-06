@@ -95,6 +95,13 @@ Ext.define('Rubedo.model.contenusDataModel', {
         },
         {
             name: 'nativeLanguage'
+        },
+        {
+            name: 'isProduct',
+            type: 'boolean'
+        },
+        {
+            name: 'productProperties'
         }
     ]
 });

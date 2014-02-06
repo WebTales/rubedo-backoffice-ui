@@ -73,10 +73,6 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                                         [
                                             'configurable',
                                             'Configurable'
-                                        ],
-                                        [
-                                            'grouped',
-                                            'Grouped'
                                         ]
                                     ]
                                 }

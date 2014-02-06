@@ -532,52 +532,62 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         if (Ext.getCmp("boiteAChampsContenus").getForm().isValid()){
             if (Ext.getCmp("boiteATaxoContenus").getForm().isValid()){
                 if (Ext.getCmp("contentMetadataBox").getForm().isValid()){
-                    var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
-                    Ext.Array.forEach(Ext.getCmp("boiteAChampsContenus").query("checkboxgroup"),function(cbGroup){
-                        champs[cbGroup.name]=cbGroup.getValue();
-                    });
-                    var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
-                    var droits = Ext.getCmp("boiteADroitsContenus").getForm().getValues();
-                    var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
-                    if (update) {
-                        var myRec =Ext.getStore("CurrentContent").getRange()[0];
-                        myRec.beginEdit();
-                        myRec.set("text",champs.text);
-                        myRec.set("champs",champs);
-                        myRec.set("taxonomie",taxonomie);
-                        myRec.set("status",status);
-                        myRec.set(metaData);
-                        myRec.set(droits);
-                        Ext.getCmp("contentsDLSToolbar").persisti18n(myRec);
-                        myRec.endEdit();
-                        Ext.getStore("CurrentContent").removeAll();
-                        Ext.getStore('TaxonomyForC2').removeAll();
-                        Ext.getStore("ContentTypesForContent").removeAll();
-                        Ext.getStore("DepContentsCombo2").removeAll();
-                        Ext.getStore('NestedContentsStore').removeAll();
+                    if((!Ext.isEmpty(Ext.getCmp("productSettingsForm")))&&(!Ext.getCmp("productSettingsForm").isValid())){
 
-                    } 
-                    else {
-                        var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
-                        var i18n= { };
-                        i18n[nativeLanguage]={fields:champs};
-                        var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
-                            text: champs.text,
-                            champs: champs,
-                            taxonomie:taxonomie,
-                            nativeLanguage:nativeLanguage,
-                            i18n:i18n,
-                            online:true,
-                            status: status,
-                            typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
-
+                        Ext.getCmp("productSettingsForm").up().setActiveTab(Ext.getCmp("productSettingsForm"));
+                    } else {
+                        var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
+                        Ext.Array.forEach(Ext.getCmp("boiteAChampsContenus").query("checkboxgroup"),function(cbGroup){
+                            champs[cbGroup.name]=cbGroup.getValue();
                         });
-                        nContenu.set(metaData);
-                        nContenu.set(droits);
+                        var taxonomie =Ext.getCmp("boiteATaxoContenus").getForm().getValues();
+                        var droits = Ext.getCmp("boiteADroitsContenus").getForm().getValues();
+                        var metaData = Ext.getCmp("contentMetadataBox").getForm().getValues();
+                        if (update) {
+                            var myRec =Ext.getStore("CurrentContent").getRange()[0];
+                            myRec.beginEdit();
+                            myRec.set("text",champs.text);
+                            myRec.set("champs",champs);
+                            myRec.set("taxonomie",taxonomie);
+                            myRec.set("status",status);
+                            myRec.set(metaData);
+                            myRec.set(droits);
+                            Ext.getCmp("contentsDLSToolbar").persisti18n(myRec);
+                            myRec.endEdit();
+                            Ext.getStore("CurrentContent").removeAll();
+                            Ext.getStore('TaxonomyForC2').removeAll();
+                            Ext.getStore("ContentTypesForContent").removeAll();
+                            Ext.getStore("DepContentsCombo2").removeAll();
+                            Ext.getStore('NestedContentsStore').removeAll();
 
-                        Ext.getCmp('ContenusGrid').getStore().add(nContenu);
+                        } 
+                        else {
+                            var nativeLanguage=Ext.getCmp("workingLanguageField").getValue();
+                            var i18n= { };
+                            i18n[nativeLanguage]={fields:champs};
+                            var nContenu = Ext.create('Rubedo.model.contenusDataModel', {
+                                text: champs.text,
+                                champs: champs,
+                                taxonomie:taxonomie,
+                                nativeLanguage:nativeLanguage,
+                                i18n:i18n,
+                                online:true,
+                                status: status,
+                                typeId: Ext.getCmp('TypesContenusGridView').getSelectionModel().getLastSelected().get("id")
+
+                            });
+                            nContenu.set(metaData);
+                            nContenu.set(droits);
+                            if(!Ext.isEmpty(Ext.getCmp("productSettingsForm"))){
+                                nContenu.set("isProduct",true);
+                                var productSettings=Ext.getCmp("productSettingsForm").getComponent(0).getForm().getValues();
+                                productSettings.variations=Ext.Array.pluck(Ext.getCmp("productSettingsForm").getComponent(1).getStore().getRange(),"data");
+                                nContenu.set("productProperties",productSettings);
+                            }
+                            Ext.getCmp('ContenusGrid').getStore().add(nContenu);
+                        }
+                        Ext.getCmp('ajouterContenu').close();
                     }
-                    Ext.getCmp('ajouterContenu').close();
                 } else {
                     Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.invalidMetaError);
                     Ext.getCmp("ajouterContenu").getComponent(0).setActiveTab(1);

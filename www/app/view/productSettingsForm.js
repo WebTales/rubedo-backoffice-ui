@@ -14,11 +14,14 @@
  */
 
 Ext.define('Rubedo.view.productSettingsForm', {
-    extend: 'Ext.form.Panel',
+    extend: 'Ext.panel.Panel',
     alias: 'widget.productSettingsForm',
 
     id: 'productSettingsForm',
-    bodyPadding: 10,
+    layout: {
+        align: 'stretch',
+        type: 'vbox'
+    },
     title: 'Product settings',
 
     initComponent: function() {
@@ -27,23 +30,32 @@ Ext.define('Rubedo.view.productSettingsForm', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'SKU'
-                },
-                {
-                    xtype: 'numberfield',
-                    anchor: '100%',
-                    fieldLabel: 'Base price'
-                },
-                {
-                    xtype: 'numberfield',
-                    anchor: '100%',
-                    fieldLabel: 'Base stock'
+                    xtype: 'form',
+                    bodyPadding: 10,
+                    title: '',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'SKU',
+                            name: 'sku',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            id: 'basePriceField',
+                            fieldLabel: 'Base price',
+                            name: 'basePrice',
+                            allowBlank: false,
+                            minValue: 0
+                        }
+                    ]
                 },
                 {
                     xtype: 'gridpanel',
-                    height: 239,
+                    flex: 1,
                     id: 'productVariationsGrid',
                     title: 'Variations',
                     columns: [
@@ -71,7 +83,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                     dockedItems: [
                         {
                             xtype: 'toolbar',
-                            dock: 'bottom',
+                            dock: 'top',
                             items: [
                                 {
                                     xtype: 'tbfill'
@@ -89,15 +101,29 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
+                                    id: 'variationRemoverBtn',
                                     iconCls: 'close',
-                                    text: 'Remove'
+                                    text: 'Remove',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onVariationRemoverBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         }
                     ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onProductVariationsGridSelectionChange,
+                            scope: me
+                        }
+                    },
                     plugins: [
                         Ext.create('Ext.grid.plugin.CellEditing', {
-
+                            clicksToEdit: 1
                         })
                     ]
                 }
@@ -108,7 +134,48 @@ Ext.define('Rubedo.view.productSettingsForm', {
     },
 
     onButtonClick: function(button, e, eOpts) {
-        button.up().up().getStore().add({ });
+        var form=button.up().up().up().getComponent(0).getForm();
+        if (form.isValid()){
+            button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku});
+        } else {
+            Ext.Msg.alert("Error","SKU and Base price are required in order to create variations");
+        }
+
+    },
+
+    onVariationRemoverBtnClick: function(button, e, eOpts) {
+        button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
+    },
+
+    onProductVariationsGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("variationRemoverBtn").disable();
+        } else {
+            Ext.getCmp("variationRemoverBtn").enable();
+        }
+    },
+
+    isValid: function() {
+        if (!Ext.getCmp("productSettingsForm").getComponent(0).getForm().isValid()){
+            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,"Invalid product settings");
+            return false;
+        }
+        if (Ext.isEmpty(Ext.getCmp("productSettingsForm").getComponent(1).getStore().getRange())){
+            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,"Product must have at least one variation");
+            return false;
+        }
+        var dataOk=true;
+        Ext.Array.forEach(Ext.Array.pluck(Ext.getCmp("productSettingsForm").getComponent(1).getStore().getRange(),"data"),function(variation){
+            Ext.Object.each(variation, function(key, value, myself) {
+                if (Ext.isEmpty(value)){
+                    dataOk=false;
+                }
+            });
+        });
+        if (!dataOk){
+            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,"Invalid variation settings. Each variation must have a valid value for each column");
+        }
+        return dataOk;
     }
 
 });
