@@ -553,6 +553,12 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                             myRec.set(metaData);
                             myRec.set(droits);
                             Ext.getCmp("contentsDLSToolbar").persisti18n(myRec);
+                            if(!Ext.isEmpty(Ext.getCmp("productSettingsForm"))){
+                                myRec.set("isProduct",true);
+                                var productSettings=Ext.getCmp("productSettingsForm").getComponent(0).getForm().getValues();
+                                productSettings.variations=Ext.Array.pluck(Ext.getCmp("productSettingsForm").getComponent(1).getStore().getRange(),"data");
+                                myRec.set("productProperties",productSettings);
+                            }
                             myRec.endEdit();
                             Ext.getStore("CurrentContent").removeAll();
                             Ext.getStore('TaxonomyForC2').removeAll();
@@ -666,6 +672,47 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         ]);
 
         var formulaireTC = Ext.getCmp('boiteAChampsContenus');
+        var isProduct=false;
+        if ((!Ext.isEmpty(contentType.get("productType")))&&(contentType.get("productType")!="none")){
+            isProduct=true;
+            fenetre.getComponent(0).add(Ext.widget("productSettingsForm"));
+            var variatorFields=[
+            {name:"price"},
+            {name:"stock"},
+            {name:"sku"}
+            ];
+            var variatorColumns=[
+            {
+                xtype: 'gridcolumn',
+                dataIndex: 'price',
+                text: 'Price',
+                flex:1,
+                editor:{
+                    xtype:"numberfield",
+                }
+            },
+            {
+                xtype: 'gridcolumn',
+                dataIndex: 'stock',
+                flex:1,
+                text: 'Stock',
+                editor:{
+                    xtype:"numberfield",
+                    allowDecimals:false,
+                    minValue:0
+                }
+            },{
+                xtype: 'gridcolumn',
+                dataIndex: 'sku',
+                flex:1,
+                text: 'SKU',
+                editor:{
+                    xtype:"textfield"
+
+                }
+            }
+            ];
+        }
         var champsD =contentType.get("champs");
         for (g=0; g<champsD.length; g++) {
             var donnees=champsD[g];
@@ -739,39 +786,59 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             //begin temporary fix
             configurateur.labelSeparator=" ";
             //end temporary fix
-            try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
-            var nouvChamp = Ext.create(donnees.cType, configurateur);
+            if (configurateur.useAsVariation&&isProduct){
+                variatorFields.push({name:configurateur.name});
+                var colEditor=Ext.clone(configurateur);
+                colEditor.xtype=donnees.cType;
+                delete colEditor.fieldLabel;
+                variatorColumns.push({
+                    xtype: 'gridcolumn',
+                    dataIndex: configurateur.name,
+                    text: configurateur.fieldLabel,
+                    flex:1,
+                    editor:colEditor
+                });
+            } else {
+                try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
+                var nouvChamp = Ext.create(donnees.cType, configurateur);
+            }
+            nouvChamp.config=Ext.clone(donnees.config);
+
+            //begin temporary fix
+            if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
+            //end temporary fix
+            if (donnees.cType =='triggerfield'){ 
+                var Ouvrir = Ext.clone(donnees.ouvrir);
+                nouvChamp.onTriggerClick= function() {
+                    var fenetre = Ext.widget(Ouvrir);
+                    fenetre.showAt(screen.width/2-200, 100);
+                } ; 
+                nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+            }  
+            nouvChamp.anchor = '90%';
+            nouvChamp.style = '{float:left;}';
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(nouvChamp);
+            enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+            if (Ext.isEmpty(configurateur.tooltip)){
+                enrobage.getComponent('helpBouton').hidden=true;
+            } 
+            if (nouvChamp.multivalued) {
+                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
+
+            };
+            if (nouvChamp.localizable) {
+                enrobage.localizable=true;
+            }
+            formulaireTC.add(enrobage);
         }
-        nouvChamp.config=Ext.clone(donnees.config);
-
-        //begin temporary fix
-        if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
-        //end temporary fix
-        if (donnees.cType =='triggerfield'){ 
-            var Ouvrir = Ext.clone(donnees.ouvrir);
-            nouvChamp.onTriggerClick= function() {
-                var fenetre = Ext.widget(Ouvrir);
-                fenetre.showAt(screen.width/2-200, 100);
-            } ; 
-            nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
-        }  
-        nouvChamp.anchor = '90%';
-        nouvChamp.style = '{float:left;}';
-        var enrobage =Ext.widget('ChampTC');
-        enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
-        if (Ext.isEmpty(configurateur.tooltip)){
-            enrobage.getComponent('helpBouton').hidden=true;
-        } 
-        if (nouvChamp.multivalued) {
-            enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
-
-        };
-        if (nouvChamp.localizable) {
-            enrobage.localizable=true;
-        }
-        formulaireTC.add(enrobage);
-
+    }
+    if (isProduct){
+        var variatorStore=Ext.create('Ext.data.Store', {
+            fields:variatorFields,
+            data:[]
+        });
+        Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns.reverse());
     }
     var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
     var lesTaxo = contentType.get("vocabularies");
@@ -946,7 +1013,10 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomie"));
     Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
     Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
-
+    if (isProduct){
+        Ext.getCmp("productSettingsForm").getComponent(0).getForm().setValues(content.get("productProperties"));
+        Ext.getCmp("productSettingsForm").getComponent(1).getStore().loadData(content.get("productProperties").variations);
+    }
     Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
     Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
