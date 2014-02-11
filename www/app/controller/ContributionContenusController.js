@@ -679,7 +679,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             var variatorFields=[
             {name:"price"},
             {name:"stock"},
-            {name:"sku"}
+            {name:"sku"},
+            {name:"id"}
             ];
             var variatorColumns=[
             {

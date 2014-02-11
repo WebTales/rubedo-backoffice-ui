@@ -50,7 +50,8 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 var variatorFields=[
                 {name:"price"},
                 {name:"stock"},
-                {name:"sku"}
+                {name:"sku"},
+                {name:"id"}
                 ];
                 var variatorColumns=[
                 {

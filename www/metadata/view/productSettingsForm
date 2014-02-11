@@ -138,7 +138,18 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "c9823752-9ea5-4773-9750-2e63fe86a668"
+                    "designerId": "c9823752-9ea5-4773-9750-2e63fe86a668",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "designerId": "e8027769-fcec-467b-a766-cd8ba063776c"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Toolbar",
@@ -190,7 +201,18 @@
                                         "implHandler": [
                                             "var form=button.up().up().up().getComponent(0).getForm();\r",
                                             "if (form.isValid()){\r",
-                                            "    button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku});\r",
+                                            "    Ext.Ajax.request({\r",
+                                            "    url: 'xhr-get-mongo-id',\r",
+                                            "    params: { },\r",
+                                            "    success: function(response){\r",
+                                            "        var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
+                                            "        button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku,stock:0, id:servedId});\r",
+                                            "    },\r",
+                                            "    failure: function(){\r",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve ID\");\r",
+                                            "\r",
+                                            "    }\r",
+                                            "    });\r",
                                             "} else {\r",
                                             "    Ext.Msg.alert(\"Error\",\"SKU and Base price are required in order to create variations\");\r",
                                             "}\r",
@@ -295,11 +317,11 @@
                     "}\r",
                     "var dataOk=true;\r",
                     "Ext.Array.forEach(Ext.Array.pluck(Ext.getCmp(\"productSettingsForm\").getComponent(1).getStore().getRange(),\"data\"),function(variation){\r",
-                    "\tExt.Object.each(variation, function(key, value, myself) {\r",
+                    "    Ext.Object.each(variation, function(key, value, myself) {\r",
                     "        if (Ext.isEmpty(value)){\r",
                     "            dataOk=false;\r",
                     "        }\r",
-                    "\t});\r",
+                    "    });\r",
                     "});\r",
                     "if (!dataOk){\r",
                     "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,\"Invalid variation settings. Each variation must have a valid value for each column\");\r",

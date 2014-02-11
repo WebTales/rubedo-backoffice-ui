@@ -80,6 +80,13 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             text: 'Boolean'
                         }
                     ],
+                    viewConfig: {
+                        plugins: [
+                            Ext.create('Ext.grid.plugin.DragDrop', {
+
+                            })
+                        ]
+                    },
                     dockedItems: [
                         {
                             xtype: 'toolbar',
@@ -136,7 +143,18 @@ Ext.define('Rubedo.view.productSettingsForm', {
     onButtonClick: function(button, e, eOpts) {
         var form=button.up().up().up().getComponent(0).getForm();
         if (form.isValid()){
-            button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku});
+            Ext.Ajax.request({
+                url: 'xhr-get-mongo-id',
+                params: { },
+                success: function(response){
+                    var servedId = Ext.JSON.decode(response.responseText).mongoID;
+                    button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku,stock:0, id:servedId});
+                },
+                failure: function(){
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, "Failed to retrieve ID");
+
+                }
+            });
         } else {
             Ext.Msg.alert("Error","SKU and Base price are required in order to create variations");
         }
