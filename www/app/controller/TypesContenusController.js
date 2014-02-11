@@ -1673,8 +1673,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         if (!Ext.Array.contains(usedFields,"summary")){
             discoveredFields.push({name:"summary",label:Rubedo.RubedoAutomatedElementsLoc.summaryText});
         }
+        var record=Ext.getCmp("AdminfTypesGrid").getSelectionModel().getLastSelected();
+        if (((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none"))&&(!Ext.Array.contains(usedFields,"productBox"))){
+            discoveredFields.push({name:"productBox",label:"Product box"});
+        }
+
         Ext.Array.forEach(Ext.getCmp('champsEditionTC').query("ChampTC"), function(field){
-            if (!Ext.Array.contains(usedFields,field.getComponent(1).name)){
+            if ((!Ext.Array.contains(usedFields,field.getComponent(1).name))&&(!field.getComponent(1).config.useAsVariation)){
                 discoveredFields.push({name:field.getComponent(1).name, label:field.getComponent(1).fieldLabel});
             }
         });
