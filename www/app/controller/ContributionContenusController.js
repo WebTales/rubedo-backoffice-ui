@@ -791,6 +791,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 variatorFields.push({name:configurateur.name});
                 var colEditor=Ext.clone(configurateur);
                 colEditor.xtype=donnees.cType;
+                colEditor.multiSelect=false;
                 delete colEditor.fieldLabel;
                 variatorColumns.push({
                     xtype: 'gridcolumn',
