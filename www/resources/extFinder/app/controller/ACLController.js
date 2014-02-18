@@ -56,7 +56,6 @@ Ext.define('extFinder.controller.ACLController', {
     },
 
     init: function(application) {
-        console.log("got here first 1");
         Ext.require("Rubedo.controller.LocalisationController");
         Ext.create("Rubedo.store.CurrentUserDataStore");
         var me=this;
@@ -84,7 +83,6 @@ Ext.define('extFinder.controller.ACLController', {
 
             }
 
-            console.log("got here first");
             Ext.define('ACL', {
                 singleton:true,
                 CSRFToken:"notYetSet",
@@ -123,7 +121,6 @@ Ext.define('extFinder.controller.ACLController', {
                     "exe.ui.elasticSearch":false
                 }
             });
-            console.log("got here");
             Ext.Ajax.on("beforerequest", function(conn, options){
                 if (Ext.isEmpty(options.params)){
                     options.params={};
