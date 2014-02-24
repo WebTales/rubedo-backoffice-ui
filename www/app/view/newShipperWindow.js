@@ -47,7 +47,6 @@ Ext.define('Rubedo.view.newShipperWindow', {
                         },
                         {
                             xtype: 'button',
-                            localiserId: 'createNewCustomThemeBtn',
                             anchor: '100%',
                             id: 'newShipperSubmitBtn',
                             scale: 'medium',

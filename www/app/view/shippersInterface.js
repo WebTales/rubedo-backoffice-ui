@@ -176,7 +176,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     dataIndex: 'rate',
-                                    text: 'Rate',
+                                    text: 'Price',
                                     editor: {
                                         xtype: 'numberfield',
                                         allowBlank: false,
