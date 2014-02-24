@@ -3189,6 +3189,46 @@
                 "app/view/productSettingsForm.js"
             ],
             "className": "productSettingsForm"
+        },
+        "afc97053-5d9d-4153-b642-911f9ef703d7": {
+            "paths": [
+                "metadata/model/shipper",
+                "app/model/override/shipper.js",
+                "app/model/shipper.js"
+            ],
+            "className": "shipper"
+        },
+        "b8b58309-0a78-41f7-92f3-66242a362db7": {
+            "paths": [
+                "metadata/store/Shippers",
+                "app/store/override/Shippers.js",
+                "app/store/Shippers.js"
+            ],
+            "className": "Shippers"
+        },
+        "b35f6a4e-5e25-474e-9dcb-4291e0c898e6": {
+            "paths": [
+                "metadata/view/shippersInterface",
+                "app/view/override/shippersInterface.js",
+                "app/view/shippersInterface.js"
+            ],
+            "className": "shippersInterface"
+        },
+        "35b36f14-372d-488e-8e51-65e4cee42f90": {
+            "paths": [
+                "metadata/view/newShipperWindow",
+                "app/view/override/newShipperWindow.js",
+                "app/view/newShipperWindow.js"
+            ],
+            "className": "newShipperWindow"
+        },
+        "bc263767-d49c-404b-b2ba-9021b7d5f361": {
+            "paths": [
+                "metadata/controller/ShippersController",
+                "app/controller/override/ShippersController.js",
+                "app/controller/ShippersController.js"
+            ],
+            "className": "ShippersController"
         }
     },
     "viewOrderMap": {
@@ -3359,6 +3399,7 @@
             "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
             "8c8eb810-59a0-4d95-a6b4-7d495027da77",
             "9495e2dc-ea9a-4ec0-9102-8a284dc3ea29",
+            "35b36f14-372d-488e-8e51-65e4cee42f90",
             "c588057d-fc9e-48a9-a7cc-943965704e92",
             "51deb2fe-50a8-4a90-a9d7-dc4842095f15",
             "fa44d14a-6bb6-46b5-a662-3f2ae1cba564",
@@ -3367,6 +3408,7 @@
             "5d7a2053-ceef-419f-9304-31c10112d29b",
             "486c42cb-ee96-4f43-ab90-c52044678375",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
+            "b35f6a4e-5e25-474e-9dcb-4291e0c898e6",
             "e1ff2391-5104-46be-9c01-680539baf938",
             "e7d07403-1815-4369-9257-def71279340c",
             "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
@@ -3491,6 +3533,7 @@
             "b1e3cc2f-a43b-450e-8914-242d618f8402",
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
+            "b8b58309-0a78-41f7-92f3-66242a362db7",
             "68f8be48-2543-47f5-9bb7-0d4de8f16097",
             "562558a9-b585-4d9a-91da-854c3548d79b",
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
@@ -3535,7 +3578,8 @@
             "94fb422b-80b5-40d7-8b25-2a16cc8be41a",
             "2a85a03b-de9d-4abc-80a4-82114d4267cf",
             "00775bc6-fbb7-4f53-bb87-669f9cfacbf4",
-            "0c137efa-3885-472d-a4d2-96e811f9f233"
+            "0c137efa-3885-472d-a4d2-96e811f9f233",
+            "bc263767-d49c-404b-b2ba-9021b7d5f361"
         ],
         "model": [
             "1bfa660e-0d86-44bc-a312-9e9830fdb7fd",
@@ -3556,6 +3600,7 @@
             "b9adfb4f-ba33-4894-bf9e-3ab108e03d8c",
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
+            "afc97053-5d9d-4153-b642-911f9ef703d7",
             "47f4935c-57ba-4bf2-afc8-ba2cfce49904",
             "67923df0-d312-4a3c-90d6-447c7e04828e",
             "753f02f1-5381-4a86-b5ea-e3b077257ff4",

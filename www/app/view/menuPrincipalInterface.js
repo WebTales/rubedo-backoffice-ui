@@ -89,6 +89,22 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                             scope: me
                                         }
                                     }
+                                },
+                                {
+                                    xtype: 'menu',
+                                    x: 0,
+                                    y: 0,
+                                    floating: false,
+                                    frame: true,
+                                    hidden: false,
+                                    id: 'salamanderECMenu',
+                                    width: 218,
+                                    listeners: {
+                                        added: {
+                                            fn: me.onSalamanderAdminMenuAdded1,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ],
                             listeners: {
@@ -183,6 +199,23 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                             listeners: {
                                 render: {
                                     fn: me.onButtonRender1,
+                                    scope: me
+                                }
+                            },
+                            menu: {
+                                xtype: 'menu',
+                                width: 120
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            usesMenu: true,
+                            usedMenu: 'salamanderECMenu',
+                            iconCls: 'cart',
+                            text: 'E-Commerce',
+                            listeners: {
+                                render: {
+                                    fn: me.onButtonRender11,
                                     scope: me
                                 }
                             },
@@ -387,6 +420,20 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         ]);
     },
 
+    onSalamanderAdminMenuAdded1: function(component, container, pos, eOpts) {
+        component.add([
+        {
+            xtype: 'menuitem',
+            ACL: 'read.ui.shippers',
+            favoriteIcon: 'truck.png',
+            itemId: 'shippersInterface',
+            iconCls: 'truck',
+            localiserId:'shippersLaunchBtn',
+            text: 'Shippers'
+        }
+        ]);
+    },
+
     onSalamanderContextRender: function(component, eOpts) {
         Ext.Array.forEach(component.query("menu"), function(thing){thing.hide();});
     },
@@ -398,6 +445,12 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     },
 
     onButtonRender1: function(component, eOpts) {
+        if ((!ACL.interfaceRights["exe.ui.import"])&&(!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
+            component.hide();
+        }
+    },
+
+    onButtonRender11: function(component, eOpts) {
         if ((!ACL.interfaceRights["exe.ui.import"])&&(!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
             component.hide();
         }

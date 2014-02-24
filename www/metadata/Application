@@ -42,7 +42,8 @@
             "CTFieldForLayout",
             "applicationLog",
             "userType",
-            "emailTemplateModel"
+            "emailTemplateModel",
+            "shipper"
         ],
         "stores": [
             "SitesJson",
@@ -170,7 +171,8 @@
             "MLUnsubscribedUsers",
             "UTFieldsForLayouts",
             "UTLayouts",
-            "SitesComboUTLayouts"
+            "SitesComboUTLayouts",
+            "Shippers"
         ],
         "views": [
             "MyGridPanel3",
@@ -345,7 +347,9 @@
             "AssignUTFieldToColWindow",
             "AssignFieldToColWindow1",
             "pagesECommerceFieldset",
-            "productSettingsForm"
+            "productSettingsForm",
+            "shippersInterface",
+            "newShipperWindow"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -370,7 +374,8 @@
             "CustomThemesController",
             "AppExtensionController",
             "UserTypesController",
-            "EmailController"
+            "EmailController",
+            "ShippersController"
         ],
         "name": "Rubedo"
     },

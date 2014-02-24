@@ -1,0 +1,144 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ShippersController",
+        "designer|userAlias": "ShippersController"
+    },
+    "designerId": "bc263767-d49c-404b-b2ba-9021b7d5f361",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewShipperSubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    Ext.getStore(\"Shippers\").add(form.getValues());\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#newShipperSubmitBtn"
+            },
+            "designerId": "0e5bb70d-c35f-4df4-b019-9c52c6220425"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onShippersAddBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newShipperWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#shippersAddBtn"
+            },
+            "designerId": "c89f7585-7c5b-4598-af00-ffb8e2932ce4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onShippersGridSelectionChange",
+                "implHandler": [
+                    "var me=this;\r",
+                    "if (Ext.isEmpty(selected)){\r",
+                    "    me.resetInterfaceNoelect();\r",
+                    "} else {\r",
+                    "    me.resetInterfaceSelect(selected[0]);\r",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#shippersGrid"
+            },
+            "designerId": "35eb3fd8-b8a7-46f6-9371-3add5207d4c9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetInterfaceNoelect",
+                "implHandler": [
+                    "Ext.getCmp(\"shippersRemoveBtn\").disable();\r",
+                    "Ext.getCmp(\"shippersSaveBtn\").disable();\r",
+                    "Ext.getCmp(\"shippersMainForm\").up().disable();\r",
+                    "Ext.getCmp(\"shippersMainForm\").getForm().reset();"
+                ]
+            },
+            "designerId": "46568558-868b-41d9-9587-ba9382c80539"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetInterfaceSelect",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "Ext.getCmp(\"shippersRemoveBtn\").enable();\r",
+                    "Ext.getCmp(\"shippersSaveBtn\").enable();\r",
+                    "Ext.getCmp(\"shippersMainForm\").up().enable();\r",
+                    "Ext.getCmp(\"shippersMainForm\").getForm().setValues(record.getData());"
+                ]
+            },
+            "designerId": "89e90d1a-f2cb-43a6-9804-1a52892e2c58"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onShippersRemoveBtnClick",
+                "implHandler": [
+                    "var fenetre = Ext.widget('delConfirmZ');\r",
+                    "fenetre.show();\r",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                    "    Ext.getStore(\"Shippers\").remove(Ext.getCmp(\"shippersGrid\").getSelectionModel().getLastSelected());\r",
+                    "    Ext.getCmp('delConfirmZ').close();\r",
+                    "}); "
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#shippersRemoveBtn"
+            },
+            "designerId": "bb700691-5398-4013-85dc-507ea614b522"
+        }
+    ]
+}

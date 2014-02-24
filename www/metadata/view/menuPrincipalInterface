@@ -306,6 +306,54 @@
                             ]
                         },
                         {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|x": 0,
+                                "layout|y": 0,
+                                "floating": false,
+                                "frame": true,
+                                "hidden": false,
+                                "id": "salamanderECMenu",
+                                "margin": null,
+                                "width": 218
+                            },
+                            "designerId": "c18228dd-1550-4cab-8d9f-d9bed73687c3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSalamanderAdminMenuAdded1",
+                                        "implHandler": [
+                                            "component.add([\r",
+                                            "{\r",
+                                            "    xtype: 'menuitem',\r",
+                                            "    ACL: 'read.ui.shippers',\r",
+                                            "    favoriteIcon: 'truck.png',\r",
+                                            "    itemId: 'shippersInterface',\r",
+                                            "    iconCls: 'truck',\r",
+                                            "    localiserId:'shippersLaunchBtn',\r",
+                                            "    text: 'Shippers'\r",
+                                            "}\r",
+                                            "]);"
+                                        ],
+                                        "name": "added",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "b488217b-4985-4e4e-affb-4eb1d731c52d"
+                                }
+                            ]
+                        },
+                        {
                             "type": "basiceventbinding",
                             "reference": {
                                 "name": "listeners",
@@ -659,6 +707,76 @@
                                 "width": 120
                             },
                             "designerId": "8bdf58fa-1e0d-489e-8a1c-427a2e12bf92"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "usesMenu": true,
+                        "usedMenu": "salamanderECMenu",
+                        "localiserId": null,
+                        "layout|flex": null,
+                        "iconCls": "cart",
+                        "text": "E-Commerce"
+                    },
+                    "configAlternates": {
+                        "usesMenu": "boolean"
+                    },
+                    "designerId": "8dfb3b56-ff71-494c-94aa-d19d3a86e3c8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "usesMenu",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "usedMenu",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonRender11",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"exe.ui.import\"])&&(!ACL.interfaceRights[\"read.ui.queries\"])&&(!ACL.interfaceRights[\"read.ui.taxonomy\"])&&(!ACL.interfaceRights[\"read.ui.groups\"])&&(!ACL.interfaceRights[\"read.ui.workspaces\"])&&(!ACL.interfaceRights[\"read.ui.users\"])&&(!ACL.interfaceRights[\"read.ui.technicalDashboard\"])&&(!ACL.interfaceRights[\"read.ui.workflows\"])&&(!ACL.interfaceRights[\"read.ui.mailingLists\"])&&(!ACL.interfaceRights[\"read.ui.languages\"])&&(!ACL.interfaceRights[\"read.ui.applicationLogs\"])){\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "58717b6f-7f53-4cd5-85dc-b4133ab07a34"
+                        },
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 120
+                            },
+                            "designerId": "9dddaa2a-194b-4019-a558-18bc9e606872"
                         }
                     ]
                 },

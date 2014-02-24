@@ -58,7 +58,8 @@ Ext.application({
         'CTFieldForLayout',
         'applicationLog',
         'userType',
-        'emailTemplateModel'
+        'emailTemplateModel',
+        'shipper'
     ],
     stores: [
         'SitesJson',
@@ -186,7 +187,8 @@ Ext.application({
         'MLUnsubscribedUsers',
         'UTFieldsForLayouts',
         'UTLayouts',
-        'SitesComboUTLayouts'
+        'SitesComboUTLayouts',
+        'Shippers'
     ],
     views: [
         'MyGridPanel3',
@@ -361,7 +363,9 @@ Ext.application({
         'AssignUTFieldToColWindow',
         'AssignFieldToColWindow1',
         'pagesECommerceFieldset',
-        'productSettingsForm'
+        'productSettingsForm',
+        'shippersInterface',
+        'newShipperWindow'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -386,7 +390,8 @@ Ext.application({
         'CustomThemesController',
         'AppExtensionController',
         'UserTypesController',
-        'EmailController'
+        'EmailController',
+        'ShippersController'
     ],
     name: 'Rubedo'
 });
