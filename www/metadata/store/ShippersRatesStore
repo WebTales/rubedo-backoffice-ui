@@ -1,0 +1,64 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "ShippersRatesStore",
+        "designer|userClassName": "ShippersRatesStore",
+        "designer|userAlias": "ShippersRatesStore"
+    },
+    "designerId": "8564ff71-4dee-456c-842d-8b115b86300e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "country"
+            },
+            "designerId": "a010bfef-9c9b-4fe5-9bd8-1263dc9d93f9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rate"
+            },
+            "designerId": "130077d0-e50b-42fc-9e62-5e810199cd50"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "delay"
+            },
+            "designerId": "f8890e69-b85a-481b-b812-df70759b78cd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "hRDelay"
+            },
+            "designerId": "73b8a041-0272-4b31-92b9-55a9b9aea28f"
+        }
+    ]
+}

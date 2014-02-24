@@ -157,29 +157,6 @@
                                 "scope": "me"
                             },
                             "designerId": "216cdd50-27b9-443f-b6a2-7a5f68f45610"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onShippersSaveBtnClick",
-                                "implHandler": [
-                                    "var form=Ext.getCmp(\"shippersMainForm\").getForm();\r",
-                                    "if (form.isValid()){\r",
-                                    "\tvar record=Ext.getCmp(\"shippersGrid\").getSelectionModel().getLastSelected();  \r",
-                                    "    record.beginEdit();\r",
-                                    "    record.set(form.getValues());\r",
-                                    "    record.endEdit();\r",
-                                    "}"
-                                ],
-                                "name": "click",
-                                "scope": "me"
-                            },
-                            "designerId": "e9a0f0a3-5d4d-4633-a61d-768fe2a4b419"
                         }
                     ]
                 },
@@ -285,8 +262,9 @@
             "userConfig": {
                 "localiserId": "propsPanel",
                 "layout|flex": 1,
+                "container|align": "stretch",
                 "disabled": true,
-                "layout": "card",
+                "layout": "vbox",
                 "title": "Propriétés"
             },
             "designerId": "461cd932-0fc8-4637-9548-81cb769ebb72",
@@ -355,6 +333,297 @@
                             "designerId": "4142ad48-4d8c-4b5a-b169-b92ee583e6be"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "title": "Rates",
+                        "forceFit": true,
+                        "store": "ShippersRatesStore"
+                    },
+                    "designerId": "e37144e1-dab4-4609-bc3c-934d2e5cdf0d",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "518f6f54-5625-440c-8875-cb9de7662da7"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "country",
+                                "text": "Country"
+                            },
+                            "designerId": "3d1c2fc9-e6e7-4465-b2ae-58ce7781f3ee",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "displayField": "name",
+                                        "forceSelection": true,
+                                        "queryMode": "local",
+                                        "store": "CountriesForShippers",
+                                        "valueField": "alpha-2"
+                                    },
+                                    "designerId": "0bbf95d3-6183-4f09-b45e-cadc8cec86a4"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "try {return(Ext.getStore(\"CountriesForShippers\").findRecord(\"alpha-2\",value).get(\"name\"));} catch (err){\r",
+                                            "    return value;\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "5aafa79d-6235-4d63-808c-7be437d7b14e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "rate",
+                                "text": "Rate"
+                            },
+                            "designerId": "6976f19c-339a-4ac8-af36-67a9ebf5c0f1",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "minValue": 0
+                                    },
+                                    "designerId": "3b9bef27-6451-4b64-96bd-f704cc04dcf7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "delay",
+                                "text": "Delay"
+                            },
+                            "designerId": "f9f76d90-5a26-47c3-924c-75173d8a618d",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "minValue": 0
+                                    },
+                                    "designerId": "8f754af2-27c1-4b04-9b5c-20a7b7ffd565"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "hRDelay",
+                                "text": "Displayed delay"
+                            },
+                            "designerId": "8cb26eac-a2e8-447d-9d61-1eef6eac940b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false
+                                    },
+                                    "designerId": "8550ed2f-1e7d-438d-b9dd-abbe1fa67fd7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom"
+                            },
+                            "designerId": "ce49d256-504e-4eac-8f28-7b00c9b4aa4f",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Fill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "designerId": "765e46ee-f0a4-438c-988e-309c4335171a"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "iconCls": "add",
+                                        "text": "Add rate"
+                                    },
+                                    "designerId": "0671c23c-dcc2-467a-9019-e7bae27b6924",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick",
+                                                "implHandler": [
+                                                    "button.up().up().getStore().add({\"country\":\"FR\",\"rate\":0,\"delay\":1,\"hRDelay\":\"1 day\"});"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "2e12ef3a-5237-4df6-9e64-d67ee81943b7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "id": "removeShipperRateBtn",
+                                        "iconCls": "close",
+                                        "text": "Remove rate"
+                                    },
+                                    "designerId": "5a50b7ca-9589-4dc4-aa8e-182e3d46bdc6",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRemoveShipperRateBtnClick",
+                                                "implHandler": [
+                                                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "18457ce4-f35b-4809-adfe-a6ad2e7688af"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.RowEditing",
+                            "designerId": "1ce11dd2-5787-43ae-b933-e2594fbda956"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridpanelSelectionChange",
+                                "implHandler": [
+                                    "if (Ext.isEmpty(selected)){\r",
+                                    "\tExt.getCmp(\"removeShipperRateBtn\").disable();\r",
+                                    "} else {\r",
+                                    "    Ext.getCmp(\"removeShipperRateBtn\").enable();\r",
+                                    "    }"
+                                ],
+                                "name": "selectionchange",
+                                "scope": "me"
+                            },
+                            "designerId": "e381b530-ccbf-429a-834e-cf58a1d04008"
+                        }
+                    ]
                 }
             ]
         },
@@ -368,7 +637,8 @@
             "userConfig": {
                 "fn": "onWorkspacesInterfaceRender",
                 "implHandler": [
-                    "Ext.getStore(\"Shippers\").load();"
+                    "Ext.getStore(\"Shippers\").load();\r",
+                    "Ext.getStore(\"CountriesForShippers\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
@@ -385,7 +655,8 @@
             "userConfig": {
                 "fn": "onWorkspacesInterfaceBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"Shippers\").removeAll();"
+                    "Ext.getStore(\"Shippers\").removeAll();\r",
+                    "Ext.getStore(\"CountriesForShippers\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

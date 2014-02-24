@@ -77,10 +77,6 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 afterrender: {
                                     fn: me.onWorkspaceSaveAfterRender,
                                     scope: me
-                                },
-                                click: {
-                                    fn: me.onShippersSaveBtnClick,
-                                    scope: me
                                 }
                             }
                         },
@@ -120,7 +116,8 @@ Ext.define('Rubedo.view.shippersInterface', {
                     flex: 1,
                     disabled: true,
                     layout: {
-                        type: 'card'
+                        align: 'stretch',
+                        type: 'vbox'
                     },
                     title: 'Propriétés',
                     items: [
@@ -149,6 +146,109 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     uncheckedValue: 'false'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            flex: 1,
+                            title: 'Rates',
+                            forceFit: true,
+                            store: 'ShippersRatesStore',
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
+                                        return value;
+                                    }
+                                    },
+                                    dataIndex: 'country',
+                                    text: 'Country',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        displayField: 'name',
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: 'CountriesForShippers',
+                                        valueField: 'alpha-2'
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'rate',
+                                    text: 'Rate',
+                                    editor: {
+                                        xtype: 'numberfield',
+                                        allowBlank: false,
+                                        minValue: 0
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'delay',
+                                    text: 'Delay',
+                                    editor: {
+                                        xtype: 'numberfield',
+                                        allowBlank: false,
+                                        minValue: 0
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'hRDelay',
+                                    text: 'Displayed delay',
+                                    editor: {
+                                        xtype: 'textfield',
+                                        allowBlank: false
+                                    }
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'bottom',
+                                    items: [
+                                        {
+                                            xtype: 'tbfill'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            iconCls: 'add',
+                                            text: 'Add rate',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onButtonClick,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            id: 'removeShipperRateBtn',
+                                            iconCls: 'close',
+                                            text: 'Remove rate',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onRemoveShipperRateBtnClick,
+                                                    scope: me
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.RowEditing', {
+
+                                })
+                            ],
+                            listeners: {
+                                selectionchange: {
+                                    fn: me.onGridpanelSelectionChange,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -185,22 +285,30 @@ Ext.define('Rubedo.view.shippersInterface', {
     });
     },
 
-    onShippersSaveBtnClick: function(button, e, eOpts) {
-        var form=Ext.getCmp("shippersMainForm").getForm();
-        if (form.isValid()){
-            var record=Ext.getCmp("shippersGrid").getSelectionModel().getLastSelected();  
-            record.beginEdit();
-            record.set(form.getValues());
-            record.endEdit();
+    onButtonClick: function(button, e, eOpts) {
+        button.up().up().getStore().add({"country":"FR","rate":0,"delay":1,"hRDelay":"1 day"});
+    },
+
+    onRemoveShipperRateBtnClick: function(button, e, eOpts) {
+        button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
+    },
+
+    onGridpanelSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("removeShipperRateBtn").disable();
+        } else {
+            Ext.getCmp("removeShipperRateBtn").enable();
         }
     },
 
     onWorkspacesInterfaceRender: function(component, eOpts) {
         Ext.getStore("Shippers").load();
+        Ext.getStore("CountriesForShippers").load();
     },
 
     onWorkspacesInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("Shippers").removeAll();
+        Ext.getStore("CountriesForShippers").removeAll();
     }
 
 });

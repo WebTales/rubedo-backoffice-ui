@@ -47,11 +47,23 @@ Ext.define('Rubedo.controller.ShippersController', {
         }); 
     },
 
+    onShippersSaveBtnClick: function(button, e, eOpts) {
+        var form=Ext.getCmp("shippersMainForm").getForm();
+        if (form.isValid()){
+            var record=Ext.getCmp("shippersGrid").getSelectionModel().getLastSelected();  
+            record.beginEdit();
+            record.set(form.getValues());
+            record.set("rates",Ext.Array.pluck(Ext.getStore("ShippersRatesStore").getRange(),"data"));
+            record.endEdit();
+        }
+    },
+
     resetInterfaceNoelect: function() {
         Ext.getCmp("shippersRemoveBtn").disable();
         Ext.getCmp("shippersSaveBtn").disable();
         Ext.getCmp("shippersMainForm").up().disable();
         Ext.getCmp("shippersMainForm").getForm().reset();
+        Ext.getStore("ShippersRatesStore").removeAll();
     },
 
     resetInterfaceSelect: function(record) {
@@ -59,6 +71,7 @@ Ext.define('Rubedo.controller.ShippersController', {
         Ext.getCmp("shippersSaveBtn").enable();
         Ext.getCmp("shippersMainForm").up().enable();
         Ext.getCmp("shippersMainForm").getForm().setValues(record.getData());
+        Ext.getStore("ShippersRatesStore").loadData(Ext.clone(record.get("rates")));
     },
 
     init: function(application) {
@@ -74,6 +87,9 @@ Ext.define('Rubedo.controller.ShippersController', {
             },
             "#shippersRemoveBtn": {
                 click: this.onShippersRemoveBtnClick
+            },
+            "#shippersSaveBtn": {
+                click: this.onShippersSaveBtnClick
             }
         });
     }

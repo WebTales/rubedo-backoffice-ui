@@ -1,0 +1,61 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "country",
+        "storeId": "CountriesForShippers",
+        "designer|userClassName": "CountriesForShippers",
+        "designer|userAlias": "CountriesForShippers",
+        "data": null,
+        "pageSize": 10000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean",
+        "forcedSync": "boolean"
+    },
+    "designerId": "ee2f30da-7af2-4eb8-972b-56b359f2811e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    " read: 'countries'\r",
+                    "}"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    notAll:true\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "d5200edf-0185-452d-8c6d-c91130254cf7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "26457fad-44d0-4ec2-8169-24653aea26cb"
+                }
+            ]
+        }
+    ]
+}

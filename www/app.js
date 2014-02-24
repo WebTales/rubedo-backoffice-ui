@@ -59,7 +59,8 @@ Ext.application({
         'applicationLog',
         'userType',
         'emailTemplateModel',
-        'shipper'
+        'shipper',
+        'country'
     ],
     stores: [
         'SitesJson',
@@ -188,7 +189,9 @@ Ext.application({
         'UTFieldsForLayouts',
         'UTLayouts',
         'SitesComboUTLayouts',
-        'Shippers'
+        'Shippers',
+        'CountriesForShippers',
+        'ShippersRatesStore'
     ],
     views: [
         'MyGridPanel3',

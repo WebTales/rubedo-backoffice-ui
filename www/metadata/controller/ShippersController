@@ -90,7 +90,8 @@
                     "Ext.getCmp(\"shippersRemoveBtn\").disable();\r",
                     "Ext.getCmp(\"shippersSaveBtn\").disable();\r",
                     "Ext.getCmp(\"shippersMainForm\").up().disable();\r",
-                    "Ext.getCmp(\"shippersMainForm\").getForm().reset();"
+                    "Ext.getCmp(\"shippersMainForm\").getForm().reset();\r",
+                    "Ext.getStore(\"ShippersRatesStore\").removeAll();"
                 ]
             },
             "designerId": "46568558-868b-41d9-9587-ba9382c80539"
@@ -111,7 +112,8 @@
                     "Ext.getCmp(\"shippersRemoveBtn\").enable();\r",
                     "Ext.getCmp(\"shippersSaveBtn\").enable();\r",
                     "Ext.getCmp(\"shippersMainForm\").up().enable();\r",
-                    "Ext.getCmp(\"shippersMainForm\").getForm().setValues(record.getData());"
+                    "Ext.getCmp(\"shippersMainForm\").getForm().setValues(record.getData());\r",
+                    "Ext.getStore(\"ShippersRatesStore\").loadData(Ext.clone(record.get(\"rates\")));"
                 ]
             },
             "designerId": "89e90d1a-f2cb-43a6-9804-1a52892e2c58"
@@ -139,6 +141,32 @@
                 "designer|controlQuery": "#shippersRemoveBtn"
             },
             "designerId": "bb700691-5398-4013-85dc-507ea614b522"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onShippersSaveBtnClick",
+                "implHandler": [
+                    "var form=Ext.getCmp(\"shippersMainForm\").getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    var record=Ext.getCmp(\"shippersGrid\").getSelectionModel().getLastSelected();  \r",
+                    "    record.beginEdit();\r",
+                    "    record.set(form.getValues());\r",
+                    "    record.set(\"rates\",Ext.Array.pluck(Ext.getStore(\"ShippersRatesStore\").getRange(),\"data\"));\r",
+                    "    record.endEdit();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#shippersSaveBtn"
+            },
+            "designerId": "6305e98f-4046-44ff-9ed6-2d51a4075754"
         }
     ]
 }

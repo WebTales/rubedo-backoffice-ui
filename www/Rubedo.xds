@@ -3229,6 +3229,30 @@
                 "app/controller/ShippersController.js"
             ],
             "className": "ShippersController"
+        },
+        "ee2f30da-7af2-4eb8-972b-56b359f2811e": {
+            "paths": [
+                "metadata/store/CountriesForShippers",
+                "app/store/override/CountriesForShippers.js",
+                "app/store/CountriesForShippers.js"
+            ],
+            "className": "CountriesForShippers"
+        },
+        "b43648d7-e5b9-470e-a7af-b267e5cf11bc": {
+            "paths": [
+                "metadata/model/country",
+                "app/model/override/country.js",
+                "app/model/country.js"
+            ],
+            "className": "country"
+        },
+        "8564ff71-4dee-456c-842d-8b115b86300e": {
+            "paths": [
+                "metadata/store/ShippersRatesStore",
+                "app/store/override/ShippersRatesStore.js",
+                "app/store/ShippersRatesStore.js"
+            ],
+            "className": "ShippersRatesStore"
         }
     },
     "viewOrderMap": {
@@ -3534,6 +3558,7 @@
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
             "b8b58309-0a78-41f7-92f3-66242a362db7",
+            "ee2f30da-7af2-4eb8-972b-56b359f2811e",
             "68f8be48-2543-47f5-9bb7-0d4de8f16097",
             "562558a9-b585-4d9a-91da-854c3548d79b",
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
@@ -3554,7 +3579,8 @@
             "d6570aca-1de2-4ab0-978a-87a7f4358840",
             "ef3e6e4f-b3cc-4471-a3c1-7df362423531",
             "bac21dc5-9467-459a-9a13-2c67a5235855",
-            "46b39dfb-e743-4e22-9e2e-ba43b60b6fee"
+            "46b39dfb-e743-4e22-9e2e-ba43b60b6fee",
+            "8564ff71-4dee-456c-842d-8b115b86300e"
         ],
         "controller": [
             "130f60c3-0d78-444a-92e2-79b56d3ab643",
@@ -3601,6 +3627,7 @@
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "afc97053-5d9d-4153-b642-911f9ef703d7",
+            "b43648d7-e5b9-470e-a7af-b267e5cf11bc",
             "47f4935c-57ba-4bf2-afc8-ba2cfce49904",
             "67923df0-d312-4a3c-90d6-447c7e04828e",
             "753f02f1-5381-4a86-b5ea-e3b077257ff4",
