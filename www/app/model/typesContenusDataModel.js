@@ -109,6 +109,17 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         {
             defaultValue: 'none',
             name: 'productType'
+        },
+        {
+            defaultValue: false,
+            name: 'manageStock',
+            type: 'boolean'
+        },
+        {
+            defaultValue: [
+                
+            ],
+            name: 'shippers'
         }
     ]
 });

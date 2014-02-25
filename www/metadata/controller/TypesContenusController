@@ -851,6 +851,15 @@
                 "fn": "selectTC",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
+                    "if (record.get(\"productType\")==\"configurable\"){\r",
+                    "    if (Ext.isEmpty(Ext.getCmp(\"CTECommerceFieldset\"))){\r",
+                    "        Ext.getCmp(\"TDCEditForm\").add(Ext.widget(\"CTECommerceFieldset\"));\r",
+                    "    }\r",
+                    "} else {\r",
+                    "    if (!Ext.isEmpty(Ext.getCmp(\"CTECommerceFieldset\"))){\r",
+                    "        Ext.getCmp(\"TDCEditForm\").remove(Ext.getCmp(\"CTECommerceFieldset\"));\r",
+                    "    }\r",
+                    "}\r",
                     "Ext.getCmp(\"boutonSupprimerTypeContenu\").enable();\r",
                     "Ext.getCmp(\"TCfieldUp\").disable();\r",
                     "Ext.getCmp(\"TCfieldDown\").disable();\r",
@@ -1558,7 +1567,8 @@
                 "fn": "onAdminfTypesGridRender",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDepDataJson\").load();\r",
-                    "Ext.getStore(\"TaxonomyForCT\").load();"
+                    "Ext.getStore(\"TaxonomyForCT\").load();\r",
+                    "Ext.getStore(\"ShippersForCT\").load();"
                 ],
                 "name": "render",
                 "scope": "me",
@@ -1578,7 +1588,8 @@
                 "fn": "onAdminfTypesGridDestroy",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDepDataJson\").removeAll();\r",
-                    "Ext.getStore(\"TaxonomyForCT\").removeAll();"
+                    "Ext.getStore(\"TaxonomyForCT\").removeAll();\r",
+                    "Ext.getStore(\"ShippersForCT\").removeAll();"
                 ],
                 "name": "destroy",
                 "scope": "me",

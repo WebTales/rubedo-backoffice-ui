@@ -3253,6 +3253,22 @@
                 "app/store/ShippersRatesStore.js"
             ],
             "className": "ShippersRatesStore"
+        },
+        "3a4fb208-402f-47e2-8fce-def7fbf0f205": {
+            "paths": [
+                "metadata/view/CTECommerceFieldset",
+                "app/view/override/CTECommerceFieldset.js",
+                "app/view/CTECommerceFieldset.js"
+            ],
+            "className": "CTECommerceFieldset"
+        },
+        "f3c4308c-d974-4f43-8a19-3aa00910e899": {
+            "paths": [
+                "metadata/store/ShippersForCT",
+                "app/store/override/ShippersForCT.js",
+                "app/store/ShippersForCT.js"
+            ],
+            "className": "ShippersForCT"
         }
     },
     "viewOrderMap": {
@@ -3447,7 +3463,8 @@
             "5d8d58e0-6cd3-4596-92b5-8b66d27d5373",
             "26b584ef-18d7-4675-8753-f42da6633fbb",
             "84a70db4-eb10-4d76-81cc-006305b2ab59",
-            "2ae78d7f-914e-476c-840e-3b4423f7e7ae"
+            "2ae78d7f-914e-476c-840e-3b4423f7e7ae",
+            "3a4fb208-402f-47e2-8fce-def7fbf0f205"
         ],
         "store": [
             "84e3508a-4334-4550-b82b-fd4877c331e4",
@@ -3558,6 +3575,7 @@
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
             "b8b58309-0a78-41f7-92f3-66242a362db7",
+            "f3c4308c-d974-4f43-8a19-3aa00910e899",
             "ee2f30da-7af2-4eb8-972b-56b359f2811e",
             "68f8be48-2543-47f5-9bb7-0d4de8f16097",
             "562558a9-b585-4d9a-91da-854c3548d79b",

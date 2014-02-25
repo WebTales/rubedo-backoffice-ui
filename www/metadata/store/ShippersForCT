@@ -9,11 +9,10 @@
         "isOptimised": true,
         "usedCollection": "Shippers",
         "autoLoad": false,
-        "autoSync": true,
         "model": "shipper",
-        "storeId": "Shippers",
-        "designer|userClassName": "Shippers",
-        "designer|userAlias": "Shippers",
+        "storeId": "ShippersForCT",
+        "designer|userClassName": "ShippersForCT",
+        "designer|userAlias": "ShippersForCT",
         "data": null,
         "pageSize": 1000
     },
@@ -21,7 +20,7 @@
         "isOptimised": "boolean",
         "forcedSync": "boolean"
     },
-    "designerId": "b8b58309-0a78-41f7-92f3-66242a362db7",
+    "designerId": "f3c4308c-d974-4f43-8a19-3aa00910e899",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -45,10 +44,7 @@
             "userConfig": {
                 "api": [
                     "{\r",
-                    "                    create: 'shippers/create',\r",
-                    "                    read: 'shippers',\r",
-                    "                    update: 'shippers/update',\r",
-                    "                    destroy: 'shippers/delete'\r",
+                    "                    read: 'shippers'\r",
                     "                }"
                 ],
                 "extraParams": [
@@ -58,7 +54,7 @@
                 ],
                 "url": null
             },
-            "designerId": "cb1ee630-bc3a-4f83-a4b7-a48f40270785",
+            "designerId": "9afb0ff5-2459-474c-8f9c-4295294b0afa",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -71,7 +67,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
-                    "designerId": "b2a1c49d-2537-44c5-b8be-05bb3bb8ae57"
+                    "designerId": "7b0260af-5c98-45c8-8975-495558b30c53"
                 },
                 {
                     "type": "Ext.data.writer.Json",
@@ -85,7 +81,7 @@
                         "encode": true,
                         "root": "data"
                     },
-                    "designerId": "94abd7a8-fe2a-4c18-abd0-a40c6db59050"
+                    "designerId": "9728065d-1d66-40a0-9515-71865f960b02"
                 }
             ]
         }

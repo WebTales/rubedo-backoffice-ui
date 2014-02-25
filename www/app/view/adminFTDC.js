@@ -818,6 +818,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                     xtype: 'form',
                                     id: 'TDCEditForm',
                                     itemId: 'mainLocItem',
+                                    autoScroll: true,
                                     bodyPadding: 10,
                                     items: [
                                         {

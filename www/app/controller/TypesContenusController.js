@@ -759,6 +759,15 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     selectTC: function(dataviewmodel, record, eOpts) {
         Ext.Array.forEach(Ext.getCmp("adminFTDC").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+        if (record.get("productType")=="configurable"){
+            if (Ext.isEmpty(Ext.getCmp("CTECommerceFieldset"))){
+                Ext.getCmp("TDCEditForm").add(Ext.widget("CTECommerceFieldset"));
+            }
+        } else {
+            if (!Ext.isEmpty(Ext.getCmp("CTECommerceFieldset"))){
+                Ext.getCmp("TDCEditForm").remove(Ext.getCmp("CTECommerceFieldset"));
+            }
+        }
         Ext.getCmp("boutonSupprimerTypeContenu").enable();
         Ext.getCmp("TCfieldUp").disable();
         Ext.getCmp("TCfieldDown").disable();
@@ -1234,11 +1243,13 @@ Ext.define('Rubedo.controller.TypesContenusController', {
     onAdminfTypesGridRender: function(component, eOpts) {
         Ext.getStore("TypesContenusDepDataJson").load();
         Ext.getStore("TaxonomyForCT").load();
+        Ext.getStore("ShippersForCT").load();
     },
 
     onAdminfTypesGridDestroy: function(component, eOpts) {
         Ext.getStore("TypesContenusDepDataJson").removeAll();
         Ext.getStore("TaxonomyForCT").removeAll();
+        Ext.getStore("ShippersForCT").removeAll();
     },
 
     onPurgeCTContentsBtnClick: function(button, e, eOpts) {

@@ -191,7 +191,8 @@ Ext.application({
         'SitesComboUTLayouts',
         'Shippers',
         'CountriesForShippers',
-        'ShippersRatesStore'
+        'ShippersRatesStore',
+        'ShippersForCT'
     ],
     views: [
         'MyGridPanel3',
@@ -368,7 +369,8 @@ Ext.application({
         'pagesECommerceFieldset',
         'productSettingsForm',
         'shippersInterface',
-        'newShipperWindow'
+        'newShipperWindow',
+        'CTECommerceFieldset'
     ],
     autoCreateViewport: true,
     controllers: [

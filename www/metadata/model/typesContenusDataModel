@@ -10,6 +10,13 @@
         "designer|userAlias": "typesContenusDataModel"
     },
     "designerId": "f6ea2437-b32f-4abf-9bac-29f98ff9f00d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "shippers",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.data.Field",
@@ -332,6 +339,37 @@
                 "name": "productType"
             },
             "designerId": "e1eb4aa4-b873-47d6-b60e-035dee459651"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "manageStock",
+                "type": "boolean"
+            },
+            "designerId": "9744f435-68c1-4373-a186-4fc2437a0802"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "[ ]"
+                ],
+                "name": "shippers"
+            },
+            "designerId": "6c6d6305-2922-4973-8ec2-edc163a93e44"
         }
     ]
 }

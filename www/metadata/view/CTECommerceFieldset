@@ -1,0 +1,71 @@
+{
+    "type": "Ext.form.FieldSet",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": "CTECommerceFieldset",
+        "width": null,
+        "designer|userClassName": "CTECommerceFieldset",
+        "designer|userAlias": "CTECommerceFieldset",
+        "title": "E-Commerce"
+    },
+    "designerId": "3a4fb208-402f-47e2-8fce-def7fbf0f205",
+    "cn": [
+        {
+            "type": "Ext.form.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "fieldLabel": "Manage stock",
+                "name": "manageStock",
+                "boxLabel": "",
+                "inputValue": "true",
+                "uncheckedValue": "false"
+            },
+            "designerId": "a53f0afd-fcba-4e6e-a826-55e19ecb3453"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCTECommerceFieldsetAdded",
+                "implHandler": [
+                    "var shippersPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                    "    store:Ext.getStore(\"ShippersForCT\"),\r",
+                    "    anchor:\"100%\",\r",
+                    "    name:\"shippers\",\r",
+                    "    fieldLabel:\"Shippers\",\r",
+                    "    labelWidth:100,\r",
+                    "    queryMode:\"local\",\r",
+                    "    multiSelect:true,\r",
+                    "    valueField:\"id\",\r",
+                    "    displayField:\"name\",\r",
+                    "    forceSelection:true,\r",
+                    "    createNewOnEnter:true,\r",
+                    "    triggerOnClick:false,\r",
+                    "    createNewOnBlur:true,\r",
+                    "    stacked:true,\r",
+                    "    allowBlank:true\r",
+                    "\r",
+                    "});\r",
+                    "component.add(shippersPicker);"
+                ],
+                "name": "added",
+                "scope": "me"
+            },
+            "designerId": "ac7424d3-45a3-425b-8c69-0e5d10fb0899"
+        }
+    ]
+}
