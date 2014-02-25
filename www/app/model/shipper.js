@@ -52,6 +52,9 @@ Ext.define('Rubedo.model.shipper', {
         },
         {
             name: 'createUser'
+        },
+        {
+            name: 'rateType'
         }
     ]
 });

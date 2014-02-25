@@ -10,7 +10,7 @@
         "container|align": "stretch",
         "height": 456,
         "id": "shippersInterface",
-        "width": 723,
+        "width": 921,
         "designer|userClassName": "shippersInterface",
         "designer|userAlias": "shippersInterface",
         "layout": "hbox",
@@ -331,6 +331,30 @@
                                 "uncheckedValue": "false"
                             },
                             "designerId": "4142ad48-4d8c-4b5a-b169-b92ee583e6be"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Rate type",
+                                "name": "rateType",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": [
+                                    "[[\"flatPerOrder\",\"Flat rate per order\"],[\"flatPerItem\",\"Flat rate per item\"]]"
+                                ]
+                            },
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "fe8e747d-f4cf-4c80-8b26-b9a0dd5c2c15"
                         }
                     ]
                 },
@@ -453,7 +477,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "delay",
-                                "text": "Delay"
+                                "text": "Delay (days)"
                             },
                             "designerId": "f9f76d90-5a26-47c3-924c-75173d8a618d",
                             "cn": [
@@ -481,21 +505,59 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "hRDelay",
-                                "text": "Displayed delay"
+                                "text": "Displayed delay (amount)"
                             },
                             "designerId": "8cb26eac-a2e8-447d-9d61-1eef6eac940b",
                             "cn": [
                                 {
-                                    "type": "Ext.form.field.Text",
+                                    "type": "Ext.form.field.Number",
                                     "reference": {
                                         "name": "editor",
                                         "type": "object"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "allowBlank": false
+                                        "allowBlank": false,
+                                        "allowOnlyWhitespace": false,
+                                        "minValue": 0
                                     },
-                                    "designerId": "8550ed2f-1e7d-438d-b9dd-abbe1fa67fd7"
+                                    "designerId": "6b68c958-72e8-4f3a-a049-fed359cd64a3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "hRUnit",
+                                "text": "Displayed delay (unit)"
+                            },
+                            "designerId": "bc6a61a5-a45d-47c9-88be-867ebe01ebcf",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "allowOnlyWhitespace": false,
+                                        "forceSelection": true,
+                                        "queryMode": "local",
+                                        "store": [
+                                            "[[\"hours\",\"hours\"],[\"days\",\"days\"],[\"weeks\",\"weeks\"],[\"months\",\"months\"]]"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "store": "array"
+                                    },
+                                    "designerId": "fe5a88e1-ef81-42af-8140-04b7516c0b8e"
                                 }
                             ]
                         },
@@ -547,7 +609,7 @@
                                             "userConfig": {
                                                 "fn": "onButtonClick",
                                                 "implHandler": [
-                                                    "button.up().up().getStore().add({\"country\":\"FR\",\"rate\":0,\"delay\":1,\"hRDelay\":\"1 day\"});"
+                                                    "button.up().up().getStore().add({\"country\":\"FR\",\"rate\":0,\"delay\":1,\"hRDelay\":1,\"hRUnit\":\"days\"});"
                                                 ],
                                                 "name": "click",
                                                 "scope": "me"

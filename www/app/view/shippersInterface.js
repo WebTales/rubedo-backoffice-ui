@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.shippersInterface', {
 
     height: 456,
     id: 'shippersInterface',
-    width: 723,
+    width: 921,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -144,6 +144,26 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     name: 'active',
                                     inputValue: 'true',
                                     uncheckedValue: 'false'
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Rate type',
+                                    name: 'rateType',
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false,
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: [
+                                        [
+                                            'flatPerOrder',
+                                            'Flat rate per order'
+                                        ],
+                                        [
+                                            'flatPerItem',
+                                            'Flat rate per item'
+                                        ]
+                                    ]
                                 }
                             ]
                         },
@@ -186,7 +206,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     dataIndex: 'delay',
-                                    text: 'Delay',
+                                    text: 'Delay (days)',
                                     editor: {
                                         xtype: 'numberfield',
                                         allowBlank: false,
@@ -196,10 +216,42 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     dataIndex: 'hRDelay',
-                                    text: 'Displayed delay',
+                                    text: 'Displayed delay (amount)',
                                     editor: {
-                                        xtype: 'textfield',
-                                        allowBlank: false
+                                        xtype: 'numberfield',
+                                        allowBlank: false,
+                                        allowOnlyWhitespace: false,
+                                        minValue: 0
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'hRUnit',
+                                    text: 'Displayed delay (unit)',
+                                    editor: {
+                                        xtype: 'combobox',
+                                        allowBlank: false,
+                                        allowOnlyWhitespace: false,
+                                        forceSelection: true,
+                                        queryMode: 'local',
+                                        store: [
+                                            [
+                                                'hours',
+                                                'hours'
+                                            ],
+                                            [
+                                                'days',
+                                                'days'
+                                            ],
+                                            [
+                                                'weeks',
+                                                'weeks'
+                                            ],
+                                            [
+                                                'months',
+                                                'months'
+                                            ]
+                                        ]
                                     }
                                 }
                             ],
@@ -286,7 +338,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     },
 
     onButtonClick: function(button, e, eOpts) {
-        button.up().up().getStore().add({"country":"FR","rate":0,"delay":1,"hRDelay":"1 day"});
+        button.up().up().getStore().add({"country":"FR","rate":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
     },
 
     onRemoveShipperRateBtnClick: function(button, e, eOpts) {

@@ -59,6 +59,18 @@
                 "name": "hRDelay"
             },
             "designerId": "73b8a041-0272-4b31-92b9-55a9b9aea28f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "hRUnit"
+            },
+            "designerId": "f9ac3312-3f44-49aa-bb25-2d2e5a5d23f9"
         }
     ]
 }

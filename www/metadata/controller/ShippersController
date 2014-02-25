@@ -23,7 +23,9 @@
                 "implHandler": [
                     "var form=button.up().getForm();\r",
                     "if (form.isValid()){\r",
-                    "    Ext.getStore(\"Shippers\").add(form.getValues());\r",
+                    "    var newShipper=form.getValues();\r",
+                    "    newShipper.rateType=\"flatPerOrder\";\r",
+                    "    Ext.getStore(\"Shippers\").add(newShipper);\r",
                     "    button.up().up().close();\r",
                     "}"
                 ],

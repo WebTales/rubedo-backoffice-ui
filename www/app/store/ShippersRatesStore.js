@@ -34,6 +34,9 @@ Ext.define('Rubedo.store.ShippersRatesStore', {
                 },
                 {
                     name: 'hRDelay'
+                },
+                {
+                    name: 'hRUnit'
                 }
             ]
         }, cfg)]);

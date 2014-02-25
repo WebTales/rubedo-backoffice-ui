@@ -38,8 +38,8 @@ Ext.define('Rubedo.view.subscribeUsersWindow', {
                     items: [
                         {
                             xtype: 'button',
-                            anchor: '100%',
                             localiserId: 'subscribeSubmitBtn',
+                            anchor: '100%',
                             id: 'subscribeUsersSubmitBtn',
                             text: 'Subscribe'
                         }

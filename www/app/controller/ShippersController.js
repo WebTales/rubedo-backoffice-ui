@@ -20,7 +20,9 @@ Ext.define('Rubedo.controller.ShippersController', {
     onNewShipperSubmitBtnClick: function(button, e, eOpts) {
         var form=button.up().getForm();
         if (form.isValid()){
-            Ext.getStore("Shippers").add(form.getValues());
+            var newShipper=form.getValues();
+            newShipper.rateType="flatPerOrder";
+            Ext.getStore("Shippers").add(newShipper);
             button.up().up().close();
         }
     },
