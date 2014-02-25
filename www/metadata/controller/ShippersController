@@ -25,6 +25,7 @@
                     "if (form.isValid()){\r",
                     "    var newShipper=form.getValues();\r",
                     "    newShipper.rateType=\"flatPerOrder\";\r",
+                    "    newShipper.minimumOrderAmount=0;\r",
                     "    Ext.getStore(\"Shippers\").add(newShipper);\r",
                     "    button.up().up().close();\r",
                     "}"

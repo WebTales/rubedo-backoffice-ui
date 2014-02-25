@@ -140,6 +140,18 @@
                 "name": "rateType"
             },
             "designerId": "1dd0ee1e-4982-4059-b082-9b692ac0bbd9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "minimumOrderAmount"
+            },
+            "designerId": "9eb21cff-839e-4ba2-9779-a8179815f02d"
         }
     ]
 }

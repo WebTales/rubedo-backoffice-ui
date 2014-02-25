@@ -133,6 +133,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     localiserId: 'nameField',
                                     anchor: '100%',
                                     fieldLabel: 'Nom',
+                                    labelWidth: 140,
                                     name: 'name',
                                     allowBlank: false,
                                     allowOnlyWhitespace: false
@@ -141,6 +142,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
                                     fieldLabel: 'Active',
+                                    labelWidth: 140,
                                     name: 'active',
                                     inputValue: 'true',
                                     uncheckedValue: 'false'
@@ -149,6 +151,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     xtype: 'combobox',
                                     anchor: '100%',
                                     fieldLabel: 'Rate type',
+                                    labelWidth: 140,
                                     name: 'rateType',
                                     allowBlank: false,
                                     allowOnlyWhitespace: false,
@@ -164,6 +167,16 @@ Ext.define('Rubedo.view.shippersInterface', {
                                             'Flat rate per item'
                                         ]
                                     ]
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Minimum order amount',
+                                    labelWidth: 140,
+                                    name: 'minimumOrderAmount',
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false,
+                                    minValue: 0
                                 }
                             ]
                         },
@@ -338,7 +351,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     },
 
     onButtonClick: function(button, e, eOpts) {
-        button.up().up().getStore().add({"country":"FR","rate":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
+        button.up().up().getStore().add({"country":"*","rate":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
     },
 
     onRemoveShipperRateBtnClick: function(button, e, eOpts) {

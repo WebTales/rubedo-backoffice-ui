@@ -302,6 +302,7 @@
                                 "localiserId": "nameField",
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Nom",
+                                "labelWidth": 140,
                                 "name": "name",
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false
@@ -325,6 +326,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Active",
+                                "labelWidth": 140,
                                 "name": "active",
                                 "boxLabel": null,
                                 "inputValue": "true",
@@ -342,6 +344,7 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Rate type",
+                                "labelWidth": 140,
                                 "name": "rateType",
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false,
@@ -355,6 +358,24 @@
                                 "store": "array"
                             },
                             "designerId": "fe8e747d-f4cf-4c80-8b26-b9a0dd5c2c15"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Minimum order amount",
+                                "labelWidth": 140,
+                                "name": "minimumOrderAmount",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "minValue": 0
+                            },
+                            "designerId": "da8c6c64-686e-4ef4-9e4a-27cc8d6c5c41"
                         }
                     ]
                 },
@@ -609,7 +630,7 @@
                                             "userConfig": {
                                                 "fn": "onButtonClick",
                                                 "implHandler": [
-                                                    "button.up().up().getStore().add({\"country\":\"FR\",\"rate\":0,\"delay\":1,\"hRDelay\":1,\"hRUnit\":\"days\"});"
+                                                    "button.up().up().getStore().add({\"country\":\"*\",\"rate\":0,\"delay\":1,\"hRDelay\":1,\"hRUnit\":\"days\"});"
                                                 ],
                                                 "name": "click",
                                                 "scope": "me"

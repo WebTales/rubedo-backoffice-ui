@@ -22,6 +22,7 @@ Ext.define('Rubedo.controller.ShippersController', {
         if (form.isValid()){
             var newShipper=form.getValues();
             newShipper.rateType="flatPerOrder";
+            newShipper.minimumOrderAmount=0;
             Ext.getStore("Shippers").add(newShipper);
             button.up().up().close();
         }

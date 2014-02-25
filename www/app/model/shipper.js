@@ -55,6 +55,9 @@ Ext.define('Rubedo.model.shipper', {
         },
         {
             name: 'rateType'
+        },
+        {
+            name: 'minimumOrderAmount'
         }
     ]
 });
