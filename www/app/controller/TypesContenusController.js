@@ -53,37 +53,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 {name:"sku"},
                 {name:"id"}
                 ];
-                var variatorColumns=[
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'price',
-                    text: 'Price',
-                    flex:1,
-                    editor:{
-                        xtype:"numberfield",
-                    }
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'stock',
-                    flex:1,
-                    text: 'Stock',
-                    editor:{
-                        xtype:"numberfield",
-                        allowDecimals:false,
-                        minValue:0
-                    }
-                },{
-                    xtype: 'gridcolumn',
-                    dataIndex: 'sku',
-                    flex:1,
-                    text: 'SKU',
-                    editor:{
-                        xtype:"textfield"
-
-                    }
-                }
-                ];
+                var variatorColumns=[ ];
             }
             var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;
             for (g=0; g<champsD.length; g++) {
@@ -211,7 +181,39 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 fields:variatorFields,
                 data:[]
             });
-            Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns.reverse());
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'price',
+                text: 'Price',
+                flex:1,
+                editor:{
+                    xtype:"numberfield",
+                }
+            });
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'sku',
+                flex:1,
+                text: 'SKU',
+                editor:{
+                    xtype:"textfield"
+
+                }
+            });
+            if (Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("manageStock")){
+                variatorColumns.push({
+                    xtype: 'gridcolumn',
+                    dataIndex: 'stock',
+                    flex:1,
+                    text: 'Stock',
+                    editor:{
+                        xtype:"numberfield",
+                        allowDecimals:false,
+                        minValue:0
+                    }
+                });
+            }
+            Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns);
         }
         var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
         var lesTaxo = Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("vocabularies");

@@ -682,37 +682,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             {name:"sku"},
             {name:"id"}
             ];
-            var variatorColumns=[
-            {
-                xtype: 'gridcolumn',
-                dataIndex: 'price',
-                text: 'Price',
-                flex:1,
-                editor:{
-                    xtype:"numberfield",
-                }
-            },
-            {
-                xtype: 'gridcolumn',
-                dataIndex: 'stock',
-                flex:1,
-                text: 'Stock',
-                editor:{
-                    xtype:"numberfield",
-                    allowDecimals:false,
-                    minValue:0
-                }
-            },{
-                xtype: 'gridcolumn',
-                dataIndex: 'sku',
-                flex:1,
-                text: 'SKU',
-                editor:{
-                    xtype:"textfield"
-
-                }
-            }
-            ];
+            var variatorColumns=[ ];
         }
         var champsD =contentType.get("champs");
         for (g=0; g<champsD.length; g++) {
@@ -840,7 +810,39 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             fields:variatorFields,
             data:[]
         });
-        Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns.reverse());
+        variatorColumns.push({
+            xtype: 'gridcolumn',
+            dataIndex: 'price',
+            text: 'Price',
+            flex:1,
+            editor:{
+                xtype:"numberfield",
+            }
+        });
+        variatorColumns.push({
+            xtype: 'gridcolumn',
+            dataIndex: 'sku',
+            flex:1,
+            text: 'SKU',
+            editor:{
+                xtype:"textfield"
+
+            }
+        });
+        if (contentType.get("manageStock")){
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'stock',
+                flex:1,
+                text: 'Stock',
+                editor:{
+                    xtype:"numberfield",
+                    allowDecimals:false,
+                    minValue:0
+                }
+            });
+        }
+        Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns);
     }
     var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
     var lesTaxo = contentType.get("vocabularies");
