@@ -54,6 +54,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 {name:"id"}
                 ];
                 var variatorColumns=[ ];
+                Ext.getCmp("productSettingsForm").getComponent(0).getForm().setValues(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].getData());
+                if (!Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].get("manageStock")){
+                    Ext.getCmp("stockManagentForProductFieldset").hide();
+                }
             }
             var champsD =Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].data.champs;
             for (g=0; g<champsD.length; g++) {

@@ -370,6 +370,82 @@
                 "name": "shippers"
             },
             "designerId": "6c6d6305-2922-4973-8ec2-edc163a93e44"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "1"
+                ],
+                "name": "preparationDelay"
+            },
+            "designerId": "5d604715-2b80-4ac0-a852-97f5374ed660"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "1"
+                ],
+                "name": "resupplyDelay"
+            },
+            "designerId": "96fa44a8-9c13-4cda-96d5-b773c59554a2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "canOrderNotInStock",
+                "type": "boolean"
+            },
+            "designerId": "22ec48c3-b141-4032-b0e5-8a1c379922fb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "1"
+                ],
+                "name": "notifyForQuantityBelow"
+            },
+            "designerId": "82a9608e-0df5-47c8-9af5-f107dd36add9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "1"
+                ],
+                "name": "outOfStockLimit"
+            },
+            "designerId": "0faf68bf-12fb-41b9-a6db-c952809c2a2d"
         }
     ]
 }

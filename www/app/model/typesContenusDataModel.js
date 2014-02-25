@@ -120,6 +120,27 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
                 
             ],
             name: 'shippers'
+        },
+        {
+            defaultValue: 1,
+            name: 'preparationDelay'
+        },
+        {
+            defaultValue: 1,
+            name: 'resupplyDelay'
+        },
+        {
+            defaultValue: false,
+            name: 'canOrderNotInStock',
+            type: 'boolean'
+        },
+        {
+            defaultValue: 1,
+            name: 'notifyForQuantityBelow'
+        },
+        {
+            defaultValue: 1,
+            name: 'outOfStockLimit'
         }
     ]
 });

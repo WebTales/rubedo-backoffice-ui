@@ -38,6 +38,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             xtype: 'textfield',
                             anchor: '100%',
                             fieldLabel: 'SKU',
+                            labelWidth: 140,
                             name: 'sku',
                             allowBlank: false,
                             allowOnlyWhitespace: false
@@ -47,9 +48,63 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             anchor: '100%',
                             id: 'basePriceField',
                             fieldLabel: 'Base price',
+                            labelWidth: 140,
                             name: 'basePrice',
                             allowBlank: false,
                             minValue: 0
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Preparation delay (days)',
+                            labelWidth: 140,
+                            name: 'preparationDelay',
+                            allowBlank: false,
+                            minValue: 0
+                        },
+                        {
+                            xtype: 'fieldset',
+                            id: 'stockManagentForProductFieldset',
+                            title: 'Stock management',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Can order out of stock',
+                                    labelWidth: 140,
+                                    name: 'canOrderNotInStock',
+                                    boxLabel: '',
+                                    inputValue: 'true',
+                                    uncheckedValue: 'false'
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Out of stock limit',
+                                    labelWidth: 140,
+                                    name: 'outOfStockLimit',
+                                    allowBlank: false,
+                                    minValue: 0
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Notify for stock below',
+                                    labelWidth: 140,
+                                    name: 'notifyForQuantityBelow',
+                                    allowBlank: false,
+                                    minValue: 0
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Resupply delay (days)',
+                                    labelWidth: 140,
+                                    name: 'resupplyDelay',
+                                    allowBlank: false,
+                                    minValue: 0
+                                }
+                            ]
                         }
                     ]
                 },

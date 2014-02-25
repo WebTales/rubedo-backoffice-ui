@@ -32,7 +32,66 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
                     name: 'manageStock',
                     boxLabel: '',
                     inputValue: 'true',
-                    uncheckedValue: 'false'
+                    uncheckedValue: 'false',
+                    listeners: {
+                        change: {
+                            fn: me.onCheckboxfieldChange,
+                            scope: me
+                        }
+                    }
+                },
+                {
+                    xtype: 'fieldset',
+                    hidden: true,
+                    title: 'Stock management',
+                    items: [
+                        {
+                            xtype: 'checkboxfield',
+                            anchor: '100%',
+                            fieldLabel: 'Can order out of stock',
+                            labelWidth: 140,
+                            name: 'canOrderNotInStock',
+                            boxLabel: '',
+                            inputValue: 'true',
+                            uncheckedValue: 'false'
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Out of stock limit',
+                            labelWidth: 140,
+                            name: 'outOfStockLimit',
+                            allowBlank: false,
+                            minValue: 0
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Notify for stock below',
+                            labelWidth: 140,
+                            name: 'notifyForQuantityBelow',
+                            allowBlank: false,
+                            minValue: 0
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Resupply delay (days)',
+                            labelWidth: 140,
+                            name: 'resupplyDelay',
+                            allowBlank: false,
+                            minValue: 0
+                        }
+                    ]
+                },
+                {
+                    xtype: 'numberfield',
+                    anchor: '100%',
+                    fieldLabel: 'Preparation delay (days)',
+                    labelWidth: 140,
+                    name: 'preparationDelay',
+                    allowBlank: false,
+                    minValue: 0
                 }
             ],
             listeners: {
@@ -44,6 +103,14 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
         });
 
         me.callParent(arguments);
+    },
+
+    onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
+        if (newValue){
+            field.nextSibling().show();
+        } else {
+            field.nextSibling().hide();
+        }
     },
 
     onCTECommerceFieldsetAdded: function(component, container, pos, eOpts) {

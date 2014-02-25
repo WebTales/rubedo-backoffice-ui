@@ -683,6 +683,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             {name:"id"}
             ];
             var variatorColumns=[ ];
+            if (!contentType.get("manageStock")){
+                Ext.getCmp("stockManagentForProductFieldset").hide();
+            }
         }
         var champsD =contentType.get("champs");
         for (g=0; g<champsD.length; g++) {

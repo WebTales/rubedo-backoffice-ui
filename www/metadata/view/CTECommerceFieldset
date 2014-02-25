@@ -30,7 +30,30 @@
                 "inputValue": "true",
                 "uncheckedValue": "false"
             },
-            "designerId": "a53f0afd-fcba-4e6e-a826-55e19ecb3453"
+            "designerId": "a53f0afd-fcba-4e6e-a826-55e19ecb3453",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCheckboxfieldChange",
+                        "implHandler": [
+                            "if (newValue){\r",
+                            "    field.nextSibling().show();\r",
+                            "} else {\r",
+                            "    field.nextSibling().hide();\r",
+                            "}"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "designerId": "7af6d9e6-fbe7-410b-9b1e-54e2087d2873"
+                }
+            ]
         },
         {
             "type": "basiceventbinding",
@@ -66,6 +89,107 @@
                 "scope": "me"
             },
             "designerId": "ac7424d3-45a3-425b-8c69-0e5d10fb0899"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "title": "Stock management"
+            },
+            "designerId": "64fc0457-4e76-4883-99f0-19c3248d09d5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Can order out of stock",
+                        "labelWidth": 140,
+                        "name": "canOrderNotInStock",
+                        "boxLabel": "",
+                        "inputValue": "true",
+                        "uncheckedValue": "false"
+                    },
+                    "designerId": "191148a9-2347-4295-a555-9e391c400d80"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Out of stock limit",
+                        "labelWidth": 140,
+                        "name": "outOfStockLimit",
+                        "allowBlank": false,
+                        "minValue": 0
+                    },
+                    "designerId": "4292d395-50be-4475-b4a6-2cf1a89b5d91"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Notify for stock below",
+                        "labelWidth": 140,
+                        "name": "notifyForQuantityBelow",
+                        "allowBlank": false,
+                        "minValue": 0
+                    },
+                    "designerId": "9ebca697-4db2-4277-a393-2a820eda6942"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Resupply delay (days)",
+                        "labelWidth": 140,
+                        "name": "resupplyDelay",
+                        "allowBlank": false,
+                        "minValue": 0
+                    },
+                    "designerId": "d6c5f209-2df3-4d7f-96fb-472441b22b3a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|anchor": "100%",
+                "fieldLabel": "Preparation delay (days)",
+                "labelWidth": 140,
+                "name": "preparationDelay",
+                "allowBlank": false,
+                "minValue": 0
+            },
+            "designerId": "0c580316-8c6c-4361-854c-d60ed76b3d17"
         }
     ]
 }
