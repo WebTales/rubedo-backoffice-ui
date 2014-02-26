@@ -1,0 +1,93 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "Taxes",
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "tax",
+        "storeId": "Taxes",
+        "designer|userClassName": "Taxes",
+        "designer|userAlias": "Taxes",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean",
+        "forcedSync": "boolean"
+    },
+    "designerId": "8b6c0967-995c-4c58-9f5c-cb6737078b81",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    create: 'taxes/create',\r",
+                    "                    read: 'taxes',\r",
+                    "                    update: 'taxes/update',\r",
+                    "                    destroy: 'taxes/delete'\r",
+                    "                }"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    notAll:true\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "2027c13a-8e40-4e55-ae7f-6f8f78e90a34",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "8c2ba877-5c2b-4af2-86af-5057f061c14e"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "nameProperty": null,
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "1613f598-c107-4724-b027-0e38daecf2e7"
+                }
+            ]
+        }
+    ]
+}

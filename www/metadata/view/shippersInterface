@@ -453,7 +453,7 @@
                                         ],
                                         "implHandler": [
                                             "try {return(Ext.getStore(\"CountriesForShippers\").findRecord(\"alpha-2\",value).get(\"name\"));} catch (err){\r",
-                                            "    return value;\r",
+                                            "return value;\r",
                                             "}"
                                         ]
                                     },

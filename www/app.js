@@ -60,7 +60,8 @@ Ext.application({
         'userType',
         'emailTemplateModel',
         'shipper',
-        'country'
+        'country',
+        'tax'
     ],
     stores: [
         'SitesJson',
@@ -192,7 +193,11 @@ Ext.application({
         'Shippers',
         'CountriesForShippers',
         'ShippersRatesStore',
-        'ShippersForCT'
+        'ShippersForCT',
+        'Taxes',
+        'CountriesForTaxes',
+        'UserTypesForTaxes',
+        'ProductTypesForTaxes'
     ],
     views: [
         'MyGridPanel3',
@@ -370,7 +375,8 @@ Ext.application({
         'productSettingsForm',
         'shippersInterface',
         'newShipperWindow',
-        'CTECommerceFieldset'
+        'CTECommerceFieldset',
+        'taxesInterface'
     ],
     autoCreateViewport: true,
     controllers: [

@@ -3269,6 +3269,54 @@
                 "app/store/ShippersForCT.js"
             ],
             "className": "ShippersForCT"
+        },
+        "67b3403d-c5af-478f-b1a8-5404d77be025": {
+            "paths": [
+                "metadata/view/taxesInterface",
+                "app/view/override/taxesInterface.js",
+                "app/view/taxesInterface.js"
+            ],
+            "className": "taxesInterface"
+        },
+        "8b6c0967-995c-4c58-9f5c-cb6737078b81": {
+            "paths": [
+                "metadata/store/Taxes",
+                "app/store/override/Taxes.js",
+                "app/store/Taxes.js"
+            ],
+            "className": "Taxes"
+        },
+        "bfab36f2-4ea7-45c7-8e32-e6abc9a20985": {
+            "paths": [
+                "metadata/model/tax",
+                "app/model/override/tax.js",
+                "app/model/tax.js"
+            ],
+            "className": "tax"
+        },
+        "ea73716f-5865-40c0-9ef2-5f5fb181d3d0": {
+            "paths": [
+                "metadata/store/CountriesForTaxes",
+                "app/store/override/CountriesForTaxes.js",
+                "app/store/CountriesForTaxes.js"
+            ],
+            "className": "CountriesForTaxes"
+        },
+        "1ead1696-2598-4a69-bca3-1d2e457eacce": {
+            "paths": [
+                "metadata/store/UserTypesForTaxes",
+                "app/store/override/UserTypesForTaxes.js",
+                "app/store/UserTypesForTaxes.js"
+            ],
+            "className": "UserTypesForTaxes"
+        },
+        "1c9e1639-bd8f-4497-93c2-0a23b04a85bb": {
+            "paths": [
+                "metadata/store/ProductTypesForTaxes",
+                "app/store/override/ProductTypesForTaxes.js",
+                "app/store/ProductTypesForTaxes.js"
+            ],
+            "className": "ProductTypesForTaxes"
         }
     },
     "viewOrderMap": {
@@ -3449,6 +3497,7 @@
             "486c42cb-ee96-4f43-ab90-c52044678375",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "b35f6a4e-5e25-474e-9dcb-4291e0c898e6",
+            "67b3403d-c5af-478f-b1a8-5404d77be025",
             "e1ff2391-5104-46be-9c01-680539baf938",
             "e7d07403-1815-4369-9257-def71279340c",
             "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
@@ -3551,6 +3600,7 @@
             "98a1d671-046d-4829-b790-2d84feb7eacc",
             "22ba5094-835c-4318-a1c2-2d6da1f35089",
             "f111f40a-db0f-4126-b5c8-43a26057522d",
+            "1c9e1639-bd8f-4497-93c2-0a23b04a85bb",
             "d8f6752f-2ba3-491c-832a-e8456b095138",
             "f7eefb3a-6e5a-4190-a8df-1649e9bf344c",
             "42485569-d0e5-4710-b0aa-104840533721",
@@ -3558,6 +3608,7 @@
             "62d2ad11-342c-4ce7-b926-beedd95ce0c6",
             "69d00e8d-8af4-4011-bb76-0c9cb56ffee0",
             "13c3dbe2-b595-4c75-a21b-d2f340bf52f7",
+            "1ead1696-2598-4a69-bca3-1d2e457eacce",
             "f57d3ecb-f31a-4c35-86cb-9f51f030613d",
             "9c372a6b-a40e-4753-9add-88ae21ae9805",
             "314e16bf-0e8d-4905-abb5-5aa656d7c22e",
@@ -3575,8 +3626,10 @@
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
             "b8b58309-0a78-41f7-92f3-66242a362db7",
+            "8b6c0967-995c-4c58-9f5c-cb6737078b81",
             "f3c4308c-d974-4f43-8a19-3aa00910e899",
             "ee2f30da-7af2-4eb8-972b-56b359f2811e",
+            "ea73716f-5865-40c0-9ef2-5f5fb181d3d0",
             "68f8be48-2543-47f5-9bb7-0d4de8f16097",
             "562558a9-b585-4d9a-91da-854c3548d79b",
             "6d5a3099-ab43-45e4-9ec7-d5946fa1e24e",
@@ -3645,6 +3698,7 @@
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "afc97053-5d9d-4153-b642-911f9ef703d7",
+            "bfab36f2-4ea7-45c7-8e32-e6abc9a20985",
             "b43648d7-e5b9-470e-a7af-b267e5cf11bc",
             "47f4935c-57ba-4bf2-afc8-ba2cfce49904",
             "67923df0-d312-4a3c-90d6-447c7e04828e",

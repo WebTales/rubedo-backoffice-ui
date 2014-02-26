@@ -1,0 +1,86 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "UserTypes",
+        "autoLoad": false,
+        "model": "userType",
+        "storeId": "UserTypesForTaxes",
+        "designer|userClassName": "UserTypesForTaxes",
+        "designer|userAlias": "UserTypesForTaxes",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "1ead1696-2598-4a69-bca3-1d2e457eacce",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'user-types'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "5647e6d2-e62e-4272-8ff2-938d03ac78f6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "b571ce06-dd2c-4440-a1e4-0504462d6578"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "store.add({type:\"*\",id:\"*\"});"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "8b85a711-7250-42a2-8499-e3898c20ae09"
+        }
+    ]
+}

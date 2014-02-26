@@ -1,0 +1,61 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "country",
+        "storeId": "CountriesForTaxes",
+        "designer|userClassName": "CountriesForTaxes",
+        "designer|userAlias": "CountriesForTaxes",
+        "data": null,
+        "pageSize": 10000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean",
+        "forcedSync": "boolean"
+    },
+    "designerId": "ea73716f-5865-40c0-9ef2-5f5fb181d3d0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    " read: 'countries'\r",
+                    "}"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    notAll:true\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "59dc5f4b-bd5d-4bec-b790-8e3123b80b87",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "f7e24a1f-1c2e-4cc6-96e7-27b5eb4e43e2"
+                }
+            ]
+        }
+    ]
+}

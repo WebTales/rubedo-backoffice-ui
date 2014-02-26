@@ -44,7 +44,8 @@
             "userType",
             "emailTemplateModel",
             "shipper",
-            "country"
+            "country",
+            "tax"
         ],
         "stores": [
             "SitesJson",
@@ -176,7 +177,11 @@
             "Shippers",
             "CountriesForShippers",
             "ShippersRatesStore",
-            "ShippersForCT"
+            "ShippersForCT",
+            "Taxes",
+            "CountriesForTaxes",
+            "UserTypesForTaxes",
+            "ProductTypesForTaxes"
         ],
         "views": [
             "MyGridPanel3",
@@ -354,7 +359,8 @@
             "productSettingsForm",
             "shippersInterface",
             "newShipperWindow",
-            "CTECommerceFieldset"
+            "CTECommerceFieldset",
+            "taxesInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

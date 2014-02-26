@@ -1,0 +1,656 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": null,
+        "height": 456,
+        "id": "taxesInterface",
+        "width": 921,
+        "designer|userClassName": "taxesInterface",
+        "designer|userAlias": "taxesInterface",
+        "layout": "fit",
+        "constrainHeader": true,
+        "iconCls": "calculator",
+        "title": "Taxes"
+    },
+    "designerId": "67b3403d-c5af-478f-b1a8-5404d77be025",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorkspacesInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"CountriesForTaxes\").load();\r",
+                    "Ext.getStore(\"UserTypesForTaxes\").load();\r",
+                    "Ext.getStore(\"ProductTypesForTaxes\").load();\r",
+                    "var task = new Ext.util.DelayedTask(function(){\r",
+                    "\tExt.getStore(\"Taxes\").load();\r",
+                    "});\r",
+                    "task.delay(200);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "8498c936-f517-4bcf-baa5-9f263e62def4"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWorkspacesInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"Taxes\").removeAll();\r",
+                    "Ext.getStore(\"CountriesForTaxes\").removeAll();\r",
+                    "Ext.getStore(\"UserTypesForTaxes\").removeAll();\r",
+                    "Ext.getStore(\"ProductTypesForTaxes\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "c2617179-82c1-44f2-9e99-67e52c77e723"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "daacc53c-5a5a-4a53-b7a7-be5cc41996d0",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "80792028-5156-423c-bf2a-bc0df7893a7c",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "",
+                "forceFit": true,
+                "store": "Taxes"
+            },
+            "designerId": "ce2a553a-ec80-443a-8061-8be0d9e3fef3",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "2cfdb734-0404-4f37-bea5-55b8e22febdf"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "text": "Name"
+                    },
+                    "designerId": "57b24dd0-3f92-44bd-92b1-872a9669dbb9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "designerId": "62501a89-1afb-46e5-908f-843856a1583b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "active",
+                        "text": "Active",
+                        "falseText": "No",
+                        "trueText": "Yes"
+                    },
+                    "designerId": "7dfc45ba-35d0-4189-ab2d-fb8846d0bca4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "33880cb3-0f13-4be7-a391-48a786483cec"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "userTypes",
+                        "text": "UserTypes"
+                    },
+                    "designerId": "d9ee1518-c4fb-418b-bebc-8e0d03369335",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "displayField": "type",
+                                "forceSelection": true,
+                                "multiSelect": true,
+                                "queryMode": "local",
+                                "store": "UserTypesForTaxes",
+                                "valueField": "id"
+                            },
+                            "designerId": "d3770b31-5624-4de7-8ac7-a84ba173aa61",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange",
+                                        "implHandler": [
+                                            "if ((newValue.length>1)&&(Ext.Array.contains(newValue,\"*\"))){\r",
+                                            "    field.setValue([ \"*\" ]);\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "86ee6f4c-a2ee-4d07-9e11-619e1de33f67"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "try {\r",
+                                    "    var returner=[ ];\r",
+                                    "    Ext.Array.forEach(value, function(item){\r",
+                                    "    \treturner.push(Ext.getStore(\"UserTypesForTaxes\").findRecord(\"id\",item).get(\"type\"));\r",
+                                    "    });\r",
+                                    "    return (returner);\r",
+                                    "\r",
+                                    "} catch (err){return value;}"
+                                ]
+                            },
+                            "designerId": "3063e95f-8ebb-4eab-aaa4-ebde91ff6e0a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "productTypes",
+                        "text": "ProductTypes"
+                    },
+                    "designerId": "1a486d37-4276-4e71-b9d6-8d89420097c8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "type",
+                                "forceSelection": true,
+                                "multiSelect": true,
+                                "queryMode": "local",
+                                "store": "ProductTypesForTaxes",
+                                "valueField": "id"
+                            },
+                            "designerId": "81dd6339-7139-4e18-bb3e-fe9a251636f2",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange1",
+                                        "implHandler": [
+                                            "if ((newValue.length>1)&&(Ext.Array.contains(newValue,\"*\"))){\r",
+                                            "    field.setValue([ \"*\" ]);\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "ef42e30e-d115-45e9-b3fd-58dd908c118a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "try {\r",
+                                    "    var returner=[ ];\r",
+                                    "    Ext.Array.forEach(value, function(item){\r",
+                                    "    \treturner.push(Ext.getStore(\"ProductTypesForTaxes\").findRecord(\"id\",item).get(\"type\"));\r",
+                                    "    });\r",
+                                    "    return (returner);\r",
+                                    "\r",
+                                    "} catch (err){return value;}"
+                                ]
+                            },
+                            "designerId": "1c56dee1-75f0-42be-a500-026a3064df36"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "country",
+                        "text": "Country"
+                    },
+                    "designerId": "2cdd684d-7482-4d3c-89da-0668da36d0fd",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "displayField": "name",
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "store": "CountriesForTaxes",
+                                "valueField": "alpha-2"
+                            },
+                            "designerId": "fe2d1118-3699-4678-9018-332ddb621b72"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "try {return(Ext.getStore(\"CountriesForTaxes\").findRecord(\"alpha-2\",value).get(\"name\"));} catch (err){\r",
+                                    "return value;\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "24c71a3c-a900-46f0-be27-83cbc120bac7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "region",
+                        "text": "State / Region"
+                    },
+                    "designerId": "6fd5409e-6205-4aaf-a8c4-31cb41d5e35a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "designerId": "ac24af22-ef3f-424e-8b06-1fe4e41ea36f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "postalCode",
+                        "text": "Zip / PostalCode"
+                    },
+                    "designerId": "119d93cb-aca6-452c-97a5-e37f7aa846f6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "designerId": "1231b97b-b417-4e9e-b40b-be39a8aa72a3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "rate",
+                        "text": "Rate (%)"
+                    },
+                    "designerId": "54892372-3372-456a-af1f-e2faf0b33c10",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "minValue": 0
+                            },
+                            "designerId": "de6012a6-37e9-443c-9c99-2a831daa198f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "priority",
+                        "text": "Priority"
+                    },
+                    "designerId": "20dede4d-6844-4ac3-846e-e546c5962e58",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "allowDecimals": false,
+                                "allowExponential": false,
+                                "minValue": 0
+                            },
+                            "designerId": "689fa073-3413-4dac-8fd7-5cccba04831d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "a4c867e6-98f8-4594-88be-e85f92c3c0c9",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "5b68eaf1-a139-43bf-98fd-1ff5f79e879e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "iconCls": "add",
+                                "text": "Add"
+                            },
+                            "designerId": "e7b1a840-60d7-4a3a-94ed-446fc93161a3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "button.up().up().getStore().add({\r",
+                                            "    name:\"New tax\",\r",
+                                            "    country:\"*\",\r",
+                                            "    region:\"*\",\r",
+                                            "    postalCode:\"*\",\r",
+                                            "    userTypes:[\"*\"],\r",
+                                            "    productTypes:[\"*\"],\r",
+                                            "    priority:0,\r",
+                                            "    rate:0\r",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "282b74d2-ef21-411c-9b20-fa884c797317"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "id": "taxRemoveBtn",
+                                "iconCls": "close",
+                                "text": "Remove"
+                            },
+                            "designerId": "ce693a02-f889-4b6a-b7fa-bf5af6263eb3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTaxRemoveBtnClick",
+                                        "implHandler": [
+                                            "var fenetre = Ext.widget('delConfirmZ');\r",
+                                            "fenetre.show();\r",
+                                            "Ext.getCmp('delConfirmZOui').on('click', function() { \r",
+                                            "    button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());\r",
+                                            "    Ext.getCmp('delConfirmZ').close();\r",
+                                            "}); \r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6c0bfdda-1177-492a-be64-f10e8e2c75aa"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){\r",
+                            "    Ext.getCmp(\"taxRemoveBtn\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"taxRemoveBtn\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "ec91ed6d-95eb-4ac8-9a7d-1455429de1a1"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "f6005f69-7e48-424e-a8e9-6eec282dd2bb"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "ContentTypes",
+        "autoLoad": false,
+        "model": "typesContenusDataModel",
+        "storeId": "ProductTypesForTaxes",
+        "designer|userClassName": "ProductTypesForTaxes",
+        "designer|userAlias": "ProductTypesForTaxes",
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "1c9e1639-bd8f-4497-93c2-0a23b04a85bb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'content-types'\r",
+                    "                }"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    \"tFilter\":'[{\"property\":\"dependant\",\"value\":false},{\"property\":\"productType\",\"value\":\"configurable\"},{\"property\":\"system\",\"value\":{\"$ne\":true}}]'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "832d719f-b4c3-4c8e-81a7-3ea05789c608",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "03838eef-2e6e-4549-8d12-6e95f1c15e73"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "store.add({type:\"*\",id:\"*\"});"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "a3ee56ca-6d39-4dee-b72b-a3389611c5d8"
+        }
+    ]
+}
