@@ -1,0 +1,73 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "isOptimised": true,
+        "usedCollection": "ContentTypes",
+        "autoLoad": false,
+        "model": "typesContenusDataModel",
+        "storeId": "ProductTypesForStock",
+        "designer|userClassName": "ProductTypesForStock",
+        "designer|userAlias": "ProductTypesForStock",
+        "pageSize": 100000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "515658a0-5be4-47d7-aed5-b99f34af8d35",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'content-types'\r",
+                    "                }"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    \"tFilter\":'[{\"property\":\"dependant\",\"value\":false},{\"property\":\"productType\",\"value\":\"configurable\"},{\"property\":\"system\",\"value\":{\"$ne\":true}},{\"property\":\"manageStock\",\"value\":true}]'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "ef8fe3e8-c113-4d2b-a6d7-c7298b04a8fd",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "66b25db7-efbe-4974-8a98-4fbf71445f34"
+                }
+            ]
+        }
+    ]
+}

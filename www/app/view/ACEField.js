@@ -59,6 +59,7 @@ Ext.define('Rubedo.view.ACEField', {
             var myEditor = Ext.widget("aceEditorWindow");
             myEditor.targetedId=component.getId();
             myEditor.initialValue=component.getValue();
+            myEditor.twigMode=component.twigMode;
             myEditor.show();
         });
 
@@ -67,6 +68,7 @@ Ext.define('Rubedo.view.ACEField', {
 
             myEditor.targetedId=component.getId();
             myEditor.initialValue=component.getValue();
+            myEditor.twigMode=component.twigMode;
             myEditor.show();
 
 

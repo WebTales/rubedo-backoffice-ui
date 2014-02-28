@@ -47,7 +47,11 @@
                 "fn": "onAceEditorWindowAfterRender",
                 "implHandler": [
                     "component.editor=ace.edit(component.getComponent(0).getEl().id);\r",
-                    "component.editor.getSession().setMode(\"ace/mode/html\");\r",
+                    "if (component.twigMode){\r",
+                    "    component.editor.getSession().setMode(\"ace/mode/twig\");\r",
+                    "} else {\r",
+                    "\tcomponent.editor.getSession().setMode(\"ace/mode/html\");\r",
+                    "}\r",
                     "component.editor.setTheme(\"ace/theme/monokai\");\r",
                     "component.editor.setValue(component.initialValue);\r",
                     "var task = new Ext.util.DelayedTask(function(){\r",
@@ -92,8 +96,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "localiserId": "saveBtn",
+                        "layout|flex": null,
                         "id": "aceWindowSaveBtn",
                         "iconCls": "save",
                         "text": "Save"

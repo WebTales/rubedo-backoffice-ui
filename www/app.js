@@ -197,7 +197,9 @@ Ext.application({
         'Taxes',
         'CountriesForTaxes',
         'UserTypesForTaxes',
-        'ProductTypesForTaxes'
+        'ProductTypesForTaxes',
+        'ProductTypesForStock',
+        'InitialStockStore'
     ],
     views: [
         'MyGridPanel3',
@@ -376,7 +378,8 @@ Ext.application({
         'shippersInterface',
         'newShipperWindow',
         'CTECommerceFieldset',
-        'taxesInterface'
+        'taxesInterface',
+        'stockInterface'
     ],
     autoCreateViewport: true,
     controllers: [

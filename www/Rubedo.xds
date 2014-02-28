@@ -3317,6 +3317,30 @@
                 "app/store/ProductTypesForTaxes.js"
             ],
             "className": "ProductTypesForTaxes"
+        },
+        "b94851ca-852c-4b9d-b092-70cfb9d6389e": {
+            "paths": [
+                "metadata/view/stockInterface",
+                "app/view/override/stockInterface.js",
+                "app/view/stockInterface.js"
+            ],
+            "className": "stockInterface"
+        },
+        "515658a0-5be4-47d7-aed5-b99f34af8d35": {
+            "paths": [
+                "metadata/store/ProductTypesForStock",
+                "app/store/override/ProductTypesForStock.js",
+                "app/store/ProductTypesForStock.js"
+            ],
+            "className": "ProductTypesForStock"
+        },
+        "ca6887d8-2b10-4b90-a87b-36256c340403": {
+            "paths": [
+                "metadata/store/InitialStockStore",
+                "app/store/override/InitialStockStore.js",
+                "app/store/InitialStockStore.js"
+            ],
+            "className": "InitialStockStore"
         }
     },
     "viewOrderMap": {
@@ -3498,6 +3522,7 @@
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "b35f6a4e-5e25-474e-9dcb-4291e0c898e6",
             "67b3403d-c5af-478f-b1a8-5404d77be025",
+            "b94851ca-852c-4b9d-b092-70cfb9d6389e",
             "e1ff2391-5104-46be-9c01-680539baf938",
             "e7d07403-1815-4369-9257-def71279340c",
             "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
@@ -3601,6 +3626,8 @@
             "22ba5094-835c-4318-a1c2-2d6da1f35089",
             "f111f40a-db0f-4126-b5c8-43a26057522d",
             "1c9e1639-bd8f-4497-93c2-0a23b04a85bb",
+            "515658a0-5be4-47d7-aed5-b99f34af8d35",
+            "ca6887d8-2b10-4b90-a87b-36256c340403",
             "d8f6752f-2ba3-491c-832a-e8456b095138",
             "f7eefb3a-6e5a-4190-a8df-1649e9bf344c",
             "42485569-d0e5-4710-b0aa-104840533721",

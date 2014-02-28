@@ -439,6 +439,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             iconCls: 'calculator',
             localiserId:'taxesLaunchBtn',
             text: 'Taxes'
+        },{
+            xtype: 'menuitem',
+            ACL: 'read.ui.stock',
+            favoriteIcon: 'package.png',
+            itemId: 'stockInterface',
+            iconCls: 'package',
+            localiserId:'stockLaunchBtn',
+            text: 'Stock'
         }
         ]);
     },

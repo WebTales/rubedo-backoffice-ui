@@ -181,7 +181,9 @@
             "Taxes",
             "CountriesForTaxes",
             "UserTypesForTaxes",
-            "ProductTypesForTaxes"
+            "ProductTypesForTaxes",
+            "ProductTypesForStock",
+            "InitialStockStore"
         ],
         "views": [
             "MyGridPanel3",
@@ -360,7 +362,8 @@
             "shippersInterface",
             "newShipperWindow",
             "CTECommerceFieldset",
-            "taxesInterface"
+            "taxesInterface",
+            "stockInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

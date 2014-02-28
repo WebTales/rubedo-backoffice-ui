@@ -87,7 +87,11 @@ Ext.define('Rubedo.view.aceEditorWindow', {
 
     onAceEditorWindowAfterRender: function(component, eOpts) {
         component.editor=ace.edit(component.getComponent(0).getEl().id);
-        component.editor.getSession().setMode("ace/mode/html");
+        if (component.twigMode){
+            component.editor.getSession().setMode("ace/mode/twig");
+        } else {
+            component.editor.getSession().setMode("ace/mode/html");
+        }
         component.editor.setTheme("ace/theme/monokai");
         component.editor.setValue(component.initialValue);
         var task = new Ext.util.DelayedTask(function(){
