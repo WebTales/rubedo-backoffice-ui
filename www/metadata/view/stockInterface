@@ -236,6 +236,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "disabled": true,
+                                "id": "stockAddToVarItem",
                                 "iconCls": "add",
                                 "text": "Add stock"
                             },
@@ -250,6 +252,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "disabled": true,
+                                "id": "stockRemoveFromVarItem",
                                 "iconCls": "close",
                                 "text": "Remove stock"
                             },
@@ -264,11 +268,32 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "disabled": true,
+                                "id": "stockViewVarProduct",
                                 "width": 100,
                                 "iconCls": "content-icon",
                                 "text": "View product"
                             },
-                            "designerId": "7fc2c793-a864-4ee7-b963-9dc3f1ad0f71"
+                            "designerId": "7fc2c793-a864-4ee7-b963-9dc3f1ad0f71",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStockViewVarProductClick",
+                                        "implHandler": [
+                                            "Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(button.up().up().getSelectionModel().getLastSelected().get(\"productId\"));"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "94473536-4a24-4162-a827-4c24df1e3b33"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -323,6 +348,31 @@
                         "text": "Sku"
                     },
                     "designerId": "82f5a8ad-4ce0-4f28-bf10-c921393e2adb"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMainStockGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){\r",
+                            "    Ext.getCmp(\"stockAddToVarItem\").disable();\r",
+                            "    Ext.getCmp(\"stockRemoveFromVarItem\").disable();\r",
+                            "    Ext.getCmp(\"stockViewVarProduct\").disable();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"stockAddToVarItem\").enable();\r",
+                            "    Ext.getCmp(\"stockRemoveFromVarItem\").enable();\r",
+                            "    Ext.getCmp(\"stockViewVarProduct\").enable();\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "6065d8f4-7f1d-42cc-8b79-a04e4f7b0cab"
                 }
             ]
         }

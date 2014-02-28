@@ -109,19 +109,31 @@ Ext.define('Rubedo.view.stockInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
+                                    id: 'stockAddToVarItem',
                                     iconCls: 'add',
                                     text: 'Add stock'
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
+                                    id: 'stockRemoveFromVarItem',
                                     iconCls: 'close',
                                     text: 'Remove stock'
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
+                                    id: 'stockViewVarProduct',
                                     width: 100,
                                     iconCls: 'content-icon',
-                                    text: 'View product'
+                                    text: 'View product',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onStockViewVarProductClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -147,7 +159,13 @@ Ext.define('Rubedo.view.stockInterface', {
                             dataIndex: 'sku',
                             text: 'Sku'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onMainStockGridSelectionChange,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
@@ -176,6 +194,22 @@ Ext.define('Rubedo.view.stockInterface', {
 
     onButtonClick: function(button, e, eOpts) {
         button.up().up().getStore().load();
+    },
+
+    onStockViewVarProductClick: function(button, e, eOpts) {
+        Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(button.up().up().getSelectionModel().getLastSelected().get("productId"));
+    },
+
+    onMainStockGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("stockAddToVarItem").disable();
+            Ext.getCmp("stockRemoveFromVarItem").disable();
+            Ext.getCmp("stockViewVarProduct").disable();
+        } else {
+            Ext.getCmp("stockAddToVarItem").enable();
+            Ext.getCmp("stockRemoveFromVarItem").enable();
+            Ext.getCmp("stockViewVarProduct").enable();
+        }
     }
 
 });
