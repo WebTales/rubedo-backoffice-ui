@@ -186,7 +186,67 @@ Ext.define('Rubedo.view.stockInterface', {
             Ext.getCmp("mainStockGrid").getStore().removeAll();
         } else {
             Ext.getCmp("mainStockGrid").getStore().removeAll();
-            Ext.getCmp("mainStockGrid").getStore().getProxy().extraParams["type-id"]=selected[0].get("id");
+            var variatorFields=[
+            {name:"price"},
+            {name:"stock"},
+            {name:"sku"},
+            {name:"id"},
+            {name:"title"},
+            {name:"productId"}
+            ];
+            var variatorColumns=[ ];
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'title',
+                text: 'Title'
+            });
+            Ext.Array.forEach(selected[0].get("champs"), function(field){
+                if (field.config.useAsVariation){
+                    variatorColumns.push({
+                        xtype: 'gridcolumn',
+                        dataIndex: field.config.name,
+                        text: field.config.fieldLabel
+                    });
+                    variatorFields.push({name:field.config.name});
+                }
+            });
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'price',
+                text: 'Price'
+            });
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'sku',
+                text: 'SKU'
+            });
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'stock',
+                text: 'Stock'
+            });
+            var variatorStore=Ext.create('Ext.data.Store', {
+                autoLoad: false,
+                pageSize: 100000,
+                proxy: {
+                    type: 'ajax',
+                    api: {
+                        read: 'contents/get-stock'
+                    },
+                    extraParams:{
+                        "type-id":selected[0].get("id")
+                    },
+                    reader: {
+                        type: 'json',
+                        messageProperty: 'message',
+                        root: 'data'
+                    }
+                },
+                fields: variatorFields
+            });
+            Ext.getCmp("mainStockGrid").reconfigure(variatorStore,variatorColumns);
+
+
             Ext.getCmp("mainStockGrid").getStore().load();
         }
 
