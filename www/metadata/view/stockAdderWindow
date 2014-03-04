@@ -91,9 +91,7 @@
                                 "implHandler": [
                                     "var form=button.up().getForm();\r",
                                     "if (form.isValid()){\r",
-                                    "    var record=Ext.getCmp(\"mainStockGrid\").getSelectionModel().getLastSelected();\r",
-                                    "    record.set(\"stock\", record.get(\"stock\")+form.getValues().amount);\r",
-                                    "    button.up().up().close();\r",
+                                    "\tconsole.log(\"test\");\r",
                                     "}"
                                 ],
                                 "name": "click",

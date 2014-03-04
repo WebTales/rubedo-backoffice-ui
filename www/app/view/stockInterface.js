@@ -239,13 +239,11 @@ Ext.define('Rubedo.view.stockInterface', {
             });
             var variatorStore=Ext.create('Ext.data.Store', {
                 autoLoad: false,
-                autoSync:true,
                 pageSize: 100000,
                 proxy: {
                     type: 'ajax',
                     api: {
-                        read: 'contents/get-stock',
-                        update: 'contents/update-stock'
+                        read: 'contents/get-stock'
                     },
                     extraParams:{
                         "type-id":selected[0].get("id")
@@ -253,11 +251,6 @@ Ext.define('Rubedo.view.stockInterface', {
                     reader: {
                         type: 'json',
                         messageProperty: 'message',
-                        root: 'data'
-                    },
-                    writer: {
-                        type: 'json',
-                        encode: true,
                         root: 'data'
                     }
                 },

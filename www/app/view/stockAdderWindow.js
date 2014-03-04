@@ -69,9 +69,7 @@ Ext.define('Rubedo.view.stockAdderWindow', {
     onStockAdderSubmitBtnClick: function(button, e, eOpts) {
         var form=button.up().getForm();
         if (form.isValid()){
-            var record=Ext.getCmp("mainStockGrid").getSelectionModel().getLastSelected();
-            record.set("stock", record.get("stock")+form.getValues().amount);
-            button.up().up().close();
+            console.log("test");
         }
     }
 
