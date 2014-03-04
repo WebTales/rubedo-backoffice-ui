@@ -125,13 +125,13 @@
                             "} else {\r",
                             "    Ext.getCmp(\"mainStockGrid\").getStore().removeAll();\r",
                             "    var variatorFields=[\r",
-                            "        {name:\"price\"},\r",
-                            "        {name:\"stock\"},\r",
-                            "        {name:\"sku\"},\r",
-                            "        {name:\"id\"},\r",
-                            "        {name:\"title\"},\r",
-                            "        {name:\"productId\"}\r",
-                            "        ];\r",
+                            "    {name:\"price\"},\r",
+                            "    {name:\"stock\"},\r",
+                            "    {name:\"sku\"},\r",
+                            "    {name:\"id\"},\r",
+                            "    {name:\"title\"},\r",
+                            "    {name:\"productId\"}\r",
+                            "    ];\r",
                             "    var variatorColumns=[ ];\r",
                             "    variatorColumns.push({\r",
                             "        xtype: 'gridcolumn',\r",
@@ -140,7 +140,7 @@
                             "    });\r",
                             "    Ext.Array.forEach(selected[0].get(\"champs\"), function(field){\r",
                             "        if (field.config.useAsVariation){\r",
-                            "        \tvariatorColumns.push({\r",
+                            "            variatorColumns.push({\r",
                             "                xtype: 'gridcolumn',\r",
                             "                dataIndex: field.config.name,\r",
                             "                text: field.config.fieldLabel\r",
@@ -159,32 +159,39 @@
                             "        text: 'SKU'\r",
                             "    });\r",
                             "    variatorColumns.push({\r",
-                            "            xtype: 'gridcolumn',\r",
-                            "            dataIndex: 'stock',\r",
-                            "            text: 'Stock'\r",
+                            "        xtype: 'gridcolumn',\r",
+                            "        dataIndex: 'stock',\r",
+                            "        text: 'Stock'\r",
                             "    });\r",
                             "    var variatorStore=Ext.create('Ext.data.Store', {\r",
-                            "            autoLoad: false,\r",
-                            "            pageSize: 100000,\r",
-                            "            proxy: {\r",
-                            "                type: 'ajax',\r",
-                            "                api: {\r",
-                            "                    read: 'contents/get-stock'\r",
-                            "                },\r",
-                            "                extraParams:{\r",
-                            "                    \"type-id\":selected[0].get(\"id\")\r",
-                            "                },\r",
-                            "                reader: {\r",
-                            "                    type: 'json',\r",
-                            "                    messageProperty: 'message',\r",
-                            "                    root: 'data'\r",
-                            "                }\r",
+                            "        autoLoad: false,\r",
+                            "        autoSync:true,\r",
+                            "        pageSize: 100000,\r",
+                            "        proxy: {\r",
+                            "            type: 'ajax',\r",
+                            "            api: {\r",
+                            "                read: 'contents/get-stock',\r",
+                            "                update: 'contents/update-stock'\r",
                             "            },\r",
-                            "            fields: variatorFields\r",
-                            "        });\r",
+                            "            extraParams:{\r",
+                            "                \"type-id\":selected[0].get(\"id\")\r",
+                            "            },\r",
+                            "            reader: {\r",
+                            "                type: 'json',\r",
+                            "                messageProperty: 'message',\r",
+                            "                root: 'data'\r",
+                            "            },\r",
+                            "            writer: {\r",
+                            "                    type: 'json',\r",
+                            "                    encode: true,\r",
+                            "                    root: 'data'\r",
+                            "            }\r",
+                            "        },\r",
+                            "        fields: variatorFields\r",
+                            "    });\r",
                             "    Ext.getCmp(\"mainStockGrid\").reconfigure(variatorStore,variatorColumns);\r",
                             "\r",
-                            "    \r",
+                            "\r",
                             "    Ext.getCmp(\"mainStockGrid\").getStore().load();\r",
                             "}\r",
                             ""
@@ -301,7 +308,26 @@
                                 "iconCls": "add",
                                 "text": "Add stock"
                             },
-                            "designerId": "2cacb5c9-1086-4d51-994f-7a672ec6d59e"
+                            "designerId": "2cacb5c9-1086-4d51-994f-7a672ec6d59e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStockAddToVarItemClick",
+                                        "implHandler": [
+                                            "Ext.widget(\"stockAdderWindow\").show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "847789ce-d84a-4f56-aca1-c3571bdd2a85"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -317,7 +343,26 @@
                                 "iconCls": "close",
                                 "text": "Remove stock"
                             },
-                            "designerId": "32a48762-5a3d-4c27-a44a-43b156152a1d"
+                            "designerId": "32a48762-5a3d-4c27-a44a-43b156152a1d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStockRemoveFromVarItemClick",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6bbe4eeb-a5b4-442e-b471-4098727fe204"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

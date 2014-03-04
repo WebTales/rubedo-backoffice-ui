@@ -379,7 +379,8 @@ Ext.application({
         'newShipperWindow',
         'CTECommerceFieldset',
         'taxesInterface',
-        'stockInterface'
+        'stockInterface',
+        'stockAdderWindow'
     ],
     autoCreateViewport: true,
     controllers: [

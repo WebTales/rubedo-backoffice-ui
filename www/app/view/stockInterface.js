@@ -112,14 +112,26 @@ Ext.define('Rubedo.view.stockInterface', {
                                     disabled: true,
                                     id: 'stockAddToVarItem',
                                     iconCls: 'add',
-                                    text: 'Add stock'
+                                    text: 'Add stock',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onStockAddToVarItemClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
                                     disabled: true,
                                     id: 'stockRemoveFromVarItem',
                                     iconCls: 'close',
-                                    text: 'Remove stock'
+                                    text: 'Remove stock',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onStockRemoveFromVarItemClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -227,11 +239,13 @@ Ext.define('Rubedo.view.stockInterface', {
             });
             var variatorStore=Ext.create('Ext.data.Store', {
                 autoLoad: false,
+                autoSync:true,
                 pageSize: 100000,
                 proxy: {
                     type: 'ajax',
                     api: {
-                        read: 'contents/get-stock'
+                        read: 'contents/get-stock',
+                        update: 'contents/update-stock'
                     },
                     extraParams:{
                         "type-id":selected[0].get("id")
@@ -239,6 +253,11 @@ Ext.define('Rubedo.view.stockInterface', {
                     reader: {
                         type: 'json',
                         messageProperty: 'message',
+                        root: 'data'
+                    },
+                    writer: {
+                        type: 'json',
+                        encode: true,
                         root: 'data'
                     }
                 },
@@ -254,6 +273,14 @@ Ext.define('Rubedo.view.stockInterface', {
 
     onButtonClick: function(button, e, eOpts) {
         button.up().up().getStore().load();
+    },
+
+    onStockAddToVarItemClick: function(button, e, eOpts) {
+        Ext.widget("stockAdderWindow").show();
+    },
+
+    onStockRemoveFromVarItemClick: function(button, e, eOpts) {
+
     },
 
     onStockViewVarProductClick: function(button, e, eOpts) {
