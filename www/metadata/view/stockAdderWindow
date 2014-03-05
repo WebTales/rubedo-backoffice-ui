@@ -94,7 +94,7 @@
                                     "    var amount=form.getValues().amount;\r",
                                     "    Ext.getCmp(\"mainStockGrid\").getStore().getProxy().extraParams.actionToApply=\"add\";\r",
                                     "    Ext.getCmp(\"mainStockGrid\").getStore().getProxy().extraParams.amountToApply=amount;\r",
-                                    "    Ext.getCmp(\"mainStockGrid\").getSelectionModel().getLastSelected().set(\"stock\",amount);\r",
+                                    "    Ext.getCmp(\"mainStockGrid\").getSelectionModel().getLastSelected().set(\"stock\",Ext.getCmp(\"mainStockGrid\").getSelectionModel().getLastSelected().get(\"stock\")+amount);\r",
                                     "    button.up().up().close();\r",
                                     "}"
                                 ],

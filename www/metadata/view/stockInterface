@@ -125,12 +125,14 @@
                             "} else {\r",
                             "    Ext.getCmp(\"mainStockGrid\").getStore().removeAll();\r",
                             "    var variatorFields=[\r",
-                            "    {name:\"price\"},\r",
-                            "    {name:\"stock\"},\r",
-                            "    {name:\"sku\"},\r",
-                            "    {name:\"id\"},\r",
-                            "    {name:\"title\"},\r",
-                            "    {name:\"productId\"}\r",
+                            "    \t{name:\"price\"},\r",
+                            "    \t{name:\"stock\"},\r",
+                            "   \t \t{name:\"sku\"},\r",
+                            "    \t{name:\"id\"},\r",
+                            "    \t{name:\"title\"},\r",
+                            "    \t{name:\"productId\"},\r",
+                            "        {name:\"outOfStockLimit\"},\r",
+                            "        {name:\"notifyForQuantityBelow\"}\r",
                             "    ];\r",
                             "    var variatorColumns=[ ];\r",
                             "    variatorColumns.push({\r",
@@ -161,7 +163,16 @@
                             "    variatorColumns.push({\r",
                             "        xtype: 'gridcolumn',\r",
                             "        dataIndex: 'stock',\r",
-                            "        text: 'Stock'\r",
+                            "        text: 'Stock',\r",
+                            "        renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {\r",
+                            "                                if (record.get(\"stock\")<record.get(\"outOfStockLimit\")){\r",
+                            "                                    return(value+\" (Out of stock)\");\r",
+                            "                                } else if (record.get(\"stock\")<record.get(\"notifyForQuantityBelow\")){\r",
+                            "                                    return(value +\" (Below warning limit) \");\r",
+                            "                                } else {\r",
+                            "                                    return(value);\r",
+                            "                                }\r",
+                            "                            }\r",
                             "    });\r",
                             "    var variatorStore=Ext.create('Ext.data.Store', {\r",
                             "        autoLoad: false,\r",
@@ -226,7 +237,34 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "designerId": "746479d3-8dcf-4710-a38a-636c709bf960"
+                    "designerId": "746479d3-8dcf-4710-a38a-636c709bf960",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getRowClass",
+                                "designer|params": [
+                                    "record",
+                                    "rowIndex",
+                                    "rowParams",
+                                    "store"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"stock\")<record.get(\"outOfStockLimit\")){\r",
+                                    "\treturn(\"stockout\");\r",
+                                    "} else if (record.get(\"stock\")<record.get(\"notifyForQuantityBelow\")){\r",
+                                    "\treturn(\"stockwarning\");\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "ad658efa-8452-441e-9fb4-e27de7e0e3f4"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.plugin.BufferedRenderer",
@@ -440,7 +478,39 @@
                         "dataIndex": "stock",
                         "text": "Stock"
                     },
-                    "designerId": "5756a5df-797c-409a-9c4d-9a8a9ab223c3"
+                    "designerId": "5756a5df-797c-409a-9c4d-9a8a9ab223c3",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (record.get(\"stock\")<record.get(\"outOfStockLimit\")){\r",
+                                    "\treturn(value+\" (Out of stock)\");\r",
+                                    "} else if (record.get(\"stock\")<record.get(\"notifyForQuantityBelow\")){\r",
+                                    "\treturn(value +\" (Below warning limit) \");\r",
+                                    "} else {\r",
+                                    "    return(value);\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "770de909-613d-449d-b497-a75f4e84ed90"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",

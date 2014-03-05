@@ -1,3 +1,11 @@
+.stockwarning .x-grid-cell{
+    background-color: #FFBB33; 
+}
+.stockout .x-grid-cell{
+    background-color: #FF4444; 
+}
+
+
 .specialGridRowDisplay{
     padding:10px;
     background:#DDD;

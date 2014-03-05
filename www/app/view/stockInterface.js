@@ -83,6 +83,15 @@ Ext.define('Rubedo.view.stockInterface', {
                     title: 'Items',
                     forceFit: true,
                     store: 'InitialStockStore',
+                    viewConfig: {
+                        getRowClass: function(record, rowIndex, rowParams, store) {
+                            if (record.get("stock")<record.get("outOfStockLimit")){
+                                return("stockout");
+                            } else if (record.get("stock")<record.get("notifyForQuantityBelow")){
+                                return("stockwarning");
+                            }
+                        }
+                    },
                     plugins: [
                         Ext.create('Ext.grid.plugin.BufferedRenderer', {
 
@@ -163,6 +172,15 @@ Ext.define('Rubedo.view.stockInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("stock")<record.get("outOfStockLimit")){
+                                    return(value+" (Out of stock)");
+                                } else if (record.get("stock")<record.get("notifyForQuantityBelow")){
+                                    return(value +" (Below warning limit) ");
+                                } else {
+                                    return(value);
+                                }
+                            },
                             dataIndex: 'stock',
                             text: 'Stock'
                         },
@@ -204,7 +222,9 @@ Ext.define('Rubedo.view.stockInterface', {
             {name:"sku"},
             {name:"id"},
             {name:"title"},
-            {name:"productId"}
+            {name:"productId"},
+            {name:"outOfStockLimit"},
+            {name:"notifyForQuantityBelow"}
             ];
             var variatorColumns=[ ];
             variatorColumns.push({
@@ -235,7 +255,16 @@ Ext.define('Rubedo.view.stockInterface', {
             variatorColumns.push({
                 xtype: 'gridcolumn',
                 dataIndex: 'stock',
-                text: 'Stock'
+                text: 'Stock',
+                renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                    if (record.get("stock")<record.get("outOfStockLimit")){
+                        return(value+" (Out of stock)");
+                    } else if (record.get("stock")<record.get("notifyForQuantityBelow")){
+                        return(value +" (Below warning limit) ");
+                    } else {
+                        return(value);
+                    }
+                }
             });
             var variatorStore=Ext.create('Ext.data.Store', {
                 autoLoad: false,

@@ -74,7 +74,7 @@ Ext.define('Rubedo.view.stockRemoverWindow', {
             var amount=form.getValues().amount;
             Ext.getCmp("mainStockGrid").getStore().getProxy().extraParams.actionToApply="remove";
             Ext.getCmp("mainStockGrid").getStore().getProxy().extraParams.amountToApply=amount;
-            Ext.getCmp("mainStockGrid").getSelectionModel().getLastSelected().set("stock",amount);
+            Ext.getCmp("mainStockGrid").getSelectionModel().getLastSelected().set("stock",Ext.getCmp("mainStockGrid").getSelectionModel().getLastSelected().get("stock")-amount);
             button.up().up().close();
         }
     }
