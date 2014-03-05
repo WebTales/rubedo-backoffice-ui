@@ -380,7 +380,8 @@ Ext.application({
         'CTECommerceFieldset',
         'taxesInterface',
         'stockInterface',
-        'stockAdderWindow'
+        'stockAdderWindow',
+        'stockRemoverWindow'
     ],
     autoCreateViewport: true,
     controllers: [

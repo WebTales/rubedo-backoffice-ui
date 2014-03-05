@@ -8,15 +8,15 @@
     "userConfig": {
         "localiserId": null,
         "height": null,
-        "id": "stockAdderWindow",
+        "id": "stockRemoverWindow",
         "width": 400,
-        "designer|userClassName": "stockAdderWindow",
-        "designer|userAlias": "stockAdderWindow",
+        "designer|userClassName": "stockRemoverWindow",
+        "designer|userAlias": "stockRemoverWindow",
         "layout": "fit",
-        "title": "Add stock",
+        "title": "Remove stock",
         "modal": true
     },
-    "designerId": "9de09bba-3400-4a07-b0c2-e32919d3f62a",
+    "designerId": "c8a13153-8259-4a7a-bd7b-3723654c4a6a",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
@@ -36,7 +36,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
-            "designerId": "aba548c3-2d52-452b-8cdc-e5f2f421b602",
+            "designerId": "556708f7-773e-4453-9b4d-4051d2eb1f6c",
             "cn": [
                 {
                     "type": "Ext.form.field.Number",
@@ -47,7 +47,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "fieldLabel": "Amount to add",
+                        "id": "stockRemoverField",
+                        "fieldLabel": "Amount to remove",
+                        "labelWidth": 120,
                         "name": "amount",
                         "allowBlank": false,
                         "allowOnlyWhitespace": false,
@@ -55,7 +57,7 @@
                         "allowExponential": false,
                         "minValue": 0
                     },
-                    "designerId": "b8808bab-eac9-492a-a718-4bc3b86ad88c"
+                    "designerId": "775f2b8f-31b0-4f78-b9eb-99e62edb5127"
                 },
                 {
                     "type": "Ext.button.Button",
@@ -67,10 +69,10 @@
                     "userConfig": {
                         "localiserId": null,
                         "layout|anchor": "100%",
-                        "id": "stockAdderSubmitBtn",
-                        "text": "Add stock to selected item"
+                        "id": "stockRemoverSubmitBtn",
+                        "text": "Remove stock from selected item"
                     },
-                    "designerId": "b6a4c9ee-192c-450e-be94-cd5118096a01",
+                    "designerId": "745a11b8-fd4b-4a6b-8b6b-ca672608d0e6",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -92,7 +94,7 @@
                                     "var form=button.up().getForm();\r",
                                     "if (form.isValid()){\r",
                                     "    var amount=form.getValues().amount;\r",
-                                    "    Ext.getCmp(\"mainStockGrid\").getStore().getProxy().extraParams.actionToApply=\"add\";\r",
+                                    "    Ext.getCmp(\"mainStockGrid\").getStore().getProxy().extraParams.actionToApply=\"remove\";\r",
                                     "    Ext.getCmp(\"mainStockGrid\").getStore().getProxy().extraParams.amountToApply=amount;\r",
                                     "    Ext.getCmp(\"mainStockGrid\").getSelectionModel().getLastSelected().set(\"stock\",amount);\r",
                                     "    button.up().up().close();\r",
@@ -101,7 +103,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
-                            "designerId": "bd55d494-fdf7-401b-b109-ad132f102d59"
+                            "designerId": "03ad4110-618a-4647-910d-ed4b70015c92"
                         }
                     ]
                 }

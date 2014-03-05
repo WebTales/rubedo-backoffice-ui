@@ -80,7 +80,7 @@ Ext.define('Rubedo.view.stockInterface', {
                     xtype: 'gridpanel',
                     flex: 1,
                     id: 'mainStockGrid',
-                    title: 'Product variations',
+                    title: 'Items',
                     forceFit: true,
                     store: 'InitialStockStore',
                     plugins: [
@@ -240,10 +240,12 @@ Ext.define('Rubedo.view.stockInterface', {
             var variatorStore=Ext.create('Ext.data.Store', {
                 autoLoad: false,
                 pageSize: 100000,
+                autoSync:true,
                 proxy: {
                     type: 'ajax',
                     api: {
-                        read: 'contents/get-stock'
+                        read: 'contents/get-stock',
+                        update: 'contents/update-stock'
                     },
                     extraParams:{
                         "type-id":selected[0].get("id")
@@ -251,6 +253,11 @@ Ext.define('Rubedo.view.stockInterface', {
                     reader: {
                         type: 'json',
                         messageProperty: 'message',
+                        root: 'data'
+                    },
+                    writer: {
+                        type: 'json',
+                        encode: true,
                         root: 'data'
                     }
                 },
@@ -273,7 +280,8 @@ Ext.define('Rubedo.view.stockInterface', {
     },
 
     onStockRemoveFromVarItemClick: function(button, e, eOpts) {
-
+        Ext.widget("stockRemoverWindow").show();
+        Ext.getCmp("stockRemoverField").setMaxValue(button.up().up().getSelectionModel().getLastSelected().get("stock"));
     },
 
     onStockViewVarProductClick: function(button, e, eOpts) {
