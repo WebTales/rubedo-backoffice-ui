@@ -171,6 +171,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    hidden: true,
                                     fieldLabel: 'Minimum order amount',
                                     labelWidth: 140,
                                     name: 'minimumOrderAmount',
