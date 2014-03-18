@@ -61,7 +61,8 @@ Ext.application({
         'emailTemplateModel',
         'shipper',
         'country',
-        'tax'
+        'tax',
+        'paymentMeans'
     ],
     stores: [
         'SitesJson',
@@ -199,7 +200,8 @@ Ext.application({
         'UserTypesForTaxes',
         'ProductTypesForTaxes',
         'ProductTypesForStock',
-        'InitialStockStore'
+        'InitialStockStore',
+        'PaymentMeans'
     ],
     views: [
         'MyGridPanel3',
@@ -381,7 +383,8 @@ Ext.application({
         'taxesInterface',
         'stockInterface',
         'stockAdderWindow',
-        'stockRemoverWindow'
+        'stockRemoverWindow',
+        'paymentMeansInterface'
     ],
     autoCreateViewport: true,
     controllers: [

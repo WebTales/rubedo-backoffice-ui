@@ -1,0 +1,187 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "localiserId": null,
+        "container|align": "stretch",
+        "height": 471,
+        "id": "paymentMeansInterface",
+        "width": 753,
+        "designer|userClassName": "paymentMeansInterface",
+        "designer|userAlias": "paymentMeansInterface",
+        "layout": "hbox",
+        "constrainHeader": true,
+        "iconCls": "credit_card",
+        "title": "Payment means"
+    },
+    "designerId": "4bbca0a9-985e-4587-a9cd-246d5da344c5",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "bdd345ed-ff19-4e96-8090-a46616652dcc",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "designerId": "438068f4-a7c7-4b0f-ae65-b66aa578bd95",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "width": 200,
+                "title": "",
+                "forceFit": true,
+                "store": "PaymentMeans"
+            },
+            "designerId": "b84954ab-fc4b-4562-9949-9343ae132b6c",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "9675a85e-2527-4ef0-82ef-97382233c46f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "text": "Name"
+                    },
+                    "designerId": "b6330948-f6fc-4984-bf8a-df1efb747c7a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "bodyPadding": 10,
+                "title": "Configuration"
+            },
+            "designerId": "10d2c004-9ab4-46cc-8924-ff3c0388781b",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "371c81cc-d86a-41c6-8c2c-572c59ff484b",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "c63b926c-0162-4489-a081-05a487eab678"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "iconCls": "save",
+                                "text": "Save configuration"
+                            },
+                            "designerId": "f4c6e7e0-5908-4ff7-aed6-07cd482886c4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentMeansInterfaceRender",
+                "implHandler": [
+                    "Ext.getStore(\"PaymentMeans\").load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "d6b8a188-c939-476e-ba7c-c0f1fb445f3a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPaymentMeansInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"PaymentMeans\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "c598dec3-fc8f-417e-aca0-8988106d2f10"
+        }
+    ]
+}

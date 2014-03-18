@@ -50,7 +50,7 @@ Ext.define('Rubedo.view.newShipperWindow', {
                             anchor: '100%',
                             id: 'newShipperSubmitBtn',
                             scale: 'medium',
-                            text: 'Create newshipper'
+                            text: 'Create new shipper'
                         }
                     ]
                 }

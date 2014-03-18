@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "paymentMeans",
+        "storeId": "PaymentMeans",
+        "designer|userClassName": "PaymentMeans",
+        "designer|userAlias": "PaymentMeans",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean",
+        "forcedSync": "boolean"
+    },
+    "designerId": "76b24694-554c-4fe2-b9a8-4fb54cffccbc",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'payment-means'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "93826339-b58c-4994-b5a3-b634e0fb71e8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "57f7389b-83db-4e44-b00d-df9980da00c6"
+                }
+            ]
+        }
+    ]
+}

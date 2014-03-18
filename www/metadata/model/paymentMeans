@@ -1,0 +1,51 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "paymentMeans",
+        "designer|userAlias": "paymentMeans"
+    },
+    "designerId": "532316cf-681a-403b-bd3c-2f77cf5a2249",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "ef7096ab-34e3-495a-810b-5b8affa4dbfa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "428a1cbb-ef3d-47e0-9b39-7441f02008ee"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "configFields"
+            },
+            "designerId": "e2f9ab76-547a-4387-ab6e-ca6f879c4013"
+        }
+    ]
+}

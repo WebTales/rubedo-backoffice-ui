@@ -45,7 +45,8 @@
             "emailTemplateModel",
             "shipper",
             "country",
-            "tax"
+            "tax",
+            "paymentMeans"
         ],
         "stores": [
             "SitesJson",
@@ -183,7 +184,8 @@
             "UserTypesForTaxes",
             "ProductTypesForTaxes",
             "ProductTypesForStock",
-            "InitialStockStore"
+            "InitialStockStore",
+            "PaymentMeans"
         ],
         "views": [
             "MyGridPanel3",
@@ -365,7 +367,8 @@
             "taxesInterface",
             "stockInterface",
             "stockAdderWindow",
-            "stockRemoverWindow"
+            "stockRemoverWindow",
+            "paymentMeansInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [

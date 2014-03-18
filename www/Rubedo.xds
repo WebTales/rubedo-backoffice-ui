@@ -3357,6 +3357,30 @@
                 "app/view/stockRemoverWindow.js"
             ],
             "className": "stockRemoverWindow"
+        },
+        "4bbca0a9-985e-4587-a9cd-246d5da344c5": {
+            "paths": [
+                "metadata/view/paymentMeansInterface",
+                "app/view/override/paymentMeansInterface.js",
+                "app/view/paymentMeansInterface.js"
+            ],
+            "className": "paymentMeansInterface"
+        },
+        "76b24694-554c-4fe2-b9a8-4fb54cffccbc": {
+            "paths": [
+                "metadata/store/PaymentMeans",
+                "app/store/override/PaymentMeans.js",
+                "app/store/PaymentMeans.js"
+            ],
+            "className": "PaymentMeans"
+        },
+        "532316cf-681a-403b-bd3c-2f77cf5a2249": {
+            "paths": [
+                "metadata/model/paymentMeans",
+                "app/model/override/paymentMeans.js",
+                "app/model/paymentMeans.js"
+            ],
+            "className": "paymentMeans"
         }
     },
     "viewOrderMap": {
@@ -3537,6 +3561,7 @@
             "486c42cb-ee96-4f43-ab90-c52044678375",
             "a00b8e6b-7b4d-49e9-b016-908679cc1295",
             "b35f6a4e-5e25-474e-9dcb-4291e0c898e6",
+            "4bbca0a9-985e-4587-a9cd-246d5da344c5",
             "67b3403d-c5af-478f-b1a8-5404d77be025",
             "b94851ca-852c-4b9d-b092-70cfb9d6389e",
             "e1ff2391-5104-46be-9c01-680539baf938",
@@ -3671,6 +3696,7 @@
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
             "b8b58309-0a78-41f7-92f3-66242a362db7",
+            "76b24694-554c-4fe2-b9a8-4fb54cffccbc",
             "8b6c0967-995c-4c58-9f5c-cb6737078b81",
             "f3c4308c-d974-4f43-8a19-3aa00910e899",
             "ee2f30da-7af2-4eb8-972b-56b359f2811e",
@@ -3767,7 +3793,8 @@
             "f3e0cafa-155c-4a60-aad3-bbf9b81623b9",
             "95fbc603-58e8-4a9c-a747-8a52f558a753",
             "f54d59fc-957d-4df9-8610-25977c88e0ac",
-            "30ae1f17-8709-4051-a6e0-8d04de56b61b"
+            "30ae1f17-8709-4051-a6e0-8d04de56b61b",
+            "532316cf-681a-403b-bd3c-2f77cf5a2249"
         ],
         "resource": [
             "0e13e975-ba15-4606-abba-202c9e7af037",
