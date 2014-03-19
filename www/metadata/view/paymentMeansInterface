@@ -62,6 +62,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
+                "id": "paymentMeansGrid",
                 "width": 200,
                 "title": "",
                 "forceFit": true,
@@ -90,11 +91,50 @@
                         "text": "Name"
                     },
                     "designerId": "b6330948-f6fc-4984-bf8a-df1efb747c7a"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPaymentMeansGridSelectionChange",
+                        "implHandler": [
+                            "var adaptiveForm=Ext.getCmp(\"pmNativeConfigForm\");\r",
+                            "Ext.getCmp(\"pmConfigSaveBtn\").disable();\r",
+                            "adaptiveForm.getForm().reset();\r",
+                            "adaptiveForm.removeAll();\r",
+                            "Ext.getStore(\"PMConfigs\").removeAll();\r",
+                            "Ext.getCmp(\"pmRubedoConfigForm\").getForm().reset();\r",
+                            "if (!Ext.isEmpty(selected)){\r",
+                            "\tvar record=selected[0];\r",
+                            "    Ext.Array.forEach(record.get(\"configFields\"),function(field){\r",
+                            "        var fConfig=Ext.clone(field.config);\r",
+                            "        fConfig.anchor=\"100%\";\r",
+                            "    \tadaptiveForm.add(Ext.create(field.type,fConfig));\r",
+                            "    });\r",
+                            "    Ext.getStore(\"PMConfigs\").getProxy().extraParams.paymentMeans=record.get(\"id\");\r",
+                            "    Ext.getStore(\"PMConfigs\").addListener(\"load\", function(){\r",
+                            "    \tvar loaded=Ext.getStore(\"PMConfigs\").getRange()[0];\r",
+                            "        Ext.getCmp(\"pmRubedoConfigForm\").getForm().setValues(loaded.getData());\r",
+                            "        adaptiveForm.getForm().setValues(loaded.get(\"nativePMConfig\"));\r",
+                            "        Ext.getCmp(\"pmConfigSaveBtn\").enable();\r",
+                            "    }, this, {single:true});\r",
+                            "    Ext.getStore(\"PMConfigs\").load();\r",
+                            "    \r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "c74b628e-3ee1-4c79-a73e-7c9e55f6c7ff"
                 }
             ]
         },
         {
-            "type": "Ext.form.Panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -102,8 +142,11 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "bodyPadding": 10,
-                "title": "Configuration"
+                "container|align": "stretch",
+                "autoScroll": true,
+                "layout": "vbox",
+                "bodyPadding": null,
+                "title": ""
             },
             "designerId": "10d2c004-9ab4-46cc-8924-ff3c0388781b",
             "cn": [
@@ -140,12 +183,130 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": null,
+                                "disabled": true,
+                                "id": "pmConfigSaveBtn",
                                 "iconCls": "save",
                                 "text": "Save configuration"
                             },
-                            "designerId": "f4c6e7e0-5908-4ff7-aed6-07cd482886c4"
+                            "designerId": "f4c6e7e0-5908-4ff7-aed6-07cd482886c4",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPmConfigSaveBtnClick",
+                                        "implHandler": [
+                                            "if ((Ext.getCmp(\"pmRubedoConfigForm\").getForm().isValid())&&(Ext.getCmp(\"pmNativeConfigForm\").getForm().isValid())){\r",
+                                            "\tvar record=Ext.getStore(\"PMConfigs\").getRange()[0];\r",
+                                            "    record.beginEdit();\r",
+                                            "    record.set(Ext.getCmp(\"pmRubedoConfigForm\").getForm().getValues());\r",
+                                            "    record.set(\"nativePMConfig\",Ext.getCmp(\"pmNativeConfigForm\").getForm().getValues());\r",
+                                            "    record.endEdit();\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "90e99a0a-d01e-4efa-a2c3-b80c62ebc987"
+                                }
+                            ]
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "pmRubedoConfigForm",
+                        "bodyPadding": 10,
+                        "title": "Rubedo configuration"
+                    },
+                    "designerId": "4413c504-c162-48fe-9cb2-c267441bcf54",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Active",
+                                "name": "active",
+                                "boxLabel": "",
+                                "inputValue": "true",
+                                "uncheckedValue": "false"
+                            },
+                            "designerId": "099e816f-97bb-4d28-96fa-d4d023a59d8a"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "designer|displayName": null,
+                                "fieldLabel": "Display name",
+                                "name": "displayName",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "designerId": "a7cf0eba-f99c-43cf-9348-5092284c1830"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Logo",
+                                "name": "logo",
+                                "allowedFileType": "Image"
+                            },
+                            "configAlternates": {
+                                "smallMode": "boolean"
+                            },
+                            "designerId": "c3a7edb4-4acf-40d1-a3e4-db56f244fd4a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "allowedFileType",
+                                    "type": "string"
+                                }
+                            ],
+                            "masterInstanceId": "29ccd34b-610a-4d7f-84de-be664235a5e8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "id": "pmNativeConfigForm",
+                        "bodyPadding": 10,
+                        "title": "Native payment means configuration"
+                    },
+                    "designerId": "96aac9d7-32c0-412d-bbd0-58881755ca7d"
                 }
             ]
         },

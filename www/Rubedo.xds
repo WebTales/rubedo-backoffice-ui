@@ -3381,6 +3381,22 @@
                 "app/model/paymentMeans.js"
             ],
             "className": "paymentMeans"
+        },
+        "c76375b0-c6e3-459d-89f8-90d277096cff": {
+            "paths": [
+                "metadata/model/pmConfig",
+                "app/model/override/pmConfig.js",
+                "app/model/pmConfig.js"
+            ],
+            "className": "pmConfig"
+        },
+        "5f8f3de5-3605-47a3-b4a5-6602aed072ba": {
+            "paths": [
+                "metadata/store/PMConfigs",
+                "app/store/override/PMConfigs.js",
+                "app/store/PMConfigs.js"
+            ],
+            "className": "PMConfigs"
         }
     },
     "viewOrderMap": {
@@ -3698,6 +3714,7 @@
             "b8b58309-0a78-41f7-92f3-66242a362db7",
             "76b24694-554c-4fe2-b9a8-4fb54cffccbc",
             "8b6c0967-995c-4c58-9f5c-cb6737078b81",
+            "5f8f3de5-3605-47a3-b4a5-6602aed072ba",
             "f3c4308c-d974-4f43-8a19-3aa00910e899",
             "ee2f30da-7af2-4eb8-972b-56b359f2811e",
             "ea73716f-5865-40c0-9ef2-5f5fb181d3d0",
@@ -3769,6 +3786,7 @@
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "afc97053-5d9d-4153-b642-911f9ef703d7",
+            "c76375b0-c6e3-459d-89f8-90d277096cff",
             "bfab36f2-4ea7-45c7-8e32-e6abc9a20985",
             "b43648d7-e5b9-470e-a7af-b267e5cf11bc",
             "47f4935c-57ba-4bf2-afc8-ba2cfce49904",

@@ -19,7 +19,8 @@ Ext.define('Rubedo.view.paymentMeansInterface', {
 
     requires: [
         'Rubedo.view.MyTool16',
-        'Rubedo.view.MyTool17'
+        'Rubedo.view.MyTool17',
+        'Rubedo.view.ImagePickerField'
     ],
 
     height: 471,
@@ -48,6 +49,7 @@ Ext.define('Rubedo.view.paymentMeansInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    id: 'paymentMeansGrid',
                     width: 200,
                     title: '',
                     forceFit: true,
@@ -58,13 +60,23 @@ Ext.define('Rubedo.view.paymentMeansInterface', {
                             dataIndex: 'name',
                             text: 'Name'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onPaymentMeansGridSelectionChange,
+                            scope: me
+                        }
+                    }
                 },
                 {
-                    xtype: 'form',
+                    xtype: 'panel',
                     flex: 1,
-                    bodyPadding: 10,
-                    title: 'Configuration',
+                    autoScroll: true,
+                    layout: {
+                        align: 'stretch',
+                        type: 'vbox'
+                    },
+                    title: '',
                     dockedItems: [
                         {
                             xtype: 'toolbar',
@@ -75,10 +87,57 @@ Ext.define('Rubedo.view.paymentMeansInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    disabled: true,
+                                    id: 'pmConfigSaveBtn',
                                     iconCls: 'save',
-                                    text: 'Save configuration'
+                                    text: 'Save configuration',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onPmConfigSaveBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
+                        }
+                    ],
+                    items: [
+                        {
+                            xtype: 'form',
+                            id: 'pmRubedoConfigForm',
+                            bodyPadding: 10,
+                            title: 'Rubedo configuration',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Active',
+                                    name: 'active',
+                                    boxLabel: '',
+                                    inputValue: 'true',
+                                    uncheckedValue: 'false'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Display name',
+                                    name: 'displayName',
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false
+                                },
+                                {
+                                    xtype: 'ImagePickerField',
+                                    fieldLabel: 'Logo',
+                                    name: 'logo',
+                                    allowedFileType: 'Image'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'form',
+                            id: 'pmNativeConfigForm',
+                            bodyPadding: 10,
+                            title: 'Native payment means configuration'
                         }
                     ]
                 }
@@ -96,6 +155,42 @@ Ext.define('Rubedo.view.paymentMeansInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onPaymentMeansGridSelectionChange: function(model, selected, eOpts) {
+        var adaptiveForm=Ext.getCmp("pmNativeConfigForm");
+        Ext.getCmp("pmConfigSaveBtn").disable();
+        adaptiveForm.getForm().reset();
+        adaptiveForm.removeAll();
+        Ext.getStore("PMConfigs").removeAll();
+        Ext.getCmp("pmRubedoConfigForm").getForm().reset();
+        if (!Ext.isEmpty(selected)){
+            var record=selected[0];
+            Ext.Array.forEach(record.get("configFields"),function(field){
+                var fConfig=Ext.clone(field.config);
+                fConfig.anchor="100%";
+                adaptiveForm.add(Ext.create(field.type,fConfig));
+            });
+            Ext.getStore("PMConfigs").getProxy().extraParams.paymentMeans=record.get("id");
+            Ext.getStore("PMConfigs").addListener("load", function(){
+                var loaded=Ext.getStore("PMConfigs").getRange()[0];
+                Ext.getCmp("pmRubedoConfigForm").getForm().setValues(loaded.getData());
+                adaptiveForm.getForm().setValues(loaded.get("nativePMConfig"));
+                Ext.getCmp("pmConfigSaveBtn").enable();
+            }, this, {single:true});
+                Ext.getStore("PMConfigs").load();
+
+            }
+    },
+
+    onPmConfigSaveBtnClick: function(button, e, eOpts) {
+        if ((Ext.getCmp("pmRubedoConfigForm").getForm().isValid())&&(Ext.getCmp("pmNativeConfigForm").getForm().isValid())){
+            var record=Ext.getStore("PMConfigs").getRange()[0];
+            record.beginEdit();
+            record.set(Ext.getCmp("pmRubedoConfigForm").getForm().getValues());
+            record.set("nativePMConfig",Ext.getCmp("pmNativeConfigForm").getForm().getValues());
+            record.endEdit();
+        }
     },
 
     onPaymentMeansInterfaceRender: function(component, eOpts) {

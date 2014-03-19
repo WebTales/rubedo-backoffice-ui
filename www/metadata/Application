@@ -46,7 +46,8 @@
             "shipper",
             "country",
             "tax",
-            "paymentMeans"
+            "paymentMeans",
+            "pmConfig"
         ],
         "stores": [
             "SitesJson",
@@ -185,7 +186,8 @@
             "ProductTypesForTaxes",
             "ProductTypesForStock",
             "InitialStockStore",
-            "PaymentMeans"
+            "PaymentMeans",
+            "PMConfigs"
         ],
         "views": [
             "MyGridPanel3",

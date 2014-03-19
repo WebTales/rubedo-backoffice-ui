@@ -62,7 +62,8 @@ Ext.application({
         'shipper',
         'country',
         'tax',
-        'paymentMeans'
+        'paymentMeans',
+        'pmConfig'
     ],
     stores: [
         'SitesJson',
@@ -201,7 +202,8 @@ Ext.application({
         'ProductTypesForTaxes',
         'ProductTypesForStock',
         'InitialStockStore',
-        'PaymentMeans'
+        'PaymentMeans',
+        'PMConfigs'
     ],
     views: [
         'MyGridPanel3',

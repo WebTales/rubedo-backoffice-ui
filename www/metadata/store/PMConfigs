@@ -1,0 +1,73 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "pmConfig",
+        "storeId": "PMConfigs",
+        "designer|userClassName": "PMConfigs",
+        "designer|userAlias": "PMConfigs",
+        "data": null,
+        "pageSize": 1000
+    },
+    "configAlternates": {
+        "isOptimised": "boolean",
+        "forcedSync": "boolean"
+    },
+    "designerId": "5f8f3de5-3605-47a3-b4a5-6602aed072ba",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'payment-configs/get-config-for-payment-means',\r",
+                    "                    update: 'payment-configs/update'\r",
+                    "}"
+                ],
+                "extraParams": null,
+                "url": null
+            },
+            "designerId": "b42a4a62-0984-4b5f-9771-9bae0bb200c1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "c6d70091-68a2-4060-b098-d910f8990019"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "nameProperty": null,
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "2b1e5880-674c-4536-b17a-4c34019258eb"
+                }
+            ]
+        }
+    ]
+}
