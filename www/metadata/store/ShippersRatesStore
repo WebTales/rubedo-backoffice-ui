@@ -71,6 +71,18 @@
                 "name": "hRUnit"
             },
             "designerId": "f9ac3312-3f44-49aa-bb25-2d2e5a5d23f9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tax"
+            },
+            "designerId": "96aea615-cd70-4b2f-a0b9-4cbcbc9165c7"
         }
     ]
 }

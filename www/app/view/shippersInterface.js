@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.shippersInterface', {
 
     height: 456,
     id: 'shippersInterface',
-    width: 921,
+    width: 1003,
     layout: {
         align: 'stretch',
         type: 'hbox'
@@ -210,7 +210,17 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     dataIndex: 'rate',
-                                    text: 'Price',
+                                    text: 'Price (tax-free)',
+                                    editor: {
+                                        xtype: 'numberfield',
+                                        allowBlank: false,
+                                        minValue: 0
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'tax',
+                                    text: 'Tax (%)',
                                     editor: {
                                         xtype: 'numberfield',
                                         allowBlank: false,
@@ -352,7 +362,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     },
 
     onButtonClick: function(button, e, eOpts) {
-        button.up().up().getStore().add({"country":"*","rate":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
+        button.up().up().getStore().add({"country":"*","rate":0,"tax":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
     },
 
     onRemoveShipperRateBtnClick: function(button, e, eOpts) {

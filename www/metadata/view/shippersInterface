@@ -10,7 +10,7 @@
         "container|align": "stretch",
         "height": 456,
         "id": "shippersInterface",
-        "width": 921,
+        "width": 1003,
         "designer|userClassName": "shippersInterface",
         "designer|userAlias": "shippersInterface",
         "layout": "hbox",
@@ -471,7 +471,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "rate",
-                                "text": "Price"
+                                "text": "Price (tax-free)"
                             },
                             "designerId": "6976f19c-339a-4ac8-af36-67a9ebf5c0f1",
                             "cn": [
@@ -487,6 +487,34 @@
                                         "minValue": 0
                                     },
                                     "designerId": "3b9bef27-6451-4b64-96bd-f704cc04dcf7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "tax",
+                                "text": "Tax (%)"
+                            },
+                            "designerId": "40c85d3d-3aa8-4379-afbe-569aadc4b01a",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "minValue": 0
+                                    },
+                                    "designerId": "bff08a4d-fced-432a-b6a5-ffd84bbf01e3"
                                 }
                             ]
                         },
@@ -631,7 +659,7 @@
                                             "userConfig": {
                                                 "fn": "onButtonClick",
                                                 "implHandler": [
-                                                    "button.up().up().getStore().add({\"country\":\"*\",\"rate\":0,\"delay\":1,\"hRDelay\":1,\"hRUnit\":\"days\"});"
+                                                    "button.up().up().getStore().add({\"country\":\"*\",\"rate\":0,\"tax\":0,\"delay\":1,\"hRDelay\":1,\"hRUnit\":\"days\"});"
                                                 ],
                                                 "name": "click",
                                                 "scope": "me"

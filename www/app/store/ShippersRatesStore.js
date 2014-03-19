@@ -37,6 +37,9 @@ Ext.define('Rubedo.store.ShippersRatesStore', {
                 },
                 {
                     name: 'hRUnit'
+                },
+                {
+                    name: 'tax'
                 }
             ]
         }, cfg)]);
