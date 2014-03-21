@@ -3397,6 +3397,30 @@
                 "app/store/PMConfigs.js"
             ],
             "className": "PMConfigs"
+        },
+        "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac": {
+            "paths": [
+                "metadata/view/ordersInterface",
+                "app/view/override/ordersInterface.js",
+                "app/view/ordersInterface.js"
+            ],
+            "className": "ordersInterface"
+        },
+        "7ef14cdc-3d5d-4bb3-b18b-74812ca6d42b": {
+            "paths": [
+                "metadata/model/order",
+                "app/model/override/order.js",
+                "app/model/order.js"
+            ],
+            "className": "order"
+        },
+        "f9d8ec66-909f-4e2f-9f5b-60c45684fff1": {
+            "paths": [
+                "metadata/store/Orders",
+                "app/store/override/Orders.js",
+                "app/store/Orders.js"
+            ],
+            "className": "Orders"
         }
     },
     "viewOrderMap": {
@@ -3579,6 +3603,7 @@
             "b35f6a4e-5e25-474e-9dcb-4291e0c898e6",
             "4bbca0a9-985e-4587-a9cd-246d5da344c5",
             "67b3403d-c5af-478f-b1a8-5404d77be025",
+            "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac",
             "b94851ca-852c-4b9d-b092-70cfb9d6389e",
             "e1ff2391-5104-46be-9c01-680539baf938",
             "e7d07403-1815-4369-9257-def71279340c",
@@ -3712,6 +3737,7 @@
             "0cb74fd7-8088-4c85-a691-7bc264873bce",
             "b94e7429-c79c-43f2-ba86-73666c6e59e3",
             "b8b58309-0a78-41f7-92f3-66242a362db7",
+            "f9d8ec66-909f-4e2f-9f5b-60c45684fff1",
             "76b24694-554c-4fe2-b9a8-4fb54cffccbc",
             "8b6c0967-995c-4c58-9f5c-cb6737078b81",
             "5f8f3de5-3605-47a3-b4a5-6602aed072ba",
@@ -3786,6 +3812,7 @@
             "f3a63ac1-e559-4822-a676-32639054b4e9",
             "1076511d-1d83-4ae9-8589-8911720c4b83",
             "afc97053-5d9d-4153-b642-911f9ef703d7",
+            "7ef14cdc-3d5d-4bb3-b18b-74812ca6d42b",
             "c76375b0-c6e3-459d-89f8-90d277096cff",
             "bfab36f2-4ea7-45c7-8e32-e6abc9a20985",
             "b43648d7-e5b9-470e-a7af-b267e5cf11bc",

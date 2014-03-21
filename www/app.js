@@ -63,7 +63,8 @@ Ext.application({
         'country',
         'tax',
         'paymentMeans',
-        'pmConfig'
+        'pmConfig',
+        'order'
     ],
     stores: [
         'SitesJson',
@@ -203,7 +204,8 @@ Ext.application({
         'ProductTypesForStock',
         'InitialStockStore',
         'PaymentMeans',
-        'PMConfigs'
+        'PMConfigs',
+        'Orders'
     ],
     views: [
         'MyGridPanel3',
@@ -386,7 +388,8 @@ Ext.application({
         'stockInterface',
         'stockAdderWindow',
         'stockRemoverWindow',
-        'paymentMeansInterface'
+        'paymentMeansInterface',
+        'ordersInterface'
     ],
     autoCreateViewport: true,
     controllers: [

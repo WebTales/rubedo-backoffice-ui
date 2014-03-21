@@ -455,6 +455,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             iconCls: 'credit_card',
             localiserId:'pmLaunchBtn',
             text: 'Payment means'
+        },{
+            xtype: 'menuitem',
+            ACL: 'read.ui.orders',
+            favoriteIcon: 'page_full.png',
+            itemId: 'ordersInterface',
+            iconCls: 'content-icon',
+            localiserId:'ordersLaunchBtn',
+            text: 'Orders'
         }
         ]);
     },

@@ -47,7 +47,8 @@
             "country",
             "tax",
             "paymentMeans",
-            "pmConfig"
+            "pmConfig",
+            "order"
         ],
         "stores": [
             "SitesJson",
@@ -187,7 +188,8 @@
             "ProductTypesForStock",
             "InitialStockStore",
             "PaymentMeans",
-            "PMConfigs"
+            "PMConfigs",
+            "Orders"
         ],
         "views": [
             "MyGridPanel3",
@@ -370,7 +372,8 @@
             "stockInterface",
             "stockAdderWindow",
             "stockRemoverWindow",
-            "paymentMeansInterface"
+            "paymentMeansInterface",
+            "ordersInterface"
         ],
         "autoCreateViewport": true,
         "controllers": [
