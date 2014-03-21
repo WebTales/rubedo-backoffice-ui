@@ -24,7 +24,7 @@ Ext.define('Rubedo.view.ordersInterface', {
 
     height: 456,
     id: 'ordersInterface',
-    width: 921,
+    width: 1066,
     layout: {
         type: 'fit'
     },
@@ -59,6 +59,14 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            dataIndex: 'userName',
+                            text: 'Client name'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return (value+" €");
+                            },
                             dataIndex: 'finalPrice',
                             text: 'Full Price'
                         },
@@ -71,6 +79,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     return "";
                                 }
                             },
+                            sortable: false,
                             dataIndex: 'detailedCart',
                             text: 'Items'
                         },
@@ -78,6 +87,31 @@ Ext.define('Rubedo.view.ordersInterface', {
                             xtype: 'datecolumn',
                             dataIndex: 'createTime',
                             text: 'Date'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'paymentMeans',
+                            text: 'Payment means'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                try {
+                                    return value.name;
+                                } catch(err){
+                                    return "";
+                                }
+                            },
+                            sortable: false,
+                            dataIndex: 'shipper',
+                            text: 'Shipper'
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            dataIndex: 'hasStockDecrementIssues',
+                            text: 'Stock issues',
+                            falseText: 'No',
+                            trueText: 'Yes'
                         },
                         {
                             xtype: 'gridcolumn',
@@ -112,6 +146,7 @@ Ext.define('Rubedo.view.ordersInterface', {
     },
 
     onOrdersInterfaceRender: function(component, eOpts) {
+        Ext.getStore("Orders").clearFilter(true);
         Ext.getStore("Orders").loadPage(1);
     },
 

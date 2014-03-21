@@ -9,7 +9,7 @@
         "localiserId": null,
         "height": 456,
         "id": "ordersInterface",
-        "width": 921,
+        "width": 1066,
         "designer|userClassName": "ordersInterface",
         "designer|userAlias": "ordersInterface",
         "layout": "fit",
@@ -82,10 +82,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "finalPrice",
-                        "text": "Full Price"
+                        "dataIndex": "userName",
+                        "text": "Client name"
                     },
-                    "designerId": "ad8e27a1-f44a-4a19-9908-6ae2e402ba40"
+                    "designerId": "cd732be2-8fa1-4762-9da5-443032f07f1f"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -95,6 +95,46 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "finalPrice",
+                        "text": "Full Price"
+                    },
+                    "designerId": "ad8e27a1-f44a-4a19-9908-6ae2e402ba40",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return (value+\" €\");"
+                                ]
+                            },
+                            "designerId": "bed6002d-098d-4337-8c89-3997abc4e307"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "sortable": false,
                         "dataIndex": "detailedCart",
                         "text": "Items"
                     },
@@ -151,10 +191,82 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "paymentMeans",
+                        "text": "Payment means"
+                    },
+                    "designerId": "6a771563-74bb-4ab0-a9e9-3c566679dedb"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "sortable": false,
+                        "dataIndex": "shipper",
+                        "text": "Shipper"
+                    },
+                    "designerId": "f06fd8af-3e67-4359-97b7-b39aa5c29f39",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "try {\r",
+                                    "    return value.name;\r",
+                                    "} catch(err){\r",
+                                    "    return \"\";\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "1ba04c6b-e95d-4b29-8a23-d14fa4237563"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "hasStockDecrementIssues",
+                        "text": "Stock issues",
+                        "falseText": "No",
+                        "trueText": "Yes"
+                    },
+                    "designerId": "a3d8b0da-869c-4194-933d-4542eaba760c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "dataIndex": "status",
                         "text": "Status"
                     },
-                    "designerId": "6a771563-74bb-4ab0-a9e9-3c566679dedb"
+                    "designerId": "a8c63e3e-ead3-4970-b8b4-22f061b60472"
                 },
                 {
                     "type": "Ext.grid.View",
@@ -192,6 +304,7 @@
             "userConfig": {
                 "fn": "onOrdersInterfaceRender",
                 "implHandler": [
+                    "Ext.getStore(\"Orders\").clearFilter(true);\r",
                     "Ext.getStore(\"Orders\").loadPage(1);"
                 ],
                 "name": "render",

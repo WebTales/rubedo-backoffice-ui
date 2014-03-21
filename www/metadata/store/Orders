@@ -9,6 +9,8 @@
         "autoLoad": false,
         "autoSync": true,
         "model": "order",
+        "remoteFilter": true,
+        "remoteSort": true,
         "storeId": "Orders",
         "designer|userClassName": "Orders",
         "designer|userAlias": "Orders",

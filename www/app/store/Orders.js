@@ -28,6 +28,8 @@ Ext.define('Rubedo.store.Orders', {
             autoLoad: false,
             autoSync: true,
             model: 'Rubedo.model.order',
+            remoteFilter: true,
+            remoteSort: true,
             storeId: 'Orders',
             pageSize: 50,
             proxy: {
