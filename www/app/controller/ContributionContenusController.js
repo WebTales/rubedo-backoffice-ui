@@ -69,10 +69,14 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                     maskMode=true;
                 }        
                 var champs=Ext.getCmp("boiteAChampsContenus").getForm().getValues();
-                if (maskMode){
-                    champs.text=Ext.getCmp(Ext.getCmp('elementIdField').getValue()).title;
-                } else{
-                    champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;
+                try {
+                    if (maskMode){
+                        champs.text=Ext.getCmp(Ext.getCmp('elementIdField').getValue()).title;
+                    } else{
+                        champs.text=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue()).title;
+                    }
+                } catch(err){
+                    champs.text="Special content";
                 }
                 champs.summary="";
                 if (button.isUpdate) {
@@ -108,14 +112,16 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                         typeId: Ext.getStore("ContentTypesForContent2").getRange()[0].get("id")
 
                     });
-                    if (maskMode){
-                        nContenu.set("maskId", Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("id"));
-                        nContenu.set("blockId", Ext.getCmp('elementIdField').getValue());
-                    } else{
-                        nContenu.set("pageId", Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("id"));
-                        nContenu.set("blockId", Ext.getCmp('pageElementIdField').getValue());
+                    try {
+                        if (maskMode){
+                            nContenu.set("maskId", Ext.getCmp("masquesGrid").getSelectionModel().getLastSelected().get("id"));
+                            nContenu.set("blockId", Ext.getCmp('elementIdField').getValue());
+                        } else{
+                            nContenu.set("pageId", Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected().get("id"));
+                            nContenu.set("blockId", Ext.getCmp('pageElementIdField').getValue());
+                        }
+                    } catch (err){
                     }
-
                     Ext.getStore("CurrentContent").add(nContenu);   
                     Ext.getStore("CurrentContent").addListener("datachanged",function(){
                         Ext.getCmp(button.targetedId).setValue(nContenu.get("id"));
