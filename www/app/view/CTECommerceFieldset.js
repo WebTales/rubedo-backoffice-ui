@@ -114,25 +114,25 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
     },
 
     onCTECommerceFieldsetAdded: function(component, container, pos, eOpts) {
-        var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
-            store:Ext.getStore("ShippersForCT"),
-            anchor:"100%",
-            name:"shippers",
-            fieldLabel:"Shippers",
-            labelWidth:100,
-            queryMode:"local",
-            multiSelect:true,
-            valueField:"id",
-            displayField:"name",
-            forceSelection:true,
-            createNewOnEnter:true,
-            triggerOnClick:false,
-            createNewOnBlur:true,
-            stacked:true,
-            allowBlank:true
+        /* var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+        store:Ext.getStore("ShippersForCT"),
+        anchor:"100%",
+        name:"shippers",
+        fieldLabel:"Shippers",
+        labelWidth:100,
+        queryMode:"local",
+        multiSelect:true,
+        valueField:"id",
+        displayField:"name",
+        forceSelection:true,
+        createNewOnEnter:true,
+        triggerOnClick:false,
+        createNewOnBlur:true,
+        stacked:true,
+        allowBlank:true
 
         });
-        component.add(shippersPicker);
+        component.add(shippersPicker); */
     }
 
 });

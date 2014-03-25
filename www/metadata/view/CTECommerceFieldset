@@ -65,7 +65,7 @@
             "userConfig": {
                 "fn": "onCTECommerceFieldsetAdded",
                 "implHandler": [
-                    "var shippersPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                    "/* var shippersPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
                     "    store:Ext.getStore(\"ShippersForCT\"),\r",
                     "    anchor:\"100%\",\r",
                     "    name:\"shippers\",\r",
@@ -83,7 +83,7 @@
                     "    allowBlank:true\r",
                     "\r",
                     "});\r",
-                    "component.add(shippersPicker);"
+                    "component.add(shippersPicker); */"
                 ],
                 "name": "added",
                 "scope": "me"
