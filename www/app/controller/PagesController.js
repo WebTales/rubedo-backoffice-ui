@@ -757,10 +757,10 @@ Ext.define('Rubedo.controller.PagesController', {
         component.getStore().addListener("load",function(store,records){
             if (!Ext.isEmpty(records)){
                 component.select(records[0]);
-                Ext.getCmp("contributionPages").siteHasEC=records[0].get("enableECommerceFeatures");
                 if (component.id=="previewSitesCombo"){
                     me.pagePreviewSelect(component, [records[0]]);
                 } else if (component.id=="pagesSitesCombo"){
+                    Ext.getCmp("contributionPages").siteHasEC=records[0].get("enableECommerceFeatures");
                     me.pageSiteSelect(component, [records[0]]);
                 }
                 if (records.length==1){
