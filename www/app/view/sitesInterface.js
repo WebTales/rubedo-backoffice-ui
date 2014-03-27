@@ -205,7 +205,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             labelWidth: 110,
                                             name: 'text',
                                             allowBlank: false,
-                                            regex: 'new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)'
+                                            regex: /^([a-z]|[0-9]|[-]|[.]){0,}$/
                                         },
                                         {
                                             xtype: 'textfield',
@@ -214,7 +214,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             fieldLabel: 'Static domain',
                                             labelWidth: 110,
                                             name: 'staticDomain',
-                                            regex: 'new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)'
+                                            regex: /^([a-z]|[0-9]|[-]|[.]){0,}$/
                                         },
                                         {
                                             xtype: 'textfield',

@@ -138,7 +138,7 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                     labelWidth: 110,
                                     name: 'text',
                                     allowBlank: false,
-                                    regex: 'new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)'
+                                    regex: /^([a-z]|[0-9]|[-]|[.]){0,}$/
                                 },
                                 {
                                     xtype: 'combobox',
