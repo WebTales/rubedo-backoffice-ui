@@ -439,7 +439,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             localiserId: 'titleField',
                                                             anchor: '90%',
                                                             style: {
-                                                                float: left
+                                                                float: 'left'
                                                             },
                                                             fieldLabel: 'Titre *',
                                                             name: 'title',
@@ -468,7 +468,7 @@ Ext.define('Rubedo.view.mediaTypesInterface', {
                                                             localiserId: 'originalFileField',
                                                             anchor: '90%',
                                                             style: {
-                                                                float: left
+                                                                float: 'left'
                                                             },
                                                             fieldLabel: 'Fichier original *',
                                                             labelSeparator: ' ',

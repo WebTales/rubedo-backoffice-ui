@@ -48,7 +48,7 @@
                 "queryMode": "local",
                 "store": "champsTCARStore",
                 "style": [
-                    "{float: left}"
+                    "{float: \"left\"}"
                 ],
                 "submitValue": false,
                 "valueField": "valeur"
@@ -74,7 +74,7 @@
                 "id": "boutonCreateurTrisChampsAR",
                 "localiserId": "qbs4auxbtn",
                 "style": [
-                    "{float:right}"
+                    "{float:\"right\"}"
                 ],
                 "text": ""
             },

@@ -102,7 +102,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                                     RTip: 'Titre du média. Obligatoire.',
                                                     anchor: '90%',
                                                     style: {
-                                                        float: left
+                                                        float: 'left'
                                                     },
                                                     fieldLabel: 'Titre *',
                                                     labelSeparator: ' ',
@@ -122,7 +122,7 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                                                     RTip: 'Fichier principal du média. Obligatoire.',
                                                     anchor: '90%',
                                                     style: {
-                                                        float: left
+                                                        float: 'left'
                                                     },
                                                     fieldLabel: 'Fichier original *',
                                                     labelSeparator: ' ',

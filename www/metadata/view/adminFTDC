@@ -1484,10 +1484,9 @@
                                                         "layout|anchor": "90%",
                                                         "localiserId": "contentTitleField",
                                                         "name": "text",
-                                                        "style": "{float:left}"
-                                                    },
-                                                    "configAlternates": {
-                                                        "style": "string"
+                                                        "style": [
+                                                            "{float:\"left\"}"
+                                                        ]
                                                     },
                                                     "designerId": "c1895a27-4332-4dc5-86f2-429457ef78dc",
                                                     "customConfigs": [
@@ -1533,7 +1532,7 @@
                                                         "layout|anchor": "90%",
                                                         "name": "urlSegment",
                                                         "style": [
-                                                            "{float:left}"
+                                                            "{float:\"left\"}"
                                                         ]
                                                     },
                                                     "designerId": "1d9abcb3-012d-406d-a165-33d33d674a3a",
@@ -1576,7 +1575,7 @@
                                                         "localiserId": "summaryField",
                                                         "name": "summary",
                                                         "style": [
-                                                            "{float:left}"
+                                                            "{float:\"left\"}"
                                                         ]
                                                     },
                                                     "designerId": "9a182780-9bb6-486c-9b81-ef4ac6567439",

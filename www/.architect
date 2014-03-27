@@ -1956,7 +1956,6 @@
         },
         "80577966-9127-4f1a-ba7a-faceef3f254a": {
             "id": "80577966-9127-4f1a-ba7a-faceef3f254a",
-            "expanded": false,
             "cn": [
                 {
                     "id": "db5b5502-4e7c-4386-bc6c-b79435a73abd",
@@ -2013,7 +2012,6 @@
         },
         "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee": {
             "id": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
-            "expanded": false,
             "cn": [
                 {
                     "id": "c92ecc15-4df0-4bba-b48f-c83d5094bd5b"
@@ -5867,7 +5865,6 @@
                     "cn": [
                         {
                             "id": "ae5a5aab-c42c-409f-92e5-336b6fcff8e1",
-                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "b22e9634-2f00-453d-b24a-515f0c4de552"
@@ -16301,21 +16298,28 @@
     },
     "tabState": {
         "openTabs": [
-            "b29235f7-9588-4632-b7ab-b0f2633b21ec"
+            "b29235f7-9588-4632-b7ab-b0f2633b21ec",
+            "b6ffe1bc-b42f-4987-9728-a2d2563012af",
+            "939ef002-62e9-4ca0-a15f-a368fcab7385",
+            "6267ab43-4966-465c-9ab8-2585191a245f",
+            "42f4214b-1c84-4039-bad0-2ae468294ac0",
+            "80577966-9127-4f1a-ba7a-faceef3f254a",
+            "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7",
+            "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
     },
     "inspectorState": {
-        "topInstance": "b29235f7-9588-4632-b7ab-b0f2633b21ec",
-        "selectedInstance": "fed768ea-12ff-49c5-8386-55e42679392e"
+        "topInstance": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6",
+        "selectedInstance": "6dd2a4c2-6c56-47b1-80fe-0aa79432f684"
     },
     "codeState": {
-        "topInstance": "b29235f7-9588-4632-b7ab-b0f2633b21ec"
+        "topInstance": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
     },
     "editMode": "code",
     "userSettings": {
-        "no-cmd": false
+        "no-cmd": true
     }
 }

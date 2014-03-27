@@ -40,7 +40,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
                     anchor: '90%',
                     id: 'createurReglesChampsAR',
                     style: {
-                        float: left
+                        float: 'left'
                     },
                     fieldLabel: 'Ajouter une régle sur ',
                     labelWidth: 140,
@@ -57,7 +57,7 @@ Ext.define('Rubedo.view.assisstantRE4', {
                     localiserId: 'qbs3auxbtn',
                     id: 'boutonCreateurReglesChampsAR',
                     style: {
-                        float: right
+                        float: 'right'
                     },
                     iconCls: 'add',
                     text: ''

@@ -146,7 +146,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     RTip: 'Content title. Mandatory.',
                                                     anchor: '90%',
                                                     style: {
-                                                        float: left
+                                                        float: 'left'
                                                     },
                                                     fieldLabel: 'Title *',
                                                     name: 'text',
@@ -166,7 +166,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     RTip: 'Value to be used as content part in any URL diplaying this content.',
                                                     anchor: '90%',
                                                     style: {
-                                                        float: left
+                                                        float: 'left'
                                                     },
                                                     fieldLabel: 'URL Segment',
                                                     labelSeparator: ' ',
@@ -187,7 +187,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                     RTip: 'Résumé facultatif du contenu.',
                                                     anchor: '90%',
                                                     style: {
-                                                        float: left
+                                                        float: 'left'
                                                     },
                                                     fieldLabel: 'Résumé ',
                                                     labelSeparator: ' ',

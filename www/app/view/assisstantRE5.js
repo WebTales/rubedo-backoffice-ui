@@ -40,7 +40,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
                     anchor: '90%',
                     id: 'createurTrisChampsAR',
                     style: {
-                        float: left
+                        float: 'left'
                     },
                     fieldLabel: 'Ajouter un tri sur ',
                     labelWidth: 140,
@@ -57,7 +57,7 @@ Ext.define('Rubedo.view.assisstantRE5', {
                     localiserId: 'qbs4auxbtn',
                     id: 'boutonCreateurTrisChampsAR',
                     style: {
-                        float: right
+                        float: 'right'
                     },
                     iconCls: 'add',
                     text: ''

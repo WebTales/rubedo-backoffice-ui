@@ -597,7 +597,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             localiserId: 'contentTitleField',
                                                             RTip: 'Content title. Mandatory.',
                                                             anchor: '90%',
-                                                            style: '{float:left}',
+                                                            style: {
+                                                                float: 'left'
+                                                            },
                                                             fieldLabel: 'Title *',
                                                             name: 'text',
                                                             allowBlank: false
@@ -614,7 +616,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             RTip: 'Value to be used as content part in any URL diplaying this content.',
                                                             anchor: '90%',
                                                             style: {
-                                                                float: left
+                                                                float: 'left'
                                                             },
                                                             fieldLabel: 'URL Segment',
                                                             labelSeparator: ' ',
@@ -633,7 +635,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             RTip: 'Résumé facultatif du contenu.',
                                                             anchor: '90%',
                                                             style: {
-                                                                float: left
+                                                                float: 'left'
                                                             },
                                                             fieldLabel: 'Résumé ',
                                                             labelSeparator: ' ',
