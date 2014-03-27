@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "model": "userDataModel",
-        "storeId": "UsersGroupStore",
-        "designer|userClassName": "UsersGroupStore",
         "designer|userAlias": "UsersGroupStore",
-        "pageSize": 1000
+        "designer|userClassName": "UsersGroupStore",
+        "model": "userDataModel",
+        "pageSize": 1000,
+        "storeId": "UsersGroupStore"
     },
     "configAlternates": {
         "isOptimised": "boolean"

@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newDamTypeWindow",
-        "height": 137,
-        "id": "newMTWindow",
-        "width": 334,
-        "designer|userClassName": "newMTWindow",
-        "designer|userAlias": "newMTWindow",
-        "resizable": false,
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "newMTWindow",
+        "designer|userClassName": "newMTWindow",
+        "height": 137,
         "iconCls": "mediaTypes",
+        "id": "newMTWindow",
+        "layout": "fit",
+        "localiserId": "newDamTypeWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Nouveau type de média",
-        "modal": true
+        "width": 334
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -52,11 +52,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "newDamTypeNameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom ",
-                        "name": "type",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "newDamTypeNameField",
+                        "name": "type"
                     },
                     "designerId": "c4655cc6-29dc-478f-a026-4899de6e7320",
                     "customConfigs": [
@@ -75,13 +75,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "newDamTypeMainFileTypeField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Type de fichier principal",
-                        "name": "mainFileType",
                         "allowBlank": false,
                         "editable": false,
+                        "fieldLabel": "Type de fichier principal",
                         "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "localiserId": "newDamTypeMainFileTypeField",
+                        "name": "mainFileType",
                         "store": [
                             "[\"Image\", \"Document\", \"Video\", \"Animation\", \"Audio\"]"
                         ]
@@ -106,9 +106,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "newDamTypeSubmitBtn",
-                        "layout|anchor": "100%",
                         "id": "createNewMTBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "newDamTypeSubmitBtn",
                         "text": "Créer un nouveau type de média"
                     },
                     "designerId": "7ba827d3-ab4d-4900-a161-a9bc92eb9a23",

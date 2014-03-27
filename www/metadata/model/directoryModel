@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "directoryModel",
-        "designer|userAlias": "directoryModel"
+        "designer|userAlias": "directoryModel",
+        "designer|userClassName": "directoryModel"
     },
     "designerId": "c0b4069f-44a9-4ba0-9dc2-3dc669611220",
     "cn": [
@@ -85,11 +85,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(false);"
                         ]

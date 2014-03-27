@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newTermWindow",
+        "designer|userAlias": "taxoTermInsertWindow",
+        "designer|userClassName": "taxoTermInsertWindow",
         "height": 118,
         "id": "taxoTermInsertWindow",
-        "width": 400,
-        "designer|userClassName": "taxoTermInsertWindow",
-        "designer|userAlias": "taxoTermInsertWindow",
         "layout": "fit",
-        "title": "Nouveau terme"
+        "localiserId": "newTermWindow",
+        "title": "Nouveau terme",
+        "width": 400
     },
     "designerId": "49bec756-7701-4c60-a70f-4a067633eff3",
     "customConfigs": [
@@ -45,11 +45,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "termField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Terme ",
-                        "name": "text",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "termField",
+                        "name": "text"
                     },
                     "designerId": "b0ba22a7-c737-4e4a-861c-7d6d0c9d0539",
                     "customConfigs": [
@@ -68,9 +68,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|anchor": "100%",
                         "id": "taxoTermInsertorBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },

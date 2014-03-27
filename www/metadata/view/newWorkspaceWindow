@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newWorkspaceWindow",
-        "height": 112,
-        "width": 400,
-        "designer|userClassName": "newWorkspaceWindow",
-        "designer|userAlias": "newWorkspaceWindow",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "newWorkspaceWindow",
+        "designer|userClassName": "newWorkspaceWindow",
+        "height": 112,
         "layout": "fit",
+        "localiserId": "newWorkspaceWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Nouvel espace de travail",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,11 +50,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom",
-                        "name": "text",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "text"
                     },
                     "designerId": "44dee598-9fa0-4cda-8298-9d0f922e598a",
                     "customConfigs": [
@@ -73,9 +73,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewWorkspaceBtn",
-                        "layout|anchor": "100%",
                         "id": "newWorkspaceSublitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "createNewWorkspaceBtn",
                         "scale": "medium",
                         "text": "Créer un nouvel espace de travail"
                     },

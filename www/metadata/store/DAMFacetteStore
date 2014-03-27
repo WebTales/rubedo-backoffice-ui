@@ -6,20 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "facettes": [
-            "[ ]"
-        ],
         "activeFacettes": [
             "{ }"
         ],
         "autoLoad": false,
         "autoSync": true,
-        "model": "DAMSearchModel",
-        "remoteSort": true,
-        "storeId": "DAMFacetteStore",
-        "designer|userClassName": "DAMFacetteStore",
         "designer|userAlias": "DAMFacetteStore",
-        "pageSize": 50
+        "designer|userClassName": "DAMFacetteStore",
+        "facettes": [
+            "[ ]"
+        ],
+        "model": "DAMSearchModel",
+        "pageSize": 50,
+        "remoteSort": true,
+        "storeId": "DAMFacetteStore"
     },
     "configAlternates": {
         "facettes": "array",
@@ -63,7 +63,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "         create: 'dam/create',\r",
@@ -71,7 +70,8 @@
                     "         update: 'dam/update',\r",
                     "         destroy: 'dam/delete'\r",
                     "}"
-                ]
+                ],
+                "batchActions": false
             },
             "designerId": "5e785b38-6664-49fc-854b-e31abe5bbfc7",
             "cn": [
@@ -96,10 +96,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
                                 ],
+                                "fn": "getResponseData",
                                 "implHandler": [
                                     "var data, error;\r",
                                     "\r",
@@ -141,8 +141,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "da436253-e7d7-471d-b979-7c065c7592a5"

@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "contents",
         "autoLoad": false,
         "autoSync": true,
+        "designer|userAlias": "ContenusDataJson",
+        "designer|userClassName": "ContenusDataJson",
+        "isOptimised": true,
         "model": "contenusDataModel",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
+        "sortOnFilter": false,
         "storeId": " ",
-        "designer|userClassName": "ContenusDataJson",
-        "designer|userAlias": "ContenusDataJson",
-        "pageSize": 50,
-        "sortOnFilter": false
+        "usedCollection": "contents"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -44,7 +44,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'contents/create',\r",
@@ -53,6 +52,7 @@
                     "                    destroy: 'contents/delete'\r",
                     "                }"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "402f9244-a4eb-4476-aa0d-7d47d285444e",
@@ -78,8 +78,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": "mapping",
                         "encode": true,
+                        "nameProperty": "mapping",
                         "root": "data"
                     },
                     "designerId": "be7e2b1d-d655-464a-a777-eced0aa78295"

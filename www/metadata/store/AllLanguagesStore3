@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Languages",
         "autoLoad": false,
+        "data": null,
+        "designer|userAlias": "AllLanguagesStore3",
+        "designer|userClassName": "AllLanguagesStore3",
+        "isOptimised": true,
         "model": "languageModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "AllLanguagesStore3",
-        "designer|userClassName": "AllLanguagesStore3",
-        "designer|userAlias": "AllLanguagesStore3",
-        "data": null,
-        "pageSize": 1000
+        "usedCollection": "Languages"
     },
     "configAlternates": {
         "isOptimised": "boolean"

@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "MediaTypes",
         "autoLoad": false,
-        "model": "mediaTypeModel",
-        "storeId": "MediaTypesFORDAMPicker",
-        "designer|userClassName": "MediaTypesFORDAMPicker",
-        "designer|userAlias": "MediaTypesFORDAMPicker",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "MediaTypesFORDAMPicker",
+        "designer|userClassName": "MediaTypesFORDAMPicker",
+        "isOptimised": true,
+        "model": "mediaTypeModel",
+        "pageSize": 1000,
+        "storeId": "MediaTypesFORDAMPicker",
+        "usedCollection": "MediaTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

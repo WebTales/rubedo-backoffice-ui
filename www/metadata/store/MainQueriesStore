@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Queries",
         "autoLoad": false,
         "autoSync": true,
+        "designer|userAlias": "MainQueriesStore",
+        "designer|userClassName": "MainQueriesStore",
+        "isOptimised": true,
         "model": "queryDataModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "MainQueriesStore",
-        "designer|userClassName": "MainQueriesStore",
-        "designer|userAlias": "MainQueriesStore",
-        "pageSize": 1000
+        "usedCollection": "Queries"
     },
     "configAlternates": {
         "isOptimised": "boolean"

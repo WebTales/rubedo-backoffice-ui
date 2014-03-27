@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "90%",
-        "height": 54,
-        "width": 426,
-        "designer|userClassName": "externalMediaFieldComponent",
         "designer|userAlias": "externalMediaFieldComponent",
-        "layout": "anchor",
+        "designer|userClassName": "externalMediaFieldComponent",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "height": 54,
+        "labelSeparator": " ",
+        "layout": "anchor",
+        "width": 426
     },
     "designerId": "c4a3059a-1950-40ff-8528-0964d4544e97",
     "customConfigs": [
@@ -32,13 +32,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "emFieldURL",
-                "layout|anchor": "100%",
-                "margin": "0 0 10 0",
-                "style": "{float:left;}",
                 "fieldLabel": "URL",
                 "labelSeparator": " ",
+                "layout|anchor": "100%",
+                "localiserId": "emFieldURL",
+                "margin": "0 0 10 0",
                 "name": "url",
+                "style": "{float:left;}",
                 "submitValue": false,
                 "vtype": "url"
             },
@@ -62,17 +62,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "emFieldMaxWidth",
-                "layout|anchor": "50%",
-                "margin": "0 10 0 0",
-                "style": "{float:left;}",
-                "fieldLabel": "Largeur max",
-                "labelSeparator": " ",
-                "name": "maxWidth",
-                "submitValue": false,
                 "allowDecimals": false,
                 "decimalPrecision": 6,
-                "minValue": 0
+                "fieldLabel": "Largeur max",
+                "labelSeparator": " ",
+                "layout|anchor": "50%",
+                "localiserId": "emFieldMaxWidth",
+                "margin": "0 10 0 0",
+                "minValue": 0,
+                "name": "maxWidth",
+                "style": "{float:left;}",
+                "submitValue": false
             },
             "configAlternates": {
                 "style": "string"
@@ -94,15 +94,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "emFieldMAxHeight",
-                "layout|anchor": "50%",
-                "fieldLabel": "Hauteur max",
-                "labelSeparator": " ",
-                "name": "maxHeight",
-                "submitValue": false,
                 "allowDecimals": false,
                 "decimalPrecision": 6,
-                "minValue": 0
+                "fieldLabel": "Hauteur max",
+                "labelSeparator": " ",
+                "layout|anchor": "50%",
+                "localiserId": "emFieldMAxHeight",
+                "minValue": 0,
+                "name": "maxHeight",
+                "submitValue": false
             },
             "designerId": "022ed57e-5376-4011-b73a-83153e560476",
             "customConfigs": [

@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Groups",
         "autoLoad": false,
-        "model": "groupDataModel",
-        "storeId": "GroupsComboStore2",
-        "designer|userClassName": "GroupsComboStore2",
         "designer|userAlias": "GroupsComboStore2",
-        "pageSize": 1000
+        "designer|userClassName": "GroupsComboStore2",
+        "isOptimised": true,
+        "model": "groupDataModel",
+        "pageSize": 1000,
+        "storeId": "GroupsComboStore2",
+        "usedCollection": "Groups"
     },
     "configAlternates": {
         "isOptimised": "boolean"

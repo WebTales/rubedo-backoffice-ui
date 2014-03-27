@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "SitesController",
-        "designer|userAlias": "SitesController"
+        "designer|userAlias": "SitesController",
+        "designer|userClassName": "SitesController"
     },
     "designerId": "75884ccb-3e5d-4d28-a9bc-a73fc3e63f6c",
     "cn": [
@@ -19,6 +19,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainSitesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "selectSite",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)) {\r",
@@ -60,9 +62,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mainSitesGrid"
+                "scope": "me"
             },
             "designerId": "f556d022-ed69-445c-ae0b-256f2561b3b0"
         },
@@ -74,6 +74,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#siteRemoveBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "deleteSite",
                 "implHandler": [
                     "var target = Ext.getCmp('mainSitesGrid').getSelectionModel().getSelection()[0];\r",
@@ -121,9 +123,7 @@
                     "            }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#siteRemoveBtn"
+                "scope": "me"
             },
             "designerId": "9e982d4b-bf73-4485-9935-2ad4712bb630"
         },
@@ -135,14 +135,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#siteAddBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "openAddSiteWindow",
                 "implHandler": [
                     "Ext.widget(\"siteBuilderWizzard\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#siteAddBtn"
+                "scope": "me"
             },
             "designerId": "db880338-3f71-412b-8ce9-7ed7faa11844"
         },
@@ -154,6 +154,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newSiteSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "createNewSite",
                 "implHandler": [
                     "var form = button.up().getForm();\r",
@@ -169,9 +171,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newSiteSubmitBtn"
+                "scope": "me"
             },
             "designerId": "93b162d4-b6dd-4c4f-b017-dcca9a36421c"
         },
@@ -183,6 +183,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#updateSiteBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "updateSiteSubmit",
                 "implHandler": [
                     "var me=this;\r",
@@ -223,9 +225,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#updateSiteBtn"
+                "scope": "me"
             },
             "designerId": "0cd9478d-25ca-4ba2-8f1d-0706ea13fa61"
         },
@@ -237,6 +237,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#sitesInterface",
+                "designer|targetType": "Ext.window.Window",
                 "fn": "onSitesInterfaceBeforeClose",
                 "implHandler": [
                     "Ext.getStore(\"SitesJson\").removeAll();\r",
@@ -246,9 +248,7 @@
                     "Ext.getStore(\"AllLanguagesStore2\").removeAll();"
                 ],
                 "name": "beforeclose",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "#sitesInterface"
+                "scope": "me"
             },
             "designerId": "ff32189d-a3ea-4f62-8b32-e8137715867d"
         },
@@ -260,6 +260,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainSitesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMainSitesGridRender",
                 "implHandler": [
                     "Ext.getStore(\"SitesJson\").load();\r",
@@ -267,9 +269,7 @@
                     "Ext.getStore(\"AllLanguagesStore2\").load();"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mainSitesGrid"
+                "scope": "me"
             },
             "designerId": "829e1c72-ddea-4fe6-b0b1-dbb2fa2da509"
         },
@@ -281,6 +281,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#siteWizzardCreateBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSiteWizzardCreateBtnClick",
                 "implHandler": [
                     "var form = button.up().up().getForm();\r",
@@ -307,9 +309,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#siteWizzardCreateBtn"
+                "scope": "me"
             },
             "designerId": "61472e76-7b05-4780-9bd8-0b6f54b24a0b"
         }

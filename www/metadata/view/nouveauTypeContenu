@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newCTWindow",
+        "constrainHeader": true,
+        "designer|userAlias": "nouveauTypeContenu",
+        "designer|userClassName": "nouveauTypeContenu",
         "frame": null,
         "height": null,
-        "id": "nouveauTypeContenuFenetre",
-        "maxHeight": null,
-        "width": 300,
-        "designer|userClassName": "nouveauTypeContenu",
-        "designer|userAlias": "nouveauTypeContenu",
-        "resizable": false,
-        "constrainHeader": true,
         "iconCls": "content-icon",
+        "id": "nouveauTypeContenuFenetre",
+        "localiserId": "newCTWindow",
+        "maxHeight": null,
+        "modal": true,
+        "resizable": false,
         "title": "Nouveau type de contenu",
-        "modal": true
+        "width": 300
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -53,12 +53,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
-                        "id": "champCreerTC",
+                        "allowBlank": false,
                         "fieldLabel": "Nom ",
-                        "name": "type",
-                        "allowBlank": false
+                        "id": "champCreerTC",
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "type"
                     },
                     "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a",
                     "customConfigs": [
@@ -110,18 +110,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Product type",
-                                "name": "productType",
-                                "value": [
-                                    "\"none\""
-                                ],
                                 "allowBlank": false,
                                 "editable": false,
+                                "fieldLabel": "Product type",
                                 "forceSelection": true,
+                                "layout|anchor": "100%",
+                                "name": "productType",
                                 "queryMode": "local",
                                 "store": [
                                     "[[\"none\",\"None\"],[\"configurable\",\"Configurable\"]]"
+                                ],
+                                "value": [
+                                    "\"none\""
                                 ]
                             },
                             "configAlternates": {
@@ -139,9 +139,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNTCBtn",
-                        "layout|anchor": "100%",
                         "id": "boutonCreerTC",
+                        "layout|anchor": "100%",
+                        "localiserId": "createNTCBtn",
                         "text": "Créer un nouveau type de contenu"
                     },
                     "designerId": "5e9ce190-3a65-410a-8f33-122344d58a33",

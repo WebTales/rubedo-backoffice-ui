@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "images-view",
-        "designer|userClassName": "MyView",
-        "designer|userAlias": "myview",
         "autoScroll": true,
+        "designer|userAlias": "myview",
+        "designer|userClassName": "MyView",
+        "id": "images-view",
         "itemSelector": "div",
         "store": "DAMFacetteStore"
     },
@@ -23,10 +23,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processMyView",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processMyView",
                 "implHandler": [
                     "config.tpl= [\r",
                     "'<tpl for=\".\">',\r",

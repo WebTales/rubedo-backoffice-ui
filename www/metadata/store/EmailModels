@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "usedCollection": "EmailTemplates",
-        "isOptimised": true,
         "autoLoad": false,
         "autoSync": null,
+        "designer|userAlias": "EmailModels",
+        "designer|userClassName": "EmailModels",
+        "isOptimised": true,
         "model": "emailTemplateModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "EmailModels",
-        "designer|userClassName": "EmailModels",
-        "designer|userAlias": "EmailModels",
-        "pageSize": 1000
+        "usedCollection": "EmailTemplates"
     },
     "configAlternates": {
         "isOptimised": "boolean"

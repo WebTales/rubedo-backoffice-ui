@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 250,
-        "width": 400,
-        "designer|userClassName": "CTLReplicatorEntity",
-        "designer|userAlias": "CTLReplicatorEntity",
         "bodyPadding": 10,
+        "designer|userAlias": "CTLReplicatorEntity",
+        "designer|userClassName": "CTLReplicatorEntity",
         "header": false,
-        "title": ""
+        "height": 250,
+        "title": "",
+        "width": 400
     },
     "designerId": "16d7947b-734c-40f8-89ec-32633511ee40",
     "cn": [
@@ -24,12 +24,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "mandatoryNameField",
-                "layout|anchor": "100%",
+                "allowBlank": false,
                 "fieldLabel": "Name *",
                 "labelWidth": 130,
-                "name": "type",
-                "allowBlank": false
+                "layout|anchor": "100%",
+                "localiserId": "mandatoryNameField",
+                "name": "type"
             },
             "designerId": "66bb94ce-d3cf-4981-a247-d74baa2f5eaf",
             "customConfigs": [

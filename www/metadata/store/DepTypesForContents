@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "ContentTypes",
         "autoLoad": false,
-        "model": null,
-        "storeId": "DepTypesForContents",
-        "designer|userClassName": "DepTypesForContents",
         "designer|userAlias": "DepTypesForContents",
-        "pageSize": 1000
+        "designer|userClassName": "DepTypesForContents",
+        "isOptimised": true,
+        "model": null,
+        "pageSize": 1000,
+        "storeId": "DepTypesForContents",
+        "usedCollection": "ContentTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

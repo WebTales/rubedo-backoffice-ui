@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "FTDComboField",
         "designer|userAlias": "FTDComboField",
-        "fieldLabel": "Label",
+        "designer|userClassName": "FTDComboField",
         "displayField": "name",
+        "fieldLabel": "Label",
         "forceSelection": true,
         "multiSelect": true,
         "queryMode": "local",
@@ -29,10 +29,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processFTDComboField",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processFTDComboField",
                 "implHandler": [
                     "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
                     "return config;"

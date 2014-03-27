@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "SearchController",
-        "designer|userAlias": "SearchController"
+        "designer|userAlias": "SearchController",
+        "designer|userClassName": "SearchController"
     },
     "designerId": "606ff5d4-d66c-4e04-81ba-5331a2b062fc",
     "cn": [
@@ -19,6 +19,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ESSearchButton",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "mainSearchLaunch",
                 "implHandler": [
                     "var me=this;\r",
@@ -46,9 +48,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ESSearchButton"
+                "scope": "me"
             },
             "designerId": "73056bf5-5078-4dd5-bd60-eb6b0e8f8262"
         },
@@ -60,6 +60,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ResultContentsGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "mainResultWindowGetContext",
                 "implHandler": [
                     "if ((record.get(\"objectType\")==\"content\")&&(ACL.interfaceRights['read.ui.contents'])){\r",
@@ -71,9 +73,7 @@
                     "}"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ResultContentsGrid"
+                "scope": "me"
             },
             "designerId": "fea6c637-212a-4372-a699-1d94b9313c48"
         },
@@ -85,10 +85,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderActiveFacets",
                 "designer|params": [
                     "facets"
                 ],
+                "fn": "renderActiveFacets",
                 "implHandler": [
                     "Ext.getCmp(\"ESFacetQueryField\").setValue(Ext.getStore(\"ESFacetteStore\").activeFacettes.query);\r",
                     "var target=Ext.getCmp(\"SearchActiveFacetBar\");\r",
@@ -146,15 +146,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ESFacetQueryBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onESFacetQueryBtnClick",
                 "implHandler": [
                     "Ext.getStore(\"ESFacetteStore\").activeFacettes.query=Ext.getCmp(\"ESFacetQueryField\").getValue();\r",
                     "Ext.getStore(\"ESFacetteStore\").load();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ESFacetQueryBtn"
+                "scope": "me"
             },
             "designerId": "9b13ba4c-cdde-410c-8ea3-d270023551ef"
         },
@@ -166,10 +166,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderFacets",
                 "designer|params": [
                     "facets"
                 ],
+                "fn": "renderFacets",
                 "implHandler": [
                     "var me=this;\r",
                     "var target=Ext.getCmp(\"searchFacetBox\");\r",

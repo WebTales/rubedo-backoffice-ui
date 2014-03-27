@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "90%",
-        "height": 54,
-        "width": 426,
-        "designer|userClassName": "localiserFieldComponent",
         "designer|userAlias": "localiserFieldComponent",
-        "layout": "anchor",
+        "designer|userClassName": "localiserFieldComponent",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "height": 54,
+        "labelSeparator": " ",
+        "layout": "anchor",
+        "width": 426
     },
     "designerId": "15b19248-a73a-4ad3-87eb-1ea892921ea0",
     "customConfigs": [
@@ -32,14 +32,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "lcFieldAdress",
-                "layout|anchor": "50%",
-                "margin": "0 10 0 0",
-                "style": "{float:left;}",
                 "fieldLabel": "Adresse",
                 "labelSeparator": " ",
                 "labelWidth": 60,
+                "layout|anchor": "50%",
+                "localiserId": "lcFieldAdress",
+                "margin": "0 10 0 0",
                 "name": "address",
+                "style": "{float:left;}",
                 "submitValue": false
             },
             "configAlternates": {
@@ -62,15 +62,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "lcFieldAltitude",
-                "layout|anchor": "50%",
-                "margin": null,
+                "decimalPrecision": 6,
                 "fieldLabel": "Altitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
+                "layout|anchor": "50%",
+                "localiserId": "lcFieldAltitude",
+                "margin": null,
                 "name": "altitude",
-                "submitValue": false,
-                "decimalPrecision": 6
+                "submitValue": false
             },
             "designerId": "a2030a19-a55b-4b67-9d5a-c4c68ae0b8e9",
             "customConfigs": [
@@ -89,18 +89,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "lcFieldLatitude",
-                "layout|anchor": "50%",
-                "margin": "0 10 0 0",
-                "style": "{float:left;}",
+                "decimalPrecision": 6,
                 "fieldLabel": "Latitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
-                "name": "lat",
-                "submitValue": false,
-                "decimalPrecision": 6,
+                "layout|anchor": "50%",
+                "localiserId": "lcFieldLatitude",
+                "margin": "0 10 0 0",
                 "maxValue": 90,
-                "minValue": -90
+                "minValue": -90,
+                "name": "lat",
+                "style": "{float:left;}",
+                "submitValue": false
             },
             "configAlternates": {
                 "style": "string"
@@ -122,16 +122,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "lcFieldLongitude",
-                "layout|anchor": "50%",
+                "decimalPrecision": 6,
                 "fieldLabel": "Longitude",
                 "labelSeparator": " ",
                 "labelWidth": 60,
-                "name": "lon",
-                "submitValue": false,
-                "decimalPrecision": 6,
+                "layout|anchor": "50%",
+                "localiserId": "lcFieldLongitude",
                 "maxValue": 180,
-                "minValue": -180
+                "minValue": -180,
+                "name": "lon",
+                "submitValue": false
             },
             "designerId": "d2978bf2-b354-48b1-8cfc-327c92d90cac",
             "customConfigs": [

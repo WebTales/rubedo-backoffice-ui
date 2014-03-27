@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "CKEField",
+        "designer|userClassName": "CKEField",
+        "fieldLabel": "Label",
         "height": null,
         "minHeight": null,
-        "designer|userClassName": "CKEField",
-        "designer|userAlias": "CKEField",
-        "fieldLabel": "Label",
         "stripCharsRe": null
     },
     "designerId": "d307504b-480a-4d03-adf2-dc2c18432b4f",
@@ -226,10 +226,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "setValue",
                 "designer|params": [
                     "value"
                 ],
+                "fn": "setValue",
                 "implHandler": [
                     "if (typeof(ContentContributor)!=\"undefined\"){\r",
                     "try{\r",
@@ -312,10 +312,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "setReadOnly",
                 "designer|params": [
                     "readOnly"
                 ],
+                "fn": "setReadOnly",
                 "implHandler": [
                     "try {\r",
                     "    var me = this,\r",

@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 29,
-        "padding": null,
-        "width": 455,
-        "designer|userClassName": "FacetOverriderFieldComponent",
         "designer|userAlias": "FacetOverriderFieldComponent",
+        "designer|userClassName": "FacetOverriderFieldComponent",
         "fieldLabel": "Label",
+        "height": 29,
         "labelSeparator": " ",
-        "labelWidth": 60
+        "labelWidth": 60,
+        "padding": null,
+        "width": 455
     },
     "designerId": "a109fcf3-48a3-4aeb-af13-4d6ad0345412",
     "cn": [
@@ -25,10 +25,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "addBtn",
-                "itemId": "addBtn",
-                "margin": "0 10 0 0",
                 "iconCls": "add",
+                "itemId": "addBtn",
+                "localiserId": "addBtn",
+                "margin": "0 10 0 0",
                 "text": "Ajouter"
             },
             "designerId": "86aa1dad-c442-4699-9482-8a95c388b5ae",
@@ -48,10 +48,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "modifyBtn",
-                "itemId": "editBtn",
-                "margin": "0 10 0 0",
                 "iconCls": "edit",
+                "itemId": "editBtn",
+                "localiserId": "modifyBtn",
+                "margin": "0 10 0 0",
                 "text": "Modifier"
             },
             "designerId": "b6255ac7-ac26-4ad9-b790-2957afd8bd0d",
@@ -71,9 +71,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "removeBtn",
-                "itemId": "removeBtn",
                 "iconCls": "close",
+                "itemId": "removeBtn",
+                "localiserId": "removeBtn",
                 "text": "Supprimer"
             },
             "designerId": "fd0cf1a6-cd21-4723-91b3-735de5dc5477",

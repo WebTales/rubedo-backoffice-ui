@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": null,
-        "designer|userClassName": "localiserField",
         "designer|userAlias": "localiserField",
-        "fieldLabel": "Label"
+        "designer|userClassName": "localiserField",
+        "fieldLabel": "Label",
+        "height": null
     },
     "designerId": "b0ae3c81-7792-47a7-91c2-3e7e993f879c",
     "cn": [
@@ -104,10 +104,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "setValue",
                 "designer|params": [
                     "value"
                 ],
+                "fn": "setValue",
                 "implHandler": [
                     "var me=this;\r",
                     "me.value=value;\r",

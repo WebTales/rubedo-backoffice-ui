@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "usedCollection": "Sites",
-        "isOptimised": true,
         "autoLoad": false,
-        "model": "sitesDataModel",
-        "storeId": "SitesComboUTLayouts",
-        "designer|userClassName": "SitesComboUTLayouts",
         "designer|userAlias": "SitesComboUTLayouts",
-        "pageSize": 1000
+        "designer|userClassName": "SitesComboUTLayouts",
+        "isOptimised": true,
+        "model": "sitesDataModel",
+        "pageSize": 1000,
+        "storeId": "SitesComboUTLayouts",
+        "usedCollection": "Sites"
     },
     "configAlternates": {
         "isOptimised": "boolean"

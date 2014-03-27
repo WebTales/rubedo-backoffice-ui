@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "specialTaxoMode": false,
-        "specialContentsMode": false,
-        "directOverrideMode": false,
         "border": null,
-        "hidden": true,
-        "style": null,
+        "designer|userAlias": "DLSToolbar",
         "designer|userClassName": "DLSToolbar",
-        "designer|userAlias": "DLSToolbar"
+        "directOverrideMode": false,
+        "hidden": true,
+        "specialContentsMode": false,
+        "specialTaxoMode": false,
+        "style": null
     },
     "configAlternates": {
         "style": "string",
@@ -58,13 +58,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "currentLanguageDSLField",
-                "layout|flex": null,
-                "itemId": "LocSelectorCombo",
-                "fieldLabel": "Current language",
-                "editable": false,
                 "displayField": "label",
+                "editable": false,
+                "fieldLabel": "Current language",
                 "forceSelection": true,
+                "itemId": "LocSelectorCombo",
+                "layout|flex": null,
+                "localiserId": "currentLanguageDSLField",
                 "queryMode": "local",
                 "valueField": "locale"
             },
@@ -85,10 +85,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processLocSelectorCombo",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processLocSelectorCombo",
                         "implHandler": [
                             "config.store=Ext.create('Ext.data.Store', {\r",
                             "    fields:[{name:\"locale\"},{name:\"label\"},{name:\"flagCode\"}]\r",
@@ -152,10 +152,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "addTranslationBtn",
-                "layout|flex": null,
-                "itemId": "LocAddBtn",
                 "iconCls": "add",
+                "itemId": "LocAddBtn",
+                "layout|flex": null,
+                "localiserId": "addTranslationBtn",
                 "text": "Add translation"
             },
             "designerId": "d4359ae1-438e-4f4c-958d-4c3fa0bae3ea",
@@ -175,11 +175,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "var me=button.up();\r",
                             "var restricted=Ext.Array.pluck(Ext.getStore(\"AllLanguagesStore3\").getRange(),\"data\");\r",
@@ -217,11 +217,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "removeTranslationBtn",
-                "layout|flex": null,
                 "disabled": true,
-                "itemId": "LocRemoveBtn",
                 "iconCls": "close",
+                "itemId": "LocRemoveBtn",
+                "layout|flex": null,
+                "localiserId": "removeTranslationBtn",
                 "text": "Remove translation"
             },
             "designerId": "1949879a-65ec-4a5c-9f0f-b30ae965472d",
@@ -241,11 +241,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "var comboValue=button.up().getComponent(\"LocSelectorCombo\").getValue();\r",
                             "button.up().getComponent(\"LocSelectorCombo\").setValue(button.up().mainLocale);\r",
@@ -267,12 +267,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "recievei18n",
                 "designer|params": [
                     "i18n",
                     "locale",
                     "nativeLanguage"
                 ],
+                "fn": "recievei18n",
                 "implHandler": [
                     "var me=this;\r",
                     "me.mainLocale=locale;\r",
@@ -358,10 +358,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "persisti18n",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "persisti18n",
                 "implHandler": [
                     "var me=this;\r",
                     "var newOne=Ext.clone(record.get(\"i18n\"));\r",
@@ -397,10 +397,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "addTranslation",
                 "designer|params": [
                     "locale"
                 ],
+                "fn": "addTranslation",
                 "implHandler": [
                     "var me=this;\r",
                     "me.getComponent(0).getStore().add({\"locale\":locale,\"label\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"label\"),\"flagCode\":Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",locale,false,false,true).items[0].get(\"flagCode\")});\r",

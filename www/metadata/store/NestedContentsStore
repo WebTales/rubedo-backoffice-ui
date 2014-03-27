@@ -8,11 +8,11 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "model": "nestedContentModel",
-        "storeId": "NestedContentsStore",
-        "designer|userClassName": "NestedContentsStore",
         "designer|userAlias": "NestedContentsStore",
-        "pageSize": 50
+        "designer|userClassName": "NestedContentsStore",
+        "model": "nestedContentModel",
+        "pageSize": 50,
+        "storeId": "NestedContentsStore"
     },
     "designerId": "817bd763-92f6-4eb5-9b4c-817418ccc96f",
     "cn": [

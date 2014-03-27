@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "queryTypeChooseWindow",
+        "constrain": true,
         "container|align": "stretch",
+        "designer|userAlias": "queryTypeChooseWindow",
+        "designer|userClassName": "queryTypeChooseWindow",
         "height": 141,
         "id": "queryTypeChooseWindow",
-        "width": 235,
-        "designer|userClassName": "queryTypeChooseWindow",
-        "designer|userAlias": "queryTypeChooseWindow",
-        "constrain": true,
-        "resizable": false,
         "layout": "vbox",
+        "localiserId": "queryTypeChooseWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Choisissez un type de requête",
-        "modal": true
+        "width": 235
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -39,8 +39,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "chooseManualQueryBtn",
                 "layout|flex": 1,
+                "localiserId": "chooseManualQueryBtn",
                 "scale": "large",
                 "text": "Requête manuelle"
             },
@@ -61,11 +61,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "var myWin = Ext.widget(\"manualQueryInterface\");\r",
                             "myWin.mainFieldId=button.up().mainFieldId;\r",
@@ -85,8 +85,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "ChooseSimpleQueryBtn",
                 "layout|flex": 1,
+                "localiserId": "ChooseSimpleQueryBtn",
                 "scale": "large",
                 "text": "Requête simple"
             },
@@ -107,11 +107,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "var myWin = Ext.widget(\"assistantRequetage\");\r",
                             "myWin.mainFieldId=button.up().mainFieldId;\r",
@@ -132,8 +132,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "chooseAdvancedQueryBtn",
                 "layout|flex": 1,
+                "localiserId": "chooseAdvancedQueryBtn",
                 "scale": "large",
                 "text": "Requête avancée"
             },
@@ -154,11 +154,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "var myWin = Ext.widget(\"assistantRequetage\");\r",
                             "myWin.mainFieldId=button.up().mainFieldId;\r",

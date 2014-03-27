@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "container|align": "stretch",
-        "height": 471,
-        "id": "paymentMeansInterface",
-        "width": 753,
-        "designer|userClassName": "paymentMeansInterface",
-        "designer|userAlias": "paymentMeansInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "paymentMeansInterface",
+        "designer|userClassName": "paymentMeansInterface",
+        "height": 471,
         "iconCls": "credit_card",
-        "title": "Payment means"
+        "id": "paymentMeansInterface",
+        "layout": "hbox",
+        "localiserId": null,
+        "title": "Payment means",
+        "width": 753
     },
     "designerId": "4bbca0a9-985e-4587-a9cd-246d5da344c5",
     "customConfigs": [
@@ -61,12 +61,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "id": "paymentMeansGrid",
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "PaymentMeans"
+                "id": "paymentMeansGrid",
+                "layout|flex": null,
+                "store": "PaymentMeans",
+                "title": "",
+                "width": 200
             },
             "designerId": "b84954ab-fc4b-4562-9949-9343ae132b6c",
             "cn": [
@@ -141,11 +141,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "container|align": "stretch",
                 "autoScroll": true,
-                "layout": "vbox",
                 "bodyPadding": null,
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 1,
                 "title": ""
             },
             "designerId": "10d2c004-9ab4-46cc-8924-ff3c0388781b",
@@ -182,10 +182,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "pmConfigSaveBtn",
                                 "iconCls": "save",
+                                "id": "pmConfigSaveBtn",
+                                "layout|flex": null,
                                 "text": "Save configuration"
                             },
                             "designerId": "f4c6e7e0-5908-4ff7-aed6-07cd482886c4",
@@ -225,9 +225,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "id": "pmRubedoConfigForm",
                         "bodyPadding": 10,
+                        "id": "pmRubedoConfigForm",
+                        "layout|flex": null,
                         "title": "Rubedo configuration"
                     },
                     "designerId": "4413c504-c162-48fe-9cb2-c267441bcf54",
@@ -240,11 +240,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Active",
-                                "name": "active",
                                 "boxLabel": "",
+                                "fieldLabel": "Active",
                                 "inputValue": "true",
+                                "layout|anchor": "100%",
+                                "name": "active",
                                 "uncheckedValue": "false"
                             },
                             "designerId": "099e816f-97bb-4d28-96fa-d4d023a59d8a"
@@ -257,12 +257,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
                                 "designer|displayName": null,
                                 "fieldLabel": "Display name",
-                                "name": "displayName",
-                                "allowBlank": false,
-                                "allowOnlyWhitespace": false
+                                "layout|anchor": "100%",
+                                "name": "displayName"
                             },
                             "designerId": "a7cf0eba-f99c-43cf-9348-5092284c1830"
                         },
@@ -274,9 +274,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "allowedFileType": "Image",
                                 "fieldLabel": "Logo",
-                                "name": "logo",
-                                "allowedFileType": "Image"
+                                "name": "logo"
                             },
                             "configAlternates": {
                                 "smallMode": "boolean"
@@ -301,9 +301,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "id": "pmNativeConfigForm",
                         "bodyPadding": 10,
+                        "id": "pmNativeConfigForm",
+                        "layout|flex": null,
                         "title": "Native payment means configuration"
                     },
                     "designerId": "96aac9d7-32c0-412d-bbd0-58881755ca7d"

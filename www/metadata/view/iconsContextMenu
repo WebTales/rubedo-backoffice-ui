@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "iconsContextMenu",
+        "designer|userClassName": "iconsContextMenu",
         "frame": true,
         "id": "iconsContextMenu",
-        "width": null,
-        "designer|userClassName": "iconsContextMenu",
-        "designer|userAlias": "iconsContextMenu",
-        "showSeparator": false
+        "showSeparator": false,
+        "width": null
     },
     "designerId": "7c4031db-6eea-4991-8483-b8160573bba4",
     "cn": [
@@ -23,10 +23,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "removeBtn",
+                "iconCls": "close",
                 "id": null,
                 "itemId": "iconDeleteMenuItem",
-                "iconCls": "close",
+                "localiserId": "removeBtn",
                 "text": "Supprimer"
             },
             "designerId": "25329bfb-492e-44b5-821f-d7930b01ed8e",
@@ -46,11 +46,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "nameField",
-                "itemId": "iconNameField",
+                "allowBlank": false,
                 "fieldLabel": "Nom ",
+                "itemId": "iconNameField",
                 "labelWidth": 40,
-                "allowBlank": false
+                "localiserId": "nameField"
             },
             "designerId": "3affe49c-7c9f-40c9-bb62-e1b1049a2d25",
             "customConfigs": [
@@ -69,10 +69,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "renameBtn",
+                "iconCls": "edit",
                 "id": null,
                 "itemId": "iconRenameMenuItem",
-                "iconCls": "edit",
+                "localiserId": "renameBtn",
                 "text": "Renommer"
             },
             "designerId": "90b328f2-ff86-4357-be12-87fa37c0fce6",

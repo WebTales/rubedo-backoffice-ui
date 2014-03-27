@@ -8,12 +8,12 @@
     "userConfig": {
         "anchor": "100%",
         "designer|snapToGrid": 10,
-        "height": 54,
-        "margin": "30 0 0 0",
-        "width": 183,
-        "designer|userClassName": "queryFieldComponent",
         "designer|userAlias": "queryFieldComponent",
-        "layout": "absolute"
+        "designer|userClassName": "queryFieldComponent",
+        "height": 54,
+        "layout": "absolute",
+        "margin": "30 0 0 0",
+        "width": 183
     },
     "designerId": "2f7e5de4-2ce2-4a35-87a7-927a97315007",
     "customConfigs": [
@@ -33,12 +33,12 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
-                "localiserId": "addBtn",
-                "itemId": "addBtn",
-                "margin": "0 4 0 0",
-                "width": 80,
                 "iconCls": "add",
-                "text": "Ajouter"
+                "itemId": "addBtn",
+                "localiserId": "addBtn",
+                "margin": "0 4 0 0",
+                "text": "Ajouter",
+                "width": 80
             },
             "designerId": "c50549c2-5e10-4777-8183-74e071faee82",
             "customConfigs": [
@@ -63,14 +63,14 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
-                "localiserId": "editBtn",
+                "iconCls": "edit",
+                "itemId": "editBtn",
                 "layout|x": 0,
                 "layout|y": 30,
-                "itemId": "editBtn",
+                "localiserId": "editBtn",
                 "margin": "0 4 0 0",
-                "width": 80,
-                "iconCls": "edit",
-                "text": "Modifier"
+                "text": "Modifier",
+                "width": 80
             },
             "designerId": "34953db2-ecc0-43fe-89eb-784373624339",
             "customConfigs": [
@@ -95,13 +95,13 @@
             "codeClass": null,
             "userConfig": {
                 "ACL": "write.ui.queries",
-                "localiserId": "removeBtn",
+                "iconCls": "close",
+                "itemId": "removeBtn",
                 "layout|x": 90,
                 "layout|y": 0,
-                "itemId": "removeBtn",
-                "width": 80,
-                "iconCls": "close",
-                "text": "Supprimer"
+                "localiserId": "removeBtn",
+                "text": "Supprimer",
+                "width": 80
             },
             "designerId": "abe9db0d-8788-40f6-93c8-6e147b164b26",
             "customConfigs": [
@@ -125,12 +125,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "iconCls": "play_small",
+                "itemId": "previewBtn",
                 "layout|x": 90,
                 "layout|y": 30,
-                "itemId": "previewBtn",
-                "width": 80,
-                "iconCls": "play_small",
-                "text": "Preview"
+                "text": "Preview",
+                "width": 80
             },
             "designerId": "4c638971-035d-472b-b7ec-eeb63ed3fc4e"
         }

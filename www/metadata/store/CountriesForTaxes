@@ -7,12 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
-        "model": "country",
-        "storeId": "CountriesForTaxes",
-        "designer|userClassName": "CountriesForTaxes",
-        "designer|userAlias": "CountriesForTaxes",
         "data": null,
-        "pageSize": 10000
+        "designer|userAlias": "CountriesForTaxes",
+        "designer|userClassName": "CountriesForTaxes",
+        "model": "country",
+        "pageSize": 10000,
+        "storeId": "CountriesForTaxes"
     },
     "configAlternates": {
         "isOptimised": "boolean",

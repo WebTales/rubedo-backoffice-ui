@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
+        "designer|userAlias": "ApplicationLogs",
+        "designer|userClassName": "ApplicationLogs",
         "model": "applicationLog",
+        "pageSize": 25,
         "remoteFilter": true,
         "remoteSort": true,
-        "storeId": "ApplicationLogs",
-        "designer|userClassName": "ApplicationLogs",
-        "designer|userAlias": "ApplicationLogs",
-        "pageSize": 25
+        "storeId": "ApplicationLogs"
     },
     "configAlternates": {
         "isOptimised": "boolean"

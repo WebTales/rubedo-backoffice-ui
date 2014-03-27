@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "InterfaceController",
+        "designer|userClassName": "InterfaceController",
         "views": [
             "menuPrincipalInterface"
-        ],
-        "designer|userClassName": "InterfaceController",
-        "designer|userAlias": "InterfaceController"
+        ]
     },
     "designerId": "130f60c3-0d78-444a-92e2-79b56d3ab643",
     "cn": [
@@ -22,6 +22,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonPincipalInterface",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "afficherMenuPrincipal",
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {\r",
@@ -42,9 +44,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonPincipalInterface"
+                "scope": "me"
             },
             "designerId": "5c5b9451-2e7e-4af5-8da6-f40b2b04a89c"
         },
@@ -56,6 +56,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "[itemId='windowMaximize']",
+                "designer|targetType": "Ext.panel.Tool",
                 "fn": "maximize",
                 "implHandler": [
                     "tool.up().up().toggleMaximize();\r",
@@ -65,9 +67,7 @@
                     "task.delay(100);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='windowMaximize']"
+                "scope": "me"
             },
             "designerId": "eb38fbf4-e77e-4549-8114-44d2c5a0699e"
         },
@@ -79,6 +79,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#desktopCont",
+                "designer|targetType": "Ext.container.Container",
                 "fn": "compenserResize",
                 "implHandler": [
                     "Ext.getCmp('boiteAIconesBureau').setHeight(component.getHeight());\r",
@@ -92,9 +94,7 @@
                     "}"
                 ],
                 "name": "resize",
-                "scope": "me",
-                "designer|targetType": "Ext.container.Container",
-                "designer|controlQuery": "#desktopCont"
+                "scope": "me"
             },
             "designerId": "0cc85e6b-3c41-4554-a7a8-8d79eb8cc9f5"
         },
@@ -187,6 +187,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "window",
+                "designer|targetType": "Ext.window.Window",
                 "fn": "componrtementWindow",
                 "implHandler": [
                     "if ((!component.isXType(\"messagebox\"))&&(!component.isXType(\"uxNotification\"))){\r",
@@ -226,9 +228,7 @@
                     "}"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "window"
+                "scope": "me"
             },
             "designerId": "1fc66bc9-dd85-4f94-8109-c4d66106d244"
         },
@@ -240,14 +240,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "[itemId='windowMinimize']",
+                "designer|targetType": "Ext.panel.Tool",
                 "fn": "minimize",
                 "implHandler": [
                     "tool.up().up().minimize();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "[itemId='windowMinimize']"
+                "scope": "me"
             },
             "designerId": "d2d6b13a-8dbe-45e8-bccc-ea158a727004"
         },
@@ -259,6 +259,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "iconeBureau",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "comportementIcones",
                 "implHandler": [
                     "var me=this;\r",
@@ -313,9 +315,7 @@
                     "        });"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "iconeBureau"
+                "scope": "me"
             },
             "designerId": "88f8999a-4a2a-41a4-a846-7beed8ca293a"
         },
@@ -327,12 +327,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "placeLibre",
                 "designer|params": [
                     "x",
                     "y",
                     "id"
                 ],
+                "fn": "placeLibre",
                 "implHandler": [
                     "var libre = true;\r",
                     "var iconesP = Ext.getCmp('boiteAIconesBureau').items.items;\r",
@@ -352,6 +352,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#salamanderContext menuitem , #specialStudioMenu11 menuitem , #specialAdminMenu22 menuitem",
+                "designer|targetType": "Ext.menu.Item",
                 "fn": "onMenuitemClick",
                 "implHandler": [
                     "var button=item; \r",
@@ -376,9 +378,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#salamanderContext menuitem , #specialStudioMenu11 menuitem , #specialAdminMenu22 menuitem"
+                "scope": "me"
             },
             "designerId": "79c93167-a905-4b81-9cd7-8ca95f7d7321"
         },
@@ -390,6 +390,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#menuPrincipalDroite button , #simpleModeMainBar button",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "ouvrirFenteresMenuDroite",
                 "implHandler": [
                     "var me=this;\r",
@@ -462,9 +464,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#menuPrincipalDroite button , #simpleModeMainBar button"
+                "scope": "me"
             },
             "designerId": "eb23ce14-d3fd-4cfe-9907-95b111a42752"
         },
@@ -476,6 +476,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boiteAIconesBureau",
+                "designer|targetType": "Ext.container.Container",
                 "fn": "desktopMenu",
                 "implHandler": [
                     "component.getEl().on('contextmenu', function(e){\r",
@@ -489,9 +491,7 @@
                     "}); "
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.container.Container",
-                "designer|controlQuery": "#boiteAIconesBureau"
+                "scope": "me"
             },
             "designerId": "b1767f0a-3ac7-44c5-90b5-0bfe2e3cd45b"
         },
@@ -503,14 +503,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#itemHideAllIcons",
+                "designer|targetType": "Ext.menu.Item",
                 "fn": "hideAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.hide();});"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemHideAllIcons"
+                "scope": "me"
             },
             "designerId": "2e116f9b-b80b-4880-b148-156c7f2d564e"
         },
@@ -522,14 +522,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#itemShowAllIcons",
+                "designer|targetType": "Ext.menu.Item",
                 "fn": "showAllIcons",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp('boiteAIconesBureau').items.items, function(ico){ico.show();});"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemShowAllIcons"
+                "scope": "me"
             },
             "designerId": "3157d68b-57d3-4ab6-a7bf-30487ceeb27d"
         },
@@ -541,6 +541,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#itemRearangeAllIcons",
+                "designer|targetType": "Ext.menu.Item",
                 "fn": "reagarangeAllIcons",
                 "implHandler": [
                     "Ext.getStore(\"IconesDataJson\").suspendAutoSync();\r",
@@ -549,9 +551,7 @@
                     "Ext.getStore(\"IconesDataJson\").sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemRearangeAllIcons"
+                "scope": "me"
             },
             "designerId": "8d6e33bd-f189-487b-b19f-c336643aa836"
         },
@@ -563,6 +563,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#itemCustomizeDesktop",
+                "designer|targetType": "Ext.menu.Item",
                 "fn": "displayDesktopCustomizeWindow",
                 "implHandler": [
                     "var fenetre=Ext.getCmp('DesktopCustomizeWindow'); \r",
@@ -572,9 +574,7 @@
                     "}fenetre.show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#itemCustomizeDesktop"
+                "scope": "me"
             },
             "designerId": "828de331-3494-4fee-8964-14993238848e"
         },
@@ -586,14 +586,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#wallpaperGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "updateWallpaperPreview",
                 "implHandler": [
                     "Ext.getCmp('wallpaperPicker').getComponent(0).setSrc(record.data.file);"
                 ],
                 "name": "itemclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#wallpaperGrid"
+                "scope": "me"
             },
             "designerId": "f64052c0-db2d-4409-afdb-17f059629b12"
         },
@@ -605,15 +605,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#wallpaperPickerButton",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "wallpaperChange",
                 "implHandler": [
                     "Ext.getCmp('desktopBackGround').setSrc(Ext.getCmp('wallpaperPicker').getComponent(0).src);\r",
                     "Ext.getStore('PersonalPrefsStore').getRange()[0].set(\"wallpaper\",Ext.getCmp('wallpaperPicker').getComponent(0).src);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#wallpaperPickerButton"
+                "scope": "me"
             },
             "designerId": "71c12dac-ac32-4123-be0a-15c7e184593d"
         },
@@ -625,10 +625,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "init",
                 "designer|params": [
                     "application"
                 ],
+                "fn": "init",
                 "implHandler": [
                     "Ext.define('MyPrefData', { \r",
                     "    singleton: true, \r",
@@ -653,15 +653,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#themeGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onGridpanelExpand",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
                     "Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('themePicker'));"
                 ],
                 "name": "expand",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#themeGrid"
+                "scope": "me"
             },
             "designerId": "cc545788-e513-4b76-a2c2-c6aec618de2a"
         },
@@ -673,15 +673,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#wallpaperGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onGridpanelExpand1",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
                     "Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('wallpaperPicker'));"
                 ],
                 "name": "expand",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#wallpaperGrid"
+                "scope": "me"
             },
             "designerId": "123d6f2a-906f-409a-988e-a536d26f09eb"
         },
@@ -693,14 +693,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#themeGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onGridpanelItemClick",
                 "implHandler": [
                     "Ext.getCmp('themePicker').getComponent(0).setSrc(record.data.preview);"
                 ],
                 "name": "itemclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#themeGrid"
+                "scope": "me"
             },
             "designerId": "e4b03aa4-070e-4907-aab2-cc2e642f3f89"
         },
@@ -712,6 +712,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#themePickerButton",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "applyTheme",
                 "implHandler": [
                     "var theme = Ext.getCmp('themeGrid').getSelectionModel().getLastSelected().data;\r",
@@ -730,9 +732,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#themePickerButton"
+                "scope": "me"
             },
             "designerId": "17005950-13f0-4c5d-9029-bc0eac6be6d1"
         },
@@ -744,15 +744,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#accessibilityOptionsPanel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onPanelExpand",
                 "implHandler": [
                     "Ext.getCmp('DesktopCustomizeMainArea').removeAll();\r",
                     "Ext.getCmp('DesktopCustomizeMainArea').add(Ext.widget('accessibilityPicker'));"
                 ],
                 "name": "expand",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#accessibilityOptionsPanel"
+                "scope": "me"
             },
             "designerId": "f3a11150-070c-4296-b731-250dbacad406"
         },
@@ -764,6 +764,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#highContrastButton",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "HCmode",
                 "implHandler": [
                     "var myPrefs=Ext.getStore('PersonalPrefsStore').getRange()[0];\r",
@@ -779,9 +781,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#highContrastButton"
+                "scope": "me"
             },
             "designerId": "beaebb73-b0f8-4def-b178-90ae0286a930"
         },
@@ -793,6 +793,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#highContrastButton",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "setHCButtonStatus",
                 "implHandler": [
                     "if (MyPrefData.HCMode===true) {\r",
@@ -800,9 +802,7 @@
                     "} "
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#highContrastButton"
+                "scope": "me"
             },
             "designerId": "04048948-77bd-4f55-8916-587fb608e6e1"
         },
@@ -814,6 +814,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "[itemId='boutonCreerRaccourci']",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "createIconBtn",
                 "implHandler": [
                     "var myWindow = button.findParentByType(\"window\");\r",
@@ -913,9 +915,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "[itemId='boutonCreerRaccourci']"
+                "scope": "me"
             },
             "designerId": "22d07334-7ef6-478c-97ab-1673c0dc6bd0"
         },
@@ -959,6 +959,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "[itemId='boutonCreerRaccourci']",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onButtonAfterRender",
                 "implHandler": [
                     "/*if (MyPrefData.simpleMode){\r",
@@ -975,9 +977,7 @@
                     "}*/"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "[itemId='boutonCreerRaccourci']"
+                "scope": "me"
             },
             "designerId": "59c191c1-1c5f-4049-8175-e5d12f12f48f"
         },
@@ -989,6 +989,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#esWindowButton",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "launchESWindow",
                 "implHandler": [
                     "if (!(Ext.isDefined(Ext.getCmp('ESWindow')))) {\r",
@@ -1002,9 +1004,7 @@
                     "}else {Ext.getCmp('ESWindow').toFront();}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#esWindowButton"
+                "scope": "me"
             },
             "designerId": "dfb50cfb-9242-4189-acc8-25879407d359"
         },
@@ -1016,6 +1016,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#desktopHomeBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onDesktopHomeBtnClick",
                 "implHandler": [
                     "Ext.WindowManager.each(function(thing){\r",
@@ -1025,9 +1027,7 @@
                     "});"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#desktopHomeBtn"
+                "scope": "me"
             },
             "designerId": "ba840fa0-4912-4427-a732-0b7ed6ac0d71"
         },
@@ -1039,6 +1039,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#menuPrincipalDroite button, #salamanderContext menuitem",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "mainToolsContextShow",
                 "implHandler": [
                     "var me=this;\r",
@@ -1082,9 +1084,7 @@
                     "});"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#menuPrincipalDroite button, #salamanderContext menuitem"
+                "scope": "me"
             },
             "designerId": "f38c0e6a-bfb2-430d-a501-82dd290d4f5c"
         },
@@ -1096,6 +1096,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#menuPrincipalDroite button",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onButtonMouseOver",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"salamanderContext\").query(\"menu\"), function(thing){ thing.hide();});\r",
@@ -1109,9 +1111,7 @@
                     "if (!Ext.isEmpty(menu)){menu.destroy();}"
                 ],
                 "name": "mouseover",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#menuPrincipalDroite button"
+                "scope": "me"
             },
             "designerId": "67ad1f68-f76d-4f00-a60e-ca7553957efa"
         },
@@ -1123,10 +1123,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "fireIconActions",
                 "designer|params": [
                     "actions"
                 ],
+                "fn": "fireIconActions",
                 "implHandler": [
                     "if (!Ext.isEmpty(actions)){\r",
                     "        Ext.Array.forEach(actions, function(action){\r",

@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "NestedContentsGrid",
+        "designer|userClassName": "NestedContentsGrid",
         "id": "NestedContentsGrid",
         "itemId": null,
-        "designer|userClassName": "NestedContentsGrid",
-        "designer|userAlias": "NestedContentsGrid",
-        "title": null,
-        "store": "NestedContentsStore"
+        "store": "NestedContentsStore",
+        "title": null
     },
     "designerId": "1a109b37-693d-4f8c-8b02-455dffd48a58",
     "cn": [
@@ -32,10 +32,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
                 "dataIndex": "text",
-                "text": "Titre",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "text": "Titre"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -57,7 +57,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -67,6 +66,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> '+value);"
                         ]
@@ -83,6 +83,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "online",
+                "falseText": "Non",
                 "filter": [
                     "{\r",
                     "    type:\"combo\",\r",
@@ -92,11 +94,9 @@
                     "            ]\r",
                     "}"
                 ],
-                "width": 60,
-                "dataIndex": "online",
                 "text": "En ligne",
-                "falseText": "Non",
-                "trueText": "Oui"
+                "trueText": "Oui",
+                "width": 60
             },
             "configAlternates": {
                 "filter": "object"
@@ -139,10 +139,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "groupHeaderTpl",
                         "implHandler": [
                             "Type : {name:this.formatName}"
-                        ],
-                        "designer|displayName": "groupHeaderTpl"
+                        ]
                     },
                     "designerId": "c590964c-1efc-49f4-8ee2-f8d0917431b4",
                     "cn": [
@@ -154,10 +154,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "formatName",
                                 "designer|params": [
                                     "name"
                                 ],
+                                "fn": "formatName",
                                 "implHandler": [
                                     "return(Ext.getStore('DepContentsCombo2').findRecord(\"id\",name).get(\"type\"));"
                                 ]

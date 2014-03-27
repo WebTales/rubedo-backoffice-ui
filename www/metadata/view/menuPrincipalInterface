@@ -6,24 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
-        "container|padding": null,
-        "border": 0,
-        "floating": true,
-        "height": 350,
-        "id": "menuPrincipalInterface",
-        "padding": null,
-        "width": 350,
-        "designer|userClassName": "menuPrincipalInterface",
-        "designer|userAlias": "menuPrincipalInterface",
-        "shadow": null,
-        "layout": "hbox",
         "bodyBorder": false,
         "bodyPadding": 0,
+        "border": 0,
+        "container|align": "stretch",
+        "container|padding": null,
+        "designer|userAlias": "menuPrincipalInterface",
+        "designer|userClassName": "menuPrincipalInterface",
+        "floating": true,
         "frameHeader": false,
+        "height": 350,
         "iconCls": "meUser",
+        "id": "menuPrincipalInterface",
+        "layout": "hbox",
         "overlapHeader": false,
-        "title": "Rubedo"
+        "padding": null,
+        "shadow": null,
+        "title": "Rubedo",
+        "width": 350
     },
     "designerId": "4141ac4a-b28d-41e3-8ea9-7a9f6471c41f",
     "cn": [
@@ -35,13 +35,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "bodyPadding": 10,
+                "bodyStyle": null,
                 "container|align": "stretch",
                 "id": "salamanderBox",
-                "width": null,
                 "layout": "vbox",
-                "bodyPadding": 10,
-                "bodyStyle": null
+                "layout|flex": 1,
+                "width": null
             },
             "configAlternates": {
                 "bodyStyle": "string"
@@ -56,14 +56,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
                         "designer|snapToGrid": 10,
                         "height": 10,
                         "id": "salamanderContext",
+                        "layout": "absolute",
+                        "layout|flex": 1,
                         "margin": null,
                         "minHeight": null,
-                        "width": 220,
-                        "layout": "absolute"
+                        "width": 220
                     },
                     "designerId": "16740bbe-36c7-4f53-a23e-27f05e8d1dea",
                     "cn": [
@@ -75,12 +75,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|x": 0,
-                                "layout|y": 0,
                                 "floating": false,
                                 "frame": true,
                                 "hidden": false,
                                 "id": "salamanderStudioMenu",
+                                "layout|x": 0,
+                                "layout|y": 0,
                                 "margin": null,
                                 "width": 218
                             },
@@ -178,12 +178,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|x": 0,
-                                "layout|y": 0,
                                 "floating": false,
                                 "frame": true,
                                 "hidden": false,
                                 "id": "salamanderAdminMenu",
+                                "layout|x": 0,
+                                "layout|y": 0,
                                 "margin": null,
                                 "width": 218
                             },
@@ -313,12 +313,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|x": 0,
-                                "layout|y": 0,
                                 "floating": false,
                                 "frame": true,
                                 "hidden": false,
                                 "id": "salamanderECMenu",
+                                "layout|x": 0,
+                                "layout|y": 0,
                                 "margin": null,
                                 "width": 218
                             },
@@ -416,8 +416,8 @@
                         "height": 239,
                         "id": "salamanderLogo",
                         "margin": null,
-                        "width": 210,
-                        "src": "resources/images/logoBkg.png"
+                        "src": "resources/images/logoBkg.png",
+                        "width": 210
                     },
                     "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
                 }
@@ -431,9 +431,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "left",
                 "id": "menuPrincipalDroite",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
@@ -448,11 +448,11 @@
                     "userConfig": {
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "application.png",
-                        "localiserId": "pagesLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "contributionPages",
-                        "margin": null,
                         "iconCls": "site-icon",
+                        "itemId": "contributionPages",
+                        "layout|flex": null,
+                        "localiserId": "pagesLaunchBtn",
+                        "margin": null,
                         "text": "Pages"
                     },
                     "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
@@ -484,11 +484,11 @@
                     "userConfig": {
                         "ACL": "read.ui.pages",
                         "favoriteIcon": "computer.png",
-                        "localiserId": "previewLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "contributionPrevisualisation",
-                        "margin": null,
                         "iconCls": "personalize",
+                        "itemId": "contributionPrevisualisation",
+                        "layout|flex": null,
+                        "localiserId": "previewLaunchBtn",
+                        "margin": null,
                         "text": "Prévisualisation"
                     },
                     "designerId": "dd27c150-88ed-41bc-8761-c66132f2b8ab",
@@ -520,11 +520,11 @@
                     "userConfig": {
                         "ACL": "read.ui.contents",
                         "favoriteIcon": "page_full.png",
-                        "localiserId": "contentsLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "contributionContenus",
-                        "margin": null,
                         "iconCls": "content-icon",
+                        "itemId": "contributionContenus",
+                        "layout|flex": null,
+                        "localiserId": "contentsLaunchBtn",
+                        "margin": null,
                         "text": "Contenus"
                     },
                     "designerId": "835f100d-6054-4611-93f2-d423b3823b89",
@@ -556,11 +556,11 @@
                     "userConfig": {
                         "ACL": "read.ui.dam",
                         "favoriteIcon": "images.png",
-                        "localiserId": "DAMLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "DAMInterface",
-                        "margin": null,
                         "iconCls": "mediaTypes",
+                        "itemId": "DAMInterface",
+                        "layout|flex": null,
+                        "localiserId": "DAMLaunchBtn",
+                        "margin": null,
                         "text": "Médiathèque"
                     },
                     "designerId": "7d3f2120-91b6-4df4-9686-2b3d5211f723",
@@ -610,13 +610,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "usesMenu": true,
-                        "usedMenu": "salamanderStudioMenu",
-                        "localiserId": "studioMenuBtn",
-                        "layout|flex": null,
                         "arrowCls": null,
                         "iconCls": "applications",
-                        "text": "Studio"
+                        "layout|flex": null,
+                        "localiserId": "studioMenuBtn",
+                        "text": "Studio",
+                        "usedMenu": "salamanderStudioMenu",
+                        "usesMenu": true
                     },
                     "configAlternates": {
                         "usesMenu": "boolean"
@@ -681,12 +681,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "usesMenu": true,
-                        "usedMenu": "salamanderAdminMenu",
-                        "localiserId": "adminLenuBtn",
-                        "layout|flex": null,
                         "iconCls": "process-icon",
-                        "text": "Administration"
+                        "layout|flex": null,
+                        "localiserId": "adminLenuBtn",
+                        "text": "Administration",
+                        "usedMenu": "salamanderAdminMenu",
+                        "usesMenu": true
                     },
                     "configAlternates": {
                         "usesMenu": "boolean"
@@ -751,12 +751,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "usesMenu": true,
-                        "usedMenu": "salamanderECMenu",
-                        "localiserId": null,
-                        "layout|flex": null,
                         "iconCls": "cart",
-                        "text": "E-Commerce"
+                        "layout|flex": null,
+                        "localiserId": null,
+                        "text": "E-Commerce",
+                        "usedMenu": "salamanderECMenu",
+                        "usesMenu": true
                     },
                     "configAlternates": {
                         "usesMenu": "boolean"
@@ -822,11 +822,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "favoriteIcon": "tools.png",
-                        "localiserId": "mySettingsLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "userSettings",
-                        "margin": null,
                         "iconCls": "parametres",
+                        "itemId": "userSettings",
+                        "layout|flex": null,
+                        "localiserId": "mySettingsLaunchBtn",
+                        "margin": null,
                         "text": "Paramètres"
                     },
                     "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff",
@@ -863,11 +863,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "logoutBtn",
-                        "layout|flex": null,
+                        "iconCls": "deconecter",
                         "id": null,
                         "itemId": "deconnexionMenuPrincipal",
-                        "iconCls": "deconecter",
+                        "layout|flex": null,
+                        "localiserId": "logoutBtn",
                         "text": "Déconnexion"
                     },
                     "designerId": "bf8c5d64-5a8a-40b1-8605-34aca44b259a",

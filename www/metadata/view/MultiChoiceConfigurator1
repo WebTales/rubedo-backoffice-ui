@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "optionsEditor1Window",
+        "constrain": true,
+        "designer|userAlias": "MultiChoiceConfigurator1",
+        "designer|userClassName": "MultiChoiceConfigurator1",
         "height": 311,
         "id": "MultiChoiceConfigurator1",
-        "width": 550,
-        "designer|userClassName": "MultiChoiceConfigurator1",
-        "designer|userAlias": "MultiChoiceConfigurator1",
-        "constrain": true,
-        "resizable": false,
         "layout": "fit",
+        "localiserId": "optionsEditor1Window",
+        "modal": true,
+        "resizable": false,
         "title": "Editeur d'options",
-        "modal": true
+        "width": 550
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -62,10 +62,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "validateBtn",
-                        "layout|flex": null,
-                        "id": "specialOptionsCfgSubmit",
                         "iconCls": "ouiSpetit",
+                        "id": "specialOptionsCfgSubmit",
+                        "layout|flex": null,
+                        "localiserId": "validateBtn",
                         "text": "Valider"
                     },
                     "designerId": "d588d8fa-553b-477a-83c6-aa2244904ac3",
@@ -109,11 +109,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "forceFit": true,
                 "height": 160,
                 "id": "formsMCCGrid1",
-                "title": "",
-                "forceFit": true,
-                "store": "MultiChoiceOptionsStore"
+                "store": "MultiChoiceOptionsStore",
+                "title": ""
             },
             "designerId": "e7d2f354-f23b-45fc-8848-fa430b609e7f",
             "cn": [
@@ -158,10 +158,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "oeditor1addBtn",
-                                "layout|flex": null,
-                                "id": "formsMCCGridAdd1",
                                 "iconCls": "add",
+                                "id": "formsMCCGridAdd1",
+                                "layout|flex": null,
+                                "localiserId": "oeditor1addBtn",
                                 "text": "",
                                 "tooltip": "Ajouter une option"
                             },
@@ -185,11 +185,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "\r",
                                             "        Ext.getStore(\"MultiChoiceOptionsStore\").add({\r",
@@ -212,11 +212,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "oeditor1removeBtn",
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "formsMCCGridRemove1",
                                 "iconCls": "close",
+                                "id": "formsMCCGridRemove1",
+                                "layout|flex": null,
+                                "localiserId": "oeditor1removeBtn",
                                 "text": "",
                                 "tooltip": "Supprimer cette option"
                             },
@@ -240,11 +240,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "Ext.getCmp(\"formsMCCGrid1\").getStore().remove(Ext.getCmp(\"formsMCCGrid1\").getSelectionModel().getLastSelected());"
                                         ]
@@ -293,8 +293,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "valueCol",
                         "dataIndex": "inputValue",
+                        "localiserId": "valueCol",
                         "text": "Valeur"
                     },
                     "designerId": "56fc6791-215a-4c11-bca6-208ac95aaaac",
@@ -328,8 +328,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "labelCol",
                         "dataIndex": "boxLabel",
+                        "localiserId": "labelCol",
                         "text": "Label"
                     },
                     "designerId": "0780a6be-e984-40e9-954c-bb5136c8e7a3",

@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 464,
-        "id": "UserCreateUpdateWindow",
-        "width": 809,
-        "designer|userClassName": "UserCreateUpdateWindow",
-        "designer|userAlias": "UserCreateUpdateWindow",
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "UserCreateUpdateWindow",
+        "designer|userClassName": "UserCreateUpdateWindow",
+        "height": 464,
         "iconCls": "user_edit",
+        "id": "UserCreateUpdateWindow",
+        "layout": "fit",
+        "modal": true,
         "title": "My Window",
-        "modal": true
+        "width": 809
     },
     "designerId": "0034e12c-bfce-4dfd-9b1a-4917b7d7ceb3",
     "cn": [
@@ -52,10 +52,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
+                        "iconCls": "save",
+                        "id": "userCUSaveBtn",
                         "layout|flex": null,
                         "localiserId": "saveBtn",
-                        "id": "userCUSaveBtn",
-                        "iconCls": "save",
                         "text": "Save"
                     },
                     "designerId": "6143846d-6e79-457e-a5ed-fcdc10c35db1",
@@ -94,10 +94,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "ucuFieldsTab",
-                        "id": "userCUFields",
                         "autoScroll": true,
                         "bodyPadding": 10,
+                        "id": "userCUFields",
+                        "localiserId": "ucuFieldsTab",
                         "title": "Fields"
                     },
                     "designerId": "f2f6d9cb-5fc9-455b-93f4-09d5f1d35944",
@@ -126,9 +126,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "padding": 10,
                                 "designer|displayName": null,
-                                "layout": "anchor"
+                                "layout": "anchor",
+                                "padding": 10
                             },
                             "designerId": "801f7389-0b15-48a3-b786-51971175073c",
                             "cn": [
@@ -140,12 +140,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "UTEmailField",
                                         "RTip": "User email. Mandatory.",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "E-mail *",
-                                        "name": "email",
                                         "allowBlank": false,
+                                        "fieldLabel": "E-mail *",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "UTEmailField",
+                                        "name": "email",
                                         "vtype": "email"
                                     },
                                     "designerId": "87ab3995-0081-474c-b80a-813f3728cd05",
@@ -172,9 +172,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "padding": 10,
                                 "designer|displayName": null,
-                                "layout": "anchor"
+                                "layout": "anchor",
+                                "padding": 10
                             },
                             "designerId": "f88bf623-1a20-4868-92c7-58ecee0f6a91",
                             "cn": [
@@ -186,12 +186,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "UTNameField",
                                         "RTip": "User name. Mandatory.",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Name *",
-                                        "name": "name",
                                         "allowBlank": false,
+                                        "fieldLabel": "Name *",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "UTNameField",
+                                        "name": "name",
                                         "vtype": null
                                     },
                                     "designerId": "7b8cdbe6-b0ac-47be-9098-158c26e86d2e",
@@ -220,9 +220,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "taxoTab",
-                        "id": "userCUTaxonomy",
                         "bodyPadding": 10,
+                        "id": "userCUTaxonomy",
+                        "localiserId": "taxoTab",
                         "title": "Taxonomy"
                     },
                     "designerId": "bb86e71e-3bc5-42bb-9c4e-e5aca27b34de",

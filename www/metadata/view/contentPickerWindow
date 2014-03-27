@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 434,
-        "id": "contentPickerWindow",
-        "width": 751,
-        "designer|userClassName": "contentPickerWindow",
-        "designer|userAlias": "contentPickerWindow",
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "contentPickerWindow",
+        "designer|userClassName": "contentPickerWindow",
+        "height": 434,
         "iconCls": null,
+        "id": "contentPickerWindow",
+        "layout": "fit",
+        "modal": true,
         "title": "Content selector",
-        "modal": true
+        "width": 751
     },
     "designerId": "6d174482-b97c-435a-b6aa-7fd530bd5680",
     "cn": [

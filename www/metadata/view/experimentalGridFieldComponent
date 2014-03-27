@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 29,
-        "padding": null,
-        "width": 455,
-        "designer|userClassName": "experimentalGridFieldComponent",
         "designer|userAlias": "experimentalGridFieldComponent",
+        "designer|userClassName": "experimentalGridFieldComponent",
         "fieldLabel": "Label",
+        "height": 29,
         "labelSeparator": " ",
-        "labelWidth": 140
+        "labelWidth": 140,
+        "padding": null,
+        "width": 455
     },
     "designerId": "b7d7c2aa-8852-43f2-917d-c5a046209143",
     "cn": [
@@ -25,10 +25,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "addBtn",
-                "itemId": "addBtn",
-                "margin": "0 10 0 0",
                 "iconCls": "add",
+                "itemId": "addBtn",
+                "localiserId": "addBtn",
+                "margin": "0 10 0 0",
                 "text": "Ajouter"
             },
             "designerId": "c118959f-bb51-4ce8-9f5f-22cebb405e6e",
@@ -48,10 +48,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "modifyBtn",
-                "itemId": "editBtn",
-                "margin": "0 10 0 0",
                 "iconCls": "edit",
+                "itemId": "editBtn",
+                "localiserId": "modifyBtn",
+                "margin": "0 10 0 0",
                 "text": "Modifier"
             },
             "designerId": "86822152-2929-4303-ac8b-e2e45dfd1b91",
@@ -71,9 +71,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "removeBtn",
-                "itemId": "removeBtn",
                 "iconCls": "close",
+                "itemId": "removeBtn",
+                "localiserId": "removeBtn",
                 "text": "Supprimer"
             },
             "designerId": "434cc26f-4505-442f-8cd9-2ac08587abdf",

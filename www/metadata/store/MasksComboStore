@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "usedCollection": "Masks",
-        "isOptimised": true,
         "autoLoad": false,
-        "model": "masquesDataModel",
-        "storeId": "MasksComboStore",
-        "designer|userClassName": "MasksComboStore",
         "designer|userAlias": "MasksComboStore",
-        "pageSize": 1000
+        "designer|userClassName": "MasksComboStore",
+        "isOptimised": true,
+        "model": "masquesDataModel",
+        "pageSize": 1000,
+        "storeId": "MasksComboStore",
+        "usedCollection": "Masks"
     },
     "configAlternates": {
         "isOptimised": "boolean"

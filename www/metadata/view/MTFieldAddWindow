@@ -6,20 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "addMTFieldWindow",
+        "constrainHeader": true,
         "container|align": "stretch",
+        "designer|userAlias": "MTFieldAddWindow",
+        "designer|userClassName": "MTFieldAddWindow",
         "height": 300,
         "id": "MTFieldAddWindow",
-        "width": 500,
-        "designer|userClassName": "MTFieldAddWindow",
-        "designer|userAlias": "MTFieldAddWindow",
+        "layout": "hbox",
+        "localiserId": "addMTFieldWindow",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "hbox",
-        "constrainHeader": true,
         "title": "Ajouter un champ",
-        "modal": true
+        "width": 500
     },
     "designerId": "930bd7cd-dcce-4789-a701-014e8fbe373e",
     "customConfigs": [
@@ -38,10 +38,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 0.5,
                 "id": "MTFieldSelectGrid",
-                "title": "",
-                "store": "MTFieldsStore"
+                "layout|flex": 0.5,
+                "store": "MTFieldsStore",
+                "title": ""
             },
             "designerId": "0af55f0e-17ed-4d8c-9ee4-45f9e44e182c",
             "cn": [
@@ -65,10 +65,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeCol",
                         "dataIndex": "type",
-                        "text": "Type",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "typeCol",
+                        "text": "Type"
                     },
                     "designerId": "447f1dab-6ffd-4df9-aa71-728f46314c3f",
                     "customConfigs": [
@@ -107,12 +107,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "id": "MTFieldDescriber",
                 "bodyPadding": 10,
                 "bodyStyle": [
                     "{text-align: justify;}"
                 ],
+                "id": "MTFieldDescriber",
+                "layout|flex": 1,
                 "title": ""
             },
             "designerId": "d3cab85f-7d88-4463-a430-8b7a41b804b4",
@@ -125,10 +125,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "tpl",
                         "implHandler": [
                             "{description}"
-                        ],
-                        "designer|displayName": "tpl"
+                        ]
                     },
                     "designerId": "35f51a9a-a1d5-436f-a1ca-91f20de24a64"
                 }
@@ -142,8 +142,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "dock": "bottom"
+                "dock": "bottom",
+                "layout|flex": 1
             },
             "designerId": "e56c1783-791c-42c2-ac91-adb52e44c9a9",
             "cn": [
@@ -167,12 +167,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "MTFieldInsertBtn",
-                        "margin": null,
                         "iconCls": "add",
+                        "id": "MTFieldInsertBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "margin": null,
                         "text": "Ajouter"
                     },
                     "designerId": "14964286-01fe-4b3d-a335-80ff972168f7",

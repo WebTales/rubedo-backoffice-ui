@@ -8,14 +8,14 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
+        "data": null,
+        "designer|userAlias": "Orders",
+        "designer|userClassName": "Orders",
         "model": "order",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
-        "storeId": "Orders",
-        "designer|userClassName": "Orders",
-        "designer|userAlias": "Orders",
-        "data": null,
-        "pageSize": 50
+        "storeId": "Orders"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -67,8 +67,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "73581a92-2ee3-4cdc-ac91-6db2839599b1"

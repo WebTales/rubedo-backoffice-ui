@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Pages",
         "autoLoad": false,
+        "designer|userAlias": "PagePickerStore",
+        "designer|userClassName": "PagePickerStore",
+        "isOptimised": true,
         "model": "pageDataModel",
         "storeId": "PagePickerStore",
-        "designer|userClassName": "PagePickerStore",
-        "designer|userAlias": "PagePickerStore"
+        "usedCollection": "Pages"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -70,10 +70,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
                                 ],
+                                "fn": "getResponseData",
                                 "implHandler": [
                                     "var data, error;\r",
                                     "\r",

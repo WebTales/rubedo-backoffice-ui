@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "usedCollection": "Sites",
-        "isOptimised": true,
         "autoLoad": false,
         "autoSync": true,
-        "model": "sitesDataModel",
-        "storeId": "SitesJson",
-        "designer|userClassName": "SitesJson",
         "designer|userAlias": "sitesJson",
-        "pageSize": 1000
+        "designer|userClassName": "SitesJson",
+        "isOptimised": true,
+        "model": "sitesDataModel",
+        "pageSize": 1000,
+        "storeId": "SitesJson",
+        "usedCollection": "Sites"
     },
     "configAlternates": {
         "isOptimised": "boolean"

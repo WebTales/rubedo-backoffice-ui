@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "facetOverridesWindow",
-        "height": 297,
-        "width": 415,
-        "designer|userClassName": "FacetOverriderWindow",
-        "designer|userAlias": "FacetOverriderWindow",
         "constrain": true,
+        "designer|userAlias": "FacetOverriderWindow",
+        "designer|userClassName": "FacetOverriderWindow",
+        "height": 297,
         "layout": "fit",
+        "localiserId": "facetOverridesWindow",
+        "modal": true,
         "title": "Facet overrides",
-        "modal": true
+        "width": 415
     },
     "designerId": "022b9194-cbf8-489f-ba75-3a204f42e228",
     "customConfigs": [
@@ -33,9 +33,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "",
                 "forceFit": true,
-                "store": "FacetOverriderStore"
+                "store": "FacetOverriderStore",
+                "title": ""
             },
             "designerId": "9f9b92c8-4bf3-4e66-a1dd-26ff97ee3050",
             "cn": [
@@ -59,8 +59,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "facetColumn",
                         "dataIndex": "id",
+                        "localiserId": "facetColumn",
                         "text": "Facet"
                     },
                     "designerId": "6260e9b8-402a-4908-b929-668d2c572713",
@@ -80,7 +80,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -90,6 +89,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "return(Ext.getStore(\"FacetsToDisplayStore\").findRecord(\"id\",value).get(\"name\"));"
                                 ]
@@ -106,8 +106,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "OperatorColumn",
                         "dataIndex": "facetOperator",
+                        "localiserId": "OperatorColumn",
                         "text": "Operator"
                     },
                     "designerId": "260cbad5-081e-4ccc-9a07-847d54451cce",
@@ -144,10 +144,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processMyComboBox10",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processMyComboBox10",
                                         "implHandler": [
                                             "config.store=[[\"AND\", Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\", Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
                                             "return config;"
@@ -165,7 +165,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -175,6 +174,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (value==\"AND\") {\r",
                                     "    return(Rubedo.RubedoAutomatedElementsLoc.andText);\r",
@@ -231,10 +231,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "applyBtn",
-                                "layout|flex": null,
-                                "id": "facetOverriderApplyBtn",
                                 "iconCls": "ouiSpetit",
+                                "id": "facetOverriderApplyBtn",
+                                "layout|flex": null,
+                                "localiserId": "applyBtn",
                                 "text": "Apply"
                             },
                             "designerId": "639eaf59-3c13-454f-b7e4-55bbeb45e864",

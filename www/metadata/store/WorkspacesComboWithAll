@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Workspaces",
         "autoLoad": true,
-        "model": "workspaceModel",
-        "storeId": "WorkspacesComboWithAll",
-        "designer|userClassName": "WorkspacesComboWithAll",
-        "designer|userAlias": "WorkspacesComboWithAll",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "WorkspacesComboWithAll",
+        "designer|userClassName": "WorkspacesComboWithAll",
+        "isOptimised": true,
+        "model": "workspaceModel",
+        "pageSize": 1000,
+        "storeId": "WorkspacesComboWithAll",
+        "usedCollection": "Workspaces"
     },
     "configAlternates": {
         "isOptimised": "boolean"

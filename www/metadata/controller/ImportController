@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ImportController",
-        "designer|userAlias": "ImportController"
+        "designer|userAlias": "ImportController",
+        "designer|userClassName": "ImportController"
     },
     "designerId": "3923be22-e5f8-4dac-b18f-8fc3eb86f640",
     "cn": [
@@ -19,6 +19,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainCSVinportField, #chooseEncodingField",
+                "designer|targetType": "Ext.form.field.File",
                 "fn": "onMainCSVinportFieldChange",
                 "implHandler": [
                     "if ((value)&&(!filefield.notNow)) {\r",
@@ -74,9 +76,7 @@
                     "    }"
                 ],
                 "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.File",
-                "designer|controlQuery": "#mainCSVinportField, #chooseEncodingField"
+                "scope": "me"
             },
             "designerId": "05f2ffe9-d0fa-4a54-9b25-797971c64291"
         },
@@ -88,6 +88,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainImportSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMainImportSubmitBtnClick",
                 "implHandler": [
                     "var myForm = button.up().getForm();\r",
@@ -141,9 +143,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#mainImportSubmitBtn"
+                "scope": "me"
             },
             "designerId": "171c9f08-971b-4b77-ab50-d1b65fecdbcc"
         },
@@ -155,6 +155,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#fileFieldHelper1",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onFileFieldHelper1Click",
                 "implHandler": [
                     "Ext.getCmp(\"mainCSVinportField\").reset();\r",
@@ -170,9 +172,7 @@
                     "button.hide();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#fileFieldHelper1"
+                "scope": "me"
             },
             "designerId": "d874ff6a-0216-465e-85c9-b75bdb6e1eaa"
         }

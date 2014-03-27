@@ -6,25 +6,25 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "imagePreviewWindow",
+        "autoScroll": true,
+        "constrainHeader": true,
+        "designer|userAlias": "ImagePreviewWindow",
+        "designer|userClassName": "ImagePreviewWindow",
         "height": null,
+        "iconCls": "imageIco",
         "id": null,
+        "localiserId": "imagePreviewWindow",
         "maxHeight": null,
         "maxWidth": null,
+        "maximizable": null,
         "minHeight": 100,
         "minWidth": 100,
-        "width": null,
-        "designer|userClassName": "ImagePreviewWindow",
-        "designer|userAlias": "ImagePreviewWindow",
-        "autoScroll": true,
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "constrainHeader": true,
-        "iconCls": "imageIco",
         "title": "Full size preview",
-        "maximizable": null,
-        "modal": true
+        "width": null
     },
     "designerId": "af90e791-bd98-4827-93a9-eca34c896abb",
     "customConfigs": [

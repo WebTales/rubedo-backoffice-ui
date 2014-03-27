@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "addUsersToGroupWindow",
+        "designer|userAlias": "UserAddWindow",
+        "designer|userClassName": "UserAddWindow",
         "height": 300,
         "id": "UserAddWindow",
-        "width": 600,
-        "designer|userClassName": "UserAddWindow",
-        "designer|userAlias": "UserAddWindow",
         "layout": "fit",
-        "title": "Ajouter des utilisateurs",
+        "localiserId": "addUsersToGroupWindow",
         "maximizable": true,
-        "modal": true
+        "modal": true,
+        "title": "Ajouter des utilisateurs",
+        "width": 600
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -84,9 +84,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addUsersToGroupWindow",
-                        "layout|flex": null,
                         "id": "userSelectionAddButton",
+                        "layout|flex": null,
+                        "localiserId": "addUsersToGroupWindow",
                         "text": "Ajouter ces utilisateurs au groupe séléctionné"
                     },
                     "designerId": "443ec294-ec6b-40e7-8e7f-7002e2951501",

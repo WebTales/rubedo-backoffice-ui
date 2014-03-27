@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "systemInfoDisplayWindow",
-        "container|align": "stretch",
-        "height": 324,
-        "id": "SystemInfoDisplayWindow",
-        "width": 925,
-        "designer|userClassName": "SystemInfoDisplayWindow",
-        "designer|userAlias": "SystemInfoDisplayWindow",
         "constrain": true,
-        "layout": "vbox",
+        "container|align": "stretch",
+        "designer|userAlias": "SystemInfoDisplayWindow",
+        "designer|userClassName": "SystemInfoDisplayWindow",
+        "height": 324,
         "iconCls": "help",
-        "title": "Informations Système"
+        "id": "SystemInfoDisplayWindow",
+        "layout": "vbox",
+        "localiserId": "systemInfoDisplayWindow",
+        "title": "Informations Système",
+        "width": 925
     },
     "designerId": "08c86828-4c11-46f1-8868-d6188a6cd164",
     "customConfigs": [
@@ -48,11 +48,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "MongoDBField",
-                        "layout|anchor": "50%",
-                        "style": "{float:right;}",
                         "fieldLabel": "MongoDB",
-                        "name": "MongoDB"
+                        "layout|anchor": "50%",
+                        "localiserId": "MongoDBField",
+                        "name": "MongoDB",
+                        "style": "{float:right;}"
                     },
                     "configAlternates": {
                         "style": "string"
@@ -74,9 +74,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "rubedoVersionField",
-                        "layout|anchor": "50%",
                         "fieldLabel": "Rubedo",
+                        "layout|anchor": "50%",
+                        "localiserId": "rubedoVersionField",
                         "name": "RubedoVersion"
                     },
                     "designerId": "09818be2-eeca-41ee-8296-16a7168d232b",
@@ -96,11 +96,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "ESVersionField",
-                        "layout|anchor": "50%",
-                        "style": "{float:right;}",
                         "fieldLabel": "Elasticsearch",
-                        "name": "ElasticSearch"
+                        "layout|anchor": "50%",
+                        "localiserId": "ESVersionField",
+                        "name": "ElasticSearch",
+                        "style": "{float:right;}"
                     },
                     "configAlternates": {
                         "style": "string"
@@ -122,9 +122,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "ZFVersionField",
-                        "layout|anchor": "50%",
                         "fieldLabel": "Zend Framework",
+                        "layout|anchor": "50%",
+                        "localiserId": "ZFVersionField",
                         "name": "ZendFramework"
                     },
                     "designerId": "0c5c94e1-147f-4a29-8860-5dd60b28fb8e",
@@ -146,9 +146,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "container|align": "stretch",
-                "layout": "hbox"
+                "layout": "hbox",
+                "layout|flex": 1
             },
             "designerId": "215e3548-c9aa-40fd-9d17-ab3e68b9285b",
             "cn": [
@@ -160,16 +160,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "phpCompoentsPropertyGrid",
-                        "layout|flex": 1,
                         "autoScroll": true,
-                        "title": "Composants PHP",
                         "disableSelection": true,
                         "hideHeaders": true,
+                        "layout|flex": 1,
+                        "localiserId": "phpCompoentsPropertyGrid",
                         "nameColumnWidth": 200,
                         "source": [
                             "{ }"
-                        ]
+                        ],
+                        "title": "Composants PHP"
                     },
                     "designerId": "0ec658ba-7f15-4b15-861d-3f39608f9cb7",
                     "customConfigs": [
@@ -207,17 +207,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "frontComponentsPropertyGrid",
-                        "layout|flex": 1,
                         "autoScroll": true,
-                        "title": "Composants Front",
                         "disableSelection": true,
                         "enableColumnMove": true,
                         "hideHeaders": true,
+                        "layout|flex": 1,
+                        "localiserId": "frontComponentsPropertyGrid",
                         "nameColumnWidth": 200,
                         "source": [
                             "{ }"
-                        ]
+                        ],
+                        "title": "Composants Front"
                     },
                     "designerId": "f7164544-d118-482a-8d2e-80e835130dae",
                     "customConfigs": [
@@ -255,17 +255,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "extensionsPropDisplayPanel",
-                        "layout|flex": 1,
                         "autoScroll": true,
-                        "title": "Rubedo Extensions",
                         "disableSelection": true,
                         "enableColumnMove": true,
                         "hideHeaders": true,
+                        "layout|flex": 1,
+                        "localiserId": "extensionsPropDisplayPanel",
                         "nameColumnWidth": 200,
                         "source": [
                             "{ }"
-                        ]
+                        ],
+                        "title": "Rubedo Extensions"
                     },
                     "designerId": "87b90cb7-174c-40e3-8fb6-410d081a3780",
                     "customConfigs": [

@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "chooseDamTypeWindow",
+        "designer|userAlias": "damTypeFacetImposeWindow",
+        "designer|userClassName": "damTypeFacetImposeWindow",
         "height": 119,
         "id": "damTypeFacetImposeWindow",
-        "width": 400,
-        "designer|userClassName": "damTypeFacetImposeWindow",
-        "designer|userAlias": "damTypeFacetImposeWindow",
-        "resizable": false,
         "layout": "fit",
+        "localiserId": "chooseDamTypeWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Choissez un type de média",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -37,8 +37,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|displayName": null,
                 "bodyPadding": 10,
+                "designer|displayName": null,
                 "title": ""
             },
             "designerId": "cf848bb1-2e81-4949-9b91-6b219cc388c5",
@@ -51,14 +51,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseDamTypeField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Type",
-                        "name": "typeId",
                         "allowBlank": false,
-                        "editable": false,
                         "displayField": "type",
+                        "editable": false,
+                        "fieldLabel": "Type",
                         "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "localiserId": "chooseDamTypeField",
+                        "name": "typeId",
                         "queryMode": "local",
                         "store": "MediaTypesForDAM",
                         "valueField": "id"
@@ -80,9 +80,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseDamTypeMassSubmitBtn",
-                        "layout|anchor": "100%",
                         "id": "imposeDamTypeFacetBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "chooseDamTypeMassSubmitBtn",
                         "scale": "large",
                         "text": "Upload media of this type"
                     },

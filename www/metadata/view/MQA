@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "mediaQueryAssistant",
+        "constrain": true,
+        "designer|userAlias": "MQA",
+        "designer|userClassName": "MQA",
         "height": 373,
         "id": "MQA",
-        "width": 469,
-        "designer|userClassName": "MQA",
-        "designer|userAlias": "MQA",
-        "constrain": true,
-        "resizable": null,
         "layout": "card",
+        "localiserId": "mediaQueryAssistant",
+        "modal": true,
+        "resizable": null,
         "title": "Assistant de requêtage sur médias",
-        "modal": true
+        "width": 469
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -95,8 +95,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "mqs1",
                 "bodyPadding": 10,
+                "localiserId": "mqs1",
                 "title": "Choix des types de médias"
             },
             "designerId": "796177a4-b025-4b70-924e-91f89c4448fd",
@@ -116,16 +116,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "mediaTypesField",
-                        "layout|anchor": "100%",
-                        "id": "DAMTypeWizCombo",
-                        "fieldLabel": "Types de media",
-                        "name": "DAMTypes",
                         "allowBlank": false,
-                        "editable": false,
                         "displayField": "type",
+                        "editable": false,
+                        "fieldLabel": "Types de media",
                         "forceSelection": true,
+                        "id": "DAMTypeWizCombo",
+                        "layout|anchor": "100%",
+                        "localiserId": "mediaTypesField",
                         "multiSelect": true,
+                        "name": "DAMTypes",
                         "store": "MediaTypesFORDAMPicker",
                         "valueField": "id"
                     },
@@ -169,10 +169,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "mqS2",
-                "id": "assisstantRE2",
-                "overflowY": "auto",
                 "bodyPadding": 10,
+                "id": "assisstantRE2",
+                "localiserId": "mqS2",
+                "overflowY": "auto",
                 "title": "Choix des règles sur la taxonomie"
             },
             "designerId": "d67b5d86-b64d-462d-9141-3f6571a9e8c6",
@@ -225,10 +225,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "reactToMTChange",
                 "designer|params": [
                     "keepInMind"
                 ],
+                "fn": "reactToMTChange",
                 "implHandler": [
                     "var editorMode = Ext.getCmp(\"MQA\").editorMode;\r",
                     "var simpleMode = false;\r",
@@ -464,9 +464,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "mqls",
-                "layout": "anchor",
                 "bodyPadding": 10,
+                "layout": "anchor",
+                "localiserId": "mqls",
                 "title": "Enregistrement"
             },
             "designerId": "fe6c1f8e-0610-4292-8792-7bbea27140b3",
@@ -486,9 +486,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "saveBtn",
-                        "layout|anchor": "100%",
                         "id": "MQASaveBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },

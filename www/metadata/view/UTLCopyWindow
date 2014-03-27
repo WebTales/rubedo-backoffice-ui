@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newLayoutWindowCopy",
-        "height": null,
-        "width": 400,
-        "designer|userClassName": "UTLCopyWindow",
-        "designer|userAlias": "UTLCopyWindow",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "UTLCopyWindow",
+        "designer|userClassName": "UTLCopyWindow",
+        "height": null,
         "layout": "fit",
+        "localiserId": "newLayoutWindowCopy",
+        "modal": true,
+        "resizable": false,
         "title": "Copy layout",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,11 +50,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameFieldCopy",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "New name",
-                        "name": "name",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameFieldCopy",
+                        "name": "name"
                     },
                     "designerId": "c882047a-2dfd-4f2e-89d9-4a0795a28a9a",
                     "customConfigs": [
@@ -73,14 +73,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nmSiteFieldCopy",
-                        "layout|anchor": "100%",
-                        "id": "nouveauMasqueSite4",
-                        "fieldLabel": "To site",
-                        "name": "site",
                         "allowBlank": false,
                         "editable": false,
+                        "fieldLabel": "To site",
                         "forceSelection": true,
+                        "id": "nouveauMasqueSite4",
+                        "layout|anchor": "100%",
+                        "localiserId": "nmSiteFieldCopy",
+                        "name": "site",
                         "queryMode": "local",
                         "store": "SitesComboUTLayouts",
                         "valueField": "id"
@@ -128,9 +128,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewLayoutBtnCopy",
-                        "layout|anchor": "100%",
                         "id": "CTLCopyLSubitBtn1",
+                        "layout|anchor": "100%",
+                        "localiserId": "createNewLayoutBtnCopy",
                         "scale": "medium",
                         "text": "Copy this layout"
                     },

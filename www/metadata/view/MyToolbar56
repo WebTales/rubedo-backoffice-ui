@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "ignoreValidation": false,
+        "designer|userAlias": "mytoolbar56",
         "designer|userClassName": "MyToolbar56",
-        "designer|userAlias": "mytoolbar56"
+        "ignoreValidation": false
     },
     "configAlternates": {
         "ignoreValidation": "boolean"
@@ -30,8 +30,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "itemId": "wizProgress",
+                "layout|flex": 1,
                 "value": 0.4
             },
             "designerId": "e0e43236-cbf8-46df-bc2e-ce8dae7b553f"
@@ -44,10 +44,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "wizardPrevBtn",
-                "layout|flex": null,
-                "itemId": "wizPrev",
                 "iconCls": "arrow_left",
+                "itemId": "wizPrev",
+                "layout|flex": null,
+                "localiserId": "wizardPrevBtn",
                 "text": "Précédent"
             },
             "designerId": "c032ac34-65b6-4121-b5a4-aeafa5360d8f",
@@ -67,11 +67,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "button.up().up().getLayout().prev();\r",
                             "button.up().makeCorrect();"
@@ -89,11 +89,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "wizardNextBtn",
-                "layout|flex": null,
-                "itemId": "wizNext",
                 "iconAlign": "right",
                 "iconCls": "arrow_right",
+                "itemId": "wizNext",
+                "layout|flex": null,
+                "localiserId": "wizardNextBtn",
                 "text": "Suivant"
             },
             "designerId": "954c1089-b17e-4b5c-901f-29facff3b346",
@@ -113,11 +113,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "if (button.up().ignoreValidation){\r",
                             "    button.up().up().getLayout().next();\r",

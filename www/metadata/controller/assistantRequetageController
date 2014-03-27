@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "assistantRequetageController",
         "views": [
             "assisstantRE4",
             "regleChampAR"
-        ],
-        "designer|userClassName": "assistantRequetageController"
+        ]
     },
     "designerId": "da7dabb6-9585-4ae7-8847-4b4d76cdb27e",
     "cn": [
@@ -22,6 +22,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonNextRequeteur",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "suivant",
                 "implHandler": [
                     "var me=this;\r",
@@ -66,9 +68,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonNextRequeteur"
+                "scope": "me"
             },
             "designerId": "b83c1479-9cbe-478c-bde1-54b5275f3a77"
         },
@@ -80,6 +80,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonPrevRequeteur",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "precedent",
                 "implHandler": [
                     "var tousET= Ext.getCmp('assistantRequetage').getLayout().getLayoutItems().length;\r",
@@ -92,9 +94,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonPrevRequeteur"
+                "scope": "me"
             },
             "designerId": "4667034e-54b1-41f0-9662-9b004a9c8479"
         },
@@ -106,6 +106,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "[itemId='boutonEnleveRegleAR']",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "enleveRegle",
                 "implHandler": [
                     "if (button.up().up().up().items.items.indexOf(button.up().up())==2) {\r",
@@ -116,9 +118,7 @@
                     "button.up().up().destroy();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "[itemId='boutonEnleveRegleAR']"
+                "scope": "me"
             },
             "designerId": "20f3e13d-6f29-47e0-ba81-ac64ffef193e"
         },
@@ -130,14 +130,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonSelectAllTCAR",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "selectAllTC",
                 "implHandler": [
                     "Ext.getCmp('champTCRequeteur').select(Ext.getCmp('champTCRequeteur').getStore().data.items);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSelectAllTCAR"
+                "scope": "me"
             },
             "designerId": "c95df528-b694-421e-b11a-54c5cba5aea0"
         },
@@ -149,6 +149,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCreateurReglesChampsAR",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "ajoutRegleChamp",
                 "implHandler": [
                     "var nRegle= Ext.getCmp('createurReglesChampsAR').getValue();\r",
@@ -203,9 +205,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreateurReglesChampsAR"
+                "scope": "me"
             },
             "designerId": "0889cbbf-053a-469f-99aa-a047a88adba7"
         },
@@ -217,6 +217,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#queryBuildSaveBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onQueryBuildSaveBtnClick",
                 "implHandler": [
                     "if ((Ext.getCmp(\"assistantRequetage\").simpleMode)||(button.up().getForm().isValid())){\r",
@@ -270,9 +272,7 @@
                     "            }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#queryBuildSaveBtn"
+                "scope": "me"
             },
             "designerId": "c8e41169-098f-4231-9aa3-cc2f77cbe89d"
         },
@@ -284,6 +284,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCreateurTrisChampsAR",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onBoutonCreateurTrisChampsARClick",
                 "implHandler": [
                     "var nRegle= Ext.getCmp('createurTrisChampsAR').getValue();\r",
@@ -326,9 +328,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreateurTrisChampsAR"
+                "scope": "me"
             },
             "designerId": "f1495402-66f3-4688-9ffc-1f0fc1301fa9"
         },
@@ -413,10 +413,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayQuery",
                 "designer|params": [
                     "query"
                 ],
+                "fn": "displayQuery",
                 "implHandler": [
                     "var htmlDisplay=\"<h3>\"+Rubedo.RubedoAutomatedElementsLoc.eligibleContentTypesText+\"</h3><ul>\";\r",
                     "Ext.Array.forEach(query.contentTypes, function(ctid){\r",
@@ -488,6 +488,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainQueriesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMainQueriesGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -505,9 +507,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mainQueriesGrid"
+                "scope": "me"
             },
             "designerId": "bc3641f6-fae2-49cc-bbfe-03dbdbe653c4"
         },
@@ -519,6 +519,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#queryMainRemoveBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onQueryMainRemoveBtnClick",
                 "implHandler": [
                     "\r",
@@ -533,9 +535,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#queryMainRemoveBtn"
+                "scope": "me"
             },
             "designerId": "07af0387-d3c5-4652-9b8e-bcb0eea3c16e"
         },
@@ -547,14 +547,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#queryMainAddBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onQueryMainAddBtnClick",
                 "implHandler": [
                     "Ext.widget(\"assistantRequetage\",{adminMode:true}).show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#queryMainAddBtn"
+                "scope": "me"
             },
             "designerId": "4cf919e2-c969-4bb3-b6e3-ff5beb12d841"
         },
@@ -566,6 +566,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#queryMainEditBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onQueryMainEditBtnClick",
                 "implHandler": [
                     "var initialQuery = Ext.clone(Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"query\"));\r",
@@ -573,9 +575,7 @@
                     "Ext.widget(\"assistantRequetage\",{editorMode:true, recId:recId, initialQuery:initialQuery,ROMode:button.ROMode}).show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#queryMainEditBtn"
+                "scope": "me"
             },
             "designerId": "8c1b7706-432e-4021-afea-a921443a92d7"
         },
@@ -587,10 +587,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "adaptToTCSelect",
                 "designer|params": [
                     "keepInMind"
                 ],
+                "fn": "adaptToTCSelect",
                 "implHandler": [
                     "var simpleMode = Ext.getCmp(\"assistantRequetage\").simpleMode;\r",
                     "var editorMode = Ext.getCmp(\"assistantRequetage\").editorMode;\r",
@@ -903,14 +903,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainQueriesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMainQueriesGridItemDblClick",
                 "implHandler": [
                     "Ext.getCmp(\"queryMainEditBtn\").fireEvent(\"click\",Ext.getCmp(\"queryMainEditBtn\"));"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mainQueriesGrid"
+                "scope": "me"
             },
             "designerId": "a4cf7b54-f02b-4620-bd41-aa9492f47683"
         },
@@ -922,10 +922,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "restoreFieldRules",
                 "designer|params": [
                     "fieldRules"
                 ],
+                "fn": "restoreFieldRules",
                 "implHandler": [
                     "if (Ext.isObject(fieldRules)){\r",
                     "    var arrayFixer=[ ];\r",
@@ -1062,14 +1062,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#queryPlayBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onQueryPlayBtnClick",
                 "implHandler": [
                     "Ext.widget(\"QuerySimWindow\",{queryId:Ext.getCmp(\"mainQueriesGrid\").getSelectionModel().getLastSelected().get(\"id\")}).show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#queryPlayBtn"
+                "scope": "me"
             },
             "designerId": "a6717c40-6670-4a09-959b-5184156753b3"
         }

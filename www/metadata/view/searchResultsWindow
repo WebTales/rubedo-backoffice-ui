@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "searchResultsWindow",
-        "container|align": "stretch",
-        "height": 492,
-        "id": "searchResultsWindow",
-        "width": 936,
-        "designer|userClassName": "searchResultsWindow",
-        "designer|userAlias": "searchResultsWindow",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "searchResultsWindow",
+        "designer|userClassName": "searchResultsWindow",
+        "height": 492,
         "iconCls": "search",
-        "title": "Résultats de recherche"
+        "id": "searchResultsWindow",
+        "layout": "hbox",
+        "localiserId": "searchResultsWindow",
+        "title": "Résultats de recherche",
+        "width": 936
     },
     "configAlternates": {
         "advancedESQMode": "boolean"
@@ -38,15 +38,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "filtersPanel",
-                "layout|flex": null,
+                "bodyPadding": "0 20 0 10",
                 "container|align": "stretch",
                 "id": "searchFacetBox",
-                "width": 240,
-                "overflowY": "auto",
                 "layout": "vbox",
-                "bodyPadding": "0 20 0 10",
-                "title": "Filtres"
+                "layout|flex": null,
+                "localiserId": "filtersPanel",
+                "overflowY": "auto",
+                "title": "Filtres",
+                "width": 240
             },
             "designerId": "35d80392-506f-4f26-89c9-d833f433870d",
             "customConfigs": [
@@ -65,10 +65,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processSearchFacetBox",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processSearchFacetBox",
                         "implHandler": [
                             "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
                             "return config;"
@@ -96,12 +96,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "id": "ESFacetQueryField",
+                                "enableKeyEvents": null,
                                 "fieldLabel": "",
+                                "id": "ESFacetQueryField",
                                 "labelWidth": 40,
-                                "name": "query",
-                                "enableKeyEvents": null
+                                "layout|flex": 1,
+                                "name": "query"
                             },
                             "designerId": "c9204439-6bcb-47e9-a8bf-19d76e699b6d",
                             "cn": [
@@ -146,9 +146,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "id": "ESFacetQueryBtn",
                                 "iconCls": "search",
+                                "id": "ESFacetQueryBtn",
+                                "layout|flex": null,
                                 "text": ""
                             },
                             "designerId": "3586846f-9108-4862-ac69-bfeec8c1a386"
@@ -163,13 +163,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "fsGlobalSetPan",
-                        "layout|flex": 1,
-                        "dock": "top",
-                        "hidden": true,
                         "bodyPadding": 10,
                         "collapsed": true,
                         "collapsible": true,
+                        "dock": "top",
+                        "hidden": true,
+                        "layout|flex": 1,
+                        "localiserId": "fsGlobalSetPan",
                         "title": "Global facet settings"
                     },
                     "designerId": "6bc092c0-ece6-4454-af5d-fdc4e6dc7cf8",
@@ -189,13 +189,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "displayFacetFieldM",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Display",
-                                "name": "displayFacet",
                                 "boxLabel": "",
                                 "checked": true,
-                                "inputValue": "true"
+                                "fieldLabel": "Display",
+                                "inputValue": "true",
+                                "layout|anchor": "100%",
+                                "localiserId": "displayFacetFieldM",
+                                "name": "displayFacet"
                             },
                             "designerId": "b2b2916d-d91e-4245-bdad-198a8d035275",
                             "customConfigs": [
@@ -214,17 +214,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "facetOperatorField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Facet operator",
-                                "name": "facetOperator",
-                                "value": [
-                                    "\"AND\""
-                                ],
                                 "allowBlank": false,
                                 "editable": false,
+                                "fieldLabel": "Facet operator",
                                 "forceSelection": true,
-                                "store": null
+                                "layout|anchor": "100%",
+                                "localiserId": "facetOperatorField",
+                                "name": "facetOperator",
+                                "store": null,
+                                "value": [
+                                    "\"AND\""
+                                ]
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -246,10 +246,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processFacetOperator",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processFacetOperator",
                                         "implHandler": [
                                             "config.store=[[\"AND\",Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\",Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
                                             "return config;"
@@ -267,8 +267,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
                                 "id": "apllyFacetPropsToAllBtn",
+                                "layout|anchor": "100%",
                                 "text": "Apply to all"
                             },
                             "designerId": "8602b8b9-514e-4f41-936f-b3a03f3032df",
@@ -367,11 +367,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "id": "ResultContentsGrid",
                 "itemId": null,
-                "title": "",
-                "store": "ESFacetteStore"
+                "layout|flex": 1,
+                "store": "ESFacetteStore",
+                "title": ""
             },
             "designerId": "7ebe237b-4559-4f9b-9f7e-314717f87dd7",
             "cn": [
@@ -392,10 +392,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "titleCol",
                         "dataIndex": "text",
-                        "text": "Titre",
-                        "flex": 2
+                        "flex": 2,
+                        "localiserId": "titleCol",
+                        "text": "Titre"
                     },
                     "configAlternates": {
                         "filter": "boolean"
@@ -417,10 +417,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "authorCol",
                         "dataIndex": "author",
-                        "text": "Auteur",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "authorCol",
+                        "text": "Auteur"
                     },
                     "designerId": "302e7c0e-40b0-4342-ace9-aa72863c4baa",
                     "customConfigs": [
@@ -439,8 +439,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeCol",
                         "dataIndex": "type",
+                        "localiserId": "typeCol",
                         "text": "Type"
                     },
                     "designerId": "70ce4c42-db36-4cf3-a4b8-264805d732da",
@@ -460,7 +460,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -470,6 +469,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "return(record.get(\"objectType\")+\" : \"+record.get(\"type\"));"
                                 ]
@@ -486,11 +486,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "lastUpdateCol",
                         "dataIndex": "lastUpdateTime",
-                        "text": "Date de dernière modification",
                         "flex": 1.2,
-                        "format": "F j, Y, G:i "
+                        "format": "F j, Y, G:i ",
+                        "localiserId": "lastUpdateCol",
+                        "text": "Date de dernière modification"
                     },
                     "designerId": "6799363c-d3dc-42bb-a27c-905f3682946c",
                     "customConfigs": [
@@ -509,11 +509,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "pertinenceCol",
-                        "width": 80,
                         "dataIndex": "score",
+                        "format": "0",
+                        "localiserId": "pertinenceCol",
                         "text": "Pertinence",
-                        "format": "0"
+                        "width": 80
                     },
                     "designerId": "29ffe6fa-f510-43ee-a552-7e882fb3117a",
                     "customConfigs": [
@@ -532,10 +532,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "width": 360,
                         "displayInfo": true,
-                        "store": "ESFacetteStore"
+                        "dock": "bottom",
+                        "store": "ESFacetteStore",
+                        "width": 360
                     },
                     "designerId": "cccd126e-1f28-4c4e-9e7b-40559bbac696"
                 },
@@ -570,9 +570,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
-                "id": "ESSearchTopBar"
+                "id": "ESSearchTopBar",
+                "layout|flex": 1
             },
             "designerId": "fdf08f42-7a2e-463f-abe9-d5a7f8fe80a7",
             "cn": [
@@ -584,12 +584,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "border": 0,
                         "cls": null,
+                        "enableOverflow": true,
                         "height": 32,
                         "id": "SearchActiveFacetBar",
-                        "enableOverflow": true
+                        "layout|flex": null
                     },
                     "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
                 },
@@ -613,10 +613,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
+                        "iconCls": "favorite_add_med",
                         "id": "ESFavBtn",
                         "itemId": "boutonCreerRaccourci",
-                        "iconCls": "favorite_add_med",
+                        "layout|flex": null,
                         "scale": "medium",
                         "text": ""
                     },
@@ -630,12 +630,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseBtn",
-                        "layout|flex": null,
                         "disabled": true,
                         "hidden": true,
-                        "id": "selectESEntityBtn",
                         "iconCls": "ouiSpetit",
+                        "id": "selectESEntityBtn",
+                        "layout|flex": null,
+                        "localiserId": "chooseBtn",
                         "text": "<b>Choose</b>"
                     },
                     "designerId": "e3065147-1362-4fc0-8e70-57889bab25f9",
@@ -676,11 +676,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "saveQueryBtn",
-                        "layout|flex": null,
                         "hidden": true,
-                        "id": "saveGeoQueryBtn",
                         "iconCls": "ouiSpetit",
+                        "id": "saveGeoQueryBtn",
+                        "layout|flex": null,
+                        "localiserId": "saveQueryBtn",
                         "text": "Enregistrer la requête"
                     },
                     "designerId": "9cf03ae4-4207-4cb9-8b92-84f157812be5",

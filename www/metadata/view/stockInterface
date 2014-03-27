@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "container|align": "stretch",
-        "height": 456,
-        "id": "stockInterface",
-        "width": 1039,
-        "designer|userClassName": "stockInterface",
-        "designer|userAlias": "stockInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "stockInterface",
+        "designer|userClassName": "stockInterface",
+        "height": 456,
         "iconCls": "package",
-        "title": "Stock"
+        "id": "stockInterface",
+        "layout": "hbox",
+        "localiserId": null,
+        "title": "Stock",
+        "width": 1039
     },
     "designerId": "b94851ca-852c-4b9d-b092-70cfb9d6389e",
     "customConfigs": [
@@ -89,11 +89,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "ProductTypesForStock"
+                "layout|flex": null,
+                "store": "ProductTypesForStock",
+                "title": "",
+                "width": 200
             },
             "designerId": "63859436-d3b3-43eb-a3ef-d5000dd9ebfc",
             "cn": [
@@ -222,11 +222,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "id": "mainStockGrid",
-                "title": "Items",
                 "forceFit": true,
-                "store": "InitialStockStore"
+                "id": "mainStockGrid",
+                "layout|flex": 1,
+                "store": "InitialStockStore",
+                "title": "Items"
             },
             "designerId": "46d6e4c5-62ec-465f-8f70-0263b28ecac1",
             "cn": [
@@ -247,13 +247,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getRowClass",
                                 "designer|params": [
                                     "record",
                                     "rowIndex",
                                     "rowParams",
                                     "store"
                                 ],
+                                "fn": "getRowClass",
                                 "implHandler": [
                                     "if (record.get(\"stock\")<record.get(\"outOfStockLimit\")){\r",
                                     "\treturn(\"stockout\");\r",
@@ -295,8 +295,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "iconCls": "refresh",
+                                "layout|flex": null,
                                 "text": "Refersh"
                             },
                             "designerId": "4b967eb1-9b99-4f67-a84b-23b751b16cdd",
@@ -340,10 +340,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "stockAddToVarItem",
                                 "iconCls": "add",
+                                "id": "stockAddToVarItem",
+                                "layout|flex": null,
                                 "text": "Add stock"
                             },
                             "designerId": "2cacb5c9-1086-4d51-994f-7a672ec6d59e",
@@ -375,10 +375,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "stockRemoveFromVarItem",
                                 "iconCls": "close",
+                                "id": "stockRemoveFromVarItem",
+                                "layout|flex": null,
                                 "text": "Remove stock"
                             },
                             "designerId": "32a48762-5a3d-4c27-a44a-43b156152a1d",
@@ -411,12 +411,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "stockViewVarProduct",
-                                "width": 100,
                                 "iconCls": "content-icon",
-                                "text": "View product"
+                                "id": "stockViewVarProduct",
+                                "layout|flex": null,
+                                "text": "View product",
+                                "width": 100
                             },
                             "designerId": "7fc2c793-a864-4ee7-b963-9dc3f1ad0f71",
                             "cn": [
@@ -488,7 +488,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -498,6 +497,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.get(\"stock\")<record.get(\"outOfStockLimit\")){\r",
                                     "\treturn(value+\" (Out of stock)\");\r",

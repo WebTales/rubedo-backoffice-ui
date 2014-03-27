@@ -7,8 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "SystemStatusPanel",
         "designer|userAlias": "SystemStatusPanel",
+        "designer|userClassName": "SystemStatusPanel",
         "layout": "hbox",
         "title": ""
     },
@@ -41,9 +41,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "container|align": "stretch",
-                "layout": "vbox"
+                "layout": "vbox",
+                "layout|flex": 1
             },
             "designerId": "28a15491-520e-49ef-934c-b49ddf332736"
         },
@@ -55,9 +55,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "container|align": "stretch",
-                "layout": "vbox"
+                "layout": "vbox",
+                "layout|flex": 1
             },
             "designerId": "3a3ef5bf-011e-42bc-afe2-a79961891a8a"
         },
@@ -121,12 +121,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "delay": 100,
                 "fn": "onPanelAfterRender",
                 "implHandler": [
                     "var me=this;\r",
                     "me.updateCharts();"
                 ],
-                "delay": 100,
                 "name": "afterrender",
                 "scope": "me"
             },
@@ -457,10 +457,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "generateData",
                 "designer|params": [
                     "names"
                 ],
+                "fn": "generateData",
                 "implHandler": [
                     "var data = [],\r",
                     "i,\r",

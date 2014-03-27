@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "UserTypes",
         "autoLoad": false,
-        "model": "userType",
-        "storeId": "UserTypesForUsers2",
-        "designer|userClassName": "UserTypesForUsers2",
-        "designer|userAlias": "UserTypesForUsers2",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "UserTypesForUsers2",
+        "designer|userClassName": "UserTypesForUsers2",
+        "isOptimised": true,
+        "model": "userType",
+        "pageSize": 1000,
+        "storeId": "UserTypesForUsers2",
+        "usedCollection": "UserTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

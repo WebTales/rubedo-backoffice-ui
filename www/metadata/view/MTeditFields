@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "fieldPanel",
+        "bodyPadding": 0,
         "container|align": "stretch",
+        "designer|userAlias": "MTeditFields",
+        "designer|userClassName": "MTeditFields",
         "frame": true,
         "id": "MTeditFields",
+        "layout": "vbox",
+        "localiserId": "fieldPanel",
         "margin": 20,
-        "designer|userClassName": "MTeditFields",
-        "designer|userAlias": "MTeditFields",
         "resizable": [
             "false"
         ],
-        "layout": "vbox",
         "suspendLayout": null,
-        "bodyPadding": 0,
         "title": "Champs"
     },
     "designerId": "7120e487-8033-4805-b435-a863418861d9",

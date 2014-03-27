@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Users",
         "autoLoad": false,
         "autoSync": true,
+        "designer|userAlias": "UsersAdminDataStore",
+        "designer|userClassName": "UsersAdminDataStore",
+        "isOptimised": true,
         "model": "userDataModel",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "UsersAdminDataStore",
-        "designer|userClassName": "UsersAdminDataStore",
-        "designer|userAlias": "UsersAdminDataStore",
-        "pageSize": 50
+        "usedCollection": "Users"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -43,7 +43,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "     create: 'users/create',\r",
@@ -52,6 +51,7 @@
                     "     destroy: 'users/delete'\r",
                     "}"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "f237c7f5-23b2-46eb-8828-1254e3e68376",

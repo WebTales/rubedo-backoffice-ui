@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Taxes",
         "autoLoad": false,
         "autoSync": true,
-        "model": "tax",
-        "storeId": "Taxes",
-        "designer|userClassName": "Taxes",
-        "designer|userAlias": "Taxes",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "Taxes",
+        "designer|userClassName": "Taxes",
+        "isOptimised": true,
+        "model": "tax",
+        "pageSize": 1000,
+        "storeId": "Taxes",
+        "usedCollection": "Taxes"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -81,8 +81,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "1613f598-c107-4724-b027-0e38daecf2e7"

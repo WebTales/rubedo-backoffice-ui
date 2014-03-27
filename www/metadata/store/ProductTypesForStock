@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "ContentTypes",
         "autoLoad": false,
-        "model": "typesContenusDataModel",
-        "storeId": "ProductTypesForStock",
-        "designer|userClassName": "ProductTypesForStock",
         "designer|userAlias": "ProductTypesForStock",
-        "pageSize": 100000
+        "designer|userClassName": "ProductTypesForStock",
+        "isOptimised": true,
+        "model": "typesContenusDataModel",
+        "pageSize": 100000,
+        "storeId": "ProductTypesForStock",
+        "usedCollection": "ContentTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

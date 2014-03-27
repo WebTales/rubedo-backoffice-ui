@@ -7,17 +7,17 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "exe.ui.elasticSearch",
-        "localiserId": "monitoringField",
-        "container|align": "stretch",
-        "height": 303,
-        "id": "monitoringTools",
-        "width": 577,
-        "designer|userClassName": "monitoringTools",
-        "designer|userAlias": "monitoringTools",
-        "layout": "vbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "monitoringTools",
+        "designer|userClassName": "monitoringTools",
+        "height": 303,
         "iconCls": "monitoring",
-        "title": "Supervision"
+        "id": "monitoringTools",
+        "layout": "vbox",
+        "localiserId": "monitoringField",
+        "title": "Supervision",
+        "width": 577
     },
     "designerId": "aad4192f-6fb1-4dbc-946e-1204a1cea801",
     "customConfigs": [
@@ -61,10 +61,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "cachePanel",
-                "layout|flex": 1,
-                "id": "SupervisionCachePanel",
                 "bodyPadding": 10,
+                "id": "SupervisionCachePanel",
+                "layout|flex": 1,
+                "localiserId": "cachePanel",
                 "title": "Cache"
             },
             "designerId": "88156036-6c5a-4848-9b93-531600345241",
@@ -104,9 +104,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "objectField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "Objets",
+                                "layout|anchor": "100%",
+                                "localiserId": "objectField",
                                 "name": "cachedItems",
                                 "readOnly": true
                             },
@@ -127,9 +127,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "urlField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "URL",
+                                "layout|anchor": "100%",
+                                "localiserId": "urlField",
                                 "name": "cachedUrl",
                                 "readOnly": true
                             },
@@ -176,9 +176,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "refreshBtn",
-                                "layout|flex": null,
                                 "id": "supervisionRefreshCacheBtn",
+                                "layout|flex": null,
+                                "localiserId": "refreshBtn",
                                 "text": "<b>Rafraîchir</b>"
                             },
                             "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
@@ -198,11 +198,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "button.up().up().refreshCacheInfo();"
                                         ]
@@ -219,9 +219,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "clearCacheBtn",
-                                "layout|flex": null,
                                 "id": "SupervisionClearCachetn",
+                                "layout|flex": null,
+                                "localiserId": "clearCacheBtn",
                                 "text": "<b>Vider le cache</b>"
                             },
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
@@ -241,11 +241,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "Ext.Ajax.request({\r",
                                             "    url: 'cache/clear',\r",
@@ -313,12 +313,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "elasticSearchPanel",
-                "layout|flex": 0.5,
-                "layout": "fit",
                 "bodyPadding": 10,
                 "icon": "resources/images/esLogo.png",
                 "iconCls": null,
+                "layout": "fit",
+                "layout|flex": 0.5,
+                "localiserId": "elasticSearchPanel",
                 "title": "Elastic Search"
             },
             "designerId": "b480c438-99d0-4d2e-b979-a715b2ef9c5e",
@@ -351,8 +351,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "indexContentsBtn",
                                 "layout|flex": null,
+                                "localiserId": "indexContentsBtn",
                                 "text": "<b>Indexation des contenus</b>"
                             },
                             "designerId": "72e9902f-bb1b-4b5c-b610-59504de9206b",
@@ -372,11 +372,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "button.setLoading(true);\r",
                                             "Ext.Ajax.request({\r",
@@ -422,8 +422,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "indexMediasBtn",
                                 "layout|flex": null,
+                                "localiserId": "indexMediasBtn",
                                 "text": "<b>Indexation des médias</b>"
                             },
                             "designerId": "e57babf3-2b12-4ec3-b9bd-a424bf5654cd",
@@ -443,11 +443,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "button.setLoading(true);\r",
                                             "Ext.Ajax.request({\r",
@@ -492,8 +492,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "indexUsersBtn",
                                 "layout|flex": null,
+                                "localiserId": "indexUsersBtn",
                                 "text": "<b>Index users</b>"
                             },
                             "designerId": "cb50b4c2-9453-4380-b477-1b3a54d02c09",
@@ -513,11 +513,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "button.setLoading(true);\r",
                                             "Ext.Ajax.request({\r",
@@ -562,8 +562,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "indexAllBtn",
                                 "layout|flex": null,
+                                "localiserId": "indexAllBtn",
                                 "text": "<b>Indexation complète</b>"
                             },
                             "designerId": "c485f01a-3c28-43c8-a954-f0d894f487a7",
@@ -583,11 +583,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "button",
                                             "event"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "button.setLoading(true);\r",
                                             "Ext.Ajax.request({\r",
@@ -624,8 +624,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "dock": "top"
+                "dock": "top",
+                "layout|flex": 1
             },
             "designerId": "d73fb910-2b55-48e2-ad69-9d4fc8241e3f",
             "cn": [
@@ -637,10 +637,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "systemInformationGetBtn",
-                        "layout|flex": null,
-                        "id": "getSystemInformationBtn",
                         "iconCls": "help",
+                        "id": "getSystemInformationBtn",
+                        "layout|flex": null,
+                        "localiserId": "systemInformationGetBtn",
                         "text": "Informations système"
                     },
                     "designerId": "b26e63c7-7bce-4452-9ca8-ecd438876785",
@@ -660,11 +660,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "var theWin =Ext.getCmp(\"SystemInfoDisplayWindow\");\r",
                                     "if (Ext.isEmpty(theWin)){\r",
@@ -686,10 +686,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "id": "getDatabaseInformationBtn",
                         "icon": "resources/icones/generic/database.png",
                         "iconCls": null,
+                        "id": "getDatabaseInformationBtn",
+                        "layout|flex": null,
                         "text": "Database is up to date"
                     },
                     "designerId": "ab3e31c1-322e-4bb0-8bff-7d6f929d2f7f",
@@ -702,10 +702,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processGetDatabaseInformationBtn",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processGetDatabaseInformationBtn",
                                 "implHandler": [
                                     "config.text=Rubedo.RubedoAutomatedElementsLoc.databaseIsUpToDateText;\r",
                                     "return config;"
@@ -721,11 +721,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "if (button.canUpdate){\r",
                                     "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, Rubedo.RubedoAutomatedElementsLoc.databaseUpdateWarning ,function(anser){\r",

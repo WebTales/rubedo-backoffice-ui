@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "idProperty": null,
+        "designer|userAlias": "pageDataModel",
         "designer|userClassName": "pageDataModel",
-        "designer|userAlias": "pageDataModel"
+        "idProperty": null
     },
     "designerId": "de8dc629-dc89-4153-926c-012ddbaa1d57",
     "cn": [
@@ -226,11 +226,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(false);"
                         ]

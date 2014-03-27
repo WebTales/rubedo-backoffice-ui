@@ -6,22 +6,22 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "DAM",
         "DAMTypeFilters": [
             "[ ]"
         ],
-        "directoryFilter": "notFiled",
         "autoLoad": false,
         "autoSync": true,
+        "data": null,
+        "designer|userAlias": "DAMFolderViewStore",
+        "designer|userClassName": "DAMFolderViewStore",
+        "directoryFilter": "notFiled",
+        "isOptimised": true,
         "model": "DAMFolderViewModel",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "DAMFolderViewStore",
-        "designer|userClassName": "DAMFolderViewStore",
-        "designer|userAlias": "DAMFolderViewStore",
-        "data": null,
-        "pageSize": 50
+        "usedCollection": "DAM"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -59,7 +59,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'dam/create',\r",
@@ -68,6 +67,7 @@
                     "                    destroy: 'dam/delete'\r",
                     "                }"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "988f7377-b8ef-44ec-a963-4796df578e2e",
@@ -93,8 +93,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": "mapping",
                         "encode": true,
+                        "nameProperty": "mapping",
                         "root": "data"
                     },
                     "designerId": "11c8623b-7bdc-446d-a768-74293be47fda"

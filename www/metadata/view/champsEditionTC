@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "fieldPanel",
+        "bodyPadding": 0,
         "container|align": "stretch",
+        "designer|userAlias": "champsEditionTC",
+        "designer|userClassName": "champsEditionTC",
         "frame": true,
         "id": "champsEditionTC",
+        "layout": "vbox",
+        "localiserId": "fieldPanel",
         "margin": 20,
-        "designer|userClassName": "champsEditionTC",
-        "designer|userAlias": "champsEditionTC",
         "resizable": [
             "false"
         ],
-        "layout": "vbox",
-        "bodyPadding": 0,
         "title": "Champs éditables"
     },
     "designerId": "9f720849-6c20-4727-8b99-ce99c0298e28",

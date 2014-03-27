@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "CustomThemesController",
-        "designer|userAlias": "CustomThemesController"
+        "designer|userAlias": "CustomThemesController",
+        "designer|userClassName": "CustomThemesController"
     },
     "designerId": "b3b24ed4-5a5b-41d6-8150-b2a668f6491b",
     "cn": [
@@ -19,14 +19,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#customThemesAddBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCustomThemesAddBtnClick",
                 "implHandler": [
                     "Ext.widget(\"NewCustomThemeWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#customThemesAddBtn"
+                "scope": "me"
             },
             "designerId": "71c9784a-4bac-4530-a9e2-39e56c621f42"
         },
@@ -38,6 +38,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newCustomThemeSublitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewCustomThemeSublitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -117,9 +119,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newCustomThemeSublitBtn"
+                "scope": "me"
             },
             "designerId": "0f48f144-64c9-4c54-9bbb-e2f3155f0cc8"
         },
@@ -131,10 +131,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "resetInterfaceSelect",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "resetInterfaceSelect",
                 "implHandler": [
                     "Ext.getCmp(\"customThemesRemoveBtn\").enable();\r",
                     "Ext.getCmp(\"customThemesSaveBtn\").enable();\r",
@@ -175,6 +175,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#customThemesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onCustomThemesGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -184,9 +186,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#customThemesGrid"
+                "scope": "me"
             },
             "designerId": "9e835ee2-b0b8-4e25-ae95-9ccc7042e1ce"
         },
@@ -198,6 +198,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#customThemesRemoveBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCustomThemesRemoveBtnClick",
                 "implHandler": [
                     "var delCon = Ext.widget('delConfirmZ');\r",
@@ -208,9 +210,7 @@
                     "}); "
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#customThemesRemoveBtn"
+                "scope": "me"
             },
             "designerId": "7e72e958-9879-4e1a-b14a-5c7c8ed6b7ce"
         },
@@ -222,10 +222,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "init",
                 "designer|params": [
                     "application"
                 ],
+                "fn": "init",
                 "implHandler": [
                     "Ext.define('ColorPickerControlSingleton', {\r",
                     "    singleton:true,\r",
@@ -243,6 +243,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#customThemesSaveBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCustomThemesSaveBtnClick",
                 "implHandler": [
                     "var form=Ext.getCmp(\"mainLessVarsForm\").getForm();\r",
@@ -254,9 +256,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#customThemesSaveBtn"
+                "scope": "me"
             },
             "designerId": "ddfd980d-a5dc-4e86-bd37-8379e36a46a6"
         },
@@ -268,10 +268,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "pushLessToSimulator",
                 "designer|params": [
                     "vars"
                 ],
+                "fn": "pushLessToSimulator",
                 "implHandler": [
                     "var refinedVars={ };\r",
                     "Ext.Object.each(vars, function(key, value, myself) {\r",
@@ -298,6 +298,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#simulateCustomThemeBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSimulateCustomThemeBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -309,9 +311,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#simulateCustomThemeBtn"
+                "scope": "me"
             },
             "designerId": "0fbf1831-7f7d-41ed-b746-3cd2870cf57a"
         },
@@ -351,14 +351,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#randomizeBaseThemeColorsBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onRandomizeBaseThemeColorsBtnClick",
                 "implHandler": [
                     "this.getCLSuggestion();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#randomizeBaseThemeColorsBtn"
+                "scope": "me"
             },
             "designerId": "d9ae41f1-fe35-4836-bad0-05ecf66ccee7"
         },
@@ -370,6 +370,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#randomizeBaseThemeColorsBOBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onRandomizeBaseThemeColorsBOBtnClick",
                 "implHandler": [
                     "var values=Ext.getCmp(\"colorSuggestionCombo\").getValue();\r",
@@ -380,9 +382,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#randomizeBaseThemeColorsBOBtn"
+                "scope": "me"
             },
             "designerId": "40874999-4792-4d3f-8026-5f5f3ae6e95e"
         },
@@ -394,10 +394,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "getCLBOSuggestion",
                 "designer|params": [
                     "values"
                 ],
+                "fn": "getCLBOSuggestion",
                 "implHandler": [
                     "Ext.Ajax.request({\r",
                     "    url: 'custom-themes/get-color-palette-bo',\r",

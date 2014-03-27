@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "UserTypes",
         "autoLoad": false,
-        "model": "userType",
-        "storeId": "UserTypesForTaxes",
-        "designer|userClassName": "UserTypesForTaxes",
-        "designer|userAlias": "UserTypesForTaxes",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "UserTypesForTaxes",
+        "designer|userClassName": "UserTypesForTaxes",
+        "isOptimised": true,
+        "model": "userType",
+        "pageSize": 1000,
+        "storeId": "UserTypesForTaxes",
+        "usedCollection": "UserTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

@@ -7,17 +7,17 @@
     "codeClass": null,
     "userConfig": {
         "anchor": "90%",
-        "style": "float: left;",
-        "designer|userClassName": "queryBuilderField",
         "designer|userAlias": "queryBuilderField",
-        "fieldLabel": "Label",
-        "labelWidth": null,
-        "editable": false,
+        "designer|userClassName": "queryBuilderField",
         "displayField": "name",
+        "editable": false,
+        "fieldLabel": "Label",
         "forceSelection": true,
+        "labelWidth": null,
         "queryMode": "local",
         "queryParam": "specificItem",
         "store": "QueriesStore",
+        "style": "float: left;",
         "valueField": "id"
     },
     "configAlternates": {

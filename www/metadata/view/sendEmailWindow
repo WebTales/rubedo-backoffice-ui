@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "sendEmailWindow",
+        "designer|userAlias": "sendEmailWindow",
+        "designer|userClassName": "sendEmailWindow",
         "height": null,
         "id": "sendEmailWindow",
-        "width": 400,
-        "designer|userClassName": "sendEmailWindow",
-        "designer|userAlias": "sendEmailWindow",
         "layout": "fit",
+        "localiserId": "sendEmailWindow",
+        "modal": true,
         "title": "Send email",
-        "modal": true
+        "width": 400
     },
     "designerId": "d2aea74e-65b3-4dbd-a9e1-a5a4caf7cb9a",
     "customConfigs": [
@@ -46,12 +46,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Mailing list",
-                        "name": "mailingList",
                         "allowBlank": false,
                         "allowOnlyWhitespace": false,
+                        "fieldLabel": "Mailing list",
                         "layout|anchor": "100%",
-                        "localiserId": "mailingListPicker"
+                        "localiserId": "mailingListPicker",
+                        "name": "mailingList"
                     },
                     "designerId": "9927c0e3-f956-49ef-b993-4693ddbdedae",
                     "customConfigs": [
@@ -71,9 +71,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "id": "sendEmailSubmitBtn",
                         "layout|anchor": "100%",
                         "localiserId": "sendSubmitBtn",
-                        "id": "sendEmailSubmitBtn",
                         "text": "Send"
                     },
                     "designerId": "7d21b5ce-5ffb-4400-a1f7-8d5eda8c218f",

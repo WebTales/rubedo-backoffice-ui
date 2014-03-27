@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "ContentTypes",
         "autoLoad": false,
+        "designer|userAlias": "TCNDepCombo",
+        "designer|userClassName": "TCNDepCombo",
+        "isOptimised": true,
         "model": "typesContenusDataModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "TCNDepCombo",
-        "designer|userClassName": "TCNDepCombo",
-        "designer|userAlias": "TCNDepCombo",
-        "pageSize": 1000
+        "usedCollection": "ContentTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

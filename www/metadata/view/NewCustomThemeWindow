@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newCustomThemeWindow",
-        "height": 112,
-        "width": 400,
-        "designer|userClassName": "NewCustomThemeWindow",
-        "designer|userAlias": "NewCustomThemeWindow",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "NewCustomThemeWindow",
+        "designer|userClassName": "NewCustomThemeWindow",
+        "height": 112,
         "layout": "fit",
+        "localiserId": "newCustomThemeWindow",
+        "modal": true,
+        "resizable": false,
         "title": "New custom theme",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,11 +50,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom",
-                        "name": "name",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "name"
                     },
                     "designerId": "745cbb84-079b-4ab2-b6ed-5a4bc0a3792d",
                     "customConfigs": [
@@ -73,9 +73,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewCustomThemeBtn",
-                        "layout|anchor": "100%",
                         "id": "newCustomThemeSublitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "createNewCustomThemeBtn",
                         "scale": "medium",
                         "text": "Create new custom theme"
                     },

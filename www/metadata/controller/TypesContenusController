@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "TypesContenusController",
+        "designer|userClassName": "TypesContenusController",
         "models": [
             "typesContenusDataModel"
         ],
@@ -18,9 +20,7 @@
             "ChampTC",
             "optionsLCGrid",
             "ongletTCDep"
-        ],
-        "designer|userClassName": "TypesContenusController",
-        "designer|userAlias": "TypesContenusController"
+        ]
     },
     "designerId": "6b4056c1-8b00-41ce-a4cb-363fbf0cb6f0",
     "cn": [
@@ -32,6 +32,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonAjouterContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "ajouterContenu",
                 "implHandler": [
                     "if (Ext.isDefined(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0])) {\r",
@@ -379,9 +381,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterContenu"
+                "scope": "me"
             },
             "designerId": "e81d0f4c-83eb-4437-a188-896315f1c5c8"
         },
@@ -393,15 +393,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonOuvrirFenetreTC",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "ouvrirFenetreTC",
                 "implHandler": [
                     "var fenetreTC = Ext.widget('ajoutChampTCFenetre');\r",
                     "fenetreTC.show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonOuvrirFenetreTC"
+                "scope": "me"
             },
             "designerId": "063f8236-3289-49dc-a637-63d5b83ff07c"
         },
@@ -413,6 +413,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonAjouterChampTC",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "creerChampTC",
                 "implHandler": [
                     "var me=this;\r",
@@ -612,9 +614,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterChampTC"
+                "scope": "me"
             },
             "designerId": "cca991ed-25e3-4a89-9490-55e02f4dcef7"
         },
@@ -626,6 +626,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#champsEditionTC ChampTC",
+                "designer|targetType": "ChampTC",
                 "fn": "selectChampTC",
                 "implHandler": [
                     "var me=this;\r",
@@ -796,9 +798,7 @@
                     "        });"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "ChampTC",
-                "designer|controlQuery": "#champsEditionTC ChampTC"
+                "scope": "me"
             },
             "designerId": "e2ebc421-111e-445c-aa56-a4c4fc55fdfe"
         },
@@ -810,6 +810,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#champsEditionTC ChampTC",
+                "designer|targetType": "ChampTC",
                 "fn": "enleveChampTC",
                 "implHandler": [
                     "if (Ext.getCmp('champTCIdField').getValue() == component.getComponent(1).id) {\r",
@@ -821,9 +823,7 @@
                     "}"
                 ],
                 "name": "beforedestroy",
-                "scope": "me",
-                "designer|targetType": "ChampTC",
-                "designer|controlQuery": "#champsEditionTC ChampTC"
+                "scope": "me"
             },
             "designerId": "0541dcd4-ee38-4b95-9dbf-b9f8d5a998e7"
         },
@@ -835,14 +835,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ChampTCSelectGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "updateOptionsListeTC",
                 "implHandler": [
                     "Ext.getCmp('PaneauTCDetail').update(record.data);"
                 ],
                 "name": "itemclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ChampTCSelectGrid"
+                "scope": "me"
             },
             "designerId": "74b79ea2-838b-4407-8e7a-69683f98bf32"
         },
@@ -854,6 +854,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#AdminfTypesGrid",
+                "designer|targetType": "Ext.grid.View",
                 "fn": "selectTC",
                 "implHandler": [
                     "Ext.Array.forEach(Ext.getCmp(\"adminFTDC\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btn){btn.enable();});\r",
@@ -1054,9 +1056,7 @@
                     ""
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.View",
-                "designer|controlQuery": "#AdminfTypesGrid"
+                "scope": "me"
             },
             "designerId": "d5b57a48-78e7-4ae9-81e5-45b88a8b725e"
         },
@@ -1068,6 +1068,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonSupprimerTypeContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "supprimeTypeContenu",
                 "implHandler": [
                     "var cible = Ext.getCmp('AdminfTypesGridView').getSelectionModel().getSelection()[0];\r",
@@ -1110,9 +1112,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTypeContenu"
+                "scope": "me"
             },
             "designerId": "926fdbd9-4653-4556-88a3-f6ea0c9a755f"
         },
@@ -1124,6 +1124,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonEnregistrerTypeContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "enregistrerTypeContenus",
                 "implHandler": [
                     "var me=this;\r",
@@ -1208,9 +1210,7 @@
                     "        }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEnregistrerTypeContenu"
+                "scope": "me"
             },
             "designerId": "a61a2f23-93e0-4ad3-9987-1602c0afced2"
         },
@@ -1222,6 +1222,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonNouveauTypeContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "fenetreNTC",
                 "implHandler": [
                     "var fenetre = Ext.widget('nouveauTypeContenu');\r",
@@ -1229,9 +1231,7 @@
                     "fenetre.show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonNouveauTypeContenu"
+                "scope": "me"
             },
             "designerId": "13f39238-b017-41fb-9868-d8f120518348"
         },
@@ -1243,6 +1243,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCreerTC",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "creerNTC",
                 "implHandler": [
                     "var me=this;\r",
@@ -1273,9 +1275,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreerTC"
+                "scope": "me"
             },
             "designerId": "80a1e005-fdd4-4af3-82fb-a9229417cce3"
         },
@@ -1287,6 +1287,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#layoutEditionPanel panel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "selectionEvents",
                 "implHandler": [
                     "var me=this;\r",
@@ -1336,9 +1338,7 @@
                     "}"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#layoutEditionPanel panel"
+                "scope": "me"
             },
             "designerId": "1a3d6c16-2026-4fb3-97b6-4495f52a7805"
         },
@@ -1350,6 +1350,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#searchFormCheck checkboxfield",
+                "designer|targetType": "Ext.form.field.Checkbox",
                 "fn": "onCheckboxfieldChange",
                 "implHandler": [
                     "if ((field.name==\"searchable\")&&(newValue===false)){\r",
@@ -1363,9 +1365,7 @@
                     "}"
                 ],
                 "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Checkbox",
-                "designer|controlQuery": "#searchFormCheck checkboxfield"
+                "scope": "me"
             },
             "designerId": "1d97759c-5055-4fb4-893f-0cc6aa215026"
         },
@@ -1377,11 +1377,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "miseAPlatTaxo",
                 "designer|params": [
                     "cible",
                     "resultat"
                 ],
+                "fn": "miseAPlatTaxo",
                 "implHandler": [
                     "var e=0;\r",
                     "for (e=0; e<cible.length; e++) {\r",
@@ -1400,6 +1400,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "[itemId= 'boutonReplicateurChamps']",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "repliqueChamp",
                 "implHandler": [
                     "var nouvChamp=button.up().getComponent(1).cloneConfig();\r",
@@ -1418,9 +1420,7 @@
                     "button.valeursM++;"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "[itemId= 'boutonReplicateurChamps']"
+                "scope": "me"
             },
             "designerId": "6c7dc62c-8c47-4fdb-a92c-52250f3464b5"
         },
@@ -1432,6 +1432,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#TCfieldDeleter",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "TCfieldDelete",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
@@ -1440,9 +1442,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#TCfieldDeleter"
+                "scope": "me"
             },
             "designerId": "f53cb645-4e7d-4623-87f9-123e8288a1fa"
         },
@@ -1454,6 +1454,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#TCfieldUp",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "TCfieldMoveUp",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
@@ -1465,9 +1467,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#TCfieldUp"
+                "scope": "me"
             },
             "designerId": "6b32c09e-8580-4589-8ae1-6487396f7d72"
         },
@@ -1479,6 +1479,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#TCfieldDown",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "TCfieldMoveDown",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('champTCIdField').getValue());\r",
@@ -1488,9 +1490,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#TCfieldDown"
+                "scope": "me"
             },
             "designerId": "84d48f71-a70a-422b-92a2-5af45464a790"
         },
@@ -1502,15 +1502,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ChampTCSelectGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "createThroughDblClick",
                 "implHandler": [
                     "Ext.getStore(\"AddMultiFieldStore\").removeAll();\r",
                     "this.creerChampTC(Ext.getCmp(\"boutonAjouterChampTC\"));"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ChampTCSelectGrid"
+                "scope": "me"
             },
             "designerId": "165b0cf1-e3f8-4a55-9506-56f5f6d8c60d"
         },
@@ -1522,6 +1522,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCopierTC",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "copyTC",
                 "implHandler": [
                     "var rec = Ext.clone(Ext.getCmp(\"AdminfTypesGrid\").getSelectionModel().getLastSelected().data);\r",
@@ -1537,9 +1539,7 @@
                     "Ext.getCmp(\"AdminfTypesGrid\").getStore().add(rec);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCopierTC"
+                "scope": "me"
             },
             "designerId": "217b6cb9-f771-406e-87cc-5c8d71d1ffaf"
         },
@@ -1551,14 +1551,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#AdminfTypesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onGridpanelEdit",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusNDepDataJson\").load();"
                 ],
                 "name": "edit",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#AdminfTypesGrid"
+                "scope": "me"
             },
             "designerId": "cee18c78-aca5-49d7-89a4-764138838ca9"
         },
@@ -1570,6 +1570,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#AdminfTypesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onAdminfTypesGridRender",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDepDataJson\").load();\r",
@@ -1577,9 +1579,7 @@
                     "Ext.getStore(\"ShippersForCT\").load();"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#AdminfTypesGrid"
+                "scope": "me"
             },
             "designerId": "e9ec09d3-2d5c-48ea-ba05-b5a7cdc8c067"
         },
@@ -1591,6 +1591,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#AdminfTypesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onAdminfTypesGridDestroy",
                 "implHandler": [
                     "Ext.getStore(\"TypesContenusDepDataJson\").removeAll();\r",
@@ -1598,9 +1600,7 @@
                     "Ext.getStore(\"ShippersForCT\").removeAll();"
                 ],
                 "name": "destroy",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#AdminfTypesGrid"
+                "scope": "me"
             },
             "designerId": "94a0398d-b1eb-4d7b-905e-37ab1698b6fd"
         },
@@ -1612,10 +1612,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "nameValidator",
                 "designer|params": [
                     "name"
                 ],
+                "fn": "nameValidator",
                 "implHandler": [
                     "var usedNames=[\"text\",\"summary\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('champsEditionTC').query(\"field\"), function(field){\r",
@@ -1640,10 +1640,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "nameAvailable",
                 "designer|params": [
                     "name"
                 ],
+                "fn": "nameAvailable",
                 "implHandler": [
                     "var usedNames=[\"text\",\"summary\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('champsEditionTC').query(\"field\"), function(field){\r",
@@ -1666,6 +1666,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#purgeCTContentsBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onPurgeCTContentsBtnClick",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -1703,9 +1705,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#purgeCTContentsBtn"
+                "scope": "me"
             },
             "designerId": "7d05bac5-df93-4d07-9429-3c9665f7a5c3"
         },
@@ -1717,14 +1717,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addCTLayoutBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddCTLayoutBtnClick",
                 "implHandler": [
                     "Ext.widget(\"NewCTLayoutWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addCTLayoutBtn"
+                "scope": "me"
             },
             "designerId": "12dcefec-ae6d-440a-97d9-d70fde20525e"
         },
@@ -1736,14 +1736,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#RemoveCTLayoutBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onRemoveCTLayoutBtnClick",
                 "implHandler": [
                     "Ext.getCmp(\"CTLayoutsGrid\").getStore().remove(Ext.getCmp(\"CTLayoutsGrid\").getSelectionModel().getLastSelected());"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#RemoveCTLayoutBtn"
+                "scope": "me"
             },
             "designerId": "e4ca4d9e-5d88-4258-8446-abb083a3592e"
         },
@@ -1755,6 +1755,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#NewCTLayoutWindowSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewCTLayoutWindowSubmitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -1766,9 +1768,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#NewCTLayoutWindowSubmitBtn"
+                "scope": "me"
             },
             "designerId": "bc40401c-e8ea-4c49-a186-3ae21b8fa9c5"
         },
@@ -1780,6 +1780,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#CTLayoutsGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onCTLayoutsGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -1789,9 +1791,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#CTLayoutsGrid"
+                "scope": "me"
             },
             "designerId": "853b4c10-4955-4132-93ae-a564ad7f07f9"
         },
@@ -1803,10 +1803,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "resetLayoutsInterfaceSelect",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "resetLayoutsInterfaceSelect",
                 "implHandler": [
                     "Ext.getCmp(\"RemoveCTLayoutBtn\").enable();\r",
                     "Ext.getCmp(\"copyCTLayoutBtn\").enable();\r",
@@ -1895,10 +1895,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "saveLayout",
                 "designer|params": [
                     "startComp"
                 ],
+                "fn": "saveLayout",
                 "implHandler": [
                     "var me=this;\r",
                     "var nRows=[ ];\r",
@@ -1958,10 +1958,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderRowTools",
                 "designer|params": [
                     "component"
                 ],
+                "fn": "renderRowTools",
                 "implHandler": [
                     "var me=this;\r",
                     "var configSpec = Ext.widget('ConfigSpecBloc');\r",
@@ -2020,10 +2020,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderFieldTools",
                 "designer|params": [
                     "component"
                 ],
+                "fn": "renderFieldTools",
                 "implHandler": [
                     "var me=this;\r",
                     "var configSpec = Ext.widget('ConfigSpecBloc');\r",
@@ -2097,10 +2097,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderMainBoxTools",
                 "designer|params": [
                     "component"
                 ],
+                "fn": "renderMainBoxTools",
                 "implHandler": [
                     ""
                 ]
@@ -2115,10 +2115,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderColumnTools",
                 "designer|params": [
                     "component"
                 ],
+                "fn": "renderColumnTools",
                 "implHandler": [
                     "var me=this;\r",
                     "var configSpec = Ext.widget('ConfigSpecBloc');\r",
@@ -2214,13 +2214,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "applyConstrain",
                 "designer|params": [
                     "target",
                     "offsetF",
                     "spanF",
                     "applyFirst"
                 ],
+                "fn": "applyConstrain",
                 "implHandler": [
                     "var myEol=target.up().getComponent(\"eol\");\r",
                     "var myOffset=null;\r",
@@ -2283,10 +2283,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "deudceResposiveClass",
                 "designer|params": [
                     "responsiveObj"
                 ],
+                "fn": "deudceResposiveClass",
                 "implHandler": [
                     "var responsiveArray=[ ];\r",
                     "Ext.Object.each(responsiveObj, function(key, value, myself) {\r",
@@ -2317,10 +2317,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "restoreLayout",
                 "designer|params": [
                     "mRows,its,cible"
                 ],
+                "fn": "restoreLayout",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.Array.forEach(mRows, function(row){\r",
@@ -2405,6 +2405,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#saveCTLayoutBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSaveCTLayoutBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -2412,9 +2414,7 @@
                     "rec.set(\"rows\",me.saveLayout(Ext.getCmp(\"layoutEditionPanel\")));"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#saveCTLayoutBtn"
+                "scope": "me"
             },
             "designerId": "ed36df37-4dc3-43c6-976f-1d3906828976"
         },
@@ -2426,6 +2426,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#layoutEditionPanel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onLayoutEditionPanelAfterRender",
                 "implHandler": [
                     "component.setBorder(2);\r",
@@ -2444,9 +2446,7 @@
                     "});"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#layoutEditionPanel"
+                "scope": "me"
             },
             "designerId": "f4deaeab-3a1e-4c50-b295-8e111a9d3bd8"
         },
@@ -2458,6 +2458,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#layoutElementIdField",
+                "designer|targetType": "Ext.form.field.Hidden",
                 "fn": "onLayoutElementIdFieldChange",
                 "implHandler": [
                     "var me=this;\r",
@@ -2519,9 +2521,7 @@
                     "}"
                 ],
                 "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Hidden",
-                "designer|controlQuery": "#layoutElementIdField"
+                "scope": "me"
             },
             "designerId": "68b599b3-2fd0-421c-91f5-72b1c27bd797"
         },
@@ -2533,6 +2533,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addRowToLayoutBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddRowToLayoutBtnClick",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());\r",
@@ -2559,9 +2561,7 @@
                     "Ext.getCmp('layoutElementIdField').setValue(row.getId());"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addRowToLayoutBtn"
+                "scope": "me"
             },
             "designerId": "c43b3ef8-ec42-4c0c-8674-bbda93a6d478"
         },
@@ -2573,6 +2573,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addColToLayoutBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddColToLayoutBtnClick",
                 "implHandler": [
                     "var cible=Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue());\r",
@@ -2609,9 +2611,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addColToLayoutBtn"
+                "scope": "me"
             },
             "designerId": "de904f3d-8d4d-4b93-aafd-160e4ae78c0b"
         },
@@ -2623,6 +2623,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#removeLayoutElementBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onRemoveLayoutElementBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -2650,9 +2652,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#removeLayoutElementBtn"
+                "scope": "me"
             },
             "designerId": "93172e5a-230a-4341-b5f7-6ce91deff08e"
         },
@@ -2664,6 +2664,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#layoutActivatorBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onLayoutActivatorBtnClick",
                 "implHandler": [
                     "if (button.deactivateMode){\r",
@@ -2684,9 +2686,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#layoutActivatorBtn"
+                "scope": "me"
             },
             "designerId": "9d4ca793-f6fe-4ebf-86c5-9eafdb51653b"
         },
@@ -2698,14 +2698,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#assignFieldToColBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAssignFieldToColBtnClick",
                 "implHandler": [
                     "Ext.widget(\"AssignFieldToColWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#assignFieldToColBtn"
+                "scope": "me"
             },
             "designerId": "bd4a070d-e98c-478a-b635-676b6e93d292"
         },
@@ -2717,6 +2717,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#assignFieldToLayoutSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAssignFieldToLayoutSubmitBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -2740,9 +2742,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#assignFieldToLayoutSubmitBtn"
+                "scope": "me"
             },
             "designerId": "7abe26fd-6f0f-428e-a881-96016269726b"
         },
@@ -2754,6 +2754,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#CTLayoutFieldInjectorGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onCTLayoutFieldInjectorGridItemDblClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -2775,9 +2777,7 @@
                     "}"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#CTLayoutFieldInjectorGrid"
+                "scope": "me"
             },
             "designerId": "1b7e7dae-cf9c-4ac3-a96a-fdcea4e3ae90"
         },
@@ -2789,6 +2789,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#moveLayoutItemUpBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMoveLayoutItemUpBtnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp(\"layoutElementIdField\").getValue());\r",
@@ -2800,9 +2802,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#moveLayoutItemUpBtn"
+                "scope": "me"
             },
             "designerId": "a0e7869a-fbbf-46c6-8a6f-0403b70dd399"
         },
@@ -2814,6 +2814,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#moveLayoutItemDownBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMoveLayoutItemDownBtnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp(\"layoutElementIdField\").getValue());\r",
@@ -2823,9 +2825,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#moveLayoutItemDownBtn"
+                "scope": "me"
             },
             "designerId": "cbbcfdd9-671b-4f5e-bd41-0c6e70e48d56"
         },
@@ -2837,6 +2837,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#CTLayoutsGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onCTLayoutsGridBeforeSelect",
                 "implHandler": [
                     "var me=this;\r",
@@ -2846,9 +2848,7 @@
                     "}"
                 ],
                 "name": "beforeselect",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#CTLayoutsGrid"
+                "scope": "me"
             },
             "designerId": "fb6d6b7a-04d3-414d-8b04-da82e0d39660"
         },
@@ -2860,6 +2860,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#copyCTLayoutBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCopyCTLayoutBtnClick",
                 "implHandler": [
                     "var target = Ext.getCmp('CTLayoutsGrid').getSelectionModel().getSelection()[0];\r",
@@ -2870,9 +2872,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#copyCTLayoutBtn"
+                "scope": "me"
             },
             "designerId": "43afccc8-b496-404f-b3a1-684aa2baa75d"
         },
@@ -2884,6 +2884,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#CTLCopyLSubitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCTLCopyLSubitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -2896,9 +2898,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#CTLCopyLSubitBtn"
+                "scope": "me"
             },
             "designerId": "891beb16-30d9-429c-a095-4a4d1e2f7c03"
         },
@@ -2910,6 +2910,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#CTLayoutMainTab",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onPanelActivate",
                 "implHandler": [
                     "Ext.getCmp(\"CTLayoutsBtnGr\").show();\r",
@@ -2920,9 +2922,7 @@
                     "}"
                 ],
                 "name": "activate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#CTLayoutMainTab"
+                "scope": "me"
             },
             "designerId": "53165355-ab90-4bd8-933f-01eb499a3373"
         },
@@ -2934,6 +2934,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#CTLayoutMainTab",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onPanelDeactivate",
                 "implHandler": [
                     "Ext.getCmp(\"CTLayoutsBtnGr\").hide();\r",
@@ -2941,9 +2943,7 @@
                     "Ext.getCmp(\"AdminfTypesGrid\").expand();"
                 ],
                 "name": "deactivate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#CTLayoutMainTab"
+                "scope": "me"
             },
             "designerId": "78a302ac-fe2c-48cb-847b-95bced7cc812"
         }

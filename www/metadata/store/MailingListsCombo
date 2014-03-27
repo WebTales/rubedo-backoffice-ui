@@ -8,11 +8,11 @@
     "userConfig": {
         "autoLoad": true,
         "autoSync": true,
-        "model": "mailingListsModel",
-        "storeId": "MailingListsCombo",
-        "designer|userClassName": "MailingListsCombo",
         "designer|userAlias": "MailingListsCombo",
-        "pageSize": 1000
+        "designer|userClassName": "MailingListsCombo",
+        "model": "mailingListsModel",
+        "pageSize": 1000,
+        "storeId": "MailingListsCombo"
     },
     "configAlternates": {
         "isOptimised": "boolean"

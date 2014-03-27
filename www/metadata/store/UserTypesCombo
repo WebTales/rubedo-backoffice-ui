@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "UserTypes",
         "autoLoad": false,
+        "data": null,
+        "designer|userAlias": "UserTypesCombo",
+        "designer|userClassName": "UserTypesCombo",
+        "isOptimised": true,
         "model": "userType",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "UserTypesCombo",
-        "designer|userClassName": "UserTypesCombo",
-        "designer|userAlias": "UserTypesCombo",
-        "data": null,
-        "pageSize": 1000
+        "usedCollection": "UserTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

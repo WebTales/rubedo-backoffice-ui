@@ -6,18 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 300,
-        "id": "Panier",
-        "style": null,
-        "width": 600,
-        "designer|userClassName": "Panier",
-        "designer|userAlias": "panier",
-        "resizable": null,
-        "layout": "fit",
         "bodyStyle": null,
         "constrainHeader": true,
+        "designer|userAlias": "panier",
+        "designer|userClassName": "Panier",
+        "height": 300,
         "iconCls": "cart",
-        "title": "Panier"
+        "id": "Panier",
+        "layout": "fit",
+        "style": null,
+        "title": "Panier",
+        "width": 600
     },
     "designerId": "e59b3e1d-ac70-40ed-8cca-3251584e2e94",
     "cn": [
@@ -30,8 +29,8 @@
             "codeClass": null,
             "userConfig": {
                 "id": "PanierGrid",
-                "title": "",
-                "store": "PanierDataJson"
+                "store": "PanierDataJson",
+                "title": ""
             },
             "designerId": "7da13257-d54f-438e-af91-5ecf1b772e9e",
             "cn": [
@@ -61,10 +60,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 183,
                         "dataIndex": "text",
+                        "flex": 1,
                         "text": "Titre",
-                        "flex": 1
+                        "width": 183
                     },
                     "designerId": "2ea352c4-cea7-4ee8-a1c1-f1fc00513e4e"
                 },
@@ -77,8 +76,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "etat",
-                        "text": "Etat",
-                        "flex": 1
+                        "flex": 1,
+                        "text": "Etat"
                     },
                     "designerId": "369a083d-dd65-43d6-adf7-6109834ee8e3"
                 }
@@ -104,10 +103,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "id": "enleverPanier",
                         "icon": null,
                         "iconCls": "shopping_cart_remove_med",
+                        "id": "enleverPanier",
+                        "layout|flex": null,
                         "scale": "medium",
                         "text": "Enlever"
                     },
@@ -133,9 +132,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "icon": null,
                         "iconCls": "pencil_med",
+                        "layout|flex": null,
                         "scale": "medium",
                         "text": "Action 1"
                     },
@@ -149,9 +148,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "icon": null,
                         "iconCls": "pencil_med",
+                        "layout|flex": null,
                         "scale": "medium",
                         "text": "Action 2"
                     },
@@ -165,9 +164,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "icon": null,
                         "iconCls": "pencil_med",
+                        "layout|flex": null,
                         "scale": "medium",
                         "text": "Action 3"
                     },

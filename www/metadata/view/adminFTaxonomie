@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "favoriteIcon": "tag.png",
-        "localiserId": "taxonomyWindow",
-        "container|align": "stretch",
-        "height": 578,
-        "id": "adminFTaxonomie",
-        "width": 1133,
-        "designer|userClassName": "adminFTaxonomie",
-        "designer|userAlias": "adminFTaxonomie",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "adminFTaxonomie",
+        "designer|userClassName": "adminFTaxonomie",
+        "favoriteIcon": "tag.png",
+        "height": 578,
         "iconCls": "page_taxonomy",
-        "title": "Taxonomie"
+        "id": "adminFTaxonomie",
+        "layout": "hbox",
+        "localiserId": "taxonomyWindow",
+        "title": "Taxonomie",
+        "width": 1133
     },
     "designerId": "6422f6a9-9b88-4951-b942-22332afd3f8d",
     "customConfigs": [
@@ -67,10 +67,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "layout|flex": 1
             },
             "designerId": "4dff7f83-c51e-462b-bdb2-3e6abfc8a3cb",
             "cn": [
@@ -82,10 +82,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "taxonomyLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "origine",
                         "iconCls": "page_taxonomy",
+                        "itemId": "origine",
+                        "layout|flex": null,
+                        "localiserId": "taxonomyLaunchBtn",
                         "text": "Taxonomie "
                     },
                     "designerId": "9f610fec-7c1a-44c2-8523-04daa23cc5c4",
@@ -107,10 +107,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "d4e4cd44-4942-4cb7-a760-73cb9b614b35",
@@ -123,10 +123,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "967c9977-efcb-498c-8660-3537a1bae65e",
                     "cn": [
@@ -157,8 +157,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "boiteBarreMeta",
+                        "layout|flex": null,
                         "margin": "0 0 0 20"
                     },
                     "designerId": "015d3e9e-7c67-4770-9c6f-2d44b4c25b32",
@@ -171,10 +171,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "943b50ea-2b2b-4066-9349-3ca4d1b5e302"
                         }
@@ -190,10 +190,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": null,
                 "itemId": "contextBar",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "c216e76a-79fc-49b7-8fc3-d3a6234b9d95",
@@ -207,13 +207,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "boutonCreerTaxonomie",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "boutonCreerTaxonomie",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -240,14 +240,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "boutonSupprimerTaxo",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "boutonSupprimerTaxo",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -274,14 +274,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomy",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "boutonEnregistrerTaxo",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "boutonEnregistrerTaxo",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -332,13 +332,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.taxonomyTerms",
-                        "localiserId": "editTermsGroup",
-                        "layout|flex": null,
+                        "columns": 2,
                         "disabled": true,
-                        "id": "taxoTermEditBrnGroup",
                         "headerPosition": "bottom",
-                        "title": "Edition des termes",
-                        "columns": 2
+                        "id": "taxoTermEditBrnGroup",
+                        "layout|flex": null,
+                        "localiserId": "editTermsGroup",
+                        "title": "Edition des termes"
                     },
                     "designerId": "8cabf1a0-1066-4425-93e8-e58baab7d467",
                     "customConfigs": [
@@ -362,10 +362,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addBtn",
-                                "id": "taxoOpenInsertBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "taxoOpenInsertBtn",
+                                "localiserId": "addBtn",
                                 "scale": "large",
                                 "text": "Ajouter"
                             },
@@ -386,10 +386,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeBtn",
-                                "id": "taxoTermKiller",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
+                                "id": "taxoTermKiller",
+                                "localiserId": "removeBtn",
                                 "scale": "large",
                                 "text": "Supprimer"
                             },
@@ -412,12 +412,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "shortcutBtn",
-                        "layout|flex": null,
-                        "itemId": "boutonCreerRaccourci",
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "favorite_add_big",
+                        "itemId": "boutonCreerRaccourci",
+                        "layout|flex": null,
+                        "localiserId": "shortcutBtn",
                         "scale": "large",
                         "text": "Ajouter aux favoris"
                     },
@@ -451,10 +451,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "taxonomy",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -477,18 +477,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": true,
-                "layout|flex": null,
-                "autoRender": false,
                 "id": "AdminfTaxonomieGrid",
                 "itemId": null,
-                "width": 150,
+                "layout|flex": null,
+                "managesStore": true,
                 "resizable": [
                     "true"
                 ],
                 "resizeHandles": "e",
+                "store": "TaxonomieDataJson",
                 "title": "",
-                "store": "TaxonomieDataJson"
+                "width": 150
             },
             "configAlternates": {
                 "managesStore": "boolean"
@@ -519,10 +518,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
                         "dataIndex": "name",
-                        "text": "Nom",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "nameColumn",
+                        "text": "Nom"
                     },
                     "designerId": "691c3d64-6d16-4f5b-941a-efd4ae2c6f30",
                     "customConfigs": [
@@ -541,7 +540,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -551,6 +549,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "var returner = value;\r",
                                     "if (record.get(\"readOnly\")){\r",
@@ -573,10 +572,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "activeTab": 0,
                 "disabled": true,
                 "id": "taxonomyCenterBox",
-                "activeTab": 0
+                "layout|flex": 1
             },
             "designerId": "f20a43a3-d7ab-4d39-b820-31c90cae2204",
             "cn": [
@@ -589,9 +588,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "iconCls": "edit",
                         "id": "conteneurAdminfTaxo",
                         "layout": "hbox",
-                        "iconCls": "edit",
                         "title": "Edition"
                     },
                     "designerId": "ee6540fb-3ce7-4d1a-8e68-09a4e2146c6b",
@@ -604,8 +603,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "editTab",
-                                "layout|flex": null
+                                "layout|flex": null,
+                                "localiserId": "editTab"
                             },
                             "designerId": "8f245380-44dc-4489-9d36-059a570b588c",
                             "customConfigs": [
@@ -624,11 +623,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsPanel",
-                                "layout|flex": 1,
-                                "layout": "card",
                                 "collapseDirection": "left",
                                 "collapsible": true,
+                                "layout": "card",
+                                "layout|flex": 1,
+                                "localiserId": "propsPanel",
                                 "title": "Propriétés"
                             },
                             "designerId": "c5b69e7e-69a3-4a93-8678-bb1229026c2f",
@@ -648,14 +647,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "id": "ProprietesTaxonomie",
-                                        "itemId": "mainLocItem",
-                                        "width": 300,
                                         "autoScroll": true,
                                         "bodyPadding": 10,
                                         "collapseDirection": "left",
                                         "collapsed": false,
-                                        "title": null
+                                        "id": "ProprietesTaxonomie",
+                                        "itemId": "mainLocItem",
+                                        "title": null,
+                                        "width": 300
                                     },
                                     "designerId": "c49a56cf-011f-46c0-9435-0f5bd8623f55",
                                     "cn": [
@@ -667,12 +666,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "nameField",
-                                                "layout|anchor": "100%",
-                                                "id": null,
+                                                "allowBlank": false,
                                                 "fieldLabel": "Nom ",
-                                                "name": "name",
-                                                "allowBlank": false
+                                                "id": null,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "nameField",
+                                                "name": "name"
                                             },
                                             "designerId": "accbbeb7-c1cc-459a-ab8b-df32d4a45855",
                                             "customConfigs": [
@@ -691,11 +690,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "descriptionField",
-                                                "layout|anchor": "100%",
+                                                "fieldLabel": "Description ",
                                                 "id": null,
                                                 "itemId": null,
-                                                "fieldLabel": "Description ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "descriptionField",
                                                 "name": "description"
                                             },
                                             "designerId": "900247b2-df90-4243-947b-85f7cf846924",
@@ -715,10 +714,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "helpTextField",
-                                                "layout|anchor": "100%",
-                                                "id": null,
                                                 "fieldLabel": "Texte d'aide ",
+                                                "id": null,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "helpTextField",
                                                 "name": "helpText"
                                             },
                                             "designerId": "e119e86e-172e-4729-b2c5-8cbbc3e0b27f",
@@ -738,13 +737,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "facetOperatorField",
-                                                "layout|anchor": "100%",
-                                                "fieldLabel": "Facet operator",
-                                                "name": "facetOperator",
                                                 "allowBlank": false,
                                                 "editable": false,
+                                                "fieldLabel": "Facet operator",
                                                 "forceSelection": true,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "facetOperatorField",
+                                                "name": "facetOperator",
                                                 "store": null
                                             },
                                             "configAlternates": {
@@ -767,10 +766,10 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "processFacetOperator",
                                                         "designer|params": [
                                                             "config"
                                                         ],
+                                                        "fn": "processFacetOperator",
                                                         "implHandler": [
                                                             "config.store=[[\"AND\",Rubedo.RubedoAutomatedElementsLoc.andText],[\"OR\",Rubedo.RubedoAutomatedElementsLoc.orText]];\r",
                                                             "return config;"
@@ -788,13 +787,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "expandableField",
-                                                "layout|anchor": "100%",
-                                                "id": null,
-                                                "fieldLabel": "Extensible ",
-                                                "name": "expandable",
                                                 "boxLabel": "",
+                                                "fieldLabel": "Extensible ",
+                                                "id": null,
                                                 "inputValue": "true",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "expandableField",
+                                                "name": "expandable",
                                                 "uncheckedValue": "false"
                                             },
                                             "designerId": "c7038d51-38ad-48b3-9a43-10a6ef10cd3b",
@@ -814,13 +813,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "inputAsTreeField",
-                                                "layout|anchor": "100%",
-                                                "id": null,
-                                                "fieldLabel": "Saisie arborescente",
-                                                "name": "inputAsTree",
                                                 "boxLabel": "",
+                                                "fieldLabel": "Saisie arborescente",
+                                                "id": null,
                                                 "inputValue": "true",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "inputAsTreeField",
+                                                "name": "inputAsTree",
                                                 "uncheckedValue": "false"
                                             },
                                             "designerId": "85b751eb-9e31-4abd-b396-e51e789f4419",
@@ -840,13 +839,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "multiSelectField",
-                                                "layout|anchor": "100%",
-                                                "id": null,
-                                                "fieldLabel": "Choix multiple ",
-                                                "name": "multiSelect",
                                                 "boxLabel": "",
+                                                "fieldLabel": "Choix multiple ",
+                                                "id": null,
                                                 "inputValue": "true",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "multiSelectField",
+                                                "name": "multiSelect",
                                                 "uncheckedValue": "false"
                                             },
                                             "designerId": "591a9d3d-a8bd-4cb9-b83d-119ae74c4a47",
@@ -866,13 +865,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "mandatoryField",
-                                                "layout|anchor": "100%",
-                                                "id": null,
-                                                "fieldLabel": "Obligatoire ",
-                                                "name": "mandatory",
                                                 "boxLabel": "",
+                                                "fieldLabel": "Obligatoire ",
+                                                "id": null,
                                                 "inputValue": "true",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "mandatoryField",
+                                                "name": "mandatory",
                                                 "uncheckedValue": "false"
                                             },
                                             "designerId": "faf9fe8e-3157-427c-8f81-f5b3030b7c61",
@@ -894,10 +893,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "replicatorEntity": "taxonomyReplicator",
-                                        "specialTaxoMode": true,
+                                        "dock": "top",
                                         "id": "taxonomyDLSToolbar",
-                                        "dock": "top"
+                                        "replicatorEntity": "taxonomyReplicator",
+                                        "specialTaxoMode": true
                                     },
                                     "designerId": "02ceaa7f-5f9c-4245-b6ac-e32a23eaf8a8",
                                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
@@ -912,8 +911,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "termsPanel",
-                                "layout|flex": 1
+                                "layout|flex": 1,
+                                "localiserId": "termsPanel"
                             },
                             "designerId": "e4c6a2b6-b68c-4569-9054-4831d1dac837",
                             "customConfigs": [
@@ -935,9 +934,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "taxoRightsBox",
                         "bodyPadding": 10,
                         "iconCls": "user",
+                        "id": "taxoRightsBox",
                         "title": "Droits"
                     },
                     "designerId": "d11dc701-05ff-46e6-a235-a4c3ab004966",
@@ -971,10 +970,10 @@
                             "userConfig": {
                                 "fieldLabel": "Espaces de travail",
                                 "labelWidth": 120,
-                                "name": "workspaces",
+                                "layout|anchor": "100%",
                                 "multiSelect": true,
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "name": "workspaces",
+                                "store": "ContributeWorkspacesCombo"
                             },
                             "designerId": "79571169-0b06-41d3-babc-41949597e8ff",
                             "customConfigs": [

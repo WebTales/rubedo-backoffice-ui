@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": false,
-        "usedCollection": null,
         "autoLoad": false,
-        "model": "typesContenusDataModel",
-        "storeId": "ContentTypesForContent2",
-        "designer|userClassName": "ContentTypesForContent2",
         "designer|userAlias": "ContentTypesForContent2",
-        "pageSize": 1000
+        "designer|userClassName": "ContentTypesForContent2",
+        "isOptimised": false,
+        "model": "typesContenusDataModel",
+        "pageSize": 1000,
+        "storeId": "ContentTypesForContent2",
+        "usedCollection": null
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -73,8 +73,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": "mapping",
                         "encode": true,
+                        "nameProperty": "mapping",
                         "root": "data"
                     },
                     "designerId": "406d3ac9-b5ac-44b1-9f81-8ce1a78812d6"

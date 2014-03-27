@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoShow": null,
-        "id": null,
-        "designer|userClassName": "pagesLocProps",
-        "designer|userAlias": "pagesLocProps",
         "autoScroll": true,
+        "autoShow": null,
         "bodyPadding": 10,
+        "designer|userAlias": "pagesLocProps",
+        "designer|userClassName": "pagesLocProps",
         "header": false,
+        "id": null,
         "title": null
     },
     "designerId": "966fdf36-b010-4ad3-a41f-3d4e8da9cf77",
@@ -25,12 +25,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "nameField",
-                "layout|anchor": "100%",
+                "allowBlank": false,
                 "fieldLabel": "Nom *",
                 "labelSeparator": null,
+                "layout|anchor": "100%",
+                "localiserId": "nameField",
                 "name": "text",
-                "allowBlank": false,
                 "regex": null,
                 "vtype": null
             },
@@ -51,9 +51,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "urlField",
-                "layout|anchor": "100%",
                 "fieldLabel": "URL ",
+                "layout|anchor": "100%",
+                "localiserId": "urlField",
                 "name": "pageURL",
                 "regex": null,
                 "vtype": null
@@ -95,12 +95,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "titleField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Titre *",
                         "labelSeparator": null,
-                        "name": "title",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "titleField",
+                        "name": "title"
                     },
                     "designerId": "9e2d622a-09d1-4e8b-be56-8b98d88e389a",
                     "customConfigs": [
@@ -119,11 +119,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "descriptionField",
-                        "layout|anchor": "100%",
                         "fieldLabel": "Description ",
-                        "name": "description",
-                        "maxLength": 250
+                        "layout|anchor": "100%",
+                        "localiserId": "descriptionField",
+                        "maxLength": 250,
+                        "name": "description"
                     },
                     "designerId": "e2d29a15-dbf8-4465-a8c1-1bf6d8a05ab5",
                     "customConfigs": [

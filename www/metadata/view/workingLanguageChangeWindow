@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "workingLanguageWindow",
-        "height": 111,
-        "id": "workingLanguageChangeWindow",
-        "width": 400,
-        "designer|userClassName": "workingLanguageChangeWindow",
-        "designer|userAlias": "workingLanguageChangeWindow",
         "constrain": true,
-        "resizable": false,
-        "layout": "fit",
+        "designer|userAlias": "workingLanguageChangeWindow",
+        "designer|userClassName": "workingLanguageChangeWindow",
+        "height": 111,
         "iconCls": "world_small",
+        "id": "workingLanguageChangeWindow",
+        "layout": "fit",
+        "localiserId": "workingLanguageWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Change current working language",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -52,15 +52,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "TALanguageField",
-                        "layout|anchor": "100%",
-                        "id": "currentLanguageSelectorCombo",
-                        "fieldLabel": "Language",
-                        "name": "language",
                         "allowBlank": false,
-                        "editable": false,
                         "displayField": "label",
+                        "editable": false,
+                        "fieldLabel": "Language",
                         "forceSelection": true,
+                        "id": "currentLanguageSelectorCombo",
+                        "layout|anchor": "100%",
+                        "localiserId": "TALanguageField",
+                        "name": "language",
                         "queryMode": "local",
                         "store": "AllLanguagesStore3",
                         "valueField": "locale"
@@ -101,9 +101,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "setAsWLBtn",
-                        "layout|anchor": "100%",
                         "id": "currentLanguageChangeSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "setAsWLBtn",
                         "scale": "medium",
                         "text": "Set as current working language"
                     },

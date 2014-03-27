@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
-        "id": "productSettingsForm",
-        "designer|userClassName": "productSettingsForm",
-        "designer|userAlias": "productSettingsForm",
-        "layout": "vbox",
         "bodyPadding": null,
+        "container|align": "stretch",
+        "designer|userAlias": "productSettingsForm",
+        "designer|userClassName": "productSettingsForm",
+        "id": "productSettingsForm",
+        "layout": "vbox",
         "title": "Product settings"
     },
     "designerId": "2ae78d7f-914e-476c-840e-3b4423f7e7ae",
@@ -37,12 +37,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
                         "fieldLabel": "SKU",
                         "labelWidth": 140,
-                        "name": "sku",
-                        "allowBlank": false,
-                        "allowOnlyWhitespace": false
+                        "layout|anchor": "100%",
+                        "name": "sku"
                     },
                     "designerId": "a52f0f59-5772-4fc9-a469-99c03a056824"
                 },
@@ -54,13 +54,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "id": "basePriceField",
-                        "fieldLabel": "Base price",
-                        "labelWidth": 140,
-                        "name": "basePrice",
                         "allowBlank": false,
-                        "minValue": 0
+                        "fieldLabel": "Base price",
+                        "id": "basePriceField",
+                        "labelWidth": 140,
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "basePrice"
                     },
                     "designerId": "e1aa9ae9-7bb0-4474-bdd1-53d7758eabc4"
                 },
@@ -72,12 +72,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Preparation delay (days)",
                         "labelWidth": 140,
-                        "name": "preparationDelay",
-                        "allowBlank": false,
-                        "minValue": 0
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "preparationDelay"
                     },
                     "designerId": "7f40d8b1-85d9-4ef2-9e17-a12fd6c2fd16"
                 },
@@ -102,12 +102,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Can order out of stock",
-                                "labelWidth": 140,
-                                "name": "canOrderNotInStock",
                                 "boxLabel": "",
+                                "fieldLabel": "Can order out of stock",
                                 "inputValue": "true",
+                                "labelWidth": 140,
+                                "layout|anchor": "100%",
+                                "name": "canOrderNotInStock",
                                 "uncheckedValue": "false"
                             },
                             "designerId": "0bba0feb-bc1d-4a51-a5e6-24eb46cd2e09"
@@ -120,12 +120,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Out of stock limit",
                                 "labelWidth": 140,
-                                "name": "outOfStockLimit",
-                                "allowBlank": false,
-                                "minValue": 0
+                                "layout|anchor": "100%",
+                                "minValue": 0,
+                                "name": "outOfStockLimit"
                             },
                             "designerId": "2e96d6d2-9c21-42ff-b465-12b8e4f0ed77"
                         },
@@ -137,12 +137,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Notify for stock below",
                                 "labelWidth": 140,
-                                "name": "notifyForQuantityBelow",
-                                "allowBlank": false,
-                                "minValue": 0
+                                "layout|anchor": "100%",
+                                "minValue": 0,
+                                "name": "notifyForQuantityBelow"
                             },
                             "designerId": "d2d56469-4551-4b55-95e7-74f7950a6bce"
                         },
@@ -154,12 +154,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Resupply delay (days)",
                                 "labelWidth": 140,
-                                "name": "resupplyDelay",
-                                "allowBlank": false,
-                                "minValue": 0
+                                "layout|anchor": "100%",
+                                "minValue": 0,
+                                "name": "resupplyDelay"
                             },
                             "designerId": "38d610a5-0a82-4d11-bb1d-c81b271d4466"
                         }
@@ -175,9 +175,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "height": null,
                 "id": "productVariationsGrid",
+                "layout|flex": 1,
                 "title": "Variations"
             },
             "designerId": "719cd507-c957-4f9f-b349-340060534ac4",
@@ -286,8 +286,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "iconCls": "add",
+                                "layout|flex": null,
                                 "text": "Add"
                             },
                             "designerId": "a61c3f71-704f-4a15-93f2-a4c910757612",
@@ -336,10 +336,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "variationRemoverBtn",
                                 "iconCls": "close",
+                                "id": "variationRemoverBtn",
+                                "layout|flex": null,
                                 "text": "Remove"
                             },
                             "designerId": "d7e3c802-65b7-4c19-8e1e-9f44d9e717e0",

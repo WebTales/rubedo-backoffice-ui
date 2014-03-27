@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "MLImportWindow",
+        "designer|userAlias": "mlImportWindow",
+        "designer|userClassName": "mlImportWindow",
         "height": null,
         "id": "mlImportWindow",
-        "width": 400,
-        "designer|userClassName": "mlImportWindow",
-        "designer|userAlias": "mlImportWindow",
         "layout": "fit",
+        "localiserId": "MLImportWindow",
+        "modal": true,
         "title": "Import users to mailing list",
-        "modal": true
+        "width": 400
     },
     "designerId": "5d8d58e0-6cd3-4596-92b5-8b66d27d5373",
     "customConfigs": [
@@ -46,11 +46,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "csvFileFIeld",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "CSV file",
-                        "name": "csvFile",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "csvFileFIeld",
+                        "name": "csvFile"
                     },
                     "designerId": "01658ef5-cd20-4d26-ac11-7a0066ad4eae",
                     "customConfigs": [
@@ -69,9 +69,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "importSubmitBtn",
-                        "layout|anchor": "100%",
                         "id": "mlImportSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "importSubmitBtn",
                         "text": "Import"
                     },
                     "designerId": "dc288382-9dfd-48ab-af55-bb9789d35a19",

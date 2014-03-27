@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": null,
-        "model": "languageModel",
-        "remoteFilter": true,
-        "storeId": "TranslationAdderStore",
-        "designer|userClassName": "TranslationAdderStore",
-        "designer|userAlias": "TranslationAdderStore",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "TranslationAdderStore",
+        "designer|userClassName": "TranslationAdderStore",
+        "model": "languageModel",
+        "pageSize": 1000,
+        "remoteFilter": true,
+        "storeId": "TranslationAdderStore"
     },
     "configAlternates": {
         "isOptimised": "boolean"

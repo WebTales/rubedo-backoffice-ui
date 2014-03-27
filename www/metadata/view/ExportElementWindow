@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "exportElementsWindow",
+        "designer|userAlias": "ExportElementWindow",
+        "designer|userClassName": "ExportElementWindow",
         "height": null,
         "id": "ExportElementWindow",
-        "width": 381,
-        "designer|userClassName": "ExportElementWindow",
-        "designer|userAlias": "ExportElementWindow",
-        "resizable": false,
         "layout": "fit",
+        "localiserId": "exportElementsWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Exporter un élément",
-        "modal": true
+        "width": 381
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,11 +50,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "mandatoryNameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom * ",
-                        "name": "name",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "mandatoryNameField",
+                        "name": "name"
                     },
                     "designerId": "7f37adb6-709c-4b57-b63d-1a0deb80f5f1",
                     "customConfigs": [
@@ -73,9 +73,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "elementDescriptionField",
-                        "layout|anchor": "100%",
                         "fieldLabel": "Description ",
+                        "layout|anchor": "100%",
+                        "localiserId": "elementDescriptionField",
                         "name": "description"
                     },
                     "designerId": "a9698243-3ee8-4f40-b2df-10a43c76f672",
@@ -95,9 +95,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "exportElementBtn",
-                        "layout|anchor": "100%",
                         "id": "ExportElementButton",
+                        "layout|anchor": "100%",
+                        "localiserId": "exportElementBtn",
                         "text": "Exporter cet élément "
                     },
                     "designerId": "2b8ebde6-ea09-4fa7-acd3-6059cba61641",

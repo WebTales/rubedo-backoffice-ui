@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Taxonomy",
         "autoLoad": false,
-        "model": "taxonomieDataModel",
-        "storeId": "TaxonomyForDAM",
-        "designer|userClassName": "TaxonomyForDAM",
         "designer|userAlias": "TaxonomyForDAM",
-        "pageSize": 1000
+        "designer|userClassName": "TaxonomyForDAM",
+        "isOptimised": true,
+        "model": "taxonomieDataModel",
+        "pageSize": 1000,
+        "storeId": "TaxonomyForDAM",
+        "usedCollection": "Taxonomy"
     },
     "configAlternates": {
         "isOptimised": "boolean"

@@ -7,12 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "allowedCT": null,
-        "queryMode": true,
-        "geoQueryMode": false,
-        "designer|userClassName": "directRTEField",
         "designer|userAlias": "directRTEField",
+        "designer|userClassName": "directRTEField",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
     },
     "configAlternates": {
         "geoQueryMode": "boolean",

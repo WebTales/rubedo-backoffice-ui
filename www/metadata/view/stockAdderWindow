@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
+        "designer|userAlias": "stockAdderWindow",
+        "designer|userClassName": "stockAdderWindow",
         "height": null,
         "id": "stockAdderWindow",
-        "width": 400,
-        "designer|userClassName": "stockAdderWindow",
-        "designer|userAlias": "stockAdderWindow",
         "layout": "fit",
+        "localiserId": null,
+        "modal": true,
         "title": "Add stock",
-        "modal": true
+        "width": 400
     },
     "designerId": "9de09bba-3400-4a07-b0c2-e32919d3f62a",
     "customConfigs": [
@@ -46,14 +46,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Amount to add",
-                        "name": "amount",
                         "allowBlank": false,
-                        "allowOnlyWhitespace": false,
                         "allowDecimals": false,
                         "allowExponential": false,
-                        "minValue": 0
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Amount to add",
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "amount"
                     },
                     "designerId": "b8808bab-eac9-492a-a718-4bc3b86ad88c"
                 },
@@ -65,9 +65,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "100%",
                         "id": "stockAdderSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": null,
                         "text": "Add stock to selected item"
                     },
                     "designerId": "b6a4c9ee-192c-450e-be94-cd5118096a01",

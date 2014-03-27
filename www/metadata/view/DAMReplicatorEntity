@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 250,
-        "width": 400,
-        "designer|userClassName": "DAMReplicatorEntity",
-        "designer|userAlias": "DAMReplicatorEntity",
         "bodyPadding": 10,
-        "title": ""
+        "designer|userAlias": "DAMReplicatorEntity",
+        "designer|userClassName": "DAMReplicatorEntity",
+        "height": 250,
+        "title": "",
+        "width": 400
     },
     "designerId": "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
     "cn": [
@@ -23,10 +23,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "100%",
-                "padding": 10,
                 "designer|displayName": null,
-                "layout": "anchor"
+                "layout": "anchor",
+                "layout|anchor": "100%",
+                "padding": 10
             },
             "designerId": "89edc1b6-f691-4bfa-8046-39c8183c665b",
             "cn": [
@@ -38,17 +38,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "damTitleField",
                         "RTip": "Titre du média. Obligatoire.",
-                        "layout|anchor": "90%",
+                        "allowBlank": false,
+                        "fieldLabel": "Titre *",
                         "id": null,
+                        "labelSeparator": " ",
+                        "layout|anchor": "90%",
+                        "localiserId": "damTitleField",
+                        "name": "title",
                         "style": [
                             "{float:left}"
-                        ],
-                        "fieldLabel": "Titre *",
-                        "labelSeparator": " ",
-                        "name": "title",
-                        "allowBlank": false
+                        ]
                     },
                     "designerId": "872a0058-f565-4ac9-aa02-0e192bfb4d2b",
                     "customConfigs": [

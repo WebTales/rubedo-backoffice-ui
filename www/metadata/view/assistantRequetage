@@ -6,20 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "simpleMode": false,
-        "localiserId": "queryBuilder",
+        "constrainHeader": true,
+        "designer|userAlias": "assistantRequetage",
+        "designer|userClassName": "assistantRequetage",
         "height": 400,
+        "iconCls": "search",
         "id": "assistantRequetage",
+        "layout": "card",
+        "localiserId": "queryBuilder",
         "maxHeight": null,
         "minHeight": null,
-        "width": 539,
-        "designer|userClassName": "assistantRequetage",
-        "designer|userAlias": "assistantRequetage",
-        "layout": "card",
-        "constrainHeader": true,
-        "iconCls": "search",
+        "modal": true,
+        "simpleMode": false,
         "title": "Assistant de requêtage ",
-        "modal": true
+        "width": 539
     },
     "configAlternates": {
         "simpleMode": "boolean"
@@ -58,12 +58,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "id": "progressAR",
-                        "width": null,
                         "animate": true,
+                        "id": "progressAR",
+                        "layout|flex": 1,
                         "text": "Etape 1 sur 5",
-                        "value": 0.2
+                        "value": 0.2,
+                        "width": null
                     },
                     "designerId": "1232c257-4234-493b-8154-4cf2735d6afe",
                     "cn": [
@@ -75,10 +75,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processProgressAR",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processProgressAR",
                                 "implHandler": [
                                     "config.text=Rubedo.RubedoAutomatedElementsLoc.stageText+\" 1 \"+Rubedo.RubedoAutomatedElementsLoc.onText+\" 5\";\r",
                                     "return config;"
@@ -96,11 +96,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "prevBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "boutonPrevRequeteur",
                         "iconCls": "arrow_left",
+                        "id": "boutonPrevRequeteur",
+                        "layout|flex": null,
+                        "localiserId": "prevBtn",
                         "text": "Précédent"
                     },
                     "designerId": "e8afb4a7-f686-43ff-a068-d122b4bd5bea",
@@ -120,11 +120,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nextBtn",
-                        "layout|flex": null,
-                        "id": "boutonNextRequeteur",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
+                        "id": "boutonNextRequeteur",
+                        "layout|flex": null,
+                        "localiserId": "nextBtn",
                         "text": "Suivant"
                     },
                     "designerId": "be1dd7fa-897c-4f3e-a895-591684ca4e07",
@@ -146,10 +146,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "etape": "1",
-                "localiserId": "queryBuilderStage1",
-                "id": "assisstantRE1",
                 "bodyPadding": 10,
+                "etape": "1",
+                "id": "assisstantRE1",
+                "localiserId": "queryBuilderStage1",
                 "title": "Choix des types de contenus"
             },
             "designerId": "5fe52b83-fea3-43b5-bd53-247032444be1",
@@ -174,19 +174,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "90%",
+                        "allowBlank": false,
+                        "displayField": "type",
+                        "editable": false,
+                        "fieldLabel": "",
+                        "forceSelection": true,
                         "id": "champTCRequeteur",
+                        "layout|anchor": "90%",
+                        "multiSelect": true,
+                        "name": "contentTypes",
+                        "store": "TCNDepCombo",
                         "style": [
                             "{float:left}"
                         ],
-                        "fieldLabel": "",
-                        "name": "contentTypes",
-                        "allowBlank": false,
-                        "editable": false,
-                        "displayField": "type",
-                        "forceSelection": true,
-                        "multiSelect": true,
-                        "store": "TCNDepCombo",
                         "valueField": "id"
                     },
                     "configAlternates": {
@@ -202,12 +202,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "qbs1selAllBtn",
+                        "iconCls": "ouiSpetit",
                         "id": "boutonSelectAllTCAR",
+                        "localiserId": "qbs1selAllBtn",
                         "style": [
                             "{float:right;}"
                         ],
-                        "iconCls": "ouiSpetit",
                         "text": "",
                         "tooltip": [
                             "'Tout selectionner'"
@@ -232,11 +232,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "etape": "2",
-                "localiserId": "qbStage2",
-                "id": "assisstantRE2",
                 "autoScroll": true,
                 "bodyPadding": 10,
+                "etape": "2",
+                "id": "assisstantRE2",
+                "localiserId": "qbStage2",
                 "title": "Choix des termes de la taxonomie"
             },
             "designerId": "bb52cb75-3abf-4acf-ab75-8ee4f0aeaa5e",

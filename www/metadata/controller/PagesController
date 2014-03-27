@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "PagesController",
-        "designer|userAlias": "PagesController"
+        "designer|userAlias": "PagesController",
+        "designer|userClassName": "PagesController"
     },
     "designerId": "b29235f7-9588-4632-b7ab-b0f2633b21ec",
     "cn": [
@@ -19,6 +19,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pagesSitesCombo",
+                "designer|targetType": "Ext.form.field.ComboBox",
                 "fn": "pageSiteSelect",
                 "implHandler": [
                     "Ext.getStore(\"PagesDataStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
@@ -46,9 +48,7 @@
                     "this.resetInterface();"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.ComboBox",
-                "designer|controlQuery": "#pagesSitesCombo"
+                "scope": "me"
             },
             "designerId": "7f866395-6912-493e-b496-40113840a82e"
         },
@@ -60,14 +60,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addPageBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "openPageAddWindow",
                 "implHandler": [
                     "Ext.widget(\"newPageWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addPageBtn"
+                "scope": "me"
             },
             "designerId": "cb9367d6-8b6d-41dd-a7d1-4a4ad74d5b92"
         },
@@ -79,6 +79,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newPageSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "createNewPage",
                 "implHandler": [
                     "var me=this;\r",
@@ -117,9 +119,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newPageSubmitBtn"
+                "scope": "me"
             },
             "designerId": "58437311-2357-4c3b-99f1-a0fa5762da47"
         },
@@ -131,6 +131,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#removePageBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "deletePage",
                 "implHandler": [
                     "var me=this;\r",
@@ -178,9 +180,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#removePageBtn"
+                "scope": "me"
             },
             "designerId": "054b6624-59d6-425e-8c55-a8dc5ed95e57"
         },
@@ -192,6 +192,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainPageTree",
+                "designer|targetType": "Ext.tree.Panel",
                 "fn": "pageSelect",
                 "implHandler": [
                     "Ext.getStore(\"PageDisplayedContentsStore\").removeAll();\r",
@@ -273,9 +275,7 @@
                     "    Ext.getCmp(\"pageTreeBreadcrumb\").add(arButtons.reverse());"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.tree.Panel",
-                "designer|controlQuery": "#mainPageTree"
+                "scope": "me"
             },
             "designerId": "16f72b7e-ea83-4f98-97e0-5e5f729e2d85"
         },
@@ -287,6 +287,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pageElementUp",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "moveElementUp",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
@@ -303,9 +305,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#pageElementUp"
+                "scope": "me"
             },
             "designerId": "420ce9f1-454c-4f4c-8647-48c6790b0b34"
         },
@@ -317,6 +317,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pageElementDown",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "moveElementDown",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
@@ -334,9 +336,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#pageElementDown"
+                "scope": "me"
             },
             "designerId": "901daf12-1778-4e89-ac53-1b8020101121"
         },
@@ -348,6 +348,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#deletePageElement",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "deleteElement",
                 "implHandler": [
                     "var target=Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());\r",
@@ -363,9 +365,7 @@
                     "Ext.getCmp('pageElementIdField').setValue();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#deletePageElement"
+                "scope": "me"
             },
             "designerId": "a13fbc2a-6370-487c-86d0-5d282a58dd1c"
         },
@@ -377,12 +377,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderPage",
                 "designer|params": [
                     "mRows",
                     "its",
                     "cible"
                 ],
+                "fn": "renderPage",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.Array.forEach(mRows, function(row){\r",
@@ -472,6 +472,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainPageEdition panel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "columnSelector",
                 "implHandler": [
                     "if ((component.mType==\"col\")&&((Ext.isEmpty(component.items.items))||(component.items.items[0].isXType(\"unBloc\")))){\r",
@@ -507,9 +509,7 @@
                     "}"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#mainPageEdition panel"
+                "scope": "me"
             },
             "designerId": "590c326a-45be-408d-8b0a-e3b354401fa7"
         },
@@ -550,6 +550,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newPageBloc",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "showBlocAddWindow",
                 "implHandler": [
                     "Ext.widget(\"ajoutBlocFenetre\").show();\r",
@@ -558,9 +560,7 @@
                     "Ext.getCmp(\"BlocsSelectGrid\").pageMode=true;"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newPageBloc"
+                "scope": "me"
             },
             "designerId": "7c7346db-dfbe-4691-ab04-fb477ab4085e"
         },
@@ -572,6 +572,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addPageBlocBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "insertBloc",
                 "implHandler": [
                     "var donnees = Ext.getCmp('BlocsSelectGrid').getSelectionModel().getLastSelected().data;\r",
@@ -603,9 +605,7 @@
                     "nouvBloc.getEl().dom.click();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addPageBlocBtn"
+                "scope": "me"
             },
             "designerId": "37a082a3-056b-4f6c-ba17-9503a4c3bdae"
         },
@@ -617,6 +617,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainPageEdition unBloc",
+                "designer|targetType": "UnBloc",
                 "fn": "blocSelection",
                 "implHandler": [
                     "if (component.canEdit){\r",
@@ -973,9 +975,7 @@
                     "    });}"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "UnBloc",
-                "designer|controlQuery": "#mainPageEdition unBloc"
+                "scope": "me"
             },
             "designerId": "14fe1e98-83ce-46a5-be63-48558f1afbcb"
         },
@@ -987,6 +987,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pageSaveBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "savePage",
                 "implHandler": [
                     "var me=this;\r",
@@ -1050,9 +1052,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#pageSaveBtn"
+                "scope": "me"
             },
             "designerId": "b1fb801d-af5e-43a7-b7f8-56799de85ce4"
         },
@@ -1064,6 +1064,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contributionPages",
+                "designer|targetType": "Ext.window.Window",
                 "fn": "onWindowBeforeDestroy",
                 "implHandler": [
                     "if (component.isXType(\"window\")){\r",
@@ -1074,9 +1076,7 @@
                     "}"
                 ],
                 "name": "beforedestroy",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "#contributionPages"
+                "scope": "me"
             },
             "designerId": "6120f6e7-46b7-410a-971d-e8c79c4f2e57"
         },
@@ -1088,6 +1088,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pagesSitesCombo, #previewSitesCombo",
+                "designer|targetType": "Ext.form.field.ComboBox",
                 "fn": "onPagesSitesComboBeforeRender",
                 "implHandler": [
                     "var me=this;\r",
@@ -1107,9 +1109,7 @@
                     "},this,{single:true});"
                 ],
                 "name": "beforerender",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.ComboBox",
-                "designer|controlQuery": "#pagesSitesCombo, #previewSitesCombo"
+                "scope": "me"
             },
             "designerId": "fed768ea-12ff-49c5-8386-55e42679392e"
         },
@@ -1121,6 +1121,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#previewSitesCombo",
+                "designer|targetType": "Ext.form.field.ComboBox",
                 "fn": "pagePreviewSelect",
                 "implHandler": [
                     "Ext.getStore(\"PagesPreviewStore\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"site\\\",\\\"value\\\":\\\"\"+records[0].get(\"id\")+\"\\\"}]\";\r",
@@ -1141,9 +1143,7 @@
                     "    Ext.getCmp(\"contribPreviewMain\").removeAll();"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.ComboBox",
-                "designer|controlQuery": "#previewSitesCombo"
+                "scope": "me"
             },
             "designerId": "7d7ddd9d-d877-4060-9865-9fec1199851e"
         },
@@ -1155,6 +1155,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#previewPageTree",
+                "designer|targetType": "Ext.tree.Panel",
                 "fn": "onPreviewPageTreeSelect",
                 "implHandler": [
                     "Ext.getCmp(\"contribPreviewMain\").removeAll();\r",
@@ -1189,9 +1191,7 @@
                     "    }}"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.tree.Panel",
-                "designer|controlQuery": "#previewPageTree"
+                "scope": "me"
             },
             "designerId": "56a373a5-6913-4cda-b321-5fb604f616bd"
         },
@@ -1203,6 +1203,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pagePreviewRefreshBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onPagePreviewRefreshBtnClick",
                 "implHandler": [
                     "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1230,9 +1232,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#pagePreviewRefreshBtn"
+                "scope": "me"
             },
             "designerId": "c918931f-c27c-4264-9d18-6cc8b64eb2c2"
         },
@@ -1244,11 +1244,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderBlocks",
                 "designer|params": [
                     "mBlocks",
                     "editable"
                 ],
+                "fn": "renderBlocks",
                 "implHandler": [
                     "Ext.Array.forEach(mBlocks, function(block){\r",
                     "    block.title=Ext.util.Format.stripTags(block.title);\r",
@@ -1290,10 +1290,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "saveBlocks",
                 "designer|params": [
                     "startComp"
                 ],
+                "fn": "saveBlocks",
                 "implHandler": [
                     "var newBlocks = [ ];\r",
                     "Ext.Array.forEach(startComp.query(\"unBloc\"), function(nBloc){\r",
@@ -1340,6 +1340,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#advancedPreviewPageRefresh",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAdvancedPreviewPageRefreshClick",
                 "implHandler": [
                     "var record=Ext.getCmp(\"previewPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1374,9 +1376,7 @@
                     "    }}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#advancedPreviewPageRefresh"
+                "scope": "me"
             },
             "designerId": "f4a5fbda-c3f3-452f-ae1a-7c849557ecdb"
         },
@@ -1388,6 +1388,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pageContentDisplayer",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onPanelActivate",
                 "implHandler": [
                     "var record = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1397,9 +1399,7 @@
                     "}"
                 ],
                 "name": "activate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#pageContentDisplayer"
+                "scope": "me"
             },
             "designerId": "5091cbda-a9df-4eac-981f-ca61c7c60bc4"
         },
@@ -1411,6 +1411,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newPageMaskSelector",
+                "designer|targetType": "Ext.form.field.ComboBox",
                 "fn": "onNewPageMaskSelectorAfterRender",
                 "implHandler": [
                     "var target=Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();\r",
@@ -1419,9 +1421,7 @@
                     "}"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.ComboBox",
-                "designer|controlQuery": "#newPageMaskSelector"
+                "scope": "me"
             },
             "designerId": "bf10d1bf-4fdb-4d8e-a9bb-94b9048e7483"
         },
@@ -1433,11 +1433,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "breadcrumbBuilder",
                 "designer|params": [
                     "node",
                     "array"
                 ],
+                "fn": "breadcrumbBuilder",
                 "implHandler": [
                     "var me=this;\r",
                     "if (node.isRoot()) {\r",
@@ -1460,6 +1460,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pageMaskDisplayBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onPageMaskDisplayBtnClick",
                 "implHandler": [
                     "var recordM = Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected().get(\"maskId\");\r",
@@ -1489,9 +1491,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#pageMaskDisplayBtn"
+                "scope": "me"
             },
             "designerId": "9a070aa8-2350-4882-a6b5-c828fbfe6494"
         },
@@ -1503,10 +1503,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "removeDiacritics",
                 "designer|params": [
                     "str"
                 ],
+                "fn": "removeDiacritics",
                 "implHandler": [
                     "\r",
                     "  var defaultDiacriticsRemovalMap = [\r",

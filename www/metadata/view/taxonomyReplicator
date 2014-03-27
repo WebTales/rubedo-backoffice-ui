@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "taxonomyReplicator",
-        "designer|userAlias": "taxonomyReplicator",
         "bodyPadding": 10,
+        "designer|userAlias": "taxonomyReplicator",
+        "designer|userClassName": "taxonomyReplicator",
         "title": null
     },
     "designerId": "317b4759-85c1-4c25-81d9-1d850e62ab1c",
@@ -21,12 +21,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "nameField",
-                "layout|anchor": "100%",
-                "id": null,
+                "allowBlank": false,
                 "fieldLabel": "Nom ",
-                "name": "name",
-                "allowBlank": false
+                "id": null,
+                "layout|anchor": "100%",
+                "localiserId": "nameField",
+                "name": "name"
             },
             "designerId": "54e48701-6a3e-4421-b098-e0fd2684ceb0",
             "customConfigs": [
@@ -45,11 +45,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "descriptionField",
-                "layout|anchor": "100%",
+                "fieldLabel": "Description ",
                 "id": null,
                 "itemId": null,
-                "fieldLabel": "Description ",
+                "layout|anchor": "100%",
+                "localiserId": "descriptionField",
                 "name": "description"
             },
             "designerId": "f6baf0df-80c9-4948-a277-b9aa22d391ed",
@@ -69,10 +69,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "helpTextField",
-                "layout|anchor": "100%",
-                "id": null,
                 "fieldLabel": "Texte d'aide ",
+                "id": null,
+                "layout|anchor": "100%",
+                "localiserId": "helpTextField",
                 "name": "helpText"
             },
             "designerId": "c514c882-cdac-44ca-876d-811148b65570",

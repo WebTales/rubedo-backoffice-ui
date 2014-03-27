@@ -6,9 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "storeId": "countryStore",
-        "designer|userClassName": "countryStore",
-        "designer|userAlias": "countryStore",
         "data": [
             "[\r",
             "    {\r",
@@ -19,7 +16,10 @@
             "    }\r",
             "]"
         ],
-        "pageSize": 1000
+        "designer|userAlias": "countryStore",
+        "designer|userClassName": "countryStore",
+        "pageSize": 1000,
+        "storeId": "countryStore"
     },
     "designerId": "ec6d87e1-455e-426b-8458-d7738082aeee",
     "cn": [

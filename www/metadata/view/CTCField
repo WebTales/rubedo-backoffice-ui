@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "managesStore": true,
-        "designer|userClassName": "CTCField",
         "designer|userAlias": "CTCField",
-        "fieldLabel": "Label",
+        "designer|userClassName": "CTCField",
         "displayField": "type",
+        "fieldLabel": "Label",
         "forceSelection": true,
+        "managesStore": true,
         "multiSelect": true,
         "store": "contentTypesCombo",
         "valueField": "id"
@@ -36,10 +36,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processCTCField",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processCTCField",
                 "implHandler": [
                     "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
                     "return config;"

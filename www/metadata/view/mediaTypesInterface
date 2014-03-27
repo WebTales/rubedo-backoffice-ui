@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "favoriteIcon": "images.png",
-        "localiserId": "DamTypesMainWindow",
-        "container|align": "stretch",
-        "height": 627,
-        "id": "mediaTypesInterface",
-        "width": 1200,
-        "designer|userClassName": "mediaTypesInterface",
-        "designer|userAlias": "mediaTypesInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "mediaTypesInterface",
+        "designer|userClassName": "mediaTypesInterface",
+        "favoriteIcon": "images.png",
+        "height": 627,
         "iconCls": "mediaTypes",
-        "title": "Types de médias"
+        "id": "mediaTypesInterface",
+        "layout": "hbox",
+        "localiserId": "DamTypesMainWindow",
+        "title": "Types de médias",
+        "width": 1200
     },
     "designerId": "42f4214b-1c84-4039-bad0-2ae468294ac0",
     "customConfigs": [
@@ -61,10 +61,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "breadcrumb"
+                "itemId": "breadcrumb",
+                "layout|flex": 1
             },
             "designerId": "0eb18404-2d62-4cb9-9f0f-ac46c18a95de"
         },
@@ -76,10 +76,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "bcf04d83-beac-418d-8746-4e43a29cb8d2",
@@ -93,13 +93,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "newMTBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "newMTBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -126,14 +126,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "removeMTBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "removeMTBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -160,13 +160,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
-                        "localiserId": "editGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Edition",
-                        "columns": 4
+                        "layout|flex": null,
+                        "localiserId": "editGroup",
+                        "title": "Edition"
                     },
                     "designerId": "dca7274e-ecf8-4984-b94a-cf8709ce0918",
                     "customConfigs": [
@@ -190,10 +190,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "newFieldBtn",
-                                "id": "newMTFieldBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "newMTFieldBtn",
+                                "localiserId": "newFieldBtn",
                                 "scale": "large",
                                 "text": "Nouveau champ"
                             },
@@ -214,11 +214,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveBtn",
                                 "disabled": true,
-                                "id": "MTfieldUp",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
+                                "id": "MTfieldUp",
+                                "localiserId": "moveBtn",
                                 "scale": "large",
                                 "text": "Déplacer"
                             },
@@ -239,11 +239,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveBtn",
                                 "disabled": true,
-                                "id": "MTfieldDown",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
+                                "id": "MTfieldDown",
+                                "localiserId": "moveBtn",
                                 "scale": "large",
                                 "text": "Déplacer"
                             },
@@ -264,11 +264,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeFieldBtn",
                                 "disabled": true,
-                                "id": "MTfieldDeleter",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
+                                "id": "MTfieldDeleter",
+                                "localiserId": "removeFieldBtn",
                                 "scale": "large",
                                 "text": "Supprimer champ"
                             },
@@ -291,13 +291,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "clipboardGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Presse-papiers",
-                        "columns": 4
+                        "layout|flex": null,
+                        "localiserId": "clipboardGroup",
+                        "title": "Presse-papiers"
                     },
                     "designerId": "ce1b8b09-4163-4cdf-99cc-6404ee52a6a0",
                     "customConfigs": [
@@ -317,14 +317,14 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.damTypes",
-                                "localiserId": "duplicateBtn",
-                                "id": "copyMTBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
+                                "id": "copyMTBtn",
+                                "localiserId": "duplicateBtn",
                                 "scale": "large",
-                                "text": "Copier"
+                                "text": "Copier",
+                                "width": null
                             },
                             "designerId": "51225926-6980-4af7-8275-590f1fbcee2b",
                             "customConfigs": [
@@ -349,10 +349,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "hidden": true,
-                                "id": "addToSCMTBtn",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
+                                "id": "addToSCMTBtn",
                                 "scale": "large",
                                 "text": "Ajouter au panier"
                             },
@@ -366,11 +366,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "shortcutBtn",
-                                "itemId": "boutonCreerRaccourci",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
+                                "itemId": "boutonCreerRaccourci",
+                                "localiserId": "shortcutBtn",
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
@@ -394,13 +394,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.damTypes",
-                        "localiserId": "saveGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Sauvegarde",
-                        "columns": 4
+                        "layout|flex": null,
+                        "localiserId": "saveGroup",
+                        "title": "Sauvegarde"
                     },
                     "designerId": "2bdff2a0-d2cf-4234-a711-516c00cd0fd4",
                     "customConfigs": [
@@ -425,12 +425,12 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.damTypes",
-                                "localiserId": "saveBtn",
-                                "id": "saveMTBtn",
-                                "itemId": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
+                                "id": "saveMTBtn",
+                                "itemId": null,
+                                "localiserId": "saveBtn",
                                 "scale": "large",
                                 "text": "Enregistrer"
                             },
@@ -482,13 +482,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "hidden": true,
                         "headerPosition": "bottom",
-                        "title": "Fichier",
-                        "columns": 4
+                        "hidden": true,
+                        "layout|flex": null,
+                        "title": "Fichier"
                     },
                     "designerId": "c9549a82-5bf2-49c0-92bf-4bdb16ae1c89",
                     "cn": [
@@ -500,10 +500,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "MTexportBtn",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
+                                "id": "MTexportBtn",
                                 "scale": "large",
                                 "text": "Exporter"
                             },
@@ -518,10 +518,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.damTypes",
-                                "id": "MTImportBtn",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
+                                "id": "MTImportBtn",
                                 "scale": "large",
                                 "text": "Importer"
                             },
@@ -545,14 +545,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "exe.ui.purgeDamType",
-                        "localiserId": "adminGroupCT",
-                        "layout|flex": null,
+                        "columns": null,
                         "container|columns": 1,
                         "disabled": true,
-                        "minWidth": null,
                         "headerPosition": "bottom",
-                        "title": "Administration",
-                        "columns": null
+                        "layout|flex": null,
+                        "localiserId": "adminGroupCT",
+                        "minWidth": null,
+                        "title": "Administration"
                     },
                     "designerId": "0fdbdd9a-b0fe-461b-b605-c151b789ccae",
                     "customConfigs": [
@@ -576,13 +576,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "emptyDamBtn",
-                                "id": "purgeDTDamTypeBtn",
-                                "itemId": null,
-                                "minWidth": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "database_remove_big",
+                                "id": "purgeDTDamTypeBtn",
+                                "itemId": null,
+                                "localiserId": "emptyDamBtn",
+                                "minWidth": null,
                                 "scale": "large",
                                 "text": "Empty assets",
                                 "tooltip": "Supprimer tous les contenus de ce type"
@@ -622,10 +622,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "damTypes",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -648,15 +648,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": true,
-                "layout|flex": null,
+                "forceFit": true,
                 "id": "mainMTGrid",
-                "width": 200,
+                "layout|flex": null,
+                "managesStore": true,
                 "resizable": true,
                 "resizeHandles": "e",
+                "store": "MediaTypes",
                 "title": "",
-                "forceFit": true,
-                "store": "MediaTypes"
+                "width": 200
             },
             "configAlternates": {
                 "managesStore": "boolean",
@@ -688,8 +688,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeColumn",
                         "dataIndex": "type",
+                        "localiserId": "typeColumn",
                         "text": "Type"
                     },
                     "designerId": "c66912bb-6553-4aa6-aa84-cf8c5fc8135f",
@@ -709,7 +709,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -719,6 +718,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "var returner = value;\r",
                                     "if (record.get(\"readOnly\")){\r",
@@ -744,9 +744,9 @@
                             "Ext.getCmp(\"MTcenterZone\").setActiveTab(2);\r",
                             "Ext.getCmp(\"MTcenterZone\").setActiveTab(0);"
                         ],
-                        "single": true,
                         "name": "select",
-                        "scope": "me"
+                        "scope": "me",
+                        "single": true
                     },
                     "designerId": "8edd6541-5d56-43d2-849b-80b6da2684f5"
                 },
@@ -758,11 +758,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "languageCoumn",
-                        "hidden": true,
                         "dataIndex": "i18n",
-                        "text": "Languages",
-                        "flex": null
+                        "flex": null,
+                        "hidden": true,
+                        "localiserId": "languageCoumn",
+                        "text": "Languages"
                     },
                     "designerId": "ea23c55d-3cc6-4885-84c3-981b69b89282",
                     "customConfigs": [
@@ -781,7 +781,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -791,6 +790,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
                                     "catch(err){var myFlagCode=\"_unknown\";}\r",
@@ -823,10 +823,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "07b0ff85-d2ff-4750-8ed8-ddc78f4a6d1e",
@@ -839,10 +839,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "fc9d176e-a8d5-4530-9514-3160ed0ffbe8",
                     "cn": [
@@ -873,8 +873,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "layout|flex": null
                     },
                     "designerId": "06474760-4a10-49ec-8af3-01bcec8cdf56",
                     "cn": [
@@ -886,10 +886,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "<b>{type}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "fe999633-dd94-47df-b93a-6f7eacf3c72b"
                         },
@@ -901,10 +901,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processBoiteBarreMeta",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processBoiteBarreMeta",
                                 "implHandler": [
                                     "config.tpl=[\r",
                                     "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
@@ -926,10 +926,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "id": "MTcenterZone",
+                "activeTab": 0,
                 "iconCls": null,
-                "activeTab": 0
+                "id": "MTcenterZone",
+                "layout|flex": 1
             },
             "designerId": "04368937-8e13-4414-8683-1fbeba38e21b",
             "cn": [
@@ -941,10 +941,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": null,
                         "container|align": "stretch",
-                        "layout": "hbox",
+                        "dock": null,
                         "iconCls": "edit",
+                        "layout": "hbox",
                         "title": "Edition"
                     },
                     "designerId": "ea2ea369-4a28-4944-af96-7604dc2d2aa1",
@@ -957,8 +957,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "editTab",
-                                "layout|flex": null
+                                "layout|flex": null,
+                                "localiserId": "editTab"
                             },
                             "designerId": "25a20889-bbff-428b-9513-ca0a1f6141ae",
                             "customConfigs": [
@@ -977,10 +977,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
+                                "autoScroll": true,
                                 "id": "MTEditContainer",
-                                "width": null,
-                                "autoScroll": true
+                                "layout|flex": 1,
+                                "width": null
                             },
                             "designerId": "10750f8a-2696-429d-b269-b56e40eca868",
                             "cn": [
@@ -992,8 +992,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "systemFieldPanel",
                                         "frame": true,
+                                        "localiserId": "systemFieldPanel",
                                         "margin": 20,
                                         "title": "Champs système"
                                     },
@@ -1014,9 +1014,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "padding": 10,
                                                 "designer|displayName": null,
-                                                "layout": "anchor"
+                                                "layout": "anchor",
+                                                "padding": 10
                                             },
                                             "designerId": "aa06f2ff-84bf-4a7a-8e8f-952627b96b50",
                                             "cn": [
@@ -1028,18 +1028,18 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "auxBtn13",
-                                                        "itemId": "helpBouton",
-                                                        "margin": null,
-                                                        "style": [
-                                                            "{float:right;}"
-                                                        ],
                                                         "allowDepress": null,
                                                         "enableToggle": null,
                                                         "handleMouseEvents": false,
                                                         "iconCls": "help",
+                                                        "itemId": "helpBouton",
+                                                        "localiserId": "auxBtn13",
+                                                        "margin": null,
                                                         "pressed": null,
                                                         "pressedCls": "x-btn",
+                                                        "style": [
+                                                            "{float:right;}"
+                                                        ],
                                                         "text": "",
                                                         "tooltip": [
                                                             "'Titre du média. Obligatoire.'"
@@ -1062,15 +1062,15 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "titleField",
-                                                        "layout|anchor": "90%",
-                                                        "style": [
-                                                            "{float:left}"
-                                                        ],
+                                                        "allowBlank": false,
                                                         "fieldLabel": "Titre *",
                                                         "labelSeparator": null,
+                                                        "layout|anchor": "90%",
+                                                        "localiserId": "titleField",
                                                         "name": "title",
-                                                        "allowBlank": false
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ]
                                                     },
                                                     "designerId": "1a4e9e40-1a80-4767-9931-53d09d470dc1",
                                                     "customConfigs": [
@@ -1091,9 +1091,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "padding": 10,
                                                 "designer|displayName": null,
-                                                "layout": "anchor"
+                                                "layout": "anchor",
+                                                "padding": 10
                                             },
                                             "designerId": "fc8e5654-bddd-4b97-8664-501c22aba5a1",
                                             "cn": [
@@ -1105,18 +1105,18 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "auxBtn15",
-                                                        "itemId": "helpBouton",
-                                                        "margin": null,
-                                                        "style": [
-                                                            "{float:right;}"
-                                                        ],
                                                         "allowDepress": null,
                                                         "enableToggle": null,
                                                         "handleMouseEvents": false,
                                                         "iconCls": "help",
+                                                        "itemId": "helpBouton",
+                                                        "localiserId": "auxBtn15",
+                                                        "margin": null,
                                                         "pressed": null,
                                                         "pressedCls": "x-btn",
+                                                        "style": [
+                                                            "{float:right;}"
+                                                        ],
                                                         "text": "",
                                                         "tooltip": [
                                                             "'Fichier principal du média. Obligatoire.'"
@@ -1139,15 +1139,15 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "originalFileField",
-                                                        "layout|anchor": "90%",
-                                                        "style": [
-                                                            "{float:left}"
-                                                        ],
+                                                        "allowBlank": false,
                                                         "fieldLabel": "Fichier original *",
                                                         "labelSeparator": " ",
+                                                        "layout|anchor": "90%",
+                                                        "localiserId": "originalFileField",
                                                         "name": "originalFileId",
-                                                        "allowBlank": false
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ]
                                                     },
                                                     "designerId": "74ccdca7-2b16-41bc-86c4-3d060bf4bb4d",
                                                     "customConfigs": [
@@ -1182,22 +1182,22 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsPanel",
-                                "layout|flex": null,
-                                "frame": true,
-                                "id": "MTPropPanel",
-                                "padding": 0,
-                                "style": null,
-                                "width": 300,
-                                "overflowY": null,
-                                "layout": "fit",
                                 "bodyPadding": 0,
                                 "bodyStyle": null,
                                 "collapseDirection": "right",
                                 "collapsed": false,
                                 "collapsible": true,
+                                "frame": true,
                                 "iconCls": "parametres",
-                                "title": "Propriétés"
+                                "id": "MTPropPanel",
+                                "layout": "fit",
+                                "layout|flex": null,
+                                "localiserId": "propsPanel",
+                                "overflowY": null,
+                                "padding": 0,
+                                "style": null,
+                                "title": "Propriétés",
+                                "width": 300
                             },
                             "designerId": "c13c08bb-d64c-45e5-9e3e-d3a347311261",
                             "customConfigs": [
@@ -1230,9 +1230,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "activeTab": 0,
                                                 "layout|flex": 1,
-                                                "overlapHeader": false,
-                                                "activeTab": 0
+                                                "overlapHeader": false
                                             },
                                             "designerId": "bd2282e9-fb17-4090-8dea-a5613940dfba",
                                             "cn": [
@@ -1244,10 +1244,10 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "dataTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "iconCls": "process-icon",
+                                                        "localiserId": "dataTab",
                                                         "title": "Data"
                                                     },
                                                     "designerId": "1caac7da-6b52-4fd8-bef5-9c6aad1b5ad4",
@@ -1279,10 +1279,10 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fn": "processData",
                                                                 "designer|params": [
                                                                     "config"
                                                                 ],
+                                                                "fn": "processData",
                                                                 "implHandler": [
                                                                     "config.title=Rubedo.RubedoInterfaceLoc.dataTab.title;\r",
                                                                     "return config;"
@@ -1300,11 +1300,11 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "searchTab",
-                                                        "itemId": "searchFormCheck",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "iconCls": "search",
+                                                        "itemId": "searchFormCheck",
+                                                        "localiserId": "searchTab",
                                                         "title": "Search"
                                                     },
                                                     "designerId": "46b72b2a-bc3a-4f18-ad8a-35e9862bf426",
@@ -1336,10 +1336,10 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fn": "processSearchFormCheck",
                                                                 "designer|params": [
                                                                     "config"
                                                                 ],
+                                                                "fn": "processSearchFormCheck",
                                                                 "implHandler": [
                                                                     "config.title=Rubedo.RubedoInterfaceLoc.searchTab.title;\r",
                                                                     "return config;"
@@ -1361,8 +1361,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "id": "MTFieldId",
-                                        "fieldLabel": "Label"
+                                        "fieldLabel": "Label",
+                                        "id": "MTFieldId"
                                     },
                                     "designerId": "356f5e0b-4fab-4377-aa18-528a1561875f"
                                 }
@@ -1404,8 +1404,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "layout": "hbox",
                         "iconCls": "page_taxonomy",
+                        "layout": "hbox",
                         "title": "Taxonomie"
                     },
                     "designerId": "9a8b8b4b-1394-4ff2-b557-2fac9b085416",
@@ -1418,8 +1418,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "taxonomyTab",
-                                "layout|flex": null
+                                "layout|flex": null,
+                                "localiserId": "taxonomyTab"
                             },
                             "designerId": "a4f9afda-b5c3-49a2-80d6-72167bd765f7",
                             "customConfigs": [
@@ -1438,13 +1438,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "managesStore": false,
-                                "localiserId": "MTtaxoGridUse",
-                                "layout|flex": 1,
-                                "autoRender": false,
                                 "id": "vocabulariesMTGrid",
-                                "title": "Vocabulaires utilisables comme plan de classement",
-                                "store": "TaxonomyForMT"
+                                "layout|flex": 1,
+                                "localiserId": "MTtaxoGridUse",
+                                "managesStore": false,
+                                "store": "TaxonomyForMT",
+                                "title": "Vocabulaires utilisables comme plan de classement"
                             },
                             "configAlternates": {
                                 "managesStore": "boolean"
@@ -1470,9 +1469,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "autoRender": false
-                                    },
                                     "designerId": "795abd4b-43b6-464c-8aef-80935b0662a9"
                                 },
                                 {
@@ -1492,10 +1488,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "titleColumn",
                                         "dataIndex": "name",
-                                        "text": "Titre",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "localiserId": "titleColumn",
+                                        "text": "Titre"
                                     },
                                     "designerId": "7e15e4bc-3616-4d66-91bd-2b5ba95ca28f",
                                     "customConfigs": [
@@ -1514,10 +1510,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "descriptionColumn",
                                         "dataIndex": "description",
-                                        "text": "Description",
-                                        "flex": 3
+                                        "flex": 3,
+                                        "localiserId": "descriptionColumn",
+                                        "text": "Description"
                                     },
                                     "designerId": "c313f37b-ff0e-474c-8ce9-44199d69180f",
                                     "customConfigs": [
@@ -1536,10 +1532,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "helpTextColumn",
                                         "dataIndex": "helpText",
-                                        "text": "HelpText",
-                                        "flex": 2
+                                        "flex": 2,
+                                        "localiserId": "helpTextColumn",
+                                        "text": "HelpText"
                                     },
                                     "designerId": "b93bcf84-58ff-4386-9421-cf64a0e93546",
                                     "customConfigs": [
@@ -1558,11 +1554,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "labelColumn",
                                         "dataIndex": "expandable",
-                                        "text": "Etiquettes",
-                                        "flex": 1,
                                         "falseText": "non",
+                                        "flex": 1,
+                                        "localiserId": "labelColumn",
+                                        "text": "Etiquettes",
                                         "trueText": "oui"
                                     },
                                     "designerId": "4918e480-af4f-4b6c-b4aa-8009bf896d84",
@@ -1582,10 +1578,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processEtiquettes",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processEtiquettes",
                                                 "implHandler": [
                                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -1604,11 +1600,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "multiChoiseColumn",
                                         "dataIndex": "mandatory",
-                                        "text": "ChoixMultiple",
-                                        "flex": 1,
                                         "falseText": "non",
+                                        "flex": 1,
+                                        "localiserId": "multiChoiseColumn",
+                                        "text": "ChoixMultiple",
                                         "trueText": "oui"
                                     },
                                     "designerId": "3ec584b3-b172-4e48-b7f8-001a3fed1fba",
@@ -1628,10 +1624,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processChoixMultiple",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processChoixMultiple",
                                                 "implHandler": [
                                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -1650,11 +1646,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "mandatoryColumn",
                                         "dataIndex": "mandatory",
-                                        "text": "Obligatoire",
-                                        "flex": 1,
                                         "falseText": "non",
+                                        "flex": 1,
+                                        "localiserId": "mandatoryColumn",
+                                        "text": "Obligatoire",
                                         "trueText": "oui"
                                     },
                                     "designerId": "9e400444-c1c9-47bf-88f9-d1a36eb72a3e",
@@ -1674,10 +1670,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processObligatoire",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processObligatoire",
                                                 "implHandler": [
                                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -1719,8 +1715,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout": "card",
                         "iconCls": "parametres",
+                        "layout": "card",
                         "title": "Propriétés"
                     },
                     "designerId": "fb2d5e4e-8424-4c0b-b1b7-3607dba15e67",
@@ -1752,10 +1748,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "mediaTypesEditForm",
-                                "itemId": "mainLocItem",
                                 "bodyPadding": 10,
                                 "iconCls": null,
+                                "id": "mediaTypesEditForm",
+                                "itemId": "mainLocItem",
                                 "title": ""
                             },
                             "designerId": "19d9c471-f1cc-4aee-bf63-f7c247740bac",
@@ -1768,11 +1764,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
+                                        "allowBlank": false,
                                         "fieldLabel": "Name",
                                         "labelWidth": 130,
-                                        "name": "type",
-                                        "allowBlank": false
+                                        "layout|anchor": "100%",
+                                        "name": "type"
                                     },
                                     "designerId": "ca3c8951-1c95-4c89-bd4f-a982aa8f246b"
                                 },
@@ -1806,10 +1802,10 @@
                                             "userConfig": {
                                                 "fieldLabel": "Espaces de travail",
                                                 "labelWidth": 120,
-                                                "name": "workspaces",
+                                                "layout|anchor": "100%",
                                                 "multiSelect": true,
-                                                "store": "ContributeWorkspacesCombo",
-                                                "layout|anchor": "100%"
+                                                "name": "workspaces",
+                                                "store": "ContributeWorkspacesCombo"
                                             },
                                             "designerId": "91283f6c-387b-4614-b1e2-8c39b54303de",
                                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -1844,12 +1840,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "disqusField",
-                                                "layout|anchor": "100%",
-                                                "fieldLabel": "Disqus",
-                                                "name": "activateDisqus",
                                                 "boxLabel": "",
+                                                "fieldLabel": "Disqus",
                                                 "inputValue": "true",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "disqusField",
+                                                "name": "activateDisqus",
                                                 "uncheckedValue": "false"
                                             },
                                             "designerId": "02be28ba-b63e-4db3-93f1-10d536e54691",
@@ -1873,9 +1869,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "replicatorEntity": "CTLReplicatorEntity",
+                                "dock": "top",
                                 "id": "MTLDLSToolbar",
-                                "dock": "top"
+                                "replicatorEntity": "CTLReplicatorEntity"
                             },
                             "designerId": "812b0cd8-6ddf-448e-b13e-ee40363b1cc9",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"

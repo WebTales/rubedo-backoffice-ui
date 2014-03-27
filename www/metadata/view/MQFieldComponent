@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 29,
-        "padding": null,
-        "width": 455,
-        "designer|userClassName": "MQFieldComponent",
         "designer|userAlias": "MQFieldComponent",
+        "designer|userClassName": "MQFieldComponent",
         "fieldLabel": "Requete",
+        "height": 29,
         "labelSeparator": " ",
-        "labelWidth": 60
+        "labelWidth": 60,
+        "padding": null,
+        "width": 455
     },
     "designerId": "ad91af67-6579-4a5a-9499-f0904b885611",
     "cn": [
@@ -25,10 +25,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "addBtn",
-                "itemId": "addBtn",
-                "margin": "0 10 0 0",
                 "iconCls": "add",
+                "itemId": "addBtn",
+                "localiserId": "addBtn",
+                "margin": "0 10 0 0",
                 "text": "Ajouter"
             },
             "designerId": "81b9a8a4-da26-4966-9c0f-c1187f90f89f",
@@ -48,10 +48,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "modifyBtn",
-                "itemId": "editBtn",
-                "margin": "0 10 0 0",
                 "iconCls": "edit",
+                "itemId": "editBtn",
+                "localiserId": "modifyBtn",
+                "margin": "0 10 0 0",
                 "text": "Modifier"
             },
             "designerId": "8601024a-a4f8-4275-ab17-2e352d895582",
@@ -71,9 +71,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "deleteBtn",
-                "itemId": "removeBtn",
                 "iconCls": "close",
+                "itemId": "removeBtn",
+                "localiserId": "deleteBtn",
                 "text": "Supprimer"
             },
             "designerId": "910c5223-4560-477d-8fcd-28cfc21433ad",

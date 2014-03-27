@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "reusableElementsWindow",
         "container|align": "stretch",
+        "designer|userAlias": "ReusableElementPicker",
+        "designer|userClassName": "ReusableElementPicker",
         "height": 350,
         "id": "ReusableElementPicker",
-        "width": 600,
-        "designer|userClassName": "ReusableElementPicker",
-        "designer|userAlias": "ReusableElementPicker",
-        "resizable": false,
         "layout": "hbox",
+        "localiserId": "reusableElementsWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Eléments réutilisables",
-        "modal": true
+        "width": 600
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -38,11 +38,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": true,
-                "layout|flex": 0.5,
                 "id": "ReusableElementsGrid",
-                "title": "",
-                "store": "ReusableElementsDataStore"
+                "layout|flex": 0.5,
+                "managesStore": true,
+                "store": "ReusableElementsDataStore",
+                "title": ""
             },
             "configAlternates": {
                 "managesStore": "boolean"
@@ -73,10 +73,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameCol",
                         "dataIndex": "name",
-                        "text": "Nom",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "nameCol",
+                        "text": "Nom"
                     },
                     "designerId": "50cea688-8cf0-40fd-a521-53de261c3bed",
                     "customConfigs": [
@@ -104,10 +104,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name:this.translator}"
-                                ],
-                                "designer|displayName": "groupHeaderTpl"
+                                ]
                             },
                             "designerId": "4041d896-a934-4ed3-a37b-015e7595308f",
                             "cn": [
@@ -119,10 +119,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "translator",
                                         "designer|params": [
                                             "name"
                                         ],
+                                        "fn": "translator",
                                         "implHandler": [
                                             "if (name==\"row\") {\r",
                                             "    return(Rubedo.RubedoAutomatedElementsLoc.lignText);\r",
@@ -171,11 +171,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "deleteBtn",
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "resusableElementsDeleteBtn",
                                 "iconCls": "close",
+                                "id": "resusableElementsDeleteBtn",
+                                "layout|flex": null,
+                                "localiserId": "deleteBtn",
                                 "text": "Supprimer"
                             },
                             "designerId": "a994ca8d-2b21-4997-833b-e3c6e03716bd",
@@ -226,9 +226,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "container|align": "center",
                 "layout": "vbox",
+                "layout|flex": 1,
                 "title": ""
             },
             "designerId": "c87ed310-3b37-4d51-93d7-2a052278a20d",
@@ -241,11 +241,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
+                        "anchorSize": null,
                         "id": "reusableelementSimulation",
+                        "layout|flex": 1,
                         "margin": "10 0 0 0",
-                        "width": 300,
-                        "anchorSize": null
+                        "width": 300
                     },
                     "designerId": "72bbb711-00fc-426b-ac82-9a0301c20483"
                 },
@@ -257,11 +257,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
+                        "anchorSize": null,
                         "id": "reusableelementDescription",
+                        "layout|flex": 1,
                         "margin": "10 0 10 0",
-                        "width": 350,
-                        "anchorSize": null
+                        "width": 350
                     },
                     "designerId": "d1370439-418e-4078-b7ed-18fff72361d9",
                     "cn": [
@@ -273,11 +273,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "<h2>{name}</h2>\r",
                                     "<p>{description}</p>"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "de9ec4af-29ce-422f-aa44-b11dc80e39f6"
                         }
@@ -291,8 +291,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "dock": "bottom"
+                        "dock": "bottom",
+                        "layout|flex": 1
                     },
                     "designerId": "8ef4da63-4453-4819-a353-67967c734453",
                     "cn": [
@@ -316,11 +316,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addBtn",
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "REAddButton",
                                 "iconCls": "add",
+                                "id": "REAddButton",
+                                "layout|flex": null,
+                                "localiserId": "addBtn",
                                 "text": "Ajouter"
                             },
                             "designerId": "8dd193ad-a01e-4ed0-8569-1ff6bbd3b08c",

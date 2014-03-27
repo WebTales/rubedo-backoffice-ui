@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Workspaces",
         "autoLoad": true,
-        "model": "workspaceModel",
-        "storeId": "WorkspacesComboStore",
-        "designer|userClassName": "WorkspacesComboStore",
-        "designer|userAlias": "WorkspacesComboStore",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "WorkspacesComboStore",
+        "designer|userClassName": "WorkspacesComboStore",
+        "isOptimised": true,
+        "model": "workspaceModel",
+        "pageSize": 1000,
+        "storeId": "WorkspacesComboStore",
+        "usedCollection": "Workspaces"
     },
     "configAlternates": {
         "isOptimised": "boolean"

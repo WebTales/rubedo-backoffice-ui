@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Groups",
         "autoLoad": false,
         "autoSync": true,
+        "defaultRootId": null,
+        "designer|userAlias": "GroupsDataStore",
+        "designer|userClassName": "GroupsDataStore",
+        "isOptimised": true,
         "model": "groupDataModel",
         "storeId": "GroupsDataStore",
-        "designer|userClassName": "GroupsDataStore",
-        "designer|userAlias": "GroupsDataStore",
-        "defaultRootId": null
+        "usedCollection": "Groups"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -41,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "     create: 'groups/create',\r",
@@ -50,6 +49,7 @@
                     "     destroy: 'groups/delete'\r",
                     "}"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "e1785f69-601f-4fed-b839-5d6dcaf4b9aa",
@@ -64,8 +64,8 @@
                     "userConfig": {
                         "idProperty": null,
                         "messageProperty": "message",
-                        "root": null,
-                        "record": null
+                        "record": null,
+                        "root": null
                     },
                     "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818",
                     "cn": [
@@ -77,10 +77,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
                                 ],
+                                "fn": "getResponseData",
                                 "implHandler": [
                                     "var data, error;\r",
                                     "\r",

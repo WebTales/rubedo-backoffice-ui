@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "usersWindow",
-        "container|align": "stretch",
-        "height": 490,
-        "id": "UserAdminWindow",
-        "width": 800,
-        "designer|userClassName": "UserAdminWindow",
-        "designer|userAlias": "UserAdminWindow",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "UserAdminWindow",
+        "designer|userClassName": "UserAdminWindow",
+        "height": 490,
         "iconCls": "user_edit",
-        "title": "Utilisateurs"
+        "id": "UserAdminWindow",
+        "layout": "hbox",
+        "localiserId": "usersWindow",
+        "title": "Utilisateurs",
+        "width": 800
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -39,10 +39,10 @@
             "codeClass": null,
             "userConfig": {
                 "id": "userAdminGrid",
-                "width": 200,
                 "resizable": true,
                 "resizeHandles": "e",
-                "store": null
+                "store": null,
+                "width": 200
             },
             "configAlternates": {
                 "resizable": "boolean",
@@ -79,11 +79,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "userAdminAdd",
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "userAdminAdd",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -110,11 +110,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
-                        "id": "userAdminRemove",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "userAdminRemove",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -153,9 +153,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "users",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -178,10 +178,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "activeTab": 0,
                 "disabled": true,
                 "id": "userAdminMainPanel",
-                "activeTab": 0
+                "layout|flex": 1
             },
             "designerId": "8c3d9510-d629-4e19-9483-9f30337da40f",
             "cn": [
@@ -193,11 +193,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "userAdminInfoDisplay",
-                        "designer|displayName": "",
-                        "overflowY": "auto",
-                        "layout": "hbox",
                         "bodyPadding": 10,
+                        "designer|displayName": "",
+                        "id": "userAdminInfoDisplay",
+                        "layout": "hbox",
+                        "overflowY": "auto",
                         "title": "Informations"
                     },
                     "designerId": "47d67632-9fff-4aa9-916c-e84569cc0bf7",
@@ -229,13 +229,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "informationsFieldSet",
-                                "layout|flex": 1,
-                                "height": 360,
-                                "margin": 0,
-                                "width": 356,
                                 "autoScroll": true,
-                                "title": "Informations"
+                                "height": 360,
+                                "layout|flex": 1,
+                                "localiserId": "informationsFieldSet",
+                                "margin": 0,
+                                "title": "Informations",
+                                "width": 356
                             },
                             "designerId": "e0fa6c9b-e333-4aba-affb-81325bc4a2c9",
                             "customConfigs": [
@@ -254,12 +254,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "nameField",
-                                        "layout|anchor": "100%",
+                                        "allowBlank": false,
                                         "fieldLabel": "Nom ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "nameField",
                                         "name": "name",
-                                        "readOnly": null,
-                                        "allowBlank": false
+                                        "readOnly": null
                                     },
                                     "designerId": "8c33f936-f9e6-4905-b7bc-8e3d699dcd0e",
                                     "customConfigs": [
@@ -278,11 +278,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "mailField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "E-mail ",
-                                        "name": "email",
                                         "allowBlank": false,
+                                        "fieldLabel": "E-mail ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "mailField",
+                                        "name": "email",
                                         "vtype": "email"
                                     },
                                     "designerId": "846e4c00-b8ff-48b7-9019-97fcdbceb783",
@@ -302,13 +302,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "civilityField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Civilité ",
-                                        "name": "title",
-                                        "editable": false,
                                         "displayField": null,
+                                        "editable": false,
+                                        "fieldLabel": "Civilité ",
                                         "forceSelection": true,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "civilityField",
+                                        "name": "title",
                                         "store": [
                                             "[\"Mr\",\"Mme\",\"Mlle\"]"
                                         ],
@@ -334,9 +334,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "organisationField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Organisation ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "organisationField",
                                         "name": "organisation"
                                     },
                                     "designerId": "ff56953e-0343-4bdf-aefd-dd23940680b2",
@@ -356,9 +356,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "serviceField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Service ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "serviceField",
                                         "name": "service"
                                     },
                                     "designerId": "01d43664-3bf9-43da-b4f7-81c4faefc240",
@@ -378,9 +378,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "postField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Fonction ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "postField",
                                         "name": "post"
                                     },
                                     "designerId": "a2d7d6d1-dd54-448f-88ae-89aaf3576acf",
@@ -400,9 +400,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "phoneField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Téléphone ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "phoneField",
                                         "name": "telephone"
                                     },
                                     "designerId": "1003ac08-2dcc-43f4-b58f-340b97968436",
@@ -422,9 +422,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "mobileField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Mobile ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "mobileField",
                                         "name": "mobile"
                                     },
                                     "designerId": "088dbd29-e57c-4e99-951a-6a2b57a5d71c",
@@ -444,9 +444,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "coordinatesField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Coordonnées ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "coordinatesField",
                                         "name": "coordinates"
                                     },
                                     "designerId": "c0576994-8a1a-4afc-b2c8-d57e4d26d93e",
@@ -466,13 +466,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "languageField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Langue ",
-                                        "name": "language",
-                                        "editable": false,
                                         "displayField": "label",
+                                        "editable": false,
+                                        "fieldLabel": "Langue ",
                                         "forceSelection": true,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "languageField",
+                                        "name": "language",
                                         "queryMode": "local",
                                         "store": "BOLanguageStore",
                                         "valueField": "key"
@@ -494,9 +494,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "countryField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Pays ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "countryField",
                                         "name": "country"
                                     },
                                     "designerId": "487a8b72-5b09-40fb-bdac-db423609b78b",
@@ -517,9 +517,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "ACL": "write.ui.users",
-                                        "localiserId": "applyField",
-                                        "layout|anchor": "100%",
                                         "id": "userAdminInfoEdit",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "applyField",
                                         "text": "Appliquer"
                                     },
                                     "designerId": "584210a9-8e8d-4737-a252-7e3437de80a4",
@@ -546,12 +546,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "photoFieldSet",
-                                "layout|flex": null,
                                 "height": 280,
+                                "layout|flex": null,
+                                "localiserId": "photoFieldSet",
                                 "margin": "0 0 0 10",
-                                "width": 200,
-                                "title": "Photo"
+                                "title": "Photo",
+                                "width": 200
                             },
                             "designerId": "50a05e4c-d597-4647-8831-9190d17f160b",
                             "customConfigs": [
@@ -573,8 +573,8 @@
                                         "height": 180,
                                         "id": "userAdminProfilePicture",
                                         "margin": "0 0 18 18",
-                                        "width": 140,
-                                        "src": "resources/images/userBig.png"
+                                        "src": "resources/images/userBig.png",
+                                        "width": 140
                                     },
                                     "designerId": "87cf3f1f-d102-426b-86ca-008863f143e5"
                                 },
@@ -586,8 +586,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "changeBtn",
                                         "layout|anchor": "100%",
+                                        "localiserId": "changeBtn",
                                         "margin": "0 0 10 0",
                                         "text": "Changer"
                                     },
@@ -608,11 +608,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "handler",
                                                 "designer|params": [
                                                     "button",
                                                     "event"
                                                 ],
+                                                "fn": "handler",
                                                 "implHandler": [
                                                     "Ext.widget(\"PersoPicUploadWindow\").show();"
                                                 ]
@@ -630,9 +630,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "ACL": "write.ui.users",
-                                        "localiserId": "removeBtn",
-                                        "layout|anchor": "100%",
                                         "id": "userAdminProfilePictureDelete",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "removeBtn",
                                         "margin": null,
                                         "text": "Supprimer"
                                     },

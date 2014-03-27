@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "addBlockWindow",
+        "constrainHeader": true,
         "container|align": "stretch",
+        "designer|userAlias": "ajoutBlocFenetre",
+        "designer|userClassName": "ajoutBlocFenetre",
         "draggable": false,
         "height": 346,
         "id": "ajoutBlocFenetre",
-        "width": 533,
-        "designer|userClassName": "ajoutBlocFenetre",
-        "designer|userAlias": "ajoutBlocFenetre",
-        "resizable": false,
         "layout": "hbox",
-        "constrainHeader": true,
+        "localiserId": "addBlockWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Ajouter un bloc",
-        "modal": true
+        "width": 533
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -40,10 +40,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "id": "BlocsSelectGrid",
-                "title": "",
-                "store": "BlocsDataStore"
+                "layout|flex": 1,
+                "store": "BlocsDataStore",
+                "title": ""
             },
             "designerId": "7a17fd96-2057-4eb8-8159-b571d7bd1e7b",
             "cn": [
@@ -64,10 +64,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBlockTypeColumn",
                         "dataIndex": "type",
-                        "text": "Type",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "addBlockTypeColumn",
+                        "text": "Type"
                     },
                     "designerId": "b98ff778-cfd7-429e-9b16-b6a430b94f98",
                     "customConfigs": [
@@ -95,10 +95,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name}"
-                                ],
-                                "designer|displayName": "groupHeaderTpl"
+                                ]
                             },
                             "designerId": "b3ecab5c-4aac-43e0-afa7-ad224023967a"
                         }
@@ -114,13 +114,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1.3,
-                "id": "PaneauBlocsDetail",
                 "autoScroll": true,
                 "bodyPadding": 10,
                 "bodyStyle": [
                     "{text-align: justify;}"
                 ],
+                "id": "PaneauBlocsDetail",
+                "layout|flex": 1.3,
                 "title": ""
             },
             "designerId": "9a5d9cf3-ff88-4af4-bc3d-94e6f086fa38",
@@ -133,10 +133,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "tpl",
                         "implHandler": [
                             "{description}"
-                        ],
-                        "designer|displayName": "tpl"
+                        ]
                     },
                     "designerId": "6324706a-03fd-4e78-af5b-945270bf4bec"
                 }
@@ -150,8 +150,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "dock": "bottom"
+                "dock": "bottom",
+                "layout|flex": 1
             },
             "designerId": "34af955f-e5f0-4ad4-a966-a4b024424451",
             "cn": [
@@ -175,11 +175,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "boutonAjouterBloc",
-                        "margin": null,
                         "iconCls": "add",
+                        "id": "boutonAjouterBloc",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "margin": null,
                         "text": "Ajouter"
                     },
                     "designerId": "0971d8e8-2a32-4b8d-982a-a0171003b368",
@@ -199,12 +199,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
                         "hidden": true,
-                        "id": "addPageBlocBtn",
-                        "margin": null,
                         "iconCls": "add",
+                        "id": "addPageBlocBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "margin": null,
                         "text": "Ajouter"
                     },
                     "designerId": "187a4d90-09af-4c71-8a57-f746b887c58f",

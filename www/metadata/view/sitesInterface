@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "sitesWindow",
-        "container|align": "stretch",
-        "height": 449,
-        "id": "sitesInterface",
-        "width": 753,
-        "designer|userClassName": "sitesInterface",
-        "designer|userAlias": "sitesInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "sitesInterface",
+        "designer|userClassName": "sitesInterface",
+        "height": 449,
         "iconCls": "referencement_icon",
-        "title": "Sites"
+        "id": "sitesInterface",
+        "layout": "hbox",
+        "localiserId": "sitesWindow",
+        "title": "Sites",
+        "width": 753
     },
     "designerId": "08c3601d-6da2-4434-bbf8-03968b08ffe4",
     "customConfigs": [
@@ -35,10 +35,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "breadcrumb"
+                "itemId": "breadcrumb",
+                "layout|flex": 1
             },
             "designerId": "324828ce-5810-4308-8b33-371d5f59c908",
             "cn": [
@@ -50,10 +50,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "sitesLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "origine",
                         "iconCls": "referencement_icon",
+                        "itemId": "origine",
+                        "layout|flex": null,
+                        "localiserId": "sitesLaunchBtn",
                         "text": "Sites"
                     },
                     "designerId": "a7e804dd-6cd3-4327-a0ff-f18b14fb58b6",
@@ -89,11 +89,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.sites",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "siteAddBtn",
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "siteAddBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -120,12 +120,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.sites",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "siteRemoveBtn",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "siteRemoveBtn",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -152,12 +152,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.sites",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "updateSiteBtn",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "updateSiteBtn",
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -196,9 +196,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "sites",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -221,13 +221,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": false,
-                "layout|flex": null,
-                "id": "mainSitesGrid",
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "SitesJson"
+                "id": "mainSitesGrid",
+                "layout|flex": null,
+                "managesStore": false,
+                "store": "SitesJson",
+                "title": "",
+                "width": 200
             },
             "configAlternates": {
                 "managesStore": "boolean"
@@ -258,8 +258,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "domainNameColumn",
                         "dataIndex": "text",
+                        "localiserId": "domainNameColumn",
                         "text": "Nom de domaine"
                     },
                     "designerId": "4d47923d-d812-40f9-8714-9e31b009dc49",
@@ -279,7 +279,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -289,6 +288,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.get(\"readOnly\")) {\r",
                                     "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
@@ -311,9 +311,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "disabled": true,
                 "layout": "card",
+                "layout|flex": 1,
                 "title": ""
             },
             "designerId": "78a8f05d-48f3-40b0-a72e-ca663b79d8a7",
@@ -326,10 +326,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "mainSiteProps",
-                        "itemId": "mainLocItem",
                         "autoScroll": true,
                         "bodyPadding": 10,
+                        "id": "mainSiteProps",
+                        "itemId": "mainLocItem",
                         "title": ""
                     },
                     "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
@@ -342,8 +342,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "siteFieldSet",
                                 "collapsible": true,
+                                "localiserId": "siteFieldSet",
                                 "title": "Site"
                             },
                             "designerId": "ef96b8c4-9626-4e8e-a915-842e448b03ec",
@@ -363,12 +363,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "domainNameField",
-                                        "layout|anchor": "100%",
+                                        "allowBlank": false,
                                         "fieldLabel": "Nom de domaine *",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "domainNameField",
                                         "name": "text",
-                                        "allowBlank": false,
                                         "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
                                     },
                                     "designerId": "3694e071-e5dd-402d-97ae-6e48e5e60573",
@@ -388,10 +388,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "staticDomainField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Static domain",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "staticDomainField",
                                         "name": "staticDomain",
                                         "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
                                     },
@@ -412,11 +412,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "aliasField",
-                                        "layout|anchor": "100%",
-                                        "hidden": true,
                                         "fieldLabel": "Alias ",
+                                        "hidden": true,
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "aliasField",
                                         "name": "alias"
                                     },
                                     "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424",
@@ -436,13 +436,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "managesStore": true,
-                                        "localiserId": "themeField",
-                                        "layout|anchor": "100%",
+                                        "displayField": "label",
                                         "fieldLabel": "Theme ",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "themeField",
+                                        "managesStore": true,
                                         "name": "theme",
-                                        "displayField": "label",
                                         "store": "SiteThemesStore",
                                         "valueField": "text"
                                     },
@@ -471,15 +471,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "protocolField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Protocole *",
-                                        "labelWidth": 110,
-                                        "name": "protocol",
                                         "allowBlank": false,
                                         "editable": false,
+                                        "fieldLabel": "Protocole *",
                                         "forceSelection": true,
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "protocolField",
                                         "multiSelect": true,
+                                        "name": "protocol",
                                         "store": [
                                             "[\"HTTP\", \"HTTPS\"]"
                                         ]
@@ -504,15 +504,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "defaultLanguageField",
-                                        "layout|anchor": "100%",
-                                        "id": "siteDefaultLanguageField",
-                                        "fieldLabel": "Default language *",
-                                        "labelWidth": 110,
-                                        "name": "defaultLanguage",
                                         "allowBlank": false,
                                         "displayField": "label",
+                                        "fieldLabel": "Default language *",
                                         "forceSelection": true,
+                                        "id": "siteDefaultLanguageField",
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "defaultLanguageField",
+                                        "name": "defaultLanguage",
                                         "store": "AllLanguagesStore",
                                         "typeAhead": true,
                                         "valueField": "locale"
@@ -534,10 +534,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "validator",
                                                 "designer|params": [
                                                     "value"
                                                 ],
+                                                "fn": "validator",
                                                 "implHandler": [
                                                     "var myValue=Ext.getCmp(\"siteDefaultLanguageField\").getValue();\r",
                                                     "var languagesArray=Ext.getCmp(\"siteUsedLanguagesField\").getValue();\r",
@@ -559,12 +559,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Localisation strategy",
-                                        "labelWidth": 110,
-                                        "name": "locStrategy",
                                         "editable": false,
+                                        "fieldLabel": "Localisation strategy",
                                         "forceSelection": true,
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "name": "locStrategy",
                                         "queryMode": "local"
                                     },
                                     "designerId": "ad52430e-d2e2-4e21-88a7-2bf1f2ddbbc5",
@@ -577,10 +577,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processLocStrategy",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processLocStrategy",
                                                 "implHandler": [
                                                     "config.store=[[\"onlyOne\",Rubedo.RubedoAutomatedElementsLoc.onlyOneText],[\"fallback\", Rubedo.RubedoAutomatedElementsLoc.withFallbackText]];\r",
                                                     "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;\r",
@@ -599,12 +599,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Use browser language",
-                                        "labelWidth": 110,
-                                        "name": "useBrowserLanguage",
                                         "boxLabel": null,
+                                        "fieldLabel": "Use browser language",
                                         "inputValue": "true",
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "name": "useBrowserLanguage",
                                         "uncheckedValue": "false"
                                     },
                                     "designerId": "289ffab8-0e63-4513-8089-dc3766217e25",
@@ -617,10 +617,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processUseBrowserLanguage",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processUseBrowserLanguage",
                                                 "implHandler": [
                                                     "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.useBrowserLanguageText;\r",
                                                     "return config;"
@@ -638,9 +638,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
-                                        "hidden": true,
                                         "fieldLabel": "Filtre ",
+                                        "hidden": true,
+                                        "layout|anchor": "100%",
                                         "name": "filter"
                                     },
                                     "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
@@ -653,10 +653,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "siteDefaultTitleField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Titre par défaut",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "siteDefaultTitleField",
                                         "name": "title"
                                     },
                                     "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173",
@@ -676,12 +676,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "defaultDescriptionField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Description par défaut",
                                         "labelWidth": 110,
-                                        "name": "description",
-                                        "maxLength": 250
+                                        "layout|anchor": "100%",
+                                        "localiserId": "defaultDescriptionField",
+                                        "maxLength": 250,
+                                        "name": "description"
                                     },
                                     "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9",
                                     "customConfigs": [
@@ -700,10 +700,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "defaultAuthorField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Auteur par défaut",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "defaultAuthorField",
                                         "name": "author",
                                         "value": [
                                             "\"Powered by Rubedo\""
@@ -795,8 +795,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "labelWidth": 110,
-                                        "store": "ContributeWorkspacesCombo",
-                                        "layout|anchor": "100%"
+                                        "layout|anchor": "100%",
+                                        "store": "ContributeWorkspacesCombo"
                                     },
                                     "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
                                     "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -809,12 +809,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "E-Commerce features",
-                                        "labelWidth": 110,
-                                        "name": "enableECommerceFeatures",
                                         "boxLabel": null,
+                                        "fieldLabel": "E-Commerce features",
                                         "inputValue": "true",
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "name": "enableECommerceFeatures",
                                         "uncheckedValue": "false"
                                     },
                                     "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6"
@@ -829,10 +829,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "messageryFieldSet",
-                                "hidden": true,
                                 "collapsed": true,
                                 "collapsible": true,
+                                "hidden": true,
+                                "localiserId": "messageryFieldSet",
                                 "title": "Messagerie"
                             },
                             "designerId": "420a6c9e-a93a-45a9-875f-534aa6abcfda",
@@ -852,11 +852,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "activeMessageryField",
-                                        "layout|anchor": "100%",
+                                        "boxLabel": "",
                                         "fieldLabel": "Activé ",
-                                        "name": "activeMessagery",
-                                        "boxLabel": ""
+                                        "layout|anchor": "100%",
+                                        "localiserId": "activeMessageryField",
+                                        "name": "activeMessagery"
                                     },
                                     "designerId": "bd542b51-fd9d-4eed-9dfe-875e16085150",
                                     "customConfigs": [
@@ -875,9 +875,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "smtpServerField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Serveur SMTP ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "smtpServerField",
                                         "name": "SMTPServer"
                                     },
                                     "designerId": "06f89195-fea2-4ea5-b7a1-2807c261a86e",
@@ -897,12 +897,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "smtpPortField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Port SMTP ",
-                                        "name": "SMTPPort",
                                         "allowDecimals": false,
-                                        "minValue": 0
+                                        "fieldLabel": "Port SMTP ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "smtpPortField",
+                                        "minValue": 0,
+                                        "name": "SMTPPort"
                                     },
                                     "designerId": "02f50589-086b-479e-8ae8-ad14cdad56a6",
                                     "customConfigs": [
@@ -921,9 +921,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "smtpLoginField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Login SMTP ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "smtpLoginField",
                                         "name": "SMTPLogin"
                                     },
                                     "designerId": "3b399b2f-89da-47be-a203-9a701fe7666e",
@@ -943,11 +943,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "smtpPassField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Mot de passe SMTP ",
-                                        "name": "SMTPPassword",
-                                        "inputType": "password"
+                                        "inputType": "password",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "smtpPassField",
+                                        "name": "SMTPPassword"
                                     },
                                     "designerId": "01df2091-90b9-4bc7-8b67-e258a614a0ab",
                                     "customConfigs": [
@@ -966,9 +966,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "defaultEmailField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "E-mail par défaut ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "defaultEmailField",
                                         "name": "defaultEmail",
                                         "vtype": "email"
                                     },
@@ -991,10 +991,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "accessibilityFieldSet ",
-                                "hidden": true,
                                 "collapsed": true,
                                 "collapsible": true,
+                                "hidden": true,
+                                "localiserId": "accessibilityFieldSet ",
                                 "title": "Accessibilité"
                             },
                             "designerId": "f0c0b11c-1199-4ac5-aa9f-204da8a91ae1",
@@ -1014,9 +1014,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "accessibilityLeveLfield",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Niveau d'accessibilité ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "accessibilityLeveLfield",
                                         "name": "accessibilityLevel",
                                         "store": [
                                             "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
@@ -1042,9 +1042,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "opquastLoginField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Login Opquast ",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "opquastLoginField",
                                         "name": "opquastLogin"
                                     },
                                     "designerId": "7a30bfe6-7cf0-411f-96c1-8d359ce84832",
@@ -1064,11 +1064,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "opquastPassField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Mot de passe Optquast ",
-                                        "name": "opquastPassword",
-                                        "inputType": "password"
+                                        "inputType": "password",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "opquastPassField",
+                                        "name": "opquastPassword"
                                     },
                                     "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4",
                                     "customConfigs": [
@@ -1089,8 +1089,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "apiKeysFieldSet",
                                 "collapsible": true,
+                                "localiserId": "apiKeysFieldSet",
                                 "title": "Clés d'API externes"
                             },
                             "designerId": "ac102a61-49b0-4f71-bdec-78402d551242",
@@ -1110,10 +1110,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "googleMapKeyField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Google Maps",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "googleMapKeyField",
                                         "name": "googleMapsKey"
                                     },
                                     "designerId": "ba1103b7-9d59-4664-9428-7474772acc87",
@@ -1133,10 +1133,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "googleAnalyticsKeyField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Google Analytics",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "googleAnalyticsKeyField",
                                         "name": "googleAnalyticsKey"
                                     },
                                     "designerId": "547bccdf-8510-49bd-a279-2d7b96355857",
@@ -1156,10 +1156,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "disqusKeyField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Disqus",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "disqusKeyField",
                                         "name": "disqusKey"
                                     },
                                     "designerId": "3946a373-0c3f-455b-8c65-6f0921d08940",
@@ -1181,9 +1181,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "recaptchaFieldset",
                                 "collapsed": true,
                                 "collapsible": true,
+                                "localiserId": "recaptchaFieldset",
                                 "title": "Recaptcha"
                             },
                             "designerId": "44c52af4-c861-4fbd-988d-e4352ae8f85c",
@@ -1203,10 +1203,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "recaptchaPublicKeyField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Public key",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "recaptchaPublicKeyField",
                                         "name": "recaptcha_public_key"
                                     },
                                     "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809",
@@ -1226,10 +1226,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "recaptchaPrivateKeyField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Private key",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "recaptchaPrivateKeyField",
                                         "name": "recaptcha_private_key"
                                     },
                                     "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b",
@@ -1253,9 +1253,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "replicatorEntity": "sitesRepLoc",
+                        "dock": "top",
                         "id": "sitesDLSToolbar",
-                        "dock": "top"
+                        "replicatorEntity": "sitesRepLoc"
                     },
                     "designerId": "1c9d6053-d4f4-4b79-b7bc-262784f31c7b",
                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
@@ -1296,10 +1296,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "adbd4edd-64f1-47db-bbde-309b3b68c6a6",
@@ -1312,10 +1312,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "93f32556-0768-4ea5-b950-faeb0d83e9a6",
                     "cn": [
@@ -1346,8 +1346,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "layout|flex": null
                     },
                     "designerId": "267bec65-8da4-4124-bddc-b83d36867da9",
                     "cn": [
@@ -1359,10 +1359,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "81960d12-b108-4a15-9c88-5749ff0e6d64"
                         },
@@ -1374,10 +1374,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processBoiteBarreMeta",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processBoiteBarreMeta",
                                 "implHandler": [
                                     "config.tpl=[\r",
                                     "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",

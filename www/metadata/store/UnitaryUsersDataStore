@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Users",
         "autoLoad": false,
         "autoSync": true,
-        "model": "userDataModel",
-        "storeId": "UnitaryUsersDataStore",
-        "designer|userClassName": "UnitaryUsersDataStore",
         "designer|userAlias": "UnitaryUsersDataStore",
-        "pageSize": 1000
+        "designer|userClassName": "UnitaryUsersDataStore",
+        "isOptimised": true,
+        "model": "userDataModel",
+        "pageSize": 1000,
+        "storeId": "UnitaryUsersDataStore",
+        "usedCollection": "Users"
     },
     "configAlternates": {
         "isOptimised": "boolean"

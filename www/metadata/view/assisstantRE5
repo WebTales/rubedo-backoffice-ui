@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "etape": "4",
-        "localiserId": "qbs4",
-        "id": "assisstantRE5",
-        "designer|userClassName": "assisstantRE5",
-        "designer|userAlias": "assisstantRE5",
         "autoScroll": true,
         "bodyPadding": 10,
+        "designer|userAlias": "assisstantRE5",
+        "designer|userClassName": "assisstantRE5",
+        "etape": "4",
+        "id": "assisstantRE5",
+        "localiserId": "qbs4",
         "title": "Choix des tris sur les champs"
     },
     "designerId": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6",
@@ -37,20 +37,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "qbs4sortBtn",
-                "layout|anchor": "90%",
+                "displayField": "nom",
+                "editable": false,
+                "fieldLabel": "Ajouter un tri sur ",
+                "forceSelection": true,
                 "id": "createurTrisChampsAR",
+                "labelWidth": 140,
+                "layout|anchor": "90%",
+                "localiserId": "qbs4sortBtn",
+                "queryMode": "local",
+                "store": "champsTCARStore",
                 "style": [
                     "{float: left}"
                 ],
-                "fieldLabel": "Ajouter un tri sur ",
-                "labelWidth": 140,
                 "submitValue": false,
-                "editable": false,
-                "displayField": "nom",
-                "forceSelection": true,
-                "queryMode": "local",
-                "store": "champsTCARStore",
                 "valueField": "valeur"
             },
             "designerId": "a7a53da1-ed28-4ce8-9bcd-f847de6cd1d1",
@@ -70,12 +70,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "qbs4auxbtn",
+                "iconCls": "add",
                 "id": "boutonCreateurTrisChampsAR",
+                "localiserId": "qbs4auxbtn",
                 "style": [
                     "{float:right}"
                 ],
-                "iconCls": "add",
                 "text": ""
             },
             "designerId": "6dd2a4c2-6c56-47b1-80fe-0aa79432f684",

@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "ContentTypes",
         "autoLoad": false,
+        "designer|userAlias": "TypesContenusNDepDataJson",
+        "designer|userClassName": "TypesContenusNDepDataJson",
+        "isOptimised": true,
         "model": "typesContenusDataModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "TypesContenusNDepDataJson",
-        "designer|userClassName": "TypesContenusNDepDataJson",
-        "designer|userAlias": "TypesContenusNDepDataJson",
-        "pageSize": 1000
+        "usedCollection": "ContentTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

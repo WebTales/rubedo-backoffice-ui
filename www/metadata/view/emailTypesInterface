@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "favoriteIcon": "application.png",
-        "localiserId": "emailsInterface",
-        "container|align": "stretch",
-        "height": 578,
-        "id": "emailTypesInterface",
-        "width": 1400,
-        "designer|userClassName": "emailTypesInterface",
-        "designer|userAlias": "emailTypesInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "emailTypesInterface",
+        "designer|userClassName": "emailTypesInterface",
+        "favoriteIcon": "application.png",
+        "height": 578,
         "iconCls": "mail_small",
-        "title": "Emails"
+        "id": "emailTypesInterface",
+        "layout": "hbox",
+        "localiserId": "emailsInterface",
+        "title": "Emails",
+        "width": 1400
     },
     "designerId": "c3353cdd-8fb5-4b0b-b2b4-3fe14225c4b2",
     "customConfigs": [
@@ -67,10 +67,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "layout|flex": 1
             },
             "designerId": "ce7fe760-fe2c-43cc-b3e4-ee93874859a4",
             "cn": [
@@ -82,10 +82,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "emailsLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "origine",
                         "iconCls": "mail_small",
+                        "itemId": "origine",
+                        "layout|flex": null,
+                        "localiserId": "emailsLaunchBtn",
                         "text": "Emails"
                     },
                     "designerId": "17d7a8e2-3c3f-4a32-a797-d950e2011b8e",
@@ -107,10 +107,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "a244fb4b-7b85-450a-ac4e-264c7ba6a7e8",
@@ -123,10 +123,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "25f8535c-59a0-424f-b925-99e5df32d826",
                     "cn": [
@@ -157,8 +157,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "boiteBarreMeta",
+                        "layout|flex": null,
                         "minWidth": 400
                     },
                     "designerId": "6844851e-bb5f-43db-98ff-3b8aaf67682f",
@@ -171,10 +171,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {autore}  <b>Version : </b>{version}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "e21ea7ce-d2e8-453e-b000-e1df42c1b607"
                         },
@@ -186,10 +186,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processBoiteBarreMeta",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processBoiteBarreMeta",
                                 "implHandler": [
                                     "config.tpl=[\r",
                                     "'<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {autore}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
@@ -223,12 +223,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
+                "enableOverflow": true,
                 "height": 86,
                 "itemId": "contextBar",
-                "width": null,
-                "enableOverflow": true
+                "layout|flex": 1,
+                "width": null
             },
             "designerId": "aa942620-7208-40f8-806e-b0ef953ee534",
             "cn": [
@@ -241,13 +241,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "localiserId": "newBtn",
-                        "layout|flex": null,
-                        "id": "newETBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "newETBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "newBtn",
                         "scale": "large",
                         "text": "Nouveau"
                     },
@@ -274,15 +274,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
-                        "disabled": true,
-                        "id": "deleteEtBtn",
-                        "itemId": null,
                         "arrowAlign": null,
+                        "disabled": true,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "deleteEtBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -309,13 +309,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "localiserId": "editStructureFS",
-                        "layout|flex": null,
+                        "columns": 5,
                         "container|columns": 2,
-                        "id": "eTTopBarBox",
                         "headerPosition": "bottom",
-                        "title": "Edit structure",
-                        "columns": 5
+                        "id": "eTTopBarBox",
+                        "layout|flex": null,
+                        "localiserId": "editStructureFS",
+                        "title": "Edit structure"
                     },
                     "designerId": "f04eb1a7-1aa8-427a-92f4-6d0170cab4b7",
                     "customConfigs": [
@@ -339,15 +339,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "newRowBtn",
                                 "disabled": true,
-                                "id": "newETRowBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
+                                "id": "newETRowBtn",
+                                "localiserId": "newRowBtn",
                                 "scale": "large",
-                                "text": "Nouvelle Ligne"
+                                "text": "Nouvelle Ligne",
+                                "width": null
                             },
                             "designerId": "52e7c741-8c82-4ba0-9735-2d12f5ae22b5",
                             "customConfigs": [
@@ -366,15 +366,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "newColBtn",
                                 "disabled": true,
-                                "id": "newETColBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_add_big",
+                                "id": "newETColBtn",
+                                "localiserId": "newColBtn",
                                 "scale": "large",
-                                "text": "Nouvelle Colonne"
+                                "text": "Nouvelle Colonne",
+                                "width": null
                             },
                             "designerId": "21e06063-a4f3-4ba4-b6f8-e8426a905d15",
                             "customConfigs": [
@@ -393,15 +393,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeBtn",
                                 "disabled": true,
-                                "id": "deleteETElBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "window_remove_big",
+                                "id": "deleteETElBtn",
+                                "localiserId": "removeBtn",
                                 "scale": "large",
-                                "text": "Supprimer"
+                                "text": "Supprimer",
+                                "width": null
                             },
                             "designerId": "ba0f3bc3-be8d-4af7-9aa7-b57818aa70d3",
                             "customConfigs": [
@@ -420,15 +420,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveBtn",
                                 "disabled": true,
-                                "id": "moveUPETBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
+                                "id": "moveUPETBtn",
+                                "localiserId": "moveBtn",
                                 "scale": "large",
-                                "text": "Déplacer"
+                                "text": "Déplacer",
+                                "width": null
                             },
                             "designerId": "2f68b42c-7e3c-45d6-b812-77207a084de8",
                             "customConfigs": [
@@ -447,15 +447,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveBtn",
                                 "disabled": true,
-                                "id": "moveDownETBTn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
+                                "id": "moveDownETBTn",
+                                "localiserId": "moveBtn",
                                 "scale": "large",
-                                "text": "Déplacer"
+                                "text": "Déplacer",
+                                "width": null
                             },
                             "designerId": "bd1e595f-e5fd-4bd7-b506-d654ace646c2",
                             "customConfigs": [
@@ -477,13 +477,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "localiserId": "addComponentsFS",
-                        "layout|flex": null,
+                        "columns": 3,
                         "disabled": true,
-                        "id": "ETAddComponentsBtnGr",
                         "headerPosition": "bottom",
-                        "title": "Add components",
-                        "columns": 3
+                        "id": "ETAddComponentsBtnGr",
+                        "layout|flex": null,
+                        "localiserId": "addComponentsFS",
+                        "title": "Add components"
                     },
                     "designerId": "0fd488bd-c985-4cc0-a49d-8c239fafc602",
                     "customConfigs": [
@@ -507,10 +507,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addImageCBtn",
-                                "id": "ETAddImageBtn",
                                 "iconAlign": "top",
                                 "iconCls": "image_add_big",
+                                "id": "ETAddImageBtn",
+                                "localiserId": "addImageCBtn",
                                 "scale": "large",
                                 "text": "Image"
                             },
@@ -531,10 +531,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addSimpleTextCBtn",
-                                "id": "ETAddSimpleTextBtn",
                                 "iconAlign": "top",
                                 "iconCls": "text_big",
+                                "id": "ETAddSimpleTextBtn",
+                                "localiserId": "addSimpleTextCBtn",
                                 "scale": "large",
                                 "text": "Simple text"
                             },
@@ -555,10 +555,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addRichTextCBtn",
-                                "id": "ETAddTextBtn",
                                 "iconAlign": "top",
                                 "iconCls": "text_big",
+                                "id": "ETAddTextBtn",
+                                "localiserId": "addRichTextCBtn",
                                 "scale": "large",
                                 "text": "Rich text"
                             },
@@ -581,14 +581,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "clipboardGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "id": "ETppBG",
                         "headerPosition": "bottom",
-                        "title": "Presse-papiers",
-                        "columns": 4
+                        "id": "ETppBG",
+                        "layout|flex": null,
+                        "localiserId": "clipboardGroup",
+                        "title": "Presse-papiers"
                     },
                     "designerId": "3c37dd9e-4b0c-4576-b15f-9090984974bb",
                     "customConfigs": [
@@ -608,14 +608,14 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.emails",
-                                "localiserId": "duplicateBtn",
-                                "id": "duplicateETBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
+                                "id": "duplicateETBtn",
+                                "localiserId": "duplicateBtn",
                                 "scale": "large",
-                                "text": "Dupliquer"
+                                "text": "Dupliquer",
+                                "width": null
                             },
                             "designerId": "080474d7-fd4d-46de-87de-9f59ed3cf3c3",
                             "customConfigs": [
@@ -639,11 +639,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "shotcutBtn",
-                                "itemId": "boutonCreerRaccourci",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
+                                "itemId": "boutonCreerRaccourci",
+                                "localiserId": "shotcutBtn",
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
@@ -667,14 +667,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.emails",
-                        "localiserId": "saveGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "id": "ETSaverBG",
                         "headerPosition": "bottom",
-                        "title": "Sauvegarde",
-                        "columns": 4
+                        "id": "ETSaverBG",
+                        "layout|flex": null,
+                        "localiserId": "saveGroup",
+                        "title": "Sauvegarde"
                     },
                     "designerId": "fbc33fb2-6b9e-47ba-8c42-8390c798f295",
                     "customConfigs": [
@@ -698,12 +698,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "saveBtn",
-                                "id": "saveETBtn",
-                                "itemId": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
+                                "id": "saveETBtn",
+                                "itemId": null,
+                                "localiserId": "saveBtn",
                                 "scale": "large",
                                 "text": "Enregistrer"
                             },
@@ -750,13 +750,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "exploutFS",
-                        "layout|flex": null,
+                        "columns": 2,
                         "disabled": true,
-                        "id": "ETEploit",
                         "headerPosition": "bottom",
-                        "title": "Exploit",
-                        "columns": 2
+                        "id": "ETEploit",
+                        "layout|flex": null,
+                        "localiserId": "exploutFS",
+                        "title": "Exploit"
                     },
                     "designerId": "2bd4771d-1541-4e6d-8a91-c7c5cc1bd254",
                     "customConfigs": [
@@ -775,10 +775,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "sendEmailBtn",
-                                "id": "ETSendBtn",
                                 "iconAlign": "top",
                                 "iconCls": "sendMail_big",
+                                "id": "ETSendBtn",
+                                "localiserId": "sendEmailBtn",
                                 "scale": "large",
                                 "text": "Send"
                             },
@@ -849,12 +849,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "id": "mainETGrid",
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "EmailTemplates"
+                "id": "mainETGrid",
+                "layout|flex": null,
+                "store": "EmailTemplates",
+                "title": "",
+                "width": 200
             },
             "designerId": "10df4ecb-1606-4cfd-955a-6de3da9ddea4",
             "cn": [
@@ -875,8 +875,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameCol",
                         "dataIndex": "text",
+                        "localiserId": "nameCol",
                         "text": "Name"
                     },
                     "designerId": "3cd68489-92f1-4c92-8868-99ff1fa98499",
@@ -905,10 +905,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name:this.formatName}"
-                                ],
-                                "designer|displayName": "groupHeaderTpl"
+                                ]
                             },
                             "designerId": "de4dd1c6-7899-436b-ad70-e700fdbe57b8",
                             "cn": [
@@ -920,10 +920,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "formatName",
                                         "designer|params": [
                                             "name"
                                         ],
+                                        "fn": "formatName",
                                         "implHandler": [
                                             "if (name) {\r",
                                             "    return (Rubedo.RubedoAutomatedElementsLoc.modelText);\r",
@@ -948,8 +948,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "activeTab": 0
+                "activeTab": 0,
+                "layout|flex": 1
             },
             "designerId": "f1d88e1e-1718-41b2-8ef9-755c1e3855c0",
             "cn": [
@@ -961,10 +961,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "editTab",
                         "container|align": "stretch",
                         "frame": true,
                         "layout": "hbox",
+                        "localiserId": "editTab",
                         "title": "Edit"
                     },
                     "designerId": "cb39bffc-ae71-4859-986c-947faffaa74c",
@@ -993,12 +993,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
+                                "autoScroll": true,
                                 "container|align": "center",
                                 "id": "mainETContainer",
-                                "padding": 10,
-                                "autoScroll": true,
-                                "layout": "vbox"
+                                "layout": "vbox",
+                                "layout|flex": 1,
+                                "padding": 10
                             },
                             "designerId": "534a4840-2bf9-418b-9a99-595efc2b6ae0",
                             "cn": [
@@ -1010,14 +1010,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "container|align": "stretch",
                                         "height": null,
                                         "id": "mainETHolder",
-                                        "minHeight": 200,
-                                        "width": 804,
                                         "layout": "vbox",
-                                        "title": ""
+                                        "layout|flex": null,
+                                        "minHeight": 200,
+                                        "title": "",
+                                        "width": 804
                                     },
                                     "designerId": "65edd206-7ddc-4c62-aed3-8732dc526bca",
                                     "cn": [
@@ -1029,10 +1029,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processMainETHolder",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processMainETHolder",
                                                 "implHandler": [
                                                     "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
                                                     "return config;"
@@ -1052,26 +1052,26 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propsPanel",
+                                "autoScroll": true,
+                                "collapseDirection": "right",
+                                "collapsed": false,
+                                "collapsible": true,
+                                "container|align": "stretch",
+                                "dock": null,
+                                "frame": true,
+                                "iconCls": "parametres",
+                                "id": "eTPropsPan",
+                                "layout": "vbox",
                                 "layout|flex": null,
                                 "layout|margins": "0, 0, 0, 2",
-                                "dock": null,
-                                "container|align": "stretch",
-                                "frame": true,
-                                "id": "eTPropsPan",
+                                "localiserId": "propsPanel",
                                 "margin": null,
-                                "width": 260,
-                                "autoScroll": true,
                                 "resizable": [
                                     "true"
                                 ],
                                 "resizeHandles": "w",
-                                "layout": "vbox",
-                                "collapseDirection": "right",
-                                "collapsed": false,
-                                "collapsible": true,
-                                "iconCls": "parametres",
-                                "title": "Propriétés"
+                                "title": "Propriétés",
+                                "width": 260
                             },
                             "designerId": "c69eca4e-55c4-49b3-b5cd-66496a860f8d",
                             "customConfigs": [
@@ -1090,8 +1090,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "id": "elementETIdField",
-                                        "fieldLabel": "Label"
+                                        "fieldLabel": "Label",
+                                        "id": "elementETIdField"
                                     },
                                     "designerId": "1957b3a7-e992-4e35-97e5-f0bb5251f625"
                                 },
@@ -1103,14 +1103,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "selectElementPanel",
-                                        "layout|flex": 1,
-                                        "height": null,
-                                        "id": "eTEditControl",
-                                        "margin": null,
                                         "autoScroll": true,
                                         "bodyPadding": 10,
+                                        "height": null,
                                         "iconCls": null,
+                                        "id": "eTEditControl",
+                                        "layout|flex": 1,
+                                        "localiserId": "selectElementPanel",
+                                        "margin": null,
                                         "title": "Sélectionnez un élément"
                                     },
                                     "designerId": "e4227d64-4e67-4d28-b9a3-47f6c70bc755",
@@ -1149,10 +1149,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processEdit",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processEdit",
                                 "implHandler": [
                                     "config.title=Rubedo.RubedoInterfaceLoc.editTab.text;\r",
                                     "return config;"
@@ -1170,10 +1170,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "propertiesTab",
-                        "id": "mainEmailForm",
                         "autoScroll": true,
                         "bodyPadding": 10,
+                        "id": "mainEmailForm",
+                        "localiserId": "propertiesTab",
                         "title": "Properties"
                     },
                     "designerId": "e2a46fc3-014e-40ab-bedb-ea532fe3014f",
@@ -1202,12 +1202,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Name",
-                                "name": "text",
                                 "allowBlank": false,
-                                "allowOnlyWhitespace": false
+                                "allowOnlyWhitespace": false,
+                                "fieldLabel": "Name",
+                                "layout|anchor": "100%",
+                                "localiserId": "nameField",
+                                "name": "text"
                             },
                             "designerId": "1853ebfa-7164-46b6-976d-4e4bf00c1af2",
                             "customConfigs": [
@@ -1226,12 +1226,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "subjectField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Subject",
-                                "name": "subject",
                                 "allowBlank": false,
-                                "allowOnlyWhitespace": false
+                                "allowOnlyWhitespace": false,
+                                "fieldLabel": "Subject",
+                                "layout|anchor": "100%",
+                                "localiserId": "subjectField",
+                                "name": "subject"
                             },
                             "designerId": "b98ec01e-4761-4fde-a4b1-39d5e6535daa",
                             "customConfigs": [
@@ -1250,12 +1250,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "plainTextField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "Plain text",
-                                "name": "plainText",
                                 "grow": true,
                                 "growMin": 100,
+                                "layout|anchor": "100%",
+                                "localiserId": "plainTextField",
+                                "name": "plainText",
                                 "rows": 10
                             },
                             "designerId": "901e44e3-52ca-4618-b688-a6f08622b794",
@@ -1275,10 +1275,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processMainEmailForm",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processMainEmailForm",
                                 "implHandler": [
                                     "config.title=Rubedo.RubedoInterfaceLoc.propertiesTab.title;\r",
                                     "return config;"
@@ -1296,9 +1296,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "previewTab",
                         "id": "ETPreviewPanel",
                         "layout": "fit",
+                        "localiserId": "previewTab",
                         "title": "Preview"
                     },
                     "designerId": "7c42b40f-f97a-4cff-99d6-e868f0db666c",
@@ -1327,10 +1327,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processETPreviewPanel",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processETPreviewPanel",
                                 "implHandler": [
                                     "config.title=Rubedo.RubedoInterfaceLoc.previewTab.title;\r",
                                     "return config;"

@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "allowedCT": null,
-        "queryMode": true,
-        "geoQueryMode": false,
         "damQueryMode": false,
-        "designer|userClassName": "FacetOverriderField",
         "designer|userAlias": "FacetOverriderField",
+        "designer|userClassName": "FacetOverriderField",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
     },
     "configAlternates": {
         "geoQueryMode": "boolean",

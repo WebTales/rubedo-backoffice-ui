@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "experimentalModel",
-        "designer|userAlias": "experimentalModel"
+        "designer|userAlias": "experimentalModel",
+        "designer|userClassName": "experimentalModel"
     },
     "designerId": "eec686d6-21b7-4457-81a0-65094f60b05b",
     "cn": [
@@ -32,11 +32,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(v);"
                         ]

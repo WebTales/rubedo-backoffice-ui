@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Users",
         "autoLoad": false,
         "autoSync": true,
+        "designer|userAlias": "UsersComboStore",
+        "designer|userClassName": "UsersComboStore",
+        "isOptimised": true,
         "model": "userDataModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "UsersComboStore",
-        "designer|userClassName": "UsersComboStore",
-        "designer|userAlias": "UsersComboStore",
-        "pageSize": 1000
+        "usedCollection": "Users"
     },
     "configAlternates": {
         "isOptimised": "boolean"

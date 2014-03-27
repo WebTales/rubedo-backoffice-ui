@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "querySimWindow",
-        "height": 407,
-        "width": 355,
-        "designer|userClassName": "QuerySimWindow",
         "designer|userAlias": "QuerySimWindow",
+        "designer|userClassName": "QuerySimWindow",
+        "height": 407,
         "layout": "fit",
+        "localiserId": "querySimWindow",
+        "modal": true,
         "title": "Query result simulation",
-        "modal": true
+        "width": 355
     },
     "designerId": "3aa42f08-1a2e-4bc6-8283-af9b6fd638a2",
     "customConfigs": [
@@ -32,9 +32,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "",
                 "forceFit": true,
-                "store": "QuerySim"
+                "store": "QuerySim",
+                "title": ""
             },
             "designerId": "f416ffa8-5956-42ee-9d18-860a16fc9c7e",
             "cn": [
@@ -55,8 +55,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "titleCol",
                         "dataIndex": "text",
+                        "localiserId": "titleCol",
                         "text": "Title"
                     },
                     "designerId": "3b6353e0-a927-4442-8ed1-01e7fe1e82a6",
@@ -76,10 +76,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "width": 360,
                         "displayInfo": true,
-                        "store": "QuerySim"
+                        "dock": "bottom",
+                        "store": "QuerySim",
+                        "width": 360
                     },
                     "designerId": "97d2e6cb-67da-49d2-98f8-b5e600ec2f66"
                 }

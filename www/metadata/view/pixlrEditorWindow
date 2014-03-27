@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "pixlrEditorWindow",
+        "designer|userAlias": "pixlrEditorWindow",
+        "designer|userClassName": "pixlrEditorWindow",
         "height": 250,
         "id": "pixlrEditorWindow",
-        "width": 400,
-        "designer|userClassName": "pixlrEditorWindow",
-        "designer|userAlias": "pixlrEditorWindow",
-        "resizable": false,
         "layout": "fit",
-        "title": "Image editor",
+        "localiserId": "pixlrEditorWindow",
         "maximized": true,
-        "modal": true
+        "modal": true,
+        "resizable": false,
+        "title": "Image editor",
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"

@@ -6,6 +6,31 @@
     },
     "codeClass": null,
     "userConfig": {
+        "controllers": [
+            "ContributionContenusController",
+            "MasqueController",
+            "TypesContenusController",
+            "TaxonomieController",
+            "assistantRequetageController",
+            "InterfaceController",
+            "UsersController",
+            "MainStoresController",
+            "ACLController",
+            "SearchController",
+            "SitesController",
+            "PagesController",
+            "MediaTypesController",
+            "DAMController",
+            "WorkspacesController",
+            "LocalisationController",
+            "ImportController",
+            "MailingListsController",
+            "CustomThemesController",
+            "AppExtensionController",
+            "UserTypesController",
+            "EmailController",
+            "ShippersController"
+        ],
         "models": [
             "sitesDataModel",
             "panierDataModel",
@@ -50,6 +75,7 @@
             "pmConfig",
             "order"
         ],
+        "name": "Rubedo",
         "stores": [
             "SitesJson",
             "BlocsDataStore",
@@ -374,34 +400,7 @@
             "stockRemoverWindow",
             "paymentMeansInterface",
             "ordersInterface"
-        ],
-        "autoCreateViewport": true,
-        "controllers": [
-            "ContributionContenusController",
-            "MasqueController",
-            "TypesContenusController",
-            "TaxonomieController",
-            "assistantRequetageController",
-            "InterfaceController",
-            "UsersController",
-            "MainStoresController",
-            "ACLController",
-            "SearchController",
-            "SitesController",
-            "PagesController",
-            "MediaTypesController",
-            "DAMController",
-            "WorkspacesController",
-            "LocalisationController",
-            "ImportController",
-            "MailingListsController",
-            "CustomThemesController",
-            "AppExtensionController",
-            "UserTypesController",
-            "EmailController",
-            "ShippersController"
-        ],
-        "name": "Rubedo"
+        ]
     },
     "designerId": "application",
     "cn": [

@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "optionsGrid",
+        "autoScroll": true,
+        "designer|userAlias": "optionsLCGrid",
+        "designer|userClassName": "optionsLCGrid",
         "height": 250,
         "id": "optionsLCGrid",
+        "localiserId": "optionsGrid",
         "margin": "20 0 0 0",
-        "width": null,
-        "designer|userClassName": "optionsLCGrid",
-        "designer|userAlias": "optionsLCGrid",
-        "autoScroll": true,
+        "store": null,
         "title": "Options",
-        "store": null
+        "width": null
     },
     "designerId": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
     "customConfigs": [
@@ -43,10 +43,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "valueCol",
                 "dataIndex": "valeur",
-                "text": "Valeur",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "valueCol",
+                "text": "Valeur"
             },
             "designerId": "ee5447c9-3ff1-4cdc-8f11-2f8f5780c6ed",
             "customConfigs": [
@@ -79,10 +79,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "nameCol",
                 "dataIndex": "nom",
-                "text": "Nom",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "nameCol",
+                "text": "Nom"
             },
             "designerId": "8ff67939-dca1-4c6b-927e-08c5eae18848",
             "customConfigs": [
@@ -136,9 +136,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
                         "iconCls": "add",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "text": "Ajouter"
                     },
                     "designerId": "bd89e8b0-020a-42d9-b70e-a59f08c37658",
@@ -177,9 +177,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "iconCls": "close",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "text": "Supprimer"
                     },
                     "designerId": "77dd6c12-3fe7-479d-8e78-3277797aa3fb",

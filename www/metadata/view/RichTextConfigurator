@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "rteConfigWindow",
-        "height": 360,
-        "width": 667,
-        "designer|userClassName": "RichTextConfigurator",
-        "designer|userAlias": "RichTextConfigurator",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "RichTextConfigurator",
+        "designer|userClassName": "RichTextConfigurator",
+        "height": 360,
         "layout": "fit",
+        "localiserId": "rteConfigWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Editeur de texte riche",
-        "modal": true
+        "width": 667
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -83,10 +83,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "validateBtn",
-                        "layout|flex": null,
-                        "id": "richTextConfiguratorSubmit",
                         "iconCls": "ouiSpetit",
+                        "id": "richTextConfiguratorSubmit",
+                        "layout|flex": null,
+                        "localiserId": "validateBtn",
                         "text": "Valider"
                     },
                     "designerId": "18446c70-8fc1-4857-8a93-bc08190ba353",

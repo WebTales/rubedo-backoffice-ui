@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
+        "bodyPadding": 10,
+        "designer|userAlias": "accessibilityPicker",
+        "designer|userClassName": "accessibilityPicker",
         "height": 250,
         "id": "accessibilityPicker",
-        "width": 400,
-        "designer|userClassName": "accessibilityPicker",
-        "designer|userAlias": "accessibilityPicker",
-        "bodyPadding": 10,
-        "title": ""
+        "title": "",
+        "width": 400
     },
     "designerId": "035b8ace-5d4c-4fbd-be9b-35ee907849d9",
     "cn": [
@@ -45,9 +45,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "hcmodeActivateBtn",
-                        "layout|anchor": "100%",
                         "id": "highContrastButton",
+                        "layout|anchor": "100%",
+                        "localiserId": "hcmodeActivateBtn",
                         "text": "Activer"
                     },
                     "designerId": "e1f91b5b-7cc6-4167-92a0-9149123ffb5f",

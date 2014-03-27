@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "addGroupWindow",
-        "height": 100,
-        "width": 300,
-        "designer|userClassName": "GroupAddWindow",
-        "designer|userAlias": "GroupAddWindow",
-        "resizable": false,
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "GroupAddWindow",
+        "designer|userClassName": "GroupAddWindow",
+        "height": 100,
         "iconCls": "user",
+        "layout": "fit",
+        "localiserId": "addGroupWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Ajouter un groupe",
-        "modal": true
+        "width": 300
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -51,11 +51,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom ",
                         "labelWidth": 40,
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField"
                     },
                     "designerId": "16474902-981d-47c0-a8d7-1dd28bd38a31",
                     "customConfigs": [
@@ -74,9 +74,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createGroupAsAsonBtn",
-                        "layout|anchor": "100%",
                         "id": "groupCreateButton",
+                        "layout|anchor": "100%",
+                        "localiserId": "createGroupAsAsonBtn",
                         "text": "Créer en tant que fils du groupe séléctionné"
                     },
                     "designerId": "013996d8-68c5-452d-b7dd-97453c108600",

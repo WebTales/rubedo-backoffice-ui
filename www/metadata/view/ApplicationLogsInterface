@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "appLogsWindow",
-        "height": 418,
-        "id": "ApplicationLogsInterface",
-        "width": 944,
-        "designer|userClassName": "ApplicationLogsInterface",
+        "constrainHeader": true,
         "designer|userAlias": "ApplicationLogsInterface",
+        "designer|userClassName": "ApplicationLogsInterface",
+        "height": 418,
+        "iconCls": "process-icon",
+        "id": "ApplicationLogsInterface",
+        "layout": "fit",
+        "localiserId": "appLogsWindow",
         "requires": [
             "Ext.ux.RowExpander"
         ],
-        "layout": "fit",
-        "constrainHeader": true,
-        "iconCls": "process-icon",
-        "title": "Application logs"
+        "title": "Application logs",
+        "width": 944
     },
     "designerId": "0abc5443-8a75-4800-9e61-80668e12ed10",
     "customConfigs": [
@@ -58,10 +58,10 @@
             "codeClass": null,
             "userConfig": {
                 "autoScroll": null,
-                "title": "",
                 "disableSelection": true,
                 "forceFit": false,
-                "store": "ApplicationLogs"
+                "store": "ApplicationLogs",
+                "title": ""
             },
             "designerId": "c207b4e4-3034-4543-9aa5-ee31bbd994f9",
             "cn": [
@@ -85,10 +85,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "messageCol",
                         "dataIndex": "message",
-                        "text": "Message",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "messageCol",
+                        "text": "Message"
                     },
                     "designerId": "a67757bc-d7ed-45fd-928f-1d7e396e4ccb",
                     "customConfigs": [
@@ -107,10 +107,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeCol",
                         "dataIndex": "type",
-                        "text": "Type",
-                        "flex": 0.4
+                        "flex": 0.4,
+                        "localiserId": "typeCol",
+                        "text": "Type"
                     },
                     "designerId": "1d592219-f775-43c2-b6d7-585606b77e9c",
                     "customConfigs": [
@@ -129,10 +129,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "DateCol",
-                        "width": 200,
                         "dataIndex": "datetime",
-                        "text": "Date"
+                        "localiserId": "DateCol",
+                        "text": "Date",
+                        "width": 200
                     },
                     "designerId": "4ba372ea-cb0d-44f5-9f20-0e90fc04bd90",
                     "customConfigs": [
@@ -151,10 +151,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "levelCol",
-                        "width": 140,
                         "dataIndex": "level_name",
-                        "text": "Level"
+                        "localiserId": "levelCol",
+                        "text": "Level",
+                        "width": 140
                     },
                     "designerId": "e49d8651-effb-4f9a-803a-168cdff5516c",
                     "customConfigs": [
@@ -173,10 +173,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processMyGridPanel6",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processMyGridPanel6",
                         "implHandler": [
                             "config.plugins=[{\r",
                             "    ptype: 'rowexpander',\r",
@@ -233,10 +233,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "width": 360,
                 "displayInfo": true,
-                "store": "ApplicationLogs"
+                "dock": "bottom",
+                "store": "ApplicationLogs",
+                "width": 360
             },
             "designerId": "791fcb00-6b5f-4d30-9fad-6e81e143ad47"
         },
@@ -260,13 +260,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "operator": "$gte",
+                        "fieldLabel": "Show logs between",
+                        "id": "testerDate1",
+                        "labelWidth": 110,
                         "layout|flex": null,
                         "localiserId": "logsInfDateField",
-                        "id": "testerDate1",
-                        "fieldLabel": "Show logs between",
-                        "labelWidth": 110,
-                        "name": "datetime"
+                        "name": "datetime",
+                        "operator": "$gte"
                     },
                     "designerId": "af970184-a7de-4589-8ec6-a157170deb3d",
                     "customConfigs": [
@@ -290,12 +290,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "operator": "$lte",
-                        "layout|flex": null,
-                        "localiserId": "logsSupDateField",
                         "fieldLabel": "and",
                         "labelWidth": 30,
-                        "name": "datetime"
+                        "layout|flex": null,
+                        "localiserId": "logsSupDateField",
+                        "name": "datetime",
+                        "operator": "$lte"
                     },
                     "designerId": "344dc887-e4fa-4415-8cee-1c5e6b3bdc85",
                     "customConfigs": [
@@ -319,19 +319,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "operator": "$gte",
+                        "editable": false,
+                        "fieldLabel": "of minimal level",
+                        "forceSelection": true,
+                        "labelWidth": 80,
                         "layout|flex": null,
                         "localiserId": "logsMinLevelField",
-                        "fieldLabel": "of minimal level",
-                        "labelWidth": 80,
                         "name": "level",
-                        "value": [
-                            "100"
-                        ],
-                        "editable": false,
-                        "forceSelection": true,
+                        "operator": "$gte",
                         "store": [
                             "[[100,\"DEBUG\"],[200,\"INFO\"],[250,\"NOTICE\"],[300,\"WARNING\"],[400,\"ERROR\"],[500,\"CRITICAL\"],[550,\"ALERT\"],[600,\"EMERGENCY\"]]"
+                        ],
+                        "value": [
+                            "100"
                         ]
                     },
                     "configAlternates": {
@@ -359,9 +359,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "refresh",
                         "layout|flex": null,
                         "localiserId": "logsRefreshBtn",
-                        "iconCls": "refresh",
                         "text": "Refresh"
                     },
                     "designerId": "f9e5f1f8-6a44-470a-a3cc-a00428695a6f",
@@ -381,11 +381,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "var filtersArray=[ ];\r",
                                     "Ext.Array.forEach(button.up().query(\"field\"),function(field){\r",
@@ -413,9 +413,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "close",
                         "layout|flex": null,
                         "localiserId": "logsClearFilterBtn",
-                        "iconCls": "close",
                         "text": "Clear filters"
                     },
                     "designerId": "bc7adfd1-648a-40e3-8be8-a4d90fe980bc",
@@ -435,11 +435,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().getComponent(0).setValue(null);\r",
                                     "button.up().getComponent(1).setValue(null);\r",

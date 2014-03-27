@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "CTECommerceFieldset",
+        "designer|userClassName": "CTECommerceFieldset",
         "height": null,
         "id": "CTECommerceFieldset",
-        "width": null,
-        "designer|userClassName": "CTECommerceFieldset",
-        "designer|userAlias": "CTECommerceFieldset",
-        "title": "E-Commerce"
+        "title": "E-Commerce",
+        "width": null
     },
     "designerId": "3a4fb208-402f-47e2-8fce-def7fbf0f205",
     "cn": [
@@ -23,11 +23,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "100%",
-                "fieldLabel": "Manage stock",
-                "name": "manageStock",
                 "boxLabel": "",
+                "fieldLabel": "Manage stock",
                 "inputValue": "true",
+                "layout|anchor": "100%",
+                "name": "manageStock",
                 "uncheckedValue": "false"
             },
             "designerId": "a53f0afd-fcba-4e6e-a826-55e19ecb3453",
@@ -111,12 +111,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Can order out of stock",
-                        "labelWidth": 140,
-                        "name": "canOrderNotInStock",
                         "boxLabel": "",
+                        "fieldLabel": "Can order out of stock",
                         "inputValue": "true",
+                        "labelWidth": 140,
+                        "layout|anchor": "100%",
+                        "name": "canOrderNotInStock",
                         "uncheckedValue": "false"
                     },
                     "designerId": "191148a9-2347-4295-a555-9e391c400d80"
@@ -129,12 +129,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Out of stock limit",
                         "labelWidth": 140,
-                        "name": "outOfStockLimit",
-                        "allowBlank": false,
-                        "minValue": 0
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "outOfStockLimit"
                     },
                     "designerId": "4292d395-50be-4475-b4a6-2cf1a89b5d91"
                 },
@@ -146,12 +146,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Notify for stock below",
                         "labelWidth": 140,
-                        "name": "notifyForQuantityBelow",
-                        "allowBlank": false,
-                        "minValue": 0
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "notifyForQuantityBelow"
                     },
                     "designerId": "9ebca697-4db2-4277-a393-2a820eda6942"
                 },
@@ -163,12 +163,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Resupply delay (days)",
                         "labelWidth": 140,
-                        "name": "resupplyDelay",
-                        "allowBlank": false,
-                        "minValue": 0
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "resupplyDelay"
                     },
                     "designerId": "d6c5f209-2df3-4d7f-96fb-472441b22b3a"
                 }
@@ -182,12 +182,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "100%",
+                "allowBlank": false,
                 "fieldLabel": "Preparation delay (days)",
                 "labelWidth": 140,
-                "name": "preparationDelay",
-                "allowBlank": false,
-                "minValue": 0
+                "layout|anchor": "100%",
+                "minValue": 0,
+                "name": "preparationDelay"
             },
             "designerId": "0c580316-8c6c-4361-854c-d60ed76b3d17"
         }

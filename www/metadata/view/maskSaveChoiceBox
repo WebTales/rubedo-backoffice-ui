@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "maskSaveChoiceWindow",
         "container|align": "stretch",
-        "height": 144,
-        "width": 400,
-        "designer|userClassName": "maskSaveChoiceBox",
         "designer|userAlias": "maskSaveChoiceBox",
-        "resizable": false,
+        "designer|userClassName": "maskSaveChoiceBox",
+        "height": 144,
         "layout": "vbox",
+        "localiserId": "maskSaveChoiceWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Ce masque est utilisé par des pages",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -37,8 +37,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "maskSaveChoice1Btn",
                 "layout|flex": 1,
+                "localiserId": "maskSaveChoice1Btn",
                 "text": "Enregistrer et répercuter les modifications sur toutes les pages"
             },
             "designerId": "923a29c9-2c40-4c54-abce-85e7d89bd651",
@@ -58,8 +58,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "maskSaveChoice2Btn",
                 "layout|flex": 1,
+                "localiserId": "maskSaveChoice2Btn",
                 "text": "Enregistrer sous un nouveau masque"
             },
             "designerId": "88b32124-cffd-46ff-b835-aa2becfafa8d",

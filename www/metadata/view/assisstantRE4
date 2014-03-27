@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "etape": "3",
-        "localiserId": "qbs3",
-        "id": "assisstantRE4",
-        "designer|userClassName": "assisstantRE4",
-        "designer|userAlias": "assisstantRE4",
         "autoScroll": true,
         "bodyPadding": 10,
+        "designer|userAlias": "assisstantRE4",
+        "designer|userClassName": "assisstantRE4",
+        "etape": "3",
+        "id": "assisstantRE4",
+        "localiserId": "qbs3",
         "title": "Choix des critères sur les champs"
     },
     "designerId": "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7",
@@ -37,20 +37,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "qbs3ruleadder",
-                "layout|anchor": "90%",
+                "displayField": "nom",
+                "editable": false,
+                "fieldLabel": "Ajouter une régle sur ",
+                "forceSelection": true,
                 "id": "createurReglesChampsAR",
+                "labelWidth": 140,
+                "layout|anchor": "90%",
+                "localiserId": "qbs3ruleadder",
+                "queryMode": "local",
+                "store": "champsTCARStore",
                 "style": [
                     "{float: left}"
                 ],
-                "fieldLabel": "Ajouter une régle sur ",
-                "labelWidth": 140,
                 "submitValue": false,
-                "editable": false,
-                "displayField": "nom",
-                "forceSelection": true,
-                "queryMode": "local",
-                "store": "champsTCARStore",
                 "valueField": "valeur"
             },
             "designerId": "ba90af8e-da88-412f-90da-dc228f2d83ac",
@@ -70,12 +70,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "qbs3auxbtn",
+                "iconCls": "add",
                 "id": "boutonCreateurReglesChampsAR",
+                "localiserId": "qbs3auxbtn",
                 "style": [
                     "{float:right}"
                 ],
-                "iconCls": "add",
                 "text": ""
             },
             "designerId": "5ec6f01a-429c-44ec-9785-36bae678bc63",

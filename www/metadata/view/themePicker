@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "themePicker",
-        "designer|userClassName": "themePicker",
-        "designer|userAlias": "themePicker",
-        "layout": "anchor",
         "bodyPadding": 20,
+        "designer|userAlias": "themePicker",
+        "designer|userClassName": "themePicker",
+        "id": "themePicker",
+        "layout": "anchor",
         "title": ""
     },
     "designerId": "34b8ae49-5eb1-4af4-9543-71bc700c8a7a",
@@ -23,11 +23,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "100%",
                 "height": null,
+                "layout|anchor": "100%",
                 "maxHeight": null,
-                "width": null,
-                "src": null
+                "src": null,
+                "width": null
             },
             "designerId": "d060ac99-d127-41a7-b3f5-32332b3c0fa7"
         },
@@ -39,9 +39,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "themePickerBtn",
-                "layout|anchor": "100%",
                 "id": "themePickerButton",
+                "layout|anchor": "100%",
+                "localiserId": "themePickerBtn",
                 "margin": "10 0 0 0",
                 "text": "Appliquer ce thème"
             },

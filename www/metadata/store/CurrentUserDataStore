@@ -8,10 +8,10 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "model": "userDataModel",
-        "storeId": "CurrentUserDataStore",
+        "designer|userAlias": "CurrentUserDataStore",
         "designer|userClassName": "CurrentUserDataStore",
-        "designer|userAlias": "CurrentUserDataStore"
+        "model": "userDataModel",
+        "storeId": "CurrentUserDataStore"
     },
     "designerId": "1c783102-7726-4aa1-bd76-fa5d05fa2046",
     "cn": [
@@ -91,9 +91,9 @@
                     "    Ext.getCmp(\"workingLanguageField\").setValue(myLanguage);\r",
                     "}"
                 ],
-                "single": true,
                 "name": "load",
-                "scope": "me"
+                "scope": "me",
+                "single": true
             },
             "designerId": "8e993bdd-5ab4-4019-bbf4-5651cddd4509"
         },

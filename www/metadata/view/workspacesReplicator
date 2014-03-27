@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": null,
-        "designer|userClassName": "workspacesReplicator",
-        "designer|userAlias": "workspacesReplicator",
         "bodyPadding": 10,
+        "designer|userAlias": "workspacesReplicator",
+        "designer|userClassName": "workspacesReplicator",
+        "id": null,
         "title": ""
     },
     "designerId": "966303e3-8916-4e51-aa9f-00cee06be4fa",
@@ -22,11 +22,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "nameField",
-                "layout|anchor": "100%",
+                "allowBlank": false,
                 "fieldLabel": "Nom",
-                "name": "text",
-                "allowBlank": false
+                "layout|anchor": "100%",
+                "localiserId": "nameField",
+                "name": "text"
             },
             "designerId": "e59209bc-8690-4007-b64e-4f4a194ae5fe",
             "customConfigs": [

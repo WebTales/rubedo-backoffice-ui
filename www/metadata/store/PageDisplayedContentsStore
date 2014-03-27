@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "contents",
         "autoLoad": false,
         "autoSync": null,
+        "designer|userAlias": "PageDisplayedContentsStore",
+        "designer|userClassName": "PageDisplayedContentsStore",
+        "isOptimised": true,
         "model": "contenusDataModel",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
+        "sortOnFilter": false,
         "storeId": "PageDisplayedContentsStore",
-        "designer|userClassName": "PageDisplayedContentsStore",
-        "designer|userAlias": "PageDisplayedContentsStore",
-        "pageSize": 50,
-        "sortOnFilter": false
+        "usedCollection": "contents"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -44,12 +44,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "    read: 'pages/get-content-list'\r",
                     "}"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "7817fdaa-de87-422c-b6f0-5924dd6d5baa",

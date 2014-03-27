@@ -8,13 +8,13 @@
     "userConfig": {
         "anchor": "90%",
         "container|align": "stretch",
+        "designer|userAlias": "ImageFieldComponentSmall",
+        "designer|userClassName": "ImageFieldComponentSmall",
         "height": 82,
         "itemId": null,
+        "layout": "hbox",
         "margin": "0 0 10 0",
-        "width": 193,
-        "designer|userClassName": "ImageFieldComponentSmall",
-        "designer|userAlias": "ImageFieldComponentSmall",
-        "layout": "hbox"
+        "width": 193
     },
     "designerId": "5805b692-a733-4f52-a6c7-89b56fb6edbe",
     "customConfigs": [
@@ -34,8 +34,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "width": 60,
-                "text": "My Label :"
+                "text": "My Label :",
+                "width": 60
             },
             "designerId": "ca478cff-c265-4afb-8870-dbb2e62e5878"
         },
@@ -50,9 +50,9 @@
                 "designer|snapToGrid": 10,
                 "height": 91,
                 "itemId": "buttonHolder",
+                "layout": "absolute",
                 "margin": "0 0 0 5",
-                "width": 29,
-                "layout": "absolute"
+                "width": 29
             },
             "designerId": "5cebfb62-0946-4cd7-9fce-931791a9eba1",
             "cn": [
@@ -64,11 +64,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "imagePickerChangeBtn",
+                        "iconCls": "edit",
+                        "itemId": "fieldChangeImage",
                         "layout|x": 0,
                         "layout|y": 0,
-                        "itemId": "fieldChangeImage",
-                        "iconCls": "edit",
+                        "localiserId": "imagePickerChangeBtn",
                         "text": "",
                         "tooltip": "Choisir un média"
                     },
@@ -92,11 +92,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "imagePickerClearBtn",
+                        "iconCls": "close",
+                        "itemId": "fieldClearImage",
                         "layout|x": 0,
                         "layout|y": 30,
-                        "itemId": "fieldClearImage",
-                        "iconCls": "close",
+                        "localiserId": "imagePickerClearBtn",
                         "text": "",
                         "tooltip": "Désélectionner"
                     },
@@ -120,10 +120,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "help",
+                        "itemId": "infoBtn",
                         "layout|x": 0,
                         "layout|y": 60,
-                        "itemId": "infoBtn",
-                        "iconCls": "help",
                         "text": ""
                     },
                     "designerId": "10664e84-1a82-4096-817e-9dd9351a7630"
@@ -141,9 +141,9 @@
                 "height": 52,
                 "itemId": "fieldImagePreview",
                 "minWidth": null,
+                "src": null,
                 "style": null,
-                "width": null,
-                "src": null
+                "width": null
             },
             "configAlternates": {
                 "style": "string"

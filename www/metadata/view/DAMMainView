@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": null,
-        "designer|userClassName": "DAMMainView",
         "designer|userAlias": "DAMMainView",
+        "designer|userClassName": "DAMMainView",
+        "forceFit": true,
+        "id": null,
         "requires": [
             "Ext.ux.container.SwitchButtonSegment"
         ],
-        "title": "",
-        "forceFit": true,
-        "store": "DAMStore"
+        "store": "DAMStore",
+        "title": ""
     },
     "configAlternates": {
         "managesStore": "boolean"
@@ -41,9 +41,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "originalFileId",
                 "localiserId": "mainFileDamCol",
                 "sortable": false,
-                "dataIndex": "originalFileId",
                 "text": "Main file"
             },
             "designerId": "07377b2f-7887-4080-a074-f131185f8c76",
@@ -63,7 +63,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -73,6 +72,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "var link=\"dam/get-thumbnail?id=\"+record.get(\"id\")+\"&version=\"+record.get(\"version\");\r",
                             "return ('<img src=\\\"'+link+'\\\" height=\\\"100\\\" width=\\\"100\\\">');"
@@ -90,10 +90,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "localiserId": "titleColumn",
                 "align": null,
                 "dataIndex": "text",
+                "filter": true,
+                "localiserId": "titleColumn",
                 "text": "Titre"
             },
             "configAlternates": {
@@ -121,7 +121,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -131,6 +130,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if (record.get(\"readOnly\")){\r",
                             "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
@@ -151,8 +151,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "sizeDamCol",
                 "dataIndex": "fileSize",
+                "localiserId": "sizeDamCol",
                 "text": "Size"
             },
             "designerId": "21694824-385c-4e75-80e3-bea6ac241642",
@@ -172,7 +172,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -182,6 +181,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "return(Ext.util.Format.fileSize(record.get(\"fileSize\")));"
                         ]
@@ -198,11 +198,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "i18n",
+                "flex": null,
                 "localiserId": "languageCoumn",
                 "sortable": false,
-                "dataIndex": "i18n",
-                "text": "Languages",
-                "flex": null
+                "text": "Languages"
             },
             "designerId": "d57fa78d-3b6c-4fa9-b32f-d6b6710ab503",
             "customConfigs": [
@@ -221,7 +221,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -231,6 +230,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if (Ext.getCmp(\"DAMInterface\").currentViewMode==\"search\"){\r",
                             "    var availableLanguages=record.get(\"availableLanguages\");\r",
@@ -291,8 +291,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "authorColumn",
                 "dataIndex": "author",
+                "localiserId": "authorColumn",
                 "text": "Auteur"
             },
             "designerId": "a977c6e5-7685-4496-bb47-141c7708ba45",
@@ -312,10 +312,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "createDateColumn",
                 "dataIndex": "lastUpdateTime",
-                "text": "Date de création",
-                "format": "d-m-Y"
+                "format": "d-m-Y",
+                "localiserId": "createDateColumn",
+                "text": "Date de création"
             },
             "designerId": "020e5c52-64e1-4ab8-bb41-d0dadc1d826f",
             "customConfigs": [
@@ -334,10 +334,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processDAMMainView",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processDAMMainView",
                 "implHandler": [
                     "config.multiSelect= true;\r",
                     "config.viewConfig= {\r",

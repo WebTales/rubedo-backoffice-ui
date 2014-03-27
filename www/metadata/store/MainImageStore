@@ -8,11 +8,11 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "model": "imageDataModel",
-        "storeId": "MainImageStore",
-        "designer|userClassName": "MainImageStore",
         "designer|userAlias": "MainImageStore",
-        "pageSize": 1000
+        "designer|userClassName": "MainImageStore",
+        "model": "imageDataModel",
+        "pageSize": 1000,
+        "storeId": "MainImageStore"
     },
     "configAlternates": {
         "isOptimised": "boolean"

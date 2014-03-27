@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "wallpaperPicker",
-        "designer|userClassName": "wallpaperPicker",
-        "designer|userAlias": "wallpaperPicker",
-        "layout": "anchor",
         "bodyPadding": 20,
+        "designer|userAlias": "wallpaperPicker",
+        "designer|userClassName": "wallpaperPicker",
+        "id": "wallpaperPicker",
+        "layout": "anchor",
         "title": ""
     },
     "designerId": "b1d4214e-b893-4a6c-89f4-d297c8733b26",
@@ -23,11 +23,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|anchor": "100%",
                 "height": null,
+                "layout|anchor": "100%",
                 "maxHeight": null,
-                "width": null,
-                "src": null
+                "src": null,
+                "width": null
             },
             "designerId": "4d5a2a5b-81af-44fa-88e1-db3003e118ae"
         },
@@ -39,9 +39,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "wallpapaerPickerBtn",
-                "layout|anchor": "100%",
                 "id": "wallpaperPickerButton",
+                "layout|anchor": "100%",
+                "localiserId": "wallpapaerPickerBtn",
                 "margin": "10 0 0 0",
                 "text": "Choisir en tant que nouveau fond d'écran"
             },

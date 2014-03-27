@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "settingsContextMenu",
+        "designer|userClassName": "settingsContextMenu",
         "frame": true,
         "id": "settingsContextMenu",
-        "width": null,
-        "designer|userClassName": "settingsContextMenu",
-        "designer|userAlias": "settingsContextMenu"
+        "width": null
     },
     "designerId": "89155b60-bd6b-4ba6-98c9-19a5443ffa2c",
     "cn": [
@@ -22,8 +22,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "iconsBtn",
                 "iconCls": null,
+                "localiserId": "iconsBtn",
                 "text": "Icônes"
             },
             "designerId": "3037325b-d9db-4d02-a1d7-6b9d7f3e8fbb",
@@ -44,8 +44,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "frame": true,
-                        "width": null,
-                        "showSeparator": false
+                        "showSeparator": false,
+                        "width": null
                     },
                     "designerId": "6f008f16-0b19-4a66-89bf-4424300c5192",
                     "cn": [
@@ -57,8 +57,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "showAllIconsBtn",
                                 "id": "itemShowAllIcons",
+                                "localiserId": "showAllIconsBtn",
                                 "text": "Afficher"
                             },
                             "designerId": "2fd4c93b-d85b-4b68-8248-557d94261408",
@@ -78,8 +78,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "hideAllIconsBtn",
                                 "id": "itemHideAllIcons",
+                                "localiserId": "hideAllIconsBtn",
                                 "text": "Cacher"
                             },
                             "designerId": "9f205ea4-a6e3-426a-a0ce-ba4b67a2e643",
@@ -99,8 +99,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "rearangeAllIconsBtn",
                                 "id": "itemRearangeAllIcons",
+                                "localiserId": "rearangeAllIconsBtn",
                                 "text": "Réorganiser automatiquement"
                             },
                             "designerId": "3039faa7-7daa-4659-bee7-4c5f72a303f8",
@@ -133,9 +133,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "CustomizeBtn",
-                "id": "itemCustomizeDesktop",
                 "iconCls": "personalize",
+                "id": "itemCustomizeDesktop",
+                "localiserId": "CustomizeBtn",
                 "text": "Personnaliser"
             },
             "designerId": "b6bd5a9b-06dc-4c69-abce-482679780311",

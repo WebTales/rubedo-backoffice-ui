@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Pages",
         "autoLoad": false,
         "autoSync": true,
+        "designer|userAlias": "PagesDataStore",
+        "designer|userClassName": "PagesDataStore",
+        "isOptimised": true,
         "model": "pageDataModel",
         "storeId": "PagesDataStore",
-        "designer|userClassName": "PagesDataStore",
-        "designer|userAlias": "PagesDataStore"
+        "usedCollection": "Pages"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'pages/create',\r",
@@ -48,7 +47,8 @@
                     "                    update: 'pages/update',\r",
                     "                    destroy: 'pages/delete'\r",
                     "                }"
-                ]
+                ],
+                "batchActions": false
             },
             "designerId": "37a9c970-4cbf-4899-908c-cf71e5d92987",
             "cn": [
@@ -72,10 +72,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
                                 ],
+                                "fn": "getResponseData",
                                 "implHandler": [
                                     "var data, error;\r",
                                     "\r",

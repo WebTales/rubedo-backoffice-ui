@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MyGridPanel16",
         "designer|userAlias": "mygridpanel16",
-        "title": "",
-        "store": "UsersAdminDataStore"
+        "designer|userClassName": "MyGridPanel16",
+        "store": "UsersAdminDataStore",
+        "title": ""
     },
     "configAlternates": {
         "managesStore": "boolean"
@@ -42,11 +42,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "localiserId": "nameColumn",
                 "dataIndex": "name",
-                "text": "Nom",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "localiserId": "nameColumn",
+                "text": "Nom"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -73,11 +73,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "title",
-                "text": "Civilité",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Civilité"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -99,11 +99,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "organisation",
-                "text": "Organisation",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Organisation"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -125,11 +125,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "service",
-                "text": "Service",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Service"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -151,11 +151,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "post",
-                "text": "Fonction",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Fonction"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -177,11 +177,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "email",
-                "text": "E-mail",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "E-mail"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -203,11 +203,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "telephone",
-                "text": "Téléphone",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Téléphone"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -229,11 +229,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "mobile",
-                "text": "Mobile",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Mobile"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -255,11 +255,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "coordinates",
-                "text": "Coordonnées",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Coordonnées"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -281,11 +281,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "language",
-                "text": "Langue",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Langue"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -307,11 +307,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "country",
-                "text": "Pays",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Pays"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -333,11 +333,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "createTime",
-                "text": "Création",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Création"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -359,11 +359,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "filter": true,
-                "hidden": true,
                 "dataIndex": "lastUpdateTime",
-                "text": "Mise à jour",
-                "flex": 1
+                "filter": true,
+                "flex": 1,
+                "hidden": true,
+                "text": "Mise à jour"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -385,10 +385,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processMyGridPanel16",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processMyGridPanel16",
                 "implHandler": [
                     "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];\r",
                     "return config;"

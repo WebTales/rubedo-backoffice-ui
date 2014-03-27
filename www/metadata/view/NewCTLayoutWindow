@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newLayoutWindow",
-        "height": null,
-        "width": 400,
-        "designer|userClassName": "NewCTLayoutWindow",
-        "designer|userAlias": "NewCTLayoutWindow",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "NewCTLayoutWindow",
+        "designer|userClassName": "NewCTLayoutWindow",
+        "height": null,
         "layout": "fit",
+        "localiserId": "newLayoutWindow",
+        "modal": true,
+        "resizable": false,
         "title": "New layout",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,11 +50,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom",
-                        "name": "name",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "name"
                     },
                     "designerId": "3081547e-faa4-4a62-8318-53bb433d7576",
                     "customConfigs": [
@@ -73,8 +73,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "fieldLabel": "Type",
+                        "layout|anchor": "100%",
                         "name": "type",
                         "value": [
                             "\"Detail\""
@@ -93,14 +93,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nmSiteField",
-                        "layout|anchor": "100%",
-                        "id": "nouveauMasqueSite1",
-                        "fieldLabel": "Site ",
-                        "name": "site",
                         "allowBlank": false,
                         "editable": false,
+                        "fieldLabel": "Site ",
                         "forceSelection": true,
+                        "id": "nouveauMasqueSite1",
+                        "layout|anchor": "100%",
+                        "localiserId": "nmSiteField",
+                        "name": "site",
                         "queryMode": "local",
                         "store": "SitesComboCTLayouts",
                         "valueField": "id"
@@ -148,9 +148,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewLayoutBtn",
-                        "layout|anchor": "100%",
                         "id": "NewCTLayoutWindowSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "createNewLayoutBtn",
                         "scale": "medium",
                         "text": "Create new layout"
                     },

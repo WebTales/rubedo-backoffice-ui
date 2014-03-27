@@ -7,10 +7,6 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "model": "MTFieldModel",
-        "storeId": "MTFieldsStore",
-        "designer|userClassName": "MTFieldsStore",
-        "designer|userAlias": "MTFieldsStore",
         "data": [
             "[\r",
             "\t\t{\r",
@@ -984,7 +980,11 @@
             "\t\t\t\"id\":\"50f520b3c0e051f504000002\"\r",
             "\t\t}\r",
             "\t]"
-        ]
+        ],
+        "designer|userAlias": "MTFieldsStore",
+        "designer|userClassName": "MTFieldsStore",
+        "model": "MTFieldModel",
+        "storeId": "MTFieldsStore"
     },
     "designerId": "6141ab25-f5c9-4413-a10a-f0e2e781e9f7"
 }

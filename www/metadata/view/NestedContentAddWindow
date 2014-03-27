@@ -6,20 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 500,
-        "id": "NestedContentAddWindow",
-        "width": 900,
-        "designer|userClassName": "NestedContentAddWindow",
+        "constrainHeader": true,
         "designer|userAlias": "NestedContentAddWindow",
+        "designer|userClassName": "NestedContentAddWindow",
+        "height": 500,
+        "iconCls": "documentDep",
+        "id": "NestedContentAddWindow",
+        "layout": "fit",
+        "maximizable": true,
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
-        "constrainHeader": true,
-        "iconCls": "documentDep",
         "title": "Nouveau Contenu Imbriqué",
-        "maximizable": true,
-        "modal": true
+        "width": 900
     },
     "designerId": "6d75bb67-dfe5-4ac4-9a37-d3852edcd53c",
     "cn": [
@@ -55,11 +55,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "save",
+                        "id": "nestedContentRecordBtn",
                         "isUpdate": false,
                         "layout|flex": null,
                         "layout|margins": null,
-                        "id": "nestedContentRecordBtn",
-                        "iconCls": "save",
                         "text": "Enregistrer"
                     },
                     "configAlternates": {
@@ -84,10 +84,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "height": 101,
-                "id": "nestedContentsFieldBox",
                 "autoScroll": true,
                 "bodyPadding": 10,
+                "height": 101,
+                "id": "nestedContentsFieldBox",
                 "title": ""
             },
             "designerId": "b1dbf2f3-cbdd-4601-ac89-4f82627a7120",
@@ -100,8 +100,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "padding": 10,
-                        "layout": "anchor"
+                        "layout": "anchor",
+                        "padding": 10
                     },
                     "designerId": "f849470d-bac7-40d0-99c6-1003a109c5e8",
                     "cn": [
@@ -113,13 +113,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Titre ",
                                 "layout|anchor": "90%",
+                                "name": "text",
                                 "style": [
                                     "{float:left}"
-                                ],
-                                "fieldLabel": "Titre ",
-                                "name": "text",
-                                "allowBlank": false
+                                ]
                             },
                             "designerId": "aa34c731-a68c-4407-9fb5-4ace47e8fe8f"
                         },
@@ -131,17 +131,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "itemId": "helpBouton",
-                                "margin": null,
-                                "style": [
-                                    "{float:right;}"
-                                ],
                                 "allowDepress": null,
                                 "enableToggle": null,
                                 "handleMouseEvents": false,
                                 "iconCls": "help",
+                                "itemId": "helpBouton",
+                                "margin": null,
                                 "pressed": null,
                                 "pressedCls": "x-btn",
+                                "style": [
+                                    "{float:right;}"
+                                ],
                                 "text": "",
                                 "tooltip": [
                                     "'Titre du contenu. Obligatoire.'"
@@ -159,8 +159,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "padding": 10,
-                        "layout": "anchor"
+                        "layout": "anchor",
+                        "padding": 10
                     },
                     "designerId": "9167fdd6-7b9a-4b97-964a-55286fd269a2",
                     "cn": [
@@ -172,13 +172,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "90%",
-                                "style": [
-                                    "{float:left}"
-                                ],
                                 "fieldLabel": "Résumé",
                                 "labelSeparator": " ",
-                                "name": "summary"
+                                "layout|anchor": "90%",
+                                "name": "summary",
+                                "style": [
+                                    "{float:left}"
+                                ]
                             },
                             "designerId": "cff6bbba-dcd1-40f8-8a63-6baeb671c44c"
                         },
@@ -190,17 +190,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "itemId": "helpBouton",
-                                "margin": null,
-                                "style": [
-                                    "{float:right;}"
-                                ],
                                 "allowDepress": null,
                                 "enableToggle": null,
                                 "handleMouseEvents": false,
                                 "iconCls": "help",
+                                "itemId": "helpBouton",
+                                "margin": null,
                                 "pressed": null,
                                 "pressedCls": "x-btn",
+                                "style": [
+                                    "{float:right;}"
+                                ],
                                 "text": "",
                                 "tooltip": [
                                     "'Résumé facultatif du contenu.'"

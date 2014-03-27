@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newUserWindow",
-        "height": 173,
-        "width": 400,
-        "designer|userClassName": "newUserWindow",
         "designer|userAlias": "newUserWindow",
-        "resizable": false,
+        "designer|userClassName": "newUserWindow",
+        "height": 173,
         "layout": "fit",
+        "localiserId": "newUserWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Nouvel utilisateur",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -49,13 +49,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom ",
                         "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "name": "name",
-                        "readOnly": null,
-                        "allowBlank": false
+                        "readOnly": null
                     },
                     "designerId": "1d142858-20d9-4d03-9a8f-a5f588a73d61",
                     "customConfigs": [
@@ -74,12 +74,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "emailField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "E-mail ",
                         "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "localiserId": "emailField",
                         "name": "email",
-                        "allowBlank": false,
                         "vtype": "email"
                     },
                     "designerId": "b968575e-d7d2-4313-9cad-29e5a8369377",
@@ -99,13 +99,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "userAccountField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Compte utilisateur ",
                         "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "localiserId": "userAccountField",
                         "name": "login",
                         "value": null,
-                        "allowBlank": false,
                         "vtype": "alphanum"
                     },
                     "designerId": "94a2c827-3a2b-46cc-b7a2-229d5f9a52f2",
@@ -125,9 +125,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "validateBtn",
-                        "layout|anchor": "100%",
                         "id": "userCreateSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "validateBtn",
                         "scale": "large",
                         "text": "Valider"
                     },

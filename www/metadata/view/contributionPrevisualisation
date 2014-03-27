@@ -7,18 +7,18 @@
     "codeClass": null,
     "userConfig": {
         "ACL": "read.ui.pages",
-        "localiserId": "previewWindow",
-        "container|align": "stretch",
-        "height": 548,
-        "id": "contributionPrevisualisation",
-        "width": 1200,
-        "designer|userClassName": "contributionPrevisualisation",
-        "designer|userAlias": "contributionPrevisualisation",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "contributionPrevisualisation",
+        "designer|userClassName": "contributionPrevisualisation",
+        "height": 548,
         "iconCls": "personalize",
+        "id": "contributionPrevisualisation",
+        "layout": "hbox",
+        "localiserId": "previewWindow",
+        "maximized": true,
         "title": "Prévisualisation",
-        "maximized": true
+        "width": 1200
     },
     "designerId": "1791c159-0c2b-4db0-89ea-cf3f1eb008c8",
     "customConfigs": [
@@ -62,15 +62,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "previewPageTree",
-                "layout|flex": null,
-                "id": "previewPageTree",
-                "width": 225,
                 "collapseDirection": "left",
                 "collapsible": true,
-                "title": "Sélecteur de pages",
+                "id": "previewPageTree",
+                "layout|flex": null,
+                "localiserId": "previewPageTree",
                 "store": "PagesPreviewStore",
-                "useArrows": true
+                "title": "Sélecteur de pages",
+                "useArrows": true,
+                "width": 225
             },
             "designerId": "e8970f61-6672-4bea-83c1-2eb06de4184b",
             "customConfigs": [
@@ -110,14 +110,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "managesStore": true,
-                                "localiserId": "siteField",
-                                "layout|flex": 1,
-                                "id": "previewSitesCombo",
-                                "fieldLabel": "Site ",
-                                "labelWidth": 40,
                                 "editable": false,
+                                "fieldLabel": "Site ",
                                 "forceSelection": true,
+                                "id": "previewSitesCombo",
+                                "labelWidth": 40,
+                                "layout|flex": 1,
+                                "localiserId": "siteField",
+                                "managesStore": true,
                                 "queryMode": "local",
                                 "store": "SitesComboPreview",
                                 "valueField": "id"
@@ -160,9 +160,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "id": "contribPreviewMain",
-                "layout": "fit"
+                "layout": "fit",
+                "layout|flex": 1
             },
             "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7",
             "cn": [
@@ -186,11 +186,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "previewDeviceCombo",
-                                "layout|flex": null,
-                                "id": "previewDeviceCombo",
-                                "margin": "0 20 0 0",
                                 "arrowAlign": "bottom",
+                                "id": "previewDeviceCombo",
+                                "layout|flex": null,
+                                "localiserId": "previewDeviceCombo",
+                                "margin": "0 20 0 0",
                                 "menuAlign": "bl",
                                 "scale": "large",
                                 "showText": true
@@ -212,12 +212,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "frame": true,
-                                        "width": null,
                                         "closeAction": "hide",
+                                        "frame": true,
                                         "frameHeader": false,
                                         "plain": true,
-                                        "showSeparator": false
+                                        "showSeparator": false,
+                                        "width": null
                                     },
                                     "designerId": "59a585ed-56d7-4d9d-8434-3bfa539ad516",
                                     "cn": [
@@ -230,10 +230,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "desktop",
-                                                "localiserId": "desktopItem",
                                                 "height": null,
                                                 "icon": null,
                                                 "iconCls": "prevDesktop",
+                                                "localiserId": "desktopItem",
                                                 "plain": true,
                                                 "text": "Desktop"
                                             },
@@ -260,8 +260,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "iphone",
-                                                "localiserId": "phoneItem",
                                                 "iconCls": "prevIphone",
+                                                "localiserId": "phoneItem",
                                                 "plain": true,
                                                 "text": "Phone - portrait"
                                             },
@@ -288,8 +288,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "iphone-l",
-                                                "localiserId": "phoneLItem",
                                                 "iconCls": "prevIphoneL",
+                                                "localiserId": "phoneLItem",
                                                 "plain": true,
                                                 "text": "Phone - Landscape"
                                             },
@@ -316,8 +316,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "ipad",
-                                                "localiserId": "tabletItem",
                                                 "iconCls": "prevIpad",
+                                                "localiserId": "tabletItem",
                                                 "plain": true,
                                                 "text": "Tablet - Portrait"
                                             },
@@ -344,8 +344,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "deviceValue": "ipad-l",
-                                                "localiserId": "tabletLItem",
                                                 "iconCls": "prevIpadL",
+                                                "localiserId": "tabletLItem",
                                                 "plain": true,
                                                 "text": "Tablet - Landscape"
                                             },
@@ -406,14 +406,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "draftField",
-                                "layout|flex": null,
-                                "id": "advancedPreviewDraftField",
-                                "margin": "0 20 0 0",
-                                "fieldLabel": "Mode brouillon",
-                                "labelWidth": 90,
                                 "boxLabel": "",
-                                "inputValue": "true"
+                                "fieldLabel": "Mode brouillon",
+                                "id": "advancedPreviewDraftField",
+                                "inputValue": "true",
+                                "labelWidth": 90,
+                                "layout|flex": null,
+                                "localiserId": "draftField",
+                                "margin": "0 20 0 0"
                             },
                             "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9",
                             "customConfigs": [
@@ -432,11 +432,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "dateField",
-                                "layout|flex": null,
-                                "id": "advancedPreviewDateField",
                                 "fieldLabel": "Date",
-                                "labelWidth": 40
+                                "id": "advancedPreviewDateField",
+                                "labelWidth": 40,
+                                "layout|flex": null,
+                                "localiserId": "dateField"
                             },
                             "designerId": "75b91476-c46b-4ddb-a9aa-ef58f870a079",
                             "customConfigs": [
@@ -455,16 +455,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "displayField": "label",
+                                "editable": false,
+                                "fieldLabel": "Language",
+                                "forceSelection": true,
+                                "id": "previewLanguageCombo",
+                                "itemId": null,
+                                "labelWidth": 60,
                                 "layout|flex": null,
                                 "layout|margins": "0 0 0 20",
                                 "localiserId": "pagePreviewLanguageField",
-                                "id": "previewLanguageCombo",
-                                "itemId": null,
-                                "fieldLabel": "Language",
-                                "labelWidth": 60,
-                                "editable": false,
-                                "displayField": "label",
-                                "forceSelection": true,
                                 "queryMode": "local",
                                 "valueField": "locale"
                             },
@@ -485,10 +485,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processPreviewLanguageCombo",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processPreviewLanguageCombo",
                                         "implHandler": [
                                             "config.store=Ext.create('Ext.data.Store', {\r",
                                             "    fields:[{name:\"locale\"},{name:\"label\"},{name:\"flagCode\"}]\r",
@@ -556,10 +556,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "refreshBtn",
-                                "layout|flex": null,
-                                "id": "advancedPreviewPageRefresh",
                                 "iconCls": "refresh_big",
+                                "id": "advancedPreviewPageRefresh",
+                                "layout|flex": null,
+                                "localiserId": "refreshBtn",
                                 "scale": "large",
                                 "text": "Actualiser"
                             },

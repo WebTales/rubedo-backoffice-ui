@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 107,
-        "width": 300,
-        "designer|userClassName": "ImportationMasques",
         "designer|userAlias": "importationMasques",
-        "layout": "fit",
+        "designer|userClassName": "ImportationMasques",
+        "height": 107,
         "iconCls": "arrow_up",
+        "layout": "fit",
+        "modal": true,
         "title": "Importation de masque",
-        "modal": true
+        "width": 300
     },
     "designerId": "a1a636e5-f718-4d0b-b731-4fe502bcaef8",
     "cn": [
@@ -38,9 +38,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "buttonText": "Choisir",
                         "fieldLabel": "",
-                        "buttonText": "Choisir"
+                        "layout|anchor": "100%"
                     },
                     "designerId": "a71f5d51-3a11-4f28-aeb3-b984d1dadbe8"
                 },

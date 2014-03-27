@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Languages",
         "autoLoad": true,
         "autoSync": true,
-        "model": "languageModel",
-        "storeId": "MainLanguagesStore",
-        "designer|userClassName": "MainLanguagesStore",
-        "designer|userAlias": "MainLanguagesStore",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "MainLanguagesStore",
+        "designer|userClassName": "MainLanguagesStore",
+        "isOptimised": true,
+        "model": "languageModel",
+        "pageSize": 1000,
+        "storeId": "MainLanguagesStore",
+        "usedCollection": "Languages"
     },
     "configAlternates": {
         "isOptimised": "boolean"

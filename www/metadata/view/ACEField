@@ -7,12 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "allowedCT": null,
-        "queryMode": true,
-        "geoQueryMode": false,
-        "designer|userClassName": "ACEField",
         "designer|userAlias": "ACEField",
+        "designer|userClassName": "ACEField",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
     },
     "configAlternates": {
         "geoQueryMode": "boolean",

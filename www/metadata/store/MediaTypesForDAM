@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "MediaTypes",
         "autoLoad": false,
-        "model": "mediaTypeModel",
-        "storeId": "MediaTypesForDAM",
-        "designer|userClassName": "MediaTypesForDAM",
-        "designer|userAlias": "MediaTypesForDAM",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "MediaTypesForDAM",
+        "designer|userClassName": "MediaTypesForDAM",
+        "isOptimised": true,
+        "model": "mediaTypeModel",
+        "pageSize": 1000,
+        "storeId": "MediaTypesForDAM",
+        "usedCollection": "MediaTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

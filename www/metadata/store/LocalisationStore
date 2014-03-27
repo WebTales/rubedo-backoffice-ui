@@ -8,12 +8,12 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "model": "LocalisationModel",
-        "storeId": "LocalisationStore",
-        "designer|userClassName": "LocalisationStore",
-        "designer|userAlias": "LocalisationStore",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "LocalisationStore",
+        "designer|userClassName": "LocalisationStore",
+        "model": "LocalisationModel",
+        "pageSize": 1000,
+        "storeId": "LocalisationStore"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -29,7 +29,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'localisation/create',\r",
@@ -38,6 +37,7 @@
                     "                    destroy: 'localisation/delete'\r",
                     "                }"
                 ],
+                "batchActions": false,
                 "extraParams": null,
                 "url": null
             },
@@ -64,8 +64,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "e9df9fa5-913c-453c-a5de-31ed56b12a1f"

@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "picUploadWindow",
-        "height": 102,
-        "width": 400,
-        "designer|userClassName": "PersoPicUploadWindow",
-        "designer|userAlias": "PersoPicUploadWindow",
-        "resizable": false,
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "PersoPicUploadWindow",
+        "designer|userClassName": "PersoPicUploadWindow",
+        "height": 102,
+        "layout": "fit",
+        "localiserId": "picUploadWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Uploader une image",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,12 +50,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "fileField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Fichier",
-                        "name": "file",
                         "allowBlank": false,
-                        "buttonText": "Choisir"
+                        "buttonText": "Choisir",
+                        "fieldLabel": "Fichier",
+                        "layout|anchor": "100%",
+                        "localiserId": "fileField",
+                        "name": "file"
                     },
                     "designerId": "0f959430-92e3-44e3-8daa-a6d7482cd6bc",
                     "customConfigs": [
@@ -74,10 +74,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "validateBtn",
-                        "layout|anchor": "50%",
-                        "margin": "0 10 0 0",
                         "iconCls": "ouiSpetit",
+                        "layout|anchor": "50%",
+                        "localiserId": "validateBtn",
+                        "margin": "0 10 0 0",
                         "text": "Valider"
                     },
                     "designerId": "e4815338-5bf9-4689-920f-3f77b7398342",
@@ -97,11 +97,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().setLoading(true);\r",
                                     "var me=this;\r",
@@ -152,10 +152,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "cancelBtn",
-                        "layout|anchor": "50%",
-                        "margin": "0 0 0 10",
                         "iconCls": "close",
+                        "layout|anchor": "50%",
+                        "localiserId": "cancelBtn",
+                        "margin": "0 0 0 10",
                         "text": "Annuler"
                     },
                     "designerId": "ed8e315a-aecc-4836-962b-28905dd043d5",
@@ -175,11 +175,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().up().close();"
                                 ]

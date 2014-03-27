@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "clientIdProperty": null,
-        "idProperty": null,
+        "designer|userAlias": "groupDataModel",
         "designer|userClassName": "groupDataModel",
-        "designer|userAlias": "groupDataModel"
+        "idProperty": null
     },
     "designerId": "9b9da84e-8515-4ff4-99f3-69b81dc01a02",
     "cn": [
@@ -183,11 +183,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(false);"
                         ]

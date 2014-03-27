@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "workspaceField",
-        "designer|userClassName": "WorkspaceCombo",
         "designer|userAlias": "WorkspaceCombo",
-        "fieldLabel": "Espace de travail",
-        "name": "workspace",
+        "designer|userClassName": "WorkspaceCombo",
         "editable": false,
+        "fieldLabel": "Espace de travail",
         "forceSelection": true,
+        "localiserId": "workspaceField",
+        "name": "workspace",
         "queryMode": "local",
         "store": "WorkspacesComboStore",
         "valueField": "id"
@@ -58,10 +58,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "setReadOnly",
                 "designer|params": [
                     "readOnly"
                 ],
+                "fn": "setReadOnly",
                 "implHandler": [
                     "var me = this,\r",
                     "    old = me.readOnly;\r",

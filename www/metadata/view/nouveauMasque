@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newMaskWindow",
-        "height": null,
-        "id": "nouveauMasqueFenetre",
-        "width": 400,
-        "designer|userClassName": "nouveauMasque",
         "designer|userAlias": "nouveauMasque",
+        "designer|userClassName": "nouveauMasque",
+        "height": null,
+        "iconCls": "add",
+        "id": "nouveauMasqueFenetre",
+        "layout": "fit",
+        "localiserId": "newMaskWindow",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
-        "iconCls": "add",
         "title": "Nouveau Masque",
-        "modal": true
+        "width": 400
     },
     "designerId": "a5749eef-eecb-4978-b0d5-e075d6b5418b",
     "customConfigs": [
@@ -50,15 +50,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "titleField",
-                        "layout|anchor": "100%",
-                        "id": "nouveauMasqueTitre",
+                        "allowBlank": false,
                         "fieldLabel": "Titre ",
+                        "id": "nouveauMasqueTitre",
+                        "layout|anchor": "100%",
+                        "localiserId": "titleField",
                         "value": [
                             "Nouveau Masque",
                             ""
-                        ],
-                        "allowBlank": false
+                        ]
                     },
                     "designerId": "b7c4838b-5432-4b27-bcca-f3576b08f298",
                     "customConfigs": [
@@ -77,13 +77,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nmSiteField",
-                        "layout|anchor": "100%",
-                        "id": "nouveauMasqueSite",
-                        "fieldLabel": "Site ",
                         "allowBlank": false,
                         "editable": false,
+                        "fieldLabel": "Site ",
                         "forceSelection": true,
+                        "id": "nouveauMasqueSite",
+                        "layout|anchor": "100%",
+                        "localiserId": "nmSiteField",
                         "queryMode": "local",
                         "store": "SitesComboMasks",
                         "valueField": "id"
@@ -131,11 +131,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewMaskBtn",
-                        "layout|anchor": "1",
                         "id": "creerNouveauMasque",
-                        "width": null,
-                        "text": "Créer un nouveau masque"
+                        "layout|anchor": "1",
+                        "localiserId": "createNewMaskBtn",
+                        "text": "Créer un nouveau masque",
+                        "width": null
                     },
                     "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a",
                     "customConfigs": [

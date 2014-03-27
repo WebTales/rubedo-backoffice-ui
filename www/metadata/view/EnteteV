@@ -7,11 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "container|padding": null,
+        "designer|userAlias": "entete",
+        "designer|userClassName": "EnteteV",
         "height": 46,
         "id": "entete",
-        "padding": null,
-        "designer|userClassName": "EnteteV",
-        "designer|userAlias": "entete"
+        "padding": null
     },
     "designerId": "399ef6a6-ce2b-45ce-b060-182cbb6d47e5",
     "cn": [
@@ -23,10 +23,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "disabled": true,
-                "id": "boutonPincipalInterface",
                 "icon": "resources/images/logoRubedo.png",
+                "id": "boutonPincipalInterface",
+                "layout|flex": null,
                 "scale": "large",
                 "text": null
             },
@@ -53,9 +53,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "id": "desktopHomeBtn",
                 "iconCls": "desktopHome_med",
+                "id": "desktopHomeBtn",
+                "layout|flex": null,
                 "scale": "medium",
                 "text": "",
                 "tooltip": "Afficher le bureau"
@@ -86,11 +86,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "border": 0,
+                "enableOverflow": true,
                 "height": 30,
                 "id": "taskbarPrincipal",
-                "enableOverflow": true
+                "layout|flex": 1
             },
             "designerId": "1cf8c639-afdd-492d-a6f2-9805dc2e51c1"
         },
@@ -102,9 +102,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
+                "fieldLabel": "Label",
                 "id": "workingLanguageField",
-                "fieldLabel": "Label"
+                "layout|flex": null
             },
             "designerId": "3c538603-7948-49b8-86d9-24fce78d8036"
         },
@@ -116,9 +116,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
-                "id": "workingLanguageBtn",
                 "iconCls": "infoWarning",
+                "id": "workingLanguageBtn",
+                "layout|flex": null,
                 "text": "",
                 "tooltip": "No working language selected",
                 "tooltipType": "title"
@@ -216,10 +216,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
+                "iconCls": "search",
                 "id": "ESSearchButton",
                 "itemId": null,
-                "iconCls": "search",
+                "layout|flex": null,
                 "text": null
             },
             "designerId": "c36bf3eb-a1b1-4c33-9d98-6c61d12c1f1f"

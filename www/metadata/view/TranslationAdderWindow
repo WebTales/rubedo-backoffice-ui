@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "translationAdderWindow",
-        "height": 111,
-        "id": "TranslationAdderWindow",
-        "width": 400,
-        "designer|userClassName": "TranslationAdderWindow",
-        "designer|userAlias": "TranslationAdderWindow",
         "constrain": true,
-        "resizable": false,
-        "layout": "fit",
+        "designer|userAlias": "TranslationAdderWindow",
+        "designer|userClassName": "TranslationAdderWindow",
+        "height": 111,
         "iconCls": "world_small",
+        "id": "TranslationAdderWindow",
+        "layout": "fit",
+        "localiserId": "translationAdderWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Add new translation",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -52,15 +52,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "TALanguageField",
-                        "layout|anchor": "100%",
-                        "id": "TranslationAdderWindowSelector",
-                        "fieldLabel": "Language",
-                        "name": "language",
                         "allowBlank": false,
-                        "editable": false,
                         "displayField": "label",
+                        "editable": false,
+                        "fieldLabel": "Language",
                         "forceSelection": true,
+                        "id": "TranslationAdderWindowSelector",
+                        "layout|anchor": "100%",
+                        "localiserId": "TALanguageField",
+                        "name": "language",
                         "queryMode": "local",
                         "store": "TranslationAdderStore",
                         "valueField": "locale"
@@ -82,9 +82,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "translateInThisLanguageBtn",
-                        "layout|anchor": "100%",
                         "id": "TranslationAdderWindowSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "translateInThisLanguageBtn",
                         "scale": "medium",
                         "text": "Translate in this language"
                     },

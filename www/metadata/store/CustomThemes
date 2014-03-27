@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "CustomThemes",
         "autoLoad": false,
         "autoSync": true,
-        "model": "customTheme",
-        "storeId": "CustomThemes",
-        "designer|userClassName": "CustomThemes",
         "designer|userAlias": "CustomThemes",
-        "pageSize": 1000
+        "designer|userClassName": "CustomThemes",
+        "isOptimised": true,
+        "model": "customTheme",
+        "pageSize": 1000,
+        "storeId": "CustomThemes",
+        "usedCollection": "CustomThemes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

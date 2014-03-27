@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Shippers",
         "autoLoad": false,
         "autoSync": true,
-        "model": "shipper",
-        "storeId": "Shippers",
-        "designer|userClassName": "Shippers",
-        "designer|userAlias": "Shippers",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "Shippers",
+        "designer|userClassName": "Shippers",
+        "isOptimised": true,
+        "model": "shipper",
+        "pageSize": 1000,
+        "storeId": "Shippers",
+        "usedCollection": "Shippers"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -81,8 +81,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "94abd7a8-fe2a-4c18-abd0-a40c6db59050"

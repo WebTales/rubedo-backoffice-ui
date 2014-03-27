@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "MainToolsContextMenu",
+        "designer|userClassName": "MainToolsContextMenu",
         "frame": true,
         "id": "MainToolsContextMenu",
-        "width": null,
-        "designer|userClassName": "MainToolsContextMenu",
-        "designer|userAlias": "MainToolsContextMenu"
+        "width": null
     },
     "designerId": "f5e1fe64-162b-493f-8422-36f38e8a8230",
     "cn": [
@@ -22,9 +22,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "createDesktopShortcutMenuBtn",
-                "id": null,
                 "iconCls": "add",
+                "id": null,
+                "localiserId": "createDesktopShortcutMenuBtn",
                 "text": "Créer un raccourci sur le bureau"
             },
             "designerId": "90799c6c-f8f2-498e-932d-87b5bfc1d7c2",

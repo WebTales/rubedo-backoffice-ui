@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "queryWindow",
-        "height": 380,
-        "id": "queryManagerInterface",
-        "width": 341,
-        "designer|userClassName": "queryManagerInterface",
-        "designer|userAlias": "queryManagerInterface",
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "queryManagerInterface",
+        "designer|userClassName": "queryManagerInterface",
+        "height": 380,
         "iconCls": "database_search",
-        "title": "Requêtes"
+        "id": "queryManagerInterface",
+        "layout": "fit",
+        "localiserId": "queryWindow",
+        "title": "Requêtes",
+        "width": 341
     },
     "designerId": "dd56c178-5e05-4cfb-9003-9a5734ed7bb8",
     "customConfigs": [
@@ -48,11 +48,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.queries",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "queryMainAddBtn",
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "queryMainAddBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -79,12 +79,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.queries",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "queryMainRemoveBtn",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "queryMainRemoveBtn",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -110,12 +110,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "editBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "queryMainEditBtn",
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
+                        "id": "queryMainEditBtn",
+                        "layout|flex": null,
+                        "localiserId": "editBtn",
                         "scale": "large",
                         "text": "Editer"
                     },
@@ -160,11 +160,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "queryPlayBtn",
                         "iconAlign": "top",
                         "iconCls": "play_big",
+                        "id": "queryPlayBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": "Preview"
                     },
@@ -191,9 +191,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "queries",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -216,10 +216,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "mainQueriesGrid",
-                "title": "",
                 "forceFit": true,
-                "store": "MainQueriesStore"
+                "id": "mainQueriesGrid",
+                "store": "MainQueriesStore",
+                "title": ""
             },
             "configAlternates": {
                 "managesStore": "boolean"
@@ -243,8 +243,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
                         "dataIndex": "name",
+                        "localiserId": "nameColumn",
                         "text": "Nom"
                     },
                     "designerId": "21541e1d-5851-48a4-b480-43a653971c82",
@@ -264,7 +264,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -274,6 +273,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.get(\"readOnly\")) {\r",
                                     "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
@@ -295,8 +295,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "hidden": true,
                         "dataIndex": "averageDuration",
+                        "hidden": true,
                         "text": "Durée moyenne (s)"
                     },
                     "designerId": "d50fe20a-3edc-4e9f-a58e-5fae0fa83fc4"
@@ -309,8 +309,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "hidden": true,
                         "dataIndex": "count",
+                        "hidden": true,
                         "text": "Compteur"
                     },
                     "designerId": "7d0e5986-4652-42c8-b07f-05f9e2b35464"
@@ -323,8 +323,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "hidden": true,
                         "dataIndex": "usage",
+                        "hidden": true,
                         "text": "Usage"
                     },
                     "designerId": "cc9a1fce-7876-49aa-8695-85b1f9f14a8a"

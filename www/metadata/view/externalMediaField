@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": null,
-        "designer|userClassName": "externalMediaField",
         "designer|userAlias": "externalMediaField",
-        "fieldLabel": "Label"
+        "designer|userClassName": "externalMediaField",
+        "fieldLabel": "Label",
+        "height": null
     },
     "designerId": "d21b3beb-e3a1-4b72-88f6-c68b443690ab",
     "cn": [
@@ -69,10 +69,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "setValue",
                 "designer|params": [
                     "value"
                 ],
+                "fn": "setValue",
                 "implHandler": [
                     "var me=this;\r",
                     "me.value=value;\r",

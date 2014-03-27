@@ -7,10 +7,6 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "model": "typesChampsDataModel",
-        "storeId": "TypesChampsDataStore",
-        "designer|userClassName": "TypesChampsDataStore",
-        "designer|userAlias": "TypesChampsDataStore",
         "data": [
             "[\r",
             "    {\r",
@@ -1742,7 +1738,11 @@
             "        \"protoId\": \"\"\r",
             "    }\r",
             "]"
-        ]
+        ],
+        "designer|userAlias": "TypesChampsDataStore",
+        "designer|userClassName": "TypesChampsDataStore",
+        "model": "typesChampsDataModel",
+        "storeId": "TypesChampsDataStore"
     },
     "designerId": "cb2fc7b0-aa63-4f16-b7f4-12b636102cc6",
     "cn": [

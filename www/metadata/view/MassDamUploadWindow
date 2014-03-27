@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "damMassUploadWindow",
+        "bodyPadding": 2,
+        "constrain": true,
+        "designer|userAlias": "MassDamUploadWindow",
+        "designer|userClassName": "MassDamUploadWindow",
         "height": 343,
         "id": "MassDamUploadWindow",
-        "width": 466,
-        "designer|userClassName": "MassDamUploadWindow",
-        "designer|userAlias": "MassDamUploadWindow",
-        "constrain": true,
-        "resizable": false,
         "layout": "fit",
-        "bodyPadding": 2,
+        "localiserId": "damMassUploadWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Digital assets mass upload",
-        "modal": true
+        "width": 466
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -51,18 +51,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "uploadTab",
-                        "container|align": "center",
-                        "container|pack": "center",
-                        "border": 4,
-                        "id": "massDamUploadDropZone",
-                        "layout": "vbox",
                         "bodyBorder": true,
                         "bodyCls": [
                             "contrastRow",
                             "x-panel-body-default",
                             "x-box-layout-ct"
                         ],
+                        "border": 4,
+                        "container|align": "center",
+                        "container|pack": "center",
+                        "id": "massDamUploadDropZone",
+                        "layout": "vbox",
+                        "localiserId": "uploadTab",
                         "title": "Upload"
                     },
                     "designerId": "9d75fb9f-b6da-4d5a-ac84-c9f85fa46793",
@@ -99,11 +99,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "height": 128,
+                                "layout|flex": null,
+                                "src": "resources/icones/generic/image_add.png",
                                 "style": "{opacity:0.4;}",
-                                "width": 128,
-                                "src": "resources/icones/generic/image_add.png"
+                                "width": 128
                             },
                             "configAlternates": {
                                 "style": "string"
@@ -118,9 +118,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "dropFilesHereContainer",
                                 "height": 60,
                                 "html": "<h1 style=\"color:#999;\">Drop files here</h1>",
+                                "localiserId": "dropFilesHereContainer",
                                 "width": 179
                             },
                             "configAlternates": {
@@ -157,8 +157,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "uploadOptionsTab",
                         "bodyPadding": 10,
+                        "localiserId": "uploadOptionsTab",
                         "title": "Options"
                     },
                     "designerId": "e999b7a3-2904-489c-a8c6-a8b594a728ff",
@@ -190,14 +190,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "applyCurrentTaxoToUploadField",
-                                "layout|anchor": "100%",
-                                "id": "applyCurrentTaxoToUploadField",
-                                "fieldLabel": "Apply current taxonomy facets",
-                                "labelWidth": 180,
                                 "boxLabel": "",
                                 "checked": true,
+                                "fieldLabel": "Apply current taxonomy facets",
+                                "id": "applyCurrentTaxoToUploadField",
                                 "inputValue": "true",
+                                "labelWidth": 180,
+                                "layout|anchor": "100%",
+                                "localiserId": "applyCurrentTaxoToUploadField",
                                 "uncheckedValue": "false"
                             },
                             "designerId": "ba34f258-e0ff-4802-b4da-3a04f495867b",
@@ -237,12 +237,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "contributeWorkspaceField",
-                                        "id": "contributeWorkspaceMassUploadField",
                                         "fieldLabel": "Contribution",
+                                        "id": "contributeWorkspaceMassUploadField",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "contributeWorkspaceField",
                                         "name": "writeWorkspace",
-                                        "store": "ContributeWorkspacesCombo",
-                                        "layout|anchor": "100%"
+                                        "store": "ContributeWorkspacesCombo"
                                     },
                                     "designerId": "c0fc4e74-692d-4efe-8ad0-5866147c5ff4",
                                     "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -255,14 +255,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "diffusionWorkspaceField",
-                                        "id": "targetWorkspaceMassUploadField",
                                         "fieldLabel": "Diffusion",
-                                        "name": "target",
-                                        "submitValue": null,
+                                        "id": "targetWorkspaceMassUploadField",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "diffusionWorkspaceField",
                                         "multiSelect": true,
+                                        "name": "target",
                                         "store": "WorkspacesComboWithAll",
-                                        "layout|anchor": "100%"
+                                        "submitValue": null
                                     },
                                     "designerId": "e63623dd-071e-4e6b-807a-d024be5fcfa5",
                                     "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -441,8 +441,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "id": "damTypeTextItem",
+                        "layout|flex": null,
                         "text": "Media type :"
                     },
                     "designerId": "0f360d76-3a41-4200-924f-d3d14ecd6f69",
@@ -482,10 +482,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "uploadedItems": 0,
-                        "layout|flex": null,
                         "id": "filesUploadedTextItem",
-                        "text": "0 files uploaded"
+                        "layout|flex": null,
+                        "text": "0 files uploaded",
+                        "uploadedItems": 0
                     },
                     "configAlternates": {
                         "uploadedItems": "number"
@@ -507,10 +507,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processFilesUploadedTextItem",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processFilesUploadedTextItem",
                                 "implHandler": [
                                     "config.text=0+\" \"+Rubedo.RubedoAutomatedElementsLoc.filesUploadedText;\r",
                                     "return config;"
@@ -540,8 +540,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "doneUploadingBtn",
                         "layout|flex": null,
+                        "localiserId": "doneUploadingBtn",
                         "text": "Done uploading"
                     },
                     "designerId": "20d8b4a4-2214-4ad4-8fc0-38e6db3b428b",
@@ -561,11 +561,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().up().close();"
                                 ]

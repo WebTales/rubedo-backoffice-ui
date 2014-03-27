@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "contentPickerGrid",
+        "designer|userClassName": "contentPickerGrid",
         "id": "contentPickerGrid",
         "itemId": null,
-        "designer|userClassName": "contentPickerGrid",
-        "designer|userAlias": "contentPickerGrid",
-        "title": "",
-        "store": "ContentSelectorStore"
+        "store": "ContentSelectorStore",
+        "title": ""
     },
     "configAlternates": {
         "managesStore": "boolean"
@@ -35,10 +35,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "titleCol",
                 "dataIndex": "text",
-                "text": "Titre",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "titleCol",
+                "text": "Titre"
             },
             "configAlternates": {
                 "filter": "boolean"
@@ -60,7 +60,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -70,6 +69,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "var icDir=\"blue\";\r",
                             "if (typeof(MyPrefData)!=\"undefined\"){\r",
@@ -100,10 +100,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "typeCol",
                 "dataIndex": "typeId",
-                "text": "Type",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "typeCol",
+                "text": "Type"
             },
             "configAlternates": {
                 "filter": "object"
@@ -125,7 +125,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -135,6 +134,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if (Ext.isEmpty(Ext.getStore(\"TCNDepComboCS\").findRecord(\"id\",value))) {\r",
                             "    return(value);\r",
@@ -153,10 +153,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processType",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processType",
                         "implHandler": [
                             "config.filter={\r",
                             "    type:\"list\",\r",
@@ -178,10 +178,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "statusCol",
                 "dataIndex": "status",
-                "text": "Etat",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "statusCol",
+                "text": "Etat"
             },
             "configAlternates": {
                 "filter": "object"
@@ -203,7 +203,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -213,6 +212,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if (value==\"published\") {\r",
                             "    return(\"publié\");\r",
@@ -233,10 +233,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processEtat",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processEtat",
                         "implHandler": [
                             "config.filter={\r",
                             "    type:\"list\",\r",
@@ -262,12 +262,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "onlineCol",
-                "width": 60,
                 "dataIndex": "online",
-                "text": "En ligne",
                 "falseText": "Non",
-                "trueText": "Oui"
+                "localiserId": "onlineCol",
+                "text": "En ligne",
+                "trueText": "Oui",
+                "width": 60
             },
             "configAlternates": {
                 "filter": "object"
@@ -289,10 +289,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processEnligne",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processEnligne",
                         "implHandler": [
                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -318,17 +318,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "width": 360,
                 "displayInfo": true,
                 "displayMsg": null,
+                "dock": "bottom",
                 "emptyMsg": null,
                 "firstText": null,
                 "lastText": null,
                 "nextText": null,
                 "prevText": null,
                 "refreshText": null,
-                "store": "ContentSelectorStore"
+                "store": "ContentSelectorStore",
+                "width": 360
             },
             "designerId": "dd52bba2-d8d2-4f4a-af5e-dfc758ecaf49",
             "cn": [
@@ -352,11 +352,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseThisContentBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "contentPickerSelectBtn",
                         "iconCls": "ouiSpetit",
+                        "id": "contentPickerSelectBtn",
+                        "layout|flex": null,
+                        "localiserId": "chooseThisContentBtn",
                         "text": "<b>Choisir ce contenu</b>"
                     },
                     "designerId": "0362fb29-8b32-4261-9691-979ceac0a7b2",
@@ -376,11 +376,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "var chosenOne = button.up().up().getSelectionModel().getLastSelected();\r",
                                     "Ext.getCmp(button.up().up().up().targetId).setValue(chosenOne.get(\"id\"));\r",
@@ -441,10 +441,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processContentPickerGrid",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processContentPickerGrid",
                 "implHandler": [
                     "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];\r",
                     "return config;"

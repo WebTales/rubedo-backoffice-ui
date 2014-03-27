@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "sitesRepLoc",
-        "designer|userAlias": "sitesRepLoc",
         "bodyPadding": 10,
+        "designer|userAlias": "sitesRepLoc",
+        "designer|userClassName": "sitesRepLoc",
         "title": ""
     },
     "designerId": "e228d799-f13d-4c58-8852-63ccae95bd0f",
@@ -21,8 +21,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "siteFieldSet",
                 "collapsible": true,
+                "localiserId": "siteFieldSet",
                 "title": "Site"
             },
             "designerId": "e5a76d14-2cc3-417d-afba-a4e32ae00a10",
@@ -42,10 +42,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "siteDefaultTitleField",
-                        "layout|anchor": "100%",
                         "fieldLabel": "Titre par défaut",
                         "labelWidth": 110,
+                        "layout|anchor": "100%",
+                        "localiserId": "siteDefaultTitleField",
                         "name": "title"
                     },
                     "designerId": "b8cae291-94d2-425c-bae3-d2e8b5bf84a6",
@@ -65,12 +65,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "defaultDescriptionField",
-                        "layout|anchor": "100%",
                         "fieldLabel": "Description par défaut",
                         "labelWidth": 110,
-                        "name": "description",
-                        "maxLength": 250
+                        "layout|anchor": "100%",
+                        "localiserId": "defaultDescriptionField",
+                        "maxLength": 250,
+                        "name": "description"
                     },
                     "designerId": "300bc45c-1779-4446-ad4b-d4dea20cee12",
                     "customConfigs": [
@@ -89,10 +89,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "defaultAuthorField",
-                        "layout|anchor": "100%",
                         "fieldLabel": "Auteur par défaut",
                         "labelWidth": 110,
+                        "layout|anchor": "100%",
+                        "localiserId": "defaultAuthorField",
                         "name": "author",
                         "value": [
                             "\"Powered by Rubedo\""

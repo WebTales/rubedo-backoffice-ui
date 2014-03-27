@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ACLController",
-        "designer|userAlias": "ACLController"
+        "designer|userAlias": "ACLController",
+        "designer|userClassName": "ACLController"
     },
     "designerId": "dc1acb41-f9a0-4ebc-8338-2cd4321f5712",
     "cn": [
@@ -19,10 +19,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "init",
                 "designer|params": [
                     "application"
                 ],
+                "fn": "init",
                 "implHandler": [
                     "Ext.define('ACL', {\r",
                     "    singleton:true,\r",
@@ -120,6 +120,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "component",
+                "designer|targetType": "Ext.Component",
                 "fn": "onComponentRender",
                 "implHandler": [
                     "if (!Ext.isEmpty(component.ACL)) {   \r",
@@ -131,9 +133,7 @@
                     "}"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.Component",
-                "designer|controlQuery": "component"
+                "scope": "me"
             },
             "designerId": "fa87d97c-595c-421e-b2c0-1f4f38d36f1a"
         },

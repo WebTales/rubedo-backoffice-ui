@@ -6,24 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newDamWindow",
+        "constrain": true,
+        "constrainHeader": true,
+        "designer|userAlias": "DAMCreateUpdateWindow",
+        "designer|userClassName": "DAMCreateUpdateWindow",
         "height": 518,
+        "iconCls": "mediaTypes",
         "id": "DAMCreateUpdateWindow",
+        "layout": "card",
+        "localiserId": "newDamWindow",
         "maxHeight": null,
         "minHeight": 220,
-        "width": 900,
-        "designer|userClassName": "DAMCreateUpdateWindow",
-        "designer|userAlias": "DAMCreateUpdateWindow",
+        "modal": true,
+        "overflowY": "auto",
         "requires": [
             "Ext.ux.TreePicker"
         ],
-        "constrain": true,
-        "overflowY": "auto",
-        "layout": "card",
-        "constrainHeader": true,
-        "iconCls": "mediaTypes",
         "title": "Nouveau média",
-        "modal": true
+        "width": 900
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -55,11 +55,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
                 "height": null,
                 "id": "DAMFieldBox",
                 "itemId": "mainLocItem",
-                "autoScroll": true,
-                "bodyPadding": 10,
                 "title": ""
             },
             "designerId": "76120e34-b5c1-40a3-9536-1168e395f143",
@@ -86,13 +86,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": null,
                                 "height": null,
                                 "id": "DAMMainFileFieldBox",
+                                "layout": "anchor",
                                 "padding": 10,
                                 "style": null,
-                                "width": 300,
-                                "designer|displayName": null,
-                                "layout": "anchor"
+                                "width": 300
                             },
                             "configAlternates": {
                                 "style": "string"
@@ -141,11 +141,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
                                 "id": "DAMSEcondaryFieldsBox",
+                                "layout": "anchor",
+                                "layout|flex": 1,
                                 "margin": "10 0 0 20",
-                                "padding": null,
-                                "layout": "anchor"
+                                "padding": null
                             },
                             "designerId": "00372f86-6219-41a4-82fb-2853c61cd555",
                             "cn": [
@@ -157,10 +157,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
-                                        "padding": 10,
                                         "designer|displayName": null,
-                                        "layout": "anchor"
+                                        "layout": "anchor",
+                                        "layout|anchor": "100%",
+                                        "padding": 10
                                     },
                                     "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
                                     "cn": [
@@ -172,17 +172,17 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "damTitleField",
                                                 "RTip": "Titre du média. Obligatoire.",
-                                                "layout|anchor": "90%",
+                                                "allowBlank": false,
+                                                "fieldLabel": "Titre *",
                                                 "id": null,
+                                                "labelSeparator": " ",
+                                                "layout|anchor": "90%",
+                                                "localiserId": "damTitleField",
+                                                "name": "title",
                                                 "style": [
                                                     "{float:left}"
-                                                ],
-                                                "fieldLabel": "Titre *",
-                                                "labelSeparator": " ",
-                                                "name": "title",
-                                                "allowBlank": false
+                                                ]
                                             },
                                             "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa",
                                             "customConfigs": [
@@ -208,10 +208,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "margin": null,
-                                        "padding": 10,
                                         "designer|displayName": null,
-                                        "layout": "anchor"
+                                        "layout": "anchor",
+                                        "margin": null,
+                                        "padding": 10
                                     },
                                     "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
                                     "cn": [
@@ -223,17 +223,17 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "damOrginalFileField",
                                                 "RTip": "Fichier principal du média. Obligatoire.",
-                                                "layout|anchor": "90%",
+                                                "allowBlank": false,
+                                                "fieldLabel": "Fichier original *",
                                                 "id": null,
+                                                "labelSeparator": " ",
+                                                "layout|anchor": "90%",
+                                                "localiserId": "damOrginalFileField",
+                                                "name": "originalFileId",
                                                 "style": [
                                                     "{float:left}"
-                                                ],
-                                                "fieldLabel": "Fichier original *",
-                                                "labelSeparator": " ",
-                                                "name": "originalFileId",
-                                                "allowBlank": false
+                                                ]
                                             },
                                             "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e",
                                             "customConfigs": [
@@ -263,8 +263,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "taxonomyFieldset",
                         "id": "DAMTaxoBox",
+                        "localiserId": "taxonomyFieldset",
                         "title": "Taxonomie"
                     },
                     "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b",
@@ -304,11 +304,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "contributeWorkspaceField",
                                 "fieldLabel": "Contribution",
+                                "layout|anchor": "90%",
+                                "localiserId": "contributeWorkspaceField",
                                 "name": "writeWorkspace",
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "90%"
+                                "store": "ContributeWorkspacesCombo"
                             },
                             "designerId": "5a81b33c-b742-488a-a36d-7dc5c789a486",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -321,13 +321,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "diffusionWorkspaceField",
                                 "fieldLabel": "Diffusion",
-                                "name": "target",
-                                "submitValue": null,
+                                "layout|anchor": "90%",
+                                "localiserId": "diffusionWorkspaceField",
                                 "multiSelect": true,
+                                "name": "target",
                                 "store": "WorkspacesComboWithAll",
-                                "layout|anchor": "90%"
+                                "submitValue": null
                             },
                             "designerId": "16031190-6710-47f9-b9c2-634bf6641099",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -368,10 +368,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "damSubmitNewBtn",
-                        "layout|flex": null,
-                        "id": "DAMSubmitBtn",
                         "iconCls": "save",
+                        "id": "DAMSubmitBtn",
+                        "layout|flex": null,
+                        "localiserId": "damSubmitNewBtn",
                         "text": "Créer ce nouveau média"
                     },
                     "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2",
@@ -391,11 +391,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "damSubmitUpdateBtn",
-                        "layout|flex": null,
                         "hidden": true,
-                        "id": "DAMSubmitUpdateBtn",
                         "iconCls": "save",
+                        "id": "DAMSubmitUpdateBtn",
+                        "layout|flex": null,
+                        "localiserId": "damSubmitUpdateBtn",
                         "text": "Enregistrer les modifications"
                     },
                     "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4",
@@ -415,9 +415,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "hidden": true,
                         "id": "DAMSwitchEditBtn",
+                        "layout|flex": null,
                         "text": "Passer en mode édition"
                     },
                     "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"
@@ -432,10 +432,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "replicatorEntity": "DAMReplicatorEntity",
-                "specialContentsMode": true,
+                "dock": "top",
                 "id": "DAMDSLToolbar",
-                "dock": "top"
+                "replicatorEntity": "DAMReplicatorEntity",
+                "specialContentsMode": true
             },
             "designerId": "d637fa01-780c-40f8-872c-829ecf0df159",
             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"

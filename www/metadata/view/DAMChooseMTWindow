@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "chooseDamTypeWindow",
+        "designer|userAlias": "DAMChooseMTWindow",
+        "designer|userClassName": "DAMChooseMTWindow",
         "height": 119,
         "id": "DAMChooseMTWindow",
-        "width": 400,
-        "designer|userClassName": "DAMChooseMTWindow",
-        "designer|userAlias": "DAMChooseMTWindow",
-        "resizable": false,
         "layout": "fit",
+        "localiserId": "chooseDamTypeWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Choissez un type de média",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -37,8 +37,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|displayName": null,
                 "bodyPadding": 10,
+                "designer|displayName": null,
                 "title": ""
             },
             "designerId": "d02218b1-40b5-4777-ad04-547c57de7f82",
@@ -51,14 +51,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseDamTypeField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Type",
-                        "name": "typeId",
                         "allowBlank": false,
-                        "editable": false,
                         "displayField": "type",
+                        "editable": false,
+                        "fieldLabel": "Type",
                         "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "localiserId": "chooseDamTypeField",
+                        "name": "typeId",
                         "queryMode": "local",
                         "store": "MediaTypesForDAM",
                         "valueField": "id"
@@ -80,9 +80,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseDamTypeSubmitBtn",
-                        "layout|anchor": "100%",
                         "id": "addDamAfterTypeBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "chooseDamTypeSubmitBtn",
                         "scale": "large",
                         "text": "Créer un nouveau média de ce type"
                     },

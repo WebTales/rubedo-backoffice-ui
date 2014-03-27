@@ -6,20 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "addMTFieldWindow",
+        "constrainHeader": true,
         "container|align": "stretch",
+        "designer|userAlias": "UTFieldAddWindow",
+        "designer|userClassName": "UTFieldAddWindow",
         "height": 300,
         "id": "UTFieldAddWindow",
-        "width": 500,
-        "designer|userClassName": "UTFieldAddWindow",
-        "designer|userAlias": "UTFieldAddWindow",
+        "layout": "hbox",
+        "localiserId": "addMTFieldWindow",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "hbox",
-        "constrainHeader": true,
         "title": "Ajouter un champ",
-        "modal": true
+        "width": 500
     },
     "designerId": "55c92826-3664-45c4-a4ec-07940e8c64b6",
     "customConfigs": [
@@ -38,10 +38,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 0.5,
                 "id": "UTFieldSelectGrid",
-                "title": "",
-                "store": "UTFieldTypes"
+                "layout|flex": 0.5,
+                "store": "UTFieldTypes",
+                "title": ""
             },
             "designerId": "07734388-9baf-4f69-8a20-950ca81a28c4",
             "cn": [
@@ -65,10 +65,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeCol",
                         "dataIndex": "type",
-                        "text": "Type",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "typeCol",
+                        "text": "Type"
                     },
                     "designerId": "bcb597f1-31e0-4922-8331-c01023d56989",
                     "customConfigs": [
@@ -114,10 +114,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name}"
-                                ],
-                                "designer|displayName": "groupHeaderTpl"
+                                ]
                             },
                             "designerId": "6da70d8f-7f66-48ad-803b-9d92e1633eca"
                         }
@@ -133,12 +133,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "id": "UTFieldDescriber",
                 "bodyPadding": 10,
                 "bodyStyle": [
                     "{text-align: justify;}"
                 ],
+                "id": "UTFieldDescriber",
+                "layout|flex": 1,
                 "title": ""
             },
             "designerId": "58979e62-fa34-4008-addc-ac7b6c7d16fa",
@@ -151,10 +151,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "tpl",
                         "implHandler": [
                             "{description}"
-                        ],
-                        "designer|displayName": "tpl"
+                        ]
                     },
                     "designerId": "d0158b1f-ee86-44f6-88d8-3fdee1007cf1"
                 }
@@ -168,8 +168,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "dock": "bottom"
+                "dock": "bottom",
+                "layout|flex": 1
             },
             "designerId": "da6e0f40-d311-4d93-8004-f96025affdd8",
             "cn": [
@@ -193,12 +193,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "UTFieldInsertBtn",
-                        "margin": null,
                         "iconCls": "add",
+                        "id": "UTFieldInsertBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "margin": null,
                         "text": "Ajouter"
                     },
                     "designerId": "d8e8da1a-1532-4447-8129-cbafea605f04",

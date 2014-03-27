@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "DAM",
         "autoLoad": false,
+        "data": null,
+        "designer|userAlias": "DAMPickerStore",
+        "designer|userClassName": "DAMPickerStore",
+        "isOptimised": true,
         "model": "DAMModel",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "DAMPickerStore",
-        "designer|userClassName": "DAMPickerStore",
-        "designer|userAlias": "DAMPickerStore",
-        "data": null,
-        "pageSize": 50
+        "usedCollection": "DAM"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -43,7 +43,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "\r",
@@ -51,6 +50,7 @@
                     "\r",
                     "                }"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "f1c6190b-758d-4930-9665-5e6ac3c80490",

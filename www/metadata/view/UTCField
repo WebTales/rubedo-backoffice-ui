@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "managesStore": true,
-        "designer|userClassName": "UTCField",
         "designer|userAlias": "UTCField",
-        "fieldLabel": "Label",
-        "editable": false,
+        "designer|userClassName": "UTCField",
         "displayField": "type",
+        "editable": false,
+        "fieldLabel": "Label",
         "forceSelection": true,
+        "managesStore": true,
         "store": "UserTypesCombo",
         "valueField": "id"
     },
@@ -36,10 +36,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processCTCField",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processCTCField",
                 "implHandler": [
                     "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
                     "return config;"

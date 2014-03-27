@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "etape": "5",
-        "localiserId": "qbFinalRecStagePanel",
-        "id": "assisstantRE6",
-        "designer|userClassName": "assisstantRE6",
-        "designer|userAlias": "assisstantRE6",
         "autoScroll": true,
         "bodyPadding": 10,
+        "designer|userAlias": "assisstantRE6",
+        "designer|userClassName": "assisstantRE6",
+        "etape": "5",
+        "id": "assisstantRE6",
+        "localiserId": "qbFinalRecStagePanel",
         "title": "Summary and saving"
     },
     "designerId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee",
@@ -37,8 +37,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "qbRecapFieldset",
                 "id": "querySummaryBox",
+                "localiserId": "qbRecapFieldset",
                 "padding": 10,
                 "title": "<b>Summary</b>"
             },
@@ -59,13 +59,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "queryNameField",
-                "layout|anchor": "100%",
-                "id": "queryNameField",
+                "allowBlank": false,
                 "fieldLabel": "Query name",
+                "id": "queryNameField",
                 "labelWidth": 130,
-                "name": "queryName",
-                "allowBlank": false
+                "layout|anchor": "100%",
+                "localiserId": "queryNameField",
+                "name": "queryName"
             },
             "designerId": "a89a5a01-5925-41ab-9032-04ee64189047",
             "customConfigs": [
@@ -84,13 +84,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "saveQBQueryBtn",
-                "layout|anchor": "100%",
-                "id": "queryBuildSaveBtn",
-                "margin": null,
-                "style": null,
                 "iconCls": null,
+                "id": "queryBuildSaveBtn",
+                "layout|anchor": "100%",
+                "localiserId": "saveQBQueryBtn",
+                "margin": null,
                 "scale": "large",
+                "style": null,
                 "text": "<b>Save this query</b>"
             },
             "designerId": "8efbcf04-d93d-45f4-894a-eb37d3963e9b",

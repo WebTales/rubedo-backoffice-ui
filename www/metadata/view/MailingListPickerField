@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "plugins": null,
-        "designer|userClassName": "MailingListPickerField",
         "designer|userAlias": "MailingListPickerField",
-        "fieldLabel": "Label",
-        "editable": false,
+        "designer|userClassName": "MailingListPickerField",
         "displayField": "name",
+        "editable": false,
+        "fieldLabel": "Label",
         "forceSelection": true,
+        "plugins": null,
         "queryMode": "local",
         "store": "MailingListsCombo",
         "valueField": "id"
@@ -38,10 +38,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processMailingListPickerField",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processMailingListPickerField",
                 "implHandler": [
                     "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
                     "return config;"

@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "ESSearchField",
+        "designer|userClassName": "ESSearchField",
+        "emptyText": "Search",
+        "enableKeyEvents": null,
+        "fieldLabel": "",
         "id": "ESSearchField",
         "itemId": "filterField",
-        "designer|userClassName": "ESSearchField",
-        "designer|userAlias": "ESSearchField",
-        "fieldLabel": "",
         "labelSeparator": " ",
         "labelWidth": 68,
-        "value": null,
-        "emptyText": "Search",
-        "enableKeyEvents": null
+        "value": null
     },
     "designerId": "35c8f1c1-4d85-4897-a76f-05b321a51c34",
     "cn": [
@@ -46,10 +46,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processESSearchField",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processESSearchField",
                 "implHandler": [
                     "config.emptyText=Rubedo.RubedoAutomatedElementsLoc.searchText;\r",
                     "return config;"

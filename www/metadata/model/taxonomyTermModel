@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "taxonomyTermModel",
-        "designer|userAlias": "taxonomyTermModel"
+        "designer|userAlias": "taxonomyTermModel",
+        "designer|userClassName": "taxonomyTermModel"
     },
     "designerId": "b7c9bf48-e637-4102-9d82-32331502ba65",
     "cn": [
@@ -110,11 +110,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(false);"
                         ]

@@ -8,12 +8,12 @@
     "userConfig": {
         "anchor": "90%",
         "container|align": "stretch",
+        "designer|userAlias": "GFSFileFieldComponent",
+        "designer|userClassName": "GFSFileFieldComponent",
         "height": 120,
         "itemId": "imageFieldComponent",
-        "width": 338,
-        "designer|userClassName": "GFSFileFieldComponent",
-        "designer|userAlias": "GFSFileFieldComponent",
-        "layout": "hbox"
+        "layout": "hbox",
+        "width": 338
     },
     "designerId": "c8ebde99-c027-4321-8d1e-ce919a2c0def",
     "customConfigs": [
@@ -33,8 +33,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "width": 105,
-                "text": "My Label :"
+                "text": "My Label :",
+                "width": 105
             },
             "designerId": "7f452ffd-c824-4619-9b07-eed4c829902f"
         },
@@ -49,9 +49,9 @@
                 "height": 120,
                 "itemId": "fieldImagePreview",
                 "minWidth": null,
+                "src": null,
                 "style": null,
-                "width": null,
-                "src": null
+                "width": null
             },
             "configAlternates": {
                 "style": "string"
@@ -87,9 +87,9 @@
             "userConfig": {
                 "designer|snapToGrid": 10,
                 "itemId": "buttonHolder",
+                "layout": "absolute",
                 "margin": "0 0 0 10",
-                "width": 41,
-                "layout": "absolute"
+                "width": 41
             },
             "designerId": "ae9be1d2-a8c6-4b95-b62c-4d1f4f08737d",
             "cn": [
@@ -101,11 +101,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "gfsUploadFileBtn",
+                        "iconCls": "database_up_small",
+                        "itemId": "fieldChangeFile",
                         "layout|x": 10,
                         "layout|y": 30,
-                        "itemId": "fieldChangeFile",
-                        "iconCls": "database_up_small",
+                        "localiserId": "gfsUploadFileBtn",
                         "text": "",
                         "tooltip": "Uploader un fichier"
                     },
@@ -129,14 +129,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "gfsDeleteFileBtn",
+                        "iconCls": "close",
+                        "itemId": "fieldClearFile",
                         "layout|x": 10,
                         "layout|y": 90,
-                        "itemId": "fieldClearFile",
-                        "width": null,
-                        "iconCls": "close",
+                        "localiserId": "gfsDeleteFileBtn",
                         "text": "",
-                        "tooltip": "Supprimer le fichier"
+                        "tooltip": "Supprimer le fichier",
+                        "width": null
                     },
                     "configAlternates": {
                         "tooltip": "string"
@@ -158,14 +158,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "gfsDownloadFileBtn",
+                        "iconCls": "database_down_small",
+                        "itemId": "fieldDownloadFile",
                         "layout|x": 10,
                         "layout|y": 0,
-                        "itemId": "fieldDownloadFile",
-                        "width": null,
-                        "iconCls": "database_down_small",
+                        "localiserId": "gfsDownloadFileBtn",
                         "text": "",
-                        "tooltip": "Télécharger le fichier"
+                        "tooltip": "Télécharger le fichier",
+                        "width": null
                     },
                     "configAlternates": {
                         "tooltip": "string"
@@ -187,14 +187,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "gfsPreviewFileBtn",
+                        "iconCls": "play_small",
+                        "itemId": "fieldPreviewFile",
                         "layout|x": 10,
                         "layout|y": 60,
-                        "itemId": "fieldPreviewFile",
-                        "width": null,
-                        "iconCls": "play_small",
+                        "localiserId": "gfsPreviewFileBtn",
                         "text": "",
-                        "tooltip": "Affichage en détail"
+                        "tooltip": "Affichage en détail",
+                        "width": null
                     },
                     "configAlternates": {
                         "tooltip": "string"
@@ -216,16 +216,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "fieldEditlocBtn",
+                        "hidden": true,
+                        "iconCls": "pencil_big",
+                        "itemId": "fieldEditFile",
                         "layout|x": 130,
                         "layout|y": 10,
-                        "hidden": true,
-                        "itemId": "fieldEditFile",
-                        "width": 40,
-                        "iconCls": "pencil_big",
+                        "localiserId": "fieldEditlocBtn",
                         "scale": "large",
                         "text": "",
-                        "tooltip": "Editer le fichier"
+                        "tooltip": "Editer le fichier",
+                        "width": 40
                     },
                     "configAlternates": {
                         "tooltip": "string"

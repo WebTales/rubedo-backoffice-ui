@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "numberOfOptions": "5",
+        "autoScroll": true,
+        "designer|userAlias": "experimentalGrid",
+        "designer|userClassName": "experimentalGrid",
+        "forceFit": false,
+        "id": "experimentalGrid",
         "initialData": [
             "[ ]"
         ],
-        "id": "experimentalGrid",
-        "designer|userClassName": "experimentalGrid",
-        "designer|userAlias": "experimentalGrid",
-        "autoScroll": true,
-        "title": "",
-        "forceFit": false,
-        "store": "experimentalStore"
+        "numberOfOptions": "5",
+        "store": "experimentalStore",
+        "title": ""
     },
     "configAlternates": {
         "initialData": "array"
@@ -56,9 +56,9 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "field1",
-                "text": "Souce 1",
                 "flex": 1,
-                "format": "0,000.0"
+                "format": "0,000.0",
+                "text": "Souce 1"
             },
             "designerId": "41b97881-d6b9-4456-b3a8-a151b712cb8a"
         },
@@ -71,8 +71,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "field2",
-                "text": "Source 2",
-                "flex": 1
+                "flex": 1,
+                "text": "Source 2"
             },
             "designerId": "23d06ad8-5a36-461f-9913-c762a2f0d559"
         },
@@ -85,8 +85,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "field3",
-                "text": "Source 1",
-                "flex": 1
+                "flex": 1,
+                "text": "Source 1"
             },
             "designerId": "002f27e3-f1c9-4cc5-8449-e98c83df2105"
         },
@@ -99,8 +99,8 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "field4",
-                "text": "Source 2",
-                "flex": 1
+                "flex": 1,
+                "text": "Source 2"
             },
             "designerId": "82569650-3aae-4cc9-81fd-46c1ae0b11c9"
         },
@@ -112,10 +112,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processExperimentalGrid",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processExperimentalGrid",
                 "implHandler": [
                     "config.plugins=[Ext.create(\"Ext.ux.grid.DataDrop\"),Ext.create('Ext.grid.plugin.CellEditing', {\r",
                     "    clicksToEdit: 2\r",
@@ -269,11 +269,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().up().getStore().add({});"
                                 ]
@@ -290,9 +290,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "disabled": true,
                         "id": "experimentalGridRowDeleter",
+                        "layout|flex": null,
                         "text": "Supprimer la ligne"
                     },
                     "designerId": "f5d9e6d6-acbf-4ca0-a285-81fe72a56ef0",
@@ -305,11 +305,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
                                 ]
@@ -339,11 +339,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().up().getStore().removeAll();"
                                 ]
@@ -372,8 +372,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "iconCls": "ouiSpetit",
+                        "layout|flex": null,
                         "text": "Enregistrer"
                     },
                     "designerId": "76bf7ac1-bc50-4261-85be-0f2430ac672f",
@@ -386,11 +386,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "var target=button.up().up().up().targetedFieldId;\r",
                                     "Ext.getCmp(target).setValue(Ext.JSON.encode(Ext.Array.pluck(button.up().up().getStore().getRange(),\"data\")));\r",

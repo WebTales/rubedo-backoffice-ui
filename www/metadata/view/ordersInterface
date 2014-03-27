@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "height": 456,
-        "id": "ordersInterface",
-        "width": 1066,
-        "designer|userClassName": "ordersInterface",
-        "designer|userAlias": "ordersInterface",
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "ordersInterface",
+        "designer|userClassName": "ordersInterface",
+        "height": 456,
         "iconCls": "content-icon",
-        "title": "Orders"
+        "id": "ordersInterface",
+        "layout": "fit",
+        "localiserId": null,
+        "title": "Orders",
+        "width": 1066
     },
     "designerId": "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac",
     "customConfigs": [
@@ -54,10 +54,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "ordersMainGrid",
-                "title": "",
                 "forceFit": true,
-                "store": "Orders"
+                "id": "ordersMainGrid",
+                "store": "Orders",
+                "title": ""
             },
             "designerId": "00c0d243-ad90-4ccf-8569-f6be94f95691",
             "cn": [
@@ -108,7 +108,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -118,6 +117,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "return (value+\" €\");"
                                 ]
@@ -134,8 +134,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "sortable": false,
                         "dataIndex": "detailedCart",
+                        "sortable": false,
                         "text": "Items"
                     },
                     "designerId": "113f1cc8-51b8-4066-a34a-530fbd3a5880",
@@ -148,7 +148,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -158,6 +157,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try {\r",
                                     "\treturn value.totalItems;\r",
@@ -204,8 +204,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "sortable": false,
                         "dataIndex": "shipper",
+                        "sortable": false,
                         "text": "Shipper"
                     },
                     "designerId": "f06fd8af-3e67-4359-97b7-b39aa5c29f39",
@@ -218,7 +218,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -228,6 +227,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try {\r",
                                     "    return value.name;\r",
@@ -249,8 +249,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "hasStockDecrementIssues",
-                        "text": "Stock issues",
                         "falseText": "No",
+                        "text": "Stock issues",
                         "trueText": "Yes"
                     },
                     "designerId": "a3d8b0da-869c-4194-933d-4542eaba760c"
@@ -285,10 +285,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "width": 360,
                         "displayInfo": true,
-                        "store": "Orders"
+                        "dock": "bottom",
+                        "store": "Orders",
+                        "width": 360
                     },
                     "designerId": "8f3191cd-464b-4206-b5bb-0cbcdb334c7f"
                 }

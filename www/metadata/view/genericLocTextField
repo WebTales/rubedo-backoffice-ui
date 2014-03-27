@@ -8,14 +8,14 @@
     "userConfig": {
         "CTMode": false,
         "container|align": "stretch",
+        "designer|userAlias": "genericLocTextField",
+        "designer|userClassName": "genericLocTextField",
+        "fieldLabel": "Label",
         "height": 26,
         "id": null,
-        "width": 400,
-        "designer|userClassName": "genericLocTextField",
-        "designer|userAlias": "genericLocTextField",
+        "labelSeparator": " ",
         "layout": "hbox",
-        "fieldLabel": "Label",
-        "labelSeparator": " "
+        "width": 400
     },
     "configAlternates": {
         "CTMode": "boolean"
@@ -37,10 +37,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "itemId": "mainTextInput",
-                "fieldLabel": "",
                 "allowBlank": false,
+                "fieldLabel": "",
+                "itemId": "mainTextInput",
+                "layout|flex": 1,
                 "stripCharsRe": "/<\\/?[^>]+>/gi"
             },
             "designerId": "8f286d23-94f3-45aa-944f-992d4d5fcfcb",
@@ -94,9 +94,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
+                "fieldLabel": "Label",
                 "itemId": "currentLanguageIntField",
-                "fieldLabel": "Label"
+                "layout|flex": null
             },
             "designerId": "36f3d4b4-42f4-4c67-89dd-03a4da6ceafe",
             "cn": [
@@ -159,14 +159,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
+                "iconCls": "infoWarning",
                 "id": null,
                 "itemId": "languageSwitcher",
-                "width": 36,
-                "iconCls": "infoWarning",
+                "layout|flex": null,
                 "text": "",
                 "tooltip": "Localization Error",
-                "tooltipType": "title"
+                "tooltipType": "title",
+                "width": 36
             },
             "configAlternates": {
                 "tooltip": "string"

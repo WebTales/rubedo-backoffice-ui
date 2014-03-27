@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "assignTCFieldWindow",
-        "height": null,
-        "width": 261,
-        "designer|userClassName": "AssignFieldToColWindow",
-        "designer|userAlias": "AssignFieldToColWindow",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "AssignFieldToColWindow",
+        "designer|userClassName": "AssignFieldToColWindow",
+        "height": null,
         "layout": "fit",
+        "localiserId": "assignTCFieldWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Assign field",
-        "modal": true
+        "width": 261
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,15 +50,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "assignFieldField",
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Field",
-                        "labelWidth": 50,
-                        "name": "field",
                         "allowBlank": false,
-                        "editable": false,
                         "displayField": "label",
+                        "editable": false,
+                        "fieldLabel": "Field",
                         "forceSelection": true,
+                        "labelWidth": 50,
+                        "layout|anchor": "100%",
+                        "localiserId": "assignFieldField",
+                        "name": "field",
                         "queryMode": "local",
                         "store": [
                             "CTFieldsForLayouts"
@@ -85,9 +85,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "assignFieldSubmitBtn",
-                        "layout|anchor": "100%",
                         "id": "assignFieldToLayoutSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "assignFieldSubmitBtn",
                         "scale": "medium",
                         "text": "Assign this field to selected column"
                     },

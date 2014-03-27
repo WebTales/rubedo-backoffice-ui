@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "mailingListsWindow",
-        "container|align": "stretch",
-        "height": 456,
-        "id": "MailingListsInterface",
-        "width": 723,
-        "designer|userClassName": "MailingListsInterface",
-        "designer|userAlias": "MailingListsInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "MailingListsInterface",
+        "designer|userClassName": "MailingListsInterface",
+        "height": 456,
         "iconCls": "mail_small",
-        "title": "Listes de diffusion"
+        "id": "MailingListsInterface",
+        "layout": "hbox",
+        "localiserId": "mailingListsWindow",
+        "title": "Listes de diffusion",
+        "width": 723
     },
     "designerId": "8f7b389a-75fc-438a-8d03-797b9afc7316",
     "customConfigs": [
@@ -48,11 +48,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.mailingLists",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "MailingListsAdd",
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "MailingListsAdd",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -79,12 +79,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.mailingLists",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "MailingListsRemove",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "MailingListsRemove",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -111,12 +111,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.mailingLists",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "MailingListsUpdate",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "MailingListsUpdate",
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -167,13 +167,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.mailingLists",
-                        "localiserId": "manageUsersFS",
-                        "layout|flex": null,
+                        "columns": 4,
                         "disabled": true,
-                        "id": "mlUsersManager",
                         "headerPosition": "bottom",
-                        "title": "Manage subscribed users",
-                        "columns": 4
+                        "id": "mlUsersManager",
+                        "layout|flex": null,
+                        "localiserId": "manageUsersFS",
+                        "title": "Manage subscribed users"
                     },
                     "designerId": "566ec6c8-947d-4770-92cc-d93e1d313236",
                     "customConfigs": [
@@ -197,10 +197,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "subscribeBtn",
-                                "id": "mlAddUser",
                                 "iconAlign": "top",
                                 "iconCls": "user_add_big",
+                                "id": "mlAddUser",
+                                "localiserId": "subscribeBtn",
                                 "scale": "large",
                                 "text": "Subscribe"
                             },
@@ -221,11 +221,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "unsubscribeBtn",
                                 "disabled": true,
-                                "id": "mlRemoveUser",
                                 "iconAlign": "top",
                                 "iconCls": "user_remove_big",
+                                "id": "mlRemoveUser",
+                                "localiserId": "unsubscribeBtn",
                                 "scale": "large",
                                 "text": "Unsubscribe"
                             },
@@ -246,10 +246,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importBtn",
-                                "id": "mlImportUsersBtn",
                                 "iconAlign": "top",
                                 "iconCls": "user_up_big",
+                                "id": "mlImportUsersBtn",
+                                "localiserId": "importBtn",
                                 "scale": "large",
                                 "text": "Import"
                             },
@@ -270,10 +270,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "exportBtn",
-                                "id": "mlExportUsersBtn",
                                 "iconAlign": "top",
                                 "iconCls": "user_down_big",
+                                "id": "mlExportUsersBtn",
+                                "localiserId": "exportBtn",
                                 "scale": "large",
                                 "text": "Export"
                             },
@@ -310,11 +310,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "MLMainGrid",
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "MailingListsCombo"
+                "id": "MLMainGrid",
+                "store": "MailingListsCombo",
+                "title": "",
+                "width": 200
             },
             "designerId": "b677c8e9-e99f-4c4d-80b1-9e93a14c09e7",
             "cn": [
@@ -335,8 +335,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
                         "dataIndex": "name",
+                        "localiserId": "nameColumn",
                         "text": "Nom"
                     },
                     "designerId": "af5483ae-6d3c-431f-9149-6b2d0831384f",
@@ -356,7 +356,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -366,6 +365,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.get(\"readOnly\")) {\r",
                                     "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
@@ -388,9 +388,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "activeTab": 0,
                 "disabled": true,
-                "activeTab": 0
+                "layout|flex": 1
             },
             "designerId": "e9bf3d03-a048-4b39-a01b-d5eff36b8b79",
             "cn": [
@@ -402,10 +402,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "propertiesForm",
-                        "id": "MLPropsForm",
                         "autoScroll": true,
                         "bodyPadding": 10,
+                        "id": "MLPropsForm",
+                        "localiserId": "propertiesForm",
                         "title": "Propriétés"
                     },
                     "designerId": "0b4a6c0f-00df-4bdf-bccc-f9f992629e82",
@@ -425,12 +425,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameField",
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Nom",
                                 "labelWidth": 140,
-                                "name": "name",
-                                "allowBlank": false
+                                "layout|anchor": "100%",
+                                "localiserId": "nameField",
+                                "name": "name"
                             },
                             "designerId": "ab12c7c6-2a2a-4d08-92b0-06e2dd9df1d6",
                             "customConfigs": [
@@ -451,10 +451,10 @@
                             "userConfig": {
                                 "fieldLabel": "Espaces de travail",
                                 "labelWidth": 140,
-                                "name": "workspaces",
+                                "layout|anchor": "100%",
                                 "multiSelect": true,
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "name": "workspaces",
+                                "store": "ContributeWorkspacesCombo"
                             },
                             "configAlternates": {
                                 "canSwitchStore": "boolean"
@@ -497,10 +497,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "expeditorAdressField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Adresse de l'expéditeur",
                                         "labelWidth": 140,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "expeditorAdressField",
                                         "name": "fromAddress",
                                         "vtype": "email"
                                     },
@@ -521,10 +521,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "expeditorNameField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Nom de l'expéditeur",
                                         "labelWidth": 140,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "expeditorNameField",
                                         "name": "fromName"
                                     },
                                     "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040",
@@ -566,10 +566,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "replyToAdressField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Adresse de réponse",
                                         "labelWidth": 140,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "replyToAdressField",
                                         "name": "replyToAddress",
                                         "vtype": "email"
                                     },
@@ -590,10 +590,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "replyToNameField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Nom de réponse",
                                         "labelWidth": 140,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "replyToNameField",
                                         "name": "replyToName"
                                     },
                                     "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03",
@@ -615,10 +615,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "returnPathAdressField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "Adresse d'erreur",
                                 "labelWidth": 140,
+                                "layout|anchor": "100%",
+                                "localiserId": "returnPathAdressField",
                                 "name": "returnPathAddress",
                                 "vtype": "email"
                             },
@@ -650,11 +650,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "subscribedUsersGrid",
-                        "id": "MLUsersGrid",
-                        "title": "Subscribed users",
                         "forceFit": true,
-                        "store": "MLUsers"
+                        "id": "MLUsersGrid",
+                        "localiserId": "subscribedUsersGrid",
+                        "store": "MLUsers",
+                        "title": "Subscribed users"
                     },
                     "designerId": "2d8c099c-2166-416b-a58b-0411d92d2147",
                     "customConfigs": [
@@ -673,8 +673,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameCol",
                                 "dataIndex": "name",
+                                "localiserId": "nameCol",
                                 "text": "Name"
                             },
                             "designerId": "69b0f110-9307-4222-9dd7-e197a9f8662e",
@@ -694,8 +694,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "emailCol",
                                 "dataIndex": "email",
+                                "localiserId": "emailCol",
                                 "text": "Email"
                             },
                             "designerId": "18f61888-a512-4727-b1c4-6050a038bed3",
@@ -715,8 +715,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "createCol",
                                 "dataIndex": "createTime",
+                                "localiserId": "createCol",
                                 "text": "Creation"
                             },
                             "designerId": "513425e4-9673-452c-bdbe-b82b6e430730",
@@ -736,8 +736,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "subsCribeCol",
                                 "dataIndex": "mailingLists",
+                                "localiserId": "subsCribeCol",
                                 "text": "Subscription"
                             },
                             "designerId": "be30caa0-e680-40d7-8b9b-37fbebd86788",
@@ -757,7 +757,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -767,6 +766,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "try {\r",
                                             "    var myDate=value[Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\")].date;\r",
@@ -806,10 +806,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dock": "bottom",
-                                "width": 360,
                                 "displayInfo": true,
-                                "store": "MLUsers"
+                                "dock": "bottom",
+                                "store": "MLUsers",
+                                "width": 360
                             },
                             "designerId": "0320815f-4603-4a6f-8e96-7db21eca17ad"
                         },
@@ -830,10 +830,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processMLUsersGrid",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processMLUsersGrid",
                                 "implHandler": [
                                     "config.title=Rubedo.RubedoInterfaceLoc.subscribedUsersGrid.title;\r",
                                     "return config;"
@@ -851,11 +851,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "unsubscribedUsersGrid",
-                        "id": "MLUsersGrid1",
-                        "title": "Unsubscribed users",
                         "forceFit": true,
-                        "store": "MLUnsubscribedUsers"
+                        "id": "MLUsersGrid1",
+                        "localiserId": "unsubscribedUsersGrid",
+                        "store": "MLUnsubscribedUsers",
+                        "title": "Unsubscribed users"
                     },
                     "designerId": "0031cc66-0370-4d07-9216-f3fe32941508",
                     "customConfigs": [
@@ -874,8 +874,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameCol",
                                 "dataIndex": "name",
+                                "localiserId": "nameCol",
                                 "text": "Name"
                             },
                             "designerId": "467a613c-86b8-4137-9aca-adb18af982c1",
@@ -895,8 +895,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "emailCol",
                                 "dataIndex": "email",
+                                "localiserId": "emailCol",
                                 "text": "Email"
                             },
                             "designerId": "4348b9cf-cd55-4bfe-b706-c09eb2c3ffd7",
@@ -916,8 +916,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "createCol",
                                 "dataIndex": "createTime",
+                                "localiserId": "createCol",
                                 "text": "Creation"
                             },
                             "designerId": "6582203e-dedf-4f8a-a3c3-3af66b340929",
@@ -937,8 +937,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "unsubscribedCol",
                                 "dataIndex": "mailingLists",
+                                "localiserId": "unsubscribedCol",
                                 "text": "Unsubscription"
                             },
                             "designerId": "178e46f0-3513-4672-9419-48db037d7e99",
@@ -958,7 +958,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -968,6 +967,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "try {\r",
                                             "    var myDate=value[Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected().get(\"id\")].date;\r",
@@ -1007,10 +1007,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dock": "bottom",
-                                "width": 360,
                                 "displayInfo": true,
-                                "store": "MLUnsubscribedUsers"
+                                "dock": "bottom",
+                                "store": "MLUnsubscribedUsers",
+                                "width": 360
                             },
                             "designerId": "4f8824fb-2a70-4bda-89cb-ddf776131019"
                         },
@@ -1031,10 +1031,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processMLUsersGrid1",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processMLUsersGrid1",
                                 "implHandler": [
                                     "config.title=Rubedo.RubedoInterfaceLoc.unsubscribedUsersGrid.title;\r",
                                     "return config;"

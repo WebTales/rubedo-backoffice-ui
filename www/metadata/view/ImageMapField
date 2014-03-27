@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "allowedCT": null,
-        "queryMode": true,
-        "geoQueryMode": false,
         "damQueryMode": false,
-        "designer|userClassName": "ImageMapField",
         "designer|userAlias": "ImageMapField",
+        "designer|userClassName": "ImageMapField",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
     },
     "configAlternates": {
         "geoQueryMode": "boolean",

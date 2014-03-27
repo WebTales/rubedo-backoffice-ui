@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "LocalisationController",
+        "designer|userClassName": "LocalisationController",
         "models": [
             "LocalisationModel"
         ],
         "stores": [
             "LocalisationStore"
-        ],
-        "designer|userClassName": "LocalisationController",
-        "designer|userAlias": "LocalisationController"
+        ]
     },
     "designerId": "765f93a9-83e7-4405-aaaa-740265c87f51",
     "cn": [
@@ -25,10 +25,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "init",
                 "designer|params": [
                     "application"
                 ],
+                "fn": "init",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.override(Ext.form.field.Date, {\r",
@@ -295,6 +295,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#RHelpBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onButtonAfterRender1",
                 "implHandler": [
                     "try {\r",
@@ -318,9 +320,7 @@
                     "}"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#RHelpBtn"
+                "scope": "me"
             },
             "designerId": "c94d5e08-9c29-411e-ab6a-d4b0134271e9"
         },
@@ -332,6 +332,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "component",
+                "designer|targetType": "Ext.form.field.Base",
                 "fn": "onComponentBeforeRender",
                 "implHandler": [
                     "if (component.localiserId){\r",
@@ -351,9 +353,7 @@
                     "}"
                 ],
                 "name": "beforerender",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Base",
-                "designer|controlQuery": "component"
+                "scope": "me"
             },
             "designerId": "20545d3d-55c2-4f5f-b471-7cfc1046dd2b"
         },
@@ -365,6 +365,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "field, checkboxgroup, radiogroup",
+                "designer|targetType": "Ext.form.field.Base",
                 "fn": "onBasefieldAdded",
                 "implHandler": [
                     "if (component.localiserId){\r",
@@ -379,9 +381,7 @@
                     "}"
                 ],
                 "name": "added",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Base",
-                "designer|controlQuery": "field, checkboxgroup, radiogroup"
+                "scope": "me"
             },
             "designerId": "4989e511-4ecd-48f4-bcbb-2cfcdfbf915d"
         },
@@ -665,6 +665,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "fieldset",
+                "designer|targetType": "Ext.form.FieldSet",
                 "fn": "onFieldsetAfterRender",
                 "implHandler": [
                     "var task = new Ext.util.DelayedTask(function(){\r",
@@ -673,9 +675,7 @@
                     "task.delay(100);"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.form.FieldSet",
-                "designer|controlQuery": "fieldset"
+                "scope": "me"
             },
             "designerId": "413bd541-5efe-49f4-b8f1-ad5d536d2703"
         },
@@ -797,11 +797,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "insertAndReplace",
                 "designer|params": [
                     "locObj",
                     "targetString"
                 ],
+                "fn": "insertAndReplace",
                 "implHandler": [
                     "var newId=\"#\"+Ext.id()+\"#\";\r",
                     "var finalId=Ext.clone(newId);\r",
@@ -826,6 +826,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#workingLanguageField",
+                "designer|targetType": "Ext.form.field.Hidden",
                 "fn": "onWorkingLanguageFieldChange",
                 "implHandler": [
                     "var myBtn=Ext.getCmp(\"workingLanguageBtn\");\r",
@@ -846,9 +848,7 @@
                     "}"
                 ],
                 "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Hidden",
-                "designer|controlQuery": "#workingLanguageField"
+                "scope": "me"
             },
             "designerId": "1afe91a9-9ab2-4ca3-ad70-935ea26a0c78"
         },
@@ -860,6 +860,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#entete",
+                "designer|targetType": "Ext.toolbar.Toolbar",
                 "fn": "onEnteteAfterRender",
                 "implHandler": [
                     "var task = new Ext.util.DelayedTask(function(){\r",
@@ -871,9 +873,7 @@
                     ""
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.toolbar.Toolbar",
-                "designer|controlQuery": "#entete"
+                "scope": "me"
             },
             "designerId": "24d32aa9-59d8-40cb-83f0-8b907d7b54ac"
         },
@@ -885,14 +885,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#workingLanguageBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onWorkingLanguageBtnClick",
                 "implHandler": [
                     "//Ext.widget(\"workingLanguageChangeWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#workingLanguageBtn"
+                "scope": "me"
             },
             "designerId": "d812dfcd-f615-49ea-8fe0-4ed344f33145"
         },
@@ -904,6 +904,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#currentLanguageChangeSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCurrentLanguageChangeSubmitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -914,9 +916,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#currentLanguageChangeSubmitBtn"
+                "scope": "me"
             },
             "designerId": "06a5ed2d-d911-442e-b51e-edf409c3a85c"
         },

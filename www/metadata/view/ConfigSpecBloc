@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": null,
-        "designer|userClassName": "ConfigSpecBloc",
+        "activeTab": 0,
         "designer|userAlias": "ConfigSpecBloc",
-        "activeTab": 0
+        "designer|userClassName": "ConfigSpecBloc",
+        "id": null
     },
     "designerId": "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
     "cn": [
@@ -21,9 +21,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "bodyPadding": 10,
                 "localiserId": "blockConfigSimplePanel",
                 "padding": null,
-                "bodyPadding": 10,
                 "title": "Simple"
             },
             "designerId": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
@@ -64,8 +64,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "blockConfigAdvancedPanel",
                 "bodyPadding": 10,
+                "localiserId": "blockConfigAdvancedPanel",
                 "title": "Avancé"
             },
             "designerId": "30b2853e-c6ad-4627-b904-006cc1fca756",

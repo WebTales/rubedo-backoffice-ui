@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Workspaces",
-        "forcedSync": true,
         "autoLoad": false,
         "autoSync": true,
-        "model": "workspaceModel",
-        "storeId": "WorkspacesStore",
-        "designer|userClassName": "WorkspacesStore",
-        "designer|userAlias": "WorkspacesStore",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "WorkspacesStore",
+        "designer|userClassName": "WorkspacesStore",
+        "forcedSync": true,
+        "isOptimised": true,
+        "model": "workspaceModel",
+        "pageSize": 1000,
+        "storeId": "WorkspacesStore",
+        "usedCollection": "Workspaces"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -87,8 +87,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "c94ba823-1057-4f9e-bef2-48f073886343"

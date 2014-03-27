@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "customThemesWindow",
-        "container|align": "stretch",
-        "height": 600,
-        "id": "CustomThemesInterface",
-        "width": 1200,
-        "designer|userClassName": "CustomThemesInterface",
-        "designer|userAlias": "CustomThemesInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "CustomThemesInterface",
+        "designer|userClassName": "CustomThemesInterface",
+        "height": 600,
         "iconCls": "palette",
-        "title": "Custom Themes"
+        "id": "CustomThemesInterface",
+        "layout": "hbox",
+        "localiserId": "customThemesWindow",
+        "title": "Custom Themes",
+        "width": 1200
     },
     "designerId": "e1ff2391-5104-46be-9c01-680539baf938",
     "customConfigs": [
@@ -35,8 +35,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "dock": "top"
+                "dock": "top",
+                "layout|flex": 1
             },
             "designerId": "bf8b79cf-8001-4dbb-9c9e-467dadbd721a",
             "cn": [
@@ -49,15 +49,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.customThemes",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "customThemesAddBtn",
-                        "minWidth": null,
-                        "width": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "customThemesAddBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "minWidth": null,
                         "scale": "large",
-                        "text": "Ajouter"
+                        "text": "Ajouter",
+                        "width": null
                     },
                     "designerId": "115267e7-1020-4d7d-9d37-e338e6c2a442",
                     "customConfigs": [
@@ -82,12 +82,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.customThemes",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "customThemesRemoveBtn",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "customThemesRemoveBtn",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -114,12 +114,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.customThemes",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "customThemesSaveBtn",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "customThemesSaveBtn",
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -203,15 +203,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "themesMainPanel",
-                "layout|flex": null,
-                "id": "customThemesGrid",
-                "width": 180,
                 "collapseDirection": "left",
                 "collapsible": true,
-                "title": "Themes",
                 "forceFit": true,
-                "store": "CustomThemes"
+                "id": "customThemesGrid",
+                "layout|flex": null,
+                "localiserId": "themesMainPanel",
+                "store": "CustomThemes",
+                "title": "Themes",
+                "width": 180
             },
             "designerId": "711d93db-b4f2-4f0d-99d9-9f97961afd28",
             "customConfigs": [
@@ -239,8 +239,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
                         "dataIndex": "name",
+                        "localiserId": "nameColumn",
                         "text": "Name"
                     },
                     "designerId": "775c1164-cba0-45e1-b0b8-9a3beb0197ab",
@@ -306,18 +306,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "lessVarsPanel",
-                "layout|flex": null,
-                "container|align": "stretch",
-                "disabled": true,
-                "id": "mainLessVarsForm",
-                "width": 300,
                 "autoScroll": true,
-                "layout": "vbox",
                 "bodyPadding": 10,
                 "collapseDirection": "left",
                 "collapsible": true,
-                "title": "Less Varaibles"
+                "container|align": "stretch",
+                "disabled": true,
+                "id": "mainLessVarsForm",
+                "layout": "vbox",
+                "layout|flex": null,
+                "localiserId": "lessVarsPanel",
+                "title": "Less Varaibles",
+                "width": 300
             },
             "designerId": "65491899-d5da-40fa-96cb-f4550e103ce7",
             "customConfigs": [
@@ -336,9 +336,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "garysFieldset",
                         "dock": null,
                         "id": "customThemesMainGraysBox",
+                        "localiserId": "garysFieldset",
                         "title": "Grays"
                     },
                     "designerId": "c8338297-b2e8-476b-b3e5-c6f053ff3fe7",
@@ -358,8 +358,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Black",
+                                "id": null,
                                 "name": "black"
                             },
                             "designerId": "386a58e3-a24d-48ba-b41d-f901e2f81c3a",
@@ -373,8 +373,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Darker gray",
+                                "id": null,
                                 "name": "grayDarker"
                             },
                             "designerId": "30f26cd1-f74b-4ab7-a141-95700e715b85",
@@ -388,8 +388,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Dark gray",
+                                "id": null,
                                 "name": "grayDark"
                             },
                             "designerId": "cacfecfa-fbb1-4d7c-86a0-340d025a6ea5",
@@ -403,8 +403,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Gray",
+                                "id": null,
                                 "name": "gray"
                             },
                             "designerId": "707428d3-41b1-4b84-9516-db4e97500353",
@@ -418,8 +418,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Light gray",
+                                "id": null,
                                 "name": "grayLight"
                             },
                             "designerId": "5b79859e-c95c-410e-8707-03ec68ce3590",
@@ -433,8 +433,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Lighter gray",
+                                "id": null,
                                 "name": "grayLighter"
                             },
                             "designerId": "7b9c3645-df9c-4e2d-b346-eddad81cab5a",
@@ -448,8 +448,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "White",
+                                "id": null,
                                 "name": "white"
                             },
                             "designerId": "e1c81820-5779-41e4-bec4-7e3d5726322d",
@@ -463,12 +463,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "randomizeColorsBtn",
-                                "layout|anchor": "100%",
                                 "id": "randomizeBaseThemeColorsBtn",
+                                "layout|anchor": "100%",
+                                "localiserId": "randomizeColorsBtn",
                                 "margin": "0 0 6 0",
-                                "width": null,
-                                "text": "Randomize base colors"
+                                "text": "Randomize base colors",
+                                "width": null
                             },
                             "designerId": "c2767fb1-ff71-41cd-9f81-b3ba428fe0c5",
                             "customConfigs": [
@@ -487,9 +487,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "randomizeColorsBOBtn",
-                                "layout|anchor": "50%",
                                 "id": "randomizeBaseThemeColorsBOBtn",
+                                "layout|anchor": "50%",
+                                "localiserId": "randomizeColorsBOBtn",
                                 "margin": "0 6 0 0",
                                 "style": "{float:left;}",
                                 "text": "Randomize based on"
@@ -514,17 +514,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "50%",
-                                "id": "colorSuggestionCombo",
-                                "margin": "",
-                                "fieldLabel": null,
-                                "submitValue": false,
                                 "editable": false,
+                                "fieldLabel": null,
                                 "forceSelection": true,
+                                "id": "colorSuggestionCombo",
+                                "layout|anchor": "50%",
+                                "margin": "",
                                 "multiSelect": true,
                                 "store": [
                                     "[\"red\", \"orange\", \"yellow\", \"green\", \"aqua\", \"blue\", \"violet\",\"fuchsia\"]"
-                                ]
+                                ],
+                                "submitValue": false
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -541,8 +541,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "accentColorsFieldset",
                         "dock": null,
+                        "localiserId": "accentColorsFieldset",
                         "title": "Accent colors"
                     },
                     "designerId": "58b75746-9aac-4478-80a8-a41fee822ad2",
@@ -562,8 +562,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Blue",
+                                "id": null,
                                 "name": "blue"
                             },
                             "designerId": "bce3788a-f2f5-4d27-92c7-dffb01296f87",
@@ -577,8 +577,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Dark blue",
+                                "id": null,
                                 "name": "blueDark"
                             },
                             "designerId": "77d8fd57-187d-427a-9300-21704913638b",
@@ -592,8 +592,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Green",
+                                "id": null,
                                 "name": "green"
                             },
                             "designerId": "cdaaa71e-c610-48bc-9663-e3a5ac1eb528",
@@ -607,8 +607,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Red",
+                                "id": null,
                                 "name": "red"
                             },
                             "designerId": "4d1ca48c-ce2e-497d-9a3b-f951ade02305",
@@ -622,8 +622,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Yellow",
+                                "id": null,
                                 "name": "yellow"
                             },
                             "designerId": "b4b12f23-9b0a-45ee-8d56-684f7c154526",
@@ -637,8 +637,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Orange",
+                                "id": null,
                                 "name": "orange"
                             },
                             "designerId": "e99941cb-414e-415e-9e77-ab9e7509c0ec",
@@ -652,8 +652,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Pink",
+                                "id": null,
                                 "name": "pink"
                             },
                             "designerId": "bd5b1fe2-55ef-4d39-91c4-da7893e1fd75",
@@ -667,8 +667,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Purlple",
+                                "id": null,
                                 "name": "purple"
                             },
                             "designerId": "4886cbc0-d3dd-411e-b332-04eab5e90891",
@@ -704,8 +704,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Link color",
+                                "id": null,
                                 "name": "linkColor"
                             },
                             "designerId": "7e880472-b7a1-464a-88ba-68e4ea5b2157",
@@ -741,8 +741,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background accent",
+                                "id": null,
                                 "name": "tableBackgroundAccent"
                             },
                             "designerId": "f10c6654-e36e-40f7-a033-574aff169131",
@@ -756,8 +756,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background hover",
+                                "id": null,
                                 "name": "tableBackgroundHover"
                             },
                             "designerId": "6afcb327-eafb-408b-84d0-bf42bb567c55",
@@ -771,8 +771,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Border",
+                                "id": null,
                                 "name": "tableBorder"
                             },
                             "designerId": "892b20b9-473b-4f1b-b467-495a210f62af",
@@ -808,8 +808,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Border",
+                                "id": null,
                                 "name": "btnBorder"
                             },
                             "designerId": "241b7c39-4627-4730-97ee-2da9e32fb557",
@@ -823,8 +823,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Info background",
+                                "id": null,
                                 "name": "btnInfoBackground"
                             },
                             "designerId": "38fefda2-9cc7-4c71-91f2-e3cdd7b8aecc",
@@ -838,8 +838,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Info background highlight",
+                                "id": null,
                                 "name": "btnInfoBackgroundHighlight"
                             },
                             "designerId": "e7625e6d-da9b-4c3c-a15f-39acacc12782",
@@ -853,8 +853,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Success background",
+                                "id": null,
                                 "name": "btnSuccessBackground"
                             },
                             "designerId": "94b73a52-b45e-4991-82ef-fdec8d6bf91e",
@@ -868,8 +868,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Success background highlight",
+                                "id": null,
                                 "name": "btnSuccessBackgroundHighlight"
                             },
                             "designerId": "2042974e-12bb-45af-98e2-e4934b7dcc91",
@@ -883,8 +883,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Danger background",
+                                "id": null,
                                 "name": "btnDangerBackground"
                             },
                             "designerId": "d64586fa-0b47-457b-8979-59274846ba5c",
@@ -898,8 +898,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Danger background highlight",
+                                "id": null,
                                 "name": "btnDangerBackgroundHighlight"
                             },
                             "designerId": "5875aa60-2449-4a77-b8ba-0d30e80742c4",
@@ -913,8 +913,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Inverse background",
+                                "id": null,
                                 "name": "btnInverseBackground"
                             },
                             "designerId": "3a2847e9-fee6-4667-8ceb-c2491bd88f04",
@@ -950,8 +950,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Input border",
+                                "id": null,
                                 "name": "inputBorder"
                             },
                             "designerId": "164bc816-5348-45a7-a6a1-70797f54567f",
@@ -965,8 +965,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Actions background",
+                                "id": null,
                                 "name": "formActionsBackground"
                             },
                             "designerId": "3efb162c-52e8-4ddf-bd63-2cc3deebafff",
@@ -1002,8 +1002,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Top divider",
+                                "id": null,
                                 "name": "dropdownDividerTop"
                             },
                             "designerId": "0f61fe7d-29f9-4190-aa70-3cb9d1ed7b55",
@@ -1039,8 +1039,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background",
+                                "id": null,
                                 "name": "wellBackground"
                             },
                             "designerId": "b991c65d-2ca0-4aef-bc6c-d88ca1b101e4",
@@ -1076,8 +1076,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background highlight",
+                                "id": null,
                                 "name": "navbarBackgroundHighlight"
                             },
                             "designerId": "08b6ca54-8835-45db-8a63-5779186d04b3",
@@ -1091,8 +1091,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Text",
+                                "id": null,
                                 "name": "navbarText"
                             },
                             "designerId": "ea9f3de4-6100-4f01-b7cb-d100413be170",
@@ -1106,8 +1106,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Link",
+                                "id": null,
                                 "name": "navbarLinkColor"
                             },
                             "designerId": "74797a69-96c1-49da-8fcd-3a4dddace854",
@@ -1143,8 +1143,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background",
+                                "id": null,
                                 "name": "navbarInverseBackground"
                             },
                             "designerId": "67d391ba-0b99-4f57-9a37-6b8545f76e8f",
@@ -1158,8 +1158,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background highlight",
+                                "id": null,
                                 "name": "navbarInverseBackgroundHighlight"
                             },
                             "designerId": "22f99cd1-a99c-4144-9c1b-470e81c6d69a",
@@ -1173,8 +1173,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Border",
+                                "id": null,
                                 "name": "navbarInverseBorder"
                             },
                             "designerId": "ef0291e3-ad28-4b5d-97be-3589f90e8614",
@@ -1188,8 +1188,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Search placeholder",
+                                "id": null,
                                 "name": "navbarInverseSearchPlaceholderColor"
                             },
                             "designerId": "1ef9f00b-3a55-4892-b3af-717d6f361bb0",
@@ -1225,8 +1225,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Background",
+                                "id": null,
                                 "name": "paginationBackground"
                             },
                             "designerId": "d17338b3-c676-47d0-b7ce-f2f841832b50",
@@ -1240,8 +1240,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Border",
+                                "id": null,
                                 "name": "paginationBorder"
                             },
                             "designerId": "5f81b002-c2ce-44fd-a7fe-2f793036bbe6",
@@ -1255,8 +1255,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Active background",
+                                "id": null,
                                 "name": "paginationActiveBackground"
                             },
                             "designerId": "9d9eeb61-2195-4da3-ac16-15d1c89d724c",
@@ -1292,8 +1292,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Warning text",
+                                "id": null,
                                 "name": "warningText"
                             },
                             "designerId": "b2e8616f-a5ed-4784-9ea0-4a0b8d51348a",
@@ -1307,8 +1307,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Warning background",
+                                "id": null,
                                 "name": "warningBackground"
                             },
                             "designerId": "7123fa19-6a8c-424c-9b83-c48ded55aa21",
@@ -1322,8 +1322,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Error text",
+                                "id": null,
                                 "name": "errorText"
                             },
                             "designerId": "830af97f-75a6-47c5-8136-0d75a5ebf86f",
@@ -1337,8 +1337,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Error background",
+                                "id": null,
                                 "name": "errorBackground"
                             },
                             "designerId": "e31a6ab6-8330-44dc-a1d8-0a8364363470",
@@ -1352,8 +1352,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Success text",
+                                "id": null,
                                 "name": "successText"
                             },
                             "designerId": "d45f4ea7-0250-4c44-9c39-050afa24760a",
@@ -1367,8 +1367,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Success background",
+                                "id": null,
                                 "name": "successBackground"
                             },
                             "designerId": "c84f2360-31f5-4623-8268-c0c7716710fc",
@@ -1382,8 +1382,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Info text",
+                                "id": null,
                                 "name": "infoText"
                             },
                             "designerId": "aa84be31-4893-4f2b-a7a5-f532c42978a5",
@@ -1397,8 +1397,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Info background",
+                                "id": null,
                                 "name": "infoBackground"
                             },
                             "designerId": "2cb3c077-f0e3-49a7-ae2b-24ebaa12f660",
@@ -1434,8 +1434,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Tooltip color",
+                                "id": null,
                                 "name": "tooltipColor"
                             },
                             "designerId": "87fe91c9-dfa3-4b37-b4b5-6ab42d880470",
@@ -1449,8 +1449,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Tooltip background",
+                                "id": null,
                                 "name": "tooltipBackground"
                             },
                             "designerId": "002ee7d7-eb14-4181-935e-588b37e2c807",
@@ -1464,8 +1464,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Popover background",
+                                "id": null,
                                 "name": "popoverBackground"
                             },
                             "designerId": "b8a034b9-d8e7-4b09-b65e-37f2c90ad1af",
@@ -1479,8 +1479,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "fieldLabel": "Popover arrow color",
+                                "id": null,
                                 "name": "popoverArrowColor"
                             },
                             "designerId": "a9610561-933c-494a-857c-d41513b773b8",
@@ -1516,8 +1516,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Sans font family",
+                                "layout|anchor": null,
                                 "name": "sansFontFamily"
                             },
                             "designerId": "dcad2965-1a11-42dd-9a23-73e172245870"
@@ -1530,8 +1530,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Serif font family",
+                                "layout|anchor": null,
                                 "name": "serifFontFamily"
                             },
                             "designerId": "a0d5afad-ec41-4974-af0c-8f96a2116061"
@@ -1544,8 +1544,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Mono font family",
+                                "layout|anchor": null,
                                 "name": "monoFontFamily"
                             },
                             "designerId": "280d9866-8867-451c-a841-48e638232967"
@@ -1558,8 +1558,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Base font size",
+                                "layout|anchor": null,
                                 "name": "baseFontSize"
                             },
                             "designerId": "61901a35-edb2-4d1d-9f1b-959690ae5373"
@@ -1572,8 +1572,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Base line height",
+                                "layout|anchor": null,
                                 "name": "baseLineHeight"
                             },
                             "designerId": "feb10045-04d5-4af7-b553-5b490ca0f138"
@@ -1586,8 +1586,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Heading font family",
+                                "layout|anchor": null,
                                 "name": "headingsFontFamily"
                             },
                             "designerId": "9c644c95-7bd9-491c-84dd-4b0772845007"
@@ -1600,8 +1600,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "Heading font weight",
+                                "layout|anchor": null,
                                 "name": "headingsFontWeight"
                             },
                             "designerId": "68bd8e43-217b-4825-81f5-b50a9e83437e"
@@ -1614,10 +1614,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "H1 proportion",
-                                "name": "headingH1Multiplier",
+                                "layout|anchor": null,
                                 "minValue": 0,
+                                "name": "headingH1Multiplier",
                                 "step": 0.25
                             },
                             "designerId": "95b8118b-815d-4968-9994-c580ea34031b"
@@ -1630,10 +1630,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "H2 proportion",
-                                "name": "headingH2Multiplier",
+                                "layout|anchor": null,
                                 "minValue": 0,
+                                "name": "headingH2Multiplier",
                                 "step": 0.25
                             },
                             "designerId": "2f7ad4ab-b490-45ed-b303-6cf6e13cdcf6"
@@ -1646,10 +1646,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "H3 proportion",
-                                "name": "headingH3Multiplier",
+                                "layout|anchor": null,
                                 "minValue": 0,
+                                "name": "headingH3Multiplier",
                                 "step": 0.25
                             },
                             "designerId": "ded29d02-3ac6-4538-a52e-dcf1c8e98e7c"
@@ -1662,10 +1662,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "H4 proportion",
-                                "name": "headingH4Multiplier",
+                                "layout|anchor": null,
                                 "minValue": 0,
+                                "name": "headingH4Multiplier",
                                 "step": 0.25
                             },
                             "designerId": "d3d51f06-307e-4d16-b1db-d78e7892cf08"
@@ -1678,10 +1678,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
                                 "fieldLabel": "H5 proportion",
-                                "name": "headingH5Multiplier",
+                                "layout|anchor": null,
                                 "minValue": 0,
+                                "name": "headingH5Multiplier",
                                 "step": 0.25
                             },
                             "designerId": "b1fa44be-29b6-4daf-bbd4-625a84cc15dd"
@@ -1694,11 +1694,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": null,
-                                "fieldLabel": "H6 proportion",
-                                "name": "headingH6Multiplier",
                                 "allowBlank": false,
+                                "fieldLabel": "H6 proportion",
+                                "layout|anchor": null,
                                 "minValue": 0,
+                                "name": "headingH6Multiplier",
                                 "step": 0.25
                             },
                             "designerId": "27744be2-9f1d-4b5d-a531-545a7fed99e3"
@@ -1715,10 +1715,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "dock": null,
-                "width": 60,
-                "vertical": true
+                "layout|flex": null,
+                "vertical": true,
+                "width": 60
             },
             "designerId": "97a91176-46d6-4c60-8a18-c5d3af08fd4f",
             "cn": [
@@ -1742,12 +1742,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "themeSimulateBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "simulateCustomThemeBtn",
                         "iconAlign": "top",
                         "iconCls": "play_big",
+                        "id": "simulateCustomThemeBtn",
+                        "layout|flex": null,
+                        "localiserId": "themeSimulateBtn",
                         "scale": "large",
                         "text": "Simulate"
                     },
@@ -1782,10 +1782,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "disabled": true,
                 "id": "themeSimulatorHolder",
-                "layout": "fit"
+                "layout": "fit",
+                "layout|flex": 1
             },
             "designerId": "fb05884d-249a-4a19-8147-b97d632530c0",
             "cn": [

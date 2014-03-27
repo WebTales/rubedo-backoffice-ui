@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "EmailController",
-        "designer|userAlias": "EmailController"
+        "designer|userAlias": "EmailController",
+        "designer|userClassName": "EmailController"
     },
     "designerId": "0c137efa-3885-472d-a4d2-96e811f9f233",
     "cn": [
@@ -19,6 +19,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newETRowBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewETRowBtnClick",
                 "implHandler": [
                     "var newRow=Ext.widget(\"panel\",{\r",
@@ -40,9 +42,7 @@
                     "newRow.getEl().dom.click();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newETRowBtn"
+                "scope": "me"
             },
             "designerId": "126bde2e-5dcd-4121-8875-0958430edbb8"
         },
@@ -54,6 +54,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainETContainer",
+                "designer|targetType": "Ext.container.Container",
                 "fn": "onMainETContainerAfterRender",
                 "implHandler": [
                     "component.getComponent(0).addBodyCls('contrastEMBorder');\r",
@@ -63,9 +65,7 @@
                     "});"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.container.Container",
-                "designer|controlQuery": "#mainETContainer"
+                "scope": "me"
             },
             "designerId": "543a8a7b-83ee-40e9-b986-d0cd275af490"
         },
@@ -77,6 +77,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainETHolder panel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onMainETHolderAfterRender",
                 "implHandler": [
                     "if ((component.eType==\"imageComponent\")||(component.eType==\"textComponent\")){\r",
@@ -90,9 +92,7 @@
                     "});"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#mainETHolder panel"
+                "scope": "me"
             },
             "designerId": "338ce064-8461-4840-a300-de1fce060133"
         },
@@ -104,6 +104,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#elementETIdField",
+                "designer|targetType": "Ext.form.field.Hidden",
                 "fn": "onElementETIdFieldChange",
                 "implHandler": [
                     "var me=this;\r",
@@ -141,9 +143,7 @@
                     "me.adaptETEditButtons(newValue);"
                 ],
                 "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Hidden",
-                "designer|controlQuery": "#elementETIdField"
+                "scope": "me"
             },
             "designerId": "2be8bd78-2484-48ee-9f43-8bda3166f1ca"
         },
@@ -155,10 +155,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "adaptETEditButtons",
                 "designer|params": [
                     "selectedElement"
                 ],
+                "fn": "adaptETEditButtons",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.Array.forEach(Ext.getCmp(\"eTTopBarBox\").query(\"button\"), function(button){button.disable();});\r",
@@ -215,6 +215,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newETColBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewETColBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -237,9 +239,7 @@
                     "newCol.getEl().dom.click();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newETColBtn"
+                "scope": "me"
             },
             "designerId": "7fe60160-e4cc-45bb-a3f7-57806b157b37"
         },
@@ -251,6 +251,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#moveUPETBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMoveUPETBtnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue());\r",
@@ -262,9 +264,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#moveUPETBtn"
+                "scope": "me"
             },
             "designerId": "9ee2ab82-0ab1-4ecb-80d7-609f39ac95a0"
         },
@@ -276,6 +276,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#moveDownETBTn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMoveDownETBTnClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue());\r",
@@ -285,9 +287,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#moveDownETBTn"
+                "scope": "me"
             },
             "designerId": "322c6208-21df-4887-955b-8239fbf64e67"
         },
@@ -299,11 +299,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "applyWidthConstraints",
                 "designer|params": [
                     "field",
                     "col"
                 ],
+                "fn": "applyWidthConstraints",
                 "implHandler": [
                     "var maxWidth=col.up().getWidth()-2;\r",
                     "Ext.Array.forEach(col.up().items.items, function(otherCol){\r",
@@ -324,10 +324,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "calculateRemainingRowWidth",
                 "designer|params": [
                     "row"
                 ],
+                "fn": "calculateRemainingRowWidth",
                 "implHandler": [
                     "var maxWidth=row.getWidth()-2;\r",
                     "Ext.Array.forEach(row.items.items, function(otherCol){\r",
@@ -346,6 +346,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ETAddImageBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onETAddImageBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -369,9 +371,7 @@
                     "newImage.getEl().dom.click();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ETAddImageBtn"
+                "scope": "me"
             },
             "designerId": "3f3cf8f1-366e-49d6-8de5-8fbfb182bcb7"
         },
@@ -383,6 +383,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ETAddTextBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onETAddTextBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -405,9 +407,7 @@
                     "newText.getEl().dom.click();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ETAddTextBtn"
+                "scope": "me"
             },
             "designerId": "b9ed9ae6-8fd6-49e7-a333-3e0a7462febc"
         },
@@ -419,11 +419,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "syncEComponent",
                 "designer|params": [
                     "component",
                     "firstTime"
                 ],
+                "fn": "syncEComponent",
                 "implHandler": [
                     "if (component.eType==\"imageComponent\"){\r",
                     "    if (firstTime){\r",
@@ -453,11 +453,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayImageControls",
                 "designer|params": [
                     "imageComponent",
                     "target"
                 ],
+                "fn": "displayImageControls",
                 "implHandler": [
                     "var me=this;\r",
                     "var imageField=Ext.create('Rubedo.view.ImagePickerField',{\r",
@@ -497,15 +497,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#deleteETElBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onDeleteETElBtnClick",
                 "implHandler": [
                     "Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()).up().remove(Ext.getCmp(Ext.getCmp(\"elementETIdField\").getValue()));\r",
                     "Ext.getCmp(\"elementETIdField\").setValue(null);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#deleteETElBtn"
+                "scope": "me"
             },
             "designerId": "ccf985fc-af0c-4397-b322-dc060a47d447"
         },
@@ -517,11 +517,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayTextControls",
                 "designer|params": [
                     "textComponent",
                     "target"
                 ],
+                "fn": "displayTextControls",
                 "implHandler": [
                     "var me=this;\r",
                     "if (textComponent.eConfig.simpleTextMode){\r",
@@ -559,10 +559,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayRowControls",
                 "designer|params": [
                     "row"
                 ],
+                "fn": "displayRowControls",
                 "implHandler": [
                     "var container=Ext.getCmp(\"eTEditControl\");\r",
                     "var bgColorEdit=Ext.widget(\"AdvancedColorField\",{\r",
@@ -591,10 +591,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayColControls",
                 "designer|params": [
                     "col"
                 ],
+                "fn": "displayColControls",
                 "implHandler": [
                     "var me=this;\r",
                     "var container=Ext.getCmp(\"eTEditControl\");\r",
@@ -643,11 +643,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayGenericControls",
                 "designer|params": [
                     "component",
                     "target"
                 ],
+                "fn": "displayGenericControls",
                 "implHandler": [
                     "var styleEdit=Ext.widget(\"textareafield\",{\r",
                     "    itemId:\"styleEditor\",\r",
@@ -750,14 +750,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newETBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewETBtnClick",
                 "implHandler": [
                     "Ext.widget(\"newEmailTemplateWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newETBtn"
+                "scope": "me"
             },
             "designerId": "ba961974-4379-4a9b-994f-424df94c7dc5"
         },
@@ -769,6 +769,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#deleteEtBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onDeleteEtBtnClick",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -779,9 +781,7 @@
                     "}); "
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#deleteEtBtn"
+                "scope": "me"
             },
             "designerId": "a0e9e761-d2ab-4d4e-ae6a-cdbb9cf7ebd5"
         },
@@ -793,10 +793,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "resetETSelect",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "resetETSelect",
                 "implHandler": [
                     "Ext.getCmp(\"deleteEtBtn\").enable();\r",
                     "Ext.getCmp(\"ETSaverBG\").enable();\r",
@@ -855,6 +855,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newETSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewETSubmitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -884,9 +886,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newETSubmitBtn"
+                "scope": "me"
             },
             "designerId": "4a01c750-51cf-4e03-99b7-3672e990d575"
         },
@@ -898,6 +898,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainETGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMainETGridSelectionChange",
                 "implHandler": [
                     "var me=this;\r",
@@ -908,9 +910,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mainETGrid"
+                "scope": "me"
             },
             "designerId": "412133d3-56e4-42ed-94cb-688bd61cc1a8"
         },
@@ -922,11 +922,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderRows",
                 "designer|params": [
                     "rows",
                     "target"
                 ],
+                "fn": "renderRows",
                 "implHandler": [
                     "var me=this;\r",
                     "var newRows=[ ];\r",
@@ -1036,6 +1036,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#saveETBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSaveETBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -1052,9 +1054,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#saveETBtn"
+                "scope": "me"
             },
             "designerId": "0b657bfa-71c6-4013-9472-c75482953b2b"
         },
@@ -1066,6 +1066,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ETPreviewPanel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onETPreviewPanelActivate",
                 "implHandler": [
                     "component.removeAll();\r",
@@ -1077,9 +1079,7 @@
                     "            }));"
                 ],
                 "name": "activate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#ETPreviewPanel"
+                "scope": "me"
             },
             "designerId": "23bddfb2-a7df-4446-9fe9-60a501926b40"
         },
@@ -1091,14 +1091,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ETSendBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onETSendBtnClick",
                 "implHandler": [
                     "Ext.widget(\"sendEmailWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ETSendBtn"
+                "scope": "me"
             },
             "designerId": "8305340b-74a2-4ef5-8b10-cda7a8d8f1cc"
         },
@@ -1110,6 +1110,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#sendEmailSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSendEmailSubmitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -1148,9 +1150,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#sendEmailSubmitBtn"
+                "scope": "me"
             },
             "designerId": "e7990ed9-5be7-419c-8744-d0ef6c0a7bc0"
         },
@@ -1162,6 +1162,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ETAddSimpleTextBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onETAddSimpleTextBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -1185,9 +1187,7 @@
                     "newText.getEl().dom.click();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ETAddSimpleTextBtn"
+                "scope": "me"
             },
             "designerId": "d3823b2c-405c-41d3-bce4-739827af49a1"
         }

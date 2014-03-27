@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MainStoresController",
-        "designer|userAlias": "MainStoresController"
+        "designer|userAlias": "MainStoresController",
+        "designer|userClassName": "MainStoresController"
     },
     "designerId": "bf25a36d-563e-484d-b6b8-b387924e3a62",
     "cn": [
@@ -19,10 +19,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "init",
                 "designer|params": [
                     "application"
                 ],
+                "fn": "init",
                 "implHandler": [
                     "var me = this;\r",
                     "Ext.override(Ext.data.Store, {\r",
@@ -45,6 +45,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "component",
+                "designer|targetType": "Ext.Component",
                 "fn": "onComponentRender",
                 "implHandler": [
                     "if ((component.managesStore)&&(component.store)) {\r",
@@ -54,9 +56,7 @@
                     "} "
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.Component",
-                "designer|controlQuery": "component"
+                "scope": "me"
             },
             "designerId": "06e76d2a-cde1-4cb5-8774-9ff15fa1ee63"
         },
@@ -68,12 +68,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "reloadActiveBrothers",
                 "designer|params": [
                     "collectionName",
                     "myId",
                     "forcedMode"
                 ],
+                "fn": "reloadActiveBrothers",
                 "implHandler": [
                     "Ext.data.StoreManager.each(function(someStore){\r",
                     "    if ((someStore.isOptimised)&&((someStore.isUsed)||(forcedMode))&&(someStore.usedCollection==collectionName)&&(!someStore.isLoading())&&(someStore.storeId!=myId)) {\r",
@@ -92,11 +92,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "fireNotif",
                 "designer|params": [
                     "title",
                     "message"
                 ],
+                "fn": "fireNotif",
                 "implHandler": [
                     "Ext.create('Ext.ux.window.Notification', {\r",
                     "    title: title,\r",
@@ -123,11 +123,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "handleLastUpdated",
                 "designer|params": [
                     "record",
                     "collection"
                 ],
+                "fn": "handleLastUpdated",
                 "implHandler": [
                     "console.log(record);\r",
                     "console.log(collection);"
@@ -143,10 +143,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "registerStore",
                 "designer|params": [
                     "store"
                 ],
+                "fn": "registerStore",
                 "implHandler": [
                     "var me=this;\r",
                     "//notifs and last updated\r",

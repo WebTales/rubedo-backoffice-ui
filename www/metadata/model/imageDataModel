@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "imageDataModel",
-        "designer|userAlias": "imageDataModel"
+        "designer|userAlias": "imageDataModel",
+        "designer|userClassName": "imageDataModel"
     },
     "designerId": "5c997a93-3afc-42e9-9098-74110e9872bf",
     "cn": [
@@ -92,11 +92,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return (new Date(v));"
                         ]

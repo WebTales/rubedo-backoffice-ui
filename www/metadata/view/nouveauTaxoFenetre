@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newVocabWindow",
+        "constrainHeader": true,
+        "designer|userAlias": "nouveauTaxoFenetre",
+        "designer|userClassName": "nouveauTaxoFenetre",
         "frame": null,
         "height": 106,
-        "id": "nouveauTaxoFenetre",
-        "width": 300,
-        "designer|userClassName": "nouveauTaxoFenetre",
-        "designer|userAlias": "nouveauTaxoFenetre",
-        "resizable": false,
-        "layout": "fit",
-        "constrainHeader": true,
         "iconCls": "page_taxonomy",
+        "id": "nouveauTaxoFenetre",
+        "layout": "fit",
+        "localiserId": "newVocabWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Nouveau vocabulaire",
-        "modal": true
+        "width": 300
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -53,11 +53,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
-                        "id": "champCreerTaxo",
+                        "allowBlank": false,
                         "fieldLabel": "Nom ",
-                        "allowBlank": false
+                        "id": "champCreerTaxo",
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField"
                     },
                     "designerId": "9b364f8f-ac9a-410e-b484-dc99bb3e37a8",
                     "customConfigs": [
@@ -76,9 +76,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "createNewVocabBtn",
-                        "layout|anchor": "100%",
                         "id": "boutonCreerTaxo",
+                        "layout|anchor": "100%",
+                        "localiserId": "createNewVocabBtn",
                         "text": "Créer un nouveau vocabulaire"
                     },
                     "designerId": "76ed696d-71b6-4cb4-a2fd-13bf3d93aae6",

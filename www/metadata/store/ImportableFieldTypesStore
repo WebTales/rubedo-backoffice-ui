@@ -7,10 +7,6 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "model": "typesChampsDataModel",
-        "storeId": "ImportableFieldTypesStore",
-        "designer|userClassName": "ImportableFieldTypesStore",
-        "designer|userAlias": "ImportableFieldTypesStore",
         "data": [
             "[\r",
             "    {\r",
@@ -1210,7 +1206,11 @@
             "        \"protoId\": \"\"\r",
             "    }\r",
             "]"
-        ]
+        ],
+        "designer|userAlias": "ImportableFieldTypesStore",
+        "designer|userClassName": "ImportableFieldTypesStore",
+        "model": "typesChampsDataModel",
+        "storeId": "ImportableFieldTypesStore"
     },
     "designerId": "c3f910a4-dc28-4844-afc2-027ed4e89b9b"
 }

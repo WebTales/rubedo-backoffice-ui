@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "siteBuilderWizzard",
+        "constrainHeader": true,
+        "designer|userAlias": "siteBuilderWizzard",
+        "designer|userClassName": "siteBuilderWizzard",
         "height": 330,
         "id": "siteBuilderWizzard",
-        "width": 464,
-        "designer|userClassName": "siteBuilderWizzard",
-        "designer|userAlias": "siteBuilderWizzard",
-        "resizable": false,
         "layout": "fit",
-        "constrainHeader": true,
+        "localiserId": "siteBuilderWizzard",
+        "modal": true,
+        "resizable": false,
         "title": "Assistant de création de site",
-        "modal": true
+        "width": 464
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -38,8 +38,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout": "card",
                 "bodyPadding": null,
+                "layout": "card",
                 "title": ""
             },
             "designerId": "1b063235-cd84-496e-a9ef-5294431763be",
@@ -52,9 +52,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "sbStage2",
-                        "layout": "anchor",
                         "bodyPadding": 10,
+                        "layout": "anchor",
+                        "localiserId": "sbStage2",
                         "title": "Etape 1 : Modèle"
                     },
                     "designerId": "7f76c07a-c528-4dcd-9f98-47619db4e229",
@@ -74,15 +74,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "createEmptySiteField",
-                                "layout|anchor": "100%",
-                                "id": "useEmptySiteField",
-                                "fieldLabel": null,
-                                "labelWidth": 110,
-                                "name": "builtOnEmptySite",
                                 "boxLabel": "Créer un site vide",
                                 "checked": true,
-                                "inputValue": "true"
+                                "fieldLabel": null,
+                                "id": "useEmptySiteField",
+                                "inputValue": "true",
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "localiserId": "createEmptySiteField",
+                                "name": "builtOnEmptySite"
                             },
                             "designerId": "bdf589d0-261e-4169-810b-3af1c8f1a94c",
                             "customConfigs": [
@@ -146,16 +146,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "createSiteFromModelField",
-                                "layout|anchor": "100%",
-                                "id": "sitesSecondReplicaterChoice",
+                                "boxLabel": "Créer un site en utilisant un site existant comme modèle",
                                 "fieldLabel": null,
+                                "id": "sitesSecondReplicaterChoice",
+                                "inputValue": "false",
                                 "labelAlign": null,
                                 "labelStyle": null,
                                 "labelWidth": 320,
-                                "name": "builtOnEmptySite",
-                                "boxLabel": "Créer un site en utilisant un site existant comme modèle",
-                                "inputValue": "false"
+                                "layout|anchor": "100%",
+                                "localiserId": "createSiteFromModelField",
+                                "name": "builtOnEmptySite"
                             },
                             "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da",
                             "customConfigs": [
@@ -210,15 +210,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "siteMoelField",
-                                        "layout|anchor": "100%",
-                                        "id": "modelSiteIdField",
-                                        "fieldLabel": "Site modèle",
-                                        "name": "builtOnModelSiteId",
-                                        "submitValue": false,
                                         "allowBlank": false,
+                                        "fieldLabel": "Site modèle",
+                                        "id": "modelSiteIdField",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "siteMoelField",
+                                        "name": "builtOnModelSiteId",
                                         "queryMode": "local",
                                         "store": "SitesJson",
+                                        "submitValue": false,
                                         "valueField": "id"
                                     },
                                     "designerId": "3ea2e4a8-ce96-407e-9c7a-b85127f96708",
@@ -268,10 +268,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "sbStage1",
                         "autoScroll": true,
-                        "layout": "anchor",
                         "bodyPadding": 10,
+                        "layout": "anchor",
+                        "localiserId": "sbStage1",
                         "title": "Etape 2 : Identification"
                     },
                     "designerId": "82ee261c-51e7-428c-8064-71d9f7b1633a",
@@ -291,12 +291,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "domainNameField",
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Nom de domaine *",
                                 "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "localiserId": "domainNameField",
                                 "name": "text",
-                                "allowBlank": false,
                                 "regex": "new RegExp(/^([a-z]|[0-9]|[-]|[.]){0,}$/)"
                             },
                             "designerId": "1456f507-0159-4113-afb8-e803bb616670",
@@ -316,16 +316,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "themeField",
-                                "layout|anchor": "100%",
+                                "displayField": "label",
                                 "fieldLabel": "Theme ",
                                 "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "localiserId": "themeField",
                                 "name": "theme",
+                                "store": "SiteThemesStore",
                                 "value": [
                                     "\"default\""
                                 ],
-                                "displayField": "label",
-                                "store": "SiteThemesStore",
                                 "valueField": "text"
                             },
                             "configAlternates": {
@@ -348,20 +348,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "protocolField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Protocole *",
-                                "labelWidth": 110,
-                                "name": "protocol",
-                                "value": [
-                                    "[\"HTTP\"]"
-                                ],
                                 "allowBlank": false,
                                 "editable": false,
+                                "fieldLabel": "Protocole *",
                                 "forceSelection": true,
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "localiserId": "protocolField",
                                 "multiSelect": true,
+                                "name": "protocol",
                                 "store": [
                                     "[\"HTTP\", \"HTTPS\"]"
+                                ],
+                                "value": [
+                                    "[\"HTTP\"]"
                                 ]
                             },
                             "configAlternates": {
@@ -385,8 +385,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "labelWidth": 110,
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "store": "ContributeWorkspacesCombo"
                             },
                             "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -399,15 +399,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "defaultLanguageField",
-                                "layout|anchor": "100%",
-                                "id": "siteDefaultLanguageField1",
-                                "fieldLabel": "Default language *",
-                                "labelWidth": 110,
-                                "name": "defaultLanguage",
                                 "allowBlank": false,
                                 "displayField": "label",
+                                "fieldLabel": "Default language *",
                                 "forceSelection": true,
+                                "id": "siteDefaultLanguageField1",
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "localiserId": "defaultLanguageField",
+                                "name": "defaultLanguage",
                                 "store": "AllLanguagesStore",
                                 "typeAhead": true,
                                 "valueField": "locale"
@@ -429,10 +429,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "validator",
                                         "designer|params": [
                                             "value"
                                         ],
+                                        "fn": "validator",
                                         "implHandler": [
                                             "var myValue=Ext.getCmp(\"siteDefaultLanguageField\").getValue();\r",
                                             "var languagesArray=Ext.getCmp(\"siteUsedLanguagesField1\").getValue();\r",
@@ -487,10 +487,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "sbStage3",
                         "autoScroll": true,
-                        "layout": "anchor",
                         "bodyPadding": 10,
+                        "layout": "anchor",
+                        "localiserId": "sbStage3",
                         "title": "Etape 3 : Référencement"
                     },
                     "designerId": "d73b14a5-0fc7-4be1-8dbb-f1b51d0f2797",
@@ -510,9 +510,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "siteDefaultTitleField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "Titre par défaut",
+                                "layout|anchor": "100%",
+                                "localiserId": "siteDefaultTitleField",
                                 "name": "title"
                             },
                             "designerId": "d7305811-82cb-4ef6-b95a-3aef28abff0f",
@@ -532,11 +532,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "defaultDescriptionField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "Description par défaut",
-                                "name": "description",
-                                "maxLength": 250
+                                "layout|anchor": "100%",
+                                "localiserId": "defaultDescriptionField",
+                                "maxLength": 250,
+                                "name": "description"
                             },
                             "designerId": "4b1a2339-43f2-4ba2-a853-2a0394f18041",
                             "customConfigs": [
@@ -585,9 +585,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "defaultAuthorField",
-                                "layout|anchor": "100%",
                                 "fieldLabel": "Auteur par défaut",
+                                "layout|anchor": "100%",
+                                "localiserId": "defaultAuthorField",
                                 "name": "author",
                                 "value": [
                                     "\"Powered by Rubedo\""
@@ -610,9 +610,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "siteBuilderWizardSubmit",
-                                "layout|anchor": "100%",
                                 "id": "siteWizzardCreateBtn",
+                                "layout|anchor": "100%",
+                                "localiserId": "siteBuilderWizardSubmit",
                                 "margin": "10 0 0 0",
                                 "scale": "large",
                                 "text": "Créer ce site"
@@ -636,8 +636,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 32,
-                        "dock": "bottom"
+                        "dock": "bottom",
+                        "height": 32
                     },
                     "designerId": "6a2922fd-4da7-4943-ade7-21e86245c984",
                     "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"

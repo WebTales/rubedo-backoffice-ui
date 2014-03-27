@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "facettes": [
-            "[ ]"
-        ],
         "activeFacettes": [
             "{ }"
         ],
         "autoLoad": false,
-        "model": "contentsSearchModel",
-        "remoteSort": true,
-        "storeId": "ESFacetteStore",
-        "designer|userClassName": "ESFacetteStore",
         "designer|userAlias": "ESFacetteStore",
-        "pageSize": 50
+        "designer|userClassName": "ESFacetteStore",
+        "facettes": [
+            "[ ]"
+        ],
+        "model": "contentsSearchModel",
+        "pageSize": 50,
+        "remoteSort": true,
+        "storeId": "ESFacetteStore"
     },
     "configAlternates": {
         "facettes": "array",
@@ -91,10 +91,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
                                 ],
+                                "fn": "getResponseData",
                                 "implHandler": [
                                     "var data, error;\r",
                                     "\r",

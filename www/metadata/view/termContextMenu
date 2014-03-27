@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "termContextMenu",
-        "width": null,
-        "designer|userClassName": "termContextMenu",
         "designer|userAlias": "termContextMenu",
-        "showSeparator": false
+        "designer|userClassName": "termContextMenu",
+        "id": "termContextMenu",
+        "showSeparator": false,
+        "width": null
     },
     "designerId": "b7f01d02-1b3a-4b25-a151-46fe64190510",
     "cn": [
@@ -22,12 +22,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "termField",
-                "id": "nouveauTermeTaxoField",
+                "allowBlank": false,
                 "fieldLabel": "Terme ",
+                "id": "nouveauTermeTaxoField",
                 "labelSeparator": null,
                 "labelWidth": 50,
-                "allowBlank": false,
+                "localiserId": "termField",
                 "vtype": null
             },
             "designerId": "6565e01f-6835-4ff8-b3c9-27141c4e4b98",
@@ -47,10 +47,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "addBtn",
-                "id": "boutonAjouterTermesTaxo",
                 "icon": "",
                 "iconCls": "add",
+                "id": "boutonAjouterTermesTaxo",
+                "localiserId": "addBtn",
                 "text": "Ajouter"
             },
             "designerId": "0229a837-e36c-4417-8bd3-869532c9e68b",
@@ -70,10 +70,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "removeBtn",
-                "id": "boutonSupprimerTermesTaxo",
                 "icon": null,
                 "iconCls": "close",
+                "id": "boutonSupprimerTermesTaxo",
+                "localiserId": "removeBtn",
                 "text": "Supprimer"
             },
             "designerId": "ca16c6a2-921d-49a2-90ce-d1d7c384c787",

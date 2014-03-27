@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Shippers",
         "autoLoad": false,
-        "model": "shipper",
-        "storeId": "ShippersForCT",
-        "designer|userClassName": "ShippersForCT",
-        "designer|userAlias": "ShippersForCT",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "ShippersForCT",
+        "designer|userClassName": "ShippersForCT",
+        "isOptimised": true,
+        "model": "shipper",
+        "pageSize": 1000,
+        "storeId": "ShippersForCT",
+        "usedCollection": "Shippers"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -77,8 +77,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "9728065d-1d66-40a0-9515-71865f960b02"

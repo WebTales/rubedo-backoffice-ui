@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "ContributionContenusController",
         "models": [
             "contenusDataModel"
         ],
@@ -14,8 +15,7 @@
         ],
         "views": [
             "AjouterContenu"
-        ],
-        "designer|userClassName": "ContributionContenusController"
+        ]
     },
     "designerId": "d27eb48c-e6bd-435b-8697-8ff50047fcac",
     "cn": [
@@ -27,6 +27,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#TypesContenusGrid",
+                "designer|targetType": "Ext.grid.View",
                 "fn": "typeSelect",
                 "implHandler": [
                     "var filArianne = Ext.getCmp(\"TypesContenusGrid\").findParentByType('window').getDockedComponent('filArianne');\r",
@@ -63,9 +65,7 @@
                     "Ext.getStore(\"DepContentsCombo\").loadData(myDependantTypes);"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.View",
-                "designer|controlQuery": "#TypesContenusGrid"
+                "scope": "me"
             },
             "designerId": "0466eea6-c776-4c88-b14e-95220a71766a"
         },
@@ -77,6 +77,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonPublierNouveauContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentSaveAndPublish",
                 "implHandler": [
                     "if (button.specialMode){\r",
@@ -155,9 +157,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonPublierNouveauContenu"
+                "scope": "me"
             },
             "designerId": "0be12317-77a9-4e12-adae-fbd3e1286d46"
         },
@@ -169,14 +169,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonEnregistrerNouveauContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentSave",
                 "implHandler": [
                     "this.nContenuRecorder('draft', button.isUpdate);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEnregistrerNouveauContenu"
+                "scope": "me"
             },
             "designerId": "43982057-d428-4c80-892d-67f635c19e58"
         },
@@ -188,6 +188,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#nestedContentsOfflineBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "putNestedContentsOffline",
                 "implHandler": [
                     "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
@@ -199,9 +201,7 @@
                     "myStore.sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nestedContentsOfflineBtn"
+                "scope": "me"
             },
             "designerId": "87d8077d-4130-4766-b7fe-4ed15619aff3"
         },
@@ -213,6 +213,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#NestedContentsGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "nestedContentsSelect",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -249,9 +251,7 @@
                     "    }"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#NestedContentsGrid"
+                "scope": "me"
             },
             "designerId": "7c34508b-b7bf-46cc-9bbd-67b7260dcd4f"
         },
@@ -263,6 +263,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contributionContenus",
+                "designer|targetType": "Ext.window.Window",
                 "fn": "onWindowBeforeClose",
                 "implHandler": [
                     "if (panel.isXType(\"window\")){\r",
@@ -275,9 +277,7 @@
                     "}"
                 ],
                 "name": "beforeclose",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "#contributionContenus"
+                "scope": "me"
             },
             "designerId": "22ca2295-8f59-4e36-acb8-122494e04a8b"
         },
@@ -289,11 +289,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "nContenuRecorder",
                 "designer|params": [
                     "status",
                     "update"
                 ],
+                "fn": "nContenuRecorder",
                 "implHandler": [
                     "if (Ext.getCmp(\"boiteAChampsContenus\").getForm().isValid()){\r",
                     "    if (Ext.getCmp(\"boiteATaxoContenus\").getForm().isValid()){\r",
@@ -384,6 +384,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonSupprimerContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentDelete",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection();\r",
@@ -400,9 +402,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerContenu"
+                "scope": "me"
             },
             "designerId": "1e8e3da9-d15d-4ff8-ae22-5814e4e23120"
         },
@@ -414,15 +414,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonModifierContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentEdit",
                 "implHandler": [
                     "var cible = Ext.getCmp('ContenusGrid').getSelectionModel().getSelection()[0];\r",
                     "this.unitaryContentEdit(cible.get(\"id\"));"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonModifierContenu"
+                "scope": "me"
             },
             "designerId": "d1d6b138-ff4c-43ec-bf21-9b2632472cf9"
         },
@@ -434,6 +434,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ContenusGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "contentsSelect",
                 "implHandler": [
                     "Ext.getCmp(\"boutonModifierContenu\").setText(Rubedo.RubedoAutomatedElementsLoc.editText);\r",
@@ -572,9 +574,7 @@
                     "    boiteMeta.update(customMeta);"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ContenusGrid"
+                "scope": "me"
             },
             "designerId": "2af287bb-3cc0-46dd-9a77-33d9b9c7235f"
         },
@@ -586,15 +586,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#ContenusGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "doubleClickEdit",
                 "implHandler": [
                     "//Ext.getCmp(\"boutonModifierContenu\").fireEvent(\"click\");\r",
                     "this.unitaryContentEdit(record.get(\"id\"));"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#ContenusGrid"
+                "scope": "me"
             },
             "designerId": "29809d19-0d43-44be-9789-cb0efb02186f"
         },
@@ -606,6 +606,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contentOnlineBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "putContentsOnline",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -617,9 +619,7 @@
                     "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#contentOnlineBtn"
+                "scope": "me"
             },
             "designerId": "5609cb55-a942-4612-a54f-e9f26e0decce"
         },
@@ -631,6 +631,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contentRefuseBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentRefuse",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -642,9 +644,7 @@
                     "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#contentRefuseBtn"
+                "scope": "me"
             },
             "designerId": "94138a98-a78e-4bb5-ad8b-0e949321e587"
         },
@@ -656,6 +656,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contentOfflineBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "putContentsOffline",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -667,9 +669,7 @@
                     "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#contentOfflineBtn"
+                "scope": "me"
             },
             "designerId": "a09ba59a-d8db-44ca-8e79-c42a6a3dcb2d"
         },
@@ -681,6 +681,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contentSubmitValBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentSubmitVal",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -692,9 +694,7 @@
                     "    Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#contentSubmitValBtn"
+                "scope": "me"
             },
             "designerId": "eae53a4e-c7fe-4932-b8c5-bc212c9bb55c"
         },
@@ -706,6 +706,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contentAcceptPublishBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentAcceptPublish",
                 "implHandler": [
                     "Ext.getStore(\"ContenusDataJson\").suspendAutoSync();\r",
@@ -717,9 +719,7 @@
                     "Ext.getStore(\"ContenusDataJson\").sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#contentAcceptPublishBtn"
+                "scope": "me"
             },
             "designerId": "84f2a9eb-c989-4280-98ec-f1d06b70936e"
         },
@@ -731,14 +731,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonSoumettreNouveauContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "contentSaveAndSubmit",
                 "implHandler": [
                     "this.nContenuRecorder('pending',button.isUpdate);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSoumettreNouveauContenu"
+                "scope": "me"
             },
             "designerId": "b54053e6-c639-4ad5-819e-ed4b31921c1e"
         },
@@ -750,14 +750,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#nestedContentsDeleteBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "nestedContentsDelete",
                 "implHandler": [
                     "Ext.getCmp(\"NestedContentsGrid\").getStore().remove(Ext.getCmp(\"NestedContentsGrid\").getSelectionModel().getSelection());"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nestedContentsDeleteBtn"
+                "scope": "me"
             },
             "designerId": "c3974fbb-2e52-4e6f-986a-7b7761b2adee"
         },
@@ -769,6 +769,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#nestedContentsOnlineBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "putNestedContentsOnline",
                 "implHandler": [
                     "var myStore = Ext.getCmp(\"NestedContentsGrid\").getStore();\r",
@@ -780,9 +782,7 @@
                     "myStore.sync();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nestedContentsOnlineBtn"
+                "scope": "me"
             },
             "designerId": "b6ad5fdb-bf2f-463f-834e-aa0c589df945"
         },
@@ -794,6 +794,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#nestedContentsAddBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "addNestedContent",
                 "implHandler": [
                     "if (Ext.getCmp(\"nestedContentsAddCombo\").isValid()) {\r",
@@ -843,9 +845,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nestedContentsAddBtn"
+                "scope": "me"
             },
             "designerId": "ccc66b9c-5a97-416f-ae83-84c635ac8e29"
         },
@@ -857,10 +857,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "nestedContentRecorder",
                 "designer|params": [
                     "update"
                 ],
+                "fn": "nestedContentRecorder",
                 "implHandler": [
                     "if (Ext.getCmp(\"nestedContentsFieldBox\").getForm().isValid()){\r",
                     "    var fields=Ext.getCmp(\"nestedContentsFieldBox\").getForm().getValues();\r",
@@ -896,14 +896,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#nestedContentRecordBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "saveNestedContent",
                 "implHandler": [
                     "this.nestedContentRecorder(button.isUpdate);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nestedContentRecordBtn"
+                "scope": "me"
             },
             "designerId": "9fe56c18-95bf-4c2e-a4a4-4319db241081"
         },
@@ -915,6 +915,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#nestedContentsModifyBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "nestedContentEdit",
                 "implHandler": [
                     "var cible = Ext.getCmp('NestedContentsGrid').getSelectionModel().getSelection()[0];\r",
@@ -941,9 +943,7 @@
                     "Ext.getCmp('ajouterContenu').setTitle(\"Modifier un contenu imbriqué\");"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#nestedContentsModifyBtn"
+                "scope": "me"
             },
             "designerId": "c95e30f7-faca-4c58-875f-27f2e815b47d"
         },
@@ -955,14 +955,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#NestedContentsGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "NCDblClickEdit",
                 "implHandler": [
                     "Ext.getCmp(\"nestedContentsModifyBtn\").fireEvent(\"click\");"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#NestedContentsGrid"
+                "scope": "me"
             },
             "designerId": "575594ef-2357-4a76-b58a-b2bad0120ca7"
         },
@@ -974,6 +974,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#contributionContenus",
+                "designer|targetType": "Ext.window.Window",
                 "fn": "onWindowRender",
                 "implHandler": [
                     "if (component.isXType(\"window\")){\r",
@@ -983,9 +985,7 @@
                     "}"
                 ],
                 "name": "render",
-                "scope": "me",
-                "designer|targetType": "Ext.window.Window",
-                "designer|controlQuery": "#contributionContenus"
+                "scope": "me"
             },
             "designerId": "f3285970-e0ec-4143-bcc6-6cd9ad124687"
         },
@@ -997,12 +997,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "unitaryContentEdit",
                 "designer|params": [
                     "id",
                     "specialMode",
                     "targetedId"
                 ],
+                "fn": "unitaryContentEdit",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.getStore('TaxonomyForC2').load();\r",
@@ -1034,7 +1034,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayContentEditWindow",
                 "designer|params": [
                     "content",
                     "contentType",
@@ -1042,6 +1041,7 @@
                     "specialMode",
                     "targetedId"
                 ],
+                "fn": "displayContentEditWindow",
                 "implHandler": [
                     "var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode});\r",
                     "Ext.getCmp('ViewportPrimaire').add(fenetre);\r",
@@ -1511,11 +1511,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displaySpecialCreate",
                 "designer|params": [
                     "theCT",
                     "targetedId"
                 ],
+                "fn": "displaySpecialCreate",
                 "implHandler": [
                     "if (Ext.isDefined(theCT)) {\r",
                     "    var fenetre = Ext.widget('ajouterContenu', {specialMode:true});\r",
@@ -1679,13 +1679,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "prepareContext",
                 "designer|params": [
                     "content",
                     "editMode",
                     "specialMode",
                     "targetedId"
                 ],
+                "fn": "prepareContext",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.getStore(\"ContentTypesForContent\").addListener(\"load\",function(theStore,records,successful){\r",
@@ -1716,11 +1716,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "specialContentCreate",
                 "designer|params": [
                     "CTType",
                     "targetedId"
                 ],
+                "fn": "specialContentCreate",
                 "implHandler": [
                     "var me=this;\r",
                     "Ext.getStore(\"ContentTypesForContent2\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"CTType\\\",\\\"value\\\":\\\"\"+CTType+\"\\\"}]\";\r",
@@ -1745,14 +1745,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#pageContentGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onPageContentGridItemDblClick",
                 "implHandler": [
                     "this.unitaryContentEdit(record.get(\"id\"), false);"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#pageContentGrid"
+                "scope": "me"
             },
             "designerId": "6d5500da-cac3-42e7-a9ef-15e77f8be732"
         },
@@ -1764,6 +1764,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCopierContenus",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onBoutonCopierContenusClick",
                 "implHandler": [
                     "var copiedOne = Ext.getCmp(\"ContenusGrid\").getSelectionModel().getLastSelected().copy();\r",
@@ -1774,9 +1776,7 @@
                     "Ext.getCmp(\"ContenusGrid\").getStore().add(copiedOne);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCopierContenus"
+                "scope": "me"
             },
             "designerId": "1babab45-9945-4020-b722-3be3ee752bfb"
         },
@@ -1788,14 +1788,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonRefuserNouveauContenu",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onBoutonRefuserNouveauContenuClick",
                 "implHandler": [
                     "this.nContenuRecorder('refused',true);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonRefuserNouveauContenu"
+                "scope": "me"
             },
             "designerId": "d0aa8ba7-45f3-4228-845a-c4c4765a8b93"
         }

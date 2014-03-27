@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "padding": 10,
-        "designer|userClassName": "ChampTC",
         "designer|userAlias": "ChampTC",
-        "layout": "anchor"
+        "designer|userClassName": "ChampTC",
+        "layout": "anchor",
+        "padding": 10
     },
     "designerId": "5c71a1ca-b876-4b61-9025-fa2f09aa603a",
     "cn": [
@@ -21,17 +21,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "helpBouton",
-                "margin": null,
-                "style": [
-                    "{float:right;}"
-                ],
                 "allowDepress": null,
                 "enableToggle": null,
                 "handleMouseEvents": false,
                 "iconCls": "help",
+                "itemId": "helpBouton",
+                "margin": null,
                 "pressed": null,
                 "pressedCls": "x-btn",
+                "style": [
+                    "{float:right;}"
+                ],
                 "text": "",
                 "tooltip": null
             },

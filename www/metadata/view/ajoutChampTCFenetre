@@ -6,20 +6,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "addCTFieldWindow",
+        "constrainHeader": true,
         "container|align": "stretch",
+        "designer|userAlias": "ajoutChampTCFenetre",
+        "designer|userClassName": "ajoutChampTCFenetre",
         "height": 446,
         "id": "ajoutChampTCFenetre",
-        "width": 587,
-        "designer|userClassName": "ajoutChampTCFenetre",
-        "designer|userAlias": "ajoutChampTCFenetre",
+        "layout": "hbox",
+        "localiserId": "addCTFieldWindow",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "hbox",
-        "constrainHeader": true,
         "title": "Ajouter un champ",
-        "modal": true
+        "width": 587
     },
     "designerId": "1e7a56cf-fe74-4d88-b0c9-1efad70a5e30",
     "customConfigs": [
@@ -38,10 +38,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 0.5,
                 "id": "ChampTCSelectGrid",
-                "title": "",
-                "store": "TypesChampsDataStore"
+                "layout|flex": 0.5,
+                "store": "TypesChampsDataStore",
+                "title": ""
             },
             "designerId": "4e0ad331-3355-4204-9b00-b51e9a390814",
             "cn": [
@@ -74,10 +74,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processMyGridView4",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processMyGridView4",
                                 "implHandler": [
                                     "config.copy=true;\r",
                                     "return config;"
@@ -95,10 +95,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeCol",
                         "dataIndex": "type",
-                        "text": "Type",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "typeCol",
+                        "text": "Type"
                     },
                     "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de",
                     "customConfigs": [
@@ -126,10 +126,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
                                 "implHandler": [
                                     "{name}"
-                                ],
-                                "designer|displayName": "groupHeaderTpl"
+                                ]
                             },
                             "designerId": "fd8e413e-3dfd-4e0d-b253-bd043d3256aa"
                         }
@@ -145,9 +145,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "container|align": "stretch",
-                "layout": "vbox"
+                "layout": "vbox",
+                "layout|flex": 1
             },
             "designerId": "58d54e6d-7e6d-45fe-a47f-eaddb91b4332",
             "cn": [
@@ -159,13 +159,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "id": "PaneauTCDetail",
                         "autoScroll": true,
                         "bodyPadding": 10,
                         "bodyStyle": [
                             "{text-align: justify;}"
                         ],
+                        "id": "PaneauTCDetail",
+                        "layout|flex": 1,
                         "title": ""
                     },
                     "designerId": "152551f5-6c45-469e-b713-d41f18fffa98",
@@ -178,10 +178,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "{description}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "4a2f48a5-8601-4162-9296-e8273df5d4e8"
                         }
@@ -195,11 +195,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "multiTCAddFieldCol",
-                        "layout|flex": 1,
-                        "title": "Ajout multiple",
                         "forceFit": true,
-                        "store": "AddMultiFieldStore"
+                        "layout|flex": 1,
+                        "localiserId": "multiTCAddFieldCol",
+                        "store": "AddMultiFieldStore",
+                        "title": "Ajout multiple"
                     },
                     "designerId": "ab145305-1858-4686-8898-35ddd9362816",
                     "customConfigs": [
@@ -263,8 +263,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "typeCol",
                                 "dataIndex": "type",
+                                "localiserId": "typeCol",
                                 "text": "Type"
                             },
                             "designerId": "a81e9ff4-8341-4042-a415-bf1fbcb2149e",
@@ -288,8 +288,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "dock": "bottom"
+                "dock": "bottom",
+                "layout|flex": 1
             },
             "designerId": "0e376d6c-8ec1-4c44-9c32-678fb7579a6e",
             "cn": [
@@ -313,11 +313,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "boutonAjouterChampTC",
-                        "margin": null,
                         "iconCls": "add",
+                        "id": "boutonAjouterChampTC",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "margin": null,
                         "text": "Ajouter"
                     },
                     "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe",

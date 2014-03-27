@@ -8,12 +8,12 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "model": "pmConfig",
-        "storeId": "PMConfigs",
-        "designer|userClassName": "PMConfigs",
-        "designer|userAlias": "PMConfigs",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "PMConfigs",
+        "designer|userClassName": "PMConfigs",
+        "model": "pmConfig",
+        "pageSize": 1000,
+        "storeId": "PMConfigs"
     },
     "configAlternates": {
         "isOptimised": "boolean",
@@ -61,8 +61,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "2b1e5880-674c-4536-b17a-4c34019258eb"

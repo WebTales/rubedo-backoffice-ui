@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "height": 456,
-        "id": "taxesInterface",
-        "width": 921,
-        "designer|userClassName": "taxesInterface",
-        "designer|userAlias": "taxesInterface",
-        "layout": "fit",
         "constrainHeader": true,
+        "designer|userAlias": "taxesInterface",
+        "designer|userClassName": "taxesInterface",
+        "height": 456,
         "iconCls": "calculator",
-        "title": "Taxes"
+        "id": "taxesInterface",
+        "layout": "fit",
+        "localiserId": null,
+        "title": "Taxes",
+        "width": 921
     },
     "designerId": "67b3403d-c5af-478f-b1a8-5404d77be025",
     "customConfigs": [
@@ -97,9 +97,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "",
                 "forceFit": true,
-                "store": "Taxes"
+                "store": "Taxes",
+                "title": ""
             },
             "designerId": "ce2a553a-ec80-443a-8061-8be0d9e3fef3",
             "cn": [
@@ -149,8 +149,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "active",
-                        "text": "Active",
                         "falseText": "No",
+                        "text": "Active",
                         "trueText": "Yes"
                     },
                     "designerId": "7dfc45ba-35d0-4189-ab2d-fb8846d0bca4",
@@ -227,7 +227,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -237,6 +236,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try {\r",
                                     "    var returner=[ ];\r",
@@ -311,7 +311,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -321,6 +320,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try {\r",
                                     "    var returner=[ ];\r",
@@ -375,7 +375,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -385,6 +384,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try {return(Ext.getStore(\"CountriesForTaxes\").findRecord(\"alpha-2\",value).get(\"name\"));} catch (err){\r",
                                     "return value;\r",
@@ -502,9 +502,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "allowBlank": false,
-                                "allowOnlyWhitespace": false,
                                 "allowDecimals": false,
                                 "allowExponential": false,
+                                "allowOnlyWhitespace": false,
                                 "minValue": 0
                             },
                             "designerId": "689fa073-3413-4dac-8fd7-5cccba04831d"
@@ -543,8 +543,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "iconCls": "add",
+                                "layout|flex": null,
                                 "text": "Add"
                             },
                             "designerId": "e7b1a840-60d7-4a3a-94ed-446fc93161a3",
@@ -585,10 +585,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "disabled": true,
-                                "id": "taxRemoveBtn",
                                 "iconCls": "close",
+                                "id": "taxRemoveBtn",
+                                "layout|flex": null,
                                 "text": "Remove"
                             },
                             "designerId": "ce693a02-f889-4b6a-b7fa-bf5af6263eb3",

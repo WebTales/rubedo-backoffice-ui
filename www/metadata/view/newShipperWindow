@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "height": 112,
-        "width": 400,
-        "designer|userClassName": "newShipperWindow",
-        "designer|userAlias": "newShipperWindow",
         "constrain": true,
-        "resizable": false,
+        "designer|userAlias": "newShipperWindow",
+        "designer|userClassName": "newShipperWindow",
+        "height": 112,
         "layout": "fit",
+        "localiserId": null,
+        "modal": true,
+        "resizable": false,
         "title": "New shipper",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -50,11 +50,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom",
-                        "name": "name",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "name"
                     },
                     "designerId": "47f3406e-cbe9-43c6-afff-bb32e9686e0a",
                     "customConfigs": [
@@ -73,9 +73,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "100%",
                         "id": "newShipperSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": null,
                         "scale": "medium",
                         "text": "Create new shipper"
                     },

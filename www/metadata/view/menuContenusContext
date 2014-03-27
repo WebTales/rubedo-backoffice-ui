@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "menuContenusContext",
+        "designer|userClassName": "menuContenusContext",
         "id": "ContenusGrid",
         "itemId": null,
-        "designer|userClassName": "menuContenusContext",
-        "designer|userAlias": "menuContenusContext",
         "requires": [
             "Ext.ux.grid.FiltersFeature"
         ],
-        "title": "",
-        "store": "ContenusDataJson"
+        "store": "ContenusDataJson",
+        "title": ""
     },
     "designerId": "648ee02b-21bf-4d06-8c07-2e215977ab97",
     "cn": [
@@ -35,10 +35,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "titleColumn",
                 "dataIndex": "text",
-                "text": "Titre",
-                "flex": 2
+                "flex": 2,
+                "localiserId": "titleColumn",
+                "text": "Titre"
             },
             "configAlternates": {
                 "filter": "boolean",
@@ -61,7 +61,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -71,6 +70,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "var returner = value;\r",
                             "if (record.get(\"readOnly\")){\r",
@@ -103,10 +103,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "languageCoumn",
                 "dataIndex": "i18n",
-                "text": "Languages",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "languageCoumn",
+                "text": "Languages"
             },
             "designerId": "eae8637e-1dbc-41ae-99a2-2dbe89782726",
             "customConfigs": [
@@ -125,7 +125,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -135,6 +134,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
                             "catch(err){var myFlagCode=\"_unknown\";}\r",
@@ -184,10 +184,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "stateColumn",
                 "dataIndex": "status",
-                "text": "Etat",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "stateColumn",
+                "text": "Etat"
             },
             "configAlternates": {
                 "filter": "object"
@@ -209,7 +209,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -219,6 +218,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if (value==\"published\") {\r",
                             "    return(Rubedo.RubedoAutomatedElementsLoc.publishedText);\r",
@@ -241,10 +241,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processEtat",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processEtat",
                         "implHandler": [
                             "config.filter={\r",
                             "    type:\"list\",\r",
@@ -270,8 +270,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "lastUpdateContentCol",
                 "dataIndex": "lastUpdateTime",
+                "localiserId": "lastUpdateContentCol",
                 "text": "Last update"
             },
             "designerId": "321ff94d-59f8-45c4-9a03-276bc393e2f4",
@@ -291,10 +291,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processLastupdate",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processLastupdate",
                         "implHandler": [
                             "config.filter={\r",
                             "    type:\"date\",\r",
@@ -315,6 +315,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dataIndex": "online",
+                "falseText": null,
                 "filter": [
                     "{\r",
                     "    type:\"combo\",\r",
@@ -325,11 +327,9 @@
                     "}"
                 ],
                 "localiserId": "onlineColumn",
-                "width": 60,
-                "dataIndex": "online",
                 "text": "En ligne",
-                "falseText": null,
-                "trueText": null
+                "trueText": null,
+                "width": 60
             },
             "configAlternates": {
                 "filter": "object"
@@ -356,10 +356,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processEnligne",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processEnligne",
                         "implHandler": [
                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -394,17 +394,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "width": 360,
                 "displayInfo": true,
                 "displayMsg": null,
+                "dock": "bottom",
                 "emptyMsg": null,
                 "firstText": null,
                 "lastText": null,
                 "nextText": null,
                 "prevText": null,
                 "refreshText": null,
-                "store": "ContenusDataJson"
+                "store": "ContenusDataJson",
+                "width": 360
             },
             "designerId": "0c1466ec-1856-48a9-a1f5-56e00a3fecbc",
             "cn": [
@@ -416,9 +416,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "contentsClearFilterBtn",
-                        "layout|flex": null,
                         "iconCls": "close",
+                        "layout|flex": null,
+                        "localiserId": "contentsClearFilterBtn",
                         "text": "Clear filters"
                     },
                     "designerId": "538a877e-b64a-465d-b13e-7336d02981d9",
@@ -438,11 +438,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "Ext.getCmp(\"ContenusGrid\").features[0].clearFilters();"
                                 ]
@@ -461,10 +461,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processMenuContenusContext",
                 "designer|params": [
                     "config"
                 ],
+                "fn": "processMenuContenusContext",
                 "implHandler": [
                     "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];\r",
                     "return config;"

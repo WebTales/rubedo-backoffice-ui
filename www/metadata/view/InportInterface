@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "importMainWindow",
-        "height": 439,
-        "id": "InportInterface",
-        "width": 1063,
-        "designer|userClassName": "InportInterface",
-        "designer|userAlias": "InportInterface",
-        "resizable": false,
-        "layout": "card",
         "constrainHeader": true,
+        "designer|userAlias": "InportInterface",
+        "designer|userClassName": "InportInterface",
+        "height": 439,
         "iconCls": "database_up_small",
-        "title": "Import"
+        "id": "InportInterface",
+        "layout": "card",
+        "localiserId": "importMainWindow",
+        "resizable": false,
+        "title": "Import",
+        "width": 1063
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -51,12 +51,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "importStage1Panel",
+                "bodyPadding": 10,
                 "container|align": "stretch",
                 "layout": "vbox",
-                "bodyPadding": 10,
-                "title": "Choix du fichier à importer",
-                "timeout": 120
+                "localiserId": "importStage1Panel",
+                "timeout": 120,
+                "title": "Choix du fichier à importer"
             },
             "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
             "customConfigs": [
@@ -75,12 +75,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "container|align": "stretch",
                         "container|padding": 1,
+                        "layout": "hbox",
+                        "layout|flex": null,
                         "margin": "0 0 10 0",
-                        "padding": null,
-                        "layout": "hbox"
+                        "padding": null
                     },
                     "designerId": "52ce27cc-8170-4540-882b-34674429c437",
                     "cn": [
@@ -92,16 +92,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importSeparatorField",
-                                "layout|flex": null,
-                                "width": 100,
+                                "allowBlank": false,
                                 "fieldLabel": "Séparateur",
                                 "labelWidth": 60,
+                                "layout|flex": null,
+                                "localiserId": "importSeparatorField",
                                 "name": "separator",
                                 "value": [
                                     "\";\""
                                 ],
-                                "allowBlank": false
+                                "width": 100
                             },
                             "designerId": "2cdf994e-da89-43ab-bd5a-f48dca38bcae",
                             "customConfigs": [
@@ -143,19 +143,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": true,
+                                "editable": false,
+                                "fieldLabel": "Encoding",
+                                "forceSelection": true,
+                                "id": "chooseEncodingField",
+                                "labelWidth": 60,
                                 "layout|flex": null,
                                 "layout|margins": "0 0 0 5",
-                                "disabled": true,
-                                "id": "chooseEncodingField",
-                                "width": 160,
-                                "fieldLabel": "Encoding",
-                                "labelWidth": 60,
                                 "name": "encoding",
-                                "editable": false,
-                                "forceSelection": true,
                                 "store": [
                                     "[ ]"
-                                ]
+                                ],
+                                "width": 160
                             },
                             "configAlternates": {
                                 "store": "array"
@@ -170,10 +170,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processChooseEncodingField",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processChooseEncodingField",
                                         "implHandler": [
                                             "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.encodingText;\r",
                                             "return config;"
@@ -191,16 +191,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importCSVFileField",
-                                "layout|flex": 1,
-                                "id": "mainCSVinportField",
-                                "margin": "0 0 0 5",
-                                "width": 380,
-                                "fieldLabel": "Fichier CSV",
-                                "labelWidth": 80,
-                                "name": "csvFile",
                                 "allowBlank": false,
-                                "buttonText": "Choisir et analyser"
+                                "buttonText": "Choisir et analyser",
+                                "fieldLabel": "Fichier CSV",
+                                "id": "mainCSVinportField",
+                                "labelWidth": 80,
+                                "layout|flex": 1,
+                                "localiserId": "importCSVFileField",
+                                "margin": "0 0 0 5",
+                                "name": "csvFile",
+                                "width": 380
                             },
                             "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
                             "customConfigs": [
@@ -237,12 +237,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importCSVFieldAuxilaryBtn",
-                                "layout|flex": null,
                                 "hidden": true,
-                                "id": "fileFieldHelper1",
-                                "margin": "0 0 0 4",
                                 "iconCls": "close",
+                                "id": "fileFieldHelper1",
+                                "layout|flex": null,
+                                "localiserId": "importCSVFieldAuxilaryBtn",
+                                "margin": "0 0 0 4",
                                 "text": ""
                             },
                             "designerId": "a4fb8fc2-6846-40b2-b969-e9b4209d0fd5",
@@ -264,10 +264,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
                         "container|align": "stretch",
                         "id": "mainCSVInportAnalyseContainer",
-                        "layout": "vbox"
+                        "layout": "vbox",
+                        "layout|flex": 1
                     },
                     "designerId": "89634e52-74f0-4547-ae81-89ca239c4f26",
                     "cn": [
@@ -279,10 +279,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importStage1MainPanel",
-                                "layout|flex": 1,
                                 "container|align": "stretch",
                                 "layout": "hbox",
+                                "layout|flex": 1,
+                                "localiserId": "importStage1MainPanel",
                                 "title": "Choisissez un fichier CSV pour afficher ses champs"
                             },
                             "designerId": "bd2ff629-6911-4596-bcfe-838c7b743f41",
@@ -302,10 +302,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "title": "",
                                         "forceFit": true,
-                                        "store": "NotInportFieldsStore"
+                                        "layout|flex": 1,
+                                        "store": "NotInportFieldsStore",
+                                        "title": ""
                                     },
                                     "designerId": "283bd4f5-dbc7-4651-bd9e-6139a8da22c9",
                                     "cn": [
@@ -317,8 +317,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "importIgnoredFieldsCol",
                                                 "dataIndex": "name",
+                                                "localiserId": "importIgnoredFieldsCol",
                                                 "text": "Ne pas importer"
                                             },
                                             "designerId": "efcc439c-9fce-45e7-b14b-1a63f4219084",
@@ -363,10 +363,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "title": "",
                                         "forceFit": true,
-                                        "store": "InportAsFieldStore"
+                                        "layout|flex": 1,
+                                        "store": "InportAsFieldStore",
+                                        "title": ""
                                     },
                                     "designerId": "f17de099-4f85-4eca-ad19-5edbb12e64ef",
                                     "cn": [
@@ -378,8 +378,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "importImportAsFieldCol",
                                                 "dataIndex": "name",
+                                                "localiserId": "importImportAsFieldCol",
                                                 "text": "Importer en tant que champ"
                                             },
                                             "designerId": "453279b9-c24c-4f6b-8082-e785aea0f6b7",
@@ -424,10 +424,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "title": "",
                                         "forceFit": true,
-                                        "store": "InportAsFieldTranslationStore"
+                                        "layout|flex": 1,
+                                        "store": "InportAsFieldTranslationStore",
+                                        "title": ""
                                     },
                                     "designerId": "99f143fe-690d-48fd-af86-654a46854663",
                                     "cn": [
@@ -439,8 +439,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "importAsFieldTransCol",
                                                 "dataIndex": "name",
+                                                "localiserId": "importAsFieldTransCol",
                                                 "text": "Import as field translation"
                                             },
                                             "designerId": "823a7e11-1c8c-4470-b219-f5c045671cc3",
@@ -504,10 +504,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "title": "",
                                         "forceFit": true,
-                                        "store": "InportAsTaxoStore"
+                                        "layout|flex": 1,
+                                        "store": "InportAsTaxoStore",
+                                        "title": ""
                                     },
                                     "designerId": "de9d07d1-9dfe-4de7-bb7b-08dd35b11d75",
                                     "cn": [
@@ -519,8 +519,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "importImportAsTaxoCol",
                                                 "dataIndex": "name",
+                                                "localiserId": "importImportAsTaxoCol",
                                                 "text": "Importer en tant que taxonomie"
                                             },
                                             "designerId": "35b30c5c-a479-472e-8248-1caf91581b62",
@@ -565,10 +565,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "title": "",
                                         "forceFit": true,
-                                        "store": "InportAsTaxoTranslationStore"
+                                        "layout|flex": 1,
+                                        "store": "InportAsTaxoTranslationStore",
+                                        "title": ""
                                     },
                                     "designerId": "76e8689a-4800-4938-a7c6-bfd834e05a58",
                                     "cn": [
@@ -580,8 +580,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "ImportAsTaxoTransCol",
                                                 "dataIndex": "name",
+                                                "localiserId": "ImportAsTaxoTransCol",
                                                 "text": "Import as taxonomy translation"
                                             },
                                             "designerId": "69ae97f0-4924-4b79-bb3e-27748f53aae4",
@@ -651,9 +651,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "importStage2",
-                "layout": "fit",
                 "bodyPadding": null,
+                "layout": "fit",
+                "localiserId": "importStage2",
                 "title": "Paramétrage des champs"
             },
             "designerId": "f1be8f51-c00e-4572-ab5f-3ec03a64008f",
@@ -673,9 +673,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "",
                         "forceFit": true,
-                        "store": "InportAsFieldStore"
+                        "store": "InportAsFieldStore",
+                        "title": ""
                     },
                     "designerId": "5f894302-a1fb-4faa-9a1d-d3468c9068ef",
                     "cn": [
@@ -710,8 +710,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2NameColumn",
                                 "dataIndex": "name",
+                                "localiserId": "importS2NameColumn",
                                 "text": "Nom"
                             },
                             "designerId": "064b115b-c924-4cbe-8c40-4cc807efc7a6",
@@ -731,11 +731,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2NewnameCol",
-                                "width": 130,
                                 "dataIndex": "newName",
+                                "flex": null,
+                                "localiserId": "importS2NewnameCol",
                                 "text": "Nouveau nom (optionnel)",
-                                "flex": null
+                                "width": 130
                             },
                             "designerId": "7c798fbe-f4ef-465f-b087-0faab3ad9753",
                             "customConfigs": [
@@ -765,8 +765,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2LabelCol",
                                 "dataIndex": "label",
+                                "localiserId": "importS2LabelCol",
                                 "text": "Libellé"
                             },
                             "designerId": "58d27c2c-d16b-4a50-aefa-be709925b6df",
@@ -797,8 +797,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2TypeCol",
                                 "dataIndex": "protoId",
+                                "localiserId": "importS2TypeCol",
                                 "text": "Type"
                             },
                             "designerId": "fd18a1d9-502b-4118-85e6-5a91fc5b5dbf",
@@ -819,8 +819,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
-                                        "editable": false,
                                         "displayField": "type",
+                                        "editable": false,
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "ImportableFieldTypesStore",
@@ -836,7 +836,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -846,6 +845,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "return(Ext.getStore(\"ImportableFieldTypesStore\").findRecord(\"id\", value).get(\"type\"));"
                                         ]
@@ -876,8 +876,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
-                                        "editable": false,
                                         "displayField": "type",
+                                        "editable": false,
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "MediaTypesFORDAMPicker",
@@ -893,7 +893,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -903,6 +902,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "if (Ext.isEmpty(value)){\r",
                                             "\treturn(\"\");\r",
@@ -923,10 +923,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2SearchableCol",
                                 "dataIndex": "searchable",
-                                "text": "Recherchable",
                                 "falseText": "Non",
+                                "localiserId": "importS2SearchableCol",
+                                "text": "Recherchable",
                                 "trueText": "Oui"
                             },
                             "designerId": "3bd1a725-44a7-4096-91b4-8dabf0f0d5dd",
@@ -960,10 +960,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processRecherchable",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processRecherchable",
                                         "implHandler": [
                                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -982,10 +982,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2LocalizableCol",
                                 "dataIndex": "localizable",
-                                "text": "Localizable",
                                 "falseText": "Non",
+                                "localiserId": "importS2LocalizableCol",
+                                "text": "Localizable",
                                 "trueText": "Oui"
                             },
                             "designerId": "d6c8f375-31b2-4f3d-bee0-bc7e5542d858",
@@ -1019,10 +1019,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processLocalizable",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processLocalizable",
                                         "implHandler": [
                                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -1041,10 +1041,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS2MandatoryCol",
                                 "dataIndex": "mandatory",
-                                "text": "Obligatoire",
                                 "falseText": "Non",
+                                "localiserId": "importS2MandatoryCol",
+                                "text": "Obligatoire",
                                 "trueText": "Oui"
                             },
                             "designerId": "51a661eb-5176-445e-b32f-3ff8d3c40319",
@@ -1078,10 +1078,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processObligatoire",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processObligatoire",
                                         "implHandler": [
                                             "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                             "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -1228,10 +1228,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "importStage3",
-                "title": "Paramétrage de la taxonomie",
                 "forceFit": true,
-                "store": "InportAsTaxoStore"
+                "localiserId": "importStage3",
+                "store": "InportAsTaxoStore",
+                "title": "Paramétrage de la taxonomie"
             },
             "designerId": "e183be72-9326-4831-9dea-a0c3bd47dec2",
             "customConfigs": [
@@ -1273,8 +1273,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "importS3NameCol",
                         "dataIndex": "name",
+                        "localiserId": "importS3NameCol",
                         "text": "Nom"
                     },
                     "designerId": "142a2cca-0657-4a22-af59-e7cb46042458",
@@ -1306,8 +1306,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "importS3NewNameXol",
                         "dataIndex": "newName",
+                        "localiserId": "importS3NewNameXol",
                         "text": "Nouveau nom (optionnel)"
                     },
                     "designerId": "bd94392f-4db7-4055-9d75-86d858df24d0",
@@ -1338,10 +1338,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "importS3MandatoryCol",
                         "dataIndex": "mandatory",
-                        "text": "Obligatoire",
                         "falseText": "Non",
+                        "localiserId": "importS3MandatoryCol",
+                        "text": "Obligatoire",
                         "trueText": "Oui"
                     },
                     "designerId": "942d2776-2795-4922-aa25-43f3484d992d",
@@ -1375,10 +1375,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processObligatoire1",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processObligatoire1",
                                 "implHandler": [
                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -1399,9 +1399,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "translationSettingsPanel",
                 "container|align": "stretch",
                 "layout": "hbox",
+                "localiserId": "translationSettingsPanel",
                 "title": "Translation settings"
             },
             "designerId": "e54a6d10-2e68-4f13-8ca5-7d81c2a7f12d",
@@ -1421,11 +1421,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "FieldTransSetPanel",
-                        "layout|flex": 1,
-                        "title": "Field translations",
                         "forceFit": true,
-                        "store": "InportAsFieldTranslationStore"
+                        "layout|flex": 1,
+                        "localiserId": "FieldTransSetPanel",
+                        "store": "InportAsFieldTranslationStore",
+                        "title": "Field translations"
                     },
                     "designerId": "143658b0-1029-4726-800b-36d27f229f33",
                     "customConfigs": [
@@ -1468,8 +1468,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS3NameCol",
                                 "dataIndex": "name",
+                                "localiserId": "importS3NameCol",
                                 "text": "Nom"
                             },
                             "designerId": "0f9b2aab-58b9-4b0a-9415-c0c2d041f751",
@@ -1489,8 +1489,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "transFieldCol",
                                 "dataIndex": "translatedElement",
+                                "localiserId": "transFieldCol",
                                 "text": "Translated field"
                             },
                             "designerId": "e5f2f4e2-c103-417a-b874-830c1c9fd51c",
@@ -1511,8 +1511,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
-                                        "editable": false,
                                         "displayField": "name",
+                                        "editable": false,
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "LocalizedFieldSelectorStore",
@@ -1528,7 +1528,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -1538,6 +1537,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "if (Ext.isEmpty(value)){\r",
                                             "    return(\"\");\r",
@@ -1558,8 +1558,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "transLanguageCol",
                                 "dataIndex": "translateToLanguage",
+                                "localiserId": "transLanguageCol",
                                 "text": "Translation language"
                             },
                             "designerId": "3fafc062-57c4-4358-95f9-cdec2aa8c346",
@@ -1580,8 +1580,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
-                                        "editable": false,
                                         "displayField": "label",
+                                        "editable": false,
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "ImportTranslationLanguageStore",
@@ -1597,7 +1597,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -1607,6 +1606,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "if (Ext.isEmpty(value)){\r",
                                             "    return(\"\");\r",
@@ -1629,12 +1629,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "TaxoTransSetPanel",
+                        "forceFit": true,
                         "layout|flex": 1,
                         "layout|margins": null,
-                        "title": "Taxonomy translations",
-                        "forceFit": true,
-                        "store": "InportAsTaxoTranslationStore"
+                        "localiserId": "TaxoTransSetPanel",
+                        "store": "InportAsTaxoTranslationStore",
+                        "title": "Taxonomy translations"
                     },
                     "designerId": "8ac35ff5-f4bf-4b72-8a91-2f582678faa7",
                     "customConfigs": [
@@ -1665,8 +1665,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "importS3NameCol",
                                 "dataIndex": "name",
+                                "localiserId": "importS3NameCol",
                                 "text": "Nom"
                             },
                             "designerId": "d7d774cb-46b3-471f-99c9-35da48e71237",
@@ -1698,8 +1698,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "transVocabCol",
                                 "dataIndex": "translatedElement",
+                                "localiserId": "transVocabCol",
                                 "text": "Translated vocabulary"
                             },
                             "designerId": "0ccb0132-e1a6-4fbe-a9fa-505a5dc6183c",
@@ -1720,8 +1720,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
-                                        "editable": false,
                                         "displayField": "name",
+                                        "editable": false,
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "InportAsTaxoStore",
@@ -1737,7 +1737,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -1747,6 +1746,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "if (Ext.isEmpty(value)){\r",
                                             "    return(\"\");\r",
@@ -1767,8 +1767,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "transLanguageCol",
                                 "dataIndex": "translateToLanguage",
+                                "localiserId": "transLanguageCol",
                                 "text": "Translation language"
                             },
                             "designerId": "eb69090f-7e3e-4b2f-ba04-7b3969c4a1a2",
@@ -1789,8 +1789,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "allowBlank": false,
-                                        "editable": false,
                                         "displayField": "label",
+                                        "editable": false,
                                         "forceSelection": true,
                                         "queryMode": "local",
                                         "store": "ImportTranslationLanguageStore",
@@ -1806,7 +1806,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -1816,6 +1815,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "if (Ext.isEmpty(value)){\r",
                                             "    return(\"\");\r",
@@ -1838,9 +1838,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
                         "dock": "bottom",
-                        "fieldLabel": "Label"
+                        "fieldLabel": "Label",
+                        "layout|flex": 1
                     },
                     "designerId": "3de75f9e-e07d-4562-b632-48b419eea437",
                     "cn": [
@@ -1884,9 +1884,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "importFinalStage",
                 "autoScroll": true,
                 "bodyPadding": 10,
+                "localiserId": "importFinalStage",
                 "title": "Finalisation  et import"
             },
             "designerId": "5426ed1d-fc23-4c2d-8687-1143c5b1c7de",
@@ -1926,12 +1926,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameField",
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Nom",
                                 "labelWidth": 165,
-                                "name": "ContentTypeType",
-                                "allowBlank": false
+                                "layout|anchor": "100%",
+                                "localiserId": "nameField",
+                                "name": "ContentTypeType"
                             },
                             "designerId": "52972bc4-ab73-4224-a300-a639dedd7cc3",
                             "customConfigs": [
@@ -1952,10 +1952,10 @@
                             "userConfig": {
                                 "fieldLabel": "Espaces de travail",
                                 "labelWidth": 165,
-                                "name": "ContentTypeWorkspaces",
+                                "layout|anchor": "100%",
                                 "multiSelect": true,
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "name": "ContentTypeWorkspaces",
+                                "store": "ContributeWorkspacesCombo"
                             },
                             "configAlternates": {
                                 "canSwitchStore": "boolean"
@@ -1971,19 +1971,19 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "workflowField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Workflow",
-                                "labelWidth": 165,
-                                "name": "ContentTypeWorkflow",
-                                "value": [
-                                    "\"Aucun\""
-                                ],
                                 "allowBlank": false,
                                 "editable": false,
+                                "fieldLabel": "Workflow",
                                 "forceSelection": true,
+                                "labelWidth": 165,
+                                "layout|anchor": "100%",
+                                "localiserId": "workflowField",
+                                "name": "ContentTypeWorkflow",
                                 "store": [
                                     "[\"Aucun\", \"Basique\"]"
+                                ],
+                                "value": [
+                                    "\"Aucun\""
                                 ]
                             },
                             "configAlternates": {
@@ -2028,12 +2028,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "contributeWorkspaceField",
                                 "fieldLabel": "Contribution",
                                 "labelWidth": 165,
+                                "layout|anchor": "100%",
+                                "localiserId": "contributeWorkspaceField",
                                 "name": "ContentsWriteWorkspace",
-                                "store": "ContributeWorkspacesCombo",
-                                "layout|anchor": "100%"
+                                "store": "ContributeWorkspacesCombo"
                             },
                             "designerId": "7db6a75a-b5c7-488d-8d88-a1807ea34193",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -2046,13 +2046,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "difusionWorkspaceField",
                                 "fieldLabel": "Diffusion",
                                 "labelWidth": 165,
-                                "name": "ContentsTarget",
+                                "layout|anchor": "100%",
+                                "localiserId": "difusionWorkspaceField",
                                 "multiSelect": true,
-                                "store": "WorkspacesComboWithAll",
-                                "layout|anchor": "100%"
+                                "name": "ContentsTarget",
+                                "store": "WorkspacesComboWithAll"
                             },
                             "designerId": "cb608ca9-372b-47f8-91b0-560c2b3bca68",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
@@ -2139,9 +2139,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "importBtn",
-                        "layout|anchor": "100%",
                         "id": "mainImportSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "importBtn",
                         "scale": "large",
                         "text": "Importer"
                     },

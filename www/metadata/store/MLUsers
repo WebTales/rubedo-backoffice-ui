@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": null,
-        "usedCollection": null,
         "autoLoad": false,
-        "model": "userDataModel",
-        "storeId": "MLUsers",
-        "designer|userClassName": "MLUsers",
         "designer|userAlias": "MLUsers",
-        "pageSize": 50
+        "designer|userClassName": "MLUsers",
+        "isOptimised": null,
+        "model": "userDataModel",
+        "pageSize": 50,
+        "storeId": "MLUsers",
+        "usedCollection": null
     },
     "configAlternates": {
         "isOptimised": "boolean"

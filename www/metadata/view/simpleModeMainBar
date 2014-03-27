@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 40,
-        "id": "simpleModeMainBar",
+        "designer|userAlias": "simpleModeMainBar",
         "designer|userClassName": "simpleModeMainBar",
-        "designer|userAlias": "simpleModeMainBar"
+        "height": 40,
+        "id": "simpleModeMainBar"
     },
     "designerId": "1b5f698a-3816-41a7-95cd-7fddf2dbe64d",
     "cn": [
@@ -21,10 +21,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "height": 32,
-                "width": 32,
-                "src": "resources/images/logoRubedo.png"
+                "layout|flex": null,
+                "src": "resources/images/logoRubedo.png",
+                "width": 32
             },
             "designerId": "c5e36476-1fb8-4a4d-b6c6-758e770dd620"
         },
@@ -48,10 +48,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "simpleModeFavoritesBtn",
-                "layout|flex": null,
-                "id": "favoritesAdaptiveMenu",
                 "iconCls": "favoris",
+                "id": "favoritesAdaptiveMenu",
+                "layout|flex": null,
+                "localiserId": "simpleModeFavoritesBtn",
                 "text": "Favorites"
             },
             "designerId": "b9451b93-655a-4f0f-9b26-1b050acdd22b",
@@ -137,11 +137,11 @@
             "userConfig": {
                 "ACL": "read.ui.pages",
                 "favoriteIcon": "application.png",
-                "localiserId": "pagesLaunchBtn",
-                "layout|flex": null,
-                "itemId": "contributionPages",
-                "margin": null,
                 "iconCls": "site-icon",
+                "itemId": "contributionPages",
+                "layout|flex": null,
+                "localiserId": "pagesLaunchBtn",
+                "margin": null,
                 "text": "Pages"
             },
             "designerId": "3312068a-afa0-4271-9838-34d8dbcb892b",
@@ -173,11 +173,11 @@
             "userConfig": {
                 "ACL": "read.ui.pages",
                 "favoriteIcon": "computer.png",
-                "localiserId": "previewLaunchBtn",
-                "layout|flex": null,
-                "itemId": "contributionPrevisualisation",
-                "margin": null,
                 "iconCls": "personalize",
+                "itemId": "contributionPrevisualisation",
+                "layout|flex": null,
+                "localiserId": "previewLaunchBtn",
+                "margin": null,
                 "text": "Prévisualisation"
             },
             "designerId": "85044e64-d0c1-4b9c-9845-ce2cc85f353b",
@@ -209,11 +209,11 @@
             "userConfig": {
                 "ACL": "read.ui.contents",
                 "favoriteIcon": "page_full.png",
-                "localiserId": "contentsLaunchBtn",
-                "layout|flex": null,
-                "itemId": "contributionContenus",
-                "margin": null,
                 "iconCls": "content-icon",
+                "itemId": "contributionContenus",
+                "layout|flex": null,
+                "localiserId": "contentsLaunchBtn",
+                "margin": null,
                 "text": "Contenus"
             },
             "designerId": "e09775bb-c362-4dcb-99d4-9bbdec8d9c26",
@@ -245,11 +245,11 @@
             "userConfig": {
                 "ACL": "read.ui.dam",
                 "favoriteIcon": "images.png",
-                "localiserId": "DAMLaunchBtn",
-                "layout|flex": null,
-                "itemId": "DAMInterface",
-                "margin": null,
                 "iconCls": "mediaTypes",
+                "itemId": "DAMInterface",
+                "layout|flex": null,
+                "localiserId": "DAMLaunchBtn",
+                "margin": null,
                 "text": "Médiathèque"
             },
             "designerId": "b9c989bd-8167-46cd-800e-a4f4d94d4fe8",
@@ -299,13 +299,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "usesMenu": true,
-                "usedMenu": "salamanderStudioMenu",
-                "localiserId": "studioMenuBtn",
-                "layout|flex": null,
                 "arrowCls": null,
                 "iconCls": "applications",
-                "text": "Studio"
+                "layout|flex": null,
+                "localiserId": "studioMenuBtn",
+                "text": "Studio",
+                "usedMenu": "salamanderStudioMenu",
+                "usesMenu": true
             },
             "configAlternates": {
                 "usesMenu": "boolean"
@@ -369,10 +369,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processSpecialStudioMenu11",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processSpecialStudioMenu11",
                                 "implHandler": [
                                     "config.items=[\r",
                                     "{\r",
@@ -456,12 +456,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "usesMenu": true,
-                "usedMenu": "salamanderAdminMenu",
-                "localiserId": "adminLenuBtn",
-                "layout|flex": null,
                 "iconCls": "process-icon",
-                "text": "Administration"
+                "layout|flex": null,
+                "localiserId": "adminLenuBtn",
+                "text": "Administration",
+                "usedMenu": "salamanderAdminMenu",
+                "usesMenu": true
             },
             "configAlternates": {
                 "usesMenu": "boolean"
@@ -525,10 +525,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processSpecialAdminMenu22",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processSpecialAdminMenu22",
                                 "implHandler": [
                                     "config.items=[\r",
                                     "{\r",
@@ -646,11 +646,11 @@
             "codeClass": null,
             "userConfig": {
                 "favoriteIcon": "tools.png",
-                "localiserId": "mySettingsLaunchBtn",
-                "layout|flex": null,
-                "itemId": "userSettings",
-                "margin": null,
                 "iconCls": "parametres",
+                "itemId": "userSettings",
+                "layout|flex": null,
+                "localiserId": "mySettingsLaunchBtn",
+                "margin": null,
                 "text": "Paramètres"
             },
             "designerId": "c0a4772d-5faf-413f-85b3-f3815816f0d8",
@@ -687,11 +687,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "logoutBtn",
-                "layout|flex": null,
+                "iconCls": "deconecter",
                 "id": null,
                 "itemId": "deconnexionMenuPrincipal",
-                "iconCls": "deconecter",
+                "layout|flex": null,
+                "localiserId": "logoutBtn",
                 "text": "Déconnexion"
             },
             "designerId": "4f1758ff-49a0-4a2e-9d10-e80de7ddf76e",

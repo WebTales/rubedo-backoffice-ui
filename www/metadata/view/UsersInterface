@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "favoriteIcon": "folder.png",
-        "localiserId": "usersWindow",
-        "container|align": "stretch",
-        "height": 578,
-        "id": "UsersInterface",
-        "width": 951,
-        "designer|userClassName": "UsersInterface",
-        "designer|userAlias": "UsersInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "UsersInterface",
+        "designer|userClassName": "UsersInterface",
+        "favoriteIcon": "folder.png",
+        "height": 578,
         "iconCls": "user_edit",
-        "title": "Users"
+        "id": "UsersInterface",
+        "layout": "hbox",
+        "localiserId": "usersWindow",
+        "title": "Users",
+        "width": 951
     },
     "designerId": "a4b83a90-d89a-4eb9-84fd-5d65fe00e651",
     "customConfigs": [
@@ -67,10 +67,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "layout|flex": 1
             },
             "designerId": "b0fbd24a-e6f6-401a-9570-336d615daac5",
             "cn": [
@@ -82,10 +82,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "usersLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "origine",
                         "iconCls": "user_edit",
+                        "itemId": "origine",
+                        "layout|flex": null,
+                        "localiserId": "usersLaunchBtn",
                         "text": "Users"
                     },
                     "designerId": "ecf7bd21-331a-436a-a074-056d4ea46f60",
@@ -107,10 +107,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "380b8193-bb32-4dd8-95ec-0453bad5ac81",
@@ -123,11 +123,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
                         "itemId": "imageBarreMeta",
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "e78c6cf4-b425-432f-928d-a3439213869c",
                     "cn": [
@@ -158,8 +158,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "boiteBarreMeta",
+                        "layout|flex": null,
                         "margin": "0 0 0 20"
                     },
                     "designerId": "61f69a1c-6889-4d45-84d5-1da105526db6",
@@ -172,10 +172,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "309a67c3-994e-48e7-b6b3-d46a74ac0de1"
                         }
@@ -191,10 +191,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "3c844339-58d7-4d2b-bf59-1ac121f2575a",
@@ -208,14 +208,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "addUserBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "addUserBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -242,14 +242,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "localiserId": "editBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "editUserBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
+                        "id": "editUserBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "editBtn",
                         "scale": "large",
                         "text": "Modifier"
                     },
@@ -276,14 +276,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "removeUserBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "removeUserBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -309,13 +309,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "clipboardGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Presse-papiers",
-                        "columns": 4
+                        "layout|flex": null,
+                        "localiserId": "clipboardGroup",
+                        "title": "Presse-papiers"
                     },
                     "designerId": "9b28bd00-ca1d-4c2c-98ca-d732455dbf52",
                     "customConfigs": [
@@ -334,11 +334,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "shortcutBtn",
-                                "itemId": "boutonCreerRaccourci",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
+                                "itemId": "boutonCreerRaccourci",
+                                "localiserId": "shortcutBtn",
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
@@ -362,13 +362,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.users",
-                        "layout|flex": null,
+                        "columns": 2,
                         "disabled": true,
+                        "headerPosition": "bottom",
                         "hidden": true,
                         "id": "usersSignUpModeration",
-                        "headerPosition": "bottom",
-                        "title": "Sign-up moderation",
-                        "columns": 2
+                        "layout|flex": null,
+                        "title": "Sign-up moderation"
                     },
                     "designerId": "1a72384e-26a5-4dae-809e-bfb6f0018440",
                     "customConfigs": [
@@ -388,9 +388,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.users",
-                                "id": "approveSignUpBtn",
                                 "iconAlign": "top",
                                 "iconCls": "accept_big",
+                                "id": "approveSignUpBtn",
                                 "scale": "large",
                                 "text": "Approve"
                             },
@@ -412,9 +412,9 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.users",
-                                "id": "denySignUpBtn",
                                 "iconAlign": "top",
                                 "iconCls": "nonS",
+                                "id": "denySignUpBtn",
                                 "scale": "large",
                                 "text": "Deny"
                             },
@@ -450,10 +450,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "users",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -476,17 +476,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
+                "autoScroll": true,
                 "id": "usersInterfaceTypeGrid",
                 "itemId": null,
-                "width": 150,
-                "autoScroll": true,
+                "layout|flex": null,
                 "resizable": [
                     "true"
                 ],
                 "resizeHandles": "e",
+                "store": "UserTypesForUsers",
                 "title": "",
-                "store": "UserTypesForUsers"
+                "width": 150
             },
             "configAlternates": {
                 "managesStore": "boolean"
@@ -514,11 +514,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "typeColumn",
-                        "width": 672,
                         "dataIndex": "type",
+                        "flex": 1,
+                        "localiserId": "typeColumn",
                         "text": "Type",
-                        "flex": 1
+                        "width": 672
                     },
                     "designerId": "76dce278-ea0c-47c2-82eb-794c311f0064",
                     "customConfigs": [
@@ -537,7 +537,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -547,6 +546,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "return ('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/folder.png\"> '+value);"
                                 ]
@@ -614,11 +614,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "id": "usersInterfaceCenterGrid",
-                "title": "",
                 "forceFit": true,
-                "store": "UsersAdminDataStore"
+                "id": "usersInterfaceCenterGrid",
+                "layout|flex": 1,
+                "store": "UsersAdminDataStore",
+                "title": ""
             },
             "designerId": "7afeb29c-cf7d-492d-858a-8928466ddbcf",
             "cn": [
@@ -630,8 +630,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "photoCol",
                         "dataIndex": "photo",
+                        "localiserId": "photoCol",
                         "text": "Photo"
                     },
                     "designerId": "725ed79d-6f3c-49f1-97dc-88d828c52731",
@@ -651,7 +651,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -661,6 +660,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "var src=\"\";\r",
                                     "if (Ext.isEmpty(record.get(\"photo\"))) {\r",
@@ -683,8 +683,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameCol",
                         "dataIndex": "name",
+                        "localiserId": "nameCol",
                         "text": "Name"
                     },
                     "designerId": "62a32be9-8cb1-42c3-9673-d5fb6c09ae7b",
@@ -704,7 +704,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -714,6 +713,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "var valueString= value;\r",
                                     "try {\r",
@@ -737,8 +737,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "emailCol",
                         "dataIndex": "email",
+                        "localiserId": "emailCol",
                         "text": "Email"
                     },
                     "designerId": "4b292ac3-758d-412a-b452-bd95cc92e8d3",
@@ -767,8 +767,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "creationCol",
                         "dataIndex": "createTime",
+                        "localiserId": "creationCol",
                         "text": "Creation"
                     },
                     "designerId": "07f5a976-d4e4-42c7-a0f7-dd48e3e03966",
@@ -788,8 +788,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "lastUpdateCol",
                         "dataIndex": "lastUpdateTime",
+                        "localiserId": "lastUpdateCol",
                         "text": "Last update"
                     },
                     "designerId": "195efb73-765f-4678-a85e-d9ae77987171",
@@ -809,10 +809,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "signUpStatCol",
-                        "id": "usersInterfaceStatusCol",
                         "dataIndex": "status",
                         "hideable": false,
+                        "id": "usersInterfaceStatusCol",
+                        "localiserId": "signUpStatCol",
                         "text": "Sign-up status"
                     },
                     "designerId": "6d08157c-307e-4f8e-b95c-6707734b98b8",
@@ -832,10 +832,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
-                        "width": 360,
                         "displayInfo": true,
-                        "store": "UsersAdminDataStore"
+                        "dock": "bottom",
+                        "store": "UsersAdminDataStore",
+                        "width": 360
                     },
                     "designerId": "32cb232c-bd70-4c0a-a2a0-36e776d732af"
                 },

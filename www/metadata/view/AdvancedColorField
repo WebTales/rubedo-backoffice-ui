@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": null,
-        "designer|userClassName": "AdvancedColorField",
-        "designer|userAlias": "AdvancedColorField",
-        "fieldLabel": "Test field",
         "allowBlank": false,
+        "designer|userAlias": "AdvancedColorField",
+        "designer|userClassName": "AdvancedColorField",
+        "fieldLabel": "Test field",
+        "id": null,
         "regex": "/^#([0-9a-f]{3}){2}$/i"
     },
     "designerId": "e7d07403-1815-4369-9257-def71279340c",
@@ -75,10 +75,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "getLuminance",
                 "designer|params": [
                     "hexCode"
                 ],
+                "fn": "getLuminance",
                 "implHandler": [
                     "hexCode = hexCode.replace('#', '');\r",
                     "var c_r = parseInt(hexCode.substr(0, 2),16);\r",

@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "numberOfOptions": "5",
+        "constrain": true,
+        "designer|userAlias": "experiencePlanEditorWindow",
+        "designer|userClassName": "experiencePlanEditorWindow",
+        "height": 445,
+        "id": "experiencePlanEditorWindow",
         "initialData": [
             "[ ]"
         ],
-        "height": 445,
-        "id": "experiencePlanEditorWindow",
-        "width": 863,
-        "designer|userClassName": "experiencePlanEditorWindow",
-        "designer|userAlias": "experiencePlanEditorWindow",
-        "constrain": true,
         "layout": "fit",
+        "modal": true,
+        "numberOfOptions": "5",
         "title": "Plan d'expérience",
-        "modal": true
+        "width": 863
     },
     "configAlternates": {
         "initialData": "array"

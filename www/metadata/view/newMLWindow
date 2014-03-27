@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "newMLWindow",
+        "constrain": true,
+        "designer|userAlias": "newMLWindow",
+        "designer|userClassName": "newMLWindow",
         "height": 112,
         "id": "newMLWindow",
-        "width": 400,
-        "designer|userClassName": "newMLWindow",
-        "designer|userAlias": "newMLWindow",
-        "constrain": true,
-        "resizable": false,
         "layout": "fit",
+        "localiserId": "newMLWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Nouvelle liste de diffusion",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -51,11 +51,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameField",
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Nom",
-                        "name": "name",
-                        "allowBlank": false
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "name"
                     },
                     "designerId": "330e5a90-d5bf-4b17-bac9-002bf255c24f",
                     "customConfigs": [
@@ -74,9 +74,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "newMLCreateBtn",
-                        "layout|anchor": "100%",
                         "id": "newMLSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "newMLCreateBtn",
                         "scale": "medium",
                         "text": "Créer une nouvelle liste de diffusion"
                     },

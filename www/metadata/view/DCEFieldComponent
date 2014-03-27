@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": null,
-        "padding": null,
-        "width": 243,
-        "designer|userClassName": "DCEFieldComponent",
         "designer|userAlias": "DCEFieldComponent",
+        "designer|userClassName": "DCEFieldComponent",
         "fieldLabel": "Label",
+        "height": null,
         "labelSeparator": " ",
-        "labelWidth": 60
+        "labelWidth": 60,
+        "padding": null,
+        "width": 243
     },
     "designerId": "0db6ec34-b4ac-44a0-94a0-0f7ce5934a0b",
     "cn": [
@@ -25,15 +25,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "allowDepress": false,
                 "disabled": true,
+                "enableToggle": true,
+                "handleMouseEvents": false,
                 "itemId": "contentTitleBtn",
                 "margin": "10 10 0 0",
                 "maxWidth": 100,
-                "style": "{cursor:default !important;}",
-                "allowDepress": false,
-                "enableToggle": true,
-                "handleMouseEvents": false,
                 "pressed": true,
+                "style": "{cursor:default !important;}",
                 "text": "",
                 "tooltip": null
             },
@@ -51,10 +51,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "addBtn",
-                "itemId": "addBtn",
-                "margin": "10 10 0 0",
                 "iconCls": "add",
+                "itemId": "addBtn",
+                "localiserId": "addBtn",
+                "margin": "10 10 0 0",
                 "text": "Ajouter"
             },
             "designerId": "ee60fef5-7c29-4cd1-9424-ff889b8782be",
@@ -74,10 +74,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "chooseBtn",
-                "itemId": "chooseBtn",
-                "margin": "10 10 0 0",
                 "iconCls": "search",
+                "itemId": "chooseBtn",
+                "localiserId": "chooseBtn",
+                "margin": "10 10 0 0",
                 "text": "Choisir"
             },
             "designerId": "212091b7-1a08-4c1f-8ca5-6fa22bcf1b5e",
@@ -97,10 +97,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "modifyBtn",
-                "itemId": "editBtn",
-                "margin": "10 10 0 0",
                 "iconCls": "edit",
+                "itemId": "editBtn",
+                "localiserId": "modifyBtn",
+                "margin": "10 10 0 0",
                 "text": "Modifier"
             },
             "designerId": "7f7e9d30-5b01-4482-ba6d-33f826d54ed7",
@@ -120,10 +120,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "removeBtn",
-                "itemId": "removeBtn",
-                "margin": "10 0 0 0",
                 "iconCls": "close",
+                "itemId": "removeBtn",
+                "localiserId": "removeBtn",
+                "margin": "10 0 0 0",
                 "text": "Supprimer"
             },
             "designerId": "e5794c53-8862-418c-b7aa-7fc06ef8b4d8",

@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "workspaceWindow",
-        "container|align": "stretch",
-        "height": 456,
-        "id": "WorkspacesInterface",
-        "width": 723,
-        "designer|userClassName": "WorkspacesInterface",
-        "designer|userAlias": "WorkspacesInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "WorkspacesInterface",
+        "designer|userClassName": "WorkspacesInterface",
+        "height": 456,
         "iconCls": "user",
-        "title": "Espaces de travail"
+        "id": "WorkspacesInterface",
+        "layout": "hbox",
+        "localiserId": "workspaceWindow",
+        "title": "Espaces de travail",
+        "width": 723
     },
     "designerId": "a00b8e6b-7b4d-49e9-b016-908679cc1295",
     "customConfigs": [
@@ -48,15 +48,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "workspaceAdd",
-                        "minWidth": null,
-                        "width": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "workspaceAdd",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "minWidth": null,
                         "scale": "large",
-                        "text": "Ajouter"
+                        "text": "Ajouter",
+                        "width": null
                     },
                     "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
                     "customConfigs": [
@@ -81,12 +81,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "workspaceRemove",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "workspaceRemove",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -113,12 +113,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.workspaces",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "workspaceSave",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "workspaceSave",
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -181,9 +181,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "workspaces",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -206,11 +206,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "workspacesGrid",
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "WorkspacesStore"
+                "id": "workspacesGrid",
+                "store": "WorkspacesStore",
+                "title": "",
+                "width": 200
             },
             "designerId": "b534706c-4fdc-4e9c-afab-5d76d2c466ae",
             "cn": [
@@ -231,8 +231,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
                         "dataIndex": "text",
+                        "localiserId": "nameColumn",
                         "text": "Nom"
                     },
                     "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383",
@@ -252,7 +252,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -262,6 +261,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.get(\"readOnly\")) {\r",
                                     "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
@@ -284,10 +284,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "propsPanel",
-                "layout|flex": 1,
                 "disabled": true,
                 "layout": "card",
+                "layout|flex": 1,
+                "localiserId": "propsPanel",
                 "title": "Propriétés"
             },
             "designerId": "bc23bf6d-f63e-4cd7-ae6e-dc970f2dab60",
@@ -307,9 +307,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "replicatorEntity": "workspacesReplicator",
+                        "dock": "top",
                         "id": "workspacesDLSToolbar",
-                        "dock": "top"
+                        "replicatorEntity": "workspacesReplicator"
                     },
                     "designerId": "c79eb712-a3dd-414d-b742-bcce9705e88d",
                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
@@ -322,9 +322,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "bodyPadding": 10,
                         "id": "workspacesMainForm",
                         "itemId": "mainLocItem",
-                        "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
@@ -337,11 +337,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameField",
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Nom",
-                                "name": "text",
-                                "allowBlank": false
+                                "layout|anchor": "100%",
+                                "localiserId": "nameField",
+                                "name": "text"
                             },
                             "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
                             "customConfigs": [

@@ -6,21 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "favoriteIcon": "page_full.png",
-        "localiserId": "contentTypesWindow",
+        "constrainHeader": true,
         "container|align": "stretch",
-        "height": 578,
-        "id": "adminFTDC",
-        "width": 1350,
-        "designer|userClassName": "adminFTDC",
         "designer|userAlias": "adminFTDC",
+        "designer|userClassName": "adminFTDC",
+        "favoriteIcon": "page_full.png",
+        "height": 578,
+        "iconCls": "content-icon",
+        "id": "adminFTDC",
+        "layout": "hbox",
+        "localiserId": "contentTypesWindow",
         "requires": [
             "Ext.ux.TreePicker"
         ],
-        "layout": "hbox",
-        "constrainHeader": true,
-        "iconCls": "content-icon",
-        "title": "Types de contenus"
+        "title": "Types de contenus",
+        "width": 1350
     },
     "designerId": "6267ab43-4966-465c-9ab8-2585191a245f",
     "customConfigs": [
@@ -70,10 +70,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "layout|flex": 1
             },
             "designerId": "e4f365ae-720a-4be4-838a-5709d0412e3f",
             "cn": [
@@ -85,10 +85,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "contentTypesLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "origine",
                         "iconCls": "content-icon",
+                        "itemId": "origine",
+                        "layout|flex": null,
+                        "localiserId": "contentTypesLaunchBtn",
                         "text": "Types de contenus"
                     },
                     "designerId": "8c917407-a836-4bc5-99f8-0258cc4af426",
@@ -110,10 +110,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "7bd9dbfb-6307-4a82-b0a3-d9230df88731",
@@ -126,10 +126,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "2512ca22-9569-40ff-9aaf-c9e00d1d95fb",
                     "cn": [
@@ -160,8 +160,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "layout|flex": null
                     },
                     "designerId": "27d0a539-abfe-4fed-8d18-ac0172113b20",
                     "cn": [
@@ -173,10 +173,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "<b>{type}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "2b705087-8964-4414-9907-3e2e7d5d21ae"
                         },
@@ -188,10 +188,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processBoiteBarreMeta",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processBoiteBarreMeta",
                                 "implHandler": [
                                     "config.tpl=[\r",
                                     "                                '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'\r",
@@ -213,10 +213,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "6d797021-4ab9-433b-9fae-11f6949876b4",
@@ -230,13 +230,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "boutonNouveauTypeContenu",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "boutonNouveauTypeContenu",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -263,14 +263,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "boutonSupprimerTypeContenu",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "boutonSupprimerTypeContenu",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -297,14 +297,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
-                        "localiserId": "editGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "id": "CTEditToolsBtnGr",
                         "headerPosition": "bottom",
-                        "title": "Edition",
-                        "columns": 4
+                        "id": "CTEditToolsBtnGr",
+                        "layout|flex": null,
+                        "localiserId": "editGroup",
+                        "title": "Edition"
                     },
                     "designerId": "02205170-acac-46ce-9696-415d93aad3c6",
                     "customConfigs": [
@@ -328,10 +328,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "newFieldBtn",
-                                "id": "boutonOuvrirFenetreTC",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "boutonOuvrirFenetreTC",
+                                "localiserId": "newFieldBtn",
                                 "scale": "large",
                                 "text": "Nouveau champ"
                             },
@@ -352,11 +352,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveBtn",
                                 "disabled": true,
-                                "id": "TCfieldUp",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
+                                "id": "TCfieldUp",
+                                "localiserId": "moveBtn",
                                 "scale": "large",
                                 "text": "Déplacer"
                             },
@@ -377,11 +377,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveBtn",
                                 "disabled": true,
-                                "id": "TCfieldDown",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
+                                "id": "TCfieldDown",
+                                "localiserId": "moveBtn",
                                 "scale": "large",
                                 "text": "Déplacer"
                             },
@@ -402,11 +402,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeFieldBtn",
                                 "disabled": true,
-                                "id": "TCfieldDeleter",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
+                                "id": "TCfieldDeleter",
+                                "localiserId": "removeFieldBtn",
                                 "scale": "large",
                                 "text": "Supprimer champ"
                             },
@@ -429,13 +429,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "layoutsGrid",
                         "ACL": "write.ui.contentTypes",
-                        "layout|flex": null,
-                        "id": "CTLayoutsBtnGr",
+                        "columns": 4,
                         "headerPosition": "bottom",
-                        "title": "Layouts",
-                        "columns": 4
+                        "id": "CTLayoutsBtnGr",
+                        "layout|flex": null,
+                        "localiserId": "layoutsGrid",
+                        "title": "Layouts"
                     },
                     "designerId": "1177e802-3bb1-4906-b8c3-376d307e8840",
                     "customConfigs": [
@@ -459,11 +459,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addBtn",
                                 "ACL": "write.ui.contentTypes",
-                                "id": "addCTLayoutBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "addCTLayoutBtn",
+                                "localiserId": "addBtn",
                                 "scale": "large",
                                 "text": "Add"
                             },
@@ -490,15 +490,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.contentTypes",
-                                "localiserId": "duplicateBtn",
                                 "disabled": true,
-                                "id": "copyCTLayoutBtn",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
+                                "id": "copyCTLayoutBtn",
+                                "localiserId": "duplicateBtn",
                                 "scale": "large",
-                                "text": "Copier"
+                                "text": "Copier",
+                                "width": null
                             },
                             "designerId": "8f6ed551-e666-4d99-9fcb-1e023220361d",
                             "customConfigs": [
@@ -522,12 +522,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "RemoveCTLayoutBtn",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
+                                "id": "RemoveCTLayoutBtn",
+                                "localiserId": "removeBtn",
                                 "scale": "large",
                                 "text": "Remove"
                             },
@@ -555,9 +555,9 @@
                             "userConfig": {
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "layoutActivatorBtn",
                                 "iconAlign": "top",
                                 "iconCls": "ouiS",
+                                "id": "layoutActivatorBtn",
                                 "scale": "large",
                                 "text": "Activate"
                             },
@@ -580,14 +580,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "editGroup",
                         "ACL": "write.ui.contentTypes",
-                        "layout|flex": null,
+                        "columns": 7,
                         "disabled": true,
-                        "id": "layoutsEditToolbar",
                         "headerPosition": "bottom",
-                        "title": "Edition",
-                        "columns": 7
+                        "id": "layoutsEditToolbar",
+                        "layout|flex": null,
+                        "localiserId": "editGroup",
+                        "title": "Edition"
                     },
                     "designerId": "042c7a2f-df59-49ee-8d3b-37f2bee07d14",
                     "customConfigs": [
@@ -611,12 +611,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addRowToLBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "addRowToLayoutBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "addRowToLayoutBtn",
+                                "localiserId": "addRowToLBtn",
                                 "scale": "large",
                                 "text": "New row"
                             },
@@ -642,12 +642,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addColToLBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "addColToLayoutBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "addColToLayoutBtn",
+                                "localiserId": "addColToLBtn",
                                 "scale": "large",
                                 "text": "New Column"
                             },
@@ -673,12 +673,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "assignFieldToColBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "assignFieldToColBtn",
                                 "iconAlign": "top",
                                 "iconCls": "add_big",
+                                "id": "assignFieldToColBtn",
+                                "localiserId": "assignFieldToColBtn",
                                 "scale": "large",
                                 "text": "Assign field"
                             },
@@ -704,12 +704,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "removeLayoutElementBtn",
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
+                                "id": "removeLayoutElementBtn",
+                                "localiserId": "removeBtn",
                                 "scale": "large",
                                 "text": "Remove"
                             },
@@ -735,12 +735,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveLBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "moveLayoutItemUpBtn",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_up_big",
+                                "id": "moveLayoutItemUpBtn",
+                                "localiserId": "moveLBtn",
                                 "scale": "large",
                                 "text": "Move"
                             },
@@ -766,12 +766,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "moveLBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "disabled": true,
-                                "id": "moveLayoutItemDownBtn",
                                 "iconAlign": "top",
                                 "iconCls": "arrow_down_big",
+                                "id": "moveLayoutItemDownBtn",
+                                "localiserId": "moveLBtn",
                                 "scale": "large",
                                 "text": "Move"
                             },
@@ -797,12 +797,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "saveLayoutBtn",
                                 "ACL": "write.ui.contentTypes",
                                 "hidden": true,
-                                "id": "saveCTLayoutBtn",
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
+                                "id": "saveCTLayoutBtn",
+                                "localiserId": "saveLayoutBtn",
                                 "scale": "large",
                                 "text": "Save layout"
                             },
@@ -830,13 +830,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "clipboardGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Presse-papiers",
-                        "columns": 4
+                        "layout|flex": null,
+                        "localiserId": "clipboardGroup",
+                        "title": "Presse-papiers"
                     },
                     "designerId": "9dc9e26e-1f14-4eb8-8020-e60ede4b2b1d",
                     "customConfigs": [
@@ -856,14 +856,14 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.contentTypes",
-                                "localiserId": "duplicateBtn",
-                                "id": "boutonCopierTC",
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
+                                "id": "boutonCopierTC",
+                                "localiserId": "duplicateBtn",
                                 "scale": "large",
-                                "text": "Copier"
+                                "text": "Copier",
+                                "width": null
                             },
                             "designerId": "c16aeeff-3f24-4f9f-93b0-fb7d85b79d8f",
                             "customConfigs": [
@@ -888,10 +888,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "hidden": true,
-                                "id": "ajouterPanierTC",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
+                                "id": "ajouterPanierTC",
                                 "scale": "large",
                                 "text": "Ajouter au panier"
                             },
@@ -905,11 +905,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "shortcutBtn",
-                                "itemId": "boutonCreerRaccourci",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
+                                "itemId": "boutonCreerRaccourci",
+                                "localiserId": "shortcutBtn",
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
@@ -933,13 +933,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contentTypes",
-                        "localiserId": "saveGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
-                        "title": "Sauvegarde",
-                        "columns": 4
+                        "layout|flex": null,
+                        "localiserId": "saveGroup",
+                        "title": "Sauvegarde"
                     },
                     "designerId": "592268b8-61de-44c4-a8e0-8ac3a1cd8f67",
                     "customConfigs": [
@@ -963,12 +963,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "saveBtn",
-                                "id": "boutonEnregistrerTypeContenu",
-                                "itemId": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "floppy_disc_big",
+                                "id": "boutonEnregistrerTypeContenu",
+                                "itemId": null,
+                                "localiserId": "saveBtn",
                                 "scale": "large",
                                 "text": "Enregistrer"
                             },
@@ -1016,14 +1016,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "exe.ui.purgeContentType",
-                        "localiserId": "adminGroupCT",
-                        "layout|flex": null,
+                        "columns": null,
                         "container|columns": 1,
                         "disabled": true,
-                        "minWidth": null,
                         "headerPosition": "bottom",
-                        "title": "Administration",
-                        "columns": null
+                        "layout|flex": null,
+                        "localiserId": "adminGroupCT",
+                        "minWidth": null,
+                        "title": "Administration"
                     },
                     "designerId": "f43ae54d-3dd6-4499-82b9-d933cd2ccae5",
                     "customConfigs": [
@@ -1047,13 +1047,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "purgeContentTypeBtn",
-                                "id": "purgeCTContentsBtn",
-                                "itemId": null,
-                                "minWidth": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "database_remove_big",
+                                "id": "purgeCTContentsBtn",
+                                "itemId": null,
+                                "localiserId": "purgeContentTypeBtn",
+                                "minWidth": null,
                                 "scale": "large",
                                 "text": "Vider les contenus",
                                 "tooltip": "Supprimer tous les contenus de ce type"
@@ -1080,13 +1080,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "hidden": true,
                         "headerPosition": "bottom",
-                        "title": "Fichier",
-                        "columns": 4
+                        "hidden": true,
+                        "layout|flex": null,
+                        "title": "Fichier"
                     },
                     "designerId": "89c96f3c-c739-4986-b1b0-11dda855bb67",
                     "cn": [
@@ -1098,10 +1098,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "AdminfTCExporter",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
+                                "id": "AdminfTCExporter",
                                 "scale": "large",
                                 "text": "Exporter"
                             },
@@ -1116,10 +1116,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.contentTypes",
-                                "id": "AdminfTCImporter",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
+                                "id": "AdminfTCImporter",
                                 "scale": "large",
                                 "text": "Importer"
                             },
@@ -1155,10 +1155,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "contentTypes",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -1181,19 +1181,19 @@
             },
             "codeClass": null,
             "userConfig": {
-                "managesStore": false,
-                "localiserId": "contentTypesWindow",
-                "layout|flex": null,
-                "id": "AdminfTypesGrid",
-                "itemId": null,
-                "width": 150,
-                "resizable": true,
-                "resizeHandles": "e",
                 "collapseDirection": "left",
                 "collapsible": true,
-                "title": "Content types",
                 "forceFit": true,
-                "store": "TypesContenusDataJson"
+                "id": "AdminfTypesGrid",
+                "itemId": null,
+                "layout|flex": null,
+                "localiserId": "contentTypesWindow",
+                "managesStore": false,
+                "resizable": true,
+                "resizeHandles": "e",
+                "store": "TypesContenusDataJson",
+                "title": "Content types",
+                "width": 150
             },
             "configAlternates": {
                 "managesStore": "boolean",
@@ -1234,11 +1234,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
-                        "width": null,
                         "dataIndex": "type",
+                        "flex": null,
+                        "localiserId": "nameColumn",
                         "text": "Name",
-                        "flex": null
+                        "width": null
                     },
                     "designerId": "db09bb7e-7f2a-4a7c-8400-82e48b822e46",
                     "customConfigs": [
@@ -1257,7 +1257,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -1267,6 +1266,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "var nValue=value;\r",
                                     "if ((!Ext.isEmpty(record.get(\"productType\")))&&(record.get(\"productType\")!=\"none\")){\r",
@@ -1305,11 +1305,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "languageCoumn",
-                        "hidden": true,
                         "dataIndex": "i18n",
-                        "text": "Languages",
-                        "flex": null
+                        "flex": null,
+                        "hidden": true,
+                        "localiserId": "languageCoumn",
+                        "text": "Languages"
                     },
                     "designerId": "99cfe374-8d96-4642-9d27-7243aaa319af",
                     "customConfigs": [
@@ -1328,7 +1328,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -1338,6 +1337,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
                                     "catch(err){var myFlagCode=\"_unknown\";}\r",
@@ -1370,11 +1370,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "activeTab": 0,
                 "disabled": true,
-                "id": "tabPanTC",
                 "iconCls": null,
-                "activeTab": 0
+                "id": "tabPanTC",
+                "layout|flex": 1
             },
             "designerId": "947b85a4-f1a9-4437-b25e-8eacb294c132",
             "cn": [
@@ -1386,10 +1386,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": null,
                         "container|align": "stretch",
-                        "layout": "hbox",
+                        "dock": null,
                         "iconCls": "edit",
+                        "layout": "hbox",
                         "title": "Edition"
                     },
                     "designerId": "ae5a5aab-c42c-409f-92e5-336b6fcff8e1",
@@ -1402,8 +1402,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "editTab",
-                                "layout|flex": null
+                                "layout|flex": null,
+                                "localiserId": "editTab"
                             },
                             "designerId": "b22e9634-2f00-453d-b24a-515f0c4de552",
                             "customConfigs": [
@@ -1422,10 +1422,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
+                                "autoScroll": true,
                                 "id": "conteneurChampsEditionTC",
-                                "width": null,
-                                "autoScroll": true
+                                "layout|flex": 1,
+                                "width": null
                             },
                             "designerId": "da1da9d0-fbd4-418f-b29e-09ffba76a126",
                             "cn": [
@@ -1437,8 +1437,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "systemFieldPanel",
                                         "frame": true,
+                                        "localiserId": "systemFieldPanel",
                                         "margin": 20,
                                         "title": "Champs système"
                                     },
@@ -1459,10 +1459,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "padding": 10,
-                                                "style": null,
                                                 "designer|displayName": null,
-                                                "layout": "anchor"
+                                                "layout": "anchor",
+                                                "padding": 10,
+                                                "style": null
                                             },
                                             "configAlternates": {
                                                 "style": "string"
@@ -1477,14 +1477,14 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "contentTitleField",
                                                         "RTip": "Content title. Mandatory.",
-                                                        "layout|anchor": "90%",
-                                                        "style": "{float:left}",
+                                                        "allowBlank": false,
                                                         "fieldLabel": "Title *",
                                                         "labelSeparator": null,
+                                                        "layout|anchor": "90%",
+                                                        "localiserId": "contentTitleField",
                                                         "name": "text",
-                                                        "allowBlank": false
+                                                        "style": "{float:left}"
                                                     },
                                                     "configAlternates": {
                                                         "style": "string"
@@ -1514,8 +1514,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "id": null,
-                                                "padding": 10,
-                                                "layout": "anchor"
+                                                "layout": "anchor",
+                                                "padding": 10
                                             },
                                             "designerId": "f3ae734f-87eb-4fba-b4bc-e5eb35d084b0",
                                             "cn": [
@@ -1528,13 +1528,13 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "RTip": "Value to be used as content part in any URL diplaying this content.",
-                                                        "layout|anchor": "90%",
-                                                        "style": [
-                                                            "{float:left}"
-                                                        ],
                                                         "fieldLabel": "URL Segment",
                                                         "labelSeparator": " ",
-                                                        "name": "urlSegment"
+                                                        "layout|anchor": "90%",
+                                                        "name": "urlSegment",
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ]
                                                     },
                                                     "designerId": "1d9abcb3-012d-406d-a165-33d33d674a3a",
                                                     "customConfigs": [
@@ -1555,9 +1555,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "padding": 10,
                                                 "designer|displayName": null,
-                                                "layout": "anchor"
+                                                "layout": "anchor",
+                                                "padding": 10
                                             },
                                             "designerId": "bee7124d-44f4-4e35-8a38-7a5fff58faf7",
                                             "cn": [
@@ -1569,15 +1569,15 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "summaryField",
                                                         "RTip": "Résumé facultatif du contenu.",
-                                                        "layout|anchor": "90%",
-                                                        "style": [
-                                                            "{float:left}"
-                                                        ],
                                                         "fieldLabel": "Résumé ",
                                                         "labelSeparator": " ",
-                                                        "name": "summary"
+                                                        "layout|anchor": "90%",
+                                                        "localiserId": "summaryField",
+                                                        "name": "summary",
+                                                        "style": [
+                                                            "{float:left}"
+                                                        ]
                                                     },
                                                     "designerId": "9a182780-9bb6-486c-9b81-ef4ac6567439",
                                                     "customConfigs": [
@@ -1605,8 +1605,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "editableFieldPanel",
                                         "id": "champsEditionTC",
+                                        "localiserId": "editableFieldPanel",
                                         "title": "Champs Editables"
                                     },
                                     "designerId": "ceb92585-593a-443f-9573-0fb296398608",
@@ -1629,21 +1629,21 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "propertiesPanel",
-                                "layout|flex": null,
-                                "frame": true,
-                                "id": "PaneauConfigChamps",
-                                "padding": 0,
-                                "style": null,
-                                "width": 300,
-                                "layout": "fit",
                                 "bodyPadding": null,
                                 "bodyStyle": null,
                                 "collapseDirection": "right",
                                 "collapsed": false,
                                 "collapsible": true,
+                                "frame": true,
                                 "iconCls": "parametres",
-                                "title": "Propriétés"
+                                "id": "PaneauConfigChamps",
+                                "layout": "fit",
+                                "layout|flex": null,
+                                "localiserId": "propertiesPanel",
+                                "padding": 0,
+                                "style": null,
+                                "title": "Propriétés",
+                                "width": 300
                             },
                             "designerId": "3412f695-c5d1-4f51-abc5-d9d5794a2b47",
                             "customConfigs": [
@@ -1676,9 +1676,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "activeTab": 0,
                                                 "layout|flex": 1,
-                                                "overlapHeader": false,
-                                                "activeTab": 0
+                                                "overlapHeader": false
                                             },
                                             "designerId": "f1b37212-11c4-47b7-9ed2-9ef30eefb34c",
                                             "cn": [
@@ -1690,10 +1690,10 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "dataTab",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "iconCls": "process-icon",
+                                                        "localiserId": "dataTab",
                                                         "title": "Data"
                                                     },
                                                     "designerId": "02016e2d-af79-407c-9037-56023a274071",
@@ -1725,10 +1725,10 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fn": "processData",
                                                                 "designer|params": [
                                                                     "config"
                                                                 ],
+                                                                "fn": "processData",
                                                                 "implHandler": [
                                                                     "config.title=Rubedo.RubedoInterfaceLoc.dataTab.title;\r",
                                                                     "return config;"
@@ -1746,11 +1746,11 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "localiserId": "searchTab",
-                                                        "itemId": "searchFormCheck",
                                                         "autoScroll": true,
                                                         "bodyPadding": 6,
                                                         "iconCls": "search",
+                                                        "itemId": "searchFormCheck",
+                                                        "localiserId": "searchTab",
                                                         "title": "Search"
                                                     },
                                                     "designerId": "64f9099e-ed2c-4bab-a7eb-290a0fe61db7",
@@ -1782,10 +1782,10 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fn": "processSearchFormCheck",
                                                                 "designer|params": [
                                                                     "config"
                                                                 ],
+                                                                "fn": "processSearchFormCheck",
                                                                 "implHandler": [
                                                                     "config.title=Rubedo.RubedoInterfaceLoc.searchTab.title;\r",
                                                                     "return config;"
@@ -1807,8 +1807,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "id": "champTCIdField",
-                                        "fieldLabel": "Label"
+                                        "fieldLabel": "Label",
+                                        "id": "champTCIdField"
                                     },
                                     "designerId": "d87c6d1b-7468-4d28-bb9d-bceb646cac2a"
                                 }
@@ -1885,8 +1885,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "layout": "hbox",
                         "iconCls": "page_taxonomy",
+                        "layout": "hbox",
                         "title": "Taxonomie"
                     },
                     "designerId": "0b674cb5-eefc-462b-8ead-02734be04147",
@@ -1899,8 +1899,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "taxonomyTab",
-                                "layout|flex": null
+                                "layout|flex": null,
+                                "localiserId": "taxonomyTab"
                             },
                             "designerId": "05756f4b-998c-4166-bf9d-ac06a05755ba",
                             "customConfigs": [
@@ -1919,13 +1919,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "managesStore": false,
-                                "localiserId": "vocabulariesGridPanel",
-                                "layout|flex": 1,
-                                "autoRender": false,
                                 "id": "vocabulairesTypesContenusGrid",
-                                "title": "Vocabulaires",
-                                "store": "TaxonomyForCT"
+                                "layout|flex": 1,
+                                "localiserId": "vocabulariesGridPanel",
+                                "managesStore": false,
+                                "store": "TaxonomyForCT",
+                                "title": "Vocabulaires"
                             },
                             "configAlternates": {
                                 "managesStore": "boolean"
@@ -1951,9 +1950,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "autoRender": false
-                                    },
                                     "designerId": "9db26ac5-2ccc-4546-b6f3-3a555232dc6c"
                                 },
                                 {
@@ -1973,10 +1969,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "titleColumn",
                                         "dataIndex": "name",
-                                        "text": "Titre",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "localiserId": "titleColumn",
+                                        "text": "Titre"
                                     },
                                     "designerId": "65be2b5c-df30-4601-9693-c954970dbc57",
                                     "customConfigs": [
@@ -1995,10 +1991,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "descriptionColumn",
                                         "dataIndex": "description",
-                                        "text": "Description",
-                                        "flex": 3
+                                        "flex": 3,
+                                        "localiserId": "descriptionColumn",
+                                        "text": "Description"
                                     },
                                     "designerId": "fb33e3e3-cd81-4f74-b123-160f20906861",
                                     "customConfigs": [
@@ -2017,10 +2013,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "helpTextColumn",
                                         "dataIndex": "helpText",
-                                        "text": "HelpText",
-                                        "flex": 2
+                                        "flex": 2,
+                                        "localiserId": "helpTextColumn",
+                                        "text": "HelpText"
                                     },
                                     "designerId": "a03a9ff8-f2b0-49fb-8850-cd530921cd2a",
                                     "customConfigs": [
@@ -2039,11 +2035,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "labelField",
                                         "dataIndex": "expandable",
-                                        "text": "Etiquettes",
-                                        "flex": 1,
                                         "falseText": "non",
+                                        "flex": 1,
+                                        "localiserId": "labelField",
+                                        "text": "Etiquettes",
                                         "trueText": "oui"
                                     },
                                     "designerId": "1f9e010b-a8d1-4648-ac8f-4fa46697d29e",
@@ -2063,10 +2059,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processEtiquettes",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processEtiquettes",
                                                 "implHandler": [
                                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -2085,11 +2081,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "multiChoiseColumn",
                                         "dataIndex": "mandatory",
-                                        "text": "ChoixMultiple",
-                                        "flex": 1,
                                         "falseText": "non",
+                                        "flex": 1,
+                                        "localiserId": "multiChoiseColumn",
+                                        "text": "ChoixMultiple",
                                         "trueText": "oui"
                                     },
                                     "designerId": "46967daa-88fd-4017-9b31-bea56381cfcb",
@@ -2109,10 +2105,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processChoixMultiple",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processChoixMultiple",
                                                 "implHandler": [
                                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -2131,11 +2127,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "mandatoryColumn",
                                         "dataIndex": "mandatory",
-                                        "text": "Obligatoire",
-                                        "flex": 1,
                                         "falseText": "non",
+                                        "flex": 1,
+                                        "localiserId": "mandatoryColumn",
+                                        "text": "Obligatoire",
                                         "trueText": "oui"
                                     },
                                     "designerId": "98bedb6a-d499-4f0b-a722-92891bf4cf0e",
@@ -2155,10 +2151,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processObligatoire",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processObligatoire",
                                                 "implHandler": [
                                                     "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
                                                     "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
@@ -2200,8 +2196,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout": "card",
                         "iconCls": "parametres",
+                        "layout": "card",
                         "title": "Propriétés"
                     },
                     "designerId": "d131d255-8c99-44c1-96f1-655a05a193dd",
@@ -2233,11 +2229,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "TDCEditForm",
-                                "itemId": "mainLocItem",
                                 "autoScroll": true,
                                 "bodyPadding": 10,
                                 "iconCls": null,
+                                "id": "TDCEditForm",
+                                "itemId": "mainLocItem",
                                 "title": null
                             },
                             "designerId": "6c4d6322-2e2c-4c87-9b52-5edfe0189b2a",
@@ -2250,11 +2246,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
+                                        "allowBlank": false,
                                         "fieldLabel": "Name",
                                         "labelWidth": 130,
-                                        "name": "type",
-                                        "allowBlank": false
+                                        "layout|anchor": "100%",
+                                        "name": "type"
                                     },
                                     "designerId": "0a60dce6-1069-4d8b-a2f6-c6c6090eb7ce"
                                 },
@@ -2266,11 +2262,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|anchor": "100%",
+                                        "allowBlank": false,
                                         "fieldLabel": "Code",
                                         "labelWidth": 130,
+                                        "layout|anchor": "100%",
                                         "name": "code",
-                                        "allowBlank": false,
                                         "vtype": "alphanum"
                                     },
                                     "designerId": "93cc6277-75b1-43db-bef5-1a0883a1d0cc"
@@ -2305,10 +2301,10 @@
                                             "userConfig": {
                                                 "fieldLabel": "Espaces de travail",
                                                 "labelWidth": 120,
-                                                "name": "workspaces",
+                                                "layout|anchor": "100%",
                                                 "multiSelect": true,
-                                                "store": "ContributeWorkspacesCombo",
-                                                "layout|anchor": "100%"
+                                                "name": "workspaces",
+                                                "store": "ContributeWorkspacesCombo"
                                             },
                                             "configAlternates": {
                                                 "canSwitchStore": "boolean"
@@ -2331,14 +2327,14 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "workflowField",
-                                                "layout|anchor": "100%",
-                                                "fieldLabel": "Workflow",
-                                                "labelWidth": 120,
-                                                "name": "workflow",
                                                 "allowBlank": false,
                                                 "editable": false,
+                                                "fieldLabel": "Workflow",
                                                 "forceSelection": true,
+                                                "labelWidth": 120,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "workflowField",
+                                                "name": "workflow",
                                                 "store": [
                                                     "[\"Aucun\", \"Basique\"]"
                                                 ]
@@ -2363,10 +2359,10 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "processWorkflow",
                                                         "designer|params": [
                                                             "config"
                                                         ],
+                                                        "fn": "processWorkflow",
                                                         "implHandler": [
                                                             "var store = Ext.create('Ext.data.Store', {\r",
                                                             "    fields: ['value', 'name'],\r",
@@ -2415,12 +2411,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "disqusField",
-                                                "layout|anchor": "100%",
-                                                "fieldLabel": "Disqus",
-                                                "name": "activateDisqus",
                                                 "boxLabel": "",
+                                                "fieldLabel": "Disqus",
                                                 "inputValue": "true",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "disqusField",
+                                                "name": "activateDisqus",
                                                 "uncheckedValue": "false"
                                             },
                                             "designerId": "417d745b-259c-4fa4-ac7e-5fce05c320b7",
@@ -2444,9 +2440,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "replicatorEntity": "CTLReplicatorEntity",
+                                "dock": "top",
                                 "id": "CTLDLSToolbar",
-                                "dock": "top"
+                                "replicatorEntity": "CTLReplicatorEntity"
                             },
                             "designerId": "e2cd1fd3-b6e4-4253-a79c-a5c92d237480",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
@@ -2487,9 +2483,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
+                        "iconCls": "masque-icon",
                         "id": "CTLayoutMainTab",
                         "layout": "hbox",
-                        "iconCls": "masque-icon",
                         "title": "Layouts"
                     },
                     "designerId": "3f456a79-271d-4f68-85fb-9da53f7d0d57",
@@ -2511,15 +2507,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "layoutsGrid",
-                                "layout|flex": null,
-                                "id": "CTLayoutsGrid",
-                                "width": 220,
                                 "collapseDirection": "left",
                                 "collapsible": true,
-                                "title": "Layouts",
                                 "forceFit": true,
-                                "store": "CTLayouts"
+                                "id": "CTLayoutsGrid",
+                                "layout|flex": null,
+                                "localiserId": "layoutsGrid",
+                                "store": "CTLayouts",
+                                "title": "Layouts",
+                                "width": 220
                             },
                             "designerId": "e49456f4-e369-4781-9570-63a7d1c0ac4f",
                             "customConfigs": [
@@ -2547,8 +2543,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "nameColumn",
                                         "dataIndex": "name",
+                                        "localiserId": "nameColumn",
                                         "text": "Name"
                                     },
                                     "designerId": "ec21dab3-f682-4b8a-9a75-4778cd760296",
@@ -2580,7 +2576,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "renderer",
                                                 "designer|params": [
                                                     "value",
                                                     "metaData",
@@ -2590,6 +2585,7 @@
                                                     "store",
                                                     "view"
                                                 ],
+                                                "fn": "renderer",
                                                 "implHandler": [
                                                     "if (record.get(\"active\")){\r",
                                                     "    return(value+' <img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/check_mark.png\"> ');\r",
@@ -2619,10 +2615,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|displayName": "groupHeaderTpl",
                                                 "implHandler": [
                                                     "Site : {name:this.getProperName}"
-                                                ],
-                                                "designer|displayName": "groupHeaderTpl"
+                                                ]
                                             },
                                             "designerId": "b4597879-0a7b-4e17-a16a-e4d69585c327",
                                             "cn": [
@@ -2634,10 +2630,10 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "getProperName",
                                                         "designer|params": [
                                                             "name"
                                                         ],
+                                                        "fn": "getProperName",
                                                         "implHandler": [
                                                             "if (Ext.isEmpty(Ext.getStore(\"SitesComboCTLayouts\").findRecord(\"id\",name))){\r",
                                                             "    return (\"\");\r",
@@ -2671,15 +2667,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "availableFieldsGrid",
-                                "layout|flex": null,
-                                "id": "CTLayoutFieldInjectorGrid",
-                                "width": 200,
                                 "collapseDirection": "left",
                                 "collapsible": true,
-                                "title": "Available fields",
                                 "forceFit": true,
-                                "store": "CTFieldsForLayouts"
+                                "id": "CTLayoutFieldInjectorGrid",
+                                "layout|flex": null,
+                                "localiserId": "availableFieldsGrid",
+                                "store": "CTFieldsForLayouts",
+                                "title": "Available fields",
+                                "width": 200
                             },
                             "designerId": "5a43b018-cc8a-4674-b54e-25351772c8fe",
                             "customConfigs": [
@@ -2707,8 +2703,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "hidden": true,
                                         "dataIndex": "name",
+                                        "hidden": true,
                                         "text": "Name"
                                     },
                                     "designerId": "37db4a45-1c54-40f0-9bf9-3f01ff977820"
@@ -2721,8 +2717,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "labelColumn",
                                         "dataIndex": "label",
+                                        "localiserId": "labelColumn",
                                         "text": "Label"
                                     },
                                     "designerId": "66ca64c0-c226-4dca-82df-ccced119d39b",
@@ -2743,9 +2739,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dock": "top",
+                                        "fieldLabel": "Label",
                                         "id": "layoutElementIdField",
-                                        "width": 100,
-                                        "fieldLabel": "Label"
+                                        "width": 100
                                     },
                                     "designerId": "00b9f81e-c0cf-4832-9976-5a14d28c5e6e"
                                 }
@@ -2759,10 +2755,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "container|align": "stretch",
                                 "autoScroll": true,
-                                "layout": "vbox"
+                                "container|align": "stretch",
+                                "layout": "vbox",
+                                "layout|flex": 1
                             },
                             "designerId": "53a9de6c-8ea4-4c11-9bef-808068ede9d1",
                             "cn": [
@@ -2774,11 +2770,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "container|align": "stretch",
                                         "height": 340,
                                         "id": "layoutEditionPanel",
                                         "layout": "vbox",
+                                        "layout|flex": null,
                                         "title": ""
                                     },
                                     "designerId": "70013f0e-f5fd-418e-ae30-7a20c4ea50de",
@@ -2791,10 +2787,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processLayoutEditionPanel",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processLayoutEditionPanel",
                                                 "implHandler": [
                                                     "config.plugins=[Ext.create(\"Ext.ux.BoxReorderer\")];\r",
                                                     "return config;"
@@ -2814,15 +2810,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "layoutPropertiesPanel",
-                                "layout|flex": null,
-                                "width": 200,
-                                "layout": "fit",
                                 "bodyPadding": 2,
                                 "collapseDirection": "right",
                                 "collapsible": true,
                                 "iconCls": "parametres",
-                                "title": "Properties"
+                                "layout": "fit",
+                                "layout|flex": null,
+                                "localiserId": "layoutPropertiesPanel",
+                                "title": "Properties",
+                                "width": 200
                             },
                             "designerId": "881fbb69-9083-4891-b8f0-9d2b37a41589",
                             "customConfigs": [
@@ -2855,10 +2851,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processLayoutPropsPanel",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processLayoutPropsPanel",
                                                 "implHandler": [
                                                     "config.title=Rubedo.RubedoAutomatedElementsLoc.selectAnElementText;\r",
                                                     "return config;"
@@ -2888,16 +2884,16 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "zoomLevelSlider",
-                                                "layout|flex": 1,
-                                                "id": "MaskZoomControlSlider2",
-                                                "width": null,
                                                 "fieldLabel": "Niveau de zoom",
+                                                "id": "MaskZoomControlSlider2",
                                                 "labelWidth": 60,
-                                                "value": 340,
+                                                "layout|flex": 1,
+                                                "localiserId": "zoomLevelSlider",
                                                 "maxValue": 2000,
                                                 "minValue": 200,
-                                                "useTips": false
+                                                "useTips": false,
+                                                "value": 340,
+                                                "width": null
                                             },
                                             "designerId": "c6ac2d33-d7c0-4df3-b7dd-5e339fea9bd9",
                                             "customConfigs": [
@@ -2939,10 +2935,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "processCTLayoutMainTab",
                                 "designer|params": [
                                     "config"
                                 ],
+                                "fn": "processCTLayoutMainTab",
                                 "implHandler": [
                                     "config.title=Rubedo.RubedoInterfaceLoc[\"layoutsGrid\"].title;\r",
                                     "return config;"

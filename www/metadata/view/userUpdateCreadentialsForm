@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "credentiamsAndIntForm",
-        "id": "userUpdateCreadentialsForm",
-        "designer|userClassName": "userUpdateCreadentialsForm",
-        "designer|userAlias": "userUpdateCreadentialsForm",
-        "overflowY": "auto",
         "bodyPadding": 20,
+        "designer|userAlias": "userUpdateCreadentialsForm",
+        "designer|userClassName": "userUpdateCreadentialsForm",
+        "id": "userUpdateCreadentialsForm",
+        "localiserId": "credentiamsAndIntForm",
+        "overflowY": "auto",
         "title": "Credentials and interface settings"
     },
     "designerId": "bd157263-ffca-45b6-9331-28e5972526b7",
@@ -77,14 +77,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "languageField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Langue ",
-                                        "labelWidth": 110,
-                                        "name": "language",
-                                        "editable": false,
                                         "displayField": "label",
+                                        "editable": false,
+                                        "fieldLabel": "Langue ",
                                         "forceSelection": true,
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "languageField",
+                                        "name": "language",
                                         "queryMode": "local",
                                         "store": "BOLanguageStore",
                                         "valueField": "key"
@@ -106,13 +106,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "editable": false,
+                                        "fieldLabel": "Interface",
+                                        "forceSelection": true,
+                                        "labelWidth": 110,
                                         "layout|anchor": "100%",
                                         "localiserId": "interfaceModeField",
-                                        "fieldLabel": "Interface",
-                                        "labelWidth": 110,
-                                        "name": "interfaceMode",
-                                        "editable": false,
-                                        "forceSelection": true
+                                        "name": "interfaceMode"
                                     },
                                     "designerId": "85fc8e08-7436-4a0d-9478-2fe115321da5",
                                     "customConfigs": [
@@ -131,10 +131,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "processInterfaceMode",
                                                 "designer|params": [
                                                     "config"
                                                 ],
+                                                "fn": "processInterfaceMode",
                                                 "implHandler": [
                                                     "config.store=[[\"desktop\",\"Desktop\"],[\"simple\",\"Application\"]];\r",
                                                     "return config;"
@@ -154,8 +154,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "acountUserValidFieldSet",
                                 "height": null,
+                                "localiserId": "acountUserValidFieldSet",
                                 "title": "Compte utilisateur et validité"
                             },
                             "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
@@ -175,13 +175,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "useraccountField",
-                                        "layout|anchor": "100%",
+                                        "allowBlank": false,
                                         "fieldLabel": "Compte utilisateur ",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "useraccountField",
                                         "name": "login",
                                         "value": null,
-                                        "allowBlank": false,
                                         "vtype": null
                                     },
                                     "designerId": "99cd73ae-9957-433c-b445-4d1c5a406bbe",
@@ -201,15 +201,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "gruopsField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Groupes",
-                                        "labelWidth": 110,
-                                        "name": "groups",
-                                        "editable": false,
                                         "displayField": "name",
+                                        "editable": false,
+                                        "fieldLabel": "Groupes",
                                         "forceSelection": true,
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "gruopsField",
                                         "multiSelect": true,
+                                        "name": "groups",
                                         "queryMode": "local",
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
@@ -231,14 +231,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "defaultGroupField",
-                                        "layout|anchor": "100%",
-                                        "fieldLabel": "Groupe par defaut",
-                                        "labelWidth": 110,
-                                        "name": "defaultGroup",
-                                        "editable": false,
                                         "displayField": "name",
+                                        "editable": false,
+                                        "fieldLabel": "Groupe par defaut",
                                         "forceSelection": true,
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "defaultGroupField",
+                                        "name": "defaultGroup",
                                         "queryMode": "local",
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
@@ -263,10 +263,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "startValidityField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Début de validité ",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "startValidityField",
                                         "name": "startValidity"
                                     },
                                     "designerId": "7d3728d2-1b25-48a6-bd55-82bc31eaf284",
@@ -286,10 +286,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "endValidityField",
-                                        "layout|anchor": "100%",
                                         "fieldLabel": "Fin de validité ",
                                         "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "localiserId": "endValidityField",
                                         "name": "endValidity"
                                     },
                                     "designerId": "2f544c05-24f0-4f13-b209-860742f40890",
@@ -312,8 +312,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.users",
-                                "localiserId": "passwordChangeFieldSet",
                                 "height": 50,
+                                "localiserId": "passwordChangeFieldSet",
                                 "title": "Changement de mot de passe"
                             },
                             "designerId": "1b357183-8778-440b-956b-daf1e3e28000",
@@ -338,9 +338,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "userPasswordChangeBtn",
-                                        "layout|anchor": "100%",
                                         "id": "UserCUChangePwd",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "userPasswordChangeBtn",
                                         "text": "Changer le mot de passe de cet utilisateur"
                                     },
                                     "designerId": "a7c9c3f6-0197-4c9c-86d4-154356adf8f5",
@@ -378,11 +378,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "photoFieldSet",
                                 "height": 280,
+                                "localiserId": "photoFieldSet",
                                 "margin": "0 0 0 10",
-                                "width": 200,
-                                "title": "Photo"
+                                "title": "Photo",
+                                "width": 200
                             },
                             "designerId": "92b39959-cd99-46a0-993f-2dd7bb9819bd",
                             "customConfigs": [
@@ -404,8 +404,8 @@
                                         "height": 180,
                                         "id": "userCUAdminProfilePicture",
                                         "margin": "0 0 18 18",
-                                        "width": 140,
-                                        "src": "resources/images/userBig.png"
+                                        "src": "resources/images/userBig.png",
+                                        "width": 140
                                     },
                                     "designerId": "66e51d08-58bb-434a-8ed7-868859289b79"
                                 },
@@ -417,9 +417,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "changeBtn",
-                                        "layout|anchor": "100%",
                                         "id": "userCUChangePictureBtn",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "changeBtn",
                                         "margin": "0 0 10 0",
                                         "text": "Changer"
                                     },
@@ -441,9 +441,9 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "ACL": "write.ui.users",
-                                        "localiserId": "removeBtn",
-                                        "layout|anchor": "100%",
                                         "id": "userCUProfilePictureDelete",
+                                        "layout|anchor": "100%",
+                                        "localiserId": "removeBtn",
                                         "margin": null,
                                         "text": "Supprimer"
                                     },

@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "indexedElementsWindow",
+        "constrainHeader": true,
+        "designer|userAlias": "esResponseWindow",
+        "designer|userClassName": "esResponseWindow",
         "height": 250,
         "id": null,
-        "width": 400,
-        "designer|userClassName": "esResponseWindow",
-        "designer|userAlias": "esResponseWindow",
         "layout": "fit",
-        "constrainHeader": true,
+        "localiserId": "indexedElementsWindow",
+        "modal": true,
         "title": "Elements indexés",
-        "modal": true
+        "width": 400
     },
     "designerId": "b1efdc7a-a950-47c0-bb61-7a3226e5f6ed",
     "customConfigs": [
@@ -34,16 +34,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "overflowY": "auto",
-                "title": "",
                 "disableSelection": true,
                 "forceFit": true,
                 "hideHeaders": true,
                 "nameColumnWidth": 250,
                 "nameField": null,
+                "overflowY": "auto",
                 "source": [
                     "{\"Property 1\":\"String\",\"Property 2\":true,\"Property 3\":\"2012-11-14T13:46:09\",\"Property 4\":123}"
-                ]
+                ],
+                "title": ""
             },
             "designerId": "4e089adb-811a-4e6c-8b95-e2bf7aec9b76",
             "cn": [
@@ -98,8 +98,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "okBtn",
                         "layout|flex": null,
+                        "localiserId": "okBtn",
                         "text": "<b>OK</b>"
                     },
                     "designerId": "cc6419f1-4bc6-4165-a055-83f86270d8fa",
@@ -119,11 +119,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up().up().close();"
                                 ]

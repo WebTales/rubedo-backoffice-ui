@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "mediasWindow",
-        "currentViewMode": "search",
-        "container|align": "stretch",
-        "height": 651,
-        "id": "DAMInterface",
-        "width": 1130,
-        "designer|userClassName": "DAMInterface",
-        "designer|userAlias": "DAMInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "currentViewMode": "search",
+        "designer|userAlias": "DAMInterface",
+        "designer|userClassName": "DAMInterface",
+        "height": 651,
         "iconCls": "mediaTypes",
-        "title": "Médiathèque"
+        "id": "DAMInterface",
+        "layout": "hbox",
+        "localiserId": "mediasWindow",
+        "title": "Médiathèque",
+        "width": 1130
     },
     "designerId": "3466e0f3-f38c-425c-be4b-04fa3282d0a2",
     "customConfigs": [
@@ -61,10 +61,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "2ec98bdc-7ba5-485e-9571-0594da1e0c3a",
@@ -77,11 +77,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
+                        "layout|flex": null,
                         "margin": "0 10 0 0",
-                        "width": 48,
-                        "src": null
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "35bf1649-d74b-4d34-a212-8bfd964817e8",
                     "cn": [
@@ -112,8 +112,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "itemId": "boiteBarreMeta"
+                        "itemId": "boiteBarreMeta",
+                        "layout|flex": null
                     },
                     "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
                     "cn": [
@@ -125,10 +125,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "{customMeta}"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "7ddb5483-1fad-495a-8f31-da354136f491"
                         }
@@ -144,10 +144,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "01137311-faac-4c13-aba1-c54b2215c288",
@@ -160,10 +160,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "id": "DAMSwitchModeBtn",
                         "iconAlign": "top",
                         "iconCls": "folder_big",
+                        "id": "DAMSwitchModeBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": "Folder view",
                         "tooltip": "Switch to folder fiew"
@@ -225,12 +225,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
+                        "columns": 3,
+                        "headerPosition": "bottom",
                         "hidden": true,
                         "id": "filePlanEditBtnGroup",
-                        "headerPosition": "bottom",
-                        "title": "File plan",
-                        "columns": 3
+                        "layout|flex": null,
+                        "title": "File plan"
                     },
                     "designerId": "49007b17-a1fc-4cfe-860b-32f11f80168f",
                     "cn": [
@@ -243,11 +243,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.directories",
-                                "localiserId": "addDirectoryBtn",
-                                "id": "addDirectoryBtn",
-                                "minWidth": 40,
                                 "iconAlign": "top",
                                 "iconCls": "folder_add_big",
+                                "id": "addDirectoryBtn",
+                                "localiserId": "addDirectoryBtn",
+                                "minWidth": 40,
                                 "scale": "large",
                                 "text": "Add"
                             },
@@ -274,11 +274,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.directories",
-                                "localiserId": "removeDirectoryBtn",
                                 "disabled": true,
-                                "id": "removeDirectoryBtn",
                                 "iconAlign": "top",
                                 "iconCls": "folder_remove_big",
+                                "id": "removeDirectoryBtn",
+                                "localiserId": "removeDirectoryBtn",
                                 "scale": "large",
                                 "text": "Remove"
                             },
@@ -304,11 +304,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "directorySettingsBtn",
                                 "disabled": true,
-                                "id": "directorySettingsBtn",
                                 "iconAlign": "top",
                                 "iconCls": "folder_settings_big",
+                                "id": "directorySettingsBtn",
+                                "localiserId": "directorySettingsBtn",
                                 "scale": "large",
                                 "text": "Settings"
                             },
@@ -332,13 +332,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "addDAMBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "addDAMBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -365,14 +365,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "DAMDeleteBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "DAMDeleteBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -399,14 +399,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": null,
-                        "layout|flex": null,
                         "disabled": true,
                         "hidden": true,
-                        "id": "DAMROBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
+                        "id": "DAMROBtn",
+                        "itemId": null,
+                        "layout|flex": null,
                         "scale": "large",
                         "text": "Afficher"
                     },
@@ -449,14 +449,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "localiserId": "editBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "DAMUpdateBtn",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "pencil_big",
+                        "id": "DAMUpdateBtn",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "editBtn",
                         "scale": "large",
                         "text": "Editer"
                     },
@@ -483,11 +483,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.dam",
-                        "localiserId": "massDamUploadBtn",
-                        "layout|flex": null,
-                        "id": "massDamUploadBtn",
                         "iconAlign": "top",
                         "iconCls": "database_up_big",
+                        "id": "massDamUploadBtn",
+                        "layout|flex": null,
+                        "localiserId": "massDamUploadBtn",
                         "scale": "large",
                         "text": "Mass upload"
                     },
@@ -513,14 +513,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "clipboardGroup",
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "id": "DAMPPBtnGroup",
                         "headerPosition": "bottom",
-                        "title": "Presse-papiers",
-                        "columns": 4
+                        "id": "DAMPPBtnGroup",
+                        "layout|flex": null,
+                        "localiserId": "clipboardGroup",
+                        "title": "Presse-papiers"
                     },
                     "designerId": "d542e06d-f92d-4938-a24b-0a4bbf60c3b9",
                     "customConfigs": [
@@ -541,13 +541,13 @@
                             "userConfig": {
                                 "ACL": "write.ui.dam",
                                 "hidden": true,
-                                "id": null,
-                                "width": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "applications_big",
+                                "id": null,
                                 "scale": "large",
-                                "text": "Copier"
+                                "text": "Copier",
+                                "width": null
                             },
                             "designerId": "c2c97af7-20aa-4a62-9d8b-1fddfc5dcd92",
                             "customConfigs": [
@@ -567,10 +567,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "hidden": true,
-                                "id": "addToSCMTBtn",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "shopping_cart_add_big",
+                                "id": "addToSCMTBtn",
                                 "scale": "large",
                                 "text": "Ajouter au panier"
                             },
@@ -584,11 +584,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "shortcutBtn",
-                                "itemId": "boutonCreerRaccourci",
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "favorite_add_big",
+                                "itemId": "boutonCreerRaccourci",
+                                "localiserId": "shortcutBtn",
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
@@ -611,13 +611,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
+                        "columns": 4,
                         "container|columns": 2,
                         "disabled": true,
-                        "hidden": true,
                         "headerPosition": "bottom",
-                        "title": "Fichier",
-                        "columns": 4
+                        "hidden": true,
+                        "layout|flex": null,
+                        "title": "Fichier"
                     },
                     "designerId": "916f1b11-bfcd-4c11-ad24-8c1393c8d71c",
                     "cn": [
@@ -629,10 +629,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_down_big",
+                                "id": null,
                                 "scale": "large",
                                 "text": "Exporter"
                             },
@@ -647,10 +647,10 @@
                             "codeClass": null,
                             "userConfig": {
                                 "ACL": "write.ui.dam",
-                                "id": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "application_up_big",
+                                "id": null,
                                 "scale": "large",
                                 "text": "Importer"
                             },
@@ -686,10 +686,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "dam",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -712,11 +712,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "id": "DAMLeftBox",
-                "width": 240,
                 "layout": "card",
-                "title": ""
+                "layout|flex": null,
+                "title": "",
+                "width": 240
             },
             "designerId": "d2d2c874-b2b7-4ee5-90bc-84f060dc3868",
             "cn": [
@@ -728,12 +728,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "DAMFacetBox",
-                        "padding": null,
-                        "width": null,
-                        "overflowY": "auto",
                         "bodyPadding": "10 16 10 10",
-                        "title": ""
+                        "id": "DAMFacetBox",
+                        "overflowY": "auto",
+                        "padding": null,
+                        "title": "",
+                        "width": null
                     },
                     "designerId": "96776b09-4164-4e41-b18f-16f742c8c1d0",
                     "cn": [
@@ -757,9 +757,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
+                                        "fieldLabel": "",
                                         "id": "DAMSearchField",
-                                        "fieldLabel": ""
+                                        "layout|flex": 1
                                     },
                                     "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
                                     "cn": [
@@ -792,9 +792,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
-                                        "id": "DAMSearchBtn",
                                         "iconCls": "search",
+                                        "id": "DAMSearchBtn",
+                                        "layout|flex": null,
                                         "text": ""
                                     },
                                     "designerId": "dab35ff8-c763-496a-91b0-7848a1952486"
@@ -811,8 +811,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "container|collapseFirst": false,
                         "container|activeOnTop": false,
+                        "container|collapseFirst": false,
                         "layout": "accordion",
                         "title": ""
                     },
@@ -826,13 +826,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "filePlanTreePanel",
                                 "height": 250,
                                 "id": "mainDirectoriesTree",
-                                "width": 400,
-                                "title": "File plan",
+                                "localiserId": "filePlanTreePanel",
                                 "store": "DirectoriesStore",
-                                "useArrows": true
+                                "title": "File plan",
+                                "useArrows": true,
+                                "width": 400
                             },
                             "designerId": "bf872b1c-ace2-4338-a14e-3f74ed98753e",
                             "isBuiltIn": true,
@@ -975,10 +975,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "damFolderCol",
                                         "dataIndex": "text",
-                                        "text": "Folder",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "localiserId": "damFolderCol",
+                                        "text": "Folder"
                                     },
                                     "designerId": "ef106ff3-cbe1-45cd-9626-8e226864536c",
                                     "customConfigs": [
@@ -997,7 +997,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "renderer",
                                                 "designer|params": [
                                                     "value",
                                                     "metaData",
@@ -1007,6 +1006,7 @@
                                                     "store",
                                                     "view"
                                                 ],
+                                                "fn": "renderer",
                                                 "implHandler": [
                                                     "if (record.isRoot()){\r",
                                                     "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
@@ -1099,11 +1099,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "filtersPanel",
                                 "autoScroll": true,
-                                "title": "Filters",
                                 "forceFit": true,
-                                "store": "MediaTypesForDAM"
+                                "localiserId": "filtersPanel",
+                                "store": "MediaTypesForDAM",
+                                "title": "Filters"
                             },
                             "designerId": "8a3fe329-7b38-4a7b-885a-98692ce5a07b",
                             "customConfigs": [
@@ -1122,8 +1122,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "typeColumn2",
                                         "dataIndex": "type",
+                                        "localiserId": "typeColumn2",
                                         "text": "Type"
                                     },
                                     "designerId": "714819d9-0b9d-463f-80c0-6a27cfe20a9a",
@@ -1164,9 +1164,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "localiserId": "applyFiltersBtn",
-                                                "layout|flex": 1,
                                                 "id": "DAMFolderViewFiltersBtn",
+                                                "layout|flex": 1,
+                                                "localiserId": "applyFiltersBtn",
                                                 "text": "Apply filters"
                                             },
                                             "designerId": "b64a7d65-b213-4dc8-a418-662a0c896048",
@@ -1203,10 +1203,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "container|align": "stretch",
-                "overflowY": "auto",
-                "layout": "vbox"
+                "layout": "vbox",
+                "layout|flex": 1,
+                "overflowY": "auto"
             },
             "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
             "cn": [
@@ -1218,11 +1218,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "DAMCenter",
-                        "minHeight": null,
                         "autoScroll": true,
-                        "store": "DAMFacetteStore",
-                        "layout|flex": 1
+                        "id": "DAMCenter",
+                        "layout|flex": 1,
+                        "minHeight": null,
+                        "store": "DAMFacetteStore"
                     },
                     "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
                     "masterInstanceId": "bde1968a-cbce-4b3a-872c-548461f2e683"
@@ -1249,11 +1249,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "displayInfo": true,
                         "dock": "bottom",
                         "id": "damMainPager",
-                        "width": 360,
-                        "displayInfo": true,
-                        "store": "DAMFacetteStore"
+                        "store": "DAMFacetteStore",
+                        "width": 360
                     },
                     "designerId": "6500b107-777f-40b3-94bb-f648601eaed4"
                 },
@@ -1265,8 +1265,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "dock": "top"
+                        "dock": "top",
+                        "layout|flex": 1
                     },
                     "designerId": "a53dbdc4-8ffa-4a34-9c2d-8beb458670f2",
                     "cn": [
@@ -1290,10 +1290,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "damSwitchGridViewBtn",
-                                "layout|flex": null,
-                                "id": "DAMSwitchGridDisplayBtn",
                                 "iconAlign": "top",
+                                "id": "DAMSwitchGridDisplayBtn",
+                                "layout|flex": null,
+                                "localiserId": "damSwitchGridViewBtn",
                                 "scale": null,
                                 "text": "Switch display mode"
                             },
@@ -1397,10 +1397,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 34,
-                "id": "DAMActiveFacetBox"
+                "id": "DAMActiveFacetBox",
+                "layout|flex": 1
             },
             "designerId": "a933a0ea-82ad-49bf-aef8-b28d0a54fc02"
         }

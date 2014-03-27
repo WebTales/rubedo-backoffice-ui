@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "subscribeUsersWindow",
+        "designer|userAlias": "subscribeUsersWindow",
+        "designer|userClassName": "subscribeUsersWindow",
         "height": null,
         "id": "subscribeUsersWindow",
-        "width": 400,
-        "designer|userClassName": "subscribeUsersWindow",
-        "designer|userAlias": "subscribeUsersWindow",
         "layout": "fit",
+        "localiserId": "subscribeUsersWindow",
+        "modal": true,
         "title": "Subscribe users",
-        "modal": true
+        "width": 400
     },
     "designerId": "6c01b362-f6b8-461e-83ce-8cfdf529203c",
     "customConfigs": [
@@ -46,9 +46,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "subscribeSubmitBtn",
-                        "layout|anchor": "100%",
                         "id": "subscribeUsersSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": "subscribeSubmitBtn",
                         "text": "Subscribe"
                     },
                     "designerId": "6f63bf97-493c-4d1d-ac9f-577f4b48fb9c",

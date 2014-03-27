@@ -6,21 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "desktopCustomizeWindow",
+        "constrainHeader": true,
         "container|align": "stretch",
-        "height": 450,
-        "id": "DesktopCustomizeWindow",
-        "width": 600,
-        "designer|userClassName": "DesktopCustomizeWindow",
         "designer|userAlias": "DesktopCustomizeWindow",
+        "designer|userClassName": "DesktopCustomizeWindow",
+        "height": 450,
+        "iconCls": "personalize",
+        "id": "DesktopCustomizeWindow",
+        "layout": "hbox",
+        "localiserId": "desktopCustomizeWindow",
+        "minimizable": true,
         "resizable": [
             "false"
         ],
-        "layout": "hbox",
-        "constrainHeader": true,
-        "iconCls": "personalize",
         "title": "Personnalisation du bureau",
-        "minimizable": true
+        "width": 600
     },
     "designerId": "021dc961-e2fd-4e63-afd9-8829737e3813",
     "customConfigs": [
@@ -39,8 +39,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "width": 150,
-                "layout": "accordion"
+                "layout": "accordion",
+                "width": 150
             },
             "designerId": "ed7cfa8f-e792-4d4d-a78e-e6a596c08fff",
             "cn": [
@@ -52,12 +52,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "managesStore": true,
-                        "localiserId": "wallpaperGrid",
-                        "id": "wallpaperGrid",
                         "collapsed": false,
-                        "title": "Fond d'écran",
-                        "store": "WallpapersDataJson"
+                        "id": "wallpaperGrid",
+                        "localiserId": "wallpaperGrid",
+                        "managesStore": true,
+                        "store": "WallpapersDataJson",
+                        "title": "Fond d'écran"
                     },
                     "configAlternates": {
                         "managesStore": "boolean"
@@ -93,10 +93,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameCol",
                                 "dataIndex": "name",
-                                "text": "Nom",
-                                "flex": 1
+                                "flex": 1,
+                                "localiserId": "nameCol",
+                                "text": "Nom"
                             },
                             "designerId": "4e8ba698-5e3f-4b6c-b5c0-8e9a9202e2cd",
                             "customConfigs": [
@@ -117,12 +117,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "managesStore": true,
-                        "localiserId": "themeGrid",
-                        "id": "themeGrid",
                         "collapsed": true,
-                        "title": "Thèmes",
-                        "store": "ThemesDataJson"
+                        "id": "themeGrid",
+                        "localiserId": "themeGrid",
+                        "managesStore": true,
+                        "store": "ThemesDataJson",
+                        "title": "Thèmes"
                     },
                     "configAlternates": {
                         "managesStore": "boolean"
@@ -158,10 +158,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameCol",
                                 "dataIndex": "name",
-                                "text": "Nom",
-                                "flex": 1
+                                "flex": 1,
+                                "localiserId": "nameCol",
+                                "text": "Nom"
                             },
                             "designerId": "29e86ca0-e02b-4343-9670-5da548459531",
                             "customConfigs": [
@@ -182,8 +182,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "accessibilityPanel",
                         "id": "accessibilityOptionsPanel",
+                        "localiserId": "accessibilityPanel",
                         "title": "Accessibilité"
                     },
                     "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f",
@@ -205,9 +205,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "id": "DesktopCustomizeMainArea",
-                "layout": "fit"
+                "layout": "fit",
+                "layout|flex": 1
             },
             "designerId": "4a737d26-c7f2-4aa4-8bc1-aa26bec7529c",
             "cn": [

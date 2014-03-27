@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "ContentTypes",
         "autoLoad": false,
-        "model": "typesContenusDataModel",
-        "storeId": "contentTypesCombo",
-        "designer|userClassName": "contentTypesCombo",
         "designer|userAlias": "contentTypesCombo",
-        "pageSize": 1000
+        "designer|userClassName": "contentTypesCombo",
+        "isOptimised": true,
+        "model": "typesContenusDataModel",
+        "pageSize": 1000,
+        "storeId": "contentTypesCombo",
+        "usedCollection": "ContentTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -78,8 +78,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": "mapping",
                         "encode": true,
+                        "nameProperty": "mapping",
                         "root": "data"
                     },
                     "designerId": "25bddd91-da63-4417-93e9-cc5057281e64"

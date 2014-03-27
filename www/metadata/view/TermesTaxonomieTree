@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "TermesTaxonomieTree",
-        "designer|userClassName": "TermesTaxonomieTree",
         "designer|userAlias": "TermesTaxonomieTree",
-        "title": "",
+        "designer|userClassName": "TermesTaxonomieTree",
         "forceFit": false,
+        "id": "TermesTaxonomieTree",
         "store": null,
+        "title": "",
         "useArrows": true
     },
     "designerId": "a78850b9-8d6a-42a3-b37f-1a00b54aba85",
@@ -38,9 +38,9 @@
                     },
                     "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
                     "userConfig": {
-                        "pluginId": "termsDrager",
                         "ddGroup": "TaxoDD",
-                        "dragText": "{0} terme{1} séléctionné{1}"
+                        "dragText": "{0} terme{1} séléctionné{1}",
+                        "pluginId": "termsDrager"
                     },
                     "designerId": "c30057c1-7987-483f-bff7-cba215698d02",
                     "cn": [
@@ -126,10 +126,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "termsCol",
                 "dataIndex": "text",
-                "text": "Termes",
-                "flex": 1
+                "flex": 1,
+                "localiserId": "termsCol",
+                "text": "Termes"
             },
             "designerId": "fb2e8d1b-8817-43dc-b288-b5a97300ec7c",
             "customConfigs": [
@@ -148,7 +148,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -158,6 +157,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if (record.isRoot()){\r",
                             "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
@@ -185,10 +185,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "languageCoumn",
                 "dataIndex": "i18n",
-                "text": "Languages",
-                "flex": 0.5
+                "flex": 0.5,
+                "localiserId": "languageCoumn",
+                "text": "Languages"
             },
             "designerId": "b7d2d51c-a8c4-4f88-bb9e-98812049407c",
             "customConfigs": [
@@ -207,7 +207,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -217,6 +216,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "if(record.isRoot()){return(\"\");}\r",
                             "try{var myFlagCode=Ext.getStore(\"AllLanguagesStore3\").query(\"locale\",record.get(\"locale\"),false,false,true).items[0].get(\"flagCode\");}\r",
@@ -267,11 +267,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "usedLanguage": "en",
-                "id": "specialLangTermColumn",
                 "dataIndex": "decoyField",
+                "flex": 1,
+                "id": "specialLangTermColumn",
                 "text": "<img class=\"header-icon\" style=\"vertical-align:middle;margin-bottom:4px;\" src=\"resources/icones/red/16x16/pencil.png\"/> English",
-                "flex": 1
+                "usedLanguage": "en"
             },
             "designerId": "3424dae7-4b88-420b-9c2c-1bef0e7e0f51",
             "customConfigs": [
@@ -290,7 +290,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "renderer",
                         "designer|params": [
                             "value",
                             "metaData",
@@ -300,6 +299,7 @@
                             "store",
                             "view"
                         ],
+                        "fn": "renderer",
                         "implHandler": [
                             "var lang=Ext.getCmp(\"specialLangTermColumn\").usedLanguage;\r",
                             "if (record.isRoot()) {return(null);}\r",

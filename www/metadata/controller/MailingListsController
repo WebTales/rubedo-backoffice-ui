@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MailingListsController",
-        "designer|userAlias": "MailingListsController"
+        "designer|userAlias": "MailingListsController",
+        "designer|userClassName": "MailingListsController"
     },
     "designerId": "fa7809cb-a36e-40d9-92de-589f62b00143",
     "cn": [
@@ -19,6 +19,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MLMainGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMLMainGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -53,9 +55,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#MLMainGrid"
+                "scope": "me"
             },
             "designerId": "e737eee8-5bab-4921-90ae-ad163b2bd60f"
         },
@@ -67,6 +67,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newMLSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewMLSubmitBtnClick",
                 "implHandler": [
                     "var form = button.up().getForm();\r",
@@ -78,9 +80,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newMLSubmitBtn"
+                "scope": "me"
             },
             "designerId": "ed3c1b1c-1ec0-4af3-b1ca-b6442ad49630"
         },
@@ -92,14 +92,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MailingListsAdd",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMailingListsAddClick",
                 "implHandler": [
                     "Ext.widget(\"newMLWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MailingListsAdd"
+                "scope": "me"
             },
             "designerId": "b5a7fee6-497a-4401-b460-5985ffb6243f"
         },
@@ -111,6 +111,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MailingListsRemove",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMailingListsRemoveClick",
                 "implHandler": [
                     "var delCon = Ext.widget('delConfirmZ');\r",
@@ -121,9 +123,7 @@
                     "});  "
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MailingListsRemove"
+                "scope": "me"
             },
             "designerId": "4ed08ee9-a5cc-421c-bb43-54a9b133fcb9"
         },
@@ -135,6 +135,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MailingListsUpdate",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMailingListsUpdateClick",
                 "implHandler": [
                     "var target = Ext.getCmp(\"MLMainGrid\").getSelectionModel().getLastSelected();\r",
@@ -144,9 +146,7 @@
                     "}  "
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MailingListsUpdate"
+                "scope": "me"
             },
             "designerId": "c5b0d7dd-e2a0-4ba9-88cf-2f740c833d0b"
         },
@@ -158,14 +158,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mlAddUser",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMlAddUserClick",
                 "implHandler": [
                     "Ext.widget(\"subscribeUsersWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#mlAddUser"
+                "scope": "me"
             },
             "designerId": "c15df487-80d3-4d4d-a2f1-54c079645657"
         },
@@ -177,6 +177,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mlRemoveUser",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMlRemoveUserClick",
                 "implHandler": [
                     "Ext.Ajax.request({\r",
@@ -198,9 +200,7 @@
                     "});"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#mlRemoveUser"
+                "scope": "me"
             },
             "designerId": "df1aedca-b003-4dfd-a6ec-049291cbcfb0"
         },
@@ -212,6 +212,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MLUsersGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMLUsersGridSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -221,9 +223,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#MLUsersGrid"
+                "scope": "me"
             },
             "designerId": "4b211b10-9e97-494b-99aa-0de3945db6c7"
         },
@@ -235,6 +235,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mlExportUsersBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMlExportUsersBtnClick",
                 "implHandler": [
                     "window.onbeforeunload=Ext.emptyFn;\r",
@@ -245,9 +247,7 @@
                     "    task63.delay(400);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#mlExportUsersBtn"
+                "scope": "me"
             },
             "designerId": "f7a78f4e-03b0-49dd-afda-fc98eddd409e"
         },
@@ -259,14 +259,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mlImportUsersBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMlImportUsersBtnClick",
                 "implHandler": [
                     "Ext.widget(\"mlImportWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#mlImportUsersBtn"
+                "scope": "me"
             },
             "designerId": "b2412f82-64e4-42ed-8041-f69cfb05d3a9"
         },
@@ -278,6 +278,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mlImportSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMlImportSubmitBtnClick",
                 "implHandler": [
                     "\r",
@@ -312,9 +314,7 @@
                     "    }"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#mlImportSubmitBtn"
+                "scope": "me"
             },
             "designerId": "d6ba22b7-860c-4fdd-b544-83f1fb3e1897"
         },
@@ -326,6 +326,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#subscribeUsersSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSubscribeUsersSubmitBtnClick",
                 "implHandler": [
                     "var form=button.up().getForm();\r",
@@ -350,9 +352,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#subscribeUsersSubmitBtn"
+                "scope": "me"
             },
             "designerId": "e7f00a53-ca32-4bdc-a735-c760f9145b0f"
         },
@@ -364,6 +364,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MLUsersGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMLMainGridItemDblClick",
                 "implHandler": [
                     "if (ACL.interfaceRights['read.ui.users']){\r",
@@ -371,9 +373,7 @@
                     "}"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#MLUsersGrid"
+                "scope": "me"
             },
             "designerId": "16bb95a0-942d-46d7-9b07-db3ddaeb0ffe"
         }

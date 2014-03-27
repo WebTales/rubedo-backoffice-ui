@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "DAM",
         "autoLoad": false,
         "autoSync": true,
+        "data": null,
+        "designer|userAlias": "DAMStore",
+        "designer|userClassName": "DAMStore",
+        "isOptimised": true,
         "model": "DAMModel",
+        "pageSize": 50,
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "DAMStore",
-        "designer|userClassName": "DAMStore",
-        "designer|userAlias": "DAMStore",
-        "data": null,
-        "pageSize": 50
+        "usedCollection": "DAM"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -44,7 +44,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'dam/create',\r",
@@ -53,6 +52,7 @@
                     "                    destroy: 'dam/delete'\r",
                     "                }"
                 ],
+                "batchActions": false,
                 "url": null
             },
             "designerId": "f1e3f9b8-b4c7-4723-863f-8fab4c54eadb",

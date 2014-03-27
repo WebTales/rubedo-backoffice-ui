@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "UserTypes",
         "autoLoad": false,
         "autoSync": true,
-        "model": "userType",
-        "storeId": "UserTypes",
-        "designer|userClassName": "UserTypes",
-        "designer|userAlias": "UserTypes",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "UserTypes",
+        "designer|userClassName": "UserTypes",
+        "isOptimised": true,
+        "model": "userType",
+        "pageSize": 1000,
+        "storeId": "UserTypes",
+        "usedCollection": "UserTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -75,8 +75,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "a967f695-8b1c-4737-8d9d-f343c29191dc"

@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
+        "designer|userAlias": "stockRemoverWindow",
+        "designer|userClassName": "stockRemoverWindow",
         "height": null,
         "id": "stockRemoverWindow",
-        "width": 400,
-        "designer|userClassName": "stockRemoverWindow",
-        "designer|userAlias": "stockRemoverWindow",
         "layout": "fit",
+        "localiserId": null,
+        "modal": true,
         "title": "Remove stock",
-        "modal": true
+        "width": 400
     },
     "designerId": "c8a13153-8259-4a7a-bd7b-3723654c4a6a",
     "customConfigs": [
@@ -46,16 +46,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "id": "stockRemoverField",
-                        "fieldLabel": "Amount to remove",
-                        "labelWidth": 120,
-                        "name": "amount",
                         "allowBlank": false,
-                        "allowOnlyWhitespace": false,
                         "allowDecimals": false,
                         "allowExponential": false,
-                        "minValue": 0
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Amount to remove",
+                        "id": "stockRemoverField",
+                        "labelWidth": 120,
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "amount"
                     },
                     "designerId": "775f2b8f-31b0-4f78-b9eb-99e62edb5127"
                 },
@@ -67,9 +67,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "100%",
                         "id": "stockRemoverSubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": null,
                         "text": "Remove stock from selected item"
                     },
                     "designerId": "745a11b8-fd4b-4a6b-8b6b-ca672608d0e6",

@@ -6,20 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
+        "constrainHeader": true,
+        "designer|userAlias": "PDFPreviewWindow",
+        "designer|userClassName": "PDFPreviewWindow",
         "height": 600,
+        "iconCls": "pdfIco",
         "id": null,
+        "layout": "fit",
         "maxHeight": null,
         "maxWidth": null,
-        "width": 500,
-        "designer|userClassName": "PDFPreviewWindow",
-        "designer|userAlias": "PDFPreviewWindow",
-        "resizable": null,
-        "layout": "fit",
-        "constrainHeader": true,
-        "iconCls": "pdfIco",
-        "title": "Titre",
         "maximizable": true,
-        "minimizable": true
+        "minimizable": true,
+        "title": "Titre",
+        "width": 500
     },
     "designerId": "ee7664a4-03e1-42ee-a412-6754a68ecb2f"
 }

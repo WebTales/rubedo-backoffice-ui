@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "applicationLog",
-        "designer|userAlias": "applicationLog"
+        "designer|userAlias": "applicationLog",
+        "designer|userClassName": "applicationLog"
     },
     "designerId": "30ae1f17-8709-4051-a6e0-8d04de56b61b",
     "cn": [
@@ -139,11 +139,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(JSON.stringify(rec.get(\"context\"),null,4));"
                         ]
@@ -172,11 +172,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "convert",
                         "designer|params": [
                             "v",
                             "rec"
                         ],
+                        "fn": "convert",
                         "implHandler": [
                             "return(rec.get(\"context\").type);"
                         ]

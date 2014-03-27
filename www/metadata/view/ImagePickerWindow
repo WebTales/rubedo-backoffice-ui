@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "damPickerWindow",
+        "constrainHeader": true,
+        "designer|userAlias": "ImagePickerWindow",
+        "designer|userClassName": "ImagePickerWindow",
         "height": 406,
         "id": "ImagePickerWindow",
-        "width": 600,
-        "designer|userClassName": "ImagePickerWindow",
-        "designer|userAlias": "ImagePickerWindow",
         "layout": "fit",
-        "constrainHeader": true,
-        "title": "Choix DAM",
+        "localiserId": "damPickerWindow",
         "maximizable": null,
-        "modal": true
+        "modal": true,
+        "title": "Choix DAM",
+        "width": 600
     },
     "designerId": "529b2508-9046-4453-930b-c1aa11abce73",
     "customConfigs": [
@@ -229,10 +229,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "width": 360,
                 "displayInfo": true,
-                "store": "DAMPickerStore"
+                "dock": "bottom",
+                "store": "DAMPickerStore",
+                "width": 360
             },
             "designerId": "82616952-af27-4097-a217-c945fd01b259",
             "cn": [
@@ -244,11 +244,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "chooseBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "imagePickerAcceptBtn",
                         "iconCls": "ouiSpetit",
+                        "id": "imagePickerAcceptBtn",
+                        "layout|flex": null,
+                        "localiserId": "chooseBtn",
                         "text": "Choisir"
                     },
                     "designerId": "b5f0469a-4889-4227-a446-e1319ad527b5",
@@ -289,10 +289,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "DAMPickerAddBtn",
                         "iconCls": "add",
+                        "id": "DAMPickerAddBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "text": "Ajouter"
                     },
                     "designerId": "38b4192f-6d63-460e-9114-816838ddef57",
@@ -391,9 +391,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "cancelBtn",
-                        "layout|flex": null,
                         "iconCls": "close",
+                        "layout|flex": null,
+                        "localiserId": "cancelBtn",
                         "text": "Annuler"
                     },
                     "designerId": "81c29517-6564-4a65-8100-ebff5447b45a",
@@ -413,11 +413,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "this.up().up().close();"
                                 ]

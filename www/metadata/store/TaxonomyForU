@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Taxonomy",
         "autoLoad": false,
-        "model": "taxonomieDataModel",
-        "storeId": "TaxonomyForU",
-        "designer|userClassName": "TaxonomyForU",
         "designer|userAlias": "TaxonomyForU",
-        "pageSize": 1000
+        "designer|userClassName": "TaxonomyForU",
+        "isOptimised": true,
+        "model": "taxonomieDataModel",
+        "pageSize": 1000,
+        "storeId": "TaxonomyForU",
+        "usedCollection": "Taxonomy"
     },
     "configAlternates": {
         "isOptimised": "boolean"

@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "sessionExpiredWindow",
+        "closable": false,
+        "designer|userAlias": "sessionExpiredWindow",
+        "designer|userClassName": "sessionExpiredWindow",
         "height": 78,
         "id": "sessionExpiredWindow",
-        "width": 236,
-        "designer|userClassName": "sessionExpiredWindow",
-        "designer|userAlias": "sessionExpiredWindow",
-        "resizable": false,
         "layout": "fit",
-        "closable": false,
+        "localiserId": "sessionExpiredWindow",
+        "modal": true,
+        "resizable": false,
         "title": "Votre session a expiré",
-        "modal": true
+        "width": 236
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -58,11 +58,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "handler",
                         "designer|params": [
                             "button",
                             "event"
                         ],
+                        "fn": "handler",
                         "implHandler": [
                             "window.onbeforeunload=Ext.emptyFn;\r",
                             "window.location.href=\"login\";"

@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "AppExtensionController",
-        "designer|userAlias": "AppExtensionController"
+        "designer|userAlias": "AppExtensionController",
+        "designer|userClassName": "AppExtensionController"
     },
     "designerId": "94fb422b-80b5-40d7-8b25-2a16cc8be41a",
     "cn": [
@@ -50,10 +50,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "processAppExtensions",
                 "designer|params": [
                     "extensionConfigs"
                 ],
+                "fn": "processAppExtensions",
                 "implHandler": [
                     "var me=this;\r",
                     "if (!Ext.isEmpty(extensionConfigs)){\r",
@@ -107,10 +107,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "init",
                 "designer|params": [
                     "application"
                 ],
+                "fn": "init",
                 "implHandler": [
                     "Ext.define('AppExtensions', {\r",
                     "    singleton:true,\r",

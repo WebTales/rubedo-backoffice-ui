@@ -8,10 +8,10 @@
     "userConfig": {
         "autoLoad": false,
         "autoSync": true,
-        "model": "panierDataModel",
-        "storeId": "PanierDataJson",
+        "designer|userAlias": "panierDataJson",
         "designer|userClassName": "PanierDataJson",
-        "designer|userAlias": "panierDataJson"
+        "model": "panierDataModel",
+        "storeId": "PanierDataJson"
     },
     "designerId": "7b418f71-7bce-450e-a6da-d3ee52b8ee7f",
     "cn": [
@@ -56,8 +56,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "6d05d397-799f-475a-ba73-eb04bae7887d"
@@ -78,9 +78,9 @@
                     "Ext.getCmp('boutonPanierEntete').setText('Panier ('+nbeltspanier+')');*/\r",
                     ""
                 ],
-                "single": true,
                 "name": "datachanged",
-                "scope": "me"
+                "scope": "me",
+                "single": true
             },
             "designerId": "68c96a00-f6a7-4245-b9be-0942b6500873"
         }

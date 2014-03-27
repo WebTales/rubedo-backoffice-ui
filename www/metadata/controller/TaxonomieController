@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "TaxonomieController",
         "models": [
             "taxonomyTermModel",
             "taxonomieDataModel"
@@ -13,8 +14,7 @@
         "views": [
             "TermesTaxonomieTree",
             "nouveauTaxoFenetre"
-        ],
-        "designer|userClassName": "TaxonomieController"
+        ]
     },
     "designerId": "694f297c-7498-4216-9113-e00663d5f6c4",
     "cn": [
@@ -26,6 +26,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#AdminfTaxonomieGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "selectVocabulary",
                 "implHandler": [
                     "var tablepanel=Ext.getCmp(\"AdminfTaxonomieGrid\");\r",
@@ -143,9 +145,7 @@
                     "boiteMeta.update(customMeta);"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#AdminfTaxonomieGrid"
+                "scope": "me"
             },
             "designerId": "01427099-ea52-45c1-a5ad-233d5b442eec"
         },
@@ -157,6 +157,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonSupprimerTermesTaxo, #taxoTermKiller",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "removeTerm",
                 "implHandler": [
                     "var cible = Ext.getCmp('TermesTaxonomieTree').getSelectionModel().getLastSelected();\r",
@@ -176,9 +178,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTermesTaxo, #taxoTermKiller"
+                "scope": "me"
             },
             "designerId": "ce78b2cf-cde8-4749-acbf-369ba7160598"
         },
@@ -190,6 +190,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonAjouterTermesTaxo",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "addTerm",
                 "implHandler": [
                     "var mainTaxo=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();\r",
@@ -225,9 +227,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonAjouterTermesTaxo"
+                "scope": "me"
             },
             "designerId": "b8758b15-4913-4a79-9539-ed729c7526d2"
         },
@@ -239,6 +239,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonEnregistrerTaxo",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "saveVocabulary",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
@@ -253,9 +255,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonEnregistrerTaxo"
+                "scope": "me"
             },
             "designerId": "87a4f3d1-7180-4c29-b9e6-24d7dc604e24"
         },
@@ -267,10 +267,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "recupereFils",
                 "designer|params": [
                     "cible"
                 ],
+                "fn": "recupereFils",
                 "implHandler": [
                     "var fils = [ ];\r",
                     "if (cible.length>0) {\r",
@@ -292,6 +292,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonSupprimerTaxo",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "deleteVocabulary",
                 "implHandler": [
                     "var cible = Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getSelection()[0];\r",
@@ -316,9 +318,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonSupprimerTaxo"
+                "scope": "me"
             },
             "designerId": "257c542b-3d3b-4c6f-b2e9-1e0db2c01e04"
         },
@@ -330,6 +330,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCreerTaxo",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "newVocabulary",
                 "implHandler": [
                     "if (Ext.getCmp('champCreerTaxo').isValid()) {\r",
@@ -350,9 +352,7 @@
                     "}    "
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreerTaxo"
+                "scope": "me"
             },
             "designerId": "30f84c36-ac93-43a3-aeed-8a4c8ffb8f0e"
         },
@@ -364,6 +364,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonCreerTaxonomie",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "openVocabWindow",
                 "implHandler": [
                     "var window = Ext.widget('nouveauTaxoFenetre');\r",
@@ -372,9 +374,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonCreerTaxonomie"
+                "scope": "me"
             },
             "designerId": "dba76a0e-a6ed-496f-8e85-7a3475ac10e3"
         },
@@ -386,6 +386,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#boutonModifierTermesTaxo",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "updateTerm",
                 "implHandler": [
                     "if (Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected() !== null) {\r",
@@ -402,9 +404,7 @@
                     "button.up().destroy();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#boutonModifierTermesTaxo"
+                "scope": "me"
             },
             "designerId": "23c5b7f6-6ebc-46e8-83c6-371d7844c330"
         },
@@ -416,6 +416,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#TermesTaxonomieTree",
+                "designer|targetType": "Ext.tree.Panel",
                 "fn": "termsContextMenuDisplay",
                 "implHandler": [
                     "if ((ACL.interfaceRights[\"write.ui.taxonomyTerms\"])&&(Ext.getCmp(\"AdminfTaxonomieGrid\").getSelectionModel().getLastSelected().get(\"id\")!=\"navigation\")){\r",
@@ -434,9 +436,7 @@
                     "    e.stopEvent();"
                 ],
                 "name": "itemcontextmenu",
-                "scope": "me",
-                "designer|targetType": "Ext.tree.Panel",
-                "designer|controlQuery": "#TermesTaxonomieTree"
+                "scope": "me"
             },
             "designerId": "309b5f2a-8c86-4dec-b9f7-db5e07610ac1"
         },
@@ -448,6 +448,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#TermesTaxonomieTree",
+                "designer|targetType": "Ext.tree.Panel",
                 "fn": "onTermesTaxonomieTreeSelectionChange",
                 "implHandler": [
                     "if (Ext.isEmpty(selected)){\r",
@@ -467,9 +469,7 @@
                     "}"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.tree.Panel",
-                "designer|controlQuery": "#TermesTaxonomieTree"
+                "scope": "me"
             },
             "designerId": "91b19d2d-c3e5-42bc-a1d0-2e27d7b4aeed"
         },
@@ -481,6 +481,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#taxoTermInsertorBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onTaxoTermInsertorBtnClick",
                 "implHandler": [
                     "var mainTaxo=Ext.getCmp('AdminfTaxonomieGrid').getSelectionModel().getLastSelected();\r",
@@ -514,9 +516,7 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#taxoTermInsertorBtn"
+                "scope": "me"
             },
             "designerId": "192085e9-79c0-4ea9-a753-820eaf11f3df"
         },
@@ -528,14 +528,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#taxoOpenInsertBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onTaxoOpenInsertBtnClick",
                 "implHandler": [
                     "Ext.widget(\"taxoTermInsertWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#taxoOpenInsertBtn"
+                "scope": "me"
             },
             "designerId": "e41b00b7-8464-4ddc-b8d3-6c441a3ec826"
         }

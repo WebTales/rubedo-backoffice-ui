@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "Directories",
         "autoLoad": false,
         "autoSync": true,
+        "designer|userAlias": "DirectoriesStore",
+        "designer|userClassName": "DirectoriesStore",
+        "isOptimised": true,
         "model": "directoryModel",
         "storeId": "DirectoriesStore",
-        "designer|userClassName": "DirectoriesStore",
-        "designer|userAlias": "DirectoriesStore"
+        "usedCollection": "Directories"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -40,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "batchActions": false,
                 "api": [
                     "{\r",
                     "                    create: 'directories/create',\r",
@@ -48,7 +47,8 @@
                     "                    update: 'directories/update',\r",
                     "                    destroy: 'directories/delete'\r",
                     "                }"
-                ]
+                ],
+                "batchActions": false
             },
             "designerId": "a4f87fd8-6f58-4c29-9a73-3cc1363a5a5f",
             "cn": [
@@ -72,10 +72,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "getResponseData",
                                 "designer|params": [
                                     "response"
                                 ],
+                                "fn": "getResponseData",
                                 "implHandler": [
                                     "var data, error;\r",
                                     "\r",

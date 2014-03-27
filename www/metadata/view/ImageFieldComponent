@@ -8,13 +8,13 @@
     "userConfig": {
         "anchor": "90%",
         "container|align": "stretch",
+        "designer|userAlias": "ImageFieldComponent",
+        "designer|userClassName": "ImageFieldComponent",
         "height": 120,
         "itemId": null,
+        "layout": "hbox",
         "margin": "0 0 10 0",
-        "width": 338,
-        "designer|userClassName": "ImageFieldComponent",
-        "designer|userAlias": "ImageFieldComponent",
-        "layout": "hbox"
+        "width": 338
     },
     "designerId": "c731a69e-dd8d-4064-b123-ea9f9fbdc128",
     "customConfigs": [
@@ -34,8 +34,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": null,
-                "width": 105,
-                "text": "My Label :"
+                "text": "My Label :",
+                "width": 105
             },
             "designerId": "a6f0dc97-303b-4735-8fe0-d740129ac151"
         },
@@ -50,9 +50,9 @@
                 "height": 120,
                 "itemId": "fieldImagePreview",
                 "minWidth": null,
+                "src": null,
                 "style": null,
-                "width": null,
-                "src": null
+                "width": null
             },
             "configAlternates": {
                 "style": "string"
@@ -88,9 +88,9 @@
             "userConfig": {
                 "designer|snapToGrid": 10,
                 "itemId": "buttonHolder",
+                "layout": "absolute",
                 "margin": "0 0 0 10",
-                "width": 49,
-                "layout": "absolute"
+                "width": 49
             },
             "designerId": "15d54f0f-2b5f-483c-9126-4b65e9786bf7",
             "cn": [
@@ -102,11 +102,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "imagePickerChangeBtn",
+                        "iconCls": "pencil_med",
+                        "itemId": "fieldChangeImage",
                         "layout|x": 10,
                         "layout|y": 10,
-                        "itemId": "fieldChangeImage",
-                        "iconCls": "pencil_med",
+                        "localiserId": "imagePickerChangeBtn",
                         "scale": "medium",
                         "text": "",
                         "tooltip": "Choisir un média"
@@ -131,11 +131,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "imagePickerClearBtn",
+                        "iconCls": "remove_med",
+                        "itemId": "fieldClearImage",
                         "layout|x": 10,
                         "layout|y": 80,
-                        "itemId": "fieldClearImage",
-                        "iconCls": "remove_med",
+                        "localiserId": "imagePickerClearBtn",
                         "scale": "medium",
                         "text": "",
                         "tooltip": "Désélectionner"
@@ -160,10 +160,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "iconCls": "help",
+                        "itemId": "infoBtn",
                         "layout|x": 10,
                         "layout|y": 50,
-                        "itemId": "infoBtn",
-                        "iconCls": "help",
                         "text": ""
                     },
                     "designerId": "d32a7d65-3c88-49b1-9ab2-24d2c86f6813"

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "containerScroll": true,
         "ddScrollConfig": [
             "{",
             "    vthresh: 50,",
@@ -15,7 +16,6 @@
             "    frequency:200",
             "}"
         ],
-        "containerScroll": true,
         "designer|userClassName": "PortalDropZone",
         "extend": "Ext.dd.DropTarget"
     },
@@ -41,11 +41,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "constructor",
                 "designer|params": [
                     "portal",
                     "cfg"
                 ],
+                "fn": "constructor",
                 "implHandler": [
                     "this.portal = portal;\r",
                     "this.callParent([portal.body, cfg]);\r",
@@ -63,7 +63,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "createEvent",
                 "designer|params": [
                     "dd",
                     "e",
@@ -72,6 +71,7 @@
                     "c",
                     "pos"
                 ],
+                "fn": "createEvent",
                 "implHandler": [
                     "return {",
                     "    portal: this.portal,",
@@ -96,12 +96,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "notifyOver",
                 "designer|params": [
                     "dd",
                     "e",
                     "data"
                 ],
+                "fn": "notifyOver",
                 "implHandler": [
                     "var xy = e.getXY(),",
                     "    portal = this.portal,",
@@ -217,12 +217,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "notifyDrop",
                 "designer|params": [
                     "dd",
                     "e",
                     "data"
                 ],
+                "fn": "notifyDrop",
                 "implHandler": [
                     "delete this.grid;",
                     "if (!this.lastPos) {",

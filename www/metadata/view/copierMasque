@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "maskDupliacteWindow",
-        "height": null,
-        "id": "copieMasqueFenetre",
-        "width": 400,
-        "designer|userClassName": "copierMasque",
         "designer|userAlias": "copierMasque",
+        "designer|userClassName": "copierMasque",
+        "height": null,
+        "iconCls": "page_copy",
+        "id": "copieMasqueFenetre",
+        "layout": "fit",
+        "localiserId": "maskDupliacteWindow",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
-        "iconCls": "page_copy",
         "title": "Duplication de masque",
-        "modal": true
+        "width": 400
     },
     "designerId": "dca5a3db-8938-4e33-8ce9-dae79f1a00a2",
     "customConfigs": [
@@ -50,12 +50,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "mdNewTitleField",
-                        "layout|anchor": "100%",
-                        "id": "copierMasqueTitre",
+                        "allowBlank": false,
                         "fieldLabel": "Nouveau titre ",
-                        "value": null,
-                        "allowBlank": false
+                        "id": "copierMasqueTitre",
+                        "layout|anchor": "100%",
+                        "localiserId": "mdNewTitleField",
+                        "value": null
                     },
                     "designerId": "fe9b4b40-2a66-4509-b688-92530eaffcf6",
                     "customConfigs": [
@@ -74,13 +74,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "mdnewSiteField",
-                        "layout|anchor": "100%",
-                        "id": "copierMasqueSite",
-                        "fieldLabel": "Dans le site ",
                         "allowBlank": false,
                         "editable": false,
+                        "fieldLabel": "Dans le site ",
                         "forceSelection": true,
+                        "id": "copierMasqueSite",
+                        "layout|anchor": "100%",
+                        "localiserId": "mdnewSiteField",
                         "queryMode": "local",
                         "store": "SitesComboMasks",
                         "valueField": "id"
@@ -125,11 +125,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "mdSubmitBtn",
-                        "layout|anchor": "1",
                         "id": "copierMasque",
-                        "width": null,
-                        "text": "Dupliquer ce masque"
+                        "layout|anchor": "1",
+                        "localiserId": "mdSubmitBtn",
+                        "text": "Dupliquer ce masque",
+                        "width": null
                     },
                     "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523",
                     "customConfigs": [

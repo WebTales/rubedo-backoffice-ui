@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "allowedCT": null,
-        "queryMode": true,
-        "geoQueryMode": false,
         "damQueryMode": false,
-        "designer|userClassName": "ESQfield",
         "designer|userAlias": "ESQfield",
+        "designer|userClassName": "ESQfield",
         "fieldLabel": "Label",
-        "labelSeparator": " "
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
     },
     "configAlternates": {
         "geoQueryMode": "boolean",

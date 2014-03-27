@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MediaTypesController",
-        "designer|userAlias": "MediaTypesController"
+        "designer|userAlias": "MediaTypesController",
+        "designer|userClassName": "MediaTypesController"
     },
     "designerId": "2a85a03b-de9d-4abc-80a4-82114d4267cf",
     "cn": [
@@ -19,14 +19,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newMTBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewMTBtnClick",
                 "implHandler": [
                     "Ext.widget(\"newMTWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newMTBtn"
+                "scope": "me"
             },
             "designerId": "8e5babb4-2faa-4faf-a51f-9b4c3d7849d8"
         },
@@ -38,6 +38,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#createNewMTBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCreateNewMTBtnClick",
                 "implHandler": [
                     "if (button.up().getForm().isValid()) {\r",
@@ -54,9 +56,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#createNewMTBtn"
+                "scope": "me"
             },
             "designerId": "c2ea7078-1d68-4214-84af-6a2dfcb589ca"
         },
@@ -96,10 +96,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "resetInterfaceSelect",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "resetInterfaceSelect",
                 "implHandler": [
                     "var me =this;\r",
                     "Ext.Array.forEach(Ext.getCmp(\"mediaTypesInterface\").getComponent(\"contextBar\").query(\"buttongroup\"), function(btng){btng.enable();});\r",
@@ -162,14 +162,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#mainMTGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMainMTGridSelect",
                 "implHandler": [
                     "this.resetInterfaceSelect(record);"
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mainMTGrid"
+                "scope": "me"
             },
             "designerId": "d77217b6-a7a4-4f45-9993-a859e9d721a8"
         },
@@ -181,6 +181,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#removeMTBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onRemoveMTBtnClick",
                 "implHandler": [
                     "var me=this;\r",
@@ -214,9 +216,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#removeMTBtn"
+                "scope": "me"
             },
             "designerId": "b44db20e-1956-4783-9446-c9967f5f33a9"
         },
@@ -228,10 +228,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "updateMT",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "updateMT",
                 "implHandler": [
                     "var me=this;\r",
                     "var form = Ext.getCmp(\"mediaTypesEditForm\").getForm();\r",
@@ -258,14 +258,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#saveMTBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onSaveMTBtnClick",
                 "implHandler": [
                     "this.updateMT(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected());"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#saveMTBtn"
+                "scope": "me"
             },
             "designerId": "465a0fde-261b-4daa-a451-461beaa7941e"
         },
@@ -277,14 +277,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#newMTFieldBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onNewMTFieldBtnClick",
                 "implHandler": [
                     "Ext.widget(\"MTFieldAddWindow\").show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#newMTFieldBtn"
+                "scope": "me"
             },
             "designerId": "cfb4f6da-26ac-48b7-8c2b-61b9675b398b"
         },
@@ -296,11 +296,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "renderMTField",
                 "designer|params": [
                     "protoData",
                     "renderTarget"
                 ],
+                "fn": "renderMTField",
                 "implHandler": [
                     "var me=this;\r",
                     "var configurator=protoData.config;\r",
@@ -354,10 +354,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "nameAvailable",
                 "designer|params": [
                     "name"
                 ],
+                "fn": "nameAvailable",
                 "implHandler": [
                     "var usedNames=[\"originalFileId\", \"title\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
@@ -380,6 +380,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MTFieldInsertBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMTFieldInsertBtnClick",
                 "implHandler": [
                     "var proto=Ext.clone(Ext.getCmp(\"MTFieldSelectGrid\").getSelectionModel().getLastSelected().getData());\r",
@@ -388,9 +390,7 @@
                     "button.up().up().close();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MTFieldInsertBtn"
+                "scope": "me"
             },
             "designerId": "f2107c8d-ed5c-47c6-8e79-059e32c1e129"
         },
@@ -402,10 +402,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "recordFields",
                 "designer|params": [
                     "target"
                 ],
+                "fn": "recordFields",
                 "implHandler": [
                     "var result = [ ];\r",
                     "Ext.Array.forEach(target.query(\"field\"), function(field){\r",
@@ -440,14 +440,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MTFieldSelectGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMTFieldSelectGridItemDblClick",
                 "implHandler": [
                     "this.onMTFieldInsertBtnClick(Ext.getCmp(\"MTFieldInsertBtn\"));"
                 ],
                 "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#MTFieldSelectGrid"
+                "scope": "me"
             },
             "designerId": "714350f7-49ac-43ca-baa5-9ac28facd8dd"
         },
@@ -459,6 +459,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MTeditFields ChampTC",
+                "designer|targetType": "ChampTC",
                 "fn": "selectionEvents",
                 "implHandler": [
                     "var usedNames=[\"original\", \"text\"];\r",
@@ -587,9 +589,7 @@
                     "    });"
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "ChampTC",
-                "designer|controlQuery": "#MTeditFields ChampTC"
+                "scope": "me"
             },
             "designerId": "e8abaae2-47b0-4410-bcbb-850bb2d40ac7"
         },
@@ -601,10 +601,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "nameValidator",
                 "designer|params": [
                     "name"
                 ],
+                "fn": "nameValidator",
                 "implHandler": [
                     "var usedNames=[\"originalFileId\", \"title\"];\r",
                     "Ext.Array.forEach(Ext.getCmp('MTeditFields').query(\"field\"), function(field){\r",
@@ -629,6 +629,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MTfieldUp",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMTfieldUpClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
@@ -640,9 +642,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MTfieldUp"
+                "scope": "me"
             },
             "designerId": "cc03035e-3bda-4d69-a0b0-3411d1ea9a50"
         },
@@ -654,6 +654,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MTfieldDown",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMTfieldDownClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
@@ -663,9 +665,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MTfieldDown"
+                "scope": "me"
             },
             "designerId": "9027f1c5-ddf1-4a26-845e-143bd0428347"
         },
@@ -677,6 +677,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#MTfieldDeleter",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onMTfieldDeleterClick",
                 "implHandler": [
                     "var field = Ext.getCmp(Ext.getCmp('MTFieldId').getValue());\r",
@@ -691,9 +693,7 @@
                     "}"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#MTfieldDeleter"
+                "scope": "me"
             },
             "designerId": "624b2097-493d-4bc5-b0b4-53ebef83458a"
         },
@@ -705,6 +705,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#copyMTBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onCopyMTBtnClick",
                 "implHandler": [
                     "var rec = Ext.clone(Ext.getCmp(\"mainMTGrid\").getSelectionModel().getLastSelected().data);\r",
@@ -721,9 +723,7 @@
                     "Ext.getCmp(\"mainMTGrid\").getStore().add(rec);"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#copyMTBtn"
+                "scope": "me"
             },
             "designerId": "dcdf96e3-e7bd-4224-9722-7768435a64fc"
         },
@@ -735,6 +735,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#purgeDTDamTypeBtn",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onPurgeDTDamTypeBtnClick",
                 "implHandler": [
                     "var fenetre = Ext.widget('delConfirmZ');\r",
@@ -770,9 +772,7 @@
                     "    }); "
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#purgeDTDamTypeBtn"
+                "scope": "me"
             },
             "designerId": "aaef4d14-5409-4025-8c3c-801bea5e3291"
         }

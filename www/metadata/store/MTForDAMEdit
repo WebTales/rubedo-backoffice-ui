@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "MediaTypes",
         "autoLoad": false,
-        "model": "mediaTypeModel",
-        "storeId": "MTForDAMEdit",
-        "designer|userClassName": "MTForDAMEdit",
-        "designer|userAlias": "MTForDAMEdit",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "MTForDAMEdit",
+        "designer|userClassName": "MTForDAMEdit",
+        "isOptimised": true,
+        "model": "mediaTypeModel",
+        "pageSize": 1000,
+        "storeId": "MTForDAMEdit",
+        "usedCollection": "MediaTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"

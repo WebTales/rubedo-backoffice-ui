@@ -7,12 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
-        "model": "versionsDataModel",
-        "remoteFilter": true,
-        "storeId": "VersioningStore",
-        "designer|userClassName": "VersioningStore",
         "designer|userAlias": "VersioningStore",
-        "pageSize": 1000
+        "designer|userClassName": "VersioningStore",
+        "model": "versionsDataModel",
+        "pageSize": 1000,
+        "remoteFilter": true,
+        "storeId": "VersioningStore"
     },
     "configAlternates": {
         "isOptimised": "boolean"

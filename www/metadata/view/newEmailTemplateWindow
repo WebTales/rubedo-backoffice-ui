@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "height": null,
-        "id": "newEmailTemplateWindow",
-        "width": 400,
-        "designer|userClassName": "newEmailTemplateWindow",
         "designer|userAlias": "newEmailTemplateWindow",
-        "resizable": false,
-        "layout": "fit",
+        "designer|userClassName": "newEmailTemplateWindow",
+        "height": null,
         "iconCls": "add",
+        "id": "newEmailTemplateWindow",
+        "layout": "fit",
+        "localiserId": null,
+        "modal": true,
+        "resizable": false,
         "title": "New email",
-        "modal": true
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean"
@@ -51,17 +51,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Type",
-                        "name": "isModel",
-                        "value": [
-                            "false"
-                        ],
                         "editable": false,
+                        "fieldLabel": "Type",
                         "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "name": "isModel",
                         "queryMode": "local",
                         "store": [
                             "[[true,\"Model\"],[false,\"Mail\"]]"
+                        ],
+                        "value": [
+                            "false"
                         ]
                     },
                     "configAlternates": {
@@ -101,20 +101,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "itemId": "useModelField",
-                        "fieldLabel": "Source",
-                        "name": "useModel",
-                        "value": [
-                            "false"
-                        ],
                         "allowBlank": false,
                         "allowOnlyWhitespace": false,
                         "editable": false,
+                        "fieldLabel": "Source",
                         "forceSelection": true,
+                        "itemId": "useModelField",
+                        "layout|anchor": "100%",
+                        "name": "useModel",
                         "queryMode": "local",
                         "store": [
                             "[[true,\"From model\"],[false,\"Blank\"]]"
+                        ],
+                        "value": [
+                            "false"
                         ]
                     },
                     "configAlternates": {
@@ -159,13 +159,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
+                        "editable": false,
+                        "fieldLabel": "Model",
+                        "forceSelection": true,
                         "hidden": true,
                         "itemId": "modelField",
-                        "fieldLabel": "Model",
+                        "layout|anchor": "100%",
                         "name": "model",
-                        "editable": false,
-                        "forceSelection": true,
                         "store": "EmailModels",
                         "valueField": "id"
                     },
@@ -179,14 +179,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "100%",
-                        "id": null,
-                        "fieldLabel": "Name",
-                        "name": "text",
-                        "value": null,
                         "allowBlank": false,
-                        "allowOnlyWhitespace": false
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Name",
+                        "id": null,
+                        "layout|anchor": "100%",
+                        "localiserId": null,
+                        "name": "text",
+                        "value": null
                     },
                     "designerId": "18eb97fe-1fa8-4680-ac3e-77210eab35d3",
                     "customConfigs": [
@@ -205,15 +205,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "itemId": "widthField",
-                        "fieldLabel": "Width",
-                        "name": "bodyWidth",
                         "allowBlank": false,
-                        "allowOnlyWhitespace": false,
                         "allowDecimals": false,
                         "allowExponential": false,
-                        "minValue": 10
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Width",
+                        "itemId": "widthField",
+                        "layout|anchor": "100%",
+                        "minValue": 10,
+                        "name": "bodyWidth"
                     },
                     "designerId": "91331da2-7075-4dcf-9fb4-8f5b5d7bf8b6"
                 },
@@ -225,11 +225,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "1",
                         "id": "newETSubmitBtn",
-                        "width": null,
-                        "text": "Create this new email"
+                        "layout|anchor": "1",
+                        "localiserId": null,
+                        "text": "Create this new email",
+                        "width": null
                     },
                     "designerId": "08145745-1a56-49ad-80cd-aa61f302d81e",
                     "customConfigs": [

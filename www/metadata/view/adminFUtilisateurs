@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "groupsWindow",
-        "container|align": "stretch",
-        "height": 578,
-        "id": "adminFUtilisateurs",
-        "width": 1000,
-        "designer|userClassName": "adminFUtilisateurs",
-        "designer|userAlias": "adminFUtilisateurs",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "adminFUtilisateurs",
+        "designer|userClassName": "adminFUtilisateurs",
+        "height": 578,
         "iconCls": "user",
-        "title": "Groupes"
+        "id": "adminFUtilisateurs",
+        "layout": "hbox",
+        "localiserId": "groupsWindow",
+        "title": "Groupes",
+        "width": 1000
     },
     "designerId": "fb146702-039a-47f8-8142-bd4572c13135",
     "customConfigs": [
@@ -61,10 +61,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 30,
-                "itemId": "filArianne"
+                "itemId": "filArianne",
+                "layout|flex": 1
             },
             "designerId": "1c7fea59-edee-4192-a2c7-f159374df0d4",
             "cn": [
@@ -76,10 +76,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "groupsLaunchBtn",
-                        "layout|flex": null,
-                        "itemId": "origine",
                         "iconCls": "user",
+                        "itemId": "origine",
+                        "layout|flex": null,
+                        "localiserId": "groupsLaunchBtn",
                         "text": "Groupes "
                     },
                     "designerId": "890706be-c355-49e7-87e4-a7357fe14269",
@@ -101,10 +101,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
                 "height": 50,
                 "itemId": "barreMeta",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "24c9bb56-fa33-4f8f-ab40-4353957b6fc0",
@@ -117,10 +117,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 45,
-                        "width": 48,
-                        "src": null
+                        "layout|flex": null,
+                        "src": null,
+                        "width": 48
                     },
                     "designerId": "21ae997d-2dbc-4837-8e85-cdf1662ad5cf",
                     "cn": [
@@ -151,8 +151,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "boiteBarreMeta",
+                        "layout|flex": null,
                         "margin": "0 0 0 10"
                     },
                     "designerId": "ac6e9cc8-defd-49ca-be3e-e8db39210003",
@@ -165,10 +165,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "tpl",
                                 "implHandler": [
                                     "<p> <b> {name} </b> {userNb} {calif} </p>"
-                                ],
-                                "designer|displayName": "tpl"
+                                ]
                             },
                             "designerId": "f6a9744b-0baf-49f9-bd90-cadcfae942a1"
                         }
@@ -184,10 +184,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "top",
                 "height": 86,
                 "itemId": "contextBar",
+                "layout|flex": 1,
                 "width": null
             },
             "designerId": "881ff497-661b-43ff-85b4-6bdc8a7a77a0",
@@ -201,13 +201,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "groupAddButton",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "groupAddButton",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
                         "scale": "large",
                         "text": "Ajouter"
                     },
@@ -234,14 +234,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "groupDeleteButton",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "groupDeleteButton",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -268,14 +268,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "groupSaveButton",
-                        "itemId": null,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "groupSaveButton",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -351,13 +351,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.groups",
-                        "localiserId": "editGroup",
-                        "layout|flex": null,
+                        "columns": 2,
                         "disabled": true,
                         "headerPosition": "bottom",
+                        "layout|flex": null,
+                        "localiserId": "editGroup",
                         "overlapHeader": false,
-                        "title": "Edition",
-                        "columns": 2
+                        "title": "Edition"
                     },
                     "designerId": "310a8329-c4d6-474b-a625-6c6ddeef1b8a",
                     "customConfigs": [
@@ -381,12 +381,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "addBtn",
-                                "id": "userAddButton",
-                                "itemId": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "user_add_big",
+                                "id": "userAddButton",
+                                "itemId": null,
+                                "localiserId": "addBtn",
                                 "scale": "large",
                                 "text": "Ajouter"
                             },
@@ -407,12 +407,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "removeBtn",
-                                "id": "userRemoveButton",
-                                "itemId": null,
                                 "icon": null,
                                 "iconAlign": "top",
                                 "iconCls": "user_remove_big",
+                                "id": "userRemoveButton",
+                                "itemId": null,
+                                "localiserId": "removeBtn",
                                 "scale": "large",
                                 "text": "Supprimer"
                             },
@@ -448,10 +448,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "RApplication": "groups",
-                        "layout|flex": null,
-                        "itemId": "RHelpBtn",
                         "icon": null,
                         "iconCls": "info_big",
+                        "itemId": "RHelpBtn",
+                        "layout|flex": null,
                         "scale": "large",
                         "text": ""
                     },
@@ -474,14 +474,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 0.4,
-                "id": "groupsGrid",
-                "title": "",
-                "hideHeaders": false,
-                "store": "GroupsDataStore",
                 "displayField": "name",
                 "folderSort": false,
+                "hideHeaders": false,
+                "id": "groupsGrid",
+                "layout|flex": 0.4,
                 "rootVisible": false,
+                "store": "GroupsDataStore",
+                "title": "",
                 "useArrows": true
             },
             "designerId": "f38fdb02-eea2-4b18-bba1-43bb8cc63c79",
@@ -582,10 +582,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameCol",
                         "dataIndex": "name",
-                        "text": "Nom",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "nameCol",
+                        "text": "Nom"
                     },
                     "designerId": "59c0c2fe-4619-44bd-9bc3-5dbdd74c61cf",
                     "customConfigs": [
@@ -604,7 +604,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -614,6 +613,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.isRoot()){\r",
                                     "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");\r",
@@ -642,8 +642,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "activeTab": 0
+                "activeTab": 0,
+                "layout|flex": 1
             },
             "designerId": "42403621-5294-482e-9e14-a9ec1ab9de9a",
             "cn": [
@@ -688,8 +688,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "UsersInGroupGrid",
-                                "title": "",
-                                "store": "UsersGroupStore"
+                                "store": "UsersGroupStore",
+                                "title": ""
                             },
                             "configAlternates": {
                                 "managesStore": "boolean"
@@ -713,10 +713,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "nameColumn",
                                         "dataIndex": "name",
-                                        "text": "Nom",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "localiserId": "nameColumn",
+                                        "text": "Nom"
                                     },
                                     "designerId": "94b0f91c-83c4-4e61-bbe0-95662042c244",
                                     "customConfigs": [
@@ -735,10 +735,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "localiserId": "mailColumn",
                                         "dataIndex": "email",
-                                        "text": "Email",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "localiserId": "mailColumn",
+                                        "text": "Email"
                                     },
                                     "designerId": "bb6319f1-8471-4b2a-8af1-19ffd24d198e",
                                     "customConfigs": [
@@ -757,10 +757,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "hidden": true,
                                         "dataIndex": "defaultGroup",
-                                        "text": "Groupes",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "hidden": true,
+                                        "text": "Groupes"
                                     },
                                     "designerId": "beb0dd51-cd42-4bcd-91d1-acc8cb4f6018"
                                 },
@@ -773,8 +773,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "createTime",
-                                        "text": "Création",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Création"
                                     },
                                     "designerId": "44315143-663f-4d8e-b157-0186e674d077"
                                 },
@@ -787,8 +787,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "lastUpdateTime",
-                                        "text": "Dernière modification",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Dernière modification"
                                     },
                                     "designerId": "39446dd6-babd-48de-a9c5-e7457ac9479f"
                                 },
@@ -830,9 +830,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "groupPropsForm",
                         "autoScroll": true,
                         "bodyPadding": 10,
+                        "id": "groupPropsForm",
                         "title": "Droits"
                     },
                     "designerId": "4c5cf7dd-da1a-4dd9-b5e4-ce7ce42e5a04",
@@ -864,12 +864,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameField",
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
                                 "fieldLabel": "Nom ",
                                 "labelWidth": 220,
-                                "name": "name",
-                                "allowBlank": false
+                                "layout|anchor": "100%",
+                                "localiserId": "nameField",
+                                "name": "name"
                             },
                             "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6",
                             "customConfigs": [
@@ -888,14 +888,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "notAutomatic": true,
-                                "localiserId": "readWorkSpaceField",
                                 "fieldLabel": "Espaces de travail en lecture ",
                                 "labelWidth": 220,
-                                "name": "readWorkspaces",
+                                "layout|anchor": "100%",
+                                "localiserId": "readWorkSpaceField",
                                 "multiSelect": true,
-                                "store": "WorkspacesComboWithAll",
-                                "layout|anchor": "100%"
+                                "name": "readWorkspaces",
+                                "notAutomatic": true,
+                                "store": "WorkspacesComboWithAll"
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"
@@ -923,14 +923,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "notAutomatic": true,
-                                "localiserId": "writeWorkspaceField",
                                 "fieldLabel": "Espaces de travail en contribution",
                                 "labelWidth": 220,
-                                "name": "writeWorkspaces",
+                                "layout|anchor": "100%",
+                                "localiserId": "writeWorkspaceField",
                                 "multiSelect": true,
-                                "store": "WorkspacesComboWithAll",
-                                "layout|anchor": "100%"
+                                "name": "writeWorkspaces",
+                                "notAutomatic": true,
+                                "store": "WorkspacesComboWithAll"
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"
@@ -958,12 +958,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "notAutomatic": true,
-                                "localiserId": "defaultWorkspaceField",
                                 "fieldLabel": "Espace de travail par défaut",
                                 "labelWidth": 220,
+                                "layout|anchor": "100%",
+                                "localiserId": "defaultWorkspaceField",
                                 "name": "defaultWorkspace",
-                                "layout|anchor": "100%"
+                                "notAutomatic": true
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"
@@ -991,13 +991,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "hidden": true,
-                                "fieldLabel": "Peut supprimer des éléments",
-                                "labelWidth": 220,
-                                "name": "canDeleteElements",
                                 "boxLabel": "",
-                                "inputValue": "true"
+                                "fieldLabel": "Peut supprimer des éléments",
+                                "hidden": true,
+                                "inputValue": "true",
+                                "labelWidth": 220,
+                                "layout|anchor": "100%",
+                                "name": "canDeleteElements"
                             },
                             "designerId": "073affe6-1517-4124-80bf-92aed84d5dce"
                         },
@@ -1009,13 +1009,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "hidden": true,
-                                "fieldLabel": "Peut modifier les éléments des autres utilisateurs",
-                                "labelWidth": 220,
-                                "name": "canWriteUnownedElements",
                                 "boxLabel": "",
-                                "inputValue": "true"
+                                "fieldLabel": "Peut modifier les éléments des autres utilisateurs",
+                                "hidden": true,
+                                "inputValue": "true",
+                                "labelWidth": 220,
+                                "layout|anchor": "100%",
+                                "name": "canWriteUnownedElements"
                             },
                             "designerId": "d071cbf4-8fb1-4f20-b598-8bdcb6c4ac50"
                         }
@@ -1030,8 +1030,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "admin.ui.groups",
-                        "id": "groupAdminPropsForm",
                         "bodyPadding": 10,
+                        "id": "groupAdminPropsForm",
                         "title": "Administration"
                     },
                     "designerId": "fe35f935-b34c-4b39-943d-eb47eaf008d3",
@@ -1076,9 +1076,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "notAutomatic": true,
                                 "labelWidth": 220,
-                                "layout|anchor": "100%"
+                                "layout|anchor": "100%",
+                                "notAutomatic": true
                             },
                             "configAlternates": {
                                 "notAutomatic": "boolean"
@@ -1106,13 +1106,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "inheritWorkspaceField",
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Hérite de l'espace de travail",
-                                "labelWidth": 220,
-                                "name": "inheritWorkspace",
                                 "boxLabel": "",
+                                "fieldLabel": "Hérite de l'espace de travail",
                                 "inputValue": null,
+                                "labelWidth": 220,
+                                "layout|anchor": "100%",
+                                "localiserId": "inheritWorkspaceField",
+                                "name": "inheritWorkspace",
                                 "uncheckedValue": null
                             },
                             "designerId": "8e91354c-9d6a-4431-b56c-58e22b25880b",

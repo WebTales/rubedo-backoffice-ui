@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": null,
-        "container|align": "stretch",
-        "height": 456,
-        "id": "shippersInterface",
-        "width": 1003,
-        "designer|userClassName": "shippersInterface",
-        "designer|userAlias": "shippersInterface",
-        "layout": "hbox",
         "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "shippersInterface",
+        "designer|userClassName": "shippersInterface",
+        "height": 456,
         "iconCls": "truck",
-        "title": "Shippers"
+        "id": "shippersInterface",
+        "layout": "hbox",
+        "localiserId": null,
+        "title": "Shippers",
+        "width": 1003
     },
     "designerId": "b35f6a4e-5e25-474e-9dcb-4291e0c898e6",
     "customConfigs": [
@@ -48,15 +48,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.shippers",
-                        "localiserId": "addBtn",
-                        "layout|flex": null,
-                        "id": "shippersAddBtn",
-                        "minWidth": null,
-                        "width": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
+                        "id": "shippersAddBtn",
+                        "layout|flex": null,
+                        "localiserId": "addBtn",
+                        "minWidth": null,
                         "scale": "large",
-                        "text": "Ajouter"
+                        "text": "Ajouter",
+                        "width": null
                     },
                     "designerId": "f640baff-8860-4a83-bd38-384633a6dad4",
                     "customConfigs": [
@@ -81,12 +81,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.shippers",
-                        "localiserId": "removeBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "shippersRemoveBtn",
                         "iconAlign": "top",
                         "iconCls": "remove_big",
+                        "id": "shippersRemoveBtn",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
@@ -113,12 +113,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.shippers",
-                        "localiserId": "saveBtn",
-                        "layout|flex": null,
                         "disabled": true,
-                        "id": "shippersSaveBtn",
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
+                        "id": "shippersSaveBtn",
+                        "layout|flex": null,
+                        "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
@@ -182,11 +182,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "shippersGrid",
-                "width": 200,
-                "title": "",
                 "forceFit": true,
-                "store": "Shippers"
+                "id": "shippersGrid",
+                "store": "Shippers",
+                "title": "",
+                "width": 200
             },
             "designerId": "14f75efa-e722-4065-871a-fb4bb4997b8d",
             "cn": [
@@ -207,8 +207,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "nameColumn",
                         "dataIndex": "name",
+                        "localiserId": "nameColumn",
                         "text": "Nom"
                     },
                     "designerId": "90fc825d-27a2-4025-a82f-53e88019a82c",
@@ -228,7 +228,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -238,6 +237,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (record.get(\"readOnly\")) {\r",
                                     "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");\r",
@@ -260,11 +260,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "localiserId": "propsPanel",
-                "layout|flex": 1,
                 "container|align": "stretch",
                 "disabled": true,
                 "layout": "vbox",
+                "layout|flex": 1,
+                "localiserId": "propsPanel",
                 "title": "Propriétés"
             },
             "designerId": "461cd932-0fc8-4637-9548-81cb769ebb72",
@@ -284,9 +284,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "bodyPadding": 10,
                         "id": "shippersMainForm",
                         "itemId": "mainLocItem",
-                        "bodyPadding": 10,
                         "title": ""
                     },
                     "designerId": "903a0e51-bc89-48fc-b8c5-e189278c09a6",
@@ -299,13 +299,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "localiserId": "nameField",
-                                "layout|anchor": "100%",
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
                                 "fieldLabel": "Nom",
                                 "labelWidth": 140,
-                                "name": "name",
-                                "allowBlank": false,
-                                "allowOnlyWhitespace": false
+                                "layout|anchor": "100%",
+                                "localiserId": "nameField",
+                                "name": "name"
                             },
                             "designerId": "172728b9-c05d-4b00-8537-0602c0bbc255",
                             "customConfigs": [
@@ -324,12 +324,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Active",
-                                "labelWidth": 140,
-                                "name": "active",
                                 "boxLabel": null,
+                                "fieldLabel": "Active",
                                 "inputValue": "true",
+                                "labelWidth": 140,
+                                "layout|anchor": "100%",
+                                "name": "active",
                                 "uncheckedValue": "false"
                             },
                             "designerId": "4142ad48-4d8c-4b5a-b169-b92ee583e6be"
@@ -342,13 +342,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "fieldLabel": "Rate type",
-                                "labelWidth": 140,
-                                "name": "rateType",
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false,
+                                "fieldLabel": "Rate type",
                                 "forceSelection": true,
+                                "labelWidth": 140,
+                                "layout|anchor": "100%",
+                                "name": "rateType",
                                 "queryMode": "local",
                                 "store": [
                                     "[[\"flatPerOrder\",\"Flat rate per order\"],[\"flatPerItem\",\"Flat rate per item\"]]"
@@ -367,14 +367,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|anchor": "100%",
-                                "hidden": true,
-                                "fieldLabel": "Minimum order amount",
-                                "labelWidth": 140,
-                                "name": "minimumOrderAmount",
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false,
-                                "minValue": 0
+                                "fieldLabel": "Minimum order amount",
+                                "hidden": true,
+                                "labelWidth": 140,
+                                "layout|anchor": "100%",
+                                "minValue": 0,
+                                "name": "minimumOrderAmount"
                             },
                             "designerId": "da8c6c64-686e-4ef4-9e4a-27cc8d6c5c41"
                         }
@@ -388,10 +388,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "title": "Rates",
                         "forceFit": true,
-                        "store": "ShippersRatesStore"
+                        "layout|flex": 1,
+                        "store": "ShippersRatesStore",
+                        "title": "Rates"
                     },
                     "designerId": "e37144e1-dab4-4609-bc3c-934d2e5cdf0d",
                     "cn": [
@@ -442,7 +442,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "renderer",
                                         "designer|params": [
                                             "value",
                                             "metaData",
@@ -452,6 +451,7 @@
                                             "store",
                                             "view"
                                         ],
+                                        "fn": "renderer",
                                         "implHandler": [
                                             "try {return(Ext.getStore(\"CountriesForShippers\").findRecord(\"alpha-2\",value).get(\"name\"));} catch (err){\r",
                                             "return value;\r",
@@ -643,8 +643,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "iconCls": "add",
+                                        "layout|flex": null,
                                         "text": "Add rate"
                                     },
                                     "designerId": "0671c23c-dcc2-467a-9019-e7bae27b6924",
@@ -676,10 +676,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "disabled": true,
-                                        "id": "removeShipperRateBtn",
                                         "iconCls": "close",
+                                        "id": "removeShipperRateBtn",
+                                        "layout|flex": null,
                                         "text": "Remove rate"
                                     },
                                     "designerId": "5a50b7ca-9589-4dc4-aa8e-182e3d46bdc6",

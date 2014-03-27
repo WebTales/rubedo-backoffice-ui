@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "MediaTypes",
         "autoLoad": false,
         "autoSync": true,
-        "model": "mediaTypeModel",
-        "storeId": "MediaTypes",
-        "designer|userClassName": "MediaTypes",
-        "designer|userAlias": "MediaTypes",
         "data": null,
-        "pageSize": 1000
+        "designer|userAlias": "MediaTypes",
+        "designer|userClassName": "MediaTypes",
+        "isOptimised": true,
+        "model": "mediaTypeModel",
+        "pageSize": 1000,
+        "storeId": "MediaTypes",
+        "usedCollection": "MediaTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -75,8 +75,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": null,
                         "encode": true,
+                        "nameProperty": null,
                         "root": "data"
                     },
                     "designerId": "d42ce4f2-fbc2-4d0e-a94e-9cca44c6e2b2"

@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
-        "usedStores": null,
-        "localiserId": null,
-        "height": 98,
-        "id": "newDirectoryWindow",
-        "width": 400,
-        "designer|userClassName": "newDirectoryWindow",
-        "designer|userAlias": "newDirectoryWindow",
         "constrain": true,
-        "resizable": false,
-        "layout": "fit",
+        "designer|userAlias": "newDirectoryWindow",
+        "designer|userClassName": "newDirectoryWindow",
+        "height": 98,
         "iconCls": null,
+        "id": "newDirectoryWindow",
+        "layout": "fit",
+        "localiserId": null,
+        "modal": true,
+        "resizable": false,
         "title": "New directory",
-        "modal": true
+        "usedStores": null,
+        "width": 400
     },
     "configAlternates": {
         "resizable": "boolean",
@@ -59,12 +59,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "100%",
+                        "allowBlank": false,
                         "fieldLabel": "Name",
                         "labelWidth": 110,
+                        "layout|anchor": "100%",
+                        "localiserId": null,
                         "name": "text",
-                        "allowBlank": false,
                         "regex": null,
                         "vtype": null
                     },
@@ -85,9 +85,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": null,
-                        "layout|anchor": "100%",
                         "id": "newDirectorySubmitBtn",
+                        "layout|anchor": "100%",
+                        "localiserId": null,
                         "text": "Create as a child of the selected directory"
                     },
                     "designerId": "6926ae76-ee7c-4ca5-9310-4cac9079ca7d",

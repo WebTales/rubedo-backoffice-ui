@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "localiserId": "languagesInterface4",
-        "height": 413,
-        "id": "languagesInterface",
-        "width": 435,
-        "designer|userClassName": "languagesInterface",
-        "designer|userAlias": "languagesInterface",
         "constrain": true,
-        "layout": "fit",
+        "designer|userAlias": "languagesInterface",
+        "designer|userClassName": "languagesInterface",
+        "height": 413,
         "iconCls": "world_small",
-        "title": "Languages"
+        "id": "languagesInterface",
+        "layout": "fit",
+        "localiserId": "languagesInterface4",
+        "title": "Languages",
+        "width": 435
     },
     "designerId": "efdddbee-4e95-4932-a8ba-4d6a06ca28d5",
     "customConfigs": [
@@ -34,10 +34,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "mainLanguagesAdminGrid",
-                "title": "",
                 "forceFit": false,
-                "store": "MainLanguagesStore"
+                "id": "mainLanguagesAdminGrid",
+                "store": "MainLanguagesStore",
+                "title": ""
             },
             "configAlternates": {
                 "managesStore": "boolean"
@@ -64,10 +64,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "localiserId": "FlagCol",
                         "dataIndex": "flagCode",
-                        "text": "Flag",
-                        "flex": 1
+                        "flex": 1,
+                        "localiserId": "FlagCol",
+                        "text": "Flag"
                     },
                     "designerId": "6518f62c-a0ab-4106-8b92-30ea499fe6d4",
                     "customConfigs": [
@@ -86,7 +86,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "renderer",
                                 "designer|params": [
                                     "value",
                                     "metaData",
@@ -96,6 +95,7 @@
                                     "store",
                                     "view"
                                 ],
+                                "fn": "renderer",
                                 "implHandler": [
                                     "if (!Ext.isEmpty(value)){\r",
                                     "    return('<img src=\"/assets/flags/16/'+value+'.png\"> ');\r",
@@ -130,10 +130,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "processMyComboBox33",
                                         "designer|params": [
                                             "config"
                                         ],
+                                        "fn": "processMyComboBox33",
                                         "implHandler": [
                                             "config.tpl=Ext.create('Ext.XTemplate',\r",
                                             "'<tpl for=\".\">',\r",
@@ -157,11 +157,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "filter": true,
-                        "localiserId": "LangNameCol",
                         "dataIndex": "label",
-                        "text": "Name",
-                        "flex": 1
+                        "filter": true,
+                        "flex": 1,
+                        "localiserId": "LangNameCol",
+                        "text": "Name"
                     },
                     "configAlternates": {
                         "filter": "boolean"
@@ -188,11 +188,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "filter": true,
-                        "localiserId": "OwnNameCol",
                         "dataIndex": "ownLabel",
-                        "text": "Own name",
-                        "flex": 1
+                        "filter": true,
+                        "flex": 1,
+                        "localiserId": "OwnNameCol",
+                        "text": "Own name"
                     },
                     "configAlternates": {
                         "filter": "boolean"
@@ -230,10 +230,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "processMyGridPanel1",
                         "designer|params": [
                             "config"
                         ],
+                        "fn": "processMyGridPanel1",
                         "implHandler": [
                             "config.columns.push(Ext.create(\"Ext.ux.CheckColumn\",{\r",
                             "    text: 'Active',\r",

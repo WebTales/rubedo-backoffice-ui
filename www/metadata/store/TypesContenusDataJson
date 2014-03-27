@@ -6,16 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isOptimised": true,
-        "usedCollection": "ContentTypes",
         "autoLoad": false,
         "autoSync": true,
+        "data": null,
+        "designer|userClassName": "TypesContenusDataJson",
+        "isOptimised": true,
         "model": "typesContenusDataModel",
+        "pageSize": 1000,
         "remoteFilter": true,
         "storeId": "TypesContenusDataJson",
-        "designer|userClassName": "TypesContenusDataJson",
-        "data": null,
-        "pageSize": 1000
+        "usedCollection": "ContentTypes"
     },
     "configAlternates": {
         "isOptimised": "boolean"
@@ -76,8 +76,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "nameProperty": "mapping",
                         "encode": true,
+                        "nameProperty": "mapping",
                         "root": "data"
                     },
                     "designerId": "eafa65d2-d800-4b40-aa1a-df15fb6b3ae1"
