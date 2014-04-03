@@ -100,7 +100,7 @@ Ext.define('Rubedo.view.CKEField', {
         if (Ext.isEmpty(userLanguage)){
             userLanguage='en';
         }
-        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
+        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, allowedContent:true, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
         component.editor.on('instanceReady', function(){
             if (component.CKETBConfig=="Email"){
                 component.editor.dataProcessor.htmlFilter.addRules(
