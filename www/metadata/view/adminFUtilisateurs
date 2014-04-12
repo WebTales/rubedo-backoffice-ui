@@ -515,6 +515,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|params": [
+                                            "node, data, overModel, dropPosition, dropHandlers"
+                                        ],
                                         "fn": "onTreedragdroppluginBeforeDrop",
                                         "implHandler": [
                                             "if (!ACL.interfaceRights['write.ui.groups']){return(false);}\r",
@@ -557,6 +560,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|params": [
+                                            "node, data, overModel, dropPosition"
+                                        ],
                                         "fn": "onTreedragdroppluginDrop",
                                         "implHandler": [
                                             "var task= new Ext.util.DelayedTask(function(){\r",

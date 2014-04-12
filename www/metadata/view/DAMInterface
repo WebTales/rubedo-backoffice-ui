@@ -875,6 +875,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "designer|params": [
+                                                            "node, data, overModel, dropPosition, dropHandlers"
+                                                        ],
                                                         "fn": "onTreeViewDragDropBeforeDrop",
                                                         "implHandler": [
                                                             "\r",
@@ -902,7 +905,7 @@
                                                             "        }\r",
                                                             "    });\r",
                                                             "\r",
-                                                            "        \r",
+                                                            "\r",
                                                             "\r",
                                                             "    return(false);\r",
                                                             "} else if ((dropPosition==\"append\")&&(overModel.get(\"id\")==\"notFiled\")){\r",
@@ -950,6 +953,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "designer|params": [
+                                                            "node, data, overModel, dropPosition"
+                                                        ],
                                                         "fn": "onTreeViewDragDropDrop",
                                                         "implHandler": [
                                                             "var task= new Ext.util.DelayedTask(function(){\r",

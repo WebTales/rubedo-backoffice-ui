@@ -236,6 +236,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "designer|params": [
+                                                    "node, data, overModel, dropPosition, dropHandlers"
+                                                ],
                                                 "fn": "onDragDropBeforeDrop",
                                                 "implHandler": [
                                                     "if (Ext.isEmpty(data.records[0].get(\"protoId\"))){\r",
