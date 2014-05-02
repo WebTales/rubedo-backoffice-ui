@@ -39,7 +39,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom"
+                "dock": "bottom",
+                "id": "customImportProgressor"
             },
             "designerId": "0fe6b893-b526-4495-b906-ca2d83b9cd88",
             "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
@@ -54,7 +55,7 @@
             "userConfig": {
                 "container|align": "stretch",
                 "id": "step1CustomImportContainer",
-                "layout": "hbox"
+                "layout": "vbox"
             },
             "designerId": "6726ef4b-9da8-452c-b814-50e6fa3e1f06",
             "cn": [
@@ -501,7 +502,7 @@
                                                     "userConfig": {
                                                         "fn": "onGridpanelAfterRender1",
                                                         "implHandler": [
-                                                            "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                                                            "if ((Ext.getCmp(\"InportInterface\").howToImport==\"update\")||(Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
                                                             "    component.hide();\r",
                                                             "}"
                                                         ],
@@ -642,7 +643,7 @@
                                                     "userConfig": {
                                                         "fn": "onGridpanelAfterRender",
                                                         "implHandler": [
-                                                            "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                                                            "if ((Ext.getCmp(\"InportInterface\").howToImport==\"update\")||(Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
                                                             "    component.hide();\r",
                                                             "}"
                                                         ],
@@ -2243,13 +2244,25 @@
                     "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
-                    "Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
-                    "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                    "if (component.howToImport==\"update\"){\r",
+                    "    component.remove(component.getComponent(4));\r",
                     "    component.remove(component.getComponent(3));\r",
-                    "}\r",
-                    "if (component.whatToImport==\"products\"){\r",
-                    "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));\r",
-                    "    Ext.getCmp(\"customImportUseAsVarCol\").show();\r",
+                    "    component.remove(component.getComponent(2));\r",
+                    "    component.remove(component.getComponent(1));\r",
+                    "    Ext.getCmp(\"mainCSVInportAnalyseContainer\").up().remove(Ext.getCmp(\"mainCSVInportAnalyseContainer\"));\r",
+                    "    Ext.getCmp(\"customImportProgressor\").hide();\r",
+                    "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"customImportUpdateSettings\"));\r",
+                    "    \r",
+                    "\r",
+                    "} else {\r",
+                    "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
+                    "    if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                    "        component.remove(component.getComponent(3));\r",
+                    "    }\r",
+                    "    if (component.whatToImport==\"products\"){\r",
+                    "        Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));\r",
+                    "        Ext.getCmp(\"customImportUseAsVarCol\").show();\r",
+                    "    }\r",
                     "}"
                 ],
                 "name": "beforerender",

@@ -53,6 +53,7 @@ Ext.define('Rubedo.view.InportInterface', {
             dockedItems: [
                 {
                     xtype: 'mytoolbar56',
+                    id: 'customImportProgressor',
                     dock: 'bottom'
                 }
             ],
@@ -61,7 +62,7 @@ Ext.define('Rubedo.view.InportInterface', {
                     xtype: 'container',
                     id: 'step1CustomImportContainer',
                     layout: {
-                        type: 'hbox',
+                        type: 'vbox',
                         align: 'stretch'
                     },
                     items: [
@@ -891,13 +892,13 @@ Ext.define('Rubedo.view.InportInterface', {
     },
 
     onGridpanelAfterRender1: function(component, eOpts) {
-        if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+        if ((Ext.getCmp("InportInterface").howToImport=="update")||(Ext.getStore("AllLanguagesStore3").getRange().length==1)){
             component.hide();
         }
     },
 
     onGridpanelAfterRender: function(component, eOpts) {
-        if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+        if ((Ext.getCmp("InportInterface").howToImport=="update")||(Ext.getStore("AllLanguagesStore3").getRange().length==1)){
             component.hide();
         }
     },
@@ -980,13 +981,25 @@ Ext.define('Rubedo.view.InportInterface', {
         Ext.getStore("InportAsTaxoStore").removeAll();
         Ext.getStore("InportAsFieldTranslationStore").removeAll();
         Ext.getStore("InportAsTaxoTranslationStore").removeAll();
-        Ext.getStore("MediaTypesFORDAMPicker").load();
-        if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+        if (component.howToImport=="update"){
+            component.remove(component.getComponent(4));
             component.remove(component.getComponent(3));
-        }
-        if (component.whatToImport=="products"){
-            Ext.getCmp("step1CustomImportContainer").add(Ext.widget("importProductOptionsForm"));
-            Ext.getCmp("customImportUseAsVarCol").show();
+            component.remove(component.getComponent(2));
+            component.remove(component.getComponent(1));
+            Ext.getCmp("mainCSVInportAnalyseContainer").up().remove(Ext.getCmp("mainCSVInportAnalyseContainer"));
+            Ext.getCmp("customImportProgressor").hide();
+            Ext.getCmp("step1CustomImportContainer").add(Ext.widget("customImportUpdateSettings"));
+
+
+        } else {
+            Ext.getStore("MediaTypesFORDAMPicker").load();
+            if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
+                component.remove(component.getComponent(3));
+            }
+            if (component.whatToImport=="products"){
+                Ext.getCmp("step1CustomImportContainer").add(Ext.widget("importProductOptionsForm"));
+                Ext.getCmp("customImportUseAsVarCol").show();
+            }
         }
     },
 

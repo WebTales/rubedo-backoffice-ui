@@ -1,0 +1,139 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "customImportUpdateSettings",
+        "designer|userClassName": "customImportUpdateSettings",
+        "flex": 3,
+        "height": null,
+        "id": "customImportUpdateSettings",
+        "layout": "hbox",
+        "width": null
+    },
+    "configAlternates": {
+        "flex": "number"
+    },
+    "designerId": "91936584-1faa-42f7-9489-65fb196a66c7",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "flex",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "layout|flex": 1,
+                "store": "NotInportFieldsStore",
+                "title": ""
+            },
+            "designerId": "04f6732f-ee9e-4cb0-9479-fa3bddb897c0",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "text": "Detected fields"
+                    },
+                    "designerId": "cd4f2f60-f850-4010-bd7b-77ec35f2502d"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "markDirty": false
+                    },
+                    "designerId": "f54ad825-ab95-4b5f-8b96-8b5ca311785b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "layout|flex": 3,
+                "title": "Field mapping"
+            },
+            "designerId": "b8f72b1e-081e-4587-8c63-e661042be4b5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Content type",
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "c50b7ce9-42e7-4a87-868a-6db706a6052e"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Unique key field",
+                        "layout|anchor": "100%"
+                    },
+                    "designerId": "9b0695b0-dbb1-4dda-b03a-f9c247b07fab"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Content type fields"
+                    },
+                    "designerId": "5c75c470-514c-45cd-9e36-2c8f77c7ad3a"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Taxonomy fields"
+                    },
+                    "designerId": "b5d8ea91-55af-4f28-84b5-65c12421b9dc"
+                }
+            ]
+        }
+    ]
+}

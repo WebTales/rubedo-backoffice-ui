@@ -397,7 +397,8 @@ Ext.application({
         'paymentMeansInterface',
         'ordersInterface',
         'ImportChoiceWindow',
-        'importProductOptionsForm'
+        'importProductOptionsForm',
+        'customImportUpdateSettings'
     ],
     controllers: [
         'ContributionContenusController',
