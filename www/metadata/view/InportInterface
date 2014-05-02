@@ -14,6 +14,7 @@
         "id": "InportInterface",
         "layout": "card",
         "localiserId": "importMainWindow",
+        "modal": true,
         "resizable": false,
         "title": "Import",
         "width": 1063
@@ -44,235 +45,46 @@
             "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
         },
         {
-            "type": "Ext.form.Panel",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "bodyPadding": 10,
                 "container|align": "stretch",
-                "layout": "vbox",
-                "localiserId": "importStage1Panel",
-                "timeout": 120,
-                "title": "Choix du fichier à importer"
+                "id": "step1CustomImportContainer",
+                "layout": "hbox"
             },
-            "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ],
+            "designerId": "6726ef4b-9da8-452c-b814-50e6fa3e1f06",
             "cn": [
                 {
-                    "type": "Ext.container.Container",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "bodyPadding": 10,
                         "container|align": "stretch",
-                        "container|padding": 1,
-                        "layout": "hbox",
-                        "layout|flex": null,
-                        "margin": "0 0 10 0",
-                        "padding": null
-                    },
-                    "designerId": "52ce27cc-8170-4540-882b-34674429c437",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "fieldLabel": "Séparateur",
-                                "labelWidth": 60,
-                                "layout|flex": null,
-                                "localiserId": "importSeparatorField",
-                                "name": "separator",
-                                "value": [
-                                    "\";\""
-                                ],
-                                "width": 100
-                            },
-                            "designerId": "2cdf994e-da89-43ab-bd5a-f48dca38bcae",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onTextfieldChange",
-                                        "implHandler": [
-                                            "if (Ext.isEmpty(newValue)){\r",
-                                            "    field.addListener(\"blur\", function(){\r",
-                                            "        if (Ext.isEmpty(field.getValue())){field.setValue(\";\");}\r",
-                                            "    }, this, {single:true});\r",
-                                            "    }"
-                                        ],
-                                        "name": "change",
-                                        "scope": "me"
-                                    },
-                                    "designerId": "4bf021a5-f84a-4243-8e71-9b1992c31840"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "disabled": true,
-                                "editable": false,
-                                "fieldLabel": "Encoding",
-                                "forceSelection": true,
-                                "id": "chooseEncodingField",
-                                "labelWidth": 60,
-                                "layout|flex": null,
-                                "layout|margins": "0 0 0 5",
-                                "name": "encoding",
-                                "store": [
-                                    "[ ]"
-                                ],
-                                "width": 160
-                            },
-                            "configAlternates": {
-                                "store": "array"
-                            },
-                            "designerId": "264058fc-1462-45a1-a3ea-d18acb4c7512",
-                            "cn": [
-                                {
-                                    "type": "processcfgfunction",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|params": [
-                                            "config"
-                                        ],
-                                        "fn": "processChooseEncodingField",
-                                        "implHandler": [
-                                            "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.encodingText;\r",
-                                            "return config;"
-                                        ]
-                                    },
-                                    "designerId": "f048740e-fef4-4b02-937b-16acae7837e0"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.field.File",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "buttonText": "Choisir et analyser",
-                                "fieldLabel": "Fichier CSV",
-                                "id": "mainCSVinportField",
-                                "labelWidth": 80,
-                                "layout|flex": 1,
-                                "localiserId": "importCSVFileField",
-                                "margin": "0 0 0 5",
-                                "name": "csvFile",
-                                "width": 380
-                            },
-                            "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "basicfunction",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "extractFileInput",
-                                        "implHandler": [
-                                            "var fileInput = Ext.getCmp(\"mainCSVinportField\").fileInputEl.dom;\r",
-                                            "return fileInput;"
-                                        ]
-                                    },
-                                    "designerId": "e4a2e2cf-df2a-462e-9df2-46d9ba443628"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "hidden": true,
-                                "iconCls": "close",
-                                "id": "fileFieldHelper1",
-                                "layout|flex": null,
-                                "localiserId": "importCSVFieldAuxilaryBtn",
-                                "margin": "0 0 0 4",
-                                "text": ""
-                            },
-                            "designerId": "a4fb8fc2-6846-40b2-b969-e9b4209d0fd5",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "container|align": "stretch",
-                        "id": "mainCSVInportAnalyseContainer",
                         "layout": "vbox",
-                        "layout|flex": 1
+                        "layout|flex": 1,
+                        "localiserId": "importStage1Panel",
+                        "timeout": 120,
+                        "title": "Choix du fichier à importer"
                     },
-                    "designerId": "89634e52-74f0-4547-ae81-89ca239c4f26",
+                    "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
-                            "type": "Ext.panel.Panel",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -280,201 +92,42 @@
                             "codeClass": null,
                             "userConfig": {
                                 "container|align": "stretch",
+                                "container|padding": 1,
                                 "layout": "hbox",
-                                "layout|flex": 1,
-                                "localiserId": "importStage1MainPanel",
-                                "title": "Choisissez un fichier CSV pour afficher ses champs"
+                                "layout|flex": null,
+                                "margin": "0 0 10 0",
+                                "padding": null
                             },
-                            "designerId": "bd2ff629-6911-4596-bcfe-838c7b743f41",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
+                            "designerId": "52ce27cc-8170-4540-882b-34674429c437",
                             "cn": [
                                 {
-                                    "type": "Ext.grid.Panel",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "forceFit": true,
-                                        "layout|flex": 1,
-                                        "store": "NotInportFieldsStore",
-                                        "title": ""
+                                        "allowBlank": false,
+                                        "fieldLabel": "Séparateur",
+                                        "labelWidth": 60,
+                                        "layout|flex": null,
+                                        "localiserId": "importSeparatorField",
+                                        "name": "separator",
+                                        "value": [
+                                            "\";\""
+                                        ],
+                                        "width": 100
                                     },
-                                    "designerId": "283bd4f5-dbc7-4651-bd9e-6139a8da22c9",
-                                    "cn": [
+                                    "designerId": "2cdf994e-da89-43ab-bd5a-f48dca38bcae",
+                                    "customConfigs": [
                                         {
-                                            "type": "Ext.grid.column.Column",
-                                            "reference": {
-                                                "name": "columns",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "dataIndex": "name",
-                                                "localiserId": "importIgnoredFieldsCol",
-                                                "text": "Ne pas importer"
-                                            },
-                                            "designerId": "efcc439c-9fce-45e7-b14b-1a63f4219084",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.grid.View",
-                                            "reference": {
-                                                "name": "viewConfig",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "markDirty": false
-                                            },
-                                            "designerId": "f0168bca-f9d5-463c-984e-ea4069204e12",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.grid.plugin.DragDrop",
-                                                    "reference": {
-                                                        "name": "plugins",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "designerId": "bb6b8c69-0737-4e02-a400-0ab614ca24d5"
-                                                }
-                                            ]
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
                                         }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.grid.Panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "forceFit": true,
-                                        "layout|flex": 1,
-                                        "store": "InportAsFieldStore",
-                                        "title": ""
-                                    },
-                                    "designerId": "f17de099-4f85-4eca-ad19-5edbb12e64ef",
+                                    ],
                                     "cn": [
-                                        {
-                                            "type": "Ext.grid.column.Column",
-                                            "reference": {
-                                                "name": "columns",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "dataIndex": "name",
-                                                "localiserId": "importImportAsFieldCol",
-                                                "text": "Importer en tant que champ"
-                                            },
-                                            "designerId": "453279b9-c24c-4f6b-8082-e785aea0f6b7",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.grid.View",
-                                            "reference": {
-                                                "name": "viewConfig",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "markDirty": false
-                                            },
-                                            "designerId": "f9b87123-7981-4d7e-becd-21f993e1a8c0",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.grid.plugin.DragDrop",
-                                                    "reference": {
-                                                        "name": "plugins",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "designerId": "5469aff0-b723-437e-af0d-ace0305b30fc"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.grid.Panel",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "forceFit": true,
-                                        "layout|flex": 1,
-                                        "store": "InportAsFieldTranslationStore",
-                                        "title": ""
-                                    },
-                                    "designerId": "99f143fe-690d-48fd-af86-654a46854663",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.grid.column.Column",
-                                            "reference": {
-                                                "name": "columns",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "dataIndex": "name",
-                                                "localiserId": "importAsFieldTransCol",
-                                                "text": "Import as field translation"
-                                            },
-                                            "designerId": "823a7e11-1c8c-4470-b219-f5c045671cc3",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.grid.View",
-                                            "reference": {
-                                                "name": "viewConfig",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "markDirty": false
-                                            },
-                                            "designerId": "5364145e-aa23-468f-a795-f5e3fd0501b1",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.grid.plugin.DragDrop",
-                                                    "reference": {
-                                                        "name": "plugins",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "designerId": "a8eb74ef-3c45-4cea-8d0e-3db6e618f5b7"
-                                                }
-                                            ]
-                                        },
                                         {
                                             "type": "basiceventbinding",
                                             "reference": {
@@ -483,157 +136,522 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "onGridpanelAfterRender1",
+                                                "fn": "onTextfieldChange",
                                                 "implHandler": [
-                                                    "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
-                                                    "    component.hide();\r",
-                                                    "}"
+                                                    "if (Ext.isEmpty(newValue)){\r",
+                                                    "    field.addListener(\"blur\", function(){\r",
+                                                    "        if (Ext.isEmpty(field.getValue())){field.setValue(\";\");}\r",
+                                                    "    }, this, {single:true});\r",
+                                                    "    }"
                                                 ],
-                                                "name": "afterrender",
+                                                "name": "change",
                                                 "scope": "me"
                                             },
-                                            "designerId": "8f6425fa-e8d1-4748-a9fc-5d8f0b938edc"
+                                            "designerId": "4bf021a5-f84a-4243-8e71-9b1992c31840"
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Ext.grid.Panel",
+                                    "type": "Ext.form.field.ComboBox",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "forceFit": true,
-                                        "layout|flex": 1,
-                                        "store": "InportAsTaxoStore",
-                                        "title": ""
+                                        "disabled": true,
+                                        "editable": false,
+                                        "fieldLabel": "Encoding",
+                                        "forceSelection": true,
+                                        "id": "chooseEncodingField",
+                                        "labelWidth": 60,
+                                        "layout|flex": null,
+                                        "layout|margins": "0 0 0 5",
+                                        "name": "encoding",
+                                        "store": [
+                                            "[ ]"
+                                        ],
+                                        "width": 160
                                     },
-                                    "designerId": "de9d07d1-9dfe-4de7-bb7b-08dd35b11d75",
+                                    "configAlternates": {
+                                        "store": "array"
+                                    },
+                                    "designerId": "264058fc-1462-45a1-a3ea-d18acb4c7512",
                                     "cn": [
                                         {
-                                            "type": "Ext.grid.column.Column",
+                                            "type": "processcfgfunction",
                                             "reference": {
-                                                "name": "columns",
+                                                "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "dataIndex": "name",
-                                                "localiserId": "importImportAsTaxoCol",
-                                                "text": "Importer en tant que taxonomie"
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "fn": "processChooseEncodingField",
+                                                "implHandler": [
+                                                    "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.encodingText;\r",
+                                                    "return config;"
+                                                ]
                                             },
-                                            "designerId": "35b30c5c-a479-472e-8248-1caf91581b62",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.grid.View",
-                                            "reference": {
-                                                "name": "viewConfig",
-                                                "type": "object"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "markDirty": false
-                                            },
-                                            "designerId": "c8aacbe6-e30e-41b6-a3fe-43ef19f161b6",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.grid.plugin.DragDrop",
-                                                    "reference": {
-                                                        "name": "plugins",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "designerId": "b1e44e51-2bbf-4289-8c0a-5e2a8221beda"
-                                                }
-                                            ]
+                                            "designerId": "f048740e-fef4-4b02-937b-16acae7837e0"
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Ext.grid.Panel",
+                                    "type": "Ext.form.field.File",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "forceFit": true,
+                                        "allowBlank": false,
+                                        "buttonText": "Choisir et analyser",
+                                        "fieldLabel": "Fichier CSV",
+                                        "id": "mainCSVinportField",
+                                        "labelWidth": 80,
                                         "layout|flex": 1,
-                                        "store": "InportAsTaxoTranslationStore",
-                                        "title": ""
+                                        "localiserId": "importCSVFileField",
+                                        "margin": "0 0 0 5",
+                                        "name": "csvFile",
+                                        "width": 380
                                     },
-                                    "designerId": "76e8689a-4800-4938-a7c6-bfd834e05a58",
+                                    "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
-                                            "type": "Ext.grid.column.Column",
+                                            "type": "basicfunction",
                                             "reference": {
-                                                "name": "columns",
+                                                "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "dataIndex": "name",
-                                                "localiserId": "ImportAsTaxoTransCol",
-                                                "text": "Import as taxonomy translation"
+                                                "fn": "extractFileInput",
+                                                "implHandler": [
+                                                    "var fileInput = Ext.getCmp(\"mainCSVinportField\").fileInputEl.dom;\r",
+                                                    "return fileInput;"
+                                                ]
                                             },
-                                            "designerId": "69ae97f0-4924-4b79-bb3e-27748f53aae4",
-                                            "customConfigs": [
-                                                {
-                                                    "group": "(Custom Properties)",
-                                                    "name": "localiserId",
-                                                    "type": "string"
-                                                }
-                                            ]
-                                        },
+                                            "designerId": "e4a2e2cf-df2a-462e-9df2-46d9ba443628"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "hidden": true,
+                                        "iconCls": "close",
+                                        "id": "fileFieldHelper1",
+                                        "layout|flex": null,
+                                        "localiserId": "importCSVFieldAuxilaryBtn",
+                                        "margin": "0 0 0 4",
+                                        "text": ""
+                                    },
+                                    "designerId": "a4fb8fc2-6846-40b2-b969-e9b4209d0fd5",
+                                    "customConfigs": [
                                         {
-                                            "type": "Ext.grid.View",
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "id": "mainCSVInportAnalyseContainer",
+                                "layout": "hbox",
+                                "layout|flex": 1
+                            },
+                            "designerId": "89634e52-74f0-4547-ae81-89ca239c4f26",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "layout": "hbox",
+                                        "layout|flex": 1,
+                                        "localiserId": "importStage1MainPanel",
+                                        "title": "Choisissez un fichier CSV pour afficher ses champs"
+                                    },
+                                    "designerId": "bd2ff629-6911-4596-bcfe-838c7b743f41",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
                                             "reference": {
-                                                "name": "viewConfig",
-                                                "type": "object"
+                                                "name": "items",
+                                                "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "markDirty": false
+                                                "forceFit": true,
+                                                "layout|flex": 1,
+                                                "store": "NotInportFieldsStore",
+                                                "title": ""
                                             },
-                                            "designerId": "cefb63c5-8709-45a2-91d1-ecf28de92432",
+                                            "designerId": "283bd4f5-dbc7-4651-bd9e-6139a8da22c9",
                                             "cn": [
                                                 {
-                                                    "type": "Ext.grid.plugin.DragDrop",
+                                                    "type": "Ext.grid.column.Column",
                                                     "reference": {
-                                                        "name": "plugins",
+                                                        "name": "columns",
                                                         "type": "array"
                                                     },
-                                                    "codeClass": "Ext.grid.plugin.DragDrop",
-                                                    "designerId": "e6bf08dd-a251-4a52-885d-9f144e05edc3"
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "name",
+                                                        "localiserId": "importIgnoredFieldsCol",
+                                                        "text": "Ne pas importer"
+                                                    },
+                                                    "designerId": "efcc439c-9fce-45e7-b14b-1a63f4219084",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "markDirty": false
+                                                    },
+                                                    "designerId": "f0168bca-f9d5-463c-984e-ea4069204e12",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.plugin.DragDrop",
+                                                            "reference": {
+                                                                "name": "plugins",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "designerId": "bb6b8c69-0737-4e02-a400-0ab614ca24d5"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "basiceventbinding",
+                                            "type": "Ext.grid.Panel",
                                             "reference": {
-                                                "name": "listeners",
+                                                "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "onGridpanelAfterRender",
-                                                "implHandler": [
-                                                    "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
-                                                    "    component.hide();\r",
-                                                    "}"
-                                                ],
-                                                "name": "afterrender",
-                                                "scope": "me"
+                                                "forceFit": true,
+                                                "layout|flex": 1,
+                                                "store": "InportAsFieldStore",
+                                                "title": ""
                                             },
-                                            "designerId": "cdf574e1-dd0f-4c33-9ccc-f0f429ac946d"
+                                            "designerId": "f17de099-4f85-4eca-ad19-5edbb12e64ef",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "name",
+                                                        "localiserId": "importImportAsFieldCol",
+                                                        "text": "Importer en tant que champ"
+                                                    },
+                                                    "designerId": "453279b9-c24c-4f6b-8082-e785aea0f6b7",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "markDirty": false
+                                                    },
+                                                    "designerId": "f9b87123-7981-4d7e-becd-21f993e1a8c0",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.plugin.DragDrop",
+                                                            "reference": {
+                                                                "name": "plugins",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "designerId": "5469aff0-b723-437e-af0d-ace0305b30fc"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "forceFit": true,
+                                                "layout|flex": 1,
+                                                "store": "InportAsFieldTranslationStore",
+                                                "title": ""
+                                            },
+                                            "designerId": "99f143fe-690d-48fd-af86-654a46854663",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "name",
+                                                        "localiserId": "importAsFieldTransCol",
+                                                        "text": "Import as field translation"
+                                                    },
+                                                    "designerId": "823a7e11-1c8c-4470-b219-f5c045671cc3",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "markDirty": false
+                                                    },
+                                                    "designerId": "5364145e-aa23-468f-a795-f5e3fd0501b1",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.plugin.DragDrop",
+                                                            "reference": {
+                                                                "name": "plugins",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "designerId": "a8eb74ef-3c45-4cea-8d0e-3db6e618f5b7"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onGridpanelAfterRender1",
+                                                        "implHandler": [
+                                                            "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                                                            "    component.hide();\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "afterrender",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "8f6425fa-e8d1-4748-a9fc-5d8f0b938edc"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "forceFit": true,
+                                                "layout|flex": 1,
+                                                "store": "InportAsTaxoStore",
+                                                "title": ""
+                                            },
+                                            "designerId": "de9d07d1-9dfe-4de7-bb7b-08dd35b11d75",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "name",
+                                                        "localiserId": "importImportAsTaxoCol",
+                                                        "text": "Importer en tant que taxonomie"
+                                                    },
+                                                    "designerId": "35b30c5c-a479-472e-8248-1caf91581b62",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "markDirty": false
+                                                    },
+                                                    "designerId": "c8aacbe6-e30e-41b6-a3fe-43ef19f161b6",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.plugin.DragDrop",
+                                                            "reference": {
+                                                                "name": "plugins",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "designerId": "b1e44e51-2bbf-4289-8c0a-5e2a8221beda"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "forceFit": true,
+                                                "layout|flex": 1,
+                                                "store": "InportAsTaxoTranslationStore",
+                                                "title": ""
+                                            },
+                                            "designerId": "76e8689a-4800-4938-a7c6-bfd834e05a58",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "name",
+                                                        "localiserId": "ImportAsTaxoTransCol",
+                                                        "text": "Import as taxonomy translation"
+                                                    },
+                                                    "designerId": "69ae97f0-4924-4b79-bb3e-27748f53aae4",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "markDirty": false
+                                                    },
+                                                    "designerId": "cefb63c5-8709-45a2-91d1-ecf28de92432",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.grid.plugin.DragDrop",
+                                                            "reference": {
+                                                                "name": "plugins",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "designerId": "e6bf08dd-a251-4a52-885d-9f144e05edc3"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onGridpanelAfterRender",
+                                                        "implHandler": [
+                                                            "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
+                                                            "    component.hide();\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "afterrender",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "cdf574e1-dd0f-4c33-9ccc-f0f429ac946d"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -673,6 +691,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "enableColumnHide": false,
                         "forceFit": true,
                         "store": "InportAsFieldStore",
                         "title": ""
@@ -1089,6 +1108,59 @@
                                         ]
                                     },
                                     "designerId": "64367b74-dea7-4acd-b4db-5a8c65c9319a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Boolean",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "useAsVariation",
+                                "falseText": "Non",
+                                "hidden": true,
+                                "id": "customImportUseAsVarCol",
+                                "text": "Use as variation",
+                                "trueText": "Oui"
+                            },
+                            "designerId": "7f3c0ada-c723-407d-b18b-ffb7df0ec681",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": null,
+                                        "inputValue": "true",
+                                        "uncheckedValue": "false"
+                                    },
+                                    "designerId": "724e52e6-c9f3-4c8b-91b3-efd788fe5b60"
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processCustomImportUseAsVarCol",
+                                        "implHandler": [
+                                            "config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;\r",
+                                            "config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "2da95700-cd61-44df-8239-d2dd44047e17"
                                 }
                             ]
                         },
@@ -2174,6 +2246,12 @@
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
                     "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
                     "    component.remove(component.getComponent(3));\r",
+                    "}\r",
+                    "console.log(component.whatToImport);\r",
+                    "console.log(component.howToImport);\r",
+                    "if (component.whatToImport==\"products\"){\r",
+                    "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));\r",
+                    "    Ext.getCmp(\"customImportUseAsVarCol\").show();\r",
                     "}"
                 ],
                 "name": "beforerender",

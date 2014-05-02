@@ -98,16 +98,23 @@ Ext.define('Rubedo.controller.ImportController', {
             var inportAsFieldTranslation=Ext.Array.pluck(Ext.getStore("InportAsFieldTranslationStore").getRange(), "data");
             var inportAsTaxoTranslation=Ext.Array.pluck(Ext.getStore("InportAsTaxoTranslationStore").getRange(), "data");
             var form=Ext.getCmp("mainCSVinportField").up().up().getForm();
-            button.up().up().setLoading(true);
-            form.submit({
-                url: 'import/import',
-                params: {
+            var mainImportWindow=Ext.getCmp("InportInterface");
+            if (mainImportWindow.whatToImport=="products"){
+                configs.isProduct=true;
+                Ext.apply(configs,Ext.getCmp("importProductOptionsForm").getForm().getValues());
+            }
+            var paramsToSend={
                     configs:Ext.JSON.encode(configs),
                     inportAsField: Ext.JSON.encode(inportAsField),
                     inportAsTaxo: Ext.JSON.encode(inportAsTaxo),
                     inportAsFieldTranslation: Ext.JSON.encode(inportAsFieldTranslation),
                     inportAsTaxoTranslation: Ext.JSON.encode(inportAsTaxoTranslation)
-                },
+                };
+
+            button.up().up().setLoading(true);
+            form.submit({
+                url: 'import/import',
+                params: paramsToSend,
                 success: function(form, action) {
                     var response = Ext.JSON.decode(action.response.responseText);
                     Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);
@@ -140,6 +147,14 @@ Ext.define('Rubedo.controller.ImportController', {
         button.hide();
     },
 
+    onImportChoiceSubmitBtnClick: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        if (form.isValid()){
+            Ext.widget("InportInterface", form.getValues()).show();
+            button.up().up().close();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#mainCSVinportField, #chooseEncodingField": {
@@ -150,6 +165,9 @@ Ext.define('Rubedo.controller.ImportController', {
             },
             "#fileFieldHelper1": {
                 click: this.onFileFieldHelper1Click
+            },
+            "#importChoiceSubmitBtn": {
+                click: this.onImportChoiceSubmitBtnClick
             }
         });
     }

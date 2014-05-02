@@ -29,7 +29,7 @@
                     "    form.submit({\r",
                     "        clientValidation: true,\r",
                     "        url: 'import/analyse',\r",
-                    "        params: { \r",
+                    "        params: {\r",
                     "\r",
                     "        },\r",
                     "        success: function(form, action) {\r",
@@ -118,16 +118,23 @@
                     "    var inportAsFieldTranslation=Ext.Array.pluck(Ext.getStore(\"InportAsFieldTranslationStore\").getRange(), \"data\");\r",
                     "    var inportAsTaxoTranslation=Ext.Array.pluck(Ext.getStore(\"InportAsTaxoTranslationStore\").getRange(), \"data\");\r",
                     "    var form=Ext.getCmp(\"mainCSVinportField\").up().up().getForm();\r",
-                    "    button.up().up().setLoading(true);\r",
-                    "    form.submit({\r",
-                    "        url: 'import/import',\r",
-                    "        params: {\r",
+                    "    var mainImportWindow=Ext.getCmp(\"InportInterface\");\r",
+                    "    if (mainImportWindow.whatToImport==\"products\"){\r",
+                    "        configs.isProduct=true;\r",
+                    "        Ext.apply(configs,Ext.getCmp(\"importProductOptionsForm\").getForm().getValues());\r",
+                    "    }\r",
+                    "    var paramsToSend={\r",
                     "            configs:Ext.JSON.encode(configs),\r",
                     "            inportAsField: Ext.JSON.encode(inportAsField),\r",
                     "            inportAsTaxo: Ext.JSON.encode(inportAsTaxo),\r",
                     "            inportAsFieldTranslation: Ext.JSON.encode(inportAsFieldTranslation),\r",
                     "            inportAsTaxoTranslation: Ext.JSON.encode(inportAsTaxoTranslation)\r",
-                    "        },\r",
+                    "        };\r",
+                    "    \r",
+                    "    button.up().up().setLoading(true);\r",
+                    "    form.submit({\r",
+                    "        url: 'import/import',\r",
+                    "        params: paramsToSend,\r",
                     "        success: function(form, action) {\r",
                     "            var response = Ext.JSON.decode(action.response.responseText);\r",
                     "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);\r",
@@ -178,6 +185,29 @@
                 "scope": "me"
             },
             "designerId": "d874ff6a-0216-465e-85c9-b75bdb6e1eaa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#importChoiceSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onImportChoiceSubmitBtnClick",
+                "implHandler": [
+                    "var form=button.up().getForm();\r",
+                    "if (form.isValid()){\r",
+                    "    Ext.widget(\"InportInterface\", form.getValues()).show();\r",
+                    "    button.up().up().close();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "c9e0adc1-8a1d-44d4-b224-dfc3bb98681c"
         }
     ]
 }

@@ -395,7 +395,9 @@ Ext.application({
         'stockAdderWindow',
         'stockRemoverWindow',
         'paymentMeansInterface',
-        'ordersInterface'
+        'ordersInterface',
+        'ImportChoiceWindow',
+        'importProductOptionsForm'
     ],
     controllers: [
         'ContributionContenusController',

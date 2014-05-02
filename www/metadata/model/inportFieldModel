@@ -169,6 +169,22 @@
                 "name": "translateToLanguage"
             },
             "designerId": "c4764117-101d-4796-9c14-6bbe06bb7443"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "useAsVariation",
+                "type": "boolean"
+            },
+            "designerId": "fb735658-1cd2-4f46-b7a7-df8827b5c02e"
         }
     ]
 }

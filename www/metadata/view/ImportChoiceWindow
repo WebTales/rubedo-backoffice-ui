@@ -1,0 +1,105 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ImportChoiceWindow",
+        "designer|userClassName": "ImportChoiceWindow",
+        "height": null,
+        "iconCls": "database_up_small",
+        "id": "ImportChoiceWindow",
+        "layout": "fit",
+        "modal": true,
+        "title": "Choose import options",
+        "width": 300
+    },
+    "designerId": "073dd00f-3118-42ef-9a98-3e9bde233947",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "designerId": "509d54b5-b206-484d-adb8-a1943fa7b3a7",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "editable": false,
+                        "fieldLabel": "What to import",
+                        "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "name": "whatToImport",
+                        "queryMode": "local",
+                        "store": [
+                            "[[\"contents\",\"Contents\"],[\"products\",\"Products\"]]"
+                        ],
+                        "value": "contents"
+                    },
+                    "configAlternates": {
+                        "store": "array",
+                        "value": "string"
+                    },
+                    "designerId": "611fbe91-5d66-4497-b49a-d35ad338d05c"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "editable": false,
+                        "fieldLabel": "How to import",
+                        "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "name": "howToImport",
+                        "queryMode": "local",
+                        "store": [
+                            "[[\"create\",\"Creation\"],[\"update\",\"Update\"]]"
+                        ],
+                        "value": "create"
+                    },
+                    "configAlternates": {
+                        "store": "array",
+                        "value": "string"
+                    },
+                    "designerId": "2427c585-4314-4024-b0f6-8e8b9281c543"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "importChoiceSubmitBtn",
+                        "layout|anchor": "100%",
+                        "text": "Import using these options"
+                    },
+                    "designerId": "5071b8be-8dce-4b0e-9e52-d21bf0bce786"
+                }
+            ]
+        }
+    ]
+}
