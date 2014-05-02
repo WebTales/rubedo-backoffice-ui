@@ -984,8 +984,6 @@ Ext.define('Rubedo.view.InportInterface', {
         if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
             component.remove(component.getComponent(3));
         }
-        console.log(component.whatToImport);
-        console.log(component.howToImport);
         if (component.whatToImport=="products"){
             Ext.getCmp("step1CustomImportContainer").add(Ext.widget("importProductOptionsForm"));
             Ext.getCmp("customImportUseAsVarCol").show();

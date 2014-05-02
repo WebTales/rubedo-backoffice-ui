@@ -2247,8 +2247,6 @@
                     "if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
                     "    component.remove(component.getComponent(3));\r",
                     "}\r",
-                    "console.log(component.whatToImport);\r",
-                    "console.log(component.howToImport);\r",
                     "if (component.whatToImport==\"products\"){\r",
                     "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));\r",
                     "    Ext.getCmp(\"customImportUseAsVarCol\").show();\r",
