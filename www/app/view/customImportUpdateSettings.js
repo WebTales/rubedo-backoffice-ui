@@ -23,7 +23,10 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
         'Ext.grid.View',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
-        'Ext.form.FieldSet'
+        'Ext.form.FieldSet',
+        'Ext.toolbar.Toolbar',
+        'Ext.toolbar.Fill',
+        'Ext.button.Button'
     ],
 
     flex: 3,
@@ -75,13 +78,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                             displayField: 'type',
                             forceSelection: true,
                             store: 'TCImportCombo',
-                            valueField: 'id',
-                            listeners: {
-                                select: {
-                                    fn: me.onImportCtSelectorSelect,
-                                    scope: me
-                                }
-                            }
+                            valueField: 'id'
                         },
                         {
                             xtype: 'combobox',
@@ -121,102 +118,28 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                             id: 'importTaxoFieldset',
                             title: 'Taxonomy fields indexes'
                         }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            items: [
+                                {
+                                    xtype: 'tbfill'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'launchUpdateImportBtn',
+                                    text: 'Launch update'
+                                }
+                            ]
+                        }
                     ]
                 }
             ]
         });
 
         me.callParent(arguments);
-    },
-
-    onImportCtSelectorSelect: function(combo, records, eOpts) {
-        Ext.getCmp("importCTFFieldset").removeAll();
-        Ext.getCmp("importTaxoFieldset").removeAll();
-        Ext.getStore("ImportKeyFieldStore").removeAll();
-        var record=records[0];
-        var uniqueKeyFields=[
-            {
-                name:"text",
-                label:"Title"
-            },
-            {
-                name:"summary",
-                label:"Summary"
-            }
-        ];
-        var fieldSelectors=[
-        {
-                                    xtype: 'combobox',
-                                    anchor: '100%',
-                                    fieldLabel: "Title",
-                                    name: "text",
-                                    editable: false,
-                                    displayField: 'name',
-                                    forceSelection: true,
-                                    queryMode: 'local',
-                                    store: 'NotInportFieldsStore',
-                                    valueField: 'csvIndex'
-                                },
-            {
-                                    xtype: 'combobox',
-                                    anchor: '100%',
-                                    fieldLabel: "Summary",
-                                    name: "summary",
-                                    editable: false,
-                                    displayField: 'name',
-                                    forceSelection: true,
-                                    queryMode: 'local',
-                                    store: 'NotInportFieldsStore',
-                                    valueField: 'csvIndex'
-                                }
-        ];
-        Ext.Array.forEach(record.get("champs"),function(champ){
-            uniqueKeyFields.push({
-                name:champ.config.name,
-                label:champ.config.fieldLabel
-            });
-            fieldSelectors.push({
-                                    xtype: 'combobox',
-                                    anchor: '100%',
-                                    fieldLabel: champ.config.fieldLabel,
-                                    name: champ.config.name,
-                                    editable: false,
-                                    displayField: 'name',
-                                    forceSelection: true,
-                                    queryMode: 'local',
-                                    store: 'NotInportFieldsStore',
-                                    valueField: 'csvIndex'
-                                });
-        });
-        Ext.getStore("ImportKeyFieldStore").loadData(uniqueKeyFields);
-        Ext.getCmp("importCTFFieldset").add(fieldSelectors);
-        var taxoSelectors=[];
-        Ext.Array.forEach(record.get("vocabularies"),function(vocabulary){
-            if (vocabulary!="navigation"){
-            taxoSelectors.push({
-                                    xtype: 'combobox',
-                                    anchor: '100%',
-                                    fieldLabel: Ext.getStore("TaxoForImportKeys").findRecord("id",vocabulary).get("name"),
-                                    name: vocabulary,
-                                    editable: false,
-                                    displayField: 'name',
-                                    forceSelection: true,
-                                    queryMode: 'local',
-                                    store: 'NotInportFieldsStore',
-                                    valueField: 'csvIndex'
-                                });
-            }
-        });
-        Ext.getCmp("importTaxoFieldset").add(taxoSelectors);
-        if (record.get("productType")=="configurable"){
-            if (Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
-                Ext.getCmp("importTaxoFieldset").up().add(Ext.widget("importProductOptionsFieldset", {anchor:"100%"}));
-            }
-        } else {
-            if (!Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
-                Ext.getCmp("importProductOptionsFieldset").up().remove(Ext.getCmp("importProductOptionsFieldset"));
-            }
-        }
     }
 
 });

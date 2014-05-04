@@ -157,6 +157,128 @@ Ext.define('Rubedo.controller.ImportController', {
         }
     },
 
+    onImportCtSelectorSelect: function(combo, records, eOpts) {
+        Ext.getCmp("importCTFFieldset").removeAll();
+        Ext.getCmp("importTaxoFieldset").removeAll();
+        Ext.getStore("ImportKeyFieldStore").removeAll();
+        var record=records[0];
+        var uniqueKeyFields=[
+            {
+                name:"text",
+                label:"Title"
+            },
+            {
+                name:"summary",
+                label:"Summary"
+            }
+        ];
+        var fieldSelectors=[
+        {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: "Title",
+                                    name: "text",
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                },
+            {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: "Summary",
+                                    name: "summary",
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                }
+        ];
+        Ext.Array.forEach(record.get("champs"),function(champ){
+            uniqueKeyFields.push({
+                name:champ.config.name,
+                label:champ.config.fieldLabel
+            });
+            fieldSelectors.push({
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: champ.config.fieldLabel,
+                                    name: champ.config.name,
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                });
+        });
+        Ext.getStore("ImportKeyFieldStore").loadData(uniqueKeyFields);
+        Ext.getCmp("importCTFFieldset").add(fieldSelectors);
+        var taxoSelectors=[];
+        Ext.Array.forEach(record.get("vocabularies"),function(vocabulary){
+            if (vocabulary!="navigation"){
+            taxoSelectors.push({
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: Ext.getStore("TaxoForImportKeys").findRecord("id",vocabulary).get("name"),
+                                    name: vocabulary,
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                });
+            }
+        });
+        Ext.getCmp("importTaxoFieldset").add(taxoSelectors);
+        if (record.get("productType")=="configurable"){
+            if (Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
+                Ext.getCmp("importTaxoFieldset").up().add(Ext.widget("importProductOptionsFieldset", {anchor:"100%"}));
+            }
+        } else {
+            if (!Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
+                Ext.getCmp("importProductOptionsFieldset").up().remove(Ext.getCmp("importProductOptionsFieldset"));
+            }
+        }
+    },
+
+    onLaunchUpdateImportBtnClick: function(button, e, eOpts) {
+        var myForm = button.up().up().getForm();
+        if (myForm.isValid()){
+            var configs=myForm.getValues();
+            var form=Ext.getCmp("mainCSVinportField").up().up().getForm();
+            var paramsToSend={
+                    configs:Ext.JSON.encode(configs)
+
+                };
+
+            Ext.getCmp("InportInterface").setLoading(true);
+            form.submit({
+                url: 'import/import',
+                params: paramsToSend,
+                success: function(form, action) {
+                    var response = Ext.JSON.decode(action.response.responseText);
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, response.importedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importedContentsText);
+                    Ext.getCmp("InportInterface").setLoading(false);
+                    Ext.getCmp("InportInterface").close();
+                    Rubedo.controller.MainStoresController.prototype.reloadActiveBrothers("Taxonomy","fakeStore");
+                    Rubedo.controller.MainStoresController.prototype.reloadActiveBrothers("ContentTypes","fakeStore");
+                    Rubedo.controller.MainStoresController.prototype.reloadActiveBrothers("contents","fakeStore");
+
+                },
+                failure: function(form, action) {
+                    Ext.getCmp("InportInterface").setLoading(false);
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.importError);
+                }
+            });
+        }
+    },
+
     init: function(application) {
         this.control({
             "#mainCSVinportField, #chooseEncodingField": {
@@ -170,6 +292,12 @@ Ext.define('Rubedo.controller.ImportController', {
             },
             "#importChoiceSubmitBtn": {
                 click: this.onImportChoiceSubmitBtnClick
+            },
+            "#importCtSelector": {
+                select: this.onImportCtSelectorSelect
+            },
+            "#launchUpdateImportBtn": {
+                click: this.onLaunchUpdateImportBtnClick
             }
         });
     }

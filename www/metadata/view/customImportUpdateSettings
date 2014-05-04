@@ -104,112 +104,7 @@
                         "store": "TCImportCombo",
                         "valueField": "id"
                     },
-                    "designerId": "c50b7ce9-42e7-4a87-868a-6db706a6052e",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onImportCtSelectorSelect",
-                                "implHandler": [
-                                    "Ext.getCmp(\"importCTFFieldset\").removeAll();\r",
-                                    "Ext.getCmp(\"importTaxoFieldset\").removeAll();\r",
-                                    "Ext.getStore(\"ImportKeyFieldStore\").removeAll();\r",
-                                    "var record=records[0];\r",
-                                    "var uniqueKeyFields=[\r",
-                                    "    {\r",
-                                    "        name:\"text\",\r",
-                                    "        label:\"Title\"\r",
-                                    "    },\r",
-                                    "    {\r",
-                                    "        name:\"summary\",\r",
-                                    "        label:\"Summary\"\r",
-                                    "    }\r",
-                                    "];\r",
-                                    "var fieldSelectors=[\r",
-                                    "{\r",
-                                    "                            xtype: 'combobox',\r",
-                                    "                            anchor: '100%',\r",
-                                    "                            fieldLabel: \"Title\",\r",
-                                    "                            name: \"text\",\r",
-                                    "                            editable: false,\r",
-                                    "                            displayField: 'name',\r",
-                                    "                            forceSelection: true,\r",
-                                    "                            queryMode: 'local',\r",
-                                    "                            store: 'NotInportFieldsStore',\r",
-                                    "                            valueField: 'csvIndex'\r",
-                                    "                        },\r",
-                                    "    {\r",
-                                    "                            xtype: 'combobox',\r",
-                                    "                            anchor: '100%',\r",
-                                    "                            fieldLabel: \"Summary\",\r",
-                                    "                            name: \"summary\",\r",
-                                    "                            editable: false,\r",
-                                    "                            displayField: 'name',\r",
-                                    "                            forceSelection: true,\r",
-                                    "                            queryMode: 'local',\r",
-                                    "                            store: 'NotInportFieldsStore',\r",
-                                    "                            valueField: 'csvIndex'\r",
-                                    "                        }\r",
-                                    "];\r",
-                                    "Ext.Array.forEach(record.get(\"champs\"),function(champ){\r",
-                                    "    uniqueKeyFields.push({\r",
-                                    "        name:champ.config.name,\r",
-                                    "        label:champ.config.fieldLabel\r",
-                                    "    });\r",
-                                    "    fieldSelectors.push({\r",
-                                    "                            xtype: 'combobox',\r",
-                                    "                            anchor: '100%',\r",
-                                    "                            fieldLabel: champ.config.fieldLabel,\r",
-                                    "                            name: champ.config.name,\r",
-                                    "                            editable: false,\r",
-                                    "                            displayField: 'name',\r",
-                                    "                            forceSelection: true,\r",
-                                    "                            queryMode: 'local',\r",
-                                    "                            store: 'NotInportFieldsStore',\r",
-                                    "                            valueField: 'csvIndex'\r",
-                                    "                        });\r",
-                                    "});\r",
-                                    "Ext.getStore(\"ImportKeyFieldStore\").loadData(uniqueKeyFields);\r",
-                                    "Ext.getCmp(\"importCTFFieldset\").add(fieldSelectors);\r",
-                                    "var taxoSelectors=[];\r",
-                                    "Ext.Array.forEach(record.get(\"vocabularies\"),function(vocabulary){\r",
-                                    "    if (vocabulary!=\"navigation\"){\r",
-                                    "    taxoSelectors.push({\r",
-                                    "                            xtype: 'combobox',\r",
-                                    "                            anchor: '100%',\r",
-                                    "                            fieldLabel: Ext.getStore(\"TaxoForImportKeys\").findRecord(\"id\",vocabulary).get(\"name\"),\r",
-                                    "                            name: vocabulary,\r",
-                                    "                            editable: false,\r",
-                                    "                            displayField: 'name',\r",
-                                    "                            forceSelection: true,\r",
-                                    "                            queryMode: 'local',\r",
-                                    "                            store: 'NotInportFieldsStore',\r",
-                                    "                            valueField: 'csvIndex'\r",
-                                    "                        });\r",
-                                    "    }\r",
-                                    "});\r",
-                                    "Ext.getCmp(\"importTaxoFieldset\").add(taxoSelectors);\r",
-                                    "if (record.get(\"productType\")==\"configurable\"){\r",
-                                    "    if (Ext.isEmpty(Ext.getCmp(\"importProductOptionsFieldset\"))){\r",
-                                    "        Ext.getCmp(\"importTaxoFieldset\").up().add(Ext.widget(\"importProductOptionsFieldset\", {anchor:\"100%\"}));\r",
-                                    "    }\r",
-                                    "} else {\r",
-                                    "    if (!Ext.isEmpty(Ext.getCmp(\"importProductOptionsFieldset\"))){\r",
-                                    "        Ext.getCmp(\"importProductOptionsFieldset\").up().remove(Ext.getCmp(\"importProductOptionsFieldset\"));\r",
-                                    "    }\r",
-                                    "}"
-                                ],
-                                "name": "select",
-                                "scope": "me"
-                            },
-                            "designerId": "46029588-277e-4f5c-8b3b-dd940f35684d"
-                        }
-                    ]
+                    "designerId": "c50b7ce9-42e7-4a87-868a-6db706a6052e"
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -280,6 +175,46 @@
                         "title": "Taxonomy fields indexes"
                     },
                     "designerId": "b5d8ea91-55af-4f28-84b5-65c12421b9dc"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "e56d3129-f1dd-495d-a448-fd8a812ee129",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "87f22208-94b2-4119-adb1-a09dee8c3290"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "launchUpdateImportBtn",
+                                "layout|flex": null,
+                                "text": "Launch update"
+                            },
+                            "designerId": "1eb9ccd6-81a7-474f-a1bc-9936ba201a23"
+                        }
+                    ]
                 }
             ]
         }
