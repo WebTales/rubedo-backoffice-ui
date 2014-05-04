@@ -59,26 +59,67 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                 {
                     xtype: 'form',
                     flex: 3,
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: 'Field mapping',
                     items: [
                         {
                             xtype: 'combobox',
                             anchor: '100%',
-                            fieldLabel: 'Content type'
+                            id: 'importCtSelector',
+                            fieldLabel: 'Content type',
+                            name: 'contentTypeId',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            displayField: 'type',
+                            forceSelection: true,
+                            store: 'TCImportCombo',
+                            valueField: 'id',
+                            listeners: {
+                                select: {
+                                    fn: me.onImportCtSelectorSelect,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'combobox',
                             anchor: '100%',
-                            fieldLabel: 'Unique key field'
+                            fieldLabel: 'Unique key index',
+                            name: 'uniqueKeyIndex',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            displayField: 'name',
+                            forceSelection: true,
+                            queryMode: 'local',
+                            store: 'NotInportFieldsStore',
+                            valueField: 'csvIndex'
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            fieldLabel: 'Unique key field',
+                            name: 'uniqueKeyField',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            displayField: 'label',
+                            forceSelection: true,
+                            queryMode: 'local',
+                            store: 'ImportKeyFieldStore',
+                            valueField: 'name'
                         },
                         {
                             xtype: 'fieldset',
-                            title: 'Content type fields'
+                            id: 'importCTFFieldset',
+                            title: 'Content fields indexes'
                         },
                         {
                             xtype: 'fieldset',
-                            title: 'Taxonomy fields'
+                            id: 'importTaxoFieldset',
+                            title: 'Taxonomy fields indexes'
                         }
                     ]
                 }
@@ -86,6 +127,96 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
         });
 
         me.callParent(arguments);
+    },
+
+    onImportCtSelectorSelect: function(combo, records, eOpts) {
+        Ext.getCmp("importCTFFieldset").removeAll();
+        Ext.getCmp("importTaxoFieldset").removeAll();
+        Ext.getStore("ImportKeyFieldStore").removeAll();
+        var record=records[0];
+        var uniqueKeyFields=[
+            {
+                name:"text",
+                label:"Title"
+            },
+            {
+                name:"summary",
+                label:"Summary"
+            }
+        ];
+        var fieldSelectors=[
+        {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: "Title",
+                                    name: "text",
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                },
+            {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: "Summary",
+                                    name: "summary",
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                }
+        ];
+        Ext.Array.forEach(record.get("champs"),function(champ){
+            uniqueKeyFields.push({
+                name:champ.config.name,
+                label:champ.config.fieldLabel
+            });
+            fieldSelectors.push({
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: champ.config.fieldLabel,
+                                    name: champ.config.name,
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                });
+        });
+        Ext.getStore("ImportKeyFieldStore").loadData(uniqueKeyFields);
+        Ext.getCmp("importCTFFieldset").add(fieldSelectors);
+        var taxoSelectors=[];
+        Ext.Array.forEach(record.get("vocabularies"),function(vocabulary){
+            if (vocabulary!="navigation"){
+            taxoSelectors.push({
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: Ext.getStore("TaxoForImportKeys").findRecord("id",vocabulary).get("name"),
+                                    name: vocabulary,
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    queryMode: 'local',
+                                    store: 'NotInportFieldsStore',
+                                    valueField: 'csvIndex'
+                                });
+            }
+        });
+        Ext.getCmp("importTaxoFieldset").add(taxoSelectors);
+        if (record.get("productType")=="configurable"){
+            if (Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
+                Ext.getCmp("importTaxoFieldset").up().add(Ext.widget("importProductOptionsFieldset", {anchor:"100%"}));
+            }
+        } else {
+            if (!Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
+                Ext.getCmp("importProductOptionsFieldset").up().remove(Ext.getCmp("importProductOptionsFieldset"));
+            }
+        }
     }
 
 });

@@ -2252,8 +2252,8 @@
                     "    Ext.getCmp(\"mainCSVInportAnalyseContainer\").up().remove(Ext.getCmp(\"mainCSVInportAnalyseContainer\"));\r",
                     "    Ext.getCmp(\"customImportProgressor\").hide();\r",
                     "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"customImportUpdateSettings\"));\r",
-                    "    \r",
-                    "\r",
+                    "    Ext.getStore(\"TCImportCombo\").load();\r",
+                    "    Ext.getStore(\"TaxoForImportKeys\").load();\r",
                     "} else {\r",
                     "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
                     "    if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
@@ -2285,7 +2285,9 @@
                     "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();\r",
                     "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
-                    "Ext.getStore(\"MediaTypesFORDAMPicker\").removeAll();"
+                    "Ext.getStore(\"MediaTypesFORDAMPicker\").removeAll();\r",
+                    "Ext.getStore(\"TCImportCombo\").removeAll();\r",
+                    "Ext.getStore(\"TaxoForImportKeys\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"

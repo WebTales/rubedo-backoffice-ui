@@ -1,0 +1,68 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "TaxoForImportKeys",
+        "designer|userClassName": "TaxoForImportKeys",
+        "isOptimised": null,
+        "model": "taxonomieDataModel",
+        "pageSize": 1000,
+        "storeId": "TaxoForImportKeys",
+        "usedCollection": null
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "6f8bb89e-7db9-460a-9b2b-5903235bd06a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "read : 'taxonomy'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "designerId": "07ab73e2-1a4f-409d-812e-77c36a3b6b07",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "d0391b2f-c7e1-48c5-acfc-fc8642248dff"
+                }
+            ]
+        }
+    ]
+}

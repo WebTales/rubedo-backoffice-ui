@@ -211,7 +211,10 @@ Ext.application({
         'InitialStockStore',
         'PaymentMeans',
         'PMConfigs',
-        'Orders'
+        'Orders',
+        'TCImportCombo',
+        'ImportKeyFieldStore',
+        'TaxoForImportKeys'
     ],
     views: [
         'MyGridPanel3',
@@ -398,7 +401,8 @@ Ext.application({
         'ordersInterface',
         'ImportChoiceWindow',
         'importProductOptionsForm',
-        'customImportUpdateSettings'
+        'customImportUpdateSettings',
+        'importProductOptionsFieldset'
     ],
     controllers: [
         'ContributionContenusController',

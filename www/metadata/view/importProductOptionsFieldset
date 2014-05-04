@@ -1,0 +1,129 @@
+{
+    "type": "Ext.form.FieldSet",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "importProductOptionsFieldset",
+        "designer|userClassName": "importProductOptionsFieldset",
+        "id": "importProductOptionsFieldset",
+        "title": "Product fields",
+        "width": 200
+    },
+    "designerId": "39b19d55-a1d3-42f7-aaa4-3ea889d209f9",
+    "cn": [
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "Base SKU",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "baseSkuFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "2932b184-c507-42ca-ba29-a7a71f666379"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "Base price",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "basePriceFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "f96a2997-342b-46a3-9c9c-a79c5b076d7e"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": null,
+                "allowOnlyWhitespace": null,
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "SKU",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "skuFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "25727771-d9d1-4758-9d41-4521223d120d"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": null,
+                "allowOnlyWhitespace": null,
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "Price",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "priceFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "46ea6d98-0deb-4a26-b5e8-6c4fe6c29f6b"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": null,
+                "allowOnlyWhitespace": null,
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "Stock",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "stockFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "7a4f4f56-9933-42f3-8592-a2896ab8366e"
+        }
+    ]
+}

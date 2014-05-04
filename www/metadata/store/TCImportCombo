@@ -1,0 +1,101 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "TCImportCombo",
+        "designer|userClassName": "TCImportCombo",
+        "isOptimised": true,
+        "model": "typesContenusDataModel",
+        "pageSize": 1000,
+        "remoteFilter": true,
+        "storeId": "TCImportCombo",
+        "usedCollection": "ContentTypes"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "534d3137-ad73-41ea-b126-d3cb80f09e3a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    read: 'content-types'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "designerId": "0188007b-b404-48dc-ba0d-d497ba061a6e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "63dc9230-a84e-4e2c-abdb-d2bc8d6df5e0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "dependant",
+                "value": [
+                    "false"
+                ]
+            },
+            "designerId": "55cbb687-5f7c-411c-8d23-cddcff0444c5"
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "system",
+                "value": [
+                    "{\r",
+                    "                    $ne: true\r",
+                    "                }"
+                ]
+            },
+            "designerId": "8ab9c4aa-c868-470e-8b23-8541924d2a41"
+        }
+    ]
+}

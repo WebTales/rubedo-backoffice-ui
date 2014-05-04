@@ -215,7 +215,10 @@
             "InitialStockStore",
             "PaymentMeans",
             "PMConfigs",
-            "Orders"
+            "Orders",
+            "TCImportCombo",
+            "ImportKeyFieldStore",
+            "TaxoForImportKeys"
         ],
         "views": [
             "MyGridPanel3",
@@ -402,7 +405,8 @@
             "ordersInterface",
             "ImportChoiceWindow",
             "importProductOptionsForm",
-            "customImportUpdateSettings"
+            "customImportUpdateSettings",
+            "importProductOptionsFieldset"
         ]
     },
     "designerId": "application",

@@ -1,0 +1,40 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ImportKeyFieldStore",
+        "designer|userClassName": "ImportKeyFieldStore",
+        "storeId": "ImportKeyFieldStore"
+    },
+    "designerId": "36a74a85-18fe-4892-aca4-dce5767a1219",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "5f4b7adb-48dc-4582-9f4b-e737d101332b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "label"
+            },
+            "designerId": "e35b81cc-df76-47c1-80d5-4658baaaadbc"
+        }
+    ]
+}

@@ -989,8 +989,8 @@ Ext.define('Rubedo.view.InportInterface', {
             Ext.getCmp("mainCSVInportAnalyseContainer").up().remove(Ext.getCmp("mainCSVInportAnalyseContainer"));
             Ext.getCmp("customImportProgressor").hide();
             Ext.getCmp("step1CustomImportContainer").add(Ext.widget("customImportUpdateSettings"));
-
-
+            Ext.getStore("TCImportCombo").load();
+            Ext.getStore("TaxoForImportKeys").load();
         } else {
             Ext.getStore("MediaTypesFORDAMPicker").load();
             if ((Ext.getStore("AllLanguagesStore3").getRange().length==1)){
@@ -1010,6 +1010,8 @@ Ext.define('Rubedo.view.InportInterface', {
         Ext.getStore("InportAsFieldTranslationStore").removeAll();
         Ext.getStore("InportAsTaxoTranslationStore").removeAll();
         Ext.getStore("MediaTypesFORDAMPicker").removeAll();
+        Ext.getStore("TCImportCombo").removeAll();
+        Ext.getStore("TaxoForImportKeys").removeAll();
     }
 
 });
