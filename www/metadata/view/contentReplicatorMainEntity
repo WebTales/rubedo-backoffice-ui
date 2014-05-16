@@ -48,7 +48,7 @@
                         "name": "text",
                         "stripCharsRe": "new RegExp(\"/\")",
                         "style": [
-                            "{float:left}"
+                            "{float:\"left\"}"
                         ]
                     },
                     "designerId": "be4a01f8-38c5-4c7c-bc68-e9af5ca8deec",
@@ -96,7 +96,7 @@
                         "name": "urlSegment",
                         "stripCharsRe": "new RegExp(\"/\")",
                         "style": [
-                            "{float:left}"
+                            "{float:\"left\"}"
                         ]
                     },
                     "designerId": "b634fff9-21b0-4c13-9bb0-f3c92bb26e7a",
@@ -139,7 +139,7 @@
                         "localiserId": "summaryField",
                         "name": "summary",
                         "style": [
-                            "{float:left}"
+                            "{float:\"left\"}"
                         ]
                     },
                     "designerId": "4ea3a568-29a9-48eb-b1f5-2c460137a371",
