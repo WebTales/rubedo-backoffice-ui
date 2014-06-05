@@ -1217,6 +1217,23 @@
                 "scope": "me"
             },
             "designerId": "8207113b-1f50-430c-a4a4-42b51127461e"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAjouterContenuBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"CurrentContent\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "designerId": "1787d04b-8bb1-4059-a0c3-eb6228a6b6e7"
         }
     ]
 }
