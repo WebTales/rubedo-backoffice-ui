@@ -28,7 +28,7 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
-                "name": "baseSkuFieldIndex",
+                "name": "productFields_baseSkuFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
@@ -49,7 +49,7 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
-                "name": "basePriceFieldIndex",
+                "name": "productFields_basePriceFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
@@ -72,7 +72,7 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
-                "name": "skuFieldIndex",
+                "name": "productFields_skuFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
@@ -95,7 +95,7 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
-                "name": "priceFieldIndex",
+                "name": "productFields_priceFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
@@ -118,7 +118,7 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
-                "name": "stockFieldIndex",
+                "name": "productFields_stockFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
