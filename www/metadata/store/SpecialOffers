@@ -1,0 +1,113 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "SpecialOffers",
+        "designer|userClassName": "SpecialOffers",
+        "storeId": "SpecialOffers"
+    },
+    "designerId": "9c6f7e05-68d6-4ac7-97d7-74700e4a7eb6",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "beginDate",
+                "type": "date"
+            },
+            "designerId": "eb718cde-291f-4f2c-a8de-611d5b64c47c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "endDate",
+                "type": "date"
+            },
+            "designerId": "264d342c-ba7f-43b0-8ca5-c09fd4f270d9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "price"
+            },
+            "designerId": "79639b5d-a2a2-4b6c-b6b4-59a85d69cccd"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreUpdate",
+                "implHandler": [
+                    "var record=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected();\r",
+                    "record.set(\"specialOffers\",Ext.Array.pluck(store.getRange(),\"data\"));\r",
+                    "console.log(\"ok\");"
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "designerId": "ade49e33-1e85-449c-bf53-71300c0990ba"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreAdd",
+                "implHandler": [
+                    "var record=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected();\r",
+                    "record.set(\"specialOffers\",Ext.Array.pluck(store.getRange(),\"data\"));\r",
+                    "console.log(\"ok\");"
+                ],
+                "name": "add",
+                "scope": "me"
+            },
+            "designerId": "5b24979b-d71d-42c6-99ce-25317fab1c19"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreRemove",
+                "implHandler": [
+                    "var record=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected();\r",
+                    "record.set(\"specialOffers\",Ext.Array.pluck(store.getRange(),\"data\"));\r",
+                    "console.log(\"ok\");"
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "designerId": "924a68db-1cdb-4be6-85b2-120c3b8c70a7"
+        }
+    ]
+}

@@ -48,10 +48,11 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 isProduct=true;
                 fenetre.getComponent(0).add(Ext.widget("productSettingsForm"));
                 var variatorFields=[
-                {name:"price"},
-                {name:"stock"},
-                {name:"sku"},
-                {name:"id"}
+                    {name:"price"},
+                    {name:"stock"},
+                    {name:"sku"},
+                    {name:"id"},
+                    {name:'specialOffers',defaultValue:[ ]}
                 ];
                 var variatorColumns=[ ];
                 Ext.getCmp("productSettingsForm").getComponent(0).getForm().setValues(Ext.getCmp('TypesContenusGrid').getSelectionModel().getSelection()[0].getData());

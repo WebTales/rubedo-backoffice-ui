@@ -168,235 +168,505 @@
             ]
         },
         {
-            "type": "Ext.grid.Panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "height": null,
-                "id": "productVariationsGrid",
+                "container|align": "stretch",
+                "layout": "hbox",
                 "layout|flex": 1,
                 "title": "Variations"
             },
-            "designerId": "719cd507-c957-4f9f-b349-340060534ac4",
+            "designerId": "a42663e8-4f9f-4e87-a57d-036e66f035ea",
             "cn": [
                 {
-                    "type": "Ext.grid.column.Column",
+                    "type": "Ext.grid.Panel",
                     "reference": {
-                        "name": "columns",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "string",
-                        "text": "String"
+                        "height": null,
+                        "id": "productVariationsGrid",
+                        "layout|flex": 1,
+                        "title": ""
                     },
-                    "designerId": "be500d0e-1bed-43df-8bbd-ea586d723e83"
-                },
-                {
-                    "type": "Ext.grid.column.Number",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "number",
-                        "text": "Number"
-                    },
-                    "designerId": "0121ed14-dc66-4921-8153-398dcaabfd2c"
-                },
-                {
-                    "type": "Ext.grid.column.Date",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "date",
-                        "text": "Date"
-                    },
-                    "designerId": "ad14d709-a397-43e9-8db5-32870cbedc4f"
-                },
-                {
-                    "type": "Ext.grid.column.Boolean",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "bool",
-                        "text": "Boolean"
-                    },
-                    "designerId": "ffdb18eb-45e3-4f91-860e-dbd5de3b690c"
-                },
-                {
-                    "type": "Ext.grid.View",
-                    "reference": {
-                        "name": "viewConfig",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "designerId": "c9823752-9ea5-4773-9750-2e63fe86a668",
+                    "designerId": "719cd507-c957-4f9f-b349-340060534ac4",
                     "cn": [
                         {
-                            "type": "Ext.grid.plugin.DragDrop",
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "string",
+                                "text": "String"
+                            },
+                            "designerId": "be500d0e-1bed-43df-8bbd-ea586d723e83"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "number",
+                                "text": "Number"
+                            },
+                            "designerId": "0121ed14-dc66-4921-8153-398dcaabfd2c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "date",
+                                "text": "Date"
+                            },
+                            "designerId": "ad14d709-a397-43e9-8db5-32870cbedc4f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Boolean",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "bool",
+                                "text": "Boolean"
+                            },
+                            "designerId": "ffdb18eb-45e3-4f91-860e-dbd5de3b690c"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "c9823752-9ea5-4773-9750-2e63fe86a668",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.plugin.DragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "designerId": "e8027769-fcec-467b-a766-cd8ba063776c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "designerId": "028e5349-cfa7-4653-8284-c254e9cc896b",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Fill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "designerId": "21bb0c65-cc27-44c3-8676-c6da54be84bb"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "add",
+                                        "layout|flex": null,
+                                        "text": "Add"
+                                    },
+                                    "designerId": "a61c3f71-704f-4a15-93f2-a4c910757612",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick",
+                                                "implHandler": [
+                                                    "var form=button.up().up().up().up().getComponent(0).getForm();\r",
+                                                    "if (form.isValid()){\r",
+                                                    "    Ext.Ajax.request({\r",
+                                                    "        url: 'xhr-get-mongo-id',\r",
+                                                    "        params: { },\r",
+                                                    "        success: function(response){\r",
+                                                    "            var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
+                                                    "            button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku,stock:0, id:servedId});\r",
+                                                    "        },\r",
+                                                    "        failure: function(){\r",
+                                                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve ID\");\r",
+                                                    "\r",
+                                                    "        }\r",
+                                                    "    });\r",
+                                                    "} else {\r",
+                                                    "    Ext.Msg.alert(\"Error\",\"SKU and Base price are required in order to create variations\");\r",
+                                                    "}\r",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "a428a486-0e27-437b-a410-9d5ca17052a9"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "iconCls": "close",
+                                        "id": "variationRemoverBtn",
+                                        "layout|flex": null,
+                                        "text": "Remove"
+                                    },
+                                    "designerId": "d7e3c802-65b7-4c19-8e1e-9f44d9e717e0",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onVariationRemoverBtnClick",
+                                                "implHandler": [
+                                                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "321b78ca-09eb-415d-961c-d6ef7a508b23"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onProductVariationsGridSelectionChange",
+                                "implHandler": [
+                                    "if (Ext.isEmpty(selected)){\r",
+                                    "    Ext.getCmp(\"variationRemoverBtn\").disable();\r",
+                                    "    Ext.getCmp(\"specialOffersGrid\").getStore().removeAll();\r",
+                                    "    Ext.getCmp(\"specialOffersGrid\").disable();\r",
+                                    "} else {\r",
+                                    "    Ext.getCmp(\"variationRemoverBtn\").enable();\r",
+                                    "    Ext.getCmp(\"specialOffersGrid\").enable();\r",
+                                    "    Ext.getCmp(\"specialOffersGrid\").getStore().loadData(selected[0].get(\"specialOffers\"));\r",
+                                    "}"
+                                ],
+                                "name": "selectionchange",
+                                "scope": "me"
+                            },
+                            "designerId": "ff571074-469b-4610-a8fb-78310e09236c"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
                             "reference": {
                                 "name": "plugins",
                                 "type": "array"
                             },
-                            "codeClass": "Ext.grid.plugin.DragDrop",
-                            "designerId": "e8027769-fcec-467b-a766-cd8ba063776c"
+                            "codeClass": "Ext.grid.plugin.CellEditing",
+                            "designerId": "75a07cee-4842-47f7-a9dc-b64b332be990"
                         }
                     ]
                 },
                 {
-                    "type": "Ext.toolbar.Toolbar",
+                    "type": "Ext.grid.Panel",
                     "reference": {
-                        "name": "dockedItems",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "top"
+                        "collapseDirection": "right",
+                        "collapsed": true,
+                        "collapsible": true,
+                        "disabled": true,
+                        "forceFit": true,
+                        "id": "specialOffersGrid",
+                        "layout|flex": null,
+                        "store": "SpecialOffers",
+                        "title": "Secial offers for this variation",
+                        "width": 300
                     },
-                    "designerId": "028e5349-cfa7-4653-8284-c254e9cc896b",
+                    "designerId": "13209eab-33ca-4aa5-ae53-82a8696c6e4b",
                     "cn": [
                         {
-                            "type": "Ext.toolbar.Fill",
+                            "type": "Ext.grid.View",
                             "reference": {
-                                "name": "items",
-                                "type": "array"
+                                "name": "viewConfig",
+                                "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": null
-                            },
-                            "designerId": "21bb0c65-cc27-44c3-8676-c6da54be84bb"
+                            "designerId": "9ea74edf-ea7f-48bc-add2-70ce07fa9bf2"
                         },
                         {
-                            "type": "Ext.button.Button",
+                            "type": "Ext.toolbar.Toolbar",
                             "reference": {
-                                "name": "items",
+                                "name": "dockedItems",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "iconCls": "add",
-                                "layout|flex": null,
-                                "text": "Add"
+                                "dock": "top"
                             },
-                            "designerId": "a61c3f71-704f-4a15-93f2-a4c910757612",
+                            "designerId": "514b5434-8e12-45d0-93a0-e114ed3c28e8",
                             "cn": [
                                 {
-                                    "type": "basiceventbinding",
+                                    "type": "Ext.toolbar.Fill",
                                     "reference": {
-                                        "name": "listeners",
+                                        "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onButtonClick",
-                                        "implHandler": [
-                                            "var form=button.up().up().up().getComponent(0).getForm();\r",
-                                            "if (form.isValid()){\r",
-                                            "    Ext.Ajax.request({\r",
-                                            "        url: 'xhr-get-mongo-id',\r",
-                                            "        params: { },\r",
-                                            "        success: function(response){\r",
-                                            "            var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
-                                            "            button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku,stock:0, id:servedId});\r",
-                                            "        },\r",
-                                            "        failure: function(){\r",
-                                            "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve ID\");\r",
-                                            "\r",
-                                            "        }\r",
-                                            "    });\r",
-                                            "} else {\r",
-                                            "    Ext.Msg.alert(\"Error\",\"SKU and Base price are required in order to create variations\");\r",
-                                            "}\r",
-                                            ""
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
+                                        "layout|flex": null
                                     },
-                                    "designerId": "a428a486-0e27-437b-a410-9d5ca17052a9"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "disabled": true,
-                                "iconCls": "close",
-                                "id": "variationRemoverBtn",
-                                "layout|flex": null,
-                                "text": "Remove"
-                            },
-                            "designerId": "d7e3c802-65b7-4c19-8e1e-9f44d9e717e0",
-                            "cn": [
+                                    "designerId": "1367b9c0-1c1f-4565-bfb3-dfdf0cfade9b"
+                                },
                                 {
-                                    "type": "basiceventbinding",
+                                    "type": "Ext.button.Button",
                                     "reference": {
-                                        "name": "listeners",
+                                        "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onVariationRemoverBtnClick",
-                                        "implHandler": [
-                                            "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
+                                        "iconCls": "add",
+                                        "layout|flex": null,
+                                        "text": "Add"
                                     },
-                                    "designerId": "321b78ca-09eb-415d-961c-d6ef7a508b23"
+                                    "designerId": "f8dbb77a-3896-48f1-9c57-23bc4b237205",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var price=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected().get(\"price\");\r",
+                                                    "var date=Ext.Date.format(new Date,\"U\");\r",
+                                                    "button.up().up().getStore().add({\r",
+                                                    "    beginDate:date,\r",
+                                                    "    endDate:date,\r",
+                                                    "    price:price\r",
+                                                    "});"
+                                                ]
+                                            },
+                                            "designerId": "0f95a660-7cab-45cf-8b51-7ecbc8b40334"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "iconCls": "close",
+                                        "id": "removeSpecialOfferBtn",
+                                        "layout|flex": null,
+                                        "text": "Remove"
+                                    },
+                                    "designerId": "f111f415-d5a8-4376-9fb0-87e4e2983dd1",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                                ]
+                                            },
+                                            "designerId": "01d9c806-edf4-47ab-afe5-00827ee0f5bd"
+                                        }
+                                    ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "beginDate",
+                                "text": "Start date"
+                            },
+                            "designerId": "8d95941a-c187-474b-aae8-49c5f12e5fdb",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "allowOnlyWhitespace": false
+                                    },
+                                    "designerId": "cf41dc99-5283-4bea-95d4-aa61610776b0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "endDate",
+                                "text": "End date"
+                            },
+                            "designerId": "dd2597f4-19a5-4796-9af9-a83180b10fa5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "allowOnlyWhitespace": false
+                                    },
+                                    "designerId": "2ffa3fa8-1ec7-45f1-8151-63a0580417b2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "price",
+                                "text": "Price"
+                            },
+                            "designerId": "fd59282d-e51a-4d72-83b6-4f82baf8cfe5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "allowOnlyWhitespace": false,
+                                        "minValue": 0
+                                    },
+                                    "designerId": "5c9dbe75-d38c-4f73-9ed5-901706adbfcd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.CellEditing",
+                            "designerId": "81db3340-77c1-4d8a-9ba4-243ac463d457"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSpecialOffersGridSelectionChange",
+                                "implHandler": [
+                                    "if (Ext.isEmpty(selected)){\r",
+                                    "    Ext.getCmp(\"removeSpecialOfferBtn\").disable();\r",
+                                    "} else {\r",
+                                    "        Ext.getCmp(\"removeSpecialOfferBtn\").enable();\r",
+                                    "\r",
+                                    "}"
+                                ],
+                                "name": "selectionchange",
+                                "scope": "me"
+                            },
+                            "designerId": "c35454eb-d041-48ed-9b79-5f5af267e2f7"
                         }
                     ]
-                },
-                {
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onProductVariationsGridSelectionChange",
-                        "implHandler": [
-                            "if (Ext.isEmpty(selected)){\r",
-                            "    Ext.getCmp(\"variationRemoverBtn\").disable();\r",
-                            "} else {\r",
-                            "    Ext.getCmp(\"variationRemoverBtn\").enable();\r",
-                            "}"
-                        ],
-                        "name": "selectionchange",
-                        "scope": "me"
-                    },
-                    "designerId": "ff571074-469b-4610-a8fb-78310e09236c"
-                },
-                {
-                    "type": "Ext.grid.plugin.CellEditing",
-                    "reference": {
-                        "name": "plugins",
-                        "type": "array"
-                    },
-                    "codeClass": "Ext.grid.plugin.CellEditing",
-                    "userConfig": {
-                        "clicksToEdit": 1
-                    },
-                    "designerId": "75a07cee-4842-47f7-a9dc-b64b332be990"
                 }
             ]
         },
@@ -414,14 +684,14 @@
                     "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,\"Invalid product settings\");\r",
                     "    return false;\r",
                     "}\r",
-                    "if (Ext.isEmpty(Ext.getCmp(\"productSettingsForm\").getComponent(1).getStore().getRange())){\r",
+                    "if (Ext.isEmpty(Ext.getCmp(\"productVariationsGrid\").getStore().getRange())){\r",
                     "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,\"Product must have at least one variation\");\r",
                     "    return false;\r",
                     "}\r",
                     "var dataOk=true;\r",
-                    "Ext.Array.forEach(Ext.Array.pluck(Ext.getCmp(\"productSettingsForm\").getComponent(1).getStore().getRange(),\"data\"),function(variation){\r",
+                    "Ext.Array.forEach(Ext.Array.pluck(Ext.getCmp(\"productVariationsGrid\").getStore().getRange(),\"data\"),function(variation){\r",
                     "    Ext.Object.each(variation, function(key, value, myself) {\r",
-                    "        if (Ext.isEmpty(value)){\r",
+                    "        if ((Ext.isEmpty(value))&&(key!=\"specialOffers\")){\r",
                     "            dataOk=false;\r",
                     "        }\r",
                     "    });\r",

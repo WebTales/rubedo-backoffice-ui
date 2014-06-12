@@ -214,7 +214,8 @@ Ext.application({
         'Orders',
         'TCImportCombo',
         'ImportKeyFieldStore',
-        'TaxoForImportKeys'
+        'TaxoForImportKeys',
+        'SpecialOffers'
     ],
     views: [
         'MyGridPanel3',
