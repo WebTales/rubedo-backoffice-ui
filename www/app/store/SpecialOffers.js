@@ -60,20 +60,32 @@ Ext.define('Rubedo.store.SpecialOffers', {
 
     onStoreUpdate: function(store, record, operation, modifiedFieldNames, eOpts) {
         var record=Ext.getCmp("productVariationsGrid").getSelectionModel().getLastSelected();
-        record.set("specialOffers",Ext.Array.pluck(store.getRange(),"data"));
-        console.log("ok");
+        var data=Ext.clone(Ext.Array.pluck(store.getRange(),"data"));
+        Ext.Array.forEach(data, function(item){
+            item.beginDate=Ext.Date.format(item.beginDate,"U");
+            item.endDate=Ext.Date.format(item.endDate,"U");
+        });
+        record.set("specialOffers",data);
     },
 
     onStoreAdd: function(store, records, index, eOpts) {
         var record=Ext.getCmp("productVariationsGrid").getSelectionModel().getLastSelected();
-        record.set("specialOffers",Ext.Array.pluck(store.getRange(),"data"));
-        console.log("ok");
+        var data=Ext.clone(Ext.Array.pluck(store.getRange(),"data"));
+        Ext.Array.forEach(data, function(item){
+            item.beginDate=Ext.Date.format(item.beginDate,"U");
+            item.endDate=Ext.Date.format(item.endDate,"U");
+        });
+        record.set("specialOffers",data);
     },
 
     onStoreRemove: function(store, record, index, isMove, eOpts) {
         var record=Ext.getCmp("productVariationsGrid").getSelectionModel().getLastSelected();
-        record.set("specialOffers",Ext.Array.pluck(store.getRange(),"data"));
-        console.log("ok");
+        var data=Ext.clone(Ext.Array.pluck(store.getRange(),"data"));
+        Ext.Array.forEach(data, function(item){
+            item.beginDate=Ext.Date.format(item.beginDate,"U");
+            item.endDate=Ext.Date.format(item.endDate,"U");
+        });
+        record.set("specialOffers",data);
     }
 
 });

@@ -63,8 +63,12 @@
                 "fn": "onStoreUpdate",
                 "implHandler": [
                     "var record=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected();\r",
-                    "record.set(\"specialOffers\",Ext.Array.pluck(store.getRange(),\"data\"));\r",
-                    "console.log(\"ok\");"
+                    "var data=Ext.clone(Ext.Array.pluck(store.getRange(),\"data\"));\r",
+                    "Ext.Array.forEach(data, function(item){\r",
+                    "    item.beginDate=Ext.Date.format(item.beginDate,\"U\");\r",
+                    "    item.endDate=Ext.Date.format(item.endDate,\"U\");\r",
+                    "});\r",
+                    "record.set(\"specialOffers\",data);"
                 ],
                 "name": "update",
                 "scope": "me"
@@ -82,8 +86,12 @@
                 "fn": "onStoreAdd",
                 "implHandler": [
                     "var record=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected();\r",
-                    "record.set(\"specialOffers\",Ext.Array.pluck(store.getRange(),\"data\"));\r",
-                    "console.log(\"ok\");"
+                    "var data=Ext.clone(Ext.Array.pluck(store.getRange(),\"data\"));\r",
+                    "Ext.Array.forEach(data, function(item){\r",
+                    "    item.beginDate=Ext.Date.format(item.beginDate,\"U\");\r",
+                    "    item.endDate=Ext.Date.format(item.endDate,\"U\");\r",
+                    "});\r",
+                    "record.set(\"specialOffers\",data);"
                 ],
                 "name": "add",
                 "scope": "me"
@@ -101,8 +109,12 @@
                 "fn": "onStoreRemove",
                 "implHandler": [
                     "var record=Ext.getCmp(\"productVariationsGrid\").getSelectionModel().getLastSelected();\r",
-                    "record.set(\"specialOffers\",Ext.Array.pluck(store.getRange(),\"data\"));\r",
-                    "console.log(\"ok\");"
+                    "var data=Ext.clone(Ext.Array.pluck(store.getRange(),\"data\"));\r",
+                    "Ext.Array.forEach(data, function(item){\r",
+                    "    item.beginDate=Ext.Date.format(item.beginDate,\"U\");\r",
+                    "    item.endDate=Ext.Date.format(item.endDate,\"U\");\r",
+                    "});\r",
+                    "record.set(\"specialOffers\",data);"
                 ],
                 "name": "remove",
                 "scope": "me"
