@@ -80,10 +80,10 @@ Ext.define('Rubedo.model.order', {
             name: 'userName'
         },
         {
-            name: 'billingAddres'
+            name: 'billingAddress'
         },
         {
-            name: 'shippingAddresss'
+            name: 'shippingAddress'
         },
         {
             name: 'hasStockDecrementIssues'

@@ -7,15 +7,16 @@
     "codeClass": null,
     "userConfig": {
         "constrainHeader": true,
+        "container|align": "stretch",
         "designer|userAlias": "ordersInterface",
         "designer|userClassName": "ordersInterface",
-        "height": 456,
+        "height": 566,
         "iconCls": "content-icon",
         "id": "ordersInterface",
-        "layout": "fit",
+        "layout": "hbox",
         "localiserId": null,
         "title": "Orders",
-        "width": 1066
+        "width": 1201
     },
     "designerId": "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac",
     "customConfigs": [
@@ -56,6 +57,7 @@
             "userConfig": {
                 "forceFit": true,
                 "id": "ordersMainGrid",
+                "layout|flex": 1,
                 "store": "Orders",
                 "title": ""
             },
@@ -135,6 +137,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "detailedCart",
+                        "hidden": true,
                         "sortable": false,
                         "text": "Items"
                     },
@@ -192,6 +195,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "paymentMeans",
+                        "hidden": true,
                         "text": "Payment means"
                     },
                     "designerId": "6a771563-74bb-4ab0-a9e9-3c566679dedb"
@@ -250,6 +254,7 @@
                     "userConfig": {
                         "dataIndex": "hasStockDecrementIssues",
                         "falseText": "No",
+                        "hidden": true,
                         "text": "Stock issues",
                         "trueText": "Yes"
                     },
@@ -291,6 +296,40 @@
                         "width": 360
                     },
                     "designerId": "8f3191cd-464b-4206-b5bb-0cbcdb334c7f"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onOrdersMainGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").disable();\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").getComponent(1).getForm().reset();\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").getComponent(2).getStore().removeAll();\r",
+                            "} else {\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").enable();\r",
+                            "    var values=Ext.clone(selected[0].getData());\r",
+                            "    values.textBillingAddress=\"\";\r",
+                            "    Ext.Object.each(values.billingAddress,function(key,value,myself){\r",
+                            "        values.textBillingAddress=values.textBillingAddress+value+\" \";\r",
+                            "    });\r",
+                            "    values.textShippingAddress=\"\";\r",
+                            "    Ext.Object.each(values.shippingAddress,function(key,value,myself){\r",
+                            "        values.textShippingAddress=values.textShippingAddress+value+\" \";\r",
+                            "    });\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").getComponent(1).getForm().setValues(values);\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").getComponent(2).getStore().loadData(values.detailedCart.cart);\r",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "designerId": "1c4bd226-6871-436d-9cfc-4187d775f853"
                 }
             ]
         },
@@ -328,6 +367,421 @@
                 "scope": "me"
             },
             "designerId": "564210e5-3dd5-41ea-b25d-04d0eb84fdc7"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "disabled": true,
+                "id": "orderDetailHolder",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "title": ""
+            },
+            "designerId": "10474930-45e7-496e-b4be-3e86699f9255",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "layout|flex": null,
+                        "title": "Status"
+                    },
+                    "designerId": "a060da5a-bd22-4295-a152-bc579fdf34d9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "fieldLabel": "Order status",
+                                "layout|anchor": "60%",
+                                "name": "status",
+                                "style": "float:left;"
+                            },
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "cb177ed7-24fe-4df1-8bca-2f39bd9e5a65"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "40%",
+                                "style": "float:right;",
+                                "text": "Apply change"
+                            },
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "48073d76-2ff9-408f-aa0d-0d00dbe9a0f3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "container|align": "stretch",
+                        "id": "orderDetailForm",
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "title": "Pricing and cilent data"
+                    },
+                    "designerId": "72d8781b-48b0-4674-961b-f1e611432cdf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 0.6,
+                                "title": "Pricing"
+                            },
+                            "designerId": "979d1c02-ec64-49ce-8075-6b45274cf99e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Shipping price (TF)",
+                                        "labelWidth": 120,
+                                        "layout|anchor": "100%",
+                                        "name": "shippingPrice",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "def1a78f-bab9-43fd-9172-87e967ed8a12"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Shipping taxes",
+                                        "labelWidth": 120,
+                                        "layout|anchor": "100%",
+                                        "name": "shippingTax",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "9b3b981b-021c-409f-ba6c-aa84fe30b6cd"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Shipping price",
+                                        "labelWidth": 120,
+                                        "layout|anchor": "100%",
+                                        "name": "shippingTaxedPrice",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "c89fd73a-3482-45b0-8c04-703c042f4e6b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Total price (TF)",
+                                        "labelWidth": 120,
+                                        "layout|anchor": "100%",
+                                        "name": "finalTFPrice",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "5bd317f4-182f-42e8-8dc5-70bfac9be304"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Tax total",
+                                        "labelWidth": 120,
+                                        "layout|anchor": "100%",
+                                        "name": "finalTaxes",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "1914b67d-7dcc-4527-8445-d88ea1529230"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Total price",
+                                        "labelWidth": 120,
+                                        "layout|anchor": "100%",
+                                        "name": "finalPrice",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "04bd6a57-08ee-4ad8-b292-48646a61db57"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "title": "Client"
+                            },
+                            "designerId": "4c51b395-daf3-4b03-9127-d14bce14ada8",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Name",
+                                        "layout|anchor": "100%",
+                                        "name": "userName",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "98aec455-2054-405c-9d80-2143b72f39ea"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Billing address",
+                                        "layout|anchor": "100%",
+                                        "name": "textBillingAddress",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "1f63fc69-a72e-42ba-9701-bdc933f89ad8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Shipping address",
+                                        "layout|anchor": "100%",
+                                        "name": "textShippingAddress",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "1cb058f9-290c-42b1-90c7-1513a6d8abbe"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Payment means",
+                                        "layout|anchor": "100%",
+                                        "name": "paymentMeans",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "2d4ee018-6936-4376-9281-df203bab2796"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "forceFit": true,
+                        "id": "baughtProductsGrid",
+                        "layout|flex": 1,
+                        "store": "BoughtProducts",
+                        "title": "Products"
+                    },
+                    "designerId": "1b67b947-c4a9-4473-ac70-dbeaf113df9a",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "abe74fb8-1c66-4f00-9981-131ac56115e6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "title",
+                                "text": "Title"
+                            },
+                            "designerId": "3ee81c66-c2c3-4532-ae95-990cd5bba6e1"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "subtitle",
+                                "text": "Subtitle"
+                            },
+                            "designerId": "05d997e1-98c5-46ba-8086-8463581ae6af"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "unitPrice",
+                                "text": "Unit price"
+                            },
+                            "designerId": "a338bb1a-d89b-4423-80db-54cd3567d3f9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "unitTaxedPrice",
+                                "text": "Unit taxed price"
+                            },
+                            "designerId": "249bf911-375d-42fa-b82a-8fa1dd801f7f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "amount",
+                                "text": "Amount"
+                            },
+                            "designerId": "7d13c87a-ab48-42c0-9809-b7f7e569a414"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "price",
+                                "text": "Price"
+                            },
+                            "designerId": "8a690258-71c2-4677-81d4-d2fc0c4f4eed"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "taxedPrice",
+                                "text": "Taxed Price"
+                            },
+                            "designerId": "b819e028-7ec4-431b-a7ef-ae775994857a"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

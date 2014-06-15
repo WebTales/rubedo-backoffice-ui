@@ -25,16 +25,25 @@ Ext.define('Rubedo.view.ordersInterface', {
         'Ext.grid.column.Date',
         'Ext.grid.column.Boolean',
         'Ext.grid.View',
-        'Ext.toolbar.Paging'
+        'Ext.toolbar.Paging',
+        'Ext.form.Panel',
+        'Ext.form.field.ComboBox',
+        'Ext.button.Button',
+        'Ext.form.FieldSet',
+        'Ext.form.field.Display'
     ],
 
-    height: 456,
+    height: 566,
     id: 'ordersInterface',
-    width: 1066,
-    layout: 'fit',
+    width: 1201,
     constrainHeader: true,
     iconCls: 'content-icon',
     title: 'Orders',
+
+    layout: {
+        type: 'hbox',
+        align: 'stretch'
+    },
 
     initComponent: function() {
         var me = this;
@@ -51,6 +60,7 @@ Ext.define('Rubedo.view.ordersInterface', {
             items: [
                 {
                     xtype: 'gridpanel',
+                    flex: 1,
                     id: 'ordersMainGrid',
                     title: '',
                     forceFit: true,
@@ -83,6 +93,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     return "";
                                 }
                             },
+                            hidden: true,
                             sortable: false,
                             dataIndex: 'detailedCart',
                             text: 'Items'
@@ -94,6 +105,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'paymentMeans',
                             text: 'Payment means'
                         },
@@ -112,6 +124,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'booleancolumn',
+                            hidden: true,
                             dataIndex: 'hasStockDecrementIssues',
                             text: 'Stock issues',
                             falseText: 'No',
@@ -131,6 +144,194 @@ Ext.define('Rubedo.view.ordersInterface', {
                             displayInfo: true,
                             store: 'Orders'
                         }
+                    ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onOrdersMainGridSelectionChange,
+                            scope: me
+                        }
+                    }
+                },
+                {
+                    xtype: 'panel',
+                    flex: 1,
+                    disabled: true,
+                    id: 'orderDetailHolder',
+                    title: '',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'form',
+                            bodyPadding: 10,
+                            title: 'Status',
+                            items: [
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '60%',
+                                    style: 'float:left;',
+                                    fieldLabel: 'Order status',
+                                    name: 'status',
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '40%',
+                                    style: 'float:right;',
+                                    text: 'Apply change'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'form',
+                            id: 'orderDetailForm',
+                            bodyPadding: 10,
+                            title: 'Pricing and cilent data',
+                            layout: {
+                                type: 'hbox',
+                                align: 'stretch'
+                            },
+                            items: [
+                                {
+                                    xtype: 'fieldset',
+                                    flex: 0.6,
+                                    title: 'Pricing',
+                                    items: [
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Shipping price (TF)',
+                                            labelWidth: 120,
+                                            name: 'shippingPrice',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Shipping taxes',
+                                            labelWidth: 120,
+                                            name: 'shippingTax',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Shipping price',
+                                            labelWidth: 120,
+                                            name: 'shippingTaxedPrice',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Total price (TF)',
+                                            labelWidth: 120,
+                                            name: 'finalTFPrice',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Tax total',
+                                            labelWidth: 120,
+                                            name: 'finalTaxes',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Total price',
+                                            labelWidth: 120,
+                                            name: 'finalPrice',
+                                            value: 'Display Field'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    flex: 1,
+                                    title: 'Client',
+                                    items: [
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Name',
+                                            name: 'userName',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Billing address',
+                                            name: 'textBillingAddress',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Shipping address',
+                                            name: 'textShippingAddress',
+                                            value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Payment means',
+                                            name: 'paymentMeans',
+                                            value: 'Display Field'
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            flex: 1,
+                            id: 'baughtProductsGrid',
+                            title: 'Products',
+                            forceFit: true,
+                            store: 'BoughtProducts',
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'title',
+                                    text: 'Title'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'subtitle',
+                                    text: 'Subtitle'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'unitPrice',
+                                    text: 'Unit price'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'unitTaxedPrice',
+                                    text: 'Unit taxed price'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'amount',
+                                    text: 'Amount'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'price',
+                                    text: 'Price'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'taxedPrice',
+                                    text: 'Taxed Price'
+                                }
+                            ]
+                        }
                     ]
                 }
             ],
@@ -147,6 +348,27 @@ Ext.define('Rubedo.view.ordersInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onOrdersMainGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("orderDetailHolder").disable();
+            Ext.getCmp("orderDetailHolder").getComponent(1).getForm().reset();
+            Ext.getCmp("orderDetailHolder").getComponent(2).getStore().removeAll();
+        } else {
+            Ext.getCmp("orderDetailHolder").enable();
+            var values=Ext.clone(selected[0].getData());
+            values.textBillingAddress="";
+            Ext.Object.each(values.billingAddress,function(key,value,myself){
+                values.textBillingAddress=values.textBillingAddress+value+" ";
+            });
+            values.textShippingAddress="";
+            Ext.Object.each(values.shippingAddress,function(key,value,myself){
+                values.textShippingAddress=values.textShippingAddress+value+" ";
+            });
+            Ext.getCmp("orderDetailHolder").getComponent(1).getForm().setValues(values);
+            Ext.getCmp("orderDetailHolder").getComponent(2).getStore().loadData(values.detailedCart.cart);
+        }
     },
 
     onOrdersInterfaceRender: function(component, eOpts) {
