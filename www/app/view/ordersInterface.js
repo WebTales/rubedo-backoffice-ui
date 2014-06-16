@@ -282,6 +282,13 @@ Ext.define('Rubedo.view.ordersInterface', {
                                             fieldLabel: 'Payment means',
                                             name: 'paymentMeans',
                                             value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Shipper',
+                                            name: 'textShipper',
+                                            value: 'Display Field'
                                         }
                                     ]
                                 }
@@ -366,6 +373,7 @@ Ext.define('Rubedo.view.ordersInterface', {
             Ext.Object.each(values.shippingAddress,function(key,value,myself){
                 values.textShippingAddress=values.textShippingAddress+value+" ";
             });
+            values.textShipper=values.shipper.name;
             Ext.getCmp("orderDetailHolder").getComponent(1).getForm().setValues(values);
             Ext.getCmp("orderDetailHolder").getComponent(2).getStore().loadData(values.detailedCart.cart);
         }

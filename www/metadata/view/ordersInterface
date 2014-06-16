@@ -322,6 +322,7 @@
                             "    Ext.Object.each(values.shippingAddress,function(key,value,myself){\r",
                             "        values.textShippingAddress=values.textShippingAddress+value+\" \";\r",
                             "    });\r",
+                            "    values.textShipper=values.shipper.name;\r",
                             "    Ext.getCmp(\"orderDetailHolder\").getComponent(1).getForm().setValues(values);\r",
                             "    Ext.getCmp(\"orderDetailHolder\").getComponent(2).getStore().loadData(values.detailedCart.cart);\r",
                             "}"
@@ -658,6 +659,23 @@
                                         ]
                                     },
                                     "designerId": "2d4ee018-6936-4376-9281-df203bab2796"
+                                },
+                                {
+                                    "type": "Ext.form.field.Display",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Shipper",
+                                        "layout|anchor": "100%",
+                                        "name": "textShipper",
+                                        "value": [
+                                            "Display Field"
+                                        ]
+                                    },
+                                    "designerId": "537740b6-2ec5-4092-ab11-72b5a45963e0"
                                 }
                             ]
                         }
