@@ -282,6 +282,7 @@
                     "delete(rec.version);\r",
                     "delete(rec.createTime);\r",
                     "delete(rec.lastUpdateTime);\r",
+                    "delete(rec.UTType);\r",
                     "Ext.getCmp(\"mainUTGrid\").getStore().add(rec);"
                 ],
                 "name": "click",
