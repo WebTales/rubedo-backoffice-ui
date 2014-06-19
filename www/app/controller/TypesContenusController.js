@@ -1530,7 +1530,10 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             newField.name=name;
             Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue()).add(newField);
             button.up().up().close();
-            me.getFieldsListForLayout();
+            var task = new Ext.util.DelayedTask(function(){
+                me.getFieldsListForLayout();
+            });
+            task.delay(400);
         }
 
     },
@@ -1553,6 +1556,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             target.add(newField);
             me.getFieldsListForLayout();
         }
+
     },
 
     onMoveLayoutItemUpBtnClick: function(button, e, eOpts) {

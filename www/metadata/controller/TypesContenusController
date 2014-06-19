@@ -2769,7 +2769,10 @@
                     "    newField.name=name;\r",
                     "    Ext.getCmp(Ext.getCmp('layoutElementIdField').getValue()).add(newField);\r",
                     "    button.up().up().close();\r",
-                    "    me.getFieldsListForLayout();\r",
+                    "    var task = new Ext.util.DelayedTask(function(){\r",
+                    "        me.getFieldsListForLayout();\r",
+                    "    });\r",
+                    "    task.delay(400);\r",
                     "}\r",
                     ""
                 ],
@@ -2806,7 +2809,8 @@
                     "    newField.name=name;\r",
                     "    target.add(newField);\r",
                     "    me.getFieldsListForLayout();\r",
-                    "}"
+                    "}\r",
+                    ""
                 ],
                 "name": "itemdblclick",
                 "scope": "me"
