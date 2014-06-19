@@ -9322,6 +9322,9 @@
                                         },
                                         {
                                             "id": "537740b6-2ec5-4092-ab11-72b5a45963e0"
+                                        },
+                                        {
+                                            "id": "8854f4a3-be79-405f-83b9-89cbe01ef8fe"
                                         }
                                     ]
                                 }
@@ -13838,7 +13841,6 @@
         },
         "7ef14cdc-3d5d-4bb3-b18b-74812ca6d42b": {
             "id": "7ef14cdc-3d5d-4bb3-b18b-74812ca6d42b",
-            "expanded": false,
             "cn": [
                 {
                     "id": "85650ce2-d31e-4bd6-b5a5-de853a639db2"
@@ -13917,6 +13919,9 @@
                 },
                 {
                     "id": "ff5811d5-cdbb-45a7-8d35-37c270564cfa"
+                },
+                {
+                    "id": "ed2ee063-1bc4-4853-b7d7-809fa20d7a12"
                 }
             ]
         },
@@ -16705,20 +16710,21 @@
         "openTabs": [
             "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac",
             "606ff5d4-d66c-4e04-81ba-5331a2b062fc",
-            "eec8d15f-1996-4c4b-8e77-4ef3271d9171"
+            "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
+            "7ef14cdc-3d5d-4bb3-b18b-74812ca6d42b"
         ]
     },
     "canvasState": {
-        "topInstance": "eec8d15f-1996-4c4b-8e77-4ef3271d9171"
+        "topInstance": "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac"
     },
     "inspectorState": {
-        "topInstance": "eec8d15f-1996-4c4b-8e77-4ef3271d9171",
-        "selectedInstance": "872a0058-f565-4ac9-aa02-0e192bfb4d2b"
+        "topInstance": "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac",
+        "selectedInstance": "8854f4a3-be79-405f-83b9-89cbe01ef8fe"
     },
     "codeState": {
-        "topInstance": "eec8d15f-1996-4c4b-8e77-4ef3271d9171"
+        "topInstance": "f7b14f7b-7260-43fa-97e5-9f0e294ed4ac"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": true
     }

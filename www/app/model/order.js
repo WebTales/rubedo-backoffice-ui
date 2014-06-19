@@ -105,6 +105,9 @@ Ext.define('Rubedo.model.order', {
         },
         {
             name: 'orderNumber'
+        },
+        {
+            name: 'shippingComments'
         }
     ]
 });

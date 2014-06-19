@@ -328,6 +328,18 @@
                 "name": "orderNumber"
             },
             "designerId": "ff5811d5-cdbb-45a7-8d35-37c270564cfa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "shippingComments"
+            },
+            "designerId": "ed2ee063-1bc4-4853-b7d7-809fa20d7a12"
         }
     ]
 }

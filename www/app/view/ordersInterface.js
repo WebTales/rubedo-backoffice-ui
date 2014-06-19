@@ -289,6 +289,12 @@ Ext.define('Rubedo.view.ordersInterface', {
                                             fieldLabel: 'Shipper',
                                             name: 'textShipper',
                                             value: 'Display Field'
+                                        },
+                                        {
+                                            xtype: 'displayfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Shipping comments',
+                                            name: 'shippingComments'
                                         }
                                     ]
                                 }
