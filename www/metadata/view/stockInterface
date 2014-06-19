@@ -122,7 +122,9 @@
                         "implHandler": [
                             "if (Ext.isEmpty(selected)) {\r",
                             "    Ext.getCmp(\"mainStockGrid\").getStore().removeAll();\r",
+                            "    Ext.getCmp(\"stockrefresherBtn\").disable();\r",
                             "} else {\r",
+                            "    Ext.getCmp(\"stockrefresherBtn\").enable();\r",
                             "    Ext.getCmp(\"mainStockGrid\").getStore().removeAll();\r",
                             "    var variatorFields=[\r",
                             "    {name:\"price\"},\r",
@@ -295,7 +297,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": true,
                                 "iconCls": "refresh",
+                                "id": "stockrefresherBtn",
                                 "layout|flex": null,
                                 "text": "Refersh"
                             },
