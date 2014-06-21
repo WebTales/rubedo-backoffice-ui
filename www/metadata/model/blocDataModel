@@ -76,6 +76,22 @@
                 "name": "bType"
             },
             "designerId": "99915f7e-c81c-4efb-a8de-a6d40cd43340"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "isECommerce",
+                "type": "boolean"
+            },
+            "designerId": "59d09fb1-c9fe-4d31-82f0-11f419e162bf"
         }
     ]
 }
