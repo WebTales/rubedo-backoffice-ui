@@ -817,7 +817,28 @@
                                         "name": "enableECommerceFeatures",
                                         "uncheckedValue": "false"
                                     },
-                                    "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6"
+                                    "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCheckboxfieldRender",
+                                                "implHandler": [
+                                                    "if (!PHPOptions.addECommerce){\r",
+                                                    "    component.hide();\r",
+                                                    "}"
+                                                ],
+                                                "name": "render",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "2ae91ed2-e1e2-4396-93bc-84e59cde6e81"
+                                        }
+                                    ]
                                 }
                             ]
                         },

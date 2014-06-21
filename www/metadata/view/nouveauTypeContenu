@@ -128,6 +128,25 @@
                                 "store": "array"
                             },
                             "designerId": "61eeb713-474c-4796-8a2c-9814a2cd0a91"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFieldsetRender",
+                                "implHandler": [
+                                    "if (!PHPOptions.addECommerce){\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "designerId": "c525754e-b29e-4acd-8d7b-55604b7279c9"
                         }
                     ]
                 },

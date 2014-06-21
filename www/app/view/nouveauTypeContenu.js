@@ -83,7 +83,13 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                                         ]
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                render: {
+                                    fn: me.onFieldsetRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -103,6 +109,12 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
     onChampCreerTCSpecialkey: function(field, e, eOpts) {
         if (e.getKey() == e.ENTER) {
             Ext.getCmp("boutonCreerTC").fireEvent("click",Ext.getCmp("boutonCreerTC"));
+        }
+    },
+
+    onFieldsetRender: function(component, eOpts) {
+        if (!PHPOptions.addECommerce){
+            component.hide();
         }
     }
 
