@@ -1033,7 +1033,7 @@
                     "var targetedImageVersion= component.targetedImageVersion;\r",
                     "var iconUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/resources/icones/logoRubedo.png\");\r",
                     "var exitUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/resources/afterPixlr.html\");\r",
-                    "var imageUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/image/get?file-id=\"+targetedImageId+\"&version=\"+targetedImageVersion);\r",
+                    "var imageUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/image?file-id=\"+targetedImageId);\r",
                     "var imageResponseUrl =encodeURIComponent(window.location.protocol+\"//\"+window.location.host+\"/backoffice/file/update?originalId=\"+targetedImageId+\"&token=\"+ACL.CSRFToken);\r",
                     "var holder=Ext.widget(\"panel\", {header:false, autoScroll:true});\r",
                     "component.add(holder);\r",

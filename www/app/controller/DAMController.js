@@ -275,7 +275,7 @@ Ext.define('Rubedo.controller.DAMController', {
         var targetedImageVersion= component.targetedImageVersion;
         var iconUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/resources/icones/logoRubedo.png");
         var exitUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/resources/afterPixlr.html");
-        var imageUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/image/get?file-id="+targetedImageId+"&version="+targetedImageVersion);
+        var imageUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/image?file-id="+targetedImageId);
         var imageResponseUrl =encodeURIComponent(window.location.protocol+"//"+window.location.host+"/backoffice/file/update?originalId="+targetedImageId+"&token="+ACL.CSRFToken);
         var holder=Ext.widget("panel", {header:false, autoScroll:true});
         component.add(holder);
