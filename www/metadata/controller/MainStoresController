@@ -53,7 +53,7 @@
                     "    component.getStore().load();\r",
                     "\r",
                     "    component.on(\"beforedestroy\", function(thing){thing.getStore().clearFilter(true); thing.getStore().removeAll(); });\r",
-                    "} "
+                    "}"
                 ],
                 "name": "render",
                 "scope": "me"
