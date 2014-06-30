@@ -430,6 +430,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
 
     onSalamanderAdminMenuAdded1: function(component, container, pos, eOpts) {
         component.add([
+            {
+                                    xtype: 'menuitem',
+                                    ACL: 'read.ui.contents',
+                                    favoriteIcon: 'page_full.png',
+                                    itemId: 'contributionContenus',
+                                    iconCls: 'content-icon',
+                                    text: 'Products'
+                                },
         {
             xtype: 'menuitem',
             ACL: 'read.ui.shippers',

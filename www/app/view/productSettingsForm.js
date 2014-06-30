@@ -225,7 +225,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             collapseDirection: 'right',
                             collapsed: true,
                             collapsible: true,
-                            title: 'Secial offers for this variation',
+                            title: 'Special offers for this variation',
                             forceFit: true,
                             store: 'SpecialOffers',
                             dockedItems: [
