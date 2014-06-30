@@ -1002,6 +1002,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
         var cible = content;
         var valuesToApply=cible.get("champs");
+
+        if (Ext.isEmpty(valuesToApply)){
+            valuesToApply={ };
+        }
+
         try{
         Ext.apply(valuesToApply, cible.get("i18n")[cible.get("locale")].fields);
         }catch(err){
