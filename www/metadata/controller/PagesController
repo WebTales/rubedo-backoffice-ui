@@ -112,7 +112,7 @@
                     "        }\r",
                     "        target.appendChild(newPage);\r",
                     "        store.resumeAutoSync();\r",
-                    "        store.sync();        \r",
+                    "        store.sync();\r",
                     "        button.up().up().close();\r",
                     "    });\r",
                     "\r",

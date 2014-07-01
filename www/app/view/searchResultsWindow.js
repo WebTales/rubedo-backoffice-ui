@@ -175,6 +175,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                                 return(record.get("objectType")+" : "+record.get("type"));
                             },
                             localiserId: 'typeCol',
+                            sortable: false,
                             dataIndex: 'type',
                             text: 'Type'
                         },
