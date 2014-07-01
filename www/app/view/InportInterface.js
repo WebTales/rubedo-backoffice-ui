@@ -39,7 +39,6 @@ Ext.define('Rubedo.view.InportInterface', {
     height: 439,
     id: 'InportInterface',
     width: 1063,
-    resizable: false,
     layout: 'card',
     constrainHeader: true,
     iconCls: 'database_up_small',
