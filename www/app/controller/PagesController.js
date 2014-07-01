@@ -68,16 +68,23 @@ Ext.define('Rubedo.controller.PagesController', {
             newPage.i18n[nativeLanguage]={text:form.getValues().title, title:form.getValues().title, pageURL:me.removeDiacritics(form.getValues().title.replace(/ /g, "-").toLowerCase())};
             var store=Ext.getCmp("mainPageTree").getStore();
             store.suspendAutoSync();
+            var resync=false;
             target.set("expandable",true);
+            if (target.isLoaded()){
+                resync=true;
+            }
             target.expand(false, function(){
                 if (!target.hasChildNodes()){
                     newPage.orderValue=100;
+                    resync=true;
                 } else {
                     newPage.orderValue=target.lastChild.get("orderValue")+100;
                 }
                 target.appendChild(newPage);
                 store.resumeAutoSync();
-                store.sync();
+                if (resync){
+                    store.sync();
+                }
                 button.up().up().close();
             });
 
