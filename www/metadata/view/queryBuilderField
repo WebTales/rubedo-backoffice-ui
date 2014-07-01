@@ -14,6 +14,7 @@
         "fieldLabel": "Label",
         "forceSelection": true,
         "labelWidth": null,
+        "lastQuery": "",
         "queryMode": "local",
         "queryParam": "specificItem",
         "store": "QueriesStore",
@@ -30,6 +31,11 @@
             "group": "(Custom Properties)",
             "name": "anchor",
             "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "lastQuery",
+            "type": "string"
         }
     ],
     "cn": [
@@ -43,22 +49,6 @@
             "userConfig": {
                 "fn": "onComboboxAdded",
                 "implHandler": [
-                    "component.getStore().addListener(\"load\",function(){\r",
-                    "    var task = new Ext.util.DelayedTask(function(){\r",
-                    "        if ((Ext.isEmpty(component.getValue()))&&(!Ext.isEmpty(component.getStore()))){\r",
-                    "            component.getStore().filterBy(function(rec){\r",
-                    "                if ((rec.get(\"type\")==\"advanced\")) {\r",
-                    "                    return(true);\r",
-                    "                }\r",
-                    "                else {\r",
-                    "                    return(false);\r",
-                    "                }\r",
-                    "            });\r",
-                    "        }\r",
-                    "    });\r",
-                    "    task.delay(1000);\r",
-                    "\r",
-                    "}, this, {single:true}); \r",
                     "    component.getStore().load();\r",
                     "    var companion = Ext.widget(\"queryFieldComponent\");\r",
                     "\r",
@@ -125,30 +115,16 @@
                     "        }\r",
                     "\r",
                     "    });\r",
-                    "    component.fireEvent(\"change\",component, component.getValue());\r",
+                    "    var task2 = new Ext.util.DelayedTask(function(){\r",
+                    "        component.fireEvent(\"change\",component, component.getValue());\r",
+                    "    });\r",
+                    "    task2.delay(200);\r",
                     "    component.up().add(companion);"
                 ],
                 "name": "added",
                 "scope": "me"
             },
             "designerId": "58bf18b0-ebaa-4351-85e9-68b0175abd4a"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onComboboxBeforeDestroy",
-                "implHandler": [
-                    "//component.getStore().removeAll();"
-                ],
-                "name": "beforedestroy",
-                "scope": "me"
-            },
-            "designerId": "44f93821-3ec2-4951-a3ad-f57bc3a2f1fc"
         }
     ]
 }
