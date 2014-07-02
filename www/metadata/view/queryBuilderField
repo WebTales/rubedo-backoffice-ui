@@ -118,7 +118,7 @@
                     "    var task2 = new Ext.util.DelayedTask(function(){\r",
                     "        component.fireEvent(\"change\",component, component.getValue());\r",
                     "    });\r",
-                    "    task2.delay(200);\r",
+                    "    task2.delay(700);\r",
                     "    component.up().add(companion);"
                 ],
                 "name": "added",
