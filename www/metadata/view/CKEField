@@ -173,9 +173,6 @@
                     "    component.editor.on('blur', function(){\r",
                     "        component.validate();\r",
                     "    });\r",
-                    "    component.editor.on('afterSetData', function(){\r",
-                    "        component.validate();\r",
-                    "    });\r",
                     "});\r",
                     ""
                 ],
@@ -240,7 +237,7 @@
                     "        });\r",
                     "    task.delay(200);\r",
                     "    }\r",
-                    "} catch (err) { \r",
+                    "} catch (err) {\r",
                     "}\r",
                     "} else {\r",
                     "var me=this;\r",
