@@ -268,7 +268,7 @@ Ext.define('Rubedo.controller.EmailController', {
                     button.setLoading(true);
                     Ext.Ajax.request({
                         url: 'emails/send',
-                        timeout: 60000,
+                        timeout: 240000,
                         method: 'POST',
                         params: {
                             list: form.getValues().mailingList,
