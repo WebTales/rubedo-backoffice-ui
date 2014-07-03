@@ -265,7 +265,7 @@
                 "fn": "getRawValue",
                 "implHandler": [
                     "var me=this;\r",
-                    "if (Ext.isDefined(me.editor)) {    \r",
+                    "if (Ext.isDefined(me.editor)) {\r",
                     "    return(me.editor.getData());\r",
                     "} else {\r",
                     "    return(me.value);\r",
