@@ -64,6 +64,27 @@
             },
             "codeClass": null,
             "userConfig": {
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "Preparation delay",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "productFields_preparationDelayFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "9a9a29ff-fd34-48ad-9c61-26ac226062d9"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "allowBlank": null,
                 "allowOnlyWhitespace": null,
                 "displayField": "name",

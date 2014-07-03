@@ -73,6 +73,29 @@
                 "allowOnlyWhitespace": false,
                 "displayField": "name",
                 "editable": false,
+                "fieldLabel": "Preparation delay",
+                "forceSelection": true,
+                "labelWidth": 60,
+                "layout|anchor": "100%",
+                "name": "preparationDelayFieldIndex",
+                "queryMode": "local",
+                "store": "NotInportFieldsStore",
+                "valueField": "csvIndex"
+            },
+            "designerId": "e1086367-4d3b-4d9b-8b72-4d26bb3637b4"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "allowOnlyWhitespace": false,
+                "displayField": "name",
+                "editable": false,
                 "fieldLabel": "SKU",
                 "forceSelection": true,
                 "labelWidth": 60,

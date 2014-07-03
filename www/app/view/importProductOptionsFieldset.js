@@ -59,6 +59,19 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
                 {
                     xtype: 'combobox',
                     anchor: '100%',
+                    fieldLabel: 'Preparation delay',
+                    labelWidth: 60,
+                    name: 'productFields_preparationDelayFieldIndex',
+                    editable: false,
+                    displayField: 'name',
+                    forceSelection: true,
+                    queryMode: 'local',
+                    store: 'NotInportFieldsStore',
+                    valueField: 'csvIndex'
+                },
+                {
+                    xtype: 'combobox',
+                    anchor: '100%',
                     fieldLabel: 'SKU',
                     labelWidth: 60,
                     name: 'productFields_skuFieldIndex',
