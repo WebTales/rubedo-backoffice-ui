@@ -206,7 +206,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     handler: function(button, e) {
                                         var form=button.up().getForm();
                                         if (form.isValid()){
-                                            Ext.getCmp("ordersMainGrid").getSelectionModel().getLastSelected().set(from.getValues());
+                                            Ext.getCmp("ordersMainGrid").getSelectionModel().getLastSelected().set(form.getValues());
                                         }
                                     },
                                     anchor: '40%',

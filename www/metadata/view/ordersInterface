@@ -509,7 +509,7 @@
                                         "implHandler": [
                                             "var form=button.up().getForm();\r",
                                             "if (form.isValid()){\r",
-                                            "    Ext.getCmp(\"ordersMainGrid\").getSelectionModel().getLastSelected().set(from.getValues());\r",
+                                            "    Ext.getCmp(\"ordersMainGrid\").getSelectionModel().getLastSelected().set(form.getValues());\r",
                                             "}"
                                         ]
                                     },
