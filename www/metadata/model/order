@@ -340,6 +340,18 @@
                 "name": "shippingComments"
             },
             "designerId": "ed2ee063-1bc4-4853-b7d7-809fa20d7a12"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "billDocument"
+            },
+            "designerId": "aeb0b424-1c7b-4ddb-8b73-80ea8ea6a9a6"
         }
     ]
 }

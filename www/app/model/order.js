@@ -108,6 +108,9 @@ Ext.define('Rubedo.model.order', {
         },
         {
             name: 'shippingComments'
+        },
+        {
+            name: 'billDocument'
         }
     ]
 });

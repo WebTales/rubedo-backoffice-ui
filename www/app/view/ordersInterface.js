@@ -20,6 +20,7 @@ Ext.define('Rubedo.view.ordersInterface', {
     requires: [
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
+        'Rubedo.view.ImagePickerField',
         'Ext.panel.Tool',
         'Ext.grid.Panel',
         'Ext.grid.column.Date',
@@ -27,9 +28,10 @@ Ext.define('Rubedo.view.ordersInterface', {
         'Ext.grid.View',
         'Ext.toolbar.Paging',
         'Ext.form.Panel',
+        'Ext.form.FieldSet',
+        'Ext.form.field.Hidden',
         'Ext.form.field.ComboBox',
         'Ext.button.Button',
-        'Ext.form.FieldSet',
         'Ext.form.field.Display'
     ],
 
@@ -157,6 +159,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                     flex: 1,
                     disabled: true,
                     id: 'orderDetailHolder',
+                    autoScroll: true,
                     title: '',
                     layout: {
                         type: 'vbox',
@@ -165,23 +168,50 @@ Ext.define('Rubedo.view.ordersInterface', {
                     items: [
                         {
                             xtype: 'form',
+                            id: 'orderSettingsForm',
                             bodyPadding: 10,
-                            title: 'Status',
+                            title: 'Settings',
                             items: [
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Attachments',
+                                    items: [
+                                        {
+                                            xtype: 'ImagePickerField',
+                                            fieldLabel: 'Bill',
+                                            labelWidth: 120,
+                                            name: 'billDocument',
+                                            allowedFileType: 'Document',
+                                            smallMode: true
+                                        }
+                                    ]
+                                },
                                 {
                                     xtype: 'combobox',
                                     anchor: '60%',
                                     style: 'float:left;',
-                                    fieldLabel: 'Order status',
+                                    fieldLabel: 'Order status *',
                                     name: 'status',
                                     allowBlank: false,
-                                    allowOnlyWhitespace: false
+                                    allowOnlyWhitespace: false,
+                                    editable: false,
+                                    forceSelection: true,
+                                    store: [
+                                        'pendingPayment',
+                                        'payed'
+                                    ]
                                 },
                                 {
                                     xtype: 'button',
+                                    handler: function(button, e) {
+                                        var form=button().up().getForm();
+                                        if (form.isValid()){
+                                            Ext.getCmp("ordersMainGrid").getSelectionModel().getLastSelected().set(from.getValues());
+                                        }
+                                    },
                                     anchor: '40%',
                                     style: 'float:right;',
-                                    text: 'Apply change'
+                                    text: 'Apply changes'
                                 }
                             ]
                         },
@@ -302,7 +332,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'gridpanel',
-                            flex: 1,
+                            height: 400,
                             id: 'baughtProductsGrid',
                             title: 'Products',
                             forceFit: true,
