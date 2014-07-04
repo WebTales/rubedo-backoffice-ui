@@ -204,7 +204,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                 {
                                     xtype: 'button',
                                     handler: function(button, e) {
-                                        var form=button().up().getForm();
+                                        var form=button.up().getForm();
                                         if (form.isValid()){
                                             Ext.getCmp("ordersMainGrid").getSelectionModel().getLastSelected().set(from.getValues());
                                         }
@@ -397,6 +397,7 @@ Ext.define('Rubedo.view.ordersInterface', {
         if (Ext.isEmpty(selected)){
             Ext.getCmp("orderDetailHolder").disable();
             Ext.getCmp("orderDetailHolder").getComponent(1).getForm().reset();
+            Ext.getCmp("orderDetailHolder").getComponent(0).getForm().reset();
             Ext.getCmp("orderDetailHolder").getComponent(2).getStore().removeAll();
         } else {
             Ext.getCmp("orderDetailHolder").enable();
@@ -411,6 +412,7 @@ Ext.define('Rubedo.view.ordersInterface', {
             });
             values.textShipper=values.shipper.name;
             Ext.getCmp("orderDetailHolder").getComponent(1).getForm().setValues(values);
+            Ext.getCmp("orderDetailHolder").getComponent(0).getForm().setValues(values);
             Ext.getCmp("orderDetailHolder").getComponent(2).getStore().loadData(values.detailedCart.cart);
         }
     },

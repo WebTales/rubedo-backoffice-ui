@@ -310,6 +310,7 @@
                             "if (Ext.isEmpty(selected)){\r",
                             "    Ext.getCmp(\"orderDetailHolder\").disable();\r",
                             "    Ext.getCmp(\"orderDetailHolder\").getComponent(1).getForm().reset();\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").getComponent(0).getForm().reset();\r",
                             "    Ext.getCmp(\"orderDetailHolder\").getComponent(2).getStore().removeAll();\r",
                             "} else {\r",
                             "    Ext.getCmp(\"orderDetailHolder\").enable();\r",
@@ -324,6 +325,7 @@
                             "    });\r",
                             "    values.textShipper=values.shipper.name;\r",
                             "    Ext.getCmp(\"orderDetailHolder\").getComponent(1).getForm().setValues(values);\r",
+                            "    Ext.getCmp(\"orderDetailHolder\").getComponent(0).getForm().setValues(values);\r",
                             "    Ext.getCmp(\"orderDetailHolder\").getComponent(2).getStore().loadData(values.detailedCart.cart);\r",
                             "}"
                         ],
@@ -505,7 +507,7 @@
                                         ],
                                         "fn": "handler",
                                         "implHandler": [
-                                            "var form=button().up().getForm();\r",
+                                            "var form=button.up().getForm();\r",
                                             "if (form.isValid()){\r",
                                             "    Ext.getCmp(\"ordersMainGrid\").getSelectionModel().getLastSelected().set(from.getValues());\r",
                                             "}"
