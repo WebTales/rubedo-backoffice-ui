@@ -178,11 +178,11 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     items: [
                                         {
                                             xtype: 'ImagePickerField',
+                                            allowedFileType: 'Document',
+                                            smallMode: true,
                                             fieldLabel: 'Bill',
                                             labelWidth: 120,
-                                            name: 'billDocument',
-                                            allowedFileType: 'Document',
-                                            smallMode: true
+                                            name: 'billDocument'
                                         }
                                     ]
                                 },
@@ -198,7 +198,8 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     forceSelection: true,
                                     store: [
                                         'pendingPayment',
-                                        'payed'
+                                        'payed',
+                                        'cancelled'
                                     ]
                                 },
                                 {

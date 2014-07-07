@@ -466,7 +466,7 @@
                                 "layout|anchor": "60%",
                                 "name": "status",
                                 "store": [
-                                    "[\"pendingPayment\",\"payed\"]"
+                                    "[\"pendingPayment\",\"payed\",\"cancelled\"]"
                                 ],
                                 "style": "float:left;"
                             },
