@@ -118,6 +118,10 @@
                     "        studio: [ ],\r",
                     "        administration:[ ]\r",
                     "    }\r",
+                    "});\r",
+                    "Ext.define('RubedoExtendableSettings', {\r",
+                    "    singleton:true,\r",
+                    "    orderStatusList:[\"pendingPayment\",\"payed\",\"cancelled\"]\r",
                     "});"
                 ]
             },

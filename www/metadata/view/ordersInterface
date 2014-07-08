@@ -465,16 +465,35 @@
                                 "forceSelection": true,
                                 "layout|anchor": "60%",
                                 "name": "status",
-                                "store": [
-                                    "[\"pendingPayment\",\"payed\",\"cancelled\"]"
-                                ],
+                                "store": null,
                                 "style": "float:left;"
                             },
                             "configAlternates": {
                                 "style": "string",
                                 "store": "array"
                             },
-                            "designerId": "cb177ed7-24fe-4df1-8bca-2f39bd9e5a65"
+                            "designerId": "cb177ed7-24fe-4df1-8bca-2f39bd9e5a65",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processStatus",
+                                        "implHandler": [
+                                            "config.store=RubedoExtendableSettings.orderStatusList;\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "39643799-028b-4a2a-9f52-4dfbe00b72d6"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

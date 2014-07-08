@@ -186,7 +186,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         }
                                     ]
                                 },
-                                {
+                                me.processStatus({
                                     xtype: 'combobox',
                                     anchor: '60%',
                                     style: 'float:left;',
@@ -195,13 +195,8 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     allowBlank: false,
                                     allowOnlyWhitespace: false,
                                     editable: false,
-                                    forceSelection: true,
-                                    store: [
-                                        'pendingPayment',
-                                        'payed',
-                                        'cancelled'
-                                    ]
-                                },
+                                    forceSelection: true
+                                }),
                                 {
                                     xtype: 'button',
                                     handler: function(button, e) {
@@ -392,6 +387,11 @@ Ext.define('Rubedo.view.ordersInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processStatus: function(config) {
+        config.store=RubedoExtendableSettings.orderStatusList;
+        return config;
     },
 
     onOrdersMainGridSelectionChange: function(model, selected, eOpts) {
