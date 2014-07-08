@@ -37,6 +37,7 @@ Ext.define('Rubedo.controller.ImportController', {
                     Ext.getCmp("fileFieldHelper1").show();
                     Ext.getStore("NotInportFieldsStore").loadData(response.detectedFields);
                     Ext.getCmp("InportInterface").initailRecoveredCsvFields=response.detectedFields;
+                    Ext.getCmp("importPresetsPannel").enable();
                     try {
                         filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+" "+Rubedo.RubedoAutomatedElementsLoc.identifiedFieldsText+" "+response.detectedContentsCount+" "+Rubedo.RubedoAutomatedElementsLoc.importableContentsText);
                     } catch (err){}

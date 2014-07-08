@@ -42,6 +42,7 @@
                     "            Ext.getCmp(\"fileFieldHelper1\").show();\r",
                     "            Ext.getStore(\"NotInportFieldsStore\").loadData(response.detectedFields);\r",
                     "            Ext.getCmp(\"InportInterface\").initailRecoveredCsvFields=response.detectedFields;\r",
+                    "            Ext.getCmp(\"importPresetsPannel\").enable();\r",
                     "            try {\r",
                     "                filefield.up().nextSibling().getComponent(0).setTitle(response.detectedFieldsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.identifiedFieldsText+\" \"+response.detectedContentsCount+\" \"+Rubedo.RubedoAutomatedElementsLoc.importableContentsText);\r",
                     "            } catch (err){}\r",

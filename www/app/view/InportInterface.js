@@ -58,10 +58,12 @@ Ext.define('Rubedo.view.InportInterface', {
                 {
                     xtype: 'panel',
                     dock: 'left',
+                    disabled: true,
+                    id: 'importPresetsPannel',
                     width: 200,
                     bodyPadding: 6,
                     collapseDirection: 'left',
-                    collapsed: false,
+                    collapsed: true,
                     collapsible: true,
                     title: 'Presets',
                     items: [
@@ -1184,7 +1186,15 @@ Ext.define('Rubedo.view.InportInterface', {
     },
 
     onImportPresetDeleteBtnClick: function(button, e, eOpts) {
-
+        var preset=Ext.getCmp("importPresetSelectorField").getStore().findRecord("id",Ext.getCmp("importPresetSelectorField").getValue());
+        if (preset){
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, "Are you sure you want to delete this preset ?" ,function(anser){
+              if (anser=="yes"){
+                  Ext.getCmp("importPresetSelectorField").getStore().remove(preset);
+                  Ext.getCmp("importPresetSelectorField").setValue(null);
+              }
+            });
+        }
     },
 
     onImportPresetSaveBtnClick: function(button, e, eOpts) {

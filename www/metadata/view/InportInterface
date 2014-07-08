@@ -2310,9 +2310,11 @@
             "userConfig": {
                 "bodyPadding": 6,
                 "collapseDirection": "left",
-                "collapsed": false,
+                "collapsed": true,
                 "collapsible": true,
+                "disabled": true,
                 "dock": "left",
+                "id": "importPresetsPannel",
                 "title": "Presets",
                 "width": 200
             },
@@ -2498,7 +2500,15 @@
                                     "userConfig": {
                                         "fn": "onImportPresetDeleteBtnClick",
                                         "implHandler": [
-                                            ""
+                                            "var preset=Ext.getCmp(\"importPresetSelectorField\").getStore().findRecord(\"id\",Ext.getCmp(\"importPresetSelectorField\").getValue());\r",
+                                            "if (preset){\r",
+                                            "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, \"Are you sure you want to delete this preset ?\" ,function(anser){\r",
+                                            "      if (anser==\"yes\"){\r",
+                                            "          Ext.getCmp(\"importPresetSelectorField\").getStore().remove(preset);\r",
+                                            "          Ext.getCmp(\"importPresetSelectorField\").setValue(null);\r",
+                                            "      }\r",
+                                            "    });\r",
+                                            "}"
                                         ],
                                         "name": "click",
                                         "scope": "me"
