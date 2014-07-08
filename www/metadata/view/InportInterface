@@ -2336,11 +2336,20 @@
                                 "editable": false,
                                 "fieldLabel": "",
                                 "forceSelection": true,
+                                "id": "importPresetSelectorField",
+                                "lastQuery": "",
                                 "layout|anchor": "100%",
                                 "store": "ImportPresets",
                                 "valueField": "id"
                             },
-                            "designerId": "411b19d4-0933-4c98-b94f-1e0e62054d51"
+                            "designerId": "411b19d4-0933-4c98-b94f-1e0e62054d51",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "lastQuery",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -2350,6 +2359,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "importPresetApplyBtn",
                                 "layout|anchor": "100%",
                                 "text": "Apply"
                             },
@@ -2363,6 +2373,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "importPresetResetBtn",
                                 "layout|anchor": "100%",
                                 "margin": "6 0 0 0",
                                 "text": "Reset"
@@ -2377,6 +2388,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "importPresetDeleteBtn",
                                 "layout|anchor": "100%",
                                 "margin": "6 0 0 0 ",
                                 "text": "Delete selected preset"
@@ -2409,6 +2421,7 @@
                                 "allowBlank": false,
                                 "allowOnlyWhitespace": false,
                                 "fieldLabel": "Name",
+                                "id": "importPresetNameField",
                                 "labelAlign": "top",
                                 "layout|anchor": "100%",
                                 "name": "name",
@@ -2424,6 +2437,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "importPresetSaveBtn",
                                 "layout|anchor": "100%",
                                 "text": "Save"
                             },

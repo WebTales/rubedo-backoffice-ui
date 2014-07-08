@@ -73,6 +73,8 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    lastQuery: '',
+                                    id: 'importPresetSelectorField',
                                     fieldLabel: '',
                                     editable: false,
                                     displayField: 'name',
@@ -83,17 +85,20 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    id: 'importPresetApplyBtn',
                                     text: 'Apply'
                                 },
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    id: 'importPresetResetBtn',
                                     margin: '6 0 0 0',
                                     text: 'Reset'
                                 },
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    id: 'importPresetDeleteBtn',
                                     margin: '6 0 0 0 ',
                                     text: 'Delete selected preset'
                                 }
@@ -107,6 +112,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    id: 'importPresetNameField',
                                     fieldLabel: 'Name',
                                     labelAlign: 'top',
                                     name: 'name',
@@ -117,6 +123,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    id: 'importPresetSaveBtn',
                                     text: 'Save'
                                 }
                             ]

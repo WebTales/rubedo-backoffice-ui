@@ -165,54 +165,62 @@ Ext.define('Rubedo.controller.ImportController', {
         var uniqueKeyFields=[
             {
                 name:"text",
-                label:"Title"
+                label:Rubedo.RubedoAutomatedElementsLoc.titleText
             },
             {
                 name:"summary",
-                label:"Summary"
+                label:Rubedo.RubedoAutomatedElementsLoc.summaryText
             }
         ];
         var fieldSelectors=[
         {
                                     xtype: 'combobox',
                                     anchor: '100%',
-                                    fieldLabel: "Title",
+                                    fieldLabel: Rubedo.RubedoAutomatedElementsLoc.titleText,
                                     name: "contentFields_text",
                                     editable: false,
                                     displayField: 'name',
                                     forceSelection: true,
                                     queryMode: 'local',
                                     store: 'NotInportFieldsStore',
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
                                     valueField: 'csvIndex'
                                 },
             {
                                     xtype: 'combobox',
                                     anchor: '100%',
-                                    fieldLabel: "Summary",
+                                    fieldLabel: Rubedo.RubedoAutomatedElementsLoc.summaryText,
                                     name: "contentFields_summary",
                                     editable: false,
                                     displayField: 'name',
                                     forceSelection: true,
                                     queryMode: 'local',
                                     store: 'NotInportFieldsStore',
+                plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
                                     valueField: 'csvIndex'
                                 }
         ];
+        var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
         Ext.Array.forEach(record.get("champs"),function(champ){
+            var label=champ.config.fieldLabel;
+            if (champ.config.i18n&&champ.config.i18n[BOLanguage]&&(!Ext.isEmpty(champ.config.i18n[BOLanguage].fieldLabel))){
+                label=champ.config.i18n[BOLanguage].fieldLabel;
+            }
             uniqueKeyFields.push({
                 name:champ.config.name,
-                label:champ.config.fieldLabel
+                label:label
             });
             fieldSelectors.push({
                                     xtype: 'combobox',
                                     anchor: '100%',
-                                    fieldLabel: champ.config.fieldLabel,
+                                    fieldLabel: label,
                 name: champ.config.useAsVariation ? "productFields_"+champ.config.name :"contentFields_"+champ.config.name,
                                     editable: false,
                                     displayField: 'name',
                                     forceSelection: true,
                                     queryMode: 'local',
                                     store: 'NotInportFieldsStore',
+                plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
                                     valueField: 'csvIndex'
                                 });
         });
@@ -231,6 +239,7 @@ Ext.define('Rubedo.controller.ImportController', {
                                     forceSelection: true,
                                     queryMode: 'local',
                                     store: 'NotInportFieldsStore',
+                plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
                                     valueField: 'csvIndex'
                                 });
             }
