@@ -1,0 +1,70 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "designer|userAlias": "ImportPresets",
+        "designer|userClassName": "ImportPresets",
+        "model": "customTheme",
+        "pageSize": 1000,
+        "storeId": "ImportPresets"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "c54fa83f-5583-40fa-b997-65085ecfb1f1",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    create: 'import-presets/create',\r",
+                    "                    read: 'import-presets',\r",
+                    "                    update: 'import-presets/update',\r",
+                    "                    destroy: 'import-presets/delete'\r",
+                    "                }"
+                ]
+            },
+            "designerId": "9479f9ac-5fcf-4ad1-9e7e-02b7a2b06762",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "designerId": "21658f4f-166c-4d9c-8b00-9724e9c57514"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "designerId": "aec6c5a9-9bc2-402e-962c-9b33a678a682"
+                }
+            ]
+        }
+    ]
+}

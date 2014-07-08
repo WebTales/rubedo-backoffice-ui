@@ -70,7 +70,8 @@ Ext.application({
         'tax',
         'paymentMeans',
         'pmConfig',
-        'order'
+        'order',
+        'importPreset'
     ],
     stores: [
         'SitesJson',
@@ -216,7 +217,8 @@ Ext.application({
         'ImportKeyFieldStore',
         'TaxoForImportKeys',
         'SpecialOffers',
-        'BoughtProducts'
+        'BoughtProducts',
+        'ImportPresets'
     ],
     views: [
         'MyGridPanel3',

@@ -73,7 +73,8 @@
             "tax",
             "paymentMeans",
             "pmConfig",
-            "order"
+            "order",
+            "importPreset"
         ],
         "name": "Rubedo",
         "stores": [
@@ -220,7 +221,8 @@
             "ImportKeyFieldStore",
             "TaxoForImportKeys",
             "SpecialOffers",
-            "BoughtProducts"
+            "BoughtProducts",
+            "ImportPresets"
         ],
         "views": [
             "MyGridPanel3",

@@ -54,6 +54,74 @@ Ext.define('Rubedo.view.InportInterface', {
                     xtype: 'mytoolbar56',
                     id: 'customImportProgressor',
                     dock: 'bottom'
+                },
+                {
+                    xtype: 'panel',
+                    dock: 'left',
+                    width: 200,
+                    bodyPadding: 6,
+                    collapseDirection: 'left',
+                    collapsed: false,
+                    collapsible: true,
+                    title: 'Presets',
+                    items: [
+                        {
+                            xtype: 'fieldset',
+                            padding: 6,
+                            title: 'Use existing preset',
+                            items: [
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: '',
+                                    editable: false,
+                                    displayField: 'name',
+                                    forceSelection: true,
+                                    store: 'ImportPresets',
+                                    valueField: 'id'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    text: 'Apply'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    margin: '6 0 0 0',
+                                    text: 'Reset'
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    margin: '6 0 0 0 ',
+                                    text: 'Delete selected preset'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'fieldset',
+                            padding: 6,
+                            title: 'Save as new preset',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Name',
+                                    labelAlign: 'top',
+                                    name: 'name',
+                                    validateOnBlur: false,
+                                    allowBlank: false,
+                                    allowOnlyWhitespace: false
+                                },
+                                {
+                                    xtype: 'button',
+                                    anchor: '100%',
+                                    text: 'Save'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             items: [

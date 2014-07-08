@@ -1,0 +1,87 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "importPreset",
+        "designer|userClassName": "importPreset"
+    },
+    "designerId": "f8f7bc35-16bf-436f-9170-a52e045d50cf",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "d4e01df3-d7cc-422e-96ef-3c21e09adae4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "version"
+            },
+            "designerId": "1d46245c-9205-4734-9b52-49737405d492"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "4ae710ae-e661-4a56-af63-f9c75bfaea7e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "whatToImport"
+            },
+            "designerId": "5464b7b2-9055-42e9-b70d-0c5812087f11"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "howToImport"
+            },
+            "designerId": "f70dd96b-fa20-45c6-aafc-bc4c732687fa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "presetData"
+            },
+            "designerId": "83a3183b-c7ea-4903-85bd-0d61effc3207"
+        }
+    ]
+}

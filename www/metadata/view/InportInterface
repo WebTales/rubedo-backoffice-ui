@@ -2292,6 +2292,146 @@
                 "scope": "me"
             },
             "designerId": "dadae1ce-0c2e-489a-9d9e-3b11f4628234"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 6,
+                "collapseDirection": "left",
+                "collapsed": false,
+                "collapsible": true,
+                "dock": "left",
+                "title": "Presets",
+                "width": 200
+            },
+            "designerId": "b28fc2c6-c2d5-4bfc-a7b3-b30c5863f809",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "padding": 6,
+                        "title": "Use existing preset"
+                    },
+                    "designerId": "54409847-0b3e-4439-9b8e-bbf63dadcc60",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "name",
+                                "editable": false,
+                                "fieldLabel": "",
+                                "forceSelection": true,
+                                "layout|anchor": "100%",
+                                "store": "ImportPresets",
+                                "valueField": "id"
+                            },
+                            "designerId": "411b19d4-0933-4c98-b94f-1e0e62054d51"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "text": "Apply"
+                            },
+                            "designerId": "39787022-a986-44a3-8963-4a9a2febfaae"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "margin": "6 0 0 0",
+                                "text": "Reset"
+                            },
+                            "designerId": "35b3861a-e1a0-4678-bcec-e1ae044b0d44"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "margin": "6 0 0 0 ",
+                                "text": "Delete selected preset"
+                            },
+                            "designerId": "122ea143-1e80-402e-8657-f5aea094f8d8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "padding": 6,
+                        "title": "Save as new preset"
+                    },
+                    "designerId": "3210e812-6f37-4a5a-99b8-e2dbcd9f9290",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false,
+                                "fieldLabel": "Name",
+                                "labelAlign": "top",
+                                "layout|anchor": "100%",
+                                "name": "name",
+                                "validateOnBlur": false
+                            },
+                            "designerId": "f1abe28c-98ab-4392-8695-29fdd311c249"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "text": "Save"
+                            },
+                            "designerId": "0c9931d4-e259-476c-982c-b207f4c56cae"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
