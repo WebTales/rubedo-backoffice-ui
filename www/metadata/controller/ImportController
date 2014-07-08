@@ -373,6 +373,177 @@
                 "scope": "me"
             },
             "designerId": "d35606a3-a387-43ac-93df-00be88a5b82b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#importPresetSelectorField",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onImportPresetSelectorFieldChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(newValue)){\r",
+                    "    Ext.getCmp(\"importPresetApplyBtn\").disable();\r",
+                    "    Ext.getCmp(\"importPresetDeleteBtn\").disable();\r",
+                    "} else {\r",
+                    "    Ext.getCmp(\"importPresetApplyBtn\").enable();\r",
+                    "    Ext.getCmp(\"importPresetDeleteBtn\").enable();\r",
+                    "}"
+                ],
+                "name": "change",
+                "scope": "me"
+            },
+            "designerId": "c0701845-b432-429a-b9af-88fa2c312f99"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#importPresetApplyBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onImportPresetApplyBtnClick",
+                "implHandler": [
+                    "var preset=Ext.getCmp(\"importPresetSelectorField\").getStore().findRecord(\"id\",Ext.getCmp(\"importPresetSelectorField\").getValue());\r",
+                    "if (preset){\r",
+                    "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, \"This action wil override all current import settings. Are you sure you want to apply this preset ?\" ,function(anser){\r",
+                    "      if (anser==\"yes\"){\r",
+                    "          if (preset.get(\"howToImport\")==\"update\"){\r",
+                    "              Ext.getCmp(\"fieldMappingTargetForm\").getForm().setValues(preset.get(\"presetData\"));\r",
+                    "              if (!Ext.isEmpty(Ext.getCmp(\"importCtSelector\").getValue())){\r",
+                    "                  Ext.getCmp(\"importCtSelector\").fireEvent(\"select\",Ext.getCmp(\"importCtSelector\"),[Ext.getCmp(\"importCtSelector\").getStore().findRecord(\"id\",Ext.getCmp(\"importCtSelector\").getValue())]);\r",
+                    "                  var task = new Ext.util.DelayedTask(function(){\r",
+                    "                      Ext.getCmp(\"fieldMappingTargetForm\").getForm().setValues(preset.get(\"presetData\"));\r",
+                    "                  });\r",
+                    "                  task.delay(500);\r",
+                    "              }\r",
+                    "          } else {\r",
+                    "              var notImpStore=Ext.getStore(\"NotInportFieldsStore\");\r",
+                    "              notImpStore.loadData(Ext.getCmp(\"InportInterface\").initailRecoveredCsvFields);\r",
+                    "              Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
+                    "              Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
+                    "              Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();\r",
+                    "              Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
+                    "\r",
+                    "              Ext.Array.forEach(preset.get(\"presetData\").inportAsField, function(usedField){\r",
+                    "                  var movedRec=notImpStore.findRecord(\"csvIndex\",usedField.csvIndex);\r",
+                    "                  if (!Ext.isEmpty(movedRec)){\r",
+                    "                      notImpStore.remove(movedRec);\r",
+                    "                  }\r",
+                    "              });\r",
+                    "              Ext.Array.forEach(preset.get(\"presetData\").inportAsTaxo, function(usedField){\r",
+                    "                  var movedRec=notImpStore.findRecord(\"csvIndex\",usedField.csvIndex);\r",
+                    "                  if (!Ext.isEmpty(movedRec)){\r",
+                    "                      notImpStore.remove(movedRec);\r",
+                    "                  }\r",
+                    "              });\r",
+                    "              Ext.Array.forEach(preset.get(\"presetData\").inportAsFieldTranslation, function(usedField){\r",
+                    "                  var movedRec=notImpStore.findRecord(\"csvIndex\",usedField.csvIndex);\r",
+                    "                  if (!Ext.isEmpty(movedRec)){\r",
+                    "                      notImpStore.remove(movedRec);\r",
+                    "                  }\r",
+                    "              });\r",
+                    "              Ext.Array.forEach(preset.get(\"presetData\").inportAsTaxoTranslation, function(usedField){\r",
+                    "                  var movedRec=notImpStore.findRecord(\"csvIndex\",usedField.csvIndex);\r",
+                    "                  if (!Ext.isEmpty(movedRec)){\r",
+                    "                      notImpStore.remove(movedRec);\r",
+                    "                  }\r",
+                    "              });\r",
+                    "              Ext.getStore(\"InportAsFieldStore\").loadData(preset.get(\"presetData\").inportAsField);\r",
+                    "              Ext.getStore(\"InportAsTaxoStore\").loadData(preset.get(\"presetData\").inportAsTaxo);\r",
+                    "              Ext.getStore(\"InportAsFieldTranslationStore\").loadData(preset.get(\"presetData\").inportAsFieldTranslation);\r",
+                    "              Ext.getStore(\"InportAsTaxoTranslationStore\").loadData(preset.get(\"presetData\").inportAsTaxoTranslation);\r",
+                    "              if (preset.get(\"whatToImport\")==\"products\"){\r",
+                    "                  Ext.getCmp(\"importProductOptionsForm\").getForm().setValues(preset.get(\"presetData\").productSettings);\r",
+                    "              }\r",
+                    "          }\r",
+                    "      }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "fae066b5-0e44-4f14-8c5c-90174d2e92bf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#importPresetDeleteBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onImportPresetDeleteBtnClick",
+                "implHandler": [
+                    "var preset=Ext.getCmp(\"importPresetSelectorField\").getStore().findRecord(\"id\",Ext.getCmp(\"importPresetSelectorField\").getValue());\r",
+                    "if (preset){\r",
+                    "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, \"Are you sure you want to delete this preset ?\" ,function(anser){\r",
+                    "      if (anser==\"yes\"){\r",
+                    "          Ext.getCmp(\"importPresetSelectorField\").getStore().remove(preset);\r",
+                    "          Ext.getCmp(\"importPresetSelectorField\").setValue(null);\r",
+                    "      }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "e217d524-3c10-40a1-bc86-21d0a341395f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#importPresetSaveBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onImportPresetSaveBtnClick",
+                "implHandler": [
+                    "if (Ext.getCmp(\"importPresetNameField\").isValid()){\r",
+                    "\r",
+                    "    var howToImport=Ext.getCmp(\"InportInterface\").howToImport;\r",
+                    "    var whatToImport=Ext.getCmp(\"InportInterface\").whatToImport;\r",
+                    "    var detectedPresets={ };\r",
+                    "    if (howToImport==\"update\"){\r",
+                    "        detectedPresets=Ext.getCmp(\"fieldMappingTargetForm\").getForm().getValues();\r",
+                    "    } else {\r",
+                    "        detectedPresets={\r",
+                    "            inportAsField : Ext.Array.pluck(Ext.getStore(\"InportAsFieldStore\").getRange(), \"data\"),\r",
+                    "            inportAsTaxo : Ext.Array.pluck(Ext.getStore(\"InportAsTaxoStore\").getRange(), \"data\"),\r",
+                    "            inportAsFieldTranslation : Ext.Array.pluck(Ext.getStore(\"InportAsFieldTranslationStore\").getRange(), \"data\"),\r",
+                    "            inportAsTaxoTranslation : Ext.Array.pluck(Ext.getStore(\"InportAsTaxoTranslationStore\").getRange(), \"data\")\r",
+                    "        };\r",
+                    "        if (whatToImport==\"products\"){\r",
+                    "            detectedPresets.productSettings=Ext.getCmp(\"importProductOptionsForm\").getForm().getValues();\r",
+                    "\r",
+                    "        }\r",
+                    "    }\r",
+                    "    var newSetting={\r",
+                    "        name:Ext.getCmp(\"importPresetNameField\").getValue(),\r",
+                    "        howToImport:howToImport,\r",
+                    "        whatToImport:whatToImport,\r",
+                    "        presetData:detectedPresets\r",
+                    "    };\r",
+                    "    Ext.getStore(\"ImportPresets\").add(newSetting);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "fc6080c9-d433-4a40-b5ed-5e50ce41a9a5"
         }
     ]
 }

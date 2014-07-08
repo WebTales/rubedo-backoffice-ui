@@ -290,6 +290,117 @@ Ext.define('Rubedo.controller.ImportController', {
         }
     },
 
+    onImportPresetSelectorFieldChange: function(field, newValue, oldValue, eOpts) {
+        if (Ext.isEmpty(newValue)){
+            Ext.getCmp("importPresetApplyBtn").disable();
+            Ext.getCmp("importPresetDeleteBtn").disable();
+        } else {
+            Ext.getCmp("importPresetApplyBtn").enable();
+            Ext.getCmp("importPresetDeleteBtn").enable();
+        }
+    },
+
+    onImportPresetApplyBtnClick: function(button, e, eOpts) {
+        var preset=Ext.getCmp("importPresetSelectorField").getStore().findRecord("id",Ext.getCmp("importPresetSelectorField").getValue());
+        if (preset){
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, "This action wil override all current import settings. Are you sure you want to apply this preset ?" ,function(anser){
+              if (anser=="yes"){
+                  if (preset.get("howToImport")=="update"){
+                      Ext.getCmp("fieldMappingTargetForm").getForm().setValues(preset.get("presetData"));
+                      if (!Ext.isEmpty(Ext.getCmp("importCtSelector").getValue())){
+                          Ext.getCmp("importCtSelector").fireEvent("select",Ext.getCmp("importCtSelector"),[Ext.getCmp("importCtSelector").getStore().findRecord("id",Ext.getCmp("importCtSelector").getValue())]);
+                          var task = new Ext.util.DelayedTask(function(){
+                              Ext.getCmp("fieldMappingTargetForm").getForm().setValues(preset.get("presetData"));
+                          });
+                          task.delay(500);
+                      }
+                  } else {
+                      var notImpStore=Ext.getStore("NotInportFieldsStore");
+                      notImpStore.loadData(Ext.getCmp("InportInterface").initailRecoveredCsvFields);
+                      Ext.getStore("InportAsFieldStore").removeAll();
+                      Ext.getStore("InportAsTaxoStore").removeAll();
+                      Ext.getStore("InportAsFieldTranslationStore").removeAll();
+                      Ext.getStore("InportAsTaxoTranslationStore").removeAll();
+
+                      Ext.Array.forEach(preset.get("presetData").inportAsField, function(usedField){
+                          var movedRec=notImpStore.findRecord("csvIndex",usedField.csvIndex);
+                          if (!Ext.isEmpty(movedRec)){
+                              notImpStore.remove(movedRec);
+                          }
+                      });
+                      Ext.Array.forEach(preset.get("presetData").inportAsTaxo, function(usedField){
+                          var movedRec=notImpStore.findRecord("csvIndex",usedField.csvIndex);
+                          if (!Ext.isEmpty(movedRec)){
+                              notImpStore.remove(movedRec);
+                          }
+                      });
+                      Ext.Array.forEach(preset.get("presetData").inportAsFieldTranslation, function(usedField){
+                          var movedRec=notImpStore.findRecord("csvIndex",usedField.csvIndex);
+                          if (!Ext.isEmpty(movedRec)){
+                              notImpStore.remove(movedRec);
+                          }
+                      });
+                      Ext.Array.forEach(preset.get("presetData").inportAsTaxoTranslation, function(usedField){
+                          var movedRec=notImpStore.findRecord("csvIndex",usedField.csvIndex);
+                          if (!Ext.isEmpty(movedRec)){
+                              notImpStore.remove(movedRec);
+                          }
+                      });
+                      Ext.getStore("InportAsFieldStore").loadData(preset.get("presetData").inportAsField);
+                      Ext.getStore("InportAsTaxoStore").loadData(preset.get("presetData").inportAsTaxo);
+                      Ext.getStore("InportAsFieldTranslationStore").loadData(preset.get("presetData").inportAsFieldTranslation);
+                      Ext.getStore("InportAsTaxoTranslationStore").loadData(preset.get("presetData").inportAsTaxoTranslation);
+                      if (preset.get("whatToImport")=="products"){
+                          Ext.getCmp("importProductOptionsForm").getForm().setValues(preset.get("presetData").productSettings);
+                      }
+                  }
+              }
+            });
+        }
+    },
+
+    onImportPresetDeleteBtnClick: function(button, e, eOpts) {
+        var preset=Ext.getCmp("importPresetSelectorField").getStore().findRecord("id",Ext.getCmp("importPresetSelectorField").getValue());
+        if (preset){
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, "Are you sure you want to delete this preset ?" ,function(anser){
+              if (anser=="yes"){
+                  Ext.getCmp("importPresetSelectorField").getStore().remove(preset);
+                  Ext.getCmp("importPresetSelectorField").setValue(null);
+              }
+            });
+        }
+    },
+
+    onImportPresetSaveBtnClick: function(button, e, eOpts) {
+        if (Ext.getCmp("importPresetNameField").isValid()){
+
+            var howToImport=Ext.getCmp("InportInterface").howToImport;
+            var whatToImport=Ext.getCmp("InportInterface").whatToImport;
+            var detectedPresets={ };
+            if (howToImport=="update"){
+                detectedPresets=Ext.getCmp("fieldMappingTargetForm").getForm().getValues();
+            } else {
+                detectedPresets={
+                    inportAsField : Ext.Array.pluck(Ext.getStore("InportAsFieldStore").getRange(), "data"),
+                    inportAsTaxo : Ext.Array.pluck(Ext.getStore("InportAsTaxoStore").getRange(), "data"),
+                    inportAsFieldTranslation : Ext.Array.pluck(Ext.getStore("InportAsFieldTranslationStore").getRange(), "data"),
+                    inportAsTaxoTranslation : Ext.Array.pluck(Ext.getStore("InportAsTaxoTranslationStore").getRange(), "data")
+                };
+                if (whatToImport=="products"){
+                    detectedPresets.productSettings=Ext.getCmp("importProductOptionsForm").getForm().getValues();
+
+                }
+            }
+            var newSetting={
+                name:Ext.getCmp("importPresetNameField").getValue(),
+                howToImport:howToImport,
+                whatToImport:whatToImport,
+                presetData:detectedPresets
+            };
+            Ext.getStore("ImportPresets").add(newSetting);
+        }
+    },
+
     init: function(application) {
         this.control({
             "#mainCSVinportField, #chooseEncodingField": {
@@ -309,6 +420,18 @@ Ext.define('Rubedo.controller.ImportController', {
             },
             "#launchUpdateImportBtn": {
                 click: this.onLaunchUpdateImportBtnClick
+            },
+            "#importPresetSelectorField": {
+                change: this.onImportPresetSelectorFieldChange
+            },
+            "#importPresetApplyBtn": {
+                click: this.onImportPresetApplyBtnClick
+            },
+            "#importPresetDeleteBtn": {
+                click: this.onImportPresetDeleteBtnClick
+            },
+            "#importPresetSaveBtn": {
+                click: this.onImportPresetSaveBtnClick
             }
         });
     }
