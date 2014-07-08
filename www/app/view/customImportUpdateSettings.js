@@ -62,6 +62,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                 {
                     xtype: 'form',
                     flex: 3,
+                    id: 'fieldMappingTargetForm',
                     autoScroll: true,
                     bodyPadding: 10,
                     title: 'Field mapping',

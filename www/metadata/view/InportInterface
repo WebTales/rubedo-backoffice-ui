@@ -2262,7 +2262,13 @@
                     "        Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));\r",
                     "        Ext.getCmp(\"customImportUseAsVarCol\").show();\r",
                     "    }\r",
-                    "}"
+                    "}\r",
+                    "Ext.getStore(\"ImportPresets\").clearFilter(true);\r",
+                    "Ext.getStore(\"ImportPresets\").filter([\r",
+                    "    {property: \"howToImport\", value: component.howToImport},\r",
+                    "    {property: \"whatToImport\", value: component.whatToImport}\r",
+                    "    ]);\r",
+                    "Ext.getStore(\"ImportPresets\").load();"
                 ],
                 "name": "beforerender",
                 "scope": "me"
@@ -2286,7 +2292,8 @@
                     "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
                     "Ext.getStore(\"MediaTypesFORDAMPicker\").removeAll();\r",
                     "Ext.getStore(\"TCImportCombo\").removeAll();\r",
-                    "Ext.getStore(\"TaxoForImportKeys\").removeAll();"
+                    "Ext.getStore(\"TaxoForImportKeys\").removeAll();\r",
+                    "Ext.getStore(\"ImportPresets\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
@@ -2349,6 +2356,31 @@
                                     "name": "lastQuery",
                                     "type": "string"
                                 }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onImportPresetSelectorFieldChange",
+                                        "implHandler": [
+                                            "if (Ext.isEmpty(newValue)){\r",
+                                            "    Ext.getCmp(\"importPresetApplyBtn\").disable();\r",
+                                            "    Ext.getCmp(\"importPresetDeleteBtn\").disable();\r",
+                                            "} else {\r",
+                                            "    Ext.getCmp(\"importPresetApplyBtn\").enable();\r",
+                                            "    Ext.getCmp(\"importPresetDeleteBtn\").enable();\r",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "f02fb224-67f0-4a3b-b459-c4f2f43691b8"
+                                }
                             ]
                         },
                         {
@@ -2359,11 +2391,47 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "disabled": true,
                                 "id": "importPresetApplyBtn",
                                 "layout|anchor": "100%",
                                 "text": "Apply"
                             },
-                            "designerId": "39787022-a986-44a3-8963-4a9a2febfaae"
+                            "designerId": "39787022-a986-44a3-8963-4a9a2febfaae",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onImportPresetApplyBtnClick",
+                                        "implHandler": [
+                                            "var preset=Ext.getCmp(\"importPresetSelectorField\").getStore().findRecord(\"id\",Ext.getCmp(\"importPresetSelectorField\").getValue());\r",
+                                            "if (preset){\r",
+                                            "    Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, \"This action wil override all current import settings. Are you sure you want to apply this preset \" ,function(anser){\r",
+                                            "      if (anser==\"yes\"){\r",
+                                            "          if (preset.get(\"howToImport\")==\"update\"){\r",
+                                            "              Ext.getCmp(\"fieldMappingTargetForm\").getForm().setValues(preset.get(\"presetData\"));\r",
+                                            "              if (!Ext.isEmpty(Ext.getCmp(\"importCtSelector\").getValue())){\r",
+                                            "                  Ext.getCmp(\"importCtSelector\").fireEvent(\"select\",Ext.getCmp(\"importCtSelector\"),[Ext.getCmp(\"importCtSelector\").getStore().findRecord(\"id\",Ext.getCmp(\"importCtSelector\").getValue())]);\r",
+                                            "                  var task = new Ext.util.DelayedTask(function(){\r",
+                                            "                      Ext.getCmp(\"fieldMappingTargetForm\").getForm().setValues(preset.get(\"presetData\"));\r",
+                                            "                  });\r",
+                                            "                  task.delay(700);\r",
+                                            "              }\r",
+                                            "          }              \r",
+                                            "      }\r",
+                                            "    });\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "08d4a375-ab85-48bb-98ab-b76c44097321"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -2373,21 +2441,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "importPresetResetBtn",
-                                "layout|anchor": "100%",
-                                "margin": "6 0 0 0",
-                                "text": "Reset"
-                            },
-                            "designerId": "35b3861a-e1a0-4678-bcec-e1ae044b0d44"
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
+                                "disabled": true,
                                 "id": "importPresetDeleteBtn",
                                 "layout|anchor": "100%",
                                 "margin": "6 0 0 0 ",
@@ -2441,7 +2495,41 @@
                                 "layout|anchor": "100%",
                                 "text": "Save"
                             },
-                            "designerId": "0c9931d4-e259-476c-982c-b207f4c56cae"
+                            "designerId": "0c9931d4-e259-476c-982c-b207f4c56cae",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onImportPresetSaveBtnClick",
+                                        "implHandler": [
+                                            "if (Ext.getCmp(\"importPresetNameField\").isValid()){\r",
+                                            "    \r",
+                                            "    var howToImport=Ext.getCmp(\"InportInterface\").howToImport;\r",
+                                            "    var whatToImport=Ext.getCmp(\"InportInterface\").whatToImport;\r",
+                                            "    var detectedPresets={ };\r",
+                                            "    if (howToImport==\"update\"){\r",
+                                            "        detectedPresets=Ext.getCmp(\"fieldMappingTargetForm\").getForm().getValues();\r",
+                                            "    }\r",
+                                            "    var newSetting={\r",
+                                            "        name:Ext.getCmp(\"importPresetNameField\").getValue(),\r",
+                                            "        howToImport:howToImport,\r",
+                                            "        whatToImport:whatToImport,\r",
+                                            "        presetData:detectedPresets\r",
+                                            "    };\r",
+                                            "    Ext.getStore(\"ImportPresets\").add(newSetting);\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "ace9fba5-5fe6-4f4f-ad28-bb9e879bbb9c"
+                                }
+                            ]
                         }
                     ]
                 }

@@ -80,24 +80,31 @@ Ext.define('Rubedo.view.InportInterface', {
                                     displayField: 'name',
                                     forceSelection: true,
                                     store: 'ImportPresets',
-                                    valueField: 'id'
+                                    valueField: 'id',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onImportPresetSelectorFieldChange,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    disabled: true,
                                     id: 'importPresetApplyBtn',
-                                    text: 'Apply'
+                                    text: 'Apply',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onImportPresetApplyBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
-                                    id: 'importPresetResetBtn',
-                                    margin: '6 0 0 0',
-                                    text: 'Reset'
-                                },
-                                {
-                                    xtype: 'button',
-                                    anchor: '100%',
+                                    disabled: true,
                                     id: 'importPresetDeleteBtn',
                                     margin: '6 0 0 0 ',
                                     text: 'Delete selected preset'
@@ -124,7 +131,13 @@ Ext.define('Rubedo.view.InportInterface', {
                                     xtype: 'button',
                                     anchor: '100%',
                                     id: 'importPresetSaveBtn',
-                                    text: 'Save'
+                                    text: 'Save',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onImportPresetSaveBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -1075,6 +1088,12 @@ Ext.define('Rubedo.view.InportInterface', {
                 Ext.getCmp("customImportUseAsVarCol").show();
             }
         }
+        Ext.getStore("ImportPresets").clearFilter(true);
+        Ext.getStore("ImportPresets").filter([
+            {property: "howToImport", value: component.howToImport},
+            {property: "whatToImport", value: component.whatToImport}
+            ]);
+        Ext.getStore("ImportPresets").load();
     },
 
     onInportInterfaceBeforeClose: function(panel, eOpts) {
@@ -1086,6 +1105,56 @@ Ext.define('Rubedo.view.InportInterface', {
         Ext.getStore("MediaTypesFORDAMPicker").removeAll();
         Ext.getStore("TCImportCombo").removeAll();
         Ext.getStore("TaxoForImportKeys").removeAll();
+        Ext.getStore("ImportPresets").removeAll();
+    },
+
+    onImportPresetSelectorFieldChange: function(field, newValue, oldValue, eOpts) {
+        if (Ext.isEmpty(newValue)){
+            Ext.getCmp("importPresetApplyBtn").disable();
+            Ext.getCmp("importPresetDeleteBtn").disable();
+        } else {
+            Ext.getCmp("importPresetApplyBtn").enable();
+            Ext.getCmp("importPresetDeleteBtn").enable();
+        }
+    },
+
+    onImportPresetApplyBtnClick: function(button, e, eOpts) {
+        var preset=Ext.getCmp("importPresetSelectorField").getStore().findRecord("id",Ext.getCmp("importPresetSelectorField").getValue());
+        if (preset){
+            Ext.Msg.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle, "This action wil override all current import settings. Are you sure you want to apply this preset " ,function(anser){
+              if (anser=="yes"){
+                  if (preset.get("howToImport")=="update"){
+                      Ext.getCmp("fieldMappingTargetForm").getForm().setValues(preset.get("presetData"));
+                      if (!Ext.isEmpty(Ext.getCmp("importCtSelector").getValue())){
+                          Ext.getCmp("importCtSelector").fireEvent("select",Ext.getCmp("importCtSelector"),[Ext.getCmp("importCtSelector").getStore().findRecord("id",Ext.getCmp("importCtSelector").getValue())]);
+                          var task = new Ext.util.DelayedTask(function(){
+                              Ext.getCmp("fieldMappingTargetForm").getForm().setValues(preset.get("presetData"));
+                          });
+                          task.delay(700);
+                      }
+                  }
+              }
+            });
+        }
+    },
+
+    onImportPresetSaveBtnClick: function(button, e, eOpts) {
+        if (Ext.getCmp("importPresetNameField").isValid()){
+
+            var howToImport=Ext.getCmp("InportInterface").howToImport;
+            var whatToImport=Ext.getCmp("InportInterface").whatToImport;
+            var detectedPresets={ };
+            if (howToImport=="update"){
+                detectedPresets=Ext.getCmp("fieldMappingTargetForm").getForm().getValues();
+            }
+            var newSetting={
+                name:Ext.getCmp("importPresetNameField").getValue(),
+                howToImport:howToImport,
+                whatToImport:whatToImport,
+                presetData:detectedPresets
+            };
+            Ext.getStore("ImportPresets").add(newSetting);
+        }
     }
 
 });

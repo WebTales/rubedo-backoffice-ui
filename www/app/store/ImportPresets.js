@@ -18,7 +18,7 @@ Ext.define('Rubedo.store.ImportPresets', {
     alias: 'store.ImportPresets',
 
     requires: [
-        'Rubedo.model.customTheme',
+        'Rubedo.model.importPreset',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -30,7 +30,7 @@ Ext.define('Rubedo.store.ImportPresets', {
         me.callParent([Ext.apply({
             autoLoad: false,
             autoSync: true,
-            model: 'Rubedo.model.customTheme',
+            model: 'Rubedo.model.importPreset',
             storeId: 'ImportPresets',
             pageSize: 1000,
             proxy: {
