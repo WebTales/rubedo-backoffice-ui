@@ -248,10 +248,12 @@ Ext.define('Rubedo.controller.ImportController', {
         });
         Ext.getCmp("importTaxoFieldset").add(taxoSelectors);
         if (record.get("productType")=="configurable"){
+            Ext.getCmp("updateImportField").setValue(true);
             if (Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
                 Ext.getCmp("importTaxoFieldset").up().add(Ext.widget("importProductOptionsFieldset", {anchor:"100%"}));
             }
         } else {
+            Ext.getCmp("updateImportField").setValue(false);
             if (!Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){
                 Ext.getCmp("importProductOptionsFieldset").up().remove(Ext.getCmp("importProductOptionsFieldset"));
             }

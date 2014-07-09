@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
         'Ext.grid.View',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
+        'Ext.form.field.Hidden',
         'Ext.form.FieldSet',
         'Ext.toolbar.Toolbar',
         'Ext.toolbar.Fill',
@@ -108,6 +109,13 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                             queryMode: 'local',
                             store: 'ImportKeyFieldStore',
                             valueField: 'name'
+                        },
+                        {
+                            xtype: 'hiddenfield',
+                            anchor: '100%',
+                            id: 'updateImportField',
+                            fieldLabel: 'Label',
+                            name: 'isProduct'
                         },
                         {
                             xtype: 'fieldset',

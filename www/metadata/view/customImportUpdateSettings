@@ -152,6 +152,21 @@
                     "designerId": "a2f065b1-166c-45e2-b869-a8a87fe079b4"
                 },
                 {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "id": "updateImportField",
+                        "layout|anchor": "100%",
+                        "name": "isProduct"
+                    },
+                    "designerId": "7446852a-42c8-44e9-8a10-fdbc80810a34"
+                },
+                {
                     "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
