@@ -74,8 +74,8 @@ Ext.define('Rubedo.view.InportInterface', {
                             items: [
                                 {
                                     xtype: 'combobox',
-                                    anchor: '100%',
                                     lastQuery: '',
+                                    anchor: '100%',
                                     id: 'importPresetSelectorField',
                                     fieldLabel: '',
                                     editable: false,
