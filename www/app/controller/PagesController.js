@@ -647,6 +647,9 @@ Ext.define('Rubedo.controller.PagesController', {
                     nChampS.anchor= '100%';
                     nChampS.labelWidth=100;
                     nChampS.setValue(component.configBloc[nChampS.name]);
+                    if ((nChampS.name=="magicQuery")&&(!PHPOptions.activateMagic)){
+                        nChampS.hide();
+                    }
                     if ((nChampS.isXType("combobox"))&&(!nChampS.isXType("treepicker"))){
                         nChampS.getStore().fieldId=Ext.clone(nChampS.id);
                         nChampS.getStore().fieldValue=Ext.clone(component.configBloc[nChampS.name]);
