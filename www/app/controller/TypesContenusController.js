@@ -736,7 +736,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                             }
 
                         }
-                        if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))) {
+                        if ((TCfield.isXType('combobox'))&&(!(TCfield.isXType('timefield')))&&(!(TCfield.isXType('FormPickerField')))) {
                             var optionsLC = Ext.widget('optionsLCGrid', {store : TCfield.getStore()});
                             boiteParam.add(optionsLC);
 
