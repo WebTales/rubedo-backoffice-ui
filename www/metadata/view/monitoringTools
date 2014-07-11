@@ -804,7 +804,7 @@
                                 "implHandler": [
                                     "button.setLoading(true);\r",
                                     "Ext.Ajax.request({\r",
-                                    "    url: '/queue?service=ItemRecommendations&class=build',\r",
+                                    "    url: 'magic/refresh-item-recommendations',\r",
                                     "    timeout: 300000,\r",
                                     "    params:{\r",
                                     "    },\r",
@@ -874,7 +874,7 @@
                                 "implHandler": [
                                     "button.setLoading(true);\r",
                                     "Ext.Ajax.request({\r",
-                                    "    url: '/queue?service=UserRecommendations&class=build',\r",
+                                    "    url: 'magic/refresh-user-recommendations',\r",
                                     "    timeout: 300000,\r",
                                     "    params:{\r",
                                     "    },\r",

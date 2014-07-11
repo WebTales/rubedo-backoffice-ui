@@ -325,7 +325,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                             handler: function(button, e) {
                                 button.setLoading(true);
                                 Ext.Ajax.request({
-                                    url: '/queue?service=ItemRecommendations&class=build',
+                                    url: 'magic/refresh-item-recommendations',
                                     timeout: 300000,
                                     params:{
                                     },
@@ -355,7 +355,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                             handler: function(button, e) {
                                 button.setLoading(true);
                                 Ext.Ajax.request({
-                                    url: '/queue?service=UserRecommendations&class=build',
+                                    url: 'magic/refresh-user-recommendations',
                                     timeout: 300000,
                                     params:{
                                     },
