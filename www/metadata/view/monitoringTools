@@ -17,7 +17,7 @@
         "layout": "vbox",
         "localiserId": "monitoringField",
         "title": "Supervision",
-        "width": 577
+        "width": 741
     },
     "designerId": "aad4192f-6fb1-4dbc-946e-1204a1cea801",
     "customConfigs": [
@@ -751,6 +751,146 @@
                                 ]
                             },
                             "designerId": "b43f6a3f-e780-486a-a8e5-141334a3b44a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "content-icon",
+                        "id": "rebuildContentConcurrencyBtn",
+                        "layout|flex": null,
+                        "text": "Refresh item recommendations"
+                    },
+                    "designerId": "1bd45b7f-f8f9-4eb1-9be2-9378e7d03244",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRebuildContentConcurrencyBtnAfterRender",
+                                "implHandler": [
+                                    "if (!PHPOptions.activateMagic){\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "d8d20724-bb8b-4f70-a847-3099425d8c24"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "button.setLoading(true);\r",
+                                    "Ext.Ajax.request({\r",
+                                    "    url: '/queue?service=ItemRecommendations&class=build',\r",
+                                    "    timeout: 300000,\r",
+                                    "    params:{\r",
+                                    "    },\r",
+                                    "    success: function(response){\r",
+                                    "        button.setLoading(false);\r",
+                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle,\"Item recommendations refreshed.\");\r",
+                                    "    },\r",
+                                    "    failure: function(response) {\r",
+                                    "        button.setLoading(false);\r",
+                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);\r",
+                                    "\r",
+                                    "    }\r",
+                                    "});"
+                                ]
+                            },
+                            "designerId": "7387a290-2c92-409d-8442-00564a7307d2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "user",
+                        "id": "rebuildUserRecsBtn",
+                        "layout|flex": null,
+                        "text": "Refresh user recommendations"
+                    },
+                    "designerId": "fdf11c8e-0ab1-488b-a3f4-e7d4af351d5b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRebuildContentConcurrencyBtnAfterRender1",
+                                "implHandler": [
+                                    "if (!PHPOptions.activateMagic){\r",
+                                    "    component.hide();\r",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "63da7a3b-f281-4f10-a1bf-6e032cdc43c6"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "button.setLoading(true);\r",
+                                    "Ext.Ajax.request({\r",
+                                    "    url: '/queue?service=UserRecommendations&class=build',\r",
+                                    "    timeout: 300000,\r",
+                                    "    params:{\r",
+                                    "    },\r",
+                                    "    success: function(response){\r",
+                                    "        button.setLoading(false);\r",
+                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle,\"User recommendations refreshed.\");\r",
+                                    "    },\r",
+                                    "    failure: function(response) {\r",
+                                    "        button.setLoading(false);\r",
+                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);\r",
+                                    "\r",
+                                    "    }\r",
+                                    "});"
+                                ]
+                            },
+                            "designerId": "d806f92f-826e-43c0-8dab-c028d076cfd8"
                         }
                     ]
                 }
