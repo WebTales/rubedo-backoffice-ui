@@ -37,7 +37,8 @@ Ext.define('Rubedo.store.CountriesForShippers', {
                     read: 'countries'
                 },
                 extraParams: {
-                    notAll: true
+                    notAll: true,
+                    filter: '[{"property":"alpha-2","value":{"$ne":"*"}}]'
                 },
                 reader: {
                     type: 'json',

@@ -35,7 +35,8 @@
                 ],
                 "extraParams": [
                     "{\r",
-                    "    notAll:true\r",
+                    "    notAll:true,\r",
+                    "    filter:'[{\"property\":\"alpha-2\",\"value\":{\"$ne\":\"*\"}}]'\r",
                     "}"
                 ],
                 "url": null
