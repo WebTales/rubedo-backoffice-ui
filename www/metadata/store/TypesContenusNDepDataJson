@@ -109,6 +109,18 @@
                 "property": "type"
             },
             "designerId": "23910f6b-88f9-43ef-9498-015c61e99bfb"
+        },
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "productType"
+            },
+            "designerId": "98b8d9c3-ed75-4eec-8398-c7469624566c"
         }
     ]
 }

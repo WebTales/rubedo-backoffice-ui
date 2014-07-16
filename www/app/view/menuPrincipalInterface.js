@@ -436,7 +436,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                                     favoriteIcon: 'page_full.png',
                                     itemId: 'contributionContenus',
                                     iconCls: 'content-icon',
-                                    text: 'Products'
+                                    text: 'Products (Contents interface)'
                                 },
         {
             xtype: 'menuitem',

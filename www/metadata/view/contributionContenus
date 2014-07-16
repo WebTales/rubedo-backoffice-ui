@@ -733,6 +733,56 @@
                     },
                     "codeClass": "Ext.selection.RowModel",
                     "designerId": "042fd63d-f360-4728-8932-51572820d755"
+                },
+                {
+                    "type": "Ext.grid.feature.Grouping",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "ffa2141d-8a65-45d7-a5c0-ebe855166d47",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
+                                "implHandler": [
+                                    "{name:this.formatName}"
+                                ]
+                            },
+                            "designerId": "57ff9ac8-0757-4002-a573-99a55ceb0f24",
+                            "cn": [
+                                {
+                                    "type": "templatefunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "name"
+                                        ],
+                                        "fn": "formatName",
+                                        "implHandler": [
+                                            "if (name!=\"none\"){\r",
+                                            "    return(\"Product types\");\r",
+                                            "} else {\r",
+                                            "    return(\"Content types\");\r",
+                                            "}"
+                                        ]
+                                    },
+                                    "designerId": "180c2d83-1f9d-482e-84f0-99d3fa6199da"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
