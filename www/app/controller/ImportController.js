@@ -226,8 +226,15 @@ Ext.define('Rubedo.controller.ImportController', {
                                     valueField: 'csvIndex'
                                 });
         });
+        if (record.get("productType")=="configurable"){
+            uniqueKeyFields.push({
+                name:"sku",
+                label:"Base SKU"
+            });
+        }
         Ext.getStore("ImportKeyFieldStore").loadData(uniqueKeyFields);
         Ext.getCmp("importCTFFieldset").add(fieldSelectors);
+        /*
         var taxoSelectors=[];
         Ext.Array.forEach(record.get("vocabularies"),function(vocabulary){
             if (vocabulary!="navigation"){
@@ -247,6 +254,7 @@ Ext.define('Rubedo.controller.ImportController', {
             }
         });
         Ext.getCmp("importTaxoFieldset").add(taxoSelectors);
+        */
         if (record.get("productType")=="configurable"){
             Ext.getCmp("updateImportField").setValue(true);
             if (Ext.isEmpty(Ext.getCmp("importProductOptionsFieldset"))){

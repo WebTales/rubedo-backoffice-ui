@@ -164,7 +164,39 @@
                         "layout|anchor": "100%",
                         "name": "isProduct"
                     },
-                    "designerId": "7446852a-42c8-44e9-8a10-fdbc80810a34"
+                    "designerId": "f5db4939-a093-4062-b975-bc8725d270d6",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getValue",
+                                "implHandler": [
+                                    "return(this.value);"
+                                ]
+                            },
+                            "designerId": "1c38758d-a88d-4e78-8617-8896f97ba5cc"
+                        },
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getSubmitValue",
+                                "implHandler": [
+                                    "return (this.value);"
+                                ]
+                            },
+                            "designerId": "d367e301-b363-46ef-a3e8-222caa97809b"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.FieldSet",
@@ -187,6 +219,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "hidden": true,
                         "id": "importTaxoFieldset",
                         "title": "Taxonomy fields indexes"
                     },

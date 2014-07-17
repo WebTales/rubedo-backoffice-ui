@@ -28,6 +28,7 @@ Ext.define('Rubedo.view.InportInterface', {
         'Ext.grid.Panel',
         'Ext.grid.View',
         'Ext.grid.plugin.DragDrop',
+        'Ext.selection.RowModel',
         'Ext.grid.column.Boolean',
         'Ext.form.field.Checkbox',
         'Ext.grid.plugin.CellEditing',
@@ -257,7 +258,10 @@ Ext.define('Rubedo.view.InportInterface', {
 
                                                             })
                                                         ]
-                                                    }
+                                                    },
+                                                    selModel: Ext.create('Ext.selection.RowModel', {
+                                                        mode: 'MULTI'
+                                                    })
                                                 },
                                                 {
                                                     xtype: 'gridpanel',
@@ -280,7 +284,10 @@ Ext.define('Rubedo.view.InportInterface', {
 
                                                             })
                                                         ]
-                                                    }
+                                                    },
+                                                    selModel: Ext.create('Ext.selection.RowModel', {
+                                                        mode: 'MULTI'
+                                                    })
                                                 },
                                                 {
                                                     xtype: 'gridpanel',
@@ -309,7 +316,10 @@ Ext.define('Rubedo.view.InportInterface', {
                                                             fn: me.onGridpanelAfterRender1,
                                                             scope: me
                                                         }
-                                                    }
+                                                    },
+                                                    selModel: Ext.create('Ext.selection.RowModel', {
+                                                        mode: 'MULTI'
+                                                    })
                                                 },
                                                 {
                                                     xtype: 'gridpanel',
@@ -332,7 +342,10 @@ Ext.define('Rubedo.view.InportInterface', {
 
                                                             })
                                                         ]
-                                                    }
+                                                    },
+                                                    selModel: Ext.create('Ext.selection.RowModel', {
+                                                        mode: 'MULTI'
+                                                    })
                                                 },
                                                 {
                                                     xtype: 'gridpanel',
@@ -361,7 +374,10 @@ Ext.define('Rubedo.view.InportInterface', {
                                                             fn: me.onGridpanelAfterRender,
                                                             scope: me
                                                         }
-                                                    }
+                                                    },
+                                                    selModel: Ext.create('Ext.selection.RowModel', {
+                                                        mode: 'MULTI'
+                                                    })
                                                 }
                                             ]
                                         }

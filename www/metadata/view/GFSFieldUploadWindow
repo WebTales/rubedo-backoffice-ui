@@ -109,7 +109,7 @@
                                     "form.submit({\r",
                                     "    clientValidation: true,\r",
                                     "    url: 'file/put',\r",
-                                    "    params: { \r",
+                                    "    params: {\r",
                                     "\r",
                                     "    },\r",
                                     "    success: function(form, action) {\r",

@@ -112,6 +112,12 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                         },
                         {
                             xtype: 'hiddenfield',
+                            getValue: function() {
+                                return(this.value);
+                            },
+                            getSubmitValue: function() {
+                                return (this.value);
+                            },
                             anchor: '100%',
                             id: 'updateImportField',
                             fieldLabel: 'Label',
@@ -124,6 +130,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                         },
                         {
                             xtype: 'fieldset',
+                            hidden: true,
                             id: 'importTaxoFieldset',
                             title: 'Taxonomy fields indexes'
                         }

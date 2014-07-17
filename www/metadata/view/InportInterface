@@ -368,6 +368,18 @@
                                                             "designerId": "bb6b8c69-0737-4e02-a400-0ab614ca24d5"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "Ext.selection.RowModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.RowModel",
+                                                    "userConfig": {
+                                                        "mode": "MULTI"
+                                                    },
+                                                    "designerId": "50b40d00-9157-47b8-bcc2-09e21826647b"
                                                 }
                                             ]
                                         },
@@ -429,6 +441,18 @@
                                                             "designerId": "5469aff0-b723-437e-af0d-ace0305b30fc"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "Ext.selection.RowModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.RowModel",
+                                                    "userConfig": {
+                                                        "mode": "MULTI"
+                                                    },
+                                                    "designerId": "e7a44148-9ed1-48c0-a9e1-8e1f94e6c54d"
                                                 }
                                             ]
                                         },
@@ -509,6 +533,18 @@
                                                         "scope": "me"
                                                     },
                                                     "designerId": "8f6425fa-e8d1-4748-a9fc-5d8f0b938edc"
+                                                },
+                                                {
+                                                    "type": "Ext.selection.RowModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.RowModel",
+                                                    "userConfig": {
+                                                        "mode": "MULTI"
+                                                    },
+                                                    "designerId": "bf7f815c-b608-4b00-a53e-982fa7fc83bc"
                                                 }
                                             ]
                                         },
@@ -570,6 +606,18 @@
                                                             "designerId": "b1e44e51-2bbf-4289-8c0a-5e2a8221beda"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "Ext.selection.RowModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.RowModel",
+                                                    "userConfig": {
+                                                        "mode": "MULTI"
+                                                    },
+                                                    "designerId": "f0d0502e-11c5-4915-9234-45b9fd67f9c9"
                                                 }
                                             ]
                                         },
@@ -650,6 +698,18 @@
                                                         "scope": "me"
                                                     },
                                                     "designerId": "cdf574e1-dd0f-4c33-9ccc-f0f429ac946d"
+                                                },
+                                                {
+                                                    "type": "Ext.selection.RowModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.RowModel",
+                                                    "userConfig": {
+                                                        "mode": "MULTI"
+                                                    },
+                                                    "designerId": "2c8b8a5e-43ba-41f5-9cf1-184b7a423025"
                                                 }
                                             ]
                                         }
