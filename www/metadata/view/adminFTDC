@@ -1398,9 +1398,9 @@
                                         "fn": "formatName",
                                         "implHandler": [
                                             "if (name!=\"none\"){\r",
-                                            "    return(\"Product types\");\r",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc.productTypeText);\r",
                                             "} else {\r",
-                                            "    return(\"Content types\");\r",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc.contentTypeText);\r",
                                             "}"
                                         ]
                                     },

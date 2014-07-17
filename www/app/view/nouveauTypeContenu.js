@@ -66,7 +66,7 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
-                                    localiserId: 'productTyeField',
+                                    localiserId: 'productTypeField',
                                     fieldLabel: 'Product type',
                                     name: 'productType',
                                     value: 'none',
@@ -77,11 +77,11 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                                     store: [
                                         [
                                             'none',
-                                            'None'
+                                            Rubedo.RubedoAutomatedElementsLoc.noneText
                                         ],
                                         [
                                             'configurable',
-                                            'Configurable'
+                                            Rubedo.RubedoAutomatedElementsLoc.configurableText
                                         ]
                                     ]
                                 }

@@ -123,11 +123,11 @@
                                 "fieldLabel": "Product type",
                                 "forceSelection": true,
                                 "layout|anchor": "100%",
-                                "localiserId": "productTyeField",
+                                "localiserId": "productTypeField",
                                 "name": "productType",
                                 "queryMode": "local",
                                 "store": [
-                                    "[[\"none\",\"None\"],[\"configurable\",\"Configurable\"]]"
+                                    "[[\"none\",Rubedo.RubedoAutomatedElementsLoc.noneText],[\"configurable\",Rubedo.RubedoAutomatedElementsLoc.configurableText]]"
                                 ],
                                 "value": [
                                     "\"none\""

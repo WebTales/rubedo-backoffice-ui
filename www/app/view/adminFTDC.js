@@ -561,9 +561,9 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     formatName: function(name) {
                                         if (name!="none"){
-                                            return("Product types");
+                                            return(Rubedo.RubedoAutomatedElementsLoc.productTypeText);
                                         } else {
-                                            return("Content types");
+                                            return(Rubedo.RubedoAutomatedElementsLoc.contentTypeText);
                                         }
                                     }
                                 }
