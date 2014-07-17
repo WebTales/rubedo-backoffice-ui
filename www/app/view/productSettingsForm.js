@@ -35,6 +35,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
         'Ext.form.field.Date'
     ],
 
+    localiserId: 'productSettingsPanel',
     id: 'productSettingsForm',
     title: 'Product settings',
 
@@ -56,6 +57,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'skuField',
                             fieldLabel: 'SKU',
                             labelWidth: 140,
                             name: 'sku',
@@ -65,6 +67,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            localiserId: 'basePriceField',
                             id: 'basePriceField',
                             fieldLabel: 'Base price',
                             labelWidth: 140,
@@ -75,6 +78,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            localiserId: 'preparationDelayField',
                             fieldLabel: 'Preparation delay (days)',
                             labelWidth: 140,
                             name: 'preparationDelay',
@@ -83,12 +87,14 @@ Ext.define('Rubedo.view.productSettingsForm', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'stockManagementFieldset',
                             id: 'stockManagentForProductFieldset',
                             title: 'Stock management',
                             items: [
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    localiserId: 'canOrderOutOfStockField',
                                     fieldLabel: 'Can order out of stock',
                                     labelWidth: 140,
                                     name: 'canOrderNotInStock',
@@ -99,6 +105,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'outOfStockLimitField',
                                     fieldLabel: 'Out of stock limit',
                                     labelWidth: 140,
                                     name: 'outOfStockLimit',
@@ -108,6 +115,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'notifyForQuantityBelowField',
                                     fieldLabel: 'Notify for stock below',
                                     labelWidth: 140,
                                     name: 'notifyForQuantityBelow',
@@ -117,6 +125,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
+                                    localiserId: 'resupplyDelayField',
                                     fieldLabel: 'Resupply delay (days)',
                                     labelWidth: 140,
                                     name: 'resupplyDelay',
@@ -130,6 +139,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                 {
                     xtype: 'panel',
                     flex: 1,
+                    localiserId: 'variationsGrid',
                     title: 'Variations',
                     layout: {
                         type: 'hbox',
@@ -180,6 +190,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                         },
                                         {
                                             xtype: 'button',
+                                            localiserId: 'addBtn',
                                             iconCls: 'add',
                                             text: 'Add',
                                             listeners: {
@@ -191,6 +202,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                         },
                                         {
                                             xtype: 'button',
+                                            localiserId: 'removeBtn',
                                             disabled: true,
                                             id: 'variationRemoverBtn',
                                             iconCls: 'close',
@@ -219,6 +231,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                         },
                         {
                             xtype: 'gridpanel',
+                            localiserId: 'specialOffersGrid',
                             disabled: true,
                             id: 'specialOffersGrid',
                             width: 300,
@@ -247,6 +260,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                                     price:price
                                                 });
                                             },
+                                            localiserId: 'addBtn',
                                             iconCls: 'add',
                                             text: 'Add'
                                         },
@@ -255,6 +269,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                             handler: function(button, e) {
                                                 button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
                                             },
+                                            localiserId: 'removeBtn',
                                             disabled: true,
                                             id: 'removeSpecialOfferBtn',
                                             iconCls: 'close',
@@ -266,6 +281,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             columns: [
                                 {
                                     xtype: 'datecolumn',
+                                    localiserId: 'startDateCol',
                                     dataIndex: 'beginDate',
                                     text: 'Start date',
                                     editor: {
@@ -276,6 +292,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 },
                                 {
                                     xtype: 'datecolumn',
+                                    localiserId: 'endDateCol',
                                     dataIndex: 'endDate',
                                     text: 'End date',
                                     editor: {
@@ -286,6 +303,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 },
                                 {
                                     xtype: 'numbercolumn',
+                                    localiserId: 'priceCol',
                                     dataIndex: 'price',
                                     text: 'Price',
                                     editor: {

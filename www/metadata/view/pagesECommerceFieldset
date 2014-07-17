@@ -9,9 +9,17 @@
         "designer|userAlias": "pagesECommerceFieldset",
         "designer|userClassName": "pagesECommerceFieldset",
         "hidden": true,
+        "localiserId": "eCCategoryFieldset",
         "title": "E-Commerce category"
     },
     "designerId": "84a70db4-eb10-4d76-81cc-006305b2ab59",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.field.Text",
@@ -23,9 +31,17 @@
             "userConfig": {
                 "fieldLabel": "Title",
                 "layout|anchor": "100%",
+                "localiserId": "titleField",
                 "name": "eCTitle"
             },
-            "designerId": "8f86520f-29f1-421b-a83b-e54b3f5ecec8"
+            "designerId": "8f86520f-29f1-421b-a83b-e54b3f5ecec8",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.TextArea",
@@ -37,9 +53,17 @@
             "userConfig": {
                 "fieldLabel": "Description",
                 "layout|anchor": "100%",
+                "localiserId": "descriptionField",
                 "name": "eCDescription"
             },
-            "designerId": "969e4a69-4a74-4540-a6c1-e30c43444755"
+            "designerId": "969e4a69-4a74-4540-a6c1-e30c43444755",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "linkedinstance",
@@ -51,6 +75,7 @@
             "userConfig": {
                 "allowedFileType": "Image",
                 "fieldLabel": "Image",
+                "localiserId": "categoryImageField",
                 "name": "eCImage"
             },
             "designerId": "c1f11263-bd5f-4383-b280-690eb1dd3198",
@@ -58,6 +83,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "allowedFileType",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
                     "type": "string"
                 }
             ],

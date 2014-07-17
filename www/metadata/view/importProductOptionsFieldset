@@ -9,10 +9,18 @@
         "designer|userAlias": "importProductOptionsFieldset",
         "designer|userClassName": "importProductOptionsFieldset",
         "id": "importProductOptionsFieldset",
+        "localiserId": "importProductOptionsFieldset",
         "title": "Product fields",
         "width": 200
     },
     "designerId": "39b19d55-a1d3-42f7-aaa4-3ea889d209f9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.field.ComboBox",
@@ -28,12 +36,20 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
+                "localiserId": "baseSkuField",
                 "name": "baseSkuFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
             },
-            "designerId": "2932b184-c507-42ca-ba29-a7a71f666379"
+            "designerId": "2932b184-c507-42ca-ba29-a7a71f666379",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -49,12 +65,20 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
+                "localiserId": "basePriceField",
                 "name": "basePriceFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
             },
-            "designerId": "f96a2997-342b-46a3-9c9c-a79c5b076d7e"
+            "designerId": "f96a2997-342b-46a3-9c9c-a79c5b076d7e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -70,12 +94,20 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
+                "localiserId": "preparationDelayField",
                 "name": "preparationDelayFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
             },
-            "designerId": "9a9a29ff-fd34-48ad-9c61-26ac226062d9"
+            "designerId": "9a9a29ff-fd34-48ad-9c61-26ac226062d9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -93,12 +125,20 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
+                "localiserId": "skuField",
                 "name": "skuFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
             },
-            "designerId": "25727771-d9d1-4758-9d41-4521223d120d"
+            "designerId": "25727771-d9d1-4758-9d41-4521223d120d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -116,12 +156,20 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
+                "localiserId": "priceField",
                 "name": "priceFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
             },
-            "designerId": "46ea6d98-0deb-4a26-b5e8-6c4fe6c29f6b"
+            "designerId": "46ea6d98-0deb-4a26-b5e8-6c4fe6c29f6b",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.form.field.ComboBox",
@@ -139,12 +187,20 @@
                 "forceSelection": true,
                 "labelWidth": 60,
                 "layout|anchor": "100%",
+                "localiserId": "stockField",
                 "name": "stockFieldIndex",
                 "queryMode": "local",
                 "store": "NotInportFieldsStore",
                 "valueField": "csvIndex"
             },
-            "designerId": "7a4f4f56-9933-42f3-8592-a2896ab8366e"
+            "designerId": "7a4f4f56-9933-42f3-8592-a2896ab8366e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

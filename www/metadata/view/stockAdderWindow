@@ -11,7 +11,7 @@
         "height": null,
         "id": "stockAdderWindow",
         "layout": "fit",
-        "localiserId": null,
+        "localiserId": "addStockWindow",
         "modal": true,
         "title": "Add stock",
         "width": 400
@@ -52,10 +52,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Amount to add",
                         "layout|anchor": "100%",
+                        "localiserId": "alountToAddField",
                         "minValue": 0,
                         "name": "amount"
                     },
-                    "designerId": "b8808bab-eac9-492a-a718-4bc3b86ad88c"
+                    "designerId": "b8808bab-eac9-492a-a718-4bc3b86ad88c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -67,7 +75,7 @@
                     "userConfig": {
                         "id": "stockAdderSubmitBtn",
                         "layout|anchor": "100%",
-                        "localiserId": null,
+                        "localiserId": "addStockToItemBtn",
                         "text": "Add stock to selected item"
                     },
                     "designerId": "b6a4c9ee-192c-450e-be94-cd5118096a01",

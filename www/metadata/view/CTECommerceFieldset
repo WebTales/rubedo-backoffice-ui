@@ -10,10 +10,18 @@
         "designer|userClassName": "CTECommerceFieldset",
         "height": null,
         "id": "CTECommerceFieldset",
+        "localiserId": "eCFieldset",
         "title": "E-Commerce",
         "width": null
     },
     "designerId": "3a4fb208-402f-47e2-8fce-def7fbf0f205",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.field.Checkbox",
@@ -27,10 +35,18 @@
                 "fieldLabel": "Manage stock",
                 "inputValue": "true",
                 "layout|anchor": "100%",
+                "localiserId": "manageStockField",
                 "name": "manageStock",
                 "uncheckedValue": "false"
             },
             "designerId": "a53f0afd-fcba-4e6e-a826-55e19ecb3453",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "basiceventbinding",
@@ -99,9 +115,17 @@
             "codeClass": null,
             "userConfig": {
                 "hidden": true,
+                "localiserId": "stockManagementFieldset",
                 "title": "Stock management"
             },
             "designerId": "64fc0457-4e76-4883-99f0-19c3248d09d5",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Checkbox",
@@ -116,10 +140,18 @@
                         "inputValue": "true",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "canOrderOutOfStockField",
                         "name": "canOrderNotInStock",
                         "uncheckedValue": "false"
                     },
-                    "designerId": "191148a9-2347-4295-a555-9e391c400d80"
+                    "designerId": "191148a9-2347-4295-a555-9e391c400d80",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -133,10 +165,18 @@
                         "fieldLabel": "Out of stock limit",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "outOfStockLimitField",
                         "minValue": 0,
                         "name": "outOfStockLimit"
                     },
-                    "designerId": "4292d395-50be-4475-b4a6-2cf1a89b5d91"
+                    "designerId": "4292d395-50be-4475-b4a6-2cf1a89b5d91",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -150,10 +190,18 @@
                         "fieldLabel": "Notify for stock below",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "notifyForQuantityBelowField",
                         "minValue": 0,
                         "name": "notifyForQuantityBelow"
                     },
-                    "designerId": "9ebca697-4db2-4277-a393-2a820eda6942"
+                    "designerId": "9ebca697-4db2-4277-a393-2a820eda6942",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -167,10 +215,18 @@
                         "fieldLabel": "Resupply delay (days)",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "resupplyDelayField",
                         "minValue": 0,
                         "name": "resupplyDelay"
                     },
-                    "designerId": "d6c5f209-2df3-4d7f-96fb-472441b22b3a"
+                    "designerId": "d6c5f209-2df3-4d7f-96fb-472441b22b3a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         },
@@ -186,10 +242,18 @@
                 "fieldLabel": "Preparation delay (days)",
                 "labelWidth": 140,
                 "layout|anchor": "100%",
+                "localiserId": "preparationDelayField",
                 "minValue": 0,
                 "name": "preparationDelay"
             },
-            "designerId": "0c580316-8c6c-4361-854c-d60ed76b3d17"
+            "designerId": "0c580316-8c6c-4361-854c-d60ed76b3d17",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

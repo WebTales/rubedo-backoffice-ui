@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.pagesECommerceFieldset', {
         'Ext.form.field.Hidden'
     ],
 
+    localiserId: 'eCCategoryFieldset',
     hidden: true,
     title: 'E-Commerce category',
 
@@ -34,12 +35,14 @@ Ext.define('Rubedo.view.pagesECommerceFieldset', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
+                    localiserId: 'titleField',
                     fieldLabel: 'Title',
                     name: 'eCTitle'
                 },
                 {
                     xtype: 'textareafield',
                     anchor: '100%',
+                    localiserId: 'descriptionField',
                     fieldLabel: 'Description',
                     name: 'eCDescription'
                 },
@@ -47,7 +50,8 @@ Ext.define('Rubedo.view.pagesECommerceFieldset', {
                     xtype: 'ImagePickerField',
                     allowedFileType: 'Image',
                     fieldLabel: 'Image',
-                    name: 'eCImage'
+                    name: 'eCImage',
+                    localiserId: 'categoryImageField'
                 }
             ],
             listeners: {

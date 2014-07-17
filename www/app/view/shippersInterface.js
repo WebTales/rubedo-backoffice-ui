@@ -34,6 +34,7 @@ Ext.define('Rubedo.view.shippersInterface', {
         'Ext.panel.Tool'
     ],
 
+    localiserId: 'shippersWindow',
     height: 456,
     id: 'shippersInterface',
     width: 1003,
@@ -154,6 +155,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'checkboxfield',
                                     anchor: '100%',
+                                    localiserId: 'activeField',
                                     fieldLabel: 'Active',
                                     labelWidth: 140,
                                     name: 'active',
@@ -163,6 +165,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    localiserId: 'rateTypeField',
                                     fieldLabel: 'Rate type',
                                     labelWidth: 140,
                                     name: 'rateType',
@@ -197,6 +200,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                         {
                             xtype: 'gridpanel',
                             flex: 1,
+                            localiserId: 'ratesGrid',
                             title: 'Rates',
                             forceFit: true,
                             store: 'ShippersRatesStore',
@@ -208,6 +212,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         return value;
                                     }
                                     },
+                                    localiserId: 'countryCol',
                                     dataIndex: 'country',
                                     text: 'Country',
                                     editor: {
@@ -222,6 +227,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'priceCol',
                                     dataIndex: 'rate',
                                     text: 'Price (tax-free)',
                                     editor: {
@@ -232,6 +238,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'taxCol',
                                     dataIndex: 'tax',
                                     text: 'Tax (%)',
                                     editor: {
@@ -242,6 +249,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'delayCol',
                                     dataIndex: 'delay',
                                     text: 'Delay (days)',
                                     editor: {
@@ -252,6 +260,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'displayedDelayAmountCol',
                                     dataIndex: 'hRDelay',
                                     text: 'Displayed delay (amount)',
                                     editor: {
@@ -263,6 +272,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'displayedDelayUnitCol',
                                     dataIndex: 'hRUnit',
                                     text: 'Displayed delay (unit)',
                                     editor: {
@@ -302,6 +312,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         },
                                         {
                                             xtype: 'button',
+                                            localiserId: 'addRateBtn',
                                             iconCls: 'add',
                                             text: 'Add rate',
                                             listeners: {
@@ -313,6 +324,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         },
                                         {
                                             xtype: 'button',
+                                            localiserId: 'removeRateBtn',
                                             disabled: true,
                                             id: 'removeShipperRateBtn',
                                             iconCls: 'close',

@@ -12,9 +12,17 @@
         "designer|userClassName": "productSettingsForm",
         "id": "productSettingsForm",
         "layout": "vbox",
+        "localiserId": "productSettingsPanel",
         "title": "Product settings"
     },
     "designerId": "2ae78d7f-914e-476c-840e-3b4423f7e7ae",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -42,9 +50,17 @@
                         "fieldLabel": "SKU",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "skuField",
                         "name": "sku"
                     },
-                    "designerId": "a52f0f59-5772-4fc9-a469-99c03a056824"
+                    "designerId": "a52f0f59-5772-4fc9-a469-99c03a056824",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -59,10 +75,18 @@
                         "id": "basePriceField",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "basePriceField",
                         "minValue": 0,
                         "name": "basePrice"
                     },
-                    "designerId": "e1aa9ae9-7bb0-4474-bdd1-53d7758eabc4"
+                    "designerId": "e1aa9ae9-7bb0-4474-bdd1-53d7758eabc4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -76,10 +100,18 @@
                         "fieldLabel": "Preparation delay (days)",
                         "labelWidth": 140,
                         "layout|anchor": "100%",
+                        "localiserId": "preparationDelayField",
                         "minValue": 0,
                         "name": "preparationDelay"
                     },
-                    "designerId": "7f40d8b1-85d9-4ef2-9e17-a12fd6c2fd16"
+                    "designerId": "7f40d8b1-85d9-4ef2-9e17-a12fd6c2fd16",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.FieldSet",
@@ -90,9 +122,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "stockManagentForProductFieldset",
+                        "localiserId": "stockManagementFieldset",
                         "title": "Stock management"
                     },
                     "designerId": "46708c33-f783-4818-92bc-068565e29517",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -107,10 +147,18 @@
                                 "inputValue": "true",
                                 "labelWidth": 140,
                                 "layout|anchor": "100%",
+                                "localiserId": "canOrderOutOfStockField",
                                 "name": "canOrderNotInStock",
                                 "uncheckedValue": "false"
                             },
-                            "designerId": "0bba0feb-bc1d-4a51-a5e6-24eb46cd2e09"
+                            "designerId": "0bba0feb-bc1d-4a51-a5e6-24eb46cd2e09",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -124,10 +172,18 @@
                                 "fieldLabel": "Out of stock limit",
                                 "labelWidth": 140,
                                 "layout|anchor": "100%",
+                                "localiserId": "outOfStockLimitField",
                                 "minValue": 0,
                                 "name": "outOfStockLimit"
                             },
-                            "designerId": "2e96d6d2-9c21-42ff-b465-12b8e4f0ed77"
+                            "designerId": "2e96d6d2-9c21-42ff-b465-12b8e4f0ed77",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -141,10 +197,18 @@
                                 "fieldLabel": "Notify for stock below",
                                 "labelWidth": 140,
                                 "layout|anchor": "100%",
+                                "localiserId": "notifyForQuantityBelowField",
                                 "minValue": 0,
                                 "name": "notifyForQuantityBelow"
                             },
-                            "designerId": "d2d56469-4551-4b55-95e7-74f7950a6bce"
+                            "designerId": "d2d56469-4551-4b55-95e7-74f7950a6bce",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -158,10 +222,18 @@
                                 "fieldLabel": "Resupply delay (days)",
                                 "labelWidth": 140,
                                 "layout|anchor": "100%",
+                                "localiserId": "resupplyDelayField",
                                 "minValue": 0,
                                 "name": "resupplyDelay"
                             },
-                            "designerId": "38d610a5-0a82-4d11-bb1d-c81b271d4466"
+                            "designerId": "38d610a5-0a82-4d11-bb1d-c81b271d4466",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -178,9 +250,17 @@
                 "container|align": "stretch",
                 "layout": "hbox",
                 "layout|flex": 1,
+                "localiserId": "variationsGrid",
                 "title": "Variations"
             },
             "designerId": "a42663e8-4f9f-4e87-a57d-036e66f035ea",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.grid.Panel",
@@ -303,9 +383,17 @@
                                     "userConfig": {
                                         "iconCls": "add",
                                         "layout|flex": null,
+                                        "localiserId": "addBtn",
                                         "text": "Add"
                                     },
                                     "designerId": "a61c3f71-704f-4a15-93f2-a4c910757612",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "basiceventbinding",
@@ -355,9 +443,17 @@
                                         "iconCls": "close",
                                         "id": "variationRemoverBtn",
                                         "layout|flex": null,
+                                        "localiserId": "removeBtn",
                                         "text": "Remove"
                                     },
                                     "designerId": "d7e3c802-65b7-4c19-8e1e-9f44d9e717e0",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "basiceventbinding",
@@ -431,11 +527,19 @@
                         "forceFit": true,
                         "id": "specialOffersGrid",
                         "layout|flex": null,
+                        "localiserId": "specialOffersGrid",
                         "store": "SpecialOffers",
                         "title": "Special offers for this variation",
                         "width": 300
                     },
                     "designerId": "13209eab-33ca-4aa5-ae53-82a8696c6e4b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.grid.View",
@@ -480,9 +584,17 @@
                                     "userConfig": {
                                         "iconCls": "add",
                                         "layout|flex": null,
+                                        "localiserId": "addBtn",
                                         "text": "Add"
                                     },
                                     "designerId": "f8dbb77a-3896-48f1-9c57-23bc4b237205",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
@@ -523,9 +635,17 @@
                                         "iconCls": "close",
                                         "id": "removeSpecialOfferBtn",
                                         "layout|flex": null,
+                                        "localiserId": "removeBtn",
                                         "text": "Remove"
                                     },
                                     "designerId": "f111f415-d5a8-4376-9fb0-87e4e2983dd1",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
@@ -559,9 +679,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "beginDate",
+                                "localiserId": "startDateCol",
                                 "text": "Start date"
                             },
                             "designerId": "8d95941a-c187-474b-aae8-49c5f12e5fdb",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Date",
@@ -587,9 +715,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "endDate",
+                                "localiserId": "endDateCol",
                                 "text": "End date"
                             },
                             "designerId": "dd2597f4-19a5-4796-9af9-a83180b10fa5",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Date",
@@ -615,9 +751,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "price",
+                                "localiserId": "priceCol",
                                 "text": "Price"
                             },
                             "designerId": "fd59282d-e51a-4d72-83b6-4f82baf8cfe5",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Number",

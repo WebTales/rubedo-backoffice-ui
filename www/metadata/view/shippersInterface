@@ -14,7 +14,7 @@
         "iconCls": "truck",
         "id": "shippersInterface",
         "layout": "hbox",
-        "localiserId": null,
+        "localiserId": "shippersWindow",
         "title": "Shippers",
         "width": 1003
     },
@@ -329,10 +329,18 @@
                                 "inputValue": "true",
                                 "labelWidth": 140,
                                 "layout|anchor": "100%",
+                                "localiserId": "activeField",
                                 "name": "active",
                                 "uncheckedValue": "false"
                             },
-                            "designerId": "4142ad48-4d8c-4b5a-b169-b92ee583e6be"
+                            "designerId": "4142ad48-4d8c-4b5a-b169-b92ee583e6be",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -348,6 +356,7 @@
                                 "forceSelection": true,
                                 "labelWidth": 140,
                                 "layout|anchor": "100%",
+                                "localiserId": "rateTypeField",
                                 "name": "rateType",
                                 "queryMode": "local",
                                 "store": [
@@ -357,7 +366,14 @@
                             "configAlternates": {
                                 "store": "array"
                             },
-                            "designerId": "fe8e747d-f4cf-4c80-8b26-b9a0dd5c2c15"
+                            "designerId": "fe8e747d-f4cf-4c80-8b26-b9a0dd5c2c15",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -390,10 +406,18 @@
                     "userConfig": {
                         "forceFit": true,
                         "layout|flex": 1,
+                        "localiserId": "ratesGrid",
                         "store": "ShippersRatesStore",
                         "title": "Rates"
                     },
                     "designerId": "e37144e1-dab4-4609-bc3c-934d2e5cdf0d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.grid.View",
@@ -413,9 +437,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "country",
+                                "localiserId": "countryCol",
                                 "text": "Country"
                             },
                             "designerId": "3d1c2fc9-e6e7-4465-b2ae-58ce7781f3ee",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -471,9 +503,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "rate",
+                                "localiserId": "priceCol",
                                 "text": "Price (tax-free)"
                             },
                             "designerId": "6976f19c-339a-4ac8-af36-67a9ebf5c0f1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Number",
@@ -499,9 +539,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "tax",
+                                "localiserId": "taxCol",
                                 "text": "Tax (%)"
                             },
                             "designerId": "40c85d3d-3aa8-4379-afbe-569aadc4b01a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Number",
@@ -527,9 +575,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "delay",
+                                "localiserId": "delayCol",
                                 "text": "Delay (days)"
                             },
                             "designerId": "f9f76d90-5a26-47c3-924c-75173d8a618d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Number",
@@ -555,9 +611,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "hRDelay",
+                                "localiserId": "displayedDelayAmountCol",
                                 "text": "Displayed delay (amount)"
                             },
                             "designerId": "8cb26eac-a2e8-447d-9d61-1eef6eac940b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Number",
@@ -584,9 +648,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "hRUnit",
+                                "localiserId": "displayedDelayUnitCol",
                                 "text": "Displayed delay (unit)"
                             },
                             "designerId": "bc6a61a5-a45d-47c9-88be-867ebe01ebcf",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -645,9 +717,17 @@
                                     "userConfig": {
                                         "iconCls": "add",
                                         "layout|flex": null,
+                                        "localiserId": "addRateBtn",
                                         "text": "Add rate"
                                     },
                                     "designerId": "0671c23c-dcc2-467a-9019-e7bae27b6924",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "basiceventbinding",
@@ -680,9 +760,17 @@
                                         "iconCls": "close",
                                         "id": "removeShipperRateBtn",
                                         "layout|flex": null,
+                                        "localiserId": "removeRateBtn",
                                         "text": "Remove rate"
                                     },
                                     "designerId": "5a50b7ca-9589-4dc4-aa8e-182e3d46bdc6",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "basiceventbinding",
