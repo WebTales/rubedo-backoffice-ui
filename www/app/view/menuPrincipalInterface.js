@@ -503,7 +503,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
         if (!PHPOptions.addECommerce){
             component.hide();
         }
-        else if ((!ACL.interfaceRights["exe.ui.import"])&&(!ACL.interfaceRights["read.ui.queries"])&&(!ACL.interfaceRights["read.ui.taxonomy"])&&(!ACL.interfaceRights["read.ui.groups"])&&(!ACL.interfaceRights["read.ui.workspaces"])&&(!ACL.interfaceRights["read.ui.users"])&&(!ACL.interfaceRights["read.ui.technicalDashboard"])&&(!ACL.interfaceRights["read.ui.workflows"])&&(!ACL.interfaceRights["read.ui.mailingLists"])&&(!ACL.interfaceRights["read.ui.languages"])&&(!ACL.interfaceRights["read.ui.applicationLogs"])){
+        else if ((!ACL.interfaceRights["read.ui.shippers"])&&(!ACL.interfaceRights["read.ui.taxes"])&&(!ACL.interfaceRights["read.ui.stock"])&&(!ACL.interfaceRights["read.ui.paymentMeans"])&&(!ACL.interfaceRights["read.ui.orders"])){
             component.hide();
         }
     }
