@@ -98,6 +98,18 @@
                 ]
             },
             "designerId": "f5e8aa84-e6dc-4ade-b11e-aee6d5df9178"
+        },
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "groupers",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "productType"
+            },
+            "designerId": "13a17d8c-1447-42a5-9cb6-4e5408eb014b"
         }
     ]
 }

@@ -29,6 +29,7 @@ Ext.define('Rubedo.view.adminFTDC', {
         'Ext.toolbar.Fill',
         'Ext.grid.Panel',
         'Ext.grid.View',
+        'Ext.grid.feature.Grouping',
         'Ext.tab.Panel',
         'Ext.tab.Tab',
         'Ext.form.field.TextArea',
@@ -39,7 +40,6 @@ Ext.define('Rubedo.view.adminFTDC', {
         'Ext.form.FieldSet',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Checkbox',
-        'Ext.grid.feature.Grouping',
         'Ext.grid.plugin.CellEditing',
         'Ext.slider.Single',
         'Ext.ux.TreePicker'
@@ -552,7 +552,24 @@ Ext.define('Rubedo.view.adminFTDC', {
                     ],
                     selModel: Ext.create('Ext.selection.RowModel', {
 
-                    })
+                    }),
+                    features: [
+                        {
+                            ftype: 'grouping',
+                            groupHeaderTpl: Ext.create('Ext.XTemplate', 
+                                '{name:this.formatName}',
+                                {
+                                    formatName: function(name) {
+                                        if (name!="none"){
+                                            return("Product types");
+                                        } else {
+                                            return("Content types");
+                                        }
+                                    }
+                                }
+                            )
+                        }
+                    ]
                 },
                 {
                     xtype: 'tabpanel',

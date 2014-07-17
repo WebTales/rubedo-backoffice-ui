@@ -21,7 +21,8 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json',
-        'Ext.util.Filter'
+        'Ext.util.Filter',
+        'Ext.util.Grouper'
     ],
 
     constructor: function(cfg) {
@@ -61,6 +62,9 @@ Ext.define('Rubedo.store.TypesContenusDataJson', {
                 value: {
                     $ne: true
                 }
+            },
+            groupers: {
+                property: 'productType'
             }
         }, cfg)]);
     }
