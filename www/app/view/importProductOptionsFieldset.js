@@ -33,8 +33,8 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
             items: [
                 {
                     xtype: 'combobox',
-                    anchor: '100%',
                     localiserId: 'baseSkuField',
+                    anchor: '100%',
                     fieldLabel: 'Base SKU',
                     labelWidth: 60,
                     name: 'baseSkuFieldIndex',
@@ -47,8 +47,8 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
                 },
                 {
                     xtype: 'combobox',
-                    anchor: '100%',
                     localiserId: 'basePriceField',
+                    anchor: '100%',
                     fieldLabel: 'Base price',
                     labelWidth: 60,
                     name: 'basePriceFieldIndex',
@@ -61,8 +61,8 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
                 },
                 {
                     xtype: 'combobox',
-                    anchor: '100%',
                     localiserId: 'preparationDelayField',
+                    anchor: '100%',
                     fieldLabel: 'Preparation delay',
                     labelWidth: 60,
                     name: 'preparationDelayFieldIndex',
@@ -75,8 +75,8 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
                 },
                 {
                     xtype: 'combobox',
-                    anchor: '100%',
                     localiserId: 'skuField',
+                    anchor: '100%',
                     fieldLabel: 'SKU',
                     labelWidth: 60,
                     name: 'skuFieldIndex',
@@ -89,8 +89,8 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
                 },
                 {
                     xtype: 'combobox',
-                    anchor: '100%',
                     localiserId: 'priceField',
+                    anchor: '100%',
                     fieldLabel: 'Price',
                     labelWidth: 60,
                     name: 'priceFieldIndex',
@@ -103,8 +103,8 @@ Ext.define('Rubedo.view.importProductOptionsFieldset', {
                 },
                 {
                     xtype: 'combobox',
-                    anchor: '100%',
                     localiserId: 'stockField',
+                    anchor: '100%',
                     fieldLabel: 'Stock',
                     labelWidth: 60,
                     name: 'stockFieldIndex',

@@ -42,8 +42,8 @@ Ext.define('Rubedo.view.stockRemoverWindow', {
                     items: [
                         {
                             xtype: 'numberfield',
-                            anchor: '100%',
                             localiserId: 'amountToRemoveField',
+                            anchor: '100%',
                             id: 'stockRemoverField',
                             fieldLabel: 'Amount to remove',
                             labelWidth: 120,

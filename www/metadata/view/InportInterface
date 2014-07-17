@@ -2375,10 +2375,18 @@
                 "disabled": true,
                 "dock": "left",
                 "id": "importPresetsPannel",
+                "localiserId": "presetsPanel",
                 "title": "Presets",
                 "width": 200
             },
             "designerId": "b28fc2c6-c2d5-4bfc-a7b3-b30c5863f809",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.FieldSet",
@@ -2388,10 +2396,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "useExistingPresetFieldset",
                         "padding": 6,
                         "title": "Use existing preset"
                     },
                     "designerId": "54409847-0b3e-4439-9b8e-bbf63dadcc60",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -2408,6 +2424,7 @@
                                 "id": "importPresetSelectorField",
                                 "lastQuery": "",
                                 "layout|anchor": "100%",
+                                "localiserId": "inportPrestField",
                                 "store": "ImportPresets",
                                 "valueField": "id"
                             },
@@ -2416,6 +2433,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "lastQuery",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
@@ -2431,9 +2453,17 @@
                                 "disabled": true,
                                 "id": "importPresetApplyBtn",
                                 "layout|anchor": "100%",
+                                "localiserId": "importPresetApplyBtn",
                                 "text": "Apply"
                             },
-                            "designerId": "39787022-a986-44a3-8963-4a9a2febfaae"
+                            "designerId": "39787022-a986-44a3-8963-4a9a2febfaae",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -2446,10 +2476,18 @@
                                 "disabled": true,
                                 "id": "importPresetDeleteBtn",
                                 "layout|anchor": "100%",
+                                "localiserId": "importPresetDeleteBtn",
                                 "margin": "6 0 0 0 ",
                                 "text": "Delete selected preset"
                             },
-                            "designerId": "122ea143-1e80-402e-8657-f5aea094f8d8"
+                            "designerId": "122ea143-1e80-402e-8657-f5aea094f8d8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -2461,10 +2499,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "saveAsNewPresetFieldset",
                         "padding": 6,
                         "title": "Save as new preset"
                     },
                     "designerId": "3210e812-6f37-4a5a-99b8-e2dbcd9f9290",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -2480,10 +2526,18 @@
                                 "id": "importPresetNameField",
                                 "labelAlign": "top",
                                 "layout|anchor": "100%",
+                                "localiserId": "importPresetNameField",
                                 "name": "name",
                                 "validateOnBlur": false
                             },
-                            "designerId": "f1abe28c-98ab-4392-8695-29fdd311c249"
+                            "designerId": "f1abe28c-98ab-4392-8695-29fdd311c249",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -2495,9 +2549,17 @@
                             "userConfig": {
                                 "id": "importPresetSaveBtn",
                                 "layout|anchor": "100%",
+                                "localiserId": "importPresetSaveBtn",
                                 "text": "Save"
                             },
-                            "designerId": "0c9931d4-e259-476c-982c-b207f4c56cae"
+                            "designerId": "0c9931d4-e259-476c-982c-b207f4c56cae",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

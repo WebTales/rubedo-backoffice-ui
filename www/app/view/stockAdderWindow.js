@@ -42,8 +42,8 @@ Ext.define('Rubedo.view.stockAdderWindow', {
                     items: [
                         {
                             xtype: 'numberfield',
-                            anchor: '100%',
                             localiserId: 'alountToAddField',
+                            anchor: '100%',
                             fieldLabel: 'Amount to add',
                             name: 'amount',
                             allowBlank: false,

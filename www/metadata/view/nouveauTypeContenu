@@ -98,9 +98,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "localiserId": "eCFieldset",
                         "title": "E-Commerce"
                     },
                     "designerId": "87ea5507-c2dc-43eb-ad40-ed19875ee096",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -115,6 +123,7 @@
                                 "fieldLabel": "Product type",
                                 "forceSelection": true,
                                 "layout|anchor": "100%",
+                                "localiserId": "productTyeField",
                                 "name": "productType",
                                 "queryMode": "local",
                                 "store": [
@@ -127,7 +136,14 @@
                             "configAlternates": {
                                 "store": "array"
                             },
-                            "designerId": "61eeb713-474c-4796-8a2c-9814a2cd0a91"
+                            "designerId": "61eeb713-474c-4796-8a2c-9814a2cd0a91",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "basiceventbinding",

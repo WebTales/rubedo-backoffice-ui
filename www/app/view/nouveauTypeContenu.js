@@ -60,11 +60,13 @@ Ext.define('Rubedo.view.nouveauTypeContenu', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'eCFieldset',
                             title: 'E-Commerce',
                             items: [
                                 {
                                     xtype: 'combobox',
                                     anchor: '100%',
+                                    localiserId: 'productTyeField',
                                     fieldLabel: 'Product type',
                                     name: 'productType',
                                     value: 'none',

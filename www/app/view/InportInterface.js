@@ -59,6 +59,7 @@ Ext.define('Rubedo.view.InportInterface', {
                 {
                     xtype: 'panel',
                     dock: 'left',
+                    localiserId: 'presetsPanel',
                     disabled: true,
                     id: 'importPresetsPannel',
                     width: 200,
@@ -70,6 +71,7 @@ Ext.define('Rubedo.view.InportInterface', {
                     items: [
                         {
                             xtype: 'fieldset',
+                            localiserId: 'useExistingPresetFieldset',
                             padding: 6,
                             title: 'Use existing preset',
                             items: [
@@ -77,6 +79,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                     xtype: 'combobox',
                                     lastQuery: '',
                                     anchor: '100%',
+                                    localiserId: 'inportPrestField',
                                     id: 'importPresetSelectorField',
                                     fieldLabel: '',
                                     editable: false,
@@ -88,6 +91,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    localiserId: 'importPresetApplyBtn',
                                     disabled: true,
                                     id: 'importPresetApplyBtn',
                                     text: 'Apply'
@@ -95,6 +99,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    localiserId: 'importPresetDeleteBtn',
                                     disabled: true,
                                     id: 'importPresetDeleteBtn',
                                     margin: '6 0 0 0 ',
@@ -104,12 +109,14 @@ Ext.define('Rubedo.view.InportInterface', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'saveAsNewPresetFieldset',
                             padding: 6,
                             title: 'Save as new preset',
                             items: [
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    localiserId: 'importPresetNameField',
                                     id: 'importPresetNameField',
                                     fieldLabel: 'Name',
                                     labelAlign: 'top',
@@ -121,6 +128,7 @@ Ext.define('Rubedo.view.InportInterface', {
                                 {
                                     xtype: 'button',
                                     anchor: '100%',
+                                    localiserId: 'importPresetSaveBtn',
                                     id: 'importPresetSaveBtn',
                                     text: 'Save'
                                 }
