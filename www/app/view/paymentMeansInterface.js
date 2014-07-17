@@ -193,8 +193,8 @@ Ext.define('Rubedo.view.paymentMeansInterface', {
             Ext.getStore("PMConfigs").getProxy().extraParams.paymentMeans=record.get("id");
             Ext.getStore("PMConfigs").addListener("load", function(){
             	var loaded=Ext.getStore("PMConfigs").getRange()[0];
-                Ext.getCmp("pmRubedoConfigForm").getForm().setValues(Ext.clone(loaded.getData());
-                adaptiveForm.getForm().setValues(Ext.clone(loaded.get("nativePMConfig"));
+                Ext.getCmp("pmRubedoConfigForm").getForm().setValues(Ext.clone(loaded.getData()));
+                adaptiveForm.getForm().setValues(Ext.clone(loaded.get("nativePMConfig")));
                 Ext.getCmp("pmConfigSaveBtn").enable();
             }, this, {single:true});
             Ext.getStore("PMConfigs").load();
