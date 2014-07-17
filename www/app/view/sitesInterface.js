@@ -337,6 +337,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'checkboxfield',
                                             anchor: '100%',
+                                            localiserId: 'sitesEnableECField',
                                             fieldLabel: 'E-Commerce page categories',
                                             labelWidth: 110,
                                             name: 'enableECommerceFeatures',

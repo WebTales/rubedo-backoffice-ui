@@ -30,6 +30,7 @@ Ext.define('Rubedo.view.stockInterface', {
         'Ext.toolbar.Fill'
     ],
 
+    localiserId: 'stockWindow',
     height: 456,
     id: 'stockInterface',
     width: 1039,
@@ -74,6 +75,7 @@ Ext.define('Rubedo.view.stockInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'productTypeCol',
                             dataIndex: 'type',
                             text: 'Product type '
                         }
@@ -88,6 +90,7 @@ Ext.define('Rubedo.view.stockInterface', {
                 {
                     xtype: 'gridpanel',
                     flex: 1,
+                    localiserId: 'ItemsGrid',
                     id: 'mainStockGrid',
                     title: 'Items',
                     forceFit: true,
@@ -113,6 +116,7 @@ Ext.define('Rubedo.view.stockInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'refreshBtn',
                                     disabled: true,
                                     id: 'stockrefresherBtn',
                                     iconCls: 'refresh',
@@ -129,6 +133,7 @@ Ext.define('Rubedo.view.stockInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addStockBtn',
                                     disabled: true,
                                     id: 'stockAddToVarItem',
                                     iconCls: 'add',
@@ -142,6 +147,7 @@ Ext.define('Rubedo.view.stockInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeStockBtn',
                                     disabled: true,
                                     id: 'stockRemoveFromVarItem',
                                     iconCls: 'close',
@@ -155,6 +161,7 @@ Ext.define('Rubedo.view.stockInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'viewProductBtn',
                                     disabled: true,
                                     id: 'stockViewVarProduct',
                                     width: 100,
@@ -173,11 +180,13 @@ Ext.define('Rubedo.view.stockInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'titleCol',
                             dataIndex: 'title',
                             text: 'Title'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'priceCol',
                             dataIndex: 'price',
                             text: 'Price'
                         },
@@ -192,11 +201,13 @@ Ext.define('Rubedo.view.stockInterface', {
                                     return(value);
                                 }
                             },
+                            localiserId: 'stockCol',
                             dataIndex: 'stock',
                             text: 'Stock'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'skuCol',
                             dataIndex: 'sku',
                             text: 'Sku'
                         }

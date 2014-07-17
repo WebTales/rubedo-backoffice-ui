@@ -14,7 +14,7 @@
         "iconCls": "content-icon",
         "id": "ordersInterface",
         "layout": "hbox",
-        "localiserId": null,
+        "localiserId": "ordersWindow",
         "title": "Orders",
         "width": 1201
     },
@@ -72,9 +72,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "orderNumber",
+                        "localiserId": "orderNumberCol",
                         "text": "Order Number"
                     },
-                    "designerId": "d6bd9bb3-e828-4845-ac42-52eefa2544e4"
+                    "designerId": "d6bd9bb3-e828-4845-ac42-52eefa2544e4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -85,9 +93,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "userName",
+                        "localiserId": "clientNameCol",
                         "text": "Client name"
                     },
-                    "designerId": "cd732be2-8fa1-4762-9da5-443032f07f1f"
+                    "designerId": "cd732be2-8fa1-4762-9da5-443032f07f1f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -98,9 +114,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "finalPrice",
+                        "localiserId": "fullPriceCol",
                         "text": "Full Price"
                     },
                     "designerId": "ad8e27a1-f44a-4a19-9908-6ae2e402ba40",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -182,9 +206,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "createTime",
+                        "localiserId": "dateCol",
                         "text": "Date"
                     },
-                    "designerId": "91be34e3-72bc-4c99-a508-1de09fe81eb5"
+                    "designerId": "91be34e3-72bc-4c99-a508-1de09fe81eb5",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -209,10 +241,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "shipper",
+                        "localiserId": "shipperCol",
                         "sortable": false,
                         "text": "Shipper"
                     },
                     "designerId": "f06fd8af-3e67-4359-97b7-b39aa5c29f39",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -269,9 +309,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "status",
+                        "localiserId": "statusCol",
                         "text": "Status"
                     },
-                    "designerId": "a8c63e3e-ead3-4970-b8b4-22f061b60472"
+                    "designerId": "a8c63e3e-ead3-4970-b8b4-22f061b60472",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.View",
@@ -400,9 +448,17 @@
                         "bodyPadding": 10,
                         "id": "orderSettingsForm",
                         "layout|flex": null,
+                        "localiserId": "orderSettingForm",
                         "title": "Settings"
                     },
                     "designerId": "a060da5a-bd22-4295-a152-bc579fdf34d9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.FieldSet",
@@ -412,9 +468,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "localiserId": "attachmentsFieldset",
                                 "title": "Attachments"
                             },
                             "designerId": "6188a231-27c6-4924-80ac-0e400d530e90",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "linkedinstance",
@@ -427,6 +491,7 @@
                                         "allowedFileType": "Document",
                                         "fieldLabel": "Bill",
                                         "labelWidth": 120,
+                                        "localiserId": "billDocumentField",
                                         "name": "billDocument",
                                         "smallMode": true
                                     },
@@ -443,6 +508,11 @@
                                         {
                                             "group": "(Custom Properties)",
                                             "name": "smallMode",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
                                             "type": "string"
                                         }
                                     ],
@@ -464,6 +534,7 @@
                                 "fieldLabel": "Order status *",
                                 "forceSelection": true,
                                 "layout|anchor": "60%",
+                                "localiserId": "orderStatusField",
                                 "name": "status",
                                 "store": null,
                                 "style": "float:left;"
@@ -473,6 +544,13 @@
                                 "store": "array"
                             },
                             "designerId": "cb177ed7-24fe-4df1-8bca-2f39bd9e5a65",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "processcfgfunction",
@@ -504,6 +582,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "40%",
+                                "localiserId": "applyChangesBtn",
                                 "style": "float:right;",
                                 "text": "Apply changes"
                             },
@@ -511,6 +590,13 @@
                                 "style": "string"
                             },
                             "designerId": "48073d76-2ff9-408f-aa0d-0d00dbe9a0f3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -551,9 +637,17 @@
                         "id": "orderDetailForm",
                         "layout": "hbox",
                         "layout|flex": null,
+                        "localiserId": "pricingAndClientDataForm",
                         "title": "Pricing and cilent data"
                     },
                     "designerId": "72d8781b-48b0-4674-961b-f1e611432cdf",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.FieldSet",
@@ -564,9 +658,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 0.6,
+                                "localiserId": "pricingFieldset",
                                 "title": "Pricing"
                             },
                             "designerId": "979d1c02-ec64-49ce-8075-6b45274cf99e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Display",
@@ -579,12 +681,20 @@
                                         "fieldLabel": "Shipping price (TF)",
                                         "labelWidth": 120,
                                         "layout|anchor": "100%",
+                                        "localiserId": "shippingPriceTFField",
                                         "name": "shippingPrice",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "def1a78f-bab9-43fd-9172-87e967ed8a12"
+                                    "designerId": "def1a78f-bab9-43fd-9172-87e967ed8a12",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -597,12 +707,20 @@
                                         "fieldLabel": "Shipping taxes",
                                         "labelWidth": 120,
                                         "layout|anchor": "100%",
+                                        "localiserId": "shippingTaxField",
                                         "name": "shippingTax",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "9b3b981b-021c-409f-ba6c-aa84fe30b6cd"
+                                    "designerId": "9b3b981b-021c-409f-ba6c-aa84fe30b6cd",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -615,12 +733,20 @@
                                         "fieldLabel": "Shipping price",
                                         "labelWidth": 120,
                                         "layout|anchor": "100%",
+                                        "localiserId": "shippingPriceField",
                                         "name": "shippingTaxedPrice",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "c89fd73a-3482-45b0-8c04-703c042f4e6b"
+                                    "designerId": "c89fd73a-3482-45b0-8c04-703c042f4e6b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -633,12 +759,20 @@
                                         "fieldLabel": "Total price (TF)",
                                         "labelWidth": 120,
                                         "layout|anchor": "100%",
+                                        "localiserId": "totalPriceField",
                                         "name": "finalTFPrice",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "5bd317f4-182f-42e8-8dc5-70bfac9be304"
+                                    "designerId": "5bd317f4-182f-42e8-8dc5-70bfac9be304",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -651,12 +785,20 @@
                                         "fieldLabel": "Tax total",
                                         "labelWidth": 120,
                                         "layout|anchor": "100%",
+                                        "localiserId": "taxTotalField",
                                         "name": "finalTaxes",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "1914b67d-7dcc-4527-8445-d88ea1529230"
+                                    "designerId": "1914b67d-7dcc-4527-8445-d88ea1529230",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -669,12 +811,20 @@
                                         "fieldLabel": "Total price",
                                         "labelWidth": 120,
                                         "layout|anchor": "100%",
+                                        "localiserId": "totalPriceField",
                                         "name": "finalPrice",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "04bd6a57-08ee-4ad8-b292-48646a61db57"
+                                    "designerId": "04bd6a57-08ee-4ad8-b292-48646a61db57",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -687,9 +837,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|flex": 1,
+                                "localiserId": "clientFieldset",
                                 "title": "Client"
                             },
                             "designerId": "4c51b395-daf3-4b03-9127-d14bce14ada8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Display",
@@ -701,12 +859,20 @@
                                     "userConfig": {
                                         "fieldLabel": "Name",
                                         "layout|anchor": "100%",
+                                        "localiserId": "nameField",
                                         "name": "userName",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "98aec455-2054-405c-9d80-2143b72f39ea"
+                                    "designerId": "98aec455-2054-405c-9d80-2143b72f39ea",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -718,12 +884,20 @@
                                     "userConfig": {
                                         "fieldLabel": "Billing address",
                                         "layout|anchor": "100%",
+                                        "localiserId": "billingAddressField",
                                         "name": "textBillingAddress",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "1f63fc69-a72e-42ba-9701-bdc933f89ad8"
+                                    "designerId": "1f63fc69-a72e-42ba-9701-bdc933f89ad8",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -735,12 +909,20 @@
                                     "userConfig": {
                                         "fieldLabel": "Shipping address",
                                         "layout|anchor": "100%",
+                                        "localiserId": "shippingAddressField",
                                         "name": "textShippingAddress",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "1cb058f9-290c-42b1-90c7-1513a6d8abbe"
+                                    "designerId": "1cb058f9-290c-42b1-90c7-1513a6d8abbe",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -752,12 +934,20 @@
                                     "userConfig": {
                                         "fieldLabel": "Payment means",
                                         "layout|anchor": "100%",
+                                        "localiserId": "paymentMeansField",
                                         "name": "paymentMeans",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "2d4ee018-6936-4376-9281-df203bab2796"
+                                    "designerId": "2d4ee018-6936-4376-9281-df203bab2796",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -769,12 +959,20 @@
                                     "userConfig": {
                                         "fieldLabel": "Shipper",
                                         "layout|anchor": "100%",
+                                        "localiserId": "shipperField",
                                         "name": "textShipper",
                                         "value": [
                                             "Display Field"
                                         ]
                                     },
-                                    "designerId": "537740b6-2ec5-4092-ab11-72b5a45963e0"
+                                    "designerId": "537740b6-2ec5-4092-ab11-72b5a45963e0",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.form.field.Display",
@@ -786,10 +984,18 @@
                                     "userConfig": {
                                         "fieldLabel": "Shipping comments",
                                         "layout|anchor": "100%",
+                                        "localiserId": "shippingCommentsField",
                                         "name": "shippingComments",
                                         "value": null
                                     },
-                                    "designerId": "8854f4a3-be79-405f-83b9-89cbe01ef8fe"
+                                    "designerId": "8854f4a3-be79-405f-83b9-89cbe01ef8fe",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -807,10 +1013,18 @@
                         "height": 400,
                         "id": "baughtProductsGrid",
                         "layout|flex": null,
+                        "localiserId": "baughtProductsGrid",
                         "store": "BoughtProducts",
                         "title": "Products"
                     },
                     "designerId": "1b67b947-c4a9-4473-ac70-dbeaf113df9a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.grid.View",
@@ -830,9 +1044,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "title",
+                                "localiserId": "titleCol",
                                 "text": "Title"
                             },
-                            "designerId": "3ee81c66-c2c3-4532-ae95-990cd5bba6e1"
+                            "designerId": "3ee81c66-c2c3-4532-ae95-990cd5bba6e1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -843,9 +1065,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "subtitle",
+                                "localiserId": "subtitleCol",
                                 "text": "Subtitle"
                             },
-                            "designerId": "05d997e1-98c5-46ba-8086-8463581ae6af"
+                            "designerId": "05d997e1-98c5-46ba-8086-8463581ae6af",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -856,9 +1086,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "unitPrice",
+                                "localiserId": "unitPriceCol",
                                 "text": "Unit price"
                             },
-                            "designerId": "a338bb1a-d89b-4423-80db-54cd3567d3f9"
+                            "designerId": "a338bb1a-d89b-4423-80db-54cd3567d3f9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -869,9 +1107,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "unitTaxedPrice",
+                                "localiserId": "unitTaxedPriceCol",
                                 "text": "Unit taxed price"
                             },
-                            "designerId": "249bf911-375d-42fa-b82a-8fa1dd801f7f"
+                            "designerId": "249bf911-375d-42fa-b82a-8fa1dd801f7f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -882,9 +1128,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "amount",
+                                "localiserId": "amountCol",
                                 "text": "Amount"
                             },
-                            "designerId": "7d13c87a-ab48-42c0-9809-b7f7e569a414"
+                            "designerId": "7d13c87a-ab48-42c0-9809-b7f7e569a414",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -895,9 +1149,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "price",
+                                "localiserId": "priceCol",
                                 "text": "Price"
                             },
-                            "designerId": "8a690258-71c2-4677-81d4-d2fc0c4f4eed"
+                            "designerId": "8a690258-71c2-4677-81d4-d2fc0c4f4eed",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -908,9 +1170,17 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "taxedPrice",
+                                "localiserId": "taxedPriceCol",
                                 "text": "Taxed Price"
                             },
-                            "designerId": "b819e028-7ec4-431b-a7ef-ae775994857a"
+                            "designerId": "b819e028-7ec4-431b-a7ef-ae775994857a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }

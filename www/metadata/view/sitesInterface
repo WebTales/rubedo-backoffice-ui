@@ -814,10 +814,18 @@
                                         "inputValue": "true",
                                         "labelWidth": 110,
                                         "layout|anchor": "100%",
+                                        "localiserId": "sitesEnableECField",
                                         "name": "enableECommerceFeatures",
                                         "uncheckedValue": "false"
                                     },
                                     "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "basiceventbinding",

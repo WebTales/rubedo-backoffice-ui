@@ -13,7 +13,7 @@
         "iconCls": "calculator",
         "id": "taxesInterface",
         "layout": "fit",
-        "localiserId": null,
+        "localiserId": "taxesWindow",
         "title": "Taxes",
         "width": 921
     },
@@ -121,9 +121,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "name",
+                        "localiserId": "nameCol",
                         "text": "Name"
                     },
                     "designerId": "57b24dd0-3f92-44bd-92b1-872a9669dbb9",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -150,10 +158,18 @@
                     "userConfig": {
                         "dataIndex": "active",
                         "falseText": "No",
+                        "localiserId": "activeCol",
                         "text": "Active",
                         "trueText": "Yes"
                     },
                     "designerId": "7dfc45ba-35d0-4189-ab2d-fb8846d0bca4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Checkbox",
@@ -175,9 +191,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "userTypes",
-                        "text": "UserTypes"
+                        "localiserId": "userTypesCol",
+                        "text": "User Types"
                     },
                     "designerId": "d9ee1518-c4fb-418b-bebc-8e0d03369335",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -261,9 +285,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "productTypes",
-                        "text": "ProductTypes"
+                        "localiserId": "productTypesCol",
+                        "text": "Product Types"
                     },
                     "designerId": "1a486d37-4276-4e71-b9d6-8d89420097c8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -345,9 +377,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "country",
+                        "localiserId": "countryCol",
                         "text": "Country"
                     },
                     "designerId": "2cdd684d-7482-4d3c-89da-0668da36d0fd",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -404,9 +444,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "region",
+                        "localiserId": "stateRegionCol",
                         "text": "State / Region"
                     },
                     "designerId": "6fd5409e-6205-4aaf-a8c4-31cb41d5e35a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -432,9 +480,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "postalCode",
+                        "localiserId": "zipPostalCodeCol",
                         "text": "Zip / PostalCode"
                     },
                     "designerId": "119d93cb-aca6-452c-97a5-e37f7aa846f6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -460,9 +516,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "rate",
+                        "localiserId": "ratePercentageCol",
                         "text": "Rate (%)"
                     },
                     "designerId": "54892372-3372-456a-af1f-e2faf0b33c10",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Number",
@@ -489,9 +553,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "priority",
+                        "localiserId": "priorityCol",
                         "text": "Priority"
                     },
                     "designerId": "20dede4d-6844-4ac3-846e-e546c5962e58",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Number",

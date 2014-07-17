@@ -35,6 +35,7 @@ Ext.define('Rubedo.view.ordersInterface', {
         'Ext.form.field.Display'
     ],
 
+    localiserId: 'ordersWindow',
     height: 566,
     id: 'ordersInterface',
     width: 1201,
@@ -70,11 +71,13 @@ Ext.define('Rubedo.view.ordersInterface', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'orderNumberCol',
                             dataIndex: 'orderNumber',
                             text: 'Order Number'
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'clientNameCol',
                             dataIndex: 'userName',
                             text: 'Client name'
                         },
@@ -83,6 +86,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return (value+" €");
                             },
+                            localiserId: 'fullPriceCol',
                             dataIndex: 'finalPrice',
                             text: 'Full Price'
                         },
@@ -102,6 +106,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'dateCol',
                             dataIndex: 'createTime',
                             text: 'Date'
                         },
@@ -120,6 +125,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     return "";
                                 }
                             },
+                            localiserId: 'shipperCol',
                             sortable: false,
                             dataIndex: 'shipper',
                             text: 'Shipper'
@@ -134,6 +140,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'statusCol',
                             dataIndex: 'status',
                             text: 'Status'
                         }
@@ -168,12 +175,14 @@ Ext.define('Rubedo.view.ordersInterface', {
                     items: [
                         {
                             xtype: 'form',
+                            localiserId: 'orderSettingForm',
                             id: 'orderSettingsForm',
                             bodyPadding: 10,
                             title: 'Settings',
                             items: [
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'attachmentsFieldset',
                                     title: 'Attachments',
                                     items: [
                                         {
@@ -182,13 +191,15 @@ Ext.define('Rubedo.view.ordersInterface', {
                                             smallMode: true,
                                             fieldLabel: 'Bill',
                                             labelWidth: 120,
-                                            name: 'billDocument'
+                                            name: 'billDocument',
+                                            localiserId: 'billDocumentField'
                                         }
                                     ]
                                 },
                                 me.processStatus({
                                     xtype: 'combobox',
                                     anchor: '60%',
+                                    localiserId: 'orderStatusField',
                                     style: 'float:left;',
                                     fieldLabel: 'Order status *',
                                     name: 'status',
@@ -206,6 +217,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         }
                                     },
                                     anchor: '40%',
+                                    localiserId: 'applyChangesBtn',
                                     style: 'float:right;',
                                     text: 'Apply changes'
                                 }
@@ -213,6 +225,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'form',
+                            localiserId: 'pricingAndClientDataForm',
                             id: 'orderDetailForm',
                             bodyPadding: 10,
                             title: 'Pricing and cilent data',
@@ -224,11 +237,13 @@ Ext.define('Rubedo.view.ordersInterface', {
                                 {
                                     xtype: 'fieldset',
                                     flex: 0.6,
+                                    localiserId: 'pricingFieldset',
                                     title: 'Pricing',
                                     items: [
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'shippingPriceTFField',
                                             fieldLabel: 'Shipping price (TF)',
                                             labelWidth: 120,
                                             name: 'shippingPrice',
@@ -237,6 +252,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'shippingTaxField',
                                             fieldLabel: 'Shipping taxes',
                                             labelWidth: 120,
                                             name: 'shippingTax',
@@ -245,6 +261,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'shippingPriceField',
                                             fieldLabel: 'Shipping price',
                                             labelWidth: 120,
                                             name: 'shippingTaxedPrice',
@@ -253,6 +270,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'totalPriceField',
                                             fieldLabel: 'Total price (TF)',
                                             labelWidth: 120,
                                             name: 'finalTFPrice',
@@ -261,6 +279,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'taxTotalField',
                                             fieldLabel: 'Tax total',
                                             labelWidth: 120,
                                             name: 'finalTaxes',
@@ -269,6 +288,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'totalPriceField',
                                             fieldLabel: 'Total price',
                                             labelWidth: 120,
                                             name: 'finalPrice',
@@ -279,11 +299,13 @@ Ext.define('Rubedo.view.ordersInterface', {
                                 {
                                     xtype: 'fieldset',
                                     flex: 1,
+                                    localiserId: 'clientFieldset',
                                     title: 'Client',
                                     items: [
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'nameField',
                                             fieldLabel: 'Name',
                                             name: 'userName',
                                             value: 'Display Field'
@@ -291,6 +313,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'billingAddressField',
                                             fieldLabel: 'Billing address',
                                             name: 'textBillingAddress',
                                             value: 'Display Field'
@@ -298,6 +321,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'shippingAddressField',
                                             fieldLabel: 'Shipping address',
                                             name: 'textShippingAddress',
                                             value: 'Display Field'
@@ -305,6 +329,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'paymentMeansField',
                                             fieldLabel: 'Payment means',
                                             name: 'paymentMeans',
                                             value: 'Display Field'
@@ -312,6 +337,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'shipperField',
                                             fieldLabel: 'Shipper',
                                             name: 'textShipper',
                                             value: 'Display Field'
@@ -319,6 +345,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         {
                                             xtype: 'displayfield',
                                             anchor: '100%',
+                                            localiserId: 'shippingCommentsField',
                                             fieldLabel: 'Shipping comments',
                                             name: 'shippingComments'
                                         }
@@ -328,6 +355,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'gridpanel',
+                            localiserId: 'baughtProductsGrid',
                             height: 400,
                             id: 'baughtProductsGrid',
                             title: 'Products',
@@ -336,36 +364,43 @@ Ext.define('Rubedo.view.ordersInterface', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'titleCol',
                                     dataIndex: 'title',
                                     text: 'Title'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'subtitleCol',
                                     dataIndex: 'subtitle',
                                     text: 'Subtitle'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'unitPriceCol',
                                     dataIndex: 'unitPrice',
                                     text: 'Unit price'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'unitTaxedPriceCol',
                                     dataIndex: 'unitTaxedPrice',
                                     text: 'Unit taxed price'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'amountCol',
                                     dataIndex: 'amount',
                                     text: 'Amount'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'priceCol',
                                     dataIndex: 'price',
                                     text: 'Price'
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'taxedPriceCol',
                                     dataIndex: 'taxedPrice',
                                     text: 'Taxed Price'
                                 }
