@@ -211,11 +211,9 @@ Ext.define('Rubedo.controller.CustomThemesController', {
             }
             refinedVars['@'+key]=interm;
         });
-        if ((!Ext.isEmpty(Ext.firefoxVersion))&&(Ext.firefoxVersion>0)){
-            themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);
-        } else {
-            themeSimulatorFrame.less.modifyVars(refinedVars);
-        }
+        
+        themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);
+        
     },
 
     getCLSuggestion: function() {
