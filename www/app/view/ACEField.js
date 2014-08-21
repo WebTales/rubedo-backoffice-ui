@@ -58,9 +58,26 @@ Ext.define('Rubedo.view.ACEField', {
         myComponent.getComponent("addBtn").on("click", function(){
             var myEditor = Ext.widget("aceEditorWindow");
             myEditor.targetedId=component.getId();
-            myEditor.initialValue=component.getValue();
             myEditor.twigMode=component.twigMode;
-            myEditor.show();
+            if (component.defaultTemplateUrl){
+                Ext.Ajax.request({
+                    url: '/components/webtales/rubedo-frontoffice/templates/blocks/'+component.defaultTemplateUrl,
+                    params: {
+                    },
+                    success: function(response){
+                        myEditor.initialValue=response.responseText;
+                        myEditor.show();
+                    },
+                    failure:function(response){
+                        myEditor.initialValue=component.getValue();
+                        myEditor.show();
+                    }
+                });
+            } else {
+                myEditor.initialValue=component.getValue();
+                myEditor.show();
+            }
+
         });
 
         myComponent.getComponent("editBtn").on("click", function(){
