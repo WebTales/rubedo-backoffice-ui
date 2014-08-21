@@ -48,6 +48,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar19",
             "designerId": "db5b5502-4e7c-4386-bc6c-b79435a73abd",
             "cn": [
                 {
@@ -65,6 +66,7 @@
                         "value": 0.2,
                         "width": null
                     },
+                    "name": "MyProgressBar1",
                     "designerId": "1232c257-4234-493b-8154-4cf2735d6afe",
                     "cn": [
                         {
@@ -84,6 +86,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processProgressAR",
                             "designerId": "2fb6b3dc-73cd-48b5-9b07-40d0c71a166e"
                         }
                     ]
@@ -103,6 +106,7 @@
                         "localiserId": "prevBtn",
                         "text": "Précédent"
                     },
+                    "name": "MyButton88",
                     "designerId": "e8afb4a7-f686-43ff-a068-d122b4bd5bea",
                     "customConfigs": [
                         {
@@ -127,6 +131,7 @@
                         "localiserId": "nextBtn",
                         "text": "Suivant"
                     },
+                    "name": "MyButton89",
                     "designerId": "be1dd7fa-897c-4f3e-a895-591684ca4e07",
                     "customConfigs": [
                         {
@@ -152,6 +157,7 @@
                 "localiserId": "queryBuilderStage1",
                 "title": "Choix des types de contenus"
             },
+            "name": "MyForm19",
             "designerId": "5fe52b83-fea3-43b5-bd53-247032444be1",
             "customConfigs": [
                 {
@@ -189,6 +195,7 @@
                         ],
                         "valueField": "id"
                     },
+                    "name": "MyComboBox20",
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
@@ -213,6 +220,7 @@
                             "'Tout selectionner'"
                         ]
                     },
+                    "name": "MyButton90",
                     "designerId": "041c6334-6731-4374-b34e-e79072907b13",
                     "customConfigs": [
                         {
@@ -239,6 +247,7 @@
                 "localiserId": "qbStage2",
                 "title": "Choix des termes de la taxonomie"
             },
+            "name": "MyForm20",
             "designerId": "bb52cb75-3abf-4acf-ab75-8ee4f0aeaa5e",
             "customConfigs": [
                 {
@@ -260,6 +269,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "assisstantre4",
             "designerId": "2c1daa0c-44c9-4c06-a40e-8762056bda2b",
             "masterInstanceId": "c3fb4103-ff9d-49bd-8bdd-78ae21eda6d7"
         },
@@ -270,6 +280,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "assisstantre5",
             "designerId": "6728f853-c881-488d-aa8a-5f02078c982c",
             "masterInstanceId": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
         },
@@ -280,6 +291,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "assisstantre6",
             "designerId": "f136b46b-b4ee-439d-8940-27af18abedda",
             "masterInstanceId": "1ef76120-d1ff-4b0f-bdc0-454b8c46c2ee"
         },
@@ -300,6 +312,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onAssistantRequetageRender",
             "designerId": "cdec9ded-7679-4a33-b617-1555e3c16058"
         },
         {
@@ -321,6 +334,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onAssistantRequetageBeforeClose",
             "designerId": "fbb0993c-0df1-4caf-8b0c-44b7481d2800"
         },
         {
@@ -375,6 +389,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onAssistantRequetageAfterRender",
             "designerId": "441b5628-1d2a-4763-a904-e51d4b97b234"
         }
     ]

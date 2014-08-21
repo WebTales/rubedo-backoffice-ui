@@ -50,6 +50,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "mainSearchLaunch",
             "designerId": "73056bf5-5078-4dd5-bd60-eb6b0e8f8262"
         },
         {
@@ -75,6 +76,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "mainResultWindowGetContext",
             "designerId": "fea6c637-212a-4372-a699-1d94b9313c48"
         },
         {
@@ -136,6 +138,7 @@
                     "});"
                 ]
             },
+            "name": "renderActiveFacets",
             "designerId": "eec912e9-4be7-4df4-b0ae-95514ade0554"
         },
         {
@@ -156,6 +159,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onESFacetQueryBtnClick",
             "designerId": "9b13ba4c-cdde-410c-8ea3-d270023551ef"
         },
         {
@@ -275,6 +279,7 @@
                     ""
                 ]
             },
+            "name": "renderFacets",
             "designerId": "0bf37f2e-bd96-4dc3-b672-d37d65fbc7e7"
         }
     ]

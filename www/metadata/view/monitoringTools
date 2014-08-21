@@ -40,6 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool168",
             "designerId": "5d0f7b8f-4e50-4973-aa72-46073dcab348",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -50,6 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1712",
             "designerId": "c13d8263-de02-4747-a28e-d99e79adccbc",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -67,6 +69,7 @@
                 "localiserId": "cachePanel",
                 "title": "Cache"
             },
+            "name": "MyForm51",
             "designerId": "88156036-6c5a-4848-9b93-531600345241",
             "customConfigs": [
                 {
@@ -87,6 +90,7 @@
                         "localiserId": "cacheElementFieldSet",
                         "title": "Elements en cache"
                     },
+                    "name": "MyFieldSet26",
                     "designerId": "b2d8e831-9f2a-4e58-9e72-1d4a4558c39a",
                     "customConfigs": [
                         {
@@ -110,6 +114,7 @@
                                 "name": "cachedItems",
                                 "readOnly": true
                             },
+                            "name": "MyNumberField1",
                             "designerId": "435c176e-69c8-4e17-9ab0-b1ef9ad50ff6",
                             "customConfigs": [
                                 {
@@ -133,6 +138,7 @@
                                 "name": "cachedUrl",
                                 "readOnly": true
                             },
+                            "name": "MyNumberField2",
                             "designerId": "cd349c11-32d8-48f0-9b59-ad9074457ac8",
                             "customConfigs": [
                                 {
@@ -154,6 +160,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar60",
                     "designerId": "271d4e37-978d-48f2-9679-b87590020b55",
                     "cn": [
                         {
@@ -166,6 +173,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill33",
                             "designerId": "7bc92e92-1848-449b-98b2-655d14b9bf46"
                         },
                         {
@@ -181,6 +189,7 @@
                                 "localiserId": "refreshBtn",
                                 "text": "<b>Rafraîchir</b>"
                             },
+                            "name": "MyButton254",
                             "designerId": "eaa0d84d-47be-49ae-8c28-68193728dd06",
                             "customConfigs": [
                                 {
@@ -207,6 +216,7 @@
                                             "button.up().up().refreshCacheInfo();"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "a3ea09fc-0593-45ed-97c7-8adf6b833dee"
                                 }
                             ]
@@ -224,6 +234,7 @@
                                 "localiserId": "clearCacheBtn",
                                 "text": "<b>Vider le cache</b>"
                             },
+                            "name": "MyButton255",
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
                             "customConfigs": [
                                 {
@@ -257,6 +268,7 @@
                                             "});"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "439aadb7-d58e-44ba-ba14-77fcb46fbadd"
                                 }
                             ]
@@ -284,6 +296,7 @@
                             "});"
                         ]
                     },
+                    "name": "refreshCacheInfo",
                     "designerId": "16c29d1a-273b-46b6-9146-08776eea7dad"
                 },
                 {
@@ -301,6 +314,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onSupervisionCachePanelAfterRender",
                     "designerId": "e9b4b039-5405-4f1b-9198-717504de8e2c"
                 }
             ]
@@ -321,6 +335,7 @@
                 "localiserId": "elasticSearchPanel",
                 "title": "Elastic Search"
             },
+            "name": "MyForm52",
             "designerId": "b480c438-99d0-4d2e-b979-a715b2ef9c5e",
             "customConfigs": [
                 {
@@ -341,6 +356,7 @@
                         "dock": null,
                         "height": 30
                     },
+                    "name": "MyToolbar61",
                     "designerId": "943c7847-7412-45d3-8161-becf886f007c",
                     "cn": [
                         {
@@ -355,6 +371,7 @@
                                 "localiserId": "indexContentsBtn",
                                 "text": "<b>Indexation des contenus</b>"
                             },
+                            "name": "MyButton256",
                             "designerId": "72e9902f-bb1b-4b5c-b610-59504de9206b",
                             "customConfigs": [
                                 {
@@ -398,6 +415,7 @@
                                             "});"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "4ecadbaa-f381-441c-a6e5-5ec184066ab8"
                                 }
                             ]
@@ -412,6 +430,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
+                            "name": "MySpacer",
                             "designerId": "7da675d9-cef1-4913-baf4-3d05e8957365"
                         },
                         {
@@ -426,6 +445,7 @@
                                 "localiserId": "indexMediasBtn",
                                 "text": "<b>Indexation des médias</b>"
                             },
+                            "name": "MyButton257",
                             "designerId": "e57babf3-2b12-4ec3-b9bd-a424bf5654cd",
                             "customConfigs": [
                                 {
@@ -468,6 +488,7 @@
                                             "});"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "5e2ffb0e-4f24-4f8f-a786-bf8303d048e9"
                                 }
                             ]
@@ -482,6 +503,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
+                            "name": "MySpacer1",
                             "designerId": "78a5c9e8-df9f-4b70-95c7-ecddf50b0da5"
                         },
                         {
@@ -496,6 +518,7 @@
                                 "localiserId": "indexUsersBtn",
                                 "text": "<b>Index users</b>"
                             },
+                            "name": "MyButton258",
                             "designerId": "cb50b4c2-9453-4380-b477-1b3a54d02c09",
                             "customConfigs": [
                                 {
@@ -538,6 +561,7 @@
                                             "});"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "4a0185c7-a63c-4644-b52f-a9b422e865e4"
                                 }
                             ]
@@ -552,6 +576,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
+                            "name": "MySpacer2",
                             "designerId": "46634022-720f-4ff1-a790-ecfb4e6ecae0"
                         },
                         {
@@ -566,6 +591,7 @@
                                 "localiserId": "indexAllBtn",
                                 "text": "<b>Indexation complète</b>"
                             },
+                            "name": "MyButton259",
                             "designerId": "c485f01a-3c28-43c8-a954-f0d894f487a7",
                             "customConfigs": [
                                 {
@@ -608,6 +634,7 @@
                                             "});"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "087f4e51-a734-41af-a6de-6809b67b710a"
                                 }
                             ]
@@ -627,6 +654,7 @@
                 "dock": "top",
                 "layout|flex": 1
             },
+            "name": "MyToolbar62",
             "designerId": "d73fb910-2b55-48e2-ad69-9d4fc8241e3f",
             "cn": [
                 {
@@ -643,6 +671,7 @@
                         "localiserId": "systemInformationGetBtn",
                         "text": "Informations système"
                     },
+                    "name": "MyButton260",
                     "designerId": "b26e63c7-7bce-4452-9ca8-ecd438876785",
                     "customConfigs": [
                         {
@@ -674,6 +703,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "6316bca4-28e4-4da4-96ae-f3cb502787eb"
                         }
                     ]
@@ -692,6 +722,7 @@
                         "layout|flex": null,
                         "text": "Database is up to date"
                     },
+                    "name": "MyButton261",
                     "designerId": "ab3e31c1-322e-4bb0-8bff-7d6f929d2f7f",
                     "cn": [
                         {
@@ -711,6 +742,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processGetDatabaseInformationBtn",
                             "designerId": "979e7c54-abfe-48a0-9290-da1021224bf4"
                         },
                         {
@@ -750,6 +782,7 @@
                                     "    }"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "b43f6a3f-e780-486a-a8e5-141334a3b44a"
                         }
                     ]
@@ -767,6 +800,7 @@
                         "layout|flex": null,
                         "text": "Refresh item recommendations"
                     },
+                    "name": "MyButton262",
                     "designerId": "1bd45b7f-f8f9-4eb1-9be2-9378e7d03244",
                     "cn": [
                         {
@@ -786,6 +820,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onRebuildContentConcurrencyBtnAfterRender",
                             "designerId": "d8d20724-bb8b-4f70-a847-3099425d8c24"
                         },
                         {
@@ -820,6 +855,7 @@
                                     "});"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "7387a290-2c92-409d-8442-00564a7307d2"
                         }
                     ]
@@ -837,6 +873,7 @@
                         "layout|flex": null,
                         "text": "Refresh user recommendations"
                     },
+                    "name": "MyButton263",
                     "designerId": "fdf11c8e-0ab1-488b-a3f4-e7d4af351d5b",
                     "cn": [
                         {
@@ -856,6 +893,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onRebuildContentConcurrencyBtnAfterRender1",
                             "designerId": "63da7a3b-f281-4f10-a1bf-6e032cdc43c6"
                         },
                         {
@@ -890,6 +928,7 @@
                                     "});"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "d806f92f-826e-43c0-8dab-c028d076cfd8"
                         }
                     ]
@@ -940,6 +979,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onMonitoringToolsAfterRender",
             "designerId": "fe635a26-cac5-406d-9f60-785193df03da"
         }
     ]

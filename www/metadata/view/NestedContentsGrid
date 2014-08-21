@@ -22,6 +22,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyGridView10",
             "designerId": "d0d193f1-a7c7-44a9-84be-4548ec9e26de"
         },
         {
@@ -37,6 +38,7 @@
                 "flex": 1,
                 "text": "Titre"
             },
+            "name": "MyColumn19",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -71,6 +73,7 @@
                             "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/attach_document.png\"> '+value);"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "5d86a3af-04bf-4038-a8f3-4e69b01a0e4e"
                 }
             ]
@@ -98,6 +101,7 @@
                 "trueText": "Oui",
                 "width": 60
             },
+            "name": "MyBooleanColumn5",
             "configAlternates": {
                 "filter": "object"
             },
@@ -117,6 +121,7 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.CheckboxModel",
+            "name": "MyCheckboxSelectionModel",
             "designerId": "ffa17544-3abd-4e72-a4a9-f37c4f1ce274"
         },
         {
@@ -129,6 +134,7 @@
             "userConfig": {
                 "enableGroupingMenu": false
             },
+            "name": "MyGroupingFeature",
             "designerId": "4857f368-7d2a-41cc-b239-95daf8b38792",
             "cn": [
                 {
@@ -144,6 +150,7 @@
                             "Type : {name:this.formatName}"
                         ]
                     },
+                    "name": "tpl",
                     "designerId": "c590964c-1efc-49f4-8ee2-f8d0917431b4",
                     "cn": [
                         {
@@ -162,6 +169,7 @@
                                     "return(Ext.getStore('DepContentsCombo2').findRecord(\"id\",name).get(\"type\"));"
                                 ]
                             },
+                            "name": "formatName",
                             "designerId": "a5844abc-c128-4333-8401-d47923b79963"
                         }
                     ]

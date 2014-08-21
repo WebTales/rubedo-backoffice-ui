@@ -50,6 +50,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "pageSiteSelect",
             "designerId": "7f866395-6912-493e-b496-40113840a82e"
         },
         {
@@ -69,6 +70,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "openPageAddWindow",
             "designerId": "cb9367d6-8b6d-41dd-a7d1-4a4ad74d5b92"
         },
         {
@@ -128,6 +130,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "createNewPage",
             "designerId": "58437311-2357-4c3b-99f1-a0fa5762da47"
         },
         {
@@ -189,6 +192,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deletePage",
             "designerId": "054b6624-59d6-425e-8c55-a8dc5ed95e57"
         },
         {
@@ -284,6 +288,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "pageSelect",
             "designerId": "16f72b7e-ea83-4f98-97e0-5e5f729e2d85"
         },
         {
@@ -314,6 +319,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "moveElementUp",
             "designerId": "420ce9f1-454c-4f4c-8647-48c6790b0b34"
         },
         {
@@ -345,6 +351,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "moveElementDown",
             "designerId": "901daf12-1778-4e89-ac53-1b8020101121"
         },
         {
@@ -374,6 +381,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteElement",
             "designerId": "a13fbc2a-6370-487c-86d0-5d282a58dd1c"
         },
         {
@@ -469,6 +477,7 @@
                     "});"
                 ]
             },
+            "name": "renderPage",
             "designerId": "3cbb5b15-cb09-4ba6-8385-f01b8ab94a69"
         },
         {
@@ -518,6 +527,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "columnSelector",
             "designerId": "590c326a-45be-408d-8b0a-e3b354401fa7"
         },
         {
@@ -547,6 +557,7 @@
                     "Ext.getCmp(\"contributionPages\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
                 ]
             },
+            "name": "resetInterface",
             "designerId": "0a4fb2d5-4c36-4c28-a7fb-b362837242c5"
         },
         {
@@ -569,6 +580,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "showBlocAddWindow",
             "designerId": "7c7346db-dfbe-4691-ab04-fb477ab4085e"
         },
         {
@@ -614,6 +626,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "insertBloc",
             "designerId": "37a082a3-056b-4f6c-ba17-9503a4c3bdae"
         },
         {
@@ -987,6 +1000,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "blocSelection",
             "designerId": "14fe1e98-83ce-46a5-be63-48558f1afbcb"
         },
         {
@@ -1064,6 +1078,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "savePage",
             "designerId": "b1fb801d-af5e-43a7-b7f8-56799de85ce4"
         },
         {
@@ -1088,6 +1103,7 @@
                 "name": "beforedestroy",
                 "scope": "me"
             },
+            "name": "onWindowBeforeDestroy",
             "designerId": "6120f6e7-46b7-410a-971d-e8c79c4f2e57"
         },
         {
@@ -1121,6 +1137,7 @@
                 "name": "beforerender",
                 "scope": "me"
             },
+            "name": "onPagesSitesComboBeforeRender",
             "designerId": "fed768ea-12ff-49c5-8386-55e42679392e"
         },
         {
@@ -1155,6 +1172,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "pagePreviewSelect",
             "designerId": "7d7ddd9d-d877-4060-9865-9fec1199851e"
         },
         {
@@ -1203,6 +1221,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "onPreviewPageTreeSelect",
             "designerId": "56a373a5-6913-4cda-b321-5fb604f616bd"
         },
         {
@@ -1244,6 +1263,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onPagePreviewRefreshBtnClick",
             "designerId": "c918931f-c27c-4264-9d18-6cc8b64eb2c2"
         },
         {
@@ -1290,6 +1310,7 @@
                     "});"
                 ]
             },
+            "name": "renderBlocks",
             "designerId": "697d3f08-71dd-4250-a19d-1915efb54c1c"
         },
         {
@@ -1340,6 +1361,7 @@
                     "return(newBlocks);"
                 ]
             },
+            "name": "saveBlocks",
             "designerId": "03579757-73d3-4682-95af-acdc91dcfeee"
         },
         {
@@ -1388,6 +1410,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAdvancedPreviewPageRefreshClick",
             "designerId": "f4a5fbda-c3f3-452f-ae1a-7c849557ecdb"
         },
         {
@@ -1411,6 +1434,7 @@
                 "name": "activate",
                 "scope": "me"
             },
+            "name": "onPanelActivate",
             "designerId": "5091cbda-a9df-4eac-981f-ca61c7c60bc4"
         },
         {
@@ -1433,6 +1457,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onNewPageMaskSelectorAfterRender",
             "designerId": "bf10d1bf-4fdb-4d8e-a9bb-94b9048e7483"
         },
         {
@@ -1460,6 +1485,7 @@
                     "}"
                 ]
             },
+            "name": "breadcrumbBuilder",
             "designerId": "485d72de-4ede-48af-b4b7-0646f7a95e2a"
         },
         {
@@ -1503,6 +1529,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onPageMaskDisplayBtnClick",
             "designerId": "9a070aa8-2350-4882-a6b5-c828fbfe6494"
         },
         {
@@ -1615,6 +1642,7 @@
                     ""
                 ]
             },
+            "name": "removeDiacritics",
             "designerId": "bc7bb37a-2f7e-4bf5-8b6b-022067227520"
         }
     ]

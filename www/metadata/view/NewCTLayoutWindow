@@ -40,6 +40,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm78",
             "designerId": "c8815506-08b2-4af2-ace2-b58dbca09082",
             "cn": [
                 {
@@ -56,6 +57,7 @@
                         "localiserId": "nameField",
                         "name": "name"
                     },
+                    "name": "MyTextField122",
                     "designerId": "3081547e-faa4-4a62-8318-53bb433d7576",
                     "customConfigs": [
                         {
@@ -80,6 +82,7 @@
                             "\"Detail\""
                         ]
                     },
+                    "name": "MyHiddenField17",
                     "configAlternates": {
                         "store": "array"
                     },
@@ -105,6 +108,7 @@
                         "store": "SitesComboCTLayouts",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox59",
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
@@ -136,6 +140,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onNouveauMasqueSiteAfterRender1",
                             "designerId": "4f64c513-d76b-4f9a-9f06-b6a12f2f811e"
                         }
                     ]
@@ -154,6 +159,7 @@
                         "scale": "medium",
                         "text": "Create new layout"
                     },
+                    "name": "MyButton379",
                     "designerId": "c8ef831e-d154-4bd3-b604-d868f95ae902",
                     "customConfigs": [
                         {

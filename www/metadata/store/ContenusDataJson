@@ -55,6 +55,7 @@
                 "batchActions": false,
                 "url": null
             },
+            "name": "MyAjaxProxy28",
             "designerId": "402f9244-a4eb-4476-aa0d-7d47d285444e",
             "cn": [
                 {
@@ -68,6 +69,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader27",
                     "designerId": "eaf8ec34-dff7-4d22-9865-12e5613107e2"
                 },
                 {
@@ -82,6 +84,7 @@
                         "nameProperty": "mapping",
                         "root": "data"
                     },
+                    "name": "MyJsonWriter14",
                     "designerId": "be7e2b1d-d655-464a-a777-eced0aa78295"
                 }
             ]
@@ -102,6 +105,7 @@
                 "name": "update",
                 "scope": "me"
             },
+            "name": "onJsonstoreUpdate",
             "designerId": "1c54afaa-5f2c-4199-ac3b-ec0d97b07f19"
         }
     ]

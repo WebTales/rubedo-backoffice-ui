@@ -39,6 +39,7 @@
                 "store": "MainLanguagesStore",
                 "title": ""
             },
+            "name": "MyGridPanel52",
             "configAlternates": {
                 "managesStore": "boolean"
             },
@@ -54,6 +55,7 @@
                     "userConfig": {
                         "preserveScrollOnRefresh": true
                     },
+                    "name": "MyGridView58",
                     "designerId": "2c7f9785-dcb8-4775-b2a5-bf50d03b6a7b"
                 },
                 {
@@ -69,6 +71,7 @@
                         "localiserId": "FlagCol",
                         "text": "Flag"
                     },
+                    "name": "MyColumn124",
                     "designerId": "6518f62c-a0ab-4106-8b92-30ea499fe6d4",
                     "customConfigs": [
                         {
@@ -102,6 +105,7 @@
                                     "} else return(value);"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "2d48a299-50fd-468d-9349-087f62b70f98"
                         },
                         {
@@ -120,6 +124,7 @@
                                 "typeAhead": true,
                                 "valueField": "code"
                             },
+                            "name": "MyComboBox56",
                             "designerId": "bd549b40-f686-40d8-a3cd-2add1837385a",
                             "cn": [
                                 {
@@ -143,6 +148,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processMyComboBox33",
                                     "designerId": "b6c476cb-bfcb-4f96-bc76-dd7e2cf25d9b"
                                 }
                             ]
@@ -163,6 +169,7 @@
                         "localiserId": "LangNameCol",
                         "text": "Name"
                     },
+                    "name": "MyColumn125",
                     "configAlternates": {
                         "filter": "boolean"
                     },
@@ -194,6 +201,7 @@
                         "localiserId": "OwnNameCol",
                         "text": "Own name"
                     },
+                    "name": "MyColumn126",
                     "configAlternates": {
                         "filter": "boolean"
                     },
@@ -218,6 +226,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyTextField108",
                             "designerId": "1335b3f2-acc2-4047-9bb3-04b774b8c1b2"
                         }
                     ]
@@ -266,6 +275,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processMyGridPanel1",
                     "designerId": "cd7006c8-eb5d-409b-8657-50defc3dc7ab"
                 }
             ]
@@ -277,6 +287,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1612",
             "designerId": "3a44eeb5-24e9-480a-9b6c-29ecb9511832",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -295,6 +306,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onLanguagesInterfaceRender",
             "designerId": "c0b1843a-a56d-4fef-aa9a-ae71bed04309"
         },
         {
@@ -313,6 +325,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onLanguagesInterfaceBeforeClose",
             "designerId": "291e467c-b133-4419-990b-42c114ff75b1"
         }
     ]

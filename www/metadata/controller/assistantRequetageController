@@ -70,6 +70,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "suivant",
             "designerId": "b83c1479-9cbe-478c-bde1-54b5275f3a77"
         },
         {
@@ -96,6 +97,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "precedent",
             "designerId": "4667034e-54b1-41f0-9662-9b004a9c8479"
         },
         {
@@ -120,6 +122,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "enleveRegle",
             "designerId": "20f3e13d-6f29-47e0-ba81-ac64ffef193e"
         },
         {
@@ -139,6 +142,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "selectAllTC",
             "designerId": "c95df528-b694-421e-b11a-54c5cba5aea0"
         },
         {
@@ -207,6 +211,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "ajoutRegleChamp",
             "designerId": "0889cbbf-053a-469f-99aa-a047a88adba7"
         },
         {
@@ -274,6 +279,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onQueryBuildSaveBtnClick",
             "designerId": "c8e41169-098f-4231-9aa3-cc2f77cbe89d"
         },
         {
@@ -330,6 +336,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onBoutonCreateurTrisChampsARClick",
             "designerId": "f1495402-66f3-4688-9ffc-1f0fc1301fa9"
         },
         {
@@ -403,6 +410,7 @@
                     "return(result);"
                 ]
             },
+            "name": "readQuery",
             "designerId": "f1e97592-b58d-4d07-9a6d-1b36966a0aca"
         },
         {
@@ -478,6 +486,7 @@
                     "target.update(htmlDisplay);"
                 ]
             },
+            "name": "displayQuery",
             "designerId": "d3bac03a-cde0-4bb8-8fdf-ef18d886ec1a"
         },
         {
@@ -509,6 +518,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onMainQueriesGridSelectionChange",
             "designerId": "bc3641f6-fae2-49cc-bbfe-03dbdbe653c4"
         },
         {
@@ -537,6 +547,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onQueryMainRemoveBtnClick",
             "designerId": "07af0387-d3c5-4652-9b8e-bcb0eea3c16e"
         },
         {
@@ -556,6 +567,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onQueryMainAddBtnClick",
             "designerId": "4cf919e2-c969-4bb3-b6e3-ff5beb12d841"
         },
         {
@@ -577,6 +589,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onQueryMainEditBtnClick",
             "designerId": "8c1b7706-432e-4021-afea-a921443a92d7"
         },
         {
@@ -893,6 +906,7 @@
                     ""
                 ]
             },
+            "name": "adaptToTCSelect",
             "designerId": "2541f598-8a9e-400c-bb19-64d5790c6c38"
         },
         {
@@ -912,6 +926,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "onMainQueriesGridItemDblClick",
             "designerId": "a4cf7b54-f02b-4620-bd41-aa9492f47683"
         },
         {
@@ -1052,6 +1067,7 @@
                     "    } catch(err){console.log(\"field error\");}});"
                 ]
             },
+            "name": "restoreFieldRules",
             "designerId": "04b065c4-7e4b-4c5e-8715-da8d42bba5ad"
         },
         {
@@ -1071,6 +1087,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onQueryPlayBtnClick",
             "designerId": "a6717c40-6670-4a09-959b-5184156753b3"
         }
     ]

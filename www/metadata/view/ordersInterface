@@ -34,6 +34,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1617",
             "designerId": "eb809d1d-9f5f-48fa-8b31-817c7058ffed",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -44,6 +45,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1723",
             "designerId": "56ba6e95-b4f0-4952-8755-56fe9b4cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -61,6 +63,7 @@
                 "store": "Orders",
                 "title": ""
             },
+            "name": "MyGridPanel58",
             "designerId": "00c0d243-ad90-4ccf-8569-f6be94f95691",
             "cn": [
                 {
@@ -75,6 +78,7 @@
                         "localiserId": "orderNumberCol",
                         "text": "Order Number"
                     },
+                    "name": "MyColumn144",
                     "designerId": "d6bd9bb3-e828-4845-ac42-52eefa2544e4",
                     "customConfigs": [
                         {
@@ -96,6 +100,7 @@
                         "localiserId": "clientNameCol",
                         "text": "Client name"
                     },
+                    "name": "MyColumn145",
                     "designerId": "cd732be2-8fa1-4762-9da5-443032f07f1f",
                     "customConfigs": [
                         {
@@ -117,6 +122,7 @@
                         "localiserId": "fullPriceCol",
                         "text": "Full Price"
                     },
+                    "name": "MyColumn146",
                     "designerId": "ad8e27a1-f44a-4a19-9908-6ae2e402ba40",
                     "customConfigs": [
                         {
@@ -148,6 +154,7 @@
                                     "return (value+\" €\");"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "bed6002d-098d-4337-8c89-3997abc4e307"
                         }
                     ]
@@ -165,6 +172,7 @@
                         "sortable": false,
                         "text": "Items"
                     },
+                    "name": "MyColumn147",
                     "designerId": "113f1cc8-51b8-4066-a34a-530fbd3a5880",
                     "cn": [
                         {
@@ -193,6 +201,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "dfb905c0-98f4-4424-90ee-7aaae277608b"
                         }
                     ]
@@ -209,6 +218,7 @@
                         "localiserId": "dateCol",
                         "text": "Date"
                     },
+                    "name": "MyDateColumn13",
                     "designerId": "91be34e3-72bc-4c99-a508-1de09fe81eb5",
                     "customConfigs": [
                         {
@@ -230,6 +240,7 @@
                         "hidden": true,
                         "text": "Payment means"
                     },
+                    "name": "MyColumn148",
                     "designerId": "6a771563-74bb-4ab0-a9e9-3c566679dedb"
                 },
                 {
@@ -245,6 +256,7 @@
                         "sortable": false,
                         "text": "Shipper"
                     },
+                    "name": "MyColumn149",
                     "designerId": "f06fd8af-3e67-4359-97b7-b39aa5c29f39",
                     "customConfigs": [
                         {
@@ -280,6 +292,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "1ba04c6b-e95d-4b29-8a23-d14fa4237563"
                         }
                     ]
@@ -298,6 +311,7 @@
                         "text": "Stock issues",
                         "trueText": "Yes"
                     },
+                    "name": "MyBooleanColumn20",
                     "designerId": "a3d8b0da-869c-4194-933d-4542eaba760c"
                 },
                 {
@@ -312,6 +326,7 @@
                         "localiserId": "statusCol",
                         "text": "Status"
                     },
+                    "name": "MyColumn150",
                     "designerId": "a8c63e3e-ead3-4970-b8b4-22f061b60472",
                     "customConfigs": [
                         {
@@ -328,6 +343,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView64",
                     "designerId": "80ef4264-1370-4e5f-bd20-45472faa6602"
                 },
                 {
@@ -343,6 +359,7 @@
                         "store": "Orders",
                         "width": 360
                     },
+                    "name": "MyPagingToolbar9",
                     "designerId": "8f3191cd-464b-4206-b5bb-0cbcdb334c7f"
                 },
                 {
@@ -380,6 +397,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onOrdersMainGridSelectionChange",
                     "designerId": "1c4bd226-6871-436d-9cfc-4187d775f853"
                 }
             ]
@@ -400,6 +418,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onOrdersInterfaceRender",
             "designerId": "0265cb9d-736d-483e-808d-ff78eb2c0e8f"
         },
         {
@@ -417,6 +436,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onOrdersInterfaceBeforeClose",
             "designerId": "564210e5-3dd5-41ea-b25d-04d0eb84fdc7"
         },
         {
@@ -435,6 +455,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel72",
             "designerId": "10474930-45e7-496e-b4be-3e86699f9255",
             "cn": [
                 {
@@ -451,6 +472,7 @@
                         "localiserId": "orderSettingForm",
                         "title": "Settings"
                     },
+                    "name": "MyForm89",
                     "designerId": "a060da5a-bd22-4295-a152-bc579fdf34d9",
                     "customConfigs": [
                         {
@@ -471,6 +493,7 @@
                                 "localiserId": "attachmentsFieldset",
                                 "title": "Attachments"
                             },
+                            "name": "MyFieldSet40",
                             "designerId": "6188a231-27c6-4924-80ac-0e400d530e90",
                             "customConfigs": [
                                 {
@@ -495,6 +518,7 @@
                                         "name": "billDocument",
                                         "smallMode": true
                                     },
+                                    "name": "imagepickerfield2",
                                     "configAlternates": {
                                         "smallMode": "boolean"
                                     },
@@ -539,6 +563,7 @@
                                 "store": null,
                                 "style": "float:left;"
                             },
+                            "name": "MyComboBox72",
                             "configAlternates": {
                                 "style": "string",
                                 "store": "array"
@@ -569,6 +594,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processStatus",
                                     "designerId": "39643799-028b-4a2a-9f52-4dfbe00b72d6"
                                 }
                             ]
@@ -586,6 +612,7 @@
                                 "style": "float:right;",
                                 "text": "Apply changes"
                             },
+                            "name": "MyButton398",
                             "configAlternates": {
                                 "style": "string"
                             },
@@ -618,6 +645,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "1760fdb8-4611-4b28-a978-09ee606230e9"
                                 }
                             ]
@@ -640,6 +668,7 @@
                         "localiserId": "pricingAndClientDataForm",
                         "title": "Pricing and cilent data"
                     },
+                    "name": "MyForm90",
                     "designerId": "72d8781b-48b0-4674-961b-f1e611432cdf",
                     "customConfigs": [
                         {
@@ -661,6 +690,7 @@
                                 "localiserId": "pricingFieldset",
                                 "title": "Pricing"
                             },
+                            "name": "MyFieldSet41",
                             "designerId": "979d1c02-ec64-49ce-8075-6b45274cf99e",
                             "customConfigs": [
                                 {
@@ -683,10 +713,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "shippingPriceTFField",
                                         "name": "shippingPrice",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField4",
                                     "designerId": "def1a78f-bab9-43fd-9172-87e967ed8a12",
                                     "customConfigs": [
                                         {
@@ -709,10 +738,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "shippingTaxField",
                                         "name": "shippingTax",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField5",
                                     "designerId": "9b3b981b-021c-409f-ba6c-aa84fe30b6cd",
                                     "customConfigs": [
                                         {
@@ -735,10 +763,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "shippingPriceField",
                                         "name": "shippingTaxedPrice",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField6",
                                     "designerId": "c89fd73a-3482-45b0-8c04-703c042f4e6b",
                                     "customConfigs": [
                                         {
@@ -761,10 +788,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "totalPriceField",
                                         "name": "finalTFPrice",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField7",
                                     "designerId": "5bd317f4-182f-42e8-8dc5-70bfac9be304",
                                     "customConfigs": [
                                         {
@@ -787,10 +813,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "taxTotalField",
                                         "name": "finalTaxes",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField8",
                                     "designerId": "1914b67d-7dcc-4527-8445-d88ea1529230",
                                     "customConfigs": [
                                         {
@@ -813,10 +838,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "totalPriceField",
                                         "name": "finalPrice",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField9",
                                     "designerId": "04bd6a57-08ee-4ad8-b292-48646a61db57",
                                     "customConfigs": [
                                         {
@@ -840,6 +864,7 @@
                                 "localiserId": "clientFieldset",
                                 "title": "Client"
                             },
+                            "name": "MyFieldSet42",
                             "designerId": "4c51b395-daf3-4b03-9127-d14bce14ada8",
                             "customConfigs": [
                                 {
@@ -861,10 +886,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "nameField",
                                         "name": "userName",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField10",
                                     "designerId": "98aec455-2054-405c-9d80-2143b72f39ea",
                                     "customConfigs": [
                                         {
@@ -886,10 +910,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "billingAddressField",
                                         "name": "textBillingAddress",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField11",
                                     "designerId": "1f63fc69-a72e-42ba-9701-bdc933f89ad8",
                                     "customConfigs": [
                                         {
@@ -911,10 +934,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "shippingAddressField",
                                         "name": "textShippingAddress",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField12",
                                     "designerId": "1cb058f9-290c-42b1-90c7-1513a6d8abbe",
                                     "customConfigs": [
                                         {
@@ -936,10 +958,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "paymentMeansField",
                                         "name": "paymentMeans",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField13",
                                     "designerId": "2d4ee018-6936-4376-9281-df203bab2796",
                                     "customConfigs": [
                                         {
@@ -961,10 +982,9 @@
                                         "layout|anchor": "100%",
                                         "localiserId": "shipperField",
                                         "name": "textShipper",
-                                        "value": [
-                                            "Display Field"
-                                        ]
+                                        "value": "Display Field"
                                     },
+                                    "name": "MyDisplayField14",
                                     "designerId": "537740b6-2ec5-4092-ab11-72b5a45963e0",
                                     "customConfigs": [
                                         {
@@ -988,6 +1008,7 @@
                                         "name": "shippingComments",
                                         "value": null
                                     },
+                                    "name": "MyDisplayField15",
                                     "designerId": "8854f4a3-be79-405f-83b9-89cbe01ef8fe",
                                     "customConfigs": [
                                         {
@@ -1017,6 +1038,7 @@
                         "store": "BoughtProducts",
                         "title": "Products"
                     },
+                    "name": "MyGridPanel59",
                     "designerId": "1b67b947-c4a9-4473-ac70-dbeaf113df9a",
                     "customConfigs": [
                         {
@@ -1033,6 +1055,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView65",
                             "designerId": "abe74fb8-1c66-4f00-9981-131ac56115e6"
                         },
                         {
@@ -1047,6 +1070,7 @@
                                 "localiserId": "titleCol",
                                 "text": "Title"
                             },
+                            "name": "MyColumn151",
                             "designerId": "3ee81c66-c2c3-4532-ae95-990cd5bba6e1",
                             "customConfigs": [
                                 {
@@ -1068,6 +1092,7 @@
                                 "localiserId": "subtitleCol",
                                 "text": "Subtitle"
                             },
+                            "name": "MyColumn152",
                             "designerId": "05d997e1-98c5-46ba-8086-8463581ae6af",
                             "customConfigs": [
                                 {
@@ -1089,6 +1114,7 @@
                                 "localiserId": "unitPriceCol",
                                 "text": "Unit price"
                             },
+                            "name": "MyColumn153",
                             "designerId": "a338bb1a-d89b-4423-80db-54cd3567d3f9",
                             "customConfigs": [
                                 {
@@ -1110,6 +1136,7 @@
                                 "localiserId": "unitTaxedPriceCol",
                                 "text": "Unit taxed price"
                             },
+                            "name": "MyColumn154",
                             "designerId": "249bf911-375d-42fa-b82a-8fa1dd801f7f",
                             "customConfigs": [
                                 {
@@ -1131,6 +1158,7 @@
                                 "localiserId": "amountCol",
                                 "text": "Amount"
                             },
+                            "name": "MyColumn155",
                             "designerId": "7d13c87a-ab48-42c0-9809-b7f7e569a414",
                             "customConfigs": [
                                 {
@@ -1152,6 +1180,7 @@
                                 "localiserId": "priceCol",
                                 "text": "Price"
                             },
+                            "name": "MyColumn156",
                             "designerId": "8a690258-71c2-4677-81d4-d2fc0c4f4eed",
                             "customConfigs": [
                                 {
@@ -1173,6 +1202,7 @@
                                 "localiserId": "taxedPriceCol",
                                 "text": "Taxed Price"
                             },
+                            "name": "MyColumn157",
                             "designerId": "b819e028-7ec4-431b-a7ef-ae775994857a",
                             "customConfigs": [
                                 {

@@ -59,6 +59,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onHiddenfieldRender",
             "designerId": "9f257716-bda2-4a88-badf-6df92c69b044"
         },
         {
@@ -79,6 +80,7 @@
                     "me.fireEvent(\"change\",me,value);"
                 ]
             },
+            "name": "setValue",
             "designerId": "52d74567-5635-42c1-9875-d05e646d3ac9"
         },
         {
@@ -94,6 +96,7 @@
                     "return(this.value);"
                 ]
             },
+            "name": "getValue",
             "designerId": "370c7ebd-e89e-479a-8a82-70ff457339c0"
         },
         {
@@ -109,6 +112,7 @@
                     "return (this.value);"
                 ]
             },
+            "name": "getSubmitValue",
             "designerId": "760e4d93-bbd1-43a9-b0c7-6dee98979409"
         }
     ]

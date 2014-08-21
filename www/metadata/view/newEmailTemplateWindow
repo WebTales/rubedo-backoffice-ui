@@ -41,6 +41,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm32",
             "designerId": "b836c9aa-f280-4997-b6a5-24587a38b284",
             "cn": [
                 {
@@ -64,6 +65,7 @@
                             "false"
                         ]
                     },
+                    "name": "MyComboBox25",
                     "configAlternates": {
                         "store": "array"
                     },
@@ -89,6 +91,7 @@
                                 "name": "change",
                                 "scope": "me"
                             },
+                            "name": "onComboboxChange",
                             "designerId": "ea9d5a02-3d04-452e-aef4-0a7990b36e48"
                         }
                     ]
@@ -117,6 +120,7 @@
                             "false"
                         ]
                     },
+                    "name": "MyComboBox26",
                     "configAlternates": {
                         "store": "array"
                     },
@@ -147,6 +151,7 @@
                                 "name": "change",
                                 "scope": "me"
                             },
+                            "name": "onUseModelFieldChange",
                             "designerId": "be158f94-fef0-47ae-abdf-7d740a65d3a9"
                         }
                     ]
@@ -169,6 +174,7 @@
                         "store": "EmailModels",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox27",
                     "designerId": "7a28e842-680c-4741-b264-76291d9d21ce"
                 },
                 {
@@ -188,6 +194,7 @@
                         "name": "text",
                         "value": null
                     },
+                    "name": "MyTextField33",
                     "designerId": "18eb97fe-1fa8-4680-ac3e-77210eab35d3",
                     "customConfigs": [
                         {
@@ -215,6 +222,7 @@
                         "minValue": 10,
                         "name": "bodyWidth"
                     },
+                    "name": "MyNumberField",
                     "designerId": "91331da2-7075-4dcf-9fb4-8f5b5d7bf8b6"
                 },
                 {
@@ -231,6 +239,7 @@
                         "text": "Create this new email",
                         "width": null
                     },
+                    "name": "MyButton160",
                     "designerId": "08145745-1a56-49ad-80cd-aa61f302d81e",
                     "customConfigs": [
                         {

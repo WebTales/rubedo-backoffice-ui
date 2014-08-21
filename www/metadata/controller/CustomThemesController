@@ -28,6 +28,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCustomThemesAddBtnClick",
             "designerId": "71c9784a-4bac-4530-a9e2-39e56c621f42"
         },
         {
@@ -121,6 +122,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onNewCustomThemeSublitBtnClick",
             "designerId": "0f48f144-64c9-4c54-9bbb-e2f3155f0cc8"
         },
         {
@@ -145,6 +147,7 @@
                     "this.pushLessToSimulator(Ext.JSON.decode(record.get(\"lessVarsJson\")));"
                 ]
             },
+            "name": "resetInterfaceSelect",
             "designerId": "f87dc705-a863-4f0b-8e3e-d4185ab7a51d"
         },
         {
@@ -165,6 +168,7 @@
                     "Ext.getCmp(\"themeSimulatorHolder\").disable();"
                 ]
             },
+            "name": "resetInterfaceNoSelect",
             "designerId": "a1369d62-5810-4b65-b875-02fe6511c8c0"
         },
         {
@@ -188,6 +192,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onCustomThemesGridSelectionChange",
             "designerId": "9e835ee2-b0b8-4e25-ae95-9ccc7042e1ce"
         },
         {
@@ -212,6 +217,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCustomThemesRemoveBtnClick",
             "designerId": "7e72e958-9879-4e1a-b14a-5c7c8ed6b7ce"
         },
         {
@@ -233,6 +239,7 @@
                     "});"
                 ]
             },
+            "name": "init",
             "designerId": "0cd60d99-4eb8-4f64-9b0c-169a99719688"
         },
         {
@@ -258,6 +265,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCustomThemesSaveBtnClick",
             "designerId": "ddfd980d-a5dc-4e86-bd37-8379e36a46a6"
         },
         {
@@ -273,21 +281,19 @@
                 ],
                 "fn": "pushLessToSimulator",
                 "implHandler": [
-                    "var refinedVars={ };\r",
-                    "Ext.Object.each(vars, function(key, value, myself) {\r",
-                    "    var interm=value;\r",
-                    "    if (Ext.isNumber(interm)){\r",
-                    "        interm=interm.toString();\r",
-                    "    }\r",
-                    "    refinedVars['@'+key]=interm;\r",
-                    "});\r",
-                    "if ((!Ext.isEmpty(Ext.firefoxVersion))&&(Ext.firefoxVersion>0)){\r",
-                    "    themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);\r",
-                    "} else {\r",
-                    "    themeSimulatorFrame.less.modifyVars(refinedVars);\r",
-                    "}"
+                    "var refinedVars={ };",
+                    "Ext.Object.each(vars, function(key, value, myself) {",
+                    "    var interm=value;",
+                    "    if (Ext.isNumber(interm)){",
+                    "        interm=interm.toString();",
+                    "    }",
+                    "    refinedVars['@'+key]=interm;",
+                    "});",
+                    "themeSimulatorFrame.contentWindow.less.modifyVars(refinedVars);",
+                    ""
                 ]
             },
+            "name": "pushLessToSimulator",
             "designerId": "9feebaf3-be11-4e03-ab04-6fd563da8728"
         },
         {
@@ -313,6 +319,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onSimulateCustomThemeBtnClick",
             "designerId": "0fbf1831-7f7d-41ed-b746-3cd2870cf57a"
         },
         {
@@ -341,6 +348,7 @@
                     ""
                 ]
             },
+            "name": "getCLSuggestion",
             "designerId": "6c6d3578-6104-4e2a-926d-e67653101455"
         },
         {
@@ -360,6 +368,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onRandomizeBaseThemeColorsBtnClick",
             "designerId": "d9ae41f1-fe35-4836-bad0-05ecf66ccee7"
         },
         {
@@ -384,6 +393,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onRandomizeBaseThemeColorsBOBtnClick",
             "designerId": "40874999-4792-4d3f-8026-5f5f3ae6e95e"
         },
         {
@@ -416,6 +426,7 @@
                     ""
                 ]
             },
+            "name": "getCLBOSuggestion",
             "designerId": "358064a6-61f5-4eab-89a2-793972d51de4"
         }
     ]

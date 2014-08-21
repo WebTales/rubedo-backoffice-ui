@@ -37,6 +37,7 @@
             "userConfig": {
                 "dock": "top"
             },
+            "name": "MyToolbar86",
             "designerId": "8fdbeb7c-1a76-40b6-850f-dca741375b0d",
             "cn": [
                 {
@@ -58,6 +59,7 @@
                         "text": "Ajouter",
                         "width": null
                     },
+                    "name": "MyButton386",
                     "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
                     "customConfigs": [
                         {
@@ -90,6 +92,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton387",
                     "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33",
                     "customConfigs": [
                         {
@@ -122,6 +125,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton388",
                     "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a",
                     "customConfigs": [
                         {
@@ -156,6 +160,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onWorkspaceSaveAfterRender",
                             "designerId": "2c159f6e-09eb-4f8b-bbe5-4ed9356d955f"
                         }
                     ]
@@ -170,6 +175,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill45",
                     "designerId": "654cf7c5-1529-4721-be31-70c5486d718b"
                 },
                 {
@@ -187,6 +193,7 @@
                         "scale": "large",
                         "text": ""
                     },
+                    "name": "MyButton389",
                     "designerId": "bbc542ed-95ba-4521-b837-212a373b42a3",
                     "customConfigs": [
                         {
@@ -212,6 +219,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel53",
             "designerId": "b534706c-4fdc-4e9c-afab-5d76d2c466ae",
             "cn": [
                 {
@@ -221,6 +229,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView59",
                     "designerId": "372cd307-4d74-46a5-aae4-fb703939edb4"
                 },
                 {
@@ -235,6 +244,7 @@
                         "localiserId": "nameColumn",
                         "text": "Nom"
                     },
+                    "name": "MyColumn127",
                     "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383",
                     "customConfigs": [
                         {
@@ -270,6 +280,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "ed5ea241-ef34-43a9-84b1-dfc9f8d86e4f"
                         }
                     ]
@@ -290,6 +301,7 @@
                 "localiserId": "propsPanel",
                 "title": "Propriétés"
             },
+            "name": "MyPanel69",
             "designerId": "bc23bf6d-f63e-4cd7-ae6e-dc970f2dab60",
             "customConfigs": [
                 {
@@ -311,6 +323,7 @@
                         "id": "workspacesDLSToolbar",
                         "replicatorEntity": "workspacesReplicator"
                     },
+                    "name": "dlstoolbar7",
                     "designerId": "c79eb712-a3dd-414d-b742-bcce9705e88d",
                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                 },
@@ -327,6 +340,7 @@
                         "itemId": "mainLocItem",
                         "title": ""
                     },
+                    "name": "MyForm85",
                     "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
                     "cn": [
                         {
@@ -343,6 +357,7 @@
                                 "localiserId": "nameField",
                                 "name": "text"
                             },
+                            "name": "MyTextField126",
                             "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
                             "customConfigs": [
                                 {
@@ -371,6 +386,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onWorkspacesInterfaceRender",
             "designerId": "12eab1d4-0d8d-407b-815a-aff4f1b0b51d"
         },
         {
@@ -388,6 +404,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onWorkspacesInterfaceBeforeClose",
             "designerId": "1f152444-d439-4016-b605-5b5cf95540ba"
         },
         {
@@ -400,6 +417,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1613",
             "designerId": "df2ae591-c05d-4f92-b303-08ddd9f66eb9",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -413,6 +431,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1719",
             "designerId": "565358fc-8689-4644-95d4-fc800b4d4cd2",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }

@@ -42,6 +42,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm74",
             "designerId": "5552dcab-6de8-4364-a427-e3e229ad2061",
             "cn": [
                 {
@@ -65,6 +66,7 @@
                         "store": "AllLanguagesStore3",
                         "valueField": "locale"
                     },
+                    "name": "MyComboBox57",
                     "designerId": "602645c5-3b9e-484f-9002-73bd94ea015a",
                     "customConfigs": [
                         {
@@ -89,6 +91,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onCurrentLanguageSelectorComboAfterRender",
                             "designerId": "2c90e09b-f181-4e42-8031-554f5489f6a4"
                         }
                     ]
@@ -107,6 +110,7 @@
                         "scale": "medium",
                         "text": "Set as current working language"
                     },
+                    "name": "MyButton374",
                     "designerId": "b7843302-1bb8-4e15-8188-99e7db043b83",
                     "customConfigs": [
                         {

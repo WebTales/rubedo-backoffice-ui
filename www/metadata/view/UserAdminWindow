@@ -44,6 +44,7 @@
                 "store": null,
                 "width": 200
             },
+            "name": "mygridpanel161",
             "configAlternates": {
                 "resizable": "boolean",
                 "managesStore": "boolean"
@@ -68,6 +69,7 @@
             "userConfig": {
                 "dock": "top"
             },
+            "name": "MyToolbar45",
             "designerId": "8399ab7f-bc71-422a-a7e2-d7ec589ccfb1",
             "cn": [
                 {
@@ -87,6 +89,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton172",
                     "designerId": "aebe2732-1f70-4e9f-bbf3-c58b6aa716d8",
                     "customConfigs": [
                         {
@@ -118,6 +121,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton173",
                     "designerId": "113f1038-7f65-4c47-baea-4250085aa700",
                     "customConfigs": [
                         {
@@ -142,6 +146,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill22",
                     "designerId": "d2048406-8115-48f9-81e1-56328b015cea"
                 },
                 {
@@ -159,6 +164,7 @@
                         "scale": "large",
                         "text": ""
                     },
+                    "name": "MyButton174",
                     "designerId": "c2f4c943-85d9-46af-bf90-f91a1b6f7d61",
                     "customConfigs": [
                         {
@@ -183,6 +189,7 @@
                 "id": "userAdminMainPanel",
                 "layout|flex": 1
             },
+            "name": "MyTabPanel8",
             "designerId": "8c3d9510-d629-4e19-9483-9f30337da40f",
             "cn": [
                 {
@@ -200,6 +207,7 @@
                         "overflowY": "auto",
                         "title": "Informations"
                     },
+                    "name": "MyForm36",
                     "designerId": "47d67632-9fff-4aa9-916c-e84569cc0bf7",
                     "cn": [
                         {
@@ -212,6 +220,7 @@
                             "userConfig": {
                                 "localiserId": "informationsTab"
                             },
+                            "name": "TabConfig31",
                             "designerId": "b2ab377d-4030-49f4-81a8-dbf760cc2938",
                             "customConfigs": [
                                 {
@@ -237,6 +246,7 @@
                                 "title": "Informations",
                                 "width": 356
                             },
+                            "name": "MyFieldSet21",
                             "designerId": "e0fa6c9b-e333-4aba-affb-81325bc4a2c9",
                             "customConfigs": [
                                 {
@@ -261,6 +271,7 @@
                                         "name": "name",
                                         "readOnly": null
                                     },
+                                    "name": "MyTextField41",
                                     "designerId": "8c33f936-f9e6-4905-b7bc-8e3d699dcd0e",
                                     "customConfigs": [
                                         {
@@ -285,6 +296,7 @@
                                         "name": "email",
                                         "vtype": "email"
                                     },
+                                    "name": "MyTextField42",
                                     "designerId": "846e4c00-b8ff-48b7-9019-97fcdbceb783",
                                     "customConfigs": [
                                         {
@@ -314,6 +326,7 @@
                                         ],
                                         "valueField": null
                                     },
+                                    "name": "MyComboBox33",
                                     "configAlternates": {
                                         "store": "array"
                                     },
@@ -339,6 +352,7 @@
                                         "localiserId": "organisationField",
                                         "name": "organisation"
                                     },
+                                    "name": "MyTextField43",
                                     "designerId": "ff56953e-0343-4bdf-aefd-dd23940680b2",
                                     "customConfigs": [
                                         {
@@ -361,6 +375,7 @@
                                         "localiserId": "serviceField",
                                         "name": "service"
                                     },
+                                    "name": "MyTextField44",
                                     "designerId": "01d43664-3bf9-43da-b4f7-81c4faefc240",
                                     "customConfigs": [
                                         {
@@ -383,6 +398,7 @@
                                         "localiserId": "postField",
                                         "name": "post"
                                     },
+                                    "name": "MyTextField45",
                                     "designerId": "a2d7d6d1-dd54-448f-88ae-89aaf3576acf",
                                     "customConfigs": [
                                         {
@@ -405,6 +421,7 @@
                                         "localiserId": "phoneField",
                                         "name": "telephone"
                                     },
+                                    "name": "MyTextField46",
                                     "designerId": "1003ac08-2dcc-43f4-b58f-340b97968436",
                                     "customConfigs": [
                                         {
@@ -427,6 +444,7 @@
                                         "localiserId": "mobileField",
                                         "name": "mobile"
                                     },
+                                    "name": "MyTextField47",
                                     "designerId": "088dbd29-e57c-4e99-951a-6a2b57a5d71c",
                                     "customConfigs": [
                                         {
@@ -449,6 +467,7 @@
                                         "localiserId": "coordinatesField",
                                         "name": "coordinates"
                                     },
+                                    "name": "MyTextField48",
                                     "designerId": "c0576994-8a1a-4afc-b2c8-d57e4d26d93e",
                                     "customConfigs": [
                                         {
@@ -477,6 +496,7 @@
                                         "store": "BOLanguageStore",
                                         "valueField": "key"
                                     },
+                                    "name": "MyComboBox34",
                                     "designerId": "87c72347-a1a9-4d54-864f-68378e62361d",
                                     "customConfigs": [
                                         {
@@ -499,6 +519,7 @@
                                         "localiserId": "countryField",
                                         "name": "country"
                                     },
+                                    "name": "MyTextField49",
                                     "designerId": "487a8b72-5b09-40fb-bdac-db423609b78b",
                                     "customConfigs": [
                                         {
@@ -522,6 +543,7 @@
                                         "localiserId": "applyField",
                                         "text": "Appliquer"
                                     },
+                                    "name": "MyButton175",
                                     "designerId": "584210a9-8e8d-4737-a252-7e3437de80a4",
                                     "customConfigs": [
                                         {
@@ -553,6 +575,7 @@
                                 "title": "Photo",
                                 "width": 200
                             },
+                            "name": "MyFieldSet22",
                             "designerId": "50a05e4c-d597-4647-8831-9190d17f160b",
                             "customConfigs": [
                                 {
@@ -576,6 +599,7 @@
                                         "src": "resources/images/userBig.png",
                                         "width": 140
                                     },
+                                    "name": "MyImg12",
                                     "designerId": "87cf3f1f-d102-426b-86ca-008863f143e5"
                                 },
                                 {
@@ -591,6 +615,7 @@
                                         "margin": "0 0 10 0",
                                         "text": "Changer"
                                     },
+                                    "name": "MyButton176",
                                     "designerId": "8c0ba0f1-fe60-4156-b16d-662458ac41a9",
                                     "customConfigs": [
                                         {
@@ -617,6 +642,7 @@
                                                     "Ext.widget(\"PersoPicUploadWindow\").show();"
                                                 ]
                                             },
+                                            "name": "handler",
                                             "designerId": "fcbee57d-40f2-4e53-b6f3-8d4d65bf566a"
                                         }
                                     ]
@@ -636,6 +662,7 @@
                                         "margin": null,
                                         "text": "Supprimer"
                                     },
+                                    "name": "MyButton177",
                                     "designerId": "717eae3f-09aa-4af1-afe2-e3cd6d3461b1",
                                     "customConfigs": [
                                         {
@@ -661,6 +688,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "userupdatecreadentialsform",
                     "designerId": "f8f340b0-d000-46f6-8b00-b185a1ce385e",
                     "masterInstanceId": "bd157263-ffca-45b6-9331-28e5972526b7",
                     "cn": [
@@ -671,6 +699,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "TabConfig32",
                             "designerId": "39e36db1-e478-469b-b622-1d2c0f53793a"
                         }
                     ]
@@ -691,6 +720,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onUserAdminMainPanelAfterRender",
                     "designerId": "c4f6016b-6e7d-48c4-823c-b2032f1651b2"
                 }
             ]
@@ -705,6 +735,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool163",
             "designerId": "95a541af-1468-47fa-9f82-752b3d3bc714",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -718,6 +749,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool175",
             "designerId": "7d41580f-2343-4bd2-a0ee-ccbc5583cd2b",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }

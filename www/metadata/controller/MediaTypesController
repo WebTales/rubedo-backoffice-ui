@@ -28,6 +28,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onNewMTBtnClick",
             "designerId": "8e5babb4-2faa-4faf-a51f-9b4c3d7849d8"
         },
         {
@@ -58,6 +59,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCreateNewMTBtnClick",
             "designerId": "c2ea7078-1d68-4214-84af-6a2dfcb589ca"
         },
         {
@@ -86,6 +88,7 @@
                     "Ext.getCmp(\"mediaTypesInterface\").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();"
                 ]
             },
+            "name": "resetInterfaceNoSelect",
             "designerId": "22525587-131f-47d2-adad-c4b415572d62"
         },
         {
@@ -152,6 +155,7 @@
                     "Ext.getCmp(\"MTLDLSToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"),record.get(\"nativeLanguage\"));"
                 ]
             },
+            "name": "resetInterfaceSelect",
             "designerId": "ee596e99-3cba-4350-b50b-6a028307d35a"
         },
         {
@@ -171,6 +175,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "onMainMTGridSelect",
             "designerId": "d77217b6-a7a4-4f45-9993-a859e9d721a8"
         },
         {
@@ -218,6 +223,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onRemoveMTBtnClick",
             "designerId": "b44db20e-1956-4783-9446-c9967f5f33a9"
         },
         {
@@ -248,6 +254,7 @@
                     "}"
                 ]
             },
+            "name": "updateMT",
             "designerId": "1170ac62-74f1-47f2-858d-bb865b9c5a83"
         },
         {
@@ -267,6 +274,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onSaveMTBtnClick",
             "designerId": "465a0fde-261b-4daa-a451-461beaa7941e"
         },
         {
@@ -286,6 +294,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onNewMTFieldBtnClick",
             "designerId": "cfb4f6da-26ac-48b7-8c2b-61b9675b398b"
         },
         {
@@ -344,6 +353,7 @@
                     "renderTarget.add(casing);"
                 ]
             },
+            "name": "renderMTField",
             "designerId": "547a1bc7-fd3d-412f-aa2a-b78c6b945034"
         },
         {
@@ -370,6 +380,7 @@
                     "}"
                 ]
             },
+            "name": "nameAvailable",
             "designerId": "50521139-945b-40a3-864c-341e337addf3"
         },
         {
@@ -392,6 +403,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMTFieldInsertBtnClick",
             "designerId": "f2107c8d-ed5c-47c6-8e79-059e32c1e129"
         },
         {
@@ -430,6 +442,7 @@
                     "return(result);"
                 ]
             },
+            "name": "recordFields",
             "designerId": "db2e8d2e-fa18-467d-ba4b-53c64981ee24"
         },
         {
@@ -449,6 +462,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "onMTFieldSelectGridItemDblClick",
             "designerId": "714350f7-49ac-43ca-baa5-9ac28facd8dd"
         },
         {
@@ -591,6 +605,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "selectionEvents",
             "designerId": "e8abaae2-47b0-4410-bcbb-850bb2d40ac7"
         },
         {
@@ -619,6 +634,7 @@
                     "}"
                 ]
             },
+            "name": "nameValidator",
             "designerId": "83e2eceb-7be1-4cda-854b-08eb3544d587"
         },
         {
@@ -644,6 +660,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMTfieldUpClick",
             "designerId": "cc03035e-3bda-4d69-a0b0-3411d1ea9a50"
         },
         {
@@ -667,6 +684,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMTfieldDownClick",
             "designerId": "9027f1c5-ddf1-4a26-845e-143bd0428347"
         },
         {
@@ -695,6 +713,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMTfieldDeleterClick",
             "designerId": "624b2097-493d-4bc5-b0b4-53ebef83458a"
         },
         {
@@ -725,6 +744,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCopyMTBtnClick",
             "designerId": "dcdf96e3-e7bd-4224-9722-7768435a64fc"
         },
         {
@@ -774,6 +794,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onPurgeDTDamTypeBtnClick",
             "designerId": "aaef4d14-5409-4025-8c3c-801bea5e3291"
         }
     ]

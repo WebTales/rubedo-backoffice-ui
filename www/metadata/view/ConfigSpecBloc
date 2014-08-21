@@ -26,6 +26,7 @@
                 "padding": null,
                 "title": "Simple"
             },
+            "name": "MyForm22",
             "designerId": "be15fc95-1cd3-4dbf-af53-f7fbefc240b6",
             "customConfigs": [
                 {
@@ -45,6 +46,7 @@
                     "userConfig": {
                         "localiserId": "blockConfigSimplePanel"
                     },
+                    "name": "TabConfig23",
                     "designerId": "db22a8e1-32da-4cb0-9a0d-3e27c539d9fd",
                     "customConfigs": [
                         {
@@ -68,6 +70,7 @@
                 "localiserId": "blockConfigAdvancedPanel",
                 "title": "Avancé"
             },
+            "name": "MyForm23",
             "designerId": "30b2853e-c6ad-4627-b904-006cc1fca756",
             "customConfigs": [
                 {
@@ -87,6 +90,7 @@
                     "userConfig": {
                         "localiserId": "blockConfigAdvancedPanel"
                     },
+                    "name": "TabConfig24",
                     "designerId": "6f4cbf89-715a-4de1-93b4-01918cdf6d22",
                     "customConfigs": [
                         {
@@ -119,6 +123,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onFormAfterRender",
             "designerId": "514808a9-400a-440d-988c-e924c76fae0a"
         }
     ]

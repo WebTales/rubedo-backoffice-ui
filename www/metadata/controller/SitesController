@@ -64,6 +64,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "selectSite",
             "designerId": "f556d022-ed69-445c-ae0b-256f2561b3b0"
         },
         {
@@ -125,6 +126,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteSite",
             "designerId": "9e982d4b-bf73-4485-9935-2ad4712bb630"
         },
         {
@@ -144,6 +146,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "openAddSiteWindow",
             "designerId": "db880338-3f71-412b-8ce9-7ed7faa11844"
         },
         {
@@ -173,6 +176,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "createNewSite",
             "designerId": "93b162d4-b6dd-4c4f-b017-dcca9a36421c"
         },
         {
@@ -227,6 +231,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "updateSiteSubmit",
             "designerId": "0cd9478d-25ca-4ba2-8f1d-0706ea13fa61"
         },
         {
@@ -250,6 +255,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onSitesInterfaceBeforeClose",
             "designerId": "ff32189d-a3ea-4f62-8b32-e8137715867d"
         },
         {
@@ -271,6 +277,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onMainSitesGridRender",
             "designerId": "829e1c72-ddea-4fe6-b0b1-dbb2fa2da509"
         },
         {
@@ -311,6 +318,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onSiteWizzardCreateBtnClick",
             "designerId": "61472e76-7b05-4780-9bd8-0b6f54b24a0b"
         }
     ]

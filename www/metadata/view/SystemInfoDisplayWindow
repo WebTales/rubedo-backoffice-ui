@@ -38,6 +38,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm71",
             "designerId": "bb9bea88-49b2-4bf9-8ca2-8615c4fc75b9",
             "cn": [
                 {
@@ -54,6 +55,7 @@
                         "name": "MongoDB",
                         "style": "{float:right;}"
                     },
+                    "name": "MyDisplayField",
                     "configAlternates": {
                         "style": "string"
                     },
@@ -79,6 +81,7 @@
                         "localiserId": "rubedoVersionField",
                         "name": "RubedoVersion"
                     },
+                    "name": "MyDisplayField1",
                     "designerId": "09818be2-eeca-41ee-8296-16a7168d232b",
                     "customConfigs": [
                         {
@@ -102,6 +105,7 @@
                         "name": "ElasticSearch",
                         "style": "{float:right;}"
                     },
+                    "name": "MyDisplayField2",
                     "configAlternates": {
                         "style": "string"
                     },
@@ -127,6 +131,7 @@
                         "localiserId": "ZFVersionField",
                         "name": "ZendFramework"
                     },
+                    "name": "MyDisplayField3",
                     "designerId": "0c5c94e1-147f-4a29-8860-5dd60b28fb8e",
                     "customConfigs": [
                         {
@@ -150,6 +155,7 @@
                 "layout": "hbox",
                 "layout|flex": 1
             },
+            "name": "MyContainer62",
             "designerId": "215e3548-c9aa-40fd-9d17-ab3e68b9285b",
             "cn": [
                 {
@@ -171,6 +177,7 @@
                         ],
                         "title": "Composants PHP"
                     },
+                    "name": "MyPropertyGrid1",
                     "designerId": "0ec658ba-7f15-4b15-861d-3f39608f9cb7",
                     "customConfigs": [
                         {
@@ -195,6 +202,7 @@
                                 "name": "beforeedit",
                                 "scope": "me"
                             },
+                            "name": "onPropertygridBeforeEdit1",
                             "designerId": "f7eec2b6-f4f6-4394-9599-a2e9ae1ad6ec"
                         }
                     ]
@@ -219,6 +227,7 @@
                         ],
                         "title": "Composants Front"
                     },
+                    "name": "MyPropertyGrid2",
                     "designerId": "f7164544-d118-482a-8d2e-80e835130dae",
                     "customConfigs": [
                         {
@@ -243,6 +252,7 @@
                                 "name": "beforeedit",
                                 "scope": "me"
                             },
+                            "name": "onPropertygridBeforeEdit",
                             "designerId": "eeccf70c-ab8d-454f-8677-eb161c3ce209"
                         }
                     ]
@@ -267,6 +277,7 @@
                         ],
                         "title": "Rubedo Extensions"
                     },
+                    "name": "MyPropertyGrid3",
                     "designerId": "87b90cb7-174c-40e3-8fb6-410d081a3780",
                     "customConfigs": [
                         {
@@ -291,6 +302,7 @@
                                 "name": "beforeedit",
                                 "scope": "me"
                             },
+                            "name": "onPropertygridBeforeEdit2",
                             "designerId": "d4a96849-f8a9-4008-a7b7-f80ce897cdef"
                         }
                     ]
@@ -316,6 +328,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onSystemInfoDisplayWindowAfterRender",
             "designerId": "5d27802d-571a-414b-a975-7a0cffb3506f"
         }
     ]

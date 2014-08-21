@@ -44,6 +44,7 @@
                 "itemId": "windowMinimize",
                 "type": "minimize"
             },
+            "name": "MyTool6",
             "designerId": "59f076fe-63dc-4879-a475-318a17c27558"
         },
         {
@@ -57,6 +58,7 @@
                 "itemId": "windowMaximize",
                 "type": "maximize"
             },
+            "name": "MyTool7",
             "designerId": "ee029be7-35bc-4a2c-8f9d-c77a10f3f78e"
         },
         {
@@ -72,6 +74,7 @@
                 "itemId": "filArianne",
                 "layout|flex": 1
             },
+            "name": "MyToolbar36",
             "designerId": "0e1829e2-db05-4a5b-8d19-7b74a848c555",
             "cn": [
                 {
@@ -88,6 +91,7 @@
                         "localiserId": "contentsLaunchBtn",
                         "text": "Contenus"
                     },
+                    "name": "MyButton137",
                     "designerId": "638f2d71-892d-44de-97d1-38ecaee822e8",
                     "customConfigs": [
                         {
@@ -113,6 +117,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar37",
             "designerId": "13638db7-830e-4891-8255-4a53d86cafb7",
             "cn": [
                 {
@@ -129,6 +134,7 @@
                         "src": null,
                         "width": 48
                     },
+                    "name": "MyImg8",
                     "designerId": "6cdac45c-2f22-46e5-9e67-bafdff2c9d17",
                     "cn": [
                         {
@@ -146,6 +152,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onImageRender",
                             "designerId": "73a6cb3b-97d9-47c7-b7eb-0c6dc9a23927"
                         }
                     ]
@@ -162,6 +169,7 @@
                         "layout|flex": null,
                         "margin": "0 0 0 20"
                     },
+                    "name": "MyContainer37",
                     "designerId": "934c5a7e-55ec-42c0-88fd-ad948cba62c7",
                     "cn": [
                         {
@@ -177,6 +185,7 @@
                                     "{customMeta}"
                                 ]
                             },
+                            "name": "tpl14",
                             "designerId": "cca57767-6b36-4d68-a2e3-b86c8748b18e"
                         }
                     ]
@@ -197,6 +206,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar38",
             "designerId": "7f9e58dc-086c-4c88-8430-a453eb2aa38c",
             "cn": [
                 {
@@ -218,6 +228,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton138",
                     "designerId": "fa93a9a8-927c-4012-8642-db7038c26449",
                     "customConfigs": [
                         {
@@ -252,6 +263,7 @@
                         "scale": "large",
                         "text": "Modifier"
                     },
+                    "name": "MyButton139",
                     "designerId": "5442b0e4-34aa-4559-942b-13662c4e5c94",
                     "customConfigs": [
                         {
@@ -286,6 +298,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton140",
                     "designerId": "361f1a7a-0d6b-4fbd-a9c0-d30c8d30487a",
                     "customConfigs": [
                         {
@@ -316,6 +329,7 @@
                         "localiserId": "clipboardGroup",
                         "title": "Presse-papiers"
                     },
+                    "name": "MyButtonGroup19",
                     "designerId": "ccedf1de-e6e6-4e1c-8689-9e38542a036b",
                     "customConfigs": [
                         {
@@ -344,6 +358,7 @@
                                 "text": "Copier",
                                 "width": null
                             },
+                            "name": "MyButton141",
                             "designerId": "2dfcb475-1ddf-4d9b-8c54-b370ee4b19f6",
                             "customConfigs": [
                                 {
@@ -376,6 +391,7 @@
                                 "scale": "large",
                                 "text": "Ajouter au panier"
                             },
+                            "name": "MyButton142",
                             "designerId": "5ad36dbb-5c5f-4c2b-ac22-aa67f61a9bad"
                         },
                         {
@@ -394,6 +410,7 @@
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
+                            "name": "MyButton143",
                             "designerId": "47bef028-84b9-4022-b0cb-21191642357a",
                             "customConfigs": [
                                 {
@@ -422,6 +439,7 @@
                         "localiserId": "workflowGroup",
                         "title": "Workflow"
                     },
+                    "name": "MyButtonGroup20",
                     "designerId": "276fe7a3-f6d9-4d7d-b50f-47156dbd0d6c",
                     "customConfigs": [
                         {
@@ -452,6 +470,7 @@
                                 "scale": "large",
                                 "text": "Publier"
                             },
+                            "name": "MyButton144",
                             "designerId": "5fb19905-c6a5-42ca-8b81-9ddca48b596d",
                             "customConfigs": [
                                 {
@@ -482,6 +501,7 @@
                                 "scale": "large",
                                 "text": "Soumettre"
                             },
+                            "name": "MyButton145",
                             "designerId": "f129e72f-6d52-45d7-aaf9-00b425ea77da",
                             "customConfigs": [
                                 {
@@ -512,6 +532,7 @@
                                 "scale": "large",
                                 "text": "Refuser"
                             },
+                            "name": "MyButton146",
                             "designerId": "f93ec826-fc84-4fe9-8894-887bdde096a4",
                             "customConfigs": [
                                 {
@@ -542,6 +563,7 @@
                                 "scale": "large",
                                 "text": "Mettre en ligne"
                             },
+                            "name": "MyButton147",
                             "designerId": "c54ec06e-1daa-449d-89d1-61ff2a511013",
                             "customConfigs": [
                                 {
@@ -572,6 +594,7 @@
                                 "scale": "large",
                                 "text": "Mettre hors ligne"
                             },
+                            "name": "MyButton148",
                             "designerId": "ab7b91b1-87df-4e7f-ab9c-85cb7805a1de",
                             "customConfigs": [
                                 {
@@ -598,6 +621,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill19",
                     "designerId": "d334fd27-ab15-45c5-a479-5f16b4583ce6"
                 },
                 {
@@ -616,6 +640,7 @@
                         "scale": "large",
                         "text": ""
                     },
+                    "name": "MyButton149",
                     "designerId": "67d7c9c4-6d55-405f-b388-e4f9ba548472",
                     "customConfigs": [
                         {
@@ -647,6 +672,7 @@
                 "title": "",
                 "width": 150
             },
+            "name": "MyGridPanel30",
             "configAlternates": {
                 "managesStore": "boolean"
             },
@@ -663,6 +689,7 @@
                         "id": "TypesContenusGridView",
                         "itemId": null
                     },
+                    "name": "MyGridView32",
                     "designerId": "624e13fe-653d-4759-955c-87f4e12c5ce3"
                 },
                 {
@@ -679,6 +706,7 @@
                         "text": "Type",
                         "width": 672
                     },
+                    "name": "MyColumn60",
                     "designerId": "dd434818-0fcb-4990-ad4b-2e0afe3e4b83",
                     "customConfigs": [
                         {
@@ -721,6 +749,7 @@
                                     ""
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "10470436-a46c-419d-a074-03b75cb7565d"
                         }
                     ]
@@ -732,6 +761,7 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.RowModel",
+                    "name": "MyRowSelectionModel5",
                     "designerId": "042fd63d-f360-4728-8932-51572820d755"
                 },
                 {
@@ -741,6 +771,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "MyGroupingFeature5",
                     "designerId": "ffa2141d-8a65-45d7-a5c0-ebe855166d47",
                     "cn": [
                         {
@@ -756,6 +787,7 @@
                                     "{name:this.formatName}"
                                 ]
                             },
+                            "name": "tpl15",
                             "designerId": "57ff9ac8-0757-4002-a573-99a55ceb0f24",
                             "cn": [
                                 {
@@ -778,6 +810,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "formatName",
                                     "designerId": "180c2d83-1f9d-482e-84f0-99d3fa6199da"
                                 }
                             ]
@@ -796,6 +829,7 @@
             "userConfig": {
                 "layout|flex": 1
             },
+            "name": "menucontenuscontext",
             "designerId": "6ce832cf-6263-4b92-98ae-36d955e93c38",
             "masterInstanceId": "648ee02b-21bf-4d06-8c07-2e215977ab97"
         }

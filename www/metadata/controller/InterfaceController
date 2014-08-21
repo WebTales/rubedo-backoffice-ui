@@ -46,6 +46,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "afficherMenuPrincipal",
             "designerId": "5c5b9451-2e7e-4af5-8da6-f40b2b04a89c"
         },
         {
@@ -69,6 +70,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "maximize",
             "designerId": "eb38fbf4-e77e-4549-8114-44d2c5a0699e"
         },
         {
@@ -96,6 +98,7 @@
                 "name": "resize",
                 "scope": "me"
             },
+            "name": "compenserResize",
             "designerId": "0cc85e6b-3c41-4554-a7a8-8d79eb8cc9f5"
         },
         {
@@ -177,6 +180,7 @@
                     ""
                 ]
             },
+            "name": "onLaunch",
             "designerId": "1060d695-b0e6-4a96-b3a9-eba366981ee3"
         },
         {
@@ -230,6 +234,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "componrtementWindow",
             "designerId": "1fc66bc9-dd85-4f94-8109-c4d66106d244"
         },
         {
@@ -249,6 +254,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "minimize",
             "designerId": "d2d6b13a-8dbe-45e8-bccc-ea158a727004"
         },
         {
@@ -317,6 +323,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "comportementIcones",
             "designerId": "88f8999a-4a2a-41a4-a846-7beed8ca293a"
         },
         {
@@ -342,6 +349,7 @@
                     "return libre;"
                 ]
             },
+            "name": "placeLibre",
             "designerId": "2dc1828d-08ec-46f2-9405-6c306be9b083"
         },
         {
@@ -380,6 +388,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMenuitemClick",
             "designerId": "79c93167-a905-4b81-9cd7-8ca95f7d7321"
         },
         {
@@ -466,6 +475,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "ouvrirFenteresMenuDroite",
             "designerId": "eb23ce14-d3fd-4cfe-9907-95b111a42752"
         },
         {
@@ -493,6 +503,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "desktopMenu",
             "designerId": "b1767f0a-3ac7-44c5-90b5-0bfe2e3cd45b"
         },
         {
@@ -512,6 +523,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "hideAllIcons",
             "designerId": "2e116f9b-b80b-4880-b148-156c7f2d564e"
         },
         {
@@ -531,6 +543,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "showAllIcons",
             "designerId": "3157d68b-57d3-4ab6-a7bf-30487ceeb27d"
         },
         {
@@ -553,6 +566,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "reagarangeAllIcons",
             "designerId": "8d6e33bd-f189-487b-b19f-c336643aa836"
         },
         {
@@ -576,6 +590,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "displayDesktopCustomizeWindow",
             "designerId": "828de331-3494-4fee-8964-14993238848e"
         },
         {
@@ -595,6 +610,7 @@
                 "name": "itemclick",
                 "scope": "me"
             },
+            "name": "updateWallpaperPreview",
             "designerId": "f64052c0-db2d-4409-afdb-17f059629b12"
         },
         {
@@ -615,6 +631,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "wallpaperChange",
             "designerId": "71c12dac-ac32-4123-be0a-15c7e184593d"
         },
         {
@@ -643,6 +660,7 @@
                     "Ext.getStore(\"AllLanguagesStore3\").load();"
                 ]
             },
+            "name": "init",
             "designerId": "ba2fb59b-169b-4580-9a53-19166be42cf7"
         },
         {
@@ -663,6 +681,7 @@
                 "name": "expand",
                 "scope": "me"
             },
+            "name": "onGridpanelExpand",
             "designerId": "cc545788-e513-4b76-a2c2-c6aec618de2a"
         },
         {
@@ -683,6 +702,7 @@
                 "name": "expand",
                 "scope": "me"
             },
+            "name": "onGridpanelExpand1",
             "designerId": "123d6f2a-906f-409a-988e-a536d26f09eb"
         },
         {
@@ -702,6 +722,7 @@
                 "name": "itemclick",
                 "scope": "me"
             },
+            "name": "onGridpanelItemClick",
             "designerId": "e4b03aa4-070e-4907-aab2-cc2e642f3f89"
         },
         {
@@ -734,6 +755,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "applyTheme",
             "designerId": "17005950-13f0-4c5d-9029-bc0eac6be6d1"
         },
         {
@@ -754,6 +776,7 @@
                 "name": "expand",
                 "scope": "me"
             },
+            "name": "onPanelExpand",
             "designerId": "f3a11150-070c-4296-b731-250dbacad406"
         },
         {
@@ -783,6 +806,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "HCmode",
             "designerId": "beaebb73-b0f8-4def-b178-90ae0286a930"
         },
         {
@@ -804,6 +828,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "setHCButtonStatus",
             "designerId": "04048948-77bd-4f55-8916-587fb608e6e1"
         },
         {
@@ -917,6 +942,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "createIconBtn",
             "designerId": "22d07334-7ef6-478c-97ab-1673c0dc6bd0"
         },
         {
@@ -949,6 +975,7 @@
                     "    }); "
                 ]
             },
+            "name": "refreshIcons",
             "designerId": "87ba059c-e5bc-4365-ae29-67c7e1758449"
         },
         {
@@ -979,6 +1006,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onButtonAfterRender",
             "designerId": "59c191c1-1c5f-4049-8175-e5d12f12f48f"
         },
         {
@@ -1006,6 +1034,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "launchESWindow",
             "designerId": "dfb50cfb-9242-4189-acc8-25879407d359"
         },
         {
@@ -1029,6 +1058,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDesktopHomeBtnClick",
             "designerId": "ba840fa0-4912-4427-a732-0b7ed6ac0d71"
         },
         {
@@ -1086,6 +1116,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "mainToolsContextShow",
             "designerId": "f38c0e6a-bfb2-430d-a501-82dd290d4f5c"
         },
         {
@@ -1113,6 +1144,7 @@
                 "name": "mouseover",
                 "scope": "me"
             },
+            "name": "onButtonMouseOver",
             "designerId": "67ad1f68-f76d-4f00-a60e-ca7553957efa"
         },
         {
@@ -1178,6 +1210,7 @@
                     "    }"
                 ]
             },
+            "name": "fireIconActions",
             "designerId": "66fadcd5-26c1-44e7-9b85-e5113af668f3"
         },
         {
@@ -1207,6 +1240,7 @@
                     "    }"
                 ]
             },
+            "name": "handleDirectives",
             "designerId": "22ff9220-65f2-42b5-b72d-5538401c0f78"
         },
         {
@@ -1227,6 +1261,7 @@
                     "Ext.getCmp(\"desktopBackGround\").hide();"
                 ]
             },
+            "name": "setSimpleInterfaceMode",
             "designerId": "e96ea476-f8d9-4035-a48b-b55eb4926444"
         }
     ]

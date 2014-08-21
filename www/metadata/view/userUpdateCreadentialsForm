@@ -34,6 +34,7 @@
                 "container|align": "stretch",
                 "layout": "hbox"
             },
+            "name": "MyContainer39",
             "designerId": "6ce5d63e-24c5-42be-8929-17b9499c9e9d",
             "cn": [
                 {
@@ -47,6 +48,7 @@
                         "layout|flex": 1,
                         "layout|margins": "0 20 0 0"
                     },
+                    "name": "MyContainer40",
                     "designerId": "140a8cc6-c4ca-4e2a-a141-f6c6f22270aa",
                     "cn": [
                         {
@@ -60,6 +62,7 @@
                                 "localiserId": "IntterfaceSettingsFS",
                                 "title": "Interface settings"
                             },
+                            "name": "MyFieldSet17",
                             "designerId": "0e853b51-b12f-4191-b936-a118d607d529",
                             "customConfigs": [
                                 {
@@ -89,6 +92,7 @@
                                         "store": "BOLanguageStore",
                                         "valueField": "key"
                                     },
+                                    "name": "MyComboBox29",
                                     "designerId": "08ac2cdd-1afd-480c-bc9c-f1eb1e650ef6",
                                     "customConfigs": [
                                         {
@@ -114,6 +118,7 @@
                                         "localiserId": "interfaceModeField",
                                         "name": "interfaceMode"
                                     },
+                                    "name": "MyComboBox30",
                                     "designerId": "85fc8e08-7436-4a0d-9478-2fe115321da5",
                                     "customConfigs": [
                                         {
@@ -140,6 +145,7 @@
                                                     "return config;"
                                                 ]
                                             },
+                                            "name": "processInterfaceMode",
                                             "designerId": "1286edea-7c58-42c1-ab7f-fa031abf4f61"
                                         }
                                     ]
@@ -158,6 +164,7 @@
                                 "localiserId": "acountUserValidFieldSet",
                                 "title": "Compte utilisateur et validité"
                             },
+                            "name": "MyFieldSet18",
                             "designerId": "8b572279-f468-4781-9ae0-777706d7d9ab",
                             "customConfigs": [
                                 {
@@ -184,6 +191,7 @@
                                         "value": null,
                                         "vtype": null
                                     },
+                                    "name": "MyTextField40",
                                     "designerId": "99cd73ae-9957-433c-b445-4d1c5a406bbe",
                                     "customConfigs": [
                                         {
@@ -214,6 +222,7 @@
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
                                     },
+                                    "name": "MyComboBox31",
                                     "designerId": "9c8e2993-fadb-4117-a3b3-6d4279070411",
                                     "customConfigs": [
                                         {
@@ -243,6 +252,7 @@
                                         "store": "GroupsComboStore",
                                         "valueField": "id"
                                     },
+                                    "name": "MyComboBox32",
                                     "configAlternates": {
                                         "notAutomatic": "boolean"
                                     },
@@ -269,6 +279,7 @@
                                         "localiserId": "startValidityField",
                                         "name": "startValidity"
                                     },
+                                    "name": "MyDateField2",
                                     "designerId": "7d3728d2-1b25-48a6-bd55-82bc31eaf284",
                                     "customConfigs": [
                                         {
@@ -292,6 +303,7 @@
                                         "localiserId": "endValidityField",
                                         "name": "endValidity"
                                     },
+                                    "name": "MyDateField3",
                                     "designerId": "2f544c05-24f0-4f13-b209-860742f40890",
                                     "customConfigs": [
                                         {
@@ -316,6 +328,7 @@
                                 "localiserId": "passwordChangeFieldSet",
                                 "title": "Changement de mot de passe"
                             },
+                            "name": "MyFieldSet19",
                             "designerId": "1b357183-8778-440b-956b-daf1e3e28000",
                             "customConfigs": [
                                 {
@@ -343,6 +356,7 @@
                                         "localiserId": "userPasswordChangeBtn",
                                         "text": "Changer le mot de passe de cet utilisateur"
                                     },
+                                    "name": "MyButton169",
                                     "designerId": "a7c9c3f6-0197-4c9c-86d4-154356adf8f5",
                                     "customConfigs": [
                                         {
@@ -368,6 +382,7 @@
                         "layout|margins": null,
                         "width": 220
                     },
+                    "name": "MyContainer41",
                     "designerId": "2b88e370-9e78-48fd-807b-664ad2856a31",
                     "cn": [
                         {
@@ -384,6 +399,7 @@
                                 "title": "Photo",
                                 "width": 200
                             },
+                            "name": "MyFieldSet20",
                             "designerId": "92b39959-cd99-46a0-993f-2dd7bb9819bd",
                             "customConfigs": [
                                 {
@@ -407,6 +423,7 @@
                                         "src": "resources/images/userBig.png",
                                         "width": 140
                                     },
+                                    "name": "MyImg11",
                                     "designerId": "66e51d08-58bb-434a-8ed7-868859289b79"
                                 },
                                 {
@@ -423,6 +440,7 @@
                                         "margin": "0 0 10 0",
                                         "text": "Changer"
                                     },
+                                    "name": "MyButton170",
                                     "designerId": "b7f38c67-859c-4cae-932d-7a6d7640bab6",
                                     "customConfigs": [
                                         {
@@ -447,6 +465,7 @@
                                         "margin": null,
                                         "text": "Supprimer"
                                     },
+                                    "name": "MyButton171",
                                     "designerId": "04a12306-6401-45b4-8136-0bc574197a5b",
                                     "customConfigs": [
                                         {

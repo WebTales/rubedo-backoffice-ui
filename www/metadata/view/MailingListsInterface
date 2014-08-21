@@ -37,6 +37,7 @@
             "userConfig": {
                 "dock": "top"
             },
+            "name": "MyToolbar75",
             "designerId": "dac24e4b-bd2f-42c2-a0ce-05f572b56766",
             "cn": [
                 {
@@ -56,6 +57,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton316",
                     "designerId": "6e7b660d-9227-480c-bcfd-057c30cb945e",
                     "customConfigs": [
                         {
@@ -88,6 +90,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton317",
                     "designerId": "135ac93b-92dd-4aea-b471-6afb1923a872",
                     "customConfigs": [
                         {
@@ -120,6 +123,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton318",
                     "designerId": "2d2d6359-b692-41c7-b639-c27b102d7b91",
                     "customConfigs": [
                         {
@@ -154,6 +158,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onWorkspaceSaveAfterRender",
                             "designerId": "857686fc-0e8d-44e0-9868-97b90f966915"
                         }
                     ]
@@ -175,6 +180,7 @@
                         "localiserId": "manageUsersFS",
                         "title": "Manage subscribed users"
                     },
+                    "name": "MyButtonGroup39",
                     "designerId": "566ec6c8-947d-4770-92cc-d93e1d313236",
                     "customConfigs": [
                         {
@@ -204,6 +210,7 @@
                                 "scale": "large",
                                 "text": "Subscribe"
                             },
+                            "name": "MyButton319",
                             "designerId": "c5ea6342-ddba-4dc0-8369-52f39631dd3e",
                             "customConfigs": [
                                 {
@@ -229,6 +236,7 @@
                                 "scale": "large",
                                 "text": "Unsubscribe"
                             },
+                            "name": "MyButton320",
                             "designerId": "c86c6126-9679-41aa-9ed6-5e3ccd66d2a8",
                             "customConfigs": [
                                 {
@@ -253,6 +261,7 @@
                                 "scale": "large",
                                 "text": "Import"
                             },
+                            "name": "MyButton321",
                             "designerId": "d0113c5b-0738-48a1-b50a-0488b018ff59",
                             "customConfigs": [
                                 {
@@ -277,6 +286,7 @@
                                 "scale": "large",
                                 "text": "Export"
                             },
+                            "name": "MyButton322",
                             "designerId": "e2c6400c-f168-4a7d-8199-415454cef0da",
                             "customConfigs": [
                                 {
@@ -298,6 +308,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill39",
                     "designerId": "d71b6f49-d6f4-44f0-858e-469b91d8d9c4"
                 }
             ]
@@ -316,6 +327,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel46",
             "designerId": "b677c8e9-e99f-4c4d-80b1-9e93a14c09e7",
             "cn": [
                 {
@@ -325,6 +337,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView51",
                     "designerId": "71d887e0-631c-4810-9227-299a16f5cf94"
                 },
                 {
@@ -339,6 +352,7 @@
                         "localiserId": "nameColumn",
                         "text": "Nom"
                     },
+                    "name": "MyColumn110",
                     "designerId": "af5483ae-6d3c-431f-9149-6b2d0831384f",
                     "customConfigs": [
                         {
@@ -374,6 +388,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "5b2379a5-be73-4852-a271-2b820ad9386e"
                         }
                     ]
@@ -392,6 +407,7 @@
                 "disabled": true,
                 "layout|flex": 1
             },
+            "name": "MyTabPanel13",
             "designerId": "e9bf3d03-a048-4b39-a01b-d5eff36b8b79",
             "cn": [
                 {
@@ -408,6 +424,7 @@
                         "localiserId": "propertiesForm",
                         "title": "Propriétés"
                     },
+                    "name": "MyForm63",
                     "designerId": "0b4a6c0f-00df-4bdf-bccc-f9f992629e82",
                     "customConfigs": [
                         {
@@ -432,6 +449,7 @@
                                 "localiserId": "nameField",
                                 "name": "name"
                             },
+                            "name": "MyTextField94",
                             "designerId": "ab12c7c6-2a2a-4d08-92b0-06e2dd9df1d6",
                             "customConfigs": [
                                 {
@@ -456,6 +474,7 @@
                                 "name": "workspaces",
                                 "store": "ContributeWorkspacesCombo"
                             },
+                            "name": "workspacecombo13",
                             "configAlternates": {
                                 "canSwitchStore": "boolean"
                             },
@@ -480,6 +499,7 @@
                                 "localiserId": "expeditorFieldset",
                                 "title": "Expéditeur"
                             },
+                            "name": "MyFieldSet35",
                             "designerId": "89ca43d8-d985-4aa1-94f1-7e881114d136",
                             "customConfigs": [
                                 {
@@ -504,6 +524,7 @@
                                         "name": "fromAddress",
                                         "vtype": "email"
                                     },
+                                    "name": "MyTextField95",
                                     "designerId": "81fb611b-5ac8-4d02-b2ca-34602c823c88",
                                     "customConfigs": [
                                         {
@@ -527,6 +548,7 @@
                                         "localiserId": "expeditorNameField",
                                         "name": "fromName"
                                     },
+                                    "name": "MyTextField96",
                                     "designerId": "a8bffe10-daad-4b90-9c09-b656b1017040",
                                     "customConfigs": [
                                         {
@@ -549,6 +571,7 @@
                                 "localiserId": "responseFieldset",
                                 "title": "Réponse"
                             },
+                            "name": "MyFieldSet36",
                             "designerId": "6d25ba0a-075e-49a5-9e61-bffdb3d23fea",
                             "customConfigs": [
                                 {
@@ -573,6 +596,7 @@
                                         "name": "replyToAddress",
                                         "vtype": "email"
                                     },
+                                    "name": "MyTextField97",
                                     "designerId": "bc415ae0-2de2-4b18-b7b1-8b2acb2cc623",
                                     "customConfigs": [
                                         {
@@ -596,6 +620,7 @@
                                         "localiserId": "replyToNameField",
                                         "name": "replyToName"
                                     },
+                                    "name": "MyTextField98",
                                     "designerId": "868e620d-a6a6-48ba-a415-eeecbd6e7f03",
                                     "customConfigs": [
                                         {
@@ -622,6 +647,7 @@
                                 "name": "returnPathAddress",
                                 "vtype": "email"
                             },
+                            "name": "MyTextField99",
                             "designerId": "b3f288ac-dd00-49d5-92f0-db98bb878bd8",
                             "customConfigs": [
                                 {
@@ -638,6 +664,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "TabConfig46",
                             "designerId": "86eff93f-68d9-4a65-b53c-5050c1d77b56"
                         }
                     ]
@@ -656,6 +683,7 @@
                         "store": "MLUsers",
                         "title": "Subscribed users"
                     },
+                    "name": "MyGridPanel47",
                     "designerId": "2d8c099c-2166-416b-a58b-0411d92d2147",
                     "customConfigs": [
                         {
@@ -677,6 +705,7 @@
                                 "localiserId": "nameCol",
                                 "text": "Name"
                             },
+                            "name": "MyColumn111",
                             "designerId": "69b0f110-9307-4222-9dd7-e197a9f8662e",
                             "customConfigs": [
                                 {
@@ -698,6 +727,7 @@
                                 "localiserId": "emailCol",
                                 "text": "Email"
                             },
+                            "name": "MyColumn112",
                             "designerId": "18f61888-a512-4727-b1c4-6050a038bed3",
                             "customConfigs": [
                                 {
@@ -719,6 +749,7 @@
                                 "localiserId": "createCol",
                                 "text": "Creation"
                             },
+                            "name": "MyDateColumn9",
                             "designerId": "513425e4-9673-452c-bdbe-b82b6e430730",
                             "customConfigs": [
                                 {
@@ -740,6 +771,7 @@
                                 "localiserId": "subsCribeCol",
                                 "text": "Subscription"
                             },
+                            "name": "MyColumn113",
                             "designerId": "be30caa0-e680-40d7-8b9b-37fbebd86788",
                             "customConfigs": [
                                 {
@@ -776,6 +808,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "59fd2b10-b7b5-4e79-86f0-6e5c7d6ca153"
                                 }
                             ]
@@ -787,6 +820,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView52",
                             "designerId": "361fe122-f1a5-4815-92c8-840a981f8306"
                         },
                         {
@@ -796,6 +830,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "TabConfig47",
                             "designerId": "77365a25-7a58-4675-9478-8fe1c8caa3fa"
                         },
                         {
@@ -811,6 +846,7 @@
                                 "store": "MLUsers",
                                 "width": 360
                             },
+                            "name": "MyPagingToolbar7",
                             "designerId": "0320815f-4603-4a6f-8e96-7db21eca17ad"
                         },
                         {
@@ -820,6 +856,7 @@
                                 "type": "object"
                             },
                             "codeClass": "Ext.selection.CheckboxModel",
+                            "name": "MyCheckboxSelectionModel11",
                             "designerId": "5ac8f812-cc8e-4da2-815b-840394134c30"
                         },
                         {
@@ -839,6 +876,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processMLUsersGrid",
                             "designerId": "29076473-4a27-4bbb-83fb-1a622dcc6d4f"
                         }
                     ]
@@ -857,6 +895,7 @@
                         "store": "MLUnsubscribedUsers",
                         "title": "Unsubscribed users"
                     },
+                    "name": "MyGridPanel48",
                     "designerId": "0031cc66-0370-4d07-9216-f3fe32941508",
                     "customConfigs": [
                         {
@@ -878,6 +917,7 @@
                                 "localiserId": "nameCol",
                                 "text": "Name"
                             },
+                            "name": "MyColumn114",
                             "designerId": "467a613c-86b8-4137-9aca-adb18af982c1",
                             "customConfigs": [
                                 {
@@ -899,6 +939,7 @@
                                 "localiserId": "emailCol",
                                 "text": "Email"
                             },
+                            "name": "MyColumn115",
                             "designerId": "4348b9cf-cd55-4bfe-b706-c09eb2c3ffd7",
                             "customConfigs": [
                                 {
@@ -920,6 +961,7 @@
                                 "localiserId": "createCol",
                                 "text": "Creation"
                             },
+                            "name": "MyDateColumn10",
                             "designerId": "6582203e-dedf-4f8a-a3c3-3af66b340929",
                             "customConfigs": [
                                 {
@@ -941,6 +983,7 @@
                                 "localiserId": "unsubscribedCol",
                                 "text": "Unsubscription"
                             },
+                            "name": "MyColumn116",
                             "designerId": "178e46f0-3513-4672-9419-48db037d7e99",
                             "customConfigs": [
                                 {
@@ -977,6 +1020,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "81742b9b-7ffd-47db-9a5f-2b1298144022"
                                 }
                             ]
@@ -988,6 +1032,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView53",
                             "designerId": "e1b2ff14-c875-4469-bf72-6196fcfcbe80"
                         },
                         {
@@ -997,6 +1042,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "TabConfig48",
                             "designerId": "179b9c5f-a55f-4afa-b2d7-6fc89f33f8e4"
                         },
                         {
@@ -1012,6 +1058,7 @@
                                 "store": "MLUnsubscribedUsers",
                                 "width": 360
                             },
+                            "name": "MyPagingToolbar8",
                             "designerId": "4f8824fb-2a70-4bda-89cb-ddf776131019"
                         },
                         {
@@ -1021,6 +1068,7 @@
                                 "type": "object"
                             },
                             "codeClass": "Ext.selection.CheckboxModel",
+                            "name": "MyCheckboxSelectionModel12",
                             "designerId": "13025f2c-f80a-4f81-bc40-68ed30289f69"
                         },
                         {
@@ -1040,6 +1088,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processMLUsersGrid1",
                             "designerId": "fb6792b4-4a5d-462a-94cb-cdfc56aa0f59"
                         }
                     ]
@@ -1056,6 +1105,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1611",
             "designerId": "6bd63a09-f1cc-402b-aa8a-a0e061d5dff4",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -1069,6 +1119,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1717",
             "designerId": "2ca6d01d-f48a-4dc9-a872-2545e8007034",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }

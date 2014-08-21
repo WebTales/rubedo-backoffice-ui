@@ -43,6 +43,7 @@
                 "store": "MTFieldsStore",
                 "title": ""
             },
+            "name": "MyGridPanel28",
             "designerId": "0af55f0e-17ed-4d8c-9ee4-45f9e44e182c",
             "cn": [
                 {
@@ -55,6 +56,7 @@
                     "userConfig": {
                         "markDirty": false
                     },
+                    "name": "MyGridView29",
                     "designerId": "1bf7b279-363d-41b4-b960-28d78754c090"
                 },
                 {
@@ -70,6 +72,7 @@
                         "localiserId": "typeCol",
                         "text": "Type"
                     },
+                    "name": "MyColumn55",
                     "designerId": "447f1dab-6ffd-4df9-aa71-728f46314c3f",
                     "customConfigs": [
                         {
@@ -95,6 +98,7 @@
                         "name": "select",
                         "scope": "me"
                     },
+                    "name": "onMTFieldSelectGridSelect",
                     "designerId": "195820d6-57b4-47fa-b9fb-086d30f583b4"
                 }
             ]
@@ -115,6 +119,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel40",
             "designerId": "d3cab85f-7d88-4463-a430-8b7a41b804b4",
             "cn": [
                 {
@@ -130,6 +135,7 @@
                             "{description}"
                         ]
                     },
+                    "name": "tpl11",
                     "designerId": "35f51a9a-a1d5-436f-a1ca-91f20de24a64"
                 }
             ]
@@ -145,6 +151,7 @@
                 "dock": "bottom",
                 "layout|flex": 1
             },
+            "name": "MyToolbar34",
             "designerId": "e56c1783-791c-42c2-ac91-adb52e44c9a9",
             "cn": [
                 {
@@ -157,6 +164,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill17",
                     "designerId": "e99ea634-5786-4590-9722-25bc74138bc0"
                 },
                 {
@@ -175,6 +183,7 @@
                         "margin": null,
                         "text": "Ajouter"
                     },
+                    "name": "MyButton134",
                     "designerId": "14964286-01fe-4b3d-a335-80ff972168f7",
                     "customConfigs": [
                         {

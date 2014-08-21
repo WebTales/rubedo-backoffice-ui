@@ -37,6 +37,7 @@
                 "store": "FacetOverriderStore",
                 "title": ""
             },
+            "name": "MyGridPanel51",
             "designerId": "9f9b92c8-4bf3-4e66-a1dd-26ff97ee3050",
             "cn": [
                 {
@@ -49,6 +50,7 @@
                     "userConfig": {
                         "markDirty": false
                     },
+                    "name": "MyGridView56",
                     "designerId": "2fbf8294-23ef-4c25-b703-549ca20d8b04"
                 },
                 {
@@ -63,6 +65,7 @@
                         "localiserId": "facetColumn",
                         "text": "Facet"
                     },
+                    "name": "MyColumn122",
                     "designerId": "6260e9b8-402a-4908-b929-668d2c572713",
                     "customConfigs": [
                         {
@@ -94,6 +97,7 @@
                                     "return(Ext.getStore(\"FacetsToDisplayStore\").findRecord(\"id\",value).get(\"name\"));"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "dd647e8d-aedc-40a8-9818-833d45fe75a3"
                         }
                     ]
@@ -110,6 +114,7 @@
                         "localiserId": "OperatorColumn",
                         "text": "Operator"
                     },
+                    "name": "MyColumn123",
                     "designerId": "260cbad5-081e-4ccc-9a07-847d54451cce",
                     "customConfigs": [
                         {
@@ -131,6 +136,7 @@
                                 "forceSelection": true,
                                 "store": null
                             },
+                            "name": "MyComboBox55",
                             "configAlternates": {
                                 "store": "array"
                             },
@@ -153,6 +159,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processMyComboBox10",
                                     "designerId": "77affb9c-bc7d-41e8-9007-0f313d92e209"
                                 }
                             ]
@@ -183,6 +190,7 @@
                                     "} "
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "10d731d7-f7eb-4650-b5a5-31dd898f5938"
                         }
                     ]
@@ -197,6 +205,7 @@
                     "userConfig": {
                         "clicksToEdit": 1
                     },
+                    "name": "MyCellEditingPlugin9",
                     "designerId": "2324c95d-2c21-43e8-aa69-122097d0d440"
                 },
                 {
@@ -209,6 +218,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar83",
                     "designerId": "a98a2623-d21d-446c-a309-ad4729cef2d8",
                     "cn": [
                         {
@@ -221,6 +231,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill43",
                             "designerId": "7db1213e-b826-4db4-aadc-73b21303db2e"
                         },
                         {
@@ -237,6 +248,7 @@
                                 "localiserId": "applyBtn",
                                 "text": "Apply"
                             },
+                            "name": "MyButton369",
                             "designerId": "639eaf59-3c13-454f-b7e4-55bbeb45e864",
                             "customConfigs": [
                                 {
@@ -264,6 +276,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onFacetOverriderApplyBtnClick",
                                     "designerId": "544751d1-d71b-401b-88ba-802804a47f05"
                                 }
                             ]
@@ -288,6 +301,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onWindowAfterRender",
             "designerId": "fb30b8dc-ac33-464e-ac3a-fc3d1d51ef24"
         }
     ]

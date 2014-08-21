@@ -53,6 +53,7 @@
                     "activeFacettes"
                 ]
             },
+            "name": "CustomEvent",
             "designerId": "105ea355-af9a-48cc-8cb2-6ab5445382d1"
         },
         {
@@ -73,6 +74,7 @@
                 ],
                 "batchActions": false
             },
+            "name": "MyAjaxProxy14",
             "designerId": "5e785b38-6664-49fc-854b-e31abe5bbfc7",
             "cn": [
                 {
@@ -86,6 +88,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader14",
                     "designerId": "19df1797-687f-4d0f-a9d3-6f0860e5ff48",
                     "cn": [
                         {
@@ -129,6 +132,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "getResponseData",
                             "designerId": "1ba38c95-a0f0-4be7-a02c-33b901c76a26"
                         }
                     ]
@@ -145,6 +149,7 @@
                         "nameProperty": null,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter6",
                     "designerId": "da436253-e7d7-471d-b979-7c065c7592a5"
                 }
             ]
@@ -166,6 +171,7 @@
                 "name": "facettesChanged",
                 "scope": "me"
             },
+            "name": "onJsonstoreFacettesChanged",
             "designerId": "4f30b3fd-cd4d-4a4d-b52a-306a74ce42a8"
         },
         {
@@ -194,6 +200,7 @@
                 "name": "load",
                 "scope": "me"
             },
+            "name": "onJsonstoreLoad",
             "designerId": "2c3c1217-78bc-4668-bdd8-dda03698d012"
         },
         {
@@ -221,6 +228,7 @@
                 "name": "beforeload",
                 "scope": "me"
             },
+            "name": "onJsonstoreBeforeLoad",
             "designerId": "0a5516d7-99a0-4842-9dd2-3bc9dd725c43"
         },
         {
@@ -234,6 +242,7 @@
                 "direction": "DESC",
                 "property": "score"
             },
+            "name": "MySorter1",
             "designerId": "ca4a4559-facf-42c7-9914-0c926c14a775"
         }
     ]

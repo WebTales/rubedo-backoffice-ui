@@ -41,6 +41,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool169",
             "designerId": "f0175ec0-5a4b-4e87-b65a-a6be595ad487",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,6 +52,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1713",
             "designerId": "79461449-0ebc-4168-8d4e-b6c8c3487fa8",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -72,6 +74,7 @@
                 "useArrows": true,
                 "width": 225
             },
+            "name": "MyTreePanel1",
             "designerId": "e8970f61-6672-4bea-83c1-2eb06de4184b",
             "customConfigs": [
                 {
@@ -88,6 +91,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyTreeView3",
                     "designerId": "0bb850f9-ae8a-4f9a-b976-b10ddb990c6c"
                 },
                 {
@@ -100,6 +104,7 @@
                     "userConfig": {
                         "dock": "top"
                     },
+                    "name": "MyToolbar63",
                     "designerId": "8ac0ebfb-9f90-40b6-86ed-3f73f2aa3a5b",
                     "cn": [
                         {
@@ -122,6 +127,7 @@
                                 "store": "SitesComboPreview",
                                 "valueField": "id"
                             },
+                            "name": "MyComboBox39",
                             "configAlternates": {
                                 "managesStore": "boolean"
                             },
@@ -148,6 +154,7 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.BufferedRenderer",
+                    "name": "MyBufferedRenderer2",
                     "designerId": "b3d585cd-0494-45b6-8059-057d49c0beea"
                 }
             ]
@@ -164,6 +171,7 @@
                 "layout": "fit",
                 "layout|flex": 1
             },
+            "name": "MyPanel50",
             "designerId": "1ebf1def-70a6-410b-943f-838389b6bcf7",
             "cn": [
                 {
@@ -176,6 +184,7 @@
                     "userConfig": {
                         "dock": "top"
                     },
+                    "name": "MyToolbar64",
                     "designerId": "26fe1274-5cf3-4d80-bb54-b0d19790ecfd",
                     "cn": [
                         {
@@ -195,6 +204,7 @@
                                 "scale": "large",
                                 "showText": true
                             },
+                            "name": "MyCycleButton",
                             "designerId": "bf4ac652-8888-4e80-93f2-78769c111b91",
                             "customConfigs": [
                                 {
@@ -219,6 +229,7 @@
                                         "showSeparator": false,
                                         "width": null
                                     },
+                                    "name": "MyMenu2",
                                     "designerId": "59a585ed-56d7-4d9d-8434-3bfa539ad516",
                                     "cn": [
                                         {
@@ -237,6 +248,7 @@
                                                 "plain": true,
                                                 "text": "Desktop"
                                             },
+                                            "name": "MyCheckItem",
                                             "designerId": "66dbf624-ad21-4c50-826b-2a3572bc30b1",
                                             "customConfigs": [
                                                 {
@@ -265,6 +277,7 @@
                                                 "plain": true,
                                                 "text": "Phone - portrait"
                                             },
+                                            "name": "MyCheckItem1",
                                             "designerId": "6ef9ffd2-0096-4928-b706-989103450e1e",
                                             "customConfigs": [
                                                 {
@@ -293,6 +306,7 @@
                                                 "plain": true,
                                                 "text": "Phone - Landscape"
                                             },
+                                            "name": "MyCheckItem2",
                                             "designerId": "a733b3bd-6123-4c34-a178-c9704a358697",
                                             "customConfigs": [
                                                 {
@@ -321,6 +335,7 @@
                                                 "plain": true,
                                                 "text": "Tablet - Portrait"
                                             },
+                                            "name": "MyCheckItem3",
                                             "designerId": "ff5b1895-b0fc-4cc4-9a97-d591d4e4a0ba",
                                             "customConfigs": [
                                                 {
@@ -349,6 +364,7 @@
                                                 "plain": true,
                                                 "text": "Tablet - Landscape"
                                             },
+                                            "name": "MyCheckItem4",
                                             "designerId": "0ee5da39-460e-4f73-ad54-afc1bf538b29",
                                             "customConfigs": [
                                                 {
@@ -382,6 +398,7 @@
                                         "name": "change",
                                         "scope": "me"
                                     },
+                                    "name": "onPreviewDeviceComboChange",
                                     "designerId": "c8ab5984-d075-4c21-b15a-2e38e60bd82f"
                                 }
                             ]
@@ -396,6 +413,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MySeparator5",
                             "designerId": "5792268c-d60e-48f5-a285-e97b20db6b26"
                         },
                         {
@@ -415,6 +433,7 @@
                                 "localiserId": "draftField",
                                 "margin": "0 20 0 0"
                             },
+                            "name": "MyCheckbox13",
                             "designerId": "85209458-156e-4d3f-a2b7-064331b64ab9",
                             "customConfigs": [
                                 {
@@ -438,6 +457,7 @@
                                 "layout|flex": null,
                                 "localiserId": "dateField"
                             },
+                            "name": "MyDateField4",
                             "designerId": "75b91476-c46b-4ddb-a9aa-ef58f870a079",
                             "customConfigs": [
                                 {
@@ -468,6 +488,7 @@
                                 "queryMode": "local",
                                 "valueField": "locale"
                             },
+                            "name": "MyComboBox40",
                             "designerId": "77e8591e-e618-4496-92a1-8648f7640c9b",
                             "customConfigs": [
                                 {
@@ -501,6 +522,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processPreviewLanguageCombo",
                                     "designerId": "004aae53-61fa-4906-8ce9-26cb9d8f8415"
                                 },
                                 {
@@ -520,6 +542,7 @@
                                         "name": "afterrender",
                                         "scope": "me"
                                     },
+                                    "name": "onPreviewLanguageComboAfterRender",
                                     "designerId": "78eba595-6ceb-467a-a5ec-277a55854690"
                                 }
                             ]
@@ -534,6 +557,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill34",
                             "designerId": "4ba7bf43-f812-44c1-a0d2-8ff0d45e1078"
                         },
                         {
@@ -546,6 +570,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MySeparator6",
                             "designerId": "2baa604d-0e06-4a33-9d2a-cb5738a2d11c"
                         },
                         {
@@ -563,6 +588,7 @@
                                 "scale": "large",
                                 "text": "Actualiser"
                             },
+                            "name": "MyButton264",
                             "designerId": "10afe836-bc5e-4f49-a68a-aee3f4c6ca2a",
                             "customConfigs": [
                                 {

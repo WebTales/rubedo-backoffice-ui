@@ -51,6 +51,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy27",
             "designerId": "e932b8ec-e36f-41ec-a6ae-f3d83c39751e",
             "cn": [
                 {
@@ -64,6 +65,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader26",
                     "designerId": "2fcd38bb-d3ae-4190-bcce-789de820be91"
                 }
             ]
@@ -81,6 +83,7 @@
                     "false"
                 ]
             },
+            "name": "MyFilter4",
             "designerId": "77c03993-0c28-43a1-8e49-2129fe7e82b5"
         },
         {
@@ -96,6 +99,7 @@
                     "{\"$ne\":true}"
                 ]
             },
+            "name": "MyFilter5",
             "designerId": "d9fbb700-f3c7-432c-9e93-fc56106f7307"
         },
         {
@@ -108,6 +112,7 @@
             "userConfig": {
                 "property": "type"
             },
+            "name": "MySorter7",
             "designerId": "23910f6b-88f9-43ef-9498-015c61e99bfb"
         },
         {
@@ -120,6 +125,7 @@
             "userConfig": {
                 "property": "productType"
             },
+            "name": "MyGrouper5",
             "designerId": "98b8d9c3-ed75-4eec-8398-c7469624566c"
         }
     ]

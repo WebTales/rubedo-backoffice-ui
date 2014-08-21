@@ -36,6 +36,7 @@
             "userConfig": {
                 "layout|flex": 1
             },
+            "name": "mygridpanel31",
             "designerId": "8d65fe65-7d83-4141-b24b-48375303cb09",
             "masterInstanceId": "ed52b806-0827-44f4-9d61-ccf1b77f5f5d",
             "cn": [
@@ -58,6 +59,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onManualQueryLeftGridSelectionChange",
                     "designerId": "ece4c3fd-bade-45aa-979f-2ed4dcdb9620"
                 }
             ]
@@ -75,6 +77,7 @@
                 "layout|flex": null,
                 "vertical": true
             },
+            "name": "MyToolbar73",
             "designerId": "aa5a151b-f0df-44be-9850-e5f20df886ec",
             "cn": [
                 {
@@ -87,6 +90,7 @@
                     "userConfig": {
                         "layout|flex": 1
                     },
+                    "name": "MySpacer3",
                     "designerId": "9a3cd3e0-f4ed-4265-9acd-a424c2ff7374"
                 },
                 {
@@ -105,6 +109,7 @@
                         "localiserId": "addQBtn",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton311",
                     "designerId": "435006e6-e1ec-4292-9d7f-15a360048507",
                     "customConfigs": [
                         {
@@ -131,6 +136,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onManualQueryAddRecordBtnClick",
                             "designerId": "17fd850d-2649-4c15-9d8a-7a91addb2cff"
                         }
                     ]
@@ -150,6 +156,7 @@
                         "localiserId": "removeQbtn",
                         "text": "Enlever"
                     },
+                    "name": "MyButton312",
                     "designerId": "7d15cc34-9d4b-4289-84ad-1b90db2a9e92",
                     "customConfigs": [
                         {
@@ -176,6 +183,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onManualQueryRemoveRecordBtnClick",
                             "designerId": "c8be1b79-a74d-45c9-bfc4-1fec8e6891fb"
                         }
                     ]
@@ -190,6 +198,7 @@
                     "userConfig": {
                         "layout|flex": 1
                     },
+                    "name": "MySpacer4",
                     "designerId": "c90e27be-a02f-4fee-8811-abe5cfe6aac4"
                 }
             ]
@@ -208,6 +217,7 @@
                 "store": "ContentMQueryStore",
                 "title": ""
             },
+            "name": "MyGridPanel45",
             "configAlternates": {
                 "managesStore": "boolean"
             },
@@ -220,6 +230,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView50",
                     "designerId": "1aed84d6-e076-4e81-9f24-fb98cf17776d",
                     "cn": [
                         {
@@ -229,6 +240,7 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.DragDrop",
+                            "name": "MyGridDragDropPlugin10",
                             "designerId": "15a21eb1-6f33-4b8e-8f5b-c498b5bfc1d5"
                         }
                     ]
@@ -247,6 +259,7 @@
                         "localiserId": "titleCol",
                         "text": "Titre"
                     },
+                    "name": "MyColumn106",
                     "configAlternates": {
                         "filter": "boolean"
                     },
@@ -295,6 +308,7 @@
                                     ""
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "ab68efa3-ec83-470c-b0f0-57d50f18f186"
                         }
                     ]
@@ -311,6 +325,7 @@
                         "flex": 0.7,
                         "text": "Languages"
                     },
+                    "name": "MyColumn107",
                     "designerId": "766fe768-d034-4c29-9f88-134953eed9c8",
                     "cn": [
                         {
@@ -349,6 +364,7 @@
                                     "return(returner);"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "8f1f3865-80cb-4756-b32e-26443d29e80b"
                         },
                         {
@@ -368,6 +384,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onGridcolumnAfterRender",
                             "designerId": "b4675ba3-ffdc-47e7-99a9-0126f196c397"
                         }
                     ]
@@ -393,6 +410,7 @@
                         "localiserId": "typeCol",
                         "text": "Type"
                     },
+                    "name": "MyColumn108",
                     "configAlternates": {
                         "filter": "object"
                     },
@@ -436,6 +454,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "01357aa2-cfd0-472e-b8bb-c3ee501857e1"
                         }
                     ]
@@ -463,6 +482,7 @@
                         "localiserId": "statusCol",
                         "text": "Etat"
                     },
+                    "name": "MyColumn109",
                     "configAlternates": {
                         "filter": "object"
                     },
@@ -508,6 +528,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "3ddab2d2-7d7a-4251-b160-6eb24091b6f3"
                         }
                     ]
@@ -536,6 +557,7 @@
                         "trueText": "Oui",
                         "width": 60
                     },
+                    "name": "MyBooleanColumn18",
                     "configAlternates": {
                         "filter": "object"
                     },
@@ -563,6 +585,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar74",
                     "designerId": "196df3b1-cb19-48ed-849e-60bb20f182c9",
                     "cn": [
                         {
@@ -575,6 +598,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill38",
                             "designerId": "a9769fc6-da1e-4f9b-89a2-bad14bb62b68"
                         },
                         {
@@ -591,6 +615,7 @@
                                 "localiserId": "saveManualQueryBtn",
                                 "text": "Enregistrer la requête"
                             },
+                            "name": "MyButton313",
                             "designerId": "855cdaf0-a7b4-4964-a851-4ae1cb2fb83b",
                             "customConfigs": [
                                 {
@@ -638,6 +663,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onManualQuerySaveBtnClick",
                                     "designerId": "b19e57a8-898a-463c-911f-d5180c148beb"
                                 }
                             ]
@@ -665,6 +691,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onManualQueryRightGridGridSelectionChange",
                     "designerId": "39f83069-238b-43b4-8315-ecea3fd90a4c"
                 }
             ]
@@ -679,6 +706,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1716",
             "designerId": "67a234fc-c280-402c-b478-ba009eac0564",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -711,6 +739,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onManualQueryInterfaceRender",
             "designerId": "202e57fd-faf0-4df4-bd7b-37408e4423f1"
         },
         {
@@ -732,6 +761,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onManualQueryInterfaceBeforeClose",
             "designerId": "aa853857-0ae1-450d-a34f-5072655a39dc"
         }
     ]

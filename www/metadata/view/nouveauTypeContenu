@@ -43,6 +43,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm34",
             "designerId": "38a03ff8-6fce-4b91-b472-bd57d4fa1c7e",
             "cn": [
                 {
@@ -60,6 +61,7 @@
                         "localiserId": "nameField",
                         "name": "type"
                     },
+                    "name": "MyTextField35",
                     "designerId": "b1c59c67-b84a-48f3-ba14-22b78713397a",
                     "customConfigs": [
                         {
@@ -86,6 +88,7 @@
                                 "name": "specialkey",
                                 "scope": "me"
                             },
+                            "name": "onChampCreerTCSpecialkey",
                             "designerId": "5001685b-f4a8-4f08-bcdf-54f1da5a36d6"
                         }
                     ]
@@ -101,6 +104,7 @@
                         "localiserId": "eCFieldset",
                         "title": "E-Commerce"
                     },
+                    "name": "MyFieldSet16",
                     "designerId": "87ea5507-c2dc-43eb-ad40-ed19875ee096",
                     "customConfigs": [
                         {
@@ -133,6 +137,7 @@
                                     "\"none\""
                                 ]
                             },
+                            "name": "MyComboBox28",
                             "configAlternates": {
                                 "store": "array"
                             },
@@ -162,6 +167,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onFieldsetRender",
                             "designerId": "c525754e-b29e-4acd-8d7b-55604b7279c9"
                         }
                     ]
@@ -179,6 +185,7 @@
                         "localiserId": "createNTCBtn",
                         "text": "Créer un nouveau type de contenu"
                     },
+                    "name": "MyButton162",
                     "designerId": "5e9ce190-3a65-410a-8f33-122344d58a33",
                     "customConfigs": [
                         {

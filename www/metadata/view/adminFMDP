@@ -43,6 +43,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool165",
             "designerId": "47d66548-f2d8-44fc-abd8-36d286a67a1e",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -56,6 +57,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool177",
             "designerId": "345b89ba-b332-46f7-969d-3867c835551f",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -72,6 +74,7 @@
                 "itemId": "filArianne",
                 "layout|flex": 1
             },
+            "name": "MyToolbar49",
             "designerId": "7009d86e-1608-44d8-bddf-86cdc670993d",
             "cn": [
                 {
@@ -88,6 +91,7 @@
                         "localiserId": "masksLaunchBtn",
                         "text": "Masques de page "
                     },
+                    "name": "MyButton190",
                     "designerId": "11899a22-6796-4539-9728-50fb40aa0f0b",
                     "customConfigs": [
                         {
@@ -113,6 +117,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar50",
             "designerId": "d4183738-b3dd-43cb-9be8-c374df4c3c17",
             "cn": [
                 {
@@ -128,6 +133,7 @@
                         "src": null,
                         "width": 48
                     },
+                    "name": "MyImg14",
                     "designerId": "44968f46-716b-4f02-b6a1-e78f6f451af2",
                     "cn": [
                         {
@@ -145,6 +151,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onImageRender",
                             "designerId": "6daa4a40-56d6-4a16-9630-fec9108471ed"
                         }
                     ]
@@ -161,6 +168,7 @@
                         "layout|flex": 2,
                         "minWidth": 400
                     },
+                    "name": "MyContainer44",
                     "designerId": "e5e9e678-e511-4689-b64f-824880b32a7c",
                     "cn": [
                         {
@@ -176,6 +184,7 @@
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {autore}  <b>Version : </b>{version}"
                                 ]
                             },
+                            "name": "tpl19",
                             "designerId": "9cfc629f-2b1c-4993-b83f-dcc12aba6b37"
                         },
                         {
@@ -197,6 +206,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processBoiteBarreMeta",
                             "designerId": "4ed2b279-8514-4930-a451-fd318586a7b7"
                         }
                     ]
@@ -219,6 +229,7 @@
                         "value": 600,
                         "width": 400
                     },
+                    "name": "MySlider2",
                     "designerId": "abd13300-7f3d-4d12-911f-0f3ecd76327e",
                     "customConfigs": [
                         {
@@ -243,6 +254,7 @@
                                 "name": "change",
                                 "scope": "me"
                             },
+                            "name": "onMaskZoomControlSliderChange",
                             "designerId": "49279884-c966-4d5a-a02b-c3fafcefa66c"
                         }
                     ]
@@ -264,6 +276,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar51",
             "designerId": "9ade6d4b-ac00-44c3-aa6f-5202512b7859",
             "cn": [
                 {
@@ -285,6 +298,7 @@
                         "scale": "large",
                         "text": "Nouveau"
                     },
+                    "name": "MyButton191",
                     "designerId": "e8996442-b11c-461a-9ce2-90c071bbf60a",
                     "customConfigs": [
                         {
@@ -320,6 +334,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton192",
                     "designerId": "b0c32943-da10-4597-b979-41d0c72db73c",
                     "customConfigs": [
                         {
@@ -352,6 +367,7 @@
                         "localiserId": "editGroup",
                         "title": "Edition"
                     },
+                    "name": "MyButtonGroup23",
                     "designerId": "283c8d6e-452d-4a1b-b2ba-633f281409ef",
                     "customConfigs": [
                         {
@@ -384,6 +400,7 @@
                                 "text": "Nouvelle Ligne",
                                 "width": null
                             },
+                            "name": "MyButton193",
                             "designerId": "e9a1fe34-8ea2-4699-872b-7e0345119318",
                             "customConfigs": [
                                 {
@@ -411,6 +428,7 @@
                                 "text": "Nouvelle Colonne",
                                 "width": null
                             },
+                            "name": "MyButton194",
                             "designerId": "094abf9a-b988-4159-9f4c-e9591a60cbf4",
                             "customConfigs": [
                                 {
@@ -438,6 +456,7 @@
                                 "text": "Nouveau Bloc",
                                 "width": null
                             },
+                            "name": "MyButton195",
                             "designerId": "69a2e8b9-1b19-4d31-b108-9c7ca2aa12a9",
                             "customConfigs": [
                                 {
@@ -465,6 +484,7 @@
                                 "text": "Supprimer",
                                 "width": null
                             },
+                            "name": "MyButton196",
                             "designerId": "31fea061-d506-4bea-97dd-db58877f255e",
                             "customConfigs": [
                                 {
@@ -492,6 +512,7 @@
                                 "text": "Exporter",
                                 "width": null
                             },
+                            "name": "MyButton197",
                             "designerId": "32b25a07-c68c-457c-9486-43b245e54995",
                             "customConfigs": [
                                 {
@@ -519,6 +540,7 @@
                                 "text": "Importer",
                                 "width": null
                             },
+                            "name": "MyButton198",
                             "designerId": "c89ceb14-3a8e-411c-90e1-15d4fb313ed5",
                             "customConfigs": [
                                 {
@@ -546,6 +568,7 @@
                                 "text": "Déplacer",
                                 "width": null
                             },
+                            "name": "MyButton199",
                             "designerId": "800ddbd4-ee28-4961-9ecc-681bf122db20",
                             "customConfigs": [
                                 {
@@ -573,6 +596,7 @@
                                 "text": "Déplacer",
                                 "width": null
                             },
+                            "name": "MyButton200",
                             "designerId": "ef594afe-971b-4416-8d0f-bc0577d69f07",
                             "customConfigs": [
                                 {
@@ -600,6 +624,7 @@
                         "localiserId": "clipboardGroup",
                         "title": "Presse-papiers"
                     },
+                    "name": "MyButtonGroup24",
                     "designerId": "16ca8d6b-68f3-43bc-8a71-49f70684f672",
                     "customConfigs": [
                         {
@@ -627,6 +652,7 @@
                                 "text": "Dupliquer",
                                 "width": null
                             },
+                            "name": "MyButton201",
                             "designerId": "5325f9fa-50bb-435c-b0a4-7e37167fde9e",
                             "customConfigs": [
                                 {
@@ -657,6 +683,7 @@
                                 "scale": "large",
                                 "text": "Ajouter au panier"
                             },
+                            "name": "MyButton202",
                             "designerId": "be65fe8d-b4e1-4d82-8642-5d4fc94cf665"
                         },
                         {
@@ -675,6 +702,7 @@
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
+                            "name": "MyButton203",
                             "designerId": "60b5777f-0c9c-4eb4-b702-93da390a9fa4",
                             "customConfigs": [
                                 {
@@ -703,6 +731,7 @@
                         "localiserId": "saveGroup",
                         "title": "Sauvegarde"
                     },
+                    "name": "MyButtonGroup25",
                     "designerId": "ce6b6b9f-38fe-4e75-839c-0fa6debfa4e8",
                     "customConfigs": [
                         {
@@ -734,6 +763,7 @@
                                 "scale": "large",
                                 "text": "Enregistrer"
                             },
+                            "name": "MyButton204",
                             "designerId": "68c3d963-6bad-4417-8d6c-11dc80cc460f",
                             "customConfigs": [
                                 {
@@ -763,6 +793,7 @@
                                         "name": "afterrender",
                                         "scope": "me"
                                     },
+                                    "name": "onAdminfMasquesEnregistrerAfterRender",
                                     "designerId": "52261f07-ca55-4fba-a232-b245d021c9e7"
                                 }
                             ]
@@ -785,6 +816,7 @@
                         "layout|flex": null,
                         "title": "Fichier"
                     },
+                    "name": "MyButtonGroup26",
                     "designerId": "5df387e4-116a-4320-8241-f584b402a689",
                     "cn": [
                         {
@@ -802,6 +834,7 @@
                                 "scale": "large",
                                 "text": "Exporter"
                             },
+                            "name": "MyButton205",
                             "designerId": "91c55ebe-d20f-41b9-8f3c-6deeaf0ca390"
                         },
                         {
@@ -820,6 +853,7 @@
                                 "scale": "large",
                                 "text": "Importer"
                             },
+                            "name": "MyButton206",
                             "designerId": "9636e50c-52fb-4ecd-95d8-c35994501c24",
                             "customConfigs": [
                                 {
@@ -841,6 +875,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill26",
                     "designerId": "1f41b011-9eda-4c5a-aaaf-5cc0c301b8fd"
                 },
                 {
@@ -860,6 +895,7 @@
                         "scale": "large",
                         "text": null
                     },
+                    "name": "MyButton207",
                     "designerId": "3e4ef8b4-f049-463b-8118-c775d160879f",
                     "customConfigs": [
                         {
@@ -892,6 +928,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel36",
             "configAlternates": {
                 "managesStore": "boolean"
             },
@@ -915,6 +952,7 @@
                         "id": "masquesGridView",
                         "itemId": null
                     },
+                    "name": "MyGridView39",
                     "designerId": "67643c61-ccf4-47a9-85a3-6d8fe7d1df08"
                 },
                 {
@@ -927,6 +965,7 @@
                     "userConfig": {
                         "groupByText": null
                     },
+                    "name": "MyGroupingFeature7",
                     "designerId": "ef14c04b-c8b4-4b27-bcdb-29624acde21e",
                     "cn": [
                         {
@@ -942,6 +981,7 @@
                                     "Site : {name:this.getProperName}"
                                 ]
                             },
+                            "name": "tpl20",
                             "designerId": "8eae40f4-701a-4c09-bedc-e8dc38a4874e",
                             "cn": [
                                 {
@@ -960,6 +1000,7 @@
                                             "return(Ext.getStore(\"SitesComboMasks\").findRecord(\"id\",name).get(\"text\"));"
                                         ]
                                     },
+                                    "name": "getProperName",
                                     "designerId": "7948b3e1-2996-4fe8-9f40-2f91dd2a3987"
                                 }
                             ]
@@ -980,6 +1021,7 @@
                         "localiserId": "titleColumn",
                         "text": "Titre"
                     },
+                    "name": "MyColumn81",
                     "designerId": "ef6cd484-dd98-4816-8403-e294fede4c28",
                     "customConfigs": [
                         {
@@ -1015,6 +1057,7 @@
                                     "return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/application.png\"> ' + returner );"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "5135dffc-f8ad-4516-bcf0-1110947cabb1"
                         },
                         {
@@ -1027,6 +1070,7 @@
                             "userConfig": {
                                 "allowBlank": false
                             },
+                            "name": "MyTextField62",
                             "designerId": "809a4f59-db92-42ba-b6b5-d6220a708ba6"
                         }
                     ]
@@ -1038,6 +1082,7 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
+                    "name": "MyCellEditingPlugin6",
                     "designerId": "c01a137c-54ed-4822-ba6c-dc41c1f1285b",
                     "cn": [
                         {
@@ -1055,6 +1100,7 @@
                                 "name": "beforeedit",
                                 "scope": "me"
                             },
+                            "name": "onGridcelleditingpluginBeforeEdit",
                             "designerId": "290bc7fd-545a-45fe-90b0-8bfc32943eeb"
                         },
                         {
@@ -1075,6 +1121,7 @@
                                 "name": "edit",
                                 "scope": "me"
                             },
+                            "name": "onGridcelleditingpluginEdit",
                             "designerId": "2be7ef15-f9e3-42a7-8795-89af4812a8ed"
                         }
                     ]
@@ -1086,6 +1133,7 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.RowModel",
+                    "name": "MyRowSelectionModel7",
                     "designerId": "d1d1591c-0345-41dd-8fd5-0559a865cb4c"
                 },
                 {
@@ -1103,6 +1151,7 @@
                         "name": "beforerender",
                         "scope": "me"
                     },
+                    "name": "onMasquesGridBeforeRender",
                     "designerId": "34ec05a3-5d69-4ef5-bb7b-372a6defd8a1"
                 },
                 {
@@ -1120,6 +1169,7 @@
                         "name": "destroy",
                         "scope": "me"
                     },
+                    "name": "onMasquesGridDestroy",
                     "designerId": "a535cc5e-c850-4fae-bd13-97b76608ce30"
                 }
             ]
@@ -1140,6 +1190,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel43",
             "designerId": "56047962-a175-46cd-b135-10443957f491",
             "cn": [
                 {
@@ -1155,6 +1206,7 @@
                         "layout": "vbox",
                         "layout|flex": 1
                     },
+                    "name": "MyContainer45",
                     "designerId": "1dbeb117-2a5e-4c1a-b28e-25b4136bfc3b",
                     "cn": [
                         {
@@ -1178,6 +1230,7 @@
                                 "style": null,
                                 "width": null
                             },
+                            "name": "MyPanel44",
                             "designerId": "fa467ac8-e4fe-4e4b-aec3-b86b75d58cbb",
                             "cn": [
                                 {
@@ -1197,6 +1250,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processMasqueEdition",
                                     "designerId": "b117c2a0-6e91-49c4-ae2f-64375d42b1a8"
                                 }
                             ]
@@ -1232,6 +1286,7 @@
                         "title": "Propriétés",
                         "width": 300
                     },
+                    "name": "MyPanel45",
                     "designerId": "b17d65c2-1c11-4ad6-ba71-3635259504e2",
                     "customConfigs": [
                         {
@@ -1252,6 +1307,7 @@
                                 "fieldLabel": "Label",
                                 "id": "elementIdField"
                             },
+                            "name": "MyHiddenField11",
                             "designerId": "437df67c-b0ed-44b5-954a-a8d2dbb58615"
                         },
                         {
@@ -1265,6 +1321,7 @@
                                 "fieldLabel": "Label",
                                 "id": "mainColumnIdField"
                             },
+                            "name": "MyHiddenField12",
                             "designerId": "214eb9cb-391d-42a6-8bd2-dfdf1f556074"
                         },
                         {
@@ -1285,6 +1342,7 @@
                                 "margin": null,
                                 "title": "Sélectionnez un élément"
                             },
+                            "name": "MyForm43",
                             "designerId": "a07c7761-a08c-4f96-a3a0-8c24a5d5e33b",
                             "customConfigs": [
                                 {
@@ -1309,6 +1367,7 @@
                                 "name": "resize",
                                 "scope": "me"
                             },
+                            "name": "onPaneauPropMasqueResize",
                             "designerId": "b6455491-8d4a-474d-9c6f-2c1c6c76381b"
                         }
                     ]

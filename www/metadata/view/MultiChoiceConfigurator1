@@ -40,6 +40,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar79",
             "designerId": "411fb381-b881-4db6-8e50-009afb04d330",
             "cn": [
                 {
@@ -52,6 +53,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill41",
                     "designerId": "7e2de866-7f95-4f43-b86d-1b85b137cf4e"
                 },
                 {
@@ -68,6 +70,7 @@
                         "localiserId": "validateBtn",
                         "text": "Valider"
                     },
+                    "name": "MyButton355",
                     "designerId": "d588d8fa-553b-477a-83c6-aa2244904ac3",
                     "customConfigs": [
                         {
@@ -95,6 +98,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onSpecialOptionsCfgSubmitClick",
                             "designerId": "f0ee9460-47f5-4c02-8cfd-39795da060ed"
                         }
                     ]
@@ -115,6 +119,7 @@
                 "store": "MultiChoiceOptionsStore",
                 "title": ""
             },
+            "name": "MyGridPanel50",
             "designerId": "e7d2f354-f23b-45fc-8848-fa430b609e7f",
             "cn": [
                 {
@@ -124,6 +129,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView55",
                     "designerId": "813cf853-610d-421a-a9bf-9842b62693ac",
                     "cn": [
                         {
@@ -133,6 +139,7 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.DragDrop",
+                            "name": "MyGridDragDropPlugin11",
                             "designerId": "c97efda5-5b49-4ff6-be32-83769a0f22b6"
                         }
                     ]
@@ -148,6 +155,7 @@
                         "dock": "right",
                         "width": 28
                     },
+                    "name": "MyToolbar80",
                     "designerId": "6e84cedc-baa6-4e0e-ae07-b4069df945d8",
                     "cn": [
                         {
@@ -165,6 +173,7 @@
                                 "text": "",
                                 "tooltip": "Ajouter une option"
                             },
+                            "name": "MyButton356",
                             "configAlternates": {
                                 "tooltip": "string"
                             },
@@ -200,6 +209,7 @@
                                             " "
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "92ba2bb6-debf-4577-b83f-7c76808a2264"
                                 }
                             ]
@@ -220,6 +230,7 @@
                                 "text": "",
                                 "tooltip": "Supprimer cette option"
                             },
+                            "name": "MyButton357",
                             "configAlternates": {
                                 "tooltip": "string"
                             },
@@ -249,6 +260,7 @@
                                             "Ext.getCmp(\"formsMCCGrid1\").getStore().remove(Ext.getCmp(\"formsMCCGrid1\").getSelectionModel().getLastSelected());"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "44e9778c-9651-4319-950e-c11b74084bb2"
                                 }
                             ]
@@ -262,6 +274,7 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
+                    "name": "MyCellEditingPlugin8",
                     "designerId": "2e1ebecb-572d-4c12-9eda-bdc55af8ac36"
                 },
                 {
@@ -283,6 +296,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onFormsMCCGridSelectionChange",
                     "designerId": "ec9ba939-118a-47e5-b937-8ef648f03681"
                 },
                 {
@@ -297,6 +311,7 @@
                         "localiserId": "valueCol",
                         "text": "Valeur"
                     },
+                    "name": "MyColumn120",
                     "designerId": "56fc6791-215a-4c11-bca6-208ac95aaaac",
                     "customConfigs": [
                         {
@@ -316,6 +331,7 @@
                             "userConfig": {
                                 "allowBlank": false
                             },
+                            "name": "MyTextField106",
                             "designerId": "1957b9cd-1eef-4f93-9937-8c0417b9381b"
                         }
                     ]
@@ -332,6 +348,7 @@
                         "localiserId": "labelCol",
                         "text": "Label"
                     },
+                    "name": "MyColumn121",
                     "designerId": "0780a6be-e984-40e9-954c-bb5136c8e7a3",
                     "customConfigs": [
                         {
@@ -351,6 +368,7 @@
                             "userConfig": {
                                 "allowBlank": false
                             },
+                            "name": "MyTextField107",
                             "designerId": "11f0ae5d-6bc4-48d0-8458-594529752fd0"
                         }
                     ]
@@ -372,6 +390,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onMultiChoiceConfigurator1AfterRender",
             "designerId": "677ca544-aae4-4e05-8319-652d160c9ea9"
         }
     ]

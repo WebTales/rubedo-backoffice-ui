@@ -147,6 +147,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "selectVocabulary",
             "designerId": "01427099-ea52-45c1-a5ad-233d5b442eec"
         },
         {
@@ -180,6 +181,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "removeTerm",
             "designerId": "ce78b2cf-cde8-4749-acbf-369ba7160598"
         },
         {
@@ -229,6 +231,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "addTerm",
             "designerId": "b8758b15-4913-4a79-9539-ed729c7526d2"
         },
         {
@@ -257,6 +260,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "saveVocabulary",
             "designerId": "87a4f3d1-7180-4c29-b9e6-24d7dc604e24"
         },
         {
@@ -282,6 +286,7 @@
                     "return fils;"
                 ]
             },
+            "name": "recupereFils",
             "designerId": "f4c567ad-de1e-4696-8221-38581beaa8e4"
         },
         {
@@ -320,6 +325,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteVocabulary",
             "designerId": "257c542b-3d3b-4c6f-b2e9-1e0db2c01e04"
         },
         {
@@ -354,6 +360,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "newVocabulary",
             "designerId": "30f84c36-ac93-43a3-aeed-8a4c8ffb8f0e"
         },
         {
@@ -376,6 +383,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "openVocabWindow",
             "designerId": "dba76a0e-a6ed-496f-8e85-7a3475ac10e3"
         },
         {
@@ -406,6 +414,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "updateTerm",
             "designerId": "23c5b7f6-6ebc-46e8-83c6-371d7844c330"
         },
         {
@@ -438,6 +447,7 @@
                 "name": "itemcontextmenu",
                 "scope": "me"
             },
+            "name": "termsContextMenuDisplay",
             "designerId": "309b5f2a-8c86-4dec-b9f7-db5e07610ac1"
         },
         {
@@ -471,6 +481,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onTermesTaxonomieTreeSelectionChange",
             "designerId": "91b19d2d-c3e5-42bc-a1d0-2e27d7b4aeed"
         },
         {
@@ -518,6 +529,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onTaxoTermInsertorBtnClick",
             "designerId": "192085e9-79c0-4ea9-a753-820eaf11f3df"
         },
         {
@@ -537,6 +549,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onTaxoOpenInsertBtnClick",
             "designerId": "e41b00b7-8464-4ddc-b8d3-6c441a3ec826"
         }
     ]

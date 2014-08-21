@@ -48,6 +48,7 @@
                     "                }"
                 ]
             },
+            "name": "MyAjaxProxy94",
             "designerId": "90cc435e-55c3-4574-a470-6ada3fae0fa9",
             "cn": [
                 {
@@ -60,6 +61,7 @@
                     "userConfig": {
                         "messageProperty": "message"
                     },
+                    "name": "MyJsonReader93",
                     "designerId": "6ac0d589-dd48-479f-9ac7-0bb223ed3e26",
                     "cn": [
                         {
@@ -99,6 +101,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "getResponseData",
                             "designerId": "afbe0fbc-f1b6-447e-909e-b2521663eb3f"
                         }
                     ]
@@ -116,6 +119,7 @@
                 "property": "orderValue",
                 "root": null
             },
+            "name": "MySorter15",
             "designerId": "a377d3d8-eacc-463d-9ab2-e3cabb2a85b8"
         }
     ]

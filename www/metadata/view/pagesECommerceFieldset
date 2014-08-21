@@ -34,6 +34,7 @@
                 "localiserId": "titleField",
                 "name": "eCTitle"
             },
+            "name": "MyTextField24",
             "designerId": "8f86520f-29f1-421b-a83b-e54b3f5ecec8",
             "customConfigs": [
                 {
@@ -56,6 +57,7 @@
                 "localiserId": "descriptionField",
                 "name": "eCDescription"
             },
+            "name": "MyTextArea3",
             "designerId": "969e4a69-4a74-4540-a6c1-e30c43444755",
             "customConfigs": [
                 {
@@ -78,6 +80,7 @@
                 "localiserId": "categoryImageField",
                 "name": "eCImage"
             },
+            "name": "imagepickerfield",
             "designerId": "c1f11263-bd5f-4383-b280-690eb1dd3198",
             "customConfigs": [
                 {
@@ -110,6 +113,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onFieldsetAfterRender",
             "designerId": "c7a1affe-b02f-40d2-954e-2537951e1633"
         }
     ]

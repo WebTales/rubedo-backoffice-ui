@@ -36,6 +36,7 @@
             "userConfig": {
                 "activeTab": 0
             },
+            "name": "MyTabPanel9",
             "designerId": "9b18d5fa-c863-4308-b52a-7c7737c83404",
             "cn": [
                 {
@@ -53,6 +54,7 @@
                         "overflowY": "auto",
                         "title": "Informations"
                     },
+                    "name": "MyForm38",
                     "designerId": "0ab49c7b-8ed5-4ad6-8d60-7fc2fcbd7b9d",
                     "cn": [
                         {
@@ -65,6 +67,7 @@
                             "userConfig": {
                                 "localiserId": "informationsTab"
                             },
+                            "name": "TabConfig33",
                             "designerId": "c0c5a29e-4423-4050-8757-2fc6971211e7",
                             "customConfigs": [
                                 {
@@ -90,6 +93,7 @@
                                 "title": "Informations",
                                 "width": 356
                             },
+                            "name": "MyFieldSet23",
                             "designerId": "d5cf9428-a2cd-4308-a4ce-40333fe9ef0f",
                             "customConfigs": [
                                 {
@@ -114,6 +118,7 @@
                                         "name": "name",
                                         "readOnly": null
                                     },
+                                    "name": "MyTextField50",
                                     "designerId": "a96bfa91-7feb-4d52-a806-320a83c4bbfa",
                                     "customConfigs": [
                                         {
@@ -138,6 +143,7 @@
                                         "name": "login",
                                         "vtype": null
                                     },
+                                    "name": "MyTextField51",
                                     "designerId": "3085aba8-536d-4148-817f-6db8cec7805a",
                                     "customConfigs": [
                                         {
@@ -162,6 +168,7 @@
                                         "name": "email",
                                         "vtype": "email"
                                     },
+                                    "name": "MyTextField52",
                                     "designerId": "d31aabb2-a733-41a3-8057-a8912a93ce82",
                                     "customConfigs": [
                                         {
@@ -190,6 +197,7 @@
                                         "store": "BOLanguageStore",
                                         "valueField": "key"
                                     },
+                                    "name": "MyComboBox35",
                                     "designerId": "50f88755-fb74-4177-9fa1-e38c0d44ae6e",
                                     "customConfigs": [
                                         {
@@ -213,6 +221,7 @@
                                         "layout|anchor": "100%",
                                         "name": "interfaceMode"
                                     },
+                                    "name": "MyComboBox36",
                                     "designerId": "b5319fd5-c0fe-49dc-87eb-52ba350532b9",
                                     "cn": [
                                         {
@@ -232,6 +241,7 @@
                                                     "return config;"
                                                 ]
                                             },
+                                            "name": "processInterfaceMode",
                                             "designerId": "31588c6a-da6b-4e1c-99e0-3ab650ecfbfe"
                                         }
                                     ]
@@ -249,6 +259,7 @@
                                         "localiserId": "applyBtn",
                                         "text": "Appliquer"
                                     },
+                                    "name": "MyButton180",
                                     "designerId": "3d93bfd0-6d10-4763-bd53-081f63ee0c1c",
                                     "customConfigs": [
                                         {
@@ -275,6 +286,7 @@
                                 "title": "Photo",
                                 "width": 200
                             },
+                            "name": "MyFieldSet24",
                             "designerId": "48d0b8d5-9096-43aa-bd78-dce11f4337f8",
                             "customConfigs": [
                                 {
@@ -298,6 +310,7 @@
                                         "src": "resources/images/userBig.png",
                                         "width": 140
                                     },
+                                    "name": "MyImg13",
                                     "designerId": "668838f7-ef25-4f75-83c6-f31331501a7c"
                                 },
                                 {
@@ -313,6 +326,7 @@
                                         "margin": "0 0 10 0",
                                         "text": "Changer"
                                     },
+                                    "name": "MyButton181",
                                     "designerId": "ea146464-9179-4603-b751-e313e155217a",
                                     "customConfigs": [
                                         {
@@ -339,6 +353,7 @@
                                                     "Ext.widget(\"PersoPicUploadWindow\", {userMode:true}).show();"
                                                 ]
                                             },
+                                            "name": "handler",
                                             "designerId": "88a88d55-424a-4c9f-bcf1-3553540ce668"
                                         }
                                     ]
@@ -357,6 +372,7 @@
                                         "margin": null,
                                         "text": "Supprimer"
                                     },
+                                    "name": "MyButton182",
                                     "designerId": "da5b5540-e49c-4bc0-ac26-5dab9caaca96",
                                     "customConfigs": [
                                         {
@@ -381,6 +397,7 @@
                         "bodyPadding": 10,
                         "title": "Accès"
                     },
+                    "name": "MyForm39",
                     "designerId": "0e4adc8b-9062-4f83-99b1-83c5275f2813",
                     "cn": [
                         {
@@ -393,6 +410,7 @@
                             "userConfig": {
                                 "localiserId": "accessTab"
                             },
+                            "name": "TabConfig34",
                             "designerId": "d81caa23-a78b-4f2a-b967-5e27ed14392d",
                             "customConfigs": [
                                 {
@@ -414,6 +432,7 @@
                                 "localiserId": "changePassFieldSet",
                                 "title": "Changer de mot de passe"
                             },
+                            "name": "MyFieldSet25",
                             "designerId": "b73318c6-650c-4d4f-ae83-7102e1441070",
                             "customConfigs": [
                                 {
@@ -438,6 +457,7 @@
                                         "localiserId": "oldPasswordField",
                                         "name": "oldPassword"
                                     },
+                                    "name": "MyTextField53",
                                     "designerId": "ac6139e7-3498-4dfd-9ac8-db23cde9dac1",
                                     "customConfigs": [
                                         {
@@ -462,6 +482,7 @@
                                         "localiserId": "newPasswordField",
                                         "name": "newPassword"
                                     },
+                                    "name": "MyTextField54",
                                     "designerId": "7bfffd5f-30b7-4ffa-bfdc-fd88b209b39d",
                                     "customConfigs": [
                                         {
@@ -487,6 +508,7 @@
                                         "name": "newPasswordConfirm",
                                         "submitValue": false
                                     },
+                                    "name": "MyTextField55",
                                     "designerId": "df2f517f-9928-4f9a-931c-b779d498b335",
                                     "customConfigs": [
                                         {
@@ -509,6 +531,7 @@
                                         "localiserId": "changePasswordBtn",
                                         "text": "Changer le mot de passe"
                                     },
+                                    "name": "MyButton183",
                                     "designerId": "75ed947b-9aca-4a8b-9ef8-f7c4e9d1773b",
                                     "customConfigs": [
                                         {
@@ -531,6 +554,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool164",
             "designerId": "9f25a5aa-bf06-428c-92ea-2f2e7d22e98b",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -541,6 +565,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool176",
             "designerId": "4f5ee275-b0cd-4972-967f-9e6c79004ab7",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -555,6 +580,7 @@
                 "dock": "bottom",
                 "height": null
             },
+            "name": "MyToolbar46",
             "designerId": "ca2bdad4-196f-494a-85a4-042d5ef64dae",
             "cn": [
                 {
@@ -567,6 +593,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill23",
                     "designerId": "382f62a2-c828-4666-89dc-9f4e631e6fc6"
                 },
                 {
@@ -582,6 +609,7 @@
                         "localiserId": "desktopBtn",
                         "text": "Bureau"
                     },
+                    "name": "MyButton184",
                     "designerId": "7cd2e547-3238-4584-8955-8e91354a3c66",
                     "customConfigs": [
                         {
@@ -615,6 +643,7 @@
                                     ""
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "e6a99a5d-8993-4908-94dd-696e82b03977"
                         }
                     ]
@@ -636,6 +665,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onButtonAfterRender",
                     "designerId": "57c80569-a275-4fe5-8168-67a8176238a3"
                 }
             ]

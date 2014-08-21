@@ -38,6 +38,7 @@
                     "return config;"
                 ]
             },
+            "name": "processFTDComboField",
             "designerId": "627e1c2c-b5bb-4f1e-8742-1b406618f1fd"
         },
         {
@@ -57,6 +58,7 @@
                 "name": "change",
                 "scope": "me"
             },
+            "name": "onComboboxChange",
             "designerId": "363cbf47-1e07-4a57-bb41-db620df80e9e"
         },
         {
@@ -75,6 +77,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onComboboxRender",
             "designerId": "9c04a126-1473-474b-a20e-3ebc87900b85"
         },
         {
@@ -92,6 +95,7 @@
                 "name": "beforedestroy",
                 "scope": "me"
             },
+            "name": "onComboboxBeforeDestroy",
             "designerId": "8823ebe4-ad6e-4301-a465-ec54cec35d20"
         }
     ]

@@ -34,6 +34,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "MyComponent",
             "designerId": "06879fa8-59e1-47f2-9d47-b8107d24ab6f"
         },
         {
@@ -62,6 +63,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onAceEditorWindowAfterRender",
             "designerId": "d2f3bbb1-6976-4c06-8971-f819f7b86880"
         },
         {
@@ -74,6 +76,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar96",
             "designerId": "0c7e2744-6a00-4382-b32d-67cf30b6aad7",
             "cn": [
                 {
@@ -86,6 +89,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill54",
                     "designerId": "839df592-fbb8-4936-843c-3751dd77b67c"
                 },
                 {
@@ -102,6 +106,7 @@
                         "localiserId": "saveBtn",
                         "text": "Save"
                     },
+                    "name": "MyButton434",
                     "designerId": "ff3e03eb-1695-4a6e-a348-8e05ff20e6be",
                     "customConfigs": [
                         {
@@ -128,6 +133,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onAceWindowSaveBtnClick",
                             "designerId": "a80108b8-22d4-4dd7-b456-3c2dec8ab7a1"
                         }
                     ]
@@ -149,6 +155,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onAceEditorWindowBeforeClose",
             "designerId": "f4d4bee0-53a9-4353-8222-07a7fa9f87d8"
         },
         {
@@ -166,6 +173,7 @@
                 "name": "maximize",
                 "scope": "me"
             },
+            "name": "onAceEditorWindowMaximize",
             "designerId": "8c639d2b-61bb-4d6d-9a03-6ddabbb56e9a"
         },
         {
@@ -183,6 +191,7 @@
                 "name": "minimize",
                 "scope": "me"
             },
+            "name": "onAceEditorWindowMinimize",
             "designerId": "31237d43-92a5-4a4a-b6e3-35745b628a12"
         }
     ]

@@ -33,6 +33,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy97",
             "designerId": "c8317a2e-38c2-4741-9d12-60adae7ca146",
             "cn": [
                 {
@@ -46,6 +47,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader96",
                     "designerId": "2014ebc5-70c5-4775-8978-ea67339c39c9"
                 },
                 {
@@ -59,6 +61,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter49",
                     "designerId": "1af54b8b-f6e2-4199-8536-e4a5d5cd2d02"
                 }
             ]
@@ -95,6 +98,7 @@
                 "scope": "me",
                 "single": true
             },
+            "name": "onJsonstoreLoad",
             "designerId": "8e993bdd-5ab4-4019-bbf4-5651cddd4509"
         },
         {
@@ -120,6 +124,7 @@
                 "name": "update",
                 "scope": "me"
             },
+            "name": "onJsonstoreUpdate",
             "designerId": "f49a9d07-bf74-4690-a80e-679f72bfc974"
         }
     ]

@@ -37,6 +37,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1615",
             "designerId": "bdd345ed-ff19-4e96-8090-a46616652dcc",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -50,6 +51,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1721",
             "designerId": "438068f4-a7c7-4b0f-ae65-b66aa578bd95",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -68,6 +70,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel56",
             "designerId": "b84954ab-fc4b-4562-9949-9343ae132b6c",
             "cn": [
                 {
@@ -77,6 +80,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView62",
                     "designerId": "9675a85e-2527-4ef0-82ef-97382233c46f"
                 },
                 {
@@ -91,6 +95,7 @@
                         "localiserId": "nameCol",
                         "text": "Name"
                     },
+                    "name": "MyColumn135",
                     "designerId": "b6330948-f6fc-4984-bf8a-df1efb747c7a",
                     "customConfigs": [
                         {
@@ -137,6 +142,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onPaymentMeansGridSelectionChange",
                     "designerId": "c74b628e-3ee1-4c79-a73e-7c9e55f6c7ff"
                 }
             ]
@@ -156,6 +162,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel71",
             "designerId": "10d2c004-9ab4-46cc-8924-ff3c0388781b",
             "cn": [
                 {
@@ -168,6 +175,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar89",
                     "designerId": "371c81cc-d86a-41c6-8c2c-572c59ff484b",
                     "cn": [
                         {
@@ -180,6 +188,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill48",
                             "designerId": "c63b926c-0162-4489-a081-05a487eab678"
                         },
                         {
@@ -197,6 +206,7 @@
                                 "localiserId": "saveConfigurationBtn",
                                 "text": "Save configuration"
                             },
+                            "name": "MyButton395",
                             "designerId": "f4c6e7e0-5908-4ff7-aed6-07cd482886c4",
                             "customConfigs": [
                                 {
@@ -227,6 +237,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onPmConfigSaveBtnClick",
                                     "designerId": "90e99a0a-d01e-4efa-a2c3-b80c62ebc987"
                                 }
                             ]
@@ -247,6 +258,7 @@
                         "localiserId": "rubedoConfigurationForm",
                         "title": "Rubedo configuration"
                     },
+                    "name": "MyForm87",
                     "designerId": "4413c504-c162-48fe-9cb2-c267441bcf54",
                     "customConfigs": [
                         {
@@ -272,6 +284,7 @@
                                 "name": "active",
                                 "uncheckedValue": "false"
                             },
+                            "name": "MyCheckbox24",
                             "designerId": "099e816f-97bb-4d28-96fa-d4d023a59d8a",
                             "customConfigs": [
                                 {
@@ -297,6 +310,7 @@
                                 "localiserId": "displayNameField",
                                 "name": "displayName"
                             },
+                            "name": "MyTextField128",
                             "designerId": "a7cf0eba-f99c-43cf-9348-5092284c1830",
                             "customConfigs": [
                                 {
@@ -318,6 +332,7 @@
                                 "fieldLabel": "Logo",
                                 "name": "logo"
                             },
+                            "name": "imagepickerfield1",
                             "configAlternates": {
                                 "smallMode": "boolean"
                             },
@@ -347,6 +362,7 @@
                         "localiserId": "nPMCForm",
                         "title": "Native payment means configuration"
                     },
+                    "name": "MyForm88",
                     "designerId": "96aac9d7-32c0-412d-bbd0-58881755ca7d",
                     "customConfigs": [
                         {
@@ -373,6 +389,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onPaymentMeansInterfaceRender",
             "designerId": "d6b8a188-c939-476e-ba7c-c0f1fb445f3a"
         },
         {
@@ -390,6 +407,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onPaymentMeansInterfaceBeforeClose",
             "designerId": "c598dec3-fc8f-417e-aca0-8988106d2f10"
         }
     ]

@@ -26,6 +26,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "contentpickergrid",
             "designerId": "6c25c6df-53b6-45e7-ad98-a9dfcf9d5bbe",
             "masterInstanceId": "5ea758ff-277e-480f-8910-8611d58b581e"
         },
@@ -36,6 +37,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1710",
             "designerId": "7b3c9396-fcf0-4a3c-8002-a399c42c0b5f",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -68,6 +70,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onContentPickerWindowRender",
             "designerId": "034d1993-13c5-4a6c-9f2b-61dfa4e6f312"
         },
         {
@@ -87,6 +90,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onContentPickerWindowBeforeClose",
             "designerId": "ebe4bf4e-7d48-4251-974b-a55bca1978c3"
         }
     ]

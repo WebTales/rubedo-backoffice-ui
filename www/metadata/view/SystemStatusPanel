@@ -31,6 +31,7 @@
                 "name": "destroy",
                 "scope": "me"
             },
+            "name": "onPanelDestroy",
             "designerId": "af7722e2-d40c-4671-880e-53f599dce235"
         },
         {
@@ -45,6 +46,7 @@
                 "layout": "vbox",
                 "layout|flex": 1
             },
+            "name": "MyContainer52",
             "designerId": "28a15491-520e-49ef-934c-b49ddf332736"
         },
         {
@@ -59,6 +61,7 @@
                 "layout": "vbox",
                 "layout|flex": 1
             },
+            "name": "MyContainer53",
             "designerId": "3a3ef5bf-011e-42bc-afe2-a79961891a8a"
         },
         {
@@ -111,6 +114,7 @@
                 "name": "beforerender",
                 "scope": "me"
             },
+            "name": "onPanelBeforeRender",
             "designerId": "8009c46e-b9a7-4664-8fe1-3be2c6e187f6"
         },
         {
@@ -130,6 +134,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onPanelAfterRender",
             "designerId": "92226f88-efd0-4846-9134-297f8e708d49"
         },
         {
@@ -182,6 +187,7 @@
                     "};"
                 ]
             },
+            "name": "createCpu1LoadChart",
             "designerId": "a42ccc3d-0b63-4443-aaa1-01ccac7f815e"
         },
         {
@@ -234,6 +240,7 @@
                     "};"
                 ]
             },
+            "name": "createCpu2LoadChart",
             "designerId": "525c19e6-d0b6-4594-8934-8421f7e6ef5e"
         },
         {
@@ -299,6 +306,7 @@
                     "};"
                 ]
             },
+            "name": "createMemoryPieChart",
             "designerId": "a78313af-93da-422d-9c32-a678a87aa473"
         },
         {
@@ -391,6 +399,7 @@
                     "};"
                 ]
             },
+            "name": "createProcessChart",
             "designerId": "31482b81-af51-43dc-abe7-22f94a7d2c6a"
         },
         {
@@ -447,6 +456,7 @@
                     "        }"
                 ]
             },
+            "name": "generateCpuLoad",
             "designerId": "7fcd8def-ed8d-4164-8bf0-612b625d4268"
         },
         {
@@ -478,6 +488,7 @@
                     "return data;"
                 ]
             },
+            "name": "generateData",
             "designerId": "b233c08e-9a90-4b1d-802e-c18017f5a1cd"
         },
         {
@@ -514,6 +525,7 @@
                     "        }, me.refreshRate);"
                 ]
             },
+            "name": "updateCharts",
             "designerId": "ed811fd5-f1c1-4ed3-b71d-e2509cca2d54"
         }
     ]

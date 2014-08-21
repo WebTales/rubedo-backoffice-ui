@@ -33,6 +33,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy37",
             "designerId": "22c9fca0-61d1-43e9-9248-2cc06b581b17",
             "cn": [
                 {
@@ -46,6 +47,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader36",
                     "designerId": "2cf93d8a-a7eb-4e0e-835b-db521f83497d"
                 },
                 {
@@ -59,6 +61,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter18",
                     "designerId": "9e11df5a-887d-483f-ab9e-cee349e8859f"
                 }
             ]
@@ -73,6 +76,7 @@
             "userConfig": {
                 "property": "mType"
             },
+            "name": "MyGrouper6",
             "designerId": "f18abfdb-3e63-41d1-8354-625575748b05"
         }
     ]

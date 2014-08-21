@@ -34,6 +34,7 @@
                 "layout|flex": 1,
                 "value": 0.4
             },
+            "name": "MyProgressBar",
             "designerId": "e0e43236-cbf8-46df-bc2e-ce8dae7b553f"
         },
         {
@@ -50,6 +51,7 @@
                 "localiserId": "wizardPrevBtn",
                 "text": "Précédent"
             },
+            "name": "MyButton1",
             "designerId": "c032ac34-65b6-4121-b5a4-aeafa5360d8f",
             "customConfigs": [
                 {
@@ -77,6 +79,7 @@
                             "button.up().makeCorrect();"
                         ]
                     },
+                    "name": "handler",
                     "designerId": "c57f634a-92c1-447c-bb56-66077a4c6626"
                 }
             ]
@@ -96,6 +99,7 @@
                 "localiserId": "wizardNextBtn",
                 "text": "Suivant"
             },
+            "name": "MyButton2",
             "designerId": "954c1089-b17e-4b5c-901f-29facff3b346",
             "customConfigs": [
                 {
@@ -136,6 +140,7 @@
                             "}"
                         ]
                     },
+                    "name": "handler",
                     "designerId": "bd3b442f-1414-4841-8d01-872433d99007"
                 }
             ]
@@ -167,6 +172,7 @@
                     "this.getComponent(\"wizProgress\").updateProgress((activeIndex+1)/all,Rubedo.RubedoAutomatedElementsLoc.stageText+\" \"+(activeIndex+1)+\" \"+Rubedo.RubedoAutomatedElementsLoc.onText+\" \"+all);"
                 ]
             },
+            "name": "makeCorrect",
             "designerId": "84a2ca78-55d4-40f2-b791-bf0e2d2bdbfc"
         },
         {
@@ -184,6 +190,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onToolbarAfterRender",
             "designerId": "ac4f1c08-be76-4fa5-a453-4d6e05fb44c7"
         }
     ]

@@ -43,6 +43,7 @@
                 "store": "UTFieldTypes",
                 "title": ""
             },
+            "name": "MyGridPanel29",
             "designerId": "07734388-9baf-4f69-8a20-950ca81a28c4",
             "cn": [
                 {
@@ -55,6 +56,7 @@
                     "userConfig": {
                         "markDirty": false
                     },
+                    "name": "MyGridView30",
                     "designerId": "5f43cd9b-31f5-47d2-85a7-1c34f993156f"
                 },
                 {
@@ -70,6 +72,7 @@
                         "localiserId": "typeCol",
                         "text": "Type"
                     },
+                    "name": "MyColumn56",
                     "designerId": "bcb597f1-31e0-4922-8331-c01023d56989",
                     "customConfigs": [
                         {
@@ -95,6 +98,7 @@
                         "name": "select",
                         "scope": "me"
                     },
+                    "name": "onMTFieldSelectGridSelect",
                     "designerId": "e2faaf31-b5eb-456f-8081-03e5ef5248de"
                 },
                 {
@@ -104,6 +108,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "MyGroupingFeature4",
                     "designerId": "bfcbccf9-ed92-44a9-907d-26019904443f",
                     "cn": [
                         {
@@ -119,6 +124,7 @@
                                     "{name}"
                                 ]
                             },
+                            "name": "tpl12",
                             "designerId": "6da70d8f-7f66-48ad-803b-9d92e1633eca"
                         }
                     ]
@@ -141,6 +147,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel41",
             "designerId": "58979e62-fa34-4008-addc-ac7b6c7d16fa",
             "cn": [
                 {
@@ -156,6 +163,7 @@
                             "{description}"
                         ]
                     },
+                    "name": "tpl13",
                     "designerId": "d0158b1f-ee86-44f6-88d8-3fdee1007cf1"
                 }
             ]
@@ -171,6 +179,7 @@
                 "dock": "bottom",
                 "layout|flex": 1
             },
+            "name": "MyToolbar35",
             "designerId": "da6e0f40-d311-4d93-8004-f96025affdd8",
             "cn": [
                 {
@@ -183,6 +192,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill18",
                     "designerId": "644eb258-1572-4932-9c7c-db4f2a1181e3"
                 },
                 {
@@ -201,6 +211,7 @@
                         "margin": null,
                         "text": "Ajouter"
                     },
+                    "name": "MyButton135",
                     "designerId": "d8e8da1a-1532-4447-8129-cbafea605f04",
                     "customConfigs": [
                         {

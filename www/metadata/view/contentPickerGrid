@@ -25,6 +25,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyGridView42",
             "designerId": "490172d4-b5b9-41ae-94d2-aca2d4d25780"
         },
         {
@@ -40,6 +41,7 @@
                 "localiserId": "titleCol",
                 "text": "Titre"
             },
+            "name": "MyColumn86",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -88,6 +90,7 @@
                             ""
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "b463c0c7-453c-4354-8b3f-2fbbe22f0f29"
                 }
             ]
@@ -105,6 +108,7 @@
                 "localiserId": "typeCol",
                 "text": "Type"
             },
+            "name": "MyColumn87",
             "configAlternates": {
                 "filter": "object"
             },
@@ -143,6 +147,7 @@
                             "}"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "69544424-82b8-43fe-b334-d6b29d08db4d"
                 },
                 {
@@ -166,6 +171,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processType",
                     "designerId": "0a927237-a6b6-40fc-bbda-b4d04b18172f"
                 }
             ]
@@ -183,6 +189,7 @@
                 "localiserId": "statusCol",
                 "text": "Etat"
             },
+            "name": "MyColumn88",
             "configAlternates": {
                 "filter": "object"
             },
@@ -223,6 +230,7 @@
                             "}"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "6f49f994-2220-49f3-8301-aa7aa449a963"
                 },
                 {
@@ -250,6 +258,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processEtat",
                     "designerId": "0b456401-d823-4c41-91eb-af8c92775148"
                 }
             ]
@@ -269,6 +278,7 @@
                 "trueText": "Oui",
                 "width": 60
             },
+            "name": "MyBooleanColumn13",
             "configAlternates": {
                 "filter": "object"
             },
@@ -306,6 +316,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processEnligne",
                     "designerId": "95ff3732-c714-49bc-bdf1-6e0aefef35f2"
                 }
             ]
@@ -330,6 +341,7 @@
                 "store": "ContentSelectorStore",
                 "width": 360
             },
+            "name": "MyPagingToolbar4",
             "designerId": "dd52bba2-d8d2-4f4a-af5e-dfc758ecaf49",
             "cn": [
                 {
@@ -342,6 +354,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill32",
                     "designerId": "0edcbb1a-9c32-4c1f-b62e-b43886318b56"
                 },
                 {
@@ -359,6 +372,7 @@
                         "localiserId": "chooseThisContentBtn",
                         "text": "<b>Choisir ce contenu</b>"
                     },
+                    "name": "MyButton233",
                     "designerId": "0362fb29-8b32-4261-9691-979ceac0a7b2",
                     "customConfigs": [
                         {
@@ -388,6 +402,7 @@
                                     ""
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "d0051433-c5ce-4541-9e25-f5de541a5641"
                         }
                     ]
@@ -413,6 +428,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onContentPickerGridSelectionChange",
             "designerId": "02b109c5-bfc3-44e0-ae01-b785874f814c"
         },
         {
@@ -431,6 +447,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "onContentPickerGridItemDblClick",
             "designerId": "04e8d318-5c37-4c14-a658-448547dcc971"
         },
         {
@@ -450,6 +467,7 @@
                     "return config;"
                 ]
             },
+            "name": "processContentPickerGrid",
             "designerId": "b4b1858d-9da1-4035-ad10-7f7531e34d3c"
         }
     ]

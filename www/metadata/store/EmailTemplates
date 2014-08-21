@@ -51,6 +51,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy39",
             "designerId": "29a40d01-1d1f-41e3-9c39-cdd475b3b53e",
             "cn": [
                 {
@@ -64,6 +65,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader38",
                     "designerId": "2dd884e4-dab9-4aaa-89f8-9a92a7ebd3f5"
                 },
                 {
@@ -77,6 +79,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter20",
                     "designerId": "5d4731d5-9b9a-499a-899b-5df6e7575239"
                 }
             ]
@@ -92,6 +95,7 @@
                 "direction": "DESC",
                 "property": "isMailModel"
             },
+            "name": "MyGrouper8",
             "designerId": "e948c077-658b-4c8c-b35d-c9034e74261b"
         }
     ]

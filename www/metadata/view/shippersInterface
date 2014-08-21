@@ -37,6 +37,7 @@
             "userConfig": {
                 "dock": "top"
             },
+            "name": "MyToolbar87",
             "designerId": "ebe4c71f-2c72-4b2e-8881-ff47e5a7e863",
             "cn": [
                 {
@@ -58,6 +59,7 @@
                         "text": "Ajouter",
                         "width": null
                     },
+                    "name": "MyButton390",
                     "designerId": "f640baff-8860-4a83-bd38-384633a6dad4",
                     "customConfigs": [
                         {
@@ -90,6 +92,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton391",
                     "designerId": "944d94c2-f1df-49f4-acf2-9cb06f1fd2fb",
                     "customConfigs": [
                         {
@@ -122,6 +125,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton392",
                     "designerId": "e2fe4ef5-6ab8-4290-8a71-45e744dc621e",
                     "customConfigs": [
                         {
@@ -156,6 +160,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onWorkspaceSaveAfterRender",
                             "designerId": "216cdd50-27b9-443f-b6a2-7a5f68f45610"
                         }
                     ]
@@ -170,6 +175,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill46",
                     "designerId": "98200f25-5fd1-4f4d-8e4d-689a91eb5865"
                 }
             ]
@@ -188,6 +194,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel54",
             "designerId": "14f75efa-e722-4065-871a-fb4bb4997b8d",
             "cn": [
                 {
@@ -197,6 +204,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView60",
                     "designerId": "4d88e10d-6867-44d4-89bc-d626b2cf5c41"
                 },
                 {
@@ -211,6 +219,7 @@
                         "localiserId": "nameColumn",
                         "text": "Nom"
                     },
+                    "name": "MyColumn128",
                     "designerId": "90fc825d-27a2-4025-a82f-53e88019a82c",
                     "customConfigs": [
                         {
@@ -246,6 +255,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "732aaf56-6af1-46cf-b269-236bf12b2a2c"
                         }
                     ]
@@ -267,6 +277,7 @@
                 "localiserId": "propsPanel",
                 "title": "Propriétés"
             },
+            "name": "MyPanel70",
             "designerId": "461cd932-0fc8-4637-9548-81cb769ebb72",
             "customConfigs": [
                 {
@@ -289,6 +300,7 @@
                         "itemId": "mainLocItem",
                         "title": ""
                     },
+                    "name": "MyForm86",
                     "designerId": "903a0e51-bc89-48fc-b8c5-e189278c09a6",
                     "cn": [
                         {
@@ -307,6 +319,7 @@
                                 "localiserId": "nameField",
                                 "name": "name"
                             },
+                            "name": "MyTextField127",
                             "designerId": "172728b9-c05d-4b00-8537-0602c0bbc255",
                             "customConfigs": [
                                 {
@@ -333,6 +346,7 @@
                                 "name": "active",
                                 "uncheckedValue": "false"
                             },
+                            "name": "MyCheckbox23",
                             "designerId": "4142ad48-4d8c-4b5a-b169-b92ee583e6be",
                             "customConfigs": [
                                 {
@@ -363,6 +377,7 @@
                                     "[[\"flatPerOrder\",\"Flat rate per order\"],[\"flatPerItem\",\"Flat rate per item\"]]"
                                 ]
                             },
+                            "name": "MyComboBox66",
                             "configAlternates": {
                                 "store": "array"
                             },
@@ -392,6 +407,7 @@
                                 "minValue": 0,
                                 "name": "minimumOrderAmount"
                             },
+                            "name": "MyNumberField9",
                             "designerId": "da8c6c64-686e-4ef4-9e4a-27cc8d6c5c41"
                         }
                     ]
@@ -410,6 +426,7 @@
                         "store": "ShippersRatesStore",
                         "title": "Rates"
                     },
+                    "name": "MyGridPanel55",
                     "designerId": "e37144e1-dab4-4609-bc3c-934d2e5cdf0d",
                     "customConfigs": [
                         {
@@ -426,6 +443,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView61",
                             "designerId": "518f6f54-5625-440c-8875-cb9de7662da7"
                         },
                         {
@@ -440,6 +458,7 @@
                                 "localiserId": "countryCol",
                                 "text": "Country"
                             },
+                            "name": "MyColumn129",
                             "designerId": "3d1c2fc9-e6e7-4465-b2ae-58ce7781f3ee",
                             "customConfigs": [
                                 {
@@ -464,6 +483,7 @@
                                         "store": "CountriesForShippers",
                                         "valueField": "alpha-2"
                                     },
+                                    "name": "MyComboBox67",
                                     "designerId": "0bbf95d3-6183-4f09-b45e-cadc8cec86a4"
                                 },
                                 {
@@ -490,6 +510,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "5aafa79d-6235-4d63-808c-7be437d7b14e"
                                 }
                             ]
@@ -506,6 +527,7 @@
                                 "localiserId": "priceCol",
                                 "text": "Price (tax-free)"
                             },
+                            "name": "MyColumn130",
                             "designerId": "6976f19c-339a-4ac8-af36-67a9ebf5c0f1",
                             "customConfigs": [
                                 {
@@ -526,6 +548,7 @@
                                         "allowBlank": false,
                                         "minValue": 0
                                     },
+                                    "name": "MyNumberField10",
                                     "designerId": "3b9bef27-6451-4b64-96bd-f704cc04dcf7"
                                 }
                             ]
@@ -542,6 +565,7 @@
                                 "localiserId": "taxCol",
                                 "text": "Tax (%)"
                             },
+                            "name": "MyColumn131",
                             "designerId": "40c85d3d-3aa8-4379-afbe-569aadc4b01a",
                             "customConfigs": [
                                 {
@@ -562,6 +586,7 @@
                                         "allowBlank": false,
                                         "minValue": 0
                                     },
+                                    "name": "MyNumberField11",
                                     "designerId": "bff08a4d-fced-432a-b6a5-ffd84bbf01e3"
                                 }
                             ]
@@ -578,6 +603,7 @@
                                 "localiserId": "delayCol",
                                 "text": "Delay (days)"
                             },
+                            "name": "MyColumn132",
                             "designerId": "f9f76d90-5a26-47c3-924c-75173d8a618d",
                             "customConfigs": [
                                 {
@@ -598,6 +624,7 @@
                                         "allowBlank": false,
                                         "minValue": 0
                                     },
+                                    "name": "MyNumberField12",
                                     "designerId": "8f754af2-27c1-4b04-9b5c-20a7b7ffd565"
                                 }
                             ]
@@ -614,6 +641,7 @@
                                 "localiserId": "displayedDelayAmountCol",
                                 "text": "Displayed delay (amount)"
                             },
+                            "name": "MyColumn133",
                             "designerId": "8cb26eac-a2e8-447d-9d61-1eef6eac940b",
                             "customConfigs": [
                                 {
@@ -635,6 +663,7 @@
                                         "allowOnlyWhitespace": false,
                                         "minValue": 0
                                     },
+                                    "name": "MyNumberField13",
                                     "designerId": "6b68c958-72e8-4f3a-a049-fed359cd64a3"
                                 }
                             ]
@@ -651,6 +680,7 @@
                                 "localiserId": "displayedDelayUnitCol",
                                 "text": "Displayed delay (unit)"
                             },
+                            "name": "MyColumn134",
                             "designerId": "bc6a61a5-a45d-47c9-88be-867ebe01ebcf",
                             "customConfigs": [
                                 {
@@ -676,6 +706,7 @@
                                             "[[\"hours\",\"hours\"],[\"days\",\"days\"],[\"weeks\",\"weeks\"],[\"months\",\"months\"]]"
                                         ]
                                     },
+                                    "name": "MyComboBox68",
                                     "configAlternates": {
                                         "store": "array"
                                     },
@@ -693,6 +724,7 @@
                             "userConfig": {
                                 "dock": "bottom"
                             },
+                            "name": "MyToolbar88",
                             "designerId": "ce49d256-504e-4eac-8f28-7b00c9b4aa4f",
                             "cn": [
                                 {
@@ -705,6 +737,7 @@
                                     "userConfig": {
                                         "layout|flex": null
                                     },
+                                    "name": "MyFill47",
                                     "designerId": "765e46ee-f0a4-438c-988e-309c4335171a"
                                 },
                                 {
@@ -720,6 +753,7 @@
                                         "localiserId": "addRateBtn",
                                         "text": "Add rate"
                                     },
+                                    "name": "MyButton393",
                                     "designerId": "0671c23c-dcc2-467a-9019-e7bae27b6924",
                                     "customConfigs": [
                                         {
@@ -744,6 +778,7 @@
                                                 "name": "click",
                                                 "scope": "me"
                                             },
+                                            "name": "onButtonClick",
                                             "designerId": "2e12ef3a-5237-4df6-9e64-d67ee81943b7"
                                         }
                                     ]
@@ -763,6 +798,7 @@
                                         "localiserId": "removeRateBtn",
                                         "text": "Remove rate"
                                     },
+                                    "name": "MyButton394",
                                     "designerId": "5a50b7ca-9589-4dc4-aa8e-182e3d46bdc6",
                                     "customConfigs": [
                                         {
@@ -787,6 +823,7 @@
                                                 "name": "click",
                                                 "scope": "me"
                                             },
+                                            "name": "onRemoveShipperRateBtnClick",
                                             "designerId": "18457ce4-f35b-4809-adfe-a6ad2e7688af"
                                         }
                                     ]
@@ -800,6 +837,7 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.RowEditing",
+                            "name": "MyRowEditingPlugin1",
                             "designerId": "1ce11dd2-5787-43ae-b933-e2594fbda956"
                         },
                         {
@@ -821,6 +859,7 @@
                                 "name": "selectionchange",
                                 "scope": "me"
                             },
+                            "name": "onGridpanelSelectionChange",
                             "designerId": "e381b530-ccbf-429a-834e-cf58a1d04008"
                         }
                     ]
@@ -843,6 +882,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onWorkspacesInterfaceRender",
             "designerId": "4b52b8ca-f9e6-4820-9b44-3385022a5f5c"
         },
         {
@@ -861,6 +901,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onWorkspacesInterfaceBeforeClose",
             "designerId": "d2269606-d28c-466b-a5b2-6cb38e034f69"
         },
         {
@@ -873,6 +914,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1614",
             "designerId": "e22bc478-cb54-49d3-a2f8-e07ad82f7c19",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -886,6 +928,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1720",
             "designerId": "7694bf92-2fb6-41a5-a279-aa383bd8dce3",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }

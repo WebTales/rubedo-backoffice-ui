@@ -45,6 +45,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyForm24",
             "designerId": "a3a10a90-0cc9-4771-ab7f-f5ad5a335d3f",
             "cn": [
                 {
@@ -62,6 +63,7 @@
                         "id": "delConMessageHolder",
                         "title": ""
                     },
+                    "name": "MyPanel28",
                     "configAlternates": {
                         "html": "string"
                     },
@@ -85,6 +87,7 @@
                         "style": null,
                         "text": "Oui"
                     },
+                    "name": "MyButton95",
                     "designerId": "86b5e869-ea00-4b39-b4d2-ed39f8416669",
                     "customConfigs": [
                         {
@@ -111,6 +114,7 @@
                         "style": null,
                         "text": "Non"
                     },
+                    "name": "MyButton96",
                     "designerId": "fac07a17-ab3c-4bb4-89dd-197c723494d9",
                     "customConfigs": [
                         {
@@ -137,6 +141,7 @@
                                     "button.up().up().close();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "3951778e-9fa9-4fd0-bdaa-23cb39e20614"
                         }
                     ]
@@ -152,6 +157,7 @@
                         "fieldLabel": "Label",
                         "id": "delConfirmZField"
                     },
+                    "name": "MyHiddenField6",
                     "designerId": "0e0f13d8-3b0f-4ba5-adf5-d64ace5ab253"
                 }
             ]

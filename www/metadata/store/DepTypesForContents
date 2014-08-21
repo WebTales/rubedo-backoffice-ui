@@ -50,6 +50,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy105",
             "designerId": "8062a6ba-3e62-4cd1-9490-16d12eeb55c2",
             "cn": [
                 {
@@ -63,6 +64,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader104",
                     "designerId": "f377fb72-db71-4505-b2c8-2d7970f61530"
                 }
             ]
@@ -80,6 +82,7 @@
                     "true"
                 ]
             },
+            "name": "MyFilter17",
             "designerId": "d5055c6f-699e-4f8f-94b6-2224562ef1cf"
         },
         {
@@ -92,6 +95,7 @@
             "userConfig": {
                 "name": "type"
             },
+            "name": "MyField586",
             "designerId": "4b122b50-d3a3-46e8-8497-4cd2a398759d"
         },
         {
@@ -105,6 +109,7 @@
                 "name": "dependant",
                 "type": "boolean"
             },
+            "name": "MyField587",
             "designerId": "fde37044-a53a-4136-8a71-47337338973d"
         },
         {
@@ -117,6 +122,7 @@
             "userConfig": {
                 "name": "id"
             },
+            "name": "MyField588",
             "designerId": "05ca686e-9689-466a-912d-ee5be996adf9"
         }
     ]

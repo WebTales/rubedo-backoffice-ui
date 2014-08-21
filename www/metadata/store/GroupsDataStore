@@ -52,6 +52,7 @@
                 "batchActions": false,
                 "url": null
             },
+            "name": "MyAjaxProxy63",
             "designerId": "e1785f69-601f-4fed-b839-5d6dcaf4b9aa",
             "cn": [
                 {
@@ -67,6 +68,7 @@
                         "record": null,
                         "root": null
                     },
+                    "name": "MyJsonReader62",
                     "designerId": "4739054c-9d43-4cdc-8e1c-35464929f818",
                     "cn": [
                         {
@@ -105,6 +107,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "getResponseData",
                             "designerId": "8f9cef44-3553-4805-9ccc-c140ca8a78c3"
                         }
                     ]
@@ -120,6 +123,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter30",
                     "designerId": "c10c65aa-5737-48d2-af1e-c2bad3b2ef87"
                 }
             ]
@@ -141,6 +145,7 @@
                 "name": "write",
                 "scope": "me"
             },
+            "name": "onTreeStoreWrite",
             "designerId": "9c70e79e-e656-4df2-bbd2-928a26c00259"
         }
     ]

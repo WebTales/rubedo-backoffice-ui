@@ -47,6 +47,7 @@
                     "}"
                 ]
             },
+            "name": "MyAjaxProxy96",
             "designerId": "6a1cbec5-311b-443b-9c5f-6e9ba50ddcb8",
             "cn": [
                 {
@@ -60,6 +61,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader95",
                     "designerId": "23a18c0a-744a-4ac3-bb4f-12b8191c02bd"
                 }
             ]
@@ -77,6 +79,7 @@
                     "true"
                 ]
             },
+            "name": "MyFilter14",
             "designerId": "796765ac-0ba6-47e9-b991-1d71526c308a"
         },
         {
@@ -94,6 +97,7 @@
                 "name": "load",
                 "scope": "me"
             },
+            "name": "onStoreLoad",
             "designerId": "0ccac6f1-0df6-4746-aded-8f29e536207b"
         },
         {
@@ -106,6 +110,7 @@
             "userConfig": {
                 "property": "order"
             },
+            "name": "MySorter16",
             "designerId": "bfa77868-c739-4e39-a62d-c736549f6e6f"
         }
     ]

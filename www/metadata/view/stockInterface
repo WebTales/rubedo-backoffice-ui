@@ -42,6 +42,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onWorkspacesInterfaceRender",
             "designerId": "d9a87059-a541-470f-b498-1734301f012f"
         },
         {
@@ -59,6 +60,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onWorkspacesInterfaceBeforeClose",
             "designerId": "bb1fb4e2-04f4-4884-9a79-7cee406433a6"
         },
         {
@@ -68,6 +70,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1618",
             "designerId": "480a12dd-a3ed-41c8-ada0-c984b39adff2",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -78,6 +81,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1724",
             "designerId": "b1878002-5b15-4fc0-8904-3c6b2df968de",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -95,6 +99,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel60",
             "designerId": "63859436-d3b3-43eb-a3ef-d5000dd9ebfc",
             "cn": [
                 {
@@ -109,6 +114,7 @@
                         "localiserId": "productTypeCol",
                         "text": "Product type "
                     },
+                    "name": "MyColumn158",
                     "designerId": "771cb2aa-664a-4b32-98b9-82eb12a9b13e",
                     "customConfigs": [
                         {
@@ -220,6 +226,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onGridpanelSelectionChange",
                     "designerId": "851af269-e038-4d6f-b89e-e07c3418dc6e"
                 }
             ]
@@ -239,6 +246,7 @@
                 "store": "InitialStockStore",
                 "title": "Items"
             },
+            "name": "MyGridPanel61",
             "designerId": "46d6e4c5-62ec-465f-8f70-0263b28ecac1",
             "customConfigs": [
                 {
@@ -255,6 +263,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView66",
                     "designerId": "746479d3-8dcf-4710-a38a-636c709bf960",
                     "cn": [
                         {
@@ -280,6 +289,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "getRowClass",
                             "designerId": "ad658efa-8452-441e-9fb4-e27de7e0e3f4"
                         }
                     ]
@@ -291,6 +301,7 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.BufferedRenderer",
+                    "name": "MyBufferedRenderer3",
                     "designerId": "bc1662c0-4abd-4da0-9a48-b6da657882b3"
                 },
                 {
@@ -303,6 +314,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar91",
                     "designerId": "d9599fd4-37f3-46c8-9d58-73174335c6af",
                     "cn": [
                         {
@@ -320,6 +332,7 @@
                                 "localiserId": "refreshBtn",
                                 "text": "Refersh"
                             },
+                            "name": "MyButton399",
                             "designerId": "4b967eb1-9b99-4f67-a84b-23b751b16cdd",
                             "customConfigs": [
                                 {
@@ -344,6 +357,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onButtonClick",
                                     "designerId": "63b9345a-9f23-41f4-ac92-c7b018d75965"
                                 }
                             ]
@@ -358,6 +372,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill50",
                             "designerId": "c4af8038-e4ca-4a6f-962d-87d385822320"
                         },
                         {
@@ -375,6 +390,7 @@
                                 "localiserId": "addStockBtn",
                                 "text": "Add stock"
                             },
+                            "name": "MyButton400",
                             "designerId": "2cacb5c9-1086-4d51-994f-7a672ec6d59e",
                             "customConfigs": [
                                 {
@@ -399,6 +415,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onStockAddToVarItemClick",
                                     "designerId": "847789ce-d84a-4f56-aca1-c3571bdd2a85"
                                 }
                             ]
@@ -418,6 +435,7 @@
                                 "localiserId": "removeStockBtn",
                                 "text": "Remove stock"
                             },
+                            "name": "MyButton401",
                             "designerId": "32a48762-5a3d-4c27-a44a-43b156152a1d",
                             "customConfigs": [
                                 {
@@ -443,6 +461,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onStockRemoveFromVarItemClick",
                                     "designerId": "6bbe4eeb-a5b4-442e-b471-4098727fe204"
                                 }
                             ]
@@ -463,6 +482,7 @@
                                 "text": "View product",
                                 "width": 100
                             },
+                            "name": "MyButton402",
                             "designerId": "7fc2c793-a864-4ee7-b963-9dc3f1ad0f71",
                             "customConfigs": [
                                 {
@@ -487,6 +507,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onStockViewVarProductClick",
                                     "designerId": "94473536-4a24-4162-a827-4c24df1e3b33"
                                 }
                             ]
@@ -505,6 +526,7 @@
                         "localiserId": "titleCol",
                         "text": "Title"
                     },
+                    "name": "MyColumn159",
                     "designerId": "53e2dfb4-1266-43ab-adf5-09ef5ec60787",
                     "customConfigs": [
                         {
@@ -526,6 +548,7 @@
                         "localiserId": "priceCol",
                         "text": "Price"
                     },
+                    "name": "MyColumn160",
                     "designerId": "a55cfe9c-aeab-4dd5-bc32-1b7dd59d8167",
                     "customConfigs": [
                         {
@@ -547,6 +570,7 @@
                         "localiserId": "stockCol",
                         "text": "Stock"
                     },
+                    "name": "MyColumn161",
                     "designerId": "5756a5df-797c-409a-9c4d-9a8a9ab223c3",
                     "customConfigs": [
                         {
@@ -584,6 +608,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "770de909-613d-449d-b497-a75f4e84ed90"
                         }
                     ]
@@ -600,6 +625,7 @@
                         "localiserId": "skuCol",
                         "text": "Sku"
                     },
+                    "name": "MyColumn162",
                     "designerId": "82f5a8ad-4ce0-4f28-bf10-c921393e2adb",
                     "customConfigs": [
                         {
@@ -632,6 +658,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onMainStockGridSelectionChange",
                     "designerId": "6065d8f4-7f1d-42cc-8b79-a04e4f7b0cab"
                 }
             ]

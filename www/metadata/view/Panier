@@ -32,6 +32,7 @@
                 "store": "PanierDataJson",
                 "title": ""
             },
+            "name": "MyGridPanel22",
             "designerId": "7da13257-d54f-438e-af91-5ecf1b772e9e",
             "cn": [
                 {
@@ -41,6 +42,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView23",
                     "designerId": "54c9d404-5a10-4eef-bf97-75a3766b21f0"
                 },
                 {
@@ -50,6 +52,7 @@
                         "type": "object"
                     },
                     "codeClass": "Ext.selection.CheckboxModel",
+                    "name": "MyCheckboxSelectionModel4",
                     "designerId": "15253fa9-e650-4116-8ee3-5c9a76b4be97"
                 },
                 {
@@ -65,6 +68,7 @@
                         "text": "Titre",
                         "width": 183
                     },
+                    "name": "MyColumn45",
                     "designerId": "2ea352c4-cea7-4ee8-a1c1-f1fc00513e4e"
                 },
                 {
@@ -79,6 +83,7 @@
                         "flex": 1,
                         "text": "Etat"
                     },
+                    "name": "MyColumn46",
                     "designerId": "369a083d-dd65-43d6-adf7-6109834ee8e3"
                 }
             ]
@@ -93,6 +98,7 @@
             "userConfig": {
                 "dock": "left"
             },
+            "name": "MyToolbar22",
             "designerId": "ecd8ded7-67ac-496d-af92-98b2f9ca295f",
             "cn": [
                 {
@@ -110,6 +116,7 @@
                         "scale": "medium",
                         "text": "Enlever"
                     },
+                    "name": "MyButton103",
                     "designerId": "c197b5c3-828d-4d07-8904-cabd9f4bc5c6"
                 },
                 {
@@ -122,6 +129,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MySeparator3",
                     "designerId": "4ace4ac5-fee6-4fc3-a4ed-419722d06f70"
                 },
                 {
@@ -138,6 +146,7 @@
                         "scale": "medium",
                         "text": "Action 1"
                     },
+                    "name": "MyButton104",
                     "designerId": "3cf37183-7279-4087-afe5-73c915b2f377"
                 },
                 {
@@ -154,6 +163,7 @@
                         "scale": "medium",
                         "text": "Action 2"
                     },
+                    "name": "MyButton105",
                     "designerId": "ea51d0b6-31a5-48f3-a956-a628601ed78f"
                 },
                 {
@@ -170,6 +180,7 @@
                         "scale": "medium",
                         "text": "Action 3"
                     },
+                    "name": "MyButton106",
                     "designerId": "35357aa1-bed6-4126-8920-18e0512903cf"
                 }
             ]
@@ -185,6 +196,7 @@
                 "itemId": "windowMinimize",
                 "type": "minimize"
             },
+            "name": "MyTool",
             "designerId": "25a5e98d-82db-4ae0-bd01-5e64707542ad"
         },
         {
@@ -198,6 +210,7 @@
                 "itemId": "windowMaximize",
                 "type": "maximize"
             },
+            "name": "MyTool1",
             "designerId": "6e6d916c-7eda-4ad0-a6ab-0171fa036c6b"
         }
     ]

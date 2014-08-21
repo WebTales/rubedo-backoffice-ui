@@ -41,6 +41,7 @@
                 "hideLabel": true,
                 "name": "html"
             },
+            "name": "ckefield",
             "designerId": "f821e9a2-52eb-4439-825f-38e50bf11ca2",
             "customConfigs": [
                 {
@@ -61,6 +62,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar3",
             "designerId": "0fb16d8f-0f6a-4873-83b5-cc06ca7e82b3",
             "cn": [
                 {
@@ -73,6 +75,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill3",
                     "designerId": "168f8a95-dc73-4c77-a03d-b09a7bc8e411"
                 },
                 {
@@ -89,6 +92,7 @@
                         "localiserId": "validateBtn",
                         "text": "Valider"
                     },
+                    "name": "MyButton22",
                     "designerId": "18446c70-8fc1-4857-8a93-bc08190ba353",
                     "customConfigs": [
                         {
@@ -126,6 +130,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onRichTextConfiguratorSubmitClick",
                             "designerId": "382cd445-e522-4512-a8d9-82abfb23e7be"
                         }
                     ]

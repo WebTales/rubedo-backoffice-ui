@@ -41,6 +41,7 @@
                 "dock": "bottom",
                 "id": "customImportProgressor"
             },
+            "name": "mytoolbar56",
             "designerId": "0fe6b893-b526-4495-b906-ca2d83b9cd88",
             "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
         },
@@ -56,6 +57,7 @@
                 "id": "step1CustomImportContainer",
                 "layout": "vbox"
             },
+            "name": "MyContainer",
             "designerId": "6726ef4b-9da8-452c-b814-50e6fa3e1f06",
             "cn": [
                 {
@@ -74,6 +76,7 @@
                         "timeout": 120,
                         "title": "Choix du fichier à importer"
                     },
+                    "name": "MyForm1",
                     "designerId": "38fad95a-fd44-4002-ba7b-c2c735c2ba18",
                     "customConfigs": [
                         {
@@ -98,6 +101,7 @@
                                 "margin": "0 0 10 0",
                                 "padding": null
                             },
+                            "name": "MyContainer1",
                             "designerId": "52ce27cc-8170-4540-882b-34674429c437",
                             "cn": [
                                 {
@@ -119,6 +123,7 @@
                                         ],
                                         "width": 100
                                     },
+                                    "name": "MyTextField",
                                     "designerId": "2cdf994e-da89-43ab-bd5a-f48dca38bcae",
                                     "customConfigs": [
                                         {
@@ -147,6 +152,7 @@
                                                 "name": "change",
                                                 "scope": "me"
                                             },
+                                            "name": "onTextfieldChange",
                                             "designerId": "4bf021a5-f84a-4243-8e71-9b1992c31840"
                                         }
                                     ]
@@ -173,6 +179,7 @@
                                         ],
                                         "width": 160
                                     },
+                                    "name": "MyComboBox2",
                                     "configAlternates": {
                                         "store": "array"
                                     },
@@ -195,6 +202,7 @@
                                                     "return config;"
                                                 ]
                                             },
+                                            "name": "processChooseEncodingField",
                                             "designerId": "f048740e-fef4-4b02-937b-16acae7837e0"
                                         }
                                     ]
@@ -218,6 +226,7 @@
                                         "name": "csvFile",
                                         "width": 380
                                     },
+                                    "name": "MyFileUpload",
                                     "designerId": "d3c0a276-3e59-4373-8524-f1f2a6df7027",
                                     "customConfigs": [
                                         {
@@ -241,6 +250,7 @@
                                                     "return fileInput;"
                                                 ]
                                             },
+                                            "name": "extractFileInput",
                                             "designerId": "e4a2e2cf-df2a-462e-9df2-46d9ba443628"
                                         }
                                     ]
@@ -261,6 +271,7 @@
                                         "margin": "0 0 0 4",
                                         "text": ""
                                     },
+                                    "name": "MyButton3",
                                     "designerId": "a4fb8fc2-6846-40b2-b969-e9b4209d0fd5",
                                     "customConfigs": [
                                         {
@@ -285,6 +296,7 @@
                                 "layout": "hbox",
                                 "layout|flex": 1
                             },
+                            "name": "MyContainer2",
                             "designerId": "89634e52-74f0-4547-ae81-89ca239c4f26",
                             "cn": [
                                 {
@@ -301,6 +313,7 @@
                                         "localiserId": "importStage1MainPanel",
                                         "title": "Choisissez un fichier CSV pour afficher ses champs"
                                     },
+                                    "name": "MyPanel",
                                     "designerId": "bd2ff629-6911-4596-bcfe-838c7b743f41",
                                     "customConfigs": [
                                         {
@@ -323,6 +336,7 @@
                                                 "store": "NotInportFieldsStore",
                                                 "title": ""
                                             },
+                                            "name": "MyGridPanel",
                                             "designerId": "283bd4f5-dbc7-4651-bd9e-6139a8da22c9",
                                             "cn": [
                                                 {
@@ -337,6 +351,7 @@
                                                         "localiserId": "importIgnoredFieldsCol",
                                                         "text": "Ne pas importer"
                                                     },
+                                                    "name": "MyColumn",
                                                     "designerId": "efcc439c-9fce-45e7-b14b-1a63f4219084",
                                                     "customConfigs": [
                                                         {
@@ -356,6 +371,7 @@
                                                     "userConfig": {
                                                         "markDirty": false
                                                     },
+                                                    "name": "MyGridView",
                                                     "designerId": "f0168bca-f9d5-463c-984e-ea4069204e12",
                                                     "cn": [
                                                         {
@@ -365,6 +381,7 @@
                                                                 "type": "array"
                                                             },
                                                             "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "name": "MyGridDragDropPlugin",
                                                             "designerId": "bb6b8c69-0737-4e02-a400-0ab614ca24d5"
                                                         }
                                                     ]
@@ -379,6 +396,7 @@
                                                     "userConfig": {
                                                         "mode": "MULTI"
                                                     },
+                                                    "name": "MyRowSelectionModel",
                                                     "designerId": "50b40d00-9157-47b8-bcc2-09e21826647b"
                                                 }
                                             ]
@@ -396,6 +414,7 @@
                                                 "store": "InportAsFieldStore",
                                                 "title": ""
                                             },
+                                            "name": "MyGridPanel1",
                                             "designerId": "f17de099-4f85-4eca-ad19-5edbb12e64ef",
                                             "cn": [
                                                 {
@@ -410,6 +429,7 @@
                                                         "localiserId": "importImportAsFieldCol",
                                                         "text": "Importer en tant que champ"
                                                     },
+                                                    "name": "MyColumn1",
                                                     "designerId": "453279b9-c24c-4f6b-8082-e785aea0f6b7",
                                                     "customConfigs": [
                                                         {
@@ -429,6 +449,7 @@
                                                     "userConfig": {
                                                         "markDirty": false
                                                     },
+                                                    "name": "MyGridView1",
                                                     "designerId": "f9b87123-7981-4d7e-becd-21f993e1a8c0",
                                                     "cn": [
                                                         {
@@ -438,6 +459,7 @@
                                                                 "type": "array"
                                                             },
                                                             "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "name": "MyGridDragDropPlugin1",
                                                             "designerId": "5469aff0-b723-437e-af0d-ace0305b30fc"
                                                         }
                                                     ]
@@ -452,6 +474,7 @@
                                                     "userConfig": {
                                                         "mode": "MULTI"
                                                     },
+                                                    "name": "MyRowSelectionModel1",
                                                     "designerId": "e7a44148-9ed1-48c0-a9e1-8e1f94e6c54d"
                                                 }
                                             ]
@@ -469,6 +492,7 @@
                                                 "store": "InportAsFieldTranslationStore",
                                                 "title": ""
                                             },
+                                            "name": "MyGridPanel2",
                                             "designerId": "99f143fe-690d-48fd-af86-654a46854663",
                                             "cn": [
                                                 {
@@ -483,6 +507,7 @@
                                                         "localiserId": "importAsFieldTransCol",
                                                         "text": "Import as field translation"
                                                     },
+                                                    "name": "MyColumn2",
                                                     "designerId": "823a7e11-1c8c-4470-b219-f5c045671cc3",
                                                     "customConfigs": [
                                                         {
@@ -502,6 +527,7 @@
                                                     "userConfig": {
                                                         "markDirty": false
                                                     },
+                                                    "name": "MyGridView2",
                                                     "designerId": "5364145e-aa23-468f-a795-f5e3fd0501b1",
                                                     "cn": [
                                                         {
@@ -511,6 +537,7 @@
                                                                 "type": "array"
                                                             },
                                                             "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "name": "MyGridDragDropPlugin2",
                                                             "designerId": "a8eb74ef-3c45-4cea-8d0e-3db6e618f5b7"
                                                         }
                                                     ]
@@ -532,6 +559,7 @@
                                                         "name": "afterrender",
                                                         "scope": "me"
                                                     },
+                                                    "name": "onGridpanelAfterRender1",
                                                     "designerId": "8f6425fa-e8d1-4748-a9fc-5d8f0b938edc"
                                                 },
                                                 {
@@ -544,6 +572,7 @@
                                                     "userConfig": {
                                                         "mode": "MULTI"
                                                     },
+                                                    "name": "MyRowSelectionModel2",
                                                     "designerId": "bf7f815c-b608-4b00-a53e-982fa7fc83bc"
                                                 }
                                             ]
@@ -561,6 +590,7 @@
                                                 "store": "InportAsTaxoStore",
                                                 "title": ""
                                             },
+                                            "name": "MyGridPanel4",
                                             "designerId": "de9d07d1-9dfe-4de7-bb7b-08dd35b11d75",
                                             "cn": [
                                                 {
@@ -575,6 +605,7 @@
                                                         "localiserId": "importImportAsTaxoCol",
                                                         "text": "Importer en tant que taxonomie"
                                                     },
+                                                    "name": "MyColumn3",
                                                     "designerId": "35b30c5c-a479-472e-8248-1caf91581b62",
                                                     "customConfigs": [
                                                         {
@@ -594,6 +625,7 @@
                                                     "userConfig": {
                                                         "markDirty": false
                                                     },
+                                                    "name": "MyGridView3",
                                                     "designerId": "c8aacbe6-e30e-41b6-a3fe-43ef19f161b6",
                                                     "cn": [
                                                         {
@@ -603,6 +635,7 @@
                                                                 "type": "array"
                                                             },
                                                             "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "name": "MyGridDragDropPlugin3",
                                                             "designerId": "b1e44e51-2bbf-4289-8c0a-5e2a8221beda"
                                                         }
                                                     ]
@@ -617,6 +650,7 @@
                                                     "userConfig": {
                                                         "mode": "MULTI"
                                                     },
+                                                    "name": "MyRowSelectionModel3",
                                                     "designerId": "f0d0502e-11c5-4915-9234-45b9fd67f9c9"
                                                 }
                                             ]
@@ -634,6 +668,7 @@
                                                 "store": "InportAsTaxoTranslationStore",
                                                 "title": ""
                                             },
+                                            "name": "MyGridPanel5",
                                             "designerId": "76e8689a-4800-4938-a7c6-bfd834e05a58",
                                             "cn": [
                                                 {
@@ -648,6 +683,7 @@
                                                         "localiserId": "ImportAsTaxoTransCol",
                                                         "text": "Import as taxonomy translation"
                                                     },
+                                                    "name": "MyColumn4",
                                                     "designerId": "69ae97f0-4924-4b79-bb3e-27748f53aae4",
                                                     "customConfigs": [
                                                         {
@@ -667,6 +703,7 @@
                                                     "userConfig": {
                                                         "markDirty": false
                                                     },
+                                                    "name": "MyGridView4",
                                                     "designerId": "cefb63c5-8709-45a2-91d1-ecf28de92432",
                                                     "cn": [
                                                         {
@@ -676,6 +713,7 @@
                                                                 "type": "array"
                                                             },
                                                             "codeClass": "Ext.grid.plugin.DragDrop",
+                                                            "name": "MyGridDragDropPlugin4",
                                                             "designerId": "e6bf08dd-a251-4a52-885d-9f144e05edc3"
                                                         }
                                                     ]
@@ -697,6 +735,7 @@
                                                         "name": "afterrender",
                                                         "scope": "me"
                                                     },
+                                                    "name": "onGridpanelAfterRender",
                                                     "designerId": "cdf574e1-dd0f-4c33-9ccc-f0f429ac946d"
                                                 },
                                                 {
@@ -709,6 +748,7 @@
                                                     "userConfig": {
                                                         "mode": "MULTI"
                                                     },
+                                                    "name": "MyRowSelectionModel4",
                                                     "designerId": "2c8b8a5e-43ba-41f5-9cf1-184b7a423025"
                                                 }
                                             ]
@@ -734,6 +774,7 @@
                 "localiserId": "importStage2",
                 "title": "Paramétrage des champs"
             },
+            "name": "MyPanel1",
             "designerId": "f1be8f51-c00e-4572-ab5f-3ec03a64008f",
             "customConfigs": [
                 {
@@ -756,6 +797,7 @@
                         "store": "InportAsFieldStore",
                         "title": ""
                     },
+                    "name": "MyGridPanel6",
                     "designerId": "5f894302-a1fb-4faa-9a1d-d3468c9068ef",
                     "cn": [
                         {
@@ -768,6 +810,7 @@
                             "userConfig": {
                                 "markDirty": false
                             },
+                            "name": "MyGridView5",
                             "designerId": "f075de21-5108-4683-88a6-eb1d4d53d319",
                             "cn": [
                                 {
@@ -777,6 +820,7 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "name": "MyGridDragDropPlugin5",
                                     "designerId": "2cafbea3-ce63-4e78-8c8d-68bb70112aa5"
                                 }
                             ]
@@ -793,6 +837,7 @@
                                 "localiserId": "importS2NameColumn",
                                 "text": "Nom"
                             },
+                            "name": "MyColumn5",
                             "designerId": "064b115b-c924-4cbe-8c40-4cc807efc7a6",
                             "customConfigs": [
                                 {
@@ -816,6 +861,7 @@
                                 "text": "Nouveau nom (optionnel)",
                                 "width": 130
                             },
+                            "name": "MyColumn6",
                             "designerId": "7c798fbe-f4ef-465f-b087-0faab3ad9753",
                             "customConfigs": [
                                 {
@@ -832,6 +878,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "MyTextField1",
                                     "designerId": "2a48bca6-b288-41f0-8d6e-6e6f944cec6f"
                                 }
                             ]
@@ -848,6 +895,7 @@
                                 "localiserId": "importS2LabelCol",
                                 "text": "Libellé"
                             },
+                            "name": "MyColumn7",
                             "designerId": "58d27c2c-d16b-4a50-aefa-be709925b6df",
                             "customConfigs": [
                                 {
@@ -864,6 +912,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "MyTextField2",
                                     "designerId": "91df9964-f3ad-42f1-9551-7c205e309625"
                                 }
                             ]
@@ -880,6 +929,7 @@
                                 "localiserId": "importS2TypeCol",
                                 "text": "Type"
                             },
+                            "name": "MyColumn8",
                             "designerId": "fd18a1d9-502b-4118-85e6-5a91fc5b5dbf",
                             "customConfigs": [
                                 {
@@ -905,6 +955,7 @@
                                         "store": "ImportableFieldTypesStore",
                                         "valueField": "id"
                                     },
+                                    "name": "MyComboBox3",
                                     "designerId": "eb3c3605-7bae-4efc-a7f2-e189013cc34e"
                                 },
                                 {
@@ -929,6 +980,7 @@
                                             "return(Ext.getStore(\"ImportableFieldTypesStore\").findRecord(\"id\", value).get(\"type\"));"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "cad16b57-b48c-47c0-81fc-85951bafe73f"
                                 }
                             ]
@@ -944,6 +996,7 @@
                                 "dataIndex": "mediaTypeId",
                                 "text": "Media type"
                             },
+                            "name": "MyColumn9",
                             "designerId": "0268c74f-7064-435a-9d18-4892243bbd2c",
                             "cn": [
                                 {
@@ -962,6 +1015,7 @@
                                         "store": "MediaTypesFORDAMPicker",
                                         "valueField": "id"
                                     },
+                                    "name": "MyComboBox4",
                                     "designerId": "2a6a05c1-e819-499d-9117-335ebbcd2afd"
                                 },
                                 {
@@ -990,6 +1044,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "ba7440ea-0fb3-4c2e-8d7f-7d2304ebcf9b"
                                 }
                             ]
@@ -1008,6 +1063,7 @@
                                 "text": "Recherchable",
                                 "trueText": "Oui"
                             },
+                            "name": "MyBooleanColumn",
                             "designerId": "3bd1a725-44a7-4096-91b4-8dabf0f0d5dd",
                             "customConfigs": [
                                 {
@@ -1029,6 +1085,7 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
+                                    "name": "MyCheckbox",
                                     "designerId": "d4e76942-5824-49c7-8426-3cfea400a5e3"
                                 },
                                 {
@@ -1049,6 +1106,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processRecherchable",
                                     "designerId": "ee101961-2de9-48ce-9c6d-1beba0962107"
                                 }
                             ]
@@ -1067,6 +1125,7 @@
                                 "text": "Localizable",
                                 "trueText": "Oui"
                             },
+                            "name": "MyBooleanColumn1",
                             "designerId": "d6c8f375-31b2-4f3d-bee0-bc7e5542d858",
                             "customConfigs": [
                                 {
@@ -1088,6 +1147,7 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
+                                    "name": "MyCheckbox1",
                                     "designerId": "2fbcc089-cd27-46d1-9902-4d90d79e15ac"
                                 },
                                 {
@@ -1108,6 +1168,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processLocalizable",
                                     "designerId": "18a911a3-8f06-4294-86fa-ca7a9c1091ae"
                                 }
                             ]
@@ -1126,6 +1187,7 @@
                                 "text": "Obligatoire",
                                 "trueText": "Oui"
                             },
+                            "name": "MyBooleanColumn2",
                             "designerId": "51a661eb-5176-445e-b32f-3ff8d3c40319",
                             "customConfigs": [
                                 {
@@ -1147,6 +1209,7 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
+                                    "name": "MyCheckbox2",
                                     "designerId": "e4b6784b-7f90-4144-8844-e40c51cc84e7"
                                 },
                                 {
@@ -1167,6 +1230,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processObligatoire",
                                     "designerId": "64367b74-dea7-4acd-b4db-5a8c65c9319a"
                                 }
                             ]
@@ -1186,6 +1250,7 @@
                                 "text": "Use as variation",
                                 "trueText": "Oui"
                             },
+                            "name": "MyBooleanColumn3",
                             "designerId": "7f3c0ada-c723-407d-b18b-ffb7df0ec681",
                             "cn": [
                                 {
@@ -1200,6 +1265,7 @@
                                         "inputValue": "true",
                                         "uncheckedValue": "false"
                                     },
+                                    "name": "MyCheckbox3",
                                     "designerId": "724e52e6-c9f3-4c8b-91b3-efd788fe5b60"
                                 },
                                 {
@@ -1220,6 +1286,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processCustomImportUseAsVarCol",
                                     "designerId": "2da95700-cd61-44df-8239-d2dd44047e17"
                                 }
                             ]
@@ -1234,6 +1301,7 @@
                             "userConfig": {
                                 "clicksToEdit": 1
                             },
+                            "name": "MyCellEditingPlugin",
                             "designerId": "8fc7928e-992f-42cd-8127-06fd1e753797",
                             "cn": [
                                 {
@@ -1260,6 +1328,7 @@
                                         "name": "edit",
                                         "scope": "me"
                                     },
+                                    "name": "onCellEditingEdit",
                                     "designerId": "c6e0fcf2-8250-498f-8ee4-fee9ab7b5bce"
                                 }
                             ]
@@ -1276,6 +1345,7 @@
                     "userConfig": {
                         "fieldLabel": "Label"
                     },
+                    "name": "MyHiddenField",
                     "designerId": "fe48403e-f41f-4041-8182-bff17ec485b6",
                     "cn": [
                         {
@@ -1346,6 +1416,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "isValid",
                             "designerId": "01164a0b-1768-4b43-b63f-d881f5dc775a"
                         }
                     ]
@@ -1365,6 +1436,7 @@
                 "store": "InportAsTaxoStore",
                 "title": "Paramétrage de la taxonomie"
             },
+            "name": "MyGridPanel7",
             "designerId": "e183be72-9326-4831-9dea-a0c3bd47dec2",
             "customConfigs": [
                 {
@@ -1384,6 +1456,7 @@
                     "userConfig": {
                         "markDirty": false
                     },
+                    "name": "MyGridView6",
                     "designerId": "010321de-5d77-43d1-84f4-b7e2490e70d6",
                     "cn": [
                         {
@@ -1393,6 +1466,7 @@
                                 "type": "array"
                             },
                             "codeClass": "Ext.grid.plugin.DragDrop",
+                            "name": "MyGridDragDropPlugin6",
                             "designerId": "d5c95319-7f14-409d-8a5c-faa86247759b"
                         }
                     ]
@@ -1409,6 +1483,7 @@
                         "localiserId": "importS3NameCol",
                         "text": "Nom"
                     },
+                    "name": "MyColumn10",
                     "designerId": "142a2cca-0657-4a22-af59-e7cb46042458",
                     "customConfigs": [
                         {
@@ -1428,6 +1503,7 @@
                     "userConfig": {
                         "clicksToEdit": 1
                     },
+                    "name": "MyCellEditingPlugin1",
                     "designerId": "9e40ec07-84d0-42ee-bee5-801d17ba98fc"
                 },
                 {
@@ -1442,6 +1518,7 @@
                         "localiserId": "importS3NewNameXol",
                         "text": "Nouveau nom (optionnel)"
                     },
+                    "name": "MyColumn11",
                     "designerId": "bd94392f-4db7-4055-9d75-86d858df24d0",
                     "customConfigs": [
                         {
@@ -1458,6 +1535,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyTextField3",
                             "designerId": "8a36d688-1e51-4b68-9282-7be3299a2e9f"
                         }
                     ]
@@ -1476,6 +1554,7 @@
                         "text": "Obligatoire",
                         "trueText": "Oui"
                     },
+                    "name": "MyBooleanColumn4",
                     "designerId": "942d2776-2795-4922-aa25-43f3484d992d",
                     "customConfigs": [
                         {
@@ -1497,6 +1576,7 @@
                                 "inputValue": "true",
                                 "uncheckedValue": "false"
                             },
+                            "name": "MyCheckbox4",
                             "designerId": "09ce9448-ceb2-4893-92a3-1ea3594be74b"
                         },
                         {
@@ -1517,6 +1597,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processObligatoire1",
                             "designerId": "d767d947-38b9-4810-ad37-e025d7f5b955"
                         }
                     ]
@@ -1536,6 +1617,7 @@
                 "localiserId": "translationSettingsPanel",
                 "title": "Translation settings"
             },
+            "name": "MyPanel2",
             "designerId": "e54a6d10-2e68-4f13-8ca5-7d81c2a7f12d",
             "customConfigs": [
                 {
@@ -1559,6 +1641,7 @@
                         "store": "InportAsFieldTranslationStore",
                         "title": "Field translations"
                     },
+                    "name": "MyGridPanel8",
                     "designerId": "143658b0-1029-4726-800b-36d27f229f33",
                     "customConfigs": [
                         {
@@ -1578,6 +1661,7 @@
                             "userConfig": {
                                 "markDirty": false
                             },
+                            "name": "MyGridView7",
                             "designerId": "6f685243-6882-4e7e-a854-545f8ba9ad34"
                         },
                         {
@@ -1590,6 +1674,7 @@
                             "userConfig": {
                                 "clicksToEdit": 1
                             },
+                            "name": "MyCellEditingPlugin2",
                             "designerId": "c753442f-0369-4b0c-ad03-8988f77907db"
                         },
                         {
@@ -1604,6 +1689,7 @@
                                 "localiserId": "importS3NameCol",
                                 "text": "Nom"
                             },
+                            "name": "MyColumn12",
                             "designerId": "0f9b2aab-58b9-4b0a-9415-c0c2d041f751",
                             "customConfigs": [
                                 {
@@ -1625,6 +1711,7 @@
                                 "localiserId": "transFieldCol",
                                 "text": "Translated field"
                             },
+                            "name": "MyColumn13",
                             "designerId": "e5f2f4e2-c103-417a-b874-830c1c9fd51c",
                             "customConfigs": [
                                 {
@@ -1650,6 +1737,7 @@
                                         "store": "LocalizedFieldSelectorStore",
                                         "valueField": "csvIndex"
                                     },
+                                    "name": "MyComboBox5",
                                     "designerId": "778cf649-1e4f-403e-98e9-b40a5ed057cf"
                                 },
                                 {
@@ -1678,6 +1766,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "eb1d2a3d-a79c-4777-b010-d6ca042cbb80"
                                 }
                             ]
@@ -1694,6 +1783,7 @@
                                 "localiserId": "transLanguageCol",
                                 "text": "Translation language"
                             },
+                            "name": "MyColumn14",
                             "designerId": "3fafc062-57c4-4358-95f9-cdec2aa8c346",
                             "customConfigs": [
                                 {
@@ -1719,6 +1809,7 @@
                                         "store": "ImportTranslationLanguageStore",
                                         "valueField": "locale"
                                     },
+                                    "name": "MyComboBox6",
                                     "designerId": "b4a5ad54-ea01-492b-8985-90d3bd4402ef"
                                 },
                                 {
@@ -1747,6 +1838,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "bedf707a-52aa-4309-99c2-201ac24003f8"
                                 }
                             ]
@@ -1768,6 +1860,7 @@
                         "store": "InportAsTaxoTranslationStore",
                         "title": "Taxonomy translations"
                     },
+                    "name": "MyGridPanel9",
                     "designerId": "8ac35ff5-f4bf-4b72-8a91-2f582678faa7",
                     "customConfigs": [
                         {
@@ -1787,6 +1880,7 @@
                             "userConfig": {
                                 "markDirty": false
                             },
+                            "name": "MyGridView8",
                             "designerId": "8fd1ec82-f022-4521-b98d-d006dbccd0ac"
                         },
                         {
@@ -1801,6 +1895,7 @@
                                 "localiserId": "importS3NameCol",
                                 "text": "Nom"
                             },
+                            "name": "MyColumn15",
                             "designerId": "d7d774cb-46b3-471f-99c9-35da48e71237",
                             "customConfigs": [
                                 {
@@ -1820,6 +1915,7 @@
                             "userConfig": {
                                 "clicksToEdit": 1
                             },
+                            "name": "MyCellEditingPlugin3",
                             "designerId": "6b4f5dd7-9943-467a-ba98-108a84d541f9"
                         },
                         {
@@ -1834,6 +1930,7 @@
                                 "localiserId": "transVocabCol",
                                 "text": "Translated vocabulary"
                             },
+                            "name": "MyColumn16",
                             "designerId": "0ccb0132-e1a6-4fbe-a9fa-505a5dc6183c",
                             "customConfigs": [
                                 {
@@ -1859,6 +1956,7 @@
                                         "store": "InportAsTaxoStore",
                                         "valueField": "csvIndex"
                                     },
+                                    "name": "MyComboBox7",
                                     "designerId": "cd03729a-3f3d-4dbd-b1ae-29f4b49f72ea"
                                 },
                                 {
@@ -1887,6 +1985,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "00ffba14-a105-48ff-a071-985d01411691"
                                 }
                             ]
@@ -1903,6 +2002,7 @@
                                 "localiserId": "transLanguageCol",
                                 "text": "Translation language"
                             },
+                            "name": "MyColumn17",
                             "designerId": "eb69090f-7e3e-4b2f-ba04-7b3969c4a1a2",
                             "customConfigs": [
                                 {
@@ -1928,6 +2028,7 @@
                                         "store": "ImportTranslationLanguageStore",
                                         "valueField": "locale"
                                     },
+                                    "name": "MyComboBox8",
                                     "designerId": "7a2a4dd2-7502-48da-bfc4-e2451505af65"
                                 },
                                 {
@@ -1956,6 +2057,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "renderer",
                                     "designerId": "6aa4e648-9c62-4763-90b3-da17a24cbb0a"
                                 }
                             ]
@@ -1974,6 +2076,7 @@
                         "fieldLabel": "Label",
                         "layout|flex": 1
                     },
+                    "name": "MyHiddenField1",
                     "designerId": "3de75f9e-e07d-4562-b632-48b419eea437",
                     "cn": [
                         {
@@ -2002,6 +2105,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "isValid",
                             "designerId": "31275bca-52e4-492a-8561-7a9f5cf646a6"
                         }
                     ]
@@ -2021,6 +2125,7 @@
                 "localiserId": "importFinalStage",
                 "title": "Finalisation  et import"
             },
+            "name": "MyForm2",
             "designerId": "5426ed1d-fc23-4c2d-8687-1143c5b1c7de",
             "customConfigs": [
                 {
@@ -2041,6 +2146,7 @@
                         "localiserId": "importS4Fielset1",
                         "title": "Paramètres du type de contenus"
                     },
+                    "name": "MyFieldSet",
                     "designerId": "f442fe0b-620b-4cc6-a130-f68b8b8ebec3",
                     "customConfigs": [
                         {
@@ -2065,6 +2171,7 @@
                                 "localiserId": "nameField",
                                 "name": "ContentTypeType"
                             },
+                            "name": "MyTextField4",
                             "designerId": "52972bc4-ab73-4224-a300-a639dedd7cc3",
                             "customConfigs": [
                                 {
@@ -2089,6 +2196,7 @@
                                 "name": "ContentTypeWorkspaces",
                                 "store": "ContributeWorkspacesCombo"
                             },
+                            "name": "workspacecombo",
                             "configAlternates": {
                                 "canSwitchStore": "boolean"
                             },
@@ -2118,6 +2226,7 @@
                                     "\"Aucun\""
                                 ]
                             },
+                            "name": "MyComboBox9",
                             "configAlternates": {
                                 "store": "array"
                             },
@@ -2143,6 +2252,7 @@
                         "localiserId": "importS4Fieldset2",
                         "title": "Paramètres des contenus"
                     },
+                    "name": "MyFieldSet1",
                     "designerId": "312d5ca5-684b-4e38-8d39-57fb31076ba0",
                     "customConfigs": [
                         {
@@ -2167,6 +2277,7 @@
                                 "name": "ContentsWriteWorkspace",
                                 "store": "ContributeWorkspacesCombo"
                             },
+                            "name": "workspacecombo1",
                             "designerId": "7db6a75a-b5c7-488d-8d88-a1807ea34193",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -2186,6 +2297,7 @@
                                 "name": "ContentsTarget",
                                 "store": "WorkspacesComboWithAll"
                             },
+                            "name": "workspacecombo2",
                             "designerId": "cb608ca9-372b-47f8-91b0-560c2b3bca68",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -2259,6 +2371,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onFieldsetRender",
                             "designerId": "943bbf88-3904-4336-a51a-f68230e08ba0"
                         }
                     ]
@@ -2277,6 +2390,7 @@
                         "scale": "large",
                         "text": "Importer"
                     },
+                    "name": "MyButton4",
                     "designerId": "a81a4d29-0f4f-4f01-8cb8-9fa980374f80",
                     "customConfigs": [
                         {
@@ -2333,6 +2447,7 @@
                 "name": "beforerender",
                 "scope": "me"
             },
+            "name": "onInportInterfaceBeforeRender",
             "designerId": "97b066b8-9612-4cf9-9c86-9ac87102a454"
         },
         {
@@ -2358,6 +2473,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onInportInterfaceBeforeClose",
             "designerId": "dadae1ce-0c2e-489a-9d9e-3b11f4628234"
         },
         {
@@ -2379,6 +2495,7 @@
                 "title": "Presets",
                 "width": 200
             },
+            "name": "MyPanel3",
             "designerId": "b28fc2c6-c2d5-4bfc-a7b3-b30c5863f809",
             "customConfigs": [
                 {
@@ -2400,6 +2517,7 @@
                         "padding": 6,
                         "title": "Use existing preset"
                     },
+                    "name": "MyFieldSet2",
                     "designerId": "54409847-0b3e-4439-9b8e-bbf63dadcc60",
                     "customConfigs": [
                         {
@@ -2428,6 +2546,7 @@
                                 "store": "ImportPresets",
                                 "valueField": "id"
                             },
+                            "name": "MyComboBox10",
                             "designerId": "411b19d4-0933-4c98-b94f-1e0e62054d51",
                             "customConfigs": [
                                 {
@@ -2456,6 +2575,7 @@
                                 "localiserId": "importPresetApplyBtn",
                                 "text": "Apply"
                             },
+                            "name": "MyButton5",
                             "designerId": "39787022-a986-44a3-8963-4a9a2febfaae",
                             "customConfigs": [
                                 {
@@ -2480,6 +2600,7 @@
                                 "margin": "6 0 0 0 ",
                                 "text": "Delete selected preset"
                             },
+                            "name": "MyButton6",
                             "designerId": "122ea143-1e80-402e-8657-f5aea094f8d8",
                             "customConfigs": [
                                 {
@@ -2503,6 +2624,7 @@
                         "padding": 6,
                         "title": "Save as new preset"
                     },
+                    "name": "MyFieldSet3",
                     "designerId": "3210e812-6f37-4a5a-99b8-e2dbcd9f9290",
                     "customConfigs": [
                         {
@@ -2530,6 +2652,7 @@
                                 "name": "name",
                                 "validateOnBlur": false
                             },
+                            "name": "MyTextField5",
                             "designerId": "f1abe28c-98ab-4392-8695-29fdd311c249",
                             "customConfigs": [
                                 {
@@ -2552,6 +2675,7 @@
                                 "localiserId": "importPresetSaveBtn",
                                 "text": "Save"
                             },
+                            "name": "MyButton7",
                             "designerId": "0c9931d4-e259-476c-982c-b207f4c56cae",
                             "customConfigs": [
                                 {

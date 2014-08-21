@@ -40,6 +40,7 @@
                 "store": "NotInportFieldsStore",
                 "title": ""
             },
+            "name": "MyGridPanel10",
             "designerId": "04f6732f-ee9e-4cb0-9479-fa3bddb897c0",
             "cn": [
                 {
@@ -53,6 +54,7 @@
                         "dataIndex": "name",
                         "text": "Detected fields"
                     },
+                    "name": "MyColumn18",
                     "designerId": "cd4f2f60-f850-4010-bd7b-77ec35f2502d"
                 },
                 {
@@ -65,6 +67,7 @@
                     "userConfig": {
                         "markDirty": false
                     },
+                    "name": "MyGridView9",
                     "designerId": "f54ad825-ab95-4b5f-8b96-8b5ca311785b"
                 }
             ]
@@ -83,6 +86,7 @@
                 "layout|flex": 3,
                 "title": "Field mapping"
             },
+            "name": "MyForm3",
             "designerId": "b8f72b1e-081e-4587-8c63-e661042be4b5",
             "cn": [
                 {
@@ -105,6 +109,7 @@
                         "store": "TCImportCombo",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox11",
                     "designerId": "c50b7ce9-42e7-4a87-868a-6db706a6052e"
                 },
                 {
@@ -127,6 +132,7 @@
                         "store": "NotInportFieldsStore",
                         "valueField": "csvIndex"
                     },
+                    "name": "MyComboBox12",
                     "designerId": "9b0695b0-dbb1-4dda-b03a-f9c247b07fab"
                 },
                 {
@@ -149,6 +155,7 @@
                         "store": "ImportKeyFieldStore",
                         "valueField": "name"
                     },
+                    "name": "MyComboBox13",
                     "designerId": "a2f065b1-166c-45e2-b869-a8a87fe079b4"
                 },
                 {
@@ -164,6 +171,7 @@
                         "layout|anchor": "100%",
                         "name": "isProduct"
                     },
+                    "name": "MyHiddenField2",
                     "designerId": "f5db4939-a093-4062-b975-bc8725d270d6",
                     "cn": [
                         {
@@ -179,6 +187,7 @@
                                     "return(this.value);"
                                 ]
                             },
+                            "name": "getValue",
                             "designerId": "1c38758d-a88d-4e78-8617-8896f97ba5cc"
                         },
                         {
@@ -194,6 +203,7 @@
                                     "return (this.value);"
                                 ]
                             },
+                            "name": "getSubmitValue",
                             "designerId": "d367e301-b363-46ef-a3e8-222caa97809b"
                         }
                     ]
@@ -209,6 +219,7 @@
                         "id": "importCTFFieldset",
                         "title": "Content fields indexes"
                     },
+                    "name": "MyFieldSet4",
                     "designerId": "5c75c470-514c-45cd-9e36-2c8f77c7ad3a"
                 },
                 {
@@ -223,6 +234,7 @@
                         "id": "importTaxoFieldset",
                         "title": "Taxonomy fields indexes"
                     },
+                    "name": "MyFieldSet5",
                     "designerId": "b5d8ea91-55af-4f28-84b5-65c12421b9dc"
                 },
                 {
@@ -235,6 +247,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar",
                     "designerId": "e56d3129-f1dd-495d-a448-fd8a812ee129",
                     "cn": [
                         {
@@ -247,6 +260,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill",
                             "designerId": "87f22208-94b2-4119-adb1-a09dee8c3290"
                         },
                         {
@@ -261,6 +275,7 @@
                                 "layout|flex": null,
                                 "text": "Launch update"
                             },
+                            "name": "MyButton8",
                             "designerId": "1eb9ccd6-81a7-474f-a1bc-9936ba201a23"
                         }
                     ]

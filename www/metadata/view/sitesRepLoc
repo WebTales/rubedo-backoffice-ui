@@ -25,6 +25,7 @@
                 "localiserId": "siteFieldSet",
                 "title": "Site"
             },
+            "name": "MyFieldSet39",
             "designerId": "e5a76d14-2cc3-417d-afba-a4e32ae00a10",
             "customConfigs": [
                 {
@@ -48,6 +49,7 @@
                         "localiserId": "siteDefaultTitleField",
                         "name": "title"
                     },
+                    "name": "MyTextField115",
                     "designerId": "b8cae291-94d2-425c-bae3-d2e8b5bf84a6",
                     "customConfigs": [
                         {
@@ -72,6 +74,7 @@
                         "maxLength": 250,
                         "name": "description"
                     },
+                    "name": "MyTextArea14",
                     "designerId": "300bc45c-1779-4446-ad4b-d4dea20cee12",
                     "customConfigs": [
                         {
@@ -98,6 +101,7 @@
                             "\"Powered by Rubedo\""
                         ]
                     },
+                    "name": "MyTextField116",
                     "designerId": "b7678331-663a-445d-af46-0779d963f8ee",
                     "customConfigs": [
                         {
@@ -136,6 +140,7 @@
                         "name": "added",
                         "scope": "me"
                     },
+                    "name": "onFieldsetAdded",
                     "designerId": "786064b3-69a1-44e0-8b6f-ce5cedfef21b"
                 }
             ]
