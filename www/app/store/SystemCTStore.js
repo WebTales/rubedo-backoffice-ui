@@ -36,7 +36,7 @@ Ext.define('Rubedo.store.SystemCTStore', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'content-types',
+                    read: 'content-types'
                     
                 },
                 reader: {
