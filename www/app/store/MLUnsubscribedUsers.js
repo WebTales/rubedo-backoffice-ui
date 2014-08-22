@@ -34,7 +34,7 @@ Ext.define('Rubedo.store.MLUnsubscribedUsers', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'mailing-lists/get-unsubscribed-users',
+                    read: 'mailing-lists/get-unsubscribed-users'
                     
                 },
                 reader: {

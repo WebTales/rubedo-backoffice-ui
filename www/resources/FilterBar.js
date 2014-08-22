@@ -714,7 +714,7 @@ Ext.define('Ext.ux.grid.FilterBar', {
         if (grid.id=="ContenusGrid") {
             me.filterArray.push(Ext.create('Ext.util.Filter', {
 					property: "typeId",
-					value: Ext.getCmp("TypesContenusGrid").getSelectionModel().getLastSelected().get("id"),
+					value: Ext.getCmp("TypesContenusGrid").getSelectionModel().getLastSelected().get("id")
 				}));            
             }
 		if(me.filterArray.length > 0) {

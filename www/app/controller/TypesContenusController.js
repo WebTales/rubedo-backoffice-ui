@@ -192,7 +192,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 text: 'Price',
                 flex:1,
                 editor:{
-                    xtype:"numberfield",
+                    xtype:"numberfield"
                 }
             });
             variatorColumns.push({
