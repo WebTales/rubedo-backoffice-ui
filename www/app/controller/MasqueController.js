@@ -714,6 +714,20 @@ Ext.define('Rubedo.controller.MasqueController', {
             margin:"10 0 10 0",
             checked:component.pageProperties.showInDiv
         }));*/
+            configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
+            fieldLabel:"Custom template",
+            onChange:function(){
+
+                component.pageProperties.customTemplate=this.getValue();
+
+            },
+            labelWidth:60,
+            anchor:"100%",
+            margin:"10 0 10 0",
+                twigMode:false,
+                defaultTemplateUrl:"defaultPageBody.html",
+            value:component.pageProperties.customTemplate
+        }));
 
         propEdit.add(configSpec);
 
