@@ -61,7 +61,7 @@ Ext.define('Rubedo.view.ACEField', {
             myEditor.twigMode=component.twigMode;
             if (component.defaultTemplateUrl){
                 Ext.Ajax.request({
-                    url: '/components/webtales/rubedo-frontoffice/templates/blocks/'+component.defaultTemplateUrl,
+                    url: '/components/webtales/rubedo-frontoffice/templates/'+component.defaultTemplateUrl,
                     params: {
                     },
                     success: function(response){
