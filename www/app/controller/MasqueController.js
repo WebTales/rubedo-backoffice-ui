@@ -672,11 +672,34 @@ Ext.define('Rubedo.controller.MasqueController', {
                         minValue:1
                     });
 
+                    var stackThreshold=Ext.widget('combobox',{
+                        itemId:"stackThreshold",
+                        fieldLabel:"Stacking threshold",
+                        labelWidth:60,
+                        editable:false,
+                        forceSelect:true,
+                        anchor:"100%",
+                        value:component.stackThreshold ? component.stackThreshold : "xs",
+                        onChange:function(){
+
+                            component.stackThreshold=this.getValue();
+
+                        },
+                        queryMode:"local",
+                        store:[
+                            ["xs","Phone"],
+                            ["sm","Tablet"],
+                            ["md","Desktop"],
+                            ["lg","Large desktop"]
+                        ]
+                    });
+
 
 
                     configSpec.getComponent(0).add(offsetEdit);
                     configSpec.getComponent(0).add(spanEdit);
                     me.applyConstrain(component,offsetEdit,spanEdit,false);
+                    configSpec.getComponent(0).add(stackThreshold);
                     offsetEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
                     spanEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
 
@@ -1651,6 +1674,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     responsive:column.responsive,
                     classHTML:column.classHTML,
                     displayTitle:column.displayTitle,
+                    stackThreshold:column.stackThreshold,
                     idHTML:column.idHTML,
                     margin:4,
                     layout: {
@@ -1738,6 +1762,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     renderSpan:col.renderSpan,
                     displayTitle:col.displayTitle,
                     span:col.flex,
+                    stackThreshold:col.stackThreshold,
                     id:col.id,
                     i18n:col.i18n,
                     mType:"col",
