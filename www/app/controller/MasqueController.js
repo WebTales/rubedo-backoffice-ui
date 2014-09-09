@@ -701,7 +701,7 @@ Ext.define('Rubedo.controller.MasqueController', {
         propEdit.setIconCls('editZone');
         propEdit.removeAll();
         var configSpec = Ext.widget('ConfigSpecBloc');
-        configSpec.getComponent(1).add(Ext.widget('checkbox',{
+        /*configSpec.getComponent(1).add(Ext.widget('checkbox',{
             fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayInADivText,
             onChange:function(){
 
@@ -713,33 +713,8 @@ Ext.define('Rubedo.controller.MasqueController', {
             anchor:"100%",
             margin:"10 0 10 0",
             checked:component.pageProperties.showInDiv
-        }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.divIdText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.pageProperties.divId=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.pageProperties.divId
-        }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.divClassText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.pageProperties.divClass=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.pageProperties.divClass
-        }));
+        }));*/
+
         propEdit.add(configSpec);
 
 
