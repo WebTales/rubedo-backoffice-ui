@@ -318,9 +318,6 @@ Ext.define('Rubedo.controller.PagesController', {
             "largeDeskTop":true
         };
         nouvBloc.canEdit=true;
-        nouvBloc.elementStyle="";
-        nouvBloc.elementTag="div";
-        nouvBloc.renderDiv=true;
         nouvBloc.flex=1;
 
         var target = Ext.getCmp(Ext.getCmp('pageElementIdField').getValue());
@@ -456,102 +453,6 @@ Ext.define('Rubedo.controller.PagesController', {
                 languagesPicker.hide();
             }
             configSpec.getComponent(0).add(languagesPicker);
-
-
-
-
-
-            configSpec.getComponent(1).add(Ext.widget('textfield',{
-                itemId:"eClassHTMLField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
-                onChange:function(){
-                    if (this.isValid()){
-                        component.classHTML=this.getValue();
-                    }
-                },
-                labelWidth:60,
-                allowBlank:true,
-                anchor:"100%",
-                margin:"10 0 0 0",
-                value:component.classHTML
-            }));
-
-
-
-            configSpec.getComponent(1).add(Ext.widget('textfield',{
-                itemId:"eidHTMLField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLIdText,
-                onChange:function(){
-                    if (this.isValid()){
-                        component.idHTML=this.getValue();
-                    }
-                },
-                labelWidth:60,
-                allowBlank:true,
-                anchor:"100%",
-                margin:"10 0 0 0",
-                value:component.idHTML
-            }));
-
-            configSpec.getComponent(1).add(Ext.widget('textfield',{
-                itemId:"urlPrefixHTMLField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.URLPrefixText,
-                onChange:function(){
-                    if (this.isValid()){
-                        component.urlPrefix=this.getValue();
-                    }
-                },
-                labelWidth:60,
-                regex :new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
-                allowBlank:true,
-                anchor:"100%",
-                margin:"10 0 0 0",
-                value:component.urlPrefix
-            }));
-            configSpec.getComponent(1).add(Ext.widget('textfield',{
-                itemId:"eStyleField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
-                onChange:function(){
-                    if (this.isValid()){
-                        component.elementStyle=this.getValue();
-                    }
-                },
-                labelWidth:60,
-                allowBlank:true,
-                anchor:"100%",
-                margin:"10 0 0 0",
-                value:component.elementStyle
-            }));
-            configSpec.getComponent(1).add(Ext.widget('combobox',{
-                itemId:"eTagField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.tagText,
-                queryMode:"local",
-                store:["div","span","header","section","footer","aside"],
-                onChange:function(){
-                    if (this.isValid()){
-                        component.elementTag=this.getValue();
-                    }
-                },
-                labelWidth:60,
-                allowBlank:true,
-                anchor:"100%",
-                margin:"10 0 0 0",
-                value:component.elementTag
-            }));
-            configSpec.getComponent(1).add(Ext.widget('checkbox',{
-                itemId:"eRenderDivField",
-                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayInADivText,
-                onChange:function(){
-
-                    component.renderDiv=this.getValue();
-
-                },
-                labelWidth:60,
-                inputValue:true,
-                anchor:"100%",
-                margin:"10 0 10 0",
-                checked:component.renderDiv
-            }));
 
             if (Ext.isEmpty(component.bType)){
                 var categories = Ext.clone(component.champsConfig.simple);
@@ -1084,14 +985,8 @@ Ext.define('Rubedo.controller.PagesController', {
                     orderValue:nBloc.orderValue,
                     title:nBloc.title,
                     localeFilters:myLocaleFilters,
-                    elementStyle:nBloc.elementStyle,
-                    elementTag:nBloc.elementTag,
-                    renderDiv:nBloc.renderDiv,
                     responsive:nBloc.responsive,
-                    classHTML:nBloc.classHTML,
                     displayTitle:nBloc.displayTitle,
-                    idHTML:nBloc.idHTML,
-                    urlPrefix:nBloc.urlPrefix,
                     flex:nBloc.flex,
                     canEdit:nBloc.canEdit,
                     checksum:nBloc.checksum

@@ -325,20 +325,6 @@ Ext.define('Rubedo.controller.MasqueController', {
                 var configSpec = Ext.widget('ConfigSpecBloc');
 
 
-                /*configSpec.getComponent(0).add(Ext.widget('textfield',{
-            itemId:"eTitleField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
-            onChange:function(){
-            if (this.isValid()){
-            component.eTitle=this.getValue();
-            }
-            },
-            labelWidth:60,
-            allowBlank:false,
-            anchor:"100%",
-            margin:"10 0 10 0",
-            value:component.eTitle
-            }));*/
                 configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                     fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
                     labelWidth:60,
@@ -380,71 +366,6 @@ Ext.define('Rubedo.controller.MasqueController', {
 
                 }));
 
-
-
-
-
-
-
-                configSpec.getComponent(1).add(Ext.widget('textfield',{
-                    itemId:"eClassHTMLField",
-                    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
-                    onChange:function(){
-                        if (this.isValid()){
-                            component.classHTML=this.getValue();
-                        }
-                    },
-                    labelWidth:60,
-                    allowBlank:true,
-                    anchor:"100%",
-                    margin:"10 0 0 0",
-                    value:component.classHTML
-                }));
-
-                configSpec.getComponent(1).add(Ext.widget('textfield',{
-                    itemId:"eidHTMLField",
-                    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLIdText,
-                    onChange:function(){
-                        if (this.isValid()){
-                            component.idHTML=this.getValue();
-                        }
-                    },
-                    labelWidth:60,
-                    allowBlank:true,
-                    anchor:"100%",
-                    margin:"10 0 0 0",
-                    value:component.idHTML
-                }));
-                configSpec.getComponent(1).add(Ext.widget('textfield',{
-                    itemId:"eStyleField",
-                    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
-                    onChange:function(){
-                        if (this.isValid()){
-                            component.elementStyle=this.getValue();
-                        }
-                    },
-                    labelWidth:60,
-                    allowBlank:true,
-                    anchor:"100%",
-                    margin:"10 0 0 0",
-                    value:component.elementStyle
-                }));
-                configSpec.getComponent(1).add(Ext.widget('combobox',{
-                    itemId:"eTagField",
-                    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.tagText,
-                    queryMode:"local",
-                    store:["div","span","header","section","footer","aside"],
-                    onChange:function(){
-                        if (this.isValid()){
-                            component.elementTag=this.getValue();
-                        }
-                    },
-                    labelWidth:60,
-                    allowBlank:true,
-                    anchor:"100%",
-                    margin:"10 0 0 0",
-                    value:component.elementTag
-                }));
                 if (component.mType=="row"){
                     Ext.getCmp("moveElementUp").enable();
                     Ext.getCmp("moveElementDown").enable();
@@ -455,145 +376,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                     } else {
                         Ext.getCmp('newCol').enable();
                     }
-                    configSpec.getComponent(0).insert(2,Ext.widget('checkbox',{
-                        itemId:"eTabField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayAsTabsText,
-                        onChange:function(){
 
-                            component.displayAsTab=this.getValue();
 
-                        },
-                        labelWidth:60,
-                        inputValue:true,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        checked:component.displayAsTab
-                    }));
-                    configSpec.getComponent(1).add(Ext.widget('checkbox',{
-                        itemId:"eDisplayRowField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayRowTagText,
-                        onChange:function(){
-
-                            component.displayRow=this.getValue();
-
-                        },
-                        labelWidth:60,
-                        inputValue:true,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        checked:component.displayRow
-                    }));
-                    configSpec.getComponent(1).add(Ext.widget('checkbox',{
-                        itemId:"eDisplayRowFluidField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayRowFluidTagText,
-                        onChange:function(){
-
-                            component.displayRowFluid=this.getValue();
-
-                        },
-                        labelWidth:60,
-                        inputValue:true,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        checked:component.displayRowFluid
-                    }));
-                    configSpec.getComponent(1).add(Ext.widget('checkbox',{
-                        itemId:"eIncludeContainerField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.includeInAContainerText,
-                        onChange:function(){
-
-                            component.includeContainer=this.getValue();
-
-                        },
-                        labelWidth:60,
-                        inputValue:true,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        checked:component.includeContainer
-                    }));
-                    configSpec.getComponent(1).add(Ext.widget('checkbox',{
-                        itemId:"eIncludeContainerFluidField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.includeInAContainerFluidText,
-                        onChange:function(){
-
-                            component.includeContainerFluid=this.getValue();
-
-                        },
-                        labelWidth:60,
-                        inputValue:true,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        checked:component.includeContainerFluid
-                    }));
-                    configSpec.getComponent(1).add(Ext.widget('textfield',{
-                        itemId:"eContainerIdHTMLField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.containerIdText,
-                        onChange:function(){
-                            if (this.isValid()){
-                                component.containerId=this.getValue();
-                            }
-                        },
-                        labelWidth:60,
-                        allowBlank:true,
-                        anchor:"100%",
-                        margin:"10 0 0 0",
-                        value:component.containerId
-                    }));
-                    configSpec.getComponent(1).add(Ext.widget('textfield',{
-                        itemId:"eConainerStyleField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.containerClassText,
-                        onChange:function(){
-                            if (this.isValid()){
-                                component.containerClass=this.getValue();
-                            }
-                        },
-                        labelWidth:60,
-                        allowBlank:true,
-                        anchor:"100%",
-                        margin:"10 0 0 0",
-                        value:component.containerClass
-                    }));
-                    /*configSpec.getComponent(0).add(Ext.widget('button',{
-                itemId:"rowAutoHeight",
-                text:"Hauteur automatique",
-                anchor:"100%",
-                tooltip:"La hauteur s'adapte au contenu lors du rendu final",
-                hidden:true,
-                handler:function(){
-                abstractcomponent.setHeight(null);
-                abstractcomponent.flex=1;
-                abstractcomponent.up().doLayout();
-                configSpec.getComponent(0).getComponent("rowHeightFixed").setValue();
-                this.hide();
-                }
-                }));
-                if (!Ext.isEmpty(abstractcomponent.height)){configSpec.getComponent(0).getComponent("rowAutoHeight").show();}
-                configSpec.getComponent(0).add(Ext.widget('numberfield',{
-                itemId:"rowHeightFixed",
-                fieldLabel:"Hauteur fixe ",
-                labelWidth:60,
-                allowDecimals:false,
-                allowBlank:false,
-                minValue:20,
-                anchor:"60%",
-                margin:"10 0 0 0",
-                style:"{float:left;}",
-                value:abstractcomponent.height
-                }));
-                configSpec.getComponent(0).add(Ext.widget('button',{
-                text:"Appliquer",
-                anchor:"38%",
-                margin:"10 0 0 0",
-                style:"{float:right;}",
-                handler:function(){
-                if (configSpec.getComponent(0).getComponent("rowHeightFixed").isValid()){
-                abstractcomponent.flex=null;
-                abstractcomponent.setHeight(configSpec.getComponent(0).getComponent("rowHeightFixed").getValue());
-                abstractcomponent.up().doLayout();
-                configSpec.getComponent(0).getComponent("rowAutoHeight").show();
-                }}
-                }));
-                */
 
 
                 }
@@ -631,20 +415,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         margin:"10 0 10 0",
                         checked:(component.getId()==Ext.getCmp("mainColumnIdField").getValue())
                     }));
-                    configSpec.getComponent(1).add(Ext.widget('checkbox',{
-                        itemId:"eRenderSpanField",
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.showSpanAndOffsetText,
-                        onChange:function(){
 
-                            component.renderSpan=this.getValue();
-
-                        },
-                        labelWidth:60,
-                        inputValue:true,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        checked:component.renderSpan
-                    }));
 
                     var offsetEdit=Ext.widget('numberfield',{
                         itemId:"offsetEditor",
@@ -766,9 +537,6 @@ Ext.define('Rubedo.controller.MasqueController', {
                     var newCol=Ext.widget('panel', {
                         header:false,
                         flex:1,
-                        renderSpan:true,
-                        elementTag:"div",
-                        elementStyle:"",
                         final:isFinalCol,
                         plugins:[Ext.create("Ext.ux.BoxReorderer")],
                         id:servedId,
@@ -780,6 +548,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             largeDesktop:true
                         },
                         mType:'col',
+                        stackThreshold:"xs",
                         margin:4,
                         layout: {
                             type: 'vbox',
@@ -816,13 +585,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             header:false,
             mType:"row",
             flex:1,
-            elementTag:"div",
-            elementStyle:"",
-            displayRow:true,
-            displayRowFluid:false,
             plugins:[Ext.create("Ext.ux.BoxReorderer")],
-            includeContainer:false,
-            includeContainerFluid:false,
             eTitle:Rubedo.RubedoAutomatedElementsLoc.titleText,
             responsive:{
                 phone:true,
@@ -891,9 +654,6 @@ Ext.define('Rubedo.controller.MasqueController', {
             "desktop":true,
             "largeDesktop":true
         };
-        nouvBloc.elementStyle="";
-        nouvBloc.elementTag="div";
-        nouvBloc.renderDiv=true;
         nouvBloc.flex=1;
 
         var target = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
@@ -1115,100 +875,6 @@ Ext.define('Rubedo.controller.MasqueController', {
         }
         configSpec.getComponent(0).add(languagesPicker);
 
-
-
-
-
-
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eClassHTMLField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.classHTML=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.classHTML
-        }));
-
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eidHTMLField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLIdText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.idHTML=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.idHTML
-        }));
-
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"urlPrefixHTMLField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.URLPrefixText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.urlPrefix=this.getValue();
-                }
-            },
-            labelWidth:60,
-            regex :new RegExp(/^([a-z]|[1-9]|[-]){0,}$/),
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.urlPrefix
-        }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eStyleField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.elementStyle=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.elementStyle
-        }));
-        configSpec.getComponent(1).add(Ext.widget('combobox',{
-            itemId:"eTagField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.tagText,
-            queryMode:"local",
-            store:["div","span","header","section","footer","aside"],
-            onChange:function(){
-                if (this.isValid()){
-                    component.elementTag=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.elementTag
-        }));
-        configSpec.getComponent(1).add(Ext.widget('checkbox',{
-            itemId:"eRenderDivField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayInADivText,
-            onChange:function(){
-
-                component.renderDiv=this.getValue();
-
-            },
-            labelWidth:60,
-            inputValue:true,
-            anchor:"100%",
-            margin:"10 0 10 0",
-            checked:component.renderDiv
-        }));
         if (Ext.isEmpty(component.bType)){
             var categories = Ext.clone(component.champsConfig.simple);
             var categoriesADV = Ext.clone(component.champsConfig.avance);
@@ -1627,18 +1293,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 id:row.id,
                 i18n:row.i18n,
                 plugins:[Ext.create("Ext.ux.BoxReorderer")],
-                elementStyle:row.elementStyle,
-                elementTag:row.elementTag,
-                displayRow:row.displayRow,
-                containerId:row.containerId,
-                containerClass:row.containerClass,
-                displayRowFluid:row.displayRowFluid,
-                includeContainer:row.includeContainer,
-                includeContainerFluid:row.includeContainerFluid,
-                displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
-                classHTML:row.classHTML,
-                idHTML:row.idHTML,
                 displayTitle:row.displayTitle,
                 margin:4,
                 layout: {
@@ -1667,15 +1322,10 @@ Ext.define('Rubedo.controller.MasqueController', {
                     mType:'col',
                     id:column.id,
                     i18n:column.i18n,
-                    elementStyle:column.elementStyle,
-                    elementTag:column.elementTag,
-                    renderSpan:column.renderSpan,
                     eTitle:column.eTitle,
                     responsive:column.responsive,
-                    classHTML:column.classHTML,
                     displayTitle:column.displayTitle,
                     stackThreshold:column.stackThreshold,
-                    idHTML:column.idHTML,
                     margin:4,
                     layout: {
                         type: 'vbox',
@@ -1699,11 +1349,8 @@ Ext.define('Rubedo.controller.MasqueController', {
                 itemId:"eol",
                 reorderable:false
             }));
-            if (Ext.isEmpty(row.height)) {
                 newRow.flex=rFlex;
-            } else {
-                newRow.height=row.height;
-            }
+
             cible.add(newRow);
         });
     },
@@ -1755,11 +1402,6 @@ Ext.define('Rubedo.controller.MasqueController', {
                 newCols.push({
                     eTitle:col.eTitle,
                     responsive:col.responsive,
-                    classHTML:col.classHTML,
-                    idHTML:col.idHTML,
-                    elementStyle:col.elementStyle,
-                    elementTag:col.elementTag,
-                    renderSpan:col.renderSpan,
                     displayTitle:col.displayTitle,
                     span:col.flex,
                     stackThreshold:col.stackThreshold,
@@ -1776,24 +1418,12 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             });
             nRows.push({
-                height:row.height,
                 eTitle:row.eTitle,
                 id:row.id,
                 i18n:row.i18n,
-                elementStyle:row.elementStyle,
-                elementTag:row.elementTag,
-                displayRow:row.displayRow,
-                displayRowFluid:row.displayRowFluid,
-                includeContainer:row.includeContainer,
-                includeContainerFluid:row.includeContainerFluid,
                 mType:"row",
-                displayAsTab:row.displayAsTab,
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
-                containerId:row.containerId,
-                containerClass:row.containerClass,
-                classHTML:row.classHTML,
-                idHTML:row.idHTML,
                 columns: newCols
 
             });
@@ -1823,15 +1453,9 @@ Ext.define('Rubedo.controller.MasqueController', {
                 champsConfig:nBloc.champsConfig,
                 orderValue:nBloc.orderValue,
                 configBloc:nBloc.configBloc,
-                elementStyle:nBloc.elementStyle,
-                elementTag:nBloc.elementTag,
-                renderDiv:nBloc.renderDiv,
                 title:nBloc.title,
                 responsive:nBloc.responsive,
-                classHTML:nBloc.classHTML,
                 displayTitle:nBloc.displayTitle,
-                idHTML:nBloc.idHTML,
-                urlPrefix:nBloc.urlPrefix,
                 flex:nBloc.flex,
                 checksum:nBloc.checksum
 
