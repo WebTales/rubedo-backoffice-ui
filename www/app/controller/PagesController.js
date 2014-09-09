@@ -314,7 +314,8 @@ Ext.define('Rubedo.controller.PagesController', {
         nouvBloc.responsive={
             "phone":true,
             "tablet":true,
-            "desktop":true
+            "desktop":true,
+            "largeDeskTop":true
         };
         nouvBloc.canEdit=true;
         nouvBloc.elementStyle="";
@@ -410,7 +411,9 @@ Ext.define('Rubedo.controller.PagesController', {
                 items: [
                 { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
                 { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText,checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
-                { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText,checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+                { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText,checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}},
+                                            { boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+
                 ]
 
             }));
