@@ -377,7 +377,20 @@ Ext.define('Rubedo.controller.MasqueController', {
                         Ext.getCmp('newCol').enable();
                     }
 
+                    configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
+                        fieldLabel:"Custom template",
+                        onChange:function(){
 
+                            component.customTemplate=this.getValue();
+
+                        },
+                        labelWidth:60,
+                        anchor:"100%",
+                        margin:"10 0 10 0",
+                        twigMode:false,
+                        defaultTemplateUrl:"row.html",
+                        value:component.customTemplate
+                    }));
 
 
                 }
@@ -464,6 +477,21 @@ Ext.define('Rubedo.controller.MasqueController', {
                             ["lg","Large desktop"]
                         ]
                     });
+
+                    configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
+                        fieldLabel:"Custom template",
+                        onChange:function(){
+
+                            component.customTemplate=this.getValue();
+
+                        },
+                        labelWidth:60,
+                        anchor:"100%",
+                        margin:"10 0 10 0",
+                        twigMode:false,
+                        defaultTemplateUrl:"column.html",
+                        value:component.customTemplate
+                    }));
 
 
 
@@ -1284,6 +1312,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 plugins:[Ext.create("Ext.ux.BoxReorderer")],
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
+                customTemplate:row.customTemplate,
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -1315,6 +1344,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     responsive:column.responsive,
                     displayTitle:column.displayTitle,
                     stackThreshold:column.stackThreshold,
+                    customTemplate:column.customTemplate,
                     margin:4,
                     layout: {
                         type: 'vbox',
@@ -1394,6 +1424,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     displayTitle:col.displayTitle,
                     span:col.flex,
                     stackThreshold:col.stackThreshold,
+                    customTemplate:col.customTemplate,
                     id:col.id,
                     i18n:col.i18n,
                     mType:"col",
@@ -1410,6 +1441,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 eTitle:row.eTitle,
                 id:row.id,
                 i18n:row.i18n,
+                customTemplate:row.customTemplate,
                 mType:"row",
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
