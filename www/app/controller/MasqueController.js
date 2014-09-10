@@ -468,7 +468,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         editable:false,
                         forceSelect:true,
                         anchor:"100%",
-                        value:component.stackThreshold ? component.stackThreshold : "xs",
+                        value:component.stackThreshold ? component.stackThreshold : "sm",
                         onChange:function(){
 
                             component.stackThreshold=this.getValue();
@@ -476,10 +476,10 @@ Ext.define('Rubedo.controller.MasqueController', {
                         },
                         queryMode:"local",
                         store:[
-                            ["xs","Phone"],
-                            ["sm","Tablet"],
-                            ["md","Desktop"],
-                            ["lg","Large desktop"]
+                            ["xs","Never"],
+                            ["sm","Phone"],
+                            ["md","Tablet"],
+                            ["lg","Desktop"]
                         ]
                     });
 
