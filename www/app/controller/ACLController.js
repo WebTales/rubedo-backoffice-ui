@@ -162,36 +162,43 @@ Ext.define('Rubedo.controller.ACLController', {
     },
 
     checkSessionStatus: function() {
-        Ext.Ajax.request({
-            url:'xhr-authentication/is-session-expiring',
+        var accessToken=Ext.util.Cookies.get("accessToken");
+        var refreshToken=Ext.util.Cookies.get("refreshToken");
+        if (!accessToken&&!refreshToken){
+            if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
+                        Ext.widget("sessionExpiredWindow").show();
+                    }
+            clearInterval(ACL.sessionCheckIterator);
+        } else if (!accessToken&&refreshToken){
+            Ext.Ajax.request({
+            url:'/api/v1/auth/oauth2/refresh',
             params:{
-
+                "refresh_token":refreshToken
             },
             success:function(response){
-                var currentStatus=Ext.JSON.decode(response.responseText);
-                if (currentStatus.status) {
-                    if ((currentStatus.time<=300)&&(Ext.isEmpty(Ext.getCmp("sessionWarningWindow")))){
-                        Ext.widget("sessionWarningWindow").show();
-                    } else if ((currentStatus.time<=300)&&(!Ext.isEmpty(Ext.getCmp("sessionWarningWindow")))){
-
-                    }else if (!Ext.isEmpty(Ext.getCmp("sessionWarningWindow"))){
-                        Ext.getCmp("sessionWarningWindow").close();
-                    }
+                var decodedResponse=Ext.JSON.decode(response.responseText);
+                if (decodedResponse.success) {
+                    var expirationDate=decodedResponse.token.createTime+decodedResponse.token.lifetime;
+                    expirationDate=new Date(expirationDate*1000);
+                    Ext.util.Cookies.set("accessToken",decodedResponse.token.access_token,expirationDate);
+                    Ext.util.Cookies.set("refreshToken",decodedResponse.token.refresh_token);
                 } else {
-                    if (!Ext.isEmpty(Ext.getCmp("sessionWarningWindow"))){
-                        Ext.getCmp("sessionWarningWindow").close();
-                    }
                     if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
                         Ext.widget("sessionExpiredWindow").show();
                     }
+                    clearInterval(ACL.sessionCheckIterator);
 
                 }
             },
             failure:function(){
-                console.log("sesson status recover error");
+                if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
+                        Ext.widget("sessionExpiredWindow").show();
+                    }
                 clearInterval(ACL.sessionCheckIterator);
             }
         });
+        }
+
     }
 
 });
