@@ -100,7 +100,11 @@ Ext.define('Rubedo.controller.MasqueController', {
         if (!Ext.isEmpty(prevSelected)) {
         prevSelected.removeBodyCls('selectedelement');
         }
-        this.getMasqueEdition().pageProperties=Ext.clone(record.get("pageProperties"));
+        var newPageProperties=Ext.clone(record.get("pageProperties"));
+        if (Ext.isEmpty(newPageProperties)){
+            newPageProperties={ };
+        }
+        this.getMasqueEdition().pageProperties=newPageProperties;
         Ext.suspendLayouts();
         this.getMasqueEdition().removeAll();
         this.masqueRestit(Ext.clone(masque.rows),1,this.getMasqueEdition());
