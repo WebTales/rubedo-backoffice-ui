@@ -301,6 +301,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 e.stopEvent();
             });
             component.getEl().on("click", function(e){
+                e.stopEvent();
                 var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
                 if (!Ext.isEmpty(prevSelected)) {
                     if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
@@ -512,7 +513,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
                     Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
                 }
-                e.stopEvent();
+
             });}
     },
 
@@ -782,6 +783,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             e.stopEvent();
         });
         component.getEl().on("click", function(e){
+            e.stopEvent();
             var prevSelected = Ext.getCmp(Ext.getCmp('elementIdField').getValue());
             if (!Ext.isEmpty(prevSelected)) {
                 if (prevSelected.isXType("unBloc")) {prevSelected.setIconCls();} else {
@@ -1025,7 +1027,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 Ext.Array.forEach(Ext.getCmp("elementEditControl").query("field"), function(truc){truc.setReadOnly(true);});
                 Ext.Array.forEach(Ext.getCmp("elementEditControl").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
             }
-            e.stopEvent();
+
 
         });
     },
