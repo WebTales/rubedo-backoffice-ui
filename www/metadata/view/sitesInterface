@@ -1415,6 +1415,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "forceFit": true,
+                                        "id": "siteExternalStylesGrid",
                                         "layout|flex": 1,
                                         "store": "SiteExternalStyles",
                                         "title": "External styles"
@@ -1441,10 +1442,125 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "url",
+                                                "id": null,
                                                 "text": "Url"
                                             },
                                             "name": "MyColumn4",
                                             "designerId": "e3a09929-155b-4575-839c-7fdb78f5a926"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top"
+                                            },
+                                            "name": "MyToolbar",
+                                            "designerId": "3ff76b56-34fe-4641-b1e9-484b61cacaae",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "iconCls": "add",
+                                                        "layout|flex": null,
+                                                        "text": "Add"
+                                                    },
+                                                    "name": "MyButton",
+                                                    "designerId": "ad02abac-ff7c-4bfe-befd-78f1e9d87a92",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "var insertorWindow=Ext.widget(\"ExternalResourceAddWindow\");",
+                                                                    "insertorWindow.targetStore=Ext.getStore(\"SiteExternalStyles\");"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "d5ba98b0-c015-420d-a5c1-2ce6fe1e535e"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "disabled": true,
+                                                        "iconCls": "close",
+                                                        "layout|flex": null,
+                                                        "text": "Remove"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "c2d0d0b5-8a0a-4bc8-9362-83fe7775b1b6",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "e04b0945-76c6-45e5-8361-5bbf12591a35"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSiteExternalStylesGridSelectionChange",
+                                                "implHandler": [
+                                                    "var button=Ext.getCmp(\"siteExternalStylesGrid\").getDockedComponent(2).getComponent(1);",
+                                                    "if (Ext.isEmpty(selected)){",
+                                                    "    button.disable();",
+                                                    "} else {",
+                                                    "    button.enable();",
+                                                    "}"
+                                                ],
+                                                "name": "selectionchange",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSiteExternalStylesGridSelectionChange",
+                                            "designerId": "e66d5aa6-034f-4354-a0bf-d891eeeb3a66"
                                         }
                                     ]
                                 },
@@ -1457,6 +1573,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "forceFit": true,
+                                        "id": "siteExternalScriptsGrid",
                                         "layout|flex": 1,
                                         "store": "SiteExternalScripts",
                                         "title": "External scripts"
@@ -1516,6 +1633,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "forceFit": true,
+                                        "id": "siteInternalStylesGrid",
                                         "layout|flex": 1,
                                         "store": "SiteInternalStyles",
                                         "title": "Internal styles"
@@ -1558,6 +1676,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "forceFit": true,
+                                        "id": "siteInternalScriptsGrid",
                                         "layout|flex": 1,
                                         "store": "SiteInternalScripts",
                                         "title": "Internal scripts"

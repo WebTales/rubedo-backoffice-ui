@@ -544,6 +544,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            id: 'siteExternalStylesGrid',
                                             title: 'External styles',
                                             forceFit: true,
                                             store: 'SiteExternalStyles',
@@ -553,11 +554,44 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     dataIndex: 'url',
                                                     text: 'Url'
                                                 }
-                                            ]
+                                            ],
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'toolbar',
+                                                    dock: 'top',
+                                                    items: [
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                var insertorWindow=Ext.widget("ExternalResourceAddWindow");
+                                                                insertorWindow.targetStore=Ext.getStore("SiteExternalStyles");
+                                                            },
+                                                            iconCls: 'add',
+                                                            text: 'Add'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
+                                                            },
+                                                            disabled: true,
+                                                            iconCls: 'close',
+                                                            text: 'Remove'
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            listeners: {
+                                                selectionchange: {
+                                                    fn: me.onSiteExternalStylesGridSelectionChange,
+                                                    scope: me
+                                                }
+                                            }
                                         },
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            id: 'siteExternalScriptsGrid',
                                             title: 'External scripts',
                                             forceFit: true,
                                             store: 'SiteExternalScripts',
@@ -582,6 +616,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            id: 'siteInternalStylesGrid',
                                             title: 'Internal styles',
                                             forceFit: true,
                                             store: 'SiteInternalStyles',
@@ -596,6 +631,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            id: 'siteInternalScriptsGrid',
                                             title: 'Internal scripts',
                                             forceFit: true,
                                             store: 'SiteInternalScripts',
@@ -703,6 +739,15 @@ Ext.define('Rubedo.view.sitesInterface', {
     onCheckboxfieldRender: function(component, eOpts) {
         if (!PHPOptions.addECommerce){
             component.hide();
+        }
+    },
+
+    onSiteExternalStylesGridSelectionChange: function(model, selected, eOpts) {
+        var button=Ext.getCmp("siteExternalStylesGrid").getDockedComponent(2).getComponent(1);
+        if (Ext.isEmpty(selected)){
+            button.disable();
+        } else {
+            button.enable();
         }
     },
 
