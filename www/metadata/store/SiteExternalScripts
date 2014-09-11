@@ -1,0 +1,30 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "SiteExternalScripts",
+        "designer|userClassName": "SiteExternalScripts",
+        "storeId": "SiteExternalScripts"
+    },
+    "name": "MyStore",
+    "designerId": "3b51e9a6-5980-4378-85be-1d9d1cffee20",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "url"
+            },
+            "name": "MyField1",
+            "designerId": "9dedebcc-cb5d-4caf-9d0d-334b65bd6fe0"
+        }
+    ]
+}

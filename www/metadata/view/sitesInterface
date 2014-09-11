@@ -10,13 +10,13 @@
         "container|align": "stretch",
         "designer|userAlias": "sitesInterface",
         "designer|userClassName": "sitesInterface",
-        "height": 449,
+        "height": 679,
         "iconCls": "referencement_icon",
         "id": "sitesInterface",
         "layout": "hbox",
         "localiserId": "sitesWindow",
         "title": "Sites",
-        "width": 753
+        "width": 853
     },
     "designerId": "08c3601d-6da2-4434-bbf8-03968b08ffe4",
     "customConfigs": [
@@ -316,550 +316,450 @@
             ]
         },
         {
-            "type": "Ext.panel.Panel",
+            "type": "Ext.tab.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "disabled": true,
-                "layout": "card",
-                "layout|flex": 1,
-                "title": ""
+                "activeTab": 0,
+                "layout|flex": 1
             },
-            "name": "MyPanel62",
-            "designerId": "78a8f05d-48f3-40b0-a72e-ca663b79d8a7",
+            "name": "MyTabPanel",
+            "designerId": "7a920fca-d7ec-4073-9c80-a01b4b4fcb41",
             "cn": [
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "autoScroll": true,
-                        "bodyPadding": 10,
-                        "id": "mainSiteProps",
-                        "itemId": "mainLocItem",
-                        "title": ""
+                        "layout": "card",
+                        "title": "Settings"
                     },
-                    "name": "MyForm59",
-                    "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
+                    "name": "MyPanel62",
+                    "designerId": "78a8f05d-48f3-40b0-a72e-ca663b79d8a7",
                     "cn": [
                         {
-                            "type": "Ext.form.FieldSet",
+                            "type": "Ext.form.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "collapsible": true,
-                                "localiserId": "siteFieldSet",
-                                "title": "Site"
+                                "autoScroll": true,
+                                "bodyPadding": 10,
+                                "id": "mainSiteProps",
+                                "itemId": "mainLocItem",
+                                "title": ""
                             },
-                            "name": "MyFieldSet29",
-                            "designerId": "ef96b8c4-9626-4e8e-a915-842e448b03ec",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
+                            "name": "MyForm59",
+                            "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
                             "cn": [
                                 {
-                                    "type": "Ext.form.field.Text",
+                                    "type": "Ext.form.FieldSet",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "allowBlank": false,
-                                        "fieldLabel": "Nom de domaine *",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "domainNameField",
-                                        "name": "text",
-                                        "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
+                                        "collapsible": true,
+                                        "localiserId": "siteFieldSet",
+                                        "title": "Site"
                                     },
-                                    "name": "MyTextField75",
-                                    "designerId": "3694e071-e5dd-402d-97ae-6e48e5e60573",
+                                    "name": "MyFieldSet29",
+                                    "designerId": "ef96b8c4-9626-4e8e-a915-842e448b03ec",
                                     "customConfigs": [
                                         {
                                             "group": "(Custom Properties)",
                                             "name": "localiserId",
                                             "type": "string"
                                         }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Static domain",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "staticDomainField",
-                                        "name": "staticDomain",
-                                        "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
-                                    },
-                                    "name": "MyTextField76",
-                                    "designerId": "3c45d03c-9fcf-454e-b30d-826d795b8102",
-                                    "customConfigs": [
+                                    ],
+                                    "cn": [
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Alias ",
-                                        "hidden": true,
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "aliasField",
-                                        "name": "alias"
-                                    },
-                                    "name": "MyTextField77",
-                                    "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "displayField": "label",
-                                        "fieldLabel": "Theme ",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "themeField",
-                                        "managesStore": true,
-                                        "name": "theme",
-                                        "store": "SiteThemesStore",
-                                        "valueField": "text"
-                                    },
-                                    "name": "MyComboBox43",
-                                    "configAlternates": {
-                                        "managesStore": "boolean"
-                                    },
-                                    "designerId": "f83b40eb-826d-4788-8e4f-b5b4edc0ffc3",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "managesStore",
-                                            "type": "string"
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Nom de domaine *",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "domainNameField",
+                                                "name": "text",
+                                                "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
+                                            },
+                                            "name": "MyTextField75",
+                                            "designerId": "3694e071-e5dd-402d-97ae-6e48e5e60573",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "allowBlank": false,
-                                        "editable": false,
-                                        "fieldLabel": "Protocole *",
-                                        "forceSelection": true,
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "protocolField",
-                                        "multiSelect": true,
-                                        "name": "protocol",
-                                        "store": [
-                                            "[\"HTTP\", \"HTTPS\"]"
-                                        ]
-                                    },
-                                    "name": "MyComboBox44",
-                                    "configAlternates": {
-                                        "store": "array"
-                                    },
-                                    "designerId": "401f0fd8-8f20-424a-a3d0-caf5f893f9b5",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "allowBlank": false,
-                                        "displayField": "label",
-                                        "fieldLabel": "Default language *",
-                                        "forceSelection": true,
-                                        "id": "siteDefaultLanguageField",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "defaultLanguageField",
-                                        "name": "defaultLanguage",
-                                        "store": "AllLanguagesStore",
-                                        "typeAhead": true,
-                                        "valueField": "locale"
-                                    },
-                                    "name": "MyComboBox45",
-                                    "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
-                                        {
-                                            "type": "fixedfunction",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|params": [
-                                                    "value"
-                                                ],
-                                                "fn": "validator",
-                                                "implHandler": [
-                                                    "var myValue=Ext.getCmp(\"siteDefaultLanguageField\").getValue();\r",
-                                                    "var languagesArray=Ext.getCmp(\"siteUsedLanguagesField\").getValue();\r",
-                                                    "if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){\r",
-                                                    "    return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);\r",
-                                                    "}\r",
-                                                    "return(true);"
-                                                ]
+                                                "fieldLabel": "Static domain",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "staticDomainField",
+                                                "name": "staticDomain",
+                                                "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
                                             },
-                                            "name": "validator",
-                                            "designerId": "c52d2b89-feb4-4a4f-b43c-ad4b89b54f42"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "editable": false,
-                                        "fieldLabel": "Localisation strategy",
-                                        "forceSelection": true,
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "name": "locStrategy",
-                                        "queryMode": "local"
-                                    },
-                                    "name": "MyComboBox46",
-                                    "designerId": "ad52430e-d2e2-4e21-88a7-2bf1f2ddbbc5",
-                                    "cn": [
+                                            "name": "MyTextField76",
+                                            "designerId": "3c45d03c-9fcf-454e-b30d-826d795b8102",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
                                         {
-                                            "type": "processcfgfunction",
+                                            "type": "Ext.form.field.Text",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "fn": "processLocStrategy",
-                                                "implHandler": [
-                                                    "config.store=[[\"onlyOne\",Rubedo.RubedoAutomatedElementsLoc.onlyOneText],[\"fallback\", Rubedo.RubedoAutomatedElementsLoc.withFallbackText]];\r",
-                                                    "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;\r",
-                                                    "return config;"
-                                                ]
+                                                "fieldLabel": "Alias ",
+                                                "hidden": true,
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "aliasField",
+                                                "name": "alias"
                                             },
-                                            "name": "processLocStrategy",
-                                            "designerId": "a94b6375-9225-4f93-be97-7855e0b7da33"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "boxLabel": null,
-                                        "fieldLabel": "Use browser language",
-                                        "inputValue": "true",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "name": "useBrowserLanguage",
-                                        "uncheckedValue": "false"
-                                    },
-                                    "name": "MyCheckbox15",
-                                    "designerId": "289ffab8-0e63-4513-8089-dc3766217e25",
-                                    "cn": [
+                                            "name": "MyTextField77",
+                                            "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
                                         {
-                                            "type": "processcfgfunction",
+                                            "type": "Ext.form.field.ComboBox",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "fn": "processUseBrowserLanguage",
-                                                "implHandler": [
-                                                    "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.useBrowserLanguageText;\r",
-                                                    "return config;"
+                                                "displayField": "label",
+                                                "fieldLabel": "Theme ",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "themeField",
+                                                "managesStore": true,
+                                                "name": "theme",
+                                                "store": "SiteThemesStore",
+                                                "valueField": "text"
+                                            },
+                                            "name": "MyComboBox43",
+                                            "configAlternates": {
+                                                "managesStore": "boolean"
+                                            },
+                                            "designerId": "f83b40eb-826d-4788-8e4f-b5b4edc0ffc3",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "managesStore",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "editable": false,
+                                                "fieldLabel": "Protocole *",
+                                                "forceSelection": true,
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "protocolField",
+                                                "multiSelect": true,
+                                                "name": "protocol",
+                                                "store": [
+                                                    "[\"HTTP\", \"HTTPS\"]"
                                                 ]
                                             },
-                                            "name": "processUseBrowserLanguage",
-                                            "designerId": "f9cfda9d-9eba-4fce-8b4e-035c22559781"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.TextArea",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Filtre ",
-                                        "hidden": true,
-                                        "layout|anchor": "100%",
-                                        "name": "filter"
-                                    },
-                                    "name": "MyTextArea9",
-                                    "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Titre par défaut",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "siteDefaultTitleField",
-                                        "name": "title"
-                                    },
-                                    "name": "MyTextField78",
-                                    "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173",
-                                    "customConfigs": [
+                                            "name": "MyComboBox44",
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "401f0fd8-8f20-424a-a3d0-caf5f893f9b5",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.TextArea",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Description par défaut",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "defaultDescriptionField",
-                                        "maxLength": 250,
-                                        "name": "description"
-                                    },
-                                    "name": "MyTextArea10",
-                                    "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9",
-                                    "customConfigs": [
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "displayField": "label",
+                                                "fieldLabel": "Default language *",
+                                                "forceSelection": true,
+                                                "id": "siteDefaultLanguageField",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "defaultLanguageField",
+                                                "name": "defaultLanguage",
+                                                "store": "AllLanguagesStore",
+                                                "typeAhead": true,
+                                                "valueField": "locale"
+                                            },
+                                            "name": "MyComboBox45",
+                                            "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "value"
+                                                        ],
+                                                        "fn": "validator",
+                                                        "implHandler": [
+                                                            "var myValue=Ext.getCmp(\"siteDefaultLanguageField\").getValue();\r",
+                                                            "var languagesArray=Ext.getCmp(\"siteUsedLanguagesField\").getValue();\r",
+                                                            "if ((!Ext.isEmpty(myValue))&&(!Ext.isEmpty(languagesArray))&&(!Ext.Array.contains(languagesArray,myValue))){\r",
+                                                            "    return(Rubedo.RubedoAutomatedElementsLoc.siteLanguageChoiceError);\r",
+                                                            "}\r",
+                                                            "return(true);"
+                                                        ]
+                                                    },
+                                                    "name": "validator",
+                                                    "designerId": "c52d2b89-feb4-4a4f-b43c-ad4b89b54f42"
+                                                }
+                                            ]
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Auteur par défaut",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "defaultAuthorField",
-                                        "name": "author",
-                                        "value": [
-                                            "\"Powered by Rubedo\""
-                                        ]
-                                    },
-                                    "name": "MyTextField79",
-                                    "designerId": "d5a6e6b4-030c-48fa-b72d-8d190f904e77",
-                                    "customConfigs": [
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "editable": false,
+                                                "fieldLabel": "Localisation strategy",
+                                                "forceSelection": true,
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "name": "locStrategy",
+                                                "queryMode": "local"
+                                            },
+                                            "name": "MyComboBox46",
+                                            "designerId": "ad52430e-d2e2-4e21-88a7-2bf1f2ddbbc5",
+                                            "cn": [
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "fn": "processLocStrategy",
+                                                        "implHandler": [
+                                                            "config.store=[[\"onlyOne\",Rubedo.RubedoAutomatedElementsLoc.onlyOneText],[\"fallback\", Rubedo.RubedoAutomatedElementsLoc.withFallbackText]];\r",
+                                                            "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.locStrategyText;\r",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "name": "processLocStrategy",
+                                                    "designerId": "a94b6375-9225-4f93-be97-7855e0b7da33"
+                                                }
+                                            ]
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onFieldsetRender",
-                                        "implHandler": [
-                                            "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
-                                            "    store:Ext.getStore(\"PagePickerStore\"),\r",
-                                            "    displayField:\"text\",\r",
-                                            "    labelWidth:110,\r",
-                                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.homePageText,\r",
-                                            "    id:\"sitesHomePicker\",\r",
-                                            "    anchor: \"100%\",\r",
-                                            "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],\r",
-                                            "    name:\"homePage\"\r",
-                                            "});\r",
-                                            "var singlePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
-                                            "    store:Ext.getStore(\"PagePickerStore\"),\r",
-                                            "    displayField:\"text\",\r",
-                                            "    labelWidth:110,\r",
-                                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultSinglePageText,\r",
-                                            "    id:\"sitesSinglePicker\",\r",
-                                            "    anchor: \"100%\",\r",
-                                            "    allowBlank:false,\r",
-                                            "    name:\"defaultSingle\"\r",
-                                            "});\r",
-                                            "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
-                                            "    store:[],\r",
-                                            "    anchor:\"100%\",\r",
-                                            "    name:\"keywords\",\r",
-                                            "    labelWidth:110,\r",
-                                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultKeywordsText,\r",
-                                            "    multiSelect:true,\r",
-                                            "    forceSelection:false,\r",
-                                            "    createNewOnEnter:true,\r",
-                                            "    hideTrigger:true,\r",
-                                            "    triggerOnClick:false,\r",
-                                            "    createNewOnBlur:true,\r",
-                                            "    pinList:false\r",
-                                            "});\r",
-                                            "var languagesPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
-                                            "    anchor:\"100%\",\r",
-                                            "    name:\"languages\",\r",
-                                            "    id:\"siteUsedLanguagesField\",\r",
-                                            "    allowBlank:false,\r",
-                                            "    labelWidth:110,\r",
-                                            "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText+\" *\",\r",
-                                            "    multiSelect:true,\r",
-                                            "    forceSelection:true,\r",
-                                            "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",
-                                            "    displayField:\"label\",\r",
-                                            "    valueField:\"locale\",\r",
-                                            "    queryMode:\"remote\"\r",
-                                            "});\r",
-                                            "component.add(tagPicker);\r",
-                                            "component.add(homePageSelector);\r",
-                                            "component.insert(5,languagesPicker);\r",
-                                            "component.add(singlePageSelector);"
-                                        ],
-                                        "name": "render",
-                                        "scope": "me"
-                                    },
-                                    "name": "onFieldsetRender",
-                                    "designerId": "2eb2e8d2-075f-4d54-ae3a-64aa95ef222b"
-                                },
-                                {
-                                    "type": "linkedinstance",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "store": "ContributeWorkspacesCombo"
-                                    },
-                                    "name": "workspacecombo11",
-                                    "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
-                                    "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
-                                },
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "boxLabel": null,
-                                        "fieldLabel": "E-Commerce page categories",
-                                        "inputValue": "true",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "sitesEnableECField",
-                                        "name": "enableECommerceFeatures",
-                                        "uncheckedValue": "false"
-                                    },
-                                    "name": "MyCheckbox16",
-                                    "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6",
-                                    "customConfigs": [
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": null,
+                                                "fieldLabel": "Use browser language",
+                                                "inputValue": "true",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "name": "useBrowserLanguage",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "name": "MyCheckbox15",
+                                            "designerId": "289ffab8-0e63-4513-8089-dc3766217e25",
+                                            "cn": [
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "fn": "processUseBrowserLanguage",
+                                                        "implHandler": [
+                                                            "config.fieldLabel=Rubedo.RubedoAutomatedElementsLoc.useBrowserLanguageText;\r",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "name": "processUseBrowserLanguage",
+                                                    "designerId": "f9cfda9d-9eba-4fce-8b4e-035c22559781"
+                                                }
+                                            ]
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
+                                            "type": "Ext.form.field.TextArea",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Filtre ",
+                                                "hidden": true,
+                                                "layout|anchor": "100%",
+                                                "name": "filter"
+                                            },
+                                            "name": "MyTextArea9",
+                                            "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Titre par défaut",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "siteDefaultTitleField",
+                                                "name": "title"
+                                            },
+                                            "name": "MyTextField78",
+                                            "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.TextArea",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Description par défaut",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "defaultDescriptionField",
+                                                "maxLength": 250,
+                                                "name": "description"
+                                            },
+                                            "name": "MyTextArea10",
+                                            "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Auteur par défaut",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "defaultAuthorField",
+                                                "name": "author",
+                                                "value": [
+                                                    "\"Powered by Rubedo\""
+                                                ]
+                                            },
+                                            "name": "MyTextField79",
+                                            "designerId": "d5a6e6b4-030c-48fa-b72d-8d190f904e77",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "type": "basiceventbinding",
                                             "reference": {
@@ -868,479 +768,832 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fn": "onCheckboxfieldRender",
+                                                "fn": "onFieldsetRender",
                                                 "implHandler": [
-                                                    "if (!PHPOptions.addECommerce){\r",
-                                                    "    component.hide();\r",
-                                                    "}"
+                                                    "var homePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                                                    "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                                                    "    displayField:\"text\",\r",
+                                                    "    labelWidth:110,\r",
+                                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.homePageText,\r",
+                                                    "    id:\"sitesHomePicker\",\r",
+                                                    "    anchor: \"100%\",\r",
+                                                    "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],\r",
+                                                    "    name:\"homePage\"\r",
+                                                    "});\r",
+                                                    "var singlePageSelector = Ext.create(\"Ext.ux.TreePicker\", {\r",
+                                                    "    store:Ext.getStore(\"PagePickerStore\"),\r",
+                                                    "    displayField:\"text\",\r",
+                                                    "    labelWidth:110,\r",
+                                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultSinglePageText,\r",
+                                                    "    id:\"sitesSinglePicker\",\r",
+                                                    "    anchor: \"100%\",\r",
+                                                    "    allowBlank:false,\r",
+                                                    "    name:\"defaultSingle\"\r",
+                                                    "});\r",
+                                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                                    "    store:[],\r",
+                                                    "    anchor:\"100%\",\r",
+                                                    "    name:\"keywords\",\r",
+                                                    "    labelWidth:110,\r",
+                                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.defaultKeywordsText,\r",
+                                                    "    multiSelect:true,\r",
+                                                    "    forceSelection:false,\r",
+                                                    "    createNewOnEnter:true,\r",
+                                                    "    hideTrigger:true,\r",
+                                                    "    triggerOnClick:false,\r",
+                                                    "    createNewOnBlur:true,\r",
+                                                    "    pinList:false\r",
+                                                    "});\r",
+                                                    "var languagesPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
+                                                    "    anchor:\"100%\",\r",
+                                                    "    name:\"languages\",\r",
+                                                    "    id:\"siteUsedLanguagesField\",\r",
+                                                    "    allowBlank:false,\r",
+                                                    "    labelWidth:110,\r",
+                                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.languagesText+\" *\",\r",
+                                                    "    multiSelect:true,\r",
+                                                    "    forceSelection:true,\r",
+                                                    "    store: Ext.getStore(\"AllLanguagesStore2\"),\r",
+                                                    "    displayField:\"label\",\r",
+                                                    "    valueField:\"locale\",\r",
+                                                    "    queryMode:\"remote\"\r",
+                                                    "});\r",
+                                                    "component.add(tagPicker);\r",
+                                                    "component.add(homePageSelector);\r",
+                                                    "component.insert(5,languagesPicker);\r",
+                                                    "component.add(singlePageSelector);"
                                                 ],
                                                 "name": "render",
                                                 "scope": "me"
                                             },
-                                            "name": "onCheckboxfieldRender",
-                                            "designerId": "2ae91ed2-e1e2-4396-93bc-84e59cde6e81"
+                                            "name": "onFieldsetRender",
+                                            "designerId": "2eb2e8d2-075f-4d54-ae3a-64aa95ef222b"
+                                        },
+                                        {
+                                            "type": "linkedinstance",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "store": "ContributeWorkspacesCombo"
+                                            },
+                                            "name": "workspacecombo",
+                                            "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
+                                            "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": null,
+                                                "fieldLabel": "E-Commerce page categories",
+                                                "inputValue": "true",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "sitesEnableECField",
+                                                "name": "enableECommerceFeatures",
+                                                "uncheckedValue": "false"
+                                            },
+                                            "name": "MyCheckbox16",
+                                            "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onCheckboxfieldRender",
+                                                        "implHandler": [
+                                                            "if (!PHPOptions.addECommerce){\r",
+                                                            "    component.hide();\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "render",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onCheckboxfieldRender",
+                                                    "designerId": "2ae91ed2-e1e2-4396-93bc-84e59cde6e81"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsed": true,
+                                        "collapsible": true,
+                                        "hidden": true,
+                                        "localiserId": "messageryFieldSet",
+                                        "title": "Messagerie"
+                                    },
+                                    "name": "MyFieldSet30",
+                                    "designerId": "420a6c9e-a93a-45a9-875f-534aa6abcfda",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "",
+                                                "fieldLabel": "Activé ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "activeMessageryField",
+                                                "name": "activeMessagery"
+                                            },
+                                            "name": "MyCheckbox17",
+                                            "designerId": "bd542b51-fd9d-4eed-9dfe-875e16085150",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Serveur SMTP ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "smtpServerField",
+                                                "name": "SMTPServer"
+                                            },
+                                            "name": "MyTextField80",
+                                            "designerId": "06f89195-fea2-4ea5-b7a1-2807c261a86e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowDecimals": false,
+                                                "fieldLabel": "Port SMTP ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "smtpPortField",
+                                                "minValue": 0,
+                                                "name": "SMTPPort"
+                                            },
+                                            "name": "MyNumberField3",
+                                            "designerId": "02f50589-086b-479e-8ae8-ad14cdad56a6",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Login SMTP ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "smtpLoginField",
+                                                "name": "SMTPLogin"
+                                            },
+                                            "name": "MyTextField81",
+                                            "designerId": "3b399b2f-89da-47be-a203-9a701fe7666e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Mot de passe SMTP ",
+                                                "inputType": "password",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "smtpPassField",
+                                                "name": "SMTPPassword"
+                                            },
+                                            "name": "MyTextField82",
+                                            "designerId": "01df2091-90b9-4bc7-8b67-e258a614a0ab",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "E-mail par défaut ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "defaultEmailField",
+                                                "name": "defaultEmail",
+                                                "vtype": "email"
+                                            },
+                                            "name": "MyTextField83",
+                                            "designerId": "89e663aa-7d5a-4581-952e-6d9e80784a03",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsed": true,
+                                        "collapsible": true,
+                                        "hidden": true,
+                                        "localiserId": "accessibilityFieldSet ",
+                                        "title": "Accessibilité"
+                                    },
+                                    "name": "MyFieldSet31",
+                                    "designerId": "f0c0b11c-1199-4ac5-aa9f-204da8a91ae1",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Niveau d'accessibilité ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "accessibilityLeveLfield",
+                                                "name": "accessibilityLevel",
+                                                "store": [
+                                                    "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
+                                                ]
+                                            },
+                                            "name": "MyComboBox47",
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "50ee0abb-5872-495d-acb7-7f37ec72c674",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Login Opquast ",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "opquastLoginField",
+                                                "name": "opquastLogin"
+                                            },
+                                            "name": "MyTextField84",
+                                            "designerId": "7a30bfe6-7cf0-411f-96c1-8d359ce84832",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Mot de passe Optquast ",
+                                                "inputType": "password",
+                                                "layout|anchor": "100%",
+                                                "localiserId": "opquastPassField",
+                                                "name": "opquastPassword"
+                                            },
+                                            "name": "MyTextField85",
+                                            "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsible": true,
+                                        "localiserId": "apiKeysFieldSet",
+                                        "title": "Clés d'API externes"
+                                    },
+                                    "name": "MyFieldSet32",
+                                    "designerId": "ac102a61-49b0-4f71-bdec-78402d551242",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Google Maps",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "googleMapKeyField",
+                                                "name": "googleMapsKey"
+                                            },
+                                            "name": "MyTextField86",
+                                            "designerId": "ba1103b7-9d59-4664-9428-7474772acc87",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Google Analytics",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "googleAnalyticsKeyField",
+                                                "name": "googleAnalyticsKey"
+                                            },
+                                            "name": "MyTextField87",
+                                            "designerId": "547bccdf-8510-49bd-a279-2d7b96355857",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Disqus",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "disqusKeyField",
+                                                "name": "disqusKey"
+                                            },
+                                            "name": "MyTextField88",
+                                            "designerId": "3946a373-0c3f-455b-8c65-6f0921d08940",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsed": true,
+                                        "collapsible": true,
+                                        "localiserId": "recaptchaFieldset",
+                                        "title": "Recaptcha"
+                                    },
+                                    "name": "MyFieldSet33",
+                                    "designerId": "44c52af4-c861-4fbd-988d-e4352ae8f85c",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Public key",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "recaptchaPublicKeyField",
+                                                "name": "recaptcha_public_key"
+                                            },
+                                            "name": "MyTextField89",
+                                            "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Private key",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": "recaptchaPrivateKeyField",
+                                                "name": "recaptcha_private_key"
+                                            },
+                                            "name": "MyTextField90",
+                                            "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
                             ]
                         },
                         {
-                            "type": "Ext.form.FieldSet",
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "id": "sitesDLSToolbar",
+                                "replicatorEntity": "sitesRepLoc"
+                            },
+                            "name": "dlstoolbar",
+                            "designerId": "1c9d6053-d4f4-4b79-b7bc-262784f31c7b",
+                            "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "31d5cfc4-a58b-4bc7-bdf5-2b9e751b88d5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "layout": "vbox",
+                        "title": "Resources"
+                    },
+                    "name": "MyPanel",
+                    "designerId": "e188afd7-1c66-4bd6-9f2d-5dd30d658930",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "1cebf1db-34ea-40ad-8741-e96d33aa23d0"
+                        },
+                        {
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "collapsed": true,
-                                "collapsible": true,
-                                "hidden": true,
-                                "localiserId": "messageryFieldSet",
-                                "title": "Messagerie"
+                                "container|align": "stretch",
+                                "layout": "hbox",
+                                "layout|flex": 1
                             },
-                            "name": "MyFieldSet30",
-                            "designerId": "420a6c9e-a93a-45a9-875f-534aa6abcfda",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
+                            "name": "MyContainer1",
+                            "designerId": "5c614a4c-ae5f-42f0-b62e-fd7092b72ff7",
                             "cn": [
                                 {
-                                    "type": "Ext.form.field.Checkbox",
+                                    "type": "Ext.grid.Panel",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "boxLabel": "",
-                                        "fieldLabel": "Activé ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "activeMessageryField",
-                                        "name": "activeMessagery"
+                                        "forceFit": true,
+                                        "layout|flex": 1,
+                                        "store": "SiteExternalStyles",
+                                        "title": "External styles"
                                     },
-                                    "name": "MyCheckbox17",
-                                    "designerId": "bd542b51-fd9d-4eed-9dfe-875e16085150",
-                                    "customConfigs": [
+                                    "name": "MyGridPanel",
+                                    "designerId": "2ff51a07-1488-43bd-b7c2-d1b2d1be811f",
+                                    "cn": [
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView",
+                                            "designerId": "15d2dc12-82a4-403b-a248-1b367f16793e"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "url",
+                                                "text": "Url"
+                                            },
+                                            "name": "MyColumn4",
+                                            "designerId": "e3a09929-155b-4575-839c-7fdb78f5a926"
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Ext.form.field.Text",
+                                    "type": "Ext.grid.Panel",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Serveur SMTP ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "smtpServerField",
-                                        "name": "SMTPServer"
+                                        "forceFit": true,
+                                        "layout|flex": 1,
+                                        "store": "SiteExternalScripts",
+                                        "title": "External scripts"
                                     },
-                                    "name": "MyTextField80",
-                                    "designerId": "06f89195-fea2-4ea5-b7a1-2807c261a86e",
-                                    "customConfigs": [
+                                    "name": "MyGridPanel1",
+                                    "designerId": "879d6de0-5124-4f77-98b8-07919c5ab4d2",
+                                    "cn": [
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Number",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "allowDecimals": false,
-                                        "fieldLabel": "Port SMTP ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "smtpPortField",
-                                        "minValue": 0,
-                                        "name": "SMTPPort"
-                                    },
-                                    "name": "MyNumberField3",
-                                    "designerId": "02f50589-086b-479e-8ae8-ad14cdad56a6",
-                                    "customConfigs": [
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView1",
+                                            "designerId": "2e79c93c-e0ae-4390-83e5-552a8405f515"
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Login SMTP ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "smtpLoginField",
-                                        "name": "SMTPLogin"
-                                    },
-                                    "name": "MyTextField81",
-                                    "designerId": "3b399b2f-89da-47be-a203-9a701fe7666e",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Mot de passe SMTP ",
-                                        "inputType": "password",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "smtpPassField",
-                                        "name": "SMTPPassword"
-                                    },
-                                    "name": "MyTextField82",
-                                    "designerId": "01df2091-90b9-4bc7-8b67-e258a614a0ab",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "E-mail par défaut ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "defaultEmailField",
-                                        "name": "defaultEmail",
-                                        "vtype": "email"
-                                    },
-                                    "name": "MyTextField83",
-                                    "designerId": "89e663aa-7d5a-4581-952e-6d9e80784a03",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "url",
+                                                "text": "Url"
+                                            },
+                                            "name": "MyColumn",
+                                            "designerId": "b034b37c-99c2-48bb-93e5-848ee14cb2d9"
                                         }
                                     ]
                                 }
                             ]
                         },
                         {
-                            "type": "Ext.form.FieldSet",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "collapsed": true,
-                                "collapsible": true,
-                                "hidden": true,
-                                "localiserId": "accessibilityFieldSet ",
-                                "title": "Accessibilité"
+                                "container|align": "stretch",
+                                "layout": "hbox",
+                                "layout|flex": 1
                             },
-                            "name": "MyFieldSet31",
-                            "designerId": "f0c0b11c-1199-4ac5-aa9f-204da8a91ae1",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
+                            "name": "MyContainer",
+                            "designerId": "db0008bc-4e00-4c54-aaf1-02cad4bddae5",
                             "cn": [
                                 {
-                                    "type": "Ext.form.field.ComboBox",
+                                    "type": "Ext.grid.Panel",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Niveau d'accessibilité ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "accessibilityLeveLfield",
-                                        "name": "accessibilityLevel",
-                                        "store": [
-                                            "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
-                                        ]
+                                        "forceFit": true,
+                                        "layout|flex": 1,
+                                        "store": "SiteInternalStyles",
+                                        "title": "Internal styles"
                                     },
-                                    "name": "MyComboBox47",
-                                    "configAlternates": {
-                                        "store": "array"
-                                    },
-                                    "designerId": "50ee0abb-5872-495d-acb7-7f37ec72c674",
-                                    "customConfigs": [
+                                    "name": "MyGridPanel2",
+                                    "designerId": "679d9139-e58c-4a75-b901-0346350daac7",
+                                    "cn": [
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView2",
+                                            "designerId": "f9757224-20e5-4c43-8e28-a1dfd7b71918"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "name",
+                                                "text": "Name"
+                                            },
+                                            "name": "MyColumn3",
+                                            "designerId": "39227240-286d-4760-ac5e-828d1db95036"
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Ext.form.field.Text",
+                                    "type": "Ext.grid.Panel",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Login Opquast ",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "opquastLoginField",
-                                        "name": "opquastLogin"
+                                        "forceFit": true,
+                                        "layout|flex": 1,
+                                        "store": "SiteInternalScripts",
+                                        "title": "Internal scripts"
                                     },
-                                    "name": "MyTextField84",
-                                    "designerId": "7a30bfe6-7cf0-411f-96c1-8d359ce84832",
-                                    "customConfigs": [
+                                    "name": "MyGridPanel4",
+                                    "designerId": "00b03c86-3f45-409d-9e6e-1b3bcbc84490",
+                                    "cn": [
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Mot de passe Optquast ",
-                                        "inputType": "password",
-                                        "layout|anchor": "100%",
-                                        "localiserId": "opquastPassField",
-                                        "name": "opquastPassword"
-                                    },
-                                    "name": "MyTextField85",
-                                    "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4",
-                                    "customConfigs": [
+                                            "type": "Ext.grid.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView3",
+                                            "designerId": "2a488a31-748a-4a15-8c11-550fc9aeef75"
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.FieldSet",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "collapsible": true,
-                                "localiserId": "apiKeysFieldSet",
-                                "title": "Clés d'API externes"
-                            },
-                            "name": "MyFieldSet32",
-                            "designerId": "ac102a61-49b0-4f71-bdec-78402d551242",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Google Maps",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "googleMapKeyField",
-                                        "name": "googleMapsKey"
-                                    },
-                                    "name": "MyTextField86",
-                                    "designerId": "ba1103b7-9d59-4664-9428-7474772acc87",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Google Analytics",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "googleAnalyticsKeyField",
-                                        "name": "googleAnalyticsKey"
-                                    },
-                                    "name": "MyTextField87",
-                                    "designerId": "547bccdf-8510-49bd-a279-2d7b96355857",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Disqus",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "disqusKeyField",
-                                        "name": "disqusKey"
-                                    },
-                                    "name": "MyTextField88",
-                                    "designerId": "3946a373-0c3f-455b-8c65-6f0921d08940",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.FieldSet",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "collapsed": true,
-                                "collapsible": true,
-                                "localiserId": "recaptchaFieldset",
-                                "title": "Recaptcha"
-                            },
-                            "name": "MyFieldSet33",
-                            "designerId": "44c52af4-c861-4fbd-988d-e4352ae8f85c",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
-                            "cn": [
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Public key",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "recaptchaPublicKeyField",
-                                        "name": "recaptcha_public_key"
-                                    },
-                                    "name": "MyTextField89",
-                                    "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fieldLabel": "Private key",
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "recaptchaPrivateKeyField",
-                                        "name": "recaptcha_private_key"
-                                    },
-                                    "name": "MyTextField90",
-                                    "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "name",
+                                                "text": "Name"
+                                            },
+                                            "name": "MyColumn1",
+                                            "designerId": "f30c545d-d199-4ded-b62a-c2948c9895cf"
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
-                },
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "dockedItems",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dock": "top",
-                        "id": "sitesDLSToolbar",
-                        "replicatorEntity": "sitesRepLoc"
-                    },
-                    "name": "dlstoolbar6",
-                    "designerId": "1c9d6053-d4f4-4b79-b7bc-262784f31c7b",
-                    "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                 }
             ]
         },
@@ -1354,7 +1607,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1610",
+            "name": "mytool16",
             "designerId": "2da1d94c-ba44-4ebf-b6b3-05ac67c9704c",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -1368,7 +1621,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1714",
+            "name": "mytool17",
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },

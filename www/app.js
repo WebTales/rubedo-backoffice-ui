@@ -218,7 +218,11 @@ Ext.application({
         'TaxoForImportKeys',
         'SpecialOffers',
         'BoughtProducts',
-        'ImportPresets'
+        'ImportPresets',
+        'SiteExternalScripts',
+        'SiteExternalStyles',
+        'SiteInternalStyles',
+        'SiteInternalScripts'
     ],
     views: [
         'MyGridPanel3',

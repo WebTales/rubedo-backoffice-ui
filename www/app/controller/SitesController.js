@@ -22,7 +22,7 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites", iconCls:"referencement_icon"}));
             Ext.getCmp("siteRemoveBtn").disable();
-            Ext.getCmp("mainSiteProps").up().disable();
+            Ext.getCmp("mainSiteProps").up().up().disable();
             Ext.getCmp("updateSiteBtn").disable();
             Ext.getCmp("mainSiteProps").getForm().reset();
         } else {
@@ -30,7 +30,7 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites <b> > </b>", iconCls:"referencement_icon"}));
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: selected[0].get("text"), iconCls:"referencement_icon"}));
             Ext.getCmp("siteRemoveBtn").enable();
-            Ext.getCmp("mainSiteProps").up().enable();
+            Ext.getCmp("mainSiteProps").up().up().enable();
             Ext.getCmp("updateSiteBtn").enable();
             Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+selected[0].get("id")+"\"}]";
             Ext.getStore("PagePickerStore").load();

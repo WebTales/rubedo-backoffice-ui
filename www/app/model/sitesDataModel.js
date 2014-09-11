@@ -166,6 +166,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         {
             name: 'enableECommerceFeatures',
             type: 'boolean'
+        },
+        {
+            name: 'resources'
         }
     ]
 });
