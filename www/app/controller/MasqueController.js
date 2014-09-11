@@ -581,7 +581,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                             largeDesktop:true
                         },
                         mType:'col',
-                        stackThreshold:"xs",
+                        stackThreshold:"sm",
                         margin:4,
                         layout: {
                             type: 'vbox',
