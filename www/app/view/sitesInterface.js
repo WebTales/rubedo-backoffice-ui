@@ -35,6 +35,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         'Ext.form.field.TextArea',
         'Ext.form.field.Number',
         'Ext.tab.Tab',
+        'Ext.grid.plugin.CellEditing',
         'Ext.panel.Tool',
         'Ext.Img',
         'Ext.XTemplate'
@@ -553,7 +554,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'url',
-                                                    text: 'Url'
+                                                    text: 'Url',
+                                                    editor: {
+                                                        xtype: 'textfield',
+                                                        allowBlank: false,
+                                                        allowOnlyWhitespace: false,
+                                                        vtype: 'url'
+                                                    }
                                                 }
                                             ],
                                             dockedItems: [
@@ -588,7 +595,12 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     fn: me.onSiteExternalStylesGridSelectionChange,
                                                     scope: me
                                                 }
-                                            }
+                                            },
+                                            plugins: [
+                                                Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                                })
+                                            ]
                                         },
                                         {
                                             xtype: 'gridpanel',
@@ -601,7 +613,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'url',
-                                                    text: 'Url'
+                                                    text: 'Url',
+                                                    editor: {
+                                                        xtype: 'textfield',
+                                                        allowBlank: false,
+                                                        allowOnlyWhitespace: false,
+                                                        vtype: 'url'
+                                                    }
                                                 }
                                             ],
                                             listeners: {
@@ -636,6 +654,11 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                         }
                                                     ]
                                                 }
+                                            ],
+                                            plugins: [
+                                                Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                                })
                                             ]
                                         }
                                     ]
@@ -659,7 +682,12 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'name',
-                                                    text: 'Name'
+                                                    text: 'Name',
+                                                    editor: {
+                                                        xtype: 'textfield',
+                                                        allowBlank: false,
+                                                        allowOnlyWhitespace: false
+                                                    }
                                                 }
                                             ],
                                             dockedItems: [
@@ -689,7 +717,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             },
                                                             disabled: true,
                                                             iconCls: 'edit',
-                                                            text: 'Edit'
+                                                            text: 'Edit code'
                                                         },
                                                         {
                                                             xtype: 'button',
@@ -708,7 +736,12 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     fn: me.onSiteInternalStylesGridSelectionChange,
                                                     scope: me
                                                 }
-                                            }
+                                            },
+                                            plugins: [
+                                                Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                                })
+                                            ]
                                         },
                                         {
                                             xtype: 'gridpanel',
@@ -721,7 +754,12 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'name',
-                                                    text: 'Name'
+                                                    text: 'Name',
+                                                    editor: {
+                                                        xtype: 'textfield',
+                                                        allowBlank: false,
+                                                        allowOnlyWhitespace: false
+                                                    }
                                                 }
                                             ],
                                             listeners: {
@@ -757,7 +795,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             },
                                                             disabled: true,
                                                             iconCls: 'edit',
-                                                            text: 'Edit'
+                                                            text: 'Edit code'
                                                         },
                                                         {
                                                             xtype: 'button',
@@ -770,6 +808,11 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                         }
                                                     ]
                                                 }
+                                            ],
+                                            plugins: [
+                                                Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                                })
                                             ]
                                         }
                                     ]

@@ -1447,7 +1447,24 @@
                                                 "text": "Url"
                                             },
                                             "name": "MyColumn4",
-                                            "designerId": "e3a09929-155b-4575-839c-7fdb78f5a926"
+                                            "designerId": "e3a09929-155b-4575-839c-7fdb78f5a926",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "allowOnlyWhitespace": false,
+                                                        "vtype": "url"
+                                                    },
+                                                    "name": "MyTextField1",
+                                                    "designerId": "0a951a9f-7e5f-4d55-8f98-a8e0a7c86f34"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.toolbar.Toolbar",
@@ -1563,6 +1580,16 @@
                                             },
                                             "name": "onSiteExternalStylesGridSelectionChange",
                                             "designerId": "e66d5aa6-034f-4354-a0bf-d891eeeb3a66"
+                                        },
+                                        {
+                                            "type": "Ext.grid.plugin.CellEditing",
+                                            "reference": {
+                                                "name": "plugins",
+                                                "type": "array"
+                                            },
+                                            "codeClass": "Ext.grid.plugin.CellEditing",
+                                            "name": "MyCellEditingPlugin",
+                                            "designerId": "c26c233e-4966-4e3a-afef-bce17089b722"
                                         }
                                     ]
                                 },
@@ -1605,7 +1632,24 @@
                                                 "text": "Url"
                                             },
                                             "name": "MyColumn",
-                                            "designerId": "b034b37c-99c2-48bb-93e5-848ee14cb2d9"
+                                            "designerId": "b034b37c-99c2-48bb-93e5-848ee14cb2d9",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "allowOnlyWhitespace": false,
+                                                        "vtype": "url"
+                                                    },
+                                                    "name": "MyTextField2",
+                                                    "designerId": "b1338ac6-6abb-4f49-a05f-780b26673853"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "basiceventbinding",
@@ -1721,6 +1765,16 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.plugin.CellEditing",
+                                            "reference": {
+                                                "name": "plugins",
+                                                "type": "array"
+                                            },
+                                            "codeClass": "Ext.grid.plugin.CellEditing",
+                                            "name": "MyCellEditingPlugin1",
+                                            "designerId": "82aa257e-7685-44b6-a489-a99ecbe64886"
                                         }
                                     ]
                                 }
@@ -1780,7 +1834,23 @@
                                                 "text": "Name"
                                             },
                                             "name": "MyColumn3",
-                                            "designerId": "39227240-286d-4760-ac5e-828d1db95036"
+                                            "designerId": "39227240-286d-4760-ac5e-828d1db95036",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "allowOnlyWhitespace": false
+                                                    },
+                                                    "name": "MyTextField3",
+                                                    "designerId": "48f52f63-0637-4663-8e7a-1ae264c8ffc4"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.toolbar.Toolbar",
@@ -1845,7 +1915,7 @@
                                                         "disabled": true,
                                                         "iconCls": "edit",
                                                         "layout|flex": null,
-                                                        "text": "Edit"
+                                                        "text": "Edit code"
                                                     },
                                                     "name": "MyButton3",
                                                     "designerId": "282d620f-3993-4e38-9d85-0f99b085ae3e",
@@ -1942,6 +2012,16 @@
                                             },
                                             "name": "onSiteInternalStylesGridSelectionChange",
                                             "designerId": "af448a0c-fde3-497a-b250-a1cc0efcdec0"
+                                        },
+                                        {
+                                            "type": "Ext.grid.plugin.CellEditing",
+                                            "reference": {
+                                                "name": "plugins",
+                                                "type": "array"
+                                            },
+                                            "codeClass": "Ext.grid.plugin.CellEditing",
+                                            "name": "MyCellEditingPlugin2",
+                                            "designerId": "0f36c72a-45b4-4644-a951-952f07a82aa6"
                                         }
                                     ]
                                 },
@@ -1984,7 +2064,23 @@
                                                 "text": "Name"
                                             },
                                             "name": "MyColumn1",
-                                            "designerId": "f30c545d-d199-4ded-b62a-c2948c9895cf"
+                                            "designerId": "f30c545d-d199-4ded-b62a-c2948c9895cf",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "allowOnlyWhitespace": false
+                                                    },
+                                                    "name": "MyTextField4",
+                                                    "designerId": "6460b1b4-a957-441e-a0b1-8b1db2d7216e"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "basiceventbinding",
@@ -2075,7 +2171,7 @@
                                                         "disabled": true,
                                                         "iconCls": "edit",
                                                         "layout|flex": null,
-                                                        "text": "Edit"
+                                                        "text": "Edit code"
                                                     },
                                                     "name": "MyButton3",
                                                     "designerId": "fed09c96-549e-47ec-96a5-bf7b562c6cf1",
@@ -2146,6 +2242,16 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.plugin.CellEditing",
+                                            "reference": {
+                                                "name": "plugins",
+                                                "type": "array"
+                                            },
+                                            "codeClass": "Ext.grid.plugin.CellEditing",
+                                            "name": "MyCellEditingPlugin3",
+                                            "designerId": "fbd70f96-88f1-49ae-a215-6196695102d0"
                                         }
                                     ]
                                 }
