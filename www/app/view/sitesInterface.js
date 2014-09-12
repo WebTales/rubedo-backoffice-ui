@@ -180,6 +180,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    disabled: true,
                     activeTab: 0,
                     items: [
                         {

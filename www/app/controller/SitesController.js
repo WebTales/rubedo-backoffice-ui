@@ -25,6 +25,10 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp("mainSiteProps").up().up().disable();
             Ext.getCmp("updateSiteBtn").disable();
             Ext.getCmp("mainSiteProps").getForm().reset();
+            Ext.getStore("SiteExternalStyles").removeAll();
+            Ext.getStore("SiteExternalScripts").removeAll();
+            Ext.getStore("SiteInternalStyles").removeAll();
+            Ext.getStore("SiteInternalScripts").removeAll();
         } else {
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").removeAll();
             Ext.getCmp("sitesInterface").getComponent("breadcrumb").add(Ext.widget("button", {text: "Sites <b> > </b>", iconCls:"referencement_icon"}));
@@ -34,6 +38,19 @@ Ext.define('Rubedo.controller.SitesController', {
             Ext.getCmp("updateSiteBtn").enable();
             Ext.getStore("PagePickerStore").getProxy().extraParams.filter="[{\"property\":\"site\",\"value\":\""+selected[0].get("id")+"\"}]";
             Ext.getStore("PagePickerStore").load();
+            var siteResources=Ext.clone(selected[0].get("resources"));
+            if (Ext.isEmpty(siteResources)){
+                siteResources={
+                    externalStyles:[ ],
+                    externalScripts:[ ],
+                    internalStyles:[ ],
+                    internalScripts:[ ]
+                };
+            }
+            Ext.getStore("SiteExternalStyles").loadData(siteResources.externalStyles);
+            Ext.getStore("SiteExternalScripts").loadData(siteResources.externalScripts);
+            Ext.getStore("SiteInternalStyles").loadData(siteResources.internalStyles);
+            Ext.getStore("SiteInternalScripts").loadData(siteResources.internalScripts);
 
             Ext.getCmp("mainSiteProps").getForm().setValues(Ext.clone(selected[0].getData()));
             if (Ext.isEmpty(Ext.getCmp("sitesHomePicker").getValue())){
@@ -125,6 +142,12 @@ Ext.define('Rubedo.controller.SitesController', {
         var me=this;
         var form = Ext.getCmp("mainSiteProps").getForm();
         if (form.isValid()){
+            var newSiteResources={
+                            externalStyles:Ext.Array.pluck(Ext.getStore("SiteExternalStyles").getRange(),"data"),
+                            externalScripts:Ext.Array.pluck(Ext.getStore("SiteExternalScripts").getRange(),"data"),
+                            internalStyles:Ext.Array.pluck(Ext.getStore("SiteInternalStyles").getRange(),"data"),
+                            internalScripts:Ext.Array.pluck(Ext.getStore("SiteInternalScripts").getRange(),"data")
+                        };
             if ((!Ext.isEmpty(Ext.getCmp("pagesSitesCombo")))&&(Ext.getCmp("pagesSitesCombo").getValue()==Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected().get("id"))) {
                 Ext.MessageBox.confirm(Rubedo.RubedoAutomatedElementsLoc.warningTitle,Rubedo.RubedoAutomatedElementsLoc.siteModifWarning, function(anser){
                     if (anser=="yes"){
@@ -132,6 +155,7 @@ Ext.define('Rubedo.controller.SitesController', {
                         var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();
                         myRec.beginEdit();
                         myRec.set(form.getValues(false, false, false, true));
+                        myRec.set("resources",newSiteResources);
                         Ext.getCmp("sitesDLSToolbar").persisti18n(myRec);
                         myRec.endEdit();
                         Ext.getStore("SitesJson").addListener("datachanged",function(){
@@ -146,6 +170,7 @@ Ext.define('Rubedo.controller.SitesController', {
                     var myRec=Ext.getCmp("mainSitesGrid").getSelectionModel().getLastSelected();
                     myRec.beginEdit();
                     myRec.set(form.getValues(false, false, false, true));
+                    myRec.set("resources",newSiteResources);
                     Ext.getCmp("sitesDLSToolbar").persisti18n(myRec);
                     myRec.endEdit();
                     Ext.getStore("SitesJson").addListener("datachanged",function(){
