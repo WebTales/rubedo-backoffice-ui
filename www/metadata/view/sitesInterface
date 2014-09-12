@@ -1491,7 +1491,8 @@
                                                                 "fn": "handler",
                                                                 "implHandler": [
                                                                     "var insertorWindow=Ext.widget(\"ExternalResourceAddWindow\");",
-                                                                    "insertorWindow.targetStore=Ext.getStore(\"SiteExternalStyles\");"
+                                                                    "insertorWindow.targetStore=Ext.getStore(\"SiteExternalStyles\");",
+                                                                    "insertorWindow.show();"
                                                                 ]
                                                             },
                                                             "name": "handler",
@@ -1604,6 +1605,121 @@
                                             },
                                             "name": "MyColumn",
                                             "designerId": "b034b37c-99c2-48bb-93e5-848ee14cb2d9"
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSiteExternalScriptsGridSelectionChange",
+                                                "implHandler": [
+                                                    "var button=Ext.getCmp(\"siteExternalScriptsGrid\").getDockedComponent(2).getComponent(1);",
+                                                    "if (Ext.isEmpty(selected)){",
+                                                    "    button.disable();",
+                                                    "} else {",
+                                                    "    button.enable();",
+                                                    "}"
+                                                ],
+                                                "name": "selectionchange",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSiteExternalScriptsGridSelectionChange",
+                                            "designerId": "6659d5d2-71b3-4c2e-85a5-adf89ba45dfe"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top"
+                                            },
+                                            "name": "MyToolbar1",
+                                            "designerId": "bc8a8371-16e7-4315-ade1-1b424dce288f",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "iconCls": "add",
+                                                        "layout|flex": null,
+                                                        "text": "Add"
+                                                    },
+                                                    "name": "MyButton",
+                                                    "designerId": "aa975daa-d03a-4f5c-ba70-d66ae9b960bb",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "var insertorWindow=Ext.widget(\"ExternalResourceAddWindow\");",
+                                                                    "insertorWindow.targetStore=Ext.getStore(\"SiteExternalScripts\");",
+                                                                    "insertorWindow.show();"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "ea4f1ad7-aea3-4a23-9373-d9ee93671303"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "disabled": true,
+                                                        "iconCls": "close",
+                                                        "layout|flex": null,
+                                                        "text": "Remove"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "1aeb0623-91c0-414a-a498-1bc2501f7b10",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "911ca75f-e3db-4d3e-b2d9-a64286225155"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

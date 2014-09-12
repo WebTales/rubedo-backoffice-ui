@@ -565,6 +565,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             handler: function(button, e) {
                                                                 var insertorWindow=Ext.widget("ExternalResourceAddWindow");
                                                                 insertorWindow.targetStore=Ext.getStore("SiteExternalStyles");
+                                                                insertorWindow.show();
                                                             },
                                                             iconCls: 'add',
                                                             text: 'Add'
@@ -600,6 +601,39 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'url',
                                                     text: 'Url'
+                                                }
+                                            ],
+                                            listeners: {
+                                                selectionchange: {
+                                                    fn: me.onSiteExternalScriptsGridSelectionChange,
+                                                    scope: me
+                                                }
+                                            },
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'toolbar',
+                                                    dock: 'top',
+                                                    items: [
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                var insertorWindow=Ext.widget("ExternalResourceAddWindow");
+                                                                insertorWindow.targetStore=Ext.getStore("SiteExternalScripts");
+                                                                insertorWindow.show();
+                                                            },
+                                                            iconCls: 'add',
+                                                            text: 'Add'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
+                                                            },
+                                                            disabled: true,
+                                                            iconCls: 'close',
+                                                            text: 'Remove'
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -744,6 +778,15 @@ Ext.define('Rubedo.view.sitesInterface', {
 
     onSiteExternalStylesGridSelectionChange: function(model, selected, eOpts) {
         var button=Ext.getCmp("siteExternalStylesGrid").getDockedComponent(2).getComponent(1);
+        if (Ext.isEmpty(selected)){
+            button.disable();
+        } else {
+            button.enable();
+        }
+    },
+
+    onSiteExternalScriptsGridSelectionChange: function(model, selected, eOpts) {
+        var button=Ext.getCmp("siteExternalScriptsGrid").getDockedComponent(2).getComponent(1);
         if (Ext.isEmpty(selected)){
             button.disable();
         } else {

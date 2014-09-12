@@ -410,7 +410,8 @@ Ext.application({
         'ImportChoiceWindow',
         'importProductOptionsForm',
         'customImportUpdateSettings',
-        'importProductOptionsFieldset'
+        'importProductOptionsFieldset',
+        'ExternalResourceAddWindow'
     ],
     controllers: [
         'ContributionContenusController',
