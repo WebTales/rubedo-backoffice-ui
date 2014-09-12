@@ -1780,6 +1780,167 @@
                                             },
                                             "name": "MyColumn3",
                                             "designerId": "39227240-286d-4760-ac5e-828d1db95036"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top"
+                                            },
+                                            "name": "MyToolbar2",
+                                            "designerId": "22e4043e-8d7a-4ffc-8ce1-ea7c99773b73",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "iconCls": "add",
+                                                        "layout|flex": null,
+                                                        "text": "Add"
+                                                    },
+                                                    "name": "MyButton",
+                                                    "designerId": "87b201fb-eb81-4ea5-8c7a-fb515b62e36f",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "var insertorWindow=Ext.widget(\"InternalResourceAddWindow\");",
+                                                                    "insertorWindow.targetStore=Ext.getStore(\"SiteInternalStyles\");",
+                                                                    "insertorWindow.show();"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "d86c6b1a-dbba-47fa-9f77-73c2bb7ffd83"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "disabled": true,
+                                                        "iconCls": "edit",
+                                                        "layout|flex": null,
+                                                        "text": "Edit"
+                                                    },
+                                                    "name": "MyButton3",
+                                                    "designerId": "282d620f-3993-4e38-9d85-0f99b085ae3e",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "var editor=Ext.widget(\"aceEditorWindow\");",
+                                                                    "var record=button.up().up().getSelectionModel().getLastSelected();",
+                                                                    "editor.targetedRec=record;",
+                                                                    "editor.initialValue=record.get(\"code\");",
+                                                                    "editor.cssMode=true;",
+                                                                    "editor.show();"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "71e940fd-c291-499a-a96e-0b5220f9e16f"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "disabled": true,
+                                                        "iconCls": "close",
+                                                        "layout|flex": null,
+                                                        "text": "Remove"
+                                                    },
+                                                    "name": "MyButton1",
+                                                    "designerId": "18520e6c-3e0e-4269-92aa-bbf510e6a48d",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
+                                                                ]
+                                                            },
+                                                            "name": "handler",
+                                                            "designerId": "dcf3ae8f-1767-4627-929d-874fdbd15554"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSiteInternalStylesGridSelectionChange",
+                                                "implHandler": [
+                                                    "var button=Ext.getCmp(\"siteInternalStylesGrid\").getDockedComponent(2).getComponent(1);",
+                                                    "var button2=Ext.getCmp(\"siteInternalStylesGrid\").getDockedComponent(2).getComponent(2);",
+                                                    "if (Ext.isEmpty(selected)){",
+                                                    "    button.disable();",
+                                                    "    button2.disable();",
+                                                    "} else {",
+                                                    "    button.enable();",
+                                                    "    button2.enable();",
+                                                    "}"
+                                                ],
+                                                "name": "selectionchange",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSiteInternalStylesGridSelectionChange",
+                                            "designerId": "af448a0c-fde3-497a-b250-a1cc0efcdec0"
                                         }
                                     ]
                                 },

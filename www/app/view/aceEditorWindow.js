@@ -91,7 +91,11 @@ Ext.define('Rubedo.view.aceEditorWindow', {
 
     onAceEditorWindowAfterRender: function(component, eOpts) {
         component.editor=ace.edit(component.getComponent(0).getEl().id);
-        if (component.twigMode){
+        if (component.cssMode){
+            component.editor.getSession().setMode("ace/mode/css");
+        } else if (component.jsMode){
+            component.editor.getSession().setMode("ace/mode/javascript");
+        } else if (component.twigMode){
             component.editor.getSession().setMode("ace/mode/twig");
         } else {
         	component.editor.getSession().setMode("ace/mode/html");
@@ -106,7 +110,11 @@ Ext.define('Rubedo.view.aceEditorWindow', {
 
     onAceWindowSaveBtnClick: function(button, e, eOpts) {
         var component=button.up().up();
-        Ext.getCmp(component.targetedId).setValue(component.editor.getValue());
+        if (component.targetedRec){
+            component.targetedRec.set("code",component.editor.getValue());
+        } else {
+            Ext.getCmp(component.targetedId).setValue(component.editor.getValue());
+        }
         component.close();
     },
 

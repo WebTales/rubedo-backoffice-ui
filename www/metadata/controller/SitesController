@@ -270,9 +270,10 @@
                 "designer|targetType": "Ext.grid.Panel",
                 "fn": "onMainSitesGridRender",
                 "implHandler": [
-                    "Ext.getStore(\"SitesJson\").load();\r",
-                    "Ext.getStore(\"AllLanguagesStore\").load();\r",
-                    "Ext.getStore(\"AllLanguagesStore2\").load();"
+                    "Ext.getStore(\"SitesJson\").load();",
+                    "Ext.getStore(\"AllLanguagesStore\").load();",
+                    "Ext.getStore(\"AllLanguagesStore2\").load();",
+                    "Ext.require(\"resources/ace/src/ace\");"
                 ],
                 "name": "render",
                 "scope": "me"

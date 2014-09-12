@@ -172,6 +172,7 @@ Ext.define('Rubedo.controller.SitesController', {
         Ext.getStore("SitesJson").load();
         Ext.getStore("AllLanguagesStore").load();
         Ext.getStore("AllLanguagesStore2").load();
+        Ext.require("resources/ace/src/ace");
     },
 
     onSiteWizzardCreateBtnClick: function(button, e, eOpts) {

@@ -660,7 +660,54 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     dataIndex: 'name',
                                                     text: 'Name'
                                                 }
-                                            ]
+                                            ],
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'toolbar',
+                                                    dock: 'top',
+                                                    items: [
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                var insertorWindow=Ext.widget("InternalResourceAddWindow");
+                                                                insertorWindow.targetStore=Ext.getStore("SiteInternalStyles");
+                                                                insertorWindow.show();
+                                                            },
+                                                            iconCls: 'add',
+                                                            text: 'Add'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                var editor=Ext.widget("aceEditorWindow");
+                                                                var record=button.up().up().getSelectionModel().getLastSelected();
+                                                                editor.targetedRec=record;
+                                                                editor.initialValue=record.get("code");
+                                                                editor.cssMode=true;
+                                                                editor.show();
+                                                            },
+                                                            disabled: true,
+                                                            iconCls: 'edit',
+                                                            text: 'Edit'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
+                                                            },
+                                                            disabled: true,
+                                                            iconCls: 'close',
+                                                            text: 'Remove'
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            listeners: {
+                                                selectionchange: {
+                                                    fn: me.onSiteInternalStylesGridSelectionChange,
+                                                    scope: me
+                                                }
+                                            }
                                         },
                                         {
                                             xtype: 'gridpanel',
@@ -791,6 +838,18 @@ Ext.define('Rubedo.view.sitesInterface', {
             button.disable();
         } else {
             button.enable();
+        }
+    },
+
+    onSiteInternalStylesGridSelectionChange: function(model, selected, eOpts) {
+        var button=Ext.getCmp("siteInternalStylesGrid").getDockedComponent(2).getComponent(1);
+        var button2=Ext.getCmp("siteInternalStylesGrid").getDockedComponent(2).getComponent(2);
+        if (Ext.isEmpty(selected)){
+            button.disable();
+            button2.disable();
+        } else {
+            button.enable();
+            button2.enable();
         }
     },
 

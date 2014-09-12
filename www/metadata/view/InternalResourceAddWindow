@@ -1,0 +1,98 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrain": true,
+        "designer|userAlias": "InternalResourceAddWindow",
+        "designer|userClassName": "InternalResourceAddWindow",
+        "height": null,
+        "id": "InternalResourceAddWindow",
+        "modal": true,
+        "title": "Add external resource",
+        "width": 400
+    },
+    "name": "ExternalResourceAddWindow1",
+    "designerId": "385a08db-4dff-460a-9614-98136bb0c3b5",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "3f774e50-b781-405d-b023-81e298aa4d94",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Name",
+                        "layout|anchor": "100%",
+                        "name": "name",
+                        "vtype": null
+                    },
+                    "name": "MyTextField",
+                    "designerId": "5890d634-6353-4ffd-803f-00b9d514d038"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "text": "Add the internal resource to this site"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "50f8333e-cc3e-4e55-9683-455e1d11ca8e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var form=button.up().getForm();",
+                                    "if (form.isValid()){",
+                                    "    var addObj=form.getValues();",
+                                    "    addObj.code=\"\";",
+                                    "    button.up().up().targetStore.add(addObj);",
+                                    "    button.up().up().close();",
+                                    "}"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "c9cbe717-fc56-4f68-be20-c4d54dc74ab4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
