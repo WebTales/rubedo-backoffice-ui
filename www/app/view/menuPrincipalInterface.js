@@ -260,69 +260,60 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
 
     onSalamanderStudioMenuAdded: function(component, container, pos, eOpts) {
         component.add([
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.sites',
-            favoriteIcon: 'globe_computer.png',
-            itemId: 'sitesInterface',
-            iconCls: 'referencement_icon',
-            localiserId:'sitesLaunchBtn',
-            text: 'Sites'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.masks',
-            favoriteIcon: 'application.png',
-            itemId: 'adminFMDP',
-            iconCls: 'masque-icon',
-            localiserId:'masksLaunchBtn',
-            text: 'Masques de page'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.emailTemplates',
-            favoriteIcon: 'mail.png',
-            itemId: 'emailTypesInterface',
-            iconCls: 'mail_small',
-            localiserId:'emailsLaunchBtn',
-            text: 'Emails'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.contentTypes',
-            favoriteIcon: 'page_full.png',
-            itemId: 'adminFTDC',
-            iconCls: 'content-icon',
-            localiserId:'contentTypesLaunchBtn',
-            text: 'Types de contenus'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.damTypes',
-            favoriteIcon: 'images.png',
-            itemId: 'mediaTypesInterface',
-            iconCls: 'mediaTypes',
-            localiserId:'damTypesLaunchBtn',
-            text: 'Types de médias'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.userTypes',
-            favoriteIcon: 'users.png',
-            itemId: 'UserTypesInterface',
-            localiserId:'userTypesLaunchBtn',
-            iconCls: 'user',
-            text: 'User types'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.customThemes',
-            favoriteIcon: 'palette.png',
-            itemId: 'CustomThemesInterface',
-            iconCls: 'palette',
-            localiserId:'customThemesLaunchBtn',
-            text: 'Custom Themes'
-        }
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.sites',
+                favoriteIcon: 'globe_computer.png',
+                itemId: 'sitesInterface',
+                iconCls: 'referencement_icon',
+                localiserId:'sitesLaunchBtn',
+                text: 'Sites'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.masks',
+                favoriteIcon: 'application.png',
+                itemId: 'adminFMDP',
+                iconCls: 'masque-icon',
+                localiserId:'masksLaunchBtn',
+                text: 'Masques de page'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.emailTemplates',
+                favoriteIcon: 'mail.png',
+                itemId: 'emailTypesInterface',
+                iconCls: 'mail_small',
+                localiserId:'emailsLaunchBtn',
+                text: 'Emails'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.contentTypes',
+                favoriteIcon: 'page_full.png',
+                itemId: 'adminFTDC',
+                iconCls: 'content-icon',
+                localiserId:'contentTypesLaunchBtn',
+                text: 'Types de contenus'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.damTypes',
+                favoriteIcon: 'images.png',
+                itemId: 'mediaTypesInterface',
+                iconCls: 'mediaTypes',
+                localiserId:'damTypesLaunchBtn',
+                text: 'Types de médias'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.userTypes',
+                favoriteIcon: 'users.png',
+                itemId: 'UserTypesInterface',
+                localiserId:'userTypesLaunchBtn',
+                iconCls: 'user',
+                text: 'User types'
+            }
         ]);
         component.add(AppExtensions.launchButtons.studio);
     },
