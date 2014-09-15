@@ -328,39 +328,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "displayField": "label",
-                                "fieldLabel": "Theme ",
-                                "labelWidth": 110,
-                                "layout|anchor": "100%",
-                                "localiserId": "themeField",
-                                "name": "theme",
-                                "store": "SiteThemesStore",
-                                "value": [
-                                    "\"default\""
-                                ],
-                                "valueField": "text"
-                            },
-                            "name": "MyComboBox49",
-                            "configAlternates": {
-                                "managesStore": "boolean"
-                            },
-                            "designerId": "3271d51b-d7e4-43cd-83b6-d05fb6b4b174",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
                                 "allowBlank": false,
                                 "editable": false,
                                 "fieldLabel": "Protocole *",
@@ -402,7 +369,7 @@
                                 "layout|anchor": "100%",
                                 "store": "ContributeWorkspacesCombo"
                             },
-                            "name": "workspacecombo12",
+                            "name": "workspacecombo1",
                             "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -663,7 +630,7 @@
                         "dock": "bottom",
                         "height": 32
                     },
-                    "name": "mytoolbar561",
+                    "name": "mytoolbar56",
                     "designerId": "6a2922fd-4da7-4943-ade7-21e86245c984",
                     "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
                 }

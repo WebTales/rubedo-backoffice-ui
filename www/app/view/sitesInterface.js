@@ -233,18 +233,6 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                 },
                                                 {
                                                     xtype: 'combobox',
-                                                    managesStore: true,
-                                                    localiserId: 'themeField',
-                                                    anchor: '100%',
-                                                    fieldLabel: 'Theme ',
-                                                    labelWidth: 110,
-                                                    name: 'theme',
-                                                    displayField: 'label',
-                                                    store: 'SiteThemesStore',
-                                                    valueField: 'text'
-                                                },
-                                                {
-                                                    xtype: 'combobox',
                                                     localiserId: 'protocolField',
                                                     anchor: '100%',
                                                     fieldLabel: 'Protocole *',
@@ -904,7 +892,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         });
         component.add(tagPicker);
         component.add(homePageSelector);
-        component.insert(5,languagesPicker);
+        component.insert(4,languagesPicker);
         component.add(singlePageSelector);
     },
 
