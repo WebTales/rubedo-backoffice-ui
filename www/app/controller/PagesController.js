@@ -315,7 +315,7 @@ Ext.define('Rubedo.controller.PagesController', {
             "phone":true,
             "tablet":true,
             "desktop":true,
-            "largeDeskTop":true
+            "largeDesktop":true
         };
         nouvBloc.canEdit=true;
         nouvBloc.flex=1;
