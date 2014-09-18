@@ -1,0 +1,98 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "SiteThemesStore",
+        "designer|userClassName": "SiteThemesStore",
+        "isOptimised": true,
+        "model": null,
+        "pageSize": 1000,
+        "storeId": "SiteThemesStore",
+        "usedCollection": "CustomThemes"
+    },
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "d83aaaaf-494e-4b1d-961c-a90b48ca6b12",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "\r",
+                    "                    read: 'fo-themes'\r",
+                    "                    \r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "name": "MyAjaxProxy56",
+            "designerId": "2b4cf942-8c8c-4613-91f2-b9e7ef0e6eaf",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader55",
+                    "designerId": "9e86a502-7d91-46ff-9d67-1f584e182e48"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "name": "MyField438",
+            "designerId": "96090cd7-d092-4741-a428-db76c9b06dcd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "label"
+            },
+            "name": "MyField439",
+            "designerId": "9b5affc0-dadd-44ac-8dad-654270b1b065"
+        }
+    ]
+}

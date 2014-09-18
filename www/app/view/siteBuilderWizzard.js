@@ -142,6 +142,18 @@ Ext.define('Rubedo.view.siteBuilderWizzard', {
                                 },
                                 {
                                     xtype: 'combobox',
+                                    localiserId: 'themeField',
+                                    anchor: '100%',
+                                    fieldLabel: 'Theme ',
+                                    labelWidth: 110,
+                                    name: 'theme',
+                                    value: 'default',
+                                    displayField: 'label',
+                                    store: 'SiteThemesStore',
+                                    valueField: 'text'
+                                },
+                                {
+                                    xtype: 'combobox',
                                     localiserId: 'protocolField',
                                     anchor: '100%',
                                     fieldLabel: 'Protocole *',

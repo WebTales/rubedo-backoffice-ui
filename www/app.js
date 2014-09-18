@@ -124,6 +124,7 @@ Ext.application({
         'TCNDepComboCS',
         'TaxonomyForMT',
         'MTFieldsStore',
+        'SiteThemesStore',
         'PagePickerStore',
         'QueriesStore',
         'MainImageStore',
