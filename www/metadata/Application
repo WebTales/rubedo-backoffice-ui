@@ -28,7 +28,8 @@
             "AppExtensionController",
             "UserTypesController",
             "EmailController",
-            "ShippersController"
+            "ShippersController",
+            "FOThemesController"
         ],
         "models": [
             "sitesDataModel",
@@ -410,7 +411,9 @@
             "customImportUpdateSettings",
             "importProductOptionsFieldset",
             "ExternalResourceAddWindow",
-            "InternalResourceAddWindow"
+            "InternalResourceAddWindow",
+            "FOThemesInterface",
+            "FOThemeImportWindow"
         ]
     },
     "name": "Application",

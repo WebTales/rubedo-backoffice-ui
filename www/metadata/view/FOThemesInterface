@@ -1,0 +1,94 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "FOThemesInterface",
+        "designer|userClassName": "FOThemesInterface",
+        "height": 533,
+        "iconCls": "media-icon",
+        "id": "FOThemesInterface",
+        "layout": "hbox",
+        "localiserId": null,
+        "title": "Themes",
+        "width": 852
+    },
+    "name": "WorkspacesInterface1",
+    "designerId": "9816f13a-37b0-41ee-8f8f-4580857e45ed",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "mytool161",
+            "designerId": "2dc5d977-f33e-4184-8eb9-d56094640344",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "mytool171",
+            "designerId": "c13dbd7f-90cb-4a59-bc33-23eb467cff05",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar",
+            "designerId": "39ca6379-d1ad-41f7-9437-8627ada1ada2",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "top",
+                        "iconCls": "database_up_big",
+                        "id": "foThemeImportBtn",
+                        "layout|flex": null,
+                        "scale": "large",
+                        "text": "Import"
+                    },
+                    "name": "MyButton",
+                    "designerId": "c5058c27-4784-465d-8df2-cfb969a597f8"
+                }
+            ]
+        }
+    ]
+}

@@ -407,7 +407,9 @@ Ext.application({
         'customImportUpdateSettings',
         'importProductOptionsFieldset',
         'ExternalResourceAddWindow',
-        'InternalResourceAddWindow'
+        'InternalResourceAddWindow',
+        'FOThemesInterface',
+        'FOThemeImportWindow'
     ],
     controllers: [
         'ContributionContenusController',
@@ -431,7 +433,8 @@ Ext.application({
         'AppExtensionController',
         'UserTypesController',
         'EmailController',
-        'ShippersController'
+        'ShippersController',
+        'FOThemesController'
     ],
     name: 'Rubedo',
 

@@ -1,0 +1,71 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrain": true,
+        "designer|userAlias": "FOThemeImportWindow",
+        "designer|userClassName": "FOThemeImportWindow",
+        "height": null,
+        "iconCls": "database_up_small",
+        "id": "FOThemeImportWindow",
+        "modal": true,
+        "title": "Theme import",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "7e3b4bc8-704b-4ec1-999c-99da0fd6bad3",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "a4f2cd7e-3b35-4bfa-9870-715f1c98fbd8",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Zip archive",
+                        "layout|anchor": "100%",
+                        "name": "archive"
+                    },
+                    "name": "MyFileUpload",
+                    "designerId": "5bfc50e7-c792-4ae6-a9f3-7d0ba4b90086"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "FOThemeZipSubmitBtn",
+                        "layout|anchor": "100%",
+                        "text": "Import"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "7c3c9aa3-4e47-4c7a-9236-cf2116dcac7c"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "FOThemesController",
+        "designer|userClassName": "FOThemesController"
+    },
+    "name": "MyController",
+    "designerId": "d99f8bf8-abf5-429c-8ec0-da464da7588c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#foThemeImportBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onFoThemeImportBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"FOThemeImportWindow\").show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onFoThemeImportBtnClick",
+            "designerId": "b700cc0c-5d07-49a9-b216-11a1ef0f695e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#FOThemeZipSubmitBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onFOThemeZipSubmitBtnClick",
+                "implHandler": [
+                    "",
+                    "var form=button.up().getForm();",
+                    "if (form.isValid()){",
+                    "     button.up().setLoading(true);",
+                    "    form.submit({",
+                    "        url: 'fo-themes/import',",
+                    "        params: {",
+                    "",
+                    "        },",
+                    "        success: function(form, action) {",
+                    "            button.up().setLoading(false);",
+                    "            button.up().up().up().close();",
+                    "        },",
+                    "        failure: function(form, action) {",
+                    "            button.up().setLoading(false);",
+                    "            switch (action.failureType) {",
+                    "                case Ext.form.action.Action.CLIENT_INVALID:",
+                    "                Ext.Msg.alert('Erreur', 'Certains champs sont invalides');",
+                    "                break;",
+                    "                case Ext.form.action.Action.CONNECT_FAILURE:",
+                    "                Ext.Msg.alert('Erreur', 'Erreur Ajax');",
+                    "                break;",
+                    "                case Ext.form.action.Action.SERVER_INVALID:",
+                    "                Ext.Msg.alert('Erreur', action.result.msg);",
+                    "            }",
+                    "        }",
+                    "    });",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onFOThemeZipSubmitBtnClick",
+            "designerId": "11d2f035-62e1-4c00-afed-17c85bbd822f"
+        }
+    ]
+}

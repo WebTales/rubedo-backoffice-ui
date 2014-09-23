@@ -313,6 +313,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                 localiserId:'userTypesLaunchBtn',
                 iconCls: 'user',
                 text: 'User types'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.customThemes',
+                favoriteIcon: 'database.png',
+                itemId: 'FOThemesInterface',
+                iconCls: 'media-icon',
+                text: 'Themes'
             }
         ]);
         component.add(AppExtensions.launchButtons.studio);
