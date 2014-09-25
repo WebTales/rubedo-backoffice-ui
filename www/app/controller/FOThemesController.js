@@ -25,7 +25,7 @@ Ext.define('Rubedo.controller.FOThemesController', {
 
         var form=button.up().getForm();
         if (form.isValid()){
-             button.up().setLoading(true);
+            button.up().setLoading(true);
             form.submit({
                 url: 'fo-themes/import',
                 params: {
@@ -34,18 +34,19 @@ Ext.define('Rubedo.controller.FOThemesController', {
                 success: function(form, action) {
                     button.up().setLoading(false);
                     button.up().up().up().close();
+                    Ext.Msg.alert('Success', "Archive imported");
                 },
                 failure: function(form, action) {
                     button.up().setLoading(false);
                     switch (action.failureType) {
                         case Ext.form.action.Action.CLIENT_INVALID:
-                        Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
-                        break;
+                            Ext.Msg.alert('Erreur', 'Certains champs sont invalides');
+                            break;
                         case Ext.form.action.Action.CONNECT_FAILURE:
-                        Ext.Msg.alert('Erreur', 'Erreur Ajax');
-                        break;
+                            Ext.Msg.alert('Erreur', 'Erreur Ajax');
+                            break;
                         case Ext.form.action.Action.SERVER_INVALID:
-                        Ext.Msg.alert('Erreur', action.result.msg);
+                            Ext.Msg.alert('Erreur', action.result.msg);
                     }
                 }
             });

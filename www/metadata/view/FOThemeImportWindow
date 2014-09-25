@@ -34,6 +34,23 @@
             "designerId": "a4f2cd7e-3b35-4bfa-9870-715f1c98fbd8",
             "cn": [
                 {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Name",
+                        "layout|anchor": "100%",
+                        "name": "name"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "61d2d1a9-d7eb-4bc6-b302-e12372ccb071"
+                },
+                {
                     "type": "Ext.form.field.File",
                     "reference": {
                         "name": "items",

@@ -41,6 +41,14 @@ Ext.define('Rubedo.view.FOThemeImportWindow', {
                     title: '',
                     items: [
                         {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'Name',
+                            name: 'name',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false
+                        },
+                        {
                             xtype: 'filefield',
                             anchor: '100%',
                             fieldLabel: 'Zip archive',
