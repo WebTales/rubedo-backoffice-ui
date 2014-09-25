@@ -42,6 +42,11 @@ Ext.define('Rubedo.view.assisstantRE6', {
                     padding: 10,
                     title: '<b>Summary</b>'
                 },
+                me.processQBReturnedDataFieldset({
+                    xtype: 'fieldset',
+                    id: 'QBReturnedDataFieldset',
+                    title: 'Returne data'
+                }),
                 {
                     xtype: 'textfield',
                     localiserId: 'queryNameField',
@@ -64,6 +69,26 @@ Ext.define('Rubedo.view.assisstantRE6', {
         });
 
         me.callParent(arguments);
+    },
+
+    processQBReturnedDataFieldset: function(config) {
+        var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            name:"returnedFields",
+            id:"QBReturnedFieldsField",
+            fieldLabel:"Returned fields",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            pinList:false
+        });
+        config.items=[];
+        config.items.push(tagPicker);
+        return config;
     }
 
 });

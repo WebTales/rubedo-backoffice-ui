@@ -50,6 +50,9 @@ Ext.define('Rubedo.model.queryDataModel', {
             name: 'readOnly',
             persist: false,
             type: 'boolean'
+        },
+        {
+            name: 'returnedFields'
         }
     ]
 });

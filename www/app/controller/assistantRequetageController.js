@@ -159,6 +159,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 } else {
                     editedOne.set("name", result.queryName);
                 }
+                editedOne.set("returnedFields", result.returnedFields);
                 editedOne.endEdit();
                 Ext.getStore("QueriesStore").addListener("update", function(){
                     Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(editedOne);
@@ -166,6 +167,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                 }else {
                     var newQuery = Ext.create("Rubedo.model.queryDataModel", {
                         name:result.queryName,
+                        returnedFields:result.returnedFields,
                         type:"advanced",
                         query:result,
                         averageDuration:0,
@@ -307,7 +309,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                     result.fieldRules[field.ruleId][field.usedRole]=field.getValue();*/
 
                 } else {
-                    if (Ext.Array.contains(["contentTypes","queryName","vocabulariesRule"],field.name)){
+                    if (Ext.Array.contains(["contentTypes","queryName","vocabulariesRule","returnedFields"],field.name)){
                     	result[field.name]=field.getValue();
                     }
                 }
@@ -746,12 +748,12 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             var storeOper = Ext.create('Ext.data.Store', {
                                 fields: ['operateur'],
                                 data : [
-                                {"operateur":"="},
-                                {"operateur":"<="},
-                                {"operateur":"<"},
-                                {"operateur":">="},
-                                {"operateur":">"},
-                                {"operateur":"!="}
+                                    {"operateur":"="},
+                                    {"operateur":"<="},
+                                    {"operateur":"<"},
+                                    {"operateur":">="},
+                                    {"operateur":">"},
+                                    {"operateur":"!="}
                                 ]
                             });
                             var operateur= Ext.create('Ext.form.ComboBox', {
@@ -798,8 +800,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         var storeOper = Ext.create('Ext.data.Store', {
                             fields: ['operateur', 'label'],
                             data : [
-                            {"operateur":"ASC", "label": Rubedo.RubedoAutomatedElementsLoc.ascText},
-                            {"operateur":"DESC", "label": Rubedo.RubedoAutomatedElementsLoc.descText}
+                                {"operateur":"ASC", "label": Rubedo.RubedoAutomatedElementsLoc.ascText},
+                                {"operateur":"DESC", "label": Rubedo.RubedoAutomatedElementsLoc.descText}
                             ]
                         });
                         var operateur= Ext.create('Ext.form.ComboBox', {

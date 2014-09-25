@@ -53,6 +53,57 @@
             ]
         },
         {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "QBReturnedDataFieldset",
+                "title": "Returne data"
+            },
+            "name": "MyFieldSet",
+            "designerId": "b82223ca-2938-40b0-b884-e7fa8857b472",
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processQBReturnedDataFieldset",
+                        "implHandler": [
+                            "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {",
+                            "    store:[],",
+                            "    anchor:\"100%\",",
+                            "    name:\"returnedFields\",",
+                            "    id:\"QBReturnedFieldsField\",",
+                            "    fieldLabel:\"Returned fields\",",
+                            "    multiSelect:true,",
+                            "    forceSelection:false,",
+                            "    createNewOnEnter:true,",
+                            "    hideTrigger:true,",
+                            "    triggerOnClick:false,",
+                            "    createNewOnBlur:true,",
+                            "    pinList:false",
+                            "});",
+                            "config.items=[];",
+                            "config.items.push(tagPicker);",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processQBReturnedDataFieldset",
+                    "designerId": "ebf948a7-d93f-48fe-b69f-98f2712aebd4"
+                }
+            ]
+        },
+        {
             "type": "Ext.form.field.Text",
             "reference": {
                 "name": "items",
