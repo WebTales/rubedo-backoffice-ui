@@ -104,11 +104,11 @@ Ext.define('Rubedo.view.DCEField', {
                 delay=400;
             }
             var task = new Ext.util.DelayedTask(function(){
-            var companion = Ext.widget("searchResultsWindow");
-            companion.targetId=component.getId();
-            companion.DCEFMode=true;
-            companion.allowedCT=component.allowedCT;
-            companion.show();
+                var companion = Ext.widget("searchResultsWindow");
+                companion.targetId=component.getId();
+                companion.DCEFMode=true;
+                companion.allowedCT=component.allowedCT;
+                companion.show();
             });
             task.delay(delay);
         });

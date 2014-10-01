@@ -157,6 +157,20 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.get("objectType")=="dam"){
+                                    var link="dam/get-thumbnail?id="+record.get("id")+"&version="+record.get("version");
+                                    return ('<img src=\"'+link+'\" height=\"100\" width=\"100\"><p>'+value+'</p>');
+                                } else if (record.get("objectType")=="user") {
+                                    var src="";
+                                    if (Ext.isEmpty(record.get("photo"))) {
+                                        src="resources/images/userBig.png";
+                                    } else {
+                                        src="image/get?file-id="+record.get("photo");
+                                    }
+                                    return ('<img src=\"'+src+'\" width=\"100\" ><p>'+value+'</p>');
+                                }else return value;
+                            },
                             localiserId: 'titleCol',
                             dataIndex: 'text',
                             text: 'Titre',
@@ -439,6 +453,17 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("selectESEntityBtn").show();
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-content';
+            Ext.getStore("ESFacetteStore").load();
+        } else if (component.MediaPickerMode){
+            component.modal=true;
+            component.setTitle("Media Selector");
+            Ext.getStore("ESFacetteStore").activeFacettes={ };
+            if (!Ext.isEmpty(component.allowedDT)){
+                Ext.getStore("ESFacetteStore").activeFacettes={damType:component.allowedDT};
+            }
+            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("selectESEntityBtn").show();
+            Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-dam';
             Ext.getStore("ESFacetteStore").load();
         }
 

@@ -35,6 +35,9 @@ Ext.define('Rubedo.model.CTLayout', {
         },
         {
             name: 'site'
+        },
+        {
+            name: 'customTemplate'
         }
     ]
 });

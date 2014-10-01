@@ -77,7 +77,23 @@ Ext.define('Rubedo.view.ImagePickerField', {
         });
         component.up().add(myComponent);
         myComponent.getComponent("buttonHolder").getComponent("fieldChangeImage").on("click",function(){
-            Ext.widget("ImagePickerWindow",{targetField:component.id}).show();
+            //Ext.widget("ImagePickerWindow",{targetField:component.id}).show();
+            var delay = 10;
+            var prev = Ext.getCmp("searchResultsWindow");
+            if (!Ext.isEmpty(prev)){
+                prev.close();
+                delay=400;
+            }
+            var task = new Ext.util.DelayedTask(function(){
+                var companion = Ext.widget("searchResultsWindow");
+                companion.targetId=component.getId();
+                companion.MediaPickerMode=true;
+                if (!Ext.isEmpty(component.allowedDAMTypes)){
+                    companion.allowedDT=component.allowedDAMTypes;
+                }
+                companion.show();
+            });
+            task.delay(delay);
         });
         myComponent.getComponent("buttonHolder").getComponent("fieldClearImage").on("click",function(){
             component.setValue(null);

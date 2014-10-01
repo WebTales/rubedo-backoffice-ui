@@ -50,6 +50,9 @@ Ext.define('Rubedo.model.contentsSearchModel', {
         },
         {
             name: 'typeId'
+        },
+        {
+            name: 'photo'
         }
     ]
 });
