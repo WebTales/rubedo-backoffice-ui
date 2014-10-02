@@ -583,6 +583,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "container|padding": "0 6 0 6",
                         "dock": "bottom"
                     },
                     "name": "MyToolbar74",
@@ -635,30 +636,34 @@
                                     "userConfig": {
                                         "fn": "onManualQuerySaveBtnClick",
                                         "implHandler": [
-                                            "var raw = button.up().up().getStore().getRange();\r",
-                                            "var refined = Ext.Array.pluck(Ext.Array.pluck(raw, \"data\"), \"id\");\r",
-                                            "if (!Ext.isEmpty(refined)){\r",
-                                            "    if (Ext.getCmp(\"manualQueryInterface\").editorMode){\r",
-                                            "        var modRec=Ext.getStore(\"QueriesStore\").findRecord(\"id\",Ext.getCmp(\"manualQueryInterface\").recId);\r",
-                                            "        modRec.set(\"query\",refined);\r",
-                                            "    } else {\r",
-                                            "        var newQuery = Ext.create(\"Rubedo.model.queryDataModel\", {\r",
-                                            "            name:Rubedo.RubedoAutomatedElementsLoc.manualQueryText,\r",
-                                            "            type:\"manual\",\r",
-                                            "            query:refined,\r",
-                                            "            averageDuration:0,\r",
-                                            "            count:0,\r",
-                                            "            usage:[]\r",
-                                            "        });\r",
-                                            "\r",
-                                            "        Ext.getStore(\"QueriesStore\").add(newQuery);\r",
-                                            "        Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){\r",
-                                            "            Ext.getCmp(Ext.getCmp(\"manualQueryInterface\").mainFieldId).select(newQuery);\r",
-                                            "        },this,{single:true});\r",
-                                            "        }\r",
-                                            "\r",
-                                            "        Ext.getCmp(\"manualQueryInterface\").close();\r",
-                                            "    }"
+                                            "var raw = button.up().up().getStore().getRange();",
+                                            "var refined = Ext.Array.pluck(Ext.Array.pluck(raw, \"data\"), \"id\");",
+                                            "if (!Ext.isEmpty(refined)){",
+                                            "    if (Ext.getCmp(\"manualQueryInterface\").editorMode){",
+                                            "        var modRec=Ext.getStore(\"QueriesStore\").findRecord(\"id\",Ext.getCmp(\"manualQueryInterface\").recId);",
+                                            "        modRec.beginEdit();",
+                                            "        modRec.set(\"query\",refined);",
+                                            "        modRec.set(\"returnedFields\",Ext.getCmp(\"QBReturnedFieldsField\").getValue());",
+                                            "        modRec.endEdit();",
+                                            "    } else {",
+                                            "        var newQuery = Ext.create(\"Rubedo.model.queryDataModel\", {",
+                                            "            name:Rubedo.RubedoAutomatedElementsLoc.manualQueryText,",
+                                            "            type:\"manual\",",
+                                            "            query:refined,",
+                                            "            averageDuration:0,",
+                                            "            returnedFields:Ext.getCmp(\"QBReturnedFieldsField\").getValue(),",
+                                            "            count:0,",
+                                            "            usage:[]",
+                                            "        });",
+                                            "",
+                                            "        Ext.getStore(\"QueriesStore\").add(newQuery);",
+                                            "        Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){",
+                                            "            Ext.getCmp(Ext.getCmp(\"manualQueryInterface\").mainFieldId).select(newQuery);",
+                                            "        },this,{single:true});",
+                                            "    }",
+                                            "",
+                                            "    Ext.getCmp(\"manualQueryInterface\").close();",
+                                            "}"
                                         ],
                                         "name": "click",
                                         "scope": "me"
@@ -667,6 +672,40 @@
                                     "designerId": "b19e57a8-898a-463c-911f-d5180c148beb"
                                 }
                             ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processMyToolbar74",
+                                "implHandler": [
+                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {",
+                                    "    store:[],",
+                                    "    width:300,",
+                                    "    name:\"returnedFields\",",
+                                    "    id:\"QBReturnedFieldsField\",",
+                                    "    fieldLabel:\"Returned fields\",",
+                                    "    multiSelect:true,",
+                                    "    forceSelection:false,",
+                                    "    createNewOnEnter:true,",
+                                    "    hideTrigger:true,",
+                                    "    triggerOnClick:false,",
+                                    "    createNewOnBlur:true,",
+                                    "    pinList:false",
+                                    "});",
+                                    "config.items.unshift(tagPicker);",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processMyToolbar74",
+                            "designerId": "dd3a7b05-1163-452a-afab-7b85c18ffe4b"
                         }
                     ]
                 },
@@ -706,7 +745,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1716",
+            "name": "mytool172",
             "designerId": "67a234fc-c280-402c-b478-ba009eac0564",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -720,20 +759,21 @@
             "userConfig": {
                 "fn": "onManualQueryInterfaceRender",
                 "implHandler": [
-                    "Ext.getStore(\"TCNDepComboCS\").load();\r",
-                    "var task = new Ext.util.DelayedTask(function(){\r",
-                    "    if (component.editorMode){\r",
-                    "        component.getComponent(2).getStore().getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(component.initialQuery)+\"}]\";\r",
-                    "        component.getComponent(2).getStore().addListener(\"load\", function(){\r",
-                    "            component.getComponent(0).getStore().clearFilter(true);\r",
-                    "            component.getComponent(0).getStore().load();\r",
-                    "        }, this, {single:true});\r",
-                    "            component.getComponent(2).getStore().load();\r",
-                    "        } else {\r",
-                    "            component.getComponent(0).getStore().clearFilter(true);\r",
-                    "            component.getComponent(0).getStore().load();\r",
-                    "        }\r",
-                    "    });\r",
+                    "Ext.getStore(\"TCNDepComboCS\").load();",
+                    "var task = new Ext.util.DelayedTask(function(){",
+                    "    if (component.editorMode){",
+                    "        Ext.getCmp(\"QBReturnedFieldsField\").setValue(component.returnedFields);",
+                    "        component.getComponent(2).getStore().getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"id\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(component.initialQuery)+\"}]\";",
+                    "        component.getComponent(2).getStore().addListener(\"load\", function(){",
+                    "            component.getComponent(0).getStore().clearFilter(true);",
+                    "            component.getComponent(0).getStore().load();",
+                    "        }, this, {single:true});",
+                    "            component.getComponent(2).getStore().load();",
+                    "        } else {",
+                    "            component.getComponent(0).getStore().clearFilter(true);",
+                    "            component.getComponent(0).getStore().load();",
+                    "        }",
+                    "    });",
                     "    task.delay(400);"
                 ],
                 "name": "render",

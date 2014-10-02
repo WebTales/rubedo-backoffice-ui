@@ -243,9 +243,13 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                         }
                     ],
                     dockedItems: [
-                        {
+                        me.processMyToolbar74({
                             xtype: 'toolbar',
                             dock: 'bottom',
+                            layout: {
+                                type: 'hbox',
+                                padding: '0 6 0 6'
+                            },
                             items: [
                                 {
                                     xtype: 'tbfill'
@@ -264,7 +268,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                                     }
                                 }
                             ]
-                        }
+                        })
                     ],
                     listeners: {
                         selectionchange: {
@@ -292,6 +296,25 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processMyToolbar74: function(config) {
+        var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            width:300,
+            name:"returnedFields",
+            id:"QBReturnedFieldsField",
+            fieldLabel:"Returned fields",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            pinList:false
+        });
+        config.items.unshift(tagPicker);
+        return config;
     },
 
     onManualQueryLeftGridSelectionChange: function(model, selected, eOpts) {
@@ -326,13 +349,17 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         if (!Ext.isEmpty(refined)){
             if (Ext.getCmp("manualQueryInterface").editorMode){
                 var modRec=Ext.getStore("QueriesStore").findRecord("id",Ext.getCmp("manualQueryInterface").recId);
+                modRec.beginEdit();
                 modRec.set("query",refined);
+                modRec.set("returnedFields",Ext.getCmp("QBReturnedFieldsField").getValue());
+                modRec.endEdit();
             } else {
                 var newQuery = Ext.create("Rubedo.model.queryDataModel", {
                     name:Rubedo.RubedoAutomatedElementsLoc.manualQueryText,
                     type:"manual",
                     query:refined,
                     averageDuration:0,
+                    returnedFields:Ext.getCmp("QBReturnedFieldsField").getValue(),
                     count:0,
                     usage:[]
                 });
@@ -341,10 +368,10 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                 Ext.getStore("QueriesStore").addListener("update", function(){
                     Ext.getCmp(Ext.getCmp("manualQueryInterface").mainFieldId).select(newQuery);
                 },this,{single:true});
-                }
-
-                Ext.getCmp("manualQueryInterface").close();
             }
+
+            Ext.getCmp("manualQueryInterface").close();
+        }
     },
 
     onManualQueryRightGridGridSelectionChange: function(model, selected, eOpts) {
@@ -361,6 +388,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         Ext.getStore("TCNDepComboCS").load();
         var task = new Ext.util.DelayedTask(function(){
             if (component.editorMode){
+                Ext.getCmp("QBReturnedFieldsField").setValue(component.returnedFields);
                 component.getComponent(2).getStore().getProxy().extraParams.filter="[{\"property\":\"id\",\"operator\":\"$in\",\"value\":"+Ext.JSON.encode(component.initialQuery)+"}]";
                 component.getComponent(2).getStore().addListener("load", function(){
                     component.getComponent(0).getStore().clearFilter(true);
