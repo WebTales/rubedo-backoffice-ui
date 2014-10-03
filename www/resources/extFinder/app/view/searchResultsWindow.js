@@ -345,8 +345,16 @@ Ext.define('extFinder.view.searchResultsWindow', {
 
     onSelectESEntityBtnClick: function(button, e, eOpts) {
         var id=Ext.getCmp("ResultContentsGrid").getSelectionModel().getLastSelected().get("id");
-        Ext.getCmp(button.up().up().targetId).setValue(id);
-        button.up().up().close();
+        if (CKEOptions.type=="Image"){
+
+            if (CKEOptions.soloMode){
+                window.opener.saveImage(CKEOptions.contentId,id);
+            } else {
+                var fileURL="/dam?media-id="+id;
+                window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
+            }
+        }
+        window.close();
     },
 
     onSaveGeoQueryBtnClick: function(button, e, eOpts) {
