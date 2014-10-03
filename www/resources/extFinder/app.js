@@ -25,21 +25,25 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'DAMModel',
-        'mediaTypeModel'
+        'mediaTypeModel',
+        'contentsSearchModel'
     ],
     stores: [
         'DAMPickerStore',
-        'MediaTypesFORDAMPicker'
+        'MediaTypesFORDAMPicker',
+        'ESFacetteStore'
     ],
     views: [
         'DAMPickerWindow',
         'MainViewport',
-        'DamMainView'
+        'DamMainView',
+        'searchResultsWindow'
     ],
     appFolder: 'resources/extFinder/app',
     autoCreateViewport: true,
     controllers: [
-        'ACLController'
+        'ACLController',
+        'SearchController'
     ],
     name: 'extFinder'
 });

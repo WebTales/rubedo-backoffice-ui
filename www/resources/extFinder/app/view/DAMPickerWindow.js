@@ -235,7 +235,7 @@ Ext.define('extFinder.view.DAMPickerWindow', {
             if (CKEOptions.soloMode){
                 window.opener.saveImage(CKEOptions.contentId,button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("id"));
             } else {
-                var fileURL="/image?file-id="+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("originalFileId");
+                var fileURL="/dam?media-id="+button.up().up().getComponent(0).getSelectionModel().getLastSelected().get("id");
                 window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
             }
         }

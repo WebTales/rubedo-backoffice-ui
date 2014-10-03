@@ -169,7 +169,7 @@ Ext.define('extFinder.controller.ACLController', {
                         var task2 = new Ext.util.DelayedTask(function(){
                             ACL.interfaceRights=Ext.JSON.decode(response.responseText);
                             Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();
-                            Ext.getCmp("MainViewport").add(Ext.widget("DAMPickerWindow"));
+                            Ext.getCmp("MainViewport").add(Ext.widget("searchResultsWindow",{MediaPickerMode:true}));
                         });
                         task2.delay(400);
                     },
