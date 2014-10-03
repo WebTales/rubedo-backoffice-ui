@@ -1261,6 +1261,30 @@
                                                     "type": "string"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Iframely",
+                                                "labelWidth": 110,
+                                                "layout|anchor": "100%",
+                                                "localiserId": null,
+                                                "name": "iframelyKey"
+                                            },
+                                            "name": "MyTextField",
+                                            "designerId": "86c1f215-70f2-4b69-a39f-34f65c96cbf0",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -1351,7 +1375,7 @@
                                 "id": "sitesDLSToolbar",
                                 "replicatorEntity": "sitesRepLoc"
                             },
-                            "name": "dlstoolbar2",
+                            "name": "dlstoolbar",
                             "designerId": "1c9d6053-d4f4-4b79-b7bc-262784f31c7b",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         },
@@ -2271,7 +2295,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool162",
+            "name": "mytool16",
             "designerId": "2da1d94c-ba44-4ebf-b6b3-05ac67c9704c",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -2285,7 +2309,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool172",
+            "name": "mytool171",
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },

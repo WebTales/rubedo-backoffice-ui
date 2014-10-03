@@ -169,6 +169,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'resources'
+        },
+        {
+            name: 'iframelyKey'
         }
     ]
 });

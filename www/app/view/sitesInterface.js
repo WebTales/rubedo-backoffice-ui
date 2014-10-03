@@ -487,6 +487,13 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     fieldLabel: 'Disqus',
                                                     labelWidth: 110,
                                                     name: 'disqusKey'
+                                                },
+                                                {
+                                                    xtype: 'textfield',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Iframely',
+                                                    labelWidth: 110,
+                                                    name: 'iframelyKey'
                                                 }
                                             ]
                                         },

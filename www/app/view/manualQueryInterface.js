@@ -394,13 +394,13 @@ Ext.define('Rubedo.view.manualQueryInterface', {
                     component.getComponent(0).getStore().clearFilter(true);
                     component.getComponent(0).getStore().load();
                 }, this, {single:true});
-                    component.getComponent(2).getStore().load();
-                } else {
-                    component.getComponent(0).getStore().clearFilter(true);
-                    component.getComponent(0).getStore().load();
-                }
-            });
-            task.delay(400);
+                component.getComponent(2).getStore().load();
+            } else {
+                component.getComponent(0).getStore().clearFilter(true);
+                component.getComponent(0).getStore().load();
+            }
+        });
+        task.delay(400);
     },
 
     onManualQueryInterfaceBeforeClose: function(panel, eOpts) {

@@ -604,6 +604,19 @@
             },
             "name": "MyField",
             "designerId": "f892f2b0-8ccf-4eac-9ae3-d04ea0bae3d7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "iframelyKey"
+            },
+            "name": "MyField2",
+            "designerId": "7e31a600-d7d1-4481-a4ff-1b5ab5bd1cbb"
         }
     ]
 }

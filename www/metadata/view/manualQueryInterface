@@ -745,7 +745,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool172",
+            "name": "mytool17",
             "designerId": "67a234fc-c280-402c-b478-ba009eac0564",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -768,13 +768,13 @@
                     "            component.getComponent(0).getStore().clearFilter(true);",
                     "            component.getComponent(0).getStore().load();",
                     "        }, this, {single:true});",
-                    "            component.getComponent(2).getStore().load();",
-                    "        } else {",
-                    "            component.getComponent(0).getStore().clearFilter(true);",
-                    "            component.getComponent(0).getStore().load();",
-                    "        }",
-                    "    });",
-                    "    task.delay(400);"
+                    "        component.getComponent(2).getStore().load();",
+                    "    } else {",
+                    "        component.getComponent(0).getStore().clearFilter(true);",
+                    "        component.getComponent(0).getStore().load();",
+                    "    }",
+                    "});",
+                    "task.delay(400);"
                 ],
                 "name": "render",
                 "scope": "me"
