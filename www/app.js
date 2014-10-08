@@ -220,7 +220,8 @@ Ext.application({
         'SiteExternalScripts',
         'SiteExternalStyles',
         'SiteInternalStyles',
-        'SiteInternalScripts'
+        'SiteInternalScripts',
+        'ThemeDirectoriesStore'
     ],
     views: [
         'MyGridPanel3',

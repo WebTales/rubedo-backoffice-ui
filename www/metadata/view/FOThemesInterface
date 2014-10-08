@@ -38,7 +38,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool161",
             "designerId": "2dc5d977-f33e-4184-8eb9-d56094640344",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -52,7 +52,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool171",
             "designerId": "c13dbd7f-90cb-4a59-bc33-23eb467cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -89,6 +89,321 @@
                     "designerId": "c5058c27-4784-465d-8df2-cfb969a597f8"
                 }
             ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 250,
+                "id": "mainDirectoriesTree1",
+                "localiserId": "filePlanTreePanel",
+                "store": "ThemeDirectoriesStore",
+                "title": "",
+                "useArrows": true,
+                "width": 400
+            },
+            "name": "TreeGrid1",
+            "designerId": "648aa533-c765-4002-a82c-dea4ac0ce24b",
+            "isBuiltIn": true,
+            "iconCls": "icon-treegridpanel",
+            "autoName": "TreeGrid",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTreeView",
+                    "designerId": "cfbca428-af18-4981-9ab2-c654e0ba2059",
+                    "cn": [
+                        {
+                            "type": "Ext.tree.plugin.TreeViewDragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                            "userConfig": {
+                                "ddGroup": "DirectoriesThemeDD"
+                            },
+                            "name": "MyTreeDragDropPlugin",
+                            "designerId": "48c01213-6e92-4bc8-8794-72691cf56569",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "node, data, overModel, dropPosition, dropHandlers"
+                                        ],
+                                        "fn": "onTreeViewDragDropBeforeDrop1",
+                                        "implHandler": [
+                                            "",
+                                            "if (!ACL.interfaceRights[\"write.ui.directories\"]){",
+                                            "    return(false);",
+                                            "}",
+                                            "Ext.getStore(\"ThemeDirectoriesStore\").suspendAutoSync();",
+                                            "var movedOne=data.records[0];",
+                                            "if (!Ext.isEmpty(movedOne.get(\"typeId\"))){",
+                                            "    if (dropPosition!=\"append\"){return(false);}",
+                                            "    if (overModel.isRoot()){return(false);}",
+                                            "    var idArray=Ext.Array.pluck(Ext.Array.pluck(data.records,\"data\"),\"id\");",
+                                            "\tExt.Ajax.request({",
+                                            "        url: 'directories/classify',",
+                                            "        params: {",
+                                            "            mediaArray: Ext.JSON.encode(idArray),",
+                                            "            directoryId:overModel.get(\"id\")",
+                                            "        },",
+                                            "        success: function(response){",
+                                            "            //Ext.getStore(\"DAMFolderViewStore\").load();",
+                                            "        },",
+                                            "        failure:function(response){",
+                                            "    \t\tvar msg=Ext.JSON.decode(response.responseText).msg;",
+                                            "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, msg);",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "",
+                                            "",
+                                            "    return(false);",
+                                            "} else if ((dropPosition==\"append\")&&(overModel.get(\"id\")==\"notFiled\")){",
+                                            "    return(false);",
+                                            "}",
+                                            "var interm=0;",
+                                            "var targeted=overModel.get(\"orderValue\");",
+                                            "",
+                                            "if (dropPosition==\"before\"){",
+                                            "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){",
+                                            "        movedOne.parentNode.set(\"expandable\", false);",
+                                            "    }",
+                                            "    if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get(\"orderValue\");}",
+                                            "    movedOne.set(\"orderValue\", (interm+targeted)/2);",
+                                            "} else if (dropPosition==\"after\"){",
+                                            "    if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){",
+                                            "        movedOne.parentNode.set(\"expandable\", false);",
+                                            "    }",
+                                            "    if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get(\"orderValue\");}",
+                                            "    else{interm=10000;}",
+                                            "    movedOne.set(\"orderValue\", (interm+targeted)/2);",
+                                            "} else if (dropPosition==\"append\"){",
+                                            "    if (movedOne.parentNode.childNodes.length==1){",
+                                            "        movedOne.parentNode.set(\"expandable\", false);",
+                                            "    }",
+                                            "",
+                                            "    if (overModel.hasChildNodes()){",
+                                            "        movedOne.set(\"orderValue\", overModel.lastChild.get(\"orderValue\")+100);",
+                                            "    } else {",
+                                            "        movedOne.set(\"orderValue\", 100);",
+                                            "        overModel.set(\"expandable\", true);",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "beforedrop",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTreeViewDragDropBeforeDrop1",
+                                    "designerId": "d6bee708-0672-43e0-975e-8da0086f910c"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "node, data, overModel, dropPosition"
+                                        ],
+                                        "fn": "onTreeViewDragDropDrop1",
+                                        "implHandler": [
+                                            "var task= new Ext.util.DelayedTask(function(){",
+                                            "    Ext.getStore(\"ThemeDirectoriesStore\").resumeAutoSync();",
+                                            "    Ext.getStore(\"ThemeDirectoriesStore\").sync();",
+                                            "});",
+                                            "task.delay(200);"
+                                        ],
+                                        "name": "drop",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTreeViewDragDropDrop1",
+                                    "designerId": "3ad4dbd9-5c33-471d-87da-052b8a175333"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "text",
+                        "flex": 1,
+                        "localiserId": "damFolderCol",
+                        "text": "Folder"
+                    },
+                    "name": "MyTreeColumn",
+                    "designerId": "bb9557f0-8ac6-4cdc-a71e-a4f812335520",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "if (record.isRoot()){",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+Rubedo.RubedoAutomatedElementsLoc.rootText+\"</i>\");",
+                                    "    record.data.allowDrop=false;",
+                                    "    record.data.allowDrag=false;",
+                                    "} else if (record.get(\"id\")==\"notFiled\") {",
+                                    "    record.data.allowDrag=false;",
+                                    "    return(Rubedo.RubedoAutomatedElementsLoc.notFiledText);",
+                                    "",
+                                    "} else if (record.get(\"text\")==\"theme\") {",
+                                    "    record.data.allowDrop=false;",
+                                    "    record.data.allowDrag=false;",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");",
+                                    "",
+                                    "}",
+                                    "else if (record.get(\"readOnly\")) {",
+                                    "    record.data.allowDrop=false;",
+                                    "    record.data.allowDrag=false;",
+                                    "    return(\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\");",
+                                    "",
+                                    "} else {",
+                                    "    return(value);",
+                                    "}"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "ac4f0e58-bab6-4b95-b7fc-317e550fc908"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false
+                            },
+                            "name": "MyTextField20",
+                            "designerId": "102be148-6873-47bf-ab74-0d34c1ee6bcd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "name": "MyCellEditingPlugin5",
+                    "designerId": "53573989-c495-4d64-965a-89de6f33e715",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingBeforeEdit1",
+                                "implHandler": [
+                                    "if ((!ACL.interfaceRights[\"write.ui.directories\"])||(Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().get(\"readOnly\"))||(Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().get(\"id\")==\"notFiled\")||(Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().isRoot())) {",
+                                    "    return false;",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "name": "onCellEditingBeforeEdit1",
+                            "designerId": "c3d53bfc-3228-483a-adce-d3241410e5ed"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingEdit1",
+                                "implHandler": [
+                                    "Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().collapseChildren(true);",
+                                    "Ext.getCmp(\"mainDirectoriesTree1\").getStore().load({\"node\":Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected()});"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "name": "onCellEditingEdit1",
+                            "designerId": "12b8839f-7cff-4582-9497-f28ee35e8fed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFOThemesInterfaceAfterRender",
+                "implHandler": [
+                    "Ext.getStore(\"ThemeDirectoriesStore\").load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onFOThemesInterfaceAfterRender",
+            "designerId": "d3c25802-5a1a-45c3-bcc4-2592c0fed464"
         }
     ]
 }

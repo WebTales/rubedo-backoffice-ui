@@ -22,7 +22,13 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         'Rubedo.view.MyTool17',
         'Ext.panel.Tool',
         'Ext.toolbar.Toolbar',
-        'Ext.button.Button'
+        'Ext.button.Button',
+        'Ext.tree.Panel',
+        'Ext.tree.View',
+        'Ext.tree.plugin.TreeViewDragDrop',
+        'Ext.tree.Column',
+        'Ext.form.field.Text',
+        'Ext.grid.plugin.CellEditing'
     ],
 
     height: 533,
@@ -65,10 +71,181 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                         }
                     ]
                 }
-            ]
+            ],
+            items: [
+                {
+                    xtype: 'treepanel',
+                    localiserId: 'filePlanTreePanel',
+                    height: 250,
+                    id: 'mainDirectoriesTree1',
+                    width: 400,
+                    title: '',
+                    store: 'ThemeDirectoriesStore',
+                    useArrows: true,
+                    viewConfig: {
+                        plugins: [
+                            Ext.create('Ext.tree.plugin.TreeViewDragDrop', {
+                                ddGroup: 'DirectoriesThemeDD'
+                            })
+                        ],
+                        listeners: {
+                            beforedrop: {
+                                fn: me.onTreeViewDragDropBeforeDrop1,
+                                scope: me
+                            },
+                            drop: {
+                                fn: me.onTreeViewDragDropDrop1,
+                                scope: me
+                            }
+                        }
+                    },
+                    columns: [
+                        {
+                            xtype: 'treecolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (record.isRoot()){
+                                    return("<i style=\"color:#777;\">"+Rubedo.RubedoAutomatedElementsLoc.rootText+"</i>");
+                                    record.data.allowDrop=false;
+                                    record.data.allowDrag=false;
+                                } else if (record.get("id")=="notFiled") {
+                                    record.data.allowDrag=false;
+                                    return(Rubedo.RubedoAutomatedElementsLoc.notFiledText);
+
+                                } else if (record.get("text")=="theme") {
+                                    record.data.allowDrop=false;
+                                    record.data.allowDrag=false;
+                                    return("<i style=\"color:#777;\">"+value+"</i>");
+
+                                }
+                                else if (record.get("readOnly")) {
+                                    record.data.allowDrop=false;
+                                    record.data.allowDrag=false;
+                                    return("<i style=\"color:#777;\">"+value+"</i>");
+
+                                } else {
+                                    return(value);
+                                }
+                            },
+                            localiserId: 'damFolderCol',
+                            dataIndex: 'text',
+                            text: 'Folder',
+                            flex: 1,
+                            editor: {
+                                xtype: 'textfield',
+                                allowBlank: false
+                            }
+                        }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onCellEditingBeforeEdit1,
+                                    scope: me
+                                },
+                                edit: {
+                                    fn: me.onCellEditingEdit1,
+                                    scope: me
+                                }
+                            }
+                        })
+                    ]
+                }
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onFOThemesInterfaceAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onTreeViewDragDropBeforeDrop1: function(node, data, overModel, dropPosition, dropHandlers) {
+
+        if (!ACL.interfaceRights["write.ui.directories"]){
+            return(false);
+        }
+        Ext.getStore("ThemeDirectoriesStore").suspendAutoSync();
+        var movedOne=data.records[0];
+        if (!Ext.isEmpty(movedOne.get("typeId"))){
+            if (dropPosition!="append"){return(false);}
+            if (overModel.isRoot()){return(false);}
+            var idArray=Ext.Array.pluck(Ext.Array.pluck(data.records,"data"),"id");
+        	Ext.Ajax.request({
+                url: 'directories/classify',
+                params: {
+                    mediaArray: Ext.JSON.encode(idArray),
+                    directoryId:overModel.get("id")
+                },
+                success: function(response){
+                    //Ext.getStore("DAMFolderViewStore").load();
+                },
+                failure:function(response){
+            		var msg=Ext.JSON.decode(response.responseText).msg;
+                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, msg);
+                }
+            });
+
+
+
+            return(false);
+        } else if ((dropPosition=="append")&&(overModel.get("id")=="notFiled")){
+            return(false);
+        }
+        var interm=0;
+        var targeted=overModel.get("orderValue");
+
+        if (dropPosition=="before"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
+            if (!Ext.isEmpty(overModel.previousSibling)){interm=overModel.previousSibling.get("orderValue");}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="after"){
+            if ((movedOne.parentNode!=overModel.parentNode)&&(movedOne.parentNode.childNodes.length==1)){
+                movedOne.parentNode.set("expandable", false);
+            }
+            if (!Ext.isEmpty(overModel.nextSibling)){interm=overModel.nextSibling.get("orderValue");}
+            else{interm=10000;}
+            movedOne.set("orderValue", (interm+targeted)/2);
+        } else if (dropPosition=="append"){
+            if (movedOne.parentNode.childNodes.length==1){
+                movedOne.parentNode.set("expandable", false);
+            }
+
+            if (overModel.hasChildNodes()){
+                movedOne.set("orderValue", overModel.lastChild.get("orderValue")+100);
+            } else {
+                movedOne.set("orderValue", 100);
+                overModel.set("expandable", true);
+            }
+        }
+    },
+
+    onTreeViewDragDropDrop1: function(node, data, overModel, dropPosition) {
+        var task= new Ext.util.DelayedTask(function(){
+            Ext.getStore("ThemeDirectoriesStore").resumeAutoSync();
+            Ext.getStore("ThemeDirectoriesStore").sync();
+        });
+        task.delay(200);
+    },
+
+    onCellEditingBeforeEdit1: function(editor, e, eOpts) {
+        if ((!ACL.interfaceRights["write.ui.directories"])||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("readOnly"))||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("id")=="notFiled")||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().isRoot())) {
+            return false;
+        }
+    },
+
+    onCellEditingEdit1: function(editor, e, eOpts) {
+        Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().collapseChildren(true);
+        Ext.getCmp("mainDirectoriesTree1").getStore().load({"node":Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected()});
+    },
+
+    onFOThemesInterfaceAfterRender: function(component, eOpts) {
+        Ext.getStore("ThemeDirectoriesStore").load();
     }
 
 });
