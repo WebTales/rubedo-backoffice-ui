@@ -1,0 +1,137 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "DAMTypeFilters": [
+            "[ ]"
+        ],
+        "autoLoad": false,
+        "autoSync": true,
+        "data": null,
+        "designer|userClassName": "DAMFolderViewStore1",
+        "directoryFilter": "theme",
+        "isOptimised": true,
+        "model": "DAMFolderViewModel",
+        "pageSize": 10000,
+        "remoteFilter": true,
+        "remoteSort": true,
+        "storeId": "DAMFolderViewStore1",
+        "usedCollection": "DAM"
+    },
+    "name": "DAMFolderViewStore1",
+    "configAlternates": {
+        "isOptimised": "boolean",
+        "DAMTypeFilters": "array"
+    },
+    "designerId": "6398f419-7979-4d68-b6e4-26a2d3138fc2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "DAMTypeFilters",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "directoryFilter",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    create: 'dam/create',\r",
+                    "                    read: 'dam',\r",
+                    "                    update: 'dam/update',\r",
+                    "                    destroy: 'dam/delete'\r",
+                    "                }"
+                ],
+                "batchActions": false,
+                "url": null
+            },
+            "name": "MyAjaxProxy110",
+            "designerId": "eca4fbdb-fe53-4e14-9d40-3007705d361f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader109",
+                    "designerId": "2fba2b70-7524-4727-9107-a59753e3987a"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "nameProperty": "mapping",
+                        "root": "data"
+                    },
+                    "name": "MyJsonWriter56",
+                    "designerId": "d4002a05-4c78-492c-b999-18290e973a52"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "if (!Ext.isEmpty(store.DAMTypeFilters)){\r",
+                    "    store.getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"typeId\\\",\\\"operator\\\":\\\"$in\\\",\\\"value\\\":\"+Ext.JSON.encode(store.DAMTypeFilters)+\"},{\\\"property\\\":\\\"directory\\\",\\\"value\\\":\\\"\"+store.directoryFilter+\"\\\"}]\";\r",
+                    "} else {\r",
+                    "    store.getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"directory\\\",\\\"value\\\":\\\"\"+store.directoryFilter+\"\\\"}]\";\r",
+                    "}\r",
+                    "try{\r",
+                    "    Ext.Array.forEach(operation.sorters, function(sorter){\r",
+                    "        if (sorter.property==\"text\"){\r",
+                    "            sorter.property=\"title\";\r",
+                    "        }\r",
+                    "    });\r",
+                    "} catch(err){console.log(\"failed to fix sort\");}"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "name": "onJsonstoreBeforeLoad",
+            "designerId": "58e59511-2da2-43a1-bb80-0eba0ce7e4d3"
+        }
+    ]
+}

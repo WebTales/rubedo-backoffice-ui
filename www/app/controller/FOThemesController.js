@@ -32,11 +32,13 @@ Ext.define('Rubedo.controller.FOThemesController', {
 
                 },
                 success: function(form, action) {
+                    Ext.getStore("ThemeDirectoriesStore").load();
                     button.up().setLoading(false);
-                    button.up().up().up().close();
+                    button.up().up().close();
                     Ext.Msg.alert('Success', "Archive imported");
                 },
                 failure: function(form, action) {
+                    Ext.getStore("ThemeDirectoriesStore").load();
                     button.up().setLoading(false);
                     switch (action.failureType) {
                         case Ext.form.action.Action.CLIENT_INVALID:
@@ -53,6 +55,10 @@ Ext.define('Rubedo.controller.FOThemesController', {
         }
     },
 
+    onFOThemesInterfaceAfterRender: function(component, eOpts) {
+        Ext.getStore("ThemeDirectoriesStore").load();
+    },
+
     init: function(application) {
         this.control({
             "#foThemeImportBtn": {
@@ -60,6 +66,9 @@ Ext.define('Rubedo.controller.FOThemesController', {
             },
             "#FOThemeZipSubmitBtn": {
                 click: this.onFOThemeZipSubmitBtnClick
+            },
+            "#FOThemesInterface": {
+                afterrender: this.onFOThemesInterfaceAfterRender
             }
         });
     }

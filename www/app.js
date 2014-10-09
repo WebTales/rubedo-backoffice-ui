@@ -221,7 +221,8 @@ Ext.application({
         'SiteExternalStyles',
         'SiteInternalStyles',
         'SiteInternalScripts',
-        'ThemeDirectoriesStore'
+        'ThemeDirectoriesStore',
+        'DAMFolderViewStore1'
     ],
     views: [
         'MyGridPanel3',

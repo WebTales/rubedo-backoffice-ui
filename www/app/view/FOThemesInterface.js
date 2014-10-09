@@ -28,7 +28,10 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         'Ext.tree.plugin.TreeViewDragDrop',
         'Ext.tree.Column',
         'Ext.form.field.Text',
-        'Ext.grid.plugin.CellEditing'
+        'Ext.grid.plugin.CellEditing',
+        'Ext.grid.Panel',
+        'Ext.grid.View',
+        'Ext.grid.column.Date'
     ],
 
     height: 533,
@@ -78,7 +81,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                     localiserId: 'filePlanTreePanel',
                     height: 250,
                     id: 'mainDirectoriesTree1',
-                    width: 400,
+                    width: 200,
                     title: '',
                     store: 'ThemeDirectoriesStore',
                     useArrows: true,
@@ -149,12 +152,47 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                 }
                             }
                         })
+                    ],
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onMainDirectoriesTree1SelectionChange,
+                            scope: me
+                        }
+                    }
+                },
+                {
+                    xtype: 'gridpanel',
+                    flex: 1,
+                    title: 'Files',
+                    store: 'DAMFolderViewStore1',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'text',
+                            text: 'Text',
+                            flex: 2
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return(Ext.util.Format.fileSize(value));
+                            },
+                            dataIndex: 'fileSize',
+                            text: 'FileSize',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'datecolumn',
+                            dataIndex: 'lastUpdateTime',
+                            text: 'Last Update',
+                            flex: 1
+                        }
                     ]
                 }
             ],
             listeners: {
-                afterrender: {
-                    fn: me.onFOThemesInterfaceAfterRender,
+                beforeclose: {
+                    fn: me.onFOThemesInterfaceBeforeClose,
                     scope: me
                 }
             }
@@ -244,8 +282,17 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         Ext.getCmp("mainDirectoriesTree1").getStore().load({"node":Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected()});
     },
 
-    onFOThemesInterfaceAfterRender: function(component, eOpts) {
-        Ext.getStore("ThemeDirectoriesStore").load();
+    onMainDirectoriesTree1SelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getStore("DAMFolderViewStore1").removeAll();
+        } else {
+            Ext.getStore("DAMFolderViewStore1").directoryFilter=selected[0].get("id");
+            Ext.getStore("DAMFolderViewStore1").load();
+        }
+    },
+
+    onFOThemesInterfaceBeforeClose: function(panel, eOpts) {
+        Ext.getStore("DAMFolderViewStore1").removeAll();
     }
 
 });

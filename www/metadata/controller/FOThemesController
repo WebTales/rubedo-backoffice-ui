@@ -54,11 +54,13 @@
                     "",
                     "        },",
                     "        success: function(form, action) {",
+                    "            Ext.getStore(\"ThemeDirectoriesStore\").load();",
                     "            button.up().setLoading(false);",
-                    "            button.up().up().up().close();",
+                    "            button.up().up().close();",
                     "            Ext.Msg.alert('Success', \"Archive imported\");",
                     "        },",
                     "        failure: function(form, action) {",
+                    "            Ext.getStore(\"ThemeDirectoriesStore\").load();",
                     "            button.up().setLoading(false);",
                     "            switch (action.failureType) {",
                     "                case Ext.form.action.Action.CLIENT_INVALID:",
@@ -79,6 +81,26 @@
             },
             "name": "onFOThemeZipSubmitBtnClick",
             "designerId": "11d2f035-62e1-4c00-afed-17c85bbd822f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#FOThemesInterface",
+                "designer|targetType": "Ext.window.Window",
+                "fn": "onFOThemesInterfaceAfterRender",
+                "implHandler": [
+                    "Ext.getStore(\"ThemeDirectoriesStore\").load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onFOThemesInterfaceAfterRender",
+            "designerId": "6cb981ae-2324-4064-9d81-504c37694182"
         }
     ]
 }
