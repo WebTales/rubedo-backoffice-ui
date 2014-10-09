@@ -1,0 +1,196 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrainHeader": true,
+        "designer|userAlias": "GFSFieldUploadWindow1",
+        "designer|userClassName": "GFSFieldUploadWindow1",
+        "height": 102,
+        "id": "GFSFieldUploadWindow1",
+        "layout": "fit",
+        "localiserId": "gfsUploadWindow",
+        "modal": true,
+        "resizable": false,
+        "title": "Upload",
+        "width": 400
+    },
+    "name": "GFSFieldUploadWindow1",
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "65df9b26-b4a7-4061-a485-6c31cd67e228",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "name": "MyForm46",
+            "designerId": "09add2d8-72a4-4b61-afd6-c1f41a3d6907",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "buttonText": "Choisir",
+                        "fieldLabel": "Fichier",
+                        "layout|anchor": "100%",
+                        "localiserId": "fileField",
+                        "name": "file"
+                    },
+                    "name": "MyFileUpload5",
+                    "designerId": "dfed0133-693c-4e81-95b8-6c51f8fd102e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "ouiSpetit",
+                        "layout|anchor": "50%",
+                        "localiserId": "validateBtn",
+                        "margin": "0 10 0 0",
+                        "text": "Valider"
+                    },
+                    "name": "MyButton223",
+                    "designerId": "5144736b-6161-49c8-8eda-681f3621432e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "button.up().setLoading(true);",
+                                    "var me=this;",
+                                    "var form=button.up().getForm();",
+                                    "form.submit({",
+                                    "    clientValidation: true,",
+                                    "    url: 'file/put',",
+                                    "    params: {",
+                                    "",
+                                    "    },",
+                                    "    success: function(form, action) {",
+                                    "        button.up().setLoading(false);",
+                                    "        Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection()[0].set(\"originalFileId\",action.result.data.id);",
+                                    "        button.up().up().close();",
+                                    "    },",
+                                    "    failure: function(form, action) {",
+                                    "        button.up().setLoading(false);",
+                                    "        switch (action.failureType) {",
+                                    "            case Ext.form.action.Action.CLIENT_INVALID:",
+                                    "            Ext.Msg.alert('Erreur', 'Certains champs sont invalides');",
+                                    "            break;",
+                                    "            case Ext.form.action.Action.CONNECT_FAILURE:",
+                                    "            Ext.Msg.alert('Erreur', 'Erreur Ajax');",
+                                    "            break;",
+                                    "            case Ext.form.action.Action.SERVER_INVALID:",
+                                    "            Ext.Msg.alert('Erreur', action.result.msg);",
+                                    "        }",
+                                    "    }",
+                                    "});",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "a08ebabb-0e10-45df-8ec1-ab57d8dcf9fe"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "close",
+                        "layout|anchor": "50%",
+                        "localiserId": "cancelBtn",
+                        "margin": "0 0 0 10",
+                        "text": "Annuler"
+                    },
+                    "name": "MyButton224",
+                    "designerId": "17cc375c-ef62-4e82-8b5a-7bcafec80ec4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "button.up().up().close();"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "1e9882ab-a0bb-4442-83ac-79f335018a98"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

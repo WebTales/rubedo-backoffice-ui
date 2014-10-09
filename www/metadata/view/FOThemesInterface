@@ -163,7 +163,27 @@
                                 "text": "Replace"
                             },
                             "name": "MyButton2",
-                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0"
+                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThemeFileUploadBtnClick",
+                                        "implHandler": [
+                                            "Ext.widget(\"GFSFieldUploadWindow1\").show();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThemeFileUploadBtnClick",
+                                    "designerId": "d32f1f43-f781-4797-a3ac-4c93493297fc"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

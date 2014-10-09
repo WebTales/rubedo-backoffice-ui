@@ -412,7 +412,8 @@ Ext.application({
         'ExternalResourceAddWindow',
         'InternalResourceAddWindow',
         'FOThemesInterface',
-        'FOThemeImportWindow'
+        'FOThemeImportWindow',
+        'GFSFieldUploadWindow1'
     ],
     controllers: [
         'ContributionContenusController',

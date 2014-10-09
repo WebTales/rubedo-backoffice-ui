@@ -102,7 +102,13 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'database_up_big',
                                     scale: 'large',
-                                    text: 'Replace'
+                                    text: 'Replace',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onThemeFileUploadBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -282,6 +288,10 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                 window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
             });
             task63.delay(400);
+    },
+
+    onThemeFileUploadBtnClick: function(button, e, eOpts) {
+        Ext.widget("GFSFieldUploadWindow1").show();
     },
 
     onThemeFileDeleteBtnClick: function(button, e, eOpts) {
