@@ -450,7 +450,23 @@
                         "text": "Text"
                     },
                     "name": "MyColumn1",
-                    "designerId": "37f333e1-e63c-4bae-ad32-7ca63960b3b8"
+                    "designerId": "37f333e1-e63c-4bae-ad32-7ca63960b3b8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": false
+                            },
+                            "name": "MyTextField",
+                            "designerId": "31c1b57d-bb24-4721-a786-9b7ebdb71177"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -532,6 +548,16 @@
                     },
                     "name": "processThemeFileManagerGrid",
                     "designerId": "9ee7afde-44f8-4970-a1a0-030c47ba1c28"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "name": "MyCellEditingPlugin",
+                    "designerId": "a18f0f0d-ffe9-4d4b-8472-d73029a25603"
                 }
             ]
         },

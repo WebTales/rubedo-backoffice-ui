@@ -171,7 +171,12 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             xtype: 'gridcolumn',
                             dataIndex: 'text',
                             text: 'Text',
-                            flex: 2
+                            flex: 2,
+                            editor: {
+                                xtype: 'textfield',
+                                allowBlank: false,
+                                allowOnlyWhitespace: false
+                            }
                         },
                         {
                             xtype: 'gridcolumn',
@@ -188,6 +193,11 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             text: 'Last Update',
                             flex: 1
                         }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+
+                        })
                     ]
                 })
             ],

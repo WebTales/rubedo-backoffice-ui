@@ -20,7 +20,8 @@ Ext.define('Rubedo.store.DAMFolderViewStore1', {
         'Rubedo.model.DAMFolderViewModel1',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
-        'Ext.data.writer.Json'
+        'Ext.data.writer.Json',
+        'Ext.util.Sorter'
     ],
 
     constructor: function(cfg) {
@@ -66,6 +67,10 @@ Ext.define('Rubedo.store.DAMFolderViewStore1', {
                     fn: me.onJsonstoreBeforeLoad,
                     scope: me
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'loadOnLaunch'
             }
         }, cfg)]);
     },
