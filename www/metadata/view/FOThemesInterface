@@ -83,10 +83,126 @@
                         "id": "foThemeImportBtn",
                         "layout|flex": null,
                         "scale": "large",
-                        "text": "Import"
+                        "text": "Import theme"
                     },
                     "name": "MyButton",
                     "designerId": "c5058c27-4784-465d-8df2-cfb969a597f8"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columns": 3,
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "id": "themeFileBtnGroup",
+                        "layout|flex": null,
+                        "title": "Manage files"
+                    },
+                    "name": "MyButtonGroup",
+                    "designerId": "3556dde8-eab3-4f16-ada5-23275b2f6b81",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "database_down_big",
+                                "id": "themeFileDownloadBtn",
+                                "scale": "large",
+                                "text": "Download"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "7f7fe278-e278-4a91-b113-38d6d03989f1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThemeFileDownloadBtnClick",
+                                        "implHandler": [
+                                            "window.onbeforeunload=Ext.emptyFn;",
+                                            "    window.location.href=\"file/get?file-id=\"+Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection()[0].get(\"originalFileId\")+\"&attachment=download\";",
+                                            "    var task63 = new Ext.util.DelayedTask(function(){",
+                                            "        window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };",
+                                            "    });",
+                                            "    task63.delay(400);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThemeFileDownloadBtnClick",
+                                    "designerId": "da45e6ba-5bb6-473a-ad2e-42def54b4b31"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "database_up_big",
+                                "id": "themeFileUploadBtn",
+                                "scale": "large",
+                                "text": "Replace"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "remove_big",
+                                "id": "themeFileDeleteBtn",
+                                "scale": "large",
+                                "text": "Delete"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "e1ff0da5-153d-49c6-ba92-dcd44f35b064",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThemeFileDeleteBtnClick",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"themeFileManagerGrid\").getStore().remove(Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection());"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThemeFileDeleteBtnClick",
+                                    "designerId": "350f2392-f361-4726-b54d-e70a94a5815d"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -100,7 +216,6 @@
             "userConfig": {
                 "height": 250,
                 "id": "mainDirectoriesTree1",
-                "localiserId": "filePlanTreePanel",
                 "store": "ThemeDirectoriesStore",
                 "title": "",
                 "useArrows": true,
@@ -111,13 +226,6 @@
             "isBuiltIn": true,
             "iconCls": "icon-treegridpanel",
             "autoName": "TreeGrid",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ],
             "cn": [
                 {
                     "type": "Ext.tree.View",
@@ -485,7 +593,7 @@
                     "userConfig": {
                         "dataIndex": "fileSize",
                         "flex": 1,
-                        "text": "FileSize"
+                        "text": "File size"
                     },
                     "name": "MyColumn11",
                     "designerId": "feae8e9f-985e-4df2-97fb-78ccc950ef61",
@@ -527,7 +635,7 @@
                     "userConfig": {
                         "dataIndex": "lastUpdateTime",
                         "flex": 1,
-                        "text": "Last Update"
+                        "text": "Last update"
                     },
                     "name": "MyDateColumn2",
                     "designerId": "59a35950-584c-4902-9f66-8440bbe8c060"
@@ -565,6 +673,19 @@
                     "codeClass": "Ext.grid.plugin.CellEditing",
                     "name": "MyCellEditingPlugin",
                     "designerId": "a18f0f0d-ffe9-4d4b-8472-d73029a25603"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "userConfig": {
+                        "mode": "MULTI"
+                    },
+                    "name": "MyRowSelectionModel",
+                    "designerId": "37bfbf6d-2ad5-4451-a704-b1bfdc7056a5"
                 }
             ]
         },

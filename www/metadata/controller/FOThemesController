@@ -101,6 +101,37 @@
             },
             "name": "onFOThemesInterfaceAfterRender",
             "designerId": "6cb981ae-2324-4064-9d81-504c37694182"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#themeFileManagerGrid",
+                "designer|targetType": "Ext.grid.Panel",
+                "fn": "onThemeFileManagerGridSelectionChange",
+                "implHandler": [
+                    "if (Ext.isEmpty(selected)){",
+                    "    Ext.getCmp(\"themeFileBtnGroup\").disable();",
+                    "} else {",
+                    "    Ext.getCmp(\"themeFileBtnGroup\").enable();",
+                    "    if (selected.length==1){",
+                    "        Ext.getCmp(\"themeFileBtnGroup\").getComponent(1).enable();",
+                    "        Ext.getCmp(\"themeFileBtnGroup\").getComponent(0).enable();",
+                    "    } else {",
+                    "        Ext.getCmp(\"themeFileBtnGroup\").getComponent(1).disable();",
+                    "        Ext.getCmp(\"themeFileBtnGroup\").getComponent(0).disable();",
+                    "    }",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onThemeFileManagerGridSelectionChange",
+            "designerId": "b300fd65-d073-4852-a6c9-e3cb2467ea4f"
         }
     ]
 }

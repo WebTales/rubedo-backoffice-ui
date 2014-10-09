@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         'Ext.panel.Tool',
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
+        'Ext.container.ButtonGroup',
         'Ext.tree.Panel',
         'Ext.tree.View',
         'Ext.tree.plugin.TreeViewDragDrop',
@@ -31,7 +32,8 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         'Ext.grid.plugin.CellEditing',
         'Ext.grid.Panel',
         'Ext.grid.View',
-        'Ext.grid.column.Date'
+        'Ext.grid.column.Date',
+        'Ext.selection.RowModel'
     ],
 
     height: 533,
@@ -70,7 +72,53 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             iconAlign: 'top',
                             iconCls: 'database_up_big',
                             scale: 'large',
-                            text: 'Import'
+                            text: 'Import theme'
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
+                            id: 'themeFileBtnGroup',
+                            headerPosition: 'bottom',
+                            title: 'Manage files',
+                            columns: 3,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'themeFileDownloadBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'database_down_big',
+                                    scale: 'large',
+                                    text: 'Download',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onThemeFileDownloadBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'themeFileUploadBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'database_up_big',
+                                    scale: 'large',
+                                    text: 'Replace'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'themeFileDeleteBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'remove_big',
+                                    scale: 'large',
+                                    text: 'Delete',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onThemeFileDeleteBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
@@ -78,7 +126,6 @@ Ext.define('Rubedo.view.FOThemesInterface', {
             items: [
                 {
                     xtype: 'treepanel',
-                    localiserId: 'filePlanTreePanel',
                     height: 250,
                     id: 'mainDirectoriesTree1',
                     width: 200,
@@ -188,13 +235,13 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                 return(Ext.util.Format.fileSize(value));
                             },
                             dataIndex: 'fileSize',
-                            text: 'FileSize',
+                            text: 'File size',
                             flex: 1
                         },
                         {
                             xtype: 'datecolumn',
                             dataIndex: 'lastUpdateTime',
-                            text: 'Last Update',
+                            text: 'Last update',
                             flex: 1
                         }
                     ],
@@ -202,7 +249,10 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                         Ext.create('Ext.grid.plugin.CellEditing', {
 
                         })
-                    ]
+                    ],
+                    selModel: Ext.create('Ext.selection.RowModel', {
+                        mode: 'MULTI'
+                    })
                 })
             ],
             listeners: {
@@ -223,6 +273,19 @@ Ext.define('Rubedo.view.FOThemesInterface', {
             width:110
         }));
         return config;
+    },
+
+    onThemeFileDownloadBtnClick: function(button, e, eOpts) {
+        window.onbeforeunload=Ext.emptyFn;
+            window.location.href="file/get?file-id="+Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection()[0].get("originalFileId")+"&attachment=download";
+            var task63 = new Ext.util.DelayedTask(function(){
+                window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
+            });
+            task63.delay(400);
+    },
+
+    onThemeFileDeleteBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("themeFileManagerGrid").getStore().remove(Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection());
     },
 
     onTreeViewDragDropBeforeDrop1: function(node, data, overModel, dropPosition, dropHandlers) {

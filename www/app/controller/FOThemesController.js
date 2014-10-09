@@ -59,6 +59,21 @@ Ext.define('Rubedo.controller.FOThemesController', {
         Ext.getStore("ThemeDirectoriesStore").load();
     },
 
+    onThemeFileManagerGridSelectionChange: function(model, selected, eOpts) {
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("themeFileBtnGroup").disable();
+        } else {
+            Ext.getCmp("themeFileBtnGroup").enable();
+            if (selected.length==1){
+                Ext.getCmp("themeFileBtnGroup").getComponent(1).enable();
+                Ext.getCmp("themeFileBtnGroup").getComponent(0).enable();
+            } else {
+                Ext.getCmp("themeFileBtnGroup").getComponent(1).disable();
+                Ext.getCmp("themeFileBtnGroup").getComponent(0).disable();
+            }
+        }
+    },
+
     init: function(application) {
         this.control({
             "#foThemeImportBtn": {
@@ -69,6 +84,9 @@ Ext.define('Rubedo.controller.FOThemesController', {
             },
             "#FOThemesInterface": {
                 afterrender: this.onFOThemesInterfaceAfterRender
+            },
+            "#themeFileManagerGrid": {
+                selectionchange: this.onThemeFileManagerGridSelectionChange
             }
         });
     }
