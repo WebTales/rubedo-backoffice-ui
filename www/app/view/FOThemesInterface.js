@@ -119,6 +119,10 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     record.data.allowDrag=false;
                                     return("<i style=\"color:#777;\">"+value+"</i>");
 
+                                } else if (record.parentNode.get("text")=="theme"){
+                                    record.data.allowDrag=false;
+                                    return("<i style=\"color:#777;\">"+value+"</i>");
+
                                 }
                                 else if (record.get("readOnly")) {
                                     record.data.allowDrop=false;
@@ -294,6 +298,9 @@ Ext.define('Rubedo.view.FOThemesInterface', {
     onCellEditingBeforeEdit1: function(editor, e, eOpts) {
         if ((!ACL.interfaceRights["write.ui.directories"])||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("readOnly"))||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("id")=="notFiled")||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().isRoot())) {
             return false;
+        }
+        else if ((Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("text")=="theme")||(Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().parentNode.get("text")=="theme")){
+            return false
         }
     },
 
