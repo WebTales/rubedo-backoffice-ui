@@ -419,6 +419,7 @@
             "codeClass": null,
             "userConfig": {
                 "forceFit": null,
+                "id": "themeFileManagerGrid",
                 "layout|flex": 1,
                 "store": "DAMFolderViewStore1",
                 "title": "Files"
@@ -507,6 +508,30 @@
                     },
                     "name": "MyDateColumn2",
                     "designerId": "59a35950-584c-4902-9f66-8440bbe8c060"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processThemeFileManagerGrid",
+                        "implHandler": [
+                            "config.columns.push(Ext.create(\"Ext.ux.CheckColumn\",{",
+                            "    text: 'Load on launch',",
+                            "    dataIndex: 'loadOnLaunch',",
+                            "    width:110",
+                            "}));",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processThemeFileManagerGrid",
+                    "designerId": "9ee7afde-44f8-4970-a1a0-030c47ba1c28"
                 }
             ]
         },

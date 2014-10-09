@@ -160,9 +160,10 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                         }
                     }
                 },
-                {
+                me.processThemeFileManagerGrid({
                     xtype: 'gridpanel',
                     flex: 1,
+                    id: 'themeFileManagerGrid',
                     title: 'Files',
                     store: 'DAMFolderViewStore1',
                     columns: [
@@ -188,7 +189,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             flex: 1
                         }
                     ]
-                }
+                })
             ],
             listeners: {
                 beforeclose: {
@@ -199,6 +200,15 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processThemeFileManagerGrid: function(config) {
+        config.columns.push(Ext.create("Ext.ux.CheckColumn",{
+            text: 'Load on launch',
+            dataIndex: 'loadOnLaunch',
+            width:110
+        }));
+        return config;
     },
 
     onTreeViewDragDropBeforeDrop1: function(node, data, overModel, dropPosition, dropHandlers) {

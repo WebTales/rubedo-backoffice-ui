@@ -70,7 +70,8 @@ Ext.application({
         'paymentMeans',
         'pmConfig',
         'order',
-        'importPreset'
+        'importPreset',
+        'DAMFolderViewModel1'
     ],
     stores: [
         'SitesJson',

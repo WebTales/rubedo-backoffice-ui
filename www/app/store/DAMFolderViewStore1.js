@@ -17,7 +17,7 @@ Ext.define('Rubedo.store.DAMFolderViewStore1', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'Rubedo.model.DAMFolderViewModel',
+        'Rubedo.model.DAMFolderViewModel1',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -35,7 +35,7 @@ Ext.define('Rubedo.store.DAMFolderViewStore1', {
             directoryFilter: 'theme',
             autoLoad: false,
             autoSync: true,
-            model: 'Rubedo.model.DAMFolderViewModel',
+            model: 'Rubedo.model.DAMFolderViewModel1',
             remoteFilter: true,
             remoteSort: true,
             storeId: 'DAMFolderViewStore1',
