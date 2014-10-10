@@ -34,8 +34,7 @@ Ext.define('Rubedo.store.MLUsers', {
             proxy: {
                 type: 'ajax',
                 api: {
-                    read: 'mailing-lists/get-users',
-                    
+                    read: 'mailing-lists/get-users'
                 },
                 reader: {
                     type: 'json',
