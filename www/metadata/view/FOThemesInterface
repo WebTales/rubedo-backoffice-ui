@@ -121,30 +121,7 @@
                                 "text": "Add child"
                             },
                             "name": "MyButton4",
-                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onThemeFolderAddChildBtnClick",
-                                        "implHandler": [
-                                            "Ext.widget(\"newDirectoryWindow1\").show();",
-                                            "if (Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().get(\"text\")==\"theme\"){",
-                                            "    Ext.getCmp(\"newTheneCreateWarning\").show();",
-                                            "}"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onThemeFolderAddChildBtnClick",
-                                    "designerId": "b10d5b65-14f8-47d5-99c0-676cfc701318"
-                                }
-                            ]
+                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31"
                         },
                         {
                             "type": "Ext.button.Button",
@@ -161,7 +138,50 @@
                                 "text": "Remove"
                             },
                             "name": "MyButton5",
-                            "designerId": "4b62f048-6d3d-46f6-b4dd-454d9886ccdb"
+                            "designerId": "4b62f048-6d3d-46f6-b4dd-454d9886ccdb",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThemeFolderRemoveBtnClick",
+                                        "implHandler": [
+                                            "var me=this;",
+                                            "var target=Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected();",
+                                            "",
+                                            "var delCon = Ext.widget('delConfirmZ');",
+                                            "Ext.getCmp(\"delConMessageHolder\").show();",
+                                            "if (target.parentNode.get(\"text\")==\"theme\"){",
+                                            "    Ext.getCmp(\"delConMessageHolder\").update(\"Are you sure you want to delete this theme ?\")",
+                                            "} else {",
+                                            "    Ext.getCmp(\"delConMessageHolder\").update(\"Are you sure you want to delete this folder and all of its contents ?\")",
+                                            "}",
+                                            "delCon.show();",
+                                            "var store=Ext.getCmp(\"mainDirectoriesTree1\").getStore();",
+                                            "Ext.getCmp('delConfirmZOui').on('click', function() {",
+                                            "    store.suspendAutoSync();",
+                                            "    var myParent=target.parentNode;",
+                                            "    if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){",
+                                            "        myParent.set(\"expandable\",false);",
+                                            "    }",
+                                            "    target.remove();",
+                                            "    store.resumeAutoSync();",
+                                            "    store.sync();",
+                                            "    Ext.getCmp('delConfirmZ').close();",
+                                            "    ",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThemeFolderRemoveBtnClick",
+                                    "designerId": "9f986284-e7d3-4470-9d5a-0b28de2bba1a"
+                                }
+                            ]
                         }
                     ]
                 },

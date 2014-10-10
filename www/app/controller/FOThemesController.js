@@ -111,6 +111,13 @@ Ext.define('Rubedo.controller.FOThemesController', {
         }
     },
 
+    onThemeFolderAddChildBtnClick: function(button, e, eOpts) {
+        Ext.widget("newDirectoryWindow1").show();
+        if (Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("text")=="theme"){
+            Ext.getCmp("newTheneCreateWarning").show();
+        }
+    },
+
     init: function(application) {
         this.control({
             "#foThemeImportBtn": {
@@ -136,6 +143,9 @@ Ext.define('Rubedo.controller.FOThemesController', {
             },
             "#newDirectorySubmitBtn1": {
                 click: this.onNewDirectorySubmitBtn1Click
+            },
+            "#themeFolderAddChildBtn": {
+                click: this.onThemeFolderAddChildBtnClick
             }
         });
     }

@@ -233,6 +233,29 @@
             },
             "name": "onNewDirectorySubmitBtn1Click",
             "designerId": "e52e0009-e8cb-490e-86c0-b2537b7eadf4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#themeFolderAddChildBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onThemeFolderAddChildBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"newDirectoryWindow1\").show();",
+                    "if (Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().get(\"text\")==\"theme\"){",
+                    "    Ext.getCmp(\"newTheneCreateWarning\").show();",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onThemeFolderAddChildBtnClick",
+            "designerId": "16cca4c9-30bf-42e8-9e14-02bf8769f60d"
         }
     ]
 }

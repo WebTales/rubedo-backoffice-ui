@@ -88,13 +88,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'folder_add_big',
                                     scale: 'large',
-                                    text: 'Add child',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onThemeFolderAddChildBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Add child'
                                 },
                                 {
                                     xtype: 'button',
@@ -102,7 +96,13 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'folder_remove_big',
                                     scale: 'large',
-                                    text: 'Remove'
+                                    text: 'Remove',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onThemeFolderRemoveBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -295,11 +295,31 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         return config;
     },
 
-    onThemeFolderAddChildBtnClick: function(button, e, eOpts) {
-        Ext.widget("newDirectoryWindow1").show();
-        if (Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("text")=="theme"){
-            Ext.getCmp("newTheneCreateWarning").show();
+    onThemeFolderRemoveBtnClick: function(button, e, eOpts) {
+        var me=this;
+        var target=Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected();
+
+        var delCon = Ext.widget('delConfirmZ');
+        Ext.getCmp("delConMessageHolder").show();
+        if (target.parentNode.get("text")=="theme"){
+            Ext.getCmp("delConMessageHolder").update("Are you sure you want to delete this theme ?")
+        } else {
+            Ext.getCmp("delConMessageHolder").update("Are you sure you want to delete this folder and all of its contents ?")
         }
+        delCon.show();
+        var store=Ext.getCmp("mainDirectoriesTree1").getStore();
+        Ext.getCmp('delConfirmZOui').on('click', function() {
+            store.suspendAutoSync();
+            var myParent=target.parentNode;
+            if ((myParent.childNodes.length==1)&&(!myParent.isRoot())){
+                myParent.set("expandable",false);
+            }
+            target.remove();
+            store.resumeAutoSync();
+            store.sync();
+            Ext.getCmp('delConfirmZ').close();
+
+        });
     },
 
     onTreeViewDragDropBeforeDrop1: function(node, data, overModel, dropPosition, dropHandlers) {
