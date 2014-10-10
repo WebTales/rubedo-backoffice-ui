@@ -175,6 +175,19 @@
             },
             "name": "MyField219",
             "designerId": "5179d4ff-4805-4f4a-b3a6-b9cafd96f7b1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "themeId"
+            },
+            "name": "MyField2",
+            "designerId": "0d6510a8-58c2-4c86-8179-0b63d3b934f7"
         }
     ]
 }

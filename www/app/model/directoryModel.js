@@ -65,6 +65,9 @@ Ext.define('Rubedo.model.directoryModel', {
         },
         {
             name: 'filePlan'
+        },
+        {
+            name: 'themeId'
         }
     ]
 });
