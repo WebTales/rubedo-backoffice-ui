@@ -245,6 +245,43 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onFormAdded",
+                        "implHandler": [
+                            "var shippersPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {",
+                            "    store:Ext.getStore(\"ShippersForCT\"),",
+                            "    anchor:\"100%\",",
+                            "    name:\"shippers\",",
+                            "    fieldLabel:\"Shippers\",",
+                            "    labelWidth:140,",
+                            "    queryMode:\"local\",",
+                            "    multiSelect:true,",
+                            "    valueField:\"id\",",
+                            "    displayField:\"name\",",
+                            "    forceSelection:true,",
+                            "    createNewOnEnter:true,",
+                            "    triggerOnClick:false,",
+                            "    createNewOnBlur:true,",
+                            "    stacked:true,",
+                            "    allowBlank:true",
+                            "",
+                            "});",
+                            "Ext.getStore(\"ShippersForCT\").load();",
+                            "component.add(shippersPicker);"
+                        ],
+                        "name": "added",
+                        "scope": "me"
+                    },
+                    "name": "onFormAdded",
+                    "designerId": "71465769-54a8-4c9a-9577-18f0a066a07f"
                 }
             ]
         },

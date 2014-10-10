@@ -135,7 +135,13 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    listeners: {
+                        added: {
+                            fn: me.onFormAdded,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'panel',
@@ -333,6 +339,29 @@ Ext.define('Rubedo.view.productSettingsForm', {
         });
 
         me.callParent(arguments);
+    },
+
+    onFormAdded: function(component, container, pos, eOpts) {
+        var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:Ext.getStore("ShippersForCT"),
+            anchor:"100%",
+            name:"shippers",
+            fieldLabel:"Shippers",
+            labelWidth:140,
+            queryMode:"local",
+            multiSelect:true,
+            valueField:"id",
+            displayField:"name",
+            forceSelection:true,
+            createNewOnEnter:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            stacked:true,
+            allowBlank:true
+
+        });
+        Ext.getStore("ShippersForCT").load();
+        component.add(shippersPicker);
     },
 
     onButtonClick: function(button, e, eOpts) {
