@@ -74,6 +74,23 @@ Ext.define('Rubedo.controller.FOThemesController', {
         }
     },
 
+    onThemeFileDeleteBtnClick: function(button, e, eOpts) {
+        Ext.getCmp("themeFileManagerGrid").getStore().remove(Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection());
+    },
+
+    onThemeFileUploadBtnClick: function(button, e, eOpts) {
+        Ext.widget("GFSFieldUploadWindow1").show();
+    },
+
+    onThemeFileDownloadBtnClick: function(button, e, eOpts) {
+        window.onbeforeunload=Ext.emptyFn;
+            window.location.href="file/get?file-id="+Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection()[0].get("originalFileId")+"&attachment=download";
+            var task63 = new Ext.util.DelayedTask(function(){
+                window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
+            });
+            task63.delay(400);
+    },
+
     init: function(application) {
         this.control({
             "#foThemeImportBtn": {
@@ -87,6 +104,15 @@ Ext.define('Rubedo.controller.FOThemesController', {
             },
             "#themeFileManagerGrid": {
                 selectionchange: this.onThemeFileManagerGridSelectionChange
+            },
+            "#themeFileDeleteBtn": {
+                click: this.onThemeFileDeleteBtnClick
+            },
+            "#themeFileUploadBtn": {
+                click: this.onThemeFileUploadBtnClick
+            },
+            "#themeFileDownloadBtn": {
+                click: this.onThemeFileDownloadBtnClick
             }
         });
     }

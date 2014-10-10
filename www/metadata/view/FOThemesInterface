@@ -38,7 +38,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool161",
+            "name": "mytool16",
             "designerId": "2dc5d977-f33e-4184-8eb9-d56094640344",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -52,7 +52,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool171",
+            "name": "mytool17",
             "designerId": "c13dbd7f-90cb-4a59-bc33-23eb467cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -96,6 +96,60 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "columns": 2,
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "id": "themeFolderBtnGroup",
+                        "layout|flex": null,
+                        "title": "Manage folders"
+                    },
+                    "name": "MyButtonGroup1",
+                    "designerId": "94b5ebe0-e21f-44f7-8881-2d422d0ca8ca",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "folder_add_big",
+                                "id": "themeFolderAddChildBtn",
+                                "scale": "large",
+                                "text": "Add child"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "top",
+                                "iconCls": "folder_remove_big",
+                                "id": "themeFolderRemoveBtn",
+                                "scale": "large",
+                                "text": "Remove"
+                            },
+                            "name": "MyButton5",
+                            "designerId": "4b62f048-6d3d-46f6-b4dd-454d9886ccdb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "columns": 3,
                         "disabled": true,
                         "headerPosition": "bottom",
@@ -121,32 +175,7 @@
                                 "text": "Download"
                             },
                             "name": "MyButton3",
-                            "designerId": "7f7fe278-e278-4a91-b113-38d6d03989f1",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onThemeFileDownloadBtnClick",
-                                        "implHandler": [
-                                            "window.onbeforeunload=Ext.emptyFn;",
-                                            "    window.location.href=\"file/get?file-id=\"+Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection()[0].get(\"originalFileId\")+\"&attachment=download\";",
-                                            "    var task63 = new Ext.util.DelayedTask(function(){",
-                                            "        window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };",
-                                            "    });",
-                                            "    task63.delay(400);"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onThemeFileDownloadBtnClick",
-                                    "designerId": "da45e6ba-5bb6-473a-ad2e-42def54b4b31"
-                                }
-                            ]
+                            "designerId": "7f7fe278-e278-4a91-b113-38d6d03989f1"
                         },
                         {
                             "type": "Ext.button.Button",
@@ -163,27 +192,7 @@
                                 "text": "Replace"
                             },
                             "name": "MyButton2",
-                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onThemeFileUploadBtnClick",
-                                        "implHandler": [
-                                            "Ext.widget(\"GFSFieldUploadWindow1\").show();"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onThemeFileUploadBtnClick",
-                                    "designerId": "d32f1f43-f781-4797-a3ac-4c93493297fc"
-                                }
-                            ]
+                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0"
                         },
                         {
                             "type": "Ext.button.Button",
@@ -200,27 +209,7 @@
                                 "text": "Delete"
                             },
                             "name": "MyButton1",
-                            "designerId": "e1ff0da5-153d-49c6-ba92-dcd44f35b064",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onThemeFileDeleteBtnClick",
-                                        "implHandler": [
-                                            "Ext.getCmp(\"themeFileManagerGrid\").getStore().remove(Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection());"
-                                        ],
-                                        "name": "click",
-                                        "scope": "me"
-                                    },
-                                    "name": "onThemeFileDeleteBtnClick",
-                                    "designerId": "350f2392-f361-4726-b54d-e70a94a5815d"
-                                }
-                            ]
+                            "designerId": "e1ff0da5-153d-49c6-ba92-dcd44f35b064"
                         }
                     ]
                 }
@@ -532,9 +521,23 @@
                         "implHandler": [
                             "if (Ext.isEmpty(selected)){",
                             "    Ext.getStore(\"DAMFolderViewStore1\").removeAll();",
+                            "    Ext.getCmp(\"themeFolderBtnGroup\").disable();",
                             "} else {",
                             "    Ext.getStore(\"DAMFolderViewStore1\").directoryFilter=selected[0].get(\"id\");",
                             "    Ext.getStore(\"DAMFolderViewStore1\").load();",
+                            "    if (selected[0].isRoot()){",
+                            "        Ext.getCmp(\"themeFolderBtnGroup\").disable();",
+                            "    } else {",
+                            "        Ext.getCmp(\"themeFolderBtnGroup\").enable();",
+                            "        if (selected[0].get(\"text\")==\"theme\"){",
+                            "            Ext.getCmp(\"themeFolderBtnGroup\").getComponent(0).enable();",
+                            "            Ext.getCmp(\"themeFolderBtnGroup\").getComponent(1).disable();",
+                            "        } else {",
+                            "             Ext.getCmp(\"themeFolderBtnGroup\").getComponent(0).enable();",
+                            "             Ext.getCmp(\"themeFolderBtnGroup\").getComponent(1).enable();",
+                            "        }",
+                            "    }",
+                            "    ",
                             "}"
                         ],
                         "name": "selectionchange",

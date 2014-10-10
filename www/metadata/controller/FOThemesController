@@ -132,6 +132,71 @@
             },
             "name": "onThemeFileManagerGridSelectionChange",
             "designerId": "b300fd65-d073-4852-a6c9-e3cb2467ea4f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#themeFileDeleteBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onThemeFileDeleteBtnClick",
+                "implHandler": [
+                    "Ext.getCmp(\"themeFileManagerGrid\").getStore().remove(Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection());"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onThemeFileDeleteBtnClick",
+            "designerId": "de19d7b9-9015-446b-b35e-875f93b759d9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#themeFileUploadBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onThemeFileUploadBtnClick",
+                "implHandler": [
+                    "Ext.widget(\"GFSFieldUploadWindow1\").show();"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onThemeFileUploadBtnClick",
+            "designerId": "c7fecd6b-e0ee-41f2-8d1c-56942d2f5d4e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#themeFileDownloadBtn",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onThemeFileDownloadBtnClick",
+                "implHandler": [
+                    "window.onbeforeunload=Ext.emptyFn;",
+                    "    window.location.href=\"file/get?file-id=\"+Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection()[0].get(\"originalFileId\")+\"&attachment=download\";",
+                    "    var task63 = new Ext.util.DelayedTask(function(){",
+                    "        window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };",
+                    "    });",
+                    "    task63.delay(400);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onThemeFileDownloadBtnClick",
+            "designerId": "26f324ff-1e65-4248-9bfb-43b0edb64b08"
         }
     ]
 }

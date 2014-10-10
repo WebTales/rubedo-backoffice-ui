@@ -77,6 +77,32 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                         {
                             xtype: 'buttongroup',
                             disabled: true,
+                            id: 'themeFolderBtnGroup',
+                            headerPosition: 'bottom',
+                            title: 'Manage folders',
+                            columns: 2,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    id: 'themeFolderAddChildBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_add_big',
+                                    scale: 'large',
+                                    text: 'Add child'
+                                },
+                                {
+                                    xtype: 'button',
+                                    id: 'themeFolderRemoveBtn',
+                                    iconAlign: 'top',
+                                    iconCls: 'folder_remove_big',
+                                    scale: 'large',
+                                    text: 'Remove'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            disabled: true,
                             id: 'themeFileBtnGroup',
                             headerPosition: 'bottom',
                             title: 'Manage files',
@@ -88,13 +114,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'database_down_big',
                                     scale: 'large',
-                                    text: 'Download',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onThemeFileDownloadBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Download'
                                 },
                                 {
                                     xtype: 'button',
@@ -102,13 +122,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'database_up_big',
                                     scale: 'large',
-                                    text: 'Replace',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onThemeFileUploadBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Replace'
                                 },
                                 {
                                     xtype: 'button',
@@ -116,13 +130,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'remove_big',
                                     scale: 'large',
-                                    text: 'Delete',
-                                    listeners: {
-                                        click: {
-                                            fn: me.onThemeFileDeleteBtnClick,
-                                            scope: me
-                                        }
-                                    }
+                                    text: 'Delete'
                                 }
                             ]
                         }
@@ -281,23 +289,6 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         return config;
     },
 
-    onThemeFileDownloadBtnClick: function(button, e, eOpts) {
-        window.onbeforeunload=Ext.emptyFn;
-            window.location.href="file/get?file-id="+Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection()[0].get("originalFileId")+"&attachment=download";
-            var task63 = new Ext.util.DelayedTask(function(){
-                window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
-            });
-            task63.delay(400);
-    },
-
-    onThemeFileUploadBtnClick: function(button, e, eOpts) {
-        Ext.widget("GFSFieldUploadWindow1").show();
-    },
-
-    onThemeFileDeleteBtnClick: function(button, e, eOpts) {
-        Ext.getCmp("themeFileManagerGrid").getStore().remove(Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection());
-    },
-
     onTreeViewDragDropBeforeDrop1: function(node, data, overModel, dropPosition, dropHandlers) {
 
         if (!ACL.interfaceRights["write.ui.directories"]){
@@ -385,9 +376,23 @@ Ext.define('Rubedo.view.FOThemesInterface', {
     onMainDirectoriesTree1SelectionChange: function(model, selected, eOpts) {
         if (Ext.isEmpty(selected)){
             Ext.getStore("DAMFolderViewStore1").removeAll();
+            Ext.getCmp("themeFolderBtnGroup").disable();
         } else {
             Ext.getStore("DAMFolderViewStore1").directoryFilter=selected[0].get("id");
             Ext.getStore("DAMFolderViewStore1").load();
+            if (selected[0].isRoot()){
+                Ext.getCmp("themeFolderBtnGroup").disable();
+            } else {
+                Ext.getCmp("themeFolderBtnGroup").enable();
+                if (selected[0].get("text")=="theme"){
+                    Ext.getCmp("themeFolderBtnGroup").getComponent(0).enable();
+                    Ext.getCmp("themeFolderBtnGroup").getComponent(1).disable();
+                } else {
+                     Ext.getCmp("themeFolderBtnGroup").getComponent(0).enable();
+                     Ext.getCmp("themeFolderBtnGroup").getComponent(1).enable();
+                }
+            }
+
         }
     },
 
