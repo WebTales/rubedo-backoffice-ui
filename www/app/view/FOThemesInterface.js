@@ -309,9 +309,11 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         }
         Ext.getStore("ThemeDirectoriesStore").suspendAutoSync();
         var movedOne=data.records[0];
+        if (dropPosition!="append"&&overModel.get("text")=="theme"){return(false);}
         if (!Ext.isEmpty(movedOne.get("typeId"))){
             if (dropPosition!="append"){return(false);}
             if (overModel.isRoot()){return(false);}
+
             var idArray=Ext.Array.pluck(Ext.Array.pluck(data.records,"data"),"id");
         	Ext.Ajax.request({
                 url: 'directories/classify',
