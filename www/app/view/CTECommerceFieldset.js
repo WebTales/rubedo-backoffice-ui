@@ -128,7 +128,7 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
     },
 
     onCTECommerceFieldsetAdded: function(component, container, pos, eOpts) {
-        /* var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+         var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             store:Ext.getStore("ShippersForCT"),
             anchor:"100%",
             name:"shippers",
@@ -146,7 +146,7 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
             allowBlank:true
 
         });
-        component.add(shippersPicker); */
+        component.add(shippersPicker);
     }
 
 });

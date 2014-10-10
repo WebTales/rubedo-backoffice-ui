@@ -1309,7 +1309,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
             }
         },this,{single:true});
-            Ext.getStore("ContentTypesForContent2").load();
+        Ext.getStore("ContentTypesForContent2").load();
     },
 
     init: function(application) {

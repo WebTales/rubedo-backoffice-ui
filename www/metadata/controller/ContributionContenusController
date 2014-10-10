@@ -1757,17 +1757,17 @@
                 ],
                 "fn": "specialContentCreate",
                 "implHandler": [
-                    "var me=this;\r",
-                    "Ext.getStore(\"ContentTypesForContent2\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"CTType\\\",\\\"value\\\":\\\"\"+CTType+\"\\\"}]\";\r",
-                    "Ext.getStore(\"ContentTypesForContent2\").addListener(\"load\",function(theStore,records,successful){\r",
-                    "    if (successful){\r",
-                    "        var theCT = records[0];\r",
-                    "        me.displaySpecialCreate(theCT,targetedId);\r",
-                    "\r",
-                    "\r",
-                    "    }\r",
-                    "},this,{single:true});\r",
-                    "    Ext.getStore(\"ContentTypesForContent2\").load();"
+                    "var me=this;",
+                    "Ext.getStore(\"ContentTypesForContent2\").getProxy().extraParams.filter=\"[{\\\"property\\\":\\\"CTType\\\",\\\"value\\\":\\\"\"+CTType+\"\\\"}]\";",
+                    "Ext.getStore(\"ContentTypesForContent2\").addListener(\"load\",function(theStore,records,successful){",
+                    "    if (successful){",
+                    "        var theCT = records[0];",
+                    "        me.displaySpecialCreate(theCT,targetedId);",
+                    "",
+                    "",
+                    "    }",
+                    "},this,{single:true});",
+                    "Ext.getStore(\"ContentTypesForContent2\").load();"
                 ]
             },
             "name": "specialContentCreate",
