@@ -121,7 +121,30 @@
                                 "text": "Add child"
                             },
                             "name": "MyButton4",
-                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31"
+                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onThemeFolderAddChildBtnClick",
+                                        "implHandler": [
+                                            "Ext.widget(\"newDirectoryWindow1\").show();",
+                                            "if (Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected().get(\"text\")==\"theme\"){",
+                                            "    Ext.getCmp(\"newTheneCreateWarning\").show();",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onThemeFolderAddChildBtnClick",
+                                    "designerId": "b10d5b65-14f8-47d5-99c0-676cfc701318"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

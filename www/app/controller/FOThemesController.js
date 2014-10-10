@@ -91,6 +91,26 @@ Ext.define('Rubedo.controller.FOThemesController', {
             task63.delay(400);
     },
 
+    onNewDirectorySubmitBtn1Click: function(button, e, eOpts) {
+        var form=button.up().getForm();
+        var target=Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected();
+
+        if (form.isValid()){
+            var newPage=form.getValues();
+            newPage.expandable=false;
+            newPage.filePlan="default";
+            newPage.inheritWorkspace=true;
+            var store=Ext.getCmp("mainDirectoriesTree1").getStore();
+            store.suspendAutoSync();
+            target.set("expandable",true);
+            target.appendChild(newPage);
+                store.resumeAutoSync();
+                store.sync();
+                button.up().up().close();
+
+        }
+    },
+
     init: function(application) {
         this.control({
             "#foThemeImportBtn": {
@@ -113,6 +133,9 @@ Ext.define('Rubedo.controller.FOThemesController', {
             },
             "#themeFileDownloadBtn": {
                 click: this.onThemeFileDownloadBtnClick
+            },
+            "#newDirectorySubmitBtn1": {
+                click: this.onNewDirectorySubmitBtn1Click
             }
         });
     }

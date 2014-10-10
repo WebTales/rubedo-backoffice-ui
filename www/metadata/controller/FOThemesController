@@ -197,6 +197,42 @@
             },
             "name": "onThemeFileDownloadBtnClick",
             "designerId": "26f324ff-1e65-4248-9bfb-43b0edb64b08"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#newDirectorySubmitBtn1",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onNewDirectorySubmitBtn1Click",
+                "implHandler": [
+                    "var form=button.up().getForm();",
+                    "var target=Ext.getCmp(\"mainDirectoriesTree1\").getSelectionModel().getLastSelected();",
+                    "",
+                    "if (form.isValid()){",
+                    "    var newPage=form.getValues();",
+                    "    newPage.expandable=false;",
+                    "    newPage.filePlan=\"default\";",
+                    "    newPage.inheritWorkspace=true;",
+                    "    var store=Ext.getCmp(\"mainDirectoriesTree1\").getStore();",
+                    "    store.suspendAutoSync();",
+                    "    target.set(\"expandable\",true);",
+                    "    target.appendChild(newPage);",
+                    "        store.resumeAutoSync();",
+                    "        store.sync();",
+                    "        button.up().up().close();",
+                    "",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onNewDirectorySubmitBtn1Click",
+            "designerId": "e52e0009-e8cb-490e-86c0-b2537b7eadf4"
         }
     ]
 }

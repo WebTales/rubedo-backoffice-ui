@@ -88,7 +88,13 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                     iconAlign: 'top',
                                     iconCls: 'folder_add_big',
                                     scale: 'large',
-                                    text: 'Add child'
+                                    text: 'Add child',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onThemeFolderAddChildBtnClick,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -287,6 +293,13 @@ Ext.define('Rubedo.view.FOThemesInterface', {
             width:110
         }));
         return config;
+    },
+
+    onThemeFolderAddChildBtnClick: function(button, e, eOpts) {
+        Ext.widget("newDirectoryWindow1").show();
+        if (Ext.getCmp("mainDirectoriesTree1").getSelectionModel().getLastSelected().get("text")=="theme"){
+            Ext.getCmp("newTheneCreateWarning").show();
+        }
     },
 
     onTreeViewDragDropBeforeDrop1: function(node, data, overModel, dropPosition, dropHandlers) {
