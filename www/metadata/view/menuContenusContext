@@ -25,6 +25,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyGridView31",
             "designerId": "1768ec9b-890e-4c0e-8028-98798e539c51"
         },
         {
@@ -40,6 +41,7 @@
                 "localiserId": "titleColumn",
                 "text": "Titre"
             },
+            "name": "MyColumn57",
             "configAlternates": {
                 "filter": "boolean",
                 "filterable": "boolean"
@@ -91,6 +93,7 @@
                             ""
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "4a2a18c1-f9ef-4126-a37c-3af3b0a38374"
                 }
             ]
@@ -108,6 +111,7 @@
                 "localiserId": "languageCoumn",
                 "text": "Languages"
             },
+            "name": "MyColumn58",
             "designerId": "eae8637e-1dbc-41ae-99a2-2dbe89782726",
             "customConfigs": [
                 {
@@ -153,6 +157,7 @@
                             "return(returner);"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "130ae6dd-da72-43c1-8dfa-975c2995bd2d"
                 },
                 {
@@ -172,6 +177,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onGridcolumnAfterRender",
                     "designerId": "ee7add8d-3b0c-4434-adbf-c6a0134c4d06"
                 }
             ]
@@ -189,6 +195,7 @@
                 "localiserId": "stateColumn",
                 "text": "Etat"
             },
+            "name": "MyColumn59",
             "configAlternates": {
                 "filter": "object"
             },
@@ -231,6 +238,7 @@
                             "}"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "7453c21b-fba4-49f2-b1e1-174ac3866a0c"
                 },
                 {
@@ -258,6 +266,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processEtat",
                     "designerId": "68445c63-62ce-4bbc-9fc1-134083536097"
                 }
             ]
@@ -274,6 +283,7 @@
                 "localiserId": "lastUpdateContentCol",
                 "text": "Last update"
             },
+            "name": "MyDateColumn3",
             "designerId": "321ff94d-59f8-45c4-9a03-276bc393e2f4",
             "customConfigs": [
                 {
@@ -303,6 +313,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processLastupdate",
                     "designerId": "ee817fd9-afda-4b40-a1bb-9d31daac4c81"
                 }
             ]
@@ -331,6 +342,7 @@
                 "trueText": null,
                 "width": 60
             },
+            "name": "MyBooleanColumn12",
             "configAlternates": {
                 "filter": "object"
             },
@@ -373,6 +385,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processEnligne",
                     "designerId": "e10e6580-e25f-40d9-8025-ecd34a17e7ad"
                 }
             ]
@@ -384,6 +397,7 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.CheckboxModel",
+            "name": "MyCheckboxSelectionModel5",
             "designerId": "c81741b8-eace-4a05-a234-d574f7bfabcc"
         },
         {
@@ -406,6 +420,7 @@
                 "store": "ContenusDataJson",
                 "width": 360
             },
+            "name": "MyPagingToolbar1",
             "designerId": "0c1466ec-1856-48a9-a1f5-56e00a3fecbc",
             "cn": [
                 {
@@ -421,6 +436,7 @@
                         "localiserId": "contentsClearFilterBtn",
                         "text": "Clear filters"
                     },
+                    "name": "MyButton136",
                     "designerId": "538a877e-b64a-465d-b13e-7336d02981d9",
                     "customConfigs": [
                         {
@@ -447,6 +463,7 @@
                                     "Ext.getCmp(\"ContenusGrid\").features[0].clearFilters();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "998d7216-8649-4d69-bbb9-b3dfa2ca7bc3"
                         }
                     ]
@@ -470,6 +487,7 @@
                     "return config;"
                 ]
             },
+            "name": "processMenuContenusContext",
             "designerId": "07e4bdd0-d38f-4519-8479-c07e7f801385"
         }
     ]

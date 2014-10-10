@@ -43,6 +43,7 @@
                 "layout|flex": 1,
                 "stripCharsRe": "/<\\/?[^>]+>/gi"
             },
+            "name": "MyTextField117",
             "designerId": "8f286d23-94f3-45aa-944f-992d4d5fcfcb",
             "cn": [
                 {
@@ -82,6 +83,7 @@
                         "name": "change",
                         "scope": "me"
                     },
+                    "name": "onMainTextInputChange",
                     "designerId": "9568ff3f-6a63-495a-88e7-1c742fdf07f4"
                 }
             ]
@@ -98,6 +100,7 @@
                 "itemId": "currentLanguageIntField",
                 "layout|flex": null
             },
+            "name": "MyHiddenField16",
             "designerId": "36f3d4b4-42f4-4c67-89dd-03a4da6ceafe",
             "cn": [
                 {
@@ -147,6 +150,7 @@
                         "name": "change",
                         "scope": "me"
                     },
+                    "name": "onCurrentLanguageIntFieldChange",
                     "designerId": "23047e72-1874-41af-ba00-bac9c6af954e"
                 }
             ]
@@ -168,6 +172,7 @@
                 "tooltipType": "title",
                 "width": 36
             },
+            "name": "MyButton376",
             "configAlternates": {
                 "tooltip": "string"
             },
@@ -186,6 +191,7 @@
                         "minWidth": 60,
                         "width": null
                     },
+                    "name": "MyMenu3",
                     "designerId": "5909fe5a-3d0f-4493-a9c2-2ee3c454cb74",
                     "cn": [
                         {
@@ -198,6 +204,7 @@
                             "userConfig": {
                                 "text": "Menu Item"
                             },
+                            "name": "MyMenuItem11",
                             "designerId": "ff547cb8-0c1d-4ae2-9027-c28b9641733a"
                         },
                         {
@@ -210,6 +217,7 @@
                             "userConfig": {
                                 "text": "Menu Item"
                             },
+                            "name": "MyMenuItem12",
                             "designerId": "483490fb-c319-49c5-8470-d3b0a8fab9ba"
                         },
                         {
@@ -222,6 +230,7 @@
                             "userConfig": {
                                 "text": "Menu Item"
                             },
+                            "name": "MyMenuItem13",
                             "designerId": "fa81cb6d-24f0-4731-bfa4-2149d460327c"
                         }
                     ]
@@ -270,6 +279,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onFieldcontainerAfterRender",
             "designerId": "0b8799ea-e374-4de1-826e-e1ae6c126226"
         }
     ]

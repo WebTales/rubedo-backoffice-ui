@@ -43,6 +43,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyPanel73",
             "configAlternates": {
                 "bodyStyle": "string"
             },
@@ -65,6 +66,7 @@
                         "minHeight": null,
                         "width": 220
                     },
+                    "name": "MyContainer66",
                     "designerId": "16740bbe-36c7-4f53-a23e-27f05e8d1dea",
                     "cn": [
                         {
@@ -84,6 +86,7 @@
                                 "margin": null,
                                 "width": 218
                             },
+                            "name": "MyMenu4",
                             "designerId": "be1246af-6b6a-4569-a656-e12db32401d6",
                             "cn": [
                                 {
@@ -166,6 +169,7 @@
                                         "name": "added",
                                         "scope": "me"
                                     },
+                                    "name": "onSalamanderStudioMenuAdded",
                                     "designerId": "40d8e44e-16f5-4c80-b93b-2aef15f8bb97"
                                 }
                             ]
@@ -187,6 +191,7 @@
                                 "margin": null,
                                 "width": 218
                             },
+                            "name": "MyMenu5",
                             "designerId": "b0494c50-c3ce-495b-b9d6-6671ac75fbbf",
                             "cn": [
                                 {
@@ -301,6 +306,7 @@
                                         "name": "added",
                                         "scope": "me"
                                     },
+                                    "name": "onSalamanderAdminMenuAdded",
                                     "designerId": "ec8d19fa-ca02-403a-8b9d-4f1aa9f8cf7f"
                                 }
                             ]
@@ -322,6 +328,7 @@
                                 "margin": null,
                                 "width": 218
                             },
+                            "name": "MyMenu6",
                             "designerId": "c18228dd-1550-4cab-8d9f-d9bed73687c3",
                             "cn": [
                                 {
@@ -390,6 +397,7 @@
                                         "name": "added",
                                         "scope": "me"
                                     },
+                                    "name": "onSalamanderAdminMenuAdded1",
                                     "designerId": "b488217b-4985-4e4e-affb-4eb1d731c52d"
                                 }
                             ]
@@ -409,6 +417,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onSalamanderContextRender",
                             "designerId": "efc38e5e-37c1-4381-921e-9c73be7f7ea0"
                         }
                     ]
@@ -427,6 +436,7 @@
                         "src": "resources/images/logoBkg.png",
                         "width": 210
                     },
+                    "name": "MyImg24",
                     "designerId": "66dfe46f-1ebf-4f8e-ac5b-5555cdd63ef3"
                 }
             ]
@@ -444,6 +454,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar94",
             "designerId": "b7066c2d-cfe0-4441-896d-05e771c574e1",
             "cn": [
                 {
@@ -463,6 +474,7 @@
                         "margin": null,
                         "text": "Pages"
                     },
+                    "name": "MyButton409",
                     "designerId": "f0c4cd2b-75ba-428f-86bf-b2183210bbb5",
                     "customConfigs": [
                         {
@@ -499,6 +511,7 @@
                         "margin": null,
                         "text": "Prévisualisation"
                     },
+                    "name": "MyButton410",
                     "designerId": "dd27c150-88ed-41bc-8761-c66132f2b8ab",
                     "customConfigs": [
                         {
@@ -535,6 +548,7 @@
                         "margin": null,
                         "text": "Contenus"
                     },
+                    "name": "MyButton411",
                     "designerId": "835f100d-6054-4611-93f2-d423b3823b89",
                     "customConfigs": [
                         {
@@ -571,6 +585,7 @@
                         "margin": null,
                         "text": "Médiathèque"
                     },
+                    "name": "MyButton412",
                     "designerId": "7d3f2120-91b6-4df4-9686-2b3d5211f723",
                     "customConfigs": [
                         {
@@ -601,6 +616,7 @@
                         "ACL": "read.ui.contents",
                         "layout|flex": null
                     },
+                    "name": "MySeparator7",
                     "designerId": "8826a614-b1cc-456f-8ad9-6eec0d83ac50",
                     "customConfigs": [
                         {
@@ -626,6 +642,7 @@
                         "usedMenu": "salamanderStudioMenu",
                         "usesMenu": true
                     },
+                    "name": "MyButton413",
                     "configAlternates": {
                         "usesMenu": "boolean"
                     },
@@ -665,6 +682,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onButtonRender",
                             "designerId": "5b3bf0f9-5931-4cfb-a6cc-6405180d66a8"
                         },
                         {
@@ -677,6 +695,7 @@
                             "userConfig": {
                                 "width": 120
                             },
+                            "name": "MyMenu7",
                             "designerId": "2920c27e-8d48-41fe-8a95-5bb91da72db5"
                         }
                     ]
@@ -696,6 +715,7 @@
                         "usedMenu": "salamanderAdminMenu",
                         "usesMenu": true
                     },
+                    "name": "MyButton414",
                     "configAlternates": {
                         "usesMenu": "boolean"
                     },
@@ -735,6 +755,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onButtonRender1",
                             "designerId": "83dc9a37-4093-445a-8d8a-8e539fc6d89a"
                         },
                         {
@@ -747,6 +768,7 @@
                             "userConfig": {
                                 "width": 120
                             },
+                            "name": "MyMenu8",
                             "designerId": "8bdf58fa-1e0d-489e-8a1c-427a2e12bf92"
                         }
                     ]
@@ -766,6 +788,7 @@
                         "usedMenu": "salamanderECMenu",
                         "usesMenu": true
                     },
+                    "name": "MyButton415",
                     "configAlternates": {
                         "usesMenu": "boolean"
                     },
@@ -808,6 +831,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onButtonRender11",
                             "designerId": "58717b6f-7f53-4cd5-85dc-b4133ab07a34"
                         },
                         {
@@ -820,6 +844,7 @@
                             "userConfig": {
                                 "width": 120
                             },
+                            "name": "MyMenu9",
                             "designerId": "9dddaa2a-194b-4019-a558-18bc9e606872"
                         }
                     ]
@@ -840,6 +865,7 @@
                         "margin": null,
                         "text": "Paramètres"
                     },
+                    "name": "MyButton416",
                     "designerId": "85d0639b-03c2-4ece-a685-b388cad3dcff",
                     "customConfigs": [
                         {
@@ -864,6 +890,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill52",
                     "designerId": "b6eb0758-2e62-4dcb-acb0-adf28999e387"
                 },
                 {
@@ -881,6 +908,7 @@
                         "localiserId": "logoutBtn",
                         "text": "Déconnexion"
                     },
+                    "name": "MyButton417",
                     "designerId": "bf8c5d64-5a8a-40b1-8605-34aca44b259a",
                     "customConfigs": [
                         {

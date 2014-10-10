@@ -50,6 +50,7 @@
                     "                }"
                 ]
             },
+            "name": "MyAjaxProxy54",
             "designerId": "3e9b87ab-95b7-4a3b-becb-f219b2780c72",
             "cn": [
                 {
@@ -63,6 +64,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader53",
                     "designerId": "9a2a470a-e3c4-44db-8ad1-7aedc420d48b"
                 },
                 {
@@ -76,6 +78,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter27",
                     "designerId": "c82bfe6e-858e-4d03-834a-65fba0b08bf9"
                 }
             ]

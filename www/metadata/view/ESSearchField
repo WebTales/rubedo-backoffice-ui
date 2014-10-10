@@ -36,6 +36,7 @@
                 "name": "specialkey",
                 "scope": "me"
             },
+            "name": "onESSearchFieldSpecialkey",
             "designerId": "7b36020e-2393-4e1a-8ef3-1ab10e082097"
         },
         {
@@ -55,6 +56,7 @@
                     "return config;"
                 ]
             },
+            "name": "processESSearchField",
             "designerId": "71cb22c2-97ef-46a9-b047-4aa803c1a149"
         }
     ]

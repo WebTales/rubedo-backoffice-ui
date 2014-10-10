@@ -40,6 +40,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm46",
             "designerId": "239fdab0-8556-46f4-a37b-eed8ca17ec99",
             "cn": [
                 {
@@ -57,6 +58,7 @@
                         "localiserId": "fileField",
                         "name": "file"
                     },
+                    "name": "MyFileUpload5",
                     "designerId": "d4ff35cb-e4d7-485a-8008-e327e47c03a8",
                     "customConfigs": [
                         {
@@ -80,6 +82,7 @@
                         "margin": "0 10 0 0",
                         "text": "Valider"
                     },
+                    "name": "MyButton223",
                     "designerId": "dad3da89-4e47-4696-aa44-8711be3d940e",
                     "customConfigs": [
                         {
@@ -134,6 +137,7 @@
                                     ""
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "bf7dc9e4-c15f-4604-b68c-d5d621fbfe44"
                         }
                     ]
@@ -152,6 +156,7 @@
                         "margin": "0 0 0 10",
                         "text": "Annuler"
                     },
+                    "name": "MyButton224",
                     "designerId": "88d8f535-0073-45d6-9c3e-e4c8288b70e4",
                     "customConfigs": [
                         {
@@ -178,6 +183,7 @@
                                     "button.up().up().close();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "e1994626-a74c-40b5-9e4b-442ed80e13d5"
                         }
                     ]

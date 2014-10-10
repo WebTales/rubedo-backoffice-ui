@@ -35,6 +35,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onNewShipperSubmitBtnClick",
             "designerId": "0e5bb70d-c35f-4df4-b019-9c52c6220425"
         },
         {
@@ -54,6 +55,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onShippersAddBtnClick",
             "designerId": "c89f7585-7c5b-4598-af00-ffb8e2932ce4"
         },
         {
@@ -78,6 +80,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onShippersGridSelectionChange",
             "designerId": "35eb3fd8-b8a7-46f6-9371-3add5207d4c9"
         },
         {
@@ -97,6 +100,7 @@
                     "Ext.getStore(\"ShippersRatesStore\").removeAll();"
                 ]
             },
+            "name": "resetInterfaceNoelect",
             "designerId": "46568558-868b-41d9-9587-ba9382c80539"
         },
         {
@@ -119,6 +123,7 @@
                     "Ext.getStore(\"ShippersRatesStore\").loadData(Ext.clone(record.get(\"rates\")));"
                 ]
             },
+            "name": "resetInterfaceSelect",
             "designerId": "89e90d1a-f2cb-43a6-9804-1a52892e2c58"
         },
         {
@@ -143,6 +148,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onShippersRemoveBtnClick",
             "designerId": "bb700691-5398-4013-85dc-507ea614b522"
         },
         {
@@ -169,6 +175,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onShippersSaveBtnClick",
             "designerId": "6305e98f-4046-44ff-9ed6-2d51a4075754"
         }
     ]

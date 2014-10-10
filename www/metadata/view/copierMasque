@@ -40,6 +40,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm30",
             "designerId": "7f8d4838-c91a-4df2-b725-94f2ced615f1",
             "cn": [
                 {
@@ -57,6 +58,7 @@
                         "localiserId": "mdNewTitleField",
                         "value": null
                     },
+                    "name": "MyTextField31",
                     "designerId": "fe9b4b40-2a66-4509-b688-92530eaffcf6",
                     "customConfigs": [
                         {
@@ -85,6 +87,7 @@
                         "store": "SitesComboMasks",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox23",
                     "designerId": "36fde64e-b099-4699-a162-b92b00cde888",
                     "customConfigs": [
                         {
@@ -113,6 +116,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onCopierMasqueSiteAfterRender",
                             "designerId": "b5cf04c1-1756-4ae4-90c8-5a5c7b137eaf"
                         }
                     ]
@@ -131,6 +135,7 @@
                         "text": "Dupliquer ce masque",
                         "width": null
                     },
+                    "name": "MyButton158",
                     "designerId": "547f2f26-3500-485c-b7b6-8db8d552c523",
                     "customConfigs": [
                         {

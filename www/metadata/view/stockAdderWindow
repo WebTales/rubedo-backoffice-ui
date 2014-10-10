@@ -36,6 +36,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm95",
             "designerId": "aba548c3-2d52-452b-8cdc-e5f2f421b602",
             "cn": [
                 {
@@ -56,6 +57,7 @@
                         "minValue": 0,
                         "name": "amount"
                     },
+                    "name": "MyNumberField22",
                     "designerId": "b8808bab-eac9-492a-a718-4bc3b86ad88c",
                     "customConfigs": [
                         {
@@ -78,6 +80,7 @@
                         "localiserId": "addStockToItemBtn",
                         "text": "Add stock to selected item"
                     },
+                    "name": "MyButton432",
                     "designerId": "b6a4c9ee-192c-450e-be94-cd5118096a01",
                     "customConfigs": [
                         {
@@ -109,6 +112,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onStockAdderSubmitBtnClick",
                             "designerId": "bd55d494-fdf7-401b-b109-ad132f102d59"
                         }
                     ]

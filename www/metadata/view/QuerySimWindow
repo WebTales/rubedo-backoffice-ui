@@ -36,6 +36,7 @@
                 "store": "QuerySim",
                 "title": ""
             },
+            "name": "MyGridPanel64",
             "designerId": "f416ffa8-5956-42ee-9d18-860a16fc9c7e",
             "cn": [
                 {
@@ -45,6 +46,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView69",
                     "designerId": "6eacaf75-819d-4672-8835-05e2f256825b"
                 },
                 {
@@ -59,6 +61,7 @@
                         "localiserId": "titleCol",
                         "text": "Title"
                     },
+                    "name": "MyColumn168",
                     "designerId": "3b6353e0-a927-4442-8ed1-01e7fe1e82a6",
                     "customConfigs": [
                         {
@@ -81,6 +84,7 @@
                         "store": "QuerySim",
                         "width": 360
                     },
+                    "name": "MyPagingToolbar11",
                     "designerId": "97d2e6cb-67da-49d2-98f8-b5e600ec2f66"
                 }
             ]
@@ -101,6 +105,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onWindowAfterRender",
             "designerId": "742c5d48-d8bc-482c-895e-7dfff69d3b71"
         },
         {
@@ -118,6 +123,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onWindowBeforeClose",
             "designerId": "686bded8-b084-4b54-b762-2cfc930253b7"
         }
     ]

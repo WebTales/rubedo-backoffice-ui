@@ -40,6 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool162",
             "designerId": "43f13d85-63a5-47b7-a321-9f13588256ea",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -50,6 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool174",
             "designerId": "69291d3a-610c-45f2-bdf9-c498a213ec2a",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -67,6 +69,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar13",
             "designerId": "2ec98bdc-7ba5-485e-9571-0594da1e0c3a",
             "cn": [
                 {
@@ -83,6 +86,7 @@
                         "src": null,
                         "width": 48
                     },
+                    "name": "MyImg2",
                     "designerId": "35bf1649-d74b-4d34-a212-8bfd964817e8",
                     "cn": [
                         {
@@ -100,6 +104,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onImageRender11",
                             "designerId": "a9106a85-e30f-42e3-b9de-da04b9ac836a"
                         }
                     ]
@@ -115,6 +120,7 @@
                         "itemId": "boiteBarreMeta",
                         "layout|flex": null
                     },
+                    "name": "MyContainer26",
                     "designerId": "5d9ba2c0-4939-4f2a-932e-6ed96091f767",
                     "cn": [
                         {
@@ -130,6 +136,7 @@
                                     "{customMeta}"
                                 ]
                             },
+                            "name": "tpl4",
                             "designerId": "7ddb5483-1fad-495a-8f31-da354136f491"
                         }
                     ]
@@ -150,6 +157,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar14",
             "designerId": "01137311-faac-4c13-aba1-c54b2215c288",
             "cn": [
                 {
@@ -168,6 +176,7 @@
                         "text": "Folder view",
                         "tooltip": "Switch to folder fiew"
                     },
+                    "name": "MyButton67",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -196,6 +205,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "adaptToCurrentMode",
                             "designerId": "d13096c8-a772-4fc3-a7ce-fbc801526f8a"
                         },
                         {
@@ -213,6 +223,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onDAMSwitchModeBtnRender",
                             "designerId": "4ca1f66c-d5e2-4656-a412-aeebc8ad2271"
                         }
                     ]
@@ -232,6 +243,7 @@
                         "layout|flex": null,
                         "title": "File plan"
                     },
+                    "name": "MyButtonGroup12",
                     "designerId": "49007b17-a1fc-4cfe-860b-32f11f80168f",
                     "cn": [
                         {
@@ -251,6 +263,7 @@
                                 "scale": "large",
                                 "text": "Add"
                             },
+                            "name": "MyButton68",
                             "designerId": "f52ff39a-a110-4213-8a68-1e9bd1a563e6",
                             "customConfigs": [
                                 {
@@ -282,6 +295,7 @@
                                 "scale": "large",
                                 "text": "Remove"
                             },
+                            "name": "MyButton69",
                             "designerId": "3699d0e3-65ba-4b5f-b2ce-4b38f6fab320",
                             "customConfigs": [
                                 {
@@ -312,6 +326,7 @@
                                 "scale": "large",
                                 "text": "Settings"
                             },
+                            "name": "MyButton70",
                             "designerId": "42e2a0e3-a854-4d5f-b300-20a5c6a928d9",
                             "customConfigs": [
                                 {
@@ -342,6 +357,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton71",
                     "designerId": "2e90a36a-9dbe-450e-8b87-be1cc70d51d2",
                     "customConfigs": [
                         {
@@ -376,6 +392,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton72",
                     "designerId": "41e0846c-c38a-445a-a6aa-9633ef082ca9",
                     "customConfigs": [
                         {
@@ -410,6 +427,7 @@
                         "scale": "large",
                         "text": "Afficher"
                     },
+                    "name": "MyButton73",
                     "designerId": "34089ef9-2c6a-40fe-b62b-d70a5e6c68c5",
                     "customConfigs": [
                         {
@@ -436,6 +454,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onDAMROBtnRender",
                             "designerId": "4a027ee4-1970-4b6f-9200-166174c6386e"
                         }
                     ]
@@ -460,6 +479,7 @@
                         "scale": "large",
                         "text": "Editer"
                     },
+                    "name": "MyButton74",
                     "designerId": "d4681572-ba93-47a8-91d0-9c33271d7a92",
                     "customConfigs": [
                         {
@@ -491,6 +511,7 @@
                         "scale": "large",
                         "text": "Mass upload"
                     },
+                    "name": "MyButton75",
                     "designerId": "b45dcbce-eadd-4b58-9eb8-bca6a77572c5",
                     "customConfigs": [
                         {
@@ -522,6 +543,7 @@
                         "localiserId": "clipboardGroup",
                         "title": "Presse-papiers"
                     },
+                    "name": "MyButtonGroup13",
                     "designerId": "d542e06d-f92d-4938-a24b-0a4bbf60c3b9",
                     "customConfigs": [
                         {
@@ -549,6 +571,7 @@
                                 "text": "Copier",
                                 "width": null
                             },
+                            "name": "MyButton76",
                             "designerId": "c2c97af7-20aa-4a62-9d8b-1fddfc5dcd92",
                             "customConfigs": [
                                 {
@@ -574,6 +597,7 @@
                                 "scale": "large",
                                 "text": "Ajouter au panier"
                             },
+                            "name": "MyButton77",
                             "designerId": "02d2ab8a-4ddc-44e1-ad4e-f5fe11f7ce6d"
                         },
                         {
@@ -592,6 +616,7 @@
                                 "scale": "large",
                                 "text": "Ajouter aux favoris"
                             },
+                            "name": "MyButton78",
                             "designerId": "0a3c0105-408d-422d-b29f-174885e1acdc",
                             "customConfigs": [
                                 {
@@ -619,6 +644,7 @@
                         "layout|flex": null,
                         "title": "Fichier"
                     },
+                    "name": "MyButtonGroup14",
                     "designerId": "916f1b11-bfcd-4c11-ad24-8c1393c8d71c",
                     "cn": [
                         {
@@ -636,6 +662,7 @@
                                 "scale": "large",
                                 "text": "Exporter"
                             },
+                            "name": "MyButton79",
                             "designerId": "c2cc59b1-6702-40e5-8538-9af3426bbfa1"
                         },
                         {
@@ -654,6 +681,7 @@
                                 "scale": "large",
                                 "text": "Importer"
                             },
+                            "name": "MyButton80",
                             "designerId": "1d892a59-5971-4060-ab7d-72f5ab543ffe",
                             "customConfigs": [
                                 {
@@ -675,6 +703,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill8",
                     "designerId": "1a661f33-69b8-437e-8bae-79ea26ea5094"
                 },
                 {
@@ -693,6 +722,7 @@
                         "scale": "large",
                         "text": ""
                     },
+                    "name": "MyButton81",
                     "designerId": "96d44f53-3480-419a-80f3-50adc4c804b5",
                     "customConfigs": [
                         {
@@ -718,6 +748,7 @@
                 "title": "",
                 "width": 240
             },
+            "name": "MyPanel24",
             "designerId": "d2d2c874-b2b7-4ee5-90bc-84f060dc3868",
             "cn": [
                 {
@@ -735,6 +766,7 @@
                         "title": "",
                         "width": null
                     },
+                    "name": "MyPanel25",
                     "designerId": "96776b09-4164-4e41-b18f-16f742c8c1d0",
                     "cn": [
                         {
@@ -747,6 +779,7 @@
                             "userConfig": {
                                 "dock": "top"
                             },
+                            "name": "MyToolbar15",
                             "designerId": "33fc02ee-8b52-4a2d-b9cc-4a2f2258d787",
                             "cn": [
                                 {
@@ -761,6 +794,7 @@
                                         "id": "DAMSearchField",
                                         "layout|flex": 1
                                     },
+                                    "name": "MyTextField19",
                                     "designerId": "55e56009-b0b1-4c84-a627-a20d8cdca5af",
                                     "cn": [
                                         {
@@ -780,6 +814,7 @@
                                                 "name": "specialkey",
                                                 "scope": "me"
                                             },
+                                            "name": "onDAMSearchFieldSpecialkey",
                                             "designerId": "df1d032e-ab74-4c49-a4b4-95ac11055707"
                                         }
                                     ]
@@ -797,6 +832,7 @@
                                         "layout|flex": null,
                                         "text": ""
                                     },
+                                    "name": "MyButton82",
                                     "designerId": "dab35ff8-c763-496a-91b0-7848a1952486"
                                 }
                             ]
@@ -816,6 +852,7 @@
                         "layout": "accordion",
                         "title": ""
                     },
+                    "name": "MyPanel26",
                     "designerId": "a82e7f7c-70a0-4284-96fe-0fa53be76745",
                     "cn": [
                         {
@@ -834,6 +871,7 @@
                                 "useArrows": true,
                                 "width": 400
                             },
+                            "name": "TreeGrid",
                             "designerId": "bf872b1c-ace2-4338-a14e-3f74ed98753e",
                             "isBuiltIn": true,
                             "iconCls": "icon-treegridpanel",
@@ -853,6 +891,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "MyTreeView",
                                     "designerId": "381d7927-90fe-44a4-ac61-cd7238cfedae",
                                     "cn": [
                                         {
@@ -865,6 +904,7 @@
                                             "userConfig": {
                                                 "ddGroup": "DirectoriesDD"
                                             },
+                                            "name": "MyTreeDragDropPlugin",
                                             "designerId": "9399f8d4-d667-41f8-b8fc-37d41327a983",
                                             "cn": [
                                                 {
@@ -943,6 +983,7 @@
                                                         "name": "beforedrop",
                                                         "scope": "me"
                                                     },
+                                                    "name": "onTreeViewDragDropBeforeDrop",
                                                     "designerId": "a820f164-5f18-497b-bcaa-9cec368b0a6a"
                                                 },
                                                 {
@@ -967,6 +1008,7 @@
                                                         "name": "drop",
                                                         "scope": "me"
                                                     },
+                                                    "name": "onTreeViewDragDropDrop",
                                                     "designerId": "0ae6c6aa-1da0-4c4a-aed0-42b8e3a66941"
                                                 }
                                             ]
@@ -986,6 +1028,7 @@
                                         "localiserId": "damFolderCol",
                                         "text": "Folder"
                                     },
+                                    "name": "MyTreeColumn",
                                     "designerId": "ef106ff3-cbe1-45cd-9626-8e226864536c",
                                     "customConfigs": [
                                         {
@@ -1031,6 +1074,7 @@
                                                     "}"
                                                 ]
                                             },
+                                            "name": "renderer",
                                             "designerId": "8de6d15e-c448-4fdd-b118-6cd92a450133"
                                         },
                                         {
@@ -1043,6 +1087,7 @@
                                             "userConfig": {
                                                 "allowBlank": false
                                             },
+                                            "name": "MyTextField20",
                                             "designerId": "41d11fc3-22f3-49af-ba80-467c8027c0df"
                                         }
                                     ]
@@ -1054,6 +1099,7 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.CellEditing",
+                                    "name": "MyCellEditingPlugin5",
                                     "designerId": "0c814077-6b09-49a3-9448-5ff5c22724a4",
                                     "cn": [
                                         {
@@ -1073,6 +1119,7 @@
                                                 "name": "beforeedit",
                                                 "scope": "me"
                                             },
+                                            "name": "onCellEditingBeforeEdit",
                                             "designerId": "81b37e70-67fb-4409-b2a7-edd041b02a62"
                                         },
                                         {
@@ -1091,6 +1138,7 @@
                                                 "name": "edit",
                                                 "scope": "me"
                                             },
+                                            "name": "onCellEditingEdit",
                                             "designerId": "7f31de08-0b07-44ac-81de-2eb7503a1f19"
                                         }
                                     ]
@@ -1111,6 +1159,7 @@
                                 "store": "MediaTypesForDAM",
                                 "title": "Filters"
                             },
+                            "name": "MyGridPanel19",
                             "designerId": "8a3fe329-7b38-4a7b-885a-98692ce5a07b",
                             "customConfigs": [
                                 {
@@ -1132,6 +1181,7 @@
                                         "localiserId": "typeColumn2",
                                         "text": "Type"
                                     },
+                                    "name": "MyColumn39",
                                     "designerId": "714819d9-0b9d-463f-80c0-6a27cfe20a9a",
                                     "customConfigs": [
                                         {
@@ -1148,6 +1198,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "MyGridView19",
                                     "designerId": "9f81a894-596f-406d-931c-e80f6deef039"
                                 },
                                 {
@@ -1160,6 +1211,7 @@
                                     "userConfig": {
                                         "dock": "bottom"
                                     },
+                                    "name": "MyToolbar16",
                                     "designerId": "2e2103bb-42af-4d77-942b-1f8619465c62",
                                     "cn": [
                                         {
@@ -1175,6 +1227,7 @@
                                                 "localiserId": "applyFiltersBtn",
                                                 "text": "Apply filters"
                                             },
+                                            "name": "MyButton83",
                                             "designerId": "b64a7d65-b213-4dc8-a418-662a0c896048",
                                             "customConfigs": [
                                                 {
@@ -1193,6 +1246,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": "Ext.selection.CheckboxModel",
+                                    "name": "MyCheckboxSelectionModel3",
                                     "designerId": "1de811fd-409b-4e13-8b30-2b33188b3ff3"
                                 }
                             ]
@@ -1214,6 +1268,7 @@
                 "layout|flex": 1,
                 "overflowY": "auto"
             },
+            "name": "MyPanel27",
             "designerId": "2d75551f-3366-42d8-a959-da1463401fc2",
             "cn": [
                 {
@@ -1230,6 +1285,7 @@
                         "minHeight": null,
                         "store": "DAMFacetteStore"
                     },
+                    "name": "dammainview",
                     "designerId": "87a9f62e-728c-47b7-9fb7-42a14d12f39e",
                     "masterInstanceId": "bde1968a-cbce-4b3a-872c-548461f2e683"
                 },
@@ -1244,6 +1300,7 @@
                         "hidden": true,
                         "layout|flex": 1
                     },
+                    "name": "myview",
                     "designerId": "292c5800-d39c-4d03-89d4-93a46738ddac",
                     "masterInstanceId": "f36e89e4-306e-40ee-b555-4f18f4129f6b"
                 },
@@ -1261,6 +1318,7 @@
                         "store": "DAMFacetteStore",
                         "width": 360
                     },
+                    "name": "MyPagingToolbar",
                     "designerId": "6500b107-777f-40b3-94bb-f648601eaed4"
                 },
                 {
@@ -1274,6 +1332,7 @@
                         "dock": "top",
                         "layout|flex": 1
                     },
+                    "name": "MyToolbar17",
                     "designerId": "a53dbdc4-8ffa-4a34-9c2d-8beb458670f2",
                     "cn": [
                         {
@@ -1286,6 +1345,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill9",
                             "designerId": "3724e595-efae-427f-b104-932f1007a05c"
                         },
                         {
@@ -1303,6 +1363,7 @@
                                 "scale": null,
                                 "text": "Switch display mode"
                             },
+                            "name": "MyButton84",
                             "designerId": "63b7be0d-ec81-4128-837b-fb67df1941ac",
                             "customConfigs": [
                                 {
@@ -1335,6 +1396,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onDAMSwitchGridDisplayBtnClick",
                                     "designerId": "a9b46940-c40e-403d-a8ef-a64751b5cb3e"
                                 }
                             ]
@@ -1368,6 +1430,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onDAMMTGridRender",
             "designerId": "42274a0f-cd01-460e-a6c6-5fbb3254cdc5"
         },
         {
@@ -1393,6 +1456,7 @@
                 "name": "destroy",
                 "scope": "me"
             },
+            "name": "onDAMInterfaceDestroy",
             "designerId": "b4f2d44b-60d2-4798-89ab-974526d14a25"
         },
         {
@@ -1408,6 +1472,7 @@
                 "id": "DAMActiveFacetBox",
                 "layout|flex": 1
             },
+            "name": "MyToolbar18",
             "designerId": "a933a0ea-82ad-49bf-aef8-b28d0a54fc02"
         }
     ]

@@ -44,6 +44,7 @@
                 "store": "ReusableElementsDataStore",
                 "title": ""
             },
+            "name": "MyGridPanel35",
             "configAlternates": {
                 "managesStore": "boolean"
             },
@@ -63,6 +64,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView38",
                     "designerId": "8bdb7e96-8aed-4c82-b1f5-7fc83e88f1f3"
                 },
                 {
@@ -78,6 +80,7 @@
                         "localiserId": "nameCol",
                         "text": "Nom"
                     },
+                    "name": "MyColumn80",
                     "designerId": "50cea688-8cf0-40fd-a521-53de261c3bed",
                     "customConfigs": [
                         {
@@ -94,6 +97,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "MyGroupingFeature6",
                     "designerId": "92bbf608-3b28-491c-aab5-19f563d60436",
                     "cn": [
                         {
@@ -109,6 +113,7 @@
                                     "{name:this.translator}"
                                 ]
                             },
+                            "name": "tpl17",
                             "designerId": "4041d896-a934-4ed3-a37b-015e7595308f",
                             "cn": [
                                 {
@@ -133,6 +138,7 @@
                                             "}"
                                         ]
                                     },
+                                    "name": "translator",
                                     "designerId": "e0b52248-2a6c-4c9d-bf91-5b35bdca3390"
                                 }
                             ]
@@ -149,6 +155,7 @@
                     "userConfig": {
                         "dock": "bottom"
                     },
+                    "name": "MyToolbar47",
                     "designerId": "50d8f915-f1d9-4775-8ac5-6801ad08ff0f",
                     "cn": [
                         {
@@ -161,6 +168,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill24",
                             "designerId": "9c6e853c-5e23-4d57-8cff-fc28e75aa44b"
                         },
                         {
@@ -178,6 +186,7 @@
                                 "localiserId": "deleteBtn",
                                 "text": "Supprimer"
                             },
+                            "name": "MyButton186",
                             "designerId": "a994ca8d-2b21-4997-833b-e3c6e03716bd",
                             "customConfigs": [
                                 {
@@ -210,6 +219,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onResusableElementsDeleteBtnClick",
                                     "designerId": "bf760f89-d417-4e20-901b-e29e444a4f17"
                                 }
                             ]
@@ -231,6 +241,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel42",
             "designerId": "c87ed310-3b37-4d51-93d7-2a052278a20d",
             "cn": [
                 {
@@ -247,6 +258,7 @@
                         "margin": "10 0 0 0",
                         "width": 300
                     },
+                    "name": "MyContainer42",
                     "designerId": "72bbb711-00fc-426b-ac82-9a0301c20483"
                 },
                 {
@@ -263,6 +275,7 @@
                         "margin": "10 0 10 0",
                         "width": 350
                     },
+                    "name": "MyContainer43",
                     "designerId": "d1370439-418e-4078-b7ed-18fff72361d9",
                     "cn": [
                         {
@@ -279,6 +292,7 @@
                                     "<p>{description}</p>"
                                 ]
                             },
+                            "name": "tpl18",
                             "designerId": "de9ec4af-29ce-422f-aa44-b11dc80e39f6"
                         }
                     ]
@@ -294,6 +308,7 @@
                         "dock": "bottom",
                         "layout|flex": 1
                     },
+                    "name": "MyToolbar48",
                     "designerId": "8ef4da63-4453-4819-a353-67967c734453",
                     "cn": [
                         {
@@ -306,6 +321,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill25",
                             "designerId": "236618a2-a732-4b8d-98fe-7b8e3b062289"
                         },
                         {
@@ -323,6 +339,7 @@
                                 "localiserId": "addBtn",
                                 "text": "Ajouter"
                             },
+                            "name": "MyButton187",
                             "designerId": "8dd193ad-a01e-4ed0-8569-1ff6bbd3b08c",
                             "customConfigs": [
                                 {

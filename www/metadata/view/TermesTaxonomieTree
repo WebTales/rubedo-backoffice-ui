@@ -28,6 +28,7 @@
                 "disableSelection": false,
                 "itemCls": null
             },
+            "name": "MyTreeView1",
             "designerId": "6540d105-d54e-4bf2-9a22-4fe4d7d85df4",
             "cn": [
                 {
@@ -42,6 +43,7 @@
                         "dragText": "{0} terme{1} séléctionné{1}",
                         "pluginId": "termsDrager"
                     },
+                    "name": "MyTreeDragDropPlugin1",
                     "designerId": "c30057c1-7987-483f-bff7-cba215698d02",
                     "cn": [
                         {
@@ -94,6 +96,7 @@
                                 "name": "beforedrop",
                                 "scope": "me"
                             },
+                            "name": "onTreedragdroppluginBeforeDrop",
                             "designerId": "8c3b19f9-6624-432b-8e65-7e0ca23cc88a"
                         },
                         {
@@ -118,6 +121,7 @@
                                 "name": "drop",
                                 "scope": "me"
                             },
+                            "name": "onTreedragdroppluginDrop",
                             "designerId": "8a5d9f92-8515-4ee6-a425-a9e0b8d82ef3"
                         }
                     ]
@@ -137,6 +141,7 @@
                 "localiserId": "termsCol",
                 "text": "Termes"
             },
+            "name": "MyTreeColumn1",
             "designerId": "fb2e8d1b-8817-43dc-b288-b5a97300ec7c",
             "customConfigs": [
                 {
@@ -179,6 +184,7 @@
                             "}"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "73583cbc-947c-4cf6-8c42-0fd757af6dd0"
                 }
             ]
@@ -196,6 +202,7 @@
                 "localiserId": "languageCoumn",
                 "text": "Languages"
             },
+            "name": "MyColumn47",
             "designerId": "b7d2d51c-a8c4-4f88-bb9e-98812049407c",
             "customConfigs": [
                 {
@@ -242,6 +249,7 @@
                             "return(returner);"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "f08e9012-8df0-4a98-a911-b02e38e035a6"
                 },
                 {
@@ -261,6 +269,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onGridcolumnAfterRender",
                     "designerId": "b2a76e36-42fa-4f9c-906b-08e977d20345"
                 }
             ]
@@ -279,6 +288,7 @@
                 "text": "<img class=\"header-icon\" style=\"vertical-align:middle;margin-bottom:4px;\" src=\"resources/icones/red/16x16/pencil.png\"/> English",
                 "usedLanguage": "en"
             },
+            "name": "MyColumn48",
             "designerId": "3424dae7-4b88-420b-9c2c-1bef0e7e0f51",
             "customConfigs": [
                 {
@@ -314,6 +324,7 @@
                             "} else {return(\"\");}"
                         ]
                     },
+                    "name": "renderer",
                     "designerId": "ad8e22ce-2552-4e99-9833-b8020ad21876"
                 },
                 {
@@ -323,6 +334,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyTextField23",
                     "designerId": "2aff21be-3be8-4f4e-82f0-82bf635527fb"
                 }
             ]
@@ -347,6 +359,7 @@
                 "name": "itemclick",
                 "scope": "me"
             },
+            "name": "onTermesTaxonomieTreeItemClick",
             "designerId": "732569e4-a773-4994-868a-8a0e5811e4ff"
         },
         {
@@ -356,6 +369,7 @@
                 "type": "array"
             },
             "codeClass": "Ext.grid.plugin.BufferedRenderer",
+            "name": "MyBufferedRenderer",
             "designerId": "268929a4-3894-4d9f-8ed4-7b3b940b0e5d"
         }
     ]

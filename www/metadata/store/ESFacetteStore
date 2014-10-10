@@ -52,6 +52,7 @@
                     "activeFacettes"
                 ]
             },
+            "name": "CustomEvent1",
             "designerId": "e2366063-d1c6-4f04-ab2f-4b2f47410971"
         },
         {
@@ -68,6 +69,7 @@
                     "}"
                 ]
             },
+            "name": "MyAjaxProxy40",
             "designerId": "929a17ea-4cd0-4578-ba38-239fb1b1ee51",
             "cn": [
                 {
@@ -81,6 +83,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader39",
                     "designerId": "7baab310-0fec-4681-af15-dfbcd8b8dac0",
                     "cn": [
                         {
@@ -124,6 +127,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "getResponseData",
                             "designerId": "d5c28543-ffc6-46d1-8a5e-b09aa73be956"
                         }
                     ]
@@ -146,6 +150,7 @@
                 "name": "facettesChanged",
                 "scope": "me"
             },
+            "name": "onJsonstoreFacettesChanged",
             "designerId": "84b7a276-bdb7-4d20-9e9e-6de02a0e542f"
         },
         {
@@ -174,6 +179,7 @@
                 "name": "load",
                 "scope": "me"
             },
+            "name": "onJsonstoreLoad",
             "designerId": "7938ccd1-1f45-4880-b211-e55b0a635cf0"
         },
         {
@@ -201,6 +207,7 @@
                 "name": "beforeload",
                 "scope": "me"
             },
+            "name": "onJsonstoreBeforeLoad",
             "designerId": "90ae1621-4e81-45b5-bcd6-d7446c6b92ff"
         },
         {
@@ -214,6 +221,7 @@
                 "direction": "DESC",
                 "property": "score"
             },
+            "name": "MySorter9",
             "designerId": "ae10a6c7-5d2e-4ceb-bbdd-1e6945fd0f15"
         }
     ]

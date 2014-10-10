@@ -45,6 +45,7 @@
                 ],
                 "title": ""
             },
+            "name": "MyPropertyGrid",
             "designerId": "4e089adb-811a-4e6c-8b95-e2bf7aec9b76",
             "cn": [
                 {
@@ -62,6 +63,7 @@
                         "name": "beforeedit",
                         "scope": "me"
                     },
+                    "name": "onPropertygridBeforeEdit",
                     "designerId": "572fc55d-42a4-43f2-814d-022c63307b81"
                 }
             ]
@@ -76,6 +78,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar55",
             "designerId": "5eb46282-3897-43ea-a286-93094bd21c65",
             "cn": [
                 {
@@ -88,6 +91,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill29",
                     "designerId": "a6677035-0c91-41b2-837f-4781583ca7a8"
                 },
                 {
@@ -102,6 +106,7 @@
                         "localiserId": "okBtn",
                         "text": "<b>OK</b>"
                     },
+                    "name": "MyButton225",
                     "designerId": "cc6419f1-4bc6-4165-a055-83f86270d8fa",
                     "customConfigs": [
                         {
@@ -128,6 +133,7 @@
                                     "button.up().up().close();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "f77e7be7-3710-4193-98fa-661f322dc6bd"
                         }
                     ]

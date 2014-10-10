@@ -29,6 +29,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar7",
             "designerId": "d2122130-d43b-4f72-a359-0930fc358902",
             "cn": [
                 {
@@ -41,6 +42,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill5",
                     "designerId": "8842182c-dfcf-4236-aa3b-19357728c7b9"
                 },
                 {
@@ -58,6 +60,7 @@
                         "localiserId": "saveBtn",
                         "text": "Save"
                     },
+                    "name": "MyButton39",
                     "designerId": "6143846d-6e79-457e-a5ed-fcdc10c35db1",
                     "customConfigs": [
                         {
@@ -84,6 +87,7 @@
             "userConfig": {
                 "activeTab": 0
             },
+            "name": "MyTabPanel3",
             "designerId": "b280143e-99f8-4331-846a-47d81c7f68e5",
             "cn": [
                 {
@@ -100,6 +104,7 @@
                         "localiserId": "ucuFieldsTab",
                         "title": "Fields"
                     },
+                    "name": "MyForm12",
                     "designerId": "f2f6d9cb-5fc9-455b-93f4-09d5f1d35944",
                     "customConfigs": [
                         {
@@ -116,6 +121,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "TabConfig13",
                             "designerId": "0bb0c3c4-8fba-457b-908a-1aeb015d1493"
                         },
                         {
@@ -130,6 +136,7 @@
                                 "layout": "anchor",
                                 "padding": 10
                             },
+                            "name": "MyContainer14",
                             "designerId": "801f7389-0b15-48a3-b786-51971175073c",
                             "cn": [
                                 {
@@ -148,6 +155,7 @@
                                         "name": "email",
                                         "vtype": "email"
                                     },
+                                    "name": "MyTextField12",
                                     "designerId": "87ab3995-0081-474c-b80a-813f3728cd05",
                                     "customConfigs": [
                                         {
@@ -176,6 +184,7 @@
                                 "layout": "anchor",
                                 "padding": 10
                             },
+                            "name": "MyContainer15",
                             "designerId": "f88bf623-1a20-4868-92c7-58ecee0f6a91",
                             "cn": [
                                 {
@@ -194,6 +203,7 @@
                                         "name": "name",
                                         "vtype": null
                                     },
+                                    "name": "MyTextField13",
                                     "designerId": "7b8cdbe6-b0ac-47be-9098-158c26e86d2e",
                                     "customConfigs": [
                                         {
@@ -225,6 +235,7 @@
                         "localiserId": "taxoTab",
                         "title": "Taxonomy"
                     },
+                    "name": "MyForm13",
                     "designerId": "bb86e71e-3bc5-42bb-9c4e-e5aca27b34de",
                     "customConfigs": [
                         {
@@ -241,6 +252,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "TabConfig14",
                             "designerId": "8f5314ff-a742-4903-a720-fecdd7bc0576"
                         }
                     ]

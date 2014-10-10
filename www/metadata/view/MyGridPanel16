@@ -23,6 +23,7 @@
                 "type": "object"
             },
             "codeClass": null,
+            "name": "MyGridView37",
             "designerId": "4c510eed-cbd9-419d-b3eb-b323b1deb924"
         },
         {
@@ -32,6 +33,7 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.CheckboxModel",
+            "name": "MyCheckboxSelectionModel8",
             "designerId": "b93c27fe-d628-4ddd-b7eb-cad93152971c"
         },
         {
@@ -48,6 +50,7 @@
                 "localiserId": "nameColumn",
                 "text": "Nom"
             },
+            "name": "MyColumn69",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -79,6 +82,7 @@
                 "hidden": true,
                 "text": "Civilité"
             },
+            "name": "MyColumn70",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -105,6 +109,7 @@
                 "hidden": true,
                 "text": "Organisation"
             },
+            "name": "MyColumn71",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -131,6 +136,7 @@
                 "hidden": true,
                 "text": "Service"
             },
+            "name": "MyColumn72",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -157,6 +163,7 @@
                 "hidden": true,
                 "text": "Fonction"
             },
+            "name": "MyColumn73",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -183,6 +190,7 @@
                 "hidden": true,
                 "text": "E-mail"
             },
+            "name": "MyColumn74",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -209,6 +217,7 @@
                 "hidden": true,
                 "text": "Téléphone"
             },
+            "name": "MyColumn75",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -235,6 +244,7 @@
                 "hidden": true,
                 "text": "Mobile"
             },
+            "name": "MyColumn76",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -261,6 +271,7 @@
                 "hidden": true,
                 "text": "Coordonnées"
             },
+            "name": "MyColumn77",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -287,6 +298,7 @@
                 "hidden": true,
                 "text": "Langue"
             },
+            "name": "MyColumn78",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -313,6 +325,7 @@
                 "hidden": true,
                 "text": "Pays"
             },
+            "name": "MyColumn79",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -339,6 +352,7 @@
                 "hidden": true,
                 "text": "Création"
             },
+            "name": "MyDateColumn6",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -365,6 +379,7 @@
                 "hidden": true,
                 "text": "Mise à jour"
             },
+            "name": "MyDateColumn7",
             "configAlternates": {
                 "filter": "boolean"
             },
@@ -394,6 +409,7 @@
                     "return config;"
                 ]
             },
+            "name": "processMyGridPanel16",
             "designerId": "1289625c-ecc3-447a-b76c-ff27bd2cdd14"
         }
     ]

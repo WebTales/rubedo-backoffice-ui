@@ -50,6 +50,7 @@
                 ],
                 "batchActions": false
             },
+            "name": "MyAjaxProxy23",
             "designerId": "37a9c970-4cbf-4899-908c-cf71e5d92987",
             "cn": [
                 {
@@ -62,6 +63,7 @@
                     "userConfig": {
                         "messageProperty": "message"
                     },
+                    "name": "MyJsonReader22",
                     "designerId": "7fe66814-48c6-4515-ab77-c9aa1d7ac239",
                     "cn": [
                         {
@@ -101,6 +103,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "getResponseData",
                             "designerId": "5380563e-73c7-4994-b679-d39906ff5d8b"
                         }
                     ]
@@ -116,6 +119,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter11",
                     "designerId": "0ebb1a9e-cc95-4b9f-b91b-6c8c6e6db8b8"
                 }
             ]
@@ -131,6 +135,7 @@
                 "property": "orderValue",
                 "root": null
             },
+            "name": "MySorter3",
             "designerId": "851f85e8-3f04-444c-b4eb-754ea9fa12fe"
         }
     ]

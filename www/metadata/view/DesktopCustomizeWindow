@@ -42,6 +42,7 @@
                 "layout": "accordion",
                 "width": 150
             },
+            "name": "MyContainer29",
             "designerId": "ed7cfa8f-e792-4d4d-a78e-e6a596c08fff",
             "cn": [
                 {
@@ -59,6 +60,7 @@
                         "store": "WallpapersDataJson",
                         "title": "Fond d'écran"
                     },
+                    "name": "MyGridPanel20",
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
@@ -83,6 +85,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView20",
                             "designerId": "b4a054a2-490f-4ccc-92d0-b22fbc3f742b"
                         },
                         {
@@ -98,6 +101,7 @@
                                 "localiserId": "nameCol",
                                 "text": "Nom"
                             },
+                            "name": "MyColumn40",
                             "designerId": "4e8ba698-5e3f-4b6c-b5c0-8e9a9202e2cd",
                             "customConfigs": [
                                 {
@@ -124,6 +128,7 @@
                         "store": "ThemesDataJson",
                         "title": "Thèmes"
                     },
+                    "name": "MyGridPanel21",
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
@@ -148,6 +153,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView21",
                             "designerId": "a2e630a6-e060-4b2b-aeaf-e56aa3f9da0e"
                         },
                         {
@@ -163,6 +169,7 @@
                                 "localiserId": "nameCol",
                                 "text": "Nom"
                             },
+                            "name": "MyColumn41",
                             "designerId": "29e86ca0-e02b-4343-9670-5da548459531",
                             "customConfigs": [
                                 {
@@ -186,6 +193,7 @@
                         "localiserId": "accessibilityPanel",
                         "title": "Accessibilité"
                     },
+                    "name": "MyPanel29",
                     "designerId": "79e1e030-4a08-429c-8ca1-2b21bfbb489f",
                     "customConfigs": [
                         {
@@ -209,6 +217,7 @@
                 "layout": "fit",
                 "layout|flex": 1
             },
+            "name": "MyContainer30",
             "designerId": "4a737d26-c7f2-4aa4-8bc1-aa26bec7529c",
             "cn": [
                 {
@@ -218,6 +227,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "wallpaperpicker",
                     "designerId": "24b761b6-c50f-4c67-9ee2-4b9c3e22abba",
                     "masterInstanceId": "b1d4214e-b893-4a6c-89f4-d297c8733b26"
                 }

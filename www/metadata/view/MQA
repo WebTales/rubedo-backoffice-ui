@@ -72,6 +72,7 @@
                     "return(result);"
                 ]
             },
+            "name": "readMyQuery",
             "designerId": "c2545fd0-ec3c-4d6b-a47f-b6064609e2b2"
         },
         {
@@ -84,6 +85,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "mytoolbar562",
             "designerId": "8d468681-7140-489f-8a2a-dc793cf8eec2",
             "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
         },
@@ -99,6 +101,7 @@
                 "localiserId": "mqs1",
                 "title": "Choix des types de médias"
             },
+            "name": "MyForm69",
             "designerId": "796177a4-b025-4b70-924e-91f89c4448fd",
             "customConfigs": [
                 {
@@ -129,6 +132,7 @@
                         "store": "MediaTypesFORDAMPicker",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox54",
                     "designerId": "93641b6b-525e-4ceb-a491-a6206c10c8fc",
                     "customConfigs": [
                         {
@@ -157,6 +161,7 @@
                         "name": "deactivate",
                         "scope": "me"
                     },
+                    "name": "onFormDeactivate",
                     "designerId": "d3a2e365-c470-4d8f-8ef7-0964bcb7e7da"
                 }
             ]
@@ -175,6 +180,7 @@
                 "overflowY": "auto",
                 "title": "Choix des règles sur la taxonomie"
             },
+            "name": "MyForm70",
             "designerId": "d67b5d86-b64d-462d-9141-3f6571a9e8c6",
             "customConfigs": [
                 {
@@ -215,6 +221,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onMQAAfterRender",
             "designerId": "73bbc96f-3d3c-42bf-b868-03270989cc38"
         },
         {
@@ -426,6 +433,7 @@
                     "        }    "
                 ]
             },
+            "name": "reactToMTChange",
             "designerId": "4f02e02d-c70c-4ece-b73d-09e858032694"
         },
         {
@@ -444,6 +452,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onMQABeforeClose",
             "designerId": "7c345df1-1f41-4ea0-b2e5-c79c53ca38df"
         },
         {
@@ -453,6 +462,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "assisstantre51",
             "designerId": "52c8bba9-a1fd-4e26-9b02-2c49334bb657",
             "masterInstanceId": "600b0e52-e465-45ce-ac64-6b6f98c6a6a6"
         },
@@ -469,6 +479,7 @@
                 "localiserId": "mqls",
                 "title": "Enregistrement"
             },
+            "name": "MyPanel67",
             "designerId": "fe6c1f8e-0610-4292-8792-7bbea27140b3",
             "customConfigs": [
                 {
@@ -492,6 +503,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton335",
                     "designerId": "fb45f1f1-3be2-4c86-8adb-a603913b9fb7",
                     "customConfigs": [
                         {
@@ -518,6 +530,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onMQASaveBtnClick",
                             "designerId": "9c474f42-1277-4258-bca4-e4643acf7f56"
                         }
                     ]

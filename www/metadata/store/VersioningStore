@@ -34,6 +34,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy6",
             "designerId": "3f23be2a-11eb-42be-8116-d122b26ecc43",
             "cn": [
                 {
@@ -47,6 +48,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader6",
                     "designerId": "482a708d-1e4f-45db-a3f4-2014c1b5b68e"
                 }
             ]
@@ -62,6 +64,7 @@
                 "direction": "DESC",
                 "property": "publishVersion"
             },
+            "name": "MySorter",
             "designerId": "18ed8649-3e47-47be-aef3-e0e03dc19403"
         }
     ]

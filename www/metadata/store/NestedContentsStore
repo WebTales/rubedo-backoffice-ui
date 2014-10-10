@@ -32,6 +32,7 @@
                 "name": "update",
                 "scope": "me"
             },
+            "name": "onStoreUpdate",
             "designerId": "425fcc41-c269-48df-babe-0bcb2b9c29e7"
         },
         {
@@ -45,6 +46,7 @@
                 "property": "typeId",
                 "root": null
             },
+            "name": "MyGrouper",
             "designerId": "3d04bb23-cec3-48a8-b92f-989a5b0e80ce"
         },
         {
@@ -69,6 +71,7 @@
                     "}"
                 ]
             },
+            "name": "MyAjaxProxy7",
             "designerId": "2089d7ca-298b-4096-b853-7e22ec40ac46",
             "cn": [
                 {
@@ -82,6 +85,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader7",
                     "designerId": "7eecfb39-7244-48ec-b663-8ef5431666b3"
                 },
                 {
@@ -95,6 +99,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter1",
                     "designerId": "5f8c1e41-bd6b-4b94-a3f5-840696010261"
                 }
             ]

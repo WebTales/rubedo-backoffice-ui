@@ -384,6 +384,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "ajouterContenu",
             "designerId": "e81d0f4c-83eb-4437-a188-896315f1c5c8"
         },
         {
@@ -404,6 +405,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "ouvrirFenetreTC",
             "designerId": "063f8236-3289-49dc-a637-63d5b83ff07c"
         },
         {
@@ -617,6 +619,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "creerChampTC",
             "designerId": "cca991ed-25e3-4a89-9490-55e02f4dcef7"
         },
         {
@@ -801,6 +804,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "selectChampTC",
             "designerId": "e2ebc421-111e-445c-aa56-a4c4fc55fdfe"
         },
         {
@@ -826,6 +830,7 @@
                 "name": "beforedestroy",
                 "scope": "me"
             },
+            "name": "enleveChampTC",
             "designerId": "0541dcd4-ee38-4b95-9dbf-b9f8d5a998e7"
         },
         {
@@ -845,6 +850,7 @@
                 "name": "itemclick",
                 "scope": "me"
             },
+            "name": "updateOptionsListeTC",
             "designerId": "74b79ea2-838b-4407-8e7a-69683f98bf32"
         },
         {
@@ -1059,6 +1065,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "selectTC",
             "designerId": "d5b57a48-78e7-4ae9-81e5-45b88a8b725e"
         },
         {
@@ -1115,6 +1122,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "supprimeTypeContenu",
             "designerId": "926fdbd9-4653-4556-88a3-f6ea0c9a755f"
         },
         {
@@ -1213,6 +1221,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "enregistrerTypeContenus",
             "designerId": "a61a2f23-93e0-4ad3-9987-1602c0afced2"
         },
         {
@@ -1234,6 +1243,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "fenetreNTC",
             "designerId": "13f39238-b017-41fb-9868-d8f120518348"
         },
         {
@@ -1278,6 +1288,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "creerNTC",
             "designerId": "80a1e005-fdd4-4af3-82fb-a9229417cce3"
         },
         {
@@ -1341,6 +1352,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "selectionEvents",
             "designerId": "1a3d6c16-2026-4fb3-97b6-4495f52a7805"
         },
         {
@@ -1368,6 +1380,7 @@
                 "name": "change",
                 "scope": "me"
             },
+            "name": "onCheckboxfieldChange",
             "designerId": "1d97759c-5055-4fb4-893f-0cc6aa215026"
         },
         {
@@ -1391,6 +1404,7 @@
                     "}"
                 ]
             },
+            "name": "miseAPlatTaxo",
             "designerId": "b01c65a8-deab-4097-8985-5e8fc1acca30"
         },
         {
@@ -1423,6 +1437,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "repliqueChamp",
             "designerId": "6c7dc62c-8c47-4fdb-a92c-52250f3464b5"
         },
         {
@@ -1445,6 +1460,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "TCfieldDelete",
             "designerId": "f53cb645-4e7d-4623-87f9-123e8288a1fa"
         },
         {
@@ -1470,6 +1486,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "TCfieldMoveUp",
             "designerId": "6b32c09e-8580-4589-8ae1-6487396f7d72"
         },
         {
@@ -1493,6 +1510,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "TCfieldMoveDown",
             "designerId": "84d48f71-a70a-422b-92a2-5af45464a790"
         },
         {
@@ -1513,6 +1531,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "createThroughDblClick",
             "designerId": "165b0cf1-e3f8-4a55-9506-56f5f6d8c60d"
         },
         {
@@ -1542,6 +1561,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "copyTC",
             "designerId": "217b6cb9-f771-406e-87cc-5c8d71d1ffaf"
         },
         {
@@ -1561,6 +1581,7 @@
                 "name": "edit",
                 "scope": "me"
             },
+            "name": "onGridpanelEdit",
             "designerId": "cee18c78-aca5-49d7-89a4-764138838ca9"
         },
         {
@@ -1582,6 +1603,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onAdminfTypesGridRender",
             "designerId": "e9ec09d3-2d5c-48ea-ba05-b5a7cdc8c067"
         },
         {
@@ -1603,6 +1625,7 @@
                 "name": "destroy",
                 "scope": "me"
             },
+            "name": "onAdminfTypesGridDestroy",
             "designerId": "94a0398d-b1eb-4d7b-905e-37ab1698b6fd"
         },
         {
@@ -1631,6 +1654,7 @@
                     "}"
                 ]
             },
+            "name": "nameValidator",
             "designerId": "3888bb3c-c2d1-483e-9b09-d722f936ceb1"
         },
         {
@@ -1657,6 +1681,7 @@
                     "}"
                 ]
             },
+            "name": "nameAvailable",
             "designerId": "d157a9ee-580e-4b98-beef-42abf6f6da50"
         },
         {
@@ -1708,6 +1733,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onPurgeCTContentsBtnClick",
             "designerId": "7d05bac5-df93-4d07-9429-3c9665f7a5c3"
         },
         {
@@ -1727,6 +1753,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAddCTLayoutBtnClick",
             "designerId": "12dcefec-ae6d-440a-97d9-d70fde20525e"
         },
         {
@@ -1746,6 +1773,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onRemoveCTLayoutBtnClick",
             "designerId": "e4ca4d9e-5d88-4258-8446-abb083a3592e"
         },
         {
@@ -1771,6 +1799,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onNewCTLayoutWindowSubmitBtnClick",
             "designerId": "bc40401c-e8ea-4c49-a186-3ae21b8fa9c5"
         },
         {
@@ -1794,6 +1823,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onCTLayoutsGridSelectionChange",
             "designerId": "853b4c10-4955-4132-93ae-a564ad7f07f9"
         },
         {
@@ -1828,6 +1858,7 @@
                     "this.getFieldsListForLayout();"
                 ]
             },
+            "name": "resetLayoutsInterfaceSelect",
             "designerId": "21e062f4-7c55-4716-99ff-2d34f03eb17d"
         },
         {
@@ -1852,6 +1883,7 @@
                     "Ext.getCmp(\"layoutActivatorBtn\").deactivateMode=false;"
                 ]
             },
+            "name": "resetLayoutsInterfaceNoSelect",
             "designerId": "5f7fd77a-3e31-43fd-b713-7bd238c954d2"
         },
         {
@@ -1886,6 +1918,7 @@
                     "Ext.getStore(\"CTFieldsForLayouts\").add(discoveredFields);"
                 ]
             },
+            "name": "getFieldsListForLayout",
             "designerId": "cf29b169-0fdb-4508-87a4-dd6dd7093835"
         },
         {
@@ -1951,6 +1984,7 @@
                     "    return nRows;"
                 ]
             },
+            "name": "saveLayout",
             "designerId": "2c309a51-1c09-469c-8993-754c9914b1c9"
         },
         {
@@ -2027,6 +2061,7 @@
                     "Ext.getCmp(\"layoutPropsPanel\").add(configSpec);"
                 ]
             },
+            "name": "renderRowTools",
             "designerId": "e346917a-6e49-4375-b293-126164c36c50"
         },
         {
@@ -2104,6 +2139,7 @@
                     "Ext.getCmp(\"layoutPropsPanel\").add(configSpec);"
                 ]
             },
+            "name": "renderFieldTools",
             "designerId": "74b77068-86c4-4c10-b599-52db74dc5c8a"
         },
         {
@@ -2122,6 +2158,7 @@
                     ""
                 ]
             },
+            "name": "renderMainBoxTools",
             "designerId": "661fa529-4e0a-480b-a22a-8f97d449bc66"
         },
         {
@@ -2234,6 +2271,7 @@
                     "Ext.getCmp(\"layoutPropsPanel\").add(configSpec);"
                 ]
             },
+            "name": "renderColumnTools",
             "designerId": "4e7f8f6e-915b-45b8-bbac-c6420215f875"
         },
         {
@@ -2303,6 +2341,7 @@
                     "}"
                 ]
             },
+            "name": "applyConstrain",
             "designerId": "7f64b9c5-7e17-4ddc-a0fa-97e49cebe57a"
         },
         {
@@ -2337,6 +2376,7 @@
                     "}"
                 ]
             },
+            "name": "deudceResposiveClass",
             "designerId": "a8392c87-d632-40e3-b75f-5429cfffbde1"
         },
         {
@@ -2427,6 +2467,7 @@
                     "});"
                 ]
             },
+            "name": "restoreLayout",
             "designerId": "6cb721ad-22c6-4105-b41a-9b7c733393d2"
         },
         {
@@ -2448,6 +2489,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onSaveCTLayoutBtnClick",
             "designerId": "ed36df37-4dc3-43c6-976f-1d3906828976"
         },
         {
@@ -2480,6 +2522,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onLayoutEditionPanelAfterRender",
             "designerId": "f4deaeab-3a1e-4c50-b295-8e111a9d3bd8"
         },
         {
@@ -2555,6 +2598,7 @@
                 "name": "change",
                 "scope": "me"
             },
+            "name": "onLayoutElementIdFieldChange",
             "designerId": "68b599b3-2fd0-421c-91f5-72b1c27bd797"
         },
         {
@@ -2595,6 +2639,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAddRowToLayoutBtnClick",
             "designerId": "c43b3ef8-ec42-4c0c-8674-bbda93a6d478"
         },
         {
@@ -2645,6 +2690,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAddColToLayoutBtnClick",
             "designerId": "de904f3d-8d4d-4b93-aafd-160e4ae78c0b"
         },
         {
@@ -2686,6 +2732,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onRemoveLayoutElementBtnClick",
             "designerId": "93172e5a-230a-4341-b5f7-6ce91deff08e"
         },
         {
@@ -2720,6 +2767,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onLayoutActivatorBtnClick",
             "designerId": "9d4ca793-f6fe-4ebf-86c5-9eafdb51653b"
         },
         {
@@ -2739,6 +2787,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAssignFieldToColBtnClick",
             "designerId": "bd4a070d-e98c-478a-b635-676b6e93d292"
         },
         {
@@ -2779,6 +2828,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAssignFieldToLayoutSubmitBtnClick",
             "designerId": "7abe26fd-6f0f-428e-a881-96016269726b"
         },
         {
@@ -2815,6 +2865,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "onCTLayoutFieldInjectorGridItemDblClick",
             "designerId": "1b7e7dae-cf9c-4ac3-a96a-fdcea4e3ae90"
         },
         {
@@ -2840,6 +2891,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMoveLayoutItemUpBtnClick",
             "designerId": "a0e7869a-fbbf-46c6-8a6f-0403b70dd399"
         },
         {
@@ -2863,6 +2915,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMoveLayoutItemDownBtnClick",
             "designerId": "cbbcfdd9-671b-4f5e-bd41-0c6e70e48d56"
         },
         {
@@ -2886,6 +2939,7 @@
                 "name": "beforeselect",
                 "scope": "me"
             },
+            "name": "onCTLayoutsGridBeforeSelect",
             "designerId": "fb6d6b7a-04d3-414d-8b04-da82e0d39660"
         },
         {
@@ -2910,6 +2964,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCopyCTLayoutBtnClick",
             "designerId": "43afccc8-b496-404f-b3a1-684aa2baa75d"
         },
         {
@@ -2936,6 +2991,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCTLCopyLSubitBtnClick",
             "designerId": "891beb16-30d9-429c-a095-4a4d1e2f7c03"
         },
         {
@@ -2960,6 +3016,7 @@
                 "name": "activate",
                 "scope": "me"
             },
+            "name": "onPanelActivate",
             "designerId": "53165355-ab90-4bd8-933f-01eb499a3373"
         },
         {
@@ -2981,6 +3038,7 @@
                 "name": "deactivate",
                 "scope": "me"
             },
+            "name": "onPanelDeactivate",
             "designerId": "78a302ac-fe2c-48cb-847b-95bced7cc812"
         }
     ]

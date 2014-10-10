@@ -51,6 +51,7 @@
                     "                }"
                 ]
             },
+            "name": "MyAjaxProxy58",
             "designerId": "3dd1673d-49f6-4da4-9e5d-b9caeb924353",
             "cn": [
                 {
@@ -64,6 +65,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader57",
                     "designerId": "bcb31127-70f6-4277-8169-51892e753d89"
                 },
                 {
@@ -77,6 +79,7 @@
                         "encode": true,
                         "root": "data"
                     },
+                    "name": "MyJsonWriter29",
                     "designerId": "4235a613-5e53-425b-88a3-8a597fa8bedd"
                 }
             ]
@@ -94,6 +97,7 @@
                     "\"advanced\""
                 ]
             },
+            "name": "MyFilter11",
             "designerId": "306127da-546c-4b0e-8153-915363918e5e"
         }
     ]

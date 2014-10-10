@@ -36,6 +36,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm92",
             "designerId": "fbe5535c-5199-4cb2-90d2-c835674431e1",
             "cn": [
                 {
@@ -51,6 +52,7 @@
                         "localiserId": "subscribeSubmitBtn",
                         "text": "Subscribe"
                     },
+                    "name": "MyButton429",
                     "designerId": "6f63bf97-493c-4d1d-ac9f-577f4b48fb9c",
                     "customConfigs": [
                         {
@@ -91,6 +93,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onFormAfterRender",
                     "designerId": "b4ed93a1-b16b-43c1-9d55-260c11e986e2"
                 }
             ]

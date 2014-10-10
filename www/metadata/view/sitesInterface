@@ -40,6 +40,7 @@
                 "itemId": "breadcrumb",
                 "layout|flex": 1
             },
+            "name": "MyToolbar69",
             "designerId": "324828ce-5810-4308-8b33-371d5f59c908",
             "cn": [
                 {
@@ -56,6 +57,7 @@
                         "localiserId": "sitesLaunchBtn",
                         "text": "Sites"
                     },
+                    "name": "MyButton297",
                     "designerId": "a7e804dd-6cd3-4327-a0ff-f18b14fb58b6",
                     "customConfigs": [
                         {
@@ -78,6 +80,7 @@
                 "dock": "top",
                 "height": 64
             },
+            "name": "MyToolbar70",
             "designerId": "41095a8f-523a-40a9-a8ed-85fa9e8bfb0b",
             "cn": [
                 {
@@ -97,6 +100,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton298",
                     "designerId": "9716f05d-2866-4623-8a0b-5b690412ca10",
                     "customConfigs": [
                         {
@@ -129,6 +133,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton299",
                     "designerId": "36e0c9e4-ff5c-4000-8e12-72d241096cb5",
                     "customConfigs": [
                         {
@@ -161,6 +166,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton300",
                     "designerId": "173628e4-7ab4-4f58-a7c5-cf7c919b531a",
                     "customConfigs": [
                         {
@@ -185,6 +191,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill36",
                     "designerId": "d517ce59-5eb0-4b20-ad39-5ffd097f4e65"
                 },
                 {
@@ -202,6 +209,7 @@
                         "scale": "large",
                         "text": ""
                     },
+                    "name": "MyButton301",
                     "designerId": "83f839b1-4d03-47db-9d3e-b869bea158b8",
                     "customConfigs": [
                         {
@@ -229,6 +237,7 @@
                 "title": "",
                 "width": 200
             },
+            "name": "MyGridPanel43",
             "configAlternates": {
                 "managesStore": "boolean"
             },
@@ -248,6 +257,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView47",
                     "designerId": "de7f7da1-3e7f-4d67-ba0c-9a4ef387bb4e"
                 },
                 {
@@ -262,6 +272,7 @@
                         "localiserId": "domainNameColumn",
                         "text": "Nom de domaine"
                     },
+                    "name": "MyColumn97",
                     "designerId": "4d47923d-d812-40f9-8714-9e31b009dc49",
                     "customConfigs": [
                         {
@@ -297,6 +308,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "e63e30c7-d5bb-4bbf-88ee-d3a1bad29d09"
                         }
                     ]
@@ -316,6 +328,7 @@
                 "layout|flex": 1,
                 "title": ""
             },
+            "name": "MyPanel62",
             "designerId": "78a8f05d-48f3-40b0-a72e-ca663b79d8a7",
             "cn": [
                 {
@@ -332,6 +345,7 @@
                         "itemId": "mainLocItem",
                         "title": ""
                     },
+                    "name": "MyForm59",
                     "designerId": "49cce5c2-741c-4b9b-89bc-6690ed4c7db3",
                     "cn": [
                         {
@@ -346,6 +360,7 @@
                                 "localiserId": "siteFieldSet",
                                 "title": "Site"
                             },
+                            "name": "MyFieldSet29",
                             "designerId": "ef96b8c4-9626-4e8e-a915-842e448b03ec",
                             "customConfigs": [
                                 {
@@ -371,6 +386,7 @@
                                         "name": "text",
                                         "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
                                     },
+                                    "name": "MyTextField75",
                                     "designerId": "3694e071-e5dd-402d-97ae-6e48e5e60573",
                                     "customConfigs": [
                                         {
@@ -395,6 +411,7 @@
                                         "name": "staticDomain",
                                         "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
                                     },
+                                    "name": "MyTextField76",
                                     "designerId": "3c45d03c-9fcf-454e-b30d-826d795b8102",
                                     "customConfigs": [
                                         {
@@ -419,6 +436,7 @@
                                         "localiserId": "aliasField",
                                         "name": "alias"
                                     },
+                                    "name": "MyTextField77",
                                     "designerId": "29b91eb9-a102-4f66-a8a2-50739e04d424",
                                     "customConfigs": [
                                         {
@@ -446,6 +464,7 @@
                                         "store": "SiteThemesStore",
                                         "valueField": "text"
                                     },
+                                    "name": "MyComboBox43",
                                     "configAlternates": {
                                         "managesStore": "boolean"
                                     },
@@ -484,6 +503,7 @@
                                             "[\"HTTP\", \"HTTPS\"]"
                                         ]
                                     },
+                                    "name": "MyComboBox44",
                                     "configAlternates": {
                                         "store": "array"
                                     },
@@ -517,6 +537,7 @@
                                         "typeAhead": true,
                                         "valueField": "locale"
                                     },
+                                    "name": "MyComboBox45",
                                     "designerId": "ee14d6af-d862-4333-b12b-481e9f6765a3",
                                     "customConfigs": [
                                         {
@@ -547,6 +568,7 @@
                                                     "return(true);"
                                                 ]
                                             },
+                                            "name": "validator",
                                             "designerId": "c52d2b89-feb4-4a4f-b43c-ad4b89b54f42"
                                         }
                                     ]
@@ -567,6 +589,7 @@
                                         "name": "locStrategy",
                                         "queryMode": "local"
                                     },
+                                    "name": "MyComboBox46",
                                     "designerId": "ad52430e-d2e2-4e21-88a7-2bf1f2ddbbc5",
                                     "cn": [
                                         {
@@ -587,6 +610,7 @@
                                                     "return config;"
                                                 ]
                                             },
+                                            "name": "processLocStrategy",
                                             "designerId": "a94b6375-9225-4f93-be97-7855e0b7da33"
                                         }
                                     ]
@@ -607,6 +631,7 @@
                                         "name": "useBrowserLanguage",
                                         "uncheckedValue": "false"
                                     },
+                                    "name": "MyCheckbox15",
                                     "designerId": "289ffab8-0e63-4513-8089-dc3766217e25",
                                     "cn": [
                                         {
@@ -626,6 +651,7 @@
                                                     "return config;"
                                                 ]
                                             },
+                                            "name": "processUseBrowserLanguage",
                                             "designerId": "f9cfda9d-9eba-4fce-8b4e-035c22559781"
                                         }
                                     ]
@@ -643,6 +669,7 @@
                                         "layout|anchor": "100%",
                                         "name": "filter"
                                     },
+                                    "name": "MyTextArea9",
                                     "designerId": "0e250b3e-b6da-4fc9-914a-a02fd5f1c205"
                                 },
                                 {
@@ -659,6 +686,7 @@
                                         "localiserId": "siteDefaultTitleField",
                                         "name": "title"
                                     },
+                                    "name": "MyTextField78",
                                     "designerId": "50bb1c2b-f3ac-4b55-943a-54fe9eec1173",
                                     "customConfigs": [
                                         {
@@ -683,6 +711,7 @@
                                         "maxLength": 250,
                                         "name": "description"
                                     },
+                                    "name": "MyTextArea10",
                                     "designerId": "638e19fe-7d0b-4623-9a4c-786d98048be9",
                                     "customConfigs": [
                                         {
@@ -709,6 +738,7 @@
                                             "\"Powered by Rubedo\""
                                         ]
                                     },
+                                    "name": "MyTextField79",
                                     "designerId": "d5a6e6b4-030c-48fa-b72d-8d190f904e77",
                                     "customConfigs": [
                                         {
@@ -784,6 +814,7 @@
                                         "name": "render",
                                         "scope": "me"
                                     },
+                                    "name": "onFieldsetRender",
                                     "designerId": "2eb2e8d2-075f-4d54-ae3a-64aa95ef222b"
                                 },
                                 {
@@ -798,6 +829,7 @@
                                         "layout|anchor": "100%",
                                         "store": "ContributeWorkspacesCombo"
                                     },
+                                    "name": "workspacecombo11",
                                     "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
                                     "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                                 },
@@ -818,6 +850,7 @@
                                         "name": "enableECommerceFeatures",
                                         "uncheckedValue": "false"
                                     },
+                                    "name": "MyCheckbox16",
                                     "designerId": "4baddf40-945e-4c30-b96a-c10adef687b6",
                                     "customConfigs": [
                                         {
@@ -844,6 +877,7 @@
                                                 "name": "render",
                                                 "scope": "me"
                                             },
+                                            "name": "onCheckboxfieldRender",
                                             "designerId": "2ae91ed2-e1e2-4396-93bc-84e59cde6e81"
                                         }
                                     ]
@@ -864,6 +898,7 @@
                                 "localiserId": "messageryFieldSet",
                                 "title": "Messagerie"
                             },
+                            "name": "MyFieldSet30",
                             "designerId": "420a6c9e-a93a-45a9-875f-534aa6abcfda",
                             "customConfigs": [
                                 {
@@ -887,6 +922,7 @@
                                         "localiserId": "activeMessageryField",
                                         "name": "activeMessagery"
                                     },
+                                    "name": "MyCheckbox17",
                                     "designerId": "bd542b51-fd9d-4eed-9dfe-875e16085150",
                                     "customConfigs": [
                                         {
@@ -909,6 +945,7 @@
                                         "localiserId": "smtpServerField",
                                         "name": "SMTPServer"
                                     },
+                                    "name": "MyTextField80",
                                     "designerId": "06f89195-fea2-4ea5-b7a1-2807c261a86e",
                                     "customConfigs": [
                                         {
@@ -933,6 +970,7 @@
                                         "minValue": 0,
                                         "name": "SMTPPort"
                                     },
+                                    "name": "MyNumberField3",
                                     "designerId": "02f50589-086b-479e-8ae8-ad14cdad56a6",
                                     "customConfigs": [
                                         {
@@ -955,6 +993,7 @@
                                         "localiserId": "smtpLoginField",
                                         "name": "SMTPLogin"
                                     },
+                                    "name": "MyTextField81",
                                     "designerId": "3b399b2f-89da-47be-a203-9a701fe7666e",
                                     "customConfigs": [
                                         {
@@ -978,6 +1017,7 @@
                                         "localiserId": "smtpPassField",
                                         "name": "SMTPPassword"
                                     },
+                                    "name": "MyTextField82",
                                     "designerId": "01df2091-90b9-4bc7-8b67-e258a614a0ab",
                                     "customConfigs": [
                                         {
@@ -1001,6 +1041,7 @@
                                         "name": "defaultEmail",
                                         "vtype": "email"
                                     },
+                                    "name": "MyTextField83",
                                     "designerId": "89e663aa-7d5a-4581-952e-6d9e80784a03",
                                     "customConfigs": [
                                         {
@@ -1026,6 +1067,7 @@
                                 "localiserId": "accessibilityFieldSet ",
                                 "title": "Accessibilité"
                             },
+                            "name": "MyFieldSet31",
                             "designerId": "f0c0b11c-1199-4ac5-aa9f-204da8a91ae1",
                             "customConfigs": [
                                 {
@@ -1051,6 +1093,7 @@
                                             "[\"RGAA A\", \"RGAA AA\", \"RGAA AAA\"]"
                                         ]
                                     },
+                                    "name": "MyComboBox47",
                                     "configAlternates": {
                                         "store": "array"
                                     },
@@ -1076,6 +1119,7 @@
                                         "localiserId": "opquastLoginField",
                                         "name": "opquastLogin"
                                     },
+                                    "name": "MyTextField84",
                                     "designerId": "7a30bfe6-7cf0-411f-96c1-8d359ce84832",
                                     "customConfigs": [
                                         {
@@ -1099,6 +1143,7 @@
                                         "localiserId": "opquastPassField",
                                         "name": "opquastPassword"
                                     },
+                                    "name": "MyTextField85",
                                     "designerId": "11fabf49-38a0-4464-8d59-f2ed3de67cc4",
                                     "customConfigs": [
                                         {
@@ -1122,6 +1167,7 @@
                                 "localiserId": "apiKeysFieldSet",
                                 "title": "Clés d'API externes"
                             },
+                            "name": "MyFieldSet32",
                             "designerId": "ac102a61-49b0-4f71-bdec-78402d551242",
                             "customConfigs": [
                                 {
@@ -1145,6 +1191,7 @@
                                         "localiserId": "googleMapKeyField",
                                         "name": "googleMapsKey"
                                     },
+                                    "name": "MyTextField86",
                                     "designerId": "ba1103b7-9d59-4664-9428-7474772acc87",
                                     "customConfigs": [
                                         {
@@ -1168,6 +1215,7 @@
                                         "localiserId": "googleAnalyticsKeyField",
                                         "name": "googleAnalyticsKey"
                                     },
+                                    "name": "MyTextField87",
                                     "designerId": "547bccdf-8510-49bd-a279-2d7b96355857",
                                     "customConfigs": [
                                         {
@@ -1191,6 +1239,7 @@
                                         "localiserId": "disqusKeyField",
                                         "name": "disqusKey"
                                     },
+                                    "name": "MyTextField88",
                                     "designerId": "3946a373-0c3f-455b-8c65-6f0921d08940",
                                     "customConfigs": [
                                         {
@@ -1215,6 +1264,7 @@
                                 "localiserId": "recaptchaFieldset",
                                 "title": "Recaptcha"
                             },
+                            "name": "MyFieldSet33",
                             "designerId": "44c52af4-c861-4fbd-988d-e4352ae8f85c",
                             "customConfigs": [
                                 {
@@ -1238,6 +1288,7 @@
                                         "localiserId": "recaptchaPublicKeyField",
                                         "name": "recaptcha_public_key"
                                     },
+                                    "name": "MyTextField89",
                                     "designerId": "0315da3e-35a9-4b13-aa09-667b3a5a9809",
                                     "customConfigs": [
                                         {
@@ -1261,6 +1312,7 @@
                                         "localiserId": "recaptchaPrivateKeyField",
                                         "name": "recaptcha_private_key"
                                     },
+                                    "name": "MyTextField90",
                                     "designerId": "a889c45f-55c9-4bd5-ae08-a51d7ee9cb0b",
                                     "customConfigs": [
                                         {
@@ -1286,6 +1338,7 @@
                         "id": "sitesDLSToolbar",
                         "replicatorEntity": "sitesRepLoc"
                     },
+                    "name": "dlstoolbar6",
                     "designerId": "1c9d6053-d4f4-4b79-b7bc-262784f31c7b",
                     "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                 }
@@ -1301,6 +1354,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1610",
             "designerId": "2da1d94c-ba44-4ebf-b6b3-05ac67c9704c",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -1314,6 +1368,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "mytool1714",
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -1331,6 +1386,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar71",
             "designerId": "adbd4edd-64f1-47db-bbde-309b3b68c6a6",
             "cn": [
                 {
@@ -1346,6 +1402,7 @@
                         "src": null,
                         "width": 48
                     },
+                    "name": "MyImg21",
                     "designerId": "93f32556-0768-4ea5-b950-faeb0d83e9a6",
                     "cn": [
                         {
@@ -1363,6 +1420,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onImageRender",
                             "designerId": "7ee69449-a5b0-4e8f-8288-c96db1ec0f15"
                         }
                     ]
@@ -1378,6 +1436,7 @@
                         "itemId": "boiteBarreMeta",
                         "layout|flex": null
                     },
+                    "name": "MyContainer60",
                     "designerId": "267bec65-8da4-4124-bddc-b83d36867da9",
                     "cn": [
                         {
@@ -1393,6 +1452,7 @@
                                     "<b>{text}</b> </br> <b>Création : </b> {creation} <b>Dernière modification : </b> {derniereModification} <b>Auteur : </b> {createUser}  <b>Version : </b>{version}"
                                 ]
                             },
+                            "name": "tpl26",
                             "designerId": "81960d12-b108-4a15-9c88-5749ff0e6d64"
                         },
                         {
@@ -1414,6 +1474,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processBoiteBarreMeta",
                             "designerId": "03492ee7-3ef5-40f7-94d9-764fb22b2312"
                         }
                     ]

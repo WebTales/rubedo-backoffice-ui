@@ -38,6 +38,7 @@
                 "itemId": "windowMinimize",
                 "type": "minimize"
             },
+            "name": "MyTool12",
             "designerId": "fff875c8-b083-4f2d-95c4-81fdb8395e96"
         },
         {
@@ -51,6 +52,7 @@
                 "itemId": "windowMaximize",
                 "type": "maximize"
             },
+            "name": "MyTool13",
             "designerId": "76eea817-13e3-4bc4-b165-abbbfef179c8"
         },
         {
@@ -66,6 +68,7 @@
                 "itemId": "filArianne",
                 "layout|flex": 1
             },
+            "name": "MyToolbar76",
             "designerId": "1c7fea59-edee-4192-a2c7-f159374df0d4",
             "cn": [
                 {
@@ -82,6 +85,7 @@
                         "localiserId": "groupsLaunchBtn",
                         "text": "Groupes "
                     },
+                    "name": "MyButton325",
                     "designerId": "890706be-c355-49e7-87e4-a7357fe14269",
                     "customConfigs": [
                         {
@@ -107,6 +111,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar77",
             "designerId": "24c9bb56-fa33-4f8f-ab40-4353957b6fc0",
             "cn": [
                 {
@@ -122,6 +127,7 @@
                         "src": null,
                         "width": 48
                     },
+                    "name": "MyImg22",
                     "designerId": "21ae997d-2dbc-4837-8e85-cdf1662ad5cf",
                     "cn": [
                         {
@@ -139,6 +145,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onImageRender",
                             "designerId": "bdfec3cb-f608-4262-bbe1-e559cf859581"
                         }
                     ]
@@ -155,6 +162,7 @@
                         "layout|flex": null,
                         "margin": "0 0 0 10"
                     },
+                    "name": "MyContainer61",
                     "designerId": "ac6e9cc8-defd-49ca-be3e-e8db39210003",
                     "cn": [
                         {
@@ -170,6 +178,7 @@
                                     "<p> <b> {name} </b> {userNb} {calif} </p>"
                                 ]
                             },
+                            "name": "tpl27",
                             "designerId": "f6a9744b-0baf-49f9-bd90-cadcfae942a1"
                         }
                     ]
@@ -190,6 +199,7 @@
                 "layout|flex": 1,
                 "width": null
             },
+            "name": "MyToolbar78",
             "designerId": "881ff497-661b-43ff-85b4-6bdc8a7a77a0",
             "cn": [
                 {
@@ -211,6 +221,7 @@
                         "scale": "large",
                         "text": "Ajouter"
                     },
+                    "name": "MyButton326",
                     "designerId": "718cf831-9456-4b34-b2ea-e15e269a5bfb",
                     "customConfigs": [
                         {
@@ -245,6 +256,7 @@
                         "scale": "large",
                         "text": "Supprimer"
                     },
+                    "name": "MyButton327",
                     "designerId": "cd77b6e5-9094-4028-84c5-38b3c7f01ca3",
                     "customConfigs": [
                         {
@@ -279,6 +291,7 @@
                         "scale": "large",
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton328",
                     "designerId": "b1cf0cf8-ac11-45b9-bf32-bd3074c61e60",
                     "customConfigs": [
                         {
@@ -316,6 +329,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onGroupSaveButtonClick",
                             "designerId": "166fe406-eae6-4655-8c76-65c9ad0bb9cb"
                         },
                         {
@@ -338,6 +352,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onGroupSaveButtonAfterRender",
                             "designerId": "2b48f88f-2452-4190-94a1-0e0469909def"
                         }
                     ]
@@ -359,6 +374,7 @@
                         "overlapHeader": false,
                         "title": "Edition"
                     },
+                    "name": "MyButtonGroup40",
                     "designerId": "310a8329-c4d6-474b-a625-6c6ddeef1b8a",
                     "customConfigs": [
                         {
@@ -390,6 +406,7 @@
                                 "scale": "large",
                                 "text": "Ajouter"
                             },
+                            "name": "MyButton329",
                             "designerId": "7dafb50a-7452-4aaa-b415-eb893de52b92",
                             "customConfigs": [
                                 {
@@ -416,6 +433,7 @@
                                 "scale": "large",
                                 "text": "Supprimer"
                             },
+                            "name": "MyButton330",
                             "designerId": "ab112f4e-12af-4bca-abb8-511e5af1720d",
                             "customConfigs": [
                                 {
@@ -437,6 +455,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill40",
                     "designerId": "6702c09e-9a7a-49ef-80b3-684c915b5808"
                 },
                 {
@@ -455,6 +474,7 @@
                         "scale": "large",
                         "text": ""
                     },
+                    "name": "MyButton331",
                     "designerId": "42b67240-9c8a-40ed-9ee1-0f96f7b25e00",
                     "customConfigs": [
                         {
@@ -484,6 +504,7 @@
                 "title": "",
                 "useArrows": true
             },
+            "name": "MyTreePanel2",
             "designerId": "f38fdb02-eea2-4b18-bba1-43bb8cc63c79",
             "cn": [
                 {
@@ -493,6 +514,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyTreeView5",
                     "designerId": "8145efcc-bff3-4ee7-a406-ac517b7d1b6f",
                     "cn": [
                         {
@@ -505,6 +527,7 @@
                             "userConfig": {
                                 "dragText": "{0} groupe{1} séléctionné{1}"
                             },
+                            "name": "MyTreeDragDropPlugin3",
                             "designerId": "42bcca70-3797-46a0-b074-6f8a822a9421",
                             "cn": [
                                 {
@@ -550,6 +573,7 @@
                                         "name": "beforedrop",
                                         "scope": "me"
                                     },
+                                    "name": "onTreedragdroppluginBeforeDrop",
                                     "designerId": "e322749e-b27b-4ec7-929b-0036ed2b8990"
                                 },
                                 {
@@ -574,6 +598,7 @@
                                         "name": "drop",
                                         "scope": "me"
                                     },
+                                    "name": "onTreedragdroppluginDrop",
                                     "designerId": "f8c5e992-810e-407f-b27f-717a70e116fb"
                                 }
                             ]
@@ -593,6 +618,7 @@
                         "localiserId": "nameCol",
                         "text": "Nom"
                     },
+                    "name": "MyTreeColumn3",
                     "designerId": "59c0c2fe-4619-44bd-9bc3-5dbdd74c61cf",
                     "customConfigs": [
                         {
@@ -634,6 +660,7 @@
                                     "}"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "a374067f-b6ee-4d38-ba99-1ea869be9d84"
                         }
                     ]
@@ -651,6 +678,7 @@
                 "activeTab": 0,
                 "layout|flex": 1
             },
+            "name": "MyTabPanel14",
             "designerId": "42403621-5294-482e-9e14-a9ec1ab9de9a",
             "cn": [
                 {
@@ -664,6 +692,7 @@
                         "layout": "fit",
                         "title": "Utilisateurs"
                     },
+                    "name": "MyPanel66",
                     "designerId": "3a3f3492-77bd-4a2b-9abe-1f78e10cb6f0",
                     "cn": [
                         {
@@ -676,6 +705,7 @@
                             "userConfig": {
                                 "localiserId": "userTab"
                             },
+                            "name": "TabConfig49",
                             "designerId": "bb142432-60c7-4d87-afe6-a99a4a14cec2",
                             "customConfigs": [
                                 {
@@ -697,6 +727,7 @@
                                 "store": "UsersGroupStore",
                                 "title": ""
                             },
+                            "name": "MyGridPanel49",
                             "configAlternates": {
                                 "managesStore": "boolean"
                             },
@@ -709,6 +740,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "MyGridView54",
                                     "designerId": "53651c8e-bcc2-47a9-86aa-8520958f33d2"
                                 },
                                 {
@@ -724,6 +756,7 @@
                                         "localiserId": "nameColumn",
                                         "text": "Nom"
                                     },
+                                    "name": "MyColumn117",
                                     "designerId": "94b0f91c-83c4-4e61-bbe0-95662042c244",
                                     "customConfigs": [
                                         {
@@ -746,6 +779,7 @@
                                         "localiserId": "mailColumn",
                                         "text": "Email"
                                     },
+                                    "name": "MyColumn118",
                                     "designerId": "bb6319f1-8471-4b2a-8af1-19ffd24d198e",
                                     "customConfigs": [
                                         {
@@ -768,6 +802,7 @@
                                         "hidden": true,
                                         "text": "Groupes"
                                     },
+                                    "name": "MyColumn119",
                                     "designerId": "beb0dd51-cd42-4bcd-91d1-acc8cb4f6018"
                                 },
                                 {
@@ -782,6 +817,7 @@
                                         "flex": 1,
                                         "text": "Création"
                                     },
+                                    "name": "MyDateColumn11",
                                     "designerId": "44315143-663f-4d8e-b157-0186e674d077"
                                 },
                                 {
@@ -796,6 +832,7 @@
                                         "flex": 1,
                                         "text": "Dernière modification"
                                     },
+                                    "name": "MyDateColumn12",
                                     "designerId": "39446dd6-babd-48de-a9c5-e7457ac9479f"
                                 },
                                 {
@@ -805,6 +842,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": "Ext.selection.CheckboxModel",
+                                    "name": "MyCheckboxSelectionModel13",
                                     "designerId": "3f12ae69-31e9-4a12-a7dc-5d9cf6b7cdc6"
                                 },
                                 {
@@ -822,6 +860,7 @@
                                         "name": "destroy",
                                         "scope": "me"
                                     },
+                                    "name": "onUsersInGroupGridDestroy",
                                     "designerId": "1c5e327c-d31f-4edb-84bb-ccfc75677fd1"
                                 }
                             ]
@@ -841,6 +880,7 @@
                         "id": "groupPropsForm",
                         "title": "Droits"
                     },
+                    "name": "MyForm66",
                     "designerId": "4c5cf7dd-da1a-4dd9-b5e4-ce7ce42e5a04",
                     "cn": [
                         {
@@ -853,6 +893,7 @@
                             "userConfig": {
                                 "localiserId": "rightsTab"
                             },
+                            "name": "TabConfig50",
                             "designerId": "0e21e1bb-5e07-446f-af67-51ca5f7e88f3",
                             "customConfigs": [
                                 {
@@ -877,6 +918,7 @@
                                 "localiserId": "nameField",
                                 "name": "name"
                             },
+                            "name": "MyTextField102",
                             "designerId": "7b05605e-dfda-4f38-97cf-95917d4bd9d6",
                             "customConfigs": [
                                 {
@@ -903,6 +945,7 @@
                                 "notAutomatic": true,
                                 "store": "WorkspacesComboWithAll"
                             },
+                            "name": "workspacecombo14",
                             "configAlternates": {
                                 "notAutomatic": "boolean"
                             },
@@ -938,6 +981,7 @@
                                 "notAutomatic": true,
                                 "store": "WorkspacesComboWithAll"
                             },
+                            "name": "workspacecombo15",
                             "configAlternates": {
                                 "notAutomatic": "boolean"
                             },
@@ -971,6 +1015,7 @@
                                 "name": "defaultWorkspace",
                                 "notAutomatic": true
                             },
+                            "name": "workspacecombo16",
                             "configAlternates": {
                                 "notAutomatic": "boolean"
                             },
@@ -1005,6 +1050,7 @@
                                 "layout|anchor": "100%",
                                 "name": "canDeleteElements"
                             },
+                            "name": "MyCheckbox18",
                             "designerId": "073affe6-1517-4124-80bf-92aed84d5dce"
                         },
                         {
@@ -1023,6 +1069,7 @@
                                 "layout|anchor": "100%",
                                 "name": "canWriteUnownedElements"
                             },
+                            "name": "MyCheckbox19",
                             "designerId": "d071cbf4-8fb1-4f20-b598-8bdcb6c4ac50"
                         }
                     ]
@@ -1040,6 +1087,7 @@
                         "id": "groupAdminPropsForm",
                         "title": "Administration"
                     },
+                    "name": "MyForm67",
                     "designerId": "fe35f935-b34c-4b39-943d-eb47eaf008d3",
                     "customConfigs": [
                         {
@@ -1060,6 +1108,7 @@
                                 "ACL": "admin.ui.groups",
                                 "localiserId": "adminTab"
                             },
+                            "name": "TabConfig51",
                             "designerId": "d6f45213-a423-4a94-8d9b-54dd9c6bbf09",
                             "customConfigs": [
                                 {
@@ -1086,6 +1135,7 @@
                                 "layout|anchor": "100%",
                                 "notAutomatic": true
                             },
+                            "name": "workspacecombo17",
                             "configAlternates": {
                                 "notAutomatic": "boolean"
                             },
@@ -1121,6 +1171,7 @@
                                 "name": "inheritWorkspace",
                                 "uncheckedValue": null
                             },
+                            "name": "MyCheckbox20",
                             "designerId": "8e91354c-9d6a-4431-b56c-58e22b25880b",
                             "customConfigs": [
                                 {
@@ -1150,6 +1201,7 @@
                                         "name": "change",
                                         "scope": "me"
                                     },
+                                    "name": "onCheckboxfieldChange1",
                                     "designerId": "3af3bf3c-428d-4a52-9e6d-774905618377"
                                 }
                             ]
@@ -1174,6 +1226,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onAdminFUtilisateursRender",
             "designerId": "df5a6faa-240a-4189-b113-c33e56fd0063"
         },
         {
@@ -1192,6 +1245,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onAdminFUtilisateursBeforeClose",
             "designerId": "ed8cc51a-6cb2-47aa-9959-b29faa4b6b66"
         },
         {
@@ -1227,6 +1281,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onAdminFUtilisateursAfterRender",
             "designerId": "d406d4c2-98a0-4d80-8030-6252d6f2bdff"
         }
     ]

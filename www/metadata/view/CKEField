@@ -179,6 +179,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onTextareafieldAfterRender",
             "designerId": "0d473cf7-8a08-442c-a253-4fe63b539c25"
         },
         {
@@ -194,6 +195,7 @@
                     "return(this.getRawValue());"
                 ]
             },
+            "name": "getValue",
             "designerId": "8596bf7d-caf3-459d-8f8f-939c5177cd73"
         },
         {
@@ -213,6 +215,7 @@
                 "name": "beforedestroy",
                 "scope": "me"
             },
+            "name": "onTextareafieldBeforeDestroy",
             "designerId": "b57e2716-9740-4f9d-b0ec-144e41eb45ec"
         },
         {
@@ -252,6 +255,7 @@
                     "}"
                 ]
             },
+            "name": "setValue",
             "designerId": "0e06946f-efae-4aa6-83d8-7e108db4e464"
         },
         {
@@ -272,6 +276,7 @@
                     "}"
                 ]
             },
+            "name": "getRawValue",
             "designerId": "611d8653-5926-4310-8fb5-0d14257c441a"
         },
         {
@@ -299,6 +304,7 @@
                 "name": "errorchange",
                 "scope": "me"
             },
+            "name": "onTextareafieldErrorChange",
             "designerId": "469df81b-6f4f-4b44-aea4-29db38e871a0"
         },
         {
@@ -332,6 +338,7 @@
                     "}"
                 ]
             },
+            "name": "setReadOnly",
             "designerId": "def3f505-9766-4202-a65e-6c79ac7a43f7"
         }
     ]

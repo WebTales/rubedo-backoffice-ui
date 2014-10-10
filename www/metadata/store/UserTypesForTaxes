@@ -48,6 +48,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy74",
             "designerId": "5647e6d2-e62e-4272-8ff2-938d03ac78f6",
             "cn": [
                 {
@@ -61,6 +62,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader73",
                     "designerId": "b571ce06-dd2c-4440-a1e4-0504462d6578"
                 }
             ]
@@ -80,6 +82,7 @@
                 "name": "load",
                 "scope": "me"
             },
+            "name": "onJsonstoreLoad",
             "designerId": "8b85a711-7250-42a2-8499-e3898c20ae09"
         }
     ]

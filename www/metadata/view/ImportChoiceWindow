@@ -29,6 +29,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm",
             "designerId": "509d54b5-b206-484d-adb8-a1943fa7b3a7",
             "cn": [
                 {
@@ -52,6 +53,7 @@
                         ],
                         "value": "contents"
                     },
+                    "name": "MyComboBox",
                     "configAlternates": {
                         "store": "array",
                         "value": "string"
@@ -79,6 +81,7 @@
                         ],
                         "value": "create"
                     },
+                    "name": "MyComboBox1",
                     "configAlternates": {
                         "store": "array",
                         "value": "string"
@@ -97,6 +100,7 @@
                         "layout|anchor": "100%",
                         "text": "Import using these options"
                     },
+                    "name": "MyButton",
                     "designerId": "5071b8be-8dce-4b0e-9e52-d21bf0bce786"
                 }
             ]

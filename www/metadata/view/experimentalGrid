@@ -45,6 +45,7 @@
             "userConfig": {
                 "markDirty": false
             },
+            "name": "MyGridView57",
             "designerId": "62f7e815-46e3-40db-a0c8-81350cd6e110"
         },
         {
@@ -60,6 +61,7 @@
                 "format": "0,000.0",
                 "text": "Souce 1"
             },
+            "name": "MyNumberColumn2",
             "designerId": "41b97881-d6b9-4456-b3a8-a151b712cb8a"
         },
         {
@@ -74,6 +76,7 @@
                 "flex": 1,
                 "text": "Source 2"
             },
+            "name": "MyNumberColumn3",
             "designerId": "23d06ad8-5a36-461f-9913-c762a2f0d559"
         },
         {
@@ -88,6 +91,7 @@
                 "flex": 1,
                 "text": "Source 1"
             },
+            "name": "MyNumberColumn4",
             "designerId": "002f27e3-f1c9-4cc5-8449-e98c83df2105"
         },
         {
@@ -102,6 +106,7 @@
                 "flex": 1,
                 "text": "Source 2"
             },
+            "name": "MyNumberColumn5",
             "designerId": "82569650-3aae-4cc9-81fd-46c1ae0b11c9"
         },
         {
@@ -177,6 +182,7 @@
                     "return config;"
                 ]
             },
+            "name": "processExperimentalGrid",
             "designerId": "34493dda-a884-437d-8ba3-ba44f2600ec7"
         },
         {
@@ -190,6 +196,7 @@
                 "dock": "top",
                 "id": "experimentalGridCompanionBar"
             },
+            "name": "MyToolbar84",
             "designerId": "e4b104a8-db7f-4093-9bc5-b461fe1d3e41",
             "cn": [
                 {
@@ -219,6 +226,7 @@
                         "name": "render",
                         "scope": "me"
                     },
+                    "name": "onExperimentalGridCompanionBarRender",
                     "designerId": "4b2f9bee-4d26-47dc-9454-7486bbfd5248"
                 },
                 {
@@ -232,6 +240,7 @@
                         "layout|flex": null,
                         "width": 30
                     },
+                    "name": "MySpacer5",
                     "designerId": "4b205b2b-c76d-445c-b874-f1a9e7078d37"
                 }
             ]
@@ -246,6 +255,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar85",
             "designerId": "ba05531e-63bc-4bc0-9370-35ffb3263dde",
             "cn": [
                 {
@@ -259,6 +269,7 @@
                         "layout|flex": null,
                         "text": "Nouvelle ligne"
                     },
+                    "name": "MyButton370",
                     "designerId": "32588b5e-0e74-413a-a5b9-669cb297cc38",
                     "cn": [
                         {
@@ -278,6 +289,7 @@
                                     "button.up().up().getStore().add({});"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "129c1df5-7ebd-467a-a279-cd707a509654"
                         }
                     ]
@@ -295,6 +307,7 @@
                         "layout|flex": null,
                         "text": "Supprimer la ligne"
                     },
+                    "name": "MyButton371",
                     "designerId": "f5d9e6d6-acbf-4ca0-a285-81fe72a56ef0",
                     "cn": [
                         {
@@ -314,6 +327,7 @@
                                     "button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "477fc7d1-2877-4986-a787-67742302eaab"
                         }
                     ]
@@ -329,6 +343,7 @@
                         "layout|flex": null,
                         "text": "Remise à zero"
                     },
+                    "name": "MyButton372",
                     "designerId": "94afe7d0-7c8c-4405-81f6-171c7395ce17",
                     "cn": [
                         {
@@ -348,6 +363,7 @@
                                     "button.up().up().getStore().removeAll();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "c3fb8b37-bbcf-4a94-b7a8-b7cba9f7e9d3"
                         }
                     ]
@@ -362,6 +378,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill44",
                     "designerId": "461d49da-7dcf-4617-a77f-40c2f9c0126c"
                 },
                 {
@@ -376,6 +393,7 @@
                         "layout|flex": null,
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton373",
                     "designerId": "76bf7ac1-bc50-4261-85be-0f2430ac672f",
                     "cn": [
                         {
@@ -397,6 +415,7 @@
                                     "button.up().up().up().close();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "02267b31-0a16-4f00-9513-75d6c88672a9"
                         }
                     ]
@@ -422,6 +441,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onExperimentalGridSelectionChange",
             "designerId": "211a49de-c133-46db-9c3c-eb4ca68e1794"
         }
     ]

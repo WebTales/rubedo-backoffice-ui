@@ -40,6 +40,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm81",
             "designerId": "b6432c22-d54b-4ccd-bc40-2465bdd0d001",
             "cn": [
                 {
@@ -56,6 +57,7 @@
                         "localiserId": "nameFieldCopy",
                         "name": "name"
                     },
+                    "name": "MyTextField125",
                     "designerId": "c882047a-2dfd-4f2e-89d9-4a0795a28a9a",
                     "customConfigs": [
                         {
@@ -85,6 +87,7 @@
                         "store": "SitesComboUTLayouts",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox62",
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
@@ -116,6 +119,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onNouveauMasqueSiteAfterRender1",
                             "designerId": "cdea103a-cad3-4bd3-9e4d-a81254992aed"
                         }
                     ]
@@ -134,6 +138,7 @@
                         "scale": "medium",
                         "text": "Copy this layout"
                     },
+                    "name": "MyButton382",
                     "designerId": "5815eb47-cd7a-4f35-99d9-bc8fd7374a33",
                     "customConfigs": [
                         {

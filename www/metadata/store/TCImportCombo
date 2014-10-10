@@ -48,6 +48,7 @@
                 ],
                 "url": null
             },
+            "name": "MyAjaxProxy5",
             "designerId": "0188007b-b404-48dc-ba0d-d497ba061a6e",
             "cn": [
                 {
@@ -61,6 +62,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader5",
                     "designerId": "63dc9230-a84e-4e2c-abdb-d2bc8d6df5e0"
                 }
             ]
@@ -78,6 +80,7 @@
                     "false"
                 ]
             },
+            "name": "MyFilter",
             "designerId": "55cbb687-5f7c-411c-8d23-cddcff0444c5"
         },
         {
@@ -95,6 +98,7 @@
                     "                }"
                 ]
             },
+            "name": "MyFilter1",
             "designerId": "8ab9c4aa-c868-470e-8b23-8541924d2a41"
         }
     ]

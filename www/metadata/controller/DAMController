@@ -39,6 +39,7 @@
                     ""
                 ]
             },
+            "name": "resetInterfaceSelect",
             "designerId": "0ef724d8-3feb-47fe-909f-82b69ff25e50"
         },
         {
@@ -60,6 +61,7 @@
                     "Ext.getCmp(\"DAMInterface\").getDockedComponent('barreMeta').getComponent(0).setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/images.png');"
                 ]
             },
+            "name": "resetInterfaceNoSelect",
             "designerId": "8b1bb213-2eb0-46f6-ab5f-4364e1832f7e"
         },
         {
@@ -83,6 +85,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "selectDAMType",
             "designerId": "523b4c13-412e-4438-9b57-e4d00a3ec826"
         },
         {
@@ -106,6 +109,7 @@
                     "});"
                 ]
             },
+            "name": "renderDAMTypeFields",
             "designerId": "899d0fcf-8b27-47d1-8d29-78c1784ca4de"
         },
         {
@@ -161,6 +165,7 @@
                     "renderTarget.add(casing);"
                 ]
             },
+            "name": "renderMTField",
             "designerId": "2092c93a-ac01-475b-ba80-2011248055db"
         },
         {
@@ -193,6 +198,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAddDAMBtnClick",
             "designerId": "d4294581-6975-44d3-a7b8-48c808aabda5"
         },
         {
@@ -363,6 +369,7 @@
                     "        }}}"
                 ]
             },
+            "name": "renderTaxoFields",
             "designerId": "d1ba1045-af86-4901-9aa5-c79962ca4a7d"
         },
         {
@@ -408,6 +415,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "selectDAM",
             "designerId": "54e84151-7d25-4893-b80a-090e656b60ba"
         },
         {
@@ -444,6 +452,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMDeleteBtnClick",
             "designerId": "9b1297a5-1654-43ec-bcea-6a016e1f5293"
         },
         {
@@ -513,6 +522,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMSubmitBtnClick",
             "designerId": "57e2450d-d0f1-44d4-b9ea-10613b64c090"
         },
         {
@@ -536,6 +546,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMUpdateBtnClick",
             "designerId": "c586426f-a0ca-4dd4-866b-34a0aa255b20"
         },
         {
@@ -555,6 +566,7 @@
                     "return(values);"
                 ]
             },
+            "name": "getTaxoValues",
             "designerId": "f85bcb7d-72e0-460c-bbae-9eb0a0b746a0"
         },
         {
@@ -596,6 +608,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMSubmitUpdateBtnClick",
             "designerId": "47e4e631-cd13-4d44-89d1-7ac517bbd39c"
         },
         {
@@ -635,6 +648,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMROBtnClick",
             "designerId": "14c187f7-70c8-43d7-9805-9b56e796fd53"
         },
         {
@@ -661,6 +675,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMSwitchEditBtnClick",
             "designerId": "80490bdb-13d5-4753-aa36-02d33b8ad112"
         },
         {
@@ -684,6 +699,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "onGridpanelItemDblClick",
             "designerId": "692cc083-f2d2-4d56-a7f8-58ef4059890d"
         },
         {
@@ -731,6 +747,7 @@
                     ""
                 ]
             },
+            "name": "prepareContext",
             "designerId": "496e818b-9326-452b-972b-aa61778fb62e"
         },
         {
@@ -779,6 +796,7 @@
                     "Ext.getCmp(\"DAMDSLToolbar\").recievei18n(record.get(\"i18n\"),record.get(\"locale\"),record.get(\"nativeLanguage\"));"
                 ]
             },
+            "name": "fireUnitaryEdit",
             "designerId": "b46baeb9-0cac-4bfa-b961-22357ac8f3bf"
         },
         {
@@ -848,6 +866,7 @@
                     ""
                 ]
             },
+            "name": "renderFacets",
             "designerId": "5f142959-7d2b-45a5-8e1e-144e449e9c07"
         },
         {
@@ -909,6 +928,7 @@
                     "});"
                 ]
             },
+            "name": "renderActiveFacets",
             "designerId": "b0bcac57-f9cc-4a57-a550-cd4e09c212b5"
         },
         {
@@ -929,6 +949,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMSearchBtnClick",
             "designerId": "39daff7b-7cc8-4a4d-8a1a-c89e9d6e33ba"
         },
         {
@@ -962,6 +983,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAddDamAfterTypeBtnClick",
             "designerId": "5b4c25c8-302b-4774-8ebe-f7cce1e6848c"
         },
         {
@@ -985,6 +1007,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onMassDamUploadBtnClick",
             "designerId": "90847aad-6b72-445f-b293-77c2a51a5205"
         },
         {
@@ -1014,6 +1037,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onImposeDamTypeFacetBtnClick",
             "designerId": "00afb5b6-e001-4940-9dc9-d968611b4b48"
         },
         {
@@ -1043,6 +1067,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onPixlrEditorWindowAfterRender",
             "designerId": "f413c44a-1c0d-4e56-ae92-8bb775100d79"
         },
         {
@@ -1069,6 +1094,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMSwitchModeBtnClick",
             "designerId": "6b670efe-c050-45f7-9751-34c537d2ccff"
         },
         {
@@ -1097,6 +1123,7 @@
                     "Ext.getCmp(\"DAMCenter\").view.plugins[0].enable();"
                 ]
             },
+            "name": "switchToFolderView",
             "designerId": "3dc95abd-f533-49a8-8710-4ac5e9baeb52"
         },
         {
@@ -1124,6 +1151,7 @@
                     "Ext.getCmp(\"DAMCenter\").view.plugins[0].disable();"
                 ]
             },
+            "name": "switchToSearchView",
             "designerId": "b028e857-b7f6-429f-b1d7-c23b40f107c2"
         },
         {
@@ -1145,6 +1173,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDAMFolderViewFiltersBtnClick",
             "designerId": "8dffcc30-9ce4-4600-916c-83e78f50c912"
         },
         {
@@ -1164,6 +1193,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onAddDirectoryBtnClick",
             "designerId": "27cdaf2c-c812-48bf-a849-095c56d84ab6"
         },
         {
@@ -1208,6 +1238,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onNewDirectorySubmitBtnClick",
             "designerId": "340a45b1-a99b-4ab1-ab0f-c7fea054547c"
         },
         {
@@ -1247,6 +1278,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onRemoveDirectoryBtnClick",
             "designerId": "99c553ee-39a2-40b1-915e-a005bc244e7e"
         },
         {
@@ -1293,6 +1325,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onMainDirectoriesTreeSelectionChange",
             "designerId": "527a2e69-0295-40f7-95cd-f4694d9cc1b2"
         },
         {
@@ -1312,6 +1345,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDirectorySettingsBtnClick",
             "designerId": "7f047c27-2916-4b27-8c68-df895a45dbe5"
         },
         {
@@ -1336,6 +1370,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onDirectorySettingsApplyBtnClick",
             "designerId": "4b295550-eac2-4ddb-ace3-256bffdb2525"
         }
     ]

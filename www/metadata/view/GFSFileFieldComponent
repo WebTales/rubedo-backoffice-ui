@@ -36,6 +36,7 @@
                 "text": "My Label :",
                 "width": 105
             },
+            "name": "MyLabel2",
             "designerId": "7f452ffd-c824-4619-9b07-eed4c829902f"
         },
         {
@@ -53,6 +54,7 @@
                 "style": null,
                 "width": null
             },
+            "name": "MyImg18",
             "configAlternates": {
                 "style": "string"
             },
@@ -73,6 +75,7 @@
                         "name": "render",
                         "scope": "me"
                     },
+                    "name": "onFieldImagePreviewRender",
                     "designerId": "e4438182-6144-48b0-80e2-108de0414464"
                 }
             ]
@@ -91,6 +94,7 @@
                 "margin": "0 0 0 10",
                 "width": 41
             },
+            "name": "MyContainer50",
             "designerId": "ae9be1d2-a8c6-4b95-b62c-4d1f4f08737d",
             "cn": [
                 {
@@ -109,6 +113,7 @@
                         "text": "",
                         "tooltip": "Uploader un fichier"
                     },
+                    "name": "MyButton243",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -138,6 +143,7 @@
                         "tooltip": "Supprimer le fichier",
                         "width": null
                     },
+                    "name": "MyButton244",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -167,6 +173,7 @@
                         "tooltip": "Télécharger le fichier",
                         "width": null
                     },
+                    "name": "MyButton245",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -196,6 +203,7 @@
                         "tooltip": "Affichage en détail",
                         "width": null
                     },
+                    "name": "MyButton246",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -227,6 +235,7 @@
                         "tooltip": "Editer le fichier",
                         "width": 40
                     },
+                    "name": "MyButton247",
                     "configAlternates": {
                         "tooltip": "string"
                     },

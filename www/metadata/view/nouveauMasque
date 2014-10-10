@@ -40,6 +40,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm31",
             "designerId": "e7735688-e799-49e6-b885-2f1be0fe74fe",
             "cn": [
                 {
@@ -60,6 +61,7 @@
                             ""
                         ]
                     },
+                    "name": "MyTextField32",
                     "designerId": "b7c4838b-5432-4b27-bcca-f3576b08f298",
                     "customConfigs": [
                         {
@@ -88,6 +90,7 @@
                         "store": "SitesComboMasks",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox24",
                     "configAlternates": {
                         "managesStore": "boolean"
                     },
@@ -119,6 +122,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onNouveauMasqueSiteAfterRender",
                             "designerId": "32b5139c-25dd-4559-91b1-acb7d2f0a0f6"
                         }
                     ]
@@ -137,6 +141,7 @@
                         "text": "Créer un nouveau masque",
                         "width": null
                     },
+                    "name": "MyButton159",
                     "designerId": "cb3bc223-ed52-4df6-a666-b46c0637754a",
                     "customConfigs": [
                         {

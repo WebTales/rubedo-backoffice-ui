@@ -44,6 +44,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool173",
             "designerId": "535d186b-c92e-4a59-86ab-42cd2799b34a",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -62,6 +63,7 @@
                 "itemId": "mainLocItem",
                 "title": ""
             },
+            "name": "MyForm18",
             "designerId": "76120e34-b5c1-40a3-9536-1168e395f143",
             "cn": [
                 {
@@ -76,6 +78,7 @@
                         "id": null,
                         "layout": "hbox"
                     },
+                    "name": "MyContainer21",
                     "designerId": "53ad484f-2ba0-41b0-902d-d697fbb20190",
                     "cn": [
                         {
@@ -94,6 +97,7 @@
                                 "style": null,
                                 "width": 300
                             },
+                            "name": "MyContainer22",
                             "configAlternates": {
                                 "style": "string"
                             },
@@ -129,6 +133,7 @@
                                         "name": "render",
                                         "scope": "me"
                                     },
+                                    "name": "onContainerRender",
                                     "designerId": "b2684d09-c1e6-485b-8bfe-7e706bd87607"
                                 }
                             ]
@@ -147,6 +152,7 @@
                                 "margin": "10 0 0 20",
                                 "padding": null
                             },
+                            "name": "MyContainer23",
                             "designerId": "00372f86-6219-41a4-82fb-2853c61cd555",
                             "cn": [
                                 {
@@ -162,6 +168,7 @@
                                         "layout|anchor": "100%",
                                         "padding": 10
                                     },
+                                    "name": "MyContainer24",
                                     "designerId": "93fa1895-60c7-4fd4-8996-ffdf20b6612d",
                                     "cn": [
                                         {
@@ -184,6 +191,7 @@
                                                     "{float:\"left\"}"
                                                 ]
                                             },
+                                            "name": "MyTextField18",
                                             "designerId": "05d25a1f-a063-44bc-8b95-e2d6afeeaeaa",
                                             "customConfigs": [
                                                 {
@@ -213,6 +221,7 @@
                                         "margin": null,
                                         "padding": 10
                                     },
+                                    "name": "MyContainer25",
                                     "designerId": "07fd700e-f2c9-4d2b-af48-91b2c3fdd39d",
                                     "cn": [
                                         {
@@ -235,6 +244,7 @@
                                                     "{float:\"left\"}"
                                                 ]
                                             },
+                                            "name": "MyFileUpload2",
                                             "designerId": "f7e05e8c-0cef-4bd0-8132-178a1d685c9e",
                                             "customConfigs": [
                                                 {
@@ -267,6 +277,7 @@
                         "localiserId": "taxonomyFieldset",
                         "title": "Taxonomie"
                     },
+                    "name": "MyFieldSet10",
                     "designerId": "5c318346-e147-484f-a9a0-56561f2f7a6b",
                     "customConfigs": [
                         {
@@ -287,6 +298,7 @@
                         "localiserId": "workspacesFieldset",
                         "title": "Espaces de travail"
                     },
+                    "name": "MyFieldSet11",
                     "designerId": "162cf652-9ad8-4da0-8b19-916b2b6ddc3a",
                     "customConfigs": [
                         {
@@ -310,6 +322,7 @@
                                 "name": "writeWorkspace",
                                 "store": "ContributeWorkspacesCombo"
                             },
+                            "name": "workspacecombo6",
                             "designerId": "5a81b33c-b742-488a-a36d-7dc5c789a486",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -329,6 +342,7 @@
                                 "store": "WorkspacesComboWithAll",
                                 "submitValue": null
                             },
+                            "name": "workspacecombo7",
                             "designerId": "16031190-6710-47f9-b9c2-634bf6641099",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }
@@ -346,6 +360,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar12",
             "designerId": "05251599-1bff-4bbb-8363-53ce3f23941b",
             "cn": [
                 {
@@ -358,6 +373,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill7",
                     "designerId": "92ab0fc0-d9b4-49ca-be75-7dcdcfa11b38"
                 },
                 {
@@ -374,6 +390,7 @@
                         "localiserId": "damSubmitNewBtn",
                         "text": "Créer ce nouveau média"
                     },
+                    "name": "MyButton64",
                     "designerId": "98af620d-4c93-4c3b-8225-5330617d10a2",
                     "customConfigs": [
                         {
@@ -398,6 +415,7 @@
                         "localiserId": "damSubmitUpdateBtn",
                         "text": "Enregistrer les modifications"
                     },
+                    "name": "MyButton65",
                     "designerId": "24802e93-70b2-4d8f-ab75-134a9d8217e4",
                     "customConfigs": [
                         {
@@ -420,6 +438,7 @@
                         "layout|flex": null,
                         "text": "Passer en mode édition"
                     },
+                    "name": "MyButton66",
                     "designerId": "16f1c5ca-40bc-430c-92fa-99645270b185"
                 }
             ]
@@ -437,6 +456,7 @@
                 "replicatorEntity": "DAMReplicatorEntity",
                 "specialContentsMode": true
             },
+            "name": "dlstoolbar2",
             "designerId": "d637fa01-780c-40f8-872c-829ecf0df159",
             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
         }

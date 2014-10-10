@@ -24,6 +24,7 @@
                 "name": "beginDate",
                 "type": "date"
             },
+            "name": "MyField559",
             "designerId": "eb718cde-291f-4f2c-a8de-611d5b64c47c"
         },
         {
@@ -38,6 +39,7 @@
                 "name": "endDate",
                 "type": "date"
             },
+            "name": "MyField560",
             "designerId": "264d342c-ba7f-43b0-8ca5-c09fd4f270d9"
         },
         {
@@ -50,6 +52,7 @@
             "userConfig": {
                 "name": "price"
             },
+            "name": "MyField561",
             "designerId": "79639b5d-a2a2-4b6c-b6b4-59a85d69cccd"
         },
         {
@@ -73,6 +76,7 @@
                 "name": "update",
                 "scope": "me"
             },
+            "name": "onStoreUpdate",
             "designerId": "ade49e33-1e85-449c-bf53-71300c0990ba"
         },
         {
@@ -96,6 +100,7 @@
                 "name": "add",
                 "scope": "me"
             },
+            "name": "onStoreAdd",
             "designerId": "5b24979b-d71d-42c6-99ce-25317fab1c19"
         },
         {
@@ -119,6 +124,7 @@
                 "name": "remove",
                 "scope": "me"
             },
+            "name": "onStoreRemove",
             "designerId": "924a68db-1cdb-4be6-85b2-120c3b8c70a7"
         }
     ]

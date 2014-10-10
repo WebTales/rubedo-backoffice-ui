@@ -36,6 +36,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1620",
             "designerId": "c6055269-bf03-4be5-bd1c-ac29f986ddc1",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -46,6 +47,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool1726",
             "designerId": "13daffd3-a1ec-42d0-b62f-0486e2d192b1",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -63,6 +65,7 @@
                 "store": "ApplicationLogs",
                 "title": ""
             },
+            "name": "MyGridPanel63",
             "designerId": "c207b4e4-3034-4543-9aa5-ee31bbd994f9",
             "cn": [
                 {
@@ -75,6 +78,7 @@
                     "userConfig": {
                         "autoScroll": false
                     },
+                    "name": "MyGridView68",
                     "designerId": "728ca948-d2f5-45e1-af43-959e8686d4f7"
                 },
                 {
@@ -90,6 +94,7 @@
                         "localiserId": "messageCol",
                         "text": "Message"
                     },
+                    "name": "MyColumn164",
                     "designerId": "a67757bc-d7ed-45fd-928f-1d7e396e4ccb",
                     "customConfigs": [
                         {
@@ -112,6 +117,7 @@
                         "localiserId": "typeCol",
                         "text": "Type"
                     },
+                    "name": "MyColumn165",
                     "designerId": "1d592219-f775-43c2-b6d7-585606b77e9c",
                     "customConfigs": [
                         {
@@ -134,6 +140,7 @@
                         "text": "Date",
                         "width": 200
                     },
+                    "name": "MyColumn166",
                     "designerId": "4ba372ea-cb0d-44f5-9f20-0e90fc04bd90",
                     "customConfigs": [
                         {
@@ -156,6 +163,7 @@
                         "text": "Level",
                         "width": 140
                     },
+                    "name": "MyColumn167",
                     "designerId": "e49d8651-effb-4f9a-803a-168cdff5516c",
                     "customConfigs": [
                         {
@@ -186,6 +194,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processMyGridPanel6",
                     "designerId": "e4a8fa57-20d6-49ec-bdd5-3c3bd208cdac"
                 }
             ]
@@ -206,6 +215,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "onApplicationLogsInterfaceAfterRender",
             "designerId": "1f789446-59be-4f72-be8b-3766cc4849c4"
         },
         {
@@ -223,6 +233,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onApplicationLogsInterfaceBeforeClose",
             "designerId": "85662b2c-4237-483d-913e-95806a7bb273"
         },
         {
@@ -238,6 +249,7 @@
                 "store": "ApplicationLogs",
                 "width": 360
             },
+            "name": "MyPagingToolbar10",
             "designerId": "791fcb00-6b5f-4d30-9fad-6e81e143ad47"
         },
         {
@@ -250,6 +262,7 @@
             "userConfig": {
                 "dock": "top"
             },
+            "name": "MyToolbar95",
             "designerId": "176bedd4-4108-44e0-915c-0aeb0aea28f0",
             "cn": [
                 {
@@ -268,6 +281,7 @@
                         "name": "datetime",
                         "operator": "$gte"
                     },
+                    "name": "MyDateField5",
                     "designerId": "af970184-a7de-4589-8ec6-a157170deb3d",
                     "customConfigs": [
                         {
@@ -297,6 +311,7 @@
                         "name": "datetime",
                         "operator": "$lte"
                     },
+                    "name": "MyDateField6",
                     "designerId": "344dc887-e4fa-4415-8cee-1c5e6b3bdc85",
                     "customConfigs": [
                         {
@@ -334,6 +349,7 @@
                             "100"
                         ]
                     },
+                    "name": "MyComboBox74",
                     "configAlternates": {
                         "store": "array"
                     },
@@ -364,6 +380,7 @@
                         "localiserId": "logsRefreshBtn",
                         "text": "Refresh"
                     },
+                    "name": "MyButton427",
                     "designerId": "f9e5f1f8-6a44-470a-a3cc-a00428695a6f",
                     "customConfigs": [
                         {
@@ -401,6 +418,7 @@
                                     "Ext.getStore(\"ApplicationLogs\").load();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "c1208f17-48a4-4e54-b384-f463a8312e31"
                         }
                     ]
@@ -418,6 +436,7 @@
                         "localiserId": "logsClearFilterBtn",
                         "text": "Clear filters"
                     },
+                    "name": "MyButton428",
                     "designerId": "bc7adfd1-648a-40e3-8be8-a4d90fe980bc",
                     "customConfigs": [
                         {
@@ -447,6 +466,7 @@
                                     "Ext.getStore(\"ApplicationLogs\").loadPage(1);"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "ab79e144-c507-43ef-91b0-ef5649b50633"
                         }
                     ]

@@ -43,6 +43,7 @@
                 "store": "TypesChampsDataStore",
                 "title": ""
             },
+            "name": "MyGridPanel26",
             "designerId": "4e0ad331-3355-4204-9b00-b51e9a390814",
             "cn": [
                 {
@@ -52,6 +53,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView27",
                     "designerId": "dc31029f-c5b2-4991-a9d5-558951a3031c",
                     "cn": [
                         {
@@ -64,6 +66,7 @@
                             "userConfig": {
                                 "enableDrop": false
                             },
+                            "name": "MyGridDragDropPlugin7",
                             "designerId": "9bd0776b-8076-44ed-ba72-ba31c3e2dfae"
                         },
                         {
@@ -83,6 +86,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processMyGridView4",
                             "designerId": "f2b496f4-15f6-422b-a4b0-b80a378fe813"
                         }
                     ]
@@ -100,6 +104,7 @@
                         "localiserId": "typeCol",
                         "text": "Type"
                     },
+                    "name": "MyColumn53",
                     "designerId": "8e7c9d97-dbf8-4be7-b6e4-f9b9f25784de",
                     "customConfigs": [
                         {
@@ -116,6 +121,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "MyGroupingFeature3",
                     "designerId": "b79bfd9b-49c7-4b78-97dd-c51b9410d893",
                     "cn": [
                         {
@@ -131,6 +137,7 @@
                                     "{name}"
                                 ]
                             },
+                            "name": "tpl9",
                             "designerId": "fd8e413e-3dfd-4e0d-b253-bd043d3256aa"
                         }
                     ]
@@ -149,6 +156,7 @@
                 "layout": "vbox",
                 "layout|flex": 1
             },
+            "name": "MyContainer36",
             "designerId": "58d54e6d-7e6d-45fe-a47f-eaddb91b4332",
             "cn": [
                 {
@@ -168,6 +176,7 @@
                         "layout|flex": 1,
                         "title": ""
                     },
+                    "name": "MyPanel39",
                     "designerId": "152551f5-6c45-469e-b713-d41f18fffa98",
                     "cn": [
                         {
@@ -183,6 +192,7 @@
                                     "{description}"
                                 ]
                             },
+                            "name": "tpl10",
                             "designerId": "4a2f48a5-8601-4162-9296-e8273df5d4e8"
                         }
                     ]
@@ -201,6 +211,7 @@
                         "store": "AddMultiFieldStore",
                         "title": "Ajout multiple"
                     },
+                    "name": "MyGridPanel27",
                     "designerId": "ab145305-1858-4686-8898-35ddd9362816",
                     "customConfigs": [
                         {
@@ -217,6 +228,7 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "name": "MyGridView28",
                             "designerId": "c2d588f7-b33d-4fe2-9b60-7735e7cb0a7b",
                             "cn": [
                                 {
@@ -226,6 +238,7 @@
                                         "type": "array"
                                     },
                                     "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "name": "MyGridDragDropPlugin8",
                                     "designerId": "b80cf63b-4ed0-4a6b-8599-38ae43122343",
                                     "cn": [
                                         {
@@ -252,6 +265,7 @@
                                                 "name": "beforedrop",
                                                 "scope": "me"
                                             },
+                                            "name": "onDragDropBeforeDrop",
                                             "designerId": "bb8f9652-2882-4c5f-874a-9b767ac96b66"
                                         }
                                     ]
@@ -270,6 +284,7 @@
                                 "localiserId": "typeCol",
                                 "text": "Type"
                             },
+                            "name": "MyColumn54",
                             "designerId": "a81e9ff4-8341-4042-a415-bf1fbcb2149e",
                             "customConfigs": [
                                 {
@@ -294,6 +309,7 @@
                 "dock": "bottom",
                 "layout|flex": 1
             },
+            "name": "MyToolbar33",
             "designerId": "0e376d6c-8ec1-4c44-9c32-678fb7579a6e",
             "cn": [
                 {
@@ -306,6 +322,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill16",
                     "designerId": "7318e19f-be26-4061-a70e-0fcfdee1a901"
                 },
                 {
@@ -323,6 +340,7 @@
                         "margin": null,
                         "text": "Ajouter"
                     },
+                    "name": "MyButton133",
                     "designerId": "d867990c-6c64-4b0c-ae86-e57646632afe",
                     "customConfigs": [
                         {
@@ -349,6 +367,7 @@
                 "name": "beforerender",
                 "scope": "me"
             },
+            "name": "onAjoutChampTCFenetreBeforeRender",
             "designerId": "9100e683-4420-4ec9-9bc0-463d0dd3d499"
         }
     ]

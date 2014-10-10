@@ -36,6 +36,7 @@
                 "text": "My Label :",
                 "width": 300
             },
+            "name": "MyLabel3",
             "designerId": "63e20f7f-7304-41e9-a037-1812676bf5a3"
         },
         {
@@ -54,6 +55,7 @@
                 "style": null,
                 "width": 300
             },
+            "name": "MyImg19",
             "configAlternates": {
                 "style": "string"
             },
@@ -74,6 +76,7 @@
                         "name": "render",
                         "scope": "me"
                     },
+                    "name": "onFieldImagePreviewRender",
                     "designerId": "8927c013-576d-4a80-8774-f6b012f655a3"
                 }
             ]
@@ -93,6 +96,7 @@
                 "margin": null,
                 "width": 300
             },
+            "name": "MyContainer51",
             "designerId": "a8d3046d-aa5c-48c5-9737-e5e3671462c3",
             "cn": [
                 {
@@ -113,6 +117,7 @@
                         "text": "",
                         "tooltip": "Uploader un fichier"
                     },
+                    "name": "MyButton248",
                     "configAlternates": {
                         "tooltip": "string",
                         "dontStretch": "boolean"
@@ -150,6 +155,7 @@
                         "tooltip": "Supprimer le fichier",
                         "width": 40
                     },
+                    "name": "MyButton249",
                     "configAlternates": {
                         "tooltip": "string",
                         "dontStretch": "boolean"
@@ -187,6 +193,7 @@
                         "tooltip": "Télécharger le fichier",
                         "width": 40
                     },
+                    "name": "MyButton250",
                     "configAlternates": {
                         "tooltip": "string",
                         "dontStretch": "boolean"
@@ -224,6 +231,7 @@
                         "tooltip": "Affichage en détail",
                         "width": 40
                     },
+                    "name": "MyButton251",
                     "configAlternates": {
                         "tooltip": "string",
                         "dontStretch": "boolean"
@@ -271,6 +279,7 @@
                             "'Fichier principal du média. Obligatoire.'"
                         ]
                     },
+                    "name": "MyButton252",
                     "configAlternates": {
                         "dontStretch": "boolean"
                     },
@@ -307,6 +316,7 @@
                         "tooltip": "Edit the file",
                         "width": 40
                     },
+                    "name": "MyButton253",
                     "configAlternates": {
                         "tooltip": "string",
                         "dontStretch": "boolean"

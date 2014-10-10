@@ -42,6 +42,7 @@
                 "layout": "card",
                 "title": ""
             },
+            "name": "MyForm60",
             "designerId": "1b063235-cd84-496e-a9ef-5294431763be",
             "cn": [
                 {
@@ -57,6 +58,7 @@
                         "localiserId": "sbStage2",
                         "title": "Etape 1 : Modèle"
                     },
+                    "name": "MyPanel63",
                     "designerId": "7f76c07a-c528-4dcd-9f98-47619db4e229",
                     "customConfigs": [
                         {
@@ -84,6 +86,7 @@
                                 "localiserId": "createEmptySiteField",
                                 "name": "builtOnEmptySite"
                             },
+                            "name": "MyRadio",
                             "designerId": "bdf589d0-261e-4169-810b-3af1c8f1a94c",
                             "customConfigs": [
                                 {
@@ -117,6 +120,7 @@
                                         "name": "change",
                                         "scope": "me"
                                     },
+                                    "name": "onUseEmptySiteFieldChange",
                                     "designerId": "984095b4-775f-4959-8189-04b19948a9a1"
                                 },
                                 {
@@ -134,6 +138,7 @@
                                         "name": "afterrender",
                                         "scope": "me"
                                     },
+                                    "name": "onUseEmptySiteFieldAfterRender",
                                     "designerId": "14cbcc70-6bbd-4cdd-a581-c415d6ae3bd7"
                                 }
                             ]
@@ -157,6 +162,7 @@
                                 "localiserId": "createSiteFromModelField",
                                 "name": "builtOnEmptySite"
                             },
+                            "name": "MyRadio1",
                             "designerId": "2230ffcc-627e-4001-bc37-f6466670d6da",
                             "customConfigs": [
                                 {
@@ -183,6 +189,7 @@
                                         "name": "render",
                                         "scope": "me"
                                     },
+                                    "name": "onSitesSecondReplicaterChoiceRender",
                                     "designerId": "22212f7e-293d-4144-a894-72475c56f330"
                                 }
                             ]
@@ -200,6 +207,7 @@
                                 "padding": 0,
                                 "title": null
                             },
+                            "name": "MyFieldSet34",
                             "designerId": "1f0f2704-dfae-4add-b507-0be1237357b5",
                             "cn": [
                                 {
@@ -221,6 +229,7 @@
                                         "submitValue": false,
                                         "valueField": "id"
                                     },
+                                    "name": "MyComboBox48",
                                     "designerId": "3ea2e4a8-ce96-407e-9c7a-b85127f96708",
                                     "customConfigs": [
                                         {
@@ -252,6 +261,7 @@
                                                 "name": "change",
                                                 "scope": "me"
                                             },
+                                            "name": "onModelSiteIdFieldChange",
                                             "designerId": "d3e5a2a9-f936-437c-b034-2c415bb8086c"
                                         }
                                     ]
@@ -274,6 +284,7 @@
                         "localiserId": "sbStage1",
                         "title": "Etape 2 : Identification"
                     },
+                    "name": "MyPanel64",
                     "designerId": "82ee261c-51e7-428c-8064-71d9f7b1633a",
                     "customConfigs": [
                         {
@@ -299,6 +310,7 @@
                                 "name": "text",
                                 "regex": "/^([a-z]|[0-9]|[-]|[.]){0,}$/"
                             },
+                            "name": "MyTextField91",
                             "designerId": "1456f507-0159-4113-afb8-e803bb616670",
                             "customConfigs": [
                                 {
@@ -328,6 +340,7 @@
                                 ],
                                 "valueField": "text"
                             },
+                            "name": "MyComboBox49",
                             "configAlternates": {
                                 "managesStore": "boolean"
                             },
@@ -364,6 +377,7 @@
                                     "[\"HTTP\"]"
                                 ]
                             },
+                            "name": "MyComboBox50",
                             "configAlternates": {
                                 "store": "array"
                             },
@@ -388,6 +402,7 @@
                                 "layout|anchor": "100%",
                                 "store": "ContributeWorkspacesCombo"
                             },
+                            "name": "workspacecombo12",
                             "designerId": "e2f92ef7-3873-4c0c-b226-8d11ddd388f6",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -412,6 +427,7 @@
                                 "typeAhead": true,
                                 "valueField": "locale"
                             },
+                            "name": "MyComboBox51",
                             "designerId": "8dd7e659-dab2-4843-936c-ba62bcc2b8b8",
                             "customConfigs": [
                                 {
@@ -442,6 +458,7 @@
                                             "return(true);"
                                         ]
                                     },
+                                    "name": "validator",
                                     "designerId": "55aa9ef2-51ad-4fc6-9485-4681e1da4233"
                                 }
                             ]
@@ -475,6 +492,7 @@
                                 "name": "added",
                                 "scope": "me"
                             },
+                            "name": "onPanelAdded",
                             "designerId": "4271377f-5d16-40a5-8c76-e1b473a020e2"
                         }
                     ]
@@ -493,6 +511,7 @@
                         "localiserId": "sbStage3",
                         "title": "Etape 3 : Référencement"
                     },
+                    "name": "MyPanel65",
                     "designerId": "d73b14a5-0fc7-4be1-8dbb-f1b51d0f2797",
                     "customConfigs": [
                         {
@@ -515,6 +534,7 @@
                                 "localiserId": "siteDefaultTitleField",
                                 "name": "title"
                             },
+                            "name": "MyTextField92",
                             "designerId": "d7305811-82cb-4ef6-b95a-3aef28abff0f",
                             "customConfigs": [
                                 {
@@ -538,6 +558,7 @@
                                 "maxLength": 250,
                                 "name": "description"
                             },
+                            "name": "MyTextArea11",
                             "designerId": "4b1a2339-43f2-4ba2-a853-2a0394f18041",
                             "customConfigs": [
                                 {
@@ -575,6 +596,7 @@
                                 "name": "render",
                                 "scope": "me"
                             },
+                            "name": "onPanelRender",
                             "designerId": "1f4c819b-8f4e-45f8-928a-ff4c7eebd693"
                         },
                         {
@@ -593,6 +615,7 @@
                                     "\"Powered by Rubedo\""
                                 ]
                             },
+                            "name": "MyTextField93",
                             "designerId": "478e64af-be52-4519-9966-de958f1ec3df",
                             "customConfigs": [
                                 {
@@ -617,6 +640,7 @@
                                 "scale": "large",
                                 "text": "Créer ce site"
                             },
+                            "name": "MyButton302",
                             "designerId": "c6ead03e-950b-4b1b-b3ac-906084eb1da7",
                             "customConfigs": [
                                 {
@@ -639,6 +663,7 @@
                         "dock": "bottom",
                         "height": 32
                     },
+                    "name": "mytoolbar561",
                     "designerId": "6a2922fd-4da7-4943-ade7-21e86245c984",
                     "masterInstanceId": "98647ca9-632b-4513-8aac-67b99b9af747"
                 }

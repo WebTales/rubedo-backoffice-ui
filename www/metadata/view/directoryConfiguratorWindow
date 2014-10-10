@@ -33,6 +33,7 @@
                 "bodyPadding": 10,
                 "title": ""
             },
+            "name": "MyForm73",
             "designerId": "c44770bc-55ad-4195-bdd5-0f43a1ce3668",
             "cn": [
                 {
@@ -49,6 +50,7 @@
                         "layout|anchor": "100%",
                         "store": "ContributeWorkspacesCombo"
                     },
+                    "name": "workspacecombo20",
                     "designerId": "c189d506-0905-4a12-bcfd-19f870716fd4",
                     "customConfigs": [
                         {
@@ -81,6 +83,7 @@
                         "name": "inheritWorkspace",
                         "uncheckedValue": "false"
                     },
+                    "name": "MyCheckbox22",
                     "designerId": "03fe85c7-9435-4765-b4c1-3af33ea2e245",
                     "customConfigs": [
                         {
@@ -110,6 +113,7 @@
                                 "name": "change",
                                 "scope": "me"
                             },
+                            "name": "onCheckboxfieldChange1",
                             "designerId": "7b585b88-dad5-4641-a526-bbe054e8b138"
                         }
                     ]
@@ -127,6 +131,7 @@
                         "layout|anchor": "100%",
                         "text": "Apply "
                     },
+                    "name": "MyButton359",
                     "designerId": "2a7f0d7c-508d-495d-8bf2-a02f4dde1313",
                     "customConfigs": [
                         {
@@ -155,6 +160,7 @@
                         "name": "afterrender",
                         "scope": "me"
                     },
+                    "name": "onFormAfterRender",
                     "designerId": "07cf57c8-a892-4103-a8c0-a72e9222dd0e"
                 }
             ]

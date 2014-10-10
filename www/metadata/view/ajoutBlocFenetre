@@ -45,6 +45,7 @@
                 "store": "BlocsDataStore",
                 "title": ""
             },
+            "name": "MyGridPanel25",
             "designerId": "7a17fd96-2057-4eb8-8159-b571d7bd1e7b",
             "cn": [
                 {
@@ -54,6 +55,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView26",
                     "designerId": "e5aac3f2-12f9-41d0-bfeb-41e9caff91a1"
                 },
                 {
@@ -69,6 +71,7 @@
                         "localiserId": "addBlockTypeColumn",
                         "text": "Type"
                     },
+                    "name": "MyColumn52",
                     "designerId": "b98ff778-cfd7-429e-9b16-b6a430b94f98",
                     "customConfigs": [
                         {
@@ -85,6 +88,7 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "name": "MyGroupingFeature2",
                     "designerId": "b0cf21c8-d32e-4826-8310-6baab3100177",
                     "cn": [
                         {
@@ -100,6 +104,7 @@
                                     "{name}"
                                 ]
                             },
+                            "name": "tpl7",
                             "designerId": "b3ecab5c-4aac-43e0-afa7-ad224023967a"
                         }
                     ]
@@ -123,6 +128,7 @@
                 "layout|flex": 1.3,
                 "title": ""
             },
+            "name": "MyPanel38",
             "designerId": "9a5d9cf3-ff88-4af4-bc3d-94e6f086fa38",
             "cn": [
                 {
@@ -138,6 +144,7 @@
                             "{description}"
                         ]
                     },
+                    "name": "tpl8",
                     "designerId": "6324706a-03fd-4e78-af5b-945270bf4bec"
                 }
             ]
@@ -153,6 +160,7 @@
                 "dock": "bottom",
                 "layout|flex": 1
             },
+            "name": "MyToolbar32",
             "designerId": "34af955f-e5f0-4ad4-a966-a4b024424451",
             "cn": [
                 {
@@ -165,6 +173,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill15",
                     "designerId": "8804b6d2-1710-4da3-8c89-5497ca27c176"
                 },
                 {
@@ -182,6 +191,7 @@
                         "margin": null,
                         "text": "Ajouter"
                     },
+                    "name": "MyButton131",
                     "designerId": "0971d8e8-2a32-4b8d-982a-a0171003b368",
                     "customConfigs": [
                         {
@@ -207,6 +217,7 @@
                         "margin": null,
                         "text": "Ajouter"
                     },
+                    "name": "MyButton132",
                     "designerId": "187a4d90-09af-4c71-8a57-f746b887c58f",
                     "customConfigs": [
                         {

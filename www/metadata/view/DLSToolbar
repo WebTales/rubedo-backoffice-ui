@@ -68,6 +68,7 @@
                 "queryMode": "local",
                 "valueField": "locale"
             },
+            "name": "MyComboBox14",
             "designerId": "be2cf7da-ea8b-4fcb-9632-2fa9e900172e",
             "customConfigs": [
                 {
@@ -101,6 +102,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processLocSelectorCombo",
                     "designerId": "098dcf74-d31a-4ab9-8059-6de1978569f7"
                 },
                 {
@@ -140,6 +142,7 @@
                         "name": "change",
                         "scope": "me"
                     },
+                    "name": "onLocSelectorComboChange",
                     "designerId": "89e80c73-53e7-488a-ba22-5e35590b2899"
                 }
             ]
@@ -158,6 +161,7 @@
                 "localiserId": "addTranslationBtn",
                 "text": "Add translation"
             },
+            "name": "MyButton9",
             "designerId": "d4359ae1-438e-4f4c-958d-4c3fa0bae3ea",
             "customConfigs": [
                 {
@@ -205,6 +209,7 @@
                             "}"
                         ]
                     },
+                    "name": "handler",
                     "designerId": "98e9df5e-35c0-4054-8bf1-e2da31025fdc"
                 }
             ]
@@ -224,6 +229,7 @@
                 "localiserId": "removeTranslationBtn",
                 "text": "Remove translation"
             },
+            "name": "MyButton10",
             "designerId": "1949879a-65ec-4a5c-9f0f-b30ae965472d",
             "customConfigs": [
                 {
@@ -255,6 +261,7 @@
                             "me.directOverrideMode=true;"
                         ]
                     },
+                    "name": "handler",
                     "designerId": "db85e2ee-fc66-4a07-a130-048fb85cfb43"
                 }
             ]
@@ -348,6 +355,7 @@
                     "    }"
                 ]
             },
+            "name": "recievei18n",
             "designerId": "2121f2fe-d3c0-4d9b-a603-37df98eaddc5"
         },
         {
@@ -387,6 +395,7 @@
                     "record.set(\"i18n\",newOne);"
                 ]
             },
+            "name": "persisti18n",
             "designerId": "2e8facc6-9370-4bff-8be0-c671eb20df06"
         },
         {
@@ -425,6 +434,7 @@
                     "me.getComponent(0).setValue(locale);"
                 ]
             },
+            "name": "addTranslation",
             "designerId": "b58e9ed9-4f3d-4ffe-b2ee-3bb9e0f3cb44"
         }
     ]

@@ -30,6 +30,7 @@
                     "                }"
                 ]
             },
+            "name": "MyAjaxProxy59",
             "designerId": "172df78a-ef93-418f-aebb-210415b03aa3",
             "cn": [
                 {
@@ -43,6 +44,7 @@
                         "messageProperty": "message",
                         "root": "data"
                     },
+                    "name": "MyJsonReader58",
                     "designerId": "cc31fd8d-f029-4aa8-a745-3a7f522372d5"
                 }
             ]
@@ -64,6 +66,7 @@
                 "name": "beforeload",
                 "scope": "me"
             },
+            "name": "onJsonstoreBeforeLoad",
             "designerId": "fd531cba-e0ce-4138-be21-594db73eaf50"
         },
         {
@@ -82,6 +85,7 @@
                 "name": "add",
                 "scope": "me"
             },
+            "name": "onJsonstoreAdd",
             "designerId": "1bb49ca4-4c49-420d-a309-330ccda313c7"
         },
         {
@@ -100,6 +104,7 @@
                 "name": "remove",
                 "scope": "me"
             },
+            "name": "onJsonstoreRemove",
             "designerId": "6b14dea7-f009-4177-a8c2-2425aa13ea63"
         }
     ]

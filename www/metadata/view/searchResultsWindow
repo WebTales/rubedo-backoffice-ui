@@ -48,6 +48,7 @@
                 "title": "Filtres",
                 "width": 240
             },
+            "name": "MyForm47",
             "designerId": "35d80392-506f-4f26-89c9-d833f433870d",
             "customConfigs": [
                 {
@@ -74,6 +75,7 @@
                             "return config;"
                         ]
                     },
+                    "name": "processSearchFacetBox",
                     "designerId": "a25df425-cb7b-4987-b070-ef1c26dd7d4f"
                 },
                 {
@@ -86,6 +88,7 @@
                     "userConfig": {
                         "dock": "top"
                     },
+                    "name": "MyToolbar57",
                     "designerId": "2f9dc766-5c89-4824-9f2c-c5aec6163e59",
                     "cn": [
                         {
@@ -103,6 +106,7 @@
                                 "layout|flex": 1,
                                 "name": "query"
                             },
+                            "name": "MyTextField65",
                             "designerId": "c9204439-6bcb-47e9-a8bf-19d76e699b6d",
                             "cn": [
                                 {
@@ -122,6 +126,7 @@
                                         "name": "specialkey",
                                         "scope": "me"
                                     },
+                                    "name": "onESFacetQueryFieldSpecialkey",
                                     "designerId": "274b65e7-04f6-42dd-94e9-109b39b6a6a8"
                                 }
                             ]
@@ -136,6 +141,7 @@
                             "userConfig": {
                                 "layout|flex": 0.01
                             },
+                            "name": "MyFill30",
                             "designerId": "512f81f9-c89e-4638-b647-ca6a0bf63761"
                         },
                         {
@@ -151,6 +157,7 @@
                                 "layout|flex": null,
                                 "text": ""
                             },
+                            "name": "MyButton226",
                             "designerId": "3586846f-9108-4862-ac69-bfeec8c1a386"
                         }
                     ]
@@ -172,6 +179,7 @@
                         "localiserId": "fsGlobalSetPan",
                         "title": "Global facet settings"
                     },
+                    "name": "MyForm48",
                     "designerId": "6bc092c0-ece6-4454-af5d-fdc4e6dc7cf8",
                     "customConfigs": [
                         {
@@ -197,6 +205,7 @@
                                 "localiserId": "displayFacetFieldM",
                                 "name": "displayFacet"
                             },
+                            "name": "MyCheckbox12",
                             "designerId": "b2b2916d-d91e-4245-bdad-198a8d035275",
                             "customConfigs": [
                                 {
@@ -226,6 +235,7 @@
                                     "\"AND\""
                                 ]
                             },
+                            "name": "MyComboBox37",
                             "configAlternates": {
                                 "store": "array"
                             },
@@ -255,6 +265,7 @@
                                             "return config;"
                                         ]
                                     },
+                                    "name": "processFacetOperator",
                                     "designerId": "659766cc-a380-4106-a23d-c09a1daaa8c0"
                                 }
                             ]
@@ -271,6 +282,7 @@
                                 "layout|anchor": "100%",
                                 "text": "Apply to all"
                             },
+                            "name": "MyButton227",
                             "designerId": "8602b8b9-514e-4f41-936f-b3a03f3032df",
                             "cn": [
                                 {
@@ -292,6 +304,7 @@
                                         "name": "click",
                                         "scope": "me"
                                     },
+                                    "name": "onApllyFacetPropsToAllBtnClick",
                                     "designerId": "32e6391e-84ef-4014-a5e2-c240a18bc27b"
                                 }
                             ]
@@ -314,6 +327,7 @@
                                 "name": "afterrender",
                                 "scope": "me"
                             },
+                            "name": "onFormAfterRender",
                             "designerId": "1d2bbc73-7e00-42b3-ba73-24dda1d7a159"
                         }
                     ]
@@ -337,6 +351,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onSearchResultsWindowBeforeClose",
             "designerId": "3c8c07db-76a3-49f2-b1df-f29002e3b9d4"
         },
         {
@@ -346,6 +361,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool167",
             "designerId": "e2a3863b-0d18-42a3-ace3-b1c83d8bdde2",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -356,6 +372,7 @@
                 "type": "array"
             },
             "codeClass": null,
+            "name": "mytool179",
             "designerId": "3817e883-13c7-41a2-86d5-0ea327a084eb",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -373,6 +390,7 @@
                 "store": "ESFacetteStore",
                 "title": ""
             },
+            "name": "MyGridPanel38",
             "designerId": "7ebe237b-4559-4f9b-9f7e-314717f87dd7",
             "cn": [
                 {
@@ -382,6 +400,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView41",
                     "designerId": "5dc083f4-5a24-48aa-9b80-e39f6ddee069"
                 },
                 {
@@ -397,6 +416,7 @@
                         "localiserId": "titleCol",
                         "text": "Titre"
                     },
+                    "name": "MyColumn83",
                     "configAlternates": {
                         "filter": "boolean"
                     },
@@ -422,6 +442,7 @@
                         "localiserId": "authorCol",
                         "text": "Auteur"
                     },
+                    "name": "MyColumn84",
                     "designerId": "302e7c0e-40b0-4342-ace9-aa72863c4baa",
                     "customConfigs": [
                         {
@@ -444,6 +465,7 @@
                         "sortable": false,
                         "text": "Type"
                     },
+                    "name": "MyColumn85",
                     "designerId": "70ce4c42-db36-4cf3-a4b8-264805d732da",
                     "customConfigs": [
                         {
@@ -475,6 +497,7 @@
                                     "return(record.get(\"objectType\")+\" : \"+record.get(\"type\"));"
                                 ]
                             },
+                            "name": "renderer",
                             "designerId": "51aa99b0-e268-43bc-96fd-dbd73421c9cf"
                         }
                     ]
@@ -493,6 +516,7 @@
                         "localiserId": "lastUpdateCol",
                         "text": "Date de dernière modification"
                     },
+                    "name": "MyDateColumn8",
                     "designerId": "6799363c-d3dc-42bb-a27c-905f3682946c",
                     "customConfigs": [
                         {
@@ -516,6 +540,7 @@
                         "text": "Pertinence",
                         "width": 80
                     },
+                    "name": "MyNumberColumn1",
                     "designerId": "29ffe6fa-f510-43ee-a552-7e882fb3117a",
                     "customConfigs": [
                         {
@@ -538,6 +563,7 @@
                         "store": "ESFacetteStore",
                         "width": 360
                     },
+                    "name": "MyPagingToolbar3",
                     "designerId": "cccd126e-1f28-4c4e-9e7b-40559bbac696"
                 },
                 {
@@ -559,6 +585,7 @@
                         "name": "selectionchange",
                         "scope": "me"
                     },
+                    "name": "onResultContentsGridSelectionChange",
                     "designerId": "02c3eebd-44c1-4f8c-81d4-bf70e7cd29a9"
                 }
             ]
@@ -575,6 +602,7 @@
                 "id": "ESSearchTopBar",
                 "layout|flex": 1
             },
+            "name": "MyToolbar58",
             "designerId": "fdf08f42-7a2e-463f-abe9-d5a7f8fe80a7",
             "cn": [
                 {
@@ -592,6 +620,7 @@
                         "id": "SearchActiveFacetBar",
                         "layout|flex": null
                     },
+                    "name": "MyToolbar59",
                     "designerId": "d5a31d22-aa7d-442c-a3af-7ec604f5ed14"
                 },
                 {
@@ -604,6 +633,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill31",
                     "designerId": "5ca14368-c13a-4a27-965c-1e0ed7bb9217"
                 },
                 {
@@ -621,6 +651,7 @@
                         "scale": "medium",
                         "text": ""
                     },
+                    "name": "MyButton228",
                     "designerId": "0a9d678c-0299-444b-b6a1-91103dd41bc3"
                 },
                 {
@@ -639,6 +670,7 @@
                         "localiserId": "chooseBtn",
                         "text": "<b>Choose</b>"
                     },
+                    "name": "MyButton229",
                     "designerId": "e3065147-1362-4fc0-8e70-57889bab25f9",
                     "customConfigs": [
                         {
@@ -665,6 +697,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onSelectESEntityBtnClick",
                             "designerId": "15840bcc-c641-4483-8816-077eb1a89631"
                         }
                     ]
@@ -684,6 +717,7 @@
                         "localiserId": "saveQueryBtn",
                         "text": "Enregistrer la requête"
                     },
+                    "name": "MyButton230",
                     "designerId": "9cf03ae4-4207-4cb9-8b92-84f157812be5",
                     "customConfigs": [
                         {
@@ -725,6 +759,7 @@
                                 "name": "click",
                                 "scope": "me"
                             },
+                            "name": "onSaveGeoQueryBtnClick",
                             "designerId": "c87dea85-371e-49e1-a34b-f68cce4beeb2"
                         }
                     ]
@@ -821,6 +856,7 @@
                 "name": "beforerender",
                 "scope": "me"
             },
+            "name": "onSearchResultsWindowBeforeRender",
             "designerId": "5afffbfb-8aa3-4117-a030-1a82d4cfb93a"
         }
     ]

@@ -78,6 +78,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteMask",
             "designerId": "50908fd7-bd46-4d7d-b504-215fdd4c7c75"
         },
         {
@@ -144,6 +145,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "masquesDisplay",
             "designerId": "90ee9ec3-51ac-45fd-a5c8-da93ce6a5710"
         },
         {
@@ -181,6 +183,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "reusablesGridSelect",
             "designerId": "f667b1d0-f417-425f-8afc-d0d5af2b1e38"
         },
         {
@@ -194,6 +197,7 @@
                 "ref": "MasqueEdition",
                 "selector": "#masqueEdition"
             },
+            "name": "MasqueEdition",
             "designerId": "0430d23b-9032-4abc-a5c3-c3d4f9a291e8"
         },
         {
@@ -233,6 +237,7 @@
                     "}"
                 ]
             },
+            "name": "removeIds",
             "designerId": "bd0aa780-5af5-48a6-bd54-73374ad60e9d"
         },
         {
@@ -302,6 +307,7 @@
                     "}"
                 ]
             },
+            "name": "applyConstrain",
             "designerId": "23c1d979-a727-40ed-bac2-e4ef8b4c7c72"
         },
         {
@@ -348,6 +354,7 @@
                     "    });}"
                 ]
             },
+            "name": "spliceMask",
             "designerId": "0b1d99fd-b045-4490-bd3e-935590c2ea71"
         },
         {
@@ -386,6 +393,7 @@
                     "    return (result);"
                 ]
             },
+            "name": "findElement",
             "designerId": "6e535155-ae5c-4d33-a23f-38d5eae4fcc0"
         },
         {
@@ -419,6 +427,7 @@
                     "cible.data.zones=nouvZones;"
                 ]
             },
+            "name": "masqueMAJ",
             "designerId": "1d1aba20-f06b-46cd-9b94-ce3f0b0e3b74"
         },
         {
@@ -462,6 +471,7 @@
                     "}"
                 ]
             },
+            "name": "getElementDepth",
             "designerId": "9dab9dc0-ebc4-45bd-a056-7fd019fea6e1"
         },
         {
@@ -568,6 +578,7 @@
                     "});"
                 ]
             },
+            "name": "masqueRestit",
             "designerId": "36dfcf49-7a25-41ac-9be8-5cd054e2bdb0"
         },
         {
@@ -590,6 +601,7 @@
                 "name": "itemclick",
                 "scope": "me"
             },
+            "name": "onTreepanelItemClick",
             "designerId": "b8b8ae88-6dae-43af-82a5-68d5129ec5d9"
         },
         {
@@ -614,6 +626,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "copyMaskWindow",
             "designerId": "fcd80b72-c55f-4cd8-8b60-795aeb1185aa"
         },
         {
@@ -634,6 +647,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "newMaskWindow",
             "designerId": "937a8757-7537-4f4b-b0b9-9367d551ad9b"
         },
         {
@@ -669,6 +683,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "createMask",
             "designerId": "1cf108dd-b3e6-442c-8aec-e10df6fac9c6"
         },
         {
@@ -741,6 +756,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "maskSave",
             "designerId": "0beba9df-bf9f-4e8f-963d-36a9dd323b38"
         },
         {
@@ -784,6 +800,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "copyMask",
             "designerId": "22678e8c-5ce9-4592-9220-d5edc41a832a"
         },
         {
@@ -805,6 +822,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "importMaskWindow",
             "designerId": "28793c92-7265-46de-8344-651a0523c5d1"
         },
         {
@@ -1228,6 +1246,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "selectionEvents",
             "designerId": "b4a72045-b1e4-4c98-a83e-c7eacb3de7b6"
         },
         {
@@ -1273,6 +1292,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteMaskElement",
             "designerId": "7dc2e797-0d01-464d-9a9f-6486e7f2707d"
         },
         {
@@ -1350,6 +1370,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "addCol",
             "designerId": "50d8cf43-e448-4ab1-9638-49be8b101ba3"
         },
         {
@@ -1396,6 +1417,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "addRow",
             "designerId": "b82ff31c-9d1a-4232-b20c-26c553fac70e"
         },
         {
@@ -1416,6 +1438,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "showBlocWindow",
             "designerId": "4c85525a-9c6d-41e1-8158-3c916ff237ec"
         },
         {
@@ -1461,6 +1484,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "importElement",
             "designerId": "ed2cc6c0-ce25-4b86-a298-e0e2e4e50823"
         },
         {
@@ -1506,6 +1530,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "addBloc",
             "designerId": "a1d7be70-950d-412d-aef0-c1fe5ea341db"
         },
         {
@@ -1534,6 +1559,7 @@
                     "});"
                 ]
             },
+            "name": "restoreBlocks",
             "designerId": "13be3170-c30e-4e1b-8ac5-aaab6c0a7995"
         },
         {
@@ -1557,6 +1583,7 @@
                     "}"
                 ]
             },
+            "name": "getElementLevel",
             "designerId": "3b400554-8f07-4613-91a5-515b3f336a32"
         },
         {
@@ -1641,6 +1668,7 @@
                     "return nRows;"
                 ]
             },
+            "name": "saveRows",
             "designerId": "ec7012c8-a91c-4437-a012-b355dc5bfe70"
         },
         {
@@ -1736,6 +1764,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "mainBoxSelect",
             "designerId": "5b3c538a-da66-40b6-88b1-e671ff70a9fb"
         },
         {
@@ -2108,6 +2137,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "blocSelect",
             "designerId": "51ce778b-c530-48f5-a2d7-43f3b6482faf"
         },
         {
@@ -2147,6 +2177,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "exportElement",
             "designerId": "ed3f878d-3a09-4236-b788-0dd518f58baa"
         },
         {
@@ -2170,6 +2201,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "addBlocDblClick",
             "designerId": "d0ccbeb8-e552-4c5f-84da-1d9621ba77f2"
         },
         {
@@ -2191,6 +2223,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "exportMaskElementWindow",
             "designerId": "18bb8233-5671-499b-858c-d49767199033"
         },
         {
@@ -2221,6 +2254,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "showImportWindow",
             "designerId": "e52a692b-71b5-4751-b59d-b8cf3d7ec5c5"
         },
         {
@@ -2251,6 +2285,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "moveElementUp",
             "designerId": "4c31abba-9cbd-47a1-bc12-416d3bdd7689"
         },
         {
@@ -2279,6 +2314,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "moveElementDown",
             "designerId": "9fb491cc-46e8-401f-bb85-a3a2f46e0ca4"
         },
         {
@@ -2298,6 +2334,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "blocDetailShow",
             "designerId": "9f82b3ec-ab6c-412f-829c-25c9816f1994"
         },
         {
@@ -2352,6 +2389,7 @@
                     "return(newBlocks);"
                 ]
             },
+            "name": "saveBlocks",
             "designerId": "b1537a2e-38aa-4b2e-ba49-86e15cabd8b5"
         },
         {
@@ -2376,6 +2414,7 @@
                 "name": "change",
                 "scope": "me"
             },
+            "name": "onMainColumnIdFieldChange",
             "designerId": "5f8525ea-37e5-4e36-b297-22cdeb2bb375"
         },
         {
@@ -2396,6 +2435,7 @@
                     "});"
                 ]
             },
+            "name": "recalculateBlockOrder",
             "designerId": "24a0279b-f5b8-4e62-a5c3-f2f1af7ac8a4"
         }
     ]

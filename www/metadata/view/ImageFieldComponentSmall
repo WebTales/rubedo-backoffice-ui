@@ -37,6 +37,7 @@
                 "text": "My Label :",
                 "width": 60
             },
+            "name": "MyLabel1",
             "designerId": "ca478cff-c265-4afb-8870-dbb2e62e5878"
         },
         {
@@ -54,6 +55,7 @@
                 "margin": "0 0 0 5",
                 "width": 29
             },
+            "name": "MyContainer49",
             "designerId": "5cebfb62-0946-4cd7-9fce-931791a9eba1",
             "cn": [
                 {
@@ -72,6 +74,7 @@
                         "text": "",
                         "tooltip": "Choisir un média"
                     },
+                    "name": "MyButton240",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -100,6 +103,7 @@
                         "text": "",
                         "tooltip": "Désélectionner"
                     },
+                    "name": "MyButton241",
                     "configAlternates": {
                         "tooltip": "string"
                     },
@@ -126,6 +130,7 @@
                         "layout|y": 60,
                         "text": ""
                     },
+                    "name": "MyButton242",
                     "designerId": "10664e84-1a82-4096-817e-9dd9351a7630"
                 }
             ]
@@ -145,6 +150,7 @@
                 "style": null,
                 "width": null
             },
+            "name": "MyImg17",
             "configAlternates": {
                 "style": "string"
             },
@@ -165,6 +171,7 @@
                         "name": "render",
                         "scope": "me"
                     },
+                    "name": "onFieldImagePreviewRender",
                     "designerId": "c6d887ea-a4a4-42cc-8656-8a9b46156f1d"
                 }
             ]

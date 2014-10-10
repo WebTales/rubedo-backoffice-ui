@@ -33,6 +33,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar20",
             "designerId": "a241ddd5-fdd2-44f9-a3ee-4edd5307ce46",
             "cn": [
                 {
@@ -45,6 +46,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill10",
                     "designerId": "ade30501-96ce-4ec5-af84-97fcb1bdb130"
                 },
                 {
@@ -62,6 +64,7 @@
                         "layout|margins": null,
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton91",
                     "configAlternates": {
                         "isUpdate": "boolean"
                     },
@@ -90,6 +93,7 @@
                 "id": "nestedContentsFieldBox",
                 "title": ""
             },
+            "name": "MyForm21",
             "designerId": "b1dbf2f3-cbdd-4601-ac89-4f82627a7120",
             "cn": [
                 {
@@ -103,6 +107,7 @@
                         "layout": "anchor",
                         "padding": 10
                     },
+                    "name": "MyContainer27",
                     "designerId": "f849470d-bac7-40d0-99c6-1003a109c5e8",
                     "cn": [
                         {
@@ -121,6 +126,7 @@
                                     "{float:left}"
                                 ]
                             },
+                            "name": "MyTextField22",
                             "designerId": "aa34c731-a68c-4407-9fb5-4ace47e8fe8f"
                         },
                         {
@@ -147,6 +153,7 @@
                                     "'Titre du contenu. Obligatoire.'"
                                 ]
                             },
+                            "name": "MyButton92",
                             "designerId": "69ae1ddb-c03f-4ce9-aff9-8450f6028056"
                         }
                     ]
@@ -162,6 +169,7 @@
                         "layout": "anchor",
                         "padding": 10
                     },
+                    "name": "MyContainer28",
                     "designerId": "9167fdd6-7b9a-4b97-964a-55286fd269a2",
                     "cn": [
                         {
@@ -180,6 +188,7 @@
                                     "{float:left}"
                                 ]
                             },
+                            "name": "MyTextArea2",
                             "designerId": "cff6bbba-dcd1-40f8-8a63-6baeb671c44c"
                         },
                         {
@@ -206,6 +215,7 @@
                                     "'Résumé facultatif du contenu.'"
                                 ]
                             },
+                            "name": "MyButton93",
                             "designerId": "60a74565-cb25-4464-903c-2d94e47a7271"
                         }
                     ]

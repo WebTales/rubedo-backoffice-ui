@@ -67,6 +67,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "typeSelect",
             "designerId": "0466eea6-c776-4c88-b14e-95220a71766a"
         },
         {
@@ -159,6 +160,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentSaveAndPublish",
             "designerId": "0be12317-77a9-4e12-adae-fbd3e1286d46"
         },
         {
@@ -178,6 +180,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentSave",
             "designerId": "43982057-d428-4c80-892d-67f635c19e58"
         },
         {
@@ -203,6 +206,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "putNestedContentsOffline",
             "designerId": "87d8077d-4130-4766-b7fe-4ed15619aff3"
         },
         {
@@ -253,6 +257,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "nestedContentsSelect",
             "designerId": "7c34508b-b7bf-46cc-9bbd-67b7260dcd4f"
         },
         {
@@ -279,6 +284,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onWindowBeforeClose",
             "designerId": "22ca2295-8f59-4e36-acb8-122494e04a8b"
         },
         {
@@ -374,6 +380,7 @@
                     "}"
                 ]
             },
+            "name": "nContenuRecorder",
             "designerId": "ae3d7d9c-194f-4fdd-b848-335bc618dcb5"
         },
         {
@@ -404,6 +411,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentDelete",
             "designerId": "1e8e3da9-d15d-4ff8-ae22-5814e4e23120"
         },
         {
@@ -424,6 +432,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentEdit",
             "designerId": "d1d6b138-ff4c-43ec-bf21-9b2632472cf9"
         },
         {
@@ -576,6 +585,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "contentsSelect",
             "designerId": "2af287bb-3cc0-46dd-9a77-33d9b9c7235f"
         },
         {
@@ -596,6 +606,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "doubleClickEdit",
             "designerId": "29809d19-0d43-44be-9789-cb0efb02186f"
         },
         {
@@ -621,6 +632,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "putContentsOnline",
             "designerId": "5609cb55-a942-4612-a54f-e9f26e0decce"
         },
         {
@@ -646,6 +658,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentRefuse",
             "designerId": "94138a98-a78e-4bb5-ad8b-0e949321e587"
         },
         {
@@ -671,6 +684,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "putContentsOffline",
             "designerId": "a09ba59a-d8db-44ca-8e79-c42a6a3dcb2d"
         },
         {
@@ -696,6 +710,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentSubmitVal",
             "designerId": "eae53a4e-c7fe-4932-b8c5-bc212c9bb55c"
         },
         {
@@ -721,6 +736,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentAcceptPublish",
             "designerId": "84f2a9eb-c989-4280-98ec-f1d06b70936e"
         },
         {
@@ -740,6 +756,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "contentSaveAndSubmit",
             "designerId": "b54053e6-c639-4ad5-819e-ed4b31921c1e"
         },
         {
@@ -759,6 +776,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "nestedContentsDelete",
             "designerId": "c3974fbb-2e52-4e6f-986a-7b7761b2adee"
         },
         {
@@ -784,6 +802,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "putNestedContentsOnline",
             "designerId": "b6ad5fdb-bf2f-463f-834e-aa0c589df945"
         },
         {
@@ -847,6 +866,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "addNestedContent",
             "designerId": "ccc66b9c-5a97-416f-ae83-84c635ac8e29"
         },
         {
@@ -886,6 +906,7 @@
                     "}"
                 ]
             },
+            "name": "nestedContentRecorder",
             "designerId": "e3e4e254-cc5e-4ecf-8755-659164383223"
         },
         {
@@ -905,6 +926,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "saveNestedContent",
             "designerId": "9fe56c18-95bf-4c2e-a4a4-4319db241081"
         },
         {
@@ -945,6 +967,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "nestedContentEdit",
             "designerId": "c95e30f7-faca-4c58-875f-27f2e815b47d"
         },
         {
@@ -964,6 +987,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "NCDblClickEdit",
             "designerId": "575594ef-2357-4a76-b58a-b2bad0120ca7"
         },
         {
@@ -987,6 +1011,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onWindowRender",
             "designerId": "f3285970-e0ec-4143-bcc6-6cd9ad124687"
         },
         {
@@ -1024,6 +1049,7 @@
                     "    Ext.getStore(\"CurrentContent\").load();"
                 ]
             },
+            "name": "unitaryContentEdit",
             "designerId": "1ee0d45e-e7df-43f3-8cc7-65f8e71a5a7e"
         },
         {
@@ -1507,6 +1533,7 @@
                     "Ext.getCmp(\"contentsDLSToolbar\").recievei18n(cible.get(\"i18n\"),cible.get(\"locale\"),cible.get(\"nativeLanguage\"));"
                 ]
             },
+            "name": "displayContentEditWindow",
             "designerId": "55e297cb-12c1-4ee8-a3c9-3e88f1d9caed"
         },
         {
@@ -1675,6 +1702,7 @@
                     "    }"
                 ]
             },
+            "name": "displaySpecialCreate",
             "designerId": "59b973fd-a6b3-49da-80bd-9719b3b8177b"
         },
         {
@@ -1712,6 +1740,7 @@
                     "    Ext.getStore(\"ContentTypesForContent\").load();"
                 ]
             },
+            "name": "prepareContext",
             "designerId": "61545fb7-19f6-474e-99b3-0961085bf6c9"
         },
         {
@@ -1741,6 +1770,7 @@
                     "    Ext.getStore(\"ContentTypesForContent2\").load();"
                 ]
             },
+            "name": "specialContentCreate",
             "designerId": "d60e78f1-db2e-4a49-acc3-f879e61fd8cf"
         },
         {
@@ -1760,6 +1790,7 @@
                 "name": "itemdblclick",
                 "scope": "me"
             },
+            "name": "onPageContentGridItemDblClick",
             "designerId": "6d5500da-cac3-42e7-a9ef-15e77f8be732"
         },
         {
@@ -1784,6 +1815,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onBoutonCopierContenusClick",
             "designerId": "1babab45-9945-4020-b722-3be3ee752bfb"
         },
         {
@@ -1803,6 +1835,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onBoutonRefuserNouveauContenuClick",
             "designerId": "d0aa8ba7-45f3-4228-845a-c4c4765a8b93"
         }
     ]

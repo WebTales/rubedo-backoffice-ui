@@ -26,6 +26,7 @@
                 "src": "resources/images/logoRubedo.png",
                 "width": 32
             },
+            "name": "MyImg25",
             "designerId": "c5e36476-1fb8-4a4d-b6c6-758e770dd620"
         },
         {
@@ -38,6 +39,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "MySeparator8",
             "designerId": "4480b17c-5c1e-44bd-9391-df7da5625442"
         },
         {
@@ -54,6 +56,7 @@
                 "localiserId": "simpleModeFavoritesBtn",
                 "text": "Favorites"
             },
+            "name": "MyButton418",
             "designerId": "b9451b93-655a-4f0f-9b26-1b050acdd22b",
             "customConfigs": [
                 {
@@ -73,6 +76,7 @@
                     "userConfig": {
                         "width": null
                     },
+                    "name": "MyMenu10",
                     "designerId": "6047c3e9-d514-49ae-88ce-e4845c649a36",
                     "cn": [
                         {
@@ -85,6 +89,7 @@
                             "userConfig": {
                                 "text": "Menu Item"
                             },
+                            "name": "MyMenuItem14",
                             "designerId": "ce33b122-c1b1-4812-ac10-75816dc8d3b5"
                         },
                         {
@@ -97,6 +102,7 @@
                             "userConfig": {
                                 "text": "Menu Item"
                             },
+                            "name": "MyMenuItem15",
                             "designerId": "120c6328-0209-46ee-8deb-231a2958a1db"
                         },
                         {
@@ -109,6 +115,7 @@
                             "userConfig": {
                                 "text": "Menu Item"
                             },
+                            "name": "MyMenuItem16",
                             "designerId": "d362a56e-5e1e-4eec-a28d-6594bdb5fc12"
                         }
                     ]
@@ -125,6 +132,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "MySeparator9",
             "designerId": "f05a7416-f524-47a1-81c4-94562e080114"
         },
         {
@@ -144,6 +152,7 @@
                 "margin": null,
                 "text": "Pages"
             },
+            "name": "MyButton419",
             "designerId": "3312068a-afa0-4271-9838-34d8dbcb892b",
             "customConfigs": [
                 {
@@ -180,6 +189,7 @@
                 "margin": null,
                 "text": "Prévisualisation"
             },
+            "name": "MyButton420",
             "designerId": "85044e64-d0c1-4b9c-9845-ce2cc85f353b",
             "customConfigs": [
                 {
@@ -216,6 +226,7 @@
                 "margin": null,
                 "text": "Contenus"
             },
+            "name": "MyButton421",
             "designerId": "e09775bb-c362-4dcb-99d4-9bbdec8d9c26",
             "customConfigs": [
                 {
@@ -252,6 +263,7 @@
                 "margin": null,
                 "text": "Médiathèque"
             },
+            "name": "MyButton422",
             "designerId": "b9c989bd-8167-46cd-800e-a4f4d94d4fe8",
             "customConfigs": [
                 {
@@ -282,6 +294,7 @@
                 "ACL": "read.ui.contents",
                 "layout|flex": null
             },
+            "name": "MySeparator10",
             "designerId": "2f1cdbfc-8660-4935-925f-2f0531862e97",
             "customConfigs": [
                 {
@@ -307,6 +320,7 @@
                 "usedMenu": "salamanderStudioMenu",
                 "usesMenu": true
             },
+            "name": "MyButton423",
             "configAlternates": {
                 "usesMenu": "boolean"
             },
@@ -346,6 +360,7 @@
                         "name": "render",
                         "scope": "me"
                     },
+                    "name": "onButtonRender2",
                     "designerId": "384e4d9e-10ba-4cfe-b1d7-86543992d7ea"
                 },
                 {
@@ -359,6 +374,7 @@
                         "id": "specialStudioMenu11",
                         "width": null
                     },
+                    "name": "MyMenu11",
                     "designerId": "216d5ab2-8b78-403c-948c-f6bdf0722d84",
                     "cn": [
                         {
@@ -442,6 +458,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processSpecialStudioMenu11",
                             "designerId": "c5906f9b-3e31-4111-a1e5-725f35540b1f"
                         }
                     ]
@@ -463,6 +480,7 @@
                 "usedMenu": "salamanderAdminMenu",
                 "usesMenu": true
             },
+            "name": "MyButton424",
             "configAlternates": {
                 "usesMenu": "boolean"
             },
@@ -502,6 +520,7 @@
                         "name": "render",
                         "scope": "me"
                     },
+                    "name": "onButtonRender11",
                     "designerId": "97351aa9-577c-4402-b0ff-c56f344e1616"
                 },
                 {
@@ -515,6 +534,7 @@
                         "id": "specialAdminMenu22",
                         "width": null
                     },
+                    "name": "MyMenu12",
                     "designerId": "bed2abf8-e9f0-4989-9198-384bbfe7146f",
                     "cn": [
                         {
@@ -631,6 +651,7 @@
                                     "return config;"
                                 ]
                             },
+                            "name": "processSpecialAdminMenu22",
                             "designerId": "d071579b-8f2d-4d2f-98e7-7e0bad85adac"
                         }
                     ]
@@ -653,6 +674,7 @@
                 "margin": null,
                 "text": "Paramètres"
             },
+            "name": "MyButton425",
             "designerId": "c0a4772d-5faf-413f-85b3-f3815816f0d8",
             "customConfigs": [
                 {
@@ -677,6 +699,7 @@
             "userConfig": {
                 "layout|flex": null
             },
+            "name": "MyFill53",
             "designerId": "1718ceae-52a9-46cf-88f0-d280215903d2"
         },
         {
@@ -694,6 +717,7 @@
                 "localiserId": "logoutBtn",
                 "text": "Déconnexion"
             },
+            "name": "MyButton426",
             "designerId": "4f1758ff-49a0-4a2e-9d10-e80de7ddf76e",
             "customConfigs": [
                 {

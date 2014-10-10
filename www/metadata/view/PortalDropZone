@@ -53,6 +53,7 @@
                     ""
                 ]
             },
+            "name": "constructor",
             "designerId": "a658d8b2-5e0e-4167-8e67-50921b0e03ef"
         },
         {
@@ -86,6 +87,7 @@
                     "};"
                 ]
             },
+            "name": "createEvent",
             "designerId": "5c98284d-76b8-4b49-aeb8-a8dffd75661a"
         },
         {
@@ -192,6 +194,7 @@
                     ""
                 ]
             },
+            "name": "notifyOver",
             "designerId": "32cdea03-55db-4229-bf2d-3f8b8e4fc80f"
         },
         {
@@ -207,6 +210,7 @@
                     "delete this.grid;"
                 ]
             },
+            "name": "notifyOut",
             "designerId": "295d47bd-8a00-4347-9dd1-bc9d983e99ff"
         },
         {
@@ -270,6 +274,7 @@
                     ""
                 ]
             },
+            "name": "notifyDrop",
             "designerId": "0870efae-832c-4b60-a6bd-c9df0fbd542f"
         },
         {
@@ -297,6 +302,7 @@
                     ""
                 ]
             },
+            "name": "getGrid",
             "designerId": "b7414ad0-a527-463d-9a30-70eccd52ccb3"
         }
     ]

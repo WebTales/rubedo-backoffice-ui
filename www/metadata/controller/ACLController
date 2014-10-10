@@ -115,6 +115,7 @@
                     "});*/"
                 ]
             },
+            "name": "init",
             "designerId": "2830bd31-d38c-4fac-869d-a550f739c628"
         },
         {
@@ -140,6 +141,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onComponentRender",
             "designerId": "fa87d97c-595c-421e-b2c0-1f4f38d36f1a"
         },
         {
@@ -187,6 +189,7 @@
                     "ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},60000);"
                 ]
             },
+            "name": "onLaunch",
             "designerId": "83ba7d31-8371-4044-a1c9-120f85c20615"
         },
         {
@@ -231,6 +234,7 @@
                     "});"
                 ]
             },
+            "name": "checkSessionStatus",
             "designerId": "81a08c0f-cbaf-45b8-9c90-0a2728094fd7"
         }
     ]

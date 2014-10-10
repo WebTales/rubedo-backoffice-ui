@@ -71,6 +71,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "groupSelect",
             "designerId": "d5a180c2-cf12-41c6-af7a-aac95a40309e"
         },
         {
@@ -111,6 +112,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "removeGroup",
             "designerId": "ba45fde9-05e0-4f40-9bf1-4ba0064daf9f"
         },
         {
@@ -133,6 +135,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "openGroupAddWindow",
             "designerId": "f61e9a39-0a51-41ea-b239-15f38bc28d33"
         },
         {
@@ -173,6 +176,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "createGroup",
             "designerId": "144cc988-420a-4aa3-8a44-870dd5054898"
         },
         {
@@ -220,6 +224,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "changeAdminPwdSubmit",
             "designerId": "a97d8177-f772-417c-9577-3fbfe56b07af"
         },
         {
@@ -242,6 +247,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "newAdminDelegation",
             "designerId": "d707be6e-62df-49b1-8e30-c9fa4e6f2c2e"
         },
         {
@@ -270,6 +276,7 @@
                     ""
                 ]
             },
+            "name": "getGroupUsers",
             "designerId": "03bf4d8d-7208-40bc-ae87-ee81d0db4237"
         },
         {
@@ -294,6 +301,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "openUserAddWindow",
             "designerId": "32ce4eb7-43ac-435d-8196-64a8e0e46d81"
         },
         {
@@ -319,6 +327,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "userSelectionAdd",
             "designerId": "d506ab15-3503-437c-969b-004bf29956fb"
         },
         {
@@ -348,6 +357,7 @@
                     "}"
                 ]
             },
+            "name": "ArianneBuilder",
             "designerId": "b3ae164b-36fd-4fc8-a7a5-42b40eb42626"
         },
         {
@@ -371,6 +381,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "removeUserFromGroup",
             "designerId": "26700983-4198-4add-8976-6e2842b7b0e7"
         },
         {
@@ -404,6 +415,7 @@
                 "name": "select",
                 "scope": "me"
             },
+            "name": "onGridpanelSelect",
             "designerId": "908d61e5-f2ab-4a31-94d7-c387687d58cc"
         },
         {
@@ -425,6 +437,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "adminInfoUpdate",
             "designerId": "205c0122-f13f-4d4b-adc9-c7373616bb3a"
         },
         {
@@ -444,6 +457,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "newUser",
             "designerId": "b016e231-6e64-470a-9d72-9b5056c18eac"
         },
         {
@@ -471,6 +485,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "userAdminRemove",
             "designerId": "17aee2a2-5dba-41fd-b861-1a82d7a8fb72"
         },
         {
@@ -491,6 +506,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteAdminPicture",
             "designerId": "8207d36b-07bf-4ffa-97de-f2afcf5e4a75"
         },
         {
@@ -512,6 +528,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "adminAccessEdit",
             "designerId": "63093309-3444-4fbd-8f56-16fd975913cd"
         },
         {
@@ -534,6 +551,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "openAdminChangePwdWindow",
             "designerId": "c35e008c-6517-4379-8842-8a169c91d814"
         },
         {
@@ -564,6 +582,7 @@
                 "name": "afterrender",
                 "scope": "me"
             },
+            "name": "openUserSettings",
             "designerId": "04e922d4-7684-4208-b46d-c34b4cfa93bb"
         },
         {
@@ -586,6 +605,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "userInfoUpdate",
             "designerId": "deac057a-6ffc-4a5e-ae86-1322e16a47e5"
         },
         {
@@ -606,6 +626,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "deleteUserProfilePic",
             "designerId": "c5ec7123-c1ee-48c7-a36a-6fd54357bec8"
         },
         {
@@ -625,6 +646,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "adminDeleteDelegations",
             "designerId": "b5c79b18-d75b-4e19-8009-4419a155c5d3"
         },
         {
@@ -668,6 +690,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "changeMyPassword",
             "designerId": "9be6d494-9865-48ec-b69e-8995f55a10c6"
         },
         {
@@ -688,6 +711,7 @@
                 "name": "beforeclose",
                 "scope": "me"
             },
+            "name": "onUserAdminWindowBeforeClose",
             "designerId": "7de3f24d-2c56-42a9-aed4-4ad20c8d4294"
         },
         {
@@ -710,6 +734,7 @@
                 "name": "render",
                 "scope": "me"
             },
+            "name": "onUserAdminWindowRender",
             "designerId": "ec7123d4-4f4e-4131-898e-15de7f800068"
         },
         {
@@ -737,6 +762,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onUserCreateSubmitBtnClick",
             "designerId": "b201a952-1f6a-4aeb-8aa3-4a1fa2da4808"
         }
     ]
