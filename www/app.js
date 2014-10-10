@@ -406,7 +406,8 @@ Ext.application({
         'ImportChoiceWindow',
         'importProductOptionsForm',
         'customImportUpdateSettings',
-        'importProductOptionsFieldset'
+        'importProductOptionsFieldset',
+        'ordersExportWindow'
     ],
     controllers: [
         'ContributionContenusController',
