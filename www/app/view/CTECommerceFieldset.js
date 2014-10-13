@@ -34,6 +34,15 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
             items: [
                 {
                     xtype: 'checkboxfield',
+                    anchor: '100%',
+                    fieldLabel: 'Free shipping',
+                    name: 'freeShipping',
+                    boxLabel: '',
+                    inputValue: 'true',
+                    uncheckedValue: 'false'
+                },
+                {
+                    xtype: 'checkboxfield',
                     localiserId: 'manageStockField',
                     anchor: '100%',
                     fieldLabel: 'Manage stock',
@@ -107,13 +116,7 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
                     allowBlank: false,
                     minValue: 0
                 }
-            ],
-            listeners: {
-                added: {
-                    fn: me.onCTECommerceFieldsetAdded,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
@@ -125,28 +128,6 @@ Ext.define('Rubedo.view.CTECommerceFieldset', {
         } else {
             field.nextSibling().hide();
         }
-    },
-
-    onCTECommerceFieldsetAdded: function(component, container, pos, eOpts) {
-         var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
-            store:Ext.getStore("ShippersForCT"),
-            anchor:"100%",
-            name:"shippers",
-            fieldLabel:"Shippers",
-            labelWidth:100,
-            queryMode:"local",
-            multiSelect:true,
-            valueField:"id",
-            displayField:"name",
-            forceSelection:true,
-            createNewOnEnter:true,
-            triggerOnClick:false,
-            createNewOnBlur:true,
-            stacked:true,
-            allowBlank:true
-
-        });
-        component.add(shippersPicker);
     }
 
 });

@@ -390,22 +390,6 @@
             "codeClass": null,
             "userConfig": {
                 "defaultValue": [
-                    "[ ]"
-                ],
-                "name": "shippers"
-            },
-            "name": "MyField89",
-            "designerId": "6c6d6305-2922-4973-8ec2-edc163a93e44"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "defaultValue": [
                     "1"
                 ],
                 "name": "preparationDelay"
@@ -477,6 +461,19 @@
             },
             "name": "MyField94",
             "designerId": "0faf68bf-12fb-41b9-a6db-c952809c2a2d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "freeShipping"
+            },
+            "name": "MyField",
+            "designerId": "0615721f-f165-461f-855a-48bbb11c7d96"
         }
     ]
 }

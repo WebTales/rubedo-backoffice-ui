@@ -32,6 +32,32 @@
             "codeClass": null,
             "userConfig": {
                 "boxLabel": "",
+                "fieldLabel": "Free shipping",
+                "inputValue": "true",
+                "layout|anchor": "100%",
+                "localiserId": null,
+                "name": "freeShipping",
+                "uncheckedValue": "false"
+            },
+            "name": "MyCheckbox",
+            "designerId": "781bfd35-9d1e-46d0-bd6c-5466c44c0a61",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "boxLabel": "",
                 "fieldLabel": "Manage stock",
                 "inputValue": "true",
                 "layout|anchor": "100%",
@@ -72,42 +98,6 @@
                     "designerId": "7af6d9e6-fbe7-410b-9b1e-54e2087d2873"
                 }
             ]
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onCTECommerceFieldsetAdded",
-                "implHandler": [
-                    " var shippersPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {",
-                    "    store:Ext.getStore(\"ShippersForCT\"),",
-                    "    anchor:\"100%\",",
-                    "    name:\"shippers\",",
-                    "    fieldLabel:\"Shippers\",",
-                    "    labelWidth:100,",
-                    "    queryMode:\"local\",",
-                    "    multiSelect:true,",
-                    "    valueField:\"id\",",
-                    "    displayField:\"name\",",
-                    "    forceSelection:true,",
-                    "    createNewOnEnter:true,",
-                    "    triggerOnClick:false,",
-                    "    createNewOnBlur:true,",
-                    "    stacked:true,",
-                    "    allowBlank:true",
-                    "",
-                    "});",
-                    "component.add(shippersPicker); "
-                ],
-                "name": "added",
-                "scope": "me"
-            },
-            "name": "onCTECommerceFieldsetAdded",
-            "designerId": "ac7424d3-45a3-425b-8c69-0e5d10fb0899"
         },
         {
             "type": "Ext.form.FieldSet",

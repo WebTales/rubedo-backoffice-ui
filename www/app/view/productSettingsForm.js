@@ -20,8 +20,8 @@ Ext.define('Rubedo.view.productSettingsForm', {
     requires: [
         'Ext.form.Panel',
         'Ext.form.field.Number',
-        'Ext.form.FieldSet',
         'Ext.form.field.Checkbox',
+        'Ext.form.FieldSet',
         'Ext.grid.Panel',
         'Ext.grid.column.Number',
         'Ext.grid.column.Date',
@@ -38,6 +38,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
 
     localiserId: 'productSettingsPanel',
     id: 'productSettingsForm',
+    autoScroll: true,
     title: 'Product settings',
 
     layout: {
@@ -85,6 +86,16 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             name: 'preparationDelay',
                             allowBlank: false,
                             minValue: 0
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            anchor: '100%',
+                            fieldLabel: 'Free shipping',
+                            labelWidth: 140,
+                            name: 'freeShipping',
+                            boxLabel: '',
+                            inputValue: 'true',
+                            uncheckedValue: 'false'
                         },
                         {
                             xtype: 'fieldset',
@@ -135,13 +146,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                 }
                             ]
                         }
-                    ],
-                    listeners: {
-                        added: {
-                            fn: me.onFormAdded,
-                            scope: me
-                        }
-                    }
+                    ]
                 },
                 {
                     xtype: 'panel',
@@ -339,29 +344,6 @@ Ext.define('Rubedo.view.productSettingsForm', {
         });
 
         me.callParent(arguments);
-    },
-
-    onFormAdded: function(component, container, pos, eOpts) {
-        var shippersPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
-            store:Ext.getStore("ShippersForCT"),
-            anchor:"100%",
-            name:"shippers",
-            fieldLabel:"Shippers",
-            labelWidth:140,
-            queryMode:"local",
-            multiSelect:true,
-            valueField:"id",
-            displayField:"name",
-            forceSelection:true,
-            createNewOnEnter:true,
-            triggerOnClick:false,
-            createNewOnBlur:true,
-            stacked:true,
-            allowBlank:true
-
-        });
-        Ext.getStore("ShippersForCT").load();
-        component.add(shippersPicker);
     },
 
     onButtonClick: function(button, e, eOpts) {

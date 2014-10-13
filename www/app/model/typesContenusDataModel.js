@@ -120,12 +120,6 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
             type: 'boolean'
         },
         {
-            defaultValue: [
-                
-            ],
-            name: 'shippers'
-        },
-        {
             defaultValue: 1,
             name: 'preparationDelay'
         },
@@ -145,6 +139,9 @@ Ext.define('Rubedo.model.typesContenusDataModel', {
         {
             defaultValue: 1,
             name: 'outOfStockLimit'
+        },
+        {
+            name: 'freeShipping'
         }
     ]
 });

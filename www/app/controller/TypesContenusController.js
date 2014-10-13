@@ -787,18 +787,18 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.type).setIconCls(monIco); }
         else { typeFil= Ext.widget('button',{iconCls: monIco, text:record.data.type, itemId:'type'});
-        filArianne.add(typeFil);
-        }
+              filArianne.add(typeFil);
+             }
 
         if ((record.data.dependant===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
-        if (!(Ext.isDefined(Ext.getCmp('ongletTCDep')))) {
-            Ext.getCmp('tabPanTC').add(Ext.widget('ongletTCDep'));
-        }
+            if (!(Ext.isDefined(Ext.getCmp('ongletTCDep')))) {
+                Ext.getCmp('tabPanTC').add(Ext.widget('ongletTCDep'));
+            }
         }
         else {
-        if (Ext.isDefined(Ext.getCmp('ongletTCDep'))) {
-            Ext.getCmp('ongletTCDep').destroy();
-        }
+            if (Ext.isDefined(Ext.getCmp('ongletTCDep'))) {
+                Ext.getCmp('ongletTCDep').destroy();
+            }
         }
         Ext.getCmp('tabPanTC').enable();
         Ext.getCmp('boiteConfigChampsTC').getComponent(0).getComponent(0).removeAll();
@@ -807,108 +807,108 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         formulaireTC.removeAll();
         var champsD =record.data.champs;
         for (g=0; g<champsD.length; g++) {
-        var donnees=champsD[g];
-        var configurateur = Ext.clone(donnees.config);
-        if (!Ext.isEmpty(configurateur.i18n)){
-            var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
-            if (!Ext.isEmpty(configurateur.i18n[BOLanguage])){
-                if (!Ext.isEmpty(configurateur.i18n[BOLanguage].fieldLabel)){
-                    configurateur.fieldLabel=configurateur.i18n[BOLanguage].fieldLabel;
-                }
-                if (!Ext.isEmpty(configurateur.i18n[BOLanguage].tooltip)){
-                    configurateur.tooltip=configurateur.i18n[BOLanguage].tooltip;
+            var donnees=champsD[g];
+            var configurateur = Ext.clone(donnees.config);
+            if (!Ext.isEmpty(configurateur.i18n)){
+                var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
+                if (!Ext.isEmpty(configurateur.i18n[BOLanguage])){
+                    if (!Ext.isEmpty(configurateur.i18n[BOLanguage].fieldLabel)){
+                        configurateur.fieldLabel=configurateur.i18n[BOLanguage].fieldLabel;
+                    }
+                    if (!Ext.isEmpty(configurateur.i18n[BOLanguage].tooltip)){
+                        configurateur.tooltip=configurateur.i18n[BOLanguage].tooltip;
+                    }
                 }
             }
-        }
-        if (donnees.cType =='treepicker'){
-            configurateur.store = Ext.create("Ext.data.TreeStore", {
-                isOptimised: true,
-                usedCollection: 'Pages',
-                autoLoad: false,
-                autoSync: false,
-                remoteFilter: true,
-                model: 'Rubedo.model.taxonomyTermModel',
-                proxy: {
-                    type: 'ajax',
-                    api: {
-                        read: 'taxonomy-terms/navigation-tree'
-                    },
-                    reader: {
-                        type: 'json',
-                        getResponseData: function(response) {
-                            var data, error;
-
-                            try {
-                                data = Ext.decode(response.responseText);
-                                if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
-                                return this.readRecords(data);
-                            } catch (ex) {
-                                error = new Ext.data.ResultSet({
-                                    total  : 0,
-                                    count  : 0,
-                                    records: [],
-                                    success: false,
-                                    message: ex.message
-                                });
-
-                                this.fireEvent('exception', this, response, error);
-                                console.log(ex);
-
-                                Ext.Logger.warn('Unable to parse the JSON returned by the server');
-
-                                return error;
-                            }
+            if (donnees.cType =='treepicker'){
+                configurateur.store = Ext.create("Ext.data.TreeStore", {
+                    isOptimised: true,
+                    usedCollection: 'Pages',
+                    autoLoad: false,
+                    autoSync: false,
+                    remoteFilter: true,
+                    model: 'Rubedo.model.taxonomyTermModel',
+                    proxy: {
+                        type: 'ajax',
+                        api: {
+                            read: 'taxonomy-terms/navigation-tree'
                         },
-                        messageProperty: 'message'
+                        reader: {
+                            type: 'json',
+                            getResponseData: function(response) {
+                                var data, error;
+
+                                try {
+                                    data = Ext.decode(response.responseText);
+                                    if (Ext.isDefined(data.data)){data.children=data.data;}// error fix
+                                    return this.readRecords(data);
+                                } catch (ex) {
+                                    error = new Ext.data.ResultSet({
+                                        total  : 0,
+                                        count  : 0,
+                                        records: [],
+                                        success: false,
+                                        message: ex.message
+                                    });
+
+                                    this.fireEvent('exception', this, response, error);
+                                    console.log(ex);
+
+                                    Ext.Logger.warn('Unable to parse the JSON returned by the server');
+
+                                    return error;
+                                }
+                            },
+                            messageProperty: 'message'
+                        }
+                    },
+                    sorters: {
+                        property: 'orderValue'
                     }
-                },
-                sorters: {
-                    property: 'orderValue'
-                }
-            });
-            configurateur.store.load();
-            configurateur.valueField="id";
-            configurateur.displayField="text";
-            configurateur.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
-        }
-        else if (donnees.cType == 'combobox') {
-            var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
-            configurateur.store = monStore;
-        }
-        //begin temporary fix
-        configurateur.labelSeparator=" ";
-        //end temporary fix
+                });
+                configurateur.store.load();
+                configurateur.valueField="id";
+                configurateur.displayField="text";
+                configurateur.plugins=[Ext.create("Ext.ux.form.field.ClearButton")];
+            }
+            else if (donnees.cType == 'combobox') {
+                var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
+                configurateur.store = monStore;
+            }
+            //begin temporary fix
+            configurateur.labelSeparator=" ";
+            //end temporary fix
 
-        try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
-        var nouvChamp = Ext.create(donnees.cType, configurateur);
-        }
-        nouvChamp.config=Ext.clone(donnees.config);
+            try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
+                var nouvChamp = Ext.create(donnees.cType, configurateur);
+            }
+            nouvChamp.config=Ext.clone(donnees.config);
 
-        //begin temporary fix
-        if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
-        //end temporary fix
+            //begin temporary fix
+            if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
+            //end temporary fix
 
-        nouvChamp.configFields=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("configFields");
-        if (donnees.cType =='triggerfield'){
-        var Ouvrir = Ext.clone(donnees.openWindow);
-        nouvChamp.onTriggerClick= function() {
-            var fenetre = Ext.widget(Ouvrir);
-            fenetre.showAt(screen.width/2-200, 100);
-        } ;
-        nouvChamp.openWindow =Ext.clone(donnees.openWindow);
-        }
-        nouvChamp.anchor = '90%';
-        nouvChamp.protoId=donnees.protoId;
+            nouvChamp.configFields=Ext.getStore("TypesChampsDataStore").findRecord("id",donnees.protoId).get("configFields");
+            if (donnees.cType =='triggerfield'){
+                var Ouvrir = Ext.clone(donnees.openWindow);
+                nouvChamp.onTriggerClick= function() {
+                    var fenetre = Ext.widget(Ouvrir);
+                    fenetre.showAt(screen.width/2-200, 100);
+                } ;
+                nouvChamp.openWindow =Ext.clone(donnees.openWindow);
+            }
+            nouvChamp.anchor = '90%';
+            nouvChamp.protoId=donnees.protoId;
 
 
-        nouvChamp.style = '{float:left;}';
-        var enrobage =Ext.widget('ChampTC');
-        enrobage.add(nouvChamp);
-        enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
-        if (Ext.isEmpty(configurateur.tooltip)){
-        enrobage.getComponent('helpBouton').hidden=true;
-        }
-        formulaireTC.add(enrobage);
+            nouvChamp.style = '{float:left;}';
+            var enrobage =Ext.widget('ChampTC');
+            enrobage.add(nouvChamp);
+            enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+            if (Ext.isEmpty(configurateur.tooltip)){
+                enrobage.getComponent('helpBouton').hidden=true;
+            }
+            formulaireTC.add(enrobage);
 
         }
         var tableauTaxoTC = Ext.getCmp('vocabulairesTypesContenusGrid');
@@ -916,24 +916,24 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         var maTaxo= record.get("vocabularies");
         var selectionR = [ ];
         Ext.Array.forEach(maTaxo, function(someTaxoId){
-        if(!Ext.isEmpty(tableauTaxoTC.getStore().findRecord("id", someTaxoId))){
-        selectionR.push(tableauTaxoTC.getStore().findRecord("id", someTaxoId));
-        }
+            if(!Ext.isEmpty(tableauTaxoTC.getStore().findRecord("id", someTaxoId))){
+                selectionR.push(tableauTaxoTC.getStore().findRecord("id", someTaxoId));
+            }
         });
         tableauTaxoTC.getSelectionModel().select(selectionR);
 
 
         if ((record.get("dependant")===false)&&(ACL.interfaceRights["read.ui.dependantTypes"])) {
-        var tableauTCI = Ext.getCmp('TCImbriquesGrid');
-        tableauTCI.getSelectionModel().deselectAll();
-        var depTypes = record.get("dependantTypes");
-        var selector=[];
-        Ext.Array.forEach(depTypes, function(someTypeId){
-        if(!Ext.isEmpty(tableauTCI.getStore().findRecord("id", someTypeId))){
-            selector.push(tableauTCI.getStore().findRecord("id", someTypeId));
-        }
-        });
-        tableauTCI.getSelectionModel().select(selector);
+            var tableauTCI = Ext.getCmp('TCImbriquesGrid');
+            tableauTCI.getSelectionModel().deselectAll();
+            var depTypes = record.get("dependantTypes");
+            var selector=[];
+            Ext.Array.forEach(depTypes, function(someTypeId){
+                if(!Ext.isEmpty(tableauTCI.getStore().findRecord("id", someTypeId))){
+                    selector.push(tableauTCI.getStore().findRecord("id", someTypeId));
+                }
+            });
+            tableauTCI.getSelectionModel().select(selector);
         }
         Ext.getCmp('champsEditionTC').doLayout();
 
@@ -944,17 +944,17 @@ Ext.define('Rubedo.controller.TypesContenusController', {
         metaBox.update(values);
         metaBox.show();
         if ((!ACL.interfaceRights["write.ui.contentTypes"])||(record.get("readOnly"))) {
-        Ext.Array.forEach(Ext.getCmp("TDCEditForm").query("field"), function(thing){thing.setReadOnly(true);});
-        Ext.getCmp("boutonSupprimerTypeContenu").disable();
-        Ext.getCmp("boutonEnregistrerTypeContenu").disable();
-        Ext.getCmp("AdminfTCImporter").disable();
-        Ext.getCmp("TCfieldUp").up().disable();
+            Ext.Array.forEach(Ext.getCmp("TDCEditForm").query("field"), function(thing){thing.setReadOnly(true);});
+            Ext.getCmp("boutonSupprimerTypeContenu").disable();
+            Ext.getCmp("boutonEnregistrerTypeContenu").disable();
+            Ext.getCmp("AdminfTCImporter").disable();
+            Ext.getCmp("TCfieldUp").up().disable();
         } else {
-        Ext.Array.forEach(Ext.getCmp("TDCEditForm").query("field"), function(thing){thing.setReadOnly(false);});
-        Ext.getCmp("boutonSupprimerTypeContenu").enable();
-        Ext.getCmp("boutonEnregistrerTypeContenu").enable();
-        Ext.getCmp("AdminfTCImporter").enable();
-        Ext.getCmp("TCfieldUp").up().enable();
+            Ext.Array.forEach(Ext.getCmp("TDCEditForm").query("field"), function(thing){thing.setReadOnly(false);});
+            Ext.getCmp("boutonSupprimerTypeContenu").enable();
+            Ext.getCmp("boutonEnregistrerTypeContenu").enable();
+            Ext.getCmp("AdminfTCImporter").enable();
+            Ext.getCmp("TCfieldUp").up().enable();
         }
         Ext.getStore("CTLayouts").removeAll();
         Ext.getStore("CTLayouts").loadData(record.get("layouts"));
