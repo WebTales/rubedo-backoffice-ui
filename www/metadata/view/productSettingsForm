@@ -13,17 +13,9 @@
         "designer|userClassName": "productSettingsForm",
         "id": "productSettingsForm",
         "layout": "vbox",
-        "localiserId": "productSettingsPanel",
         "title": "Product settings"
     },
     "designerId": "2ae78d7f-914e-476c-840e-3b4423f7e7ae",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "localiserId",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -917,6 +909,25 @@
             },
             "name": "isValid",
             "designerId": "98fcada9-5672-4e71-a6a3-40f287c89a3d"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processProductSettingsForm",
+                "implHandler": [
+                    "config.title=Rubedo.RubedoAutomatedElementsLoc.productSettingsText;"
+                ]
+            },
+            "name": "processProductSettingsForm",
+            "designerId": "8ff636ff-ae39-467a-91fb-79c3083cef96"
         }
     ]
 }

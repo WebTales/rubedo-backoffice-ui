@@ -36,7 +36,6 @@ Ext.define('Rubedo.view.productSettingsForm', {
         'Ext.form.field.Date'
     ],
 
-    localiserId: 'productSettingsPanel',
     id: 'productSettingsForm',
     autoScroll: true,
     title: 'Product settings',
@@ -343,7 +342,12 @@ Ext.define('Rubedo.view.productSettingsForm', {
             ]
         });
 
+        me.processProductSettingsForm(me);
         me.callParent(arguments);
+    },
+
+    processProductSettingsForm: function(config) {
+        config.title=Rubedo.RubedoAutomatedElementsLoc.productSettingsText;
     },
 
     onButtonClick: function(button, e, eOpts) {

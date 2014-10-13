@@ -162,7 +162,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     inputValue: 'true',
                                     uncheckedValue: 'false'
                                 },
-                                {
+                                me.processRateType({
                                     xtype: 'combobox',
                                     localiserId: 'rateTypeField',
                                     anchor: '100%',
@@ -183,7 +183,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                             'Flat rate per item'
                                         ]
                                     ]
-                                },
+                                }),
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
@@ -272,10 +272,18 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (!Ext.isEmpty(value)){
+                                            return(Rubedo.RubedoAutomatedElementsLoc[value+"Text"]);
+
+                                        } else {
+                                            return value;
+                                        }
+                                    },
                                     localiserId: 'displayedDelayUnitCol',
                                     dataIndex: 'hRUnit',
                                     text: 'Displayed delay (unit)',
-                                    editor: {
+                                    editor: me.processMyComboBox68({
                                         xtype: 'combobox',
                                         allowBlank: false,
                                         allowOnlyWhitespace: false,
@@ -299,7 +307,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                                 'months'
                                             ]
                                         ]
-                                    }
+                                    })
                                 }
                             ],
                             dockedItems: [
@@ -375,6 +383,33 @@ Ext.define('Rubedo.view.shippersInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processRateType: function(config) {
+        config.store=[["flatPerOrder",Rubedo.RubedoAutomatedElementsLoc.flatRatePerOrderText],["flatPerItem",Rubedo.RubedoAutomatedElementsLoc.flatRatePerItemText]];
+        return config;
+    },
+
+    processMyComboBox68: function(config) {
+        config.store= [
+                                                    [
+                                                        'hours',
+                                                        Rubedo.RubedoAutomatedElementsLoc.hoursText
+                                                    ],
+                                                    [
+                                                        'days',
+                                                        Rubedo.RubedoAutomatedElementsLoc.daysText
+                                                    ],
+                                                    [
+                                                        'weeks',
+                                                        Rubedo.RubedoAutomatedElementsLoc.weeksText
+                                                    ],
+                                                    [
+                                                        'months',
+                                                        Rubedo.RubedoAutomatedElementsLoc.monthsText
+                                                    ]
+                                                ];
+        return config;
     },
 
     onWorkspaceSaveAfterRender: function(component, eOpts) {

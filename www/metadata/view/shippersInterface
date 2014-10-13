@@ -388,6 +388,28 @@
                                     "name": "localiserId",
                                     "type": "string"
                                 }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processRateType",
+                                        "implHandler": [
+                                            "config.store=[[\"flatPerOrder\",Rubedo.RubedoAutomatedElementsLoc.flatRatePerOrderText],[\"flatPerItem\",Rubedo.RubedoAutomatedElementsLoc.flatRatePerItemText]];",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processRateType",
+                                    "designerId": "ca2c60f3-37db-4337-bbc1-1476554e0672"
+                                }
                             ]
                         },
                         {
@@ -710,7 +732,76 @@
                                     "configAlternates": {
                                         "store": "array"
                                     },
-                                    "designerId": "fe5a88e1-ef81-42af-8140-04b7516c0b8e"
+                                    "designerId": "fe5a88e1-ef81-42af-8140-04b7516c0b8e",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "fn": "processMyComboBox68",
+                                                "implHandler": [
+                                                    "config.store= [",
+                                                    "                                            [",
+                                                    "                                                'hours',",
+                                                    "                                                Rubedo.RubedoAutomatedElementsLoc.hoursText",
+                                                    "                                            ],",
+                                                    "                                            [",
+                                                    "                                                'days',",
+                                                    "                                                Rubedo.RubedoAutomatedElementsLoc.daysText",
+                                                    "                                            ],",
+                                                    "                                            [",
+                                                    "                                                'weeks',",
+                                                    "                                                Rubedo.RubedoAutomatedElementsLoc.weeksText",
+                                                    "                                            ],",
+                                                    "                                            [",
+                                                    "                                                'months',",
+                                                    "                                                Rubedo.RubedoAutomatedElementsLoc.monthsText",
+                                                    "                                            ]",
+                                                    "                                        ];",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "name": "processMyComboBox68",
+                                            "designerId": "c4a43b7a-23a4-4fb5-8d50-6f5982d2e6ec"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "if (!Ext.isEmpty(value)){",
+                                            "    return(Rubedo.RubedoAutomatedElementsLoc[value+\"Text\"]);",
+                                            "    ",
+                                            "} else {",
+                                            "    return value;",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "61cec4c6-e675-43c4-9c3b-4cc92d2a2395"
                                 }
                             ]
                         },
@@ -914,7 +1005,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1614",
+            "name": "mytool162",
             "designerId": "e22bc478-cb54-49d3-a2f8-e07ad82f7c19",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -928,7 +1019,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1720",
+            "name": "mytool172",
             "designerId": "7694bf92-2fb6-41a5-a279-aa383bd8dce3",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
