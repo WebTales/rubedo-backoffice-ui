@@ -240,7 +240,9 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
         } else if (selected.length==1) {
             Ext.getCmp("ajoutPanierContenus").enable();
-            Ext.getCmp("boutonCopierContenus").enable();
+            if (!selected[0].get("isProduct")){
+                 Ext.getCmp("boutonCopierContenus").enable();
+            }
             if ((!selected[0].get("readOnly"))&&(ACL.interfaceRights["write.ui.contents."+selected[0].get("status")])){
                 Ext.getCmp("boutonModifierContenu").enable();
                 Ext.getCmp("boutonSupprimerContenu").enable();

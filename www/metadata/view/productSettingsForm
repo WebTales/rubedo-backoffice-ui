@@ -145,6 +145,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "collapsed": true,
+                        "collapsible": true,
                         "id": "stockManagentForProductFieldset",
                         "localiserId": "stockManagementFieldset",
                         "title": "Stock management"
@@ -280,6 +282,7 @@
                 "layout": "hbox",
                 "layout|flex": 1,
                 "localiserId": "variationsGrid",
+                "minHeight": 260,
                 "title": "Variations"
             },
             "name": "MyPanel74",

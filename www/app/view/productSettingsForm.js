@@ -100,6 +100,8 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             xtype: 'fieldset',
                             localiserId: 'stockManagementFieldset',
                             id: 'stockManagentForProductFieldset',
+                            collapsed: true,
+                            collapsible: true,
                             title: 'Stock management',
                             items: [
                                 {
@@ -151,6 +153,7 @@ Ext.define('Rubedo.view.productSettingsForm', {
                     xtype: 'panel',
                     localiserId: 'variationsGrid',
                     flex: 1,
+                    minHeight: 260,
                     title: 'Variations',
                     layout: {
                         type: 'hbox',
