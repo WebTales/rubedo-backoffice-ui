@@ -17,7 +17,7 @@
         "layout": "hbox",
         "localiserId": "UserTypesMainWindow",
         "title": "User types",
-        "width": 1350
+        "width": 1370
     },
     "designerId": "f226d2f3-1a1c-40c0-97d1-16f6c14b6f16",
     "customConfigs": [
@@ -40,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool161",
+            "name": "mytool16",
             "designerId": "73f37b67-c70b-49b7-9b1b-11416b9080cd",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool172",
+            "name": "mytool17",
             "designerId": "1eb2bb11-c295-42bd-9e7a-e7c7dc134539",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -1417,7 +1417,7 @@
                                     "userConfig": {
                                         "id": "UTeditFields"
                                     },
-                                    "name": "mteditfields1",
+                                    "name": "mteditfields",
                                     "designerId": "d54fc408-ab5b-430d-8a2b-cc4ab4549c03",
                                     "masterInstanceId": "7120e487-8033-4805-b435-a863418861d9"
                                 }
@@ -2558,7 +2558,7 @@
                                 "layout|flex": null,
                                 "localiserId": "layoutPropertiesPanel",
                                 "title": "Properties",
-                                "width": 200
+                                "width": 220
                             },
                             "name": "MyPanel22",
                             "designerId": "271a92c8-4d7e-4770-ae86-24cb2430d8ed",
@@ -2578,8 +2578,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "autoScroll": true,
                                         "id": "layoutPropsPanel1",
-                                        "layout": "fit",
                                         "title": "Select an element"
                                     },
                                     "name": "MyPanel23",

@@ -20,7 +20,7 @@
             "Ext.ux.TreePicker"
         ],
         "title": "Types de contenus",
-        "width": 1350
+        "width": 1370
     },
     "designerId": "6267ab43-4966-465c-9ab8-2585191a245f",
     "customConfigs": [
@@ -1724,7 +1724,7 @@
                                         "localiserId": "editableFieldPanel",
                                         "title": "Champs Editables"
                                     },
-                                    "name": "mteditfields",
+                                    "name": "mteditfields1",
                                     "designerId": "ceb92585-593a-443f-9573-0fb296398608",
                                     "customConfigs": [
                                         {
@@ -2996,7 +2996,7 @@
                                 "layout|flex": null,
                                 "localiserId": "layoutPropertiesPanel",
                                 "title": "Properties",
-                                "width": 200
+                                "width": 220
                             },
                             "name": "MyPanel60",
                             "designerId": "881fbb69-9083-4891-b8f0-9d2b37a41589",
@@ -3016,9 +3016,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "autoScroll": null,
+                                        "autoScroll": true,
                                         "id": "layoutPropsPanel",
-                                        "layout": "fit",
                                         "title": "Select an element"
                                     },
                                     "name": "MyPanel61",

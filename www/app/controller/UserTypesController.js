@@ -489,34 +489,40 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 component.addBodyCls('contrastRow');
             }
             component.getEl().on("mouseover", function(e){
-                component.setBorder(4);
                 e.stopEvent();
+                component.setBorder(4);
+
             });
             component.getEl().on("mouseout", function(e){
-                component.setBorder(2);
                 e.stopEvent();
+                component.setBorder(2);
+
             });
             component.getEl().on("click", function(e){
-                Ext.getCmp("layoutElementIdField1").setValue(component.getId());
                 e.stopEvent();
+                Ext.getCmp("layoutElementIdField1").setValue(component.getId());
+
             });
         } else {
             component.getEl().on("mouseover", function(e){
+                e.stopEvent();
                 var prevSelected = Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());
                 if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==component.id)) {
                     component.setIconCls('selectBloc');
                 }
-                e.stopEvent();
+
             });
             component.getEl().on("mouseout", function(e){
+                e.stopEvent();
                 var prevSelected = Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue());
                 if ((Ext.isEmpty(prevSelected))||(prevSelected.id!==component.id)) {
                 component.setIconCls();}
-                e.stopEvent();
+
             });
             component.getEl().on("click", function(e){
-                Ext.getCmp("layoutElementIdField1").setValue(component.getId());
                 e.stopEvent();
+                Ext.getCmp("layoutElementIdField1").setValue(component.getId());
+
             });
             component.header.add(Ext.widget("tool",{
                 type:"close",
@@ -614,11 +620,11 @@ Ext.define('Rubedo.controller.UserTypesController', {
             flex:1,
             id:"UTLayout-"+Ext.id(),
             plugins:[Ext.create("Ext.ux.BoxReorderer")],
-            elementStyle:"",
             responsive:{
                 phone:true,
                 tablet:true,
-                desktop:true
+                desktop:true,
+                largeDesktop:true
             },
             margin:4,
             layout: {
@@ -640,14 +646,15 @@ Ext.define('Rubedo.controller.UserTypesController', {
             var newCol=Ext.widget('panel', {
                 header:false,
                 flex:1,
-                elementStyle:"",
                 final:isFinalCol,
                 id:"UTLayout-"+Ext.id(),
+                stackThreshold:"sm",
                 plugins:[Ext.create("Ext.ux.BoxReorderer")],
                 responsive:{
                     phone:true,
                     tablet:true,
-                    desktop:true
+                    desktop:true,
+                    largeDesktop:true
                 },
                 mType:'col',
                 margin:4,
@@ -724,9 +731,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             newField.responsive={
                 "phone":true,
                 "tablet":true,
-                "desktop":true
+                "desktop":true,
+                "largeDesktop":true,
             };
-            newField.elementStyle="";
             newField.flex=1;
             newField.name=name;
             target.add(newField);
@@ -744,9 +751,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
             newField.responsive={
                 "phone":true,
                 "tablet":true,
-                "desktop":true
+                "desktop":true,
+                "largeDesktop":true
             };
-            newField.elementStyle="";
             newField.flex=1;
             newField.name=name;
             Ext.getCmp(Ext.getCmp('layoutElementIdField1').getValue()).add(newField);
@@ -1278,19 +1285,15 @@ Ext.define('Rubedo.controller.UserTypesController', {
                         fields.push({
                             title:field.title,
                             responsive:field.responsive,
-                            responsiveClass:me.deudceResposiveClass(field.responsive),
                             name:field.name,
                             showLabel:field.showLabel,
-                            elementStyle:field.elementStyle,
-                            classHTML:field.classHTML,
                             flex:field.flex
                         });
                     });
                     newCols.push({
+                        eTitle:col.eTitle,
                         responsive:col.responsive,
-                        responsiveClass:me.deudceResposiveClass(col.responsive),
-                        classHTML:col.classHTML,
-                        elementStyle:col.elementStyle,
+                        stackThreshold:col.stackThreshold,
                         span:col.flex,
                         mType:"col",
                         fields:fields,
@@ -1302,11 +1305,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
                 });
                 nRows.push({
-                    elementStyle:row.elementStyle,
                     mType:"row",
                     responsive:row.responsive,
-                    responsiveClass:me.deudceResposiveClass(row.responsive),
-                    classHTML:row.classHTML,
+                    displayAsTabs:row.displayAsTabs,
                     columns: newCols
 
                 });
@@ -1327,38 +1328,28 @@ Ext.define('Rubedo.controller.UserTypesController', {
             items: [
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
-            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}
+            },{ boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+
             ]
 
         }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eClassHTMLField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+
+        configSpec.getComponent(0).add(Ext.widget('checkbox',{
+            itemId:"eDisplayAsTabsField",
+            fieldLabel:"Display as tabs",
             onChange:function(){
-                if (this.isValid()){
-                    component.classHTML=this.getValue();
-                }
+
+                component.displayAsTabs=this.getValue();
+
             },
             labelWidth:60,
-            allowBlank:true,
+            inputValue:true,
             anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.classHTML
+            margin:"10 0 10 0",
+            checked:component.displayAsTabs
         }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eStyleField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.elementStyle=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.elementStyle
-        }));
+
         Ext.getCmp("layoutPropsPanel1").add(configSpec);
     },
 
@@ -1390,38 +1381,12 @@ Ext.define('Rubedo.controller.UserTypesController', {
             items: [
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
-            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}
+            },{ boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
             ]
 
         }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eClassHTMLField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.classHTML=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.classHTML
-        }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eStyleField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.elementStyle=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.elementStyle
-        }));
+
         Ext.getCmp("layoutPropsPanel1").add(configSpec);
     },
 
@@ -1449,7 +1414,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
             items: [
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
-            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}}
+            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}
+            },{ boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
             ]
 
         }));
@@ -1474,42 +1440,48 @@ Ext.define('Rubedo.controller.UserTypesController', {
             value:component.flex,
             minValue:1
         });
+        var stackThreshold=Ext.widget('combobox',{
+                        itemId:"stackThreshold",
+                        fieldLabel:"Stacking threshold",
+                        labelWidth:60,
+                        editable:false,
+                        forceSelect:true,
+                        anchor:"100%",
+                        value:component.stackThreshold ? component.stackThreshold : "sm",
+                        onChange:function(){
 
+                            component.stackThreshold=this.getValue();
+
+                        },
+                        queryMode:"local",
+                        store:[
+                            ["xs","Never"],
+                            ["sm","Phone"],
+                            ["md","Tablet"],
+                            ["lg","Desktop"]
+                        ]
+                    });
 
 
         configSpec.getComponent(0).add(offsetEdit);
         configSpec.getComponent(0).add(spanEdit);
+        configSpec.getComponent(0).add(stackThreshold);
         me.applyConstrain(component,offsetEdit,spanEdit,false);
         offsetEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
         spanEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
-
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eClassHTMLField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.HTMLClassText,
+        configSpec.getComponent(0).add(Ext.widget('textfield',{
+            itemId:"eTitleField",
+            fieldLabel:"Title",
             onChange:function(){
                 if (this.isValid()){
-                    component.classHTML=this.getValue();
+                    component.eTitle=this.getValue();
                 }
             },
             labelWidth:60,
             allowBlank:true,
             anchor:"100%",
             margin:"10 0 0 0",
-            value:component.classHTML
-        }));
-        configSpec.getComponent(1).add(Ext.widget('textfield',{
-            itemId:"eStyleField",
-            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.styleText,
-            onChange:function(){
-                if (this.isValid()){
-                    component.elementStyle=this.getValue();
-                }
-            },
-            labelWidth:60,
-            allowBlank:true,
-            anchor:"100%",
-            margin:"10 0 0 0",
-            value:component.elementStyle
+            value:component.eTitle
         }));
         Ext.getCmp("layoutPropsPanel1").add(configSpec);
     },
@@ -1593,9 +1565,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 header:false,
                 mType:"row",
                 plugins:[Ext.create("Ext.ux.BoxReorderer")],
-                elementStyle:row.elementStyle,
+                displayAsTabs:row.displayAsTabs,
                 responsive:row.responsive,
-                classHTML:row.classHTML,
                 id:"UTLayout-"+Ext.id(),
                 margin:4,
                 layout: {
@@ -1619,13 +1590,13 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 var newCol=Ext.widget('panel', {
                     header:false,
                     flex:column.span,
+                    eTitle:column.eTitle,
+                    stackThreshold:column.stackThreshold,
                     plugins:[Ext.create("Ext.ux.BoxReorderer")],
                     final:isFinalCol,
                     mType:'col',
                     id:"UTLayout-"+Ext.id(),
-                    elementStyle:column.elementStyle,
                     responsive:column.responsive,
-                    classHTML:column.classHTML,
                     margin:4,
                     layout: {
                         type: 'vbox',

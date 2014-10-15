@@ -46,7 +46,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
     localiserId: 'UserTypesMainWindow',
     height: 627,
     id: 'UserTypesInterface',
-    width: 1350,
+    width: 1370,
     constrainHeader: true,
     iconCls: 'user',
     title: 'User types',
@@ -919,7 +919,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                 {
                                     xtype: 'panel',
                                     localiserId: 'layoutPropertiesPanel',
-                                    width: 200,
+                                    width: 220,
                                     layout: 'fit',
                                     bodyPadding: 2,
                                     collapseDirection: 'right',
@@ -930,7 +930,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                         me.processLayoutPropsPanel1({
                                             xtype: 'panel',
                                             id: 'layoutPropsPanel1',
-                                            layout: 'fit',
+                                            autoScroll: true,
                                             title: 'Select an element'
                                         })
                                     ],

@@ -49,7 +49,7 @@ Ext.define('Rubedo.view.adminFTDC', {
     localiserId: 'contentTypesWindow',
     height: 578,
     id: 'adminFTDC',
-    width: 1350,
+    width: 1370,
     constrainHeader: true,
     iconCls: 'content-icon',
     title: 'Types de contenus',
@@ -1055,7 +1055,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                 {
                                     xtype: 'panel',
                                     localiserId: 'layoutPropertiesPanel',
-                                    width: 200,
+                                    width: 220,
                                     layout: 'fit',
                                     bodyPadding: 2,
                                     collapseDirection: 'right',
@@ -1066,7 +1066,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                         me.processLayoutPropsPanel({
                                             xtype: 'panel',
                                             id: 'layoutPropsPanel',
-                                            layout: 'fit',
+                                            autoScroll: true,
                                             title: 'Select an element'
                                         })
                                     ],
