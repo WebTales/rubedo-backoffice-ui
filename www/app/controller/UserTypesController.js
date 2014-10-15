@@ -1391,7 +1391,23 @@ Ext.define('Rubedo.controller.UserTypesController', {
     },
 
     renderMainBoxTools: function(component) {
+        var configSpec = Ext.widget('ConfigSpecBloc');
+        var rec=Ext.getCmp("CTLayoutsGrid1").getSelectionModel().getLastSelected();
+        configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
+            fieldLabel:"Custom template",
+            onChange:function(){
 
+                rec.set("customTemplate",this.getValue());
+
+            },
+            labelWidth:60,
+            anchor:"100%",
+            margin:"10 0 10 0",
+            twigMode:false,
+            defaultTemplateUrl:"blocks/userDetail/customLayout.html",
+            value:Ext.clone(rec.get("customTemplate"))
+        }));
+        Ext.getCmp("layoutPropsPanel1").add(configSpec);
     },
 
     renderColumnTools: function(component) {
