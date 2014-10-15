@@ -318,6 +318,12 @@ Ext.define('Rubedo.view.FOThemesInterface', {
             store.resumeAutoSync();
             store.sync();
             Ext.getCmp('delConfirmZ').close();
+            var task = new Ext.util.DelayedTask(function(){
+                if (Ext.getStore("SiteThemesStore").isUsed){
+                    Ext.getStore("SiteThemesStore").load();
+                }
+            });
+            task.delay(400);
 
         });
     },

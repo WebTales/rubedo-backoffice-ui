@@ -35,6 +35,12 @@ Ext.define('Rubedo.controller.FOThemesController', {
                     Ext.getStore("ThemeDirectoriesStore").load();
                     button.up().setLoading(false);
                     button.up().up().close();
+                    var task = new Ext.util.DelayedTask(function(){
+                        if (Ext.getStore("SiteThemesStore").isUsed){
+                            Ext.getStore("SiteThemesStore").load();
+                        }
+                    });
+                    task.delay(400);
                     Ext.Msg.alert('Success', "Archive imported");
                 },
                 failure: function(form, action) {
@@ -107,6 +113,12 @@ Ext.define('Rubedo.controller.FOThemesController', {
                 store.resumeAutoSync();
                 store.sync();
                 button.up().up().close();
+            var task = new Ext.util.DelayedTask(function(){
+                if (Ext.getStore("SiteThemesStore").isUsed){
+                    Ext.getStore("SiteThemesStore").load();
+                }
+            });
+            task.delay(400);
 
         }
     },
