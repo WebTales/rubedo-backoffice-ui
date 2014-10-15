@@ -111,6 +111,9 @@ Ext.define('Rubedo.model.order', {
         },
         {
             name: 'billDocument'
+        },
+        {
+            name: 'siteId'
         }
     ]
 });

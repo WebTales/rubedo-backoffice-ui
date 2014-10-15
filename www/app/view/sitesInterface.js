@@ -606,6 +606,23 @@ Ext.define('Rubedo.view.sitesInterface', {
         component.add(homePageSelector);
         component.insert(5,languagesPicker);
         component.add(singlePageSelector);
+        if (PHPOptions.addECommerce){
+            var ecEmPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
+            store:[],
+            anchor:"100%",
+            name:"ecommerceNotificationEmails",
+            labelWidth:110,
+            fieldLabel:"E-commerce notification emails",
+            multiSelect:true,
+            forceSelection:false,
+            createNewOnEnter:true,
+            hideTrigger:true,
+            triggerOnClick:false,
+            createNewOnBlur:true,
+            pinList:false
+        });
+            component.insert(15,ecEmPicker);
+                }
     },
 
     onCheckboxfieldRender: function(component, eOpts) {
