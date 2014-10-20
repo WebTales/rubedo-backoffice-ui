@@ -54,11 +54,11 @@ Ext.define('Rubedo.view.ordersExportWindow', {
                         {
                             xtype: 'button',
                             handler: function(button, e) {
-                                var url="/backoffice/orders/export?";
+                                var url="/backoffice/orders/export?workingLanguage="+Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
                                 var values=button.up().getForm().getValues();
                                 Ext.Object.each(values, function(key,value){
                                     if (!Ext.isEmpty(value)){
-                                        url=url+key+"="+value+"&";
+                                        url=url+"&"+key+"="+value;
                                     }
                                 });
                                 window.onbeforeunload=Ext.emptyFn;
