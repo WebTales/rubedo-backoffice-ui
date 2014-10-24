@@ -141,9 +141,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getStore("PageDisplayedContentsStore").removeAll();
         var me=this;
         if (!record.isRoot()){
-            if (Ext.getCmp("pageContentDisplayer").up().activeTab.id=="pageContentDisplayer"){
-                Ext.getCmp("pageContentDisplayer").fireEvent("activate", Ext.getCmp("pageContentDisplayer"));
-            }
+
             Ext.getCmp("removePageBtn").enable();
             Ext.Array.forEach(Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
 

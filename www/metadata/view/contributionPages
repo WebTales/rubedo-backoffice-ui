@@ -1319,7 +1319,7 @@
                                         "layout|anchor": "100%",
                                         "store": "ContributeWorkspacesCombo"
                                     },
-                                    "name": "workspacecombo",
+                                    "name": "workspacecombo1",
                                     "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
                                     "customConfigs": [
                                         {
@@ -1582,96 +1582,9 @@
                                 "id": "pagesDLSToolbar",
                                 "replicatorEntity": "pagesLocProps"
                             },
-                            "name": "dlstoolbar",
+                            "name": "dlstoolbar1",
                             "designerId": "0ec7c46e-d600-4a9a-ab2a-0a1fc967b8d6",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "pageContentDisplayer",
-                        "layout": "fit",
-                        "title": "Contenus affichés"
-                    },
-                    "name": "MyPanel35",
-                    "designerId": "912c1c9a-4b2c-469d-a3d2-4634d83ec839",
-                    "cn": [
-                        {
-                            "type": "Ext.tab.Tab",
-                            "reference": {
-                                "name": "tabConfig",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "localiserId": "displayedContentTab"
-                            },
-                            "name": "TabConfig28",
-                            "designerId": "5c0ca1d9-5e44-409d-b03b-f7da24367bc7",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.grid.Panel",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "forceFit": true,
-                                "id": "pageContentGrid",
-                                "store": "PageDisplayedContentsStore",
-                                "title": ""
-                            },
-                            "name": "MyGridPanel23",
-                            "designerId": "2411bcdc-b72a-4b38-a30d-9e14cffe714e",
-                            "cn": [
-                                {
-                                    "type": "Ext.grid.View",
-                                    "reference": {
-                                        "name": "viewConfig",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "name": "MyGridView24",
-                                    "designerId": "7fe51694-b500-42da-9fd6-2a06475dad41"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "text",
-                                        "localiserId": "titleColumn",
-                                        "text": "Titre"
-                                    },
-                                    "name": "MyColumn50",
-                                    "designerId": "589e10a4-14f1-4012-8829-1b994f7d4974",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ]
-                                }
-                            ]
                         }
                     ]
                 },

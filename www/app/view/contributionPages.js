@@ -39,8 +39,6 @@ Ext.define('Rubedo.view.contributionPages', {
         'Ext.form.field.Checkbox',
         'Ext.form.FieldSet',
         'Ext.form.field.TextArea',
-        'Ext.grid.Panel',
-        'Ext.grid.View',
         'Ext.Img',
         'Ext.XTemplate',
         'Ext.slider.Single'
@@ -638,33 +636,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                     replicatorEntity: 'pagesLocProps',
                                     id: 'pagesDLSToolbar',
                                     dock: 'top'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'panel',
-                            id: 'pageContentDisplayer',
-                            layout: 'fit',
-                            title: 'Contenus affichés',
-                            tabConfig: {
-                                xtype: 'tab',
-                                localiserId: 'displayedContentTab'
-                            },
-                            items: [
-                                {
-                                    xtype: 'gridpanel',
-                                    id: 'pageContentGrid',
-                                    title: '',
-                                    forceFit: true,
-                                    store: 'PageDisplayedContentsStore',
-                                    columns: [
-                                        {
-                                            xtype: 'gridcolumn',
-                                            localiserId: 'titleColumn',
-                                            dataIndex: 'text',
-                                            text: 'Titre'
-                                        }
-                                    ]
                                 }
                             ]
                         }
