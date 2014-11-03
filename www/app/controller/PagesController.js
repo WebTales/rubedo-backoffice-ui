@@ -412,6 +412,20 @@ Ext.define('Rubedo.controller.PagesController', {
                 ]
 
             }));
+
+                configSpec.getComponent(1).add(Ext.widget('textfield',{
+            fieldLabel:"Code",
+            onChange:function(){
+                if (this.isValid()){
+                    component.code=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.code
+        }));
             var languagesPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
                 anchor:"100%",
                 name:"localeFilters",
@@ -986,6 +1000,7 @@ Ext.define('Rubedo.controller.PagesController', {
                     responsive:nBloc.responsive,
                     displayTitle:nBloc.displayTitle,
                     flex:nBloc.flex,
+                    code:nBloc.code,
                     canEdit:nBloc.canEdit,
                     checksum:nBloc.checksum
                 });

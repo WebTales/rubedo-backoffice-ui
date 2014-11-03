@@ -396,6 +396,19 @@ Ext.define('Rubedo.controller.MasqueController', {
                         defaultTemplateUrl:"row.html",
                         value:component.customTemplate
                     }));
+                    configSpec.getComponent(1).add(Ext.widget('textfield',{
+            fieldLabel:"Code",
+            onChange:function(){
+                if (this.isValid()){
+                    component.code=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.code
+        }));
 
 
                 }
@@ -497,6 +510,20 @@ Ext.define('Rubedo.controller.MasqueController', {
                         defaultTemplateUrl:"column.html",
                         value:component.customTemplate
                     }));
+
+                    configSpec.getComponent(1).add(Ext.widget('textfield',{
+            fieldLabel:"Code",
+            onChange:function(){
+                if (this.isValid()){
+                    component.code=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.code
+        }));
 
 
 
@@ -858,6 +885,20 @@ Ext.define('Rubedo.controller.MasqueController', {
             ]
 
         }));
+            configSpec.getComponent(1).add(Ext.widget('textfield',{
+            fieldLabel:"Code",
+            onChange:function(){
+                if (this.isValid()){
+                    component.code=this.getValue();
+                }
+            },
+            labelWidth:60,
+            allowBlank:true,
+            anchor:"100%",
+            margin:"10 0 0 0",
+            value:component.code
+        }));
+
         var languagesPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             anchor:"100%",
             name:"localeFilters",
@@ -1319,6 +1360,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
                 customTemplate:row.customTemplate,
+                code:row.code,
                 margin:4,
                 layout: {
                     type: 'hbox',
@@ -1351,6 +1393,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     displayTitle:column.displayTitle,
                     stackThreshold:column.stackThreshold,
                     customTemplate:column.customTemplate,
+                    code:column.code,
                     margin:4,
                     layout: {
                         type: 'vbox',
@@ -1431,6 +1474,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     span:col.flex,
                     stackThreshold:col.stackThreshold,
                     customTemplate:col.customTemplate,
+                    code:col.code,
                     id:col.id,
                     i18n:col.i18n,
                     mType:"col",
@@ -1451,6 +1495,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 mType:"row",
                 responsive:row.responsive,
                 displayTitle:row.displayTitle,
+                code:row.code,
                 columns: newCols
 
             });
@@ -1484,6 +1529,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 responsive:nBloc.responsive,
                 displayTitle:nBloc.displayTitle,
                 flex:nBloc.flex,
+                code:nBloc.code,
                 checksum:nBloc.checksum
 
             });
