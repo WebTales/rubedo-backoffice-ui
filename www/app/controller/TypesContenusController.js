@@ -1103,7 +1103,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             i18n[nativeLanguage]={type:nType};
             var nouvType = Ext.create('model.typesContenusDataModel', {
                 type: nType,
-                code:nType.replace(/\W/g, ''),
+                //code:nType.replace(/\W/g, ''),
                 productType:values.productType,
                 dependant: false,
                 champs: [ ],

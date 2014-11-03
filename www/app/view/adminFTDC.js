@@ -866,7 +866,6 @@ Ext.define('Rubedo.view.adminFTDC', {
                                             fieldLabel: 'Code',
                                             labelWidth: 130,
                                             name: 'code',
-                                            allowBlank: false,
                                             vtype: 'alphanum'
                                         },
                                         {
