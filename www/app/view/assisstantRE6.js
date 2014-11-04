@@ -45,7 +45,7 @@ Ext.define('Rubedo.view.assisstantRE6', {
                 me.processQBReturnedDataFieldset({
                     xtype: 'fieldset',
                     id: 'QBReturnedDataFieldset',
-                    title: 'Returne data'
+                    title: 'Returned data'
                 }),
                 {
                     xtype: 'textfield',
