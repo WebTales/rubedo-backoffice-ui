@@ -46,7 +46,7 @@ Ext.define('linkfinder.controller.ACLController', {
                 },
                 success: function(response){
                     var targetedUrl = Ext.JSON.decode(response.responseText).url;
-                    me.sendLink(targetedUrl);
+                    me.sendLink(targetedUrl,Ext.getCmp("pagePicker").getValue());
                 },
                 failure:function(){
                     Ext.Msg.alert('Erreur', 'Erreur dans la récupération de l\'url de la page');
@@ -160,20 +160,20 @@ Ext.define('linkfinder.controller.ACLController', {
         }
     },
 
-    sendLink: function(link) {
+    sendLink: function(link,pageId) {
         var editor = window.opener.CKEDITOR.instances[CKEOptions.CKEditorInstance];
         var selection=editor.getSelection();
         if (selection.getType()==1){
-            editor.insertHtml('<a href="'+link+'">'+link+'</a>');
+            editor.insertHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'">'+link+'</a>');
         } else if (selection.getType()==2){
             var text=selection.getSelectedText();
             if (Ext.isEmpty(text)){
                 text=link;
             }
-            editor.insertHtml('<a href="'+link+'">'+text+'</a>');
+            editor.insertHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'">'+text+'</a>');
 
         } else if (selection.getType()==3){
-            var newElement=window.opener.CKEDITOR.dom.element.createFromHtml('<a href="'+link+'"></a>');
+            var newElement=window.opener.CKEDITOR.dom.element.createFromHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'"></a>');
             var selElement=selection.getSelectedElement();
             newElement.append(selElement);
             editor.insertElement(newElement);
