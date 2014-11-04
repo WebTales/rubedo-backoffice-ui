@@ -101,6 +101,15 @@ Ext.define('Rubedo.view.CKEField', {
             userLanguage='en';
         }
         component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, allowedContent:true, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
+        component.editor.on("maximize",function(){
+            var mainWindow=component.findParentByType("window");
+            if (!Ext.isEmpty(mainWindow)){
+                var task3 = new Ext.util.DelayedTask(function(){
+                    mainWindow.doLayout();
+                });
+                task3.delay(200);
+            }
+        });
         component.editor.on('instanceReady', function(){
             if (component.CKETBConfig=="Email"){
                 component.editor.dataProcessor.htmlFilter.addRules(
