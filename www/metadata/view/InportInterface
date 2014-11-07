@@ -2136,6 +2136,97 @@
             ],
             "cn": [
                 {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "editable": false,
+                        "fieldLabel": "Mode d'import",
+                        "forceSelection": true,
+                        "id": "importCreateSwitcher",
+                        "layout|anchor": "100%",
+                        "name": "importMode",
+                        "queryMode": "local",
+                        "store": [
+                            "[[\"insert\",\"Create new content type\"],[\"update\",\"Use existing content type\"]]"
+                        ],
+                        "value": "insert"
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "array",
+                        "value": "string"
+                    },
+                    "designerId": "95d69149-8e87-4004-a440-b62c00675d28",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImportCreateSwitcherChange",
+                                "implHandler": [
+                                    "var typesCombo=Ext.getCmp(\"importChooseExistingCombo1\");",
+                                    "var newTypeFieldset=Ext.getCmp(\"importS4Fielset1\");",
+                                    "if (newValue==\"insert\"){",
+                                    "    typesCombo.allowBlank=true;",
+                                    "    typesCombo.setValue(null);",
+                                    "    typesCombo.hide();",
+                                    "    typesCombo.submitValue=false;",
+                                    "    newTypeFieldset.show();",
+                                    "    Ext.Array.forEach(newTypeFieldset.items.items,function(item){",
+                                    "        item.submitValue=true;",
+                                    "        item.allowBlank=false;",
+                                    "    });",
+                                    "} else if (newValue==\"update\"){",
+                                    "    typesCombo.allowBlank=false;",
+                                    "    typesCombo.show();",
+                                    "    typesCombo.submitValue=true;",
+                                    "    newTypeFieldset.hide();",
+                                    "    Ext.Array.forEach(newTypeFieldset.items.items,function(item){",
+                                    "        item.submitValue=false;",
+                                    "        item.allowBlank=true;",
+                                    "        item.setValue(null);",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onImportCreateSwitcherChange",
+                            "designerId": "34d03329-b85a-4524-b6d4-1931bf019f00"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "type",
+                        "fieldLabel": "Content type",
+                        "hidden": true,
+                        "id": "importChooseExistingCombo1",
+                        "layout|anchor": "100%",
+                        "name": "typeId",
+                        "store": "TCImportCombo",
+                        "submitValue": false,
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "0de700bf-2ee1-461f-b5b0-7d1173988269"
+                },
+                {
                     "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
@@ -2143,6 +2234,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "id": "importS4Fielset1",
                         "localiserId": "importS4Fielset1",
                         "title": "Paramètres du type de contenus"
                     },
@@ -2412,36 +2504,37 @@
             "userConfig": {
                 "fn": "onInportInterfaceBeforeRender",
                 "implHandler": [
-                    "Ext.getStore(\"NotInportFieldsStore\").removeAll();\r",
-                    "Ext.getStore(\"InportAsFieldStore\").removeAll();\r",
-                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();\r",
-                    "Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();\r",
-                    "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();\r",
-                    "if (component.howToImport==\"update\"){\r",
-                    "    component.remove(component.getComponent(4));\r",
-                    "    component.remove(component.getComponent(3));\r",
-                    "    component.remove(component.getComponent(2));\r",
-                    "    component.remove(component.getComponent(1));\r",
-                    "    Ext.getCmp(\"mainCSVInportAnalyseContainer\").up().remove(Ext.getCmp(\"mainCSVInportAnalyseContainer\"));\r",
-                    "    Ext.getCmp(\"customImportProgressor\").hide();\r",
-                    "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"customImportUpdateSettings\"));\r",
-                    "    Ext.getStore(\"TCImportCombo\").load();\r",
-                    "    Ext.getStore(\"TaxoForImportKeys\").load();\r",
-                    "} else {\r",
-                    "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();\r",
-                    "    if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){\r",
-                    "        component.remove(component.getComponent(3));\r",
-                    "    }\r",
-                    "    if (component.whatToImport==\"products\"){\r",
-                    "        Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));\r",
-                    "        Ext.getCmp(\"customImportUseAsVarCol\").show();\r",
-                    "    }\r",
-                    "}\r",
-                    "Ext.getStore(\"ImportPresets\").clearFilter(true);\r",
-                    "Ext.getStore(\"ImportPresets\").filter([\r",
-                    "    {property: \"howToImport\", value: component.howToImport},\r",
-                    "    {property: \"whatToImport\", value: component.whatToImport}\r",
-                    "    ]);\r",
+                    "Ext.getStore(\"NotInportFieldsStore\").removeAll();",
+                    "Ext.getStore(\"InportAsFieldStore\").removeAll();",
+                    "Ext.getStore(\"InportAsTaxoStore\").removeAll();",
+                    "Ext.getStore(\"InportAsFieldTranslationStore\").removeAll();",
+                    "Ext.getStore(\"InportAsTaxoTranslationStore\").removeAll();",
+                    "Ext.getStore(\"TCImportCombo\").load();",
+                    "if (component.howToImport==\"update\"){",
+                    "    component.remove(component.getComponent(4));",
+                    "    component.remove(component.getComponent(3));",
+                    "    component.remove(component.getComponent(2));",
+                    "    component.remove(component.getComponent(1));",
+                    "    Ext.getCmp(\"mainCSVInportAnalyseContainer\").up().remove(Ext.getCmp(\"mainCSVInportAnalyseContainer\"));",
+                    "    Ext.getCmp(\"customImportProgressor\").hide();",
+                    "    Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"customImportUpdateSettings\"));",
+                    "    ",
+                    "    Ext.getStore(\"TaxoForImportKeys\").load();",
+                    "} else {",
+                    "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();",
+                    "    if ((Ext.getStore(\"AllLanguagesStore3\").getRange().length==1)){",
+                    "        component.remove(component.getComponent(3));",
+                    "    }",
+                    "    if (component.whatToImport==\"products\"){",
+                    "        Ext.getCmp(\"step1CustomImportContainer\").add(Ext.widget(\"importProductOptionsForm\"));",
+                    "        Ext.getCmp(\"customImportUseAsVarCol\").show();",
+                    "    }",
+                    "}",
+                    "Ext.getStore(\"ImportPresets\").clearFilter(true);",
+                    "Ext.getStore(\"ImportPresets\").filter([",
+                    "    {property: \"howToImport\", value: component.howToImport},",
+                    "    {property: \"whatToImport\", value: component.whatToImport}",
+                    "    ]);",
                     "Ext.getStore(\"ImportPresets\").load();"
                 ],
                 "name": "beforerender",
