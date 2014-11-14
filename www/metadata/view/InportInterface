@@ -2136,6 +2136,24 @@
             ],
             "cn": [
                 {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "importMode",
+                        "value": [
+                            "\"insert\""
+                        ]
+                    },
+                    "name": "MyHiddenField2",
+                    "designerId": "076cbd98-a24d-402a-9210-0559e887606e"
+                },
+                {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
@@ -2149,11 +2167,12 @@
                         "forceSelection": true,
                         "id": "importCreateSwitcher",
                         "layout|anchor": "100%",
-                        "name": "importMode",
+                        "name": "importSwitcherField",
                         "queryMode": "local",
                         "store": [
                             "[[\"insert\",\"Create new content type\"],[\"update\",\"Use existing content type\"]]"
                         ],
+                        "submitValue": false,
                         "value": "insert"
                     },
                     "name": "MyComboBox",

@@ -846,11 +846,19 @@ Ext.define('Rubedo.view.InportInterface', {
                     title: 'Finalisation  et import',
                     items: [
                         {
+                            xtype: 'hiddenfield',
+                            anchor: '100%',
+                            fieldLabel: 'Label',
+                            name: 'importMode',
+                            value: 'insert'
+                        },
+                        {
                             xtype: 'combobox',
                             anchor: '100%',
                             id: 'importCreateSwitcher',
                             fieldLabel: 'Mode d\'import',
-                            name: 'importMode',
+                            name: 'importSwitcherField',
+                            submitValue: false,
                             value: 'insert',
                             allowBlank: false,
                             editable: false,
