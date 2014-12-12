@@ -414,7 +414,8 @@ Ext.application({
         'FOThemesInterface',
         'FOThemeImportWindow',
         'GFSFieldUploadWindow1',
-        'newDirectoryWindow1'
+        'newDirectoryWindow1',
+        'ordersExportWindow'
     ],
     controllers: [
         'ContributionContenusController',

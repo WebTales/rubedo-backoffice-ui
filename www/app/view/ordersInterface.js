@@ -27,11 +27,11 @@ Ext.define('Rubedo.view.ordersInterface', {
         'Ext.grid.column.Boolean',
         'Ext.grid.View',
         'Ext.toolbar.Paging',
+        'Ext.button.Button',
         'Ext.form.Panel',
         'Ext.form.FieldSet',
         'Ext.form.field.Hidden',
         'Ext.form.field.ComboBox',
-        'Ext.button.Button',
         'Ext.form.field.Display'
     ],
 
@@ -151,7 +151,19 @@ Ext.define('Rubedo.view.ordersInterface', {
                             dock: 'bottom',
                             width: 360,
                             displayInfo: true,
-                            store: 'Orders'
+                            store: 'Orders',
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.widget("ordersExportWindow").show();
+
+                                    },
+                                    id: 'ordersExportBtn',
+                                    iconCls: 'database_down_small',
+                                    text: 'Export orders'
+                                }
+                            ]
                         }
                     ],
                     listeners: {

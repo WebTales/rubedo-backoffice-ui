@@ -34,7 +34,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1617",
+            "name": "mytool16",
             "designerId": "eb809d1d-9f5f-48fa-8b31-817c7058ffed",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -45,7 +45,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1723",
+            "name": "mytool17",
             "designerId": "56ba6e95-b4f0-4952-8755-56fe9b4cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -360,7 +360,48 @@
                         "width": 360
                     },
                     "name": "MyPagingToolbar9",
-                    "designerId": "8f3191cd-464b-4206-b5bb-0cbcdb334c7f"
+                    "designerId": "8f3191cd-464b-4206-b5bb-0cbcdb334c7f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "database_down_small",
+                                "id": "ordersExportBtn",
+                                "layout|flex": null,
+                                "text": "Export orders"
+                            },
+                            "name": "MyButton",
+                            "designerId": "0eef1990-d581-41cf-ac4c-1217b03e5488",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "                                        Ext.widget(\"ordersExportWindow\").show();",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "5f70018c-be30-45d8-94ec-8f1f9d2cd171"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "basiceventbinding",
@@ -518,7 +559,7 @@
                                         "name": "billDocument",
                                         "smallMode": true
                                     },
-                                    "name": "imagepickerfield2",
+                                    "name": "imagepickerfield",
                                     "configAlternates": {
                                         "smallMode": "boolean"
                                     },
