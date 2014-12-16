@@ -148,6 +148,18 @@ Ext.define('Rubedo.view.UsersInterface', {
                             text: 'Supprimer'
                         },
                         {
+                            xtype: 'button',
+                            handler: function(button, e) {
+                                Ext.widget("usersExportWindow").show();
+                            },
+                            disabled: true,
+                            id: 'exportUsersBtn',
+                            iconAlign: 'top',
+                            iconCls: 'database_down_big',
+                            scale: 'large',
+                            text: 'Export'
+                        },
+                        {
                             xtype: 'buttongroup',
                             localiserId: 'clipboardGroup',
                             disabled: true,

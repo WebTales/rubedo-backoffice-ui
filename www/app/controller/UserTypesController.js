@@ -311,6 +311,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             Ext.getStore("UsersAdminDataStore").clearFilter(true);
             Ext.getStore("UsersAdminDataStore").removeAll();
             Ext.getCmp("addUserBtn").disable();
+            Ext.getCmp("exportUsersBtn").disable();
             imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/user.png');
             boiteMeta.hide();
         } else {
@@ -319,6 +320,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             Ext.getStore("UsersAdminDataStore").filter("typeId",selected[0].get("id"));
             Ext.getStore("UsersAdminDataStore").loadPage(1);
             Ext.getCmp("addUserBtn").enable();
+            Ext.getCmp("exportUsersBtn").enable();
             if (selected[0].get("signUpType")=="moderated"){
                 Ext.getCmp("usersInterfaceStatusCol").show();
                 Ext.getCmp("usersSignUpModeration").show();

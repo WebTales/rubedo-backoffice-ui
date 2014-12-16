@@ -315,6 +315,47 @@
                     ]
                 },
                 {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "iconAlign": "top",
+                        "iconCls": "database_down_big",
+                        "id": "exportUsersBtn",
+                        "layout|flex": null,
+                        "scale": "large",
+                        "text": "Export"
+                    },
+                    "name": "MyButton",
+                    "designerId": "064c6ac1-c869-4895-a3b0-9cd751b08636",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.widget(\"usersExportWindow\").show();"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "c8c899f8-d254-4ccd-bde2-7ba88456f13a"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.container.ButtonGroup",
                     "reference": {
                         "name": "items",
