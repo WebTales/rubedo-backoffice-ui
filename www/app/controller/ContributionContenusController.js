@@ -44,6 +44,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boutonModifierContenu").disable();
         Ext.getCmp("boutonCopierContenus").disable();
         Ext.getCmp("contribWorkflowBox").disable();
+        Ext.getCmp("contentsExportBtn").enable();
+        Ext.getCmp("boutonAjouterContenu").enable();
         var  customMeta = record.get("type");
         var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
         if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){

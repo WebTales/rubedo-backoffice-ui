@@ -1,0 +1,120 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrain": true,
+        "designer|userAlias": "contentsExportWindow",
+        "designer|userClassName": "contentsExportWindow",
+        "height": null,
+        "iconCls": "database_down_small",
+        "modal": true,
+        "title": "Export contents",
+        "width": 400
+    },
+    "name": "usersExportWindow1",
+    "designerId": "f209290e-18ee-47bd-a929-e3d3ac78badf",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "cd1ca7ed-f4c1-4e2d-927b-672c4ecd1db9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Start date",
+                        "layout|anchor": "100%",
+                        "name": "startDate"
+                    },
+                    "name": "MyDateField2",
+                    "designerId": "a066df4a-99c6-43ee-a5ff-3800db525d6f"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "End date",
+                        "layout|anchor": "100%",
+                        "name": "endDate"
+                    },
+                    "name": "MyDateField3",
+                    "designerId": "3ab0b93d-0362-4b3b-bbf0-263a27588326"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "ordersExportSubmitBtn2",
+                        "layout|anchor": "100%",
+                        "text": "Export"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "31a2da04-eced-4243-9e93-c57821b07e4b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var url=\"/backoffice/contents/export?workingLanguage=\"+Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\")+\"&typeId=\"+Ext.getCmp(\"TypesContenusGrid\").getSelectionModel().getLastSelected().get(\"id\");",
+                                    "var values=button.up().getForm().getValues();",
+                                    "Ext.Object.each(values, function(key,value){",
+                                    "    if (!Ext.isEmpty(value)){",
+                                    "        url=url+\"&\"+key+\"=\"+value;",
+                                    "    }",
+                                    "});",
+                                    "window.onbeforeunload=Ext.emptyFn;",
+                                    "window.location.href=url;",
+                                    "var task63 = new Ext.util.DelayedTask(function(){",
+                                    "    window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };",
+                                    "});",
+                                    "button.up().up().close();",
+                                    "task63.delay(400);",
+                                    "",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "5f404da6-bb5d-4a72-a032-3639a576512b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

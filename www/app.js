@@ -416,7 +416,8 @@ Ext.application({
         'GFSFieldUploadWindow1',
         'newDirectoryWindow1',
         'ordersExportWindow',
-        'usersExportWindow'
+        'usersExportWindow',
+        'contentsExportWindow'
     ],
     controllers: [
         'ContributionContenusController',

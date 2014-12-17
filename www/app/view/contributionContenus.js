@@ -120,6 +120,7 @@ Ext.define('Rubedo.view.contributionContenus', {
                             xtype: 'button',
                             ACL: 'write.ui.contents',
                             localiserId: 'addBtn',
+                            disabled: true,
                             id: 'boutonAjouterContenu',
                             iconAlign: 'top',
                             iconCls: 'add_big',
@@ -147,6 +148,18 @@ Ext.define('Rubedo.view.contributionContenus', {
                             iconCls: 'remove_big',
                             scale: 'large',
                             text: 'Supprimer'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, e) {
+                                Ext.widget("contentsExportWindow").show();
+                            },
+                            disabled: true,
+                            id: 'contentsExportBtn',
+                            iconAlign: 'top',
+                            iconCls: 'database_down_big',
+                            scale: 'large',
+                            text: 'Export'
                         },
                         {
                             xtype: 'buttongroup',

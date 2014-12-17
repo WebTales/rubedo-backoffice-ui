@@ -218,6 +218,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.contents",
+                        "disabled": true,
                         "icon": null,
                         "iconAlign": "top",
                         "iconCls": "add_big",
@@ -310,6 +311,47 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "iconAlign": "top",
+                        "iconCls": "database_down_big",
+                        "id": "contentsExportBtn",
+                        "layout|flex": null,
+                        "scale": "large",
+                        "text": "Export"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "a6a46db2-b61c-46d4-bea0-92f2abd943fb",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.widget(\"contentsExportWindow\").show();"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "91c65dee-6977-480a-8f1d-8ca020d9c65b"
                         }
                     ]
                 },
