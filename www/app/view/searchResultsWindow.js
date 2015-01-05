@@ -216,7 +216,28 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             dock: 'bottom',
                             width: 360,
                             displayInfo: true,
-                            store: 'ESFacetteStore'
+                            store: 'ESFacetteStore',
+                            items: [
+                                {
+                                    xtype: 'tbfill',
+                                    flex: 10
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'chooseBtn',
+                                    disabled: true,
+                                    hidden: true,
+                                    id: 'selectESEntityBtn',
+                                    iconCls: 'ouiSpetit',
+                                    text: '<b>Choose</b>',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onSelectESEntityBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ],
                     listeners: {
@@ -269,21 +290,6 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             iconCls: 'favorite_add_med',
                             scale: 'medium',
                             text: ''
-                        },
-                        {
-                            xtype: 'button',
-                            localiserId: 'chooseBtn',
-                            disabled: true,
-                            hidden: true,
-                            id: 'selectESEntityBtn',
-                            iconCls: 'ouiSpetit',
-                            text: '<b>Choose</b>',
-                            listeners: {
-                                click: {
-                                    fn: me.onSelectESEntityBtnClick,
-                                    scope: me
-                                }
-                            }
                         },
                         {
                             xtype: 'button',
@@ -344,18 +350,18 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search';
     },
 
+    onSelectESEntityBtnClick: function(button, e, eOpts) {
+        var id=Ext.getCmp("ResultContentsGrid").getSelectionModel().getLastSelected().get("id");
+        Ext.getCmp(Ext.getCmp("searchResultsWindow").targetId).setValue(id);
+        Ext.getCmp("searchResultsWindow").close();
+    },
+
     onResultContentsGridSelectionChange: function(model, selected, eOpts) {
         if (Ext.isEmpty(selected)){
         	Ext.getCmp("selectESEntityBtn").disable();
         } else {
             Ext.getCmp("selectESEntityBtn").enable();
         }
-    },
-
-    onSelectESEntityBtnClick: function(button, e, eOpts) {
-        var id=Ext.getCmp("ResultContentsGrid").getSelectionModel().getLastSelected().get("id");
-        Ext.getCmp(button.up().up().targetId).setValue(id);
-        button.up().up().close();
     },
 
     onSaveGeoQueryBtnClick: function(button, e, eOpts) {
