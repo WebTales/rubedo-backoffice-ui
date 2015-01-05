@@ -40,7 +40,7 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
                     bodyPadding: 10,
                     title: '',
                     items: [
-                        {
+                        me.processWhatToImport({
                             xtype: 'combobox',
                             anchor: '100%',
                             fieldLabel: 'What to import',
@@ -61,7 +61,7 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
                                     'Products'
                                 ]
                             ]
-                        },
+                        }),
                         {
                             xtype: 'combobox',
                             anchor: '100%',
@@ -96,6 +96,31 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
         });
 
         me.callParent(arguments);
+    },
+
+    processWhatToImport: function(config) {
+        if (PHPOptions.addECommerce){
+            config.store=[
+                                        [
+                                            'contents',
+                                            'Contents'
+                                        ],
+                                        [
+                                            'products',
+                                            'Products'
+                                        ]
+                                    ];
+        } else {
+            config.store=[
+                                        [
+                                            'contents',
+                                            'Contents'
+                                        ]
+                                    ];
+            config.value='contents';
+            config.hidden=true;
+        }
+        return config;
     }
 
 });

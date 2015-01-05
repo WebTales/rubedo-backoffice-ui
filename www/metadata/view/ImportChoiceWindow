@@ -58,7 +58,49 @@
                         "store": "array",
                         "value": "string"
                     },
-                    "designerId": "611fbe91-5d66-4497-b49a-d35ad338d05c"
+                    "designerId": "611fbe91-5d66-4497-b49a-d35ad338d05c",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processWhatToImport",
+                                "implHandler": [
+                                    "if (PHPOptions.addECommerce){",
+                                    "    config.store=[",
+                                    "                                [",
+                                    "                                    'contents',",
+                                    "                                    'Contents'",
+                                    "                                ],",
+                                    "                                [",
+                                    "                                    'products',",
+                                    "                                    'Products'",
+                                    "                                ]",
+                                    "                            ];",
+                                    "} else {",
+                                    "    config.store=[",
+                                    "                                [",
+                                    "                                    'contents',",
+                                    "                                    'Contents'",
+                                    "                                ]",
+                                    "                            ];",
+                                    "    config.value='contents';",
+                                    "    config.hidden=true;",
+                                    "}",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processWhatToImport",
+                            "designerId": "2ea28bda-3e89-4d7f-a531-4784ece3c138"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",

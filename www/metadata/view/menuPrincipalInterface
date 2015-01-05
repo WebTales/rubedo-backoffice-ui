@@ -820,11 +820,11 @@
                             "userConfig": {
                                 "fn": "onButtonRender11",
                                 "implHandler": [
-                                    "if (!PHPOptions.addECommerce){\r",
-                                    "    component.hide();\r",
-                                    "}\r",
-                                    "else if ((!ACL.interfaceRights[\"read.ui.shippers\"])&&(!ACL.interfaceRights[\"read.ui.taxes\"])&&(!ACL.interfaceRights[\"read.ui.stock\"])&&(!ACL.interfaceRights[\"read.ui.paymentMeans\"])&&(!ACL.interfaceRights[\"read.ui.orders\"])){\r",
-                                    "    component.hide();\r",
+                                    "if (!PHPOptions.addECommerce){",
+                                    "    component.hide();",
+                                    "}",
+                                    "else if ((!ACL.interfaceRights[\"read.ui.shippers\"])&&(!ACL.interfaceRights[\"read.ui.taxes\"])&&(!ACL.interfaceRights[\"read.ui.stock\"])&&(!ACL.interfaceRights[\"read.ui.paymentMeans\"])&&(!ACL.interfaceRights[\"read.ui.orders\"])){",
+                                    "    component.hide();",
                                     "}"
                                 ],
                                 "name": "render",
