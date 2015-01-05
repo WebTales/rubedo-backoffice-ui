@@ -456,7 +456,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             if (!Ext.isEmpty(component.allowedCT)){
                 Ext.getStore("ESFacetteStore").activeFacettes={type:component.allowedCT};
             }
-            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("ESSearchTopBar").hide();
             Ext.getCmp("selectESEntityBtn").show();
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-content';
             Ext.getStore("ESFacetteStore").load();
@@ -467,7 +467,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             if (!Ext.isEmpty(component.allowedDT)){
                 Ext.getStore("ESFacetteStore").activeFacettes={damType:component.allowedDT};
             }
-            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("ESSearchTopBar").hide();
             Ext.getCmp("selectESEntityBtn").show();
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-dam';
             Ext.getStore("ESFacetteStore").load();
