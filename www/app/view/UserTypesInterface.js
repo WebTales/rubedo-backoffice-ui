@@ -946,8 +946,8 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                                     id: 'MaskZoomControlSlider3',
                                                     fieldLabel: 'Niveau de zoom',
                                                     labelWidth: 60,
-                                                    value: 294,
-                                                    maxValue: 2000,
+                                                    value: 1040,
+                                                    maxValue: 6000,
                                                     minValue: 200,
                                                     useTips: false,
                                                     listeners: {

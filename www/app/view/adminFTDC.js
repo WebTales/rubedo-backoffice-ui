@@ -1082,7 +1082,7 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                     fieldLabel: 'Niveau de zoom',
                                                     labelWidth: 60,
                                                     value: 340,
-                                                    maxValue: 3600,
+                                                    maxValue: 6000,
                                                     minValue: 200,
                                                     useTips: false,
                                                     listeners: {
