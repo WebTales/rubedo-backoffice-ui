@@ -232,6 +232,7 @@ Ext.define('Rubedo.view.userSettings', {
                 {
                     xtype: 'toolbar',
                     dock: 'bottom',
+                    hidden: true,
                     items: [
                         {
                             xtype: 'tbfill'
