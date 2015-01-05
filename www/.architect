@@ -8,12 +8,7 @@
                     "id": "509d54b5-b206-484d-adb8-a1943fa7b3a7",
                     "cn": [
                         {
-                            "id": "611fbe91-5d66-4497-b49a-d35ad338d05c",
-                            "cn": [
-                                {
-                                    "id": "2ea28bda-3e89-4d7f-a531-4784ece3c138"
-                                }
-                            ]
+                            "id": "611fbe91-5d66-4497-b49a-d35ad338d05c"
                         },
                         {
                             "id": "2427c585-4314-4024-b0f6-8e8b9281c543"
@@ -3762,7 +3757,6 @@
         },
         "d036c7e0-5f9d-403b-b550-4a470da98fd0": {
             "id": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
-            "expanded": false,
             "cn": [
                 {
                     "id": "75dc6c5f-c2ab-4503-a3ba-e4eb603a89aa"
@@ -3784,9 +3778,6 @@
                     ]
                 },
                 {
-                    "id": "7501fd76-69a6-4dae-bb1c-9b88bf2c7f17"
-                },
-                {
                     "id": "1a87ee7c-d1a8-4c6d-8a3a-d8898ba05b46",
                     "cn": [
                         {
@@ -3806,6 +3797,9 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "cd784354-0a7a-4747-878d-2373a88d74cf"
                 }
             ]
         },
@@ -17135,17 +17129,17 @@
     },
     "tabState": {
         "openTabs": [
-            "073dd00f-3118-42ef-9a98-3e9bde233947"
+            "d036c7e0-5f9d-403b-b550-4a470da98fd0"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "d036c7e0-5f9d-403b-b550-4a470da98fd0"
     },
     "inspectorState": {
-        "topInstance": "073dd00f-3118-42ef-9a98-3e9bde233947",
-        "selectedInstance": "2ea28bda-3e89-4d7f-a531-4784ece3c138"
+        "topInstance": "d036c7e0-5f9d-403b-b550-4a470da98fd0",
+        "selectedInstance": "cd784354-0a7a-4747-878d-2373a88d74cf"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": true
     }

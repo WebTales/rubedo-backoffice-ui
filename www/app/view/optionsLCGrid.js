@@ -21,9 +21,9 @@ Ext.define('Rubedo.view.optionsLCGrid', {
         'Ext.grid.View',
         'Ext.grid.column.Column',
         'Ext.form.field.Text',
-        'Ext.grid.plugin.RowEditing',
         'Ext.toolbar.Toolbar',
-        'Ext.button.Button'
+        'Ext.button.Button',
+        'Ext.grid.plugin.CellEditing'
     ],
 
     localiserId: 'optionsGrid',
@@ -61,11 +61,6 @@ Ext.define('Rubedo.view.optionsLCGrid', {
                     }
                 }
             ],
-            plugins: [
-                Ext.create('Ext.grid.plugin.RowEditing', {
-
-                })
-            ],
             dockedItems: [
                 {
                     xtype: 'toolbar',
@@ -97,6 +92,11 @@ Ext.define('Rubedo.view.optionsLCGrid', {
                         }
                     ]
                 }
+            ],
+            plugins: [
+                Ext.create('Ext.grid.plugin.CellEditing', {
+
+                })
             ]
         });
 

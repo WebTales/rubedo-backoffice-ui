@@ -113,16 +113,6 @@
             ]
         },
         {
-            "type": "Ext.grid.plugin.RowEditing",
-            "reference": {
-                "name": "plugins",
-                "type": "array"
-            },
-            "codeClass": "Ext.grid.plugin.RowEditing",
-            "name": "MyRowEditingPlugin",
-            "designerId": "7501fd76-69a6-4dae-bb1c-9b88bf2c7f17"
-        },
-        {
             "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
@@ -222,6 +212,16 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Ext.grid.plugin.CellEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": "Ext.grid.plugin.CellEditing",
+            "name": "MyCellEditingPlugin",
+            "designerId": "cd784354-0a7a-4747-878d-2373a88d74cf"
         }
     ]
 }
