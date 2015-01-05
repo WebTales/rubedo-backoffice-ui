@@ -44,12 +44,16 @@ Ext.define('Rubedo.controller.SearchController', {
     },
 
     mainResultWindowGetContext: function(dataview, record, item, index, e, eOpts) {
-        if ((record.get("objectType")=="content")&&(ACL.interfaceRights['read.ui.contents'])){
-            Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
-        } else if ((record.get("objectType")=="dam")&&(ACL.interfaceRights['read.ui.contents'])){
-            Rubedo.controller.DAMController.prototype.prepareContext(record.get("id"),record.get("typeId"));
-        } else if ((record.get("objectType")=="user")&&(ACL.interfaceRights['read.ui.users'])){
-            Rubedo.controller.UserTypesController.prototype.prepareContext(record.get("id"),record.get("typeId"));
+        if (Ext.getCmp("selectESEntityBtn").isVisible()){
+            Ext.getCmp("selectESEntityBtn").fireEvent("click",Ext.getCmp("selectESEntityBtn"));
+        } else {
+            if ((record.get("objectType")=="content")&&(ACL.interfaceRights['read.ui.contents'])){
+                Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
+            } else if ((record.get("objectType")=="dam")&&(ACL.interfaceRights['read.ui.contents'])){
+                Rubedo.controller.DAMController.prototype.prepareContext(record.get("id"),record.get("typeId"));
+            } else if ((record.get("objectType")=="user")&&(ACL.interfaceRights['read.ui.users'])){
+                Rubedo.controller.UserTypesController.prototype.prepareContext(record.get("id"),record.get("typeId"));
+            }
         }
     },
 
