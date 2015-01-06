@@ -457,8 +457,8 @@ Ext.define('extFinder.view.searchResultsWindow', {
             component.modal=true;
             component.setTitle("Media Selector");
             Ext.getStore("ESFacetteStore").activeFacettes={ };
-            if (!Ext.isEmpty(component.allowedDT)){
-                Ext.getStore("ESFacetteStore").activeFacettes={damType:component.allowedDT};
+            if (!Ext.isEmpty(CKEOptions.allowedDT)){
+                Ext.getStore("ESFacetteStore").activeFacettes={damType:CKEOptions.allowedDT};
             }
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("selectESEntityBtn").show();

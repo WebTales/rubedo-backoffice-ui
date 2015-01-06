@@ -77,8 +77,7 @@ Ext.define('extFinder.controller.ACLController', {
                 Ext.define('CKEOptions', {
                     singleton:true,
                     soloMode:true,
-                    contentId:options.contentId,
-                    type:"Image"
+                    allowedDT: !Ext.isEmpty(options.allowedDT) ? options.allowedDT: null
                 });
 
             }
