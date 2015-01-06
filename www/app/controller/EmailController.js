@@ -40,8 +40,9 @@ Ext.define('Rubedo.controller.EmailController', {
     onMainETContainerAfterRender: function(component, eOpts) {
         component.getComponent(0).addBodyCls('contrastEMBorder');
         component.getEl().on("click", function(e){
-            Ext.getCmp("elementETIdField").setValue(component.getComponent(0).getId());
             e.stopEvent();
+            Ext.getCmp("elementETIdField").setValue(component.getComponent(0).getId());
+
         });
     },
 
@@ -52,8 +53,9 @@ Ext.define('Rubedo.controller.EmailController', {
             component.addBodyCls('contrastEMBorder');
         }
         component.getEl().on("click", function(e){
-            Ext.getCmp("elementETIdField").setValue(component.getId());
             e.stopEvent();
+            Ext.getCmp("elementETIdField").setValue(component.getId());
+
         });
     },
 
