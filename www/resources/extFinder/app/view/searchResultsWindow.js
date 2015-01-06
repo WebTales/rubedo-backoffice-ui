@@ -348,7 +348,7 @@ Ext.define('extFinder.view.searchResultsWindow', {
         if (CKEOptions.type=="Image"){
 
             if (CKEOptions.soloMode){
-                window.opener.saveImage(CKEOptions.contentId,id);
+                window.opener.saveRubedoMediaChange(id);
             } else {
                 var fileURL="/dam?media-id="+id;
                 window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
