@@ -417,7 +417,8 @@ Ext.application({
         'newDirectoryWindow1',
         'ordersExportWindow',
         'usersExportWindow',
-        'contentsExportWindow'
+        'contentsExportWindow',
+        'AdvancedColorField'
     ],
     controllers: [
         'ContributionContenusController',
