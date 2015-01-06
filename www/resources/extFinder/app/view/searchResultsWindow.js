@@ -240,6 +240,10 @@ Ext.define('extFinder.view.searchResultsWindow', {
                         selectionchange: {
                             fn: me.onResultContentsGridSelectionChange,
                             scope: me
+                        },
+                        itemdblclick:{
+                            fn: me.onSelectESEntityBtnClick,
+                            scope: me
                         }
                     }
                 }
