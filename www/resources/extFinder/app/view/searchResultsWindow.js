@@ -212,7 +212,28 @@ Ext.define('extFinder.view.searchResultsWindow', {
                             dock: 'bottom',
                             width: 360,
                             displayInfo: true,
-                            store: 'ESFacetteStore'
+                            store: 'ESFacetteStore',
+                            items:[
+                                {
+                                    xtype: 'tbfill',
+                                    flex:10
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'chooseBtn',
+                                    disabled: true,
+                                    hidden: true,
+                                    id: 'selectESEntityBtn',
+                                    iconCls: 'ouiSpetit',
+                                    text: '<b>Choose</b>',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onSelectESEntityBtnClick,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ],
                     listeners: {
@@ -260,21 +281,6 @@ Ext.define('extFinder.view.searchResultsWindow', {
                             iconCls: 'favorite_add_med',
                             scale: 'medium',
                             text: ''
-                        },
-                        {
-                            xtype: 'button',
-                            localiserId: 'chooseBtn',
-                            disabled: true,
-                            hidden: true,
-                            id: 'selectESEntityBtn',
-                            iconCls: 'ouiSpetit',
-                            text: '<b>Choose</b>',
-                            listeners: {
-                                click: {
-                                    fn: me.onSelectESEntityBtnClick,
-                                    scope: me
-                                }
-                            }
                         },
                         {
                             xtype: 'button',
@@ -345,7 +351,6 @@ Ext.define('extFinder.view.searchResultsWindow', {
 
     onSelectESEntityBtnClick: function(button, e, eOpts) {
         var id=Ext.getCmp("ResultContentsGrid").getSelectionModel().getLastSelected().get("id");
-        if (CKEOptions.type=="Image"){
 
             if (CKEOptions.soloMode){
                 window.opener.saveRubedoMediaChange(id);
@@ -353,7 +358,6 @@ Ext.define('extFinder.view.searchResultsWindow', {
                 var fileURL="/dam?media-id="+id;
                 window.opener.CKEDITOR.tools.callFunction( CKEOptions.CKEditorFuncNum, fileURL );
             }
-        }
         window.close();
     },
 
