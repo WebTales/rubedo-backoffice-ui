@@ -1640,9 +1640,10 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "RTip": "Value to be used as content part in any URL diplaying this content.",
-                                                        "fieldLabel": "URL Segment",
+                                                        "fieldLabel": "Vanity URL",
                                                         "labelSeparator": " ",
                                                         "layout|anchor": "90%",
+                                                        "localiserId": "vanityUrlField",
                                                         "name": "urlSegment",
                                                         "style": [
                                                             "{float:\"left\"}"
@@ -1654,6 +1655,11 @@
                                                         {
                                                             "group": "(Custom Properties)",
                                                             "name": "RTip",
+                                                            "type": "string"
+                                                        },
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
                                                             "type": "string"
                                                         }
                                                     ]
@@ -2457,7 +2463,7 @@
                                                 "name": "workspaces",
                                                 "store": "ContributeWorkspacesCombo"
                                             },
-                                            "name": "workspacecombo1",
+                                            "name": "workspacecombo",
                                             "configAlternates": {
                                                 "canSwitchStore": "boolean"
                                             },
@@ -2600,7 +2606,7 @@
                                 "id": "CTLDLSToolbar",
                                 "replicatorEntity": "CTLReplicatorEntity"
                             },
-                            "name": "dlstoolbar1",
+                            "name": "dlstoolbar",
                             "designerId": "e2cd1fd3-b6e4-4253-a79c-a5c92d237480",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }

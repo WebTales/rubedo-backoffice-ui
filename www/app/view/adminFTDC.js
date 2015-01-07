@@ -632,10 +632,11 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                             xtype: 'textfield',
                                                             RTip: 'Value to be used as content part in any URL diplaying this content.',
                                                             anchor: '90%',
+                                                            localiserId: 'vanityUrlField',
                                                             style: {
                                                                 float: 'left'
                                                             },
-                                                            fieldLabel: 'URL Segment',
+                                                            fieldLabel: 'Vanity URL',
                                                             labelSeparator: ' ',
                                                             name: 'urlSegment'
                                                         }
