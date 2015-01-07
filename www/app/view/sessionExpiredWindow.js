@@ -40,7 +40,7 @@ Ext.define('Rubedo.view.sessionExpiredWindow', {
                     xtype: 'button',
                     handler: function(button, event) {
                         window.onbeforeunload=Ext.emptyFn;
-                        window.location.href="login";
+                        window.location.href="logout";
                     },
                     localiserId: 'reconnectBtn',
                     text: 'Se connecter à nouveau'

@@ -65,8 +65,8 @@
                         ],
                         "fn": "handler",
                         "implHandler": [
-                            "window.onbeforeunload=Ext.emptyFn;\r",
-                            "window.location.href=\"login\";"
+                            "window.onbeforeunload=Ext.emptyFn;",
+                            "window.location.href=\"logout\";"
                         ]
                     },
                     "name": "handler",
