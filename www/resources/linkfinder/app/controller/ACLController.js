@@ -64,13 +64,13 @@ Ext.define('linkfinder.controller.ACLController', {
             a[b[0]] = b[1];
             return a;
         }, {});
-            if (!Ext.isEmpty(options.ckinstance)){
                 Ext.define('CKEOptions', {
                     singleton:true,
-                    CKEditorInstance:options.ckinstance
+                    CKEditorInstance:options.ckinstance,
+                    soloMode:options.soloMode
                 });
 
-            }
+            
 
 
             Ext.define('ACL', {
@@ -161,23 +161,27 @@ Ext.define('linkfinder.controller.ACLController', {
     },
 
     sendLink: function(link,pageId) {
-        var editor = window.opener.CKEDITOR.instances[CKEOptions.CKEditorInstance];
-        var selection=editor.getSelection();
-        if (selection.getType()==1){
-            editor.insertHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'">'+link+'</a>');
-        } else if (selection.getType()==2){
-            var text=selection.getSelectedText();
-            if (Ext.isEmpty(text)){
-                text=link;
+        if (CKEOptions.soloMode){
+            window.opener.saveRubedPageLinkChange(pageId);
+        } else {
+            var editor = window.opener.CKEDITOR.instances[CKEOptions.CKEditorInstance];
+            var selection=editor.getSelection();
+            if (selection.getType()==1){
+                editor.insertHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'">'+link+'</a>');
+            } else if (selection.getType()==2){
+                var text=selection.getSelectedText();
+                if (Ext.isEmpty(text)){
+                    text=link;
+                }
+                editor.insertHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'">'+text+'</a>');
+
+            } else if (selection.getType()==3){
+                var newElement=window.opener.CKEDITOR.dom.element.createFromHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'"></a>');
+                var selElement=selection.getSelectedElement();
+                newElement.append(selElement);
+                editor.insertElement(newElement);
+
             }
-            editor.insertHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'">'+text+'</a>');
-
-        } else if (selection.getType()==3){
-            var newElement=window.opener.CKEDITOR.dom.element.createFromHtml('<a rubedo-page-link="'+pageId+'" href="'+link+'"></a>');
-            var selElement=selection.getSelectedElement();
-            newElement.append(selElement);
-            editor.insertElement(newElement);
-
         }
         window.close();
     }
