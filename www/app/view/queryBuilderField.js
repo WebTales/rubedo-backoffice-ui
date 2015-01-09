@@ -115,8 +115,8 @@ Ext.define('Rubedo.view.queryBuilderField', {
         var task2 = new Ext.util.DelayedTask(function(){
             component.fireEvent("change",component, component.getValue());
         });
-        task2.delay(700);
         component.up().add(companion);
+        task2.delay(1600);
     }
 
 });

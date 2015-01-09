@@ -631,8 +631,8 @@ Ext.define('Rubedo.view.adminFTDC', {
                                                         {
                                                             xtype: 'textfield',
                                                             RTip: 'Value to be used as content part in any URL diplaying this content.',
-                                                            anchor: '90%',
                                                             localiserId: 'vanityUrlField',
+                                                            anchor: '90%',
                                                             style: {
                                                                 float: 'left'
                                                             },
