@@ -78,10 +78,13 @@ Ext.define('Ext.ux.widget.Rating', {
 		Ext.applyIf(me, {
 			maxValue: 5,
 			minValue: 1,
-			split: 2,
+			split: 1,
 			numberOfStars: 5,
 			titles: {}
 		});
+        me.maxValue=me.numberOfStars;
+        me.minValue=1;
+        me.split=1;
 		var tempVal = [],
 			hasTitle,
 			name,

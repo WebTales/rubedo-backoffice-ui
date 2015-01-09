@@ -1953,12 +1953,12 @@
             "allowBlank": true,
             "facetOperator":"AND",
             "multivalued": false,
-            "minValue": 0.5,
-            "maxValue": 5,
+            "minValue": 1,
+            "value":1,
             "localizable": false,
             "tooltip": "",
             "numberOfStars": 5,
-            "split": 2,
+            "split": 1,
             "labelSeparator": " "
         },
         "configFields": [
@@ -1991,21 +1991,9 @@
                 "type": "Ext.form.field.Number",
                 "config": {
                     "fieldLabel": "#ext-gen1066#",
+                    "allowDecimals": false,
+                    "minValue":0,
                     "name": "value"
-                }
-            },
-            {
-                "type": "Ext.form.field.Number",
-                "config": {
-                    "fieldLabel": "#ext-gen1143#",
-                    "name": "maxValue"
-                }
-            },
-            {
-                "type": "Ext.form.field.Number",
-                "config": {
-                    "fieldLabel": "#ext-gen1144#",
-                    "name": "minValue"
                 }
             },
             {
@@ -2016,17 +2004,6 @@
                     "allowDecimals": false,
                     "editable": false,
                     "name": "numberOfStars"
-                }
-            },
-            {
-                "type": "Ext.form.field.Number",
-                "config": {
-                    "fieldLabel": "#ext-gen1226#",
-                    "name": "split",
-                    "minValue": 1,
-                    "maxValue": 2,
-                    "editable": false,
-                    "allowDecimals": false
                 }
             },
             {
