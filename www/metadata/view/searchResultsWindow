@@ -664,6 +664,112 @@
                                     "designerId": "15840bcc-c641-4483-8816-077eb1a89631"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "iconCls": "add",
+                                "id": "DAMPickerAddBtn1",
+                                "layout|flex": null,
+                                "localiserId": "addBtn",
+                                "text": "Ajouter"
+                            },
+                            "name": "MyButton",
+                            "designerId": "41d68b56-7f55-41c3-bbc9-ed2a3d413f57",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDAMPickerAddBtnClick1",
+                                        "implHandler": [
+                                            "if ((!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo')))&&(!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo').getValue()))) {\r",
+                                            "    var DAMType=Ext.getStore(\"MediaTypesFORDAMPicker\").findRecord(\"id\", Ext.getCmp('chooseMTInPickerCombo').getValue());\r",
+                                            "    var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                                            "    Ext.getCmp(\"DAMMainFileFieldBox\").up().remove(Ext.getCmp(\"DAMMainFileFieldBox\"));\r",
+                                            "    myEditor.typeId=DAMType.get(\"id\");\r",
+                                            "    myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
+                                            "    myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+\" \"+DAMType.get(\"type\"));\r",
+                                            "    myEditor.directContribute=true;\r",
+                                            "    myEditor.show();\r",
+                                            "    Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);\r",
+                                            "    Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);\r",
+                                            "    Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                                            "} else if (!Ext.isEmpty(Ext.getStore(\"MediaTypesFORDAMPicker\").getRange())){\r",
+                                            "    Ext.widget(\"DAMChooseMTWindow\").show();\r",
+                                            "    Ext.getCmp(\"DAMChooseMTWindow\").getComponent(0).getComponent(0).bindStore(Ext.getStore(\"MediaTypesFORDAMPicker\"));\r",
+                                            "    Ext.getCmp(\"addDamAfterTypeBtn\").nonClassic=true;\r",
+                                            "    Ext.getCmp(\"addDamAfterTypeBtn\").setHandler(function(){\r",
+                                            "        var form=Ext.getCmp(\"addDamAfterTypeBtn\").up();\r",
+                                            "        if (form.getForm().isValid()){\r",
+                                            "            var DAMType=Ext.getStore(\"MediaTypesFORDAMPicker\").findRecord(\"id\", form.getComponent(0).getValue());\r",
+                                            "            var myEditor = Ext.widget(\"DAMCreateUpdateWindow\");\r",
+                                            "            Ext.getCmp(\"DAMMainFileFieldBox\").up().remove(Ext.getCmp(\"DAMMainFileFieldBox\"));\r",
+                                            "            myEditor.typeId=DAMType.get(\"id\");\r",
+                                            "            myEditor.mainFileType=DAMType.get(\"mainFileType\");\r",
+                                            "            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+\" \"+DAMType.get(\"type\"));\r",
+                                            "            myEditor.directContribute=true;\r",
+                                            "            myEditor.show();\r",
+                                            "            Ext.getCmp(\"addDamAfterTypeBtn\").up().up().close();\r",
+                                            "            Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);\r",
+                                            "            Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);\r",
+                                            "            Ext.getCmp(\"DAMCreateUpdateWindow\").doLayout();\r",
+                                            "        }\r",
+                                            "\r",
+                                            "    });\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "} else {\r",
+                                            "    Ext.Msg.alert(\"Erreur\", \"Aucun type de média défini\");\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDAMPickerAddBtnClick1",
+                                    "designerId": "8c446e34-3104-4b51-8938-9f141ad3238c"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDAMPickerAddBtnRender1",
+                                        "implHandler": [
+                                            "if (typeof(Rubedo.view.DAMCreateUpdateWindow)==\"undefined\"){\r",
+                                            "    component.hide();\r",
+                                            "}"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDAMPickerAddBtnRender1",
+                                    "designerId": "b4986f7f-16c1-46f8-b6bb-1f5ecde515ad"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -914,6 +1020,9 @@
                     "    Ext.getCmp(\"selectESEntityBtn\").show();",
                     "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-dam';",
                     "    Ext.getStore(\"ESFacetteStore\").load();",
+                    "    Ext.getStore(\"MediaTypesFORDAMPicker\").load();",
+                    "    Ext.getStore('TaxonomyForDam2').load();",
+                    "    Ext.getCmp(\"DAMPickerAddBtn1\").show();",
                     "}",
                     ""
                 ],

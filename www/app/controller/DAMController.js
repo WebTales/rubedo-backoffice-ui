@@ -122,7 +122,8 @@ Ext.define('Rubedo.controller.DAMController', {
                 button.up().up().setLoading(false);
                 button.up().up().close();
                 if (Ext.getCmp("DAMCreateUpdateWindow").directContribute){
-                    Ext.getStore("DAMPickerStore").load();
+                    //Ext.getStore("DAMPickerStore").load();
+                    Ext.getStore("ESFacetteStore").load();
                 } else if (Ext.getCmp("DAMInterface").currentViewMode=="search"){
                     Ext.getStore("DAMFacetteStore").load();
                 } else {

@@ -236,6 +236,24 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                                             scope: me
                                         }
                                     }
+                                },
+                                {
+                                    xtype: 'button',
+                                    localiserId: 'addBtn',
+                                    hidden: true,
+                                    id: 'DAMPickerAddBtn1',
+                                    iconCls: 'add',
+                                    text: 'Ajouter',
+                                    listeners: {
+                                        click: {
+                                            fn: me.onDAMPickerAddBtnClick1,
+                                            scope: me
+                                        },
+                                        render: {
+                                            fn: me.onDAMPickerAddBtnRender1,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -356,6 +374,57 @@ Ext.define('Rubedo.view.searchResultsWindow', {
         Ext.getCmp("searchResultsWindow").close();
     },
 
+    onDAMPickerAddBtnClick1: function(button, e, eOpts) {
+        if ((!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo')))&&(!Ext.isEmpty(Ext.getCmp('chooseMTInPickerCombo').getValue()))) {
+            var DAMType=Ext.getStore("MediaTypesFORDAMPicker").findRecord("id", Ext.getCmp('chooseMTInPickerCombo').getValue());
+            var myEditor = Ext.widget("DAMCreateUpdateWindow");
+            Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
+            myEditor.typeId=DAMType.get("id");
+            myEditor.mainFileType=DAMType.get("mainFileType");
+            myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+" "+DAMType.get("type"));
+            myEditor.directContribute=true;
+            myEditor.show();
+            Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);
+            Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);
+            Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+        } else if (!Ext.isEmpty(Ext.getStore("MediaTypesFORDAMPicker").getRange())){
+            Ext.widget("DAMChooseMTWindow").show();
+            Ext.getCmp("DAMChooseMTWindow").getComponent(0).getComponent(0).bindStore(Ext.getStore("MediaTypesFORDAMPicker"));
+            Ext.getCmp("addDamAfterTypeBtn").nonClassic=true;
+            Ext.getCmp("addDamAfterTypeBtn").setHandler(function(){
+                var form=Ext.getCmp("addDamAfterTypeBtn").up();
+                if (form.getForm().isValid()){
+                    var DAMType=Ext.getStore("MediaTypesFORDAMPicker").findRecord("id", form.getComponent(0).getValue());
+                    var myEditor = Ext.widget("DAMCreateUpdateWindow");
+                    Ext.getCmp("DAMMainFileFieldBox").up().remove(Ext.getCmp("DAMMainFileFieldBox"));
+                    myEditor.typeId=DAMType.get("id");
+                    myEditor.mainFileType=DAMType.get("mainFileType");
+                    myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.newDamText+" "+DAMType.get("type"));
+                    myEditor.directContribute=true;
+                    myEditor.show();
+                    Ext.getCmp("addDamAfterTypeBtn").up().up().close();
+                    Rubedo.controller.DAMController.prototype.renderDAMTypeFields(DAMType, false);
+                    Rubedo.controller.DAMController.prototype.renderTaxoFields(DAMType,true);
+                    Ext.getCmp("DAMCreateUpdateWindow").doLayout();
+                }
+
+            });
+
+
+
+
+        } else {
+            Ext.Msg.alert("Erreur", "Aucun type de média défini");
+        }
+
+    },
+
+    onDAMPickerAddBtnRender1: function(component, eOpts) {
+        if (typeof(Rubedo.view.DAMCreateUpdateWindow)=="undefined"){
+            component.hide();
+        }
+    },
+
     onResultContentsGridSelectionChange: function(model, selected, eOpts) {
         if (Ext.isEmpty(selected)){
         	Ext.getCmp("selectESEntityBtn").disable();
@@ -471,6 +540,9 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getCmp("selectESEntityBtn").show();
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-dam';
             Ext.getStore("ESFacetteStore").load();
+            Ext.getStore("MediaTypesFORDAMPicker").load();
+            Ext.getStore('TaxonomyForDam2').load();
+            Ext.getCmp("DAMPickerAddBtn1").show();
         }
 
     }
