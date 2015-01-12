@@ -113,7 +113,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
 
         });
         //var task2 = new Ext.util.DelayedTask(function(){
-          //  component.fireEvent("change",component, component.getValue());
+        //  component.fireEvent("change",component, component.getValue());
         //});
         component.addListener("focus",function(){
             component.fireEvent("change",component, component.getValue());

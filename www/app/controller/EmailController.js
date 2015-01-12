@@ -279,7 +279,12 @@ Ext.define('Rubedo.controller.EmailController', {
                         success: function(response){
                             var text = Ext.JSON.decode(response.responseText);
                             if (text.success){
-                                Ext.Msg.alert("Success", "Mail sent");
+                                var message="Mail sent.";
+                                if (!Ext.isEmpty(text.badEmails)){
+                                    message="Mail sent to all recipients except to the following invalid email addresses : ";
+                                    message=message+text.badEmails.join(", ");
+                                }
+                                Ext.Msg.alert("Success", message);
                                 button.setLoading(false);
                                 button.up().up().close();
                             } else {
@@ -292,7 +297,7 @@ Ext.define('Rubedo.controller.EmailController', {
                 }
             }
 
-            );
+                           );
 
 
 
