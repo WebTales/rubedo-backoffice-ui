@@ -124,7 +124,7 @@
         "openWindow": "",
         "description": "#ext-gen1061#",
         "config": {
-            "name": "couleur",
+            "name": "color",
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
             "localizable": false,
@@ -660,7 +660,7 @@
         "openWindow": "",
         "description": "#ext-gen1102#",
         "config": {
-            "name": "lienSurPage",
+            "name": "pageLink",
             "fieldLabel": "#ext-gen1053#",
             "displayField": "text",
             "localizable": false,
@@ -791,7 +791,7 @@
         "openWindow": "",
         "description": "#ext-gen1113#",
         "config": {
-            "name": "listeDeChoix",
+            "name": "listBox",
             "queryMode": "local",
             "displayField": "nom",
             "valueField": "valeur",
@@ -1231,7 +1231,7 @@
         "openWindow": "",
         "description": "#ext-gen1151#",
         "config": {
-            "name": "temps",
+            "name": "time",
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
             "localizable": false,
@@ -1565,7 +1565,7 @@
         "openWindow": "",
         "description": "#ext-gen1178#",
         "config": {
-            "name": "mediaExterne",
+            "name": "externalMedia",
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
             "localizable": false,
@@ -1637,7 +1637,7 @@
         "openWindow": "",
         "description": "#ext-gen1189#",
         "config": {
-            "name": "nombre",
+            "name": "number",
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
             "searchable": false,
@@ -1944,7 +1944,7 @@
         "openWindow": "",
         "description": "#ext-gen1217#",
         "config": {
-            "name": "evaluation",
+            "name": "rating",
             "fieldLabel": "#ext-gen1053#",
             "searchable": false,
             "notAnalyzed":false,
@@ -2083,7 +2083,7 @@
         "openWindow": "",
         "description": "#ext-gen1231#",
         "config": {
-            "name": "texte",
+            "name": "text",
             "fieldLabel": "#ext-gen1053#",
             "maxLength": 255,
             "minLength": 0,
@@ -2284,7 +2284,7 @@
         "openWindow": "",
         "description": "#ext-gen1247#",
         "config": {
-            "name": "texteRiche",
+            "name": "richText",
             "fieldLabel": "#ext-gen1053#",
             "maxLength": 6000,
             "minLength": 0,
@@ -2463,7 +2463,7 @@
         "openWindow": "",
         "description": "#ext-gen1261#",
         "config": {
-            "name": "zoneDeTexte",
+            "name": "textArea",
             "fieldLabel": "#ext-gen1053#",
             "maxLength": 6000,
             "minLength": 0,
