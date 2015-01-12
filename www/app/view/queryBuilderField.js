@@ -112,11 +112,14 @@ Ext.define('Rubedo.view.queryBuilderField', {
             }
 
         });
-        var task2 = new Ext.util.DelayedTask(function(){
+        //var task2 = new Ext.util.DelayedTask(function(){
+          //  component.fireEvent("change",component, component.getValue());
+        //});
+        component.addListener("focus",function(){
             component.fireEvent("change",component, component.getValue());
-        });
+        },this,{single:true});
         component.up().add(companion);
-        task2.delay(1600);
+        //task2.delay(1600);
     }
 
 });
