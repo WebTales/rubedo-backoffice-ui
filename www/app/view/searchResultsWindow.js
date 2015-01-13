@@ -36,7 +36,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
     localiserId: 'searchResultsWindow',
     height: 492,
     id: 'searchResultsWindow',
-    width: 936,
+    width: 880,
     constrainHeader: true,
     iconCls: 'search',
     title: 'Résultats de recherche',
@@ -174,7 +174,7 @@ Ext.define('Rubedo.view.searchResultsWindow', {
                             localiserId: 'titleCol',
                             dataIndex: 'text',
                             text: 'Titre',
-                            flex: 2
+                            flex: 1.6
                         },
                         {
                             xtype: 'gridcolumn',

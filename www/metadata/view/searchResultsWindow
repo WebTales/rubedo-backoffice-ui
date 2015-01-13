@@ -16,7 +16,7 @@
         "layout": "hbox",
         "localiserId": "searchResultsWindow",
         "title": "Résultats de recherche",
-        "width": 936
+        "width": 880
     },
     "configAlternates": {
         "advancedESQMode": "boolean"
@@ -412,7 +412,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "text",
-                        "flex": 2,
+                        "flex": 1.6,
                         "localiserId": "titleCol",
                         "text": "Titre"
                     },

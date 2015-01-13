@@ -122,7 +122,7 @@ Ext.define('ContentContributor.controller.MainController', {
     },
 
     onFieldBeforeRender: function(component, eOpts) {
-        if (component.localiserId){
+        if (component.localiserId&&Rubedo.RubedoInterfaceLoc){
             var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
             if (!Ext.isEmpty(configs)) {
                 Ext.apply(component, configs);
@@ -144,7 +144,7 @@ Ext.define('ContentContributor.controller.MainController', {
     },
 
     onFieldAdded: function(component, container, pos, eOpts) {
-        if (component.localiserId){
+        if (component.localiserId&&Rubedo.RubedoInterfaceLoc){
             var configs = Rubedo.RubedoInterfaceLoc[component.localiserId];
             if (!Ext.isEmpty(configs)) {
                 Ext.apply(component, configs);
@@ -491,11 +491,14 @@ Ext.define('ContentContributor.controller.MainController', {
         Ext.create("Rubedo.store.MediaTypesFORDAMPicker");
         Ext.create("Rubedo.store.DAMPickerStore");
         Ext.create("Rubedo.store.TaxonomyForDam2");
+        Ext.create("Rubedo.store.ESFacetteStore");
         Ext.require("Rubedo.view.DAMMainView");
         Ext.require("Rubedo.view.ImagePickerField");
         Ext.require("Rubedo.view.ImageFieldComponent");
         Ext.require("Rubedo.view.ImagePickerWindow");
         Ext.require("Rubedo.controller.LocalisationController");
+        Ext.require("Rubedo.controller.SearchController");
+        Ext.require("Rubedo.view.searchResultsWindow");
         Ext.create("Rubedo.store.CurrentUserDataStore");
         Ext.create("Rubedo.store.AllLanguagesStore3");
         Ext.define('AppGlobals', {singleton: true});
@@ -600,7 +603,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             Ext.getStore("Contents").load();
                         }
                     });
-                    task.delay(700);
+                    task.delay(900);
     },
 
     onLaunch: function() {
@@ -610,7 +613,7 @@ Ext.define('ContentContributor.controller.MainController', {
             } catch (err){}
                 Ext.getStore("CurrentUserDataStore").load();
             });
-            task.delay(400);
+            task.delay(600);
     }
 
 });
