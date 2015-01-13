@@ -51,9 +51,7 @@ Ext.define('ContentContributor.controller.MainController', {
                     });
                 }
                 Ext.getStore("Contents").addListener("write", function(){
-                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.notifUpdate, function(){
-                        window.parent.destroyModal("add-content-window");
-                    });
+                        window.parent.confirmContentContribution();
                 },this, {single:true});
                     currentContent.beginEdit();
                     currentContent.set("taxonomy",taxoRes);
@@ -101,9 +99,7 @@ Ext.define('ContentContributor.controller.MainController', {
                             qArray.push(newContent.get("id"));
                             queryRecord.set("query", qArray);
                         }
-                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.notifCreate, function(){
-                            window.parent.destroyModal("add-content-window");
-                        });
+                        window.parent.confirmContentContribution();
                     },this, {single:true});
 
 
@@ -218,7 +214,7 @@ Ext.define('ContentContributor.controller.MainController', {
             Ext.getCmp("MainForm").setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+" "+contentType.type);
         }
 
-        window.parent.jQuery("#contentModal").modal("loading");
+        //window.parent.jQuery("#contentModal").modal("loading");
     },
 
     renderMainFields: function(fields) {

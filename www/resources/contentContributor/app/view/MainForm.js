@@ -57,7 +57,7 @@ Ext.define('ContentContributor.view.MainForm', {
                         {
                             xtype: 'button',
                             handler: function(button, event) {
-                                window.parent.destroyModal("add-content-window");
+                                window.parent.cancelContentContribution();
                             },
                             localiserId: 'cancelBtn',
                             icon: 'resources/icones/blue/24x24/remove.png',
