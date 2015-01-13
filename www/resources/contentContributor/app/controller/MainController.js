@@ -99,7 +99,10 @@ Ext.define('ContentContributor.controller.MainController', {
                             qArray.push(newContent.get("id"));
                             queryRecord.set("query", qArray);
                         }
-                        window.parent.confirmContentContribution();
+                        var task5689 = new Ext.util.DelayedTask(function(){
+                            window.parent.confirmContentContribution();
+                        });
+                        task5689.delay(600);
                     },this, {single:true});
 
 
