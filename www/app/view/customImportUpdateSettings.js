@@ -52,6 +52,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'detectedFieldsCol',
                             dataIndex: 'name',
                             text: 'Detected fields'
                         }
@@ -63,6 +64,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                 {
                     xtype: 'form',
                     flex: 3,
+                    localiserId: 'fieldMappingsPannel',
                     id: 'fieldMappingTargetForm',
                     autoScroll: true,
                     bodyPadding: 10,
@@ -71,6 +73,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'contentTypeField',
                             id: 'importCtSelector',
                             fieldLabel: 'Content type',
                             name: 'contentTypeId',
@@ -85,6 +88,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'uniqueKeyIndexField',
                             fieldLabel: 'Unique key index',
                             name: 'uniqueKeyIndex',
                             allowBlank: false,
@@ -99,6 +103,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'uniqueKeyField',
                             fieldLabel: 'Unique key field',
                             name: 'uniqueKeyField',
                             allowBlank: false,
@@ -125,11 +130,13 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'contentFieldIndexesFieldset',
                             id: 'importCTFFieldset',
                             title: 'Content fields indexes'
                         },
                         {
                             xtype: 'fieldset',
+                            localiserId: 'importTaxoFieldset',
                             hidden: true,
                             id: 'importTaxoFieldset',
                             title: 'Taxonomy fields indexes'
@@ -145,6 +152,7 @@ Ext.define('Rubedo.view.customImportUpdateSettings', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'launchUpdateBtn',
                                     id: 'launchUpdateImportBtn',
                                     text: 'Launch update'
                                 }

@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
         'Ext.button.Button'
     ],
 
+    localiserId: 'importChoiceWindow',
     id: 'ImportChoiceWindow',
     width: 300,
     layout: 'fit',
@@ -43,6 +44,7 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
                         me.processWhatToImport({
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'whatToImportCombo',
                             fieldLabel: 'What to import',
                             name: 'whatToImport',
                             value: 'contents',
@@ -62,9 +64,10 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
                                 ]
                             ]
                         }),
-                        {
+                        me.processHowToImport({
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'howToImportCombo',
                             fieldLabel: 'How to import',
                             name: 'howToImport',
                             value: 'create',
@@ -83,10 +86,11 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
                                     'Update'
                                 ]
                             ]
-                        },
+                        }),
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'importUsingTheseOptionsBtn',
                             id: 'importChoiceSubmitBtn',
                             text: 'Import using these options'
                         }
@@ -103,23 +107,37 @@ Ext.define('Rubedo.view.ImportChoiceWindow', {
             config.store=[
                                         [
                                             'contents',
-                                            'Contents'
+                                            Rubedo.RubedoAutomatedElementsLoc.contentsText
                                         ],
                                         [
                                             'products',
-                                            'Products'
+                                            Rubedo.RubedoAutomatedElementsLoc.productsText
                                         ]
                                     ];
         } else {
             config.store=[
                                         [
                                             'contents',
-                                            'Contents'
+                                            Rubedo.RubedoAutomatedElementsLoc.contentsText
                                         ]
                                     ];
             config.value='contents';
             config.hidden=true;
         }
+        return config;
+    },
+
+    processHowToImport: function(config) {
+        config.store=[
+                                        [
+                                            'create',
+                                            Rubedo.RubedoAutomatedElementsLoc.creationText
+                                        ],
+                                        [
+                                            'update',
+                                            Rubedo.RubedoAutomatedElementsLoc.updateText
+                                        ]
+                                    ];
         return config;
     }
 

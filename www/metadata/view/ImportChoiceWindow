@@ -12,11 +12,19 @@
         "iconCls": "database_up_small",
         "id": "ImportChoiceWindow",
         "layout": "fit",
+        "localiserId": "importChoiceWindow",
         "modal": true,
         "title": "Choose import options",
         "width": 300
     },
     "designerId": "073dd00f-3118-42ef-9a98-3e9bde233947",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -46,6 +54,7 @@
                         "fieldLabel": "What to import",
                         "forceSelection": true,
                         "layout|anchor": "100%",
+                        "localiserId": "whatToImportCombo",
                         "name": "whatToImport",
                         "queryMode": "local",
                         "store": [
@@ -59,6 +68,13 @@
                         "value": "string"
                     },
                     "designerId": "611fbe91-5d66-4497-b49a-d35ad338d05c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "processcfgfunction",
@@ -77,18 +93,18 @@
                                     "    config.store=[",
                                     "                                [",
                                     "                                    'contents',",
-                                    "                                    'Contents'",
+                                    "                                    Rubedo.RubedoAutomatedElementsLoc.contentsText",
                                     "                                ],",
                                     "                                [",
                                     "                                    'products',",
-                                    "                                    'Products'",
+                                    "                                    Rubedo.RubedoAutomatedElementsLoc.productsText",
                                     "                                ]",
                                     "                            ];",
                                     "} else {",
                                     "    config.store=[",
                                     "                                [",
                                     "                                    'contents',",
-                                    "                                    'Contents'",
+                                    "                                    Rubedo.RubedoAutomatedElementsLoc.contentsText",
                                     "                                ]",
                                     "                            ];",
                                     "    config.value='contents';",
@@ -116,6 +132,7 @@
                         "fieldLabel": "How to import",
                         "forceSelection": true,
                         "layout|anchor": "100%",
+                        "localiserId": "howToImportCombo",
                         "name": "howToImport",
                         "queryMode": "local",
                         "store": [
@@ -128,7 +145,45 @@
                         "store": "array",
                         "value": "string"
                     },
-                    "designerId": "2427c585-4314-4024-b0f6-8e8b9281c543"
+                    "designerId": "2427c585-4314-4024-b0f6-8e8b9281c543",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processHowToImport",
+                                "implHandler": [
+                                    "config.store=[",
+                                    "                                [",
+                                    "                                    'create',",
+                                    "                                    Rubedo.RubedoAutomatedElementsLoc.creationText",
+                                    "                                ],",
+                                    "                                [",
+                                    "                                    'update',",
+                                    "                                    Rubedo.RubedoAutomatedElementsLoc.updateText",
+                                    "                                ]",
+                                    "                            ];",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processHowToImport",
+                            "designerId": "7eb15775-7120-4d7f-836d-5740529cc1ce"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -140,10 +195,18 @@
                     "userConfig": {
                         "id": "importChoiceSubmitBtn",
                         "layout|anchor": "100%",
+                        "localiserId": "importUsingTheseOptionsBtn",
                         "text": "Import using these options"
                     },
                     "name": "MyButton",
-                    "designerId": "5071b8be-8dce-4b0e-9e52-d21bf0bce786"
+                    "designerId": "5071b8be-8dce-4b0e-9e52-d21bf0bce786",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

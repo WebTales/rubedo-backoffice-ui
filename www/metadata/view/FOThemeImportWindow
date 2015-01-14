@@ -12,12 +12,20 @@
         "height": null,
         "iconCls": "database_up_small",
         "id": "FOThemeImportWindow",
+        "localiserId": "thmeImportWindow",
         "modal": true,
         "title": "Theme import",
         "width": 400
     },
     "name": "MyWindow",
     "designerId": "7e3b4bc8-704b-4ec1-999c-99da0fd6bad3",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -45,10 +53,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Name",
                         "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "name": "name"
                     },
                     "name": "MyTextField",
-                    "designerId": "61d2d1a9-d7eb-4bc6-b302-e12372ccb071"
+                    "designerId": "61d2d1a9-d7eb-4bc6-b302-e12372ccb071",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.File",
@@ -62,10 +78,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Zip archive",
                         "layout|anchor": "100%",
+                        "localiserId": "zipArchiveField",
                         "name": "archive"
                     },
                     "name": "MyFileUpload",
-                    "designerId": "5bfc50e7-c792-4ae6-a9f3-7d0ba4b90086"
+                    "designerId": "5bfc50e7-c792-4ae6-a9f3-7d0ba4b90086",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -77,10 +101,18 @@
                     "userConfig": {
                         "id": "FOThemeZipSubmitBtn",
                         "layout|anchor": "100%",
+                        "localiserId": "themeImportSubmitBtn",
                         "text": "Import"
                     },
                     "name": "MyButton1",
-                    "designerId": "7c3c9aa3-4e47-4c7a-9236-cf2116dcac7c"
+                    "designerId": "7c3c9aa3-4e47-4c7a-9236-cf2116dcac7c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

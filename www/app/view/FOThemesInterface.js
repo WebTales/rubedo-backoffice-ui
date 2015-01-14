@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
         'Ext.selection.RowModel'
     ],
 
+    localiserId: 'foThemesInterface',
     height: 533,
     id: 'FOThemesInterface',
     width: 852,
@@ -68,6 +69,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                     items: [
                         {
                             xtype: 'button',
+                            localiserId: 'importThemeBtn',
                             id: 'foThemeImportBtn',
                             iconAlign: 'top',
                             iconCls: 'database_up_big',
@@ -76,6 +78,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'manageFodersBtnGroup',
                             disabled: true,
                             id: 'themeFolderBtnGroup',
                             headerPosition: 'bottom',
@@ -84,6 +87,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'addChildBtn',
                                     id: 'themeFolderAddChildBtn',
                                     iconAlign: 'top',
                                     iconCls: 'folder_add_big',
@@ -92,6 +96,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'removeChildBtn',
                                     id: 'themeFolderRemoveBtn',
                                     iconAlign: 'top',
                                     iconCls: 'folder_remove_big',
@@ -108,6 +113,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'manageFilesBtnGroup',
                             disabled: true,
                             id: 'themeFileBtnGroup',
                             headerPosition: 'bottom',
@@ -116,6 +122,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    localiserId: 'downloadFileBtn',
                                     id: 'themeFileDownloadBtn',
                                     iconAlign: 'top',
                                     iconCls: 'database_down_big',
@@ -124,6 +131,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'replaceFileBtn',
                                     id: 'themeFileUploadBtn',
                                     iconAlign: 'top',
                                     iconCls: 'database_up_big',
@@ -132,6 +140,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    localiserId: 'deleteFileBtn',
                                     id: 'themeFileDeleteBtn',
                                     iconAlign: 'top',
                                     iconCls: 'remove_big',
@@ -234,14 +243,16 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                 me.processThemeFileManagerGrid({
                     xtype: 'gridpanel',
                     flex: 1,
+                    localiserId: 'themeFilesGrid',
                     id: 'themeFileManagerGrid',
                     title: 'Files',
                     store: 'DAMFolderViewStore1',
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            localiserId: 'titleCol',
                             dataIndex: 'text',
-                            text: 'Text',
+                            text: 'Title',
                             flex: 2,
                             editor: {
                                 xtype: 'textfield',
@@ -254,12 +265,14 @@ Ext.define('Rubedo.view.FOThemesInterface', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return(Ext.util.Format.fileSize(value));
                             },
+                            localiserId: 'fileSizeCol',
                             dataIndex: 'fileSize',
                             text: 'File size',
                             flex: 1
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'lastUpdateCol',
                             dataIndex: 'lastUpdateTime',
                             text: 'Last update',
                             flex: 1

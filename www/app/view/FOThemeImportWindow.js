@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.FOThemeImportWindow', {
         'Ext.button.Button'
     ],
 
+    localiserId: 'thmeImportWindow',
     id: 'FOThemeImportWindow',
     width: 400,
     constrain: true,
@@ -43,6 +44,7 @@ Ext.define('Rubedo.view.FOThemeImportWindow', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'nameField',
                             fieldLabel: 'Name',
                             name: 'name',
                             allowBlank: false,
@@ -51,6 +53,7 @@ Ext.define('Rubedo.view.FOThemeImportWindow', {
                         {
                             xtype: 'filefield',
                             anchor: '100%',
+                            localiserId: 'zipArchiveField',
                             fieldLabel: 'Zip archive',
                             name: 'archive',
                             allowBlank: false,
@@ -59,6 +62,7 @@ Ext.define('Rubedo.view.FOThemeImportWindow', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'themeImportSubmitBtn',
                             id: 'FOThemeZipSubmitBtn',
                             text: 'Import'
                         }

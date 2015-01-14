@@ -14,7 +14,7 @@
         "iconCls": "media-icon",
         "id": "FOThemesInterface",
         "layout": "hbox",
-        "localiserId": null,
+        "localiserId": "foThemesInterface",
         "title": "Themes",
         "width": 852
     },
@@ -52,7 +52,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool171",
+            "name": "mytool172",
             "designerId": "c13dbd7f-90cb-4a59-bc33-23eb467cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -82,11 +82,19 @@
                         "iconCls": "database_up_big",
                         "id": "foThemeImportBtn",
                         "layout|flex": null,
+                        "localiserId": "importThemeBtn",
                         "scale": "large",
                         "text": "Import theme"
                     },
                     "name": "MyButton",
-                    "designerId": "c5058c27-4784-465d-8df2-cfb969a597f8"
+                    "designerId": "c5058c27-4784-465d-8df2-cfb969a597f8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.container.ButtonGroup",
@@ -101,10 +109,18 @@
                         "headerPosition": "bottom",
                         "id": "themeFolderBtnGroup",
                         "layout|flex": null,
+                        "localiserId": "manageFodersBtnGroup",
                         "title": "Manage folders"
                     },
                     "name": "MyButtonGroup1",
                     "designerId": "94b5ebe0-e21f-44f7-8881-2d422d0ca8ca",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -117,11 +133,19 @@
                                 "iconAlign": "top",
                                 "iconCls": "folder_add_big",
                                 "id": "themeFolderAddChildBtn",
+                                "localiserId": "addChildBtn",
                                 "scale": "large",
                                 "text": "Add child"
                             },
                             "name": "MyButton4",
-                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31"
+                            "designerId": "12712951-5020-4daf-8812-2f8d1fb27d31",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -134,11 +158,19 @@
                                 "iconAlign": "top",
                                 "iconCls": "folder_remove_big",
                                 "id": "themeFolderRemoveBtn",
+                                "localiserId": "removeChildBtn",
                                 "scale": "large",
                                 "text": "Remove"
                             },
                             "name": "MyButton5",
                             "designerId": "4b62f048-6d3d-46f6-b4dd-454d9886ccdb",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",
@@ -204,10 +236,18 @@
                         "headerPosition": "bottom",
                         "id": "themeFileBtnGroup",
                         "layout|flex": null,
+                        "localiserId": "manageFilesBtnGroup",
                         "title": "Manage files"
                     },
                     "name": "MyButtonGroup",
                     "designerId": "3556dde8-eab3-4f16-ada5-23275b2f6b81",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.button.Button",
@@ -220,11 +260,19 @@
                                 "iconAlign": "top",
                                 "iconCls": "database_down_big",
                                 "id": "themeFileDownloadBtn",
+                                "localiserId": "downloadFileBtn",
                                 "scale": "large",
                                 "text": "Download"
                             },
                             "name": "MyButton3",
-                            "designerId": "7f7fe278-e278-4a91-b113-38d6d03989f1"
+                            "designerId": "7f7fe278-e278-4a91-b113-38d6d03989f1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -237,11 +285,19 @@
                                 "iconAlign": "top",
                                 "iconCls": "database_up_big",
                                 "id": "themeFileUploadBtn",
+                                "localiserId": "replaceFileBtn",
                                 "scale": "large",
                                 "text": "Replace"
                             },
                             "name": "MyButton2",
-                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0"
+                            "designerId": "61fba4eb-51b1-45db-b717-3e8bb77f22f0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -254,11 +310,19 @@
                                 "iconAlign": "top",
                                 "iconCls": "remove_big",
                                 "id": "themeFileDeleteBtn",
+                                "localiserId": "deleteFileBtn",
                                 "scale": "large",
                                 "text": "Delete"
                             },
                             "name": "MyButton1",
-                            "designerId": "e1ff0da5-153d-49c6-ba92-dcd44f35b064"
+                            "designerId": "e1ff0da5-153d-49c6-ba92-dcd44f35b064",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -610,11 +674,19 @@
                 "forceFit": null,
                 "id": "themeFileManagerGrid",
                 "layout|flex": 1,
+                "localiserId": "themeFilesGrid",
                 "store": "DAMFolderViewStore1",
                 "title": "Files"
             },
             "name": "MyGridPanel",
             "designerId": "e515dae8-920e-44df-ba29-d4e88e85f4e3",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.grid.View",
@@ -636,10 +708,18 @@
                     "userConfig": {
                         "dataIndex": "text",
                         "flex": 2,
-                        "text": "Text"
+                        "localiserId": "titleCol",
+                        "text": "Title"
                     },
                     "name": "MyColumn1",
                     "designerId": "37f333e1-e63c-4bae-ad32-7ca63960b3b8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.Text",
@@ -667,10 +747,18 @@
                     "userConfig": {
                         "dataIndex": "fileSize",
                         "flex": 1,
+                        "localiserId": "fileSizeCol",
                         "text": "File size"
                     },
                     "name": "MyColumn11",
                     "designerId": "feae8e9f-985e-4df2-97fb-78ccc950ef61",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -709,10 +797,18 @@
                     "userConfig": {
                         "dataIndex": "lastUpdateTime",
                         "flex": 1,
+                        "localiserId": "lastUpdateCol",
                         "text": "Last update"
                     },
                     "name": "MyDateColumn2",
-                    "designerId": "59a35950-584c-4902-9f66-8440bbe8c060"
+                    "designerId": "59a35950-584c-4902-9f66-8440bbe8c060",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "processcfgfunction",

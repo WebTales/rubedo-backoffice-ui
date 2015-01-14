@@ -380,7 +380,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "mailText":"Mail",
                     "displayLabelText":"Display label",
                     "productTypeText":"ProductType",
-                    "configurableText":"Configurable"
+                    "configurableText":"Configurable",
+                    "productsText":"Products",
+                    "updateText":"Update"
                 });
 
         this.control({
