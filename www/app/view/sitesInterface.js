@@ -186,6 +186,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                     items: [
                         {
                             xtype: 'panel',
+                            localiserId: 'settingsTab',
                             layout: 'card',
                             title: 'Settings',
                             items: [
@@ -536,6 +537,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                         },
                         {
                             xtype: 'panel',
+                            localiserId: 'resourcesTab',
                             title: 'Resources',
                             layout: {
                                 type: 'vbox',
@@ -553,6 +555,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            localiserId: 'exteranlStylesPanel',
                                             id: 'siteExternalStylesGrid',
                                             title: 'External styles',
                                             forceFit: true,
@@ -560,6 +563,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'urlCol',
                                                     dataIndex: 'url',
                                                     text: 'Url',
                                                     editor: {
@@ -582,6 +586,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                                 insertorWindow.targetStore=Ext.getStore("SiteExternalStyles");
                                                                 insertorWindow.show();
                                                             },
+                                                            localiserId: 'addBtn',
                                                             iconCls: 'add',
                                                             text: 'Add'
                                                         },
@@ -590,6 +595,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             handler: function(button, e) {
                                                                 button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
                                                             },
+                                                            localiserId: 'removeBtn',
                                                             disabled: true,
                                                             iconCls: 'close',
                                                             text: 'Remove'
@@ -612,6 +618,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            localiserId: 'externalScriptsPanel',
                                             id: 'siteExternalScriptsGrid',
                                             title: 'External scripts',
                                             forceFit: true,
@@ -619,6 +626,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'urlCol',
                                                     dataIndex: 'url',
                                                     text: 'Url',
                                                     editor: {
@@ -647,6 +655,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                                 insertorWindow.targetStore=Ext.getStore("SiteExternalScripts");
                                                                 insertorWindow.show();
                                                             },
+                                                            localiserId: 'addBtn',
                                                             iconCls: 'add',
                                                             text: 'Add'
                                                         },
@@ -655,6 +664,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             handler: function(button, e) {
                                                                 button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
                                                             },
+                                                            localiserId: 'removeBtn',
                                                             disabled: true,
                                                             iconCls: 'close',
                                                             text: 'Remove'
@@ -681,6 +691,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            localiserId: 'internalStylesGrid',
                                             id: 'siteInternalStylesGrid',
                                             title: 'Internal styles',
                                             forceFit: true,
@@ -688,6 +699,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'nameCol',
                                                     dataIndex: 'name',
                                                     text: 'Name',
                                                     editor: {
@@ -709,6 +721,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                                 insertorWindow.targetStore=Ext.getStore("SiteInternalStyles");
                                                                 insertorWindow.show();
                                                             },
+                                                            localiserId: 'addBtn',
                                                             iconCls: 'add',
                                                             text: 'Add'
                                                         },
@@ -722,6 +735,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                                 editor.cssMode=true;
                                                                 editor.show();
                                                             },
+                                                            localiserId: 'editCodeBtn',
                                                             disabled: true,
                                                             iconCls: 'edit',
                                                             text: 'Edit code'
@@ -731,6 +745,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             handler: function(button, e) {
                                                                 button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
                                                             },
+                                                            localiserId: 'removeBtn',
                                                             disabled: true,
                                                             iconCls: 'close',
                                                             text: 'Remove'
@@ -753,6 +768,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                         {
                                             xtype: 'gridpanel',
                                             flex: 1,
+                                            localiserId: 'internalScriptsGrid',
                                             id: 'siteInternalScriptsGrid',
                                             title: 'Internal scripts',
                                             forceFit: true,
@@ -760,6 +776,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    localiserId: 'nameCol',
                                                     dataIndex: 'name',
                                                     text: 'Name',
                                                     editor: {
@@ -787,6 +804,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                                 insertorWindow.targetStore=Ext.getStore("SiteInternalScripts");
                                                                 insertorWindow.show();
                                                             },
+                                                            localiserId: 'addBtn',
                                                             iconCls: 'add',
                                                             text: 'Add'
                                                         },
@@ -800,6 +818,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                                 editor.jsMode=true;
                                                                 editor.show();
                                                             },
+                                                            localiserId: 'editCodeBtn',
                                                             disabled: true,
                                                             iconCls: 'edit',
                                                             text: 'Edit code'
@@ -809,6 +828,7 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                             handler: function(button, e) {
                                                                 button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
                                                             },
+                                                            localiserId: 'removeBtn',
                                                             disabled: true,
                                                             iconCls: 'close',
                                                             text: 'Remove'

@@ -339,10 +339,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout": "card",
+                        "localiserId": "settingsTab",
                         "title": "Settings"
                     },
                     "name": "MyPanel62",
                     "designerId": "78a8f05d-48f3-40b0-a72e-ca663b79d8a7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.Panel",
@@ -1401,10 +1409,18 @@
                     "userConfig": {
                         "container|align": "stretch",
                         "layout": "vbox",
+                        "localiserId": "resourcesTab",
                         "title": "Resources"
                     },
                     "name": "MyPanel",
                     "designerId": "e188afd7-1c66-4bd6-9f2d-5dd30d658930",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1442,11 +1458,19 @@
                                         "forceFit": true,
                                         "id": "siteExternalStylesGrid",
                                         "layout|flex": 1,
+                                        "localiserId": "exteranlStylesPanel",
                                         "store": "SiteExternalStyles",
                                         "title": "External styles"
                                     },
                                     "name": "MyGridPanel",
                                     "designerId": "2ff51a07-1488-43bd-b7c2-d1b2d1be811f",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "Ext.grid.View",
@@ -1468,10 +1492,18 @@
                                             "userConfig": {
                                                 "dataIndex": "url",
                                                 "id": null,
+                                                "localiserId": "urlCol",
                                                 "text": "Url"
                                             },
                                             "name": "MyColumn4",
                                             "designerId": "e3a09929-155b-4575-839c-7fdb78f5a926",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -1513,10 +1545,18 @@
                                                     "userConfig": {
                                                         "iconCls": "add",
                                                         "layout|flex": null,
+                                                        "localiserId": "addBtn",
                                                         "text": "Add"
                                                     },
                                                     "name": "MyButton",
                                                     "designerId": "ad02abac-ff7c-4bfe-befd-78f1e9d87a92",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -1553,10 +1593,18 @@
                                                         "disabled": true,
                                                         "iconCls": "close",
                                                         "layout|flex": null,
+                                                        "localiserId": "removeBtn",
                                                         "text": "Remove"
                                                     },
                                                     "name": "MyButton1",
                                                     "designerId": "c2d0d0b5-8a0a-4bc8-9362-83fe7775b1b6",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -1628,11 +1676,19 @@
                                         "forceFit": true,
                                         "id": "siteExternalScriptsGrid",
                                         "layout|flex": 1,
+                                        "localiserId": "externalScriptsPanel",
                                         "store": "SiteExternalScripts",
                                         "title": "External scripts"
                                     },
                                     "name": "MyGridPanel1",
                                     "designerId": "879d6de0-5124-4f77-98b8-07919c5ab4d2",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "Ext.grid.View",
@@ -1653,10 +1709,18 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "url",
+                                                "localiserId": "urlCol",
                                                 "text": "Url"
                                             },
                                             "name": "MyColumn",
                                             "designerId": "b034b37c-99c2-48bb-93e5-848ee14cb2d9",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -1721,10 +1785,18 @@
                                                     "userConfig": {
                                                         "iconCls": "add",
                                                         "layout|flex": null,
+                                                        "localiserId": "addBtn",
                                                         "text": "Add"
                                                     },
                                                     "name": "MyButton",
                                                     "designerId": "aa975daa-d03a-4f5c-ba70-d66ae9b960bb",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -1761,10 +1833,18 @@
                                                         "disabled": true,
                                                         "iconCls": "close",
                                                         "layout|flex": null,
+                                                        "localiserId": "removeBtn",
                                                         "text": "Remove"
                                                     },
                                                     "name": "MyButton1",
                                                     "designerId": "1aeb0623-91c0-414a-a498-1bc2501f7b10",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -1830,11 +1910,19 @@
                                         "forceFit": true,
                                         "id": "siteInternalStylesGrid",
                                         "layout|flex": 1,
+                                        "localiserId": "internalStylesGrid",
                                         "store": "SiteInternalStyles",
                                         "title": "Internal styles"
                                     },
                                     "name": "MyGridPanel2",
                                     "designerId": "679d9139-e58c-4a75-b901-0346350daac7",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "Ext.grid.View",
@@ -1855,10 +1943,18 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "name",
+                                                "localiserId": "nameCol",
                                                 "text": "Name"
                                             },
                                             "name": "MyColumn3",
                                             "designerId": "39227240-286d-4760-ac5e-828d1db95036",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -1899,10 +1995,18 @@
                                                     "userConfig": {
                                                         "iconCls": "add",
                                                         "layout|flex": null,
+                                                        "localiserId": "addBtn",
                                                         "text": "Add"
                                                     },
                                                     "name": "MyButton",
                                                     "designerId": "87b201fb-eb81-4ea5-8c7a-fb515b62e36f",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -1939,10 +2043,18 @@
                                                         "disabled": true,
                                                         "iconCls": "edit",
                                                         "layout|flex": null,
+                                                        "localiserId": "editCodeBtn",
                                                         "text": "Edit code"
                                                     },
                                                     "name": "MyButton3",
                                                     "designerId": "282d620f-3993-4e38-9d85-0f99b085ae3e",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -1982,10 +2094,18 @@
                                                         "disabled": true,
                                                         "iconCls": "close",
                                                         "layout|flex": null,
+                                                        "localiserId": "removeBtn",
                                                         "text": "Remove"
                                                     },
                                                     "name": "MyButton1",
                                                     "designerId": "18520e6c-3e0e-4269-92aa-bbf510e6a48d",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -2060,11 +2180,19 @@
                                         "forceFit": true,
                                         "id": "siteInternalScriptsGrid",
                                         "layout|flex": 1,
+                                        "localiserId": "internalScriptsGrid",
                                         "store": "SiteInternalScripts",
                                         "title": "Internal scripts"
                                     },
                                     "name": "MyGridPanel4",
                                     "designerId": "00b03c86-3f45-409d-9e6e-1b3bcbc84490",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "Ext.grid.View",
@@ -2085,10 +2213,18 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "name",
+                                                "localiserId": "nameCol",
                                                 "text": "Name"
                                             },
                                             "name": "MyColumn1",
                                             "designerId": "f30c545d-d199-4ded-b62a-c2948c9895cf",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -2155,10 +2291,18 @@
                                                     "userConfig": {
                                                         "iconCls": "add",
                                                         "layout|flex": null,
+                                                        "localiserId": "addBtn",
                                                         "text": "Add"
                                                     },
                                                     "name": "MyButton",
                                                     "designerId": "8dbbe281-71c6-4bec-bdd9-ab00d8411e58",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -2195,10 +2339,18 @@
                                                         "disabled": true,
                                                         "iconCls": "edit",
                                                         "layout|flex": null,
+                                                        "localiserId": "editCodeBtn",
                                                         "text": "Edit code"
                                                     },
                                                     "name": "MyButton3",
                                                     "designerId": "fed09c96-549e-47ec-96a5-bf7b562c6cf1",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -2238,10 +2390,18 @@
                                                         "disabled": true,
                                                         "iconCls": "close",
                                                         "layout|flex": null,
+                                                        "localiserId": "removeBtn",
                                                         "text": "Remove"
                                                     },
                                                     "name": "MyButton1",
                                                     "designerId": "533ad557-56ad-41c9-acf2-7e45cf4ee50e",
+                                                    "customConfigs": [
+                                                        {
+                                                            "group": "(Custom Properties)",
+                                                            "name": "localiserId",
+                                                            "type": "string"
+                                                        }
+                                                    ],
                                                     "cn": [
                                                         {
                                                             "type": "fixedfunction",
@@ -2295,7 +2455,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool162",
             "designerId": "2da1d94c-ba44-4ebf-b6b3-05ac67c9704c",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -2309,7 +2469,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool173",
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
