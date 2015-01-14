@@ -365,7 +365,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                         { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
                         { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
                         { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}},
-                        { boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+                        { boxLabel: Rubedo.RubedoAutomatedElementsLoc.largeDesktopText, checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
 
                     ]
 
@@ -383,7 +383,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     }
 
                     configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
-                        fieldLabel:"Custom template",
+                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.customTemplateText,
                         onChange:function(){
 
                             component.customTemplate=this.getValue();
@@ -476,7 +476,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
                     var stackThreshold=Ext.widget('combobox',{
                         itemId:"stackThreshold",
-                        fieldLabel:"Stacking threshold",
+                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.stackingThresholdText,
                         labelWidth:60,
                         editable:false,
                         forceSelect:true,
@@ -489,15 +489,15 @@ Ext.define('Rubedo.controller.MasqueController', {
                         },
                         queryMode:"local",
                         store:[
-                            ["xs","Never"],
-                            ["sm","Phone"],
-                            ["md","Tablet"],
-                            ["lg","Desktop"]
+                            ["xs",Rubedo.RubedoAutomatedElementsLoc.neverText],
+                            ["sm",Rubedo.RubedoAutomatedElementsLoc.telephoneText],
+                            ["md",Rubedo.RubedoAutomatedElementsLoc.tabletText],
+                            ["lg",Rubedo.RubedoAutomatedElementsLoc.computerText]
                         ]
                     });
 
                     configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
-                        fieldLabel:"Custom template",
+                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.customTemplateText,
                         onChange:function(){
 
                             component.customTemplate=this.getValue();
@@ -919,7 +919,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}},
-                                { boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+                                { boxLabel: Rubedo.RubedoAutomatedElementsLoc.largeDesktopText, checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
 
             ]
 

@@ -382,7 +382,12 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "productTypeText":"ProductType",
                     "configurableText":"Configurable",
                     "productsText":"Products",
-                    "updateText":"Update"
+                    "updateText":"Update",
+                    "neverText":"Never",
+                    "largeDesktopText":"Large desktop",
+                    "customTemplateText":"Custom template",
+                    "displayAsTabsText":"Display as tabs",
+                    "stackingThresholdText": "Stacking threshold"
                 });
 
         this.control({

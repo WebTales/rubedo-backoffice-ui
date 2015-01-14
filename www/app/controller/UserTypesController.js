@@ -1331,7 +1331,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}
-            },{ boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+            },{ boxLabel: Rubedo.RubedoAutomatedElementsLoc.largeDesktopText, checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
 
             ]
 
@@ -1339,7 +1339,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
         configSpec.getComponent(0).add(Ext.widget('checkbox',{
             itemId:"eDisplayAsTabsField",
-            fieldLabel:"Display as tabs",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.displayAsTabsText,
             onChange:function(){
 
                 component.displayAsTabs=this.getValue();
@@ -1384,7 +1384,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}
-            },{ boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+            },{ boxLabel: Rubedo.RubedoAutomatedElementsLoc.largeDesktopText, checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
             ]
 
         }));
@@ -1396,7 +1396,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
         var configSpec = Ext.widget('ConfigSpecBloc');
         var rec=Ext.getCmp("CTLayoutsGrid1").getSelectionModel().getLastSelected();
         configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
-            fieldLabel:"Custom template",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.customTemplateText,
             onChange:function(){
 
                 rec.set("customTemplate",this.getValue());
@@ -1433,7 +1433,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText, checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
             { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText, checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}
-            },{ boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+            },{ boxLabel: Rubedo.RubedoAutomatedElementsLoc.largeDesktopText, checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
             ]
 
         }));
@@ -1460,7 +1460,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
         });
         var stackThreshold=Ext.widget('combobox',{
                         itemId:"stackThreshold",
-                        fieldLabel:"Stacking threshold",
+                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.stackingThresholdText,
                         labelWidth:60,
                         editable:false,
                         forceSelect:true,
@@ -1473,10 +1473,10 @@ Ext.define('Rubedo.controller.UserTypesController', {
                         },
                         queryMode:"local",
                         store:[
-                            ["xs","Never"],
-                            ["sm","Phone"],
-                            ["md","Tablet"],
-                            ["lg","Desktop"]
+                            ["xs",Rubedo.RubedoAutomatedElementsLoc.neverText],
+                            ["sm",Rubedo.RubedoAutomatedElementsLoc.telephoneText],
+                            ["md",Rubedo.RubedoAutomatedElementsLoc.tabletText],
+                            ["lg",Rubedo.RubedoAutomatedElementsLoc.computerText]
                         ]
                     });
 
@@ -1489,7 +1489,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
         spanEdit.on("change",function(){me.applyConstrain(component,offsetEdit,spanEdit,true);});
         configSpec.getComponent(0).add(Ext.widget('textfield',{
             itemId:"eTitleField",
-            fieldLabel:"Title",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
             onChange:function(){
                 if (this.isValid()){
                     component.eTitle=this.getValue();

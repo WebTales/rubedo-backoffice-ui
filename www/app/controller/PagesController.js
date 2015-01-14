@@ -407,7 +407,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 { boxLabel: Rubedo.RubedoAutomatedElementsLoc.telephoneText, checked:component.responsive.phone, handler:function(){component.responsive.phone=this.getValue();} },
                 { boxLabel: Rubedo.RubedoAutomatedElementsLoc.tabletText,checked:component.responsive.tablet, handler:function(){component.responsive.tablet=this.getValue();}},
                 { boxLabel: Rubedo.RubedoAutomatedElementsLoc.computerText,checked:component.responsive.desktop, handler:function(){component.responsive.desktop=this.getValue();}},
-                                            { boxLabel: "Large desktop", checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
+                                            { boxLabel: Rubedo.RubedoAutomatedElementsLoc.largeDesktopText, checked:component.responsive.largeDesktop, handler:function(){component.responsive.largeDesktop=this.getValue();}}
 
                 ]
 
