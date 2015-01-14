@@ -1275,8 +1275,20 @@ Ext.define('Rubedo.controller.TypesContenusController', {
                 },
                 success: function(response){
                     button.setLoading(false);
-
-                    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);
+        Ext.create('Ext.ux.window.Notification', {
+            title: Rubedo.RubedoAutomatedElementsLoc.successTitle,
+            position: 'tr',
+            manager: 'instructions',
+            cls: 'ux-notification-light',
+            iconCls: 'ux-notification-icon-information',
+            html: Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText,
+            autoCloseDelay: 4000,
+            styleHtmlContent:true,
+            slideBackDuration: 500,
+            slideInAnimation: 'bounceOut',
+            slideBackAnimation: 'easeIn'
+        }).show();
+                    //Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.contentTypeHasBeenEmptiedText);
                 },
                 failure: function(response) {
                     button.setLoading(false);
