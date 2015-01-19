@@ -846,8 +846,57 @@ Ext.define('Rubedo.view.InportInterface', {
                     title: 'Finalisation  et import',
                     items: [
                         {
+                            xtype: 'hiddenfield',
+                            anchor: '100%',
+                            fieldLabel: 'Label',
+                            name: 'importMode',
+                            value: 'insert'
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            id: 'importCreateSwitcher',
+                            fieldLabel: 'Mode d\'import',
+                            name: 'importSwitcherField',
+                            submitValue: false,
+                            value: 'insert',
+                            allowBlank: false,
+                            editable: false,
+                            forceSelection: true,
+                            queryMode: 'local',
+                            store: [
+                                [
+                                    'insert',
+                                    'Create new content type'
+                                ],
+                                [
+                                    'update',
+                                    'Use existing content type'
+                                ]
+                            ],
+                            listeners: {
+                                change: {
+                                    fn: me.onImportCreateSwitcherChange,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            hidden: true,
+                            id: 'importChooseExistingCombo1',
+                            fieldLabel: 'Content type',
+                            name: 'typeId',
+                            submitValue: false,
+                            displayField: 'type',
+                            store: 'TCImportCombo',
+                            valueField: 'id'
+                        },
+                        {
                             xtype: 'fieldset',
                             localiserId: 'importS4Fielset1',
+                            id: 'importS4Fielset1',
                             title: 'Paramètres du type de contenus',
                             items: [
                                 {
@@ -1010,6 +1059,32 @@ Ext.define('Rubedo.view.InportInterface', {
                 record.set("searchable",true);
             }
         });
+    },
+
+    onImportCreateSwitcherChange: function(field, newValue, oldValue, eOpts) {
+        var typesCombo=Ext.getCmp("importChooseExistingCombo1");
+        var newTypeFieldset=Ext.getCmp("importS4Fielset1");
+        if (newValue=="insert"){
+            typesCombo.allowBlank=true;
+            typesCombo.setValue(null);
+            typesCombo.hide();
+            typesCombo.submitValue=false;
+            newTypeFieldset.show();
+            Ext.Array.forEach(newTypeFieldset.items.items,function(item){
+                item.submitValue=true;
+                item.allowBlank=false;
+            });
+        } else if (newValue=="update"){
+            typesCombo.allowBlank=false;
+            typesCombo.show();
+            typesCombo.submitValue=true;
+            newTypeFieldset.hide();
+            Ext.Array.forEach(newTypeFieldset.items.items,function(item){
+                item.submitValue=false;
+                item.allowBlank=true;
+                item.setValue(null);
+            });
+        }
     },
 
     onFieldsetRender: function(component, eOpts) {

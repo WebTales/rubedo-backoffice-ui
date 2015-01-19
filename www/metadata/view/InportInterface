@@ -2136,6 +2136,126 @@
             ],
             "cn": [
                 {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "importMode",
+                        "value": [
+                            "'insert'"
+                        ]
+                    },
+                    "name": "MyHiddenField2",
+                    "designerId": "8a0de633-88f1-4ce0-a4c5-8e5dd32dd1a1"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "editable": false,
+                        "fieldLabel": "Mode d'import",
+                        "forceSelection": true,
+                        "id": "importCreateSwitcher",
+                        "layout|anchor": "100%",
+                        "name": "importSwitcherField",
+                        "queryMode": "local",
+                        "store": [
+                            "[",
+                            "                                [",
+                            "                                    'insert',",
+                            "                                    'Create new content type'",
+                            "                                ],",
+                            "                                [",
+                            "                                    'update',",
+                            "                                    'Use existing content type'",
+                            "                                ]",
+                            "                            ]"
+                        ],
+                        "submitValue": false,
+                        "value": [
+                            "'insert'"
+                        ]
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "03827315-232c-4950-a049-5695a728fb7e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImportCreateSwitcherChange",
+                                "implHandler": [
+                                    "var typesCombo=Ext.getCmp(\"importChooseExistingCombo1\");",
+                                    "var newTypeFieldset=Ext.getCmp(\"importS4Fielset1\");",
+                                    "if (newValue==\"insert\"){",
+                                    "    typesCombo.allowBlank=true;",
+                                    "    typesCombo.setValue(null);",
+                                    "    typesCombo.hide();",
+                                    "    typesCombo.submitValue=false;",
+                                    "    newTypeFieldset.show();",
+                                    "    Ext.Array.forEach(newTypeFieldset.items.items,function(item){",
+                                    "        item.submitValue=true;",
+                                    "        item.allowBlank=false;",
+                                    "    });",
+                                    "} else if (newValue==\"update\"){",
+                                    "    typesCombo.allowBlank=false;",
+                                    "    typesCombo.show();",
+                                    "    typesCombo.submitValue=true;",
+                                    "    newTypeFieldset.hide();",
+                                    "    Ext.Array.forEach(newTypeFieldset.items.items,function(item){",
+                                    "        item.submitValue=false;",
+                                    "        item.allowBlank=true;",
+                                    "        item.setValue(null);",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onImportCreateSwitcherChange",
+                            "designerId": "aae5d6c4-7420-4f8a-9231-c94847366565"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "type",
+                        "fieldLabel": "Content type",
+                        "hidden": true,
+                        "id": "importChooseExistingCombo1",
+                        "layout|anchor": "100%",
+                        "name": "typeId",
+                        "store": "TCImportCombo",
+                        "submitValue": false,
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "d1027ef2-063e-4bf9-9d5c-41d804e21351"
+                },
+                {
                     "type": "Ext.form.FieldSet",
                     "reference": {
                         "name": "items",
@@ -2143,6 +2263,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "id": "importS4Fielset1",
                         "localiserId": "importS4Fielset1",
                         "title": "Paramètres du type de contenus"
                     },
