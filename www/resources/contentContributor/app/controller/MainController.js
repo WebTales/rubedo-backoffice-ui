@@ -223,6 +223,7 @@ Ext.define('ContentContributor.controller.MainController', {
     renderMainFields: function(fields) {
         var target = Ext.getCmp("MainForm");
         Ext.Array.forEach(fields, function(field,index){
+            if (!field.config.useAsVariation){
             var configurator=Ext.clone(field.config);
             if (!Ext.isEmpty(configurator.i18n)){
                 var BOLanguage=Ext.getStore("CurrentUserDataStore").getRange()[0].get("language");
@@ -309,8 +310,9 @@ Ext.define('ContentContributor.controller.MainController', {
         }
         target.add(wrapping);
 
-
+            }
     });
+
     },
 
     renderTaxoFields: function(vocabularies) {
