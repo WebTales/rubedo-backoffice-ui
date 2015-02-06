@@ -11,7 +11,7 @@
         "container|align": "stretch",
         "designer|userAlias": "monitoringTools",
         "designer|userClassName": "monitoringTools",
-        "height": 303,
+        "height": 325,
         "iconCls": "monitoring",
         "id": "monitoringTools",
         "layout": "vbox",
@@ -40,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool168",
+            "name": "mytool16",
             "designerId": "5d0f7b8f-4e50-4973-aa72-46073dcab348",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1712",
+            "name": "mytool17",
             "designerId": "c13d8263-de02-4747-a28e-d99e79adccbc",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -140,6 +140,30 @@
                             },
                             "name": "MyNumberField2",
                             "designerId": "cd349c11-32d8-48f0-9b59-ad9074457ac8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "API calls",
+                                "layout|anchor": "100%",
+                                "localiserId": "cachedApiCallsField",
+                                "name": "apiCache",
+                                "readOnly": true
+                            },
+                            "name": "MyNumberField",
+                            "designerId": "d18b5362-c79d-475b-be08-3c7702eead7f",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",

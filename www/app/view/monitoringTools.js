@@ -32,7 +32,7 @@ Ext.define('Rubedo.view.monitoringTools', {
 
     ACL: 'exe.ui.elasticSearch',
     localiserId: 'monitoringField',
-    height: 303,
+    height: 325,
     id: 'monitoringTools',
     width: 741,
     constrainHeader: true,
@@ -95,6 +95,14 @@ Ext.define('Rubedo.view.monitoringTools', {
                                     anchor: '100%',
                                     fieldLabel: 'URL',
                                     name: 'cachedUrl',
+                                    readOnly: true
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    localiserId: 'cachedApiCallsField',
+                                    anchor: '100%',
+                                    fieldLabel: 'API calls',
+                                    name: 'apiCache',
                                     readOnly: true
                                 }
                             ]
