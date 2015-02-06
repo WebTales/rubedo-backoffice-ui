@@ -62,6 +62,28 @@
                             "name": "localiserId",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTextfieldChange",
+                                "implHandler": [
+                                    "if (Ext.getCmp(\"productVariationsGrid\").getStore().getRange().length==1&&!Ext.isEmpty(newValue)){",
+                                    "    Ext.getCmp(\"productVariationsGrid\").getStore().getRange()[0].set(\"sku\",newValue);",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onTextfieldChange",
+                            "designerId": "b4676498-4d56-4347-a906-c56dd57c6bb7"
+                        }
                     ]
                 },
                 {
@@ -88,6 +110,28 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBasePriceFieldChange",
+                                "implHandler": [
+                                    "if (Ext.getCmp(\"productVariationsGrid\").getStore().getRange().length==1&&!Ext.isEmpty(newValue)){",
+                                    "    Ext.getCmp(\"productVariationsGrid\").getStore().getRange()[0].set(\"price\",newValue);",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onBasePriceFieldChange",
+                            "designerId": "e6af46c4-0186-49fe-a7ae-13a6baf47364"
                         }
                     ]
                 },
@@ -401,6 +445,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "iconCls": "add",
+                                        "id": "variationsAdderBtn",
                                         "layout|flex": null,
                                         "localiserId": "addBtn",
                                         "text": "Add"
@@ -425,23 +470,23 @@
                                             "userConfig": {
                                                 "fn": "onButtonClick",
                                                 "implHandler": [
-                                                    "var form=button.up().up().up().up().getComponent(0).getForm();\r",
-                                                    "if (form.isValid()){\r",
-                                                    "    Ext.Ajax.request({\r",
-                                                    "        url: 'xhr-get-mongo-id',\r",
-                                                    "        params: { },\r",
-                                                    "        success: function(response){\r",
-                                                    "            var servedId = Ext.JSON.decode(response.responseText).mongoID;\r",
-                                                    "            button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku,stock:0, id:servedId});\r",
-                                                    "        },\r",
-                                                    "        failure: function(){\r",
-                                                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve ID\");\r",
-                                                    "\r",
-                                                    "        }\r",
-                                                    "    });\r",
-                                                    "} else {\r",
-                                                    "    Ext.Msg.alert(\"Error\",\"SKU and Base price are required in order to create variations\");\r",
-                                                    "}\r",
+                                                    "var form=button.up().up().up().up().getComponent(0).getForm();",
+                                                    "if (true){",
+                                                    "    Ext.Ajax.request({",
+                                                    "        url: 'xhr-get-mongo-id',",
+                                                    "        params: { },",
+                                                    "        success: function(response){",
+                                                    "            var servedId = Ext.JSON.decode(response.responseText).mongoID;",
+                                                    "            button.up().up().getStore().add({price:form.getValues().basePrice,sku:form.getValues().sku,stock:0, id:servedId});",
+                                                    "        },",
+                                                    "        failure: function(){",
+                                                    "            Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, \"Failed to retrieve ID\");",
+                                                    "",
+                                                    "        }",
+                                                    "    });",
+                                                    "} else {",
+                                                    "    Ext.Msg.alert(\"Error\",\"SKU and Base price are required in order to create variations\");",
+                                                    "}",
                                                     ""
                                                 ],
                                                 "name": "click",
@@ -449,6 +494,29 @@
                                             },
                                             "name": "onButtonClick",
                                             "designerId": "a428a486-0e27-437b-a410-9d5ca17052a9"
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onVariationsAdderBtnAfterRender",
+                                                "implHandler": [
+                                                    "if (Ext.getCmp(\"productVariationsGrid\").getStore().getRange().length==0){",
+                                                    "    component.fireEvent(\"click\",component);",
+                                                    "}",
+                                                    "if (Ext.getCmp(\"productVariationsGrid\").getStore().model.getFields().length==5){",
+                                                    "    component.disable();",
+                                                    "}"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onVariationsAdderBtnAfterRender",
+                                            "designerId": "ce69ec88-31f3-41f9-9346-209514feb51b"
                                         }
                                     ]
                                 },
@@ -509,14 +577,20 @@
                             "userConfig": {
                                 "fn": "onProductVariationsGridSelectionChange",
                                 "implHandler": [
-                                    "if (Ext.isEmpty(selected)){\r",
-                                    "    Ext.getCmp(\"variationRemoverBtn\").disable();\r",
-                                    "    Ext.getCmp(\"specialOffersGrid\").getStore().removeAll();\r",
-                                    "    Ext.getCmp(\"specialOffersGrid\").disable();\r",
-                                    "} else {\r",
-                                    "    Ext.getCmp(\"variationRemoverBtn\").enable();\r",
-                                    "    Ext.getCmp(\"specialOffersGrid\").enable();\r",
-                                    "    Ext.getCmp(\"specialOffersGrid\").getStore().loadData(selected[0].get(\"specialOffers\"));\r",
+                                    "if (Ext.isEmpty(selected)){",
+                                    "    Ext.getCmp(\"variationRemoverBtn\").disable();",
+                                    "    Ext.getCmp(\"specialOffersGrid\").getStore().removeAll();",
+                                    "    Ext.getCmp(\"specialOffersGrid\").disable();",
+                                    "} else {",
+                                    "    var nbOfVariations=Ext.getCmp(\"productVariationsGrid\").getStore().getRange().length;",
+                                    "    if (nbOfVariations>1){",
+                                    "        Ext.getCmp(\"variationRemoverBtn\").enable();",
+                                    "    } else {",
+                                    "        Ext.getCmp(\"variationRemoverBtn\").disable();",
+                                    "    }",
+                                    "",
+                                    "    Ext.getCmp(\"specialOffersGrid\").enable();",
+                                    "    Ext.getCmp(\"specialOffersGrid\").getStore().loadData(selected[0].get(\"specialOffers\"));",
                                     "}"
                                 ],
                                 "name": "selectionchange",

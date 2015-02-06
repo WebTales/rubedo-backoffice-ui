@@ -63,7 +63,13 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             labelWidth: 140,
                             name: 'sku',
                             allowBlank: false,
-                            allowOnlyWhitespace: false
+                            allowOnlyWhitespace: false,
+                            listeners: {
+                                change: {
+                                    fn: me.onTextfieldChange,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'numberfield',
@@ -74,7 +80,13 @@ Ext.define('Rubedo.view.productSettingsForm', {
                             labelWidth: 140,
                             name: 'basePrice',
                             allowBlank: false,
-                            minValue: 0
+                            minValue: 0,
+                            listeners: {
+                                change: {
+                                    fn: me.onBasePriceFieldChange,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'numberfield',
@@ -192,11 +204,16 @@ Ext.define('Rubedo.view.productSettingsForm', {
                                         {
                                             xtype: 'button',
                                             localiserId: 'addBtn',
+                                            id: 'variationsAdderBtn',
                                             iconCls: 'add',
                                             text: 'Add',
                                             listeners: {
                                                 click: {
                                                     fn: me.onButtonClick,
+                                                    scope: me
+                                                },
+                                                afterrender: {
+                                                    fn: me.onVariationsAdderBtnAfterRender,
                                                     scope: me
                                                 }
                                             }
@@ -335,9 +352,21 @@ Ext.define('Rubedo.view.productSettingsForm', {
         me.callParent(arguments);
     },
 
+    onTextfieldChange: function(field, newValue, oldValue, eOpts) {
+        if (Ext.getCmp("productVariationsGrid").getStore().getRange().length==1&&!Ext.isEmpty(newValue)){
+            Ext.getCmp("productVariationsGrid").getStore().getRange()[0].set("sku",newValue);
+        }
+    },
+
+    onBasePriceFieldChange: function(field, newValue, oldValue, eOpts) {
+        if (Ext.getCmp("productVariationsGrid").getStore().getRange().length==1&&!Ext.isEmpty(newValue)){
+            Ext.getCmp("productVariationsGrid").getStore().getRange()[0].set("price",newValue);
+        }
+    },
+
     onButtonClick: function(button, e, eOpts) {
         var form=button.up().up().up().up().getComponent(0).getForm();
-        if (form.isValid()){
+        if (true){
             Ext.Ajax.request({
                 url: 'xhr-get-mongo-id',
                 params: { },
@@ -356,6 +385,15 @@ Ext.define('Rubedo.view.productSettingsForm', {
 
     },
 
+    onVariationsAdderBtnAfterRender: function(component, eOpts) {
+        if (Ext.getCmp("productVariationsGrid").getStore().getRange().length==0){
+            component.fireEvent("click",component);
+        }
+        if (Ext.getCmp("productVariationsGrid").getStore().model.getFields().length==5){
+            component.disable();
+        }
+    },
+
     onVariationRemoverBtnClick: function(button, e, eOpts) {
         button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
     },
@@ -366,7 +404,13 @@ Ext.define('Rubedo.view.productSettingsForm', {
             Ext.getCmp("specialOffersGrid").getStore().removeAll();
             Ext.getCmp("specialOffersGrid").disable();
         } else {
-            Ext.getCmp("variationRemoverBtn").enable();
+            var nbOfVariations=Ext.getCmp("productVariationsGrid").getStore().getRange().length;
+            if (nbOfVariations>1){
+                Ext.getCmp("variationRemoverBtn").enable();
+            } else {
+                Ext.getCmp("variationRemoverBtn").disable();
+            }
+
             Ext.getCmp("specialOffersGrid").enable();
             Ext.getCmp("specialOffersGrid").getStore().loadData(selected[0].get("specialOffers"));
         }
