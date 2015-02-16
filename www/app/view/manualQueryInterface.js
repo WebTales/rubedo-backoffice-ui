@@ -38,6 +38,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
     width: 1064,
     constrain: true,
     title: 'Requête manuelle',
+    modal: true,
 
     layout: {
         type: 'hbox',
@@ -385,6 +386,11 @@ Ext.define('Rubedo.view.manualQueryInterface', {
     },
 
     onManualQueryInterfaceRender: function(component, eOpts) {
+        if (component.isProductQuery){
+            Ext.getStore("TCNDepComboCS").getProxy().extraParams.filter=Ext.JSON.encode([{property:"productType",value:"configurable"}]);
+        } else {
+            Ext.getStore("TCNDepComboCS").getProxy().extraParams.filter=Ext.JSON.encode([{property:"productType",value:{"$ne":"configurable"}}]);
+        }
         Ext.getStore("TCNDepComboCS").load();
         var task = new Ext.util.DelayedTask(function(){
             if (component.editorMode){
@@ -408,6 +414,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
         panel.getComponent(0).getStore().removeAll();
         panel.getComponent(2).getStore().clearFilter(true);
         panel.getComponent(2).getStore().removeAll();
+        delete(Ext.getStore("TCNDepComboCS").getProxy().extraParams.filter);
         Ext.getStore("TCNDepComboCS").removeAll();
     }
 
