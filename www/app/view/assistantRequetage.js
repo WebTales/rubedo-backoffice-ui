@@ -158,6 +158,11 @@ Ext.define('Rubedo.view.assistantRequetage', {
     onAssistantRequetageRender: function(component, eOpts) {
         Ext.getStore('TCDepForQA').load();
         Ext.getStore('TaxonomyForQA').load();
+        if (component.isProductQuery){
+            Ext.getStore("TCNDepCombo").getProxy().extraParams.tFilter=Ext.JSON.encode([{property:"productType",value:"configurable"}]);
+        } else {
+            Ext.getStore("TCNDepCombo").getProxy().extraParams.tFilter=Ext.JSON.encode([{property:"productType",value:{"$ne":"configurable"}}]);
+        }
         Ext.getStore("TCNDepCombo").load();
     },
 
@@ -166,6 +171,7 @@ Ext.define('Rubedo.view.assistantRequetage', {
         Ext.getStore('TaxonomyForQA').removeAll();
         Ext.getStore("VersioningStore").clearFilter(true);
         Ext.getStore("VersioningStore").removeAll();
+        delete(Ext.getStore("TCNDepCombo").getProxy().extraParams.tFilter);
         Ext.getStore("TCNDepCombo").removeAll();
     },
 

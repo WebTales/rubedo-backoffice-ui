@@ -50,6 +50,7 @@ Ext.define('Rubedo.view.queryBuilderField', {
 
         companion.getComponent("addBtn").on("click", function(){
             var myWin = Ext.widget("queryTypeChooseWindow");
+            myWin.isProductQuery=component.isProductQuery;
             myWin.mainFieldId=component.getId();
             myWin.show();
         });
@@ -62,13 +63,13 @@ Ext.define('Rubedo.view.queryBuilderField', {
             var returnedFields = Ext.clone(theRec.get("returnedFields"));
             var recId = Ext.clone(theRec.get("id"));
             if (theRec.get("type")=="advanced") {
-                Ext.widget("assistantRequetage",{editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:component.getId()}).show();
+                Ext.widget("assistantRequetage",{isProductQuery:component.isProductQuery,editorMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:component.getId()}).show();
             } else if (theRec.get("type")=="simple"){
-                Ext.widget("assistantRequetage",{editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:component.getId()}).show();
+                Ext.widget("assistantRequetage",{isProductQuery:component.isProductQuery,editorMode:true, simpleMode:true, recId:recId, initialQuery:initialQuery, directToCombo:true, mainFieldId:component.getId()}).show();
 
             } else if (theRec.get("type")=="manual"){
 
-                Ext.widget("manualQueryInterface", {returnedFields:returnedFields, editorMode:true, recId:recId, initialQuery:initialQuery}).show();
+                Ext.widget("manualQueryInterface", {isProductQuery:component.isProductQuery,returnedFields:returnedFields, editorMode:true, recId:recId, initialQuery:initialQuery}).show();
             }
 
         });

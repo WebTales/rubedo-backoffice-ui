@@ -45,6 +45,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                     handler: function(button, event) {
                         var myWin = Ext.widget("manualQueryInterface");
                         myWin.mainFieldId=button.up().mainFieldId;
+                        myWin.isProductQuery=button.up().isProductQuery;
                         myWin.show();
                         button.up().close();
                     },
@@ -59,6 +60,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                         var myWin = Ext.widget("assistantRequetage");
                         myWin.mainFieldId=button.up().mainFieldId;
                         myWin.simpleMode=true;
+                        myWin.isProductQuery=button.up().isProductQuery;
                         myWin.show();
                         button.up().close();
                     },
@@ -72,6 +74,7 @@ Ext.define('Rubedo.view.queryTypeChooseWindow', {
                     handler: function(button, event) {
                         var myWin = Ext.widget("assistantRequetage");
                         myWin.mainFieldId=button.up().mainFieldId;
+                        myWin.isProductQuery=button.up().isProductQuery;
                         myWin.show();
                         button.up().close();
                     },
