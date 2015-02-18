@@ -55,7 +55,7 @@ Ext.define('Rubedo.view.ESQfield', {
         myComponent.getComponent("removeBtn").on("click", function(){
             component.setValue(null);
             if (component.advancedESQMode){
-                    component.up().getComponent("displayedFacetsBrotherField").setValue("['all']");
+                component.up().getComponent("displayedFacetsBrotherField").setValue("['all']");
             }
         });
         myComponent.getComponent("addBtn").on("click", function(){
@@ -79,6 +79,7 @@ Ext.define('Rubedo.view.ESQfield', {
 
                 Ext.widget("searchResultsWindow", {
                     queryMode:component.queryMode,
+                    productQueryMode:component.productQueryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
                     advancedESQMode:component.advancedESQMode,
