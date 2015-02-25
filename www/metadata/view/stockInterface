@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ACL": "read.ui.stock",
         "constrainHeader": true,
         "container|align": "stretch",
         "designer|userAlias": "stockInterface",
@@ -23,6 +24,11 @@
         {
             "group": "(Custom Properties)",
             "name": "localiserId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
             "type": "string"
         }
     ],
@@ -70,7 +76,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1618",
+            "name": "mytool164",
             "designerId": "480a12dd-a3ed-41c8-ada0-c984b39adff2",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -81,7 +87,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1724",
+            "name": "mytool174",
             "designerId": "b1878002-5b15-4fc0-8904-3c6b2df968de",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -383,6 +389,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.stock",
                                 "disabled": true,
                                 "iconCls": "add",
                                 "id": "stockAddToVarItem",
@@ -396,6 +403,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
                                     "type": "string"
                                 }
                             ],
@@ -428,6 +440,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.stock",
                                 "disabled": true,
                                 "iconCls": "close",
                                 "id": "stockRemoveFromVarItem",
@@ -441,6 +454,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
                                     "type": "string"
                                 }
                             ],
@@ -474,6 +492,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "read.ui.contents",
                                 "disabled": true,
                                 "iconCls": "content-icon",
                                 "id": "stockViewVarProduct",
@@ -488,6 +507,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
                                     "type": "string"
                                 }
                             ],

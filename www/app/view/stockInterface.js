@@ -31,6 +31,7 @@ Ext.define('Rubedo.view.stockInterface', {
     ],
 
     localiserId: 'stockWindow',
+    ACL: 'read.ui.stock',
     height: 456,
     id: 'stockInterface',
     width: 1039,
@@ -134,6 +135,7 @@ Ext.define('Rubedo.view.stockInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'addStockBtn',
+                                    ACL: 'write.ui.stock',
                                     disabled: true,
                                     id: 'stockAddToVarItem',
                                     iconCls: 'add',
@@ -148,6 +150,7 @@ Ext.define('Rubedo.view.stockInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'removeStockBtn',
+                                    ACL: 'write.ui.stock',
                                     disabled: true,
                                     id: 'stockRemoveFromVarItem',
                                     iconCls: 'close',
@@ -162,6 +165,7 @@ Ext.define('Rubedo.view.stockInterface', {
                                 {
                                     xtype: 'button',
                                     localiserId: 'viewProductBtn',
+                                    ACL: 'read.ui.contents',
                                     disabled: true,
                                     id: 'stockViewVarProduct',
                                     width: 100,

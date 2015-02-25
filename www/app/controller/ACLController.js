@@ -105,6 +105,7 @@ Ext.define('Rubedo.controller.ACLController', {
                         "read.ui.taxes":false,
                         "write.ui.taxes":false,
                         "read.ui.stock":false,
+                        "write.ui.stock":false,
                         "read.ui.paymentMeans":false
                     }
                 });
