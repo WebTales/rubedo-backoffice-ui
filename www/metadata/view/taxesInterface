@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ACL": "read.ui.taxes",
         "constrainHeader": true,
         "designer|userAlias": "taxesInterface",
         "designer|userClassName": "taxesInterface",
@@ -22,6 +23,11 @@
         {
             "group": "(Custom Properties)",
             "name": "localiserId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
             "type": "string"
         }
     ],
@@ -78,7 +84,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1616",
+            "name": "mytool161",
             "designerId": "daacc53c-5a5a-4a53-b7a7-be5cc41996d0",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -89,7 +95,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1722",
+            "name": "mytool171",
             "designerId": "80792028-5156-423c-bf2a-bc0df7893a7c",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -646,12 +652,20 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.taxes",
                                 "iconCls": "add",
                                 "layout|flex": null,
                                 "text": "Add"
                             },
                             "name": "MyButton396",
                             "designerId": "e7b1a840-60d7-4a3a-94ed-446fc93161a3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",
@@ -690,6 +704,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.taxes",
                                 "disabled": true,
                                 "iconCls": "close",
                                 "id": "taxRemoveBtn",
@@ -698,6 +713,13 @@
                             },
                             "name": "MyButton397",
                             "designerId": "ce693a02-f889-4b6a-b7fa-bf5af6263eb3",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "basiceventbinding",
@@ -757,7 +779,29 @@
                     },
                     "codeClass": "Ext.grid.plugin.RowEditing",
                     "name": "MyRowEditingPlugin2",
-                    "designerId": "f6005f69-7e48-424e-a8e9-6eec282dd2bb"
+                    "designerId": "f6005f69-7e48-424e-a8e9-6eec282dd2bb",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingBeforeEdit",
+                                "implHandler": [
+                                    "if (!ACL.interfaceRights[\"write.ui.taxes\"]){",
+                                    "    return false;",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingBeforeEdit",
+                            "designerId": "4a9fa88f-d43e-4ff0-9b6c-9690c0efb5a5"
+                        }
+                    ]
                 }
             ]
         }

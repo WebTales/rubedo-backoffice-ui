@@ -34,6 +34,7 @@ Ext.define('Rubedo.view.taxesInterface', {
     ],
 
     localiserId: 'taxesWindow',
+    ACL: 'read.ui.taxes',
     height: 456,
     id: 'taxesInterface',
     width: 921,
@@ -237,6 +238,7 @@ Ext.define('Rubedo.view.taxesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.taxes',
                                     iconCls: 'add',
                                     text: 'Add',
                                     listeners: {
@@ -248,6 +250,7 @@ Ext.define('Rubedo.view.taxesInterface', {
                                 },
                                 {
                                     xtype: 'button',
+                                    ACL: 'write.ui.taxes',
                                     disabled: true,
                                     id: 'taxRemoveBtn',
                                     iconCls: 'close',
@@ -270,7 +273,12 @@ Ext.define('Rubedo.view.taxesInterface', {
                     },
                     plugins: [
                         Ext.create('Ext.grid.plugin.RowEditing', {
-
+                            listeners: {
+                                beforeedit: {
+                                    fn: me.onRowEditingBeforeEdit,
+                                    scope: me
+                                }
+                            }
                         })
                     ]
                 }
@@ -337,6 +345,12 @@ Ext.define('Rubedo.view.taxesInterface', {
             Ext.getCmp("taxRemoveBtn").disable();
         } else {
             Ext.getCmp("taxRemoveBtn").enable();
+        }
+    },
+
+    onRowEditingBeforeEdit: function(editor, context, eOpts) {
+        if (!ACL.interfaceRights["write.ui.taxes"]){
+            return false;
         }
     }
 

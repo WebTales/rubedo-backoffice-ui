@@ -430,55 +430,55 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
     onSalamanderAdminMenuAdded1: function(component, container, pos, eOpts) {
         component.add([
             {
-                                    xtype: 'menuitem',
-                                    ACL: 'read.ui.contents',
-                                    favoriteIcon: 'page_full.png',
-                                    itemId: 'contributionContenus',
-                                    iconCls: 'content-icon',
-                                    text: 'Products (Contents interface)'
-                                },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.shippers',
-            favoriteIcon: 'truck.png',
-            itemId: 'shippersInterface',
-            iconCls: 'truck',
-            localiserId:'shippersLaunchBtn',
-            text: 'Shippers'
-        },
-        {
-            xtype: 'menuitem',
-            ACL: 'read.ui.taxes',
-            favoriteIcon: 'calculator.png',
-            itemId: 'taxesInterface',
-            iconCls: 'calculator',
-            localiserId:'taxesLaunchBtn',
-            text: 'Taxes'
-        },{
-            xtype: 'menuitem',
-            ACL: 'read.ui.stock',
-            favoriteIcon: 'package.png',
-            itemId: 'stockInterface',
-            iconCls: 'package',
-            localiserId:'stockLaunchBtn',
-            text: 'Stock'
-        },{
-            xtype: 'menuitem',
-            ACL: 'read.ui.paymentMeans',
-            favoriteIcon: 'credit_card.png',
-            itemId: 'paymentMeansInterface',
-            iconCls: 'credit_card',
-            localiserId:'pmLaunchBtn',
-            text: 'Payment means'
-        },{
-            xtype: 'menuitem',
-            ACL: 'read.ui.orders',
-            favoriteIcon: 'page_full.png',
-            itemId: 'ordersInterface',
-            iconCls: 'content-icon',
-            localiserId:'ordersLaunchBtn',
-            text: 'Orders'
-        }
+                xtype: 'menuitem',
+                ACL: 'read.ui.contents',
+                favoriteIcon: 'page_full.png',
+                itemId: 'contributionContenus',
+                iconCls: 'content-icon',
+                text: 'Products (Contents interface)'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.shippers',
+                favoriteIcon: 'truck.png',
+                itemId: 'shippersInterface',
+                iconCls: 'truck',
+                localiserId:'shippersLaunchBtn',
+                text: 'Shippers'
+            },
+            {
+                xtype: 'menuitem',
+                ACL: 'read.ui.taxes',
+                favoriteIcon: 'calculator.png',
+                itemId: 'taxesInterface',
+                iconCls: 'calculator',
+                localiserId:'taxesLaunchBtn',
+                text: 'Taxes'
+            },{
+                xtype: 'menuitem',
+                ACL: 'read.ui.stock',
+                favoriteIcon: 'package.png',
+                itemId: 'stockInterface',
+                iconCls: 'package',
+                localiserId:'stockLaunchBtn',
+                text: 'Stock'
+            },{
+                xtype: 'menuitem',
+                ACL: 'read.ui.paymentMeans',
+                favoriteIcon: 'credit_card.png',
+                itemId: 'paymentMeansInterface',
+                iconCls: 'credit_card',
+                localiserId:'pmLaunchBtn',
+                text: 'Payment means'
+            },{
+                xtype: 'menuitem',
+                ACL: 'read.ui.orders',
+                favoriteIcon: 'page_full.png',
+                itemId: 'ordersInterface',
+                iconCls: 'content-icon',
+                localiserId:'ordersLaunchBtn',
+                text: 'Orders'
+            }
         ]);
     },
 
