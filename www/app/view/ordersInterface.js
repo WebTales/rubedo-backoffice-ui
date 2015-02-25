@@ -36,6 +36,7 @@ Ext.define('Rubedo.view.ordersInterface', {
     ],
 
     localiserId: 'ordersWindow',
+    ACL: 'read.ui.orders',
     height: 566,
     id: 'ordersInterface',
     width: 1201,
@@ -197,7 +198,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     localiserId: 'attachmentsFieldset',
                                     title: 'Attachments',
                                     items: [
-                                        {
+                                        me.processBillDocument({
                                             xtype: 'ImagePickerField',
                                             allowedFileType: 'Document',
                                             smallMode: true,
@@ -205,7 +206,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                             fieldLabel: 'Bill',
                                             labelWidth: 120,
                                             name: 'billDocument'
-                                        }
+                                        })
                                     ]
                                 },
                                 me.processStatus({
@@ -230,6 +231,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                     },
                                     localiserId: 'applyChangesBtn',
                                     anchor: '40%',
+                                    ACL: 'write.ui.orders',
                                     style: 'float:right;',
                                     text: 'Apply changes'
                                 }
@@ -436,7 +438,17 @@ Ext.define('Rubedo.view.ordersInterface', {
         me.callParent(arguments);
     },
 
+    processBillDocument: function(config) {
+        if (!ACL.interfaceRights["write.ui.orders"]){
+            config.readOnly=true;
+        }
+        return config;
+    },
+
     processStatus: function(config) {
+        if (!ACL.interfaceRights["write.ui.orders"]){
+            config.readOnly=true;
+        }
         config.store=RubedoExtendableSettings.orderStatusList;
         return config;
     },

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ACL": "read.ui.orders",
         "constrainHeader": true,
         "container|align": "stretch",
         "designer|userAlias": "ordersInterface",
@@ -24,6 +25,11 @@
             "group": "(Custom Properties)",
             "name": "localiserId",
             "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
+            "type": "string"
         }
     ],
     "cn": [
@@ -34,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool16",
+            "name": "mytool163",
             "designerId": "eb809d1d-9f5f-48fa-8b31-817c7058ffed",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -45,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool17",
+            "name": "mytool173",
             "designerId": "56ba6e95-b4f0-4952-8755-56fe9b4cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -581,7 +587,31 @@
                                             "type": "string"
                                         }
                                     ],
-                                    "masterInstanceId": "29ccd34b-610a-4d7f-84de-be664235a5e8"
+                                    "masterInstanceId": "29ccd34b-610a-4d7f-84de-be664235a5e8",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "fn": "processBillDocument",
+                                                "implHandler": [
+                                                    "if (!ACL.interfaceRights[\"write.ui.orders\"]){",
+                                                    "    config.readOnly=true;",
+                                                    "}",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "name": "processBillDocument",
+                                            "designerId": "4631f5d3-a05b-4129-b7f6-f0f471cf78a1"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -631,7 +661,10 @@
                                         ],
                                         "fn": "processStatus",
                                         "implHandler": [
-                                            "config.store=RubedoExtendableSettings.orderStatusList;\r",
+                                            "if (!ACL.interfaceRights[\"write.ui.orders\"]){",
+                                            "    config.readOnly=true;",
+                                            "}",
+                                            "config.store=RubedoExtendableSettings.orderStatusList;",
                                             "return config;"
                                         ]
                                     },
@@ -648,6 +681,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.orders",
                                 "layout|anchor": "40%",
                                 "localiserId": "applyChangesBtn",
                                 "style": "float:right;",
@@ -662,6 +696,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
                                     "type": "string"
                                 }
                             ],
