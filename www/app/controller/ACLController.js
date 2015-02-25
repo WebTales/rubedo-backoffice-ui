@@ -99,6 +99,7 @@ Ext.define('Rubedo.controller.ACLController', {
                         "write.ui.emailTemplates":false,
                         "read.ui.applicationLogs":false,
                         "read.ui.shippers":false,
+                        "write.ui.shippers":false,
                         "read.ui.orders":false,
                         "read.ui.taxes":false,
                         "write.ui.taxes":false,

@@ -35,6 +35,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     ],
 
     localiserId: 'shippersWindow',
+    ACL: 'read.ui.shippers',
     height: 456,
     id: 'shippersInterface',
     width: 1003,
@@ -55,6 +56,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                 {
                     xtype: 'toolbar',
                     dock: 'top',
+                    ACL: 'write.ui.shippers',
                     items: [
                         {
                             xtype: 'button',
@@ -142,7 +144,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                             bodyPadding: 10,
                             title: '',
                             items: [
-                                {
+                                me.processName({
                                     xtype: 'textfield',
                                     localiserId: 'nameField',
                                     anchor: '100%',
@@ -151,8 +153,8 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     name: 'name',
                                     allowBlank: false,
                                     allowOnlyWhitespace: false
-                                },
-                                {
+                                }),
+                                me.processActive({
                                     xtype: 'checkboxfield',
                                     localiserId: 'activeField',
                                     anchor: '100%',
@@ -161,8 +163,8 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     name: 'active',
                                     inputValue: 'true',
                                     uncheckedValue: 'false'
-                                },
-                                {
+                                }),
+                                me.processRateType({
                                     xtype: 'combobox',
                                     localiserId: 'rateTypeField',
                                     anchor: '100%',
@@ -183,7 +185,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                             'Flat rate per item'
                                         ]
                                     ]
-                                },
+                                }),
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
@@ -306,6 +308,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'toolbar',
                                     dock: 'bottom',
+                                    ACL: 'write.ui.shippers',
                                     items: [
                                         {
                                             xtype: 'tbfill'
@@ -341,7 +344,12 @@ Ext.define('Rubedo.view.shippersInterface', {
                             ],
                             plugins: [
                                 Ext.create('Ext.grid.plugin.RowEditing', {
-
+                                    listeners: {
+                                        beforeedit: {
+                                            fn: me.onRowEditingBeforeEdit,
+                                            scope: me
+                                        }
+                                    }
                                 })
                             ],
                             listeners: {
@@ -377,6 +385,27 @@ Ext.define('Rubedo.view.shippersInterface', {
         me.callParent(arguments);
     },
 
+    processName: function(config) {
+        if (!ACL.interfaceRights["write.ui.shippers"]){
+            config.readOnly=true;
+        }
+        return config;
+    },
+
+    processActive: function(config) {
+        if (!ACL.interfaceRights["write.ui.shippers"]){
+            config.readOnly=true;
+        }
+        return config;
+    },
+
+    processRateType: function(config) {
+        if (!ACL.interfaceRights["write.ui.shippers"]){
+            config.readOnly=true;
+        }
+        return config;
+    },
+
     onWorkspaceSaveAfterRender: function(component, eOpts) {
         component.findParentByType("window").getEl().addKeyListener({key:"s", ctrl:true}, function(e,t){
         if (!component.disabled){
@@ -392,6 +421,12 @@ Ext.define('Rubedo.view.shippersInterface', {
 
     onRemoveShipperRateBtnClick: function(button, e, eOpts) {
         button.up().up().getStore().remove(button.up().up().getSelectionModel().getLastSelected());
+    },
+
+    onRowEditingBeforeEdit: function(editor, context, eOpts) {
+        if (!ACL.interfaceRights["write.ui.shippers"]){
+            return(false);
+        }
     },
 
     onGridpanelSelectionChange: function(model, selected, eOpts) {

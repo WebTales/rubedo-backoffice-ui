@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "ACL": "read.ui.shippers",
         "constrainHeader": true,
         "container|align": "stretch",
         "designer|userAlias": "shippersInterface",
@@ -24,6 +25,11 @@
             "group": "(Custom Properties)",
             "name": "localiserId",
             "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "ACL",
+            "type": "string"
         }
     ],
     "cn": [
@@ -35,10 +41,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ACL": "write.ui.shippers",
                 "dock": "top"
             },
             "name": "MyToolbar87",
             "designerId": "ebe4c71f-2c72-4b2e-8881-ff47e5a7e863",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "ACL",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.button.Button",
@@ -327,6 +341,30 @@
                                     "name": "localiserId",
                                     "type": "string"
                                 }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processName",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights[\"write.ui.shippers\"]){",
+                                            "    config.readOnly=true;",
+                                            "}",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processName",
+                                    "designerId": "7779383d-a22c-4c39-b3a6-fcb7aa0aefc7"
+                                }
                             ]
                         },
                         {
@@ -353,6 +391,30 @@
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processActive",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights[\"write.ui.shippers\"]){",
+                                            "    config.readOnly=true;",
+                                            "}",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processActive",
+                                    "designerId": "3da5cf71-0f9a-48e4-a19b-02c14d44e016"
                                 }
                             ]
                         },
@@ -387,6 +449,30 @@
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processRateType",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights[\"write.ui.shippers\"]){",
+                                            "    config.readOnly=true;",
+                                            "}",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processRateType",
+                                    "designerId": "32f68de2-cddf-48df-8622-b6ea96237560"
                                 }
                             ]
                         },
@@ -722,10 +808,18 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "ACL": "write.ui.shippers",
                                 "dock": "bottom"
                             },
                             "name": "MyToolbar88",
                             "designerId": "ce49d256-504e-4eac-8f28-7b00c9b4aa4f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.toolbar.Fill",
@@ -838,7 +932,29 @@
                             },
                             "codeClass": "Ext.grid.plugin.RowEditing",
                             "name": "MyRowEditingPlugin1",
-                            "designerId": "1ce11dd2-5787-43ae-b933-e2594fbda956"
+                            "designerId": "1ce11dd2-5787-43ae-b933-e2594fbda956",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRowEditingBeforeEdit",
+                                        "implHandler": [
+                                            "if (!ACL.interfaceRights[\"write.ui.shippers\"]){",
+                                            "    return(false);",
+                                            "}"
+                                        ],
+                                        "name": "beforeedit",
+                                        "scope": "me"
+                                    },
+                                    "name": "onRowEditingBeforeEdit",
+                                    "designerId": "49c2a56c-33e5-43bb-9198-dfb2a8fa6228"
+                                }
+                            ]
                         },
                         {
                             "type": "basiceventbinding",
@@ -914,7 +1030,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1614",
+            "name": "mytool162",
             "designerId": "e22bc478-cb54-49d3-a2f8-e07ad82f7c19",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -928,7 +1044,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool1720",
+            "name": "mytool172",
             "designerId": "7694bf92-2fb6-41a5-a279-aa383bd8dce3",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
