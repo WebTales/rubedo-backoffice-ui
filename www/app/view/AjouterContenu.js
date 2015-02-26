@@ -372,9 +372,24 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                             try{
                                                                 Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
                                                                 Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
-                                                                Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomy"));
-                                                                Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
-                                                                Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
+                                                                if (Ext.getCmp("boiteATaxoContenus")){
+                                                                    Ext.getCmp("boiteATaxoContenus").getForm().setValues(cible.get("taxonomy"));
+                                                                }
+                                                                if (Ext.getCmp("boiteADroitsContenus")){
+                                                                    Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
+                                                                }
+                                                                if (Ext.getCmp("contentMetadataBox")){
+                                                                    Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
+                                                                }
+                                                                if (cible.get("isProduct")&&Ext.getCmp("productSettingsForm")){
+                                                                    var productProperties=cible.get("productProperties");
+                                                                    if(productProperties){
+                                                                        Ext.getCmp("productSettingsForm").getComponent(0).getForm().setValues(productProperties);
+                                                                        Ext.getCmp("productVariationsGrid").getStore().loadData(productProperties.variations);
+                                                                    }
+                                                                }
+
+
                                                             }catch (err){
                                                                 console.log("reloading anomaly");
                                                             }

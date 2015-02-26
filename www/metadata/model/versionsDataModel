@@ -213,6 +213,32 @@
             },
             "name": "MyField111",
             "designerId": "1a1a906e-fdf2-4b5e-86b6-d5a808ab8d77"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isProduct"
+            },
+            "name": "MyField",
+            "designerId": "3de64eb2-5426-46da-9f2d-ebe502b5d265"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "productProperties"
+            },
+            "name": "MyField1",
+            "designerId": "7e39d173-cfce-4fc2-bd5f-503a7746f26c"
         }
     ]
 }

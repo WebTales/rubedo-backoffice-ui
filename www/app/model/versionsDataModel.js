@@ -71,6 +71,12 @@ Ext.define('Rubedo.model.versionsDataModel', {
         },
         {
             name: 'nativeLanguage'
+        },
+        {
+            name: 'isProduct'
+        },
+        {
+            name: 'productProperties'
         }
     ]
 });
