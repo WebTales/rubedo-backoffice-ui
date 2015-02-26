@@ -351,6 +351,9 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                                             Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.missingLocError);
                                                         } else {
                                                             me.directOverrideMode=true;
+                                                            if (Ext.isEmpty(fields)){
+                                                                fields={ };
+                                                            }
                                                             Ext.apply(fields,i18n[me.mainLocale].fields);
                                                             me.up().getComponent("mainLocItem").getForm().setValues(fields);
                                                             me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);

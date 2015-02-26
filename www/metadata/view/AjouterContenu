@@ -948,6 +948,9 @@
                                                             "    Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle,Rubedo.RubedoAutomatedElementsLoc.missingLocError);",
                                                             "} else {",
                                                             "    me.directOverrideMode=true;",
+                                                            "    if (Ext.isEmpty(fields)){",
+                                                            "        fields={ };",
+                                                            "    }",
                                                             "    Ext.apply(fields,i18n[me.mainLocale].fields);",
                                                             "    me.up().getComponent(\"mainLocItem\").getForm().setValues(fields);",
                                                             "    me.recievei18n(i18n,me.mainLocale,me.nativeLanguage);",
@@ -1273,7 +1276,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool171",
+            "name": "mytool17",
             "designerId": "2a19d21c-4a48-4475-afcd-fd6041b2852c",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
