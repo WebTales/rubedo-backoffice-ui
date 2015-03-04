@@ -1,0 +1,163 @@
+{
+    "type": "Ext.form.FieldContainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "embeddedImageFieldComponent",
+        "designer|userClassName": "embeddedImageFieldComponent",
+        "fieldLabel": "Label",
+        "height": 120,
+        "width": 400
+    },
+    "name": "MyFieldContainer",
+    "designerId": "2751cc9f-73fe-45bb-a8d3-e350f9538a7d",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer1",
+            "designerId": "bccd1d90-47e9-48e3-8f6d-5e0d0e735894",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 120,
+                        "itemId": "fieldEmbedImagePreview",
+                        "maxHeight": null,
+                        "width": 120
+                    },
+                    "name": "MyImg",
+                    "designerId": "f18d87cb-52fa-4a47-bbff-50fa4ee4b15f"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyContainer",
+                    "designerId": "54c02ab2-072b-4f9d-a7d7-d8f150eed325",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "database_up_small",
+                                "margin": "0 10 0 0",
+                                "scale": null,
+                                "text": "",
+                                "tooltip": "Upload image"
+                            },
+                            "name": "MyButton",
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "3428c2eb-7beb-4c2e-887c-fbd228e7e1f5"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "close",
+                                "margin": "0 10 0 0",
+                                "text": "",
+                                "tooltip": "Remove"
+                            },
+                            "name": "MyButton1",
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "5c631d38-4612-4a91-8d54-c351ccfc7dc1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "maxWidth": 200,
+                        "title": "Image options"
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "4117b91a-88f7-4328-b65b-cc815bcb8137",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Alt",
+                                "labelWidth": 40,
+                                "layout|anchor": "100%",
+                                "name": "alt",
+                                "submitValue": false
+                            },
+                            "name": "MyTextField",
+                            "designerId": "78b634ac-1ca7-457b-8f54-f782225dda31"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Url",
+                                "labelWidth": 40,
+                                "layout|anchor": "100%",
+                                "name": "url",
+                                "submitValue": false
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "65e63f0b-d5f1-41ab-91da-c0944a03d2dc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "name": "imageCode",
+                        "submitValue": false
+                    },
+                    "name": "MyHiddenField",
+                    "designerId": "ffc78278-387d-40a9-8e16-2f2ce7079c3d"
+                }
+            ]
+        }
+    ]
+}

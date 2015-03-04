@@ -1,0 +1,132 @@
+{
+    "type": "Ext.form.field.Hidden",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "embeddedImageField",
+        "designer|userClassName": "embeddedImageField",
+        "fieldLabel": "Label",
+        "height": null
+    },
+    "name": "localiserField1",
+    "designerId": "9ad05097-8688-4986-ba19-58fff252d90c",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "setValue",
+                "implHandler": [
+                    "var me=this;\r",
+                    "me.value=value;\r",
+                    "me.fireEvent(\"change\",me,value);"
+                ]
+            },
+            "name": "setValue",
+            "designerId": "1545bc15-5565-4be4-b2b3-7e479c1a545a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getValue",
+                "implHandler": [
+                    "return(this.value);"
+                ]
+            },
+            "name": "getValue",
+            "designerId": "234e35bf-29f5-4f2f-873a-3d2461d9500e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getSubmitValue",
+                "implHandler": [
+                    "return (this.value);"
+                ]
+            },
+            "name": "getSubmitValue",
+            "designerId": "cb20f533-07cb-489e-bfd1-1c425dc9252a"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var companion = Ext.widget(\"embeddedImageFieldComponent\");",
+                    "component.companion=companion;",
+                    "companion.setFieldLabel(component.getFieldLabel());",
+                    "    var icDir=\"blue\";",
+                    "if (typeof(MyPrefData)!=\"undefined\"){",
+                    "    icDir=MyPrefData.iconsDir;",
+                    "}",
+                    "companion.on(\"afterrender\",function(){",
+                    "    companion.getEl().on(\"click\",function(){",
+                    "",
+                    "        component.getEl().dom.click();",
+                    "    });",
+                    "});",
+                    "component.on(\"change\", function(a, newValue){",
+                    "    var decoded = { };",
+                    "    if (!Ext.isEmpty(newValue)){",
+                    "        decoded = newValue;",
+                    "    }",
+                    "    Ext.Array.forEach(companion.query(\"field\"), function(field){",
+                    "        field.suspendEvents(false);",
+                    "        field.setValue(decoded[field.name]);",
+                    "        field.resumeEvents();",
+                    "    });",
+                    "    if(Ext.isEmpty(decoded.imageCode)){",
+                    "        companion.getComponent(0).getComponent(\"fieldEmbedImagePreview\").setSrc(\"resources/icones/\"+icDir+\"/128x128/image_remove.png\");",
+                    "    } else {",
+                    "        companion.getComponent(0).getComponent(\"fieldEmbedImagePreview\").setSrc(decoded.imageCode);",
+                    "    }",
+                    "});",
+                    "Ext.Array.forEach(companion.query(\"field\"), function(field){",
+                    "    field.on(\"change\", function(a, newValue){",
+                    "        if (field.isValid()){",
+                    "            component.suspendEvents(false);",
+                    "            var decoded = { };",
+                    "            if (!Ext.isEmpty(component.getValue())) {",
+                    "                decoded = component.getValue();",
+                    "            }",
+                    "            decoded[field.name]=newValue;",
+                    "            component.setValue(decoded);",
+                    "            component.resumeEvents();",
+                    "    }});",
+                    "});",
+                    "component.up().add(companion);",
+                    "component.fireEvent(\"change\",component,component.getValue());"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onHiddenfieldRender",
+            "designerId": "118ae105-fc10-4e65-b73f-5cdf1fc02ea9"
+        }
+    ]
+}

@@ -418,7 +418,9 @@ Ext.application({
         'ordersExportWindow',
         'usersExportWindow',
         'contentsExportWindow',
-        'AdvancedColorField'
+        'AdvancedColorField',
+        'embeddedImageField',
+        'embeddedImageFieldComponent'
     ],
     controllers: [
         'ContributionContenusController',

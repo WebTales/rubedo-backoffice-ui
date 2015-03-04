@@ -985,7 +985,7 @@
                                                             "            var productProperties=cible.get(\"productProperties\");",
                                                             "            if(productProperties){",
                                                             "                Ext.getCmp(\"productSettingsForm\").getComponent(0).getForm().setValues(productProperties);",
-                                                            "Ext.getCmp(\"productVariationsGrid\").getStore().loadData(productProperties.variations);",
+                                                            "                Ext.getCmp(\"productVariationsGrid\").getStore().loadData(productProperties.variations);",
                                                             "            }",
                                                             "        }",
                                                             "",

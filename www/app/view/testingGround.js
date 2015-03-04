@@ -18,8 +18,9 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.MyView',
-        'Ext.view.View'
+        'Rubedo.view.embeddedImageField',
+        'Ext.form.Panel',
+        'Ext.form.field.Hidden'
     ],
 
     height: 450,
@@ -34,7 +35,16 @@ Ext.define('Rubedo.view.testingGround', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'myview'
+                    xtype: 'form',
+                    id: 'tg1Form',
+                    bodyPadding: 10,
+                    title: 'Test embedded image field',
+                    items: [
+                        {
+                            xtype: 'embeddedImageField',
+                            name: 'test'
+                        }
+                    ]
                 }
             ]
         });

@@ -17,15 +17,35 @@
     "designerId": "66174f28-03d3-4c02-855f-65706d91852a",
     "cn": [
         {
-            "type": "linkedinstance",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
-            "name": "myview1",
-            "designerId": "21c6edd9-cadf-44f7-81be-5b72c94e7095",
-            "masterInstanceId": "f36e89e4-306e-40ee-b555-4f18f4129f6b"
+            "userConfig": {
+                "bodyPadding": 10,
+                "id": "tg1Form",
+                "title": "Test embedded image field"
+            },
+            "name": "MyForm1",
+            "designerId": "1559f2dd-d6d9-406f-938f-320aef190d41",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "test"
+                    },
+                    "name": "embeddedimagefield",
+                    "designerId": "d8edb4cc-1187-4cf3-823a-b2c3efa2ba92",
+                    "masterInstanceId": "9ad05097-8688-4986-ba19-58fff252d90c"
+                }
+            ]
         }
     ]
 }
