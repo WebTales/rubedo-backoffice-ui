@@ -26,7 +26,7 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
     ],
 
     height: 120,
-    width: 400,
+    maxWidth: 400,
     fieldLabel: 'Label',
 
     initComponent: function() {
