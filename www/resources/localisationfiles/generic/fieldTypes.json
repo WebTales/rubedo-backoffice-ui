@@ -2653,7 +2653,7 @@
             "allowBlank": true,
             "localizable": true,
             "searchable": false,
-            "notAnalyzed":false,
+            "notAnalyzed":true,
             "returnInSearch":false,
             "useAsFacet":false,
             "facetOperator":"AND",
@@ -2712,53 +2712,10 @@
                 "type": "Ext.form.field.Checkbox",
                 "isASearchField":true,
                 "config": {
-                    "fieldLabel": "#ext-gen1264#",
-                    "name": "notAnalyzed"
-                }
-            },{
-                "type": "Ext.form.field.Checkbox",
-                "isASearchField":true,
-                "config": {
                     "fieldLabel":"#ext-gen1265#",
                     "name": "returnInSearch"
                 }
-            },{
-                "type": "Ext.form.field.Checkbox",
-                "isASearchField":true,
-                "config": {
-                    "fieldLabel": "#ext-gen1266#",
-                    "name": "useAsFacet"
-                }
-            }, {
-                "type": "Ext.form.field.ComboBox",
-                "isASearchField":true,
-                "store": {
-                    "fields": [
-                        "valeur",
-                        "nom"
-                    ],
-                    "data": [
-                        {
-                            "valeur": "AND",
-                            "nom":"#ext-gen1263#"
-                        },
-                        {
-                            "valeur": "OR",
-                            "nom":"#ext-gen1262#"
-                        }
-
-                    ]
-                },
-                "config": {
-                    "fieldLabel": "#ext-gen1267#",
-                    "queryMode": "local",
-                    "displayField": "nom",
-                    "valueField": "valeur",
-                    "forceSelect": true,
-                    "editable": false,
-                    "name": "facetOperator"
-                }
-                },
+            },
             {
                 "type": "Ext.form.field.Checkbox",
                 "config": {
@@ -2769,7 +2726,7 @@
         ],
         "store": "",
         "id": "54fdcc45f05c1dbc27000029",
-        "category": "#ext-gen1229#",
+        "category": "#ext-gen1163#",
         "protoId": ""
     }
 ]

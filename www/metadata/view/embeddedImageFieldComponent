@@ -10,7 +10,7 @@
         "designer|userClassName": "embeddedImageFieldComponent",
         "fieldLabel": "Label",
         "height": 120,
-        "maxWidth": 400,
+        "maxWidth": null,
         "width": null
     },
     "name": "MyFieldContainer",
@@ -23,6 +23,10 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "hbox"
+            },
             "name": "MyContainer1",
             "designerId": "bccd1d90-47e9-48e3-8f6d-5e0d0e735894",
             "cn": [
@@ -36,6 +40,7 @@
                     "userConfig": {
                         "height": 120,
                         "itemId": "fieldEmbedImagePreview",
+                        "margin": "0 10 0 0",
                         "maxHeight": null,
                         "width": 120
                     },
@@ -49,6 +54,11 @@
                         "type": "array"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 10,
+                        "layout": "absolute",
+                        "width": 40
+                    },
                     "name": "MyContainer",
                     "designerId": "54c02ab2-072b-4f9d-a7d7-d8f150eed325",
                     "cn": [
@@ -60,9 +70,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "iconCls": "database_up_small",
+                                "iconCls": "database_up_med",
+                                "layout|x": 0,
+                                "layout|y": 10,
                                 "margin": "0 10 0 0",
-                                "scale": null,
+                                "scale": "medium",
                                 "text": "",
                                 "tooltip": "Upload image"
                             },
@@ -103,8 +115,11 @@
                             "codeClass": null,
                             "userConfig": {
                                 "glyph": null,
-                                "iconCls": "close",
+                                "iconCls": "remove_med",
+                                "layout|x": 0,
+                                "layout|y": 60,
                                 "margin": "0 10 0 0",
+                                "scale": "medium",
                                 "text": "",
                                 "tooltip": "Remove"
                             },
@@ -146,7 +161,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "maxWidth": 200,
+                        "margin": "0 0 0 10",
+                        "maxWidth": 400,
                         "title": "Image options"
                     },
                     "name": "MyFieldSet",

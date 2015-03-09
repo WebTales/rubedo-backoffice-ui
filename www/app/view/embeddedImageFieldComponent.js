@@ -26,7 +26,6 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
     ],
 
     height: 120,
-    maxWidth: 400,
     fieldLabel: 'Label',
 
     initComponent: function() {
@@ -36,23 +35,33 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
             items: [
                 {
                     xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        align: 'stretch'
+                    },
                     items: [
                         {
                             xtype: 'image',
                             height: 120,
                             itemId: 'fieldEmbedImagePreview',
+                            margin: '0 10 0 0',
                             width: 120
                         },
                         {
                             xtype: 'container',
+                            width: 40,
+                            layout: 'absolute',
                             items: [
                                 {
                                     xtype: 'button',
                                     handler: function(button, e) {
                                         Ext.widget("B64ImageUploadWindow",{openerId:button.getId()}).show();
                                     },
+                                    x: 0,
+                                    y: 10,
                                     margin: '0 10 0 0',
-                                    iconCls: 'database_up_small',
+                                    iconCls: 'database_up_med',
+                                    scale: 'medium',
                                     text: '',
                                     tooltip: 'Upload image'
                                 },
@@ -61,8 +70,11 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
                                     handler: function(button, e) {
                                         button.up().up().getComponent("imageCode").setValue(null);
                                     },
+                                    x: 0,
+                                    y: 60,
                                     margin: '0 10 0 0',
-                                    iconCls: 'close',
+                                    iconCls: 'remove_med',
+                                    scale: 'medium',
                                     text: '',
                                     tooltip: 'Remove'
                                 }
@@ -70,7 +82,8 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
                         },
                         {
                             xtype: 'fieldset',
-                            maxWidth: 200,
+                            margin: '0 0 0 10',
+                            maxWidth: 400,
                             title: 'Image options',
                             items: [
                                 {
