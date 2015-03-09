@@ -69,7 +69,29 @@
                             "configAlternates": {
                                 "tooltip": "string"
                             },
-                            "designerId": "3428c2eb-7beb-4c2e-887c-fbd228e7e1f5"
+                            "designerId": "3428c2eb-7beb-4c2e-887c-fbd228e7e1f5",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.widget(\"B64ImageUploadWindow\",{openerId:button.getId()}).show();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "0c8a2211-5cfb-48da-8fa1-cb15e095cf7a"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",
@@ -79,6 +101,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "glyph": null,
                                 "iconCls": "close",
                                 "margin": "0 10 0 0",
                                 "text": "",
@@ -88,7 +111,29 @@
                             "configAlternates": {
                                 "tooltip": "string"
                             },
-                            "designerId": "5c631d38-4612-4a91-8d54-c351ccfc7dc1"
+                            "designerId": "5c631d38-4612-4a91-8d54-c351ccfc7dc1",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.up().up().getComponent(\"imageCode\").setValue(null);"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "6b0a7e63-e0d8-4299-947c-10032c260ec9"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -151,6 +196,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fieldLabel": "Label",
+                        "itemId": "imageCode",
                         "name": "imageCode",
                         "submitValue": false
                     },

@@ -38,7 +38,7 @@ Ext.define('Rubedo.view.embeddedImageField', {
         var companion = Ext.widget("embeddedImageFieldComponent");
         component.companion=companion;
         companion.setFieldLabel(component.getFieldLabel());
-            var icDir="blue";
+        var icDir="blue";
         if (typeof(MyPrefData)!="undefined"){
             icDir=MyPrefData.iconsDir;
         }
@@ -74,8 +74,13 @@ Ext.define('Rubedo.view.embeddedImageField', {
                     }
                     decoded[field.name]=newValue;
                     component.setValue(decoded);
+                    if(Ext.isEmpty(decoded.imageCode)){
+                        companion.getComponent(0).getComponent("fieldEmbedImagePreview").setSrc("resources/icones/"+icDir+"/128x128/image_remove.png");
+                    } else {
+                        companion.getComponent(0).getComponent("fieldEmbedImagePreview").setSrc(decoded.imageCode);
+                    }
                     component.resumeEvents();
-            }});
+                }});
         });
         component.up().add(companion);
         component.fireEvent("change",component,component.getValue());

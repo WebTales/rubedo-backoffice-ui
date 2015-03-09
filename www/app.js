@@ -420,7 +420,8 @@ Ext.application({
         'contentsExportWindow',
         'AdvancedColorField',
         'embeddedImageField',
-        'embeddedImageFieldComponent'
+        'embeddedImageFieldComponent',
+        'B64ImageUploadWindow'
     ],
     controllers: [
         'ContributionContenusController',

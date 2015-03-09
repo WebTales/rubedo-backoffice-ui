@@ -48,6 +48,9 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.widget("B64ImageUploadWindow",{openerId:button.getId()}).show();
+                                    },
                                     margin: '0 10 0 0',
                                     iconCls: 'database_up_small',
                                     text: '',
@@ -55,6 +58,9 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
                                 },
                                 {
                                     xtype: 'button',
+                                    handler: function(button, e) {
+                                        button.up().up().getComponent("imageCode").setValue(null);
+                                    },
                                     margin: '0 10 0 0',
                                     iconCls: 'close',
                                     text: '',
@@ -87,6 +93,7 @@ Ext.define('Rubedo.view.embeddedImageFieldComponent', {
                         },
                         {
                             xtype: 'hiddenfield',
+                            itemId: 'imageCode',
                             fieldLabel: 'Label',
                             name: 'imageCode',
                             submitValue: false
