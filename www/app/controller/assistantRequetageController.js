@@ -421,8 +421,8 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
             var storeL = Ext.create('Ext.data.Store', {
                 fields: ['valeur', 'nom'],
                 data : [
-                {valeur: 'AND', nom :'ET'},
-                {valeur: 'OR', nom :'OU'}
+                    {valeur: 'AND', nom:Rubedo.RubedoAutomatedElementsLoc.andText},
+                    {valeur: 'OR', nom: Rubedo.RubedoAutomatedElementsLoc.orText}
                 ]
             });
 
