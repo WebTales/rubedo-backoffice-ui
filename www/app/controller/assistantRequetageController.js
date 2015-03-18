@@ -181,15 +181,17 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                         Ext.getStore("MainQueriesStore").add(newQuery);
                         Ext.getStore("MainQueriesStore").addListener("datachanged", function(){
                             Ext.getCmp("mainQueriesGrid").getSelectionModel().select(newQuery);
+                            Ext.getCmp("assistantRequetage").close();
                         },this, {single:true});
                         } else {
                             Ext.getStore("QueriesStore").add(newQuery);
                             Ext.getStore("QueriesStore").addListener("update", function(){
                                 Ext.getCmp(Ext.getCmp("assistantRequetage").mainFieldId).select(newQuery);
+                                Ext.getCmp("assistantRequetage").close();
                             },this,{single:true});
                             }
                         }
-                        Ext.getCmp("assistantRequetage").close();
+
                     }
     },
 
