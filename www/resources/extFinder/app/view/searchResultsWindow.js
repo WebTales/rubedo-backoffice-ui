@@ -454,8 +454,8 @@ Ext.define('extFinder.view.searchResultsWindow', {
             component.modal=true;
             component.setTitle("Content Selector");
             Ext.getStore("ESFacetteStore").activeFacettes={ };
-            if (!Ext.isEmpty(component.allowedCT)){
-                Ext.getStore("ESFacetteStore").activeFacettes={type:component.allowedCT};
+            if (!Ext.isEmpty(CKEOptions.allowedCT)&&CKEOptions.allowedCT!="undefined"){
+                Ext.getStore("ESFacetteStore").activeFacettes={type:CKEOptions.allowedCT};
             }
             Ext.getCmp("ESFavBtn").hide();
             Ext.getCmp("selectESEntityBtn").show();

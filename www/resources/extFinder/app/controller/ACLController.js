@@ -77,7 +77,10 @@ Ext.define('extFinder.controller.ACLController', {
                 Ext.define('CKEOptions', {
                     singleton:true,
                     soloMode:true,
-                    allowedDT: !Ext.isEmpty(options.allowedDT) ? options.allowedDT: null
+                    allowedDT: !Ext.isEmpty(options.allowedDT) ? options.allowedDT: null,
+                    allowedCT: !Ext.isEmpty(options.allowedCT) ? options.allowedCT: null,
+                    contentMode: !Ext.isEmpty(options.contentMode) ? true: false
+
                 });
 
             }
@@ -168,7 +171,12 @@ Ext.define('extFinder.controller.ACLController', {
                         var task2 = new Ext.util.DelayedTask(function(){
                             ACL.interfaceRights=Ext.JSON.decode(response.responseText);
                             Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();
-                            Ext.getCmp("MainViewport").add(Ext.widget("searchResultsWindow",{MediaPickerMode:true}));
+                            if (CKEOptions.contentMode){
+                                Ext.getCmp("MainViewport").add(Ext.widget("searchResultsWindow",{DCEFMode:true}));
+                            } else {
+                                Ext.getCmp("MainViewport").add(Ext.widget("searchResultsWindow",{MediaPickerMode:true}));
+                            }
+
                         });
                         task2.delay(400);
                     },
