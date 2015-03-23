@@ -141,6 +141,13 @@ Ext.define('Rubedo.view.ordersInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (!Ext.isEmpty(Rubedo.RubedoAutomatedElementsLoc[value+"Text"])){
+                                    return Rubedo.RubedoAutomatedElementsLoc[value+"Text"];
+                                } else {
+                                    return value;
+                                }
+                            },
                             localiserId: 'statusCol',
                             dataIndex: 'status',
                             text: 'Status'

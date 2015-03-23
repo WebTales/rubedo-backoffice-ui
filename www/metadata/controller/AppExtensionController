@@ -114,17 +114,17 @@
                 ],
                 "fn": "init",
                 "implHandler": [
-                    "Ext.define('AppExtensions', {\r",
-                    "    singleton:true,\r",
-                    "    launchButtons:{\r",
-                    "        studio: [ ],\r",
-                    "        administration:[ ]\r",
-                    "    }\r",
-                    "});\r",
-                    "Ext.define('RubedoExtendableSettings', {\r",
-                    "    singleton:true,\r",
-                    "    orderStatusList:[\"pendingPayment\",\"payed\",\"cancelled\"]\r",
-                    "});"
+                    "Ext.define('AppExtensions', {",
+                    "    singleton:true,",
+                    "    launchButtons:{",
+                    "        studio: [ ],",
+                    "        administration:[ ]",
+                    "    }",
+                    "});",
+                    "Ext.define('RubedoExtendableSettings', {",
+                    "    singleton:true,",
+                    "    orderStatusList:[[\"pendingPayment\",Rubedo.RubedoAutomatedElementsLoc.pendingPaymentText],[\"payed\",Rubedo.RubedoAutomatedElementsLoc.payedText],[\"cancelled\",Rubedo.RubedoAutomatedElementsLoc.cancelledText]",
+                    "]});"
                 ]
             },
             "name": "init",

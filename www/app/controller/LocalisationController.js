@@ -387,7 +387,10 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "largeDesktopText":"Large desktop",
                     "customTemplateText":"Custom template",
                     "displayAsTabsText":"Display as tabs",
-                    "stackingThresholdText": "Stacking threshold"
+                    "stackingThresholdText": "Stacking threshold",
+                    "cancelledText":"Cancelled",
+                    "pendingPaymentText":"Pending payment",
+                    "payedText":"Payed"
                 });
 
         this.control({

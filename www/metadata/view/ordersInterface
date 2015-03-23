@@ -340,6 +340,37 @@
                             "name": "localiserId",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "if (!Ext.isEmpty(Rubedo.RubedoAutomatedElementsLoc[value+\"Text\"])){",
+                                    "    return Rubedo.RubedoAutomatedElementsLoc[value+\"Text\"];",
+                                    "} else {",
+                                    "    return value;",
+                                    "}"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "a83d1a35-d5a4-4920-af27-0ca30cae1cc5"
+                        }
                     ]
                 },
                 {

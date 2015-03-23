@@ -90,8 +90,8 @@ Ext.define('Rubedo.controller.AppExtensionController', {
         });
         Ext.define('RubedoExtendableSettings', {
             singleton:true,
-            orderStatusList:["pendingPayment","payed","cancelled"]
-        });
+            orderStatusList:[["pendingPayment",Rubedo.RubedoAutomatedElementsLoc.pendingPaymentText],["payed",Rubedo.RubedoAutomatedElementsLoc.payedText],["cancelled",Rubedo.RubedoAutomatedElementsLoc.cancelledText]
+        ]});
     }
 
 });
