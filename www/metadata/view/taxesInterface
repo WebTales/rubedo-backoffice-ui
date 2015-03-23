@@ -84,7 +84,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool161",
+            "name": "mytool16",
             "designerId": "daacc53c-5a5a-4a53-b7a7-be5cc41996d0",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -95,7 +95,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool171",
+            "name": "mytool17",
             "designerId": "80792028-5156-423c-bf2a-bc0df7893a7c",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -655,6 +655,7 @@
                                 "ACL": "write.ui.taxes",
                                 "iconCls": "add",
                                 "layout|flex": null,
+                                "localiserId": "addBtn",
                                 "text": "Add"
                             },
                             "name": "MyButton396",
@@ -663,6 +664,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ],
@@ -709,6 +715,7 @@
                                 "iconCls": "close",
                                 "id": "taxRemoveBtn",
                                 "layout|flex": null,
+                                "localiserId": "removeBtn",
                                 "text": "Remove"
                             },
                             "name": "MyButton397",
@@ -717,6 +724,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ],

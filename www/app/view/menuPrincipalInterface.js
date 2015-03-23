@@ -434,6 +434,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                 ACL: 'read.ui.contents',
                 favoriteIcon: 'page_full.png',
                 itemId: 'contributionContenus',
+                localiserId:'productsShortcutBtn',
                 iconCls: 'content-icon',
                 text: 'Products (Contents interface)'
             },

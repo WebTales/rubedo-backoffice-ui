@@ -40,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool163",
+            "name": "mytool162",
             "designerId": "eb809d1d-9f5f-48fa-8b31-817c7058ffed",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool173",
+            "name": "mytool172",
             "designerId": "56ba6e95-b4f0-4952-8755-56fe9b4cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -379,10 +379,18 @@
                                 "iconCls": "database_down_small",
                                 "id": "ordersExportBtn",
                                 "layout|flex": null,
+                                "localiserId": "exportOrdersBtn",
                                 "text": "Export orders"
                             },
                             "name": "MyButton",
                             "designerId": "0eef1990-d581-41cf-ac4c-1217b03e5488",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",

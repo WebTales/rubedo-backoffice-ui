@@ -239,6 +239,7 @@ Ext.define('Rubedo.view.taxesInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.taxes',
+                                    localiserId: 'addBtn',
                                     iconCls: 'add',
                                     text: 'Add',
                                     listeners: {
@@ -251,6 +252,7 @@ Ext.define('Rubedo.view.taxesInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.taxes',
+                                    localiserId: 'removeBtn',
                                     disabled: true,
                                     id: 'taxRemoveBtn',
                                     iconCls: 'close',

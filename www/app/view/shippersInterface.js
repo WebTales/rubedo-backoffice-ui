@@ -55,8 +55,8 @@ Ext.define('Rubedo.view.shippersInterface', {
             dockedItems: [
                 {
                     xtype: 'toolbar',
-                    dock: 'top',
                     ACL: 'write.ui.shippers',
+                    dock: 'top',
                     items: [
                         {
                             xtype: 'button',
@@ -274,10 +274,15 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        if (!Ext.isEmpty(value)){
+                                            return(Rubedo.RubedoAutomatedElementsLoc[value+"Text"]);
+                                        } else return value;
+                                    },
                                     localiserId: 'displayedDelayUnitCol',
                                     dataIndex: 'hRUnit',
                                     text: 'Displayed delay (unit)',
-                                    editor: {
+                                    editor: me.processMyComboBox68({
                                         xtype: 'combobox',
                                         allowBlank: false,
                                         allowOnlyWhitespace: false,
@@ -301,14 +306,14 @@ Ext.define('Rubedo.view.shippersInterface', {
                                                 'months'
                                             ]
                                         ]
-                                    }
+                                    })
                                 }
                             ],
                             dockedItems: [
                                 {
                                     xtype: 'toolbar',
-                                    dock: 'bottom',
                                     ACL: 'write.ui.shippers',
+                                    dock: 'bottom',
                                     items: [
                                         {
                                             xtype: 'tbfill'
@@ -403,6 +408,38 @@ Ext.define('Rubedo.view.shippersInterface', {
         if (!ACL.interfaceRights["write.ui.shippers"]){
             config.readOnly=true;
         }
+        config.store=[
+                                                [
+                                                    'flatPerOrder',
+                                                    Rubedo.RubedoAutomatedElementsLoc.flatRatePerOrderText
+                                                ],
+                                                [
+                                                    'flatPerItem',
+                                                    Rubedo.RubedoAutomatedElementsLoc.flatRatePerItemText
+                                                ]
+                                            ];
+        return config;
+    },
+
+    processMyComboBox68: function(config) {
+        config.store=[
+                                                    [
+                                                        'hours',
+                                                        Rubedo.RubedoAutomatedElementsLoc.hoursText
+                                                    ],
+                                                    [
+                                                        'days',
+                                                        Rubedo.RubedoAutomatedElementsLoc.daysText
+                                                    ],
+                                                    [
+                                                        'weeks',
+                                                        Rubedo.RubedoAutomatedElementsLoc.weeksText
+                                                    ],
+                                                    [
+                                                        'months',
+                                                        Rubedo.RubedoAutomatedElementsLoc.monthsText
+                                                    ]
+                                                ];
         return config;
     },
 

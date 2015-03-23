@@ -160,6 +160,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         Ext.widget("ordersExportWindow").show();
 
                                     },
+                                    localiserId: 'exportOrdersBtn',
                                     id: 'ordersExportBtn',
                                     iconCls: 'database_down_small',
                                     text: 'Export orders'
@@ -230,8 +231,8 @@ Ext.define('Rubedo.view.ordersInterface', {
                                         }
                                     },
                                     localiserId: 'applyChangesBtn',
-                                    anchor: '40%',
                                     ACL: 'write.ui.orders',
+                                    anchor: '40%',
                                     style: 'float:right;',
                                     text: 'Apply changes'
                                 }
