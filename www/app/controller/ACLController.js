@@ -162,7 +162,8 @@ Ext.define('Rubedo.controller.ACLController', {
                 Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Rubedo.RubedoAutomatedElementsLoc.rightsRecoveryError);
             }
         });
-        ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},60000);
+        ACL.sessionCheckRefreshIncrement=20;
+        ACL.sessionCheckIterator=setInterval(function(){me.checkSessionStatus();},20000);
     },
 
     checkSessionStatus: function() {
@@ -170,37 +171,70 @@ Ext.define('Rubedo.controller.ACLController', {
         var refreshToken=Ext.util.Cookies.get("refreshToken");
         if (!accessToken&&!refreshToken){
             if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
-                        Ext.widget("sessionExpiredWindow").show();
-                    }
+                Ext.widget("sessionExpiredWindow").show();
+            }
             clearInterval(ACL.sessionCheckIterator);
         } else if (!accessToken&&refreshToken){
             Ext.Ajax.request({
-            url:'/api/v1/auth/oauth2/refresh',
-            params:{
-                "refresh_token":refreshToken
-            },
-            success:function(response){
-                var decodedResponse=Ext.JSON.decode(response.responseText);
-                if (decodedResponse.success) {
-                    var expirationDate=decodedResponse.token.createTime+decodedResponse.token.lifetime;
-                    expirationDate=new Date(expirationDate*1000);
-                    Ext.util.Cookies.set("accessToken",decodedResponse.token.access_token,expirationDate);
-                    Ext.util.Cookies.set("refreshToken",decodedResponse.token.refresh_token);
-                } else {
+                url:'/api/v1/auth/oauth2/refresh',
+                params:{
+                    "refresh_token":refreshToken
+                },
+                success:function(response){
+                    var decodedResponse=Ext.JSON.decode(response.responseText);
+                    if (decodedResponse.success) {
+                        var expirationDate=decodedResponse.token.createTime+decodedResponse.token.lifetime;
+                        expirationDate=new Date(expirationDate*1000);
+                        Ext.util.Cookies.set("accessToken",decodedResponse.token.access_token,expirationDate);
+                        Ext.util.Cookies.set("refreshToken",decodedResponse.token.refresh_token);
+                    } else {
+                        if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
+                            Ext.widget("sessionExpiredWindow").show();
+                        }
+                        clearInterval(ACL.sessionCheckIterator);
+
+                    }
+                },
+                failure:function(){
                     if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
                         Ext.widget("sessionExpiredWindow").show();
                     }
                     clearInterval(ACL.sessionCheckIterator);
-
                 }
-            },
-            failure:function(){
-                if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
-                        Ext.widget("sessionExpiredWindow").show();
+            });
+        } else {
+            if (!ACL.sessionCheckRefreshIncrement||ACL.sessionCheckRefreshIncrement<=0){
+                Ext.Ajax.request({
+                    url:'/api/v1/auth/oauth2/refresh',
+                    params:{
+                        "refresh_token":refreshToken
+                    },
+                    success:function(response){
+                        var decodedResponse=Ext.JSON.decode(response.responseText);
+                        if (decodedResponse.success) {
+                            var expirationDate=decodedResponse.token.createTime+decodedResponse.token.lifetime;
+                            expirationDate=new Date(expirationDate*1000);
+                            Ext.util.Cookies.set("accessToken",decodedResponse.token.access_token,expirationDate);
+                            Ext.util.Cookies.set("refreshToken",decodedResponse.token.refresh_token);
+                            ACL.sessionCheckRefreshIncrement=20;
+                        } else {
+                            if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
+                                Ext.widget("sessionExpiredWindow").show();
+                            }
+                            clearInterval(ACL.sessionCheckIterator);
+
+                        }
+                    },
+                    failure:function(){
+                        if (Ext.isEmpty(Ext.getCmp("sessionExpiredWindow"))){
+                            Ext.widget("sessionExpiredWindow").show();
+                        }
+                        clearInterval(ACL.sessionCheckIterator);
                     }
-                clearInterval(ACL.sessionCheckIterator);
+                });
+            } else {
+                ACL.sessionCheckRefreshIncrement=ACL.sessionCheckRefreshIncrement-1;
             }
-        });
         }
 
     }
