@@ -646,6 +646,7 @@
                                             "        modRec.set(\"query\",refined);",
                                             "        modRec.set(\"returnedFields\",Ext.getCmp(\"QBReturnedFieldsField\").getValue());",
                                             "        modRec.endEdit();",
+                                            "        Ext.getCmp(\"manualQueryInterface\").close();",
                                             "    } else {",
                                             "        var newQuery = Ext.create(\"Rubedo.model.queryDataModel\", {",
                                             "            name:Rubedo.RubedoAutomatedElementsLoc.manualQueryText,",
@@ -660,10 +661,11 @@
                                             "        Ext.getStore(\"QueriesStore\").add(newQuery);",
                                             "        Ext.getStore(\"QueriesStore\").addListener(\"update\", function(){",
                                             "            Ext.getCmp(Ext.getCmp(\"manualQueryInterface\").mainFieldId).select(newQuery);",
+                                            "            Ext.getCmp(\"manualQueryInterface\").close();",
                                             "        },this,{single:true});",
                                             "    }",
                                             "",
-                                            "    Ext.getCmp(\"manualQueryInterface\").close();",
+                                            "    ",
                                             "}"
                                         ],
                                         "name": "click",
@@ -746,7 +748,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool1716",
             "designerId": "67a234fc-c280-402c-b478-ba009eac0564",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
