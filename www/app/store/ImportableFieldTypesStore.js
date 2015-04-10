@@ -54,6 +54,94 @@ Ext.define('Rubedo.store.ImportableFieldTypesStore', {
                     protoId: ''
                 },
                 {
+                    type: 'Embedded image',
+                    cType: 'Rubedo.view.embeddedImageField',
+                    openWindow: '',
+                    description: 'Embedded image',
+                    config: {
+                        name: 'embeddedImage',
+                        fieldLabel: 'Embedded image',
+                        allowBlank: true,
+                        localizable: true,
+                        searchable: false,
+                        notAnalyzed: true,
+                        returnInSearch: false,
+                        useAsFacet: false,
+                        facetOperator: 'AND',
+                        multivalued: false,
+                        tooltip: '',
+                        labelSeparator: ' '
+                    },
+                    configFields: [
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: '#ext-gen1054#',
+                                name: 'name',
+                                vtype: 'alphanum',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: '#ext-gen1055#',
+                                name: 'fieldLabel',
+                                allowBlank: false
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Text',
+                            config: {
+                                fieldLabel: '#ext-gen1056#',
+                                name: 'tooltip',
+                                allowBlank: true
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: '#ext-gen1067#',
+                                name: 'allowBlank'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: '#ext-gen1068#',
+                                name: 'localizable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            isASearchField: true,
+                            config: {
+                                fieldLabel: '#ext-gen1057#',
+                                name: 'searchable'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            isASearchField: true,
+                            config: {
+                                fieldLabel: '#ext-gen1265#',
+                                name: 'returnInSearch'
+                            }
+                        },
+                        {
+                            type: 'Ext.form.field.Checkbox',
+                            config: {
+                                fieldLabel: '#ext-gen1058#',
+                                name: 'multivalued'
+                            }
+                        }
+                    ],
+                    store: '',
+                    id: '54fdcc45f05c1dbc27000029',
+                    category: '#ext-gen1163#',
+                    protoId: ''
+                },
+                {
                     type: 'Location',
                     cType: 'Rubedo.view.localiserField',
                     openWindow: '',
