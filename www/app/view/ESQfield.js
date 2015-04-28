@@ -114,6 +114,7 @@ Ext.define('Rubedo.view.ESQfield', {
             var task = new Ext.util.DelayedTask(function(){
                 Ext.widget("searchResultsWindow", {
                     queryMode:component.queryMode,
+                    productQueryMode:component.productQueryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
                     advancedESQMode:component.advancedESQMode,
