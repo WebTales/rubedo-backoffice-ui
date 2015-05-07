@@ -164,6 +164,9 @@ Ext.define('Rubedo.controller.PagesController', {
                 Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
                     field.setReadOnly(false);
                 });
+            Ext.Array.forEach(Ext.getCmp("pagesTaxoForm").query("field"), function(field){
+                    field.setReadOnly(false);
+                });
                 Ext.Ajax.request({
                     url: 'xhr-get-page-url',
                     params: {
@@ -192,12 +195,22 @@ Ext.define('Rubedo.controller.PagesController', {
                 metaBox.update(values);
                 metaBox.show();
                 Ext.getCmp("addPageBtn").enable();
+            Ext.getCmp("pagesTaxoForm").getForm().reset();
+            var pageTaxo=Ext.clone(record.get("taxonomy"));
+            if (Ext.isEmpty(pageTaxo)){
+                pageTaxo={ };
+
+            }
+            Ext.getCmp("pagesTaxoForm").getForm().setValues(pageTaxo);
                 if((!ACL.interfaceRights["write.ui.pages"])||(record.get("readOnly"))){
                     Ext.getCmp("removePageBtn").disable();
                     Ext.getCmp("addPageBtn").disable();
                     Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
                     Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[2].disable();
                     Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
+                        field.setReadOnly(true);
+                    });
+                    Ext.Array.forEach(Ext.getCmp("pagesTaxoForm").query("field"), function(field){
                         field.setReadOnly(true);
                     });
                 }
@@ -613,10 +626,12 @@ Ext.define('Rubedo.controller.PagesController', {
             var editedPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
             var newBlocks=this.saveBlocks(Ext.getCmp("mainPageEdition"));
             var store=Ext.getCmp("mainPageTree").getStore();
+            var newTaxo=Ext.getCmp("pagesTaxoForm").getForm().getValues();
             store.suspendAutoSync();
             editedPage.beginEdit();
             editedPage.set("blocks",newBlocks);
             editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getFieldValues());
+            editedPage.set("taxonomy",newTaxo);
             Ext.getCmp("pagesDLSToolbar").persisti18n(editedPage);
             editedPage.endEdit();
             store.resumeAutoSync();

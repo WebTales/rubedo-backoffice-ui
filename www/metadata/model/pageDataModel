@@ -379,6 +379,22 @@
             },
             "name": "MyField259",
             "designerId": "b131bfa8-22e5-4215-a23e-2effe98c8957"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "{ }"
+                ],
+                "name": "taxonomy"
+            },
+            "name": "MyField",
+            "designerId": "eb91c6c0-d23c-4133-b796-7c9ac2cdce7f"
         }
     ]
 }

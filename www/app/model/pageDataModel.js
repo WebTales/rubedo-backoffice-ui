@@ -118,6 +118,12 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'noFollow'
+        },
+        {
+            defaultValue: {
+                
+            },
+            name: 'taxonomy'
         }
     ]
 });
