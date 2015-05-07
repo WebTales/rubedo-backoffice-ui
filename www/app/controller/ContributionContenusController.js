@@ -960,7 +960,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 });
                 storeT.on("beforeload", function(s,o){
                     o.filters=Ext.Array.slice(o.filters,0,1);
-                    if (!Ext.isEmpty(o.params.comboQuery)){
+                    if (o.params&&!Ext.isEmpty(o.params.comboQuery)){
 
                         var newFilter=Ext.create('Ext.util.Filter', {
                             property:"text",
@@ -999,6 +999,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
             enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
             if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
             formTaxoTC.add(enrobage);
+            storeT.load();
         }
         }
 
