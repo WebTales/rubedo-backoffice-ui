@@ -119,8 +119,8 @@ Ext.define('Rubedo.controller.SearchController', {
                 if (!Ext.isEmpty(facet.ranges)){
                     Ext.Array.forEach(facet.ranges, function(rangeTerm){
                         if ((rangeTerm.count<Ext.getStore("ESFacetteStore").getTotalCount())&&(rangeTerm.count!==0)){
+                            rangeTerm.term=rangeTerm.key;
                             facet.terms.push(rangeTerm);
-                            rangeTerm.term=rangeTerm.from;
 
                         }
                     });
