@@ -422,7 +422,8 @@ Ext.application({
         'embeddedImageField',
         'embeddedImageFieldComponent',
         'B64ImageUploadWindow',
-        'DBRestoreInterface'
+        'DBRestoreInterface',
+        'DBExportInterface'
     ],
     controllers: [
         'ContributionContenusController',

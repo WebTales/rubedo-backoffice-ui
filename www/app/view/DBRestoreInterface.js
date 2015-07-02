@@ -103,7 +103,7 @@ Ext.define('Rubedo.view.DBRestoreInterface', {
         var form=button.up().getForm();
         if (form.isValid()){
             form.submit({
-                url:"/backoffice/export",
+                url:"/backoffice/restore",
                 success: function(form, action) {
                Ext.Msg.alert('Success', action.result.msg);
             },
