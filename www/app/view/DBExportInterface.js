@@ -61,7 +61,7 @@ Ext.define('Rubedo.view.DBExportInterface', {
                             xtype: 'combobox',
                             anchor: '100%',
                             fieldLabel: 'Collections',
-                            name: 'collection',
+                            name: 'collection[]',
                             allowBlank: false,
                             allowOnlyWhitespace: false,
                             editable: false,
@@ -135,24 +135,12 @@ Ext.define('Rubedo.view.DBExportInterface', {
     onButtonClick: function(button, e, eOpts) {
         var form=button.up().getForm();
         if (form.isValid()){
-            form.submit({
-                url:"/backoffice/dump",
-                success: function(form, action) {
-               Ext.Msg.alert('Success', action.result.msg);
-            },
-            failure: function(form, action) {
-                switch (action.failureType) {
-                    case Ext.form.action.Action.CLIENT_INVALID:
-                        Ext.Msg.alert('Error', 'Form fields may not be submitted with invalid values');
-                        break;
-                    case Ext.form.action.Action.CONNECT_FAILURE:
-                        Ext.Msg.alert('Error', 'Ajax communication failed');
-                        break;
-                    case Ext.form.action.Action.SERVER_INVALID:
-                       Ext.Msg.alert('Error', action.result.msg);
-               }
-            }
+             window.onbeforeunload=Ext.emptyFn;
+            window.location.href="/backoffice/dump?"+Ext.Object.toQueryString(form.getValues());
+            var task63 = new Ext.util.DelayedTask(function(){
+                window.onbeforeunload = function() { return Rubedo.RubedoAutomatedElementsLoc.windowBeforeUnloadMessage; };
             });
+            task63.delay(400);
         }
     }
 
