@@ -105,7 +105,13 @@ Ext.define('Rubedo.view.DBRestoreInterface', {
             form.submit({
                 url:"/backoffice/restore",
                 success: function(form, action) {
-               Ext.Msg.alert('Success', action.result.msg);
+               //Ext.Msg.alert('Success', action.result.msg);
+                var answerMe = Ext.widget("esResponseWindow");
+                answerMe.getComponent(0).setSource(action.result.restoredElements);
+                Ext.getCmp("ViewportPrimaire").add(answerMe);
+                    delete(answerMe.localiserId);
+                    answerMe.setTitle("Restored elements");
+                answerMe.show();
             },
             failure: function(form, action) {
                 switch (action.failureType) {
