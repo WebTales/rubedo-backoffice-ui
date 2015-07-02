@@ -23,7 +23,6 @@ Ext.define('Rubedo.view.DBExportInterface', {
         'Ext.panel.Tool',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
-        'Ext.form.field.Checkbox',
         'Ext.button.Button'
     ],
 
@@ -98,14 +97,6 @@ Ext.define('Rubedo.view.DBExportInterface', {
                                     scope: me
                                 }
                             }
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            anchor: '100%',
-                            fieldLabel: 'Dump files',
-                            name: 'dumpFiles',
-                            boxLabel: '',
-                            inputValue: 'true'
                         },
                         {
                             xtype: 'button',

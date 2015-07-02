@@ -136,24 +136,6 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "boxLabel": "",
-                        "fieldLabel": "Dump files",
-                        "inputValue": "true",
-                        "layout|anchor": "100%",
-                        "name": "dumpFiles",
-                        "uncheckedValue": null
-                    },
-                    "name": "MyCheckbox",
-                    "designerId": "6aea0e52-a470-41b9-923d-29c48a992010"
-                },
-                {
                     "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
