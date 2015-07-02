@@ -28,7 +28,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
 
     border: 0,
     floating: true,
-    height: 350,
+    height: 370,
     id: 'menuPrincipalInterface',
     width: 350,
     bodyBorder: false,
@@ -399,6 +399,20 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             iconCls: 'database_up_small',
             localiserId:'importLaunchBtn',
             text: 'Import'
+        },{
+            xtype: 'menuitem',
+            ACL: 'exe.ui.import',
+            favoriteIcon: 'database_down.png',
+            itemId: 'DBExportInterface',
+            iconCls: 'database_down_small',
+            text: 'Dump'
+        },{
+            xtype: 'menuitem',
+            ACL: 'exe.ui.import',
+            favoriteIcon: 'database_up.png',
+            itemId: 'DBRestoreInterface',
+            iconCls: 'database_up_small',
+            text: 'Restore'
         },{
             xtype: 'menuitem',
             ACL: 'read.ui.mailingLists',

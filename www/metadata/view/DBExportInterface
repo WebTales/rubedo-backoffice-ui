@@ -1,0 +1,213 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "DBExportInterface",
+        "designer|userClassName": "DBExportInterface",
+        "height": null,
+        "iconCls": "database_down_small",
+        "id": "DBExportInterface",
+        "layout": "hbox",
+        "title": "Dump",
+        "width": 480
+    },
+    "name": "WorkspacesInterface1",
+    "designerId": "81ce093f-9ed8-4282-a2f3-1c2d7dfdd33c",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "mytool161",
+            "designerId": "fc8bc43e-a275-4214-99e8-e7dfdd607b5b",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "mytool171",
+            "designerId": "0cb14293-2a89-484e-972c-aabcc87b6a3a",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "layout|flex": 1,
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "37a2dd6b-ae17-4338-b077-ae0716b465ef",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "editable": false,
+                        "fieldLabel": "Collections",
+                        "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "multiSelect": true,
+                        "name": "collection",
+                        "store": [
+                            "[",
+                            "\t\t'all',",
+                            "        'Blocks',",
+                            "\t\t'ContentTypes',",
+                            "\t\t'Contents',",
+                            "\t\t'CustomThemes',",
+                            "\t\t'Dam',",
+                            "\t\t'DamTypes',",
+                            "\t\t'Directories',",
+                            "\t\t'Groups',",
+                            "\t\t'Languages',",
+                            "\t\t'Masks',",
+                            "\t\t'Pages',",
+                            "\t\t'Queries',",
+                            "\t\t'ReusableElements',",
+                            "\t\t'Shippers',",
+                            "\t\t'Sites',",
+                            "\t\t'Taxes',",
+                            "\t\t'Taxonomy',",
+                            "\t\t'TaxonomyTerms',",
+                            "\t\t'Themes',",
+                            "\t\t'UserTypes',",
+                            "\t\t'Users',",
+                            "\t\t'Workspaces'",
+                            "\t]"
+                        ]
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "store": "array"
+                    },
+                    "designerId": "652dce72-dbb9-4b38-bd64-05e83590e1b5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onComboboxChange",
+                                "implHandler": [
+                                    "if (newValue&&Ext.Array.contains(newValue,\"all\")&&newValue.length>1){",
+                                    "    field.setValue([\"all\"]);",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onComboboxChange",
+                            "designerId": "e657cd6b-495f-49d5-a777-84e50bf4a123"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Dump files",
+                        "inputValue": "true",
+                        "layout|anchor": "100%",
+                        "name": "dumpFiles",
+                        "uncheckedValue": null
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "6aea0e52-a470-41b9-923d-29c48a992010"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "text": "Download as zip"
+                    },
+                    "name": "MyButton",
+                    "designerId": "16e03321-beba-4b9e-9bff-81130fdbd405",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var form=button.up().getForm();",
+                                    "if (form.isValid()){",
+                                    "    form.submit({",
+                                    "        url:\"/backoffice/dump\",",
+                                    "        success: function(form, action) {",
+                                    "       Ext.Msg.alert('Success', action.result.msg);",
+                                    "    },",
+                                    "    failure: function(form, action) {",
+                                    "        switch (action.failureType) {",
+                                    "            case Ext.form.action.Action.CLIENT_INVALID:",
+                                    "                Ext.Msg.alert('Error', 'Form fields may not be submitted with invalid values');",
+                                    "                break;",
+                                    "            case Ext.form.action.Action.CONNECT_FAILURE:",
+                                    "                Ext.Msg.alert('Error', 'Ajax communication failed');",
+                                    "                break;",
+                                    "            case Ext.form.action.Action.SERVER_INVALID:",
+                                    "               Ext.Msg.alert('Error', action.result.msg);",
+                                    "       }",
+                                    "    }",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "50299f1c-c8e5-45e0-95b0-267fd810f180"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
