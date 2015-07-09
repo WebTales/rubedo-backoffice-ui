@@ -746,6 +746,7 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                             items: [
                                                 {
                                                     xtype: 'combobox',
+                                                    localiserId: 'signUpTypeField',
                                                     anchor: '100%',
                                                     fieldLabel: 'Sign-up type',
                                                     labelWidth: 130,
