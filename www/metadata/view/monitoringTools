@@ -17,7 +17,7 @@
         "layout": "vbox",
         "localiserId": "monitoringField",
         "title": "Supervision",
-        "width": 741
+        "width": 874
     },
     "designerId": "aad4192f-6fb1-4dbc-946e-1204a1cea801",
     "customConfigs": [
@@ -40,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool163",
+            "name": "mytool161",
             "designerId": "5d0f7b8f-4e50-4973-aa72-46073dcab348",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool173",
+            "name": "mytool171",
             "designerId": "c13d8263-de02-4747-a28e-d99e79adccbc",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -808,6 +808,54 @@
                             },
                             "name": "handler",
                             "designerId": "b43f6a3f-e780-486a-a8e5-141334a3b44a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "process-icon",
+                        "layout|flex": null,
+                        "text": "Apply collection indexes"
+                    },
+                    "name": "MyButton",
+                    "designerId": "6500a8c3-ee62-4c06-961e-911d93cd974c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "button.setLoading(true);",
+                                    "Ext.Ajax.request({",
+                                    "    url: 'update/apply-indexes',",
+                                    "    params: {",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "        var data = Ext.JSON.decode(response.responseText);",
+                                    "        button.setLoading(false);",
+                                    "",
+                                    "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Collection indexes applied.\");",
+                                    "",
+                                    "    }});"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "27939c3f-a9c2-45a6-9048-9f2cd6f739ed"
                         }
                     ]
                 },

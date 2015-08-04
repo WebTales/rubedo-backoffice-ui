@@ -34,7 +34,7 @@ Ext.define('Rubedo.view.monitoringTools', {
     localiserId: 'monitoringField',
     height: 325,
     id: 'monitoringTools',
-    width: 741,
+    width: 874,
     constrainHeader: true,
     iconCls: 'monitoring',
     title: 'Supervision',
@@ -328,6 +328,25 @@ Ext.define('Rubedo.view.monitoringTools', {
                             icon: 'resources/icones/generic/database.png',
                             text: 'Database is up to date'
                         }),
+                        {
+                            xtype: 'button',
+                            handler: function(button, e) {
+                                button.setLoading(true);
+                                Ext.Ajax.request({
+                                    url: 'update/apply-indexes',
+                                    params: {
+                                    },
+                                    success: function(response){
+                                        var data = Ext.JSON.decode(response.responseText);
+                                        button.setLoading(false);
+
+                                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Collection indexes applied.");
+
+                                    }});
+                            },
+                            iconCls: 'process-icon',
+                            text: 'Apply collection indexes'
+                        },
                         {
                             xtype: 'button',
                             handler: function(button, e) {

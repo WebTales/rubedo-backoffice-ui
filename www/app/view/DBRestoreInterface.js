@@ -105,26 +105,26 @@ Ext.define('Rubedo.view.DBRestoreInterface', {
             form.submit({
                 url:"/backoffice/restore",
                 success: function(form, action) {
-               //Ext.Msg.alert('Success', action.result.msg);
-                var answerMe = Ext.widget("esResponseWindow");
-                answerMe.getComponent(0).setSource(action.result.restoredElements);
-                Ext.getCmp("ViewportPrimaire").add(answerMe);
+                    //Ext.Msg.alert('Success', action.result.msg);
+                    var answerMe = Ext.widget("esResponseWindow");
+                    answerMe.getComponent(0).setSource(action.result.restoredElements);
+                    Ext.getCmp("ViewportPrimaire").add(answerMe);
                     delete(answerMe.localiserId);
                     answerMe.setTitle("Restored elements");
-                answerMe.show();
-            },
-            failure: function(form, action) {
-                switch (action.failureType) {
-                    case Ext.form.action.Action.CLIENT_INVALID:
-                        Ext.Msg.alert('Error', 'Form fields may not be submitted with invalid values');
-                        break;
-                    case Ext.form.action.Action.CONNECT_FAILURE:
-                        Ext.Msg.alert('Error', 'Ajax communication failed');
-                        break;
-                    case Ext.form.action.Action.SERVER_INVALID:
-                       Ext.Msg.alert('Error', action.result.msg);
-               }
-            }
+                    answerMe.show();
+                },
+                failure: function(form, action) {
+                    switch (action.failureType) {
+                        case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Error', 'Form fields may not be submitted with invalid values');
+                            break;
+                        case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Error', 'Ajax communication failed');
+                            break;
+                        case Ext.form.action.Action.SERVER_INVALID:
+                            Ext.Msg.alert('Error', action.result.msg);
+                    }
+                }
             });
         }
     }
