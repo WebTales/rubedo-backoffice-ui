@@ -81,7 +81,13 @@ Ext.define('Rubedo.controller.FOThemesController', {
     },
 
     onThemeFileDeleteBtnClick: function(button, e, eOpts) {
-        Ext.getCmp("themeFileManagerGrid").getStore().remove(Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection());
+        var delCon = Ext.widget('delConfirmZ');
+        delCon.show();
+        Ext.getCmp('delConfirmZOui').on('click', function() {
+            Ext.getCmp("themeFileManagerGrid").getStore().remove(Ext.getCmp("themeFileManagerGrid").getSelectionModel().getSelection());
+            Ext.getCmp('delConfirmZ').close();
+        });
+
     },
 
     onThemeFileUploadBtnClick: function(button, e, eOpts) {

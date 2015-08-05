@@ -151,7 +151,13 @@
                 "designer|targetType": "Ext.button.Button",
                 "fn": "onThemeFileDeleteBtnClick",
                 "implHandler": [
-                    "Ext.getCmp(\"themeFileManagerGrid\").getStore().remove(Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection());"
+                    "var delCon = Ext.widget('delConfirmZ');",
+                    "delCon.show();",
+                    "Ext.getCmp('delConfirmZOui').on('click', function() {",
+                    "    Ext.getCmp(\"themeFileManagerGrid\").getStore().remove(Ext.getCmp(\"themeFileManagerGrid\").getSelectionModel().getSelection());",
+                    "    Ext.getCmp('delConfirmZ').close();",
+                    "});",
+                    ""
                 ],
                 "name": "click",
                 "scope": "me"
