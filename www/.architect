@@ -2746,7 +2746,6 @@
                     "cn": [
                         {
                             "id": "fc5aec75-3b24-4636-91ef-4ab3b58d0cb7",
-                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "3e88f0dd-a817-428c-9196-8bf2d9687ec0"
@@ -2797,7 +2796,6 @@
                         },
                         {
                             "id": "d69bdf7f-693a-48d8-afd8-8077e71401fe",
-                            "expanded": false,
                             "cn": [
                                 {
                                     "id": "fc4ac7d2-b031-45a7-bc62-108737f1f804"
@@ -2828,6 +2826,7 @@
                                         },
                                         {
                                             "id": "c7ec2131-9c4a-4f2a-8b7d-5a5834bf829e",
+                                            "expanded": false,
                                             "cn": [
                                                 {
                                                     "id": "4aac2896-fd55-4956-b889-63edbbda59c3"
@@ -2837,6 +2836,14 @@
                                                 },
                                                 {
                                                     "id": "800082df-9b24-4cad-826f-5f4633bf953a"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "91711a86-18fd-4d3c-9fbb-6f7e75f24a05",
+                                            "cn": [
+                                                {
+                                                    "id": "77de3bd9-dcb5-4251-810d-eff76a44040f"
                                                 }
                                             ]
                                         },
@@ -15374,6 +15381,9 @@
                 },
                 {
                     "id": "eb91c6c0-d23c-4133-b796-7c9ac2cdce7f"
+                },
+                {
+                    "id": "c370d84e-0c71-4615-8774-5eb1219fb63f"
                 }
             ]
         },
@@ -17403,17 +17413,20 @@
     "tabState": {
         "openTabs": [
             "1366c4ef-d97c-4ac1-9ee9-954b0852c1a0",
-            "aad4192f-6fb1-4dbc-946e-1204a1cea801"
+            "aad4192f-6fb1-4dbc-946e-1204a1cea801",
+            "de8dc629-dc89-4153-926c-012ddbaa1d57",
+            "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
+            "84a70db4-eb10-4d76-81cc-006305b2ab59"
         ]
     },
     "canvasState": {
-        "topInstance": "aad4192f-6fb1-4dbc-946e-1204a1cea801"
+        "topInstance": null
     },
     "inspectorState": {
-        "topInstance": null,
-        "selectedInstance": null
+        "topInstance": "84a70db4-eb10-4d76-81cc-006305b2ab59",
+        "selectedInstance": "84a70db4-eb10-4d76-81cc-006305b2ab59"
     },
-    "editMode": "design",
+    "editMode": "code",
     "userSettings": {
         "no-cmd": true
     }

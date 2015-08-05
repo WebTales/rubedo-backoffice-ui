@@ -124,6 +124,9 @@ Ext.define('Rubedo.model.pageDataModel', {
                 
             },
             name: 'taxonomy'
+        },
+        {
+            name: 'richTextId'
         }
     ]
 });

@@ -25,6 +25,7 @@ Ext.define('Rubedo.view.pagesECommerceFieldset', {
 
     localiserId: 'eCCategoryFieldset',
     hidden: true,
+    collapsible: true,
     title: 'E-Commerce category',
 
     initComponent: function() {

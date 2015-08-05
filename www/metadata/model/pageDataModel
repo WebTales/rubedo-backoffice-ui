@@ -395,6 +395,19 @@
             },
             "name": "MyField",
             "designerId": "eb91c6c0-d23c-4133-b796-7c9ac2cdce7f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "richTextId"
+            },
+            "name": "MyField1",
+            "designerId": "c370d84e-0c71-4615-8774-5eb1219fb63f"
         }
     ]
 }

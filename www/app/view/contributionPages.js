@@ -592,6 +592,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                         {
                                             xtype: 'fieldset',
                                             localiserId: 'referencingFieldSEt',
+                                            collapsible: true,
                                             title: 'Référencement',
                                             items: [
                                                 {
@@ -618,9 +619,21 @@ Ext.define('Rubedo.view.contributionPages', {
                                                 }
                                             }
                                         },
+                                        {
+                                            xtype: 'fieldset',
+                                            collapsible: true,
+                                            title: 'Rich text',
+                                            listeners: {
+                                                afterrender: {
+                                                    fn: me.onFieldsetAfterRender,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
                                         me.processRobot({
                                             xtype: 'fieldset',
                                             localiserId: 'robotFieldset',
+                                            collapsible: true,
                                             title: 'Robot'
                                         }),
                                         {
@@ -789,6 +802,15 @@ Ext.define('Rubedo.view.contributionPages', {
             pinList:false
         });
         component.add(tagPicker);
+    },
+
+    onFieldsetAfterRender: function(component, eOpts) {
+        component.add(Ext.create("Rubedo.view.DCEField",{
+                                        "fieldLabel": "Rich text",
+                                        "name": "richTextId",
+                                        "allowedCT": "richText",
+                                        "addOnly": true
+                                }));
     },
 
     onPagesCenterTabBoxAfterRender: function(component, eOpts) {
