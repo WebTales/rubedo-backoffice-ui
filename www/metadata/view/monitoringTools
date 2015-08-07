@@ -479,6 +479,53 @@
                                     "designerId": "253baf61-ac31-4fe3-8f60-b45730a7b891"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "layout|flex": null,
+                                "text": "<b>Clear Object cache</b>"
+                            },
+                            "name": "MyButton10",
+                            "designerId": "9329c44f-781d-4ba8-bb9a-f004c32b26bc",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.setLoading(true);",
+                                            "Ext.Ajax.request({",
+                                            "    url: 'cache/clear-objects',",
+                                            "    params: {",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        button.setLoading(false);",
+                                            "        button.up().up().refreshCacheInfo();",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "69c749cc-be47-43a5-835a-17ae6bd62d33"
+                                }
+                            ]
                         }
                     ]
                 },

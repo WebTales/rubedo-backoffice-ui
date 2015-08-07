@@ -210,6 +210,23 @@ Ext.define('Rubedo.view.monitoringTools', {
                                         });
                                     },
                                     text: '<b>Clear URL cache</b>'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'cache/clear-objects',
+                                            params: {
+                                            },
+                                            success: function(response){
+                                                button.setLoading(false);
+                                                button.up().up().refreshCacheInfo();
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Clear Object cache</b>'
                                 }
                             ]
                         }
