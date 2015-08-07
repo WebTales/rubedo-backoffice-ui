@@ -255,18 +255,10 @@
                             "userConfig": {
                                 "id": "SupervisionClearCachetn",
                                 "layout|flex": null,
-                                "localiserId": "clearCacheBtn",
-                                "text": "<b>Vider le cache</b>"
+                                "text": "<b>Clear all cached items</b>"
                             },
                             "name": "MyButton255",
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -282,18 +274,209 @@
                                         ],
                                         "fn": "handler",
                                         "implHandler": [
-                                            "Ext.Ajax.request({\r",
-                                            "    url: 'cache/clear',\r",
-                                            "    params: {\r",
-                                            "    },\r",
-                                            "    success: function(response){\r",
-                                            "        button.up().up().refreshCacheInfo();\r",
-                                            "    }\r",
+                                            "button.setLoading(true);",
+                                            "Ext.Ajax.request({",
+                                            "    url: 'cache/clear',",
+                                            "    params: {",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        button.setLoading(false);",
+                                            "        button.up().up().refreshCacheInfo();",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "    }",
                                             "});"
                                         ]
                                     },
                                     "name": "handler",
                                     "designerId": "439aadb7-d58e-44ba-ba14-77fcb46fbadd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "layout|flex": null,
+                                "text": "<b>Clear file cache</b>"
+                            },
+                            "name": "MyButton6",
+                            "designerId": "25ded4c9-c9c9-45ee-8644-1a49a3982593",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.setLoading(true);",
+                                            "Ext.Ajax.request({",
+                                            "    url: 'cache/clear-files',",
+                                            "    params: {",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        button.setLoading(false);",
+                                            "        button.up().up().refreshCacheInfo();",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "607fdc5d-6b84-4f46-af6a-8c50d5849cbc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "layout|flex": null,
+                                "text": "<b>Clear config cache</b>"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "5a8a6ec0-9ad0-48e6-9780-e9004cdabe77",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.setLoading(true);",
+                                            "Ext.Ajax.request({",
+                                            "    url: 'cache/clear-config',",
+                                            "    params: {",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        button.setLoading(false);",
+                                            "        button.up().up().refreshCacheInfo();",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "bd3348b4-a19b-43b1-8fe3-967d816b5334"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "layout|flex": null,
+                                "text": "<b>Clear API cache</b>"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "fa6396e5-c0b2-458d-9624-ce4bce272ecf",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.setLoading(true);",
+                                            "Ext.Ajax.request({",
+                                            "    url: 'cache/clear-api',",
+                                            "    params: {",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        button.setLoading(false);",
+                                            "        button.up().up().refreshCacheInfo();",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "28beeddd-41f2-424f-9f9b-657a952e6adb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "layout|flex": null,
+                                "text": "<b>Clear URL cache</b>"
+                            },
+                            "name": "MyButton9",
+                            "designerId": "4942fc85-547f-4565-bf92-5901ee0054b9",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.setLoading(true);",
+                                            "Ext.Ajax.request({",
+                                            "    url: 'cache/clear-url',",
+                                            "    params: {",
+                                            "    },",
+                                            "    success: function(response){",
+                                            "        button.setLoading(false);",
+                                            "        button.up().up().refreshCacheInfo();",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "253baf61-ac31-4fe3-8f60-b45730a7b891"
                                 }
                             ]
                         }

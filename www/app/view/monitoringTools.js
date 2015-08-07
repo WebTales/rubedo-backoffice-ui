@@ -128,18 +128,88 @@ Ext.define('Rubedo.view.monitoringTools', {
                                 {
                                     xtype: 'button',
                                     handler: function(button, event) {
+                                        button.setLoading(true);
                                         Ext.Ajax.request({
                                             url: 'cache/clear',
                                             params: {
                                             },
                                             success: function(response){
+                                                button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
                                             }
                                         });
                                     },
-                                    localiserId: 'clearCacheBtn',
                                     id: 'SupervisionClearCachetn',
-                                    text: '<b>Vider le cache</b>'
+                                    text: '<b>Clear all cached items</b>'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'cache/clear-files',
+                                            params: {
+                                            },
+                                            success: function(response){
+                                                button.setLoading(false);
+                                                button.up().up().refreshCacheInfo();
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Clear file cache</b>'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'cache/clear-config',
+                                            params: {
+                                            },
+                                            success: function(response){
+                                                button.setLoading(false);
+                                                button.up().up().refreshCacheInfo();
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Clear config cache</b>'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'cache/clear-api',
+                                            params: {
+                                            },
+                                            success: function(response){
+                                                button.setLoading(false);
+                                                button.up().up().refreshCacheInfo();
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Clear API cache</b>'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, event) {
+                                        button.setLoading(true);
+                                        Ext.Ajax.request({
+                                            url: 'cache/clear-url',
+                                            params: {
+                                            },
+                                            success: function(response){
+                                                button.setLoading(false);
+                                                button.up().up().refreshCacheInfo();
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                            }
+                                        });
+                                    },
+                                    text: '<b>Clear URL cache</b>'
                                 }
                             ]
                         }
