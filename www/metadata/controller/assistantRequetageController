@@ -677,7 +677,7 @@
                     "    if (typesContenus.length==1) {",
                     "        var myThingType=Ext.getStore('TCNDepCombo').findRecord('id',typesContenus[0]);",
                     "        var champsReq = Ext.clone(myThingType.data.champs);",
-                    "        var champsEligibles = [\"datefield\", \"numberfield\", \"timefield\", \"slider\",\"ratingField\"];",
+                    "        var champsEligibles = [\"datefield\", \"numberfield\", \"timefield\", \"slider\",\"ratingField\",\"textfield\"];",
                     "        var champsReqF = Ext.Array.filter(champsReq, function(champ){",
                     "            if (Ext.Array.contains(champsEligibles, champ.cType)) {return true;} else {return false;}",
                     "        });",
