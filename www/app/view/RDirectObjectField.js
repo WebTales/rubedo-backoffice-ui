@@ -40,7 +40,12 @@ Ext.define('Rubedo.view.RDirectObjectField', {
     onHiddenfieldRender: function(component, eOpts) {
         Ext.require("resources/ace/src/ace");
         var myComponent = Ext.widget("ACEFieldComponent");
+        myComponent.on("afterrender",function(){
+            myComponent.getEl().on("click",function(){
 
+                component.getEl().dom.click();
+            });
+        });
         myComponent.setFieldLabel(component.fieldLabel+" ");
         component.on("change", function(a,newValue){
             if (Ext.isEmpty(newValue)){
