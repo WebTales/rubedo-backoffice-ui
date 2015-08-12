@@ -875,6 +875,9 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             var monStore=  Ext.create('Ext.data.Store', Ext.clone(donnees.store));
             configurateur.store = monStore;
         }
+        if (!configurateur.allowBlank&&configurateur.fieldLabel&&configurateur.fieldLabel.indexOf("*")<0){
+            configurateur.fieldLabel=configurateur.fieldLabel+" *";
+        }
         //begin temporary fix
         configurateur.labelSeparator=" ";
         //end temporary fix
