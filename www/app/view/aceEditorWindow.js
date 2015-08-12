@@ -109,7 +109,7 @@ Ext.define('Rubedo.view.aceEditorWindow', {
 
                 }));
             } else {
-                component.editor.setValue(Ext.JSON.encode(component.initialValue));
+                component.editor.setValue(JSON.stringify(component.initialValue, null, '\t'));
             }
 
         } else {
