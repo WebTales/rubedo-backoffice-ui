@@ -721,7 +721,7 @@ Ext.define('Rubedo.controller.DAMController', {
                     });
                 }
             }
-            if (!Ext.isEmpty(facet.terms)){
+            if (!Ext.isEmpty(facet.terms)&&facet.id!="objectType"){
                 var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
                 if(facet.id!="damType"){newFacet.collapse();}
                 newFacet.usedProperty=facet.id;
