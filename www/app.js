@@ -423,7 +423,8 @@ Ext.application({
         'embeddedImageFieldComponent',
         'B64ImageUploadWindow',
         'DBRestoreInterface',
-        'DBExportInterface'
+        'DBExportInterface',
+        'RDirectObjectField'
     ],
     controllers: [
         'ContributionContenusController',

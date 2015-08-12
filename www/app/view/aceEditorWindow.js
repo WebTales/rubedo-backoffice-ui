@@ -97,11 +97,24 @@ Ext.define('Rubedo.view.aceEditorWindow', {
             component.editor.getSession().setMode("ace/mode/javascript");
         } else if (component.twigMode){
             component.editor.getSession().setMode("ace/mode/twig");
-        } else {
+        } else if (component.rawObjectMode) {
+            component.editor.getSession().setMode("ace/mode/json");
+        }else {
         	component.editor.getSession().setMode("ace/mode/html");
         }
         component.editor.setTheme("ace/theme/monokai");
-        component.editor.setValue(component.initialValue);
+        if (component.rawObjectMode) {
+            if (Ext.isEmpty(component.initialValue)){
+                component.editor.setValue(Ext.JSON.encode({
+
+                }));
+            } else {
+                component.editor.setValue(Ext.JSON.encode(component.initialValue));
+            }
+
+        } else {
+            component.editor.setValue(component.initialValue);
+        }
         var task = new Ext.util.DelayedTask(function(){
             component.editor.setTheme("ace/theme/monokai");
         });
@@ -112,10 +125,21 @@ Ext.define('Rubedo.view.aceEditorWindow', {
         var component=button.up().up();
         if (component.targetedRec){
             component.targetedRec.set("code",component.editor.getValue());
+            component.close();
+        } else if (component.rawObjectMode) {
+            try {
+                var decoded=Ext.JSON.decode(component.editor.getValue());
+                Ext.getCmp(component.targetedId).setValue(decoded);
+                component.close();
+            }
+            catch(err) {
+                Ext.Msg.alert("Error","Invalid JSON");
+            }
         } else {
             Ext.getCmp(component.targetedId).setValue(component.editor.getValue());
+            component.close();
         }
-        component.close();
+
     },
 
     onAceEditorWindowBeforeClose: function(panel, eOpts) {

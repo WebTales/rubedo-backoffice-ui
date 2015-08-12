@@ -18,9 +18,7 @@ Ext.define('Rubedo.view.testingGround', {
     alias: 'widget.testingGround',
 
     requires: [
-        'Rubedo.view.embeddedImageField',
-        'Ext.form.Panel',
-        'Ext.form.field.Hidden'
+        'Ext.form.Panel'
     ],
 
     height: 450,
@@ -39,17 +37,21 @@ Ext.define('Rubedo.view.testingGround', {
                     id: 'tg1Form',
                     bodyPadding: 10,
                     title: 'Test embedded image field',
-                    items: [
-                        {
-                            xtype: 'embeddedImageField',
-                            name: 'test'
+                    listeners: {
+                        afterrender: {
+                            fn: me.onTg1FormAfterRender,
+                            scope: me
                         }
-                    ]
+                    }
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    onTg1FormAfterRender: function(component, eOpts) {
+        component.add(Ext.widget("RDirectObjectField",{"name":"testField","fieldLabel":"labels are useless"}));
     }
 
 });

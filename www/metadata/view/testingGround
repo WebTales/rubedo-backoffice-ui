@@ -32,18 +32,22 @@
             "designerId": "1559f2dd-d6d9-406f-938f-320aef190d41",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "name": "test"
+                        "fn": "onTg1FormAfterRender",
+                        "implHandler": [
+                            "component.add(Ext.widget(\"RDirectObjectField\",{\"name\":\"testField\",\"fieldLabel\":\"labels are useless\"}));"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
                     },
-                    "name": "embeddedimagefield",
-                    "designerId": "d8edb4cc-1187-4cf3-823a-b2c3efa2ba92",
-                    "masterInstanceId": "9ad05097-8688-4986-ba19-58fff252d90c"
+                    "name": "onTg1FormAfterRender",
+                    "designerId": "89a90a5c-bee6-4753-a729-26a127dcca4e"
                 }
             ]
         }
