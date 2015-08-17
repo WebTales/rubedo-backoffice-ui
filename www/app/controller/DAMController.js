@@ -712,13 +712,12 @@ Ext.define('Rubedo.controller.DAMController', {
         target.removeAll();
         Ext.Array.forEach(facets, function(facet){
             if (facet._type=="range"){
-                facet.id="lastupdatetime";
-                facet.terms=[ ];
+                facet.terms=[];
                 if (!Ext.isEmpty(facet.ranges)){
                     Ext.Array.forEach(facet.ranges, function(rangeTerm){
-                        if ((rangeTerm.count<Ext.getStore("DAMFacetteStore").getTotalCount())&&(rangeTerm.count!==0)){
+                        if (rangeTerm.count&&rangeTerm.count!==0){
+                            rangeTerm.term=rangeTerm.key;
                             facet.terms.push(rangeTerm);
-                            rangeTerm.term=rangeTerm.from;
 
                         }
                     });
