@@ -116,7 +116,7 @@ Ext.define('Rubedo.controller.SearchController', {
         Ext.Array.forEach(facets, function(facet){
             if (facet._type=="range"){
                 facet.terms=[ ];
-                if (!Ext.isEmpty(facet.ranges)){
+                if (!Ext.isEmpty(facet.ranges)&&Ext.isArray(facet.ranges)){
                     Ext.Array.forEach(facet.ranges, function(rangeTerm){
                         if (rangeTerm.count&&rangeTerm.count!==0){
                             rangeTerm.term=rangeTerm.key;
