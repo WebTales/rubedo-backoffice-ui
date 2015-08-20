@@ -1396,6 +1396,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "collapsed": true,
                                         "collapsible": true,
                                         "localiserId": "referencingFieldSEt",
                                         "title": "Référencement"
@@ -1501,46 +1502,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "collapsible": true,
-                                        "minHeight": null,
-                                        "title": "Rich text"
-                                    },
-                                    "name": "MyFieldSet",
-                                    "designerId": "91711a86-18fd-4d3c-9fbb-6f7e75f24a05",
-                                    "cn": [
-                                        {
-                                            "type": "basiceventbinding",
-                                            "reference": {
-                                                "name": "listeners",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fn": "onFieldsetAfterRender",
-                                                "implHandler": [
-                                                    "component.add(Ext.create(\"Rubedo.view.DCEField\",{",
-                                                    "                                \"fieldLabel\": \"Rich text\",",
-                                                    "                                \"name\": \"richTextId\",",
-                                                    "                                \"allowedCT\": \"richText\",",
-                                                    "                                \"addOnly\": true",
-                                                    "                        }));"
-                                                ],
-                                                "name": "afterrender",
-                                                "scope": "me"
-                                            },
-                                            "name": "onFieldsetAfterRender",
-                                            "designerId": "77de3bd9-dcb5-4251-810d-eff76a44040f"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.FieldSet",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
+                                        "collapsed": true,
                                         "collapsible": true,
                                         "localiserId": "robotFieldset",
                                         "title": "Robot"
@@ -1593,6 +1555,47 @@
                                             },
                                             "name": "processRobot",
                                             "designerId": "ea705ddd-c33b-45d6-86a5-98c7c4764fea"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsed": true,
+                                        "collapsible": true,
+                                        "minHeight": null,
+                                        "title": "Rich text"
+                                    },
+                                    "name": "MyFieldSet",
+                                    "designerId": "91711a86-18fd-4d3c-9fbb-6f7e75f24a05",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onFieldsetAfterRender",
+                                                "implHandler": [
+                                                    "component.add(Ext.create(\"Rubedo.view.DCEField\",{",
+                                                    "                                \"fieldLabel\": \"Rich text\",",
+                                                    "                                \"name\": \"richTextId\",",
+                                                    "                                \"allowedCT\": \"richText\",",
+                                                    "                                \"addOnly\": true",
+                                                    "                        }));"
+                                                ],
+                                                "name": "afterrender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onFieldsetAfterRender",
+                                            "designerId": "77de3bd9-dcb5-4251-810d-eff76a44040f"
                                         }
                                     ]
                                 },

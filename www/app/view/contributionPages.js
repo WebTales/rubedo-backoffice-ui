@@ -592,6 +592,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                         {
                                             xtype: 'fieldset',
                                             localiserId: 'referencingFieldSEt',
+                                            collapsed: true,
                                             collapsible: true,
                                             title: 'Référencement',
                                             items: [
@@ -619,8 +620,16 @@ Ext.define('Rubedo.view.contributionPages', {
                                                 }
                                             }
                                         },
+                                        me.processRobot({
+                                            xtype: 'fieldset',
+                                            localiserId: 'robotFieldset',
+                                            collapsed: true,
+                                            collapsible: true,
+                                            title: 'Robot'
+                                        }),
                                         {
                                             xtype: 'fieldset',
+                                            collapsed: true,
                                             collapsible: true,
                                             title: 'Rich text',
                                             listeners: {
@@ -630,12 +639,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                                 }
                                             }
                                         },
-                                        me.processRobot({
-                                            xtype: 'fieldset',
-                                            localiserId: 'robotFieldset',
-                                            collapsible: true,
-                                            title: 'Robot'
-                                        }),
                                         {
                                             xtype: 'pagesECommerceFieldset',
                                             id: 'primaryPageECFS'
