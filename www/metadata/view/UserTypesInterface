@@ -40,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool161",
+            "name": "mytool164",
             "designerId": "73f37b67-c70b-49b7-9b1b-11416b9080cd",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool172",
+            "name": "mytool174",
             "designerId": "1eb2bb11-c295-42bd-9e7a-e7c7dc134539",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -2098,10 +2098,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "localiserId": "rightsFieldSet",
                                         "title": "Rights"
                                     },
                                     "name": "MyFieldSet9",
                                     "designerId": "a385287c-1b3c-4ef9-96d5-c0ceda233f7e",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "Ext.form.field.ComboBox",
@@ -2117,7 +2125,6 @@
                                                 "forceSelection": true,
                                                 "labelWidth": 130,
                                                 "layout|anchor": "100%",
-                                                "localiserId": "signUpTypeField",
                                                 "name": "signUpType",
                                                 "queryMode": "local",
                                                 "store": [

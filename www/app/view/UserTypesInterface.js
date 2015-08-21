@@ -742,11 +742,11 @@ Ext.define('Rubedo.view.UserTypesInterface', {
                                         },
                                         {
                                             xtype: 'fieldset',
+                                            localiserId: 'rightsFieldSet',
                                             title: 'Rights',
                                             items: [
                                                 {
                                                     xtype: 'combobox',
-                                                    localiserId: 'signUpTypeField',
                                                     anchor: '100%',
                                                     fieldLabel: 'Sign-up type',
                                                     labelWidth: 130,
