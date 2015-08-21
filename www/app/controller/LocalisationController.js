@@ -569,6 +569,9 @@ Ext.define('Rubedo.controller.LocalisationController', {
             success: function(response){
                 var singletonUpdates = Ext.JSON.decode(response.responseText);
                 Ext.apply(Rubedo.RubedoInterfaceLoc, singletonUpdates);
+                if(Rubedo.RubedoInterfaceLoc.hideAllWindowsBtn&&Rubedo.RubedoInterfaceLoc.hideAllWindowsBtn.tooltip){
+                    Ext.getCmp("desktopHomeBtn").setTooltip(Rubedo.RubedoInterfaceLoc.hideAllWindowsBtn.tooltip);
+                }
             },
             failure:function(){
                 console.log("RubedoInterfaceLoc singleton could not be localized for the current language");

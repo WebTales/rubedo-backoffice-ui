@@ -58,6 +58,7 @@
                 "iconCls": "desktopHome_med",
                 "id": "desktopHomeBtn",
                 "layout|flex": null,
+                "localiserId": "hideAllWindowsBtn",
                 "scale": "medium",
                 "text": "",
                 "tooltip": "Afficher le bureau"
@@ -66,7 +67,14 @@
             "configAlternates": {
                 "tooltip": "string"
             },
-            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4"
+            "designerId": "9658d7a1-5213-4a0b-8aad-f859446cabb4",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "Ext.toolbar.Separator",
