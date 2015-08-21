@@ -136,10 +136,11 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             success: function(response){
                                                 button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
-                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);
                                             }
                                         });
                                     },
+                                    localiserId: 'clearCacheBtn',
                                     id: 'SupervisionClearCachetn',
                                     text: '<b>Clear all cached items</b>'
                                 },
@@ -154,10 +155,11 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             success: function(response){
                                                 button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
-                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);
                                             }
                                         });
                                     },
+                                    localiserId: 'clearFileCacheBtn',
                                     text: '<b>Clear file cache</b>'
                                 },
                                 {
@@ -171,10 +173,11 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             success: function(response){
                                                 button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
-                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);
                                             }
                                         });
                                     },
+                                    localiserId: 'clearConfigCacheBtn',
                                     text: '<b>Clear config cache</b>'
                                 },
                                 {
@@ -188,10 +191,11 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             success: function(response){
                                                 button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
-                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);
                                             }
                                         });
                                     },
+                                    localiserId: 'clearAPICacheBtn',
                                     text: '<b>Clear API cache</b>'
                                 },
                                 {
@@ -205,10 +209,11 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             success: function(response){
                                                 button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
-                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);
                                             }
                                         });
                                     },
+                                    localiserId: 'clearUrlCacheBtn',
                                     text: '<b>Clear URL cache</b>'
                                 },
                                 {
@@ -222,10 +227,11 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             success: function(response){
                                                 button.setLoading(false);
                                                 button.up().up().refreshCacheInfo();
-                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, "Cache cleared");
+                                                Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);
                                             }
                                         });
                                     },
+                                    localiserId: 'clearObjectCacheBtn',
                                     text: '<b>Clear Object cache</b>'
                                 }
                             ]

@@ -255,10 +255,18 @@
                             "userConfig": {
                                 "id": "SupervisionClearCachetn",
                                 "layout|flex": null,
+                                "localiserId": "clearCacheBtn",
                                 "text": "<b>Clear all cached items</b>"
                             },
                             "name": "MyButton255",
                             "designerId": "a348571e-c80e-43b8-b17a-31bc1cee8248",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -282,7 +290,7 @@
                                             "    success: function(response){",
                                             "        button.setLoading(false);",
                                             "        button.up().up().refreshCacheInfo();",
-                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);",
                                             "    }",
                                             "});"
                                         ]
@@ -302,10 +310,18 @@
                             "userConfig": {
                                 "id": null,
                                 "layout|flex": null,
+                                "localiserId": "clearFileCacheBtn",
                                 "text": "<b>Clear file cache</b>"
                             },
                             "name": "MyButton6",
                             "designerId": "25ded4c9-c9c9-45ee-8644-1a49a3982593",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -329,7 +345,7 @@
                                             "    success: function(response){",
                                             "        button.setLoading(false);",
                                             "        button.up().up().refreshCacheInfo();",
-                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);",
                                             "    }",
                                             "});"
                                         ]
@@ -349,10 +365,18 @@
                             "userConfig": {
                                 "id": null,
                                 "layout|flex": null,
+                                "localiserId": "clearConfigCacheBtn",
                                 "text": "<b>Clear config cache</b>"
                             },
                             "name": "MyButton7",
                             "designerId": "5a8a6ec0-9ad0-48e6-9780-e9004cdabe77",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -376,7 +400,7 @@
                                             "    success: function(response){",
                                             "        button.setLoading(false);",
                                             "        button.up().up().refreshCacheInfo();",
-                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);",
                                             "    }",
                                             "});"
                                         ]
@@ -396,10 +420,18 @@
                             "userConfig": {
                                 "id": null,
                                 "layout|flex": null,
+                                "localiserId": "clearAPICacheBtn",
                                 "text": "<b>Clear API cache</b>"
                             },
                             "name": "MyButton8",
                             "designerId": "fa6396e5-c0b2-458d-9624-ce4bce272ecf",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -423,7 +455,7 @@
                                             "    success: function(response){",
                                             "        button.setLoading(false);",
                                             "        button.up().up().refreshCacheInfo();",
-                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);",
                                             "    }",
                                             "});"
                                         ]
@@ -443,10 +475,18 @@
                             "userConfig": {
                                 "id": null,
                                 "layout|flex": null,
+                                "localiserId": "clearUrlCacheBtn",
                                 "text": "<b>Clear URL cache</b>"
                             },
                             "name": "MyButton9",
                             "designerId": "4942fc85-547f-4565-bf92-5901ee0054b9",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -470,7 +510,7 @@
                                             "    success: function(response){",
                                             "        button.setLoading(false);",
                                             "        button.up().up().refreshCacheInfo();",
-                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);",
                                             "    }",
                                             "});"
                                         ]
@@ -490,10 +530,18 @@
                             "userConfig": {
                                 "id": null,
                                 "layout|flex": null,
+                                "localiserId": "clearObjectCacheBtn",
                                 "text": "<b>Clear Object cache</b>"
                             },
                             "name": "MyButton10",
                             "designerId": "9329c44f-781d-4ba8-bb9a-f004c32b26bc",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -517,7 +565,7 @@
                                             "    success: function(response){",
                                             "        button.setLoading(false);",
                                             "        button.up().up().refreshCacheInfo();",
-                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, \"Cache cleared\");",
+                                            "        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle, Rubedo.RubedoAutomatedElementsLoc.cacheClearedText);",
                                             "    }",
                                             "});"
                                         ]
