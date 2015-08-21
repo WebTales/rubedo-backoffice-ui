@@ -163,6 +163,7 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     singleton:true,
                     "notifTitle": "Notification",
                     "cacheClearedText":"Cache cleared",
+                    "loadOnLaunchText":"Load on launch",
                     "notifCreate": "<p>Successful creation.</p>",
                     "notifUpdate": "<p>Successful update.</p>",
                     "notifDestroy": "<p>Successful deletion.</p>",

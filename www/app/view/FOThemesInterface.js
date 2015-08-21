@@ -301,7 +301,7 @@ Ext.define('Rubedo.view.FOThemesInterface', {
 
     processThemeFileManagerGrid: function(config) {
         config.columns.push(Ext.create("Ext.ux.CheckColumn",{
-            text: 'Load on launch',
+            text: Rubedo.RubedoAutomatedElementsLoc.loadOnLaunchText,
             dataIndex: 'loadOnLaunch',
             width:110
         }));
