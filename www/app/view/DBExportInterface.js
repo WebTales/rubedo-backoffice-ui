@@ -101,6 +101,7 @@ Ext.define('Rubedo.view.DBExportInterface', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'downloadAsZipBtn',
                             text: 'Download as zip',
                             listeners: {
                                 click: {

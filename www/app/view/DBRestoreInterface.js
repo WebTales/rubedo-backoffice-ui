@@ -60,6 +60,7 @@ Ext.define('Rubedo.view.DBRestoreInterface', {
                         {
                             xtype: 'filefield',
                             anchor: '100%',
+                            localiserId: 'zipFileField',
                             fieldLabel: 'Zip file',
                             name: 'zipFile',
                             allowBlank: false,
@@ -83,6 +84,7 @@ Ext.define('Rubedo.view.DBRestoreInterface', {
                         {
                             xtype: 'button',
                             anchor: '100%',
+                            localiserId: 'uploadBtn',
                             text: 'Upload',
                             listeners: {
                                 click: {

@@ -30,7 +30,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool162",
             "designerId": "917e5bdc-f319-4381-83dc-dc05e8d76ad2",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -44,7 +44,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool172",
             "designerId": "fc56253b-36c8-40c4-9f63-a19c1ca9d613",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -75,10 +75,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Zip file",
                         "layout|anchor": "100%",
+                        "localiserId": "zipFileField",
                         "name": "zipFile"
                     },
                     "name": "MyFileUpload",
-                    "designerId": "0ba91a21-906c-4891-a8a0-1a265cb2a021"
+                    "designerId": "0ba91a21-906c-4891-a8a0-1a265cb2a021",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -117,10 +125,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "uploadBtn",
                         "text": "Upload"
                     },
                     "name": "MyButton1",
                     "designerId": "b9e25a9f-6dbd-4250-9bfb-b388542b663c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",

@@ -144,10 +144,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
+                        "localiserId": "downloadAsZipBtn",
                         "text": "Download as zip"
                     },
                     "name": "MyButton",
                     "designerId": "16e03321-beba-4b9e-9bff-81130fdbd405",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "basiceventbinding",
