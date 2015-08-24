@@ -646,11 +646,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
                                 genericStructureString=genericStructureString.replace(replacer, value);
                             });
                             var decodedFT=Ext.JSON.decode(genericStructureString);
-                        Ext.Array.forEach(decodedFT,function(candidateBlock){
-                            if (Ext.isEmpty(candidateBlock)){
-                            	Ext.Array.remove(decodedFT,candidateBlock);
-                            }
-                        });
+                            Ext.Array.forEach(decodedFT,function(candidateBlock){
+                                if (Ext.isEmpty(candidateBlock)){
+                                    Ext.Array.remove(decodedFT,candidateBlock);
+                                }
+                            });
                             Ext.getStore("BlocsDataStore").removeAll();
                             Ext.getStore("BlocsDataStore").loadData(decodedFT);
                             var task6 = new Ext.util.DelayedTask(function(){
