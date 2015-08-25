@@ -31,33 +31,38 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         var typeFil = filArianne.getComponent('type');
         if (Ext.isDefined(typeFil)) {typeFil.setText(record.data.type);}
         else { typeFil= Ext.widget('button',{iconCls: "folder", text:record.data.type, itemId:'type'});
-        filArianne.add(typeFil);
-        }
+              filArianne.add(typeFil);
+             }
 
         Ext.getCmp("ContenusGrid").getStore().getProxy().extraParams.tFilter=Ext.JSON.encode([{property:"typeId",value:record.get("id")}]);
         Ext.getCmp("ContenusGrid").features[0].clearFilters();
         Ext.getCmp("ContenusGrid").getStore().loadPage(1);
 
         Ext.Array.forEach(Ext.getCmp("contributionContenus").getComponent("contextBar").query("buttongroup"), function(btn){btn.enable();});
+        var mixedArray=Ext.Array.intersect(Ext.Array.pluck(Ext.Array.pluck(Ext.getStore("ContributeWorkspacesCombo").getRange(),"data"),"id"),record.get("workspaces"));
+        Ext.getCmp("boutonAjouterContenu").disable();
+        if (mixedArray.length>0){
+            Ext.getCmp("boutonAjouterContenu").enable();
+        }
         Ext.getCmp("ajoutPanierContenus").disable();
         Ext.getCmp("boutonSupprimerContenu").disable();
         Ext.getCmp("boutonModifierContenu").disable();
         Ext.getCmp("boutonCopierContenus").disable();
         Ext.getCmp("contribWorkflowBox").disable();
         Ext.getCmp("contentsExportBtn").enable();
-        Ext.getCmp("boutonAjouterContenu").enable();
+
         var  customMeta = record.get("type");
         var imageMeta = Ext.getCmp('contributionContenus').getDockedComponent('barreMeta').getComponent('imageBarreMeta');
         if ((!Ext.isEmpty(record.get("productType")))&&(record.get("productType")!="none")){
-        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/shopping_cart.png');
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/shopping_cart.png');
         } else {
-        imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
+            imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
         }
         var boiteMeta = Ext.getCmp("contributionContenus").getDockedComponent('barreMeta').getComponent('boiteBarreMeta');
         boiteMeta.update(customMeta);
         var myDependantTypes= [ ];
         Ext.Array.forEach(record.get("dependantTypes"), function(someType){
-        myDependantTypes.push(Ext.getStore("DepTypesForContents").findRecord("id",someType));
+            myDependantTypes.push(Ext.getStore("DepTypesForContents").findRecord("id",someType));
         });
         Ext.getStore("DepContentsCombo").removeAll();
         Ext.getStore("DepContentsCombo").loadData(myDependantTypes);
