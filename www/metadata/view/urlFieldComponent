@@ -1,0 +1,90 @@
+{
+    "type": "Ext.form.FieldContainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "anchor": "90%",
+        "designer|userAlias": "urlFieldComponent",
+        "designer|userClassName": "urlFieldComponent",
+        "fieldLabel": "Label",
+        "height": 54,
+        "labelSeparator": " ",
+        "layout": "anchor",
+        "width": 426
+    },
+    "name": "externalMediaFieldComponent1",
+    "designerId": "c094386c-f970-403f-b77a-ab950e4d5145",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "anchor",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "URL",
+                "labelSeparator": " ",
+                "layout|anchor": "100%",
+                "localiserId": "emFieldURL",
+                "margin": "0 0 10 0",
+                "name": "url",
+                "style": null,
+                "submitValue": false,
+                "vtype": null
+            },
+            "name": "MyTextField105",
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "26f7fb6f-a50e-49f0-a436-f37547638160",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Title",
+                "labelSeparator": " ",
+                "layout|anchor": "100%",
+                "localiserId": "urlFieldTitle",
+                "margin": null,
+                "name": "title",
+                "style": null,
+                "submitValue": false
+            },
+            "name": "MyTextField",
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "94aaea15-7483-4516-8fc7-068b18197c37",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

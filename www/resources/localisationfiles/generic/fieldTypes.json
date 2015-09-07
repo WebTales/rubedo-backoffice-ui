@@ -2814,5 +2814,134 @@
         "id": "55cb5b5e80dd20d40b000086",
         "category": "#ext-gen1050#",
         "protoId": ""
+    },{
+  "type": "URL",
+  "cType": "Rubedo.view.urlField",
+  "openWindow": "",
+  "description": "URL",
+  "config": {
+    "name": "url",
+    "fieldLabel": "URL",
+    "allowBlank": true,
+    "localizable": false,
+    "searchable": false,
+    "notAnalyzed":false,
+    "returnInSearch":false,
+    "useAsFacet":false,
+    "facetOperator":"AND",
+    "multivalued": false,
+    "tooltip": "",
+    "labelSeparator": " "
+  },
+  "configFields": [
+    {
+      "type": "Ext.form.field.Text",
+      "config": {
+        "fieldLabel": "#ext-gen1054#",
+        "name": "name",
+        "vtype": "alphanum",
+        "allowBlank": false
+      }
+    },
+    {
+      "type": "Ext.form.field.Text",
+      "config": {
+        "fieldLabel": "#ext-gen1055#",
+        "name": "fieldLabel",
+        "allowBlank": false
+      }
+    },
+    {
+      "type": "Ext.form.field.Text",
+      "config": {
+        "fieldLabel": "#ext-gen1056#",
+        "name": "tooltip",
+        "allowBlank": true
+      }
+    },
+    {
+      "type": "Ext.form.field.Checkbox",
+      "config": {
+        "fieldLabel": "#ext-gen1067#",
+        "name": "allowBlank"
+      }
+    },
+    {
+      "type": "Ext.form.field.Checkbox",
+      "config": {
+        "fieldLabel": "#ext-gen1068#",
+        "name": "localizable"
+      }
+    },
+    {
+      "type": "Ext.form.field.Checkbox",
+      "config": {
+        "fieldLabel": "#ext-gen1058#",
+        "name": "multivalued"
+      }
+    },
+    {
+      "type": "Ext.form.field.Checkbox",
+      "isASearchField":true,
+      "config": {
+        "fieldLabel": "#ext-gen1057#",
+        "name": "searchable"
+      }
+    },{
+      "type": "Ext.form.field.Checkbox",
+      "isASearchField":true,
+      "config": {
+        "fieldLabel": "#ext-gen1264#",
+        "name": "notAnalyzed"
+      }
+    },{
+      "type": "Ext.form.field.Checkbox",
+      "isASearchField":true,
+      "config": {
+        "fieldLabel":"#ext-gen1265#",
+        "name": "returnInSearch"
+      }
+    },{
+      "type": "Ext.form.field.Checkbox",
+      "isASearchField":true,
+      "config": {
+        "fieldLabel": "#ext-gen1266#",
+        "name": "useAsFacet"
+      }
+    }, {
+      "type": "Ext.form.field.ComboBox",
+      "isASearchField":true,
+      "store": {
+        "fields": [
+          "valeur",
+          "nom"
+        ],
+        "data": [
+          {
+            "valeur": "AND",
+            "nom":"#ext-gen1263#"
+          },
+          {
+            "valeur": "OR",
+            "nom":"#ext-gen1262#"
+          }
+
+        ]
+      },
+      "config": {
+        "fieldLabel": "#ext-gen1267#",
+        "queryMode": "local",
+        "displayField": "nom",
+        "valueField": "valeur",
+        "forceSelect": true,
+        "editable": false,
+        "name": "facetOperator"
+      }
     }
+  ],
+  "store": "",
+  "id": "55edab7b80dd20841a000191",
+  "category": "#ext-gen1229#",
+  "protoId": ""
+}
 ]

@@ -1,0 +1,120 @@
+{
+    "type": "Ext.form.field.Hidden",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "urlField",
+        "designer|userClassName": "urlField",
+        "fieldLabel": "Label",
+        "height": null
+    },
+    "name": "externalMediaField1",
+    "designerId": "88d49d44-8659-419a-b63c-266550dd9d91",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var companion = Ext.widget(\"urlFieldComponent\");",
+                    "companion.setFieldLabel(component.getFieldLabel());",
+                    "component.on(\"change\", function(a, newValue){",
+                    "    var decoded = { };",
+                    "    if (!Ext.isEmpty(newValue)){",
+                    "        decoded = newValue;",
+                    "    }",
+                    "    Ext.Array.forEach(companion.query(\"field\"), function(field){",
+                    "        field.suspendEvents(false);",
+                    "        field.setValue(decoded[field.name]);",
+                    "        field.resumeEvents();",
+                    "    });",
+                    "});",
+                    "Ext.Array.forEach(companion.query(\"field\"), function(field){",
+                    "    field.on(\"change\", function(a, newValue){",
+                    "        component.suspendEvents(false);",
+                    "        var decoded = { };",
+                    "        if (!Ext.isEmpty(component.getValue())) {",
+                    "            decoded = component.getValue();",
+                    "        }",
+                    "        decoded[field.name]=newValue;",
+                    "        component.setValue(decoded);",
+                    "        component.resumeEvents();",
+                    "    });",
+                    "});",
+                    "companion.on(\"afterrender\",function(){",
+                    "    companion.getEl().on(\"click\",function(){",
+                    "",
+                    "        component.getEl().dom.click();",
+                    "    });",
+                    "});",
+                    "component.up().add(companion);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onHiddenfieldRender",
+            "designerId": "935870f4-5736-4971-8f3b-aa2a88c66701"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "setValue",
+                "implHandler": [
+                    "var me=this;\r",
+                    "me.value=value;\r",
+                    "me.fireEvent(\"change\",me,value);"
+                ]
+            },
+            "name": "setValue",
+            "designerId": "8c384e22-0808-49bb-880c-f88c6b8719d0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getValue",
+                "implHandler": [
+                    "return(this.value);"
+                ]
+            },
+            "name": "getValue",
+            "designerId": "8784b186-1c0a-4470-ae58-550f89c4a104"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getSubmitValue",
+                "implHandler": [
+                    "return (this.value);"
+                ]
+            },
+            "name": "getSubmitValue",
+            "designerId": "313b734d-9d57-4587-b53b-a041011c93f4"
+        }
+    ]
+}
