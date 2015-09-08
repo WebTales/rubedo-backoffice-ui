@@ -962,6 +962,7 @@
             "name": "position",
             "fieldLabel": "#ext-gen1053#",
             "allowBlank": true,
+            "usePlacesSearch":false,
             "localizable": false,
             "searchable": true,
             "multivalued": false,
@@ -1000,6 +1001,13 @@
                 "config": {
                     "fieldLabel": "#ext-gen1067#",
                     "name": "allowBlank"
+                }
+            },
+            {
+                "type": "Ext.form.field.Checkbox",
+                "config": {
+                    "fieldLabel": "Autocomplete",
+                    "name": "usePlacesSearch"
                 }
             },
             {
