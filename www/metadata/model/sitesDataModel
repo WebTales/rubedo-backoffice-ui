@@ -617,6 +617,19 @@
             },
             "name": "MyField2",
             "designerId": "7e31a600-d7d1-4481-a4ff-1b5ab5bd1cbb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sitemapContentTypes"
+            },
+            "name": "MyField4",
+            "designerId": "dda71d2a-8dc3-4670-bfc4-ffc9de59e612"
         }
     ]
 }

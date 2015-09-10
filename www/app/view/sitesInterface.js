@@ -929,10 +929,18 @@ Ext.define('Rubedo.view.sitesInterface', {
             valueField:"locale",
             queryMode:"remote"
         });
+        var ctc=Ext.widget("CTCField",{
+            multiSelect:true,
+            name:"sitemapContentTypes",
+            labelWidth:110,
+            fieldLabel:"Content types used in sitemap",
+            anchor:"100%"
+        });
         component.add(tagPicker);
         component.add(homePageSelector);
         component.insert(5,languagesPicker);
         component.add(singlePageSelector);
+        component.insert(13,ctc);
     },
 
     onCheckboxfieldRender: function(component, eOpts) {

@@ -172,6 +172,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'iframelyKey'
+        },
+        {
+            name: 'sitemapContentTypes'
         }
     ]
 });
