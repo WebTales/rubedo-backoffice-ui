@@ -44,48 +44,48 @@ Ext.define('Rubedo.view.CKEField', {
 
     onTextareafieldAfterRender: function(component, eOpts) {
         var myTBConfig=[
-        { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
-        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo',"Source"  ] },
-        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+            { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
+            { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo',"Source"  ] },
+            { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
 
 
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
 
 
-        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-        { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
-        { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
-        { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink','-','Anchor' ] },
+            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+            { name: 'colors', items: [ 'TextColor', '-','BGColor' ] },
+            { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
+            { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink','-','Anchor' ] },
 
-        { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak' ] }
+            { name: 'insert', items: [ 'Image',  '-', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak' ] }
         ];
         if (component.CKETBConfig=="Standard"){
             myTBConfig=[
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-            { name: 'colors', items: [ 'TextColor','BGColor','-', 'Scayt' ] },
-            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-            { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', "Rubedolink", 'Unlink'] },
-            { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo', "Source"  ] }
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+                { name: 'colors', items: [ 'TextColor','BGColor','-', 'Scayt' ] },
+                { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                { name: 'insert', items: [ 'Image',  '-', 'Table', 'SpecialChar', 'PageBreak', 'Link', "Rubedolink", 'Unlink'] },
+                { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo', "Source"  ] }
             ];
         } else if (component.CKETBConfig=="Basic"){
             myTBConfig=[
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
-            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','-','Image']},
-            { name: 'colors', items: [ 'TextColor','BGColor' ,'-', 'Scayt'] },
-            { name: 'styles', items: [ 'Font', 'FontSize' ] }
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
+                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','-','Image']},
+                { name: 'colors', items: [ 'TextColor','BGColor' ,'-', 'Scayt'] },
+                { name: 'styles', items: [ 'Font', 'FontSize' ] }
 
 
             ];
         } else if (component.CKETBConfig=="Email"){
             myTBConfig=[
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
-            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-            { name: 'colors', items: [ 'TextColor','BGColor' ,'-', 'Scayt'] },
-            { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-            { name: 'insert', items: [ 'Image',  '-', 'SpecialChar', 'Link', "Rubedolink", 'Unlink'] },
-            { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo',"Source"  ] }
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline','Strike', '-', 'RemoveFormat' ] },
+                { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-',  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
+                { name: 'colors', items: [ 'TextColor','BGColor' ,'-', 'Scayt'] },
+                { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                { name: 'insert', items: [ 'Image',  '-', 'SpecialChar', 'Link', "Rubedolink", 'Unlink'] },
+                { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo',"Source"  ] }
 
 
             ];
@@ -100,7 +100,7 @@ Ext.define('Rubedo.view.CKEField', {
         if (Ext.isEmpty(userLanguage)){
             userLanguage='en';
         }
-        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, allowedContent:true, language:userLanguage, extraPlugins:'rubedolink',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
+        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, allowedContent:true, contentsCss:"/theme/default/css/rubedo-all.css", language:userLanguage, extraPlugins:'rubedolink,stylesheetparser',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
         component.editor.on("maximize",function(){
             var mainWindow=component.findParentByType("window");
             if (!Ext.isEmpty(mainWindow)){
@@ -113,82 +113,82 @@ Ext.define('Rubedo.view.CKEField', {
         component.editor.on('instanceReady', function(){
             if (component.CKETBConfig=="Email"){
                 component.editor.dataProcessor.htmlFilter.addRules(
-                {
-                    elements:
                     {
-                        $: function (element) {
-                            // Output dimensions of images as width and height
-                            if (element.name == 'img') {
-                                var style = element.attributes.style;
+                        elements:
+                        {
+                            $: function (element) {
+                                // Output dimensions of images as width and height
+                                if (element.name == 'img') {
+                                    var style = element.attributes.style;
 
-                                if (style) {
-                                    // Get the width from the style.
-                                    var match = /(?:^|\s)width\s*:\s*(\d+)px/i.exec(style),
-                                        width = match && match[1];
+                                    if (style) {
+                                        // Get the width from the style.
+                                        var match = /(?:^|\s)width\s*:\s*(\d+)px/i.exec(style),
+                                            width = match && match[1];
 
-                                    // Get the height from the style.
-                                    match = /(?:^|\s)height\s*:\s*(\d+)px/i.exec(style);
-                                    var height = match && match[1];
+                                        // Get the height from the style.
+                                        match = /(?:^|\s)height\s*:\s*(\d+)px/i.exec(style);
+                                        var height = match && match[1];
 
-                                    // Get the align from the style
+                                        // Get the align from the style
 
-                                    var match = /(?:^|\s)float\s*:\s*(left|right)/i.exec(style),
-                                        align = match && match[1];
+                                        var match = /(?:^|\s)float\s*:\s*(left|right)/i.exec(style),
+                                            align = match && match[1];
 
-                                    // Get the hspace and vspace from the style
+                                        // Get the hspace and vspace from the style
 
-                                    var match =  /(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px/i.exec(style);
-                                    var vspace = match && match[1];
-                                    var hspace = match && match[2];
+                                        var match =  /(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px/i.exec(style);
+                                        var vspace = match && match[1];
+                                        var hspace = match && match[2];
 
-                                    if ((!vspace)&&(!hspace)){
-                                        var match =  /(?:^|\s)margin\s*:\s*(\d+)px/i.exec(style);
-                                        var hvspace=match && match[1];
-                                    }
+                                        if ((!vspace)&&(!hspace)){
+                                            var match =  /(?:^|\s)margin\s*:\s*(\d+)px/i.exec(style);
+                                            var hvspace=match && match[1];
+                                        }
 
-                                    if (hvspace) {
-                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px;?/i, '');
-                                        element.attributes.vspace = hvspace;
-                                        element.attributes.hspace = hvspace;
-                                    }
+                                        if (hvspace) {
+                                            element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px;?/i, '');
+                                            element.attributes.vspace = hvspace;
+                                            element.attributes.hspace = hvspace;
+                                        }
 
-                                    if (vspace) {
-                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px;?/i, '');
-                                        element.attributes.vspace = vspace;
-                                    }
+                                        if (vspace) {
+                                            element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px;?/i, '');
+                                            element.attributes.vspace = vspace;
+                                        }
 
-                                    if (hspace) {
-                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px;?/i, '');
-                                        element.attributes.hspace = hspace;
-                                    }
+                                        if (hspace) {
+                                            element.attributes.style = element.attributes.style.replace(/(?:^|\s)margin\s*:\s*(\d+)px\s*(\d+)px;?/i, '');
+                                            element.attributes.hspace = hspace;
+                                        }
 
 
-                                    if (width) {
-                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)width\s*:\s*(\d+)px;?/i, '');
-                                        element.attributes.width = width;
-                                    }
+                                        if (width) {
+                                            element.attributes.style = element.attributes.style.replace(/(?:^|\s)width\s*:\s*(\d+)px;?/i, '');
+                                            element.attributes.width = width;
+                                        }
 
-                                    if (height) {
-                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)height\s*:\s*(\d+)px;?/i, '');
-                                        element.attributes.height = height;
-                                    }
+                                        if (height) {
+                                            element.attributes.style = element.attributes.style.replace(/(?:^|\s)height\s*:\s*(\d+)px;?/i, '');
+                                            element.attributes.height = height;
+                                        }
 
-                                    if (align) {
-                                        element.attributes.style = element.attributes.style.replace(/(?:^|\s)float\s*:\s*(left|right);?/i, '');
-                                        element.attributes.align = align;
+                                        if (align) {
+                                            element.attributes.style = element.attributes.style.replace(/(?:^|\s)float\s*:\s*(left|right);?/i, '');
+                                            element.attributes.align = align;
+                                        }
                                     }
                                 }
+
+
+
+                                if (!element.attributes.style)
+                                    delete element.attributes.style;
+
+                                return element;
                             }
-
-
-
-                            if (!element.attributes.style)
-                            delete element.attributes.style;
-
-                            return element;
                         }
-                    }
-                });
+                    });
 
 
 
