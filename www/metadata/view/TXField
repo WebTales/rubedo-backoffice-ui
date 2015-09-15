@@ -1,0 +1,53 @@
+{
+    "type": "Ext.form.field.ComboBox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "TXField",
+        "designer|userClassName": "TXField",
+        "displayField": "name",
+        "fieldLabel": "Label",
+        "forceSelection": true,
+        "managesStore": true,
+        "multiSelect": true,
+        "store": "TaxonomyForTXField",
+        "valueField": "id"
+    },
+    "name": "CTCField1",
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "designerId": "501004f7-cfbe-4d6b-b394-872f208e7f3a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCTCField",
+                "implHandler": [
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
+                    "return config;"
+                ]
+            },
+            "name": "processCTCField",
+            "designerId": "fce2005e-b540-4ea8-b4c9-f00a15849116"
+        }
+    ]
+}

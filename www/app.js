@@ -223,7 +223,8 @@ Ext.application({
         'SiteInternalStyles',
         'SiteInternalScripts',
         'ThemeDirectoriesStore',
-        'DAMFolderViewStore1'
+        'DAMFolderViewStore1',
+        'TaxonomyForTXField'
     ],
     views: [
         'MyGridPanel3',
@@ -426,7 +427,8 @@ Ext.application({
         'DBExportInterface',
         'RDirectObjectField',
         'urlField',
-        'urlFieldComponent'
+        'urlFieldComponent',
+        'TXField'
     ],
     controllers: [
         'ContributionContenusController',

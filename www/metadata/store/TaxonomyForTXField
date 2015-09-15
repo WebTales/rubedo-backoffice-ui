@@ -1,0 +1,57 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "TaxonomyForTXField",
+        "designer|userClassName": "TaxonomyForTXField",
+        "model": "taxonomieDataModel",
+        "pageSize": 1000,
+        "storeId": "TaxonomyForTXField"
+    },
+    "name": "TaxonomyForQA1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "56c87a3a-5624-4659-93c9-72f29a0e4681",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read : 'taxonomy'",
+                    "}"
+                ],
+                "url": null
+            },
+            "name": "MyAjaxProxy85",
+            "designerId": "8e407e8c-609f-4538-80d9-e0051ca51f40",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader84",
+                    "designerId": "62e95f85-4b45-4916-8332-82814f447c52"
+                }
+            ]
+        }
+    ]
+}
