@@ -56,6 +56,9 @@ Ext.define('Rubedo.controller.SitesController', {
             if (Ext.isEmpty(Ext.getCmp("sitesHomePicker").getValue())){
                 Ext.getCmp("sitesHomePicker").setValue([]);
             }
+            if (Ext.isEmpty(Ext.getCmp("sitesNotFoundPicker").getValue())){
+                Ext.getCmp("sitesNotFoundPicker").setValue([]);
+            }
             if ((!ACL.interfaceRights["write.ui.sites"])||(selected[0].get("readOnly"))){
                 Ext.getCmp("updateSiteBtn").disable();
                 Ext.getCmp("siteRemoveBtn").disable();

@@ -901,6 +901,17 @@ Ext.define('Rubedo.view.sitesInterface', {
             allowBlank:false,
             name:"defaultSingle"
         });
+        var notFoundPageSelector = Ext.create("Ext.ux.TreePicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            labelWidth:110,
+            fieldLabel:"404 Page",
+            id:"sitesNotFoundPicker",
+            anchor: "100%",
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
+            allowBlank:true,
+            name:"defaultNotFound"
+        });
         var tagPicker = Ext.create("Ext.ux.form.field.BoxSelect", {
             store:[],
             anchor:"100%",
@@ -940,6 +951,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         component.add(homePageSelector);
         component.insert(5,languagesPicker);
         component.add(singlePageSelector);
+        component.add(notFoundPageSelector);
         component.insert(13,ctc);
     },
 

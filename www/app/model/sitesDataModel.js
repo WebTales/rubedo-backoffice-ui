@@ -175,6 +175,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
         },
         {
             name: 'sitemapContentTypes'
+        },
+        {
+            name: 'defaultNotFound'
         }
     ]
 });
