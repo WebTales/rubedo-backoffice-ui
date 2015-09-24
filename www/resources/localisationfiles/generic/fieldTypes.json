@@ -1632,7 +1632,64 @@
                     "fieldLabel": "#ext-gen1058#",
                     "name": "multivalued"
                 }
+            },{
+            "type": "Ext.form.field.Checkbox",
+            "isASearchField":true,
+            "config": {
+              "fieldLabel": "#ext-gen1057#",
+              "name": "searchable"
             }
+          },{
+            "type": "Ext.form.field.Checkbox",
+            "isASearchField":true,
+            "config": {
+              "fieldLabel": "#ext-gen1264#",
+              "name": "notAnalyzed"
+            }
+          },{
+            "type": "Ext.form.field.Checkbox",
+            "isASearchField":true,
+            "config": {
+              "fieldLabel":"#ext-gen1265#",
+              "name": "returnInSearch"
+            }
+          },{
+            "type": "Ext.form.field.Checkbox",
+            "isASearchField":true,
+            "config": {
+              "fieldLabel": "#ext-gen1266#",
+              "name": "useAsFacet"
+            }
+          }, {
+            "type": "Ext.form.field.ComboBox",
+            "isASearchField":true,
+            "store": {
+              "fields": [
+                "valeur",
+                "nom"
+              ],
+              "data": [
+                {
+                  "valeur": "AND",
+                  "nom":"#ext-gen1263#"
+                },
+                {
+                  "valeur": "OR",
+                  "nom":"#ext-gen1262#"
+                }
+
+              ]
+            },
+            "config": {
+              "fieldLabel": "#ext-gen1267#",
+              "queryMode": "local",
+              "displayField": "nom",
+              "valueField": "valeur",
+              "forceSelect": true,
+              "editable": false,
+              "name": "facetOperator"
+            }
+          }
         ],
         "store": "",
         "id": "51234e09c0e0516a0b00002f",
