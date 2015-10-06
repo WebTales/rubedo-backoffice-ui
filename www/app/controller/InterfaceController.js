@@ -32,7 +32,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
             var menuPrincipal = Ext.widget('menuPrincipalInterface', {title:MyPrefData.myName});
 
 
-            menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-370);
+            menuPrincipal.showAt(0, Ext.getCmp('desktopCont').getHeight()-390);
             menuPrincipal.getEl().addListener('mouseover', function(){  Ext.getBody().removeAllListeners(); });
             menuPrincipal.getEl().addListener('mouseout', function(){  Ext.getBody().addListener('click', function(){ if (!Ext.isEmpty(Ext.getCmp('menuPrincipalInterface'))) {
                 Ext.getCmp('menuPrincipalInterface').hide();
@@ -53,7 +53,7 @@ Ext.define('Rubedo.controller.InterfaceController', {
         Ext.getCmp('boiteAIconesBureau').setWidth(component.getWidth());
         if (Ext.isDefined(Ext.getCmp('menuPrincipalInterface'))) {
             var hideAfter=!Ext.getCmp('menuPrincipalInterface').isVisible();
-            Ext.getCmp('menuPrincipalInterface').showAt(0, component.getHeight()-370);
+            Ext.getCmp('menuPrincipalInterface').showAt(0, component.getHeight()-390);
             if (hideAfter){
                 Ext.getCmp('menuPrincipalInterface').hide();
             }

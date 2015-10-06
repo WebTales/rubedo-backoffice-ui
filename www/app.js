@@ -428,7 +428,8 @@ Ext.application({
         'RDirectObjectField',
         'urlField',
         'urlFieldComponent',
-        'TXField'
+        'TXField',
+        'SystemSettingsInterface'
     ],
     controllers: [
         'ContributionContenusController',
