@@ -48,7 +48,14 @@
                     "        if (Ext.isEmpty(config.rubedo_config)){",
                     "            config.rubedo_config={};",
                     "        }",
+                    "        if (Ext.isEmpty(config.swiftmail)){",
+                    "            config.swiftmail={};",
+                    "        }",
+                    "        if (Ext.isEmpty(config.swiftmail.smtp)){",
+                    "            config.swiftmail.smtp={};",
+                    "        }",
                     "        Ext.getCmp(\"rubedoSystemConfigForm\").getForm().setValues(config.rubedo_config);",
+                    "        Ext.getCmp(\"rubedoMailerConfigForm\").getForm().setValues(config.swiftmail.smtp);",
                     "    }",
                     "});"
                 ],
@@ -94,6 +101,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "activeTab": 0,
                 "layout|flex": 1
             },
             "name": "MyTabPanel",
@@ -372,16 +380,18 @@
                     ]
                 },
                 {
-                    "type": "Ext.panel.Panel",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "bodyPadding": 10,
+                        "id": "rubedoMailerConfigForm",
                         "title": "Default mailer config"
                     },
-                    "name": "MyPanel1",
+                    "name": "MyForm1",
                     "designerId": "f7cf4e5c-8262-4564-a720-277a82e59753",
                     "cn": [
                         {
@@ -393,6 +403,85 @@
                             "codeClass": null,
                             "name": "TabConfig1",
                             "designerId": "84d52ae6-5365-4ae7-8066-d68e72d2d67c"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Server name *",
+                                "layout|anchor": "100%",
+                                "name": "server"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "71040d42-ac50-4c0d-94d6-37769025d10e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Server port *",
+                                "layout|anchor": "100%",
+                                "name": "port"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "0a913367-a600-4dc1-93b2-add185b3a569"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": "Use SSL",
+                                "inputValue": "1",
+                                "layout|anchor": "100%",
+                                "name": "ssl",
+                                "uncheckedValue": "0"
+                            },
+                            "name": "MyCheckbox8",
+                            "designerId": "72a2dcaf-ff44-4022-aa41-264af352917e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "User name",
+                                "layout|anchor": "100%",
+                                "name": "username"
+                            },
+                            "name": "MyTextField4",
+                            "designerId": "52346bd1-61e0-4bd7-8206-8a4d13d9f3cf"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Password",
+                                "inputType": "password",
+                                "layout|anchor": "100%",
+                                "name": "password"
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "0d71deea-7eb1-4983-b20e-930e5ef87d20"
                         }
                     ]
                 }
@@ -456,6 +545,9 @@
                                 "implHandler": [
                                     "var payload={};",
                                     "payload.rubedo_config=Ext.getCmp(\"rubedoSystemConfigForm\").getForm().getValues();",
+                                    "payload.swiftmail={",
+                                    "    smtp:Ext.getCmp(\"rubedoMailerConfigForm\").getForm().getValues()",
+                                    "};",
                                     "Ext.Ajax.request({",
                                     "            url: 'config/update',",
                                     "            method:'POST',",

@@ -66,6 +66,7 @@ Ext.define('Rubedo.view.SystemSettingsInterface', {
                 {
                     xtype: 'tabpanel',
                     flex: 1,
+                    activeTab: 0,
                     items: [
                         {
                             xtype: 'form',
@@ -195,8 +196,46 @@ Ext.define('Rubedo.view.SystemSettingsInterface', {
                             ]
                         },
                         {
-                            xtype: 'panel',
-                            title: 'Default mailer config'
+                            xtype: 'form',
+                            id: 'rubedoMailerConfigForm',
+                            bodyPadding: 10,
+                            title: 'Default mailer config',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Server name *',
+                                    name: 'server'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Server port *',
+                                    name: 'port'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Use SSL',
+                                    name: 'ssl',
+                                    boxLabel: '',
+                                    inputValue: '1',
+                                    uncheckedValue: '0'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'User name',
+                                    name: 'username'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Password',
+                                    name: 'password',
+                                    inputType: 'password'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -215,6 +254,9 @@ Ext.define('Rubedo.view.SystemSettingsInterface', {
                             handler: function(button, e) {
                                 var payload={};
                                 payload.rubedo_config=Ext.getCmp("rubedoSystemConfigForm").getForm().getValues();
+                                payload.swiftmail={
+                                    smtp:Ext.getCmp("rubedoMailerConfigForm").getForm().getValues()
+                                };
                                 Ext.Ajax.request({
                                     url: 'config/update',
                                     method:'POST',
@@ -264,7 +306,14 @@ Ext.define('Rubedo.view.SystemSettingsInterface', {
                 if (Ext.isEmpty(config.rubedo_config)){
                     config.rubedo_config={};
                 }
+                if (Ext.isEmpty(config.swiftmail)){
+                    config.swiftmail={};
+                }
+                if (Ext.isEmpty(config.swiftmail.smtp)){
+                    config.swiftmail.smtp={};
+                }
                 Ext.getCmp("rubedoSystemConfigForm").getForm().setValues(config.rubedo_config);
+                Ext.getCmp("rubedoMailerConfigForm").getForm().setValues(config.swiftmail.smtp);
             }
         });
     }
