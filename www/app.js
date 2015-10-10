@@ -429,7 +429,9 @@ Ext.application({
         'urlField',
         'urlFieldComponent',
         'TXField',
-        'SystemSettingsInterface'
+        'SystemSettingsInterface',
+        'RECField',
+        'RECWindow'
     ],
     controllers: [
         'ContributionContenusController',

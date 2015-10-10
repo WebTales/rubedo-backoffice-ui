@@ -1,0 +1,163 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrain": true,
+        "designer|userAlias": "RECWindow",
+        "designer|userClassName": "RECWindow",
+        "height": null,
+        "minHeight": null,
+        "modal": true,
+        "title": "Embedded content",
+        "width": 800
+    },
+    "name": "MyWindow",
+    "designerId": "66c0a7ec-27ce-473b-b1db-191d010ee98a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "itemId": "embeddedForm",
+                "minHeight": 200,
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "40921c8f-346f-4d04-8805-4bdc6248656a"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "name": "MyToolbar",
+            "designerId": "c50c6fe5-a5f7-4d4d-9320-51ca2a9fa9dc",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyFill",
+                    "designerId": "bfe88b75-abb0-472b-99a7-a1dbadb8f1ed"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "save",
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "name": "MyButton",
+                    "designerId": "08d5cd46-8518-457b-bdbf-a8b862c3b317",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var target=Ext.getCmp(button.up().up().targetedId);",
+                                    "var form=button.up().up().getComponent(\"embeddedForm\").getForm();",
+                                    "if (form.isValid()){",
+                                    "    target.setValue(form.getValues());",
+                                    "    button.up().up().close();",
+                                    "}"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "7999e10b-7407-4d17-af06-65447b6b349c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "var form=component.getComponent(\"embeddedForm\");",
+                    "if (component.structureFields&&Ext.isArray(component.structureFields)){",
+                    "    Ext.Array.forEach(component.structureFields,function(protoData){",
+                    "        var configurator=protoData.config;",
+                    "        if (!Ext.isEmpty(configurator.i18n)){",
+                    "            var BOLanguage=Ext.getStore(\"CurrentUserDataStore\").getRange()[0].get(\"language\");",
+                    "            if (!Ext.isEmpty(configurator.i18n[BOLanguage])){",
+                    "                if (!Ext.isEmpty(configurator.i18n[BOLanguage].fieldLabel)){",
+                    "                    configurator.fieldLabel=configurator.i18n[BOLanguage].fieldLabel;",
+                    "                }",
+                    "                if (!Ext.isEmpty(configurator.i18n[BOLanguage].tooltip)){",
+                    "                    configurator.tooltip=configurator.i18n[BOLanguage].tooltip;",
+                    "                }",
+                    "            }",
+                    "        }",
+                    "        if (protoData.cType == 'combobox') {",
+                    "            var myStore=  Ext.create('Ext.data.Store', Ext.clone(protoData.config.store));",
+                    "            configurator.store = myStore;",
+                    "        }",
+                    "        var newField= Ext.widget(protoData.cType, configurator);",
+                    "        newField.config=protoData.config;",
+                    "        newField.protoId=protoData.protoId;",
+                    "        newField.cType=protoData.cType;",
+                    "        newField.anchor = '90%';",
+                    "        newField.style = '{float:left;}';",
+                    "        var casing =Ext.widget('ChampTC');",
+                    "        casing.add(newField);",
+                    "        casing.getComponent('helpBouton').setTooltip(configurator.tooltip);",
+                    "        if (Ext.isEmpty(configurator.tooltip)){",
+                    "            casing.getComponent('helpBouton').hidden=true;",
+                    "        }",
+                    "",
+                    "        form.add(casing);",
+                    "     });",
+                    "    if (component.initialValue){",
+                    "        form.getForm().setValues(component.initialValue);",
+                    "    }",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onWindowAfterRender",
+            "designerId": "615cf99b-ed7f-4110-bb0e-9cc8e6d7eea7"
+        }
+    ]
+}
