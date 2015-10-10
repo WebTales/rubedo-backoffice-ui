@@ -38,17 +38,19 @@ Ext.define('Rubedo.view.RECField', {
     },
 
     onHiddenfieldRender: function(component, eOpts) {
-        Ext.Ajax.request({
-            url: 'content-types/find-one',
-            method:"GET",
-            params: {
-                id: component.usedCT
-            },
-            success: function(response){
-                var result = Ext.JSON.decode(response.responseText);
-                component.structureFields=result.data.fields;
-            }
-        });
+        if (component.usedCT){
+            Ext.Ajax.request({
+                url: 'content-types/find-one',
+                method:"GET",
+                params: {
+                    id: component.usedCT
+                },
+                success: function(response){
+                    var result = Ext.JSON.decode(response.responseText);
+                    component.structureFields=result.data.fields;
+                }
+            });
+        }
         var myComponent = Ext.widget("ACEFieldComponent");
         myComponent.on("afterrender",function(){
             myComponent.getEl().on("click",function(){
