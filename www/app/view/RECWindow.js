@@ -111,7 +111,7 @@ Ext.define('Rubedo.view.RECWindow', {
                 }
 
                 form.add(casing);
-             });
+            });
             if (component.initialValue){
                 form.getForm().setValues(component.initialValue);
                 var task = new Ext.util.DelayedTask(function(){

@@ -127,6 +127,9 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'richTextId'
+        },
+        {
+            name: 'UXInstructions'
         }
     ]
 });

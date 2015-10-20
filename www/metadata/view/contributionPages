@@ -1568,6 +1568,59 @@
                                     "userConfig": {
                                         "collapsed": true,
                                         "collapsible": true,
+                                        "localiserId": null,
+                                        "title": "UX"
+                                    },
+                                    "name": "MyFieldSet1",
+                                    "designerId": "f33e4931-0aa4-4778-b0d5-1c1d2567fc74",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "fn": "processUX",
+                                                "implHandler": [
+                                                    "config.items=[",
+                                                    "{",
+                                                    "    xtype: 'ACEField',",
+                                                    "    anchor: '100%',",
+                                                    "    fieldLabel: 'Instructions',",
+                                                    "    name: 'UXInstructions',",
+                                                    "    textMode:true",
+                                                    "}",
+                                                    "];",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "name": "processUX",
+                                            "designerId": "7d7c62a5-998d-445a-aeb2-125172fac067"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsed": true,
+                                        "collapsible": true,
                                         "minHeight": null,
                                         "title": "Rich text"
                                     },

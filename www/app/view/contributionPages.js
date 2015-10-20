@@ -627,6 +627,12 @@ Ext.define('Rubedo.view.contributionPages', {
                                             collapsible: true,
                                             title: 'Robot'
                                         }),
+                                        me.processUX({
+                                            xtype: 'fieldset',
+                                            collapsed: true,
+                                            collapsible: true,
+                                            title: 'UX'
+                                        }),
                                         {
                                             xtype: 'fieldset',
                                             collapsed: true,
@@ -705,6 +711,19 @@ Ext.define('Rubedo.view.contributionPages', {
             boxLabel: '',
             inputValue: 'true',
             uncheckedValue: 'false'
+        }
+        ];
+        return config;
+    },
+
+    processUX: function(config) {
+        config.items=[
+        {
+            xtype: 'ACEField',
+            anchor: '100%',
+            fieldLabel: 'Instructions',
+            name: 'UXInstructions',
+            textMode:true
         }
         ];
         return config;

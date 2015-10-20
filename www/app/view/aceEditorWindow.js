@@ -99,6 +99,8 @@ Ext.define('Rubedo.view.aceEditorWindow', {
             component.editor.getSession().setMode("ace/mode/twig");
         } else if (component.rawObjectMode) {
             component.editor.getSession().setMode("ace/mode/json");
+        }else if (component.textMode) {
+            component.editor.getSession().setMode("ace/mode/text");
         }else {
         	component.editor.getSession().setMode("ace/mode/html");
         }

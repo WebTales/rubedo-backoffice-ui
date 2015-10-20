@@ -59,6 +59,8 @@ Ext.define('Rubedo.view.ACEField', {
             var myEditor = Ext.widget("aceEditorWindow");
             myEditor.targetedId=component.getId();
             myEditor.twigMode=component.twigMode;
+                myEditor.textMode=component.textMode;
+
             if (component.defaultTemplateUrl){
                 Ext.Ajax.request({
                     url: '/components/webtales/rubedo-frontoffice/templates/'+component.defaultTemplateUrl,
@@ -86,6 +88,7 @@ Ext.define('Rubedo.view.ACEField', {
             myEditor.targetedId=component.getId();
             myEditor.initialValue=component.getValue();
             myEditor.twigMode=component.twigMode;
+            myEditor.textMode=component.textMode;
             myEditor.show();
 
 

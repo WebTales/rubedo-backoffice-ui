@@ -408,6 +408,19 @@
             },
             "name": "MyField1",
             "designerId": "c370d84e-0c71-4615-8774-5eb1219fb63f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "UXInstructions"
+            },
+            "name": "MyField3",
+            "designerId": "64081c09-60da-4dc3-8db1-8f00f3eebda4"
         }
     ]
 }
