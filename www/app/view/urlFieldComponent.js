@@ -18,7 +18,8 @@ Ext.define('Rubedo.view.urlFieldComponent', {
     alias: 'widget.urlFieldComponent',
 
     requires: [
-        'Ext.form.field.Text'
+        'Ext.form.field.Text',
+        'Ext.form.field.Checkbox'
     ],
 
     anchor: '90%',
@@ -51,6 +52,15 @@ Ext.define('Rubedo.view.urlFieldComponent', {
                     labelSeparator: ' ',
                     name: 'title',
                     submitValue: false
+                },
+                {
+                    xtype: 'checkboxfield',
+                    anchor: '100%',
+                    fieldLabel: 'Open in new window',
+                    labelWidth: 140,
+                    name: 'openInNewWindow',
+                    submitValue: false,
+                    boxLabel: ''
                 }
             ]
         });

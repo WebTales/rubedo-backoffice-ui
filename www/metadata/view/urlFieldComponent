@@ -85,6 +85,24 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "type": "Ext.form.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "boxLabel": "",
+                "fieldLabel": "Open in new window",
+                "labelWidth": 140,
+                "layout|anchor": "100%",
+                "name": "openInNewWindow",
+                "submitValue": false
+            },
+            "name": "MyCheckbox",
+            "designerId": "75277f4b-e80d-4ec3-b4c3-5ba64bd01760"
         }
     ]
 }
