@@ -1424,19 +1424,23 @@
                 "designer|targetType": "Ext.button.Button",
                 "fn": "repliqueChamp",
                 "implHandler": [
-                    "var nouvChamp=button.up().getComponent(1).cloneConfig();\r",
-                    "nouvChamp.anchor = '90%';\r",
-                    "nouvChamp.style = '{float:left;}';\r",
-                    "var enrobage =Ext.widget('ChampTC');\r",
-                    "enrobage.add(nouvChamp);\r",
-                    "enrobage.getComponent('helpBouton').setTooltip(Rubedo.RubedoAutomatedElementsLoc.duplicateFieldText+\" \"+button.up().getComponent(1).fieldLabel);\r",
-                    "var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.removeText, itemId: 'boutonEffaceurChamps'});\r",
-                    "supprimeur.on('click', function(){\r",
-                    "    button.valeursM--;\r",
-                    "    button.up().up().remove(supprimeur.up());\r",
-                    "});\r",
-                    "enrobage.add(supprimeur);\r",
-                    "button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);\r",
+                    "var nouvChamp=button.up().getComponent(1).cloneConfig();",
+                    "nouvChamp.anchor = '80%';",
+                    "nouvChamp.style = '{float:left;}';",
+                    "var enrobage =Ext.widget('ChampTC');",
+                    "enrobage.add(nouvChamp);",
+                    "enrobage.getComponent('helpBouton').setTooltip(Rubedo.RubedoAutomatedElementsLoc.duplicateFieldText+\" \"+button.up().getComponent(1).fieldLabel);",
+                    "var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.removeText, itemId: 'boutonEffaceurChamps'});",
+                    "supprimeur.on('click', function(){",
+                    "    button.valeursM--;",
+                    "    button.up().up().remove(supprimeur.up());",
+                    "});",
+                    "enrobage.add(supprimeur);",
+                    "var moveUp = Ext.widget('button', {iconCls: 'arrow_up', margin: '0 0 0 5', tooltip: \"Move field up\", itemId: 'moveFieldUpMVBtn'});",
+                    "enrobage.add(moveUp);",
+                    "var moveDown = Ext.widget('button', {iconCls: 'arrow_down', margin: '0 0 0 5', tooltip: \"Move field down\", itemId: 'moveFieldDownMVBtn'});",
+                    "enrobage.add(moveDown);",
+                    "button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);",
                     "button.valeursM++;"
                 ],
                 "name": "click",
@@ -1444,6 +1448,66 @@
             },
             "name": "repliqueChamp",
             "designerId": "6c7dc62c-8c47-4fdb-a92c-52250f3464b5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "[itemId= 'moveFieldUpMVBtn']",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "var prevNode=button.up().previousSibling();",
+                    "if(prevNode){",
+                    "    var prevNodeConf=prevNode.getComponent(1);",
+                    "    var thisNodeConf=button.up().getComponent(1);",
+                    "    if (prevNodeConf.multivalued&&prevNodeConf.name==thisNodeConf.name){",
+                    "        var myValue=Ext.clone(thisNodeConf.getValue());",
+                    "        var hisValue=Ext.clone(prevNodeConf.getValue());",
+                    "        prevNodeConf.setValue(myValue);",
+                    "        thisNodeConf.setValue(hisValue);",
+                    "    }",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onButtonClick",
+            "designerId": "6266d5e7-250e-4c3d-8d24-bef7488ad95b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "[itemId= 'moveFieldDownMVBtn']",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onButtonClick2",
+                "implHandler": [
+                    "var prevNode=button.up().nextSibling();",
+                    "if(prevNode){",
+                    "    var prevNodeConf=prevNode.getComponent(1);",
+                    "    var thisNodeConf=button.up().getComponent(1);",
+                    "    if (prevNodeConf.multivalued&&prevNodeConf.name==thisNodeConf.name){",
+                    "        var myValue=Ext.clone(thisNodeConf.getValue());",
+                    "        var hisValue=Ext.clone(prevNodeConf.getValue());",
+                    "        prevNodeConf.setValue(myValue);",
+                    "        thisNodeConf.setValue(hisValue);",
+                    "    }",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onButtonClick2",
+            "designerId": "27f1ceef-72e3-4e43-9b5d-bc0863bfd6f3"
         },
         {
             "type": "controlleraction",

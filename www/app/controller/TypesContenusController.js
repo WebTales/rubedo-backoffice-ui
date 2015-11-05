@@ -1189,7 +1189,7 @@ Ext.define('Rubedo.controller.TypesContenusController', {
 
     repliqueChamp: function(button, e, eOpts) {
         var nouvChamp=button.up().getComponent(1).cloneConfig();
-        nouvChamp.anchor = '90%';
+        nouvChamp.anchor = '80%';
         nouvChamp.style = '{float:left;}';
         var enrobage =Ext.widget('ChampTC');
         enrobage.add(nouvChamp);
@@ -1200,8 +1200,40 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             button.up().up().remove(supprimeur.up());
         });
         enrobage.add(supprimeur);
+        var moveUp = Ext.widget('button', {iconCls: 'arrow_up', margin: '0 0 0 5', tooltip: "Move field up", itemId: 'moveFieldUpMVBtn'});
+        enrobage.add(moveUp);
+        var moveDown = Ext.widget('button', {iconCls: 'arrow_down', margin: '0 0 0 5', tooltip: "Move field down", itemId: 'moveFieldDownMVBtn'});
+        enrobage.add(moveDown);
         button.up().up().insert(button.up().up().items.indexOf(button.up())+button.valeursM, enrobage);
         button.valeursM++;
+    },
+
+    onButtonClick: function(button, e, eOpts) {
+        var prevNode=button.up().previousSibling();
+        if(prevNode){
+            var prevNodeConf=prevNode.getComponent(1);
+            var thisNodeConf=button.up().getComponent(1);
+            if (prevNodeConf.multivalued&&prevNodeConf.name==thisNodeConf.name){
+                var myValue=Ext.clone(thisNodeConf.getValue());
+                var hisValue=Ext.clone(prevNodeConf.getValue());
+                prevNodeConf.setValue(myValue);
+                thisNodeConf.setValue(hisValue);
+            }
+        }
+    },
+
+    onButtonClick2: function(button, e, eOpts) {
+        var prevNode=button.up().nextSibling();
+        if(prevNode){
+            var prevNodeConf=prevNode.getComponent(1);
+            var thisNodeConf=button.up().getComponent(1);
+            if (prevNodeConf.multivalued&&prevNodeConf.name==thisNodeConf.name){
+                var myValue=Ext.clone(thisNodeConf.getValue());
+                var hisValue=Ext.clone(prevNodeConf.getValue());
+                prevNodeConf.setValue(myValue);
+                thisNodeConf.setValue(hisValue);
+            }
+        }
     },
 
     TCfieldDelete: function(button, e, eOpts) {
@@ -2147,6 +2179,12 @@ Ext.define('Rubedo.controller.TypesContenusController', {
             },
             "[itemId= 'boutonReplicateurChamps']": {
                 click: this.repliqueChamp
+            },
+            "[itemId= 'moveFieldUpMVBtn']": {
+                click: this.onButtonClick
+            },
+            "[itemId= 'moveFieldDownMVBtn']": {
+                click: this.onButtonClick2
             },
             "#TCfieldDeleter": {
                 click: this.TCfieldDelete
