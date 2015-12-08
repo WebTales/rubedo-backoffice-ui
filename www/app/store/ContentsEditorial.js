@@ -58,7 +58,18 @@ Ext.define('Rubedo.store.ContentsEditorial', {
                     encode: true,
                     root: 'data'
                 }
+            },
+            listeners: {
+                update: {
+                    fn: me.onJsonstoreUpdate,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreUpdate: function(store, record, operation, modifiedFieldNames, eOpts) {
+        Ext.getCmp("editorialContentsGrid").fireEvent("selectionchange",Ext.getCmp("editorialContentsGrid").getSelectionModel(),Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection());
     }
+
 });

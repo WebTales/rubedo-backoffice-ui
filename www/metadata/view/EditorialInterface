@@ -74,7 +74,308 @@
                 "layout|flex": 1
             },
             "name": "MyToolbar",
-            "designerId": "a49b4395-e3c7-4d8d-b42c-3c116e50d6f0"
+            "designerId": "a49b4395-e3c7-4d8d-b42c-3c116e50d6f0",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.contents",
+                        "columns": 5,
+                        "disabled": true,
+                        "headerPosition": "bottom",
+                        "id": "contribWorkflowBox1",
+                        "layout|flex": null,
+                        "localiserId": "workflowGroup",
+                        "title": "Workflow"
+                    },
+                    "name": "MyButtonGroup2",
+                    "designerId": "ab4b1f81-ffd2-46a3-b4f5-eba7ba220bc0",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contents.pendingToPublished",
+                                "iconAlign": "top",
+                                "iconCls": "accept_big",
+                                "id": "contentAcceptPublishBtn1",
+                                "localiserId": "publishBtn",
+                                "scale": "large",
+                                "text": "Publier"
+                            },
+                            "name": "MyButton144",
+                            "designerId": "d50d8e1c-392d-48fe-a73e-e8a830fbb4cc",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"editorialContentsGrid\").getSelectionModel().getSelection()[0].set(\"status\",\"published\");"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "efae6c6c-79b3-4b51-b1b9-435e0ab854dc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contents.draftToPending",
+                                "iconAlign": "top",
+                                "iconCls": "validation_submit_big",
+                                "id": "contentSubmitValBtn1",
+                                "localiserId": "submitBtn",
+                                "scale": "large",
+                                "text": "Soumettre"
+                            },
+                            "name": "MyButton145",
+                            "designerId": "22d7ae2b-6258-4bd0-b011-e8bd2a60f75a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"editorialContentsGrid\").getSelectionModel().getSelection()[0].set(\"status\",\"pending\");"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "85621868-c635-4ff3-bdad-51d7640c0872"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contents.pendingToDraft",
+                                "iconAlign": "top",
+                                "iconCls": "nonS",
+                                "id": "contentRefuseBtn1",
+                                "localiserId": "refuseBtn",
+                                "scale": "large",
+                                "text": "Refuser"
+                            },
+                            "name": "MyButton146",
+                            "designerId": "5761309d-4057-47c3-8d70-fddb30d89285",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"editorialContentsGrid\").getSelectionModel().getSelection()[0].set(\"status\",\"refused\");"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "99530d9e-6f12-4ec1-8a2d-b03449a9d78d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contents.putOnline",
+                                "iconAlign": "top",
+                                "iconCls": "online_big",
+                                "id": "contentOnlineBtn1",
+                                "localiserId": "onlineBtn",
+                                "scale": "large",
+                                "text": "Mettre en ligne"
+                            },
+                            "name": "MyButton147",
+                            "designerId": "ee7f5411-c12d-4362-babf-548ecc991382",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"editorialContentsGrid\").getSelectionModel().getSelection()[0].set(\"online\",true);"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "2098a8ac-ac62-4194-ae14-098a10755936"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "ACL": "write.ui.contents.putOffline",
+                                "iconAlign": "top",
+                                "iconCls": "offline_big",
+                                "id": "contentOfflineBtn1",
+                                "localiserId": "offlineBtn",
+                                "scale": "large",
+                                "text": "Mettre hors ligne"
+                            },
+                            "name": "MyButton148",
+                            "designerId": "0a8ff3fc-bd5a-4eb4-a0d4-2b36a3d08db0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"editorialContentsGrid\").getSelectionModel().getSelection()[0].set(\"online\",false);"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "1914018b-a406-4b6b-a785-cef46f8f4602"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "Ext.panel.Panel",
@@ -100,6 +401,7 @@
             "codeClass": null,
             "userConfig": {
                 "forceFit": false,
+                "id": "editorialContentsGrid",
                 "layout|flex": 1,
                 "store": "ContentsEditorial",
                 "title": "Contents"
@@ -130,7 +432,46 @@
                         "text": "Text"
                     },
                     "name": "MyColumn2",
-                    "designerId": "f8f09956-517f-40f1-86ac-76d676ee46fa"
+                    "designerId": "f8f09956-517f-40f1-86ac-76d676ee46fa",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "var returner = value;",
+                                    "if (record.get(\"readOnly\")){",
+                                    "    returner =\"<i style=\\\"color:#777;\\\">\"+value+\"</i>\";",
+                                    "}",
+                                    "if (record.get(\"status\")==\"published\") {",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png\"> '+returner);",
+                                    "} else if (record.get(\"status\")==\"pending\") {",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png\"> '+returner);",
+                                    "} else if (record.get(\"status\")==\"draft\") {",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png\"> '+returner);",
+                                    "} else if (record.get(\"status\")==\"refused\") {",
+                                    "    return('<img src=\"resources/icones/'+MyPrefData.iconsDir+'/16x16/page_remove.png\"> '+returner);",
+                                    "}"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "e8bd0a79-0d6b-42f3-9d8b-80ed0c94f732"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -482,6 +823,45 @@
                     },
                     "name": "onGridpanelItemDblClick",
                     "designerId": "dc10e449-3551-4614-9dcd-0529eacc17c7"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onEditorialContentsGridSelectionChange",
+                        "implHandler": [
+                            "Ext.Array.forEach(Ext.getCmp(\"contribWorkflowBox1\").items.items, function(item){item.disable();});",
+                            "if (Ext.isEmpty(selected)){",
+                            "    Ext.getCmp(\"contribWorkflowBox1\").disable();",
+                            "} else {",
+                            "    Ext.getCmp(\"contribWorkflowBox1\").enable();",
+                            "    var record=selected[0];",
+                            "    if (record.get(\"online\")){",
+                            "        Ext.getCmp(\"contentOfflineBtn1\").enable();",
+                            "    } else {",
+                            "        Ext.getCmp(\"contentOnlineBtn1\").enable();",
+                            "    }",
+                            "    if (record.get(\"status\")==\"draft\"){",
+                            "        Ext.getCmp(\"contentAcceptPublishBtn1\").enable();",
+                            "        Ext.getCmp(\"contentSubmitValBtn1\").enable();",
+                            "    } else if (record.get(\"status\")==\"pending\"){",
+                            "        Ext.getCmp(\"contentAcceptPublishBtn1\").enable();",
+                            "        Ext.getCmp(\"contentRefuseBtn1\").enable();",
+                            "    } else if (record.get(\"status\")==\"refused\"){",
+                            "        Ext.getCmp(\"contentSubmitValBtn1\").enable();",
+                            "        Ext.getCmp(\"contentAcceptPublishBtn1\").enable();",
+                            "    }",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onEditorialContentsGridSelectionChange",
+                    "designerId": "34abe26f-1a18-4d62-9b52-6028b88ba975"
                 }
             ]
         },

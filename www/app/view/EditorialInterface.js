@@ -21,6 +21,8 @@ Ext.define('Rubedo.view.EditorialInterface', {
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
         'Ext.panel.Tool',
+        'Ext.container.ButtonGroup',
+        'Ext.button.Button',
         'Ext.grid.Panel',
         'Ext.grid.View',
         'Ext.grid.column.Boolean',
@@ -58,7 +60,86 @@ Ext.define('Rubedo.view.EditorialInterface', {
                 {
                     xtype: 'toolbar',
                     flex: 1,
-                    dock: 'top'
+                    dock: 'top',
+                    items: [
+                        {
+                            xtype: 'buttongroup',
+                            ACL: 'write.ui.contents',
+                            localiserId: 'workflowGroup',
+                            disabled: true,
+                            id: 'contribWorkflowBox1',
+                            headerPosition: 'bottom',
+                            title: 'Workflow',
+                            columns: 5,
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection()[0].set("status","published");
+                                    },
+                                    ACL: 'write.ui.contents.pendingToPublished',
+                                    localiserId: 'publishBtn',
+                                    id: 'contentAcceptPublishBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'accept_big',
+                                    scale: 'large',
+                                    text: 'Publier'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection()[0].set("status","pending");
+                                    },
+                                    ACL: 'write.ui.contents.draftToPending',
+                                    localiserId: 'submitBtn',
+                                    id: 'contentSubmitValBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'validation_submit_big',
+                                    scale: 'large',
+                                    text: 'Soumettre'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection()[0].set("status","refused");
+                                    },
+                                    ACL: 'write.ui.contents.pendingToDraft',
+                                    localiserId: 'refuseBtn',
+                                    id: 'contentRefuseBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'nonS',
+                                    scale: 'large',
+                                    text: 'Refuser'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection()[0].set("online",true);
+                                    },
+                                    ACL: 'write.ui.contents.putOnline',
+                                    localiserId: 'onlineBtn',
+                                    id: 'contentOnlineBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'online_big',
+                                    scale: 'large',
+                                    text: 'Mettre en ligne'
+                                },
+                                {
+                                    xtype: 'button',
+                                    handler: function(button, e) {
+                                        Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection()[0].set("online",false);
+                                    },
+                                    ACL: 'write.ui.contents.putOffline',
+                                    localiserId: 'offlineBtn',
+                                    id: 'contentOfflineBtn1',
+                                    iconAlign: 'top',
+                                    iconCls: 'offline_big',
+                                    scale: 'large',
+                                    text: 'Mettre hors ligne'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             items: [
@@ -70,12 +151,28 @@ Ext.define('Rubedo.view.EditorialInterface', {
                 {
                     xtype: 'gridpanel',
                     flex: 1,
+                    id: 'editorialContentsGrid',
                     title: 'Contents',
                     forceFit: false,
                     store: 'ContentsEditorial',
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                var returner = value;
+                                if (record.get("readOnly")){
+                                    returner ="<i style=\"color:#777;\">"+value+"</i>";
+                                }
+                                if (record.get("status")=="published") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_accept.png"> '+returner);
+                                } else if (record.get("status")=="pending") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_process.png"> '+returner);
+                                } else if (record.get("status")=="draft") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_edit.png"> '+returner);
+                                } else if (record.get("status")=="refused") {
+                                    return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_remove.png"> '+returner);
+                                }
+                            },
                             dataIndex: 'text',
                             text: 'Text',
                             flex: 2
@@ -185,6 +282,10 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         itemdblclick: {
                             fn: me.onGridpanelItemDblClick,
                             scope: me
+                        },
+                        selectionchange: {
+                            fn: me.onEditorialContentsGridSelectionChange,
+                            scope: me
                         }
                     }
                 }
@@ -227,6 +328,31 @@ Ext.define('Rubedo.view.EditorialInterface', {
 
     onGridpanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
         Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
+    },
+
+    onEditorialContentsGridSelectionChange: function(model, selected, eOpts) {
+        Ext.Array.forEach(Ext.getCmp("contribWorkflowBox1").items.items, function(item){item.disable();});
+        if (Ext.isEmpty(selected)){
+            Ext.getCmp("contribWorkflowBox1").disable();
+        } else {
+            Ext.getCmp("contribWorkflowBox1").enable();
+            var record=selected[0];
+            if (record.get("online")){
+                Ext.getCmp("contentOfflineBtn1").enable();
+            } else {
+                Ext.getCmp("contentOnlineBtn1").enable();
+            }
+            if (record.get("status")=="draft"){
+                Ext.getCmp("contentAcceptPublishBtn1").enable();
+                Ext.getCmp("contentSubmitValBtn1").enable();
+            } else if (record.get("status")=="pending"){
+                Ext.getCmp("contentAcceptPublishBtn1").enable();
+                Ext.getCmp("contentRefuseBtn1").enable();
+            } else if (record.get("status")=="refused"){
+                Ext.getCmp("contentSubmitValBtn1").enable();
+                Ext.getCmp("contentAcceptPublishBtn1").enable();
+            }
+        }
     },
 
     onEditorialInterfaceAfterRender: function(component, eOpts) {

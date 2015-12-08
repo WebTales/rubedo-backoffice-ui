@@ -89,6 +89,24 @@
                     "designerId": "9e523cc0-338b-47d5-9641-22b50196a7b2"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreUpdate",
+                "implHandler": [
+                    "Ext.getCmp(\"editorialContentsGrid\").fireEvent(\"selectionchange\",Ext.getCmp(\"editorialContentsGrid\").getSelectionModel(),Ext.getCmp(\"editorialContentsGrid\").getSelectionModel().getSelection());"
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onJsonstoreUpdate",
+            "designerId": "d6664c7f-87d3-4bfa-a305-33ee9e00b151"
         }
     ]
 }
