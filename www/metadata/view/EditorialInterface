@@ -44,7 +44,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool162",
             "designerId": "72f342ba-beba-4178-9849-7f76a41b8f00",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -58,7 +58,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool173",
             "designerId": "98eccc95-6829-43bb-961e-3ce0458bed1b",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -370,6 +370,91 @@
                                     },
                                     "name": "handler",
                                     "designerId": "1914018b-a406-4b6b-a785-cef46f8f4602"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 15,
+                        "columns": 1,
+                        "headerPosition": "bottom",
+                        "layout|flex": null,
+                        "style": null,
+                        "title": "View mode"
+                    },
+                    "name": "MyButtonGroup1",
+                    "designerId": "988cea8e-0d0d-47ae-9739-13e6bca71c4d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "filterMode"
+                            },
+                            "name": "MyComboBox",
+                            "designerId": "48925fcf-149a-463e-a17c-1d9931285f01",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processFilterMode",
+                                        "implHandler": [
+                                            "config.store=[",
+                                            "    [false,\"All states\"],",
+                                            "    ['[{\"property\":\"live.endPublicationDate\",\"operator\":\"$ne\",\"value\":\"\"},{\"property\":\"live.endPublicationDate\",\"operator\":\"$lte\",\"value\":\"'+Math.floor(Date.now() / 1000)+'\"}]','Archived'],",
+                                            "    ['[{\"property\":\"live.startPublicationDate\",\"operator\":\"$ne\",\"value\":\"\"},{\"property\":\"live.startPublicationDate\",\"operator\":\"$gte\",\"value\":\"'+Math.floor(Date.now() / 1000)+'\"}]','Future']",
+                                            "];",
+                                            "config.value=false;",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processFilterMode",
+                                    "designerId": "9efd28eb-9c41-45b8-beb2-96a4446be5d1"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange",
+                                        "implHandler": [
+                                            "if(newValue){",
+                                            "    Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=newValue;",
+                                            "    Ext.getStore(\"ContentsEditorial\").loadPage(1);",
+                                            "} else {",
+                                            "    Ext.getStore(\"ContentsEditorial\").clearFilter(true);",
+                                            "    Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=null;",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxChange",
+                                    "designerId": "7fd4e44e-429a-4065-b17e-86bfbdbb7386"
                                 }
                             ]
                         }
@@ -980,6 +1065,7 @@
                 "fn": "onEditorialInterfaceAfterRender",
                 "implHandler": [
                     "Ext.getStore(\"ContentsEditorial\").clearFilter(true);",
+                    "Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=null;",
                     ""
                 ],
                 "name": "afterrender",

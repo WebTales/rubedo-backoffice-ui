@@ -23,6 +23,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
         'Ext.panel.Tool',
         'Ext.container.ButtonGroup',
         'Ext.button.Button',
+        'Ext.form.field.ComboBox',
         'Ext.grid.Panel',
         'Ext.grid.View',
         'Ext.selection.CheckboxModel',
@@ -138,6 +139,25 @@ Ext.define('Rubedo.view.EditorialInterface', {
                                     scale: 'large',
                                     text: 'Mettre hors ligne'
                                 }
+                            ]
+                        },
+                        {
+                            xtype: 'buttongroup',
+                            bodyPadding: 15,
+                            headerPosition: 'bottom',
+                            title: 'View mode',
+                            columns: 1,
+                            items: [
+                                me.processFilterMode({
+                                    xtype: 'combobox',
+                                    name: 'filterMode',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onComboboxChange,
+                                            scope: me
+                                        }
+                                    }
+                                })
                             ]
                         }
                     ]
@@ -339,6 +359,16 @@ Ext.define('Rubedo.view.EditorialInterface', {
         me.callParent(arguments);
     },
 
+    processFilterMode: function(config) {
+        config.store=[
+            [false,"All states"],
+            ['[{"property":"live.endPublicationDate","operator":"$ne","value":""},{"property":"live.endPublicationDate","operator":"$lte","value":"'+Math.floor(Date.now() / 1000)+'"}]','Archived'],
+            ['[{"property":"live.startPublicationDate","operator":"$ne","value":""},{"property":"live.startPublicationDate","operator":"$gte","value":"'+Math.floor(Date.now() / 1000)+'"}]','Future']
+        ];
+        config.value=false;
+        return config;
+    },
+
     processEtat: function(config) {
         config.filter={
             type:"list",
@@ -356,6 +386,16 @@ Ext.define('Rubedo.view.EditorialInterface', {
         config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
         config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         return config;
+    },
+
+    onComboboxChange: function(field, newValue, oldValue, eOpts) {
+        if(newValue){
+            Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=newValue;
+            Ext.getStore("ContentsEditorial").loadPage(1);
+        } else {
+            Ext.getStore("ContentsEditorial").clearFilter(true);
+            Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=null;
+        }
     },
 
     onEditorialCTGridSelectionChange: function(model, selected, eOpts) {
@@ -399,6 +439,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
 
     onEditorialInterfaceAfterRender: function(component, eOpts) {
         Ext.getStore("ContentsEditorial").clearFilter(true);
+        Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=null;
 
     },
 
