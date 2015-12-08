@@ -875,13 +875,32 @@
             "userConfig": {
                 "fn": "onEditorialInterfaceAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"ContentsEditorial\").loadPage(1);"
+                    "Ext.getStore(\"ContentsEditorial\").loadPage(1);",
+                    ""
                 ],
                 "name": "afterrender",
                 "scope": "me"
             },
             "name": "onEditorialInterfaceAfterRender",
             "designerId": "e89cf554-ec75-430c-8c9d-41b41870a585"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditorialInterfaceBeforeRender",
+                "implHandler": [
+                    "Ext.getStore(\"CTEditorial\").load();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onEditorialInterfaceBeforeRender",
+            "designerId": "11c41bff-e807-4c48-99d6-c2175007f93e"
         }
     ]
 }

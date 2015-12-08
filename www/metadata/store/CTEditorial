@@ -1,0 +1,78 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "CTEditorial",
+        "designer|userClassName": "CTEditorial",
+        "isOptimised": true,
+        "model": "typesContenusDataModel",
+        "pageSize": 1000,
+        "storeId": "CTEditorial",
+        "usedCollection": "ContentTypes"
+    },
+    "name": "contentTypesCombo1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "55d64f43-8c18-4a40-9074-cfa5aae994a5",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "                  ",
+                    "                    read: 'content-types'",
+                    "                  ",
+                    "                }"
+                ],
+                "extraParams": [
+                    "{\r",
+                    "    'tFilter':'[{\"property\":\"dependant\",\"value\":false},{\"property\":\"system\",\"value\":{\"$ne\":true}}]'\r",
+                    "}"
+                ],
+                "url": null
+            },
+            "name": "MyAjaxProxy42",
+            "designerId": "d883cb6c-071f-4621-8e8a-046476af09e0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader41",
+                    "designerId": "8b8ca8c8-edf1-49a9-85a7-5dc15637c9f9"
+                }
+            ]
+        }
+    ]
+}

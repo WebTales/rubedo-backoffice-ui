@@ -225,7 +225,8 @@ Ext.application({
         'ThemeDirectoriesStore',
         'DAMFolderViewStore1',
         'TaxonomyForTXField',
-        'ContentsEditorial'
+        'ContentsEditorial',
+        'CTEditorial'
     ],
     views: [
         'MyGridPanel3',

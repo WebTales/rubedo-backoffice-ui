@@ -294,6 +294,10 @@ Ext.define('Rubedo.view.EditorialInterface', {
                 afterrender: {
                     fn: me.onEditorialInterfaceAfterRender,
                     scope: me
+                },
+                beforerender: {
+                    fn: me.onEditorialInterfaceBeforeRender,
+                    scope: me
                 }
             }
         });
@@ -357,6 +361,11 @@ Ext.define('Rubedo.view.EditorialInterface', {
 
     onEditorialInterfaceAfterRender: function(component, eOpts) {
         Ext.getStore("ContentsEditorial").loadPage(1);
+
+    },
+
+    onEditorialInterfaceBeforeRender: function(component, eOpts) {
+        Ext.getStore("CTEditorial").load();
     }
 
 });
