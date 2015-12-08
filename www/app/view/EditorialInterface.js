@@ -160,7 +160,13 @@ Ext.define('Rubedo.view.EditorialInterface', {
                     ],
                     selModel: Ext.create('Ext.selection.CheckboxModel', {
 
-                    })
+                    }),
+                    listeners: {
+                        selectionchange: {
+                            fn: me.onEditorialCTGridSelectionChange,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'gridpanel',
@@ -350,6 +356,10 @@ Ext.define('Rubedo.view.EditorialInterface', {
         config.trueText=Rubedo.RubedoAutomatedElementsLoc.yesText;
         config.falseText=Rubedo.RubedoAutomatedElementsLoc.noText;
         return config;
+    },
+
+    onEditorialCTGridSelectionChange: function(model, selected, eOpts) {
+        Ext.getStore("ContentsEditorial").loadPage(1);
     },
 
     onGridcolumnAfterRender1: function(component, eOpts) {

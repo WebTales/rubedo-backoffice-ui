@@ -428,6 +428,24 @@
                     "codeClass": "Ext.selection.CheckboxModel",
                     "name": "MyCheckboxSelectionModel",
                     "designerId": "ea7cc1f4-c9cc-4a63-b571-1ce0bfd6faf8"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onEditorialCTGridSelectionChange",
+                        "implHandler": [
+                            "Ext.getStore(\"ContentsEditorial\").loadPage(1);"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onEditorialCTGridSelectionChange",
+                    "designerId": "f51389f4-5992-4390-8bbe-0af21d659b3d"
                 }
             ]
         },
