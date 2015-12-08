@@ -363,7 +363,9 @@ Ext.define('Rubedo.view.EditorialInterface', {
         config.store=[
             [false,"All states"],
             ['[{"property":"live.endPublicationDate","operator":"$ne","value":""},{"property":"live.endPublicationDate","operator":"$lte","value":"'+Math.floor(Date.now() / 1000)+'"}]','Archived'],
-            ['[{"property":"live.startPublicationDate","operator":"$ne","value":""},{"property":"live.startPublicationDate","operator":"$gte","value":"'+Math.floor(Date.now() / 1000)+'"}]','Future']
+            ['[{"property":"live.startPublicationDate","operator":"$ne","value":""},{"property":"live.startPublicationDate","operator":"$gte","value":"'+Math.floor(Date.now() / 1000)+'"}]','Future'],
+            ['[{"property":"status","value":"draft"}]',"Draft"],
+            ['[{"property":"status","value":"pending"}]',"Pending validation"]
         ];
         config.value=false;
         return config;
