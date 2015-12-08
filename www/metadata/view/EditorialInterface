@@ -444,11 +444,11 @@
                                         "implHandler": [
                                             "if(newValue){",
                                             "    Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=newValue;",
-                                            "    Ext.getStore(\"ContentsEditorial\").loadPage(1);",
                                             "} else {",
                                             "    Ext.getStore(\"ContentsEditorial\").clearFilter(true);",
                                             "    Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=null;",
-                                            "}"
+                                            "}",
+                                            "Ext.getStore(\"ContentsEditorial\").loadPage(1);"
                                         ],
                                         "name": "change",
                                         "scope": "me"

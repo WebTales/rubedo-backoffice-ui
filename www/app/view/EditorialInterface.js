@@ -391,11 +391,11 @@ Ext.define('Rubedo.view.EditorialInterface', {
     onComboboxChange: function(field, newValue, oldValue, eOpts) {
         if(newValue){
             Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=newValue;
-            Ext.getStore("ContentsEditorial").loadPage(1);
         } else {
             Ext.getStore("ContentsEditorial").clearFilter(true);
             Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=null;
         }
+        Ext.getStore("ContentsEditorial").loadPage(1);
     },
 
     onEditorialCTGridSelectionChange: function(model, selected, eOpts) {
