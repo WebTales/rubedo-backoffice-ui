@@ -44,7 +44,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool161",
+            "name": "mytool16",
             "designerId": "72f342ba-beba-4178-9849-7f76a41b8f00",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -58,7 +58,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool172",
+            "name": "mytool17",
             "designerId": "98eccc95-6829-43bb-961e-3ce0458bed1b",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -378,19 +378,58 @@
             ]
         },
         {
-            "type": "Ext.panel.Panel",
+            "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "forceFit": true,
+                "id": "EditorialCTGrid",
                 "layout|flex": null,
-                "title": "Filters",
+                "store": "CTEditorial",
+                "title": "",
                 "width": 200
             },
-            "name": "MyPanel",
-            "designerId": "0fc350a1-9f2f-405e-abc3-6d207047e577"
+            "name": "MyGridPanel2",
+            "designerId": "893af809-747d-4810-ba92-0422ce9fab56",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "type",
+                        "text": "Type"
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "c29183a2-79f1-4c5b-b25e-01d8eb279f04"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView2",
+                    "designerId": "8d9ace53-d41e-4709-84f9-4821bc807c63"
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "name": "MyCheckboxSelectionModel",
+                    "designerId": "ea7cc1f4-c9cc-4a63-b571-1ce0bfd6faf8"
+                }
+            ]
         },
         {
             "type": "Ext.grid.Panel",
@@ -922,7 +961,7 @@
             "userConfig": {
                 "fn": "onEditorialInterfaceAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"ContentsEditorial\").loadPage(1);",
+                    "",
                     ""
                 ],
                 "name": "afterrender",

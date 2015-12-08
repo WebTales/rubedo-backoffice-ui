@@ -63,6 +63,10 @@ Ext.define('Rubedo.store.ContentsEditorial', {
                 update: {
                     fn: me.onJsonstoreUpdate,
                     scope: me
+                },
+                beforeload: {
+                    fn: me.onJsonstoreBeforeLoad,
+                    scope: me
                 }
             }
         }, cfg)]);
@@ -70,6 +74,11 @@ Ext.define('Rubedo.store.ContentsEditorial', {
 
     onJsonstoreUpdate: function(store, record, operation, modifiedFieldNames, eOpts) {
         Ext.getCmp("editorialContentsGrid").fireEvent("selectionchange",Ext.getCmp("editorialContentsGrid").getSelectionModel(),Ext.getCmp("editorialContentsGrid").getSelectionModel().getSelection());
+    },
+
+    onJsonstoreBeforeLoad: function(store, operation, eOpts) {
+        var okTypes=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp("EditorialCTGrid").getSelectionModel().getSelection(),"data"),"id");
+        store.getProxy().extraParams.tFilter=Ext.JSON.encode([{property:"typeId",value:okTypes,operator:'$in'}]);
     }
 
 });

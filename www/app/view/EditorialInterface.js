@@ -25,6 +25,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
         'Ext.button.Button',
         'Ext.grid.Panel',
         'Ext.grid.View',
+        'Ext.selection.CheckboxModel',
         'Ext.grid.column.Boolean',
         'Ext.grid.column.Date',
         'Ext.toolbar.Paging'
@@ -144,9 +145,22 @@ Ext.define('Rubedo.view.EditorialInterface', {
             ],
             items: [
                 {
-                    xtype: 'panel',
+                    xtype: 'gridpanel',
+                    id: 'EditorialCTGrid',
                     width: 200,
-                    title: 'Filters'
+                    title: '',
+                    forceFit: true,
+                    store: 'CTEditorial',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'type',
+                            text: 'Type'
+                        }
+                    ],
+                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                    })
                 },
                 {
                     xtype: 'gridpanel',
@@ -374,7 +388,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
     },
 
     onEditorialInterfaceAfterRender: function(component, eOpts) {
-        Ext.getStore("ContentsEditorial").loadPage(1);
+
 
     },
 

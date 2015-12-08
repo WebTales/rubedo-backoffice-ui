@@ -107,6 +107,25 @@
             },
             "name": "onJsonstoreUpdate",
             "designerId": "d6664c7f-87d3-4bfa-a305-33ee9e00b151"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreBeforeLoad",
+                "implHandler": [
+                    "var okTypes=Ext.Array.pluck(Ext.Array.pluck(Ext.getCmp(\"EditorialCTGrid\").getSelectionModel().getSelection(),\"data\"),\"id\");",
+                    "store.getProxy().extraParams.tFilter=Ext.JSON.encode([{property:\"typeId\",value:okTypes,operator:'$in'}]);"
+                ],
+                "name": "beforeload",
+                "scope": "me"
+            },
+            "name": "onJsonstoreBeforeLoad",
+            "designerId": "ec3c0181-c215-4fdb-b7b5-4dacb68c95d6"
         }
     ]
 }
