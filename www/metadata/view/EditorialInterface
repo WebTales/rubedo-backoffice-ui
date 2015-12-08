@@ -979,7 +979,7 @@
             "userConfig": {
                 "fn": "onEditorialInterfaceAfterRender",
                 "implHandler": [
-                    "",
+                    "Ext.getStore(\"ContentsEditorial\").clearFilter(true);",
                     ""
                 ],
                 "name": "afterrender",

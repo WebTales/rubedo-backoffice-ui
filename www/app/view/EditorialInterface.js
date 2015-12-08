@@ -398,7 +398,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
     },
 
     onEditorialInterfaceAfterRender: function(component, eOpts) {
-
+        Ext.getStore("ContentsEditorial").clearFilter(true);
 
     },
 
