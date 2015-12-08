@@ -112,10 +112,31 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'status',
-                            text: 'Status',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return(value.fullName);
+                            },
+                            dataIndex: 'createUser',
+                            text: 'Author',
                             flex: 1
                         },
+                        me.processEtat({
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (value=="published") {
+                                    return(Rubedo.RubedoAutomatedElementsLoc.publishedText);
+                                } else if (value=="pending") {
+                                    return(Rubedo.RubedoAutomatedElementsLoc.pendingText);
+                                } else if (value=="draft") {
+                                    return(Rubedo.RubedoAutomatedElementsLoc.draftText);
+                                } else if (value=="refused") {
+                                    return(Rubedo.RubedoAutomatedElementsLoc.refusedText);
+                                }
+                            },
+                            localiserId: 'stateColumn',
+                            dataIndex: 'status',
+                            text: 'Etat',
+                            flex: 1
+                        }),
                         me.processOnline({
                             xtype: 'booleancolumn',
                             dataIndex: 'online',
@@ -127,32 +148,28 @@ Ext.define('Rubedo.view.EditorialInterface', {
                             dataIndex: 'lastUpdateTime',
                             text: 'Last update',
                             flex: 1,
-                            format: 'm/j/Y'
+                            format: 'j/m/Y'
                         },
                         {
                             xtype: 'datecolumn',
                             dataIndex: 'createTime',
                             text: 'Create',
                             flex: 1,
-                            format: 'm/j/Y'
+                            format: 'j/m/Y'
                         },
                         {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'createUser',
-                            text: 'Author',
-                            flex: 1
-                        },
-                        {
-                            xtype: 'gridcolumn',
+                            xtype: 'datecolumn',
                             dataIndex: 'startPublicationDate',
                             text: 'Start Publication',
-                            flex: 1
+                            flex: 1,
+                            format: 'j/m/Y'
                         },
                         {
-                            xtype: 'gridcolumn',
+                            xtype: 'datecolumn',
                             dataIndex: 'endPublicationDate',
                             text: 'End Publication',
-                            flex: 1
+                            flex: 1,
+                            format: 'j/m/Y'
                         }
                     ]
                 }
@@ -166,6 +183,19 @@ Ext.define('Rubedo.view.EditorialInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processEtat: function(config) {
+        config.filter={
+            type:"list",
+            options: [
+            ["draft", Rubedo.RubedoAutomatedElementsLoc.draftText],
+            ["pending", Rubedo.RubedoAutomatedElementsLoc.pendingText],
+            ["published", Rubedo.RubedoAutomatedElementsLoc.publishedText],
+            ["refused", Rubedo.RubedoAutomatedElementsLoc.refusedText]
+            ]
+        };
+        return config;
     },
 
     processOnline: function(config) {

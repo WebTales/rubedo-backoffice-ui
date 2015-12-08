@@ -174,8 +174,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "timestamp",
                 "name": "startPublicationDate",
-                "type": null
+                "type": "date"
             },
             "name": "MyField314",
             "designerId": "a2814e00-7b6a-47b8-b360-4756f76d2b1b"
@@ -188,8 +189,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "timestamp",
                 "name": "endPublicationDate",
-                "type": null
+                "type": "date"
             },
             "name": "MyField315",
             "designerId": "6bfd7261-8f98-4b47-8034-51084593dcb0"

@@ -224,12 +224,128 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "createUser",
+                        "flex": 1,
+                        "text": "Author"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "1454d689-e137-4db3-9c13-e882719be18b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "return(value.fullName);"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "c86d5bf7-fefa-4e4e-9c1b-b071df2632ad"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "dataIndex": "status",
                         "flex": 1,
-                        "text": "Status"
+                        "localiserId": "stateColumn",
+                        "text": "Etat"
                     },
-                    "name": "MyColumn3",
-                    "designerId": "182fb07c-07e4-450e-aedc-5ca8980d6875"
+                    "name": "MyColumn7",
+                    "configAlternates": {
+                        "filter": "object"
+                    },
+                    "designerId": "a2587b0f-a0b0-44a5-a275-3301d88e009b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "if (value==\"published\") {\r",
+                                    "    return(Rubedo.RubedoAutomatedElementsLoc.publishedText);\r",
+                                    "} else if (value==\"pending\") {\r",
+                                    "    return(Rubedo.RubedoAutomatedElementsLoc.pendingText);\r",
+                                    "} else if (value==\"draft\") {\r",
+                                    "    return(Rubedo.RubedoAutomatedElementsLoc.draftText);\r",
+                                    "} else if (value==\"refused\") {\r",
+                                    "    return(Rubedo.RubedoAutomatedElementsLoc.refusedText);\r",
+                                    "}"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "c3bc26d3-f924-4daa-8222-c8db3d3c4fb5"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processEtat",
+                                "implHandler": [
+                                    "config.filter={\r",
+                                    "    type:\"list\",\r",
+                                    "    options: [\r",
+                                    "    [\"draft\", Rubedo.RubedoAutomatedElementsLoc.draftText],\r",
+                                    "    [\"pending\", Rubedo.RubedoAutomatedElementsLoc.pendingText],\r",
+                                    "    [\"published\", Rubedo.RubedoAutomatedElementsLoc.publishedText],\r",
+                                    "    [\"refused\", Rubedo.RubedoAutomatedElementsLoc.refusedText]\r",
+                                    "    ]\r",
+                                    "};\r",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processEtat",
+                            "designerId": "e5a31abc-6c86-4722-b245-007154b3a991"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Boolean",
@@ -279,7 +395,7 @@
                     "userConfig": {
                         "dataIndex": "lastUpdateTime",
                         "flex": 1,
-                        "format": "m/j/Y",
+                        "format": "j/m/Y",
                         "text": "Last update"
                     },
                     "name": "MyDateColumn4",
@@ -295,29 +411,14 @@
                     "userConfig": {
                         "dataIndex": "createTime",
                         "flex": 1,
-                        "format": "m/j/Y",
+                        "format": "j/m/Y",
                         "text": "Create"
                     },
                     "name": "MyDateColumn5",
                     "designerId": "42f73889-cff4-435b-b53f-4202bd8d9665"
                 },
                 {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "createUser",
-                        "flex": 1,
-                        "text": "Author"
-                    },
-                    "name": "MyColumn4",
-                    "designerId": "1454d689-e137-4db3-9c13-e882719be18b"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
+                    "type": "Ext.grid.column.Date",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -326,13 +427,14 @@
                     "userConfig": {
                         "dataIndex": "startPublicationDate",
                         "flex": 1,
+                        "format": "j/m/Y",
                         "text": "Start Publication"
                     },
-                    "name": "MyColumn5",
+                    "name": "MyDateColumn1",
                     "designerId": "07451110-1674-4bf1-a86b-7ced862146fa"
                 },
                 {
-                    "type": "Ext.grid.column.Column",
+                    "type": "Ext.grid.column.Date",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -341,9 +443,10 @@
                     "userConfig": {
                         "dataIndex": "endPublicationDate",
                         "flex": 1,
+                        "format": "j/m/Y",
                         "text": "End Publication"
                     },
-                    "name": "MyColumn6",
+                    "name": "MyDateColumn6",
                     "designerId": "be49a7e0-da27-4bfb-a654-06155b74a746"
                 }
             ]
