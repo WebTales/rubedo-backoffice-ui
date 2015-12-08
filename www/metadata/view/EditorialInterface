@@ -448,6 +448,40 @@
                     },
                     "name": "MyDateColumn6",
                     "designerId": "be49a7e0-da27-4bfb-a654-06155b74a746"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "store": "ContentsEditorial",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar",
+                    "designerId": "dfe86e58-d574-441d-af8d-8cd432f7ccc7"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemDblClick",
+                        "implHandler": [
+                            "Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get(\"id\"));"
+                        ],
+                        "name": "itemdblclick",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelItemDblClick",
+                    "designerId": "dc10e449-3551-4614-9dcd-0529eacc17c7"
                 }
             ]
         },
@@ -461,7 +495,7 @@
             "userConfig": {
                 "fn": "onEditorialInterfaceAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"ContentsEditorial\").load();"
+                    "Ext.getStore(\"ContentsEditorial\").loadPage(1);"
                 ],
                 "name": "afterrender",
                 "scope": "me"

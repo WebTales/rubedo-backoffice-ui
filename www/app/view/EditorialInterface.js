@@ -21,11 +21,11 @@ Ext.define('Rubedo.view.EditorialInterface', {
         'Rubedo.view.MyTool16',
         'Rubedo.view.MyTool17',
         'Ext.panel.Tool',
-        'Ext.toolbar.Toolbar',
         'Ext.grid.Panel',
         'Ext.grid.View',
         'Ext.grid.column.Boolean',
-        'Ext.grid.column.Date'
+        'Ext.grid.column.Date',
+        'Ext.toolbar.Paging'
     ],
 
     localiserId: 'EditorialInterface',
@@ -171,7 +171,22 @@ Ext.define('Rubedo.view.EditorialInterface', {
                             flex: 1,
                             format: 'j/m/Y'
                         }
-                    ]
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true,
+                            store: 'ContentsEditorial'
+                        }
+                    ],
+                    listeners: {
+                        itemdblclick: {
+                            fn: me.onGridpanelItemDblClick,
+                            scope: me
+                        }
+                    }
                 }
             ],
             listeners: {
@@ -210,8 +225,12 @@ Ext.define('Rubedo.view.EditorialInterface', {
         }
     },
 
+    onGridpanelItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get("id"));
+    },
+
     onEditorialInterfaceAfterRender: function(component, eOpts) {
-        Ext.getStore("ContentsEditorial").load();
+        Ext.getStore("ContentsEditorial").loadPage(1);
     }
 
 });
