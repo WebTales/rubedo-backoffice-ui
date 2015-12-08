@@ -224,7 +224,8 @@ Ext.application({
         'SiteInternalScripts',
         'ThemeDirectoriesStore',
         'DAMFolderViewStore1',
-        'TaxonomyForTXField'
+        'TaxonomyForTXField',
+        'ContentsEditorial'
     ],
     views: [
         'MyGridPanel3',
@@ -431,7 +432,8 @@ Ext.application({
         'TXField',
         'SystemSettingsInterface',
         'RECField',
-        'RECWindow'
+        'RECWindow',
+        'EditorialInterface'
     ],
     controllers: [
         'ContributionContenusController',

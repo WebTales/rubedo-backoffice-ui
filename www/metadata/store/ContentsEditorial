@@ -1,0 +1,94 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "designer|userAlias": "ContentsEditorial",
+        "designer|userClassName": "ContentsEditorial",
+        "isOptimised": true,
+        "model": "contenusDataModel",
+        "pageSize": 50,
+        "remoteFilter": true,
+        "remoteSort": true,
+        "sortOnFilter": false,
+        "storeId": "ContentsEditorial",
+        "usedCollection": "contents"
+    },
+    "name": "ContenusDataJson1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "6b26fd07-722f-4d48-9eea-1ca6e33e0d6f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    create: 'contents/create',\r",
+                    "                    read: 'contents',\r",
+                    "                    update: 'contents/update',\r",
+                    "                    destroy: 'contents/delete'\r",
+                    "                }"
+                ],
+                "batchActions": false,
+                "url": null
+            },
+            "name": "MyAjaxProxy28",
+            "designerId": "db64623f-24b5-4105-b2fa-39597387f797",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader27",
+                    "designerId": "b975177a-46ce-4b0f-89af-f2eb48796cb4"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "nameProperty": "mapping",
+                        "root": "data"
+                    },
+                    "name": "MyJsonWriter14",
+                    "designerId": "9e523cc0-338b-47d5-9641-22b50196a7b2"
+                }
+            ]
+        }
+    ]
+}

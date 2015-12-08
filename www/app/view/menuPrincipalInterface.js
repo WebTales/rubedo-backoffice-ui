@@ -298,6 +298,15 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             },
             {
                 xtype: 'menuitem',
+                ACL: 'read.ui.contents',
+                favoriteIcon: 'page_full.png',
+                itemId: 'EditorialInterface',
+                iconCls: 'content-icon',
+                localiserId:'editorialDasboardLaunchBtn',
+                text: 'Editorial dashboard'
+            },
+            {
+                xtype: 'menuitem',
                 ACL: 'read.ui.damTypes',
                 favoriteIcon: 'images.png',
                 itemId: 'mediaTypesInterface',
