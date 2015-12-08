@@ -210,6 +210,20 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                var myType=Ext.getStore("CTEditorial").findRecord("id",value);
+                                if(myType){
+                                    return (myType.get("type"));
+                                } else {
+                                    return "";
+                                }
+                            },
+                            dataIndex: 'typeId',
+                            text: 'Type',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return(value.fullName);
                             },
                             dataIndex: 'createUser',

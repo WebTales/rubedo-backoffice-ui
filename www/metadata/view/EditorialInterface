@@ -565,6 +565,53 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "typeId",
+                        "flex": 1,
+                        "text": "Type"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "b8aaeeb2-196e-413d-bf6f-bd6c9f1c23fe",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "var myType=Ext.getStore(\"CTEditorial\").findRecord(\"id\",value);",
+                                    "if(myType){",
+                                    "    return (myType.get(\"type\"));",
+                                    "} else {",
+                                    "    return \"\";",
+                                    "}"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "ebb76f10-bce2-4cf8-b9ce-9a10be7457e2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "dataIndex": "createUser",
                         "flex": 1,
                         "text": "Author"
