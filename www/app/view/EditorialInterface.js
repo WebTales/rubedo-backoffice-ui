@@ -420,23 +420,26 @@ Ext.define('Rubedo.view.EditorialInterface', {
         if (Ext.isEmpty(selected)){
             Ext.getCmp("contribWorkflowBox1").disable();
         } else {
-            Ext.getCmp("contribWorkflowBox1").enable();
             var record=selected[0];
-            if (record.get("online")){
-                Ext.getCmp("contentOfflineBtn1").enable();
-            } else {
-                Ext.getCmp("contentOnlineBtn1").enable();
+            if (!record.get("readOnly")){
+                Ext.getCmp("contribWorkflowBox1").enable();
+                if (record.get("online")){
+                    Ext.getCmp("contentOfflineBtn1").enable();
+                } else {
+                    Ext.getCmp("contentOnlineBtn1").enable();
+                }
+                if (record.get("status")=="draft"){
+                    Ext.getCmp("contentAcceptPublishBtn1").enable();
+                    Ext.getCmp("contentSubmitValBtn1").enable();
+                } else if (record.get("status")=="pending"){
+                    Ext.getCmp("contentAcceptPublishBtn1").enable();
+                    Ext.getCmp("contentRefuseBtn1").enable();
+                } else if (record.get("status")=="refused"){
+                    Ext.getCmp("contentSubmitValBtn1").enable();
+                    Ext.getCmp("contentAcceptPublishBtn1").enable();
+                }
             }
-            if (record.get("status")=="draft"){
-                Ext.getCmp("contentAcceptPublishBtn1").enable();
-                Ext.getCmp("contentSubmitValBtn1").enable();
-            } else if (record.get("status")=="pending"){
-                Ext.getCmp("contentAcceptPublishBtn1").enable();
-                Ext.getCmp("contentRefuseBtn1").enable();
-            } else if (record.get("status")=="refused"){
-                Ext.getCmp("contentSubmitValBtn1").enable();
-                Ext.getCmp("contentAcceptPublishBtn1").enable();
-            }
+
         }
     },
 
