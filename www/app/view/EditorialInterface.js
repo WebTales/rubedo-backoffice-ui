@@ -352,6 +352,10 @@ Ext.define('Rubedo.view.EditorialInterface', {
                 beforerender: {
                     fn: me.onEditorialInterfaceBeforeRender,
                     scope: me
+                },
+                beforeclose: {
+                    fn: me.onEditorialInterfaceBeforeClose,
+                    scope: me
                 }
             }
         });
@@ -396,7 +400,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
             Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=newValue;
         } else {
             Ext.getStore("ContentsEditorial").clearFilter(true);
-            Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=null;
+            delete(Ext.getStore("ContentsEditorial").getProxy().extraParams.filter);
         }
         Ext.getStore("ContentsEditorial").loadPage(1);
     },
@@ -445,12 +449,16 @@ Ext.define('Rubedo.view.EditorialInterface', {
 
     onEditorialInterfaceAfterRender: function(component, eOpts) {
         Ext.getStore("ContentsEditorial").clearFilter(true);
-        Ext.getStore("ContentsEditorial").getProxy().extraParams.filter=null;
+        delete(Ext.getStore("ContentsEditorial").getProxy().extraParams.filter);
 
     },
 
     onEditorialInterfaceBeforeRender: function(component, eOpts) {
         Ext.getStore("CTEditorial").load();
+    },
+
+    onEditorialInterfaceBeforeClose: function(panel, eOpts) {
+        Ext.getStore("ContentsEditorial").removeAll();
     }
 
 });

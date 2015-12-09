@@ -44,7 +44,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool162",
+            "name": "mytool16",
             "designerId": "72f342ba-beba-4178-9849-7f76a41b8f00",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -58,7 +58,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool173",
+            "name": "mytool17",
             "designerId": "98eccc95-6829-43bb-961e-3ce0458bed1b",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -449,7 +449,7 @@
                                             "    Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=newValue;",
                                             "} else {",
                                             "    Ext.getStore(\"ContentsEditorial\").clearFilter(true);",
-                                            "    Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=null;",
+                                            "    delete(Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter);",
                                             "}",
                                             "Ext.getStore(\"ContentsEditorial\").loadPage(1);"
                                         ],
@@ -1071,7 +1071,7 @@
                 "fn": "onEditorialInterfaceAfterRender",
                 "implHandler": [
                     "Ext.getStore(\"ContentsEditorial\").clearFilter(true);",
-                    "Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter=null;",
+                    "delete(Ext.getStore(\"ContentsEditorial\").getProxy().extraParams.filter);",
                     ""
                 ],
                 "name": "afterrender",
@@ -1097,6 +1097,24 @@
             },
             "name": "onEditorialInterfaceBeforeRender",
             "designerId": "11c41bff-e807-4c48-99d6-c2175007f93e"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditorialInterfaceBeforeClose",
+                "implHandler": [
+                    "Ext.getStore(\"ContentsEditorial\").removeAll();"
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "name": "onEditorialInterfaceBeforeClose",
+            "designerId": "0da0cbcd-e650-4456-ad30-75867a3e7b42"
         }
     ]
 }
