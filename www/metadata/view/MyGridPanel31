@@ -260,6 +260,54 @@
             ]
         },
         {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "lastUpdateTime",
+                "flex": 1,
+                "localiserId": "lastUpdateContentCol",
+                "text": "Last update"
+            },
+            "name": "MyDateColumn",
+            "designerId": "63d68b85-85fa-4e1b-b002-e5fe1b827c88",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processLastupdate",
+                        "implHandler": [
+                            "config.filter={\r",
+                            "    type:\"date\",\r",
+                            "    dateFormat: 'U'\r",
+                            "};\r",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processLastupdate",
+                    "designerId": "6e08fb12-d427-42a2-b998-40fe3b8d1589"
+                }
+            ]
+        },
+        {
             "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",

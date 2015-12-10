@@ -35,7 +35,7 @@ Ext.define('Rubedo.view.manualQueryInterface', {
     localiserId: 'manualQueryWindow',
     height: 401,
     id: 'manualQueryInterface',
-    width: 1064,
+    width: 1200,
     constrain: true,
     title: 'Requête manuelle',
     modal: true,

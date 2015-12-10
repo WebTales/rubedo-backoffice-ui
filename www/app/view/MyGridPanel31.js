@@ -21,6 +21,7 @@ Ext.define('Rubedo.view.MyGridPanel31', {
         'Ext.grid.View',
         'Ext.grid.plugin.DragDrop',
         'Ext.util.Point',
+        'Ext.grid.column.Date',
         'Ext.grid.column.Boolean',
         'Ext.toolbar.Paging'
     ],
@@ -103,6 +104,13 @@ Ext.define('Rubedo.view.MyGridPanel31', {
                     text: 'Type',
                     flex: 1
                 }),
+                me.processLastupdate({
+                    xtype: 'datecolumn',
+                    localiserId: 'lastUpdateContentCol',
+                    dataIndex: 'lastUpdateTime',
+                    text: 'Last update',
+                    flex: 1
+                }),
                 me.processEtat({
                     xtype: 'gridcolumn',
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
@@ -168,6 +176,14 @@ Ext.define('Rubedo.view.MyGridPanel31', {
             type:"list",
             labelField:"type",
             store:Ext.getStore("TCNDepComboCS")
+        };
+        return config;
+    },
+
+    processLastupdate: function(config) {
+        config.filter={
+            type:"date",
+            dateFormat: 'U'
         };
         return config;
     },
