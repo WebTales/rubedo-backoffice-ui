@@ -138,15 +138,6 @@
                                             "    },",
                                             "    {",
                                             "        xtype: 'menuitem',",
-                                            "        ACL: 'read.ui.contents',",
-                                            "        favoriteIcon: 'page_full.png',",
-                                            "        itemId: 'EditorialInterface',",
-                                            "        iconCls: 'content-icon',",
-                                            "        localiserId:'editorialDasboardLaunchBtn',",
-                                            "        text: 'Editorial dashboard'",
-                                            "    },",
-                                            "    {",
-                                            "        xtype: 'menuitem',",
                                             "        ACL: 'read.ui.damTypes',",
                                             "        favoriteIcon: 'images.png',",
                                             "        itemId: 'mediaTypesInterface',",
@@ -581,6 +572,43 @@
                     },
                     "name": "MyButton411",
                     "designerId": "835f100d-6054-4611-93f2-d423b3823b89",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "read.ui.contents",
+                        "favoriteIcon": "page_full.png",
+                        "iconCls": "content-icon",
+                        "itemId": "EditorialInterface",
+                        "layout|flex": null,
+                        "localiserId": "editorialDasboardLaunchBtn",
+                        "margin": null,
+                        "text": "Editorial dashboard"
+                    },
+                    "name": "MyButton",
+                    "designerId": "2d2f670e-913e-4564-9d06-8f578bfbc27a",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

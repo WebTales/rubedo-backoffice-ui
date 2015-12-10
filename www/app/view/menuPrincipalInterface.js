@@ -168,6 +168,15 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.contents',
+                            favoriteIcon: 'page_full.png',
+                            localiserId: 'editorialDasboardLaunchBtn',
+                            itemId: 'EditorialInterface',
+                            iconCls: 'content-icon',
+                            text: 'Editorial dashboard'
+                        },
+                        {
+                            xtype: 'button',
                             ACL: 'read.ui.dam',
                             favoriteIcon: 'images.png',
                             localiserId: 'DAMLaunchBtn',
@@ -295,15 +304,6 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                 iconCls: 'content-icon',
                 localiserId:'contentTypesLaunchBtn',
                 text: 'Types de contenus'
-            },
-            {
-                xtype: 'menuitem',
-                ACL: 'read.ui.contents',
-                favoriteIcon: 'page_full.png',
-                itemId: 'EditorialInterface',
-                iconCls: 'content-icon',
-                localiserId:'editorialDasboardLaunchBtn',
-                text: 'Editorial dashboard'
             },
             {
                 xtype: 'menuitem',
