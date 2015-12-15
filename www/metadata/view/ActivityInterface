@@ -188,7 +188,82 @@
                                         "width": 360
                                     },
                                     "name": "MyPagingToolbar",
-                                    "designerId": "099c1d04-87b5-4112-b05b-4fc6f66f790a"
+                                    "designerId": "099c1d04-87b5-4112-b05b-4fc6f66f790a",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "iconCls": "user_edit",
+                                                "id": "activityUserUAthDetailBtn",
+                                                "layout|flex": null,
+                                                "text": "View user detail"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "dc2c50f3-55bc-4bb4-aece-c594708f497e",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var userId=button.up().up().getSelectionModel().getLastSelected().get(\"context\").user.id;",
+                                                            "Ext.Ajax.request({",
+                                                            "    url: 'users/find-one?id='+userId,",
+                                                            "    params: {",
+                                                            "    },",
+                                                            "    method:\"GET\",",
+                                                            "    success: function(response){",
+                                                            "        var resp = Ext.JSON.decode(response.responseText);",
+                                                            "        if(resp.data&&resp.data.typeId){",
+                                                            "            Rubedo.controller.UserTypesController.prototype.prepareContext(userId,resp.data.typeId);",
+                                                            "        }",
+                                                            "    }",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "19a47b05-ffc6-4993-9eb6-b9b9435fcf70"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelSelectionChange",
+                                        "implHandler": [
+                                            "if(Ext.isEmpty(selected)){",
+                                            "    Ext.getCmp(\"activityUserUAthDetailBtn\").disable();",
+                                            "} else {",
+                                            "    Ext.getCmp(\"activityUserUAthDetailBtn\").enable();",
+                                            "}"
+                                        ],
+                                        "name": "selectionchange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onGridpanelSelectionChange",
+                                    "designerId": "c138983a-2e2e-47d3-847f-cfb1f490a318"
                                 }
                             ]
                         }

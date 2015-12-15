@@ -91,9 +91,39 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                             dock: 'bottom',
                                             width: 360,
                                             displayInfo: true,
-                                            store: 'ApplicationLogsAuth'
+                                            store: 'ApplicationLogsAuth',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    handler: function(button, e) {
+                                                        var userId=button.up().up().getSelectionModel().getLastSelected().get("context").user.id;
+                                                        Ext.Ajax.request({
+                                                            url: 'users/find-one?id='+userId,
+                                                            params: {
+                                                            },
+                                                            method:"GET",
+                                                            success: function(response){
+                                                                var resp = Ext.JSON.decode(response.responseText);
+                                                                if(resp.data&&resp.data.typeId){
+                                                                    Rubedo.controller.UserTypesController.prototype.prepareContext(userId,resp.data.typeId);
+                                                                }
+                                                            }
+                                                        });
+                                                    },
+                                                    disabled: true,
+                                                    id: 'activityUserUAthDetailBtn',
+                                                    iconCls: 'user_edit',
+                                                    text: 'View user detail'
+                                                }
+                                            ]
                                         }
-                                    ]
+                                    ],
+                                    listeners: {
+                                        selectionchange: {
+                                            fn: me.onGridpanelSelectionChange,
+                                            scope: me
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -113,6 +143,14 @@ Ext.define('Rubedo.view.ActivityInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    onGridpanelSelectionChange: function(model, selected, eOpts) {
+        if(Ext.isEmpty(selected)){
+            Ext.getCmp("activityUserUAthDetailBtn").disable();
+        } else {
+            Ext.getCmp("activityUserUAthDetailBtn").enable();
+        }
     },
 
     onActivityInterfaceAfterRender: function(component, eOpts) {
