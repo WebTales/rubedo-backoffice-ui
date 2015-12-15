@@ -635,6 +635,43 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "read.ui.users",
+                        "favoriteIcon": "users.png",
+                        "iconCls": "user",
+                        "itemId": "ActivityInterface",
+                        "layout|flex": null,
+                        "localiserId": "activityInterfaceLaunchBtn",
+                        "margin": null,
+                        "text": "Activity"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "0cd70694-f4e6-4abf-9546-5ca1da1a5106",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "favoriteIcon",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "ACL": "read.ui.dam",
                         "favoriteIcon": "images.png",
                         "iconCls": "mediaTypes",

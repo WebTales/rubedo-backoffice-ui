@@ -177,6 +177,15 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
                         },
                         {
                             xtype: 'button',
+                            ACL: 'read.ui.users',
+                            favoriteIcon: 'users.png',
+                            localiserId: 'activityInterfaceLaunchBtn',
+                            itemId: 'ActivityInterface',
+                            iconCls: 'user',
+                            text: 'Activity'
+                        },
+                        {
+                            xtype: 'button',
                             ACL: 'read.ui.dam',
                             favoriteIcon: 'images.png',
                             localiserId: 'DAMLaunchBtn',
