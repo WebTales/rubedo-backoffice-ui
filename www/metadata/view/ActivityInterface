@@ -1,0 +1,243 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrainHeader": true,
+        "container|align": "stretch",
+        "designer|userAlias": "ActivityInterface",
+        "designer|userClassName": "ActivityInterface",
+        "height": 456,
+        "iconCls": "user",
+        "id": "ActivityInterface",
+        "layout": "hbox",
+        "localiserId": "activityMonitorWindow",
+        "title": "Activity",
+        "width": 723
+    },
+    "name": "WorkspacesInterface1",
+    "designerId": "63ca6728-02be-4580-8e4e-af93f6cccc30",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "mytool16",
+            "designerId": "6ae04a20-231c-4247-93db-0770bebe72e2",
+            "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "mytool17",
+            "designerId": "ef7699e4-53ed-4451-9906-2520e9af635b",
+            "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "layout|flex": 1
+            },
+            "name": "MyTabPanel",
+            "designerId": "a6b0d48e-dd43-43d9-b96b-9cbe633345f2",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "Log in"
+                    },
+                    "name": "MyPanel",
+                    "designerId": "1ee912ba-1491-4e35-8e6c-cc1b3486b3e4",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "f9691c29-4d19-4ba1-804d-9f84e4bd8bde"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "forceFit": true,
+                                "store": "ApplicationLogsAuth",
+                                "title": ""
+                            },
+                            "name": "MyGridPanel",
+                            "designerId": "a316a32f-da1a-4ab2-9f34-18d3ec81b541",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView",
+                                    "designerId": "7e74dc42-a521-4e29-82a5-a14286d8be90"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "context",
+                                        "text": "User"
+                                    },
+                                    "name": "MyColumn2",
+                                    "designerId": "b098a8df-0d44-419d-ac5a-58f586aaa5cb",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "fn": "renderer",
+                                                "implHandler": [
+                                                    "return(value.user.fullName);"
+                                                ]
+                                            },
+                                            "name": "renderer",
+                                            "designerId": "ebad8ff7-17e2-4afe-a59e-ab457946fdfc"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "datetime",
+                                        "text": "Lon-in date"
+                                    },
+                                    "name": "MyColumn6",
+                                    "designerId": "b58e08ff-844c-4bc0-8d3c-5296f70ab020"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayInfo": true,
+                                        "dock": "bottom",
+                                        "store": "ApplicationLogsAuth",
+                                        "width": 360
+                                    },
+                                    "name": "MyPagingToolbar",
+                                    "designerId": "099c1d04-87b5-4112-b05b-4fc6f66f790a"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Content contribution"
+                    },
+                    "name": "MyPanel1",
+                    "designerId": "c3e940c5-1e62-4c5e-b0cb-e323c1a9b7be",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "9c95e893-b781-4da9-a248-a9954586e1f2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivityInterfaceAfterRender",
+                "implHandler": [
+                    "Ext.getStore(\"ApplicationLogsAuth\").load();"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onActivityInterfaceAfterRender",
+            "designerId": "3084ad40-a82d-4f4e-928c-b496e9aed1fa"
+        }
+    ]
+}

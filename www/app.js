@@ -71,7 +71,8 @@ Ext.application({
         'pmConfig',
         'order',
         'importPreset',
-        'DAMFolderViewModel1'
+        'DAMFolderViewModel1',
+        'applicationLogSimple'
     ],
     stores: [
         'SitesJson',
@@ -227,7 +228,8 @@ Ext.application({
         'TaxonomyForTXField',
         'ContentsEditorial',
         'CTEditorial',
-        'QueriesStore1'
+        'QueriesStore1',
+        'ApplicationLogsAuth'
     ],
     views: [
         'MyGridPanel3',
@@ -436,7 +438,8 @@ Ext.application({
         'RECField',
         'RECWindow',
         'EditorialInterface',
-        'queryBuilderField1'
+        'queryBuilderField1',
+        'ActivityInterface'
     ],
     controllers: [
         'ContributionContenusController',

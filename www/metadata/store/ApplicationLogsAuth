@@ -1,0 +1,91 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "ApplicationLogsAuth",
+        "designer|userClassName": "ApplicationLogsAuth",
+        "model": "applicationLogSimple",
+        "pageSize": 25,
+        "remoteSort": true,
+        "storeId": "ApplicationLogsAuth"
+    },
+    "name": "ApplicationLogs1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "2695e6a2-6232-411c-a1a7-3238154dfb97",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "\tread: 'application-log'\r",
+                    "}"
+                ],
+                "extraParams": [
+                    "{",
+                    "    filter:'[{\"property\":\"context.collection\",\"value\":\"UserTokens\"},{\"property\":\"context.event\",\"value\":\"rubedo_collection_create_post\"}]'",
+                    "",
+                    "}"
+                ]
+            },
+            "name": "MyAjaxProxy81",
+            "designerId": "cfe85b17-8e60-4faa-ad7d-598d6069a50e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader80",
+                    "designerId": "14ec6913-58f7-4649-9126-d48c5849a477"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "name": "MyJsonWriter39",
+                    "designerId": "27c60ef8-4e83-4e00-b972-d6e7cfb3a30e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "datetime"
+            },
+            "name": "MySorter14",
+            "designerId": "c99650b3-7d92-4459-be1a-60b308a9d831"
+        }
+    ]
+}
