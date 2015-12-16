@@ -366,7 +366,9 @@
             "userConfig": {
                 "fn": "onWorkspacesInterfaceRender",
                 "implHandler": [
-                    "Ext.getStore(\"RSSFeeds\").load();"
+                    "Ext.getStore(\"RSSFeeds\").load();",
+                    "Ext.getStore(\"SitesComboRss\").load();",
+                    ""
                 ],
                 "name": "render",
                 "scope": "me"
@@ -384,7 +386,8 @@
             "userConfig": {
                 "fn": "onWorkspacesInterfaceBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"RSSFeeds\").removeAll();"
+                    "Ext.getStore(\"RSSFeeds\").removeAll();",
+                    "Ext.getStore(\"SitesComboRss\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
@@ -505,6 +508,49 @@
                     },
                     "name": "MyTextArea",
                     "designerId": "02a0ce65-8f22-4d67-828e-f050d3684c99"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "editable": false,
+                        "fieldLabel": "Site",
+                        "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "name": "siteId",
+                        "store": "SitesComboRss",
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "244335b4-3096-4598-bfdf-30963eb3f317"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "displayField": "label",
+                        "editable": false,
+                        "fieldLabel": "Language",
+                        "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "name": "feedLang",
+                        "store": "AllLanguagesStore",
+                        "valueField": "iso2"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "f9bc57ee-a3aa-4110-87cf-6fd55e00367e"
                 }
             ]
         }

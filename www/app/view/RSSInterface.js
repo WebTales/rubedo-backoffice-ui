@@ -29,7 +29,8 @@ Ext.define('Rubedo.view.RSSInterface', {
         'Ext.panel.Tool',
         'Ext.form.Panel',
         'Ext.form.field.Checkbox',
-        'Ext.form.field.TextArea'
+        'Ext.form.field.TextArea',
+        'Ext.form.field.ComboBox'
     ],
 
     height: 456,
@@ -184,6 +185,31 @@ Ext.define('Rubedo.view.RSSInterface', {
                             name: 'description',
                             allowBlank: false,
                             allowOnlyWhitespace: false
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            fieldLabel: 'Site',
+                            name: 'siteId',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            forceSelection: true,
+                            store: 'SitesComboRss',
+                            valueField: 'id'
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            fieldLabel: 'Language',
+                            name: 'feedLang',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            displayField: 'label',
+                            forceSelection: true,
+                            store: 'AllLanguagesStore',
+                            valueField: 'iso2'
                         }
                     ]
                 }
@@ -237,10 +263,13 @@ Ext.define('Rubedo.view.RSSInterface', {
 
     onWorkspacesInterfaceRender: function(component, eOpts) {
         Ext.getStore("RSSFeeds").load();
+        Ext.getStore("SitesComboRss").load();
+
     },
 
     onWorkspacesInterfaceBeforeClose: function(panel, eOpts) {
         Ext.getStore("RSSFeeds").removeAll();
+        Ext.getStore("SitesComboRss").removeAll();
     }
 
 });

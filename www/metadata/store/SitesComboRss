@@ -1,0 +1,88 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "SitesComboRss",
+        "designer|userClassName": "SitesComboRss",
+        "isOptimised": true,
+        "model": "sitesDataModel",
+        "pageSize": 1000,
+        "storeId": "SitesComboRss",
+        "usedCollection": "Sites"
+    },
+    "name": "SitesComboMasks1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "fdb8b855-5647-4a53-ab87-ba58ae043073",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "                    create: 'sites/create',\r",
+                    "                    read: 'sites',\r",
+                    "                    update: 'sites/update',\r",
+                    "                    destroy: 'sites/delete'\r",
+                    "                }"
+                ],
+                "url": null
+            },
+            "name": "MyAjaxProxy31",
+            "designerId": "3c9a5848-c1cc-4ff0-b12d-62933f76c60c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader30",
+                    "designerId": "242e3a46-0353-4a0f-92a9-0ba8eec5ef9a"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "name": "MyJsonWriter16",
+                    "designerId": "ab4532c4-2e62-49d6-8e37-a9e6d4a63047"
+                }
+            ]
+        }
+    ]
+}

@@ -232,7 +232,8 @@ Ext.application({
         'QueriesStore1',
         'ApplicationLogsAuth',
         'ApplicationLogsCont',
-        'RSSFeeds'
+        'RSSFeeds',
+        'SitesComboRss'
     ],
     views: [
         'MyGridPanel3',
