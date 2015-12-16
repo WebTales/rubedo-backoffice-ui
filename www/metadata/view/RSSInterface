@@ -218,7 +218,12 @@
                                     "e"
                                 ],
                                 "fn": "handler",
-                                "implHandler": null
+                                "implHandler": [
+                                    "var form=Ext.getCmp(\"rssSettingsForm\").getForm();",
+                                    "if(form.isValid()){",
+                                    "    Ext.getCmp(\"rssFeedsGrid\").getSelectionModel().getLastSelected().set(form.getValues());",
+                                    "}"
+                                ]
                             },
                             "name": "handler",
                             "designerId": "7f2bb139-fa74-468e-ab9b-5ab6812fd7c6"
@@ -330,13 +335,17 @@
                     "userConfig": {
                         "fn": "onRssFeedsGridSelectionChange",
                         "implHandler": [
+                            "Ext.getCmp(\"rssSettingsForm\").getForm().reset();",
+                            "Ext.getCmp(\"rssSettingsForm\").disable();",
                             "if (Ext.isEmpty(selected)){",
                             "    Ext.getCmp(\"rssRemoveBtn\").disable();",
                             "    Ext.getCmp(\"rssSaveBtn\").disable();",
                             "} else {",
                             "    Ext.getCmp(\"rssRemoveBtn\").enable();",
                             "    Ext.getCmp(\"rssSaveBtn\").enable();",
-                            "    ",
+                            "    Ext.getCmp(\"rssSettingsForm\").enable();",
+                            "    Ext.getCmp(\"rssSettingsForm\").getForm().setValues(selected[0].getData());",
+                            "",
                             "}"
                         ],
                         "name": "selectionchange",
@@ -410,6 +419,94 @@
             "name": "mytool172",
             "designerId": "af35b976-c30d-42a7-85f1-1b2b42bb9966",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "disabled": true,
+                "id": "rssSettingsForm",
+                "layout|flex": 1,
+                "title": "Settings"
+            },
+            "name": "MyForm",
+            "designerId": "812cf062-0ea1-473d-8b17-825724e62af5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Name",
+                        "layout|anchor": "100%",
+                        "name": "text"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "343f614e-b392-437b-9506-c960862bb473"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "",
+                        "fieldLabel": "Activated",
+                        "inputValue": "true",
+                        "layout|anchor": "100%",
+                        "name": "isActivated",
+                        "uncheckedValue": "false"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "c62b642a-7fdf-4d60-87c7-3125859125d8"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Title",
+                        "layout|anchor": "100%",
+                        "name": "title"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "69aebe2d-4091-4ac6-93c7-c5719b548114"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "fieldLabel": "Description",
+                        "layout|anchor": "100%",
+                        "name": "description"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "02a0ce65-8f22-4d67-828e-f050d3684c99"
+                }
+            ]
         }
     ]
 }

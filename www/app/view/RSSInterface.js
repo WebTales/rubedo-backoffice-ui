@@ -26,7 +26,10 @@ Ext.define('Rubedo.view.RSSInterface', {
         'Ext.grid.Panel',
         'Ext.grid.View',
         'Ext.grid.column.Column',
-        'Ext.panel.Tool'
+        'Ext.panel.Tool',
+        'Ext.form.Panel',
+        'Ext.form.field.Checkbox',
+        'Ext.form.field.TextArea'
     ],
 
     height: 456,
@@ -85,7 +88,10 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'button',
                             handler: function(button, e) {
-
+                                var form=Ext.getCmp("rssSettingsForm").getForm();
+                                if(form.isValid()){
+                                    Ext.getCmp("rssFeedsGrid").getSelectionModel().getLastSelected().set(form.getValues());
+                                }
                             },
                             ACL: 'write.ui.sites',
                             localiserId: 'saveBtn',
@@ -137,6 +143,49 @@ Ext.define('Rubedo.view.RSSInterface', {
                             scope: me
                         }
                     }
+                },
+                {
+                    xtype: 'form',
+                    flex: 1,
+                    disabled: true,
+                    id: 'rssSettingsForm',
+                    bodyPadding: 10,
+                    title: 'Settings',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'Name',
+                            name: 'text',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            anchor: '100%',
+                            fieldLabel: 'Activated',
+                            name: 'isActivated',
+                            boxLabel: '',
+                            inputValue: 'true',
+                            uncheckedValue: 'false'
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'Title',
+                            name: 'title',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false
+                        },
+                        {
+                            xtype: 'textareafield',
+                            anchor: '100%',
+                            fieldLabel: 'Description',
+                            name: 'description',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false
+                        }
+                    ]
                 }
             ],
             listeners: {
@@ -172,12 +221,16 @@ Ext.define('Rubedo.view.RSSInterface', {
     },
 
     onRssFeedsGridSelectionChange: function(model, selected, eOpts) {
+        Ext.getCmp("rssSettingsForm").getForm().reset();
+        Ext.getCmp("rssSettingsForm").disable();
         if (Ext.isEmpty(selected)){
             Ext.getCmp("rssRemoveBtn").disable();
             Ext.getCmp("rssSaveBtn").disable();
         } else {
             Ext.getCmp("rssRemoveBtn").enable();
             Ext.getCmp("rssSaveBtn").enable();
+            Ext.getCmp("rssSettingsForm").enable();
+            Ext.getCmp("rssSettingsForm").getForm().setValues(selected[0].getData());
 
         }
     },

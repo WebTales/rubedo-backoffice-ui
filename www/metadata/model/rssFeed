@@ -130,6 +130,23 @@
             },
             "name": "MyField4",
             "designerId": "a947d10f-7d73-4e49-a147-79ee575572e6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "name": "isActivated",
+                "type": "boolean"
+            },
+            "name": "MyField5",
+            "designerId": "b33fc4df-c419-4139-8cdc-9e0b82e0b085"
         }
     ]
 }

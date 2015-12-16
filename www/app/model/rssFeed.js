@@ -50,6 +50,11 @@ Ext.define('Rubedo.model.rssFeed', {
         },
         {
             name: 'title'
+        },
+        {
+            defaultValue: false,
+            name: 'isActivated',
+            type: 'boolean'
         }
     ]
 });
