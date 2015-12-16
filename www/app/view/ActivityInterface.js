@@ -146,7 +146,7 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'datetime',
-                                            text: 'Datetime'
+                                            text: 'Date'
                                         }
                                     ],
                                     dockedItems: [

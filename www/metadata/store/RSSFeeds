@@ -1,0 +1,77 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "data": null,
+        "designer|userAlias": "RSSFeeds",
+        "designer|userClassName": "RSSFeeds",
+        "model": "rssFeed",
+        "pageSize": 1000,
+        "storeId": "RSSFeeds"
+    },
+    "name": "UserTypes1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "1cf8eaef-5038-4c9a-8c72-9d7808ea95c0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "                    create: 'rss-feeds/create',",
+                    "                    read: 'rss-feeds',",
+                    "                    update: 'rss-feeds/update',",
+                    "                    destroy: 'rss-feeds/delete'",
+                    "                }"
+                ],
+                "url": null
+            },
+            "name": "MyAjaxProxy11",
+            "designerId": "c9b1551a-a5ff-4ec5-bbed-120e8ca093b6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader11",
+                    "designerId": "4c0a2ea7-a1f7-4d81-8b1b-bd4bd886909c"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "nameProperty": null,
+                        "root": "data"
+                    },
+                    "name": "MyJsonWriter4",
+                    "designerId": "00e68804-020d-432b-9bae-269e21e6bcaa"
+                }
+            ]
+        }
+    ]
+}

@@ -72,7 +72,8 @@ Ext.application({
         'order',
         'importPreset',
         'DAMFolderViewModel1',
-        'applicationLogSimple'
+        'applicationLogSimple',
+        'rssFeed'
     ],
     stores: [
         'SitesJson',
@@ -230,7 +231,8 @@ Ext.application({
         'CTEditorial',
         'QueriesStore1',
         'ApplicationLogsAuth',
-        'ApplicationLogsCont'
+        'ApplicationLogsCont',
+        'RSSFeeds'
     ],
     views: [
         'MyGridPanel3',
