@@ -30,7 +30,8 @@ Ext.define('Rubedo.view.RSSInterface', {
         'Ext.form.Panel',
         'Ext.form.field.Checkbox',
         'Ext.form.field.TextArea',
-        'Ext.form.field.ComboBox'
+        'Ext.form.field.ComboBox',
+        'Ext.form.field.Number'
     ],
 
     height: 456,
@@ -210,6 +211,35 @@ Ext.define('Rubedo.view.RSSInterface', {
                             forceSelection: true,
                             store: 'AllLanguagesStore',
                             valueField: 'iso2'
+                        },
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            fieldLabel: 'Query',
+                            name: 'queryId',
+                            allowBlank: false,
+                            allowOnlyWhitespace: false,
+                            editable: false,
+                            displayField: 'name',
+                            forceSelection: true,
+                            store: 'RSSQueriesStore',
+                            valueField: 'id'
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Skip',
+                            name: 'start',
+                            allowDecimals: false,
+                            minValue: 0
+                        },
+                        {
+                            xtype: 'numberfield',
+                            anchor: '100%',
+                            fieldLabel: 'Limit',
+                            name: 'limit',
+                            allowDecimals: false,
+                            minValue: 1
                         }
                     ]
                 }
@@ -264,6 +294,8 @@ Ext.define('Rubedo.view.RSSInterface', {
     onWorkspacesInterfaceRender: function(component, eOpts) {
         Ext.getStore("RSSFeeds").load();
         Ext.getStore("SitesComboRss").load();
+        Ext.getStore("AllLanguagesStore").load();
+        Ext.getStore("RSSQueriesStore").load();
 
     },
 

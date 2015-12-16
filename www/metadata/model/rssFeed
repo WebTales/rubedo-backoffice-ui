@@ -147,6 +147,41 @@
             },
             "name": "MyField5",
             "designerId": "b33fc4df-c419-4139-8cdc-9e0b82e0b085"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "0"
+                ],
+                "name": "start",
+                "type": "int"
+            },
+            "name": "MyField7",
+            "designerId": "f43b9156-aa27-4043-97b3-9161ae7d947a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "20",
+                    ""
+                ],
+                "name": "limit",
+                "type": "int"
+            },
+            "name": "MyField6",
+            "designerId": "02bbb797-9e2e-459e-b0cd-aeadda17478a"
         }
     ]
 }

@@ -368,6 +368,8 @@
                 "implHandler": [
                     "Ext.getStore(\"RSSFeeds\").load();",
                     "Ext.getStore(\"SitesComboRss\").load();",
+                    "Ext.getStore(\"AllLanguagesStore\").load();",
+                    "Ext.getStore(\"RSSQueriesStore\").load();",
                     ""
                 ],
                 "name": "render",
@@ -551,6 +553,62 @@
                     },
                     "name": "MyComboBox1",
                     "designerId": "f9bc57ee-a3aa-4110-87cf-6fd55e00367e"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "displayField": "name",
+                        "editable": false,
+                        "fieldLabel": "Query",
+                        "forceSelection": true,
+                        "layout|anchor": "100%",
+                        "name": "queryId",
+                        "store": "RSSQueriesStore",
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "fcaf395f-1a9c-4e29-8249-84a4b06efe48"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDecimals": false,
+                        "fieldLabel": "Skip",
+                        "layout|anchor": "100%",
+                        "minValue": 0,
+                        "name": "start"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "0d971c99-0918-48a5-a82d-a72c37f95823"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDecimals": false,
+                        "fieldLabel": "Limit",
+                        "layout|anchor": "100%",
+                        "minValue": 1,
+                        "name": "limit"
+                    },
+                    "name": "MyNumberField1",
+                    "designerId": "5da637d3-9f81-4725-b939-12928066f61b"
                 }
             ]
         }
