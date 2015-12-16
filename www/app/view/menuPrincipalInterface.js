@@ -316,6 +316,15 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             },
             {
                 xtype: 'menuitem',
+                ACL: 'read.ui.sites',
+                favoriteIcon: 'page_full.png',
+                itemId: 'RSSInterface',
+                iconCls: 'content-icon',
+                localiserId:'rssFeedsLaunchBtn',
+                text: 'RSS Feeds'
+            },
+            {
+                xtype: 'menuitem',
                 ACL: 'read.ui.damTypes',
                 favoriteIcon: 'images.png',
                 itemId: 'mediaTypesInterface',

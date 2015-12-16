@@ -8,24 +8,17 @@
     "userConfig": {
         "constrainHeader": true,
         "container|align": "stretch",
-        "designer|userAlias": "WorkspacesInterface",
-        "designer|userClassName": "WorkspacesInterface",
+        "designer|userAlias": "RSSInterface",
+        "designer|userClassName": "RSSInterface",
         "height": 456,
-        "iconCls": "user",
-        "id": "WorkspacesInterface",
+        "iconCls": "content-icon",
+        "id": "RSSInterface",
         "layout": "hbox",
-        "localiserId": "workspaceWindow",
-        "title": "Espaces de travail",
+        "title": "RSS Feeds",
         "width": 723
     },
-    "designerId": "a00b8e6b-7b4d-49e9-b016-908679cc1295",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "localiserId",
-            "type": "string"
-        }
-    ],
+    "name": "WorkspacesInterface1",
+    "designerId": "de99e05a-a2d7-49e5-b4e9-d915377f788d",
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -38,7 +31,7 @@
                 "dock": "top"
             },
             "name": "MyToolbar86",
-            "designerId": "8fdbeb7c-1a76-40b6-850f-dca741375b0d",
+            "designerId": "a22d5a87-8ce2-4dee-9c67-7c8d9d67b6e5",
             "cn": [
                 {
                     "type": "Ext.button.Button",
@@ -48,10 +41,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.sites",
                         "iconAlign": "top",
                         "iconCls": "add_big",
-                        "id": "workspaceAdd",
+                        "id": "rssAddBtn",
                         "layout|flex": null,
                         "localiserId": "addBtn",
                         "minWidth": null,
@@ -60,7 +53,7 @@
                         "width": null
                     },
                     "name": "MyButton386",
-                    "designerId": "41d768e8-d6f7-403e-920f-ac6d481007cc",
+                    "designerId": "2199e9de-cdb5-4557-b7f0-b819c0f927fd",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -72,6 +65,28 @@
                             "name": "localiserId",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.widget(\"newRssWindow\").show();"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "6fa8c95e-de69-4316-8231-4695790af201"
+                        }
                     ]
                 },
                 {
@@ -82,18 +97,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.sites",
                         "disabled": true,
                         "iconAlign": "top",
                         "iconCls": "remove_big",
-                        "id": "workspaceRemove",
+                        "id": "rssRemoveBtn",
                         "layout|flex": null,
                         "localiserId": "removeBtn",
                         "scale": "large",
                         "text": "Supprimer"
                     },
                     "name": "MyButton387",
-                    "designerId": "d0bbc696-bd07-4e19-bf98-2d77dfe85e33",
+                    "designerId": "c032d13e-f707-41d5-a21d-f8e301b93d58",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -105,6 +120,33 @@
                             "name": "localiserId",
                             "type": "string"
                         }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var delCon = Ext.widget('delConfirmZ');",
+                                    "delCon.show();",
+                                    "Ext.getCmp('delConfirmZOui').on('click', function() {",
+                                    "    Ext.getStore(\"RSSFeeds\").remove(Ext.getCmp(\"rssFeedsGrid\").getSelectionModel().getLastSelected());",
+                                    "    Ext.getCmp('delConfirmZ').close();",
+                                    "});"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "c576a820-d5d6-4b05-8ed5-2412c5abd435"
+                        }
                     ]
                 },
                 {
@@ -115,18 +157,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "ACL": "write.ui.workspaces",
+                        "ACL": "write.ui.sites",
                         "disabled": true,
                         "iconAlign": "top",
                         "iconCls": "floppy_disc_big",
-                        "id": "workspaceSave",
+                        "id": "rssSaveBtn",
                         "layout|flex": null,
                         "localiserId": "saveBtn",
                         "scale": "large",
                         "text": "Enregistrer"
                     },
                     "name": "MyButton388",
-                    "designerId": "942b8c59-6fbb-45ae-b11b-fa64be2dd66a",
+                    "designerId": "bd756fe8-2739-48b2-b162-592cf0f9bb03",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -161,7 +203,25 @@
                                 "scope": "me"
                             },
                             "name": "onWorkspaceSaveAfterRender",
-                            "designerId": "2c159f6e-09eb-4f8b-bbe5-4ed9356d955f"
+                            "designerId": "48fe614e-680d-4e06-9afa-a3cf5f05bba5"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": null
+                            },
+                            "name": "handler",
+                            "designerId": "7f2bb139-fa74-468e-ab9b-5ab6812fd7c6"
                         }
                     ]
                 },
@@ -176,32 +236,7 @@
                         "layout|flex": null
                     },
                     "name": "MyFill45",
-                    "designerId": "654cf7c5-1529-4721-be31-70c5486d718b"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "RApplication": "workspaces",
-                        "iconCls": "info_big",
-                        "itemId": "RHelpBtn",
-                        "layout|flex": null,
-                        "scale": "large",
-                        "text": ""
-                    },
-                    "name": "MyButton389",
-                    "designerId": "bbc542ed-95ba-4521-b837-212a373b42a3",
-                    "customConfigs": [
-                        {
-                            "group": "(Custom Properties)",
-                            "name": "RApplication",
-                            "type": "string"
-                        }
-                    ]
+                    "designerId": "dd727d26-6764-4f05-8c54-0bcd78f7d48c"
                 }
             ]
         },
@@ -214,13 +249,13 @@
             "codeClass": null,
             "userConfig": {
                 "forceFit": true,
-                "id": "workspacesGrid",
-                "store": "WorkspacesStore",
+                "id": "rssFeedsGrid",
+                "store": "RSSFeeds",
                 "title": "",
                 "width": 200
             },
             "name": "MyGridPanel53",
-            "designerId": "b534706c-4fdc-4e9c-afab-5d76d2c466ae",
+            "designerId": "7c244220-9155-4788-a319-6e582f0efb54",
             "cn": [
                 {
                     "type": "Ext.grid.View",
@@ -230,7 +265,7 @@
                     },
                     "codeClass": null,
                     "name": "MyGridView59",
-                    "designerId": "372cd307-4d74-46a5-aae4-fb703939edb4"
+                    "designerId": "d233ca37-144c-4c14-a641-7f690bfa743e"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -245,7 +280,7 @@
                         "text": "Nom"
                     },
                     "name": "MyColumn127",
-                    "designerId": "bc435fa4-5300-4fd8-a78e-f542f158e383",
+                    "designerId": "9a6da849-1d41-4457-b7fe-162ea3d25fd1",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -281,93 +316,34 @@
                                 ]
                             },
                             "name": "renderer",
-                            "designerId": "ed5ea241-ef34-43a9-84b1-dfc9f8d86e4f"
+                            "designerId": "d3ab0fee-45e5-4206-b81b-8cf78c13b91b"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "Ext.panel.Panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "disabled": true,
-                "layout": "card",
-                "layout|flex": 1,
-                "localiserId": "propsPanel",
-                "title": "Propriétés"
-            },
-            "name": "MyPanel69",
-            "designerId": "bc23bf6d-f63e-4cd7-ae6e-dc970f2dab60",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "localiserId",
-                    "type": "string"
-                }
-            ],
-            "cn": [
-                {
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "dockedItems",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dock": "top",
-                        "id": "workspacesDLSToolbar",
-                        "replicatorEntity": "workspacesReplicator"
-                    },
-                    "name": "dlstoolbar",
-                    "designerId": "c79eb712-a3dd-414d-b742-bcce9705e88d",
-                    "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                 },
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "basiceventbinding",
                     "reference": {
-                        "name": "items",
+                        "name": "listeners",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "bodyPadding": 10,
-                        "id": "workspacesMainForm",
-                        "itemId": "mainLocItem",
-                        "title": ""
+                        "fn": "onRssFeedsGridSelectionChange",
+                        "implHandler": [
+                            "if (Ext.isEmpty(selected)){",
+                            "    Ext.getCmp(\"rssRemoveBtn\").disable();",
+                            "    Ext.getCmp(\"rssSaveBtn\").disable();",
+                            "} else {",
+                            "    Ext.getCmp(\"rssRemoveBtn\").enable();",
+                            "    Ext.getCmp(\"rssSaveBtn\").enable();",
+                            "    ",
+                            "}"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
                     },
-                    "name": "MyForm85",
-                    "designerId": "c679fb36-69a6-4fea-9764-64df2357701c",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "allowBlank": false,
-                                "fieldLabel": "Nom",
-                                "layout|anchor": "100%",
-                                "localiserId": "nameField",
-                                "name": "text"
-                            },
-                            "name": "MyTextField126",
-                            "designerId": "743daf5f-a1da-4881-84d0-36af7f2c4767",
-                            "customConfigs": [
-                                {
-                                    "group": "(Custom Properties)",
-                                    "name": "localiserId",
-                                    "type": "string"
-                                }
-                            ]
-                        }
-                    ]
+                    "name": "onRssFeedsGridSelectionChange",
+                    "designerId": "4607f86d-6416-444c-bd37-fbd397aa166e"
                 }
             ]
         },
@@ -381,13 +357,13 @@
             "userConfig": {
                 "fn": "onWorkspacesInterfaceRender",
                 "implHandler": [
-                    "Ext.getStore(\"WorkspacesStore\").load();"
+                    "Ext.getStore(\"RSSFeeds\").load();"
                 ],
                 "name": "render",
                 "scope": "me"
             },
             "name": "onWorkspacesInterfaceRender",
-            "designerId": "12eab1d4-0d8d-407b-815a-aff4f1b0b51d"
+            "designerId": "03f1817e-88c4-4561-9503-e622fc525866"
         },
         {
             "type": "basiceventbinding",
@@ -399,13 +375,13 @@
             "userConfig": {
                 "fn": "onWorkspacesInterfaceBeforeClose",
                 "implHandler": [
-                    "Ext.getStore(\"WorkspacesStore\").removeAll();"
+                    "Ext.getStore(\"RSSFeeds\").removeAll();"
                 ],
                 "name": "beforeclose",
                 "scope": "me"
             },
             "name": "onWorkspacesInterfaceBeforeClose",
-            "designerId": "1f152444-d439-4016-b605-5b5cf95540ba"
+            "designerId": "37696021-332c-442e-8c49-3140c097a50b"
         },
         {
             "type": "linkedinstance",
@@ -417,8 +393,8 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool161",
-            "designerId": "df2ae591-c05d-4f92-b303-08ddd9f66eb9",
+            "name": "mytool162",
+            "designerId": "576dc5da-e315-4d9f-9802-50af3cfd8398",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
         {
@@ -431,8 +407,8 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool171",
-            "designerId": "565358fc-8689-4644-95d4-fc800b4d4cd2",
+            "name": "mytool172",
+            "designerId": "af35b976-c30d-42a7-85f1-1b2b42bb9966",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         }
     ]

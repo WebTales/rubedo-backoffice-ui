@@ -1,0 +1,117 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrain": true,
+        "designer|userAlias": "newRssWindow",
+        "designer|userClassName": "newRssWindow",
+        "height": 112,
+        "id": "newRssWindow",
+        "layout": "fit",
+        "localiserId": "newRssWindow",
+        "modal": true,
+        "resizable": false,
+        "title": "New RSS Feed",
+        "width": 400
+    },
+    "name": "newWorkspaceWindow1",
+    "configAlternates": {
+        "resizable": "boolean"
+    },
+    "designerId": "5cd332dd-9858-4d4c-b8f3-173c0d6482bb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "name": "MyForm64",
+            "designerId": "89a9eca4-4a66-411f-9342-387f3e4bf341",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Nom",
+                        "layout|anchor": "100%",
+                        "localiserId": "nameField",
+                        "name": "text"
+                    },
+                    "name": "MyTextField100",
+                    "designerId": "b6e64465-03a2-4803-9fe9-d5153d3951f6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "newWorkspaceSublitBtn1",
+                        "layout|anchor": "100%",
+                        "scale": "medium",
+                        "text": "Create new feed"
+                    },
+                    "name": "MyButton323",
+                    "designerId": "a5306fb5-b2e8-401c-a045-b3e0e479a08b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var form=button.up().getForm();",
+                                    "if(form.isValid()){",
+                                    "    Ext.getStore(\"RSSFeeds\").add(form.getValues());",
+                                    "    button.up().up().close();",
+                                    "}"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "a4f97e80-2039-4bb8-b938-b32340836eb1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

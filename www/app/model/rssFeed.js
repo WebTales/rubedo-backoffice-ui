@@ -47,6 +47,9 @@ Ext.define('Rubedo.model.rssFeed', {
         },
         {
             name: 'siteId'
+        },
+        {
+            name: 'title'
         }
     ]
 });

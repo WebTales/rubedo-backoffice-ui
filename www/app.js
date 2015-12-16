@@ -442,7 +442,9 @@ Ext.application({
         'RECWindow',
         'EditorialInterface',
         'queryBuilderField1',
-        'ActivityInterface'
+        'ActivityInterface',
+        'RSSInterface',
+        'newRssWindow'
     ],
     controllers: [
         'ContributionContenusController',
