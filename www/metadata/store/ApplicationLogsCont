@@ -1,0 +1,91 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "ApplicationLogsCont",
+        "designer|userClassName": "ApplicationLogsCont",
+        "model": "applicationLogSimple",
+        "pageSize": 25,
+        "remoteSort": true,
+        "storeId": "ApplicationLogsCont"
+    },
+    "name": "ApplicationLogsAuth1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "5898490b-e92b-4b46-be34-09a84260dbed",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "\tread: 'application-log'\r",
+                    "}"
+                ],
+                "extraParams": [
+                    "{",
+                    "    filter:'[{\"property\":\"context.collection\",\"value\":\"Contents\"}]'",
+                    "",
+                    "}"
+                ]
+            },
+            "name": "MyAjaxProxy81",
+            "designerId": "eba1a78c-fe1b-422a-9dd6-77d87cdc0fda",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader80",
+                    "designerId": "a4515f6f-bd62-4deb-9fdf-107ac491da9a"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "encode": true,
+                        "root": "data"
+                    },
+                    "name": "MyJsonWriter39",
+                    "designerId": "f167b298-567c-4933-a469-5da938d71332"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "datetime"
+            },
+            "name": "MySorter14",
+            "designerId": "e47d0115-de4e-4749-84fb-0e53a6b25b0a"
+        }
+    ]
+}

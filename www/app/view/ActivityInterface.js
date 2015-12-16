@@ -129,7 +129,78 @@ Ext.define('Rubedo.view.ActivityInterface', {
                         },
                         {
                             xtype: 'panel',
-                            title: 'Content contribution'
+                            layout: 'fit',
+                            title: 'Content contribution',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    title: '',
+                                    forceFit: true,
+                                    store: 'ApplicationLogsCont',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'message',
+                                            text: 'Message'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'datetime',
+                                            text: 'Datetime'
+                                        }
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'pagingtoolbar',
+                                            dock: 'bottom',
+                                            width: 360,
+                                            displayInfo: true,
+                                            store: 'ApplicationLogsCont',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    handler: function(button, e) {
+                                                        var userId=button.up().up().getSelectionModel().getLastSelected().get("context").user.id;
+                                                        Ext.Ajax.request({
+                                                            url: 'users/find-one?id='+userId,
+                                                            params: {
+                                                            },
+                                                            method:"GET",
+                                                            success: function(response){
+                                                                var resp = Ext.JSON.decode(response.responseText);
+                                                                if(resp.data&&resp.data.typeId){
+                                                                    Rubedo.controller.UserTypesController.prototype.prepareContext(userId,resp.data.typeId);
+                                                                }
+                                                            }
+                                                        });
+                                                    },
+                                                    disabled: true,
+                                                    id: 'activityUserUAthDetailBtn1',
+                                                    iconCls: 'user_edit',
+                                                    text: 'View user detail'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    handler: function(button, e) {
+                                                        var contentId=button.up().up().getSelectionModel().getLastSelected().get("context").data.id;
+                                                        Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(contentId);
+                                                    },
+                                                    disabled: true,
+                                                    id: 'activityViewCdBtn',
+                                                    iconCls: 'content-icon',
+                                                    text: 'View content detail'
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    listeners: {
+                                        selectionchange: {
+                                            fn: me.onGridpanelSelectionChange1,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }
@@ -153,8 +224,21 @@ Ext.define('Rubedo.view.ActivityInterface', {
         }
     },
 
+    onGridpanelSelectionChange1: function(model, selected, eOpts) {
+        if(Ext.isEmpty(selected)){
+            Ext.getCmp("activityUserUAthDetailBtn1").disable();
+                Ext.getCmp("activityViewCdBtn").disable();
+
+        } else {
+            Ext.getCmp("activityUserUAthDetailBtn1").enable();
+                Ext.getCmp("activityViewCdBtn").enable();
+
+        }
+    },
+
     onActivityInterfaceAfterRender: function(component, eOpts) {
-        Ext.getStore("ApplicationLogsAuth").load();
+        Ext.getStore("ApplicationLogsAuth").loadPage(1);
+        Ext.getStore("ApplicationLogsCont").loadPage(1);
     }
 
 });

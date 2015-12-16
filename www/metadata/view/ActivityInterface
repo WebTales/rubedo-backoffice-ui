@@ -277,6 +277,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout": "fit",
                         "title": "Content contribution"
                     },
                     "name": "MyPanel1",
@@ -291,6 +292,196 @@
                             "codeClass": null,
                             "name": "TabConfig1",
                             "designerId": "9c95e893-b781-4da9-a248-a9954586e1f2"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "forceFit": true,
+                                "store": "ApplicationLogsCont",
+                                "title": ""
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "f74256ad-0112-4a60-9cc0-7b83b0d20430",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "29952a09-9005-4f71-9c4e-f3405cb92417"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "message",
+                                        "text": "Message"
+                                    },
+                                    "name": "MyColumn1",
+                                    "designerId": "4d5858cd-612c-4439-b08d-97e775e317f3"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "datetime",
+                                        "text": "Datetime"
+                                    },
+                                    "name": "MyColumn3",
+                                    "designerId": "434fffda-096c-41da-be59-895654376cb8"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayInfo": true,
+                                        "dock": "bottom",
+                                        "store": "ApplicationLogsCont",
+                                        "width": 360
+                                    },
+                                    "name": "MyPagingToolbar1",
+                                    "designerId": "23f025fa-390e-4f09-bfbd-52ecbaff9214",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "iconCls": "user_edit",
+                                                "id": "activityUserUAthDetailBtn1",
+                                                "layout|flex": null,
+                                                "text": "View user detail"
+                                            },
+                                            "name": "MyButton",
+                                            "designerId": "8807894c-8232-4a68-a705-c1f1b5b4c28b",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var userId=button.up().up().getSelectionModel().getLastSelected().get(\"context\").user.id;",
+                                                            "Ext.Ajax.request({",
+                                                            "    url: 'users/find-one?id='+userId,",
+                                                            "    params: {",
+                                                            "    },",
+                                                            "    method:\"GET\",",
+                                                            "    success: function(response){",
+                                                            "        var resp = Ext.JSON.decode(response.responseText);",
+                                                            "        if(resp.data&&resp.data.typeId){",
+                                                            "            Rubedo.controller.UserTypesController.prototype.prepareContext(userId,resp.data.typeId);",
+                                                            "        }",
+                                                            "    }",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "89bb82aa-426c-4036-a1d9-079f8ef8bbe6"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "iconCls": "content-icon",
+                                                "id": "activityViewCdBtn",
+                                                "layout|flex": null,
+                                                "text": "View content detail"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "5608e763-033e-4a87-a4e1-9dc209a0bca3",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var contentId=button.up().up().getSelectionModel().getLastSelected().get(\"context\").data.id;",
+                                                            "Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(contentId);"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "d2e164d9-cbe2-4367-b766-e433cfb95d78"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelSelectionChange1",
+                                        "implHandler": [
+                                            "if(Ext.isEmpty(selected)){",
+                                            "    Ext.getCmp(\"activityUserUAthDetailBtn1\").disable();",
+                                            "        Ext.getCmp(\"activityViewCdBtn\").disable();",
+                                            "",
+                                            "} else {",
+                                            "    Ext.getCmp(\"activityUserUAthDetailBtn1\").enable();",
+                                            "        Ext.getCmp(\"activityViewCdBtn\").enable();",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "selectionchange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onGridpanelSelectionChange1",
+                                    "designerId": "428e9307-861d-4d32-9796-0f907f5290c0"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -306,7 +497,8 @@
             "userConfig": {
                 "fn": "onActivityInterfaceAfterRender",
                 "implHandler": [
-                    "Ext.getStore(\"ApplicationLogsAuth\").load();"
+                    "Ext.getStore(\"ApplicationLogsAuth\").loadPage(1);",
+                    "Ext.getStore(\"ApplicationLogsCont\").loadPage(1);"
                 ],
                 "name": "afterrender",
                 "scope": "me"

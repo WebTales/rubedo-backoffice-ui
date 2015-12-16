@@ -229,7 +229,8 @@ Ext.application({
         'ContentsEditorial',
         'CTEditorial',
         'QueriesStore1',
-        'ApplicationLogsAuth'
+        'ApplicationLogsAuth',
+        'ApplicationLogsCont'
     ],
     views: [
         'MyGridPanel3',
