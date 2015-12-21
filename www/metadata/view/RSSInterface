@@ -222,11 +222,59 @@
                                     "var form=Ext.getCmp(\"rssSettingsForm\").getForm();",
                                     "if(form.isValid()){",
                                     "    Ext.getCmp(\"rssFeedsGrid\").getSelectionModel().getLastSelected().set(form.getValues());",
+                                    "    if(Ext.getCmp(\"rssFeedsGrid\").getSelectionModel().getLastSelected().get(\"isActivated\")){",
+                                    "        Ext.getCmp(\"rssGetLinkBtn\").enable();",
+                                    "    } else {",
+                                    "        Ext.getCmp(\"rssGetLinkBtn\").disable();",
+                                    "    }",
                                     "}"
                                 ]
                             },
                             "name": "handler",
                             "designerId": "7f2bb139-fa74-468e-ab9b-5ab6812fd7c6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "iconAlign": "top",
+                        "iconCls": "rss_big",
+                        "id": "rssGetLinkBtn",
+                        "layout|flex": null,
+                        "scale": "large",
+                        "text": "Get feed link"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "5e440f55-946a-4597-b155-6f4845826a94",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var record=Ext.getCmp(\"rssFeedsGrid\").getSelectionModel().getLastSelected();",
+                                    "var site=Ext.getStore(\"SitesComboRss\").findRecord(\"id\",record.get(\"siteId\"));",
+                                    "Ext.Msg.alert(\"Rss feed link\",\"http://\"+site.get(\"text\")+\"/api/v1/rss/\"+record.get(\"id\"));"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "97dbe945-78ec-42e0-9c65-c7d032dfb1b6"
                         }
                     ]
                 },
@@ -337,6 +385,7 @@
                         "implHandler": [
                             "Ext.getCmp(\"rssSettingsForm\").getForm().reset();",
                             "Ext.getCmp(\"rssSettingsForm\").disable();",
+                            "Ext.getCmp(\"rssGetLinkBtn\").disable();",
                             "if (Ext.isEmpty(selected)){",
                             "    Ext.getCmp(\"rssRemoveBtn\").disable();",
                             "    Ext.getCmp(\"rssSaveBtn\").disable();",
@@ -345,6 +394,9 @@
                             "    Ext.getCmp(\"rssSaveBtn\").enable();",
                             "    Ext.getCmp(\"rssSettingsForm\").enable();",
                             "    Ext.getCmp(\"rssSettingsForm\").getForm().setValues(selected[0].getData());",
+                            "    if(selected[0].get(\"isActivated\")){",
+                            "        Ext.getCmp(\"rssGetLinkBtn\").enable();",
+                            "    }",
                             "",
                             "}"
                         ],

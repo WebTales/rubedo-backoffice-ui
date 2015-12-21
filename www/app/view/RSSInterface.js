@@ -93,6 +93,11 @@ Ext.define('Rubedo.view.RSSInterface', {
                                 var form=Ext.getCmp("rssSettingsForm").getForm();
                                 if(form.isValid()){
                                     Ext.getCmp("rssFeedsGrid").getSelectionModel().getLastSelected().set(form.getValues());
+                                    if(Ext.getCmp("rssFeedsGrid").getSelectionModel().getLastSelected().get("isActivated")){
+                                        Ext.getCmp("rssGetLinkBtn").enable();
+                                    } else {
+                                        Ext.getCmp("rssGetLinkBtn").disable();
+                                    }
                                 }
                             },
                             ACL: 'write.ui.sites',
@@ -109,6 +114,20 @@ Ext.define('Rubedo.view.RSSInterface', {
                                     scope: me
                                 }
                             }
+                        },
+                        {
+                            xtype: 'button',
+                            handler: function(button, e) {
+                                var record=Ext.getCmp("rssFeedsGrid").getSelectionModel().getLastSelected();
+                                var site=Ext.getStore("SitesComboRss").findRecord("id",record.get("siteId"));
+                                Ext.Msg.alert("Rss feed link","http://"+site.get("text")+"/api/v1/rss/"+record.get("id"));
+                            },
+                            disabled: true,
+                            id: 'rssGetLinkBtn',
+                            iconAlign: 'top',
+                            iconCls: 'rss_big',
+                            scale: 'large',
+                            text: 'Get feed link'
                         },
                         {
                             xtype: 'tbfill'
@@ -279,6 +298,7 @@ Ext.define('Rubedo.view.RSSInterface', {
     onRssFeedsGridSelectionChange: function(model, selected, eOpts) {
         Ext.getCmp("rssSettingsForm").getForm().reset();
         Ext.getCmp("rssSettingsForm").disable();
+        Ext.getCmp("rssGetLinkBtn").disable();
         if (Ext.isEmpty(selected)){
             Ext.getCmp("rssRemoveBtn").disable();
             Ext.getCmp("rssSaveBtn").disable();
@@ -287,6 +307,9 @@ Ext.define('Rubedo.view.RSSInterface', {
             Ext.getCmp("rssSaveBtn").enable();
             Ext.getCmp("rssSettingsForm").enable();
             Ext.getCmp("rssSettingsForm").getForm().setValues(selected[0].getData());
+            if(selected[0].get("isActivated")){
+                Ext.getCmp("rssGetLinkBtn").enable();
+            }
 
         }
     },
