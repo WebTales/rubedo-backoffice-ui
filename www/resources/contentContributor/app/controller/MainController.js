@@ -477,6 +477,10 @@ Ext.define('ContentContributor.controller.MainController', {
             Ext.getCmp("taxonomyFieldset").doLayout();
         }
     },
+    onESFacetQueryBtnClick: function(button, e, eOpts) {
+        Ext.getStore("ESFacetteStore").activeFacettes.query=Ext.getCmp("ESFacetQueryField").getValue();
+        Ext.getStore("ESFacetteStore").load();
+    },
 
     init: function(application) {
         Ext.require("Rubedo.view.CKEField");
@@ -526,6 +530,9 @@ Ext.define('ContentContributor.controller.MainController', {
             },
             "fieldset": {
                 afterrender: this.onFieldsetAfterRender
+            },
+            "#ESFacetQueryBtn": {
+                click: this.onESFacetQueryBtnClick
             }
         });
     },
