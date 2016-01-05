@@ -101,54 +101,6 @@
                                             "type": "string"
                                         }
                                     ]
-                                },
-                                {
-                                    "type": "Ext.form.field.ComboBox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "editable": false,
-                                        "fieldLabel": "Interface",
-                                        "forceSelection": true,
-                                        "labelWidth": 110,
-                                        "layout|anchor": "100%",
-                                        "localiserId": "interfaceModeField",
-                                        "name": "interfaceMode"
-                                    },
-                                    "name": "MyComboBox30",
-                                    "designerId": "85fc8e08-7436-4a0d-9478-2fe115321da5",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
-                                        {
-                                            "type": "processcfgfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "fn": "processInterfaceMode",
-                                                "implHandler": [
-                                                    "config.store=[[\"desktop\",\"Desktop\"],[\"simple\",\"Application\"]];\r",
-                                                    "return config;"
-                                                ]
-                                            },
-                                            "name": "processInterfaceMode",
-                                            "designerId": "1286edea-7c58-42c1-ab7f-fa031abf4f61"
-                                        }
-                                    ]
                                 }
                             ]
                         },

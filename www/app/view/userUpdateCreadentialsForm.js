@@ -66,17 +66,7 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                                             queryMode: 'local',
                                             store: 'BOLanguageStore',
                                             valueField: 'key'
-                                        },
-                                        me.processInterfaceMode({
-                                            xtype: 'combobox',
-                                            localiserId: 'interfaceModeField',
-                                            anchor: '100%',
-                                            fieldLabel: 'Interface',
-                                            labelWidth: 110,
-                                            name: 'interfaceMode',
-                                            editable: false,
-                                            forceSelection: true
-                                        })
+                                        }
                                     ]
                                 },
                                 {
@@ -204,11 +194,6 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
         });
 
         me.callParent(arguments);
-    },
-
-    processInterfaceMode: function(config) {
-        config.store=[["desktop","Desktop"],["simple","Application"]];
-        return config;
     }
 
 });

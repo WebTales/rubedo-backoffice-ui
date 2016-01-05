@@ -67,14 +67,14 @@ Ext.define('Rubedo.store.CurrentUserDataStore', {
 
     onJsonstoreLoad: function(store, records, successful, eOpts) {
 
-        var mode=records[0].get("interfaceMode");
-        if ((!Ext.isEmpty(mode))&&(mode=="simple")){
-            MyPrefData.simpleMode=true;
-            var task = new Ext.util.DelayedTask(function(){
-                Rubedo.controller.InterfaceController.prototype.setSimpleInterfaceMode();
-            });
-            task.delay(300);
-        }
+        //var mode=records[0].get("interfaceMode");
+        //if ((!Ext.isEmpty(mode))&&(mode=="simple")){
+          //  MyPrefData.simpleMode=true;
+            //var task = new Ext.util.DelayedTask(function(){
+              //  Rubedo.controller.InterfaceController.prototype.setSimpleInterfaceMode();
+            //});
+            //task.delay(300);
+        //}
         Rubedo.controller.LocalisationController.prototype.updateLocalisationSingletons();
         if (!Ext.isEmpty(Ext.getCmp("workingLanguageField"))){
             var myLanguage=records[0].get("workingLanguage");

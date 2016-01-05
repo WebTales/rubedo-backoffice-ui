@@ -65,7 +65,7 @@ Ext.define('Rubedo.view.userSettings', {
                                     xtype: 'fieldset',
                                     localiserId: 'informationsFieldSet',
                                     flex: 1,
-                                    height: 180,
+                                    height: 160,
                                     margin: 0,
                                     width: 356,
                                     autoScroll: true,
@@ -109,14 +109,6 @@ Ext.define('Rubedo.view.userSettings', {
                                             store: 'BOLanguageStore',
                                             valueField: 'key'
                                         },
-                                        me.processInterfaceMode({
-                                            xtype: 'combobox',
-                                            anchor: '100%',
-                                            fieldLabel: 'Interface',
-                                            name: 'interfaceMode',
-                                            editable: false,
-                                            forceSelection: true
-                                        }),
                                         {
                                             xtype: 'button',
                                             localiserId: 'applyBtn',
@@ -265,11 +257,6 @@ Ext.define('Rubedo.view.userSettings', {
         });
 
         me.callParent(arguments);
-    },
-
-    processInterfaceMode: function(config) {
-        config.store=[["desktop","Desktop"],["simple","Application"]];
-        return config;
     },
 
     onButtonAfterRender: function(component, eOpts) {
