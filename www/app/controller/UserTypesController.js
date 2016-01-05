@@ -1146,6 +1146,9 @@ Ext.define('Rubedo.controller.UserTypesController', {
         } else {
             Ext.getCmp("userCUAdminProfilePicture").setSrc("image/get?file-id="+record.get("photo"));
         }
+        if(untethered){
+            Ext.getCmp("directUserKiller").show();
+        }
 
         Ext.getCmp("userCUSaveBtn").on("click", function(){
             me.editUser(record);

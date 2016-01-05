@@ -53,6 +53,60 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "hidden": true,
+                        "iconCls": "close",
+                        "id": "directUserKiller",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
+                        "text": "Delete"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "c39a4838-e6c7-4713-88bc-72a2f038899d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var delCon = Ext.widget('delConfirmZ');",
+                                    "delCon.show();",
+                                    "Ext.getCmp('delConfirmZOui').on('click', function() {",
+                                    "    Ext.getStore(\"UnitaryUsersDataStore\").remove(Ext.getStore(\"UnitaryUsersDataStore\").getRange()[0]);",
+                                    "    button.up().up().close();",
+                                    "    Ext.getCmp('delConfirmZ').close();",
+                                    "});",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "2ea45f5e-9db8-4cad-926e-8e7c213b3cee"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "ACL": "write.ui.users",
                         "iconCls": "save",
                         "id": "userCUSaveBtn",

@@ -49,6 +49,24 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
                         },
                         {
                             xtype: 'button',
+                            handler: function(button, event) {
+                                var delCon = Ext.widget('delConfirmZ');
+                                delCon.show();
+                                Ext.getCmp('delConfirmZOui').on('click', function() {
+                                    Ext.getStore("UnitaryUsersDataStore").remove(Ext.getStore("UnitaryUsersDataStore").getRange()[0]);
+                                    button.up().up().close();
+                                    Ext.getCmp('delConfirmZ').close();
+                                });
+
+                            },
+                            localiserId: 'removeBtn',
+                            hidden: true,
+                            id: 'directUserKiller',
+                            iconCls: 'close',
+                            text: 'Delete'
+                        },
+                        {
+                            xtype: 'button',
                             ACL: 'write.ui.users',
                             localiserId: 'saveBtn',
                             id: 'userCUSaveBtn',
