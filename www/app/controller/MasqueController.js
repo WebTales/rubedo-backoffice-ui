@@ -788,7 +788,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 defaultTemplateUrl:"defaultPageBody.html",
                 value:component.pageProperties.customTemplate
             }));
-            configSpec.getComponent(0).add(Ext.create('Rubedo.view.ACEField',{
+          /*  configSpec.getComponent(0).add(Ext.create('Rubedo.view.ACEField',{
                 fieldLabel:"UX Instructions",
                 onChange:function(){
 
@@ -801,7 +801,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 twigMode:false,
                 textMode:true,
                 value:component.pageProperties.UXInstructions
-            }));
+            })); */
             configSpec.getComponent(1).add(Ext.widget('textfield',{
                 fieldLabel:"Code",
                 onChange:function(){
