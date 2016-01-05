@@ -702,6 +702,8 @@ Ext.define('Rubedo.controller.DAMController', {
             //Ext.Array.forEach(myEditor.query("button"), function(thing){thing.disable();});
             myEditor.setTitle(Rubedo.RubedoAutomatedElementsLoc.DAMDisplayText+" \" "+record.get("title")+" \"");
             Ext.getCmp("DAMSubmitUpdateBtn").hide();
+        } else {
+        Ext.getCmp("directDamKiller").show();
         }
         Ext.getCmp("DAMDSLToolbar").recievei18n(record.get("i18n"),record.get("locale"),record.get("nativeLanguage"));
     },

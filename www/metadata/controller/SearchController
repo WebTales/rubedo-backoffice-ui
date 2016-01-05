@@ -70,7 +70,7 @@
                     "} else {",
                     "    if ((record.get(\"objectType\")==\"content\")&&(ACL.interfaceRights['read.ui.contents'])){",
                     "        Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(record.get(\"id\"));",
-                    "    } else if ((record.get(\"objectType\")==\"dam\")&&(ACL.interfaceRights['read.ui.contents'])){",
+                    "    } else if ((record.get(\"objectType\")==\"dam\")&&(ACL.interfaceRights['read.ui.dam'])){",
                     "        Rubedo.controller.DAMController.prototype.prepareContext(record.get(\"id\"),record.get(\"typeId\"));",
                     "    } else if ((record.get(\"objectType\")==\"user\")&&(ACL.interfaceRights['read.ui.users'])){",
                     "        Rubedo.controller.UserTypesController.prototype.prepareContext(record.get(\"id\"),record.get(\"typeId\"));",

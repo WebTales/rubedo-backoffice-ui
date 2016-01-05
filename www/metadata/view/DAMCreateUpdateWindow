@@ -322,7 +322,7 @@
                                 "name": "writeWorkspace",
                                 "store": "ContributeWorkspacesCombo"
                             },
-                            "name": "workspacecombo6",
+                            "name": "workspacecombo3",
                             "designerId": "5a81b33c-b742-488a-a36d-7dc5c789a486",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -342,7 +342,7 @@
                                 "store": "WorkspacesComboWithAll",
                                 "submitValue": null
                             },
-                            "name": "workspacecombo7",
+                            "name": "workspacecombo4",
                             "designerId": "16031190-6710-47f9-b9c2-634bf6641099",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }
@@ -375,6 +375,60 @@
                     },
                     "name": "MyFill7",
                     "designerId": "92ab0fc0-d9b4-49ca-be75-7dcdcfa11b38"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "iconCls": "close",
+                        "id": "directDamKiller",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
+                        "text": "Delete"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "ad8a2e01-b534-40da-b804-d5022554c525",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var delCon = Ext.widget('delConfirmZ');",
+                                    "delCon.show();",
+                                    "Ext.getCmp('delConfirmZOui').on('click', function() {",
+                                    "    Ext.getStore(\"DAMEditStore\").remove(Ext.getStore(\"DAMEditStore\").getRange()[0]);",
+                                    "    button.up().up().close();",
+                                    "    Ext.getCmp('delConfirmZ').close();",
+                                    "});",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "71568a20-55b1-482e-abe6-174c8beeea2c"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",

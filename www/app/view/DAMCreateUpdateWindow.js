@@ -178,6 +178,24 @@ Ext.define('Rubedo.view.DAMCreateUpdateWindow', {
                         },
                         {
                             xtype: 'button',
+                            handler: function(button, event) {
+                                var delCon = Ext.widget('delConfirmZ');
+                                delCon.show();
+                                Ext.getCmp('delConfirmZOui').on('click', function() {
+                                    Ext.getStore("DAMEditStore").remove(Ext.getStore("DAMEditStore").getRange()[0]);
+                                    button.up().up().close();
+                                    Ext.getCmp('delConfirmZ').close();
+                                });
+
+                            },
+                            localiserId: 'removeBtn',
+                            hidden: true,
+                            id: 'directDamKiller',
+                            iconCls: 'close',
+                            text: 'Delete'
+                        },
+                        {
+                            xtype: 'button',
                             localiserId: 'damSubmitNewBtn',
                             id: 'DAMSubmitBtn',
                             iconCls: 'save',
