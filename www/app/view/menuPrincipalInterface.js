@@ -428,14 +428,14 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             text: 'Import'
         },{
             xtype: 'menuitem',
-            ACL: 'exe.ui.import',
+            ACL: 'exe.ui.dump',
             favoriteIcon: 'database_down.png',
             itemId: 'DBExportInterface',
             iconCls: 'database_down_small',
             text: 'Dump'
         },{
             xtype: 'menuitem',
-            ACL: 'exe.ui.import',
+            ACL: 'exe.ui.restore',
             favoriteIcon: 'database_up.png',
             itemId: 'DBRestoreInterface',
             iconCls: 'database_up_small',
@@ -466,7 +466,7 @@ Ext.define('Rubedo.view.menuPrincipalInterface', {
             text: 'Application logs'
         },{
             xtype: 'menuitem',
-            ACL: 'read.ui.technicalDashboard',
+            ACL: 'exe.ui.systemSettings',
             favoriteIcon: 'processes.png',
             itemId: 'SystemSettingsInterface',
             localiserId:'systemSettingsLaunchBtn',
