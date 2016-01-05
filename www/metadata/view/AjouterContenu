@@ -67,6 +67,60 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "hidden": true,
+                        "iconCls": "close",
+                        "id": "directContentKiller",
+                        "layout|flex": null,
+                        "localiserId": "removeBtn",
+                        "text": "Delete"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "30aef666-64bd-4f6b-aeb0-bcfdf01e1d67",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var delCon = Ext.widget('delConfirmZ');",
+                                    "delCon.show();",
+                                    "Ext.getCmp('delConfirmZOui').on('click', function() {",
+                                    "    Ext.getStore(\"CurrentContent\").remove(Ext.getStore(\"CurrentContent\").getRange()[0]);",
+                                    "    button.up().up().close();",
+                                    "    Ext.getCmp('delConfirmZ').close();",
+                                    "});",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "9e735560-dae6-478e-9ecd-dbf16b7fbf6e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "ACL": "write.ui.contents.draft",
                         "iconCls": "save",
                         "id": "boutonEnregistrerNouveauContenu",
@@ -481,7 +535,7 @@
                                 "replicatorEntity": "contentReplicatorMainEntity",
                                 "specialContentsMode": true
                             },
-                            "name": "dlstoolbar",
+                            "name": "dlstoolbar1",
                             "designerId": "e3bc6e5d-bcca-43a3-9b68-d8e491bd7510",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
@@ -685,7 +739,7 @@
                                 "name": "writeWorkspace",
                                 "store": "ContributeWorkspacesCombo"
                             },
-                            "name": "workspacecombo",
+                            "name": "workspacecombo1",
                             "designerId": "bbc94904-3819-435a-af3d-aa3906c4edd3",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -704,7 +758,7 @@
                                 "name": "target",
                                 "store": "WorkspacesComboWithAll"
                             },
-                            "name": "workspacecombo1",
+                            "name": "workspacecombo2",
                             "designerId": "a1e27865-898c-4d89-ab44-6f5e1f38bfac",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }

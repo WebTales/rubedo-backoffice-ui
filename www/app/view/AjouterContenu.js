@@ -65,6 +65,24 @@ Ext.define('Rubedo.view.AjouterContenu', {
                         },
                         {
                             xtype: 'button',
+                            handler: function(button, event) {
+                                var delCon = Ext.widget('delConfirmZ');
+                                delCon.show();
+                                Ext.getCmp('delConfirmZOui').on('click', function() {
+                                    Ext.getStore("CurrentContent").remove(Ext.getStore("CurrentContent").getRange()[0]);
+                                    button.up().up().close();
+                                    Ext.getCmp('delConfirmZ').close();
+                                });
+
+                            },
+                            localiserId: 'removeBtn',
+                            hidden: true,
+                            id: 'directContentKiller',
+                            iconCls: 'close',
+                            text: 'Delete'
+                        },
+                        {
+                            xtype: 'button',
                             isUpdate: false,
                             ACL: 'write.ui.contents.draft',
                             localiserId: 'createAsDraftBtn',

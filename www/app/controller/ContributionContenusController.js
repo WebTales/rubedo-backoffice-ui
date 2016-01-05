@@ -1130,6 +1130,11 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
 
 
         }
+        if(editMode&&!specialMode){
+
+            Ext.getCmp("directContentKiller").show();
+        }
+
         Ext.getCmp("contentsDLSToolbar").recievei18n(cible.get("i18n"),cible.get("locale"),cible.get("nativeLanguage"));
     },
 
