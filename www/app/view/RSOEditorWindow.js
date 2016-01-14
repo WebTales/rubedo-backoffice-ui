@@ -26,7 +26,7 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
     ],
 
     height: 463,
-    width: 623,
+    width: 800,
     layout: 'fit',
     constrainHeader: true,
     title: 'Object Editor',
@@ -73,6 +73,8 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
                                         var confF=Ext.clone(recData.config);
                                         confF.fieldLabel=recData.type;
                                         confF.name="field-"+Ext.id();
+                                        confF.anchor="80%";
+                                        confF.style='{float:left;}';
                                         me.rendField({
                                             cType:recData.cType,
                                             config:confF
@@ -100,7 +102,20 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
     },
 
     rendField: function(field) {
-        console.log(field);
+        var me=this;
+        var enrobage =Ext.widget('ChampTC');
+        enrobage.add(Ext.create(field.cType,field.config));
+        var supprimeur = Ext.widget('button', {iconCls: 'close', margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.removeText, itemId: 'bcClearSO'});
+        supprimeur.on('click', function(){
+            supprimeur.up().up().remove(supprimeur.up());
+        });
+        enrobage.add(supprimeur);
+        var moveUp = Ext.widget('button', {iconCls: 'arrow_up', margin: '0 0 0 5', tooltip: "Move field up", itemId: 'moveFieldUpRSO'});
+        enrobage.add(moveUp);
+        var moveDown = Ext.widget('button', {iconCls: 'arrow_down', margin: '0 0 0 5', tooltip: "Move field down", itemId: 'moveFieldDownRSO'});
+        enrobage.add(moveDown);
+        enrobage.getComponent('helpBouton').hide();
+        me.getComponent(0).add(enrobage);
     }
 
 });
