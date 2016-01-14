@@ -446,7 +446,9 @@ Ext.application({
         'queryBuilderField1',
         'ActivityInterface',
         'RSSInterface',
-        'newRssWindow'
+        'newRssWindow',
+        'RStructuredObjectField',
+        'RSOEditorWindow'
     ],
     controllers: [
         'ContributionContenusController',

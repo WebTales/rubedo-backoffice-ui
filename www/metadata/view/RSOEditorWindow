@@ -1,0 +1,172 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "constrainHeader": true,
+        "designer|userAlias": "RSOEditorWindow",
+        "designer|userClassName": "RSOEditorWindow",
+        "height": 463,
+        "layout": "fit",
+        "modal": true,
+        "title": "Object Editor",
+        "width": 623
+    },
+    "name": "MyWindow",
+    "designerId": "ec19d47b-e758-4f22-8f28-744b9fd6bb74",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "name": "MyForm",
+            "designerId": "90063c68-6def-426e-948e-70e582ff5ed8"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "name": "MyToolbar",
+            "designerId": "61dd681f-80dc-42f3-ace5-e8ba9943741b",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "allowOnlyWhitespace": false,
+                        "displayField": "type",
+                        "editable": false,
+                        "fieldLabel": "Field type",
+                        "forceSelection": true,
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "queryMode": "local",
+                        "store": "TypesChampsDataStore",
+                        "valueField": "cType"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "664295c9-ffb8-4986-81fe-a8aed97edb6a"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "add",
+                        "layout|flex": null,
+                        "text": "Add field"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "d1d8b586-5c09-44ad-b170-d27ee4a72dbc",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var cType=button.previousSibling().getValue();",
+                                    "if(cType){",
+                                    "    var rec=button.previousSibling().findRecord(\"cType\",cType);",
+                                    "    if(rec){",
+                                    "        var recData=rec.getData();",
+                                    "        var confF=Ext.clone(recData.config);",
+                                    "        confF.fieldLabel=recData.type;",
+                                    "        confF.name=\"field-\"+Ext.id();",
+                                    "        me.rendField({",
+                                    "            cType:recData.cType,",
+                                    "            config:confF",
+                                    "        });",
+                                    "    }",
+                                    "}"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "679331c3-ac30-4dfa-bca5-111d707d72bc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyFill",
+                    "designerId": "10a8d115-bf10-48cb-960a-bb1920df7b55"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "save",
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "name": "MyButton",
+                    "designerId": "e61a165d-7e4a-4487-a155-d32f48221d26"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "field"
+                ],
+                "fn": "rendField",
+                "implHandler": [
+                    "console.log(field);"
+                ]
+            },
+            "name": "rendField",
+            "designerId": "3da7e050-ace2-4b26-b01b-a8c57decedbc"
+        }
+    ]
+}

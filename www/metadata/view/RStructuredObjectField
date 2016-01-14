@@ -1,0 +1,154 @@
+{
+    "type": "Ext.form.field.Hidden",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "allowedCT": null,
+        "designer|userAlias": "RStructuredObjectField",
+        "designer|userClassName": "RStructuredObjectField",
+        "fieldLabel": "Label",
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
+    },
+    "name": "RDirectObjectField1",
+    "configAlternates": {
+        "geoQueryMode": "boolean",
+        "queryMode": "boolean"
+    },
+    "designerId": "a16950fc-c8b8-4b52-9ce2-ea02f482b27b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "allowedCT",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "queryMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "geoQueryMode",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"ACEFieldComponent\");",
+                    "myComponent.on(\"afterrender\",function(){",
+                    "    myComponent.getEl().on(\"click\",function(){",
+                    "",
+                    "        component.getEl().dom.click();",
+                    "    });",
+                    "});",
+                    "myComponent.setFieldLabel(component.fieldLabel+\" \");",
+                    "component.on(\"change\", function(a,newValue){",
+                    "    if (Ext.isEmpty(newValue)){",
+                    "        myComponent.getComponent(\"addBtn\").show();",
+                    "        myComponent.getComponent(\"editBtn\").hide();",
+                    "        myComponent.getComponent(\"removeBtn\").hide();",
+                    "    } else {",
+                    "        myComponent.getComponent(\"addBtn\").hide();",
+                    "        myComponent.getComponent(\"editBtn\").show();",
+                    "        myComponent.getComponent(\"removeBtn\").show();",
+                    "    }",
+                    "});",
+                    "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){",
+                    "    component.setValue(null);",
+                    "});",
+                    "myComponent.getComponent(\"addBtn\").on(\"click\", function(){",
+                    "    var myEditor = Ext.widget(\"RSOEditorWindow\");",
+                    "    myEditor.targetedId=component.getId();",
+                    "    myEditor.initialValue=component.getValue();",
+                    "    myEditor.show();",
+                    "",
+                    "});",
+                    "",
+                    "myComponent.getComponent(\"editBtn\").on(\"click\", function(){",
+                    "    var myEditor = Ext.widget(\"RSOEditorWindow\");",
+                    "",
+                    "    myEditor.targetedId=component.getId();",
+                    "    myEditor.initialValue=component.getValue();",
+                    "    myEditor.show();",
+                    "",
+                    "",
+                    "});",
+                    "component.up().add(myComponent);",
+                    "component.fireEvent(\"change\",component, component.getValue());",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onHiddenfieldRender",
+            "designerId": "f4975813-3f1a-4201-a4e3-7ec565e0db0f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "setValue",
+                "implHandler": [
+                    "var me=this;",
+                    "me.value=value;",
+                    "me.fireEvent(\"change\",me,value);"
+                ]
+            },
+            "name": "setValue",
+            "designerId": "f7c4bf9b-449c-4dca-bbc3-9a66fa94235b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getValue",
+                "implHandler": [
+                    "return(this.value);"
+                ]
+            },
+            "name": "getValue",
+            "designerId": "3285b5e8-3e1f-4821-ae11-7a2c925c8f0b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getSubmitValue",
+                "implHandler": [
+                    "return(this.value);"
+                ]
+            },
+            "name": "getSubmitValue",
+            "designerId": "f8aece2c-c662-475f-91f8-d3011bf1b5f8"
+        }
+    ]
+}
