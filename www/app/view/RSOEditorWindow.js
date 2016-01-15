@@ -90,6 +90,21 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
                         },
                         {
                             xtype: 'button',
+                            handler: function(button, e) {
+                                var formC=button.up().up().getComponent(0);
+                                var newValue={
+                                    fields:[],
+                                    values:{}
+                                };
+                                Ext.Array.forEach(formC.items.items,function(fieldHolder){
+                                    if(fieldHolder.initialRConf){
+                                        newValue.fields.push(Ext.clone(fieldHolder.initialRConf));
+                                    }
+                                });
+                                newValue.values=formC.getForm().getValues();
+                                console.log(newValue);
+
+                            },
                             iconCls: 'save',
                             text: 'Save'
                         }

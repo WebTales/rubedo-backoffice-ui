@@ -147,7 +147,41 @@
                         "text": "Save"
                     },
                     "name": "MyButton",
-                    "designerId": "e61a165d-7e4a-4487-a155-d32f48221d26"
+                    "designerId": "e61a165d-7e4a-4487-a155-d32f48221d26",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var formC=button.up().up().getComponent(0);",
+                                    "var newValue={",
+                                    "    fields:[],",
+                                    "    values:{}",
+                                    "};",
+                                    "Ext.Array.forEach(formC.items.items,function(fieldHolder){",
+                                    "    if(fieldHolder.initialRConf){",
+                                    "        newValue.fields.push(Ext.clone(fieldHolder.initialRConf));",
+                                    "    }",
+                                    "});",
+                                    "newValue.values=formC.getForm().getValues();",
+                                    "console.log(newValue);",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "dd25e81e-217b-42b5-bf25-d471ff25d357"
+                        }
+                    ]
                 }
             ]
         },
