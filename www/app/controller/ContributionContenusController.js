@@ -680,8 +680,8 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getStore("VersioningStore").clearFilter(true);
 
         Ext.getStore("VersioningStore").filter([
-        Ext.create('Ext.util.Filter', {property: "contentId", value: content.get("id")}),
-        Ext.create('Ext.util.Filter', {property:"publishVersion", value:{$gt:0}})
+            Ext.create('Ext.util.Filter', {property: "contentId", value: content.get("id")}),
+            Ext.create('Ext.util.Filter', {property:"publishVersion", value:{$gt:0}})
         ]);
 
         var formulaireTC = Ext.getCmp('boiteAChampsContenus');
@@ -789,223 +789,223 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
                 });
             } else {
                 try {var nouvChamp = Ext.widget(donnees.cType, configurateur);} catch(err){
-                var nouvChamp = Ext.create(donnees.cType, configurateur);
-            }
-            nouvChamp.config=Ext.clone(donnees.config);
+                    var nouvChamp = Ext.create(donnees.cType, configurateur);
+                }
+                nouvChamp.config=Ext.clone(donnees.config);
 
-            //begin temporary fix
-            if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
-            //end temporary fix
-            if (donnees.cType =='triggerfield'){
-                var Ouvrir = Ext.clone(donnees.ouvrir);
-                nouvChamp.onTriggerClick= function() {
-                    var fenetre = Ext.widget(Ouvrir);
-                    fenetre.showAt(screen.width/2-200, 100);
-                } ;
-                nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
-            }
-            nouvChamp.anchor = '90%';
-            nouvChamp.style = '{float:left;}';
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(nouvChamp);
-            enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
-            if (Ext.isEmpty(configurateur.tooltip)){
-                enrobage.getComponent('helpBouton').hidden=true;
-            }
-            if (nouvChamp.multivalued) {
-                enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
+                //begin temporary fix
+                if(configurateur.tooltip=="help text"){configurateur.tooltip="";}
+                //end temporary fix
+                if (donnees.cType =='triggerfield'){
+                    var Ouvrir = Ext.clone(donnees.ouvrir);
+                    nouvChamp.onTriggerClick= function() {
+                        var fenetre = Ext.widget(Ouvrir);
+                        fenetre.showAt(screen.width/2-200, 100);
+                    } ;
+                    nouvChamp.ouvrir =Ext.clone(donnees.ouvrir);
+                }
+                nouvChamp.anchor = '90%';
+                nouvChamp.style = '{float:left;}';
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(nouvChamp);
+                enrobage.getComponent('helpBouton').setTooltip(configurateur.tooltip);
+                if (Ext.isEmpty(configurateur.tooltip)){
+                    enrobage.getComponent('helpBouton').hidden=true;
+                }
+                if (nouvChamp.multivalued) {
+                    enrobage.add(Ext.widget('button', {iconCls: 'add',valeursM: 1, margin: '0 0 0 5', tooltip: Rubedo.RubedoAutomatedElementsLoc.duplicateText, itemId: 'boutonReplicateurChamps'}));
 
-            };
-            if (nouvChamp.localizable) {
-                enrobage.localizable=true;
+                };
+                if (nouvChamp.localizable) {
+                    enrobage.localizable=true;
+                }
+                formulaireTC.add(enrobage);
             }
-            formulaireTC.add(enrobage);
-        }
         }
         if (isProduct){
-        var variatorStore=Ext.create('Ext.data.Store', {
-            fields:variatorFields,
-            data:[]
-        });
-        variatorColumns.push({
-            xtype: 'gridcolumn',
-            dataIndex: 'price',
-            text: 'Price',
-            flex:1,
-            editor:{
-                xtype:"numberfield",
-            }
-        });
-        variatorColumns.push({
-            xtype: 'gridcolumn',
-            dataIndex: 'sku',
-            flex:1,
-            text: 'SKU',
-            editor:{
-                xtype:"textfield"
-
-            }
-        });
-        if (contentType.get("manageStock")){
+            var variatorStore=Ext.create('Ext.data.Store', {
+                fields:variatorFields,
+                data:[]
+            });
             variatorColumns.push({
                 xtype: 'gridcolumn',
-                dataIndex: 'stock',
+                dataIndex: 'price',
+                text: 'Price',
                 flex:1,
-                text: 'Stock',
                 editor:{
                     xtype:"numberfield",
-                    allowDecimals:false,
-                    minValue:0
                 }
             });
-        }
-        Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns);
+            variatorColumns.push({
+                xtype: 'gridcolumn',
+                dataIndex: 'sku',
+                flex:1,
+                text: 'SKU',
+                editor:{
+                    xtype:"textfield"
+
+                }
+            });
+            if (contentType.get("manageStock")){
+                variatorColumns.push({
+                    xtype: 'gridcolumn',
+                    dataIndex: 'stock',
+                    flex:1,
+                    text: 'Stock',
+                    editor:{
+                        xtype:"numberfield",
+                        allowDecimals:false,
+                        minValue:0
+                    }
+                });
+            }
+            Ext.getCmp("productVariationsGrid").reconfigure(variatorStore,variatorColumns);
         }
         var formTaxoTC =  Ext.getCmp('boiteATaxoContenus');
         var lesTaxo = contentType.get("vocabularies");
         var i=0;
         for (i=0; i<lesTaxo.length; i++) {
 
-        var leVocab = Ext.getStore('TaxonomyForC2').findRecord('id', lesTaxo[i]);
-        if (!Ext.isEmpty(leVocab)){
-            if (leVocab.get("inputAsTree")){
-                var storeT = Ext.create("Ext.data.TreeStore", {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms/tree'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
+            var leVocab = Ext.getStore('TaxonomyForC2').findRecord('id', lesTaxo[i]);
+            if (!Ext.isEmpty(leVocab)){
+                if (leVocab.get("inputAsTree")){
+                    var storeT = Ext.create("Ext.data.TreeStore", {
+                        model:"Rubedo.model.taxonomyTermModel",
+                        remoteFilter:"true",
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms/tree'
+                            },
+                            reader: {
+                                type: 'json',
+                                messageProperty: 'message'
+                            },
+                            encodeFilters: function(filters) {
+                                var min = [],
+                                    length = filters.length,
+                                    i = 0;
 
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
+                                for (; i < length; i++) {
+                                    min[i] = {
+                                        property: filters[i].property,
+                                        value   : filters[i].value
+                                    };
+                                    if (filters[i].type) {
+                                        min[i].type = filters[i].type;
+                                    }
+                                    if (filters[i].operator) {
+                                        min[i].operator = filters[i].operator;
+                                    }
                                 }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
+                                return this.applyEncoding(min);
                             }
-                            return this.applyEncoding(min);
+                        },
+                        filters: {
+                            property: 'vocabularyId',
+                            value: leVocab.get("id")
                         }
-                    },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
 
-                });
-                var toUse="Ext.ux.TreePicker";
-                if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
-                if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+                    });
+                    var toUse="Ext.ux.TreePicker";
+                    if(leVocab.get("multiSelect")){toUse="Ext.ux.TreeMultiPicker";}
+                    if(leVocab.get("id")=='navigation'){storeT.getProxy().api={read:"taxonomy-terms/navigation-tree"};}
+                    storeT.load();
+                    var selecteur = Ext.create(toUse, {
+                        name:leVocab.get("id"),
+                        fieldLabel: leVocab.get("name"),
+                        store: storeT,
+                        ignoreIsNotPage:true,
+                        anchor:"90%",
+                        displayField:"text",
+                        allowBlank: !leVocab.data.mandatory,
+                        plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
+                    });
+
+
+                } else {
+                    var storeT = Ext.create('Ext.data.JsonStore', {
+                        model:"Rubedo.model.taxonomyTermModel",
+                        remoteFilter:"true",
+                        proxy: {
+                            type: 'ajax',
+                            api: {
+                                read: 'taxonomy-terms'
+                            },
+                            reader: {
+                                type: 'json',
+                                messageProperty: 'message',
+                                root: 'data'
+                            },
+                            encodeFilters: function(filters) {
+                                var min = [],
+                                    length = filters.length,
+                                    i = 0;
+
+                                for (; i < length; i++) {
+                                    min[i] = {
+                                        property: filters[i].property,
+                                        value   : filters[i].value
+                                    };
+                                    if (filters[i].type) {
+                                        min[i].type = filters[i].type;
+                                    }
+                                    if (filters[i].operator) {
+                                        min[i].operator = filters[i].operator;
+                                    }
+                                }
+                                return this.applyEncoding(min);
+                            }
+                        },
+                        filters: {
+                            property: 'vocabularyId',
+                            value: leVocab.get("id")
+                        }
+
+                    });
+                    storeT.on("beforeload", function(s,o){
+                        o.filters=Ext.Array.slice(o.filters,0,1);
+                        if (o.params&&!Ext.isEmpty(o.params.comboQuery)){
+
+                            var newFilter=Ext.create('Ext.util.Filter', {
+                                property:"text",
+                                value:o.params.comboQuery,
+                                operator:'like'
+                            });
+
+                            o.filters.push(newFilter);
+
+                        }
+
+
+                    });
+                    var selecteur = Ext.widget('comboboxselect', {
+                        name:leVocab.get("id"),
+                        anchor:"90%",
+                        fieldLabel: leVocab.get("name"),
+                        autoScroll: false,
+                        store: storeT,
+                        queryMode: 'remote',
+                        queryParam: 'comboQuery',
+                        minChars:3,
+                        displayField: 'text',
+                        valueField: 'id',
+                        filterPickList: true,
+                        typeAhead: true,
+                        forceSelection: !leVocab.data.expandable,
+                        createNewOnEnter: leVocab.data.expandable,
+                        multiSelect: leVocab.data.multiSelect,
+                        allowBlank: !leVocab.data.mandatory
+                    });
+
+                }
+                var enrobage =Ext.widget('ChampTC');
+                enrobage.add(selecteur);
+                enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
+                if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
+                formTaxoTC.add(enrobage);
                 storeT.load();
-                var selecteur = Ext.create(toUse, {
-                    name:leVocab.get("id"),
-                    fieldLabel: leVocab.get("name"),
-                    store: storeT,
-                    ignoreIsNotPage:true,
-                    anchor:"90%",
-                    displayField:"text",
-                    allowBlank: !leVocab.data.mandatory,
-                    plugins:[Ext.create("Ext.ux.form.field.ClearButton")]
-                });
-
-
-            } else {
-                var storeT = Ext.create('Ext.data.JsonStore', {
-                    model:"Rubedo.model.taxonomyTermModel",
-                    remoteFilter:"true",
-                    proxy: {
-                        type: 'ajax',
-                        api: {
-                            read: 'taxonomy-terms'
-                        },
-                        reader: {
-                            type: 'json',
-                            messageProperty: 'message',
-                            root: 'data'
-                        },
-                        encodeFilters: function(filters) {
-                            var min = [],
-                                length = filters.length,
-                                i = 0;
-
-                            for (; i < length; i++) {
-                                min[i] = {
-                                    property: filters[i].property,
-                                    value   : filters[i].value
-                                };
-                                if (filters[i].type) {
-                                    min[i].type = filters[i].type;
-                                }
-                                if (filters[i].operator) {
-                                    min[i].operator = filters[i].operator;
-                                }
-                            }
-                            return this.applyEncoding(min);
-                        }
-                    },
-                    filters: {
-                        property: 'vocabularyId',
-                        value: leVocab.get("id")
-                    }
-
-                });
-                storeT.on("beforeload", function(s,o){
-                    o.filters=Ext.Array.slice(o.filters,0,1);
-                    if (o.params&&!Ext.isEmpty(o.params.comboQuery)){
-
-                        var newFilter=Ext.create('Ext.util.Filter', {
-                            property:"text",
-                            value:o.params.comboQuery,
-                            operator:'like'
-                        });
-
-                        o.filters.push(newFilter);
-
-                    }
-
-
-                });
-                var selecteur = Ext.widget('comboboxselect', {
-                    name:leVocab.get("id"),
-                    anchor:"90%",
-                    fieldLabel: leVocab.get("name"),
-                    autoScroll: false,
-                    store: storeT,
-                    queryMode: 'remote',
-                    queryParam: 'comboQuery',
-                    minChars:3,
-                    displayField: 'text',
-                    valueField: 'id',
-                    filterPickList: true,
-                    typeAhead: true,
-                    forceSelection: !leVocab.data.expandable,
-                    createNewOnEnter: leVocab.data.expandable,
-                    multiSelect: leVocab.data.multiSelect,
-                    allowBlank: !leVocab.data.mandatory
-                });
-
             }
-            var enrobage =Ext.widget('ChampTC');
-            enrobage.add(selecteur);
-            enrobage.getComponent('helpBouton').setTooltip(leVocab.data.helpText);
-            if (Ext.isEmpty(leVocab.data.helpText)){enrobage.getComponent('helpBouton').hide();}
-            formTaxoTC.add(enrobage);
-            storeT.load();
-        }
         }
 
         var cible = content;
@@ -1016,24 +1016,24 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         }
 
         try{
-        Ext.apply(valuesToApply, cible.get("i18n")[cible.get("locale")].fields);
+            Ext.apply(valuesToApply, cible.get("i18n")[cible.get("locale")].fields);
         }catch(err){
-        console.log("failed to localize fields on input");
+            console.log("failed to localize fields on input");
         }
         try{Ext.getCmp('boiteAChampsContenus').getForm().setValues(valuesToApply);} catch(err){console.log("form set anomaly");}
         Ext.Object.each(valuesToApply, function(key, value, myself){
-        if (Ext.isArray(value)) {
-            var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
-            var y=0;
-            if (multiField.multivalued) {
-                Ext.Array.each(value,function(val,index){
-                    if (index>0) {
-                        multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
-                    }
-                    Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
-                });
+            if (Ext.isArray(value)) {
+                var multiField=Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[0];
+                var y=0;
+                if (multiField.multivalued) {
+                    Ext.Array.each(value,function(val,index){
+                        if (index>0) {
+                            multiField.up().getComponent('boutonReplicateurChamps').fireEvent("click",multiField.up().getComponent('boutonReplicateurChamps'));
+                        }
+                        Ext.getCmp('boiteAChampsContenus').query('[name='+key+']')[index].setValue(val);
+                    });
+                }
             }
-        }
         });
         Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(1);
         Ext.getCmp("ajouterContenu").getComponent(0).getLayout().setActiveItem(0);
@@ -1041,67 +1041,67 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
         Ext.getCmp("boiteADroitsContenus").getForm().setValues(cible.getData());
         Ext.getCmp("contentMetadataBox").getForm().setValues(cible.getData());
         if (isProduct){
-        Ext.getCmp("productSettingsForm").getComponent(0).getForm().setValues(content.get("productProperties"));
-        Ext.getCmp("productVariationsGrid").getStore().loadData(content.get("productProperties").variations);
+            Ext.getCmp("productSettingsForm").getComponent(0).getForm().setValues(content.get("productProperties"));
+            Ext.getCmp("productVariationsGrid").getStore().loadData(content.get("productProperties").variations);
         }
         Ext.getCmp("boutonEnregistrerNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonPublierNouveauContenu").isUpdate=true;
         Ext.getCmp("boutonSoumettreNouveauContenu").isUpdate=true;
         Ext.getCmp('ajouterContenu').setTitle(content.get("text"));
         if (!editMode){
-        if ((!content.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
-            Ext.getCmp("boutonSoumettreNouveauContenu").hide();
-            Ext.getCmp("boutonPublierNouveauContenu").hide();
-            var nct = Ext.getCmp("nestedContentsTab");
-            if (!Ext.isEmpty(nct)){
-                Ext.getCmp('nestedContensTabConfig').destroy();
-                nct.destroy();
+            if ((!content.get("readOnly"))&&(ACL.interfaceRights["write.ui.contents"])&&(content.get("status")=="published")&&(ACL.interfaceRights["write.ui.contents.draft"])) {
+                Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+                Ext.getCmp("boutonPublierNouveauContenu").hide();
+                var nct = Ext.getCmp("nestedContentsTab");
+                if (!Ext.isEmpty(nct)){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy();
+                }
             }
-        }
-        else
-        {
-            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
-            Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
+            else
+            {
+                Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("field"), function(thing){thing.setReadOnly(true);})
+                Ext.Array.forEach(Ext.getCmp("ajouterContenu").query("button"), function(truc){if (!truc.isXType("tab")){truc.disable();}});
 
-            Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
-            var nct = Ext.getCmp("nestedContentsTab");
-            if (!Ext.isEmpty(nct)){
-                Ext.getCmp('nestedContensTabConfig').destroy();
-                nct.destroy();
+                Ext.getCmp("boutonSoumettreNouveauContenu").up().hide();
+                var nct = Ext.getCmp("nestedContentsTab");
+                if (!Ext.isEmpty(nct)){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy();
+                }
             }
-        }
         } else {
-        var myId=cible.get("id");
+            var myId=cible.get("id");
 
-        var nct = Ext.getCmp("nestedContentsTab");
-        if (!Ext.isEmpty(nct)){
-            if (Ext.isEmpty(Ext.getCmp("nestedContentsAddCombo").getStore().getRange())){
-                Ext.getCmp('nestedContensTabConfig').destroy();
-                nct.destroy();
+            var nct = Ext.getCmp("nestedContentsTab");
+            if (!Ext.isEmpty(nct)){
+                if (Ext.isEmpty(Ext.getCmp("nestedContentsAddCombo").getStore().getRange())){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct.destroy();
 
-            } else {
-                Ext.getStore('NestedContentsStore').removeAll();
-                Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
-                Ext.getStore('NestedContentsStore').load();
+                } else {
+                    Ext.getStore('NestedContentsStore').removeAll();
+                    Ext.getStore('NestedContentsStore').getProxy().extraParams.parentId=myId;
+                    Ext.getStore('NestedContentsStore').load();
+                }
             }
-        }
         }
         if (content.get("status")=="pending"){
-        if (ACL.interfaceRights['write.ui.contents.refused']) {
-            Ext.getCmp("boutonRefuserNouveauContenu").show();
-        }
-        Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
-        Ext.getCmp("boutonSoumettreNouveauContenu").hide();
+            if (ACL.interfaceRights['write.ui.contents.refused']) {
+                Ext.getCmp("boutonRefuserNouveauContenu").show();
+            }
+            Ext.getCmp("boutonEnregistrerNouveauContenu").hide();
+            Ext.getCmp("boutonSoumettreNouveauContenu").hide();
         }
         if (specialMode){
-        try{
-            var nct5 = Ext.getCmp("nestedContentsTab");
-            if (!Ext.isEmpty(nct)){
-                Ext.getCmp('nestedContensTabConfig').destroy();
-                nct5.destroy();
+            try{
+                var nct5 = Ext.getCmp("nestedContentsTab");
+                if (!Ext.isEmpty(nct)){
+                    Ext.getCmp('nestedContensTabConfig').destroy();
+                    nct5.destroy();
 
-            }
-        } catch(err){ }
+                }
+            } catch(err){ }
             var nct2 = Ext.getCmp('boiteATaxoContenus');
             if (!Ext.isEmpty(nct2)){
                 Ext.getCmp('taxoTabConfig').destroy();
