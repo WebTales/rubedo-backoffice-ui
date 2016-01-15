@@ -174,7 +174,13 @@
                                     "    }",
                                     "});",
                                     "newValue.values=formC.getForm().getValues();",
-                                    "console.log(newValue);",
+                                    "var target=Ext.getCmp(button.up().up().targetedId);",
+                                    "if(newValue.fields.length===0){",
+                                    "    target.setValue(null);",
+                                    "} else {",
+                                    "    target.setValue(newValue);",
+                                    "}",
+                                    "button.up().up().close();",
                                     ""
                                 ]
                             },
@@ -228,6 +234,30 @@
             },
             "name": "rendField",
             "designerId": "3da7e050-ace2-4b26-b01b-a8c57decedbc"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "var me=this;",
+                    "if (component.initialValue&&component.initialValue.fields&&component.initialValue.fields.length>0){",
+                    "    Ext.Array.forEach(component.initialValue.fields,function(field){",
+                    "        me.rendField(field);",
+                    "    });",
+                    "    component.getComponent(0).getForm().setValues(component.initialValue.values);",
+                    "}"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onWindowAfterRender",
+            "designerId": "e39d7197-5c6d-4348-97e3-0aa0de89a05d"
         }
     ]
 }

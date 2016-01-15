@@ -51,7 +51,7 @@ Ext.define('Rubedo.view.testingGround', {
     },
 
     onTg1FormAfterRender: function(component, eOpts) {
-        component.add(Ext.widget("RECField",{"name":"testField","fieldLabel":"labels are useless","usedCT":"5619803e40d0d5885b00002b"}));
+        component.add(Ext.widget("RStructuredObjectField",{"name":"testField","fieldLabel":"labels are useless"}));
     }
 
 });

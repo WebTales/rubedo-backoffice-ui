@@ -102,7 +102,13 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
                                     }
                                 });
                                 newValue.values=formC.getForm().getValues();
-                                console.log(newValue);
+                                var target=Ext.getCmp(button.up().up().targetedId);
+                                if(newValue.fields.length===0){
+                                    target.setValue(null);
+                                } else {
+                                    target.setValue(newValue);
+                                }
+                                button.up().up().close();
 
                             },
                             iconCls: 'save',
@@ -110,10 +116,26 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                afterrender: {
+                    fn: me.onWindowAfterRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
+    },
+
+    onWindowAfterRender: function(component, eOpts) {
+        var me=this;
+        if (component.initialValue&&component.initialValue.fields&&component.initialValue.fields.length>0){
+            Ext.Array.forEach(component.initialValue.fields,function(field){
+                me.rendField(field);
+            });
+            component.getComponent(0).getForm().setValues(component.initialValue.values);
+        }
     },
 
     rendField: function(field) {
