@@ -128,7 +128,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
                     }
                 }
                 Ext.getCmp('UTFieldId').setValue(TCfield.id);
-                if ((TCfield.isXType("ImagePickerField"))||(TCfield.isXType("RECField"))||(TCfield.isXType("urlField"))||(TCfield.isXType("RDirectObjectField"))||(TCfield.isXType("embeddedImageField"))||(TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))) {
+                if ((TCfield.isXType("ImagePickerField"))||(TCfield.isXType("RECField"))||(TCfield.isXType("RStructuredObjectField"))||(TCfield.isXType("urlField"))||(TCfield.isXType("RDirectObjectField"))||(TCfield.isXType("embeddedImageField"))||(TCfield.isXType("localiserField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))) {
                     TCfield.up().getComponent(2).getEl().frame(MyPrefData.themeColor);
                     TCfield.up().getComponent(2).getEl().applyStyles('color:'+MyPrefData.themeColor);
                 } else {
@@ -194,7 +194,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
 
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent(2).getComponent(0).setText(this.getValue());
-                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("RECField"))||(TCfield.isXType("urlField"))||(TCfield.isXType("RDirectObjectField"))||(TCfield.isXType("embeddedImageField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
+                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("RECField"))||(TCfield.isXType("RStructuredObjectField"))||(TCfield.isXType("urlField"))||(TCfield.isXType("RDirectObjectField"))||(TCfield.isXType("embeddedImageField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
                                         TCfield.up().getComponent(2).setFieldLabel(this.getValue());
                                     } else {
                                         TCfield.setFieldLabel(this.getValue());
@@ -215,7 +215,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
                                     TCfield.config.fieldLabel=currentOne;
                                     if (TCfield.isXType("ImagePickerField")) {
                                         TCfield.up().getComponent(2).getComponent(0).setText(currentOne+" ");
-                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("RECField"))||(TCfield.isXType("urlField"))||(TCfield.isXType("RDirectObjectField"))||(TCfield.isXType("embeddedImageField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
+                                    } else if ((TCfield.isXType("localiserField"))||(TCfield.isXType("RECField"))||(TCfield.isXType("RStructuredObjectField"))||(TCfield.isXType("urlField"))||(TCfield.isXType("RDirectObjectField"))||(TCfield.isXType("embeddedImageField"))||(TCfield.isXType("externalMediaField"))||(TCfield.isXType("DCEField"))){
                                         TCfield.up().getComponent(2).setFieldLabel(currentOne);
                                     } else {
                                         TCfield.setFieldLabel(currentOne);
