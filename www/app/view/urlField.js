@@ -37,6 +37,14 @@ Ext.define('Rubedo.view.urlField', {
     onHiddenfieldRender: function(component, eOpts) {
         var companion = Ext.widget("urlFieldComponent");
         companion.setFieldLabel(component.getFieldLabel());
+        if (!Ext.isEmpty(me.value)){
+            decoded = Ext.clone(me.value);
+            Ext.Array.forEach(companion.query("field"), function(field){
+                field.suspendEvents(false);
+                field.setValue(decoded[field.name]);
+                field.resumeEvents();
+            });
+        }
         component.on("change", function(a, newValue){
             var decoded = { };
             if (!Ext.isEmpty(newValue)){
