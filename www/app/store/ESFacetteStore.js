@@ -98,7 +98,7 @@ Ext.define('Rubedo.store.ESFacetteStore', {
             },
             sorters: {
                 direction: 'DESC',
-                property: 'score'
+                property: 'lastUpdateTime'
             }
         }, cfg)]);
     },

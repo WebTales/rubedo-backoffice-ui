@@ -109,7 +109,7 @@ Ext.define('Rubedo.store.DAMFacetteStore', {
             },
             sorters: {
                 direction: 'DESC',
-                property: 'score'
+                property: 'lastUpdateTime'
             }
         }, cfg)]);
     },
