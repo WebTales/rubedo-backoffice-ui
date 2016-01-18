@@ -160,7 +160,7 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
         var moveDown = Ext.widget('button', {iconCls: 'arrow_down', margin: '0 0 0 5', tooltip: "Move field down", itemId: 'moveFieldDownRSO'});
         moveDown.on('click', function(){
             var pos = moveDown.up().up().items.indexOf(moveDown.up());
-            moveDown.up().up().move(pos,pos-1);
+            moveDown.up().up().move(pos,pos+1);
         });
         enrobage.add(moveDown);
         enrobage.getComponent('helpBouton').hide();
