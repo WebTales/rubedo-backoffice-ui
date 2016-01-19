@@ -430,7 +430,15 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "stackingThresholdText": "Stacking threshold",
                     "cancelledText":"Cancelled",
                     "pendingPaymentText":"Pending payment",
-                    "payedText":"Payed"
+                    "payedText":"Payed",
+                    "loadOnLaunchText":"Load on launch",
+                    "cacheClearedText":"Cache cleared",
+                    "edAll":"All states",
+                    "edDraft":"Draft",
+                    "edArchived":"Archived",
+                    "edFuture":"Future",
+                    "edPublished":"Published now",
+                    "edPending":"Pending validation"
                 });
 
         this.control({
