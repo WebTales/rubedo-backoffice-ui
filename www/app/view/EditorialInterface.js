@@ -143,6 +143,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         },
                         {
                             xtype: 'buttongroup',
+                            localiserId: 'viewModeBox',
                             bodyPadding: 15,
                             headerPosition: 'bottom',
                             title: 'View mode',
@@ -191,6 +192,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                 {
                     xtype: 'gridpanel',
                     flex: 1,
+                    localiserId: 'contentWindow',
                     id: 'editorialContentsGrid',
                     title: 'Contents',
                     forceFit: false,
@@ -213,8 +215,9 @@ Ext.define('Rubedo.view.EditorialInterface', {
                                     return('<img src="resources/icones/'+MyPrefData.iconsDir+'/16x16/page_remove.png"> '+returner);
                                 }
                             },
+                            localiserId: 'titleCol',
                             dataIndex: 'text',
-                            text: 'Text',
+                            text: 'Title',
                             flex: 2
                         },
                         {
@@ -257,6 +260,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                                     return "";
                                 }
                             },
+                            localiserId: 'typeColumn2',
                             dataIndex: 'typeId',
                             text: 'Type',
                             flex: 1
@@ -266,6 +270,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return(value.fullName);
                             },
+                            localiserId: 'versionAuthorCol',
                             dataIndex: 'createUser',
                             text: 'Author',
                             flex: 1
@@ -290,12 +295,14 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         }),
                         me.processOnline({
                             xtype: 'booleancolumn',
+                            localiserId: 'onlineCol',
                             dataIndex: 'online',
                             text: 'Online',
                             flex: 0.5
                         }),
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'lastUpdateContentCol',
                             dataIndex: 'lastUpdateTime',
                             text: 'Last update',
                             flex: 1,
@@ -303,6 +310,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'createCol',
                             dataIndex: 'createTime',
                             text: 'Create',
                             flex: 1,
@@ -310,6 +318,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'spdCol',
                             dataIndex: 'startPublicationDate',
                             text: 'Start Publication',
                             flex: 1,
@@ -317,6 +326,7 @@ Ext.define('Rubedo.view.EditorialInterface', {
                         },
                         {
                             xtype: 'datecolumn',
+                            localiserId: 'epdCol',
                             dataIndex: 'endPublicationDate',
                             text: 'End Publication',
                             flex: 1,

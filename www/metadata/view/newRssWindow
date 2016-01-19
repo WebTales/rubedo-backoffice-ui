@@ -79,11 +79,19 @@
                     "userConfig": {
                         "id": "newWorkspaceSublitBtn1",
                         "layout|anchor": "100%",
+                        "localiserId": "createNewFeedBtn",
                         "scale": "medium",
                         "text": "Create new feed"
                     },
                     "name": "MyButton323",
                     "designerId": "a5306fb5-b2e8-401c-a045-b3e0e479a08b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",

@@ -14,11 +14,19 @@
         "iconCls": "content-icon",
         "id": "RSSInterface",
         "layout": "hbox",
+        "localiserId": "rssFeedsInterface",
         "title": "RSS Feeds",
         "width": 723
     },
     "name": "WorkspacesInterface1",
     "designerId": "de99e05a-a2d7-49e5-b4e9-d915377f788d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "localiserId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -248,11 +256,19 @@
                         "iconCls": "rss_big",
                         "id": "rssGetLinkBtn",
                         "layout|flex": null,
+                        "localiserId": "getFeedLinkBtn",
                         "scale": "large",
                         "text": "Get feed link"
                     },
                     "name": "MyButton2",
                     "designerId": "5e440f55-946a-4597-b155-6f4845826a94",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -459,7 +475,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool163",
             "designerId": "576dc5da-e315-4d9f-9802-50af3cfd8398",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -473,7 +489,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool173",
             "designerId": "af35b976-c30d-42a7-85f1-1b2b42bb9966",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -489,10 +505,18 @@
                 "disabled": true,
                 "id": "rssSettingsForm",
                 "layout|flex": 1,
+                "localiserId": "orderSettingForm",
                 "title": "Settings"
             },
             "name": "MyForm",
             "designerId": "812cf062-0ea1-473d-8b17-825724e62af5",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -506,10 +530,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Name",
                         "layout|anchor": "100%",
+                        "localiserId": "nameField",
                         "name": "text"
                     },
                     "name": "MyTextField",
-                    "designerId": "343f614e-b392-437b-9506-c960862bb473"
+                    "designerId": "343f614e-b392-437b-9506-c960862bb473",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Checkbox",
@@ -523,11 +555,19 @@
                         "fieldLabel": "Activated",
                         "inputValue": "true",
                         "layout|anchor": "100%",
+                        "localiserId": "activateUField",
                         "name": "isActivated",
                         "uncheckedValue": "false"
                     },
                     "name": "MyCheckbox",
-                    "designerId": "c62b642a-7fdf-4d60-87c7-3125859125d8"
+                    "designerId": "c62b642a-7fdf-4d60-87c7-3125859125d8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -541,10 +581,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Title",
                         "layout|anchor": "100%",
+                        "localiserId": "titleField",
                         "name": "title"
                     },
                     "name": "MyTextField1",
-                    "designerId": "69aebe2d-4091-4ac6-93c7-c5719b548114"
+                    "designerId": "69aebe2d-4091-4ac6-93c7-c5719b548114",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.TextArea",
@@ -558,10 +606,18 @@
                         "allowOnlyWhitespace": false,
                         "fieldLabel": "Description",
                         "layout|anchor": "100%",
+                        "localiserId": "elementDescriptionField",
                         "name": "description"
                     },
                     "name": "MyTextArea",
-                    "designerId": "02a0ce65-8f22-4d67-828e-f050d3684c99"
+                    "designerId": "02a0ce65-8f22-4d67-828e-f050d3684c99",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -577,12 +633,20 @@
                         "fieldLabel": "Site",
                         "forceSelection": true,
                         "layout|anchor": "100%",
+                        "localiserId": "siteField",
                         "name": "siteId",
                         "store": "SitesComboRss",
                         "valueField": "id"
                     },
                     "name": "MyComboBox",
-                    "designerId": "244335b4-3096-4598-bfdf-30963eb3f317"
+                    "designerId": "244335b4-3096-4598-bfdf-30963eb3f317",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -599,12 +663,20 @@
                         "fieldLabel": "Language",
                         "forceSelection": true,
                         "layout|anchor": "100%",
+                        "localiserId": "pagePreviewLanguageField",
                         "name": "feedLang",
                         "store": "AllLanguagesStore",
                         "valueField": "iso2"
                     },
                     "name": "MyComboBox1",
-                    "designerId": "f9bc57ee-a3aa-4110-87cf-6fd55e00367e"
+                    "designerId": "f9bc57ee-a3aa-4110-87cf-6fd55e00367e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -621,12 +693,20 @@
                         "fieldLabel": "Query",
                         "forceSelection": true,
                         "layout|anchor": "100%",
+                        "localiserId": "query1field",
                         "name": "queryId",
                         "store": "RSSQueriesStore",
                         "valueField": "id"
                     },
                     "name": "MyComboBox2",
-                    "designerId": "fcaf395f-1a9c-4e29-8249-84a4b06efe48"
+                    "designerId": "fcaf395f-1a9c-4e29-8249-84a4b06efe48",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -639,11 +719,19 @@
                         "allowDecimals": false,
                         "fieldLabel": "Skip",
                         "layout|anchor": "100%",
+                        "localiserId": "start1field",
                         "minValue": 0,
                         "name": "start"
                     },
                     "name": "MyNumberField",
-                    "designerId": "0d971c99-0918-48a5-a82d-a72c37f95823"
+                    "designerId": "0d971c99-0918-48a5-a82d-a72c37f95823",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Number",
@@ -656,11 +744,19 @@
                         "allowDecimals": false,
                         "fieldLabel": "Limit",
                         "layout|anchor": "100%",
+                        "localiserId": "limit1field",
                         "minValue": 1,
                         "name": "limit"
                     },
                     "name": "MyNumberField1",
-                    "designerId": "5da637d3-9f81-4725-b939-12928066f61b"
+                    "designerId": "5da637d3-9f81-4725-b939-12928066f61b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 }
             ]
         }

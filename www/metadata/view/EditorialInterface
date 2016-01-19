@@ -44,7 +44,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool162",
             "designerId": "72f342ba-beba-4178-9849-7f76a41b8f00",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -58,7 +58,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool172",
             "designerId": "98eccc95-6829-43bb-961e-3ce0458bed1b",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -387,11 +387,19 @@
                         "columns": 1,
                         "headerPosition": "bottom",
                         "layout|flex": null,
+                        "localiserId": "viewModeBox",
                         "style": null,
                         "title": "View mode"
                     },
                     "name": "MyButtonGroup1",
                     "designerId": "988cea8e-0d0d-47ae-9739-13e6bca71c4d",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -548,11 +556,19 @@
                 "forceFit": false,
                 "id": "editorialContentsGrid",
                 "layout|flex": 1,
+                "localiserId": "contentWindow",
                 "store": "ContentsEditorial",
                 "title": "Contents"
             },
             "name": "MyGridPanel1",
             "designerId": "3878fd5b-312a-482b-a642-93e638d20c9f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "Ext.grid.View",
@@ -574,10 +590,18 @@
                     "userConfig": {
                         "dataIndex": "text",
                         "flex": 2,
-                        "text": "Text"
+                        "localiserId": "titleCol",
+                        "text": "Title"
                     },
                     "name": "MyColumn2",
                     "designerId": "f8f09956-517f-40f1-86ac-76d676ee46fa",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -712,10 +736,18 @@
                     "userConfig": {
                         "dataIndex": "typeId",
                         "flex": 1,
+                        "localiserId": "typeColumn2",
                         "text": "Type"
                     },
                     "name": "MyColumn3",
                     "designerId": "b8aaeeb2-196e-413d-bf6f-bd6c9f1c23fe",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -759,10 +791,18 @@
                     "userConfig": {
                         "dataIndex": "createUser",
                         "flex": 1,
+                        "localiserId": "versionAuthorCol",
                         "text": "Author"
                     },
                     "name": "MyColumn4",
                     "designerId": "1454d689-e137-4db3-9c13-e882719be18b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -890,10 +930,18 @@
                     "userConfig": {
                         "dataIndex": "online",
                         "flex": 0.5,
+                        "localiserId": "onlineCol",
                         "text": "Online"
                     },
                     "name": "MyBooleanColumn1",
                     "designerId": "6b9e68e6-2d16-4fbb-bd9e-b8c12db00844",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "processcfgfunction",
@@ -929,10 +977,18 @@
                         "dataIndex": "lastUpdateTime",
                         "flex": 1,
                         "format": "j/m/Y",
+                        "localiserId": "lastUpdateContentCol",
                         "text": "Last update"
                     },
                     "name": "MyDateColumn4",
-                    "designerId": "74e7e7ac-6ed0-43c0-97d4-a98f934fcee7"
+                    "designerId": "74e7e7ac-6ed0-43c0-97d4-a98f934fcee7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Date",
@@ -945,10 +1001,18 @@
                         "dataIndex": "createTime",
                         "flex": 1,
                         "format": "j/m/Y",
+                        "localiserId": "createCol",
                         "text": "Create"
                     },
                     "name": "MyDateColumn5",
-                    "designerId": "42f73889-cff4-435b-b53f-4202bd8d9665"
+                    "designerId": "42f73889-cff4-435b-b53f-4202bd8d9665",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Date",
@@ -961,10 +1025,18 @@
                         "dataIndex": "startPublicationDate",
                         "flex": 1,
                         "format": "j/m/Y",
+                        "localiserId": "spdCol",
                         "text": "Start Publication"
                     },
                     "name": "MyDateColumn1",
-                    "designerId": "07451110-1674-4bf1-a86b-7ced862146fa"
+                    "designerId": "07451110-1674-4bf1-a86b-7ced862146fa",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Date",
@@ -977,10 +1049,18 @@
                         "dataIndex": "endPublicationDate",
                         "flex": 1,
                         "format": "j/m/Y",
+                        "localiserId": "epdCol",
                         "text": "End Publication"
                     },
                     "name": "MyDateColumn6",
-                    "designerId": "be49a7e0-da27-4bfb-a654-06155b74a746"
+                    "designerId": "be49a7e0-da27-4bfb-a654-06155b74a746",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.toolbar.Paging",

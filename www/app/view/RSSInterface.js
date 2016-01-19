@@ -34,6 +34,7 @@ Ext.define('Rubedo.view.RSSInterface', {
         'Ext.form.field.Number'
     ],
 
+    localiserId: 'rssFeedsInterface',
     height: 456,
     id: 'RSSInterface',
     width: 723,
@@ -122,6 +123,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                                 var site=Ext.getStore("SitesComboRss").findRecord("id",record.get("siteId"));
                                 Ext.Msg.alert("Rss feed link","http://"+site.get("text")+"/api/v1/rss/"+record.get("id"));
                             },
+                            localiserId: 'getFeedLinkBtn',
                             disabled: true,
                             id: 'rssGetLinkBtn',
                             iconAlign: 'top',
@@ -168,6 +170,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                 {
                     xtype: 'form',
                     flex: 1,
+                    localiserId: 'orderSettingForm',
                     disabled: true,
                     id: 'rssSettingsForm',
                     bodyPadding: 10,
@@ -176,6 +179,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'nameField',
                             fieldLabel: 'Name',
                             name: 'text',
                             allowBlank: false,
@@ -184,6 +188,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
+                            localiserId: 'activateUField',
                             fieldLabel: 'Activated',
                             name: 'isActivated',
                             boxLabel: '',
@@ -193,6 +198,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'textfield',
                             anchor: '100%',
+                            localiserId: 'titleField',
                             fieldLabel: 'Title',
                             name: 'title',
                             allowBlank: false,
@@ -201,6 +207,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'textareafield',
                             anchor: '100%',
+                            localiserId: 'elementDescriptionField',
                             fieldLabel: 'Description',
                             name: 'description',
                             allowBlank: false,
@@ -209,6 +216,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'siteField',
                             fieldLabel: 'Site',
                             name: 'siteId',
                             allowBlank: false,
@@ -221,6 +229,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'pagePreviewLanguageField',
                             fieldLabel: 'Language',
                             name: 'feedLang',
                             allowBlank: false,
@@ -234,6 +243,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'combobox',
                             anchor: '100%',
+                            localiserId: 'query1field',
                             fieldLabel: 'Query',
                             name: 'queryId',
                             allowBlank: false,
@@ -247,6 +257,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            localiserId: 'start1field',
                             fieldLabel: 'Skip',
                             name: 'start',
                             allowDecimals: false,
@@ -255,6 +266,7 @@ Ext.define('Rubedo.view.RSSInterface', {
                         {
                             xtype: 'numberfield',
                             anchor: '100%',
+                            localiserId: 'limit1field',
                             fieldLabel: 'Limit',
                             name: 'limit',
                             allowDecimals: false,

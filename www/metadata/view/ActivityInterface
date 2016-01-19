@@ -38,7 +38,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool16",
+            "name": "mytool161",
             "designerId": "6ae04a20-231c-4247-93db-0770bebe72e2",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -52,7 +52,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool17",
+            "name": "mytool171",
             "designerId": "ef7699e4-53ed-4451-9906-2520e9af635b",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -79,10 +79,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout": "fit",
+                        "localiserId": "actLogInTab",
                         "title": "Log in"
                     },
                     "name": "MyPanel",
                     "designerId": "1ee912ba-1491-4e35-8e6c-cc1b3486b3e4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -91,8 +99,18 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "actLogInTab"
+                            },
                             "name": "TabConfig",
-                            "designerId": "f9691c29-4d19-4ba1-804d-9f84e4bd8bde"
+                            "designerId": "f9691c29-4d19-4ba1-804d-9f84e4bd8bde",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.Panel",
@@ -128,10 +146,18 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "context",
+                                        "localiserId": "userCol",
                                         "text": "User"
                                     },
                                     "name": "MyColumn2",
                                     "designerId": "b098a8df-0d44-419d-ac5a-58f586aaa5cb",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ],
                                     "cn": [
                                         {
                                             "type": "fixedfunction",
@@ -169,10 +195,24 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "datetime",
-                                        "text": "Lon-in date"
+                                        "loaliserId": "logInDateCol",
+                                        "localiserId": "logInDateCol",
+                                        "text": "Log-in date"
                                     },
                                     "name": "MyColumn6",
-                                    "designerId": "b58e08ff-844c-4bc0-8d3c-5296f70ab020"
+                                    "designerId": "b58e08ff-844c-4bc0-8d3c-5296f70ab020",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "loaliserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.toolbar.Paging",
@@ -202,10 +242,18 @@
                                                 "iconCls": "user_edit",
                                                 "id": "activityUserUAthDetailBtn",
                                                 "layout|flex": null,
+                                                "localiserId": "viewUserDetailABtn",
                                                 "text": "View user detail"
                                             },
                                             "name": "MyButton2",
                                             "designerId": "dc2c50f3-55bc-4bb4-aece-c594708f497e",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "fixedfunction",
@@ -266,6 +314,28 @@
                                     "designerId": "c138983a-2e2e-47d3-847f-cfb1f490a318"
                                 }
                             ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processLogin",
+                                "implHandler": [
+                                    "if (Rubedo.RubedoInterfaceLoc.actLogInTab){",
+                                    "    config.title=Rubedo.RubedoInterfaceLoc.actLogInTab.title;",
+                                    "}",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processLogin",
+                            "designerId": "abec597c-240b-408a-8fb4-2df468d4416e"
                         }
                     ]
                 },
@@ -278,10 +348,18 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout": "fit",
+                        "localiserId": "contentContribATab",
                         "title": "Content contribution"
                     },
                     "name": "MyPanel1",
                     "designerId": "c3e940c5-1e62-4c5e-b0cb-e323c1a9b7be",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -290,8 +368,18 @@
                                 "type": "object"
                             },
                             "codeClass": null,
+                            "userConfig": {
+                                "localiserId": "contentContribATab"
+                            },
                             "name": "TabConfig1",
-                            "designerId": "9c95e893-b781-4da9-a248-a9954586e1f2"
+                            "designerId": "9c95e893-b781-4da9-a248-a9954586e1f2",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.grid.Panel",
@@ -327,10 +415,18 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "message",
+                                        "localiserId": "messageCol",
                                         "text": "Message"
                                     },
                                     "name": "MyColumn1",
-                                    "designerId": "4d5858cd-612c-4439-b08d-97e775e317f3"
+                                    "designerId": "4d5858cd-612c-4439-b08d-97e775e317f3",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -341,10 +437,18 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "datetime",
+                                        "localiserId": "dateCol",
                                         "text": "Date"
                                     },
                                     "name": "MyColumn3",
-                                    "designerId": "434fffda-096c-41da-be59-895654376cb8"
+                                    "designerId": "434fffda-096c-41da-be59-895654376cb8",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "Ext.toolbar.Paging",
@@ -374,10 +478,18 @@
                                                 "iconCls": "user_edit",
                                                 "id": "activityUserUAthDetailBtn1",
                                                 "layout|flex": null,
+                                                "localiserId": "viewUserDetailABtn",
                                                 "text": "View user detail"
                                             },
                                             "name": "MyButton",
                                             "designerId": "8807894c-8232-4a68-a705-c1f1b5b4c28b",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "fixedfunction",
@@ -425,10 +537,18 @@
                                                 "iconCls": "content-icon",
                                                 "id": "activityViewCdBtn",
                                                 "layout|flex": null,
+                                                "localiserId": "viewContentDetailBtn1",
                                                 "text": "View content detail"
                                             },
                                             "name": "MyButton3",
                                             "designerId": "5608e763-033e-4a87-a4e1-9dc209a0bca3",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
                                             "cn": [
                                                 {
                                                     "type": "fixedfunction",
@@ -482,6 +602,28 @@
                                     "designerId": "428e9307-861d-4d32-9796-0f907f5290c0"
                                 }
                             ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processContentcontribution",
+                                "implHandler": [
+                                    "if (Rubedo.RubedoInterfaceLoc.contentContribATab){",
+                                    "    config.title=Rubedo.RubedoInterfaceLoc.contentContribATab.title;",
+                                    "}",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processContentcontribution",
+                            "designerId": "7ec33336-87b5-4f9b-a3ef-b43d0533b177"
                         }
                     ]
                 }

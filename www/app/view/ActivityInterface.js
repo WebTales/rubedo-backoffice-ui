@@ -60,10 +60,15 @@ Ext.define('Rubedo.view.ActivityInterface', {
                     flex: 1,
                     activeTab: 0,
                     items: [
-                        {
+                        me.processLogin({
                             xtype: 'panel',
+                            localiserId: 'actLogInTab',
                             layout: 'fit',
                             title: 'Log in',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'actLogInTab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -76,13 +81,16 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                                 return(value.user.fullName);
                                             },
+                                            localiserId: 'userCol',
                                             dataIndex: 'context',
                                             text: 'User'
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'logInDateCol',
+                                            loaliserId: 'logInDateCol',
                                             dataIndex: 'datetime',
-                                            text: 'Lon-in date'
+                                            text: 'Log-in date'
                                         }
                                     ],
                                     dockedItems: [
@@ -110,6 +118,7 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                                             }
                                                         });
                                                     },
+                                                    localiserId: 'viewUserDetailABtn',
                                                     disabled: true,
                                                     id: 'activityUserUAthDetailBtn',
                                                     iconCls: 'user_edit',
@@ -126,11 +135,16 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                     }
                                 }
                             ]
-                        },
-                        {
+                        }),
+                        me.processContentcontribution({
                             xtype: 'panel',
+                            localiserId: 'contentContribATab',
                             layout: 'fit',
                             title: 'Content contribution',
+                            tabConfig: {
+                                xtype: 'tab',
+                                localiserId: 'contentContribATab'
+                            },
                             items: [
                                 {
                                     xtype: 'gridpanel',
@@ -140,11 +154,13 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'messageCol',
                                             dataIndex: 'message',
                                             text: 'Message'
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            localiserId: 'dateCol',
                                             dataIndex: 'datetime',
                                             text: 'Date'
                                         }
@@ -174,6 +190,7 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                                             }
                                                         });
                                                     },
+                                                    localiserId: 'viewUserDetailABtn',
                                                     disabled: true,
                                                     id: 'activityUserUAthDetailBtn1',
                                                     iconCls: 'user_edit',
@@ -185,6 +202,7 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                                         var contentId=button.up().up().getSelectionModel().getLastSelected().get("context").data.id;
                                                         Rubedo.controller.ContributionContenusController.prototype.unitaryContentEdit(contentId);
                                                     },
+                                                    localiserId: 'viewContentDetailBtn1',
                                                     disabled: true,
                                                     id: 'activityViewCdBtn',
                                                     iconCls: 'content-icon',
@@ -201,7 +219,7 @@ Ext.define('Rubedo.view.ActivityInterface', {
                                     }
                                 }
                             ]
-                        }
+                        })
                     ]
                 }
             ],
@@ -214,6 +232,20 @@ Ext.define('Rubedo.view.ActivityInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processLogin: function(config) {
+        if (Rubedo.RubedoInterfaceLoc.actLogInTab){
+            config.title=Rubedo.RubedoInterfaceLoc.actLogInTab.title;
+        }
+        return config;
+    },
+
+    processContentcontribution: function(config) {
+        if (Rubedo.RubedoInterfaceLoc.contentContribATab){
+            config.title=Rubedo.RubedoInterfaceLoc.contentContribATab.title;
+        }
+        return config;
     },
 
     onGridpanelSelectionChange: function(model, selected, eOpts) {
