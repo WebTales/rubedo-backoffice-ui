@@ -81,7 +81,7 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
                     xtype: 'tabpanel',
                     activeTab: 0,
                     items: [
-                        {
+                        me.processUserCUFields({
                             xtype: 'form',
                             localiserId: 'ucuFieldsTab',
                             id: 'userCUFields',
@@ -123,20 +123,34 @@ Ext.define('Rubedo.view.UserCreateUpdateWindow', {
                                     ]
                                 }
                             ]
-                        },
-                        {
+                        }),
+                        me.processUserCUTaxonomy({
                             xtype: 'form',
                             localiserId: 'taxoTab',
                             id: 'userCUTaxonomy',
                             bodyPadding: 10,
                             title: 'Taxonomy'
-                        }
+                        })
                     ]
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    processUserCUFields: function(config) {
+        if (Rubedo.RubedoInterfaceLoc.ucuFieldsTab){
+            config.title=Rubedo.RubedoInterfaceLoc.ucuFieldsTab.title;
+        }
+        return config;
+    },
+
+    processUserCUTaxonomy: function(config) {
+        if (Rubedo.RubedoInterfaceLoc.taxoTab){
+            config.title=Rubedo.RubedoInterfaceLoc.taxoTab.title;
+        }
+        return config;
     }
 
 });

@@ -273,6 +273,28 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processUserCUFields",
+                                "implHandler": [
+                                    "if (Rubedo.RubedoInterfaceLoc.ucuFieldsTab){",
+                                    "    config.title=Rubedo.RubedoInterfaceLoc.ucuFieldsTab.title;",
+                                    "}",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processUserCUFields",
+                            "designerId": "f3e62766-723a-469a-b8c4-a831e54ff010"
                         }
                     ]
                 },
@@ -308,6 +330,28 @@
                             "codeClass": null,
                             "name": "TabConfig14",
                             "designerId": "8f5314ff-a742-4903-a720-fecdd7bc0576"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processUserCUTaxonomy",
+                                "implHandler": [
+                                    "if (Rubedo.RubedoInterfaceLoc.taxoTab){",
+                                    "    config.title=Rubedo.RubedoInterfaceLoc.taxoTab.title;",
+                                    "}",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processUserCUTaxonomy",
+                            "designerId": "3d60bf0a-eedc-4a12-9898-650d602756aa"
                         }
                     ]
                 }

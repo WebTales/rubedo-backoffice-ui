@@ -437,6 +437,28 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processUserUpdateCreadentialsForm",
+                "implHandler": [
+                    "if (Rubedo.RubedoInterfaceLoc.credentiamsAndIntForm){",
+                    "    config.title=Rubedo.RubedoInterfaceLoc.credentiamsAndIntForm.title;",
+                    "}",
+                    "return config;"
+                ]
+            },
+            "name": "processUserUpdateCreadentialsForm",
+            "designerId": "bd4c7d9a-a1fa-4f45-b91a-4b517fb87b23"
         }
     ]
 }

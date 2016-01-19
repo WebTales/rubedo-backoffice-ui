@@ -193,7 +193,15 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
             ]
         });
 
+        me.processUserUpdateCreadentialsForm(me);
         me.callParent(arguments);
+    },
+
+    processUserUpdateCreadentialsForm: function(config) {
+        if (Rubedo.RubedoInterfaceLoc.credentiamsAndIntForm){
+            config.title=Rubedo.RubedoInterfaceLoc.credentiamsAndIntForm.title;
+        }
+        return config;
     }
 
 });
