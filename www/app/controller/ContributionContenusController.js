@@ -668,7 +668,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     displayContentEditWindow: function(content, contentType, editMode, specialMode, targetedId) {
-        var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode});
+        var fenetre = Ext.widget('ajouterContenu', {specialMode:specialMode,editedContentId:content.get("id")});
         Ext.getCmp('ViewportPrimaire').add(fenetre);
         if (Ext.isDefined(window.innerHeight)) {
             if (fenetre.height>(window.innerHeight-40)) {fenetre.setHeight((window.innerHeight-40));}
