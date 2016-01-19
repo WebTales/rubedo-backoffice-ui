@@ -3010,13 +3010,13 @@
   "protoId": ""
 },
   {
-    "type": "Embedded Content",
+    "type": "#ext-gen1272#",
     "cType": "Rubedo.view.RECField",
     "openWindow": "",
-    "description": "Embedded Content",
+    "description": "#ext-gen1272#",
     "config": {
       "name": "embeddedContent",
-      "fieldLabel": "Embedded Content",
+      "fieldLabel": "#ext-gen1272#",
       "allowBlank": true,
       "localizable": false,
       "searchable": false,
@@ -3057,7 +3057,7 @@
       {
         "type": "Rubedo.view.CTCField",
         "config": {
-          "fieldLabel": "Content type",
+          "fieldLabel": "#ext-gen1096#",
           "name": "usedCT",
           "multiSelect": false,
           "allowBlank": false
@@ -3148,13 +3148,13 @@
     "category": "#ext-gen1050#",
     "protoId": ""
   },{
-  "type": "Free Field",
+  "type": "#ext-gen1273#",
   "cType": "Rubedo.view.RStructuredObjectField",
   "openWindow": "",
-  "description": "Free Field",
+  "description": "#ext-gen1273#",
   "config": {
     "name": "freeField",
-    "fieldLabel": "Free Field",
+    "fieldLabel": "#ext-gen1273#",
     "allowBlank": true,
     "localizable": false,
     "searchable": false,
