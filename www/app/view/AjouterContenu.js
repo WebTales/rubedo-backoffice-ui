@@ -59,6 +59,7 @@ Ext.define('Rubedo.view.AjouterContenu', {
                 {
                     xtype: 'toolbar',
                     dock: 'bottom',
+                    id: 'contentEditorMTTb',
                     items: [
                         {
                             xtype: 'tbfill'
