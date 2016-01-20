@@ -56,15 +56,18 @@ Ext.define('Ext.ux.form.TimePickerField', {
 
 		  me.hoursSpinner = Ext.create('Ext.form.field.Number', Ext.apply({}, cfg, {
 			      minValue: 0,
+                  minWidth:40,
 			      maxValue: 23
 		      }));
 		  me.minutesSpinner = Ext.create('Ext.form.field.Number', Ext.apply({}, cfg, {
 			      minValue: 0,
+                  minWidth:40,
 			      maxValue: 59
 		      }));
 		  // TODO 使用timeformat 判断是否创建秒输入框, maybe second field is not always need.
 		  me.secondsSpinner = Ext.create('Ext.form.field.Number', Ext.apply({}, cfg, {
 			      minValue: 0,
+                  minWidth:40,
 			      maxValue: 59
 		      }));
 
