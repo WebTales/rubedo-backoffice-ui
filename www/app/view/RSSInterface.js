@@ -169,8 +169,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                 },
                 {
                     xtype: 'form',
-                    flex: 1,
                     localiserId: 'orderSettingForm',
+                    flex: 1,
                     disabled: true,
                     id: 'rssSettingsForm',
                     bodyPadding: 10,
@@ -178,8 +178,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'nameField',
+                            anchor: '100%',
                             fieldLabel: 'Name',
                             name: 'text',
                             allowBlank: false,
@@ -187,8 +187,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'checkboxfield',
-                            anchor: '100%',
                             localiserId: 'activateUField',
+                            anchor: '100%',
                             fieldLabel: 'Activated',
                             name: 'isActivated',
                             boxLabel: '',
@@ -197,8 +197,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             localiserId: 'titleField',
+                            anchor: '100%',
                             fieldLabel: 'Title',
                             name: 'title',
                             allowBlank: false,
@@ -206,8 +206,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'textareafield',
-                            anchor: '100%',
                             localiserId: 'elementDescriptionField',
+                            anchor: '100%',
                             fieldLabel: 'Description',
                             name: 'description',
                             allowBlank: false,
@@ -215,8 +215,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'siteField',
+                            anchor: '100%',
                             fieldLabel: 'Site',
                             name: 'siteId',
                             allowBlank: false,
@@ -228,8 +228,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'pagePreviewLanguageField',
+                            anchor: '100%',
                             fieldLabel: 'Language',
                             name: 'feedLang',
                             allowBlank: false,
@@ -242,8 +242,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'combobox',
-                            anchor: '100%',
                             localiserId: 'query1field',
+                            anchor: '100%',
                             fieldLabel: 'Query',
                             name: 'queryId',
                             allowBlank: false,
@@ -256,8 +256,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'numberfield',
-                            anchor: '100%',
                             localiserId: 'start1field',
+                            anchor: '100%',
                             fieldLabel: 'Skip',
                             name: 'start',
                             allowDecimals: false,
@@ -265,8 +265,8 @@ Ext.define('Rubedo.view.RSSInterface', {
                         },
                         {
                             xtype: 'numberfield',
-                            anchor: '100%',
                             localiserId: 'limit1field',
+                            anchor: '100%',
                             fieldLabel: 'Limit',
                             name: 'limit',
                             allowDecimals: false,

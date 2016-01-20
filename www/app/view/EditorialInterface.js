@@ -191,8 +191,8 @@ Ext.define('Rubedo.view.EditorialInterface', {
                 },
                 {
                     xtype: 'gridpanel',
-                    flex: 1,
                     localiserId: 'contentWindow',
+                    flex: 1,
                     id: 'editorialContentsGrid',
                     title: 'Contents',
                     forceFit: false,

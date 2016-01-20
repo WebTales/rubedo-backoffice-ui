@@ -60,8 +60,8 @@ Ext.define('Rubedo.view.newRssWindow', {
                                     button.up().up().close();
                                 }
                             },
-                            anchor: '100%',
                             localiserId: 'createNewFeedBtn',
+                            anchor: '100%',
                             id: 'newWorkspaceSublitBtn1',
                             scale: 'medium',
                             text: 'Create new feed'
