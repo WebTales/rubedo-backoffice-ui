@@ -121,6 +121,9 @@ Ext.define('Rubedo.model.sitesDataModel', {
             name: 'defaultSingle'
         },
         {
+            name: 'defaultSearch'
+        },
+        {
             name: 'googleMapsKey'
         },
         {

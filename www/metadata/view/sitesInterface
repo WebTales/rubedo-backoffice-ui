@@ -799,6 +799,17 @@
                                                     "    allowBlank:false,",
                                                     "    name:\"defaultSingle\"",
                                                     "});",
+                                                    "var searchPageSelector = Ext.create(\"Ext.ux.TreePicker\", {",
+                                                    "    store:Ext.getStore(\"PagePickerStore\"),",
+                                                    "    displayField:\"text\",",
+                                                    "    labelWidth:110,",
+                                                    "    fieldLabel:\"SEO search page\",",
+                                                    "    id:\"sitesSearchPicker\",",
+                                                    "    anchor: \"100%\",",
+                                                    "    plugins:[Ext.create(\"Ext.ux.form.field.ClearButton\")],",
+                                                    "    allowBlank:true,",
+                                                    "    name:\"defaultSearch\"",
+                                                    "});",
                                                     "var notFoundPageSelector = Ext.create(\"Ext.ux.TreePicker\", {",
                                                     "    store:Ext.getStore(\"PagePickerStore\"),",
                                                     "    displayField:\"text\",",
@@ -850,7 +861,8 @@
                                                     "component.insert(5,languagesPicker);",
                                                     "component.add(singlePageSelector);",
                                                     "component.add(notFoundPageSelector);",
-                                                    "component.insert(13,ctc);"
+                                                    "component.insert(13,ctc);",
+                                                    "component.add(searchPageSelector);"
                                                 ],
                                                 "name": "render",
                                                 "scope": "me"
@@ -870,7 +882,7 @@
                                                 "layout|anchor": "100%",
                                                 "store": "ContributeWorkspacesCombo"
                                             },
-                                            "name": "workspacecombo",
+                                            "name": "workspacecombo2",
                                             "designerId": "6abd6665-a53a-4eae-ba02-af819b8e2ade",
                                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                                         },
@@ -1403,7 +1415,7 @@
                                 "id": "sitesDLSToolbar",
                                 "replicatorEntity": "sitesRepLoc"
                             },
-                            "name": "dlstoolbar2",
+                            "name": "dlstoolbar1",
                             "designerId": "1c9d6053-d4f4-4b79-b7bc-262784f31c7b",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         },
@@ -2489,7 +2501,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool173",
+            "name": "mytool174",
             "designerId": "8a18ead3-dc02-4dae-91f7-cf7f41319b28",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
