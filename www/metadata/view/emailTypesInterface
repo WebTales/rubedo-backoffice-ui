@@ -43,7 +43,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool166",
+            "name": "mytool161",
             "designerId": "7129d95c-f9cb-44a7-bd5e-ac5183e01f41",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -57,7 +57,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool178",
+            "name": "mytool171",
             "designerId": "475f561a-925b-4504-9c54-23648d832527",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -654,6 +654,34 @@
                                     "group": "(Custom Properties)",
                                     "name": "localiserId",
                                     "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var target=Ext.getCmp(\"mainETGrid\").getSelectionModel().getLastSelected();",
+                                            "if (!Ext.isEmpty(target)){",
+                                            "    var data=Ext.clone(target.getData());",
+                                            "    delete(data.id);",
+                                            "    data.text=data.text+\" Copy\";",
+                                            "    Ext.getCmp(\"mainETGrid\").getStore().add(data);",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "529e3586-fdc3-42ca-90f7-b4855fb27c05"
                                 }
                             ]
                         },
