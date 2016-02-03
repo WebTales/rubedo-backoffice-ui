@@ -54,7 +54,7 @@ Ext.define('Rubedo.view.contentsExportWindow', {
                         {
                             xtype: 'button',
                             handler: function(button, e) {
-                                var url="/backoffice/contents/export?workingLanguage="+Ext.getStore("CurrentUserDataStore").getRange()[0].get("language")+"&typeId="+Ext.getCmp("TypesContenusGrid").getSelectionModel().getLastSelected().get("id");
+                                var url="/backoffice/contents/export?workingLanguage="+Ext.getStore("CurrentUserDataStore").getRange()[0].get("workingLanguage")+"&typeId="+Ext.getCmp("TypesContenusGrid").getSelectionModel().getLastSelected().get("id");
                                 var values=button.up().getForm().getValues();
                                 Ext.Object.each(values, function(key,value){
                                     if (!Ext.isEmpty(value)){
