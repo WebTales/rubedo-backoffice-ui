@@ -601,8 +601,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                                     localiserId: 'titleField',
                                                     anchor: '100%',
                                                     fieldLabel: 'Titre *',
-                                                    name: 'title',
-                                                    allowBlank: false
+                                                    name: 'title'
                                                 },
                                                 {
                                                     xtype: 'textareafield',
