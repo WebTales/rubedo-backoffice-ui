@@ -379,7 +379,9 @@ Ext.define('Rubedo.view.contributionPages', {
                                 }
                             },
                             localiserId: 'nameColumn',
+                            sortable: false,
                             dataIndex: 'text',
+                            menuDisabled: true,
                             text: 'Nom',
                             flex: 1
                         },
@@ -404,7 +406,9 @@ Ext.define('Rubedo.view.contributionPages', {
                                 return(returner);
                             },
                             localiserId: 'languageCoumn',
+                            sortable: false,
                             dataIndex: 'i18n',
+                            menuDisabled: true,
                             text: 'Languages',
                             flex: 0.5,
                             listeners: {

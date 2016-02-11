@@ -751,7 +751,9 @@
                         "dataIndex": "text",
                         "flex": 1,
                         "localiserId": "nameColumn",
+                        "menuDisabled": true,
                         "menuText": null,
+                        "sortable": false,
                         "text": "Nom",
                         "tooltip": null
                     },
@@ -813,6 +815,8 @@
                         "dataIndex": "i18n",
                         "flex": 0.5,
                         "localiserId": "languageCoumn",
+                        "menuDisabled": true,
+                        "sortable": false,
                         "text": "Languages"
                     },
                     "name": "MyColumn49",
