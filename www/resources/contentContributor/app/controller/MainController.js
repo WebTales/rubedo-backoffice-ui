@@ -211,7 +211,7 @@ Ext.define('ContentContributor.controller.MainController', {
                     });
                 }
             });
-            task336.delay(500);
+            task336.delay(900);
 
         } else {
             Ext.getCmp("MainForm").setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+" "+contentType.type);
