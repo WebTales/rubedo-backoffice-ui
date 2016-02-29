@@ -529,11 +529,15 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     onBoutonCopierContenusClick: function(button, e, eOpts) {
-        var copiedOne = Ext.getCmp("ContenusGrid").getSelectionModel().getLastSelected().copy();
-        Ext.data.Model.id(copiedOne);
-        copiedOne.data.champs.text=copiedOne.get("text")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
-        copiedOne.set("status", "draft");
-        copiedOne.set("text",copiedOne.get("text")+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i'));
+        var copiedOne = Ext.clone(Ext.getCmp("ContenusGrid").getSelectionModel().getLastSelected().getData());
+        delete(copiedOne.id);
+        copiedOne.champs.text=copiedOne.text+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        copiedOne.status="draft";
+        copiedOne.text=copiedOne.text+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+
+        Ext.Object.each(copiedOne.i18n,function(lang,item){
+            item.fields.text=item.fields.text+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
+        });
         Ext.getCmp("ContenusGrid").getStore().add(copiedOne);
     },
 
