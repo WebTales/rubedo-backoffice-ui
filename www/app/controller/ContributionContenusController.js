@@ -529,7 +529,7 @@ Ext.define('Rubedo.controller.ContributionContenusController', {
     },
 
     onBoutonCopierContenusClick: function(button, e, eOpts) {
-        var copiedOne = Ext.clone(Ext.getCmp("ContenusGrid").getSelectionModel().getLastSelected().getData());
+        var copiedOne = Ext.clone(Ext.getCmp("ContenusGrid").getStore().findRecord("id",Ext.getCmp("ContenusGrid").getSelectionModel().getSelection()[0].get("id")).getData());
         delete(copiedOne.id);
         copiedOne.champs.text=copiedOne.text+" - Copie du "+Ext.Date.format(new Date(), 'j F, Y, G:i');
         copiedOne.status="draft";
