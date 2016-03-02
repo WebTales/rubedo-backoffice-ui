@@ -407,6 +407,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "defaultSearch"
+            },
+            "name": "MyField8",
+            "designerId": "ae21826c-90a9-4642-a1cb-fd38249cb9f1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "googleMapsKey"
             },
             "name": "MyField289",

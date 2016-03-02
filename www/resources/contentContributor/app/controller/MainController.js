@@ -170,7 +170,7 @@ Ext.define('ContentContributor.controller.MainController', {
         this.renderMainFields(contentType.fields);
         this.renderTaxoFields(contentType.vocabularies);
         if (AppGlobals.editMode){
-            var task = new Ext.util.DelayedTask(function(){
+            var task336 = new Ext.util.DelayedTask(function(){
 
                 var myWorkingLanguage=ACL.workingLanguage;
                 try{var myFlagCode=Ext.getStore("AllLanguagesStore3").query("locale",myWorkingLanguage,false,false,true).items[0].get("flagCode");}
@@ -211,7 +211,7 @@ Ext.define('ContentContributor.controller.MainController', {
                     });
                 }
             });
-            task.delay(200);
+            task336.delay(900);
 
         } else {
             Ext.getCmp("MainForm").setTitle(Rubedo.RubedoAutomatedElementsLoc.newContentText+" "+contentType.type);
@@ -615,17 +615,17 @@ Ext.define('ContentContributor.controller.MainController', {
                             Ext.getStore("Contents").load();
                         }
                     });
-                    task.delay(900);
+                    task.delay(1400);
     },
 
     onLaunch: function() {
-        var task = new Ext.util.DelayedTask(function(){
+        var task334 = new Ext.util.DelayedTask(function(){
             try {
                 Rubedo.controller.LocalisationController.prototype.init();
             } catch (err){}
                 Ext.getStore("CurrentUserDataStore").load();
             });
-            task.delay(600);
+            task334.delay(600);
     }
 
 });

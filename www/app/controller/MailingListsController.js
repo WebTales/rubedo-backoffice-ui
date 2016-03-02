@@ -132,6 +132,7 @@ Ext.define('Rubedo.controller.MailingListsController', {
         if (form.isValid()){
             button.up().setLoading(true);
             form.submit({
+                timeout:600,
                 url: 'mailing-lists/import-users',
                 params: {
                     id:Ext.getCmp("MLMainGrid").getSelectionModel().getLastSelected().get("id")

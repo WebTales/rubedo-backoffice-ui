@@ -901,6 +901,17 @@ Ext.define('Rubedo.view.sitesInterface', {
             allowBlank:false,
             name:"defaultSingle"
         });
+        var searchPageSelector = Ext.create("Ext.ux.TreePicker", {
+            store:Ext.getStore("PagePickerStore"),
+            displayField:"text",
+            labelWidth:110,
+            fieldLabel:"SEO search page",
+            id:"sitesSearchPicker",
+            anchor: "100%",
+            plugins:[Ext.create("Ext.ux.form.field.ClearButton")],
+            allowBlank:true,
+            name:"defaultSearch"
+        });
         var notFoundPageSelector = Ext.create("Ext.ux.TreePicker", {
             store:Ext.getStore("PagePickerStore"),
             displayField:"text",
@@ -953,6 +964,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         component.add(singlePageSelector);
         component.add(notFoundPageSelector);
         component.insert(13,ctc);
+        component.add(searchPageSelector);
     },
 
     onCheckboxfieldRender: function(component, eOpts) {

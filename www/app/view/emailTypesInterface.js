@@ -259,6 +259,15 @@ Ext.define('Rubedo.view.emailTypesInterface', {
                             items: [
                                 {
                                     xtype: 'button',
+                                    handler: function(button, e) {
+                                        var target=Ext.getCmp("mainETGrid").getSelectionModel().getLastSelected();
+                                        if (!Ext.isEmpty(target)){
+                                            var data=Ext.clone(target.getData());
+                                            delete(data.id);
+                                            data.text=data.text+" Copy";
+                                            Ext.getCmp("mainETGrid").getStore().add(data);
+                                        }
+                                    },
                                     ACL: 'write.ui.emails',
                                     localiserId: 'duplicateBtn',
                                     id: 'duplicateETBtn',
