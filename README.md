@@ -3,7 +3,7 @@ rubedo-backoffice-ui
 
 An ExtJs backoffice interface for RUBEDO ECM
 
-Copyright (c) 2012, WebTales (http://www.webtales.fr/).
+Copyright (c) 2016, WebTales (http://www.webtales.fr/).
 All rights reserved.
 licensing@webtales.fr
 
