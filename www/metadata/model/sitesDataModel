@@ -520,6 +520,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "designer|displayName": null,
+                "name": "optimizedRender",
+                "type": "boolean"
+            },
+            "name": "MyField1",
+            "designerId": "9d6ca40b-95ab-4fdd-8f82-b8d4ced51935"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "i18n"
             },
             "name": "MyField296",
