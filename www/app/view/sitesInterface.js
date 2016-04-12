@@ -303,6 +303,15 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     uncheckedValue: 'false'
                                                 }),
                                                 {
+                                                    xtype: 'checkboxfield',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Optimized render',
+                                                    labelWidth: 110,
+                                                    name: 'optimizedRender',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                },
+                                                {
                                                     xtype: 'textareafield',
                                                     anchor: '100%',
                                                     hidden: true,
@@ -963,7 +972,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         component.insert(5,languagesPicker);
         component.add(singlePageSelector);
         component.add(notFoundPageSelector);
-        component.insert(13,ctc);
+        component.insert(14,ctc);
         component.add(searchPageSelector);
     },
 
