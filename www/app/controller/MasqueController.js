@@ -1013,6 +1013,14 @@ Ext.define('Rubedo.controller.MasqueController', {
                                         "name": "bypassOptimizer",
                                         "inputValue": true
                                     }
+                                },{
+                                    "type": "Ext.form.field.Number",
+                                    "config": {
+                                        "fieldLabel": "Placeholder height",
+                                        "name": "orPlaceholderMinHeight",
+                                        "allowDecimals": false,
+                                        "minValue": 0
+                                    }
                                 }
                     ]
 

@@ -501,6 +501,14 @@ Ext.define('Rubedo.controller.PagesController', {
                                         "name": "bypassOptimizer",
                                         "inputValue": true
                                     }
+                                },{
+                                    "type": "Ext.form.field.Number",
+                                    "config": {
+                                        "fieldLabel": "Placeholder height",
+                                        "name": "orPlaceholderMinHeight",
+                                        "allowDecimals": false,
+                                        "minValue": 0
+                                    }
                                 }
                     ]
 
