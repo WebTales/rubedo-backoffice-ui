@@ -327,6 +327,8 @@ Ext.define('Rubedo.controller.UserTypesController', {
                 Ext.getCmp("usersSignUpModeration").disable();
             } else if (selected[0].get("signUpType")=="emailConfirmation") {
                 Ext.getCmp("usersInterfaceStatusCol").show();
+                Ext.getCmp("usersSignUpModeration").show();
+                Ext.getCmp("usersSignUpModeration").disable();
             }
             imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/folder.png');
             var  customMeta = selected[0].get("type");
@@ -352,7 +354,7 @@ Ext.define('Rubedo.controller.UserTypesController', {
         } else if (selected.length==1) {
             Ext.getCmp("editUserBtn").enable();
             Ext.getCmp("removeUserBtn").enable();
-            if (selected[0].get("status")=="pending"){
+            if (selected[0].get("status")=="pending"||selected[0].get("status")=="emailUnconfirmed"){
                 Ext.getCmp("usersSignUpModeration").enable();
             }
             imageMeta.setSrc('resources/icones/'+MyPrefData.iconsDir+'/48x48/user.png');
