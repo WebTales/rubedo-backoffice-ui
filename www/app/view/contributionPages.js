@@ -632,7 +632,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                         }),
                                         me.processUX({
                                             xtype: 'fieldset',
-                                            hidden: true,
                                             collapsed: true,
                                             collapsible: true,
                                             title: 'UX'
