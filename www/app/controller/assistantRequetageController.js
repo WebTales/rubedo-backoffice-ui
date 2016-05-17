@@ -594,7 +594,7 @@ Ext.define('Rubedo.controller.assistantRequetageController', {
                             proxy: {
                                 type: 'ajax',
                                 api: {
-                                    read: 'taxonomy-terms'
+                                    read: 'taxonomy-terms?add-current-page=true'
                                 },
                                 reader: {
                                     type: 'json',
