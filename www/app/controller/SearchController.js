@@ -125,6 +125,12 @@ Ext.define('Rubedo.controller.SearchController', {
                         }
                     });
                 }
+            } else if (facet._type=="datehistogram"){
+                if (!Ext.isEmpty(facet.terms)){
+                     Ext.Array.forEach(facet.terms, function(someTerm){
+                        someTerm.label=Ext.Date.format(new Date(someTerm.term),Ext.Date.defaultFormat);
+                    });
+                }
             }
             if (!Ext.isEmpty(facet.terms)){
                 var newFacet = Ext.widget("fieldset", {title:facet.label, collapsible:true});
