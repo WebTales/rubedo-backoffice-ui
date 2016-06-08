@@ -380,7 +380,16 @@ Ext.define('Rubedo.controller.PagesController', {
             propEdit.removeAll();
             var configSpec = Ext.widget('ConfigSpecBloc');
 
-
+        var eventsConfig=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.csEvents);
+        if(!Ext.isEmpty(eventsConfig)){
+            if(Ext.isEmpty(component.configBloc.csEventConfig)){
+                component.configBloc.csEventConfig=Ext.clone(eventsConfig);
+            }
+            configSpec.add(Ext.create('Ext.grid.property.Grid', {
+            title: 'ClickStream events',
+            source: component.configBloc.csEventConfig
+        }));
+        }
 
             configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                 fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
