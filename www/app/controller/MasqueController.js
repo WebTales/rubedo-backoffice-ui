@@ -900,6 +900,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             if(Ext.isEmpty(component.configBloc.csEventConfig)){
                 component.configBloc.csEventConfig=Ext.clone(eventsConfig);
             }
+            Ext.applyIf(component.configBloc.csEventConfig,eventsConfig);
             configSpec.add(Ext.create('Ext.grid.property.Grid', {
             title: 'ClickStream events',
             source: component.configBloc.csEventConfig
