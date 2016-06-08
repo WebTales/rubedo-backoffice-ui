@@ -651,6 +651,20 @@ Ext.define('Rubedo.view.contributionPages', {
                                         {
                                             xtype: 'pagesECommerceFieldset',
                                             id: 'primaryPageECFS'
+                                        },
+                                        {
+                                            xtype: 'fieldset',
+                                            collapsed: true,
+                                            collapsible: true,
+                                            title: 'ClickStream',
+                                            items: [
+                                                {
+                                                    xtype: 'textfield',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'ClickStream event',
+                                                    name: 'clickStreamEvent'
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

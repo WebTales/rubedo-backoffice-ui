@@ -47,6 +47,9 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'title'
         },
         {
+            name: 'clickStreamEvent'
+        },
+        {
             name: 'description'
         },
         {

@@ -114,6 +114,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "clickStreamEvent"
+            },
+            "name": "MyField6",
+            "designerId": "5c47989d-9073-44e3-9538-57030f1a9f86"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "description"
             },
             "name": "MyField242",
