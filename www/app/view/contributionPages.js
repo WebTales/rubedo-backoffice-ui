@@ -656,12 +656,12 @@ Ext.define('Rubedo.view.contributionPages', {
                                             xtype: 'fieldset',
                                             collapsed: true,
                                             collapsible: true,
-                                            title: 'ClickStream',
+                                            title: 'Events',
                                             items: [
                                                 {
                                                     xtype: 'textfield',
                                                     anchor: '100%',
-                                                    fieldLabel: 'ClickStream event',
+                                                    fieldLabel: 'Page view',
                                                     name: 'clickStreamEvent'
                                                 }
                                             ]

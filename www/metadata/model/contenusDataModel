@@ -341,6 +341,19 @@
             },
             "name": "MyField326",
             "designerId": "8cda48e0-adbc-463b-9e6d-97b5fcf50b96"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "clickStreamEvent"
+            },
+            "name": "MyField7",
+            "designerId": "8a978ed2-e77f-4894-a374-aa52b18edbc5"
         }
     ]
 }

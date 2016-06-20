@@ -711,6 +711,14 @@
                                             "id": "96d08ae7-6132-4319-afd9-9d664f976f4d"
                                         }
                                     ]
+                                },
+                                {
+                                    "id": "9a49af38-5313-44b9-ac6e-07c1da5f5d08",
+                                    "cn": [
+                                        {
+                                            "id": "f7b4746f-5fec-44a9-b93e-9f2966bbf262"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -14944,6 +14952,9 @@
                 },
                 {
                     "id": "8cda48e0-adbc-463b-9e6d-97b5fcf50b96"
+                },
+                {
+                    "id": "8a978ed2-e77f-4894-a374-aa52b18edbc5"
                 }
             ]
         },
@@ -18460,21 +18471,23 @@
     },
     "tabState": {
         "openTabs": [
-            "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
             "de8dc629-dc89-4153-926c-012ddbaa1d57",
             "41d656a3-49d4-4a9c-ab7d-f13817e6085f",
             "da6ed701-29c3-4603-a441-221b8ebb99cf",
-            "b29235f7-9588-4632-b7ab-b0f2633b21ec"
+            "b29235f7-9588-4632-b7ab-b0f2633b21ec",
+            "b6ffe1bc-b42f-4987-9728-a2d2563012af",
+            "2a997cf3-fe50-4034-bc1b-61cbb5863c12",
+            "3895db21-6cb0-4c47-bbdb-6733b5e4684f"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "b6ffe1bc-b42f-4987-9728-a2d2563012af"
     },
     "inspectorState": {
-        "topInstance": "da6ed701-29c3-4603-a441-221b8ebb99cf",
-        "selectedInstance": "51ce778b-c530-48f5-a2d7-43f3b6482faf"
+        "topInstance": "b6ffe1bc-b42f-4987-9728-a2d2563012af",
+        "selectedInstance": "f7b4746f-5fec-44a9-b93e-9f2966bbf262"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": true
     }

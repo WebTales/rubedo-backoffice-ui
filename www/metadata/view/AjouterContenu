@@ -536,7 +536,7 @@
                                 "replicatorEntity": "contentReplicatorMainEntity",
                                 "specialContentsMode": true
                             },
-                            "name": "dlstoolbar",
+                            "name": "dlstoolbar1",
                             "designerId": "e3bc6e5d-bcca-43a3-9b68-d8e491bd7510",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
@@ -648,6 +648,37 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "Events"
+                            },
+                            "name": "MyFieldSet3",
+                            "designerId": "9a49af38-5313-44b9-ac6e-07c1da5f5d08",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Detail view",
+                                        "labelWidth": 200,
+                                        "layout|anchor": "100%",
+                                        "name": "clickStreamEvent"
+                                    },
+                                    "name": "MyTextField1",
+                                    "designerId": "f7b4746f-5fec-44a9-b93e-9f2966bbf262"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -740,7 +771,7 @@
                                 "name": "writeWorkspace",
                                 "store": "ContributeWorkspacesCombo"
                             },
-                            "name": "workspacecombo",
+                            "name": "workspacecombo1",
                             "designerId": "bbc94904-3819-435a-af3d-aa3906c4edd3",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         },
@@ -759,7 +790,7 @@
                                 "name": "target",
                                 "store": "WorkspacesComboWithAll"
                             },
-                            "name": "workspacecombo1",
+                            "name": "workspacecombo2",
                             "designerId": "a1e27865-898c-4d89-ab44-6f5e1f38bfac",
                             "masterInstanceId": "552c244b-b66b-4875-9d66-15bedb41fd64"
                         }

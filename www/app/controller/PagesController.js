@@ -387,7 +387,7 @@ Ext.define('Rubedo.controller.PagesController', {
             }
             Ext.applyIf(component.configBloc.csEventConfig,eventsConfig);
             configSpec.add(Ext.create('Ext.grid.property.Grid', {
-            title: 'ClickStream events',
+            title: 'Events',
             source: component.configBloc.csEventConfig
         }));
         }

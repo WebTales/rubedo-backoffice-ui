@@ -261,6 +261,19 @@ Ext.define('Rubedo.view.AjouterContenu', {
                                             name: 'endPublicationDate'
                                         }
                                     ]
+                                },
+                                {
+                                    xtype: 'fieldset',
+                                    title: 'Events',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Detail view',
+                                            labelWidth: 200,
+                                            name: 'clickStreamEvent'
+                                        }
+                                    ]
                                 }
                             ]
                         },

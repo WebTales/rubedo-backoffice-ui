@@ -110,6 +110,9 @@ Ext.define('Rubedo.model.contenusDataModel', {
         },
         {
             name: 'productProperties'
+        },
+        {
+            name: 'clickStreamEvent'
         }
     ]
 });

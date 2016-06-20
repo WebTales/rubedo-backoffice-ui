@@ -1323,7 +1323,7 @@
                                         "layout|anchor": "100%",
                                         "store": "ContributeWorkspacesCombo"
                                     },
-                                    "name": "workspacecombo",
+                                    "name": "workspacecombo3",
                                     "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
                                     "customConfigs": [
                                         {
@@ -1665,7 +1665,7 @@
                                     "userConfig": {
                                         "id": "primaryPageECFS"
                                     },
-                                    "name": "pagesecommercefieldset",
+                                    "name": "pagesecommercefieldset1",
                                     "designerId": "b676315a-f6d5-4d16-b32e-5d61c64fd581",
                                     "masterInstanceId": "84a70db4-eb10-4d76-81cc-006305b2ab59"
                                 },
@@ -1679,7 +1679,7 @@
                                     "userConfig": {
                                         "collapsed": true,
                                         "collapsible": true,
-                                        "title": "ClickStream"
+                                        "title": "Events"
                                     },
                                     "name": "MyFieldSet2",
                                     "designerId": "94489174-0c95-48e7-b0f6-5ae87e4e3a4c",
@@ -1692,7 +1692,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fieldLabel": "ClickStream event",
+                                                "fieldLabel": "Page view",
                                                 "layout|anchor": "100%",
                                                 "name": "clickStreamEvent"
                                             },
@@ -1715,7 +1715,7 @@
                                 "id": "pagesDLSToolbar",
                                 "replicatorEntity": "pagesLocProps"
                             },
-                            "name": "dlstoolbar",
+                            "name": "dlstoolbar2",
                             "designerId": "0ec7c46e-d600-4a9a-ab2a-0a1fc967b8d6",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
