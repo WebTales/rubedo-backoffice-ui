@@ -34,7 +34,7 @@ Ext.define('Rubedo.store.QueriesStore', {
             autoSync: true,
             model: 'Rubedo.model.queryDataModel',
             storeId: 'QueriesStore',
-            pageSize: 1000,
+            pageSize: 100000,
             proxy: {
                 type: 'ajax',
                 api: {
