@@ -185,15 +185,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.pages",
+                        "disabled": true,
                         "icon": null,
                         "iconAlign": "top",
-                        "iconCls": "add_big",
+                        "iconCls": "applications_big",
                         "id": "addPageBtn1",
                         "itemId": null,
                         "layout|flex": null,
-                        "localiserId": null,
+                        "localiserId": "duplicateBtn",
                         "scale": "large",
-                        "text": "Copy"
+                        "text": "Copier"
                     },
                     "name": "MyButton",
                     "designerId": "27ffb4b7-f436-4e5f-a281-568100cf64a7",
@@ -243,8 +244,6 @@
                                     "});",
                                     "newPage.expandable=false;",
                                     "newPage.orderValue=target.lastChild.get(\"orderValue\")+100;",
-                                    "console.log(newPage);",
-                                    "console.log(\"test\");",
                                     "target.appendChild(newPage);"
                                 ],
                                 "name": "click",

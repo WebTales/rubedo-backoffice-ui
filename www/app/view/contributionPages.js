@@ -118,11 +118,13 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.pages',
+                            localiserId: 'duplicateBtn',
+                            disabled: true,
                             id: 'addPageBtn1',
                             iconAlign: 'top',
-                            iconCls: 'add_big',
+                            iconCls: 'applications_big',
                             scale: 'large',
-                            text: 'Copy',
+                            text: 'Copier',
                             listeners: {
                                 click: {
                                     fn: me.onAddPageBtn1Click,
@@ -792,8 +794,6 @@ Ext.define('Rubedo.view.contributionPages', {
         });
         newPage.expandable=false;
         newPage.orderValue=target.lastChild.get("orderValue")+100;
-        console.log(newPage);
-        console.log("test");
         target.appendChild(newPage);
     },
 

@@ -195,6 +195,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 metaBox.update(values);
                 metaBox.show();
                 Ext.getCmp("addPageBtn").enable();
+            Ext.getCmp("addPageBtn1").enable();
             Ext.getCmp("pagesTaxoForm").getForm().reset();
             var pageTaxo=Ext.clone(record.get("taxonomy"));
             if (Ext.isEmpty(pageTaxo)){
@@ -205,6 +206,7 @@ Ext.define('Rubedo.controller.PagesController', {
                 if((!ACL.interfaceRights["write.ui.pages"])||(record.get("readOnly"))){
                     Ext.getCmp("removePageBtn").disable();
                     Ext.getCmp("addPageBtn").disable();
+                    Ext.getCmp("addPageBtn1").disable();
                     Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[0].disable();
                     Ext.getCmp("contributionPages").getComponent("contextBar").query("buttongroup")[2].disable();
                     Ext.Array.forEach(Ext.getCmp("mainPageAttributeForm").query("field"), function(field){
@@ -983,6 +985,7 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("newPageBloc").disable();
         Ext.getCmp("deletePageElement").disable();
         Ext.getCmp("addPageBtn").disable();
+        Ext.getCmp("addPageBtn1").disable();
         Ext.getCmp("pageElementUp").disable();
         Ext.getCmp("pageElementDown").disable();
         Ext.getCmp('pageElementPropsPanel').removeAll();
