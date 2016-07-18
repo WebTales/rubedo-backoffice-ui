@@ -185,6 +185,85 @@
                     "codeClass": null,
                     "userConfig": {
                         "ACL": "write.ui.pages",
+                        "icon": null,
+                        "iconAlign": "top",
+                        "iconCls": "add_big",
+                        "id": "addPageBtn1",
+                        "itemId": null,
+                        "layout|flex": null,
+                        "localiserId": null,
+                        "scale": "large",
+                        "text": "Copy"
+                    },
+                    "name": "MyButton",
+                    "designerId": "27ffb4b7-f436-4e5f-a281-568100cf64a7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddPageBtn1Click",
+                                "implHandler": [
+                                    "var currentPage=Ext.getCmp(\"mainPageTree\").getSelectionModel().getLastSelected();",
+                                    "var target=currentPage.parentNode;",
+                                    "var newPage=Ext.clone(currentPage.raw);",
+                                    "delete(newPage.id);",
+                                    "delete(newPage.version);",
+                                    "delete(newPage.createUser);",
+                                    "delete(newPage.createTime);",
+                                    "delete(newPage.lastUpdateUser);",
+                                    "delete(newPage.lastUpdateTime);",
+                                    "delete(newPage.orderValue);",
+                                    "newPage.pageURL=newPage.pageURL+\"-copy\";",
+                                    "newPage.text=newPage.text+\"-copy\";",
+                                    "newPage.title=newPage.title+\"-copy\";",
+                                    "Ext.Object.each(newPage.i18n,function(key,value){",
+                                    "    value.pageURL=value.pageURL+\"-copy\";",
+                                    "    value.text=value.text+\"-copy\";",
+                                    "    value.title=value.title+\"-copy\";",
+                                    "});",
+                                    "Ext.Array.forEach(newPage.blocks,function(block){",
+                                    "    delete(block.id);",
+                                    "});",
+                                    "newPage.expandable=false;",
+                                    "newPage.orderValue=target.lastChild.get(\"orderValue\")+100;",
+                                    "console.log(newPage);",
+                                    "console.log(\"test\");",
+                                    "target.appendChild(newPage);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAddPageBtn1Click",
+                            "designerId": "41d377cf-cdb7-4fa1-9dea-46537609d996"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ACL": "write.ui.pages",
                         "disabled": true,
                         "icon": null,
                         "iconAlign": "top",
@@ -1323,7 +1402,7 @@
                                         "layout|anchor": "100%",
                                         "store": "ContributeWorkspacesCombo"
                                     },
-                                    "name": "workspacecombo2",
+                                    "name": "workspacecombo",
                                     "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
                                     "customConfigs": [
                                         {
@@ -1715,7 +1794,7 @@
                                 "id": "pagesDLSToolbar",
                                 "replicatorEntity": "pagesLocProps"
                             },
-                            "name": "dlstoolbar1",
+                            "name": "dlstoolbar",
                             "designerId": "0ec7c46e-d600-4a9a-ab2a-0a1fc967b8d6",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }

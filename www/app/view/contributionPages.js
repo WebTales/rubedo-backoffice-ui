@@ -118,6 +118,21 @@ Ext.define('Rubedo.view.contributionPages', {
                         {
                             xtype: 'button',
                             ACL: 'write.ui.pages',
+                            id: 'addPageBtn1',
+                            iconAlign: 'top',
+                            iconCls: 'add_big',
+                            scale: 'large',
+                            text: 'Copy',
+                            listeners: {
+                                click: {
+                                    fn: me.onAddPageBtn1Click,
+                                    scope: me
+                                }
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            ACL: 'write.ui.pages',
                             localiserId: 'removeBtn',
                             disabled: true,
                             id: 'removePageBtn',
@@ -751,6 +766,35 @@ Ext.define('Rubedo.view.contributionPages', {
                                         '<b>{text}</b> </br> <b>'+Rubedo.RubedoAutomatedElementsLoc.creationText+' : </b> {creation} <b>'+Rubedo.RubedoAutomatedElementsLoc.lastUpdateText+' : </b> {derniereModification} <b>'+Rubedo.RubedoAutomatedElementsLoc.authorText+' : </b> {createUser}  <b>'+Rubedo.RubedoAutomatedElementsLoc.versionText+' : </b>{version}'
                                     ];
         return config;
+    },
+
+    onAddPageBtn1Click: function(button, e, eOpts) {
+        var currentPage=Ext.getCmp("mainPageTree").getSelectionModel().getLastSelected();
+        var target=currentPage.parentNode;
+        var newPage=Ext.clone(currentPage.raw);
+        delete(newPage.id);
+        delete(newPage.version);
+        delete(newPage.createUser);
+        delete(newPage.createTime);
+        delete(newPage.lastUpdateUser);
+        delete(newPage.lastUpdateTime);
+        delete(newPage.orderValue);
+        newPage.pageURL=newPage.pageURL+"-copy";
+        newPage.text=newPage.text+"-copy";
+        newPage.title=newPage.title+"-copy";
+        Ext.Object.each(newPage.i18n,function(key,value){
+            value.pageURL=value.pageURL+"-copy";
+            value.text=value.text+"-copy";
+            value.title=value.title+"-copy";
+        });
+        Ext.Array.forEach(newPage.blocks,function(block){
+            delete(block.id);
+        });
+        newPage.expandable=false;
+        newPage.orderValue=target.lastChild.get("orderValue")+100;
+        console.log(newPage);
+        console.log("test");
+        target.appendChild(newPage);
     },
 
     onPageSaveBtnAfterRender: function(component, eOpts) {
