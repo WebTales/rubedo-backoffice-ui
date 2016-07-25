@@ -187,9 +187,16 @@ Ext.define('Rubedo.view.SystemSettingsInterface', {
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
-                                            fieldLabel: 'Sender',
+                                            fieldLabel: 'Sender address',
                                             labelWidth: 200,
                                             name: 'fromEmailNotification'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Sender name',
+                                            labelWidth: 200,
+                                            name: 'fromEmailNotificationName'
                                         }
                                     ]
                                 }

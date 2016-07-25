@@ -89,7 +89,7 @@
             "userConfig": {
                 "layout|flex": null
             },
-            "name": "mytool171",
+            "name": "mytool17",
             "designerId": "c2131b98-e61e-49ad-8043-af3f62abf4cc",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -367,13 +367,29 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fieldLabel": "Sender",
+                                        "fieldLabel": "Sender address",
                                         "labelWidth": 200,
                                         "layout|anchor": "100%",
                                         "name": "fromEmailNotification"
                                     },
                                     "name": "MyTextField1",
                                     "designerId": "4074bd7d-36fd-44a8-841a-f304babac261"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Sender name",
+                                        "labelWidth": 200,
+                                        "layout|anchor": "100%",
+                                        "name": "fromEmailNotificationName"
+                                    },
+                                    "name": "MyTextField6",
+                                    "designerId": "7c68ea32-c024-4b29-a23d-86527a56062d"
                                 }
                             ]
                         }
