@@ -97,11 +97,19 @@
                 "boxLabel": "",
                 "fieldLabel": "Open in new tab",
                 "layout|anchor": "100%",
+                "localiserId": "urlFieldOption",
                 "name": "openInNewWindow",
                 "submitValue": false
             },
             "name": "MyCheckbox",
-            "designerId": "75277f4b-e80d-4ec3-b4c3-5ba64bd01760"
+            "designerId": "75277f4b-e80d-4ec3-b4c3-5ba64bd01760",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
         }
     ]
 }

@@ -185,6 +185,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                         {
                             xtype: 'buttongroup',
                             ACL: 'write.ui.users',
+                            localiserId: 'signUpModerationBtnGroup',
                             disabled: true,
                             hidden: true,
                             id: 'usersSignUpModeration',
@@ -195,6 +196,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.users',
+                                    localiserId: 'approveSignUpBtn',
                                     id: 'approveSignUpBtn',
                                     iconAlign: 'top',
                                     iconCls: 'accept_big',
@@ -204,6 +206,7 @@ Ext.define('Rubedo.view.UsersInterface', {
                                 {
                                     xtype: 'button',
                                     ACL: 'write.ui.users',
+                                    localiserId: 'denySignUpBtn',
                                     id: 'denySignUpBtn',
                                     iconAlign: 'top',
                                     iconCls: 'nonS',

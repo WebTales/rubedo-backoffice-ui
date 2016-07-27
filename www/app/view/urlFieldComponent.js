@@ -56,6 +56,7 @@ Ext.define('Rubedo.view.urlFieldComponent', {
                 {
                     xtype: 'checkboxfield',
                     anchor: '100%',
+                    localiserId: 'urlFieldOption',
                     fieldLabel: 'Open in new tab',
                     name: 'openInNewWindow',
                     submitValue: false,

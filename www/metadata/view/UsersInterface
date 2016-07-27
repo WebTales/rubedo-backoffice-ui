@@ -424,6 +424,7 @@
                         "hidden": true,
                         "id": "usersSignUpModeration",
                         "layout|flex": null,
+                        "localiserId": "signUpModerationBtnGroup",
                         "title": "Sign-up moderation"
                     },
                     "name": "MyButtonGroup22",
@@ -432,6 +433,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -448,6 +454,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "accept_big",
                                 "id": "approveSignUpBtn",
+                                "localiserId": "approveSignUpBtn",
                                 "scale": "large",
                                 "text": "Approve"
                             },
@@ -457,6 +464,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
@@ -473,6 +485,7 @@
                                 "iconAlign": "top",
                                 "iconCls": "nonS",
                                 "id": "denySignUpBtn",
+                                "localiserId": "denySignUpBtn",
                                 "scale": "large",
                                 "text": "Deny"
                             },
@@ -482,6 +495,11 @@
                                 {
                                     "group": "(Custom Properties)",
                                     "name": "ACL",
+                                    "type": "string"
+                                },
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
                                     "type": "string"
                                 }
                             ]
