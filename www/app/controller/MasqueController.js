@@ -1036,21 +1036,21 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             });
             categories.push({
-                    categorie:"Behaviour",
-                    isAdv:true,
-                    champs:[
-                        {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "config": {
-                                        "fieldLabel": "Render only in modal",
-                                        "name": "renderAsEventModal",
-                                        "inputValue": true
-                                    }
-                                }
+                categorie:"Behaviour",
+                isAdv:true,
+                champs:[
+                    {
+                        "type": "Ext.form.field.Checkbox",
+                        "config": {
+                            "fieldLabel": "Render only in modal",
+                            "name": "renderAsEventModal",
+                            "inputValue": true
+                        }
+                    }
 
-                    ]
+                ]
 
-                });
+            });
             for (j=0; j<categories.length; j++){
                 var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
                 nCateg.isAdv=categories[j].isAdv;

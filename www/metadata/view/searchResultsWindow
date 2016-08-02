@@ -361,7 +361,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool162",
+            "name": "mytool16",
             "designerId": "e2a3863b-0d18-42a3-ace3-b1c83d8bdde2",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -372,7 +372,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool173",
+            "name": "mytool17",
             "designerId": "3817e883-13c7-41a2-86d5-0ea327a084eb",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -998,7 +998,19 @@
                     "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-product';",
                     "    Ext.getStore(\"ESFacetteStore\").load();",
                     "",
-                    "} else if (component.userQueryMode){",
+                    "} else if (component.contentQueryMode){",
+                    "    component.modal=true;",
+                    "    component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esQueryText);",
+                    "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };",
+                    "    Ext.getCmp(\"ESFavBtn\").hide();",
+                    "    Ext.getCmp(\"saveGeoQueryBtn\").show();",
+                    "    if (!Ext.isEmpty(component.predefFacettes)){",
+                    "        Ext.getStore(\"ESFacetteStore\").activeFacettes=component.predefFacettes;",
+                    "    }",
+                    "    Ext.getStore(\"ESFacetteStore\").getProxy().api.read='elastic-search-content';",
+                    "    Ext.getStore(\"ESFacetteStore\").load();",
+                    "",
+                    "}else if (component.userQueryMode){",
                     "    component.modal=true;",
                     "    component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esDAMQueryText);",
                     "    Ext.getStore(\"ESFacetteStore\").activeFacettes={ };",

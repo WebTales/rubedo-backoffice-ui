@@ -80,6 +80,7 @@ Ext.define('Rubedo.view.ESQfield', {
                 Ext.widget("searchResultsWindow", {
                     queryMode:component.queryMode,
                     productQueryMode:component.productQueryMode,
+                    contentQueryMode:component.contentQueryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
                     advancedESQMode:component.advancedESQMode,
@@ -115,6 +116,7 @@ Ext.define('Rubedo.view.ESQfield', {
                 Ext.widget("searchResultsWindow", {
                     queryMode:component.queryMode,
                     productQueryMode:component.productQueryMode,
+                    contentQueryMode:component.contentQueryMode,
                     userQueryMode:component.userQueryMode,
                     geoQueryMode:component.geoQueryMode,
                     advancedESQMode:component.advancedESQMode,

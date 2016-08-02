@@ -518,7 +518,19 @@ Ext.define('Rubedo.view.searchResultsWindow', {
             Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-product';
             Ext.getStore("ESFacetteStore").load();
 
-        } else if (component.userQueryMode){
+        } else if (component.contentQueryMode){
+            component.modal=true;
+            component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esQueryText);
+            Ext.getStore("ESFacetteStore").activeFacettes={ };
+            Ext.getCmp("ESFavBtn").hide();
+            Ext.getCmp("saveGeoQueryBtn").show();
+            if (!Ext.isEmpty(component.predefFacettes)){
+                Ext.getStore("ESFacetteStore").activeFacettes=component.predefFacettes;
+            }
+            Ext.getStore("ESFacetteStore").getProxy().api.read='elastic-search-content';
+            Ext.getStore("ESFacetteStore").load();
+
+        }else if (component.userQueryMode){
             component.modal=true;
             component.setTitle(Rubedo.RubedoAutomatedElementsLoc.esDAMQueryText);
             Ext.getStore("ESFacetteStore").activeFacettes={ };
