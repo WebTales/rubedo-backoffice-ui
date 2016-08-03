@@ -1551,91 +1551,91 @@
                                             "userConfig": {
                                                 "fn": "onMainPageAttributeFormRender",
                                                 "implHandler": [
-                                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {\r",
-                                                    "    store:[],\r",
-                                                    "    anchor:\"100%\",\r",
-                                                    "    name:\"keywords\",\r",
-                                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.keywordsText,\r",
-                                                    "    localiserId:\"keywordsField\",\r",
-                                                    "    multiSelect:true,\r",
-                                                    "    forceSelection:false,\r",
-                                                    "    createNewOnEnter:true,\r",
-                                                    "    hideTrigger:true,\r",
-                                                    "    triggerOnClick:false,\r",
-                                                    "    createNewOnBlur:true,\r",
-                                                    "    pinList:false\r",
-                                                    "});\r",
-                                                    "component.add(tagPicker);"
+                                                    "var tagPicker = Ext.create(\"Ext.ux.form.field.BoxSelect\", {",
+                                                    "    store:[],",
+                                                    "    anchor:\"100%\",",
+                                                    "    name:\"keywords\",",
+                                                    "    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.keywordsText,",
+                                                    "    localiserId:\"keywordsField\",",
+                                                    "    multiSelect:true,",
+                                                    "    forceSelection:false,",
+                                                    "    createNewOnEnter:true,",
+                                                    "    hideTrigger:true,",
+                                                    "    triggerOnClick:false,",
+                                                    "    createNewOnBlur:true,",
+                                                    "    pinList:false",
+                                                    "});",
+                                                    "component.insert(2,tagPicker);"
                                                 ],
                                                 "name": "render",
                                                 "scope": "me"
                                             },
                                             "name": "onMainPageAttributeFormRender",
                                             "designerId": "800082df-9b24-4cad-826f-5f4633bf953a"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.FieldSet",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "collapsed": true,
-                                        "collapsible": true,
-                                        "localiserId": "robotFieldset",
-                                        "title": "Robot"
-                                    },
-                                    "name": "MyFieldSet14",
-                                    "designerId": "2451b9c3-1c8f-400e-8cdd-d3388099e97a",
-                                    "customConfigs": [
+                                        },
                                         {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
-                                        {
-                                            "type": "processcfgfunction",
+                                            "type": "Ext.form.FieldSet",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "fn": "processRobot",
-                                                "implHandler": [
-                                                    "config.items=[\r",
-                                                    "{\r",
-                                                    "    xtype: 'checkboxfield',\r",
-                                                    "    anchor: '100%',\r",
-                                                    "    fieldLabel: 'noindex',\r",
-                                                    "    name: 'noIndex',\r",
-                                                    "    boxLabel: '',\r",
-                                                    "    inputValue: 'true',\r",
-                                                    "    uncheckedValue: 'false'\r",
-                                                    "},\r",
-                                                    "{\r",
-                                                    "    xtype: 'checkboxfield',\r",
-                                                    "    anchor: '100%',\r",
-                                                    "    fieldLabel: 'nofollow',\r",
-                                                    "    name: 'noFollow',\r",
-                                                    "    boxLabel: '',\r",
-                                                    "    inputValue: 'true',\r",
-                                                    "    uncheckedValue: 'false'\r",
-                                                    "}\r",
-                                                    "];\r",
-                                                    "return config;"
-                                                ]
+                                                "collapsed": true,
+                                                "collapsible": true,
+                                                "localiserId": "robotFieldset",
+                                                "title": "Robot"
                                             },
-                                            "name": "processRobot",
-                                            "designerId": "ea705ddd-c33b-45d6-86a5-98c7c4764fea"
+                                            "name": "MyFieldSet14",
+                                            "designerId": "2451b9c3-1c8f-400e-8cdd-d3388099e97a",
+                                            "customConfigs": [
+                                                {
+                                                    "group": "(Custom Properties)",
+                                                    "name": "localiserId",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "cn": [
+                                                {
+                                                    "type": "processcfgfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "config"
+                                                        ],
+                                                        "fn": "processRobot",
+                                                        "implHandler": [
+                                                            "config.items=[\r",
+                                                            "{\r",
+                                                            "    xtype: 'checkboxfield',\r",
+                                                            "    anchor: '100%',\r",
+                                                            "    fieldLabel: 'noindex',\r",
+                                                            "    name: 'noIndex',\r",
+                                                            "    boxLabel: '',\r",
+                                                            "    inputValue: 'true',\r",
+                                                            "    uncheckedValue: 'false'\r",
+                                                            "},\r",
+                                                            "{\r",
+                                                            "    xtype: 'checkboxfield',\r",
+                                                            "    anchor: '100%',\r",
+                                                            "    fieldLabel: 'nofollow',\r",
+                                                            "    name: 'noFollow',\r",
+                                                            "    boxLabel: '',\r",
+                                                            "    inputValue: 'true',\r",
+                                                            "    uncheckedValue: 'false'\r",
+                                                            "}\r",
+                                                            "];\r",
+                                                            "return config;"
+                                                        ]
+                                                    },
+                                                    "name": "processRobot",
+                                                    "designerId": "ea705ddd-c33b-45d6-86a5-98c7c4764fea"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },

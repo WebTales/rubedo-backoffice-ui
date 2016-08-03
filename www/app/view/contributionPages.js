@@ -631,7 +631,14 @@ Ext.define('Rubedo.view.contributionPages', {
                                                     fieldLabel: 'Description ',
                                                     name: 'description',
                                                     maxLength: 250
-                                                }
+                                                },
+                                                me.processRobot({
+                                                    xtype: 'fieldset',
+                                                    localiserId: 'robotFieldset',
+                                                    collapsed: true,
+                                                    collapsible: true,
+                                                    title: 'Robot'
+                                                })
                                             ],
                                             listeners: {
                                                 render: {
@@ -640,13 +647,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                                 }
                                             }
                                         },
-                                        me.processRobot({
-                                            xtype: 'fieldset',
-                                            localiserId: 'robotFieldset',
-                                            collapsed: true,
-                                            collapsible: true,
-                                            title: 'Robot'
-                                        }),
                                         me.processUX({
                                             xtype: 'fieldset',
                                             collapsed: true,
@@ -884,7 +884,7 @@ Ext.define('Rubedo.view.contributionPages', {
             createNewOnBlur:true,
             pinList:false
         });
-        component.add(tagPicker);
+        component.insert(2,tagPicker);
     },
 
     onFieldsetAfterRender: function(component, eOpts) {
