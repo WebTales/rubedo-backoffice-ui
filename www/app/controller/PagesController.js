@@ -382,6 +382,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 propEdit.setIconCls('editBloc');
                 propEdit.removeAll();
                 var configSpec = Ext.widget('ConfigSpecBloc');
+
+                if(ACL.interfaceRights["exe.ui.personalization"]){
                 var persoTab=Ext.widget("panel",{
                     title:"Personalization"
                 });
@@ -416,6 +418,8 @@ Ext.define('Rubedo.controller.PagesController', {
                 }));
                 persoTab.add(fset);
                 configSpec.add(persoTab);
+                }
+
                 configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                     fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
                     labelWidth:60,

@@ -694,9 +694,19 @@ Ext.define('Rubedo.view.contributionPages', {
                         },
                         {
                             xtype: 'form',
+                            ACL: 'exe.ui.personalization',
                             id: 'pagesPersoForm',
                             bodyPadding: 10,
                             title: 'Personalization',
+                            tabConfig: {
+                                xtype: 'tab',
+                                listeners: {
+                                    beforerender: {
+                                        fn: me.onTabBeforeRender,
+                                        scope: me
+                                    }
+                                }
+                            },
                             items: [
                                 me.processPhilters({
                                     xtype: 'fieldset',
@@ -716,7 +726,13 @@ Ext.define('Rubedo.view.contributionPages', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                beforerender: {
+                                    fn: me.onPagesPersoFormBeforeRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ],
                     listeners: {
@@ -1061,6 +1077,18 @@ Ext.define('Rubedo.view.contributionPages', {
                 });
             }
         });
+    },
+
+    onTabBeforeRender: function(component, eOpts) {
+        if(!ACL.interfaceRights["exe.ui.personalization"]){
+            component.hide();
+        }
+    },
+
+    onPagesPersoFormBeforeRender: function(component, eOpts) {
+        if(!ACL.interfaceRights["exe.ui.personalization"]){
+            component.hide();
+        }
     },
 
     onImageRender1: function(component, eOpts) {

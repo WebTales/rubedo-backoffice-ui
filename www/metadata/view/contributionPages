@@ -1949,12 +1949,20 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "ACL": "exe.ui.personalization",
                         "bodyPadding": 10,
                         "id": "pagesPersoForm",
                         "title": "Personalization"
                     },
                     "name": "MyForm1",
                     "designerId": "021fbe3c-d702-438c-b29c-4402aaef3fc2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "ACL",
+                            "type": "string"
+                        }
+                    ],
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -1964,7 +1972,29 @@
                             },
                             "codeClass": null,
                             "name": "TabConfig3",
-                            "designerId": "a2554703-2ca3-46e1-bdff-e1e0fdd2f80e"
+                            "designerId": "a2554703-2ca3-46e1-bdff-e1e0fdd2f80e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTabBeforeRender",
+                                        "implHandler": [
+                                            "if(!ACL.interfaceRights[\"exe.ui.personalization\"]){",
+                                            "    component.hide();",
+                                            "}"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTabBeforeRender",
+                                    "designerId": "2d2a5cb6-bc74-47a3-9003-cce54e3e4a36"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.FieldSet",
@@ -2048,6 +2078,26 @@
                                     "designerId": "8bb8bb35-42b8-4e33-808c-831155f240f4"
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPagesPersoFormBeforeRender",
+                                "implHandler": [
+                                    "if(!ACL.interfaceRights[\"exe.ui.personalization\"]){",
+                                    "    component.hide();",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onPagesPersoFormBeforeRender",
+                            "designerId": "4fde29ce-4440-44a2-a746-c7188e5efe06"
                         }
                     ]
                 }
