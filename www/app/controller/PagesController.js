@@ -381,19 +381,40 @@ Ext.define('Rubedo.controller.PagesController', {
                 propEdit.setIconCls('editBloc');
                 propEdit.removeAll();
                 var configSpec = Ext.widget('ConfigSpecBloc');
-
+                var persoTab=Ext.widget("panel",{
+                    title:"Personalization"
+                });
                 var eventsConfig=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.csEvents);
                 if(!Ext.isEmpty(eventsConfig)){
                     if(Ext.isEmpty(component.configBloc.csEventConfig)){
                         component.configBloc.csEventConfig=Ext.clone(eventsConfig);
                     }
                     Ext.applyIf(component.configBloc.csEventConfig,eventsConfig);
-                    configSpec.add(Ext.create('Ext.grid.property.Grid', {
+                    persoTab.add(Ext.create('Ext.grid.property.Grid', {
                         title: 'Events',
                         source: component.configBloc.csEventConfig
                     }));
                 }
+                var fset=Ext.widget("fieldset",{
+                    title:"Behaviour",
+                    margin:10,
+                    layout:"anchor"
+                });
+                fset.add(Ext.widget('checkbox',{
+                    fieldLabel:"Render only as modal",
+                    onChange:function(){
 
+                        component.configBloc.renderAsEventModal=this.getValue();
+
+                    },
+                    labelWidth:120,
+                    inputValue:true,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    checked:component.configBloc.renderAsEventModal
+                }));
+                persoTab.add(fset);
+                configSpec.add(persoTab);
                 configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
                     fieldLabel:Rubedo.RubedoAutomatedElementsLoc.titleText,
                     labelWidth:60,
@@ -526,22 +547,6 @@ Ext.define('Rubedo.controller.PagesController', {
 
                 });
 
-                categories.push({
-                    categorie:"Behaviour",
-                    isAdv:true,
-                    champs:[
-                        {
-                            "type": "Ext.form.field.Checkbox",
-                            "config": {
-                                "fieldLabel": "Render only in modal",
-                                "name": "renderAsEventModal",
-                                "inputValue": true
-                            }
-                        }
-
-                    ]
-
-                });
 
                 for (j=0; j<categories.length; j++){
                     var nCateg = Ext.create('Ext.form.FieldSet', {title: categories[j].categorie, collapsible:true, layout: 'anchor'});
