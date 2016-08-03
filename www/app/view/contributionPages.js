@@ -647,12 +647,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                                 }
                                             }
                                         },
-                                        me.processUX({
-                                            xtype: 'fieldset',
-                                            collapsed: true,
-                                            collapsible: true,
-                                            title: 'UX'
-                                        }),
                                         {
                                             xtype: 'fieldset',
                                             collapsed: true,
@@ -668,20 +662,6 @@ Ext.define('Rubedo.view.contributionPages', {
                                         {
                                             xtype: 'pagesECommerceFieldset',
                                             id: 'primaryPageECFS'
-                                        },
-                                        {
-                                            xtype: 'fieldset',
-                                            collapsed: true,
-                                            collapsible: true,
-                                            title: 'Events',
-                                            items: [
-                                                {
-                                                    xtype: 'textfield',
-                                                    anchor: '100%',
-                                                    fieldLabel: 'Page view',
-                                                    name: 'clickStreamEvent'
-                                                }
-                                            ]
                                         }
                                     ]
                                 }
@@ -711,6 +691,32 @@ Ext.define('Rubedo.view.contributionPages', {
                                     scope: me
                                 }
                             }
+                        },
+                        {
+                            xtype: 'form',
+                            id: 'pagesPersoForm',
+                            bodyPadding: 10,
+                            title: 'Personalization',
+                            items: [
+                                me.processPhilters({
+                                    xtype: 'fieldset',
+                                    collapsible: true,
+                                    title: 'Philters'
+                                }),
+                                {
+                                    xtype: 'fieldset',
+                                    collapsible: true,
+                                    title: 'Events',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Page view',
+                                            name: 'clickStreamEvent'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     listeners: {
@@ -750,12 +756,12 @@ Ext.define('Rubedo.view.contributionPages', {
         return config;
     },
 
-    processUX: function(config) {
+    processPhilters: function(config) {
         config.items=[
         {
             xtype: 'ACEField',
             anchor: '100%',
-            fieldLabel: 'Instructions',
+            fieldLabel: 'Philters',
             name: 'UXInstructions',
             textMode:true
         }

@@ -1649,59 +1649,6 @@
                                     "userConfig": {
                                         "collapsed": true,
                                         "collapsible": true,
-                                        "localiserId": null,
-                                        "title": "UX"
-                                    },
-                                    "name": "MyFieldSet1",
-                                    "designerId": "f33e4931-0aa4-4778-b0d5-1c1d2567fc74",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "localiserId",
-                                            "type": "string"
-                                        }
-                                    ],
-                                    "cn": [
-                                        {
-                                            "type": "processcfgfunction",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|params": [
-                                                    "config"
-                                                ],
-                                                "fn": "processUX",
-                                                "implHandler": [
-                                                    "config.items=[",
-                                                    "{",
-                                                    "    xtype: 'ACEField',",
-                                                    "    anchor: '100%',",
-                                                    "    fieldLabel: 'Instructions',",
-                                                    "    name: 'UXInstructions',",
-                                                    "    textMode:true",
-                                                    "}",
-                                                    "];",
-                                                    "return config;"
-                                                ]
-                                            },
-                                            "name": "processUX",
-                                            "designerId": "7d7c62a5-998d-445a-aeb2-125172fac067"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.form.FieldSet",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "collapsed": true,
-                                        "collapsible": true,
                                         "minHeight": null,
                                         "title": "Rich text"
                                     },
@@ -1746,38 +1693,6 @@
                                     "name": "pagesecommercefieldset",
                                     "designerId": "b676315a-f6d5-4d16-b32e-5d61c64fd581",
                                     "masterInstanceId": "84a70db4-eb10-4d76-81cc-006305b2ab59"
-                                },
-                                {
-                                    "type": "Ext.form.FieldSet",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "collapsed": true,
-                                        "collapsible": true,
-                                        "title": "Events"
-                                    },
-                                    "name": "MyFieldSet2",
-                                    "designerId": "94489174-0c95-48e7-b0f6-5ae87e4e3a4c",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.form.field.Text",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "fieldLabel": "Page view",
-                                                "layout|anchor": "100%",
-                                                "name": "clickStreamEvent"
-                                            },
-                                            "name": "MyTextField",
-                                            "designerId": "8bb8bb35-42b8-4e33-808c-831155f240f4"
-                                        }
-                                    ]
                                 }
                             ]
                         },
@@ -2023,6 +1938,116 @@
                             },
                             "name": "onFormAdded",
                             "designerId": "48dd0606-2a12-4ded-b136-5b001fd24a11"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "id": "pagesPersoForm",
+                        "title": "Personalization"
+                    },
+                    "name": "MyForm1",
+                    "designerId": "021fbe3c-d702-438c-b29c-4402aaef3fc2",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig3",
+                            "designerId": "a2554703-2ca3-46e1-bdff-e1e0fdd2f80e"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapsible": true,
+                                "localiserId": null,
+                                "title": "Philters"
+                            },
+                            "name": "MyFieldSet1",
+                            "designerId": "f33e4931-0aa4-4778-b0d5-1c1d2567fc74",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processPhilters",
+                                        "implHandler": [
+                                            "config.items=[",
+                                            "{",
+                                            "    xtype: 'ACEField',",
+                                            "    anchor: '100%',",
+                                            "    fieldLabel: 'Philters',",
+                                            "    name: 'UXInstructions',",
+                                            "    textMode:true",
+                                            "}",
+                                            "];",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processPhilters",
+                                    "designerId": "7d7c62a5-998d-445a-aeb2-125172fac067"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "collapsible": true,
+                                "title": "Events"
+                            },
+                            "name": "MyFieldSet2",
+                            "designerId": "94489174-0c95-48e7-b0f6-5ae87e4e3a4c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Page view",
+                                        "layout|anchor": "100%",
+                                        "name": "clickStreamEvent"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "8bb8bb35-42b8-4e33-808c-831155f240f4"
+                                }
+                            ]
                         }
                     ]
                 }

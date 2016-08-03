@@ -203,6 +203,7 @@ Ext.define('Rubedo.controller.PagesController', {
 
             }
             Ext.getCmp("pagesTaxoForm").getForm().setValues(pageTaxo);
+            Ext.getCmp("pagesPersoForm").getForm().setValues(Ext.clone(record.getData()));
                 if((!ACL.interfaceRights["write.ui.pages"])||(record.get("readOnly"))){
                     Ext.getCmp("removePageBtn").disable();
                     Ext.getCmp("addPageBtn").disable();
@@ -689,6 +690,7 @@ Ext.define('Rubedo.controller.PagesController', {
             store.suspendAutoSync();
             editedPage.beginEdit();
             editedPage.set("blocks",newBlocks);
+            editedPage.set(Ext.getCmp("pagesPersoForm").getForm().getFieldValues());
             editedPage.set(Ext.getCmp("mainPageAttributeForm").getForm().getFieldValues());
             editedPage.set("taxonomy",newTaxo);
             Ext.getCmp("pagesDLSToolbar").persisti18n(editedPage);
@@ -1018,6 +1020,8 @@ Ext.define('Rubedo.controller.PagesController', {
         Ext.getCmp("pageMaskDisplayBtn").hide();
         Ext.getCmp("mainPageAttributeForm").getForm().setValues();
         Ext.getCmp("mainPageAttributeForm").getForm().reset();
+        Ext.getCmp("pagesPersoForm").getForm().setValues();
+        Ext.getCmp("pagesPersoForm").getForm().reset();
         Ext.getCmp("pagePreviewTextItem").setText();
         Ext.getCmp("contributionPages").getDockedComponent('barreMeta').getComponent('boiteBarreMeta').hide();
     },
