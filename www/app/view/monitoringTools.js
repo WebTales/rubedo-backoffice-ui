@@ -439,66 +439,6 @@ Ext.define('Rubedo.view.monitoringTools', {
                             },
                             iconCls: 'process-icon',
                             text: 'Apply collection indexes'
-                        },
-                        {
-                            xtype: 'button',
-                            handler: function(button, e) {
-                                button.setLoading(true);
-                                Ext.Ajax.request({
-                                    url: 'magic/refresh-item-recommendations',
-                                    timeout: 300000,
-                                    params:{
-                                    },
-                                    success: function(response){
-                                        button.setLoading(false);
-                                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle,"Item recommendations refreshed.");
-                                    },
-                                    failure: function(response) {
-                                        button.setLoading(false);
-                                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);
-
-                                    }
-                                });
-                            },
-                            id: 'rebuildContentConcurrencyBtn',
-                            iconCls: 'content-icon',
-                            text: 'Refresh item recommendations',
-                            listeners: {
-                                afterrender: {
-                                    fn: me.onRebuildContentConcurrencyBtnAfterRender,
-                                    scope: me
-                                }
-                            }
-                        },
-                        {
-                            xtype: 'button',
-                            handler: function(button, e) {
-                                button.setLoading(true);
-                                Ext.Ajax.request({
-                                    url: 'magic/refresh-user-recommendations',
-                                    timeout: 300000,
-                                    params:{
-                                    },
-                                    success: function(response){
-                                        button.setLoading(false);
-                                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.successTitle,"User recommendations refreshed.");
-                                    },
-                                    failure: function(response) {
-                                        button.setLoading(false);
-                                        Ext.Msg.alert(Rubedo.RubedoAutomatedElementsLoc.errorTitle, Ext.JSON.decode(response.responseText).msg);
-
-                                    }
-                                });
-                            },
-                            id: 'rebuildUserRecsBtn',
-                            iconCls: 'user',
-                            text: 'Refresh user recommendations',
-                            listeners: {
-                                afterrender: {
-                                    fn: me.onRebuildContentConcurrencyBtnAfterRender1,
-                                    scope: me
-                                }
-                            }
                         }
                     ]
                 }
@@ -521,18 +461,6 @@ Ext.define('Rubedo.view.monitoringTools', {
 
     onSupervisionCachePanelAfterRender: function(component, eOpts) {
         component.refreshCacheInfo();
-    },
-
-    onRebuildContentConcurrencyBtnAfterRender: function(component, eOpts) {
-        if (!PHPOptions.activateMagic){
-            component.hide();
-        }
-    },
-
-    onRebuildContentConcurrencyBtnAfterRender1: function(component, eOpts) {
-        if (!PHPOptions.activateMagic){
-            component.hide();
-        }
     },
 
     onMonitoringToolsAfterRender: function(component, eOpts) {

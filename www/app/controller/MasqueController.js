@@ -896,7 +896,7 @@ Ext.define('Rubedo.controller.MasqueController', {
 
             var configSpec = Ext.widget('ConfigSpecBloc');
             if(ACL.interfaceRights["exe.ui.personalization"]){
-            var persoTab=Ext.widget("panel",{
+                var persoTab=Ext.widget("panel",{
                     title:"Personalization"
                 });
                 var eventsConfig=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.csEvents);
