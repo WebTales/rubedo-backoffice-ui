@@ -24,8 +24,12 @@ Ext.define('Rubedo.view.RECWindow', {
         'Ext.button.Button'
     ],
 
+    height: '',
+    maxHeight: 500,
     width: 800,
     constrain: true,
+    autoScroll: true,
+    layout: 'fit',
     title: 'Embedded content',
     modal: true,
 
@@ -38,6 +42,7 @@ Ext.define('Rubedo.view.RECWindow', {
                     xtype: 'form',
                     itemId: 'embeddedForm',
                     minHeight: 200,
+                    autoScroll: true,
                     bodyPadding: 10,
                     title: ''
                 }
@@ -121,6 +126,7 @@ Ext.define('Rubedo.view.RECWindow', {
                 });
                 task.delay(400);
             }
+            component.doLayout();
         }
     }
 
