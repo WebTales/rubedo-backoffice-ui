@@ -401,6 +401,7 @@ Ext.define('Rubedo.view.monitoringTools', {
                                             Ext.getCmp("getDatabaseInformationBtn").setLoading(true);
                                             Ext.Ajax.request({
                                                 url: 'update/run',
+                                                timeout: 600000,
                                                 params: {
                                                 },
                                                 success: function(response){
