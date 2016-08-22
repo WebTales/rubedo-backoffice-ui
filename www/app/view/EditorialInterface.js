@@ -380,7 +380,8 @@ Ext.define('Rubedo.view.EditorialInterface', {
             ['[{"property":"live.startPublicationDate","operator":"$ne","value":""},{"property":"live.startPublicationDate","operator":"$gte","value":"'+Math.floor(Date.now() / 1000)+'"}]',Rubedo.RubedoAutomatedElementsLoc.edFuture],
             ['[{"property":"live.endPublicationDate","operator":"$ne","value":{"operator":"$lte","value":"'+Math.floor(Date.now() / 1000)+'"}},{"property":"live.startPublicationDate","operator":"$ne","value":{"operator":"$gte","value":"'+Math.floor(Date.now() / 1000)+'"}}]',Rubedo.RubedoAutomatedElementsLoc.edPublished],
             ['[{"property":"status","value":"draft"}]',Rubedo.RubedoAutomatedElementsLoc.edDraft],
-            ['[{"property":"status","value":"pending"}]',Rubedo.RubedoAutomatedElementsLoc.edPending]
+            ['[{"property":"status","value":"pending"}]',Rubedo.RubedoAutomatedElementsLoc.edPending],
+            ['[{"property":"status","value":"refused"}]',Ext.String.capitalize(Rubedo.RubedoAutomatedElementsLoc.refusedText)]
         ];
         config.value=false;
         return config;
