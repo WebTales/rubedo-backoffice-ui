@@ -22,6 +22,7 @@ Ext.define('Rubedo.view.EventChoiceField', {
     displayField: 'label',
     forceSelection: true,
     multiSelect: true,
+    queryMode: 'local',
     store: 'eventListCombo',
     valueField: 'value',
 
