@@ -238,7 +238,9 @@
             "ApplicationLogsCont",
             "RSSFeeds",
             "SitesComboRss",
-            "RSSQueriesStore"
+            "RSSQueriesStore",
+            "facetListCombo",
+            "eventListCombo"
         ],
         "views": [
             "MyGridPanel3",
@@ -452,7 +454,9 @@
             "RSSInterface",
             "newRssWindow",
             "RStructuredObjectField",
-            "RSOEditorWindow"
+            "RSOEditorWindow",
+            "EventChoiceField",
+            "FacetChoiceField"
         ]
     },
     "name": "Application",

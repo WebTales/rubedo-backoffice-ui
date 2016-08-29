@@ -1,0 +1,98 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "eventListCombo",
+        "designer|userClassName": "eventListCombo",
+        "isOptimised": true,
+        "model": null,
+        "pageSize": 100000,
+        "storeId": "eventListCombo",
+        "usedCollection": "eventList"
+    },
+    "name": "facetListCombo1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "6db6e827-28c9-40fe-a0a6-1d012d029a8c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "                    read: 'click-stream/event-list'",
+                    "                }"
+                ],
+                "extraParams": null,
+                "url": null
+            },
+            "name": "MyAjaxProxy42",
+            "designerId": "31510ed8-c84f-4dab-9dbd-ba5e635f1ad4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader41",
+                    "designerId": "3f388257-1409-4bfa-ae40-0443c779dfad"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField",
+            "designerId": "be72207f-d229-400b-8fbf-43c9278ad047"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "label"
+            },
+            "name": "MyField1",
+            "designerId": "2c5e5698-b105-4ad4-a8c4-79adc05e3c56"
+        }
+    ]
+}

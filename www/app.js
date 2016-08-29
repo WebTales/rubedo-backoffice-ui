@@ -235,7 +235,9 @@ Ext.application({
         'ApplicationLogsCont',
         'RSSFeeds',
         'SitesComboRss',
-        'RSSQueriesStore'
+        'RSSQueriesStore',
+        'facetListCombo',
+        'eventListCombo'
     ],
     views: [
         'MyGridPanel3',
@@ -449,7 +451,9 @@ Ext.application({
         'RSSInterface',
         'newRssWindow',
         'RStructuredObjectField',
-        'RSOEditorWindow'
+        'RSOEditorWindow',
+        'EventChoiceField',
+        'FacetChoiceField'
     ],
     controllers: [
         'ContributionContenusController',

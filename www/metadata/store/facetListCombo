@@ -1,0 +1,98 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userAlias": "facetListCombo",
+        "designer|userClassName": "facetListCombo",
+        "isOptimised": true,
+        "model": null,
+        "pageSize": 100000,
+        "storeId": "facetListCombo",
+        "usedCollection": "facetList"
+    },
+    "name": "contentTypesCombo1",
+    "configAlternates": {
+        "isOptimised": "boolean"
+    },
+    "designerId": "96d52dfc-4e6f-468b-8765-b9f48732d38f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "isOptimised",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "usedCollection",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "                    read: 'click-stream/facet-list'",
+                    "                }"
+                ],
+                "extraParams": null,
+                "url": null
+            },
+            "name": "MyAjaxProxy42",
+            "designerId": "619b6136-cff2-4101-a8db-58c316de8753",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "messageProperty": "message",
+                        "root": "data"
+                    },
+                    "name": "MyJsonReader41",
+                    "designerId": "f1af10bd-5b3c-4865-8881-3f5d1025aad7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField",
+            "designerId": "9d205593-ab1b-4803-9534-3c195b1193ce"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "label"
+            },
+            "name": "MyField1",
+            "designerId": "97ad9fc5-ba6f-4ecd-bf2c-043c15aaa3e6"
+        }
+    ]
+}

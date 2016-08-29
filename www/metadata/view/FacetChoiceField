@@ -1,0 +1,53 @@
+{
+    "type": "Ext.form.field.ComboBox",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "FacetChoiceField",
+        "designer|userClassName": "FacetChoiceField",
+        "displayField": "label",
+        "fieldLabel": "Label",
+        "forceSelection": true,
+        "managesStore": true,
+        "multiSelect": true,
+        "store": "facetListCombo",
+        "valueField": "value"
+    },
+    "name": "EventChoiceField1",
+    "configAlternates": {
+        "managesStore": "boolean"
+    },
+    "designerId": "7a6fb9e7-77dc-4d8f-9cb4-7603cfe1b072",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "managesStore",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCTCField",
+                "implHandler": [
+                    "config.plugins=[Ext.create(\"Ext.ux.form.field.ClearButton\")];\r",
+                    "return config;"
+                ]
+            },
+            "name": "processCTCField",
+            "designerId": "22cd8522-42c7-4443-97ec-391db5030ab7"
+        }
+    ]
+}
