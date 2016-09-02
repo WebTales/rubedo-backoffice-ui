@@ -133,6 +133,9 @@ Ext.define('Rubedo.model.pageDataModel', {
         },
         {
             name: 'UXInstructions'
+        },
+        {
+            name: 'metaImage'
         }
     ]
 });
