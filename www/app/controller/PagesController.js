@@ -384,40 +384,52 @@ Ext.define('Rubedo.controller.PagesController', {
                 var configSpec = Ext.widget('ConfigSpecBloc');
 
                 if(ACL.interfaceRights["exe.ui.personalization"]){
-                var persoTab=Ext.widget("panel",{
-                    title:"Personalization"
-                });
-                var eventsConfig=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.csEvents);
-                if(!Ext.isEmpty(eventsConfig)){
-                    if(Ext.isEmpty(component.configBloc.csEventConfig)){
-                        component.configBloc.csEventConfig=Ext.clone(eventsConfig);
+                    var persoTab=Ext.widget("panel",{
+                        title:"Personalization"
+                    });
+                    var eventsConfig=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.csEvents);
+                    if(!Ext.isEmpty(eventsConfig)){
+                        if(Ext.isEmpty(component.configBloc.csEventConfig)){
+                            component.configBloc.csEventConfig=Ext.clone(eventsConfig);
+                        }
+                        Ext.applyIf(component.configBloc.csEventConfig,eventsConfig);
+                        persoTab.add(Ext.create('Ext.grid.property.Grid', {
+                            title: 'Events',
+                            source: component.configBloc.csEventConfig
+                        }));
                     }
-                    Ext.applyIf(component.configBloc.csEventConfig,eventsConfig);
-                    persoTab.add(Ext.create('Ext.grid.property.Grid', {
-                        title: 'Events',
-                        source: component.configBloc.csEventConfig
+                    var fset=Ext.widget("fieldset",{
+                        title:"Behaviour",
+                        margin:10,
+                        layout:"anchor"
+                    });
+                    fset.add(Ext.widget('checkbox',{
+                        fieldLabel:"Render only as modal",
+                        onChange:function(){
+
+                            component.configBloc.renderAsEventModal=this.getValue();
+
+                        },
+                        labelWidth:120,
+                        inputValue:true,
+                        anchor:"100%",
+                        margin:"10 0 10 0",
+                        checked:component.configBloc.renderAsEventModal
                     }));
-                }
-                var fset=Ext.widget("fieldset",{
-                    title:"Behaviour",
-                    margin:10,
-                    layout:"anchor"
-                });
-                fset.add(Ext.widget('checkbox',{
-                    fieldLabel:"Render only as modal",
-                    onChange:function(){
+                    fset.add(Ext.widget('textfield',{
+                        fieldLabel:"Modal class",
+                        onChange:function(){
 
-                        component.configBloc.renderAsEventModal=this.getValue();
+                            component.configBloc.modalClass=this.getValue();
 
-                    },
-                    labelWidth:120,
-                    inputValue:true,
-                    anchor:"100%",
-                    margin:"10 0 10 0",
-                    checked:component.configBloc.renderAsEventModal
-                }));
-                persoTab.add(fset);
-                configSpec.add(persoTab);
+                        },
+                        labelWidth:120,
+                        anchor:"100%",
+                        margin:"10 0 10 0",
+                        value:component.configBloc.modalClass
+                    }));
+                    persoTab.add(fset);
+                    configSpec.add(persoTab);
                 }
 
                 configSpec.getComponent(0).add(Ext.widget('genericLocTextField',{
