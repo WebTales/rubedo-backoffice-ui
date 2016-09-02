@@ -1399,6 +1399,7 @@
       "notAnalyzed":false,
       "returnInSearch":false,
       "useAsFacet":false,
+      "useAsMetadata":false,
       "facetOperator":"AND",
       "multivalued": false,
       "tooltip": "",
@@ -1487,6 +1488,13 @@
         "config": {
           "fieldLabel": "#ext-gen1068#",
           "name": "localizable"
+        }
+      },
+      {
+        "type": "Ext.form.field.Checkbox",
+        "config": {
+          "fieldLabel": "Use as SEO image",
+          "name": "useAsMetadata"
         }
       },
       {
