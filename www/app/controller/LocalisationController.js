@@ -439,7 +439,13 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "edFuture":"Future",
                     "edPublished":"Published now",
                     "edPending":"Pending validation",
-                    "ctSitemapText":"Content types used in sitemap"
+                    "ctSitemapText":"Content types used in sitemap",
+                    "personalizationText":"Personalization",
+                    "behaviourText":"Behaviour",
+                    "eventsText":"Events",
+                    "onlyModalText":"Render only as modal",
+                    "modalClassText":"Modal class"
+
                 });
 
         this.control({

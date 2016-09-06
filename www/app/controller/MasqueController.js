@@ -897,7 +897,7 @@ Ext.define('Rubedo.controller.MasqueController', {
             var configSpec = Ext.widget('ConfigSpecBloc');
             if(ACL.interfaceRights["exe.ui.personalization"]){
                 var persoTab=Ext.widget("panel",{
-                    title:"Personalization"
+                    title:Rubedo.RubedoAutomatedElementsLoc.personalizationText
                 });
                 var eventsConfig=Ext.clone(Ext.getStore("BlocsDataStore").findRecord('bType', component.bType,0,false,false,true).get("configBasique").champsConfig.csEvents);
                 if(!Ext.isEmpty(eventsConfig)){
@@ -906,17 +906,17 @@ Ext.define('Rubedo.controller.MasqueController', {
                     }
                     Ext.applyIf(component.configBloc.csEventConfig,eventsConfig);
                     persoTab.add(Ext.create('Ext.grid.property.Grid', {
-                        title: 'Events',
+                        title: Rubedo.RubedoAutomatedElementsLoc.eventsText,
                         source: component.configBloc.csEventConfig
                     }));
                 }
                 var fset=Ext.widget("fieldset",{
-                    title:"Behaviour",
+                    title:Rubedo.RubedoAutomatedElementsLoc.behaviourText,
                     margin:10,
                     layout:"anchor"
                 });
                 fset.add(Ext.widget('checkbox',{
-                    fieldLabel:"Render only as modal",
+                    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.onlyModalText,
                     onChange:function(){
 
                         component.configBloc.renderAsEventModal=this.getValue();
@@ -929,7 +929,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                     checked:component.configBloc.renderAsEventModal
                 }));
                 fset.add(Ext.widget('textfield',{
-                        fieldLabel:"Modal class",
+                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.modalClassText,
                         onChange:function(){
 
                             component.configBloc.modalClass=this.getValue();
