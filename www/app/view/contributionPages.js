@@ -907,13 +907,15 @@ Ext.define('Rubedo.view.contributionPages', {
             pinList:false
         });
         component.insert(2,tagPicker);
+        var mpContainer=Ext.widget("container");
         var metaImagePicker=Ext.widget("ImagePickerField",{
-                            allowedFileType: 'Image',
-                            localiserId: 'categoryImageField',
-                            fieldLabel: 'Image',
-                            name: 'metaImage'
-                        });
-        component.insert(2,metaImagePicker);
+            allowedFileType: 'Image',
+            localiserId: 'categoryImageField',
+            fieldLabel: 'Image',
+            name: 'metaImage'
+        });
+        mpContainer.add(metaImagePicker);
+        component.insert(3,mpContainer);
     },
 
     onFieldsetAfterRender: function(component, eOpts) {
