@@ -789,7 +789,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 value:component.pageProperties.customTemplate
             }));
             configSpec.getComponent(0).add(Ext.create('Rubedo.view.ACEField',{
-                fieldLabel:"UX Instructions",
+                fieldLabel:"Philters",
                 onChange:function(){
 
                     component.pageProperties.UXInstructions=this.getValue();
