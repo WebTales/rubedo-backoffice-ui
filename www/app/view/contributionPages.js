@@ -692,9 +692,10 @@ Ext.define('Rubedo.view.contributionPages', {
                                 }
                             }
                         },
-                        {
+                        me.processPagesPersoForm({
                             xtype: 'form',
                             ACL: 'exe.ui.personalization',
+                            localiserId: 'pagesPersoForm',
                             id: 'pagesPersoForm',
                             bodyPadding: 10,
                             title: 'Personalization',
@@ -710,17 +711,20 @@ Ext.define('Rubedo.view.contributionPages', {
                             items: [
                                 me.processPhilters({
                                     xtype: 'fieldset',
+                                    localiserId: 'philtersFieldset',
                                     collapsible: true,
                                     title: 'Philters'
                                 }),
                                 {
                                     xtype: 'fieldset',
+                                    localiserId: 'eventsFieldset',
                                     collapsible: true,
                                     title: 'Events',
                                     items: [
                                         {
                                             xtype: 'textfield',
                                             anchor: '100%',
+                                            localiserId: 'pageViewField',
                                             fieldLabel: 'Page view',
                                             name: 'clickStreamEvent'
                                         }
@@ -733,7 +737,7 @@ Ext.define('Rubedo.view.contributionPages', {
                                     scope: me
                                 }
                             }
-                        }
+                        })
                     ],
                     listeners: {
                         afterrender: {
@@ -777,11 +781,16 @@ Ext.define('Rubedo.view.contributionPages', {
         {
             xtype: 'ACEField',
             anchor: '100%',
-            fieldLabel: 'Philters',
+            fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,
             name: 'UXInstructions',
             textMode:true
         }
         ];
+        return config;
+    },
+
+    processPagesPersoForm: function(config) {
+        config.title=Rubedo.RubedoInterfaceLoc.pagesPersoForm.title;
         return config;
     },
 

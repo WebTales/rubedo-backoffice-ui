@@ -1401,7 +1401,7 @@
                                         "layout|anchor": "100%",
                                         "store": "ContributeWorkspacesCombo"
                                     },
-                                    "name": "workspacecombo",
+                                    "name": "workspacecombo2",
                                     "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
                                     "customConfigs": [
                                         {
@@ -1699,7 +1699,7 @@
                                     "userConfig": {
                                         "id": "primaryPageECFS"
                                     },
-                                    "name": "pagesecommercefieldset",
+                                    "name": "pagesecommercefieldset1",
                                     "designerId": "b676315a-f6d5-4d16-b32e-5d61c64fd581",
                                     "masterInstanceId": "84a70db4-eb10-4d76-81cc-006305b2ab59"
                                 }
@@ -1717,7 +1717,7 @@
                                 "id": "pagesDLSToolbar",
                                 "replicatorEntity": "pagesLocProps"
                             },
-                            "name": "dlstoolbar",
+                            "name": "dlstoolbar2",
                             "designerId": "0ec7c46e-d600-4a9a-ab2a-0a1fc967b8d6",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
@@ -1961,6 +1961,7 @@
                         "ACL": "exe.ui.personalization",
                         "bodyPadding": 10,
                         "id": "pagesPersoForm",
+                        "localiserId": "pagesPersoForm",
                         "title": "Personalization"
                     },
                     "name": "MyForm1",
@@ -1969,6 +1970,11 @@
                         {
                             "group": "(Custom Properties)",
                             "name": "ACL",
+                            "type": "string"
+                        },
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "localiserId",
                             "type": "string"
                         }
                     ],
@@ -2014,7 +2020,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "collapsible": true,
-                                "localiserId": null,
+                                "localiserId": "philtersFieldset",
                                 "title": "Philters"
                             },
                             "name": "MyFieldSet1",
@@ -2044,7 +2050,7 @@
                                             "{",
                                             "    xtype: 'ACEField',",
                                             "    anchor: '100%',",
-                                            "    fieldLabel: 'Philters',",
+                                            "    fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,",
                                             "    name: 'UXInstructions',",
                                             "    textMode:true",
                                             "}",
@@ -2066,10 +2072,18 @@
                             "codeClass": null,
                             "userConfig": {
                                 "collapsible": true,
+                                "localiserId": "eventsFieldset",
                                 "title": "Events"
                             },
                             "name": "MyFieldSet2",
                             "designerId": "94489174-0c95-48e7-b0f6-5ae87e4e3a4c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "localiserId",
+                                    "type": "string"
+                                }
+                            ],
                             "cn": [
                                 {
                                     "type": "Ext.form.field.Text",
@@ -2081,10 +2095,18 @@
                                     "userConfig": {
                                         "fieldLabel": "Page view",
                                         "layout|anchor": "100%",
+                                        "localiserId": "pageViewField",
                                         "name": "clickStreamEvent"
                                     },
                                     "name": "MyTextField",
-                                    "designerId": "8bb8bb35-42b8-4e33-808c-831155f240f4"
+                                    "designerId": "8bb8bb35-42b8-4e33-808c-831155f240f4",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "localiserId",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -2107,6 +2129,26 @@
                             },
                             "name": "onPagesPersoFormBeforeRender",
                             "designerId": "4fde29ce-4440-44a2-a746-c7188e5efe06"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processPagesPersoForm",
+                                "implHandler": [
+                                    "config.title=Rubedo.RubedoInterfaceLoc.pagesPersoForm.title;",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processPagesPersoForm",
+                            "designerId": "9c38c64f-12f0-4e22-949c-64c4cb6e7240"
                         }
                     ]
                 }
