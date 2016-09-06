@@ -964,7 +964,7 @@ Ext.define('Rubedo.view.sitesInterface', {
             multiSelect:true,
             name:"sitemapContentTypes",
             labelWidth:110,
-            fieldLabel:"Content types used in sitemap",
+            fieldLabel:Rubedo.RubedoAutomatedElementsLoc.ctSitemapText,
             anchor:"100%"
         });
         component.add(tagPicker);

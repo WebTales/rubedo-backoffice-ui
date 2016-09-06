@@ -438,7 +438,8 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "edArchived":"Archived",
                     "edFuture":"Future",
                     "edPublished":"Published now",
-                    "edPending":"Pending validation"
+                    "edPending":"Pending validation",
+                    "ctSitemapText":"Content types used in sitemap"
                 });
 
         this.control({
