@@ -1,10 +1,21 @@
-var App = angular.module('cauldron', ['ngDragDrop']);
+var App = angular.module('cauldron', []);
 App.controller('CauldronController', ['$scope',function($scope) {
     var me=this;
+    me.instructionTypes={
+        ifThen:{
+            template:"templates/ifThen.html",
+            instructionDefaultConfig:{
+                conditionsArray:[],
+                conditionsOperator:"AND",
+                executionsArray:[]
+            }
+        }
+    };
     me.elementSet=[
         {
             title:"If ... Then ...",
-            icon:"next.png"
+            icon:"next.png",
+            type:"ifThen"
         },
         {
             title:"When ... DO ...",
@@ -38,4 +49,7 @@ App.controller('CauldronController', ['$scope',function($scope) {
     me.instructionsArray=[
 
     ];
+    me.dropInMain=function(){
+      console.log("test");
+    };
 }]);
