@@ -19,7 +19,10 @@
                             <h3 class="panel-title text-center">Elements</h3>
                         </div>
                         <div class="panel-body">
-
+                            <div ng-repeat="element in cauldron.elementSet">
+                                <p class="text-center"><img ng-src="/backoffice/resources/icones/red/32x32/{{element.icon}}"></p>
+                                <p class="text-center">{{element.title}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
