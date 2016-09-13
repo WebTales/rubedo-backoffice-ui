@@ -28,8 +28,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 padded-15">
-                    <div class="panel panel-default" ng-repeat="instruction in cauldron.instructionsArray">
-                        <div class="panel-heading">Generic element holder</div>
+                    <div class="panel panel-default" ng-repeat="instruction in cauldron.instructionsArray track by $index">
+                        <div class="panel-heading text-right">
+                            <a class="cursor-as-pointer" ng-click="cauldron.moveItemUp($index)" ng-show="$index>0"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+                            <a class="cursor-as-pointer" ng-click="cauldron.moveItemDown($index)" ng-show="$index<cauldron.instructionsArray.length-1"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
+                            <a class="cursor-as-pointer"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                        </div>
                         <div class="panel-body" ng-include="cauldron.getInstructionTemplate(instruction.type)">
                         </div>
                     </div>

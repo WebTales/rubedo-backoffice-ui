@@ -1,3 +1,13 @@
+Array.prototype.move = function (old_index, new_index) {
+    if (new_index >= this.length) {
+        var k = new_index - this.length;
+        while ((k--) + 1) {
+            this.push(undefined);
+        }
+    }
+    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+    return this; // for testing purposes
+};
 var App = angular.module('cauldron', ['ngDragDrop']);
 App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     var me=this;
@@ -77,5 +87,11 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     me.currentItemType=null;
     me.setCurrentItemType=function(useless1,useless2,type){
         me.currentItemType=type;
+    };
+    me.moveItemUp=function(index){
+        me.instructionsArray.move(index,index-1);
+    };
+    me.moveItemDown=function(index){
+        me.instructionsArray.move(index,index+1);
     };
 }]);
