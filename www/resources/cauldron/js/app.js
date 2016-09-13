@@ -11,6 +11,9 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
             }
         }
     };
+    me.getInstructionTemplate=function(type){
+        return(me.instructionTypes[type] ? me.instructionTypes[type].template : null);
+    };
     me.elementSet=[
         {
             title:"If ... Then ...",
@@ -51,7 +54,13 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     ];
     me.dropInMain=function(){
         me.mainDropClass="alert-info";
-        console.log("dropped "+me.currentItemType);
+        var type=angular.copy(me.currentItemType);
+        if(me.instructionTypes[type]){
+            me.instructionsArray.push({
+                type:type,
+                config:me.instructionTypes[type].instructionDefaultConfig
+            });
+        }
         var deferred = $q.defer();
         deferred.reject();
         return deferred.promise;
@@ -67,7 +76,6 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     };
     me.currentItemType=null;
     me.setCurrentItemType=function(useless1,useless2,type){
-        console.log(type);
         me.currentItemType=type;
     };
 }]);

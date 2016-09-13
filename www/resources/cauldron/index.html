@@ -28,6 +28,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 padded-15">
+                    <div class="panel panel-default" ng-repeat="instruction in cauldron.instructionsArray">
+                        <div class="panel-heading">Generic element holder</div>
+                        <div class="panel-body" ng-include="cauldron.getInstructionTemplate(instruction.type)">
+                        </div>
+                    </div>
+                    {{cauldron.instructionsArray}}
                     <div class="alert zone-border text-center" ng-class="cauldron.mainDropClass"
                          data-drop="true"
                          jqyoui-droppable="{beforeDrop:'cauldron.dropInMain()',onOver:'cauldron.onMainOver()',onOut:'cauldron.onMainOut()'}"
