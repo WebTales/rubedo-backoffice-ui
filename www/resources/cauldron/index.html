@@ -20,7 +20,7 @@
                             <h3 class="panel-title text-center">Elements</h3>
                         </div>
                         <div class="panel-body">
-                            <div ng-repeat="element in cauldron.elementSet"  data-drag="true"  data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" jqyoui-draggable="{placeholder: 'keep',onStart:'cauldron.setCurrentItemType(element.type)'}">
+                            <div class="cauldron-element-type" ng-repeat="element in cauldron.elementSet"  data-drag="true"  data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" jqyoui-draggable="{placeholder: 'keep',onStart:'cauldron.setCurrentItemType(element.type)'}">
                                 <p class="text-center"><img ng-src="/backoffice/resources/icones/red/32x32/{{element.icon}}"></p>
                                 <p class="text-center">{{element.title}}</p>
                             </div>
