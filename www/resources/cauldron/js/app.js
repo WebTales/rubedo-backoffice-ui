@@ -76,7 +76,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         if(me.instructionTypes[type]){
             me.instructionsArray.push({
                 type:type,
-                config:me.instructionTypes[type].instructionDefaultConfig
+                config:angular.copy(me.instructionTypes[type].instructionDefaultConfig)
             });
         }
         var deferred = $q.defer();
