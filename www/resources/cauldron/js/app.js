@@ -1,5 +1,5 @@
-var App = angular.module('cauldron', []);
-App.controller('CauldronController', ['$scope',function($scope) {
+var App = angular.module('cauldron', ['ngDragDrop']);
+App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     var me=this;
     me.instructionTypes={
         ifThen:{
@@ -50,6 +50,24 @@ App.controller('CauldronController', ['$scope',function($scope) {
 
     ];
     me.dropInMain=function(){
-      console.log("test");
+        me.mainDropClass="alert-info";
+        console.log("dropped "+me.currentItemType);
+        var deferred = $q.defer();
+        deferred.reject();
+        return deferred.promise;
+    };
+    me.mainDropClass="alert-info";
+    me.onMainOver=function(){
+        me.mainDropClass="alert-success";
+        $scope.$apply();
+    };
+    me.onMainOut=function(){
+        me.mainDropClass="alert-info";
+        $scope.$apply();
+    };
+    me.currentItemType=null;
+    me.setCurrentItemType=function(useless1,useless2,type){
+        console.log(type);
+        me.currentItemType=type;
     };
 }]);

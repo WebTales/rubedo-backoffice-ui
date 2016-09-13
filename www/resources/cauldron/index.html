@@ -5,8 +5,10 @@
         <link rel="stylesheet" type="text/css" href="/components/twbs/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src="/components/jquery/jquery/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="/components/jquery/jqueryui/ui/minified/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/components/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/components/angular/angular.js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-dragdrop.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
     </head>
     <body>
@@ -18,7 +20,7 @@
                             <h3 class="panel-title text-center">Elements</h3>
                         </div>
                         <div class="panel-body">
-                            <div ng-repeat="element in cauldron.elementSet">
+                            <div ng-repeat="element in cauldron.elementSet"  data-drag="true"  data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" jqyoui-draggable="{placeholder: 'keep',onStart:'cauldron.setCurrentItemType(element.type)'}">
                                 <p class="text-center"><img ng-src="/backoffice/resources/icones/red/32x32/{{element.icon}}"></p>
                                 <p class="text-center">{{element.title}}</p>
                             </div>
@@ -26,7 +28,10 @@
                     </div>
                 </div>
                 <div class="col-xs-10 padded-15">
-                    <div class="alert alert-info zone-border text-center" role="alert">Drag and drop an element here</div>
+                    <div class="alert zone-border text-center" ng-class="cauldron.mainDropClass"
+                         data-drop="true"
+                         jqyoui-droppable="{beforeDrop:'cauldron.dropInMain()',onOver:'cauldron.onMainOver()',onOut:'cauldron.onMainOut()'}"
+                         role="alert">Drag and drop an element here</div>
                 </div>
             </div>
         </div>
