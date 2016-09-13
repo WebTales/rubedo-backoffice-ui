@@ -19,6 +19,13 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                 conditionsOperator:"AND",
                 executionsArray:[]
             }
+        },
+        incVar:{
+            template:"templates/incVar.html",
+            instructionDefaultConfig:{
+                property:null,
+                value:1
+            }
         }
     };
     me.getInstructionTemplate=function(type){
@@ -40,7 +47,8 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         },
         {
             title:"Increment variable",
-            icon:"add.png"
+            icon:"add.png",
+            type:"incVar"
         },
         {
             title:"Decrement variable",
