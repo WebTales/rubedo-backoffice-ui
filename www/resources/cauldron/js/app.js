@@ -94,4 +94,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     me.moveItemDown=function(index){
         me.instructionsArray.move(index,index+1);
     };
+    me.removeItem=function(index){
+        me.instructionsArray.splice(index,1);
+    };
 }]);
