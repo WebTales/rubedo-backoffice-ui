@@ -106,3 +106,17 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         me.instructionsArray.splice(index,1);
     };
 }]);
+App.directive('autoComplete', function($timeout) {
+    return function(scope, iElement, iAttrs) {
+        iElement.autocomplete({
+            source: [
+                "USER.RUID"
+            ],
+            select: function() {
+                $timeout(function() {
+                    iElement.trigger('input');
+                }, 0);
+            }
+        });
+    };
+});
