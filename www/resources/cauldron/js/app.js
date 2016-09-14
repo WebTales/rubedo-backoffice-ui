@@ -20,6 +20,16 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                 executionsArray:[]
             }
         },
+        setVar:{
+            template:"templates/setVar.html",
+            instructionDefaultConfig:{
+                property:null,
+                value:1
+            },
+            toInstruction:function(config){
+                return isNaN(parseFloat(config.value)) ? "SET("+config.property+",'"+config.value+"')" : "SET("+config.property+","+config.value+")";
+            }
+        },
         incVar:{
             template:"templates/incVar.html",
             instructionDefaultConfig:{
@@ -82,7 +92,8 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         },
         {
             title:"Set variable",
-            icon:"page_next.png"
+            icon:"page_next.png",
+            type:"setVar"
         },
         {
             title:"Increment variable",
