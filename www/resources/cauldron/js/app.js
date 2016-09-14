@@ -20,6 +20,24 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                 executionsArray:[]
             }
         },
+        whenDo:{
+            template:"templates/whenDo.html",
+            instructionDefaultConfig:{
+                eventName:null,
+                executionsArray:[]
+            },
+            toInstruction:function(config){
+                var executionArray=[];
+                angular.forEach(config.executionsArray,function(instruction){
+                    var type=angular.copy(instruction.type);
+                    if(me.instructionTypes[type]){
+                        executionArray.push(me.instructionTypes[type].toInstruction(angular.copy(instruction.config)));
+                    }
+                });
+                return "WHEN "+config.eventName+" DO "+executionArray.join(' ');
+
+            }
+        },
         setVar:{
             template:"templates/setVar.html",
             instructionDefaultConfig:{
@@ -88,7 +106,8 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         },
         {
             title:"When ... DO ...",
-            icon:"flag.png"
+            icon:"flag.png",
+            type:"whenDo"
         },
         {
             title:"Set variable",
@@ -168,6 +187,32 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     };
     me.removeItem=function(index){
         me.instructionsArray.splice(index,1);
+    };
+}]);
+App.controller('WhenDoController', ['$scope','$q',function($scope,$q) {
+    var me=this;
+    me.dropInMain=function(){
+        me.mainDropClass="alert-info";
+        var type=angular.copy($scope.cauldron.currentItemType);
+        if(type!="ifThen"&&type!="whenDo"&&$scope.cauldron.instructionTypes[type]){
+            $scope.instruction.config.executionsArray.push({
+                type:type,
+                config:angular.copy($scope.cauldron.instructionTypes[type].instructionDefaultConfig)
+            });
+        }
+        var deferred = $q.defer();
+        deferred.reject();
+        return deferred.promise;
+    };
+    me.mainDropClass="alert-info";
+    me.onMainOver=function(){
+        var type=angular.copy($scope.cauldron.currentItemType);
+        me.mainDropClass=type!="ifThen"&&type!="whenDo" ? "alert-success" : "alert-danger";
+        $scope.$apply();
+    };
+    me.onMainOut=function(){
+        me.mainDropClass="alert-info";
+        $scope.$apply();
     };
 }]);
 App.directive('autoCompleteCondition', function($timeout) {

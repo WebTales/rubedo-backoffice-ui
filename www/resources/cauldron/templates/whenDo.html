@@ -1,0 +1,27 @@
+<div ng-controller="WhenDoController as wdCtrl">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>When  </label>
+            <input type="text" ng-model="instruction.config.eventName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label> Do  </label>
+        </div>
+    </form>
+    <div class="panel panel-default" ng-repeat="instruction in instruction.config.executionsArray track by $index">
+        <div class="panel-body" >
+            <div class="text-right pull-right">
+                <a class="cursor-as-pointer" ng-click="wdCtrl.moveItemUp($index)" ng-show="$index>0"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+                <a class="cursor-as-pointer" ng-click="wdCtrl.moveItemDown($index)" ng-show="$index<item.config.executionsArray.length-1"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
+                <a class="cursor-as-pointer" ng-click="wdCtrl.removeItem($index)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+            </div>
+            <div ng-include="cauldron.getInstructionTemplate(instruction.type)">
+
+            </div>
+        </div>
+    </div>
+    <div class="alert zone-border text-center" ng-class="wdCtrl.mainDropClass"
+         data-drop="true"
+         jqyoui-droppable="{beforeDrop:'wdCtrl.dropInMain()',onOver:'wdCtrl.onMainOver()',onOut:'wdCtrl.onMainOut()'}"
+         role="alert">Drag and drop an element here</div>
+</div>
