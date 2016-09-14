@@ -214,6 +214,18 @@ App.controller('WhenDoController', ['$scope','$q',function($scope,$q) {
         me.mainDropClass="alert-info";
         $scope.$apply();
     };
+    me.moveItemUp=function(index){
+        $scope.instruction.config.executionsArray.move(index,index-1);
+    };
+    me.moveItemDown=function(index){
+        $scope.instruction.config.executionsArray.move(index,index+1);
+    };
+    me.removeItem=function(index){
+        $scope.instruction.config.executionsArray.splice(index,1);
+    };
+    me.getInstLength=function(){
+        return $scope.instruction.config.executionsArray.length-1;
+    }
 }]);
 App.directive('autoCompleteCondition', function($timeout) {
     return function(scope, iElement, iAttrs) {
