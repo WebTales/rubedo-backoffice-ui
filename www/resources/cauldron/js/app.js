@@ -35,24 +35,36 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
             instructionDefaultConfig:{
                 property:null,
                 value:1
+            },
+            toInstruction:function(config){
+                return config.value ? "DEC("+config.property+","+config.value+")" : "DEC("+config.property+")";
             }
         },
         showModal:{
             template:"templates/showModal.html",
             instructionDefaultConfig:{
                 code:null
+            },
+            toInstruction:function(config){
+                return "SHOWMODAL('"+config.code+"')";
             }
         },
         showBlock:{
             template:"templates/showBlock.html",
             instructionDefaultConfig:{
                 code:null
+            },
+            toInstruction:function(config){
+                return "SHOWBLOCK('"+config.code+"')";
             }
         },
         hideBlock:{
             template:"templates/hideBlock.html",
             instructionDefaultConfig:{
                 code:null
+            },
+            toInstruction:function(config){
+                return "HIDEBLOCK('"+config.code+"')";
             }
         }
     };
