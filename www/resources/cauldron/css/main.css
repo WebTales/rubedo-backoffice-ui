@@ -8,11 +8,16 @@
     border: 2px dotted;
 }
 .cauldron-element-type{
-    min-width: 100px;
+    margin-top: 10px;
+    margin-right:10px;
+    max-width: 100px;
 }
 .cursor-as-pointer{
     cursor:pointer;
 }
 .top20{
     margin-top:20px;
+}
+.bottom-move{
+    padding-top: 120px;
 }

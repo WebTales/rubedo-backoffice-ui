@@ -15,7 +15,11 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         ifThen:{
             template:"templates/ifThen.html",
             instructionDefaultConfig:{
-                conditionsArray:[],
+                conditionsArray:[{
+                    property:null,
+                    operator:" = ",
+                    value:null
+                }],
                 conditionsOperator:" AND ",
                 executionsArray:[]
             },
