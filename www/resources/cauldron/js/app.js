@@ -16,7 +16,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
             template:"templates/ifThen.html",
             instructionDefaultConfig:{
                 conditionsArray:[],
-                conditionsOperator:"AND",
+                conditionsOperator:" AND ",
                 executionsArray:[]
             },
             toInstruction:function(config){
@@ -27,7 +27,11 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                         executionArray.push(me.instructionTypes[type].toInstruction(angular.copy(instruction.config)));
                     }
                 });
-                return "IF "+"WIP"+" THEN "+executionArray.join(' ');
+                var conditionsArray=[];
+                angular.forEach(config.conditionsArray,function(condition){
+                    conditionsArray.push(isNaN(parseFloat(condition.value)) ? condition.property+" "+condition.operator+" '"+condition.value+"'" : condition.property+" "+condition.operator+" "+condition.value);
+                });
+                return "IF "+conditionsArray.join(config.conditionsOperator)+" THEN "+executionArray.join(' ');
 
             }
         },
@@ -237,7 +241,7 @@ App.controller('WhenDoController', ['$scope','$q',function($scope,$q) {
     };
     me.getInstLength=function(){
         return $scope.instruction.config.executionsArray.length-1;
-    }
+    };
 }]);
 App.controller('IfThenController', ['$scope','$q',function($scope,$q) {
     var me=this;
@@ -275,7 +279,36 @@ App.controller('IfThenController', ['$scope','$q',function($scope,$q) {
     };
     me.getInstLength=function(){
         return $scope.instruction.config.executionsArray.length-1;
-    }
+    };
+    me.moveCondItemUp=function(index){
+        $scope.instruction.config.conditionsArray.move(index,index-1);
+    };
+    me.moveCondItemDown=function(index){
+        $scope.instruction.config.conditionsArray.move(index,index+1);
+    };
+    me.removeCondItem=function(index){
+        $scope.instruction.config.conditionsArray.splice(index,1);
+    };
+    me.addCondition=function(){
+        $scope.instruction.config.conditionsArray.push({
+            property:null,
+            operator:"=",
+            value:null
+        });
+    };
+    me.conditionOperators=[
+        "=",
+        "NOT =",
+        "<",
+        ">",
+        "<=",
+        ">="
+    ];
+    me.conditionInterOperators=[
+        " AND ",
+        " OR "
+    ];
+
 }]);
 App.directive('autoCompleteCondition', function($timeout) {
     return function(scope, iElement, iAttrs) {
