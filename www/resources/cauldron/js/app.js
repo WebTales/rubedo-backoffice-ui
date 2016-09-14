@@ -106,11 +106,35 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         me.instructionsArray.splice(index,1);
     };
 }]);
-App.directive('autoComplete', function($timeout) {
+App.directive('autoCompleteCondition', function($timeout) {
     return function(scope, iElement, iAttrs) {
         iElement.autocomplete({
             source: [
-                "USER.RUID"
+                "USER.RUID",
+                "USER.ISCONNECTED",
+                "USER.EMAIL",
+                "USER.ISEMAILVALID",
+                "USER.ISGEOLOCATED",
+                "USER.SUBSCRIBEDTO",
+                "PAGE.TIMEONPAGE",
+                "PAGE.REFERRER",
+                "PAGE.NBVIEWS",
+                "SESSION.DURATION",
+                "TIME"
+            ],
+            select: function() {
+                $timeout(function() {
+                    iElement.trigger('input');
+                }, 0);
+            }
+        });
+    };
+});
+App.directive('autoCompleteAction', function($timeout) {
+    return function(scope, iElement, iAttrs) {
+        iElement.autocomplete({
+            source: [
+                "PAGE.NBVIEWS"
             ],
             select: function() {
                 $timeout(function() {
