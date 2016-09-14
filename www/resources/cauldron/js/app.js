@@ -28,8 +28,15 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                     }
                 });
                 var conditionsArray=[];
-                angular.forEach(config.conditionsArray,function(condition){
-                    conditionsArray.push(isNaN(parseFloat(condition.value)) ? condition.property+" "+condition.operator+" '"+condition.value+"'" : condition.property+" "+condition.operator+" "+condition.value);
+                angular.forEach(config.conditionsArray,function(conditionOri){
+                    var condition=angular.copy(conditionOri);
+                    if(!condition.operator){
+                        condition.operator="";
+                    }
+                    if(!condition.value){
+                        condition.value="";
+                    }
+                    conditionsArray.push(isNaN(parseFloat(condition.value))&&condition.value!="" ? condition.property+condition.operator+"'"+condition.value+"'" : condition.property+condition.operator+condition.value);
                 });
                 return "IF "+conditionsArray.join(config.conditionsOperator)+" THEN "+executionArray.join(' ');
 
@@ -292,17 +299,18 @@ App.controller('IfThenController', ['$scope','$q',function($scope,$q) {
     me.addCondition=function(){
         $scope.instruction.config.conditionsArray.push({
             property:null,
-            operator:"=",
+            operator:" = ",
             value:null
         });
     };
     me.conditionOperators=[
-        "=",
-        "NOT =",
-        "<",
-        ">",
-        "<=",
-        ">="
+        "",
+        " = ",
+        " NOT = ",
+        " < ",
+        " > ",
+        " <= ",
+        " >= "
     ];
     me.conditionInterOperators=[
         " AND ",
