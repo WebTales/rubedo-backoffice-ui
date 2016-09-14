@@ -26,6 +26,31 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                 property:null,
                 value:1
             }
+        },
+        decVar:{
+            template:"templates/decVar.html",
+            instructionDefaultConfig:{
+                property:null,
+                value:1
+            }
+        },
+        showModal:{
+            template:"templates/showModal.html",
+            instructionDefaultConfig:{
+                code:null
+            }
+        },
+        showBlock:{
+            template:"templates/showBlock.html",
+            instructionDefaultConfig:{
+                code:null
+            }
+        },
+        hideBlock:{
+            template:"templates/hideBlock.html",
+            instructionDefaultConfig:{
+                code:null
+            }
         }
     };
     me.getInstructionTemplate=function(type){
@@ -52,19 +77,23 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
         },
         {
             title:"Decrement variable",
-            icon:"remove.png"
+            icon:"remove.png",
+            type:"decVar"
         },
         {
             title:"Show modal",
-            icon:"windows.png"
+            icon:"windows.png",
+            type:"showModal"
         },
         {
             title:"Show block",
-            icon:"application_add.png"
+            icon:"application_add.png",
+            type:"showBlock"
         },
         {
             title:"Hide block",
-            icon:"application_remove.png"
+            icon:"application_remove.png",
+            type:"hideBlock"
         }
     ];
     me.instructionsArray=[
@@ -144,3 +173,4 @@ App.directive('autoCompleteAction', function($timeout) {
         });
     };
 });
+
