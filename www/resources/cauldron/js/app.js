@@ -25,6 +25,9 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
             instructionDefaultConfig:{
                 property:null,
                 value:1
+            },
+            toInstruction:function(config){
+                return config.value ? "INC("+config.property+","+config.value+")" : "INC("+config.property+")";
             }
         },
         decVar:{
@@ -59,8 +62,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     me.elementSet=[
         {
             title:"If ... Then ...",
-            icon:"next.png",
-            type:"ifThen"
+            icon:"next.png"
         },
         {
             title:"When ... DO ...",
@@ -99,6 +101,16 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     me.instructionsArray=[
 
     ];
+    me.getPhilter=function(){
+        var stringArray=[];
+        angular.forEach(me.instructionsArray,function(instruction){
+            var type=angular.copy(instruction.type);
+            if(me.instructionTypes[type]){
+                stringArray.push(me.instructionTypes[type].toInstruction(angular.copy(instruction.config)));
+            }
+        });
+        return stringArray.join('\n');
+    };
     me.dropInMain=function(){
         me.mainDropClass="alert-info";
         var type=angular.copy(me.currentItemType);
