@@ -9,7 +9,7 @@ Array.prototype.move = function (old_index, new_index) {
     return this; // for testing purposes
 };
 var App = angular.module('cauldron', ['ngDragDrop']);
-App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
+App.controller('CauldronController', ['$scope','$q','$location',function($scope,$q,$location) {
     var me=this;
     me.instructionTypes={
         ifThen:{
@@ -167,9 +167,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
             type:"hideBlock"
         }
     ];
-    me.instructionsArray=[
-
-    ];
+    me.instructionsArray=[];
     me.getPhilter=function(){
         var stringArray=[];
         angular.forEach(me.instructionsArray,function(instruction){
@@ -215,6 +213,13 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
     me.removeItem=function(index){
         me.instructionsArray.splice(index,1);
     };
+    me.saveChanges=function(){
+        console.log(JSON.stringify(me.instructionsArray));
+    };
+    var stringConfig=$location.search().config;
+    if(stringConfig){
+        me.instructionsArray=angular.copy(JSON.parse(stringConfig));
+    }
 }]);
 App.controller('WhenDoController', ['$scope','$q',function($scope,$q) {
     var me=this;
