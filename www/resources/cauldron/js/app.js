@@ -42,7 +42,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                     }
                     conditionsArray.push(isNaN(parseFloat(condition.value))&&condition.value!="" ? condition.property+condition.operator+"'"+condition.value+"'" : condition.property+condition.operator+condition.value);
                 });
-                return "IF "+conditionsArray.join(config.conditionsOperator)+" THEN "+executionArray.join(' ');
+                return "IF "+conditionsArray.join(config.conditionsOperator)+" THEN "+executionArray.join('; ');
 
             }
         },
@@ -60,7 +60,7 @@ App.controller('CauldronController', ['$scope','$q',function($scope,$q) {
                         executionArray.push(me.instructionTypes[type].toInstruction(angular.copy(instruction.config)));
                     }
                 });
-                return "WHEN "+config.eventName+" DO "+executionArray.join(' ');
+                return "WHEN "+config.eventName+" DO "+executionArray.join('; ');
 
             }
         },
