@@ -723,8 +723,8 @@ Ext.define('Rubedo.view.contributionPages', {
                                     items: [
                                         {
                                             xtype: 'textfield',
-                                            anchor: '100%',
                                             localiserId: 'pageViewField',
+                                            anchor: '100%',
                                             fieldLabel: 'Page view',
                                             name: 'clickStreamEvent'
                                         }
@@ -778,14 +778,36 @@ Ext.define('Rubedo.view.contributionPages', {
 
     processPhilters: function(config) {
         config.items=[
-        {
+            {
+            xtype: 'ACEFieldCauldron',
+            anchor: '100%',
+            fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,
+            name: 'cauldronInstructions',
+            textMode:true
+        },
+                                                {
+                                                    xtype: 'hiddenfield',
+                                                    anchor: '100%',
+                                                    id: 'cauldronPageConfig',
+                                                    fieldLabel: 'Label',
+                                                    name: 'cauldronConfig'
+                                                },
+            {xtype: 'fieldset',
+                                                    collapsed: true,
+                                                    collapsible: true,
+             items:[
+                 {
             xtype: 'ACEField',
             anchor: '100%',
             fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,
             name: 'UXInstructions',
             textMode:true
         }
-        ];
+
+             ],
+             title: 'Manual override'}
+
+                                            ];
         return config;
     },
 

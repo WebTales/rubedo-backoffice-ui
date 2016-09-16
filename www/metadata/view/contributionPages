@@ -1401,7 +1401,7 @@
                                         "layout|anchor": "100%",
                                         "store": "ContributeWorkspacesCombo"
                                     },
-                                    "name": "workspacecombo2",
+                                    "name": "workspacecombo",
                                     "designerId": "27571b04-a6e8-454e-9512-120cbaee6e6e",
                                     "customConfigs": [
                                         {
@@ -1699,7 +1699,7 @@
                                     "userConfig": {
                                         "id": "primaryPageECFS"
                                     },
-                                    "name": "pagesecommercefieldset1",
+                                    "name": "pagesecommercefieldset",
                                     "designerId": "b676315a-f6d5-4d16-b32e-5d61c64fd581",
                                     "masterInstanceId": "84a70db4-eb10-4d76-81cc-006305b2ab59"
                                 }
@@ -1717,7 +1717,7 @@
                                 "id": "pagesDLSToolbar",
                                 "replicatorEntity": "pagesLocProps"
                             },
-                            "name": "dlstoolbar2",
+                            "name": "dlstoolbar",
                             "designerId": "0ec7c46e-d600-4a9a-ab2a-0a1fc967b8d6",
                             "masterInstanceId": "d4099bd4-38b8-42ed-80b9-5dbde8b941c0"
                         }
@@ -2020,6 +2020,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "collapsible": true,
+                                "height": null,
                                 "localiserId": "philtersFieldset",
                                 "title": "Philters"
                             },
@@ -2047,19 +2048,41 @@
                                         "fn": "processPhilters",
                                         "implHandler": [
                                             "config.items=[",
-                                            "{",
+                                            "    {",
+                                            "    xtype: 'ACEFieldCauldron',",
+                                            "    anchor: '100%',",
+                                            "    fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,",
+                                            "    name: 'cauldronInstructions',",
+                                            "    textMode:true",
+                                            "},",
+                                            "                                        {",
+                                            "                                            xtype: 'hiddenfield',",
+                                            "                                            anchor: '100%',",
+                                            "                                            id: 'cauldronPageConfig',",
+                                            "                                            fieldLabel: 'Label',",
+                                            "                                            name: 'cauldronConfig'",
+                                            "                                        },",
+                                            "    {xtype: 'fieldset',",
+                                            "                                            collapsed: true,",
+                                            "                                            collapsible: true,",
+                                            "     items:[",
+                                            "         {",
                                             "    xtype: 'ACEField',",
                                             "    anchor: '100%',",
                                             "    fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,",
                                             "    name: 'UXInstructions',",
                                             "    textMode:true",
                                             "}",
-                                            "];",
+                                            "",
+                                            "     ],",
+                                            "     title: 'Manual override'}",
+                                            "",
+                                            "                                    ];",
                                             "return config;"
                                         ]
                                     },
                                     "name": "processPhilters",
-                                    "designerId": "7d7c62a5-998d-445a-aeb2-125172fac067"
+                                    "designerId": "510ebff9-b9d7-4fc4-86ac-3c017a661c5c"
                                 }
                             ]
                         },

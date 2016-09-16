@@ -929,17 +929,17 @@ Ext.define('Rubedo.controller.MasqueController', {
                     checked:component.configBloc.renderAsEventModal
                 }));
                 fset.add(Ext.widget('textfield',{
-                        fieldLabel:Rubedo.RubedoAutomatedElementsLoc.modalClassText,
-                        onChange:function(){
+                    fieldLabel:Rubedo.RubedoAutomatedElementsLoc.modalClassText,
+                    onChange:function(){
 
-                            component.configBloc.modalClass=this.getValue();
+                        component.configBloc.modalClass=this.getValue();
 
-                        },
-                        labelWidth:120,
-                        anchor:"100%",
-                        margin:"10 0 10 0",
-                        value:component.configBloc.modalClass
-                    }));
+                    },
+                    labelWidth:120,
+                    anchor:"100%",
+                    margin:"10 0 10 0",
+                    value:component.configBloc.modalClass
+                }));
                 persoTab.add(fset);
                 configSpec.add(persoTab);
             }

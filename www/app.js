@@ -453,7 +453,9 @@ Ext.application({
         'RStructuredObjectField',
         'RSOEditorWindow',
         'EventChoiceField',
-        'FacetChoiceField'
+        'FacetChoiceField',
+        'ACEFieldCauldron',
+        'ACEFieldCauldronComponent'
     ],
     controllers: [
         'ContributionContenusController',

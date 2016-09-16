@@ -1,0 +1,93 @@
+{
+    "type": "Ext.form.FieldContainer",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ACEFieldCauldronComponent",
+        "designer|userClassName": "ACEFieldCauldronComponent",
+        "fieldLabel": "Label",
+        "height": 26,
+        "labelSeparator": " ",
+        "labelWidth": 60,
+        "padding": null,
+        "width": 455
+    },
+    "name": "ACEFieldComponent1",
+    "designerId": "9ae052b6-6e36-4d65-8d5b-398db184c04e",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "add",
+                "itemId": "addBtn",
+                "localiserId": "addBtn",
+                "margin": "0 10 0 0",
+                "text": "Ajouter"
+            },
+            "name": "MyButton347",
+            "designerId": "5c99d8ca-cf7b-4e76-b89a-cd1c275b985e",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "edit",
+                "itemId": "editBtn",
+                "localiserId": "modifyBtn",
+                "margin": "0 10 0 0",
+                "text": "Modifier"
+            },
+            "name": "MyButton348",
+            "designerId": "80bc75fc-5852-4db0-b2c9-2421e658bb42",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "close",
+                "itemId": "removeBtn",
+                "localiserId": "removeBtn",
+                "text": "Supprimer"
+            },
+            "name": "MyButton349",
+            "designerId": "89cb6bfe-1de1-49c6-810b-cca302c392f7",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "localiserId",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

@@ -443,6 +443,32 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "cauldronInstructions"
+            },
+            "name": "MyField9",
+            "designerId": "fe38ec2c-54eb-4988-b24a-f04399777153"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cauldronConfig"
+            },
+            "name": "MyField10",
+            "designerId": "544207ca-e590-40bf-b365-fecf40d0a8d5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "metaImage"
             },
             "name": "MyField7",

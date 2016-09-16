@@ -1,0 +1,116 @@
+{
+    "type": "Ext.form.field.Hidden",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "allowedCT": null,
+        "designer|userAlias": "ACEFieldCauldron",
+        "designer|userClassName": "ACEFieldCauldron",
+        "fieldLabel": "Label",
+        "geoQueryMode": false,
+        "labelSeparator": " ",
+        "queryMode": true
+    },
+    "name": "ACEField1",
+    "configAlternates": {
+        "geoQueryMode": "boolean",
+        "queryMode": "boolean"
+    },
+    "designerId": "08678a37-584a-4c7c-8dd8-c3250c974e68",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "allowedCT",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "queryMode",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "geoQueryMode",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHiddenfieldRender",
+                "implHandler": [
+                    "var myComponent = Ext.widget(\"ACEFieldCauldronComponent\");",
+                    "myComponent.setFieldLabel(component.fieldLabel+\" \");",
+                    "component.on(\"change\", function(a,newValue){",
+                    "    if (Ext.isEmpty(newValue)){",
+                    "        myComponent.getComponent(\"addBtn\").show();",
+                    "        myComponent.getComponent(\"editBtn\").hide();",
+                    "        myComponent.getComponent(\"removeBtn\").hide();",
+                    "    } else {",
+                    "        myComponent.getComponent(\"addBtn\").hide();",
+                    "        myComponent.getComponent(\"editBtn\").show();",
+                    "        myComponent.getComponent(\"removeBtn\").show();",
+                    "    }",
+                    "});",
+                    "myComponent.getComponent(\"removeBtn\").on(\"click\", function(){",
+                    "    component.setValue(null);",
+                    "});",
+                    "myComponent.getComponent(\"addBtn\").on(\"click\", function(){",
+                    "    var myEditor = Ext.widget(\"aceEditorWindow\");",
+                    "    myEditor.targetedId=component.getId();",
+                    "    myEditor.twigMode=component.twigMode;",
+                    "        myEditor.textMode=component.textMode;",
+                    "",
+                    "    if (component.defaultTemplateUrl){",
+                    "        Ext.Ajax.request({",
+                    "            url: '/components/webtales/rubedo-frontoffice/templates/'+component.defaultTemplateUrl,",
+                    "            params: {",
+                    "            },",
+                    "            success: function(response){",
+                    "                myEditor.initialValue=response.responseText;",
+                    "                myEditor.show();",
+                    "            },",
+                    "            failure:function(response){",
+                    "                myEditor.initialValue=component.getValue();",
+                    "                myEditor.show();",
+                    "            }",
+                    "        });",
+                    "    } else {",
+                    "        myEditor.initialValue=component.getValue();",
+                    "        myEditor.show();",
+                    "    }",
+                    "",
+                    "});",
+                    "",
+                    "myComponent.getComponent(\"editBtn\").on(\"click\", function(){",
+                    "    var myEditor = Ext.widget(\"aceEditorWindow\");",
+                    "",
+                    "    myEditor.targetedId=component.getId();",
+                    "    myEditor.initialValue=component.getValue();",
+                    "    myEditor.twigMode=component.twigMode;",
+                    "    myEditor.textMode=component.textMode;",
+                    "    myEditor.show();",
+                    "",
+                    "",
+                    "});",
+                    "component.up().add(myComponent);",
+                    "component.fireEvent(\"change\",component, component.getValue());",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onHiddenfieldRender",
+            "designerId": "fcc577f4-d62c-4ac7-a43b-bbbb88c58647"
+        }
+    ]
+}

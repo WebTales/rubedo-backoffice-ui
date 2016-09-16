@@ -135,6 +135,12 @@ Ext.define('Rubedo.model.pageDataModel', {
             name: 'UXInstructions'
         },
         {
+            name: 'cauldronInstructions'
+        },
+        {
+            name: 'cauldronConfig'
+        },
+        {
             name: 'metaImage'
         }
     ]
