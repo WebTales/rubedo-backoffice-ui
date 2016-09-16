@@ -783,6 +783,7 @@ Ext.define('Rubedo.view.contributionPages', {
             anchor: '100%',
             fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,
             name: 'cauldronInstructions',
+                brotherFieldId:"cauldronPageConfig",
             textMode:true
         },
                                                 {

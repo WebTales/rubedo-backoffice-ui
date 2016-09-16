@@ -214,7 +214,11 @@ App.controller('CauldronController', ['$scope','$q','$location',function($scope,
         me.instructionsArray.splice(index,1);
     };
     me.saveChanges=function(){
-        console.log(JSON.stringify(me.instructionsArray));
+        var resultConf=JSON.stringify(me.instructionsArray);
+        var resultPhilter = me.getPhilter();
+        if(window.top.handleCauldronSave){
+            window.top.handleCauldronSave(resultConf,resultPhilter);
+        }
     };
     var stringConfig=$location.search().config;
     if(stringConfig){

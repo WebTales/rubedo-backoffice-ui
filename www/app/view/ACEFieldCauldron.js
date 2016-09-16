@@ -39,6 +39,7 @@ Ext.define('Rubedo.view.ACEFieldCauldron', {
 
     onHiddenfieldRender: function(component, eOpts) {
         var myComponent = Ext.widget("ACEFieldCauldronComponent");
+        var brotherField=Ext.getCmp(component.brotherFieldId);
         myComponent.setFieldLabel(component.fieldLabel+" ");
         component.on("change", function(a,newValue){
             if (Ext.isEmpty(newValue)){
@@ -53,41 +54,42 @@ Ext.define('Rubedo.view.ACEFieldCauldron', {
         });
         myComponent.getComponent("removeBtn").on("click", function(){
             component.setValue(null);
+            brotherField.setValue(null);
         });
         myComponent.getComponent("addBtn").on("click", function(){
-            var myEditor = Ext.widget("aceEditorWindow");
-            myEditor.targetedId=component.getId();
-            myEditor.twigMode=component.twigMode;
-                myEditor.textMode=component.textMode;
-
-            if (component.defaultTemplateUrl){
-                Ext.Ajax.request({
-                    url: '/components/webtales/rubedo-frontoffice/templates/'+component.defaultTemplateUrl,
-                    params: {
-                    },
-                    success: function(response){
-                        myEditor.initialValue=response.responseText;
-                        myEditor.show();
-                    },
-                    failure:function(response){
-                        myEditor.initialValue=component.getValue();
-                        myEditor.show();
-                    }
-                });
-            } else {
-                myEditor.initialValue=component.getValue();
-                myEditor.show();
-            }
+            var myEditor = Ext.create('Ext.window.Window', {
+                title: 'Cauldron',
+                height: 700,
+                width: 1000,constrainHeader:true,
+                modal:true,
+                layout: 'fit',
+                html:'<iframe src="/backoffice/resources/cauldron/" style="width:100%; height:100%;"></iframe>'
+            });
+            window.handleCauldronSave=function(cauldronConfig,philter){
+                component.setValue(philter);
+                brotherField.setValue(cauldronConfig);
+                myEditor.close();
+                window.handleCauldronSave=null;
+            };
+            myEditor.show();
 
         });
 
         myComponent.getComponent("editBtn").on("click", function(){
-            var myEditor = Ext.widget("aceEditorWindow");
-
-            myEditor.targetedId=component.getId();
-            myEditor.initialValue=component.getValue();
-            myEditor.twigMode=component.twigMode;
-            myEditor.textMode=component.textMode;
+            var myEditor = Ext.create('Ext.window.Window', {
+                title: 'Cauldron',
+                height: 700,
+                width: 1000,constrainHeader:true,
+                modal:true,
+                layout: 'fit',
+                html:'<iframe src="/backoffice/resources/cauldron/#?config='+encodeURIComponent(brotherField.getValue())+'" style="width:100%; height:100%;"></iframe>'
+            });
+            window.handleCauldronSave=function(cauldronConfig,philter){
+                component.setValue(philter);
+                brotherField.setValue(cauldronConfig);
+                myEditor.close();
+                window.handleCauldronSave=null;
+            };
             myEditor.show();
 
 
