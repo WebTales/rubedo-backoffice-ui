@@ -781,7 +781,7 @@ Ext.define('Rubedo.view.contributionPages', {
             {
             xtype: 'ACEFieldCauldron',
             anchor: '100%',
-            fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,
+            fieldLabel: Rubedo.RubedoAutomatedElementsLoc.philterText,
             name: 'cauldronInstructions',
                 brotherFieldId:"cauldronPageConfig",
             textMode:true
@@ -800,13 +800,13 @@ Ext.define('Rubedo.view.contributionPages', {
                  {
             xtype: 'ACEField',
             anchor: '100%',
-            fieldLabel: Rubedo.RubedoInterfaceLoc.philtersFieldset.title,
+            fieldLabel: Rubedo.RubedoAutomatedElementsLoc.philterText,
             name: 'UXInstructions',
             textMode:true
         }
 
              ],
-             title: 'Manual override'}
+             title: Rubedo.RubedoAutomatedElementsLoc.manualOverrideText}
 
                                             ];
         return config;

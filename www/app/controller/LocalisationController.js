@@ -444,7 +444,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "behaviourText":"Behaviour",
                     "eventsText":"Events",
                     "onlyModalText":"Render only as modal",
-                    "modalClassText":"Modal class"
+                    "modalClassText":"Modal class",
+                    "philterText":"Philter",
+                    "philterOverrideText":"Philter manual override",
+                    "manualOverrideText":"Manual override",
+                    "philterEditorText":"Philter editor"
 
                 });
 

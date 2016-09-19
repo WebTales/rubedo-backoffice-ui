@@ -789,7 +789,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 value:component.pageProperties.customTemplate
             }));
             configSpec.getComponent(1).add(Ext.create('Rubedo.view.ACEField',{
-                fieldLabel:"Philter manual override",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.philterOverrideText,
                 onChange:function(){
 
                     component.pageProperties.UXInstructions=this.getValue();
@@ -812,7 +812,7 @@ Ext.define('Rubedo.controller.MasqueController', {
                 value:component.pageProperties.cauldronConfig
             }));
             configSpec.getComponent(0).add(Ext.create('Rubedo.view.ACEFieldCauldron',{
-                fieldLabel:"Philter",
+                fieldLabel:Rubedo.RubedoAutomatedElementsLoc.philterText,
                 onChange:function(){
 
                     component.pageProperties.cauldronInstructions=this.getValue();

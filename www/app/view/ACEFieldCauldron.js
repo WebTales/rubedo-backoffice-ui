@@ -58,7 +58,7 @@ Ext.define('Rubedo.view.ACEFieldCauldron', {
         });
         myComponent.getComponent("addBtn").on("click", function(){
             var myEditor = Ext.create('Ext.window.Window', {
-                title: 'Cauldron',
+                title: Rubedo.RubedoAutomatedElementsLoc.philterEditorText,
                 height: 700,
                 width: 1000,constrainHeader:true,
                 modal:true,
@@ -77,7 +77,7 @@ Ext.define('Rubedo.view.ACEFieldCauldron', {
 
         myComponent.getComponent("editBtn").on("click", function(){
             var myEditor = Ext.create('Ext.window.Window', {
-                title: 'Cauldron',
+                title: Rubedo.RubedoAutomatedElementsLoc.philterEditorText,
                 height: 700,
                 width: 1000,constrainHeader:true,
                 modal:true,
