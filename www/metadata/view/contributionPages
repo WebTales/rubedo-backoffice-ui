@@ -976,6 +976,10 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.BufferedRenderer",
+                    "userConfig": {
+                        "leadingBufferZone": 25,
+                        "trailingBufferZone": 25
+                    },
                     "name": "MyBufferedRenderer1",
                     "designerId": "bd143597-df51-4fe2-b54c-cd4d68fc941f"
                 }

@@ -438,7 +438,8 @@ Ext.define('Rubedo.view.contributionPages', {
                     ],
                     plugins: [
                         Ext.create('Ext.grid.plugin.BufferedRenderer', {
-
+                            leadingBufferZone: 25,
+                            trailingBufferZone: 25
                         })
                     ]
                 },
