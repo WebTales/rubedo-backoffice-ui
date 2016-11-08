@@ -127,7 +127,32 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
                                             fieldLabel: 'Fin de validité ',
                                             labelWidth: 110,
                                             name: 'endValidity'
-                                        }
+                                        },
+                                        me.processStatus({
+                                            xtype: 'combobox',
+                                            anchor: '100%',
+                                            fieldLabel: 'Sign-up status',
+                                            labelWidth: 110,
+                                            name: 'status',
+                                            store: [
+                                                [
+                                                    'approved',
+                                                    Rubedo.RubedoAutomatedElementsLoc.approvedText
+                                                ],
+                                                [
+                                                    'deined',
+                                                    Rubedo.RubedoAutomatedElementsLoc.deniedText
+                                                ],
+                                                [
+                                                    'pending',
+                                                    Rubedo.RubedoAutomatedElementsLoc.pendingText
+                                                ],
+                                                [
+                                                    'emailUnconfirmed',
+                                                    Rubedo.RubedoAutomatedElementsLoc.emailUnconfirmedText
+                                                ]
+                                            ]
+                                        })
                                     ]
                                 },
                                 {
@@ -195,6 +220,11 @@ Ext.define('Rubedo.view.userUpdateCreadentialsForm', {
 
         me.processUserUpdateCreadentialsForm(me);
         me.callParent(arguments);
+    },
+
+    processStatus: function(config) {
+        config.fieldLabel=Rubedo.RubedoInterfaceLoc.signUpStatCol.text;
+        return config;
     },
 
     processUserUpdateCreadentialsForm: function(config) {

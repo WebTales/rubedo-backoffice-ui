@@ -448,7 +448,11 @@ Ext.define('Rubedo.controller.LocalisationController', {
                     "philterText":"Philter",
                     "philterOverrideText":"Philter manual override",
                     "manualOverrideText":"Manual override",
-                    "philterEditorText":"Philter editor"
+                    "philterEditorText":"Philter editor",
+                    "emailUnconfirmedText":"Email unconfirmed",
+                    "approvedText":"Approved",
+                    "deniedText":"Denied",
+                    "pendingText":"Pending"
 
                 });
 

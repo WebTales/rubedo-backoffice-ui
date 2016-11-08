@@ -315,6 +315,10 @@ Ext.define('Rubedo.view.UsersInterface', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                var tradKey=value+"Text";
+                                return !Ext.isEmpty(Rubedo.RubedoAutomatedElementsLoc[tradKey]) ? Rubedo.RubedoAutomatedElementsLoc[tradKey] : value;
+                            },
                             localiserId: 'signUpStatCol',
                             id: 'usersInterfaceStatusCol',
                             dataIndex: 'status',

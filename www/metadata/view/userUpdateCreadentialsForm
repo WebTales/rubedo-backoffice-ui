@@ -264,6 +264,53 @@
                                             "type": "string"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Sign-up status",
+                                        "labelWidth": 110,
+                                        "layout|anchor": "100%",
+                                        "name": "status",
+                                        "store": [
+                                            "[[\"approved\",Rubedo.RubedoAutomatedElementsLoc.approvedText],",
+                                            "[\"deined\",Rubedo.RubedoAutomatedElementsLoc.deniedText],",
+                                            "[\"pending\",Rubedo.RubedoAutomatedElementsLoc.pendingText],",
+                                            "[\"emailUnconfirmed\",Rubedo.RubedoAutomatedElementsLoc.emailUnconfirmedText]]"
+                                        ]
+                                    },
+                                    "name": "MyComboBox",
+                                    "configAlternates": {
+                                        "store": "array"
+                                    },
+                                    "designerId": "c44918fa-9379-40e8-b072-73e2abba365a",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "fn": "processStatus",
+                                                "implHandler": [
+                                                    "config.fieldLabel=Rubedo.RubedoInterfaceLoc.signUpStatCol.text;",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "name": "processStatus",
+                                            "designerId": "589307f3-31a4-489f-bb97-5d79824f1dad"
+                                        }
+                                    ]
                                 }
                             ]
                         },
