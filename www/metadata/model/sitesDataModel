@@ -538,6 +538,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "defaultValue": [
+                    "false"
+                ],
+                "designer|displayName": null,
+                "name": "enableServiceWorker",
+                "type": "boolean"
+            },
+            "name": "MyField3",
+            "designerId": "67b7369a-17b3-47af-981b-ce95c6678b2a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "i18n"
             },
             "name": "MyField296",

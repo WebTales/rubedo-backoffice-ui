@@ -154,6 +154,11 @@ Ext.define('Rubedo.model.sitesDataModel', {
             type: 'boolean'
         },
         {
+            defaultValue: false,
+            name: 'enableServiceWorker',
+            type: 'boolean'
+        },
+        {
             name: 'i18n'
         },
         {
