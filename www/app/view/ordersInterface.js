@@ -62,7 +62,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                 }
             ],
             items: [
-                {
+                me.processOrdersMainGrid({
                     xtype: 'gridpanel',
                     flex: 1,
                     id: 'ordersMainGrid',
@@ -70,12 +70,12 @@ Ext.define('Rubedo.view.ordersInterface', {
                     forceFit: true,
                     store: 'Orders',
                     columns: [
-                        {
+                        me.processOrderNumber({
                             xtype: 'gridcolumn',
                             localiserId: 'orderNumberCol',
                             dataIndex: 'orderNumber',
                             text: 'Order Number'
-                        },
+                        }),
                         {
                             xtype: 'gridcolumn',
                             localiserId: 'clientNameCol',
@@ -139,7 +139,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                             falseText: 'No',
                             trueText: 'Yes'
                         },
-                        {
+                        me.processStatus1({
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 if (!Ext.isEmpty(Rubedo.RubedoAutomatedElementsLoc[value+"Text"])){
@@ -151,7 +151,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                             localiserId: 'statusCol',
                             dataIndex: 'status',
                             text: 'Status'
-                        }
+                        })
                     ],
                     dockedItems: [
                         {
@@ -181,7 +181,7 @@ Ext.define('Rubedo.view.ordersInterface', {
                             scope: me
                         }
                     }
-                },
+                }),
                 {
                     xtype: 'panel',
                     flex: 1,
@@ -444,6 +444,26 @@ Ext.define('Rubedo.view.ordersInterface', {
         });
 
         me.callParent(arguments);
+    },
+
+    processOrderNumber: function(config) {
+        config.filter={
+                    type:"string"
+                };
+                return config;
+    },
+
+    processStatus1: function(config) {
+        config.filter={
+                    type:"list",
+                    options: RubedoExtendableSettings.orderStatusList
+                };
+                return config;
+    },
+
+    processOrdersMainGrid: function(config) {
+        config.features=[Ext.create("Ext.ux.grid.FiltersFeature",{encode:true,local:false})];
+        return config;
     },
 
     processBillDocument: function(config) {

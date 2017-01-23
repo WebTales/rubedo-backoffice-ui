@@ -40,7 +40,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1618",
+            "name": "mytool16",
             "designerId": "eb809d1d-9f5f-48fa-8b31-817c7058ffed",
             "masterInstanceId": "7263f6b0-1331-4499-84af-95500ad7f815"
         },
@@ -51,7 +51,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "mytool1724",
+            "name": "mytool17",
             "designerId": "56ba6e95-b4f0-4952-8755-56fe9b4cff05",
             "masterInstanceId": "1ab0b0a2-44a7-48b2-8bf5-cfcf4aa29237"
         },
@@ -91,6 +91,30 @@
                             "group": "(Custom Properties)",
                             "name": "localiserId",
                             "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processOrderNumber",
+                                "implHandler": [
+                                    "config.filter={",
+                                    "            type:\"string\"",
+                                    "        };",
+                                    "        return config;"
+                                ]
+                            },
+                            "name": "processOrderNumber",
+                            "designerId": "4a373f6a-934b-4015-a290-071cfb25c1bd"
                         }
                     ]
                 },
@@ -370,6 +394,29 @@
                             },
                             "name": "renderer",
                             "designerId": "a83d1a35-d5a4-4920-af27-0ca30cae1cc5"
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processStatus1",
+                                "implHandler": [
+                                    "config.filter={",
+                                    "            type:\"list\",",
+                                    "            options: RubedoExtendableSettings.orderStatusList",
+                                    "        };",
+                                    "        return config;"
+                                ]
+                            },
+                            "name": "processStatus1",
+                            "designerId": "b0971dcf-461b-461a-9fc8-e222938f8d45"
                         }
                     ]
                 },
@@ -485,6 +532,26 @@
                     },
                     "name": "onOrdersMainGridSelectionChange",
                     "designerId": "1c4bd226-6871-436d-9cfc-4187d775f853"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "config"
+                        ],
+                        "fn": "processOrdersMainGrid",
+                        "implHandler": [
+                            "config.features=[Ext.create(\"Ext.ux.grid.FiltersFeature\",{encode:true,local:false})];",
+                            "return config;"
+                        ]
+                    },
+                    "name": "processOrdersMainGrid",
+                    "designerId": "a9e13ceb-1e67-47ba-b3f8-0355cb3606da"
                 }
             ]
         },
@@ -604,7 +671,7 @@
                                         "name": "billDocument",
                                         "smallMode": true
                                     },
-                                    "name": "imagepickerfield2",
+                                    "name": "imagepickerfield",
                                     "configAlternates": {
                                         "smallMode": "boolean"
                                     },
