@@ -312,6 +312,15 @@ Ext.define('Rubedo.view.sitesInterface', {
                                                     uncheckedValue: 'false'
                                                 },
                                                 {
+                                                    xtype: 'checkboxfield',
+                                                    anchor: '100%',
+                                                    fieldLabel: 'Service worker',
+                                                    labelWidth: 110,
+                                                    name: 'enableServiceWorker',
+                                                    inputValue: 'true',
+                                                    uncheckedValue: 'false'
+                                                },
+                                                {
                                                     xtype: 'textareafield',
                                                     anchor: '100%',
                                                     hidden: true,
@@ -972,7 +981,7 @@ Ext.define('Rubedo.view.sitesInterface', {
         component.insert(5,languagesPicker);
         component.add(singlePageSelector);
         component.add(notFoundPageSelector);
-        component.insert(14,ctc);
+        component.insert(15,ctc);
         component.add(searchPageSelector);
     },
 
