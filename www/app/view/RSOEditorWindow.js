@@ -72,7 +72,9 @@ Ext.define('Rubedo.view.RSOEditorWindow', {
                                         var recData=rec.getData();
                                         var confF=Ext.clone(recData.config);
                                         confF.fieldLabel=recData.type;
-                                        confF.name="field"+Ext.id().replace("-","");
+                                        var index=me.getComponent(0).items.items.length+1;
+                                        var fieldType=Ext.create(testFieldType).xtype;
+                                        confF.name="fieldextgen"+fieldType+index;
                                         confF.anchor="80%";
                                         confF.style='{float:left;}';
                                         me.rendField({
